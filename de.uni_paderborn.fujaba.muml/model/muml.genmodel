@@ -381,54 +381,6 @@
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//msgtype/MessageTypeRepository/messageTypes"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Deployment" basePackage="de.uni_paderborn.fujaba.muml"
-        disposableProviderFactory="true" ecorePackage="muml.ecore#//deployment">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//deployment/HardwareNodeKind">
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//deployment/HardwareNodeKind/SENSOR"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//deployment/HardwareNodeKind/ACTOR"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//deployment/HardwareNodeKind/COMMUNICATION"/>
-      </genEnums>
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//deployment/HardwarePortDirectionKind">
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//deployment/HardwarePortDirectionKind/IN"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//deployment/HardwarePortDirectionKind/OUT"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//deployment/HardwarePortDirectionKind/IN_OUT"/>
-      </genEnums>
-      <genClasses ecoreClass="muml.ecore#//deployment/Deployment">
-        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//deployment/Deployment/communicationLinks"/>
-        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//deployment/Deployment/hardwareNodes"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//deployment/Deployment/componentInstanceConfiguration"/>
-        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//deployment/Deployment/qualityOfLinkServices"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//deployment/HardwareNode">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//deployment/HardwareNode/deployment"/>
-        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//deployment/HardwareNode/hardwarePorts"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//deployment/HardwareNode/deployedInstances"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//deployment/HardwareNode/hardwareNodeKind"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//deployment/HardwarePort">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//deployment/HardwarePort/hardwareNode"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//deployment/HardwarePort/deployedPortInstance"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//deployment/HardwarePort/kind"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//deployment/HardwarePort/communicationLinks"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//deployment/CommunicationLink">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//deployment/CommunicationLink/deployment"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//deployment/CommunicationLink/qualityOfService"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//deployment/CommunicationLink/hardwarePorts"/>
-      </genClasses>
-      <genClasses ecoreClass="muml.ecore#//deployment/LinkQualityOfService">
-        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation"/>
-        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//deployment/LinkQualityOfService/latency"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//deployment/LinkQualityOfService/deployment"/>
-      </genClasses>
-    </nestedGenPackages>
     <nestedGenPackages prefix="Types" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
         ecorePackage="muml.ecore#//types">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//types/PrimitiveTypes">

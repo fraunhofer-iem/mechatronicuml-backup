@@ -1525,131 +1525,131 @@
             featureName="value" dataValue="This package defines the message interfaces. A MessageInterface defines a set&#xD;&#xA;of event signatures using the class MessageType. These message types are used&#xD;&#xA;to type the events within a realtime statechart. "/>
       </changes>
       <changes xsi:type="history:Create" target="#//@releases.15/@changes.110/@element"
-          referenceName="eSubpackages" element="muml.ecore#//deployment">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment" featureName="name"
-            dataValue="deployment"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment" featureName="nsURI"
-            dataValue="http://www.fujaba.de/muml/model/deployment/0.3.1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment" featureName="nsPrefix"
-            dataValue="deployment"/>
+          referenceName="eSubpackages" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+            featureName="name" dataValue="deployment"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+            featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/deployment/0.3.1"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+            featureName="nsPrefix" dataValue="deployment"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment" referenceName="eAnnotations"
-          element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="key" dataValue="invocationDelegates"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
             featureName="key" dataValue="settingDelegates"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"
             featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
             featureName="key" dataValue="validationDelegates"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
             featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment" referenceName="eClassifiers"
-          element="muml.ecore#//deployment/HardwareNodeKind">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind"
             featureName="name" dataValue="HardwareNodeKind"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNodeKind"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Different kinds of HardwareNodes. "/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNodeKind"
-          referenceName="eLiterals" element="muml.ecore#//deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind"
+          referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE"
             featureName="name" dataValue="COMPUTATIONAL_RESOURCE"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/COMPUTATIONAL_RESOURCE"
             featureName="literal" dataValue="COMPUTATIONAL_RESOURCE"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNodeKind"
-          referenceName="eLiterals" element="muml.ecore#//deployment/HardwareNodeKind/SENSOR">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/SENSOR"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind"
+          referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/SENSOR">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/SENSOR"
             featureName="name" dataValue="SENSOR"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/SENSOR"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/SENSOR"
             featureName="value" dataValue="2" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/SENSOR"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/SENSOR"
             featureName="literal" dataValue="SENSOR"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNodeKind"
-          referenceName="eLiterals" element="muml.ecore#//deployment/HardwareNodeKind/ACTOR">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/ACTOR"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind"
+          referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/ACTOR">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/ACTOR"
             featureName="name" dataValue="ACTOR"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/ACTOR"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/ACTOR"
             featureName="value" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/ACTOR"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/ACTOR"
             featureName="literal" dataValue="ACTOR"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNodeKind"
-          referenceName="eLiterals" element="muml.ecore#//deployment/HardwareNodeKind/COMMUNICATION">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/COMMUNICATION"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind"
+          referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/COMMUNICATION">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/COMMUNICATION"
             featureName="name" dataValue="COMMUNICATION"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/COMMUNICATION"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/COMMUNICATION"
             featureName="value" dataValue="3" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNodeKind/COMMUNICATION"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind/COMMUNICATION"
             featureName="literal" dataValue="COMMUNICATION"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment" referenceName="eClassifiers"
-          element="muml.ecore#//deployment/HardwarePortDirectionKind">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind"
             featureName="name" dataValue="HardwarePortDirectionKind"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePortDirectionKind"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A HardwarePort is of kind in, out, or in/out. &#xD;&#xA;Depending on its kind it can receive, send, or receive and send messages. "/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePortDirectionKind"
-          referenceName="eLiterals" element="muml.ecore#//deployment/HardwarePortDirectionKind/IN">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/IN"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind"
+          referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/IN">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/IN"
             featureName="name" dataValue="IN"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/IN"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/IN"
             featureName="literal" dataValue="IN"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePortDirectionKind"
-          referenceName="eLiterals" element="muml.ecore#//deployment/HardwarePortDirectionKind/OUT">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/OUT"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind"
+          referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/OUT">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/OUT"
             featureName="name" dataValue="OUT"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/OUT"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/OUT"
             featureName="value" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/OUT"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/OUT"
             featureName="literal" dataValue="OUT"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePortDirectionKind"
-          referenceName="eLiterals" element="muml.ecore#//deployment/HardwarePortDirectionKind/IN_OUT">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/IN_OUT"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind"
+          referenceName="eLiterals" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/IN_OUT">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/IN_OUT"
             featureName="name" dataValue="IN_OUT"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/IN_OUT"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/IN_OUT"
             featureName="value" dataValue="2" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePortDirectionKind/IN_OUT"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind/IN_OUT"
             featureName="literal" dataValue="IN_OUT"/>
       </changes>
       <changes xsi:type="history:Create" element="../../org.storydriven.core/model/core.ecore#/">
@@ -2812,26 +2812,26 @@
         <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Message/parameterBinding"
             featureName="eType" referenceValue="muml.ecore#//behavior/ParameterBinding"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment" referenceName="eClassifiers"
-          element="muml.ecore#//deployment/CommunicationLink">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
             featureName="name" dataValue="CommunicationLink"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//deployment/CommunicationLink"
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//ExtendableElement"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A communication link between hardware nodes and a target used for the deployment of connectors between component instances."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
           referenceName="eAnnotations" element="#//@releases.15/@changes.215/@element">
         <changes xsi:type="history:Set" element="#//@releases.15/@changes.215/@element"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2843,25 +2843,25 @@
         <changes xsi:type="history:Set" element="#//@releases.15/@changes.215/@element/@details.0"
             featureName="value" dataValue="self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances"
             featureName="name" dataValue="deployedAssemblyInstances"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances"
             featureName="eType" referenceValue="muml.ecore#//instance/AssemblyConnectorInstance"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployedAssemblyInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Used for the deployment of connectors between component instances."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#/"
@@ -9004,258 +9004,258 @@
         <changes xsi:type="history:Set" element="muml.ecore#//msgtype/MessageType/repository"
             featureName="eOpposite" referenceValue="muml.ecore#//msgtype/MessageTypeRepository/messageTypes"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment" referenceName="eClassifiers"
-          element="muml.ecore#//deployment/Deployment">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"
             featureName="name" dataValue="Deployment"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//deployment/Deployment"
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//deployment/Deployment"
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Deployment exists in the software lifecycle to bridge the gap between what a software developer could know about the execution environment and what the environment's developer could know about the deployable software.\footnote{C. Szyperski, Foreword to Proceedings of Component Deployment, IFIP/ACM Working Conference, Berlin 2002}"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/Deployment/componentInstanceConfiguration">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/componentInstanceConfiguration"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/componentInstanceConfiguration">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/componentInstanceConfiguration"
             featureName="name" dataValue="componentInstanceConfiguration"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/componentInstanceConfiguration"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/componentInstanceConfiguration"
             featureName="eType" referenceValue="muml.ecore#//instance/ComponentInstanceConfiguration"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment/componentInstanceConfiguration"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/componentInstanceConfiguration"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/componentInstanceConfiguration/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The componentInstanceConfiguration which contains the component instances which should be deployed to hardware nodes."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment" referenceName="eClassifiers"
-          element="muml.ecore#//deployment/HardwareNode">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"
             featureName="name" dataValue="HardwareNode"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//deployment/HardwareNode"
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//deployment/HardwareNode"
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/Deployment/hardwareNodes">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/hardwareNodes"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes"
             featureName="name" dataValue="hardwareNodes"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/hardwareNodes"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/hardwareNodes"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/hardwareNodes"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/hardwareNodes"
-            featureName="eType" referenceValue="muml.ecore#//deployment/HardwareNode"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment/hardwareNodes"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A Deployment contains HardwareNodes which represents hardware resources like computational, communication, sensor, or actor."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="key" dataValue="NoDeploymentOnActorOrSensor"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
             featureName="value" dataValue="(self.hardwareNodeKind &lt;> deployment::HardwareNodeKind::COMPUTATIONAL_RESOURCE) implies self.deployedInstances->isEmpty()"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A run-time computational resource which generally has at least memory and processing capabilities. &#xD;&#xA;Component instances may reside on hardware nodes if they are not a sensor or an actor."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="key" dataValue="constraints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
             featureName="value" dataValue="NoDeploymentOnActorOrSensor"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/HardwareNode/deployment">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployment"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment"
             featureName="name" dataValue="deployment"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployment"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployment"
-            featureName="eType" referenceValue="muml.ecore#//deployment/Deployment"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployment"
-            featureName="eOpposite" referenceValue="muml.ecore#//deployment/Deployment/hardwareNodes"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/hardwareNodes"
-            featureName="eOpposite" referenceValue="muml.ecore#//deployment/HardwareNode/deployment"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment"
+            featureName="eOpposite" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/hardwareNodes"
+            featureName="eOpposite" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/deployment"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Deployment which contains the HardwareNode."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/HardwareNode/deployedInstances">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployedInstances"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances"
             featureName="name" dataValue="deployedInstances"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployedInstances"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployedInstances"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances"
             featureName="eType" referenceValue="muml.ecore#//instance/ComponentInstance"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/deployedInstances"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/deployedInstances/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="ComponentInstances which are deployed to the HardwareNode."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/HardwareNode/hardwareNodeKind">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwareNodeKind"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwareNodeKind">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwareNodeKind"
             featureName="name" dataValue="hardwareNodeKind"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwareNodeKind"
-            featureName="eType" referenceValue="muml.ecore#//deployment/HardwareNodeKind"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwareNodeKind"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNodeKind"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/hardwareNodeKind"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwareNodeKind"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwareNodeKind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A HardwareNode is kind of a computational resource, a sensor, an actor, or a communication device like a router."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment" referenceName="eClassifiers"
-          element="muml.ecore#//deployment/HardwarePort">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
             featureName="name" dataValue="HardwarePort"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//deployment/HardwarePort"
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//deployment/HardwarePort"
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/HardwareNode/hardwarePorts">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwarePorts"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts"
             featureName="name" dataValue="hardwarePorts"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwarePorts"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwarePorts"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwarePorts"
-            featureName="eType" referenceValue="muml.ecore#//deployment/HardwarePort"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/hardwarePorts"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A HardwareNode contains HardwarePorts to communicate with other HardwarePorts via a CommunicationLink."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Hardware ports  are used to communicate&#xD;&#xA;with other hardware nodes and with component instances."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/HardwarePort/hardwareNode">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/hardwareNode"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode"
             featureName="name" dataValue="hardwareNode"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/hardwareNode"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/hardwareNode"
-            featureName="eType" referenceValue="muml.ecore#//deployment/HardwareNode"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/hardwareNode"
-            featureName="eOpposite" referenceValue="muml.ecore#//deployment/HardwareNode/hardwarePorts"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwareNode/hardwarePorts"
-            featureName="eOpposite" referenceValue="muml.ecore#//deployment/HardwarePort/hardwareNode"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode"
+            featureName="eOpposite" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwareNode/hardwarePorts"
+            featureName="eOpposite" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/hardwareNode"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/hardwareNode/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Hardware nodes are hardware elements on which port instances could be deployed if they are not a sensor or an actor."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
           referenceName="eStructuralFeatures" element="#//@releases.9/@changes.9/@changes.1/@element">
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element"
             featureName="name" dataValue="incomingCommunicationLink"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element"
-            featureName="eType" referenceValue="muml.ecore#//deployment/CommunicationLink"/>
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"/>
       </changes>
       <changes xsi:type="history:Create" target="#//@releases.9/@changes.9/@changes.1/@element"
           referenceName="eAnnotations" element="#//@releases.9/@changes.9/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
@@ -9269,113 +9269,113 @@
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="CommunicationLinks which have the HardwarePort as sink."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/HardwarePort/deployedPortInstance">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/deployedPortInstance"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance"
             featureName="name" dataValue="deployedPortInstance"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/deployedPortInstance"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/deployedPortInstance"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance"
             featureName="eType" referenceValue="muml.ecore#//instance/PortInstance"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/deployedPortInstance"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/deployedPortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="PortInstances which are deployed to the HardwarePort."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/HardwarePort/kind">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/kind"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind"
             featureName="name" dataValue="kind"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/kind"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind"
             featureName="defaultValueLiteral" dataValue=""/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/kind"
-            featureName="eType" referenceValue="muml.ecore#//deployment/HardwarePortDirectionKind"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePortDirectionKind"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/kind"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/kind/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A HardwarePort is of kind in, out, or in/out. &#xD;&#xA;Depending on its kind it can receive, send, or receive and send messages. "/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/CommunicationLink/deployment">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployment"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment"
             featureName="name" dataValue="deployment"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployment"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployment"
-            featureName="eType" referenceValue="muml.ecore#//deployment/Deployment"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/Deployment/communicationLinks">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/communicationLinks"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks"
             featureName="name" dataValue="communicationLinks"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/communicationLinks"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/communicationLinks"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/communicationLinks"
-            featureName="eType" referenceValue="muml.ecore#//deployment/CommunicationLink"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/communicationLinks"
-            featureName="eOpposite" referenceValue="muml.ecore#//deployment/CommunicationLink/deployment"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployment"
-            featureName="eOpposite" referenceValue="muml.ecore#//deployment/Deployment/communicationLinks"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks"
+            featureName="eOpposite" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment"
+            featureName="eOpposite" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment/communicationLinks"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="A Deployment contains CommunicationLinks which are used to connect HardwarePorts."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/deployment"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The deployment to which the link belongs to."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
           referenceName="eStructuralFeatures" element="#//@releases.9/@changes.10/@changes.2/@element">
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element"
             featureName="name" dataValue="source"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element"
-            featureName="eType" referenceValue="muml.ecore#//deployment/HardwarePort"/>
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
           referenceName="eStructuralFeatures" element="#//@releases.9/@changes.10/@changes.1/@element">
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element"
             featureName="name" dataValue="outgoingCommunicationLink"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element"
-            featureName="eType" referenceValue="muml.ecore#//deployment/CommunicationLink"/>
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.1/@element"
             featureName="eOpposite" referenceValue="#//@releases.9/@changes.10/@changes.2/@element"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element"
@@ -9405,14 +9405,14 @@
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Source HardwarePort of the link."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
           referenceName="eStructuralFeatures" element="#//@releases.9/@changes.9/@changes.2/@element">
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element"
             featureName="name" dataValue="target"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element"
             featureName="lowerBound" dataValue="1" oldDataValue="0"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element"
-            featureName="eType" referenceValue="muml.ecore#//deployment/HardwarePort"/>
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element"
             featureName="eOpposite" referenceValue="#//@releases.9/@changes.9/@changes.1/@element"/>
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.1/@element"
@@ -9430,130 +9430,130 @@
         <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Target HardwarePort of the link."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment" referenceName="eClassifiers"
-          element="muml.ecore#//deployment/LinkQualityOfService">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+          referenceName="eClassifiers" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService"
             featureName="name" dataValue="QualityOfLinkService"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//deployment/LinkQualityOfService"
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//CommentableElement"/>
-        <changes xsi:type="history:Add" element="muml.ecore#//deployment/LinkQualityOfService"
+        <changes xsi:type="history:Add" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService"
             featureName="eSuperTypes" referenceValue="../../org.storydriven.core/model/core.ecore#//NamedElement"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/CommunicationLink/qualityOfService">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/qualityOfService"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/qualityOfService">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/qualityOfService"
             featureName="name" dataValue="qualityOfService"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/qualityOfService"
-            featureName="eType" referenceValue="muml.ecore#//deployment/LinkQualityOfService"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/qualityOfService"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/qualityOfService"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/qualityOfService"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/qualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The quality of service which the link fullfills. "/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Quality of Service of a communication link. "/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation"
             featureName="name" dataValue="packetDelayVariation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation"
             featureName="eType" referenceValue="muml.ecore#//valuetype/NaturalNumber"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Difference in end-to-end one-way delay between selected messages without lost messages."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/LinkQualityOfService/latency">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/latency"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency"
             featureName="name" dataValue="latency"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/latency"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/latency"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency"
             featureName="eType" referenceValue="muml.ecore#//valuetype/NaturalNumber"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService/latency"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The time from the source port sending a message to the destination port receiving it."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/LinkQualityOfService/deployment">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/deployment"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment"
             featureName="name" dataValue="deployment"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/deployment"
-            featureName="eType" referenceValue="muml.ecore#//deployment/Deployment"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/Deployment/qualityOfLinkServices">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/qualityOfLinkServices"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices"
             featureName="name" dataValue="qualityOfLinkServices"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/qualityOfLinkServices"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices"
             featureName="containment" dataValue="true" oldDataValue="false"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/qualityOfLinkServices"
-            featureName="eType" referenceValue="muml.ecore#//deployment/LinkQualityOfService"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/qualityOfLinkServices"
-            featureName="eOpposite" referenceValue="muml.ecore#//deployment/LinkQualityOfService/deployment"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/deployment"
-            featureName="eOpposite" referenceValue="muml.ecore#//deployment/Deployment/qualityOfLinkServices"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices"
+            featureName="eOpposite" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment"
+            featureName="eOpposite" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment/qualityOfLinkServices"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/Deployment/qualityOfLinkServices/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Reference to all contained quality of services."/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService/deployment"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/deployment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="The deployment to which the service belongs."/>
       </changes>
       <changes xsi:type="history:Create" target="../../org.storydriven.core/model/core.ecore#//NamedElement"
@@ -17220,14 +17220,15 @@
         featureName="eType" referenceValue="muml.ecore#//valuetype/TimeValue" oldReferenceValue="muml.ecore#//valuetype/NaturalNumber"/>
     <changes xsi:type="history:Set" element="muml.ecore#//protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"
         featureName="eType" referenceValue="muml.ecore#//valuetype/TimeValue" oldReferenceValue="muml.ecore#//valuetype/NaturalNumber"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService"
         featureName="name" dataValue="LinkQualityOfService" oldDataValue="QualityOfLinkService"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/packetDelayVariation"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/packetDelayVariation"
         featureName="eType" referenceValue="muml.ecore#//valuetype/TimeValue" oldReferenceValue="muml.ecore#//valuetype/NaturalNumber"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment/LinkQualityOfService/latency"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/LinkQualityOfService/latency"
         featureName="eType" referenceValue="muml.ecore#//valuetype/TimeValue" oldReferenceValue="muml.ecore#//valuetype/NaturalNumber"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment" featureName="nsURI"
-        dataValue="http://www.fujaba.de/muml/model/deployment/0.3.7" oldDataValue="http://www.fujaba.de/muml/model/deployment/0.3.1"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/deployment/0.3.7"
+        oldDataValue="http://www.fujaba.de/muml/model/deployment/0.3.1"/>
   </releases>
   <releases date="2012-12-18T18:46:51.291+0100" label="0.3.8">
     <changes xsi:type="history:OperationChange">
@@ -17652,7 +17653,7 @@
         oldDataValue="RoleRequiresBehavior"/>
     <changes xsi:type="history:Set" element="muml.ecore#//protocol/Role/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
         featureName="key" dataValue="RoleRequiresMessageTypes" oldDataValue="RoleRequiresInterface"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink"
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
         referenceName="eAnnotations" element="#//@releases.15/@changes.216/@element">
       <changes xsi:type="history:Set" element="#//@releases.15/@changes.216/@element"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
@@ -18052,26 +18053,26 @@
         oldDataValue="This class represents a complex state of a realtime statechart. Complex states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more complex states have do, entry and exit actions. Also complex states define which synchronization channels are allowed to be used by embedded statecharts."/>
   </releases>
   <releases date="2013-01-01T11:17:51.291+0100" label="0.3.11">
-    <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort"
-        referenceName="eStructuralFeatures" element="muml.ecore#//deployment/HardwarePort/communicationLinks"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks"
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
+        referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"
         featureName="name" dataValue="communicationLinks"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"
         featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks"
-        featureName="eType" referenceValue="muml.ecore#//deployment/CommunicationLink"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"
+        featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"/>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks"
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"
           featureName="volatile" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks"
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"
           featureName="transient" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks"
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"
           featureName="derived" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks"
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"
           featureName="changeable" dataValue="false" oldDataValue="true"/>
       <operation name="makeFeatureVolatile">
         <parameters name="feature">
-          <referenceValue element="muml.ecore#//deployment/HardwarePort/communicationLinks"/>
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"/>
         </parameters>
         <parameters name="trans">
           <dataValue>true</dataValue>
@@ -18084,37 +18085,37 @@
         </parameters>
       </operation>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/communicationLinks"
-        referenceName="eAnnotations" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"
+        referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="key" dataValue="derivation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="value" dataValue="self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.connectors->select(c | c.oclIsTypeOf(CommunicationLink)).oclAsType(CommunicationLink)->asOrderedSet()"
         oldDataValue="self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()"/>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/communicationLinks"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="CommunicationLinks which have the HardwarePort as connector endpoints."/>
       </changes>
       <operation name="document">
         <parameters name="element">
-          <referenceValue element="muml.ecore#//deployment/HardwarePort/communicationLinks"/>
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort/communicationLinks"/>
         </parameters>
         <parameters name="documentation">
           <dataValue>CommunicationLinks which have the HardwarePort as connector endpoints.</dataValue>
@@ -18124,18 +18125,19 @@
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Set" element="#//@releases.9/@changes.9/@changes.2/@element"
           featureName="eOpposite" oldReferenceValue="#//@releases.9/@changes.9/@changes.1/@element"/>
-      <changes xsi:type="history:Delete" target="muml.ecore#//deployment/HardwarePort"
+      <changes xsi:type="history:Delete" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
           referenceName="eStructuralFeatures">
         <element xsi:type="ecore:EReference" name="incomingCommunicationLink" upperBound="-1"
-            eType="ecore:EClass muml.ecore#//deployment/CommunicationLink" eOpposite="#//@releases.9/@changes.9/@changes.2/@element">
+            eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
+            eOpposite="#//@releases.9/@changes.9/@changes.2/@element">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="CommunicationLinks which have the HardwarePort as sink."/>
           </eAnnotations>
         </element>
       </changes>
-      <changes xsi:type="history:Delete" target="muml.ecore#//deployment/CommunicationLink"
+      <changes xsi:type="history:Delete" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
           referenceName="eStructuralFeatures">
-        <element xsi:type="ecore:EReference" name="target" lowerBound="1" eType="ecore:EClass muml.ecore#//deployment/HardwarePort">
+        <element xsi:type="ecore:EReference" name="target" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Target HardwarePort of the link."/>
           </eAnnotations>
@@ -18150,18 +18152,19 @@
     <changes xsi:type="history:OperationChange">
       <changes xsi:type="history:Set" element="#//@releases.9/@changes.10/@changes.2/@element"
           featureName="eOpposite" oldReferenceValue="#//@releases.9/@changes.10/@changes.1/@element"/>
-      <changes xsi:type="history:Delete" target="muml.ecore#//deployment/HardwarePort"
+      <changes xsi:type="history:Delete" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"
           referenceName="eStructuralFeatures">
         <element xsi:type="ecore:EReference" name="outgoingCommunicationLink" upperBound="-1"
-            eType="ecore:EClass muml.ecore#//deployment/CommunicationLink" eOpposite="#//@releases.9/@changes.10/@changes.2/@element">
+            eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
+            eOpposite="#//@releases.9/@changes.10/@changes.2/@element">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="CommunicationLinks which have the HardwarePort as source."/>
           </eAnnotations>
         </element>
       </changes>
-      <changes xsi:type="history:Delete" target="muml.ecore#//deployment/CommunicationLink"
+      <changes xsi:type="history:Delete" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
           referenceName="eStructuralFeatures">
-        <element xsi:type="ecore:EReference" name="source" lowerBound="1" eType="ecore:EClass muml.ecore#//deployment/HardwarePort">
+        <element xsi:type="ecore:EReference" name="source" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Source HardwarePort of the link."/>
           </eAnnotations>
@@ -18174,24 +18177,24 @@
       </operation>
     </changes>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink"
-          referenceName="eStructuralFeatures" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
+          referenceName="eStructuralFeatures" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"
             featureName="name" dataValue="hardwarePorts"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"
             featureName="upperBound" dataValue="-1" oldDataValue="1"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts"
-            featureName="eType" referenceValue="muml.ecore#//deployment/HardwarePort"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"
+            featureName="eType" referenceValue="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"/>
       </changes>
       <operation name="newReference">
         <parameters name="eClass">
-          <referenceValue element="muml.ecore#//deployment/CommunicationLink"/>
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"/>
         </parameters>
         <parameters name="name">
           <dataValue>hardwarePorts</dataValue>
         </parameters>
         <parameters name="type">
-          <referenceValue element="muml.ecore#//deployment/HardwarePort"/>
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/HardwarePort"/>
         </parameters>
         <parameters name="lowerBound">
           <dataValue>0</dataValue>
@@ -18206,17 +18209,17 @@
       </operation>
     </changes>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts"
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"
           featureName="volatile" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts"
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"
           featureName="transient" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts"
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"
           featureName="derived" dataValue="true" oldDataValue="false"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts"
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"
           featureName="changeable" dataValue="false" oldDataValue="true"/>
       <operation name="makeFeatureVolatile">
         <parameters name="feature">
-          <referenceValue element="muml.ecore#//deployment/CommunicationLink/hardwarePorts"/>
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"/>
         </parameters>
         <parameters name="trans">
           <dataValue>true</dataValue>
@@ -18229,45 +18232,46 @@
         </parameters>
       </operation>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/hardwarePorts"
-        referenceName="eAnnotations" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"
+        referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
           featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </changes>
-    <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="key" dataValue="derivation"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
           featureName="value" dataValue="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)->asOrderedSet()"/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="self.connectorEndpoints->select(c | c.oclIsTypeOf(HardwarePort)).oclAsType(HardwarePort)->asOrderedSet()"
         oldDataValue="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port)->asOrderedSet()"/>
     <changes xsi:type="history:OperationChange">
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/hardwarePorts"
-          referenceName="eAnnotations" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/GenModel"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
-          referenceName="details" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="key" dataValue="documentation"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
             featureName="value" dataValue="Derives all hardware ports which are endpoints of the communication link."/>
       </changes>
       <operation name="document">
         <parameters name="element">
-          <referenceValue element="muml.ecore#//deployment/CommunicationLink/hardwarePorts"/>
+          <referenceValue element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink/hardwarePorts"/>
         </parameters>
         <parameters name="documentation">
           <dataValue>Derives all hardware ports which are endpoints of the communication link.</dataValue>
         </parameters>
       </operation>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment" featureName="nsURI"
-        dataValue="http://www.fujaba.de/muml/model/deployment/0.3.11" oldDataValue="http://www.fujaba.de/muml/model/deployment/0.3.7"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/model/deployment/0.3.11"
+        oldDataValue="http://www.fujaba.de/muml/model/deployment/0.3.7"/>
   </releases>
   <releases date="2013-01-01T15:19:51.291+0100" label="0.3.12">
     <changes xsi:type="history:OperationChange">
@@ -19684,7 +19688,8 @@
     <changes xsi:type="history:Move" target="muml.ecore#/" referenceName="eSubpackages"
         element="muml.ecore#//types" source="#//@releases.15/@changes.110/@element"/>
     <changes xsi:type="history:Move" target="muml.ecore#/" referenceName="eSubpackages"
-        element="muml.ecore#//deployment" source="#//@releases.15/@changes.110/@element"/>
+        element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+        source="#//@releases.15/@changes.110/@element"/>
     <changes xsi:type="history:Move" target="muml.ecore#/" referenceName="eSubpackages"
         element="muml.ecore#//msgtype" source="#//@releases.15/@changes.110/@element"/>
     <changes xsi:type="history:Move" target="muml.ecore#/" referenceName="eSubpackages"
@@ -19813,8 +19818,9 @@
         dataValue="http://www.fujaba.de/muml/realtimestatechart/0.3.17" oldDataValue="http://www.fujaba.de/muml/model/realtimestatechart/0.3.17"/>
     <changes xsi:type="history:Set" element="muml.ecore#//msgtype" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/msgtype/0.3.6" oldDataValue="http://www.fujaba.de/muml/model/msgtype/0.3.6"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//deployment" featureName="nsURI"
-        dataValue="http://www.fujaba.de/muml/deployment/0.3.11" oldDataValue="http://www.fujaba.de/muml/model/deployment/0.3.11"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+        featureName="nsURI" dataValue="http://www.fujaba.de/muml/deployment/0.3.11"
+        oldDataValue="http://www.fujaba.de/muml/model/deployment/0.3.11"/>
     <changes xsi:type="history:Set" element="muml.ecore#//types" featureName="nsURI"
         dataValue="http://www.fujaba.de/muml/types/0.3.6" oldDataValue="http://www.fujaba.de/muml/model/types/0.3.6"/>
     <changes xsi:type="history:Set" element="muml.ecore#//connector" featureName="nsURI"
@@ -20032,13 +20038,13 @@
     <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="-- lower bound of cardinality must be less or equal than upper bound&#xD;&#xA;((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))&#xD;&#xA;and (self.lowerBound.infinity implies self.upperBound.infinity)"
         oldDataValue="((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))&#xA;and (self.lowerBound.infinity implies self.upperBound.infinity)"/>
-    <changes xsi:type="history:Delete" target="muml.ecore#//deployment/CommunicationLink"
+    <changes xsi:type="history:Delete" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
         referenceName="eAnnotations">
       <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="SameConfiguration" value="self.deployedAssemblyInstances.componentInstanceConfiguration=self.deployment.componentInstanceConfiguration"/>
       </element>
     </changes>
-    <changes xsi:type="history:Delete" target="muml.ecore#//deployment/CommunicationLink"
+    <changes xsi:type="history:Delete" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment/CommunicationLink"
         referenceName="eAnnotations">
       <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="SameConfiguration"/>
@@ -22332,5 +22338,30 @@
       <changes xsi:type="history:Set" element="muml.ecore#//connector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"
           featureName="value" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </changes>
+    <changes xsi:type="history:CompositeChange">
+      <changes xsi:type="history:Create" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#/">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#/"
+            featureName="name" dataValue="psm"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#/"
+            featureName="nsURI" dataValue="http://www.fujaba.de/muml/psm/0.1"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#/"
+            featureName="nsPrefix" dataValue="psm"/>
+      </changes>
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#/"
+          referenceName="eAnnotations" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
+            featureName="source" dataValue="http://www.eclipse.org/edapt"/>
+      </changes>
+      <changes xsi:type="history:Create" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%"
+          referenceName="details" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0">
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
+            featureName="key" dataValue="historyURI"/>
+        <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//%http:%2F%2Fwww.eclipse.org%2Fedapt%/@details.0"
+            featureName="value" dataValue="../../de.uni_paderborn.fujaba.muml/model/muml.history"/>
+      </changes>
+    </changes>
+    <changes xsi:type="history:Move" target="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#/"
+        referenceName="eSubpackages" element="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.ecore#//deployment"
+        source="muml.ecore#/"/>
   </releases>
 </history:History>

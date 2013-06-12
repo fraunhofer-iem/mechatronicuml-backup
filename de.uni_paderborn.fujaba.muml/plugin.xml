@@ -52,10 +52,6 @@
       <package class="de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/msgtype/0.3.6"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/deployment/0.3.11"/>
-   </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
