@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.properties.protocol.section;
+package de.uni_paderborn.fujaba.muml.properties.connector.section;
 
 public class MessageBufferBufferSizeSection
 		extends
@@ -6,7 +6,7 @@ public class MessageBufferBufferSizeSection
 
 	@Override
 	public org.eclipse.emf.ecore.EStructuralFeature getFeature() {
-		return de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+		return de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 				.getMessageBuffer_BufferSize();
 	}
 

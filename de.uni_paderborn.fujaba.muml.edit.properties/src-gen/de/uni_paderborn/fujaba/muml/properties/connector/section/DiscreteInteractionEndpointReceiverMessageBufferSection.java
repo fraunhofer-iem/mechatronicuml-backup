@@ -1,18 +1,18 @@
-package de.uni_paderborn.fujaba.muml.properties.deployment.section;
+package de.uni_paderborn.fujaba.muml.properties.connector.section;
 
-public class CommunicationLinkDeployedAssemblyInstancesSection
+public class DiscreteInteractionEndpointReceiverMessageBufferSection
 		extends
 			de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object> {
 
 	@Override
 	public org.eclipse.emf.ecore.EStructuralFeature getFeature() {
-		return de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage.eINSTANCE
-				.getCommunicationLink_DeployedAssemblyInstances();
+		return de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+				.getDiscreteInteractionEndpoint_ReceiverMessageBuffer();
 	}
 
 	@Override
 	protected String getLabelText() {
-		return "DeployedAssemblyInstances";
+		return "ReceiverMessageBuffer";
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class CommunicationLinkDeployedAssemblyInstancesSection
 				.getAllContents(getEditingDomain().getResourceSet(), true);
 		while (it.hasNext()) {
 			Object element = (Object) it.next();
-			if (element instanceof de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance) {
+			if (element instanceof de.uni_paderborn.fujaba.muml.connector.MessageBuffer) {
 				nodes.add(element);
 			}
 		}
