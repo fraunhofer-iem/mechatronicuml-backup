@@ -32,10 +32,6 @@
       <factory class="de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/muml/msgtype/0.3.6"/>
    </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <?emfgen generated="true"?>
-      <factory class="de.uni_paderborn.fujaba.muml.deployment.provider.DeploymentItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/muml/deployment/0.3.11"/>
-   </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <?emfgen generated="true"?>
