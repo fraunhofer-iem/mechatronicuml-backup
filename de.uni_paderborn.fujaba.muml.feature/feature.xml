@@ -74,7 +74,6 @@
       <import plugin="de.uni_paderborn.fujaba.muml.common" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.0.1" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.deployment.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.5.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.messagetype.diagram" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.swt" version="3.7.2" match="greaterOrEqual"/>
@@ -153,20 +152,8 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.deployment.diagram"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.uni_paderborn.fujaba.muml.deployment.diagram.custom"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
+  
+   
    <plugin
          id="de.uni_paderborn.fujaba.muml.messagetype.diagram"
          download-size="0"
