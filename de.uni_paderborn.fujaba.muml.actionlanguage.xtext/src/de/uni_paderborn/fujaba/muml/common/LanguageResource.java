@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.xtext.Constants;
+import org.eclipse.xtext.parsetree.reconstr.XtextSerializationException;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.StringInputStream;
 import org.storydriven.core.expressions.Expression;
-import org.storydriven.core.expressions.TextualExpression;
 
 import com.google.inject.Injector;
 import com.google.inject.Key;
@@ -26,6 +26,8 @@ import de.uni_paderborn.fujaba.muml.scoping.ActionLanguageScopeProviderFactory;
 
 public class LanguageResource {
 	private static Injector injector = null;
+	private static String INVALID = "unable to serialize expression "
+			+ "because it does not conform to the actionlanguage grammar";
 	
 	protected static class LoadResult implements ILoadResult {
 		
@@ -103,10 +105,18 @@ public class LanguageResource {
 	}
 
 	public static String serializeEObject(EObject object, EObject container) {
-		if (!(object instanceof Expression) || object instanceof TextualExpression) {
+		if (!(object instanceof Expression)) {
 			return null;
 		}
 		XtextResource resource = (XtextResource) getXtextResource(container);
 		return resource.getSerializer().serialize(object);
+	}
+	
+	public static String serializeEObjectSafe(EObject object, EObject container) {
+		try {
+			return serializeEObject(object, container);
+		} catch (XtextSerializationException e) {
+			return INVALID;
+		}
 	}
 }
