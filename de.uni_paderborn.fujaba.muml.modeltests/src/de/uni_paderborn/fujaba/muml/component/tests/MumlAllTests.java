@@ -12,7 +12,6 @@ import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.behavior.tests.BehaviorTests;
 import de.uni_paderborn.fujaba.muml.connector.tests.ConnectorTests;
 import de.uni_paderborn.fujaba.muml.constraint.tests.ConstraintTests;
-import de.uni_paderborn.fujaba.muml.deployment.tests.DeploymentTests;
 import de.uni_paderborn.fujaba.muml.instance.tests.InstanceTests;
 import de.uni_paderborn.fujaba.muml.msgtype.tests.MsgtypeTests;
 import de.uni_paderborn.fujaba.muml.protocol.tests.ProtocolTests;
@@ -50,7 +49,6 @@ public class MumlAllTests extends TestSuite {
 		suite.addTest(ProtocolTests.suite());
 		suite.addTest(RealtimestatechartTests.suite());
 		suite.addTest(MsgtypeTests.suite());
-		suite.addTest(DeploymentTests.suite());
 		suite.addTest(TypesTests.suite());
 		suite.addTest(ConnectorTests.suite());
 		suite.addTest(ValuetypeTests.suite());

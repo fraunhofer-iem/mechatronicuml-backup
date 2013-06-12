@@ -143,8 +143,6 @@ public class ComponentinstanceconfigurationDiagramEditorPlugin extends
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.deployment.provider.DeploymentItemProviderAdapterFactory());
-		factories
 				.add(new de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());

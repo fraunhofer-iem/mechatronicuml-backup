@@ -6,24 +6,20 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
-
 import de.uni_paderborn.fujaba.muml.types.impl.DataTypeImpl;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->

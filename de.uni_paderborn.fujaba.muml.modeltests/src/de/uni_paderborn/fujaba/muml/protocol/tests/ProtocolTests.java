@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol.tests;
 
-import de.uni_paderborn.fujaba.muml.connector.tests.MessageBufferTest;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
@@ -35,10 +34,9 @@ public class ProtocolTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new ProtocolTests("protocol Tests");
-		suite.addTestSuite(RoleConnectorTest.class);
 		suite.addTestSuite(CoordinationProtocolTest.class);
 		suite.addTestSuite(RoleTest.class);
-		suite.addTestSuite(MessageBufferTest.class);
+		suite.addTestSuite(RoleConnectorTest.class);
 		suite.addTestSuite(ConnectorQualityOfServiceAssumptionsTest.class);
 		return suite;
 	}

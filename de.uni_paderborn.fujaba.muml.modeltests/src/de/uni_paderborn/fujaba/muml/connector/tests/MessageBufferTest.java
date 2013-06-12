@@ -8,8 +8,8 @@ package de.uni_paderborn.fujaba.muml.connector.tests;
 
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
-import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorFactory;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 
 /**
  * <!-- begin-user-doc -->

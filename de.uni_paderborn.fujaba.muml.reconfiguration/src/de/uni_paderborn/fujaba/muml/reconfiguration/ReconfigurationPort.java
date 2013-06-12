@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->

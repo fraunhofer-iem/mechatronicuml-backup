@@ -20,7 +20,6 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoleConnector() <em>Role Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#isMultiRole() <em>Multi Role</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoles() <em>Roles</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -100,19 +99,6 @@ public class RoleTest extends DiscreteInteractionEndpointTest {
 	 * @generated
 	 */
 	public void testIsMultiRole() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.protocol.Role#getRoles() <em>Roles</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.protocol.Role#getRoles()
-	 * @generated
-	 */
-	public void testGetRoles() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

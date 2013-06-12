@@ -21,7 +21,6 @@ import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
@@ -272,7 +271,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		ProtocolPackage.eINSTANCE.eClass();
 		RealtimestatechartPackage.eINSTANCE.eClass();
 		MsgtypePackage.eINSTANCE.eClass();
-		DeploymentPackage.eINSTANCE.eClass();
 		TypesPackage.eINSTANCE.eClass();
 		ConnectorPackage.eINSTANCE.eClass();
 		ValuetypePackage.eINSTANCE.eClass();

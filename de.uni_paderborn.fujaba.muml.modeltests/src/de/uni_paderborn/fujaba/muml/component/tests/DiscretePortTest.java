@@ -20,7 +20,6 @@ import de.uni_paderborn.fujaba.muml.component.DiscretePort;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteInPort() <em>Is Discrete In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteOutPort() <em>Is Discrete Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteInOutPort() <em>Is Discrete In Out Port</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isMultiPort() <em>Multi Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getCoordinationProtocol() <em>Coordination Protocol</em>}</li>
  * </ul>
@@ -115,19 +114,6 @@ public class DiscretePortTest extends PortTest {
 	 * @generated
 	 */
 	public void testIsIsDiscreteInOutPort() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.component.DiscretePort#getReceiverMessageBuffer()
-	 * @generated
-	 */
-	public void testGetReceiverMessageBuffer() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

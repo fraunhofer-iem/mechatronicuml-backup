@@ -2,10 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

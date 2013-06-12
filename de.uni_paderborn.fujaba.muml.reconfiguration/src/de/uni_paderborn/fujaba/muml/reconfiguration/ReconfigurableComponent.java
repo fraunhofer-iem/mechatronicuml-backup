@@ -8,8 +8,6 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
 
 import de.uni_paderborn.fujaba.muml.component.Component;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Reconfigurable Component</b></em>'.

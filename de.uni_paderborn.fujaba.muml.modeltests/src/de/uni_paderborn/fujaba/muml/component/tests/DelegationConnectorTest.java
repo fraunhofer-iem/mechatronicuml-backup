@@ -91,19 +91,6 @@ public class DelegationConnectorTest extends PortConnectorTest {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.DelegationConnector#setPortPart(de.uni_paderborn.fujaba.muml.component.PortPart) <em>Port Part</em>}' feature setter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.component.DelegationConnector#setPortPart(de.uni_paderborn.fujaba.muml.component.PortPart)
-	 * @generated
-	 */
-	public void testSetPortPart() {
-		// TODO: implement this feature setter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.DelegationConnector#getPort() <em>Port</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,19 +99,6 @@ public class DelegationConnectorTest extends PortConnectorTest {
 	 */
 	public void testGetPort() {
 		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.DelegationConnector#setPort(de.uni_paderborn.fujaba.muml.component.Port) <em>Port</em>}' feature setter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.component.DelegationConnector#setPort(de.uni_paderborn.fujaba.muml.component.Port)
-	 * @generated
-	 */
-	public void testSetPort() {
-		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

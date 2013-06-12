@@ -17,7 +17,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isGmfHistory() <em>Gmf History</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart() <em>Embeds History Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName() <em>Name</em>}</li>
  * </ul>
  * </p>
@@ -87,13 +87,13 @@ public class RegionTest extends PrioritizedElementTest {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isGmfHistory() <em>Gmf History</em>}' feature getter.
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart() <em>Embeds History Statechart</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isGmfHistory()
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart()
 	 * @generated
 	 */
-	public void testIsGmfHistory() {
+	public void testIsEmbedsHistoryStatechart() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

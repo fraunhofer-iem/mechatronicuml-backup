@@ -6,9 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
-
 import org.storydriven.core.ExtendableElement;
+
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 
 /**
  * <!-- begin-user-doc -->

@@ -12,7 +12,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.expression.*;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionFactory;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ReconfigurationRuleCallExpression;
 
 /**
  * <!-- begin-user-doc -->

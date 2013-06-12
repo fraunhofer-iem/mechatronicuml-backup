@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
-import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public class ProtocolExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.protocol"));
-				RoleConnector root = ProtocolFactory.eINSTANCE.createRoleConnector();
+				CoordinationProtocol root = ProtocolFactory.eINSTANCE.createCoordinationProtocol();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

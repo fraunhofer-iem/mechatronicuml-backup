@@ -6,18 +6,18 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.util;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.*;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

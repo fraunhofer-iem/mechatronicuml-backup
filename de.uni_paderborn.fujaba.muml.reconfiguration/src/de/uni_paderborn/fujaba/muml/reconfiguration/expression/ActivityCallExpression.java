@@ -6,12 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.expression;
 
-import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.activities.Activity;
-
 import org.storydriven.storydiagrams.calls.Invocation;
-import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 
 /**
  * <!-- begin-user-doc -->

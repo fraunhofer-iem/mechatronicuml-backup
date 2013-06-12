@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.protocol.tests;
 
-import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory;
@@ -23,15 +22,7 @@ import de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory;
  * </p>
  * @generated
  */
-public class CoordinationProtocolTest extends TestCase {
-
-	/**
-	 * The fixture for this Coordination Protocol test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CoordinationProtocol fixture = null;
+public class CoordinationProtocolTest extends AbstractCoordinationSpecificationTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,23 +44,14 @@ public class CoordinationProtocolTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Coordination Protocol test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(CoordinationProtocol fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Coordination Protocol test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected CoordinationProtocol getFixture() {
-		return fixture;
+		return (CoordinationProtocol)fixture;
 	}
 
 	/**
@@ -103,19 +85,6 @@ public class CoordinationProtocolTest extends TestCase {
 	 */
 	public void testGetGmfCoordinationProtocol() {
 		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#setGmfCoordinationProtocol(de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol) <em>Gmf Coordination Protocol</em>}' feature setter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol#setGmfCoordinationProtocol(de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol)
-	 * @generated
-	 */
-	public void testSetGmfCoordinationProtocol() {
-		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

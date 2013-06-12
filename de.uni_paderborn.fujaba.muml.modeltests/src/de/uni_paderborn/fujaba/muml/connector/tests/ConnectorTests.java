@@ -34,6 +34,7 @@ public class ConnectorTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new ConnectorTests("connector Tests");
+		suite.addTestSuite(MessageBufferTest.class);
 		return suite;
 	}
 

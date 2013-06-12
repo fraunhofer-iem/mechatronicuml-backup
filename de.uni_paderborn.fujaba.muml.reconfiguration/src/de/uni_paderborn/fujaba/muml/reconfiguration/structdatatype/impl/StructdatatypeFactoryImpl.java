@@ -6,15 +6,17 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypeFactory;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
 
 /**
  * <!-- begin-user-doc -->

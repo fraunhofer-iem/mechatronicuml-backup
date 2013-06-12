@@ -13,9 +13,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
-
 import org.storydriven.storydiagrams.calls.Invocation;
-import de.uni_paderborn.fujaba.muml.reconfiguration.expression.*;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ActivityCallExpression;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ReconfigurationRuleCallExpression;
 
 /**
  * <!-- begin-user-doc -->

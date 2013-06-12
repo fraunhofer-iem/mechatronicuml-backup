@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype;
 
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
-
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.types.DataType;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->

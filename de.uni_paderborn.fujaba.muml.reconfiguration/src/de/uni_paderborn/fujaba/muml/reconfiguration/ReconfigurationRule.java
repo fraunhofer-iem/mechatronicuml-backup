@@ -6,11 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
-import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
 /**

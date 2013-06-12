@@ -6,20 +6,19 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.util;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.*;
-
-import de.uni_paderborn.fujaba.muml.types.DataType;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

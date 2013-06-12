@@ -18,7 +18,7 @@ import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getReceiverMessageTypes() <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getSenderMessageTypes() <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefines() <em>Refines</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefinedRole() <em>Refined Role</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -86,13 +86,13 @@ public abstract class DiscretePortInstanceTest extends PortInstanceTest {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefines() <em>Refines</em>}' feature getter.
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefinedRole() <em>Refined Role</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefines()
+	 * @see de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance#getRefinedRole()
 	 * @generated
 	 */
-	public void testGetRefines() {
+	public void testGetRefinedRole() {
 		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
