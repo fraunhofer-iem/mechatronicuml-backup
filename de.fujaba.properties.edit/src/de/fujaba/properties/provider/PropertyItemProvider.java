@@ -222,8 +222,8 @@ public class PropertyItemProvider
 	@Override
 	public String getText(Object object) {
 		de.fujaba.properties.Property property = (de.fujaba.properties.Property) object;
-		if (property != null && property.getGenFeature() != null
-				&& property.getGenFeature().getName() != null) {
+		if (property != null && property.getGenFeature() != null && property.getGenFeature().getEcoreFeature() != null
+				&& property.getGenFeature().getEcoreFeature().getName() != null) {
 			StringBuilder builder = new StringBuilder();
 			builder.append(property.getGenFeature().getName());
 			if (property.getGenFeature().getTypeGenClass() != null) {

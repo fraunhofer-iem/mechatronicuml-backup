@@ -164,9 +164,9 @@ public class ClassItemProvider
 	@Override
 	public String getText(Object object) {
 		de.fujaba.properties.Class _class = (de.fujaba.properties.Class) object;
-		if (_class != null && _class.getGenClass() != null
-				&& _class.getGenClass().getName() != null) {
-			return _class.getGenClass().getName();
+		if (_class != null && _class.getGenClass() != null && _class.getGenClass().getEcoreClassifier() != null
+				&& _class.getGenClass().getEcoreClassifier().getName() != null) {
+			return _class.getGenClass().getEcoreClassifier().getName();
 		}
 		return getString("_UI_Class_type");
 		
