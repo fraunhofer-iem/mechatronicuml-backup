@@ -93,6 +93,9 @@ query ComponentPart::createPortInstances() : Set(PortInstance) {
 query ConnectorEndpoint::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
 	return Set { self.createInstance(part, 0) }
 }
+query PortPart::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
+	return self.portType.createInstances(part);
+}
 query DirectedTypedPort::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
 	if (self.optional) then {
 		return Set { };
@@ -234,13 +237,7 @@ mapping ConnectorEndpoint::single(part : ComponentPart, id : Integer) : Connecto
 }
 
 mapping ConnectorEndpoint::internalSingle(part : ComponentPart, id : Integer) : ConnectorEndpointInstance
-	disjuncts PortPart::internalSingle, DiscretePort::internalSingleDiscrete, ContinuousPort::internalSingleContinuous, HybridPort::internalSingleHybrid;
-
-mapping PortPart::internalSingle(part : ComponentPart, id : Integer) : ConnectorEndpointInstance {
-	init {
-		result := self.portType.map internalSingle(part, id);
-	}
-}
+	disjuncts DiscretePort::internalSingleDiscrete, ContinuousPort::internalSingleContinuous, HybridPort::internalSingleHybrid;
 
 mapping DiscretePort::multi(part : ComponentPart) : DiscreteMultiPortInstance {
 	type := self;
