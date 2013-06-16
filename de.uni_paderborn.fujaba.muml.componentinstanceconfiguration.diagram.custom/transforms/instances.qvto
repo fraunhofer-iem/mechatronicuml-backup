@@ -46,11 +46,13 @@ main() {
 				var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
 				var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
 				if (endpoint1 != endpoint2) then {
-					endpoint1.resolve()[PortInstance]->forEach(endpointInstance1) {
-						endpoint2.resolve()[PortInstance]->forEach(endpointInstance2) {
-							ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
-								Set { endpointInstance1, endpointInstance2 }
-							)[PortConnectorInstance];
+					endpoint1.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance1) {
+						endpoint2.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance2) {
+							if (ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) and connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
+								ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
+									Set { endpointInstance1, endpointInstance2 }
+								)[PortConnectorInstance];
+							} endif;
 						};
 					};
 				} endif;
@@ -217,11 +219,13 @@ constructor StructuredComponentInstance::StructuredComponentInstance(type : Stru
 			var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
 			var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
 			if (endpoint1 != endpoint2) then {
-				endpoint1.resolve()[PortInstance]->forEach(endpointInstance1) {
-					endpoint2.resolve()[PortInstance]->forEach(endpointInstance2) {
-						container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
-							Set { endpointInstance1, endpointInstance2 }
-						)[PortConnectorInstance];
+				endpoint1.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance1) {
+					endpoint2.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance2) {
+						if (container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) and connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
+							container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
+								Set { endpointInstance1, endpointInstance2 }
+							)[PortConnectorInstance];
+						} endif;
 					};
 				};
 			} endif;
@@ -239,26 +243,20 @@ constructor DelegationConnectorInstance::DelegationConnectorInstance(delegation 
 	type := delegation;	
 }
 
-mapping ConnectorEndpoint::single(part : ComponentPart, portPart : PortPart, id : Integer) : ConnectorEndpointInstance {
-	init {
-		result := self.map internalSingle(part, portPart, id);
-	}
-}
-
-mapping ConnectorEndpoint::internalSingle(part : ComponentPart, portPart : PortPart, id : Integer) : ConnectorEndpointInstance
-	disjuncts DiscretePort::internalSingleDiscrete, ContinuousPort::internalSingleContinuous, HybridPort::internalSingleHybrid;
+mapping ConnectorEndpoint::single(part : ComponentPart, portPart : PortPart, id : Integer) : ConnectorEndpointInstance
+	disjuncts DiscretePort::singleDiscrete, ContinuousPort::singleContinuous, HybridPort::singleHybrid;
 
 mapping DiscretePort::multi(part : ComponentPart, portPart : PortPart) : DiscreteMultiPortInstance {
 	type := self;
 	name := type.name;
 	subInteractionEndpointInstances := self.createSubPortInstances(part, portPart)[DiscreteSinglePortInstance];
 }
-mapping DiscretePort::internalSingleDiscrete(part : ComponentPart, portPart : PortPart, id : Integer) : DiscreteSinglePortInstance {
+mapping DiscretePort::singleDiscrete(part : ComponentPart, portPart : PortPart, id : Integer) : DiscreteSinglePortInstance {
 	type := self;
 }
-mapping ContinuousPort::internalSingleContinuous(part : ComponentPart, portPart : PortPart, id : Integer) : ContinuousPortInstance {
+mapping ContinuousPort::singleContinuous(part : ComponentPart, portPart : PortPart, id : Integer) : ContinuousPortInstance {
 	type := self;
 }
-mapping HybridPort::internalSingleHybrid(part : ComponentPart, portPart : PortPart, id : Integer) : HybridPortInstance {
+mapping HybridPort::singleHybrid(part : ComponentPart, portPart : PortPart, id : Integer) : HybridPortInstance {
 	type := self;
 }
