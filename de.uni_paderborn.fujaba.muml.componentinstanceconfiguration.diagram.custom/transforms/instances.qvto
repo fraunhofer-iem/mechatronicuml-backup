@@ -12,6 +12,10 @@ property NULL_COMPONENT_PART_HELPER : ComponentPart = object ComponentPart{};
 main() {
 	log("QVT-O Script \"instances.qvto\" started.");
 
+	var root : Set(Element) := instance.rootObjects();
+	var rootObjects : Collection(Element) := root->selectByType(AtomicComponentInstance);
+	var zwei : Collection(Element) := root->selectByType(StructuredComponentInstance);
+
 	// process AtomicComponentInstances
 	instance.rootObjects()[AtomicComponentInstance]->forEach(ci) {
 		ci.portInstances := ci.componentType.createPortInstances(NULL_COMPONENT_PART_HELPER); // using helper instead of "null", because of QVTO-Bug
@@ -87,13 +91,13 @@ query ComponentPart::createPortInstances() : Set(PortInstance) {
 
 // Creating multiple Port Instances for multi ports and one Port Instance for single ports.
 query ConnectorEndpoint::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
-	return Set { self.createInstance(part) }
+	return Set { self.createInstance(part, 0) }
 }
 query DirectedTypedPort::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
 	if (self.optional) then {
 		return Set { };
  	} endif;
-	return Set { self.createInstance(part) };
+	return Set { self.createInstance(part, 0) };
 }
 query DiscretePort::createInstances(part : ComponentPart) : Set(ConnectorEndpointInstance) {
 	if (self.multiPort) then {
@@ -107,7 +111,7 @@ query DiscretePort::createSubPortInstances(part : ComponentPart) : Set(PortInsta
 	var subPortInstances : Set(PortInstance);
 	var count : Integer := 0;
 	while (count < self.cardinality.lowerBound.toInteger()) {
-		var portInstance : PortInstance := self.createInstance(part).oclAsType(PortInstance);
+		var portInstance : PortInstance := self.createInstance(part, count).oclAsType(PortInstance);
 		portInstance.name := self.name + (count + 1).toString();
 		subPortInstances += portInstance;
 		count := count + 1;
@@ -116,8 +120,8 @@ query DiscretePort::createSubPortInstances(part : ComponentPart) : Set(PortInsta
 }
 
 // Primitively creating and initializing one PortInstance by PortType
-query ConnectorEndpoint::createInstance(part : ComponentPart) : ConnectorEndpointInstance {
-	return self.map single(part);
+query ConnectorEndpoint::createInstance(part : ComponentPart, id : Integer) : ConnectorEndpointInstance {
+	return self.map single(part, id);
 }
 
 // Connector instances
@@ -223,18 +227,18 @@ constructor DelegationConnectorInstance::DelegationConnectorInstance(delegation 
 }
 
 
-mapping ConnectorEndpoint::single(part : ComponentPart) : ConnectorEndpointInstance {
+mapping ConnectorEndpoint::single(part : ComponentPart, id : Integer) : ConnectorEndpointInstance {
 	init {
-		result := self.map internalSingle(part);
+		result := self.map internalSingle(part, id);
 	}
 }
 
-mapping ConnectorEndpoint::internalSingle(part : ComponentPart) : ConnectorEndpointInstance
+mapping ConnectorEndpoint::internalSingle(part : ComponentPart, id : Integer) : ConnectorEndpointInstance
 	disjuncts PortPart::internalSingle, DiscretePort::internalSingleDiscrete, ContinuousPort::internalSingleContinuous, HybridPort::internalSingleHybrid;
 
-mapping PortPart::internalSingle(part : ComponentPart) : ConnectorEndpointInstance {
+mapping PortPart::internalSingle(part : ComponentPart, id : Integer) : ConnectorEndpointInstance {
 	init {
-		result := self.portType.map internalSingle(part);
+		result := self.portType.map internalSingle(part, id);
 	}
 }
 
@@ -243,12 +247,12 @@ mapping DiscretePort::multi(part : ComponentPart) : DiscreteMultiPortInstance {
 	name := type.name;
 	subInteractionEndpointInstances := self.createSubPortInstances(part)[DiscreteSinglePortInstance];
 }
-mapping DiscretePort::internalSingleDiscrete(part : ComponentPart) : DiscreteSinglePortInstance {
+mapping DiscretePort::internalSingleDiscrete(part : ComponentPart, id : Integer) : DiscreteSinglePortInstance {
 	type := self;
 }
-mapping ContinuousPort::internalSingleContinuous(part : ComponentPart) : ContinuousPortInstance {
+mapping ContinuousPort::internalSingleContinuous(part : ComponentPart, id : Integer) : ContinuousPortInstance {
 	type := self;
 }
-mapping HybridPort::internalSingleHybrid(part : ComponentPart) : HybridPortInstance {
+mapping HybridPort::internalSingleHybrid(part : ComponentPart, id : Integer) : HybridPortInstance {
 	type := self;
 }
