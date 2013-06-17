@@ -306,40 +306,21 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
-  <propertySheet>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
-        iD="appearance"/>
-    <tabs
-        xsi:type="gmfgen:GenStandardPropertyTab"
-        iD="diagram"/>
-    <tabs
-        xsi:type="gmfgen:GenCustomPropertyTab"
-        iD="domain"
-        label="Core">
-      <filter
-          xsi:type="gmfgen:TypeTabFilter">
-        <types>org.eclipse.gmf.runtime.notation.View</types>
-        <types>org.eclipse.gef.EditPart</types>
-        <generatedTypes>abstractNavigatorItem</generatedTypes>
-      </filter>
-    </tabs>
-  </propertySheet>
   <domainGenModel
       href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#/"/>
   <expressionProviders>
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="'hardwareNode'"/>
+          body="--'hardwareNode'"/>
       <expressions
-          body="'hardwarePort'"/>
-      <expressions
-          xsi:type="gmfgen:GenConstraint"
-          body="self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = HardwarePortDirectionKind::OUT or self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN_OUT "/>
+          body="--'hardwarePort'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="if oppositeEnd.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN endif"/>
+          body="--self.eGet(self.eClass().getEStructuralFeature('kind')).toString()='OUT' or self.eGet(self.eClass().getEStructuralFeature('kind')).toString()='IN_OUT'"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="--if oppositeEnd.eGet(oppositeEnd.eClass().getEStructuralFeature('kind')).toString()='IN_OUT' then self.eGet(self.eClass().getEStructuralFeature('kind')).toString()='IN_OUT' else self.eGet(self.eClass().getEStructuralFeature('kind')).toString()='IN' endif"/>
     </providers>
   </expressionProviders>
   <labelParsers

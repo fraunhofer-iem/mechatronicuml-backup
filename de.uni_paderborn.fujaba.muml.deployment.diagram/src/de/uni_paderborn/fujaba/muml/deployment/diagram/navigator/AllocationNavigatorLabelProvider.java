@@ -77,18 +77,18 @@ public class AllocationNavigatorLabelProvider extends LabelProvider implements
 	public Image getImage(View view) {
 		switch (de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/deployment/0.3.11?HardwarePort", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.AllocationElementTypes.HardwarePort_3003); //$NON-NLS-1$
-		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/deployment/0.3.11?HardwareNode", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.AllocationElementTypes.HardwareNode_2003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/deployment/0.3.11?CommunicationLink", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.AllocationElementTypes.CommunicationLink_4003); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.fujaba.de/muml/deployment/0.3.11?HardwarePort", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.AllocationElementTypes.HardwarePort_3003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Diagram?http://www.fujaba.de/muml/deployment/0.3.11?Deployment", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.AllocationElementTypes.Deployment_1000); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?http://www.fujaba.de/muml/deployment/0.3.11?HardwareNode", de.uni_paderborn.fujaba.muml.deployment.diagram.providers.AllocationElementTypes.HardwareNode_2003); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -145,14 +145,14 @@ public class AllocationNavigatorLabelProvider extends LabelProvider implements
 		}
 		switch (de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
 				.getVisualID(view)) {
-		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID:
-			return getHardwarePort_3003Text(view);
-		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID:
-			return getHardwareNode_2003Text(view);
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID:
 			return getCommunicationLink_4003Text(view);
+		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID:
+			return getHardwarePort_3003Text(view);
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return getDeployment_1000Text(view);
+		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeEditPart.VISUAL_ID:
+			return getHardwareNode_2003Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -182,21 +182,16 @@ public class AllocationNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getHardwareNode_2003Text(View view) {
-		IParser parser = de.uni_paderborn.fujaba.muml.deployment.diagram.providers.AllocationParserProvider
-				.getParser(
-						de.uni_paderborn.fujaba.muml.deployment.diagram.providers.AllocationElementTypes.HardwareNode_2003,
-						view.getElement() != null ? view.getElement() : view,
-						de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
-								.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
+	private String getDeployment_1000Text(View view) {
+		de.uni_paderborn.fujaba.muml.psm.deployment.Deployment domainModelElement = (de.uni_paderborn.fujaba.muml.psm.deployment.Deployment) view
+				.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
 		} else {
 			de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5006); //$NON-NLS-1$
+					.getInstance()
+					.logError(
+							"No domain element for view with visualID = " + 1000); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -221,16 +216,21 @@ public class AllocationNavigatorLabelProvider extends LabelProvider implements
 	/**
 	 * @generated
 	 */
-	private String getDeployment_1000Text(View view) {
-		de.uni_paderborn.fujaba.muml.psm.deployment.Deployment domainModelElement = (de.uni_paderborn.fujaba.muml.psm.deployment.Deployment) view
-				.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
+	private String getHardwareNode_2003Text(View view) {
+		IParser parser = de.uni_paderborn.fujaba.muml.deployment.diagram.providers.AllocationParserProvider
+				.getParser(
+						de.uni_paderborn.fujaba.muml.deployment.diagram.providers.AllocationElementTypes.HardwareNode_2003,
+						view.getElement() != null ? view.getElement() : view,
+						de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
+								.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwareNodeNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
 			de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationDiagramEditorPlugin
-					.getInstance()
-					.logError(
-							"No domain element for view with visualID = " + 1000); //$NON-NLS-1$
+					.getInstance().logError(
+							"Parser was not found for label " + 5006); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

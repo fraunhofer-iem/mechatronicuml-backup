@@ -90,9 +90,9 @@
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/Connector/connectorEndpoints"/>
     <creationConstraints>
       <sourceEnd
-          body="self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = HardwarePortDirectionKind::OUT or self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN_OUT "/>
+          body="self.eGet(self.eClass().getEStructuralFeature('kind')).toString()='OUT' or self.eGet(self.eClass().getEStructuralFeature('kind')).toString()='IN_OUT'"/>
       <targetEnd
-          body="if oppositeEnd.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(_'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePort).kind = _'http://www.fujaba.de/muml/deployment/0.3.11'::deployment::HardwarePortDirectionKind::IN endif"/>
+          body="if oppositeEnd.eGet(oppositeEnd.eClass().getEStructuralFeature('kind')).toString()='IN_OUT' then self.eGet(self.eClass().getEStructuralFeature('kind')).toString()='IN_OUT' else self.eGet(self.eClass().getEStructuralFeature('kind')).toString()='IN' endif"/>
     </creationConstraints>
   </links>
   <diagram>

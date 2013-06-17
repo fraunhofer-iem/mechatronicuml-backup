@@ -293,17 +293,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Deployment_1000_links;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_CommunicationLink_4003_target;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_CommunicationLink_4003_source;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_Deployment_1000_links;
 
 	/**
 	 * @generated

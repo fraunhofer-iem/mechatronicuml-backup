@@ -50,10 +50,10 @@ public class AllocationOCLFactory {
 		}
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
-					"\'hardwareNode\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"\'hardwarePort\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"self.oclAsType(_\'http://www.fujaba.de/muml/deployment/0.3.11\'::deployment::HardwarePort).kind = HardwarePortDirectionKind::OUT or self.oclAsType(_\'http://www.fujaba.de/muml/deployment/0.3.11\'::deployment::HardwarePort).kind = _\'http://www.fujaba.de/muml/deployment/0.3.11\'::deployment::HardwarePortDirectionKind::IN_OUT ".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"if oppositeEnd.oclAsType(_\'http://www.fujaba.de/muml/deployment/0.3.11\'::deployment::HardwarePort).kind = _\'http://www.fujaba.de/muml/deployment/0.3.11\'::deployment::HardwarePortDirectionKind::IN_OUT then self.oclAsType(_\'http://www.fujaba.de/muml/deployment/0.3.11\'::deployment::HardwarePort).kind = _\'http://www.fujaba.de/muml/deployment/0.3.11\'::deployment::HardwarePortDirectionKind::IN_OUT else self.oclAsType(_\'http://www.fujaba.de/muml/deployment/0.3.11\'::deployment::HardwarePort).kind = _\'http://www.fujaba.de/muml/deployment/0.3.11\'::deployment::HardwarePortDirectionKind::IN endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'hardwareNode\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\'hardwarePort\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.eGet(self.eClass().getEStructuralFeature(\'kind\')).toString()=\'OUT\' or self.eGet(self.eClass().getEStructuralFeature(\'kind\')).toString()=\'IN_OUT\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--if oppositeEnd.eGet(oppositeEnd.eClass().getEStructuralFeature(\'kind\')).toString()=\'IN_OUT\' then self.eGet(self.eClass().getEStructuralFeature(\'kind\')).toString()=\'IN_OUT\' else self.eGet(self.eClass().getEStructuralFeature(\'kind\')).toString()=\'IN\' endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],
