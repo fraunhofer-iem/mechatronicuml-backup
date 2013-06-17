@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -61,6 +62,16 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * @ordered
 	 */
 	protected Callable callee;
+
+	/**
+	 * The cached setting delegate for the '{@link #getActivity() <em>Activity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActivity()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ACTIVITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ExpressionPackage.Literals.ACTIVITY_CALL_EXPRESSION__ACTIVITY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,8 +148,7 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * @generated
 	 */
 	public Activity getActivity() {
-		Activity activity = basicGetActivity();
-		return activity != null && activity.eIsProxy() ? (Activity)eResolveProxy((InternalEObject)activity) : activity;
+		return (Activity)ACTIVITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -147,10 +157,7 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * @generated
 	 */
 	public Activity basicGetActivity() {
-		// TODO: implement this method to return the 'Activity' reference
-		// -> do not perform proxy resolution
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return (Activity)ACTIVITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -159,9 +166,7 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 	 * @generated
 	 */
 	public void setActivity(Activity newActivity) {
-		// TODO: implement this method to set the 'Activity' reference
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		ACTIVITY__ESETTING_DELEGATE.dynamicSet(this, null, 0, newActivity);
 	}
 
 	/**
@@ -270,7 +275,7 @@ public class ActivityCallExpressionImpl extends ExpressionImpl implements Activi
 			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__CALLEE:
 				return callee != null;
 			case ExpressionPackage.ACTIVITY_CALL_EXPRESSION__ACTIVITY:
-				return basicGetActivity() != null;
+				return ACTIVITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

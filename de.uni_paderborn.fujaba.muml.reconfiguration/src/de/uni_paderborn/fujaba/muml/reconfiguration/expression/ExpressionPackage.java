@@ -28,6 +28,7 @@ import org.storydriven.core.expressions.ExpressionsPackage;
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface ExpressionPackage extends EPackage {
