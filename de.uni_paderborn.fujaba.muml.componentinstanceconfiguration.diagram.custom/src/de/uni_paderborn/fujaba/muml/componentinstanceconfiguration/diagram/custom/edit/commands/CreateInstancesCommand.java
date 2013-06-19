@@ -13,7 +13,7 @@ import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custo
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 
 public class CreateInstancesCommand extends ChangeCommand {
-
+ 
 	private ComponentInstance componentInstance;
 
 	public CreateInstancesCommand(ComponentInstance componentInstance) {
