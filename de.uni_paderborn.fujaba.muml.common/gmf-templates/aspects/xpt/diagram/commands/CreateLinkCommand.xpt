@@ -1,0 +1,35 @@
+﻿«IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
+
+«EXTENSION xpt::diagram::Utils»
+
+
+«DEFINE initialize(gmfgen::GenLink link, String newElementVar) FOR gmfgen::TypeModelFacet»«EXPAND xpt::providers::ElementInitializers::initMethodCall(self, newElementVar) FOR link»«ENDDEFINE»
+
+
+«AROUND execute(link : gmfgen::GenLink) FOR gmfgen::TypeLinkModelFacet»
+«IF (if sourceMetaFeature = null then containmentMetaFeature.ecoreFeature.changeable else sourceMetaFeature.ecoreFeature.changeable endif) and targetMetaFeature.ecoreFeature.changeable-»
+		«EXPAND MetaModel::NewInstance('newElement') FOR metaClass-»
+		«IF sourceMetaFeature <> null-»
+			«EXPAND MetaModel::modifyFeature('newElement', metaClass, 'getSource()') FOR sourceMetaFeature-»
+		«ENDIF-»
+		«EXPAND MetaModel::modifyFeature('newElement', metaClass, 'getTarget()') FOR targetMetaFeature-»
+		((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).setNewElement(«EXPAND MetaModel::DowncastToEObject('newElement') FOR metaClass»);
+		
+		// MUML #642: Call getContainer() after setting source, target and updating the request,
+		// because the implementation of getContainer() now needs to know the source and target. 
+		«EXPAND MetaModel::modifyFeature((if hasContainerOtherThanSource(self) then 'getContainer()' else 'getSource()' endif), containmentMetaFeature.genClass, 'newElement') FOR containmentMetaFeature-»
+		
+		«IF hasExplicitChildFeature(self)-»
+			«IF sourceMetaFeature <> null-»
+				«EXPAND MetaModel::modifyFeature('getContainer()', containmentMetaFeature.genClass, 'newElement') FOR childMetaFeature-»
+			«ELSE-»
+				«EXPAND MetaModel::modifyFeature('getSource()', getSourceType(), 'newElement') FOR childMetaFeature-»
+			«ENDIF-»
+		«ENDIF-»
+		«EXPAND initialize(link, 'newElement')-»
+		doConfigure(newElement, monitor, info);
+		return org.eclipse.gmf.runtime.common.core.command.CommandResult.newOKCommandResult(newElement);
+«ELSE-»
+		throw new UnsupportedOperationException();
+«ENDIF-»
+«ENDAROUND»

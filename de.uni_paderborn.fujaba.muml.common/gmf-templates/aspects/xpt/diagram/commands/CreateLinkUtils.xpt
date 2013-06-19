@@ -46,9 +46,48 @@
 «ENDIF-»
 	this.container = container;
 «ENDAROUND»
+
+
 «AROUND containerAccessor FOR gmfgen::TypeLinkModelFacet-»
-«targetDef.proceed()»
+	
 «IF hasContainerOtherThanSource(self)-»
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	public «EXPAND MetaModel::QualifiedClassName FOR containmentMetaFeature.genClass» getContainer() {
+		«EXPAND MetaModel::QualifiedClassName FOR containmentMetaFeature.genClass» container = this.container;
+«LET null AS valueExpression»
+«IF not valueExpression.oclIsUndefined()»
+		«valueExpression.provider.container.getAbstractExpressionQualifiedClassName()» expression = «EXPAND xpt::expressions::getExpression::getExpression(valueExpression, metaClass, 'null') FOR modelElementSelector.provider»;
+		org.eclipse.emf.ecore.EObject element = ((org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest) getRequest()).getNewElement();
+		if (element != null) {
+			Object object = expression.evaluate(element);
+			if (object instanceof «EXPAND MetaModel::QualifiedClassName FOR containmentMetaFeature.genClass») {
+				container = («EXPAND MetaModel::QualifiedClassName FOR containmentMetaFeature.genClass») object;
+			}
+		}
+«ENDIF»
+«ENDLET»
+	
+		return container;
+	}
+
+	«EXPAND xpt::Common::generatedMemberComment(
+		'Default approach is to traverse ancestors of the source to find instance of container.\n' + 
+		'Modify with appropriate logic.'
+	)»
+
+	private static «EXPAND MetaModel::QualifiedClassName FOR containmentMetaFeature.genClass» deduceContainer(org.eclipse.emf.ecore.EObject source, org.eclipse.emf.ecore.EObject target) {
+		// Find container element for the new link.
+		// Climb up by containment hierarchy starting from the source
+		// and return the first element that is instance of the container class.
+		for (org.eclipse.emf.ecore.EObject element = source; element != null; element = element.eContainer()) {
+			if («EXPAND MetaModel::IsInstance('element') FOR containmentMetaFeature.genClass») {
+				return «EXPAND MetaModel::CastEObject('element') FOR containmentMetaFeature.genClass»;
+			}
+		}
+		return null;
+	}
+
 	«EXPAND xpt::Common::generatedMemberComment(
 		'Traverse the notation view hierarchy.\n'
 	)»
