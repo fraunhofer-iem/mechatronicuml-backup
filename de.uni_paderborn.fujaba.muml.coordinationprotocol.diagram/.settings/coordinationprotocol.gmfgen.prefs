@@ -4,6 +4,6 @@ generate_rcp=false
 ignore_gmfgen_validation=false
 ignore_mapmodel_validation=false
 post-reconcile-qvto=platform\:/resource/de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram/model/coordinationprotocol.qvto
-pre-reconcile-qvto=platform\:/resource/de.uni_paderborn.fujaba.common/transformations/pre-reconcile.qvto
+pre-reconcile-qvto=platform\:/resource/de.uni_paderborn.fujaba.muml.common/transformations/pre-reconcile.qvto
 use_map_mode=true
 use_runtime_figures=true
