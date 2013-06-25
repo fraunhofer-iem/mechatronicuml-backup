@@ -816,11 +816,12 @@ public class ActionLanguageInterpreter {
 			for (VariableBinding varBinding : variableBindings) {
 				if (varBinding.getVariable().equals(tne)) {
 					if (varBinding.getValue() == null)
-						throw new VariableNotInitializedException(
-								tne.toString()
-										+ " not initialized until execution of"
-										+ typedNamedElementExpression
-												.toString());
+//						throw new VariableNotInitializedException(
+//								tne.toString()
+//										+ " not initialized until execution of"
+//										+ typedNamedElementExpression
+//												.toString());
+						return null;
 
 					return varBinding.getValue();
 				}
@@ -1170,15 +1171,21 @@ public class ActionLanguageInterpreter {
 		// cast to boolean
 		case PrimitiveTypes.BOOLEAN_VALUE:
 			// evaluate whether value is of supported type for this cast
-			if (!(value instanceof Boolean) && !(value instanceof String)) {
+			if (!(value instanceof Short) && !(value instanceof Double)
+					&& !(value instanceof Long) && !(value instanceof Integer)
+					&& !(value instanceof String)&& !(value instanceof Boolean)) {
 				throw new IncompatibleTypeException("Cannot cast "
 						+ value.toString()
 						+ " to "
 						+ ((PrimitiveDataType) type).getPrimitiveType()
 								.toString());
 			}
+			// value was already of type boolean
+			if(value instanceof Boolean)
+				return (Boolean) value;
+			
 			// cast string to boolean
-			if (value instanceof String) {
+			 if (value instanceof String) {
 				if (((String) value).equals("true"))
 					return true;
 				else if (((String) value).equals("false"))
@@ -1191,8 +1198,21 @@ public class ActionLanguageInterpreter {
 									.toString());
 
 			}
-			// value was already of type boolean
-			return (Boolean) value;
+		
+				// numeric to boolean (check whether decimal places are only 0s)
+				else {
+					if (((Number) value).doubleValue() > 1
+							|| ((Number) value).doubleValue() % 1 != 0)
+						throw new IncompatibleTypeException("Cannot cast "
+								+ value.toString() + " to Byte");
+					if(((Number) value).doubleValue()==0)
+						return false;
+					if(((Number) value).doubleValue()==1)
+						return true;
+						
+					return ((Number) value).byteValue();
+				}
+			
 
 			// cast to byte
 		case PrimitiveTypes.BYTE_VALUE:
