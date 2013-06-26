@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.uni_paderborn.fujaba.muml.feature"
+      id="de.uni_paderborn.fujaba.muml.pim.feature"
       label="%featureName"
       version="0.3.2.qualifier"
       provider-name="%providerName">
@@ -152,8 +152,6 @@
          version="0.0.0"
          unpack="false"/>
 
-  
-   
    <plugin
          id="de.uni_paderborn.fujaba.muml.messagetype.diagram"
          download-size="0"
