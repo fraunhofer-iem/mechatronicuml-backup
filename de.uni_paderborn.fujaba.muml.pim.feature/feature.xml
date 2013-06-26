@@ -2,7 +2,7 @@
 <feature
       id="de.uni_paderborn.fujaba.muml.pim.feature"
       label="%featureName"
-      version="0.3.2.qualifier"
+      version="0.4.0.qualifier"
       provider-name="%providerName">
 
    <description>
