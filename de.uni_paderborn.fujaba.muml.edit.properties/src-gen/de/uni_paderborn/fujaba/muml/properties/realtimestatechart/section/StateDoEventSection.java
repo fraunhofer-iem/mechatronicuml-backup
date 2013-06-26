@@ -19,11 +19,9 @@ public class StateDoEventSection
 
 		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.DoEventActionSection());
 
-		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.DoEventPeriodLowerSection());
-
-		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.DoEventPeriodUpperSection());
-
 		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.EventKindSection());
+
+		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.DoEventPeriodSection());
 
 	}
 

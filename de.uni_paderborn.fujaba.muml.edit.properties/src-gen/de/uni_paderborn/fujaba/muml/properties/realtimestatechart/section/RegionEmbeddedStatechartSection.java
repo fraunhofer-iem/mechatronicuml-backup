@@ -23,8 +23,6 @@ public class RegionEmbeddedStatechartSection
 
 		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.RealtimeStatechartClocksSection());
 
-		addSection(new de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.RealtimeStatechartHistorySection());
-
 		addSection(new de.uni_paderborn.fujaba.muml.properties.behavior.section.BehaviorOperationsSection());
 
 		addSection(new de.uni_paderborn.fujaba.muml.properties.behavior.section.BehaviorVariablesSection());

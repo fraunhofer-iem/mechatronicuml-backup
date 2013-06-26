@@ -293,15 +293,9 @@
             <input type="de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent"/>
          </propertySection>
          <propertySection
-            id="DoEvent.periodLower" 
+            id="DoEvent.period" 
             tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.DoEventPeriodLowerSection">
-            <input type="de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent"/>
-         </propertySection>
-         <propertySection
-            id="DoEvent.periodUpper" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.DoEventPeriodUpperSection">
+            class="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.DoEventPeriodSection">
             <input type="de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent"/>
          </propertySection>
          <propertySection
@@ -350,12 +344,6 @@
             id="RealtimeStatechart.clocks" 
             tab="base"
             class="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.RealtimeStatechartClocksSection">
-            <input type="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart"/>
-         </propertySection>
-         <propertySection
-            id="RealtimeStatechart.history" 
-            tab="base"
-            class="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.section.RealtimeStatechartHistorySection">
             <input type="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart"/>
          </propertySection>
          <propertySection

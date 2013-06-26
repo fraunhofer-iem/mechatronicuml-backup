@@ -194,7 +194,6 @@
           <referencedProperties active="true" property="//@packages.4/@classes.15/@properties.1"/>
           <referencedProperties active="true" property="//@packages.4/@classes.15/@properties.2"/>
           <referencedProperties active="true" property="//@packages.4/@classes.15/@properties.3"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.15/@properties.4"/>
           <referencedProperties active="true" property="//@packages.7/@classes.1/@properties.0"/>
           <referencedProperties active="true" property="//@packages.7/@classes.1/@properties.1"/>
           <referencedProperties active="true" property="//@packages.7/@classes.1/@properties.2"/>
@@ -214,9 +213,8 @@
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/doEvent"/>
         <section xsi:type="de.fujaba:GroupPropertySection">
           <referencedProperties active="true" property="//@packages.4/@classes.10/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.10/@properties.1"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.10/@properties.2"/>
           <referencedProperties active="true" property="//@packages.4/@classes.16/@properties.0"/>
+          <referencedProperties active="true" property="//@packages.4/@classes.10/@properties.1"/>
         </section>
       </properties>
       <properties tab="//@tabs.0">
@@ -382,14 +380,7 @@
         </section>
       </properties>
       <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/DoEvent/periodLower"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.1"/>
-        </section>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/DoEvent/periodUpper"/>
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/DoEvent/period"/>
         <section xsi:type="de.fujaba:GroupPropertySection">
           <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.0"/>
           <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.1"/>
@@ -455,10 +446,6 @@
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/clocks"/>
         <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/history"/>
-        <section xsi:type="de.fujaba:CheckboxPropertySection"/>
       </properties>
     </classes>
     <classes>
