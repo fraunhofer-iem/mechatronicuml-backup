@@ -13,10 +13,6 @@ property NULL_PORT_PART_HELPER : PortPart = object PortPart{};
 main() {
 	log("QVT-O Script \"instances.qvto\" started.");
 
-	var root : Set(Element) := instance.rootObjects();
-	var rootObjects : Collection(Element) := root->selectByType(AtomicComponentInstance);
-	var zwei : Collection(Element) := root->selectByType(StructuredComponentInstance);
-
 	// process AtomicComponentInstances
 	instance.rootObjects()[AtomicComponentInstance]->forEach(ci) {
 		ci.portInstances := ci.componentType.createPortInstances(NULL_COMPONENT_PART_HELPER); // using helper instead of "null", because of QVTO-Bug
@@ -48,7 +44,7 @@ main() {
 				if (endpoint1 != endpoint2) then {
 					endpoint1.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance1) {
 						endpoint2.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance2) {
-							if (ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) and connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
+							if (not endpointInstance1.oclIsKindOf(DiscreteMultiPortInstance) and not endpointInstance2.oclIsKindOf(DiscreteMultiPortInstance) and ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) or connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
 								ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
 									Set { endpointInstance1, endpointInstance2 }
 								)[PortConnectorInstance];
@@ -221,7 +217,7 @@ constructor StructuredComponentInstance::StructuredComponentInstance(type : Stru
 			if (endpoint1 != endpoint2) then {
 				endpoint1.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance1) {
 					endpoint2.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance2) {
-						if (container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) and connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
+						if (not endpointInstance1.oclIsKindOf(DiscreteMultiPortInstance) and not endpointInstance2.oclIsKindOf(DiscreteMultiPortInstance) and container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) or connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
 							container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
 								Set { endpointInstance1, endpointInstance2 }
 							)[PortConnectorInstance];
