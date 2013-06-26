@@ -541,7 +541,7 @@
       <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
-  <plugin version="0.3.2.qualifier">
+  <plugin version="0.4.0.qualifier">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>

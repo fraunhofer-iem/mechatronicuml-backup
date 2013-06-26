@@ -321,7 +321,7 @@
       iD="de.uni_paderborn.fujaba.muml.messagetype.diagram"
       name="Message Type Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
-      version="0.3.1.qualifier"
+      version="0.4.0.qualifier"
       activatorClassName="MessageTypeDiagramEditorPlugin">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>

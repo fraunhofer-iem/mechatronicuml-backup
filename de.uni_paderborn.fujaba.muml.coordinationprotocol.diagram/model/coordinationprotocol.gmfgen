@@ -492,7 +492,7 @@
       iD="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram"
       name="Coordination Protocol Diagram-Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
-      version="0.3.1.qualifier">
+      version="0.4.0.qualifier">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
