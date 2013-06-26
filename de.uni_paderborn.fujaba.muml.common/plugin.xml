@@ -118,8 +118,10 @@
              category="visual"
              id="property.tab.DiagramPropertySection"
              label="Rulers &amp; Grid"/>
+         
+          <!-- this was in the category extra, to put it to the bottom -->
           <propertyTab
-             category="extra"
+             category="domain"
              id="property.tab.domain.advanced"
              label="Advanced"/>
       </propertyTabs>
