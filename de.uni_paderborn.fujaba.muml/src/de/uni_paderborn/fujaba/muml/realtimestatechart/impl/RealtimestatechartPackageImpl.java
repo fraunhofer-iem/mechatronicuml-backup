@@ -958,17 +958,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDoEvent_PeriodLower() {
+	public EReference getDoEvent_Period() {
 		return (EReference)doEventEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDoEvent_PeriodUpper() {
-		return (EReference)doEventEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1129,7 +1120,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRealtimeStatechart_History() {
+	public EAttribute getRealtimeStatechart_Flat() {
 		return (EAttribute)realtimeStatechartEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1138,17 +1129,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRealtimeStatechart_Flat() {
-		return (EAttribute)realtimeStatechartEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getRealtimeStatechart_AvailableClocks() {
-		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(6);
+		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1157,7 +1139,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EAttribute getRealtimeStatechart_Embedded() {
-		return (EAttribute)realtimeStatechartEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)realtimeStatechartEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1166,7 +1148,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getRealtimeStatechart_AllAvailableVariables() {
-		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(8);
+		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1175,7 +1157,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	public EReference getRealtimeStatechart_AllAvailableOperations() {
-		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(9);
+		return (EReference)realtimeStatechartEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1443,8 +1425,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		doEventEClass = createEClass(DO_EVENT);
 		createEReference(doEventEClass, DO_EVENT__ACTION);
-		createEReference(doEventEClass, DO_EVENT__PERIOD_LOWER);
-		createEReference(doEventEClass, DO_EVENT__PERIOD_UPPER);
+		createEReference(doEventEClass, DO_EVENT__PERIOD);
 
 		entryOrExitEventEClass = createEClass(ENTRY_OR_EXIT_EVENT);
 		createEReference(entryOrExitEventEClass, ENTRY_OR_EXIT_EVENT__CLOCK_RESETS);
@@ -1467,7 +1448,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__TRANSITIONS);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__STATES);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__CLOCKS);
-		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__HISTORY);
 		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__FLAT);
 		createEReference(realtimeStatechartEClass, REALTIME_STATECHART__AVAILABLE_CLOCKS);
 		createEAttribute(realtimeStatechartEClass, REALTIME_STATECHART__EMBEDDED);
@@ -1657,8 +1637,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 
 		initEClass(doEventEClass, DoEvent.class, "DoEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDoEvent_Action(), this.getAction(), null, "action", null, 1, 1, DoEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDoEvent_PeriodLower(), theValuetypePackage.getTimeValue(), null, "periodLower", null, 1, 1, DoEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDoEvent_PeriodUpper(), theValuetypePackage.getTimeValue(), null, "periodUpper", null, 1, 1, DoEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDoEvent_Period(), theValuetypePackage.getTimeValue(), null, "period", null, 1, 1, DoEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entryOrExitEventEClass, EntryOrExitEvent.class, "EntryOrExitEvent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntryOrExitEvent_ClockResets(), this.getClock(), null, "clockResets", null, 0, -1, EntryOrExitEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1681,7 +1660,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getRealtimeStatechart_Transitions(), this.getTransition(), this.getTransition_Statechart(), "transitions", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_States(), this.getState(), this.getState_ParentStatechart(), "states", null, 1, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_Clocks(), this.getClock(), this.getClock_Statechart(), "clocks", null, 0, -1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRealtimeStatechart_History(), ecorePackage.getEBoolean(), "history", null, 0, 1, RealtimeStatechart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRealtimeStatechart_Flat(), theEcorePackage.getEBoolean(), "flat", "false", 0, 1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getRealtimeStatechart_AvailableClocks(), this.getClock(), null, "availableClocks", null, 0, -1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRealtimeStatechart_Embedded(), ecorePackage.getEBoolean(), "embedded", "false", 0, 1, RealtimeStatechart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1763,13 +1741,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent "
-		   });																																
-		addAnnotation
-		  (doEventEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "ValidLowerUpperPeriod"
-		   });														
+		   });																																										
 		addAnnotation
 		  (prioritizedElementEClass, 
 		   source, 
@@ -1781,7 +1753,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueNameOfStates NoCycles OneInitialState"
-		   });																																
+		   });																															
 		addAnnotation
 		  (stateConnectionPointEClass, 
 		   source, 
@@ -1896,13 +1868,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\nif b.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tif b.oclIsKindOf(component::DiscretePort) then\n\t\tb.oclAsType(component::DiscretePort).senderMessageTypes\n\telse\n\t\tif b.oclIsKindOf(protocol::Role) then\n\t\t\tb.oclAsType(protocol::Role).senderMessageTypes\n\t\telse\n\t\t\tOrderedSet { }\n\t\tendif\n\tendif\nendif"
-		   });											
-		addAnnotation
-		  (doEventEClass, 
-		   source, 
-		   new String[] {
-			 "ValidLowerUpperPeriod", "not (self.periodLower.value.oclIsUndefined() and self.periodUpper.value.oclIsUndefined())\r\nimplies\r\nself.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value"
-		   });																
+		   });																							
 		addAnnotation
 		  (prioritizedElementEClass, 
 		   source, 
@@ -1916,7 +1882,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "UniqueNameOfStates", "self.states->isUnique(name)",
 			 "NoCycles", "-- If we are contained within a statechart...\r\n(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n\r\nimplies\r\n\r\n-- ... then we must not be a super statechart of it.\r\n(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))",
 			 "OneInitialState", "self.states->select(s |  s.initial)->size() = 1"
-		   });											
+		   });										
 		addAnnotation
 		  (getRealtimeStatechart_Flat(), 
 		   source, 

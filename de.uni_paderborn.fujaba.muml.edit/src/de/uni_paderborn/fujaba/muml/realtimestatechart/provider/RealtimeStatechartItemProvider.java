@@ -76,7 +76,6 @@ public class RealtimeStatechartItemProvider
 			addTransitionsPropertyDescriptor(object);
 			addStatesPropertyDescriptor(object);
 			addClocksPropertyDescriptor(object);
-			addHistoryPropertyDescriptor(object);
 			addFlatPropertyDescriptor(object);
 			addEmbeddedPropertyDescriptor(object);
 			addAllAvailableVariablesPropertyDescriptor(object);
@@ -262,28 +261,6 @@ public class RealtimeStatechartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the History feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addHistoryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_RealtimeStatechart_history_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RealtimeStatechart_history_feature", "_UI_RealtimeStatechart_type"),
-				 RealtimestatechartPackage.Literals.REALTIME_STATECHART__HISTORY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Flat feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -443,7 +420,6 @@ public class RealtimeStatechartItemProvider
 
 		switch (notification.getFeatureID(RealtimeStatechart.class)) {
 			case RealtimestatechartPackage.REALTIME_STATECHART__COMMENT:
-			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
 			case RealtimestatechartPackage.REALTIME_STATECHART__EMBEDDED:

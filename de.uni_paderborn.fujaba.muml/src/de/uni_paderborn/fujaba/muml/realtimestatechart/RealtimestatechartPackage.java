@@ -2342,22 +2342,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int DO_EVENT__ACTION = STATE_EVENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Period Lower</b></em>' containment reference.
+	 * The feature id for the '<em><b>Period</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_EVENT__PERIOD_LOWER = STATE_EVENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Period Upper</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_EVENT__PERIOD_UPPER = STATE_EVENT_FEATURE_COUNT + 2;
+	int DO_EVENT__PERIOD = STATE_EVENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Do Event</em>' class.
@@ -2366,7 +2357,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_EVENT_FEATURE_COUNT = STATE_EVENT_FEATURE_COUNT + 3;
+	int DO_EVENT_FEATURE_COUNT = STATE_EVENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Do Event</em>' class.
@@ -3009,22 +3000,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REALTIME_STATECHART__CLOCKS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>History</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REALTIME_STATECHART__HISTORY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
-
-	/**
 	 * The feature id for the '<em><b>Flat</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__FLAT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
+	int REALTIME_STATECHART__FLAT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Available Clocks</b></em>' reference list.
@@ -3033,7 +3015,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__AVAILABLE_CLOCKS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
+	int REALTIME_STATECHART__AVAILABLE_CLOCKS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Embedded</b></em>' attribute.
@@ -3042,7 +3024,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__EMBEDDED = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
+	int REALTIME_STATECHART__EMBEDDED = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>All Available Variables</b></em>' reference list.
@@ -3051,7 +3033,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
+	int REALTIME_STATECHART__ALL_AVAILABLE_VARIABLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>All Available Operations</b></em>' reference list.
@@ -3060,7 +3042,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
+	int REALTIME_STATECHART__ALL_AVAILABLE_OPERATIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Realtime Statechart</em>' class.
@@ -3069,7 +3051,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 14;
+	int REALTIME_STATECHART_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -5198,26 +5180,15 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getDoEvent_Action();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriodLower <em>Period Lower</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriod <em>Period</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Period Lower</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriodLower()
+	 * @return the meta object for the containment reference '<em>Period</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriod()
 	 * @see #getDoEvent()
 	 * @generated
 	 */
-	EReference getDoEvent_PeriodLower();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriodUpper <em>Period Upper</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Period Upper</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriodUpper()
-	 * @see #getDoEvent()
-	 * @generated
-	 */
-	EReference getDoEvent_PeriodUpper();
+	EReference getDoEvent_Period();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.EntryOrExitEvent <em>Entry Or Exit Event</em>}'.
@@ -5400,17 +5371,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRealtimeStatechart_Clocks();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isHistory <em>History</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>History</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isHistory()
-	 * @see #getRealtimeStatechart()
-	 * @generated
-	 */
-	EAttribute getRealtimeStatechart_History();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isFlat <em>Flat</em>}'.
@@ -6210,20 +6170,12 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference DO_EVENT__ACTION = eINSTANCE.getDoEvent_Action();
 
 		/**
-		 * The meta object literal for the '<em><b>Period Lower</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Period</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DO_EVENT__PERIOD_LOWER = eINSTANCE.getDoEvent_PeriodLower();
-
-		/**
-		 * The meta object literal for the '<em><b>Period Upper</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DO_EVENT__PERIOD_UPPER = eINSTANCE.getDoEvent_PeriodUpper();
+		EReference DO_EVENT__PERIOD = eINSTANCE.getDoEvent_Period();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.EntryOrExitEventImpl <em>Entry Or Exit Event</em>}' class.
@@ -6370,14 +6322,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REALTIME_STATECHART__CLOCKS = eINSTANCE.getRealtimeStatechart_Clocks();
-
-		/**
-		 * The meta object literal for the '<em><b>History</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REALTIME_STATECHART__HISTORY = eINSTANCE.getRealtimeStatechart_History();
 
 		/**
 		 * The meta object literal for the '<em><b>Flat</b></em>' attribute feature.

@@ -70,8 +70,7 @@ public class DoEventItemProvider
 			super.getPropertyDescriptors(object);
 
 			addActionPropertyDescriptor(object);
-			addPeriodLowerPropertyDescriptor(object);
-			addPeriodUpperPropertyDescriptor(object);
+			addPeriodPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,13 +113,13 @@ public class DoEventItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addPeriodLowerPropertyDescriptor(Object object) {
+	protected void addPeriodPropertyDescriptor(Object object) {
 		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DoEvent_periodLower_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DoEvent_periodLower_feature", "_UI_DoEvent_type"),
-				 RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_LOWER,
+				 getString("_UI_DoEvent_period_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DoEvent_period_feature", "_UI_DoEvent_type"),
+				 RealtimestatechartPackage.Literals.DO_EVENT__PERIOD,
 				 true,
 				 false,
 				 false,
@@ -139,7 +138,7 @@ public class DoEventItemProvider
 			 false,
 			 false,
 			 null,
-			 "Period Lower",
+			 "Period",
 			 null,
 			 rootPropertyDescriptor));
 
@@ -154,58 +153,7 @@ public class DoEventItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 "Period Lower",
-				 null,
-				 rootPropertyDescriptor));
-	}
-
-	/**
-	 * This adds a property descriptor for the Period Upper feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addPeriodUpperPropertyDescriptor(Object object) {
-		IChainedPropertyDescriptor rootPropertyDescriptor = new DefaultChainedPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DoEvent_periodUpper_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DoEvent_periodUpper_feature", "_UI_DoEvent_type"),
-				 RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_UPPER,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null);
-		
-		itemPropertyDescriptors.add
-		(new NaturalNumberPropertyDescriptor
-			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			 getResourceLocator(),
-			 getString("_UI_TimeValue_value_feature"),
-			 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-			 ValuetypePackage.Literals.TIME_VALUE__VALUE,
-			 true,
-			 false,
-			 false,
-			 null,
-			 "Period Upper",
-			 null,
-			 rootPropertyDescriptor));
-
-		itemPropertyDescriptors.add
-			(new EnumerationPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TimeValue_unit_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_unit_feature", "_UI_TimeValue_type"),
-				 ValuetypePackage.Literals.TIME_VALUE__UNIT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 "Period Upper",
+				 "Period",
 				 null,
 				 rootPropertyDescriptor));
 	}
@@ -223,8 +171,7 @@ public class DoEventItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.DO_EVENT__ACTION);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_LOWER);
-			childrenFeatures.add(RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_UPPER);
+			childrenFeatures.add(RealtimestatechartPackage.Literals.DO_EVENT__PERIOD);
 		}
 		return childrenFeatures;
 	}
@@ -281,8 +228,7 @@ public class DoEventItemProvider
 
 		switch (notification.getFeatureID(DoEvent.class)) {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
+			case RealtimestatechartPackage.DO_EVENT__PERIOD:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -307,36 +253,8 @@ public class DoEventItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_LOWER,
+				(RealtimestatechartPackage.Literals.DO_EVENT__PERIOD,
 				 ValuetypeFactory.eINSTANCE.createTimeValue()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_UPPER,
-				 ValuetypeFactory.eINSTANCE.createTimeValue()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_LOWER ||
-			childFeature == RealtimestatechartPackage.Literals.DO_EVENT__PERIOD_UPPER;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

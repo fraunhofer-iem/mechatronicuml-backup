@@ -1447,28 +1447,16 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The action of a state that is executed periodically as long as this state is active. The first period starts after the execution of the entry-action."/>
       </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="ValidLowerUpperPeriod" value="not (self.periodLower.value.oclIsUndefined() and self.periodUpper.value.oclIsUndefined())&#xD;&#xA;implies&#xD;&#xA;self.periodLower.value.value >= 1 and self.periodLower.value.value &lt;= self.periodUpper.value.value"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="ValidLowerUpperPeriod"/>
-      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
           eType="#//realtimestatechart/Action" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Each entry or exit action has one or more actions."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="periodLower" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="period" lowerBound="1"
           eType="#//valuetype/TimeValue" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="the lower bound of the period"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="periodUpper" lowerBound="1"
-          eType="#//valuetype/TimeValue" containment="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="the upper bound of the period"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -1585,11 +1573,6 @@
           eType="#//realtimestatechart/Clock" containment="true" eOpposite="#//realtimestatechart/Clock/statechart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The clocks of this realtime statechart."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="If this attribute is true, it acts as a shallow history on the top hierarchy of this statechart."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="flat" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"

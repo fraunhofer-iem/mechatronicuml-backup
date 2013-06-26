@@ -28,17 +28,18 @@ public class CustomRealtimeStatechartEditPart extends
 		RealtimeStatechart statechart = (RealtimeStatechart) getNotationView()
 				.getElement();
 		if (statechart != null) {
-			updateHistory(statechart.isHistory());
+			// updateHistory(statechart.isHistory());
+			updateHistory(false);
 		}
 	}
 
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
-		Object feature = notification.getFeature();
-		if (RealtimestatechartPackage.Literals.REALTIME_STATECHART__HISTORY
-				.equals(feature)) {
-			updateHistory(notification.getNewBooleanValue());
-		}
+//		Object feature = notification.getFeature();
+//		if (RealtimestatechartPackage.Literals.REALTIME_STATECHART__HISTORY
+//				.equals(feature)) {
+//			updateHistory(notification.getNewBooleanValue());
+//		}
 		super.handleNotificationEvent(notification);
 	}
 

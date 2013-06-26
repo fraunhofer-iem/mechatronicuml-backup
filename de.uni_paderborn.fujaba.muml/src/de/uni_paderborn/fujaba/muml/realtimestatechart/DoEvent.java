@@ -22,14 +22,12 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getAction <em>Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriodLower <em>Period Lower</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriodUpper <em>Period Upper</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriod <em>Period</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getDoEvent()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValidLowerUpperPeriod='not (self.periodLower.value.oclIsUndefined() and self.periodUpper.value.oclIsUndefined())\r\nimplies\r\nself.periodLower.value.value >= 1 and self.periodLower.value.value <= self.periodUpper.value.value'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValidLowerUpperPeriod'"
+ * @model
  * @generated
  */
 public interface DoEvent extends StateEvent {
@@ -59,53 +57,28 @@ public interface DoEvent extends StateEvent {
 	void setAction(Action value);
 
 	/**
-	 * Returns the value of the '<em><b>Period Lower</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Period</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * the lower bound of the period
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Period Lower</em>' containment reference.
-	 * @see #setPeriodLower(TimeValue)
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getDoEvent_PeriodLower()
+	 * @return the value of the '<em>Period</em>' containment reference.
+	 * @see #setPeriod(TimeValue)
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getDoEvent_Period()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	TimeValue getPeriodLower();
+	TimeValue getPeriod();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriodLower <em>Period Lower</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriod <em>Period</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Period Lower</em>' containment reference.
-	 * @see #getPeriodLower()
+	 * @param value the new value of the '<em>Period</em>' containment reference.
+	 * @see #getPeriod()
 	 * @generated
 	 */
-	void setPeriodLower(TimeValue value);
-
-	/**
-	 * Returns the value of the '<em><b>Period Upper</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * the upper bound of the period
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Period Upper</em>' containment reference.
-	 * @see #setPeriodUpper(TimeValue)
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getDoEvent_PeriodUpper()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	TimeValue getPeriodUpper();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent#getPeriodUpper <em>Period Upper</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Period Upper</em>' containment reference.
-	 * @see #getPeriodUpper()
-	 * @generated
-	 */
-	void setPeriodUpper(TimeValue value);
+	void setPeriod(TimeValue value);
 
 } // DoEvent

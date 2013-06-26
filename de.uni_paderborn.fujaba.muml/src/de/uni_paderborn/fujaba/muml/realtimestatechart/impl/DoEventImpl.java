@@ -25,8 +25,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.DoEventImpl#getAction <em>Action</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.DoEventImpl#getPeriodLower <em>Period Lower</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.DoEventImpl#getPeriodUpper <em>Period Upper</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.DoEventImpl#getPeriod <em>Period</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,24 +43,14 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 	protected Action action;
 
 	/**
-	 * The cached value of the '{@link #getPeriodLower() <em>Period Lower</em>}' containment reference.
+	 * The cached value of the '{@link #getPeriod() <em>Period</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPeriodLower()
+	 * @see #getPeriod()
 	 * @generated
 	 * @ordered
 	 */
-	protected TimeValue periodLower;
-
-	/**
-	 * The cached value of the '{@link #getPeriodUpper() <em>Period Upper</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPeriodUpper()
-	 * @generated
-	 * @ordered
-	 */
-	protected TimeValue periodUpper;
+	protected TimeValue period;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,8 +119,8 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeValue getPeriodLower() {
-		return periodLower;
+	public TimeValue getPeriod() {
+		return period;
 	}
 
 	/**
@@ -139,11 +128,11 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPeriodLower(TimeValue newPeriodLower, NotificationChain msgs) {
-		TimeValue oldPeriodLower = periodLower;
-		periodLower = newPeriodLower;
+	public NotificationChain basicSetPeriod(TimeValue newPeriod, NotificationChain msgs) {
+		TimeValue oldPeriod = period;
+		period = newPeriod;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER, oldPeriodLower, newPeriodLower);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__PERIOD, oldPeriod, newPeriod);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -154,61 +143,18 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPeriodLower(TimeValue newPeriodLower) {
-		if (newPeriodLower != periodLower) {
+	public void setPeriod(TimeValue newPeriod) {
+		if (newPeriod != period) {
 			NotificationChain msgs = null;
-			if (periodLower != null)
-				msgs = ((InternalEObject)periodLower).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER, null, msgs);
-			if (newPeriodLower != null)
-				msgs = ((InternalEObject)newPeriodLower).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER, null, msgs);
-			msgs = basicSetPeriodLower(newPeriodLower, msgs);
+			if (period != null)
+				msgs = ((InternalEObject)period).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.DO_EVENT__PERIOD, null, msgs);
+			if (newPeriod != null)
+				msgs = ((InternalEObject)newPeriod).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.DO_EVENT__PERIOD, null, msgs);
+			msgs = basicSetPeriod(newPeriod, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER, newPeriodLower, newPeriodLower));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TimeValue getPeriodUpper() {
-		return periodUpper;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetPeriodUpper(TimeValue newPeriodUpper, NotificationChain msgs) {
-		TimeValue oldPeriodUpper = periodUpper;
-		periodUpper = newPeriodUpper;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER, oldPeriodUpper, newPeriodUpper);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPeriodUpper(TimeValue newPeriodUpper) {
-		if (newPeriodUpper != periodUpper) {
-			NotificationChain msgs = null;
-			if (periodUpper != null)
-				msgs = ((InternalEObject)periodUpper).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER, null, msgs);
-			if (newPeriodUpper != null)
-				msgs = ((InternalEObject)newPeriodUpper).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER, null, msgs);
-			msgs = basicSetPeriodUpper(newPeriodUpper, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER, newPeriodUpper, newPeriodUpper));
+			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.DO_EVENT__PERIOD, newPeriod, newPeriod));
 	}
 
 	/**
@@ -221,10 +167,8 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 		switch (featureID) {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				return basicSetAction(null, msgs);
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
-				return basicSetPeriodLower(null, msgs);
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
-				return basicSetPeriodUpper(null, msgs);
+			case RealtimestatechartPackage.DO_EVENT__PERIOD:
+				return basicSetPeriod(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -239,10 +183,8 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 		switch (featureID) {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				return getAction();
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
-				return getPeriodLower();
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
-				return getPeriodUpper();
+			case RealtimestatechartPackage.DO_EVENT__PERIOD:
+				return getPeriod();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,11 +201,8 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				setAction((Action)newValue);
 				return;
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
-				setPeriodLower((TimeValue)newValue);
-				return;
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
-				setPeriodUpper((TimeValue)newValue);
+			case RealtimestatechartPackage.DO_EVENT__PERIOD:
+				setPeriod((TimeValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,11 +219,8 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				setAction((Action)null);
 				return;
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
-				setPeriodLower((TimeValue)null);
-				return;
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
-				setPeriodUpper((TimeValue)null);
+			case RealtimestatechartPackage.DO_EVENT__PERIOD:
+				setPeriod((TimeValue)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -300,10 +236,8 @@ public class DoEventImpl extends StateEventImpl implements DoEvent {
 		switch (featureID) {
 			case RealtimestatechartPackage.DO_EVENT__ACTION:
 				return action != null;
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_LOWER:
-				return periodLower != null;
-			case RealtimestatechartPackage.DO_EVENT__PERIOD_UPPER:
-				return periodUpper != null;
+			case RealtimestatechartPackage.DO_EVENT__PERIOD:
+				return period != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -58,7 +58,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getStates <em>States</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getClocks <em>Clocks</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#isHistory <em>History</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#isFlat <em>Flat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl#isEmbedded <em>Embedded</em>}</li>
@@ -149,26 +148,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * @ordered
 	 */
 	protected EList<Clock> clocks;
-
-	/**
-	 * The default value of the '{@link #isHistory() <em>History</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHistory()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean HISTORY_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isHistory() <em>History</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isHistory()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean history = HISTORY_EDEFAULT;
 
 	/**
 	 * The cached setting delegate for the '{@link #isFlat() <em>Flat</em>}' attribute.
@@ -426,27 +405,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isHistory() {
-		return history;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHistory(boolean newHistory) {
-		boolean oldHistory = history;
-		history = newHistory;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.REALTIME_STATECHART__HISTORY, oldHistory, history));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isFlat() {
 		return (Boolean)FLAT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -656,8 +614,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return getStates();
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				return getClocks();
-			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
-				return isHistory();
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
 				return isFlat();
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
@@ -710,9 +666,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				getClocks().clear();
 				getClocks().addAll((Collection<? extends Clock>)newValue);
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
-				setHistory((Boolean)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -749,9 +702,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				getClocks().clear();
 				return;
-			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
-				setHistory(HISTORY_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -780,8 +730,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				return states != null && !states.isEmpty();
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:
 				return clocks != null && !clocks.isEmpty();
-			case RealtimestatechartPackage.REALTIME_STATECHART__HISTORY:
-				return history != HISTORY_EDEFAULT;
 			case RealtimestatechartPackage.REALTIME_STATECHART__FLAT:
 				return FLAT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REALTIME_STATECHART__AVAILABLE_CLOCKS:
@@ -874,8 +822,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
-		result.append(", history: ");
-		result.append(history);
 		result.append(')');
 		return result.toString();
 	}

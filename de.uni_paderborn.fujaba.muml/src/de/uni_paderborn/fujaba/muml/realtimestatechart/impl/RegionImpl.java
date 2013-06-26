@@ -28,7 +28,6 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.Extension;
 
-import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
@@ -127,16 +126,10 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected RegionImpl() {
 		super();
-		DerivedAttributeAdapter portsDerivedAdapter = new DerivedAttributeAdapter(
-				this, RealtimestatechartPackage.Literals.REGION__EMBEDS_HISTORY_STATECHART);
-		portsDerivedAdapter
-				.addNavigatedDependency(
-						RealtimestatechartPackage.Literals.REGION__EMBEDDED_STATECHART,
-						RealtimestatechartPackage.Literals.REALTIME_STATECHART__HISTORY);
 	}
 
 	/**

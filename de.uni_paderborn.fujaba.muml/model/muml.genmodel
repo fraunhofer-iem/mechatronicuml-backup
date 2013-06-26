@@ -315,8 +315,7 @@
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/DoEvent">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/DoEvent/action"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/DoEvent/periodLower"/>
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/DoEvent/periodUpper"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/DoEvent/period"/>
       </genClasses>
       <genClasses image="false" ecoreClass="muml.ecore#//realtimestatechart/EntryOrExitEvent">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -342,7 +341,6 @@
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/transitions"/>
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/states"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/clocks"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/RealtimeStatechart/history"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/RealtimeStatechart/flat"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/RealtimeStatechart/availableClocks"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/RealtimeStatechart/embedded"/>

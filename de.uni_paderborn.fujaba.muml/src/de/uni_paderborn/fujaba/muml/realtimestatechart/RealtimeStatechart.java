@@ -30,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getTransitions <em>Transitions</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getStates <em>States</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getClocks <em>Clocks</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isHistory <em>History</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isFlat <em>Flat</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getAvailableClocks <em>Available Clocks</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isEmbedded <em>Embedded</em>}</li>
@@ -124,31 +123,6 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * @generated
 	 */
 	EList<Clock> getClocks();
-
-	/**
-	 * Returns the value of the '<em><b>History</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * If this attribute is true, it acts as a shallow history on the top hierarchy of this statechart.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>History</em>' attribute.
-	 * @see #setHistory(boolean)
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_History()
-	 * @model
-	 * @generated
-	 */
-	boolean isHistory();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#isHistory <em>History</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>History</em>' attribute.
-	 * @see #isHistory()
-	 * @generated
-	 */
-	void setHistory(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Flat</b></em>' attribute.
