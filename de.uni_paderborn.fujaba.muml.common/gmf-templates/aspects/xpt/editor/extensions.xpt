@@ -93,7 +93,7 @@
       «EXPAND xpt::Common::xmlGeneratedTag»  
       <category
             key="«modelElementCategoryKey(diagram)»"
-            name="«diagram.topLevelNodes->first().getDomainMetaClass().genPackage.ecorePackage.name»">
+            name="«modelElementCategoryName(diagram)»">
          «IF diagram.domainDiagramElement.ecoreClass.name = 'ModelElementCategory'»
          «FOREACH diagram.topLevelNodes.getDomainMetaClass() AS node»
          <child

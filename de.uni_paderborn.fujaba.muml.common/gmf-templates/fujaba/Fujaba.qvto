@@ -20,5 +20,34 @@ helper usesModelElementCategory(genDiagram : gmfgen::GenDiagram) : Boolean {
 }
 
 helper modelElementCategoryKey(genDiagram : gmfgen::GenDiagram) : String {
-	return getReflectionPackageName(genDiagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgtype', '\\.messagetype') + ".category";
+	switch {
+		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceTypeRepository'){
+			return 'de.uni_paderborn.fujaba.muml.hardware.resource.category';
+		}
+		
+		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceInstanceRepository'){
+						return 'de.uni_paderborn.fujaba.muml.hardware.resource.category';
+		}
+		
+		else{
+			return getReflectionPackageName(genDiagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgtype', '\\.messagetype') + ".category";
+			}
+	};
+}
+
+helper modelElementCategoryName(genDiagram : gmfgen::GenDiagram) : String {
+switch {
+		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceTypeRepository'){
+			return 'resource';
+		}
+		
+		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceInstanceRepository'){
+				return 'resource';
+		}
+		
+		else{
+				return genDiagram.topLevelNodes->first().getDomainMetaClass().genPackage.ecorePackage.name	
+		}
+	
+	};
 }
