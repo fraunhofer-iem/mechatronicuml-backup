@@ -9,7 +9,7 @@
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
   </plugin>
-  <tabs id="base" name="Base"/>
+  <tabs id="base" name="Experimental"/>
   <packages>
     <genPackage href="muml.genmodel#//muml/types"/>
     <classes>

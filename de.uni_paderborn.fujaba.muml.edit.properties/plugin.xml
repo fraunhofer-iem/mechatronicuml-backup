@@ -8,7 +8,7 @@
           <propertyTab
              category="domain"
              id="base"
-             label="Base"/>
+             label="Experimental"/>
           
       </propertyTabs>
 
