@@ -17,8 +17,8 @@
       %license
    </license>
 
-   <requires>
-      <import feature="de.uni_paderborn.fujaba.muml.pim.feature" version="0.4.0.qualifier"/>
-   </requires>
+   <includes
+         id="de.uni_paderborn.fujaba.muml.pim.feature"
+         version="0.0.0"/>
 
 </feature>
