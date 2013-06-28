@@ -1171,9 +1171,7 @@ public class ActionLanguageInterpreter {
 		// cast to boolean
 		case PrimitiveTypes.BOOLEAN_VALUE:
 			// evaluate whether value is of supported type for this cast
-			if (!(value instanceof Short) && !(value instanceof Double)
-					&& !(value instanceof Long) && !(value instanceof Integer)
-					&& !(value instanceof String)&& !(value instanceof Boolean)) {
+			if (!(value instanceof Boolean) && !(value instanceof String) && !(value instanceof Number)) {
 				throw new IncompatibleTypeException("Cannot cast "
 						+ value.toString()
 						+ " to "
@@ -1198,21 +1196,16 @@ public class ActionLanguageInterpreter {
 									.toString());
 
 			}
-		
-				// numeric to boolean (check whether decimal places are only 0s)
-				else {
-					if (((Number) value).doubleValue() > 1
-							|| ((Number) value).doubleValue() % 1 != 0)
-						throw new IncompatibleTypeException("Cannot cast "
-								+ value.toString() + " to Byte");
-					if(((Number) value).doubleValue()==0)
-						return false;
-					if(((Number) value).doubleValue()==1)
-						return true;
-						
-					return ((Number) value).byteValue();
+			//use C-semantics for casting a number to boolean (0 = false, > 0 = true, < 0 = true)
+			if (value instanceof Number){
+				if (((Number) value).longValue() == 0){
+					return false;
+				} else {
+					return true;
 				}
-			
+			}
+			// value was already of type boolean
+			return (Boolean) value;
 
 			// cast to byte
 		case PrimitiveTypes.BYTE_VALUE:
