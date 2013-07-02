@@ -6,7 +6,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.MumlEditPartFactory;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartment2EditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartStatechartContentsCompartmentEditPart;
@@ -18,7 +17,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateE
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateInvariantCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateRegionCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel6EditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlVisualIDRegistry;
 
 /**

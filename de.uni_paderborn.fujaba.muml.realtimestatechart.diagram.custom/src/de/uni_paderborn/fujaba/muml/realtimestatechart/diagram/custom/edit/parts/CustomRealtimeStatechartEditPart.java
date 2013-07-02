@@ -5,7 +5,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart;
 
 public class CustomRealtimeStatechartEditPart extends
