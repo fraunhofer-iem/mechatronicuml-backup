@@ -140,6 +140,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 					RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION,
 					RealtimestatechartPackage.Literals.SYNCHRONIZATION__SYNC_CHANNEL,
 					RealtimestatechartPackage.Literals.SYNCHRONIZATION__KIND,
+					RealtimestatechartPackage.Literals.SYNCHRONIZATION__SELECTOR_EXPRESSION,
 					RealtimestatechartPackage.Literals.TRANSITION__ACTION,
 					RealtimestatechartPackage.Literals.TRANSITION__RAISE_MESSAGE_EVENT,
 					RealtimestatechartPackage.Literals.TRANSITION__CLOCK_RESETS,
