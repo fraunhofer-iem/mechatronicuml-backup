@@ -68,6 +68,18 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 		this.propertySourceProvider = propertySourceProvider;
 		this.editingDomain = editingDomain;
 	}
+	
+	/*
+	 * Fix for MUML #641
+	 */
+	@Override
+	public String getCategory() {
+		String category = itemPropertyDescriptor.getCategory(object);
+		if (category != null && !category.isEmpty()) {
+			return category;
+		}
+		return "General";
+	}
 
 	@Override
 	public CellEditor createPropertyEditor(Composite parent) {
