@@ -5,6 +5,7 @@ import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -40,29 +41,30 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		return primaryShape = new CustomComponentMultiFigure();
 	}
 
-	// Note: The following is the unchanged default implementation, can be uncommented to change it.
-//	@Override
-//	public EditPolicy getPrimaryDragEditPolicy() {
-//		EditPolicy policy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-//		return policy != null ? policy : new ResizableShapeEditPolicy() {
-//			protected Command getMoveCommand(ChangeBoundsRequest request) {
-//				ChangeBoundsRequest req = new ChangeBoundsRequest(REQ_MOVE_CHILDREN);
-//				req.setEditParts(getHost());
-//
-//				req.setMoveDelta(request.getMoveDelta());
-//				req.setSizeDelta(request.getSizeDelta());
-//				req.setLocation(request.getLocation());
-//				req.setExtendedData(request.getExtendedData());
-//				Command cmd =  getHost().getParent().getCommand(req);
-//				if (cmd instanceof ICommandProxy) {
-//					System.out.println(((ICommandProxy)cmd).getICommand());
-//				} else {
-//					System.out.println(cmd);
-//				}
-//				return cmd;
-//			}
-//		};
-//	}
+	// Note: The following is the unchanged default implementation, can be
+	// uncommented to change it.
+	// @Override
+	// public EditPolicy getPrimaryDragEditPolicy() {
+	// EditPolicy policy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+	// return policy != null ? policy : new ResizableShapeEditPolicy() {
+	// protected Command getMoveCommand(ChangeBoundsRequest request) {
+	// ChangeBoundsRequest req = new ChangeBoundsRequest(REQ_MOVE_CHILDREN);
+	// req.setEditParts(getHost());
+	//
+	// req.setMoveDelta(request.getMoveDelta());
+	// req.setSizeDelta(request.getSizeDelta());
+	// req.setLocation(request.getLocation());
+	// req.setExtendedData(request.getExtendedData());
+	// Command cmd = getHost().getParent().getCommand(req);
+	// if (cmd instanceof ICommandProxy) {
+	// System.out.println(((ICommandProxy)cmd).getICommand());
+	// } else {
+	// System.out.println(cmd);
+	// }
+	// return cmd;
+	// }
+	// };
+	// }
 
 	/**
 	 * Called whenever the EditPart is going to be activated. Initializes
@@ -70,8 +72,21 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	 */
 	@Override
 	public void activate() {
-		updateCardinality();
 		super.activate();
+		updateCardinality();
+	}
+
+	@Override
+	protected void addSemanticListeners() {
+		super.addSemanticListeners();
+		addListenerFilter(
+				"ComponentType", this, (EObject) resolveSemanticElement().eGet(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE));//$NON-NLS-1$ $NON-NLS-2$
+	}
+
+	@Override
+	protected void removeSemanticListeners() {
+		super.removeSemanticListeners();
+		removeListenerFilter("ComponentType"); //$NON-NLS-1$
 	}
 
 	/**
@@ -81,21 +96,33 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
 		Object feature = notification.getFeature();
+
 		if (ComponentPackage.Literals.COMPONENT_PART__CARDINALITY
 				.equals(feature)) {
 			updateCardinality();
 		} else if (ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE
 				.equals(feature)) {
-			EditingDomain editingDomain = getEditingDomain();
-			if (editingDomain != null) {
-				ComponentPart componentPart = (ComponentPart) getNotationView()
-						.getElement();
-				CreatePortPartsCommand command = new CreatePortPartsCommand(
-						componentPart);
-				editingDomain.getCommandStack().execute(command);
-			}
+
+			// Remove and recreate listeners
+			reactivateSemanticModel();
+
+			executeTransformation();
+		} else if (ComponentPackage.Literals.COMPONENT__PORTS == feature) {
+			executeTransformation();
 		}
 		super.handleNotificationEvent(notification);
+	}
+
+	private void executeTransformation() {
+
+		EditingDomain editingDomain = getEditingDomain();
+		if (editingDomain != null) {
+			ComponentPart componentPart = (ComponentPart) getNotationView()
+					.getElement();
+			CreatePortPartsCommand command = new CreatePortPartsCommand(
+					componentPart);
+			editingDomain.getCommandStack().execute(command);
+		}
 	}
 
 	/**
