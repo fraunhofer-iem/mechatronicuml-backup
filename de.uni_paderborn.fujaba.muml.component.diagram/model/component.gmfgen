@@ -36,6 +36,7 @@
         visualID="3010"
         editPartClassName="DiscretePortEditPart"
         itemSemanticEditPolicyClassName="DiscretePortItemSemanticEditPolicy"
+        notationViewFactoryClassName="DiscretePortViewFactory"
         canonicalEditPolicyClassName="DiscretePortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="DiscretePortGraphicalNodeEditPolicy"
         createCommandClassName="DiscretePortCreateCommand"
@@ -116,7 +117,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5012"
           editPartClassName="DiscretePortNameEditPart"
-          itemSemanticEditPolicyClassName="DiscretePortNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="DiscretePortNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="DiscretePortNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -133,7 +135,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5025"
           editPartClassName="WrappingLabelEditPart"
-          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="WrappingLabelItemSemanticEditPolicy"
+          notationViewFactoryClassName="DiscretePortLabelViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -153,6 +156,7 @@
         visualID="3011"
         editPartClassName="ContinuousPortEditPart"
         itemSemanticEditPolicyClassName="ContinuousPortItemSemanticEditPolicy"
+        notationViewFactoryClassName="ContinuousPortViewFactory"
         canonicalEditPolicyClassName="ContinuousPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ContinuousPortGraphicalNodeEditPolicy"
         createCommandClassName="ContinuousPortCreateCommand"
@@ -196,7 +200,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5013"
           editPartClassName="ContinuousPortNameEditPart"
-          itemSemanticEditPolicyClassName="ContinuousPortNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="ContinuousPortNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="ContinuousPortNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -215,6 +220,7 @@
         visualID="3013"
         editPartClassName="HybridPortEditPart"
         itemSemanticEditPolicyClassName="HybridPortItemSemanticEditPolicy"
+        notationViewFactoryClassName="HybridPortViewFactory"
         canonicalEditPolicyClassName="HybridPortCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="HybridPortGraphicalNodeEditPolicy"
         createCommandClassName="HybridPortCreateCommand"
@@ -258,7 +264,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5024"
           editPartClassName="HybridPortNameEditPart"
-          itemSemanticEditPolicyClassName="HybridPortNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="HybridPortNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="HybridPortNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -276,6 +283,7 @@
         visualID="3012"
         editPartClassName="ComponentPartEditPart"
         itemSemanticEditPolicyClassName="ComponentPartItemSemanticEditPolicy"
+        notationViewFactoryClassName="ComponentPartViewFactory"
         canonicalEditPolicyClassName="ComponentPartCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.4"
         graphicalNodeEditPolicyClassName="ComponentPartGraphicalNodeEditPolicy"
@@ -343,6 +351,7 @@
           visualID="5017"
           editPartClassName="WrappingLabel2EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel2ItemSemanticEditPolicy"
+          notationViewFactoryClassName="ComponentPartLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -364,6 +373,7 @@
         visualID="3022"
         editPartClassName="PortPartEditPart"
         itemSemanticEditPolicyClassName="PortPartItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortPartViewFactory"
         canonicalEditPolicyClassName="PortPartCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="PortPartGraphicalNodeEditPolicy"
         createCommandClassName="PortPartCreateCommand"
@@ -398,7 +408,8 @@
           xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5034"
           editPartClassName="PortPartNameEditPart"
-          itemSemanticEditPolicyClassName="PortPartNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="PortPartNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="PortPartNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -416,6 +427,7 @@
         visualID="3016"
         editPartClassName="CoordinationProtocolOccurrenceEditPart"
         itemSemanticEditPolicyClassName="CoordinationProtocolOccurrenceItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationProtocolOccurrenceViewFactory"
         canonicalEditPolicyClassName="CoordinationProtocolOccurrenceCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="CoordinationProtocolOccurrenceGraphicalNodeEditPolicy"
         createCommandClassName="CoordinationProtocolOccurrenceCreateCommand"
@@ -441,6 +453,7 @@
           visualID="5026"
           editPartClassName="WrappingLabel3EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
+          notationViewFactoryClassName="CoordinationProtocolOccurrenceLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -457,6 +470,7 @@
         visualID="2006"
         editPartClassName="AtomicComponentEditPart"
         itemSemanticEditPolicyClassName="AtomicComponentItemSemanticEditPolicy"
+        notationViewFactoryClassName="AtomicComponentViewFactory"
         canonicalEditPolicyClassName="AtomicComponentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1 //@diagram/@childNodes.2"
         graphicalNodeEditPolicyClassName="AtomicComponentGraphicalNodeEditPolicy"
@@ -495,7 +509,8 @@
       <labels
           visualID="5028"
           editPartClassName="AtomicComponentNameEditPart"
-          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="AtomicComponentNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="AtomicComponentNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -518,6 +533,7 @@
         visualID="2005"
         editPartClassName="StaticStructuredComponentEditPart"
         itemSemanticEditPolicyClassName="StaticStructuredComponentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StaticStructuredComponentViewFactory"
         canonicalEditPolicyClassName="StaticStructuredComponentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.0 //@diagram/@childNodes.1"
         compartments="//@diagram/@compartments.0"
@@ -548,7 +564,8 @@
       <labels
           visualID="5021"
           editPartClassName="StaticStructuredComponentNameEditPart"
-          itemSemanticEditPolicyClassName="StaticStructuredComponentNameItemSemanticEditPolicy">
+          itemSemanticEditPolicyClassName="StaticStructuredComponentNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="StaticStructuredComponentNameViewFactory">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
@@ -571,6 +588,7 @@
         visualID="4001"
         editPartClassName="AssemblyConnectorEditPart"
         itemSemanticEditPolicyClassName="AssemblyConnectorItemSemanticEditPolicy"
+        notationViewFactoryClassName="AssemblyConnectorViewFactory"
         createCommandClassName="AssemblyConnectorCreateCommand"
         reorientCommandClassName="AssemblyConnectorReorientCommand">
       <diagramRunTimeClass
@@ -602,6 +620,7 @@
         visualID="4002"
         editPartClassName="DelegationConnectorEditPart"
         itemSemanticEditPolicyClassName="DelegationConnectorItemSemanticEditPolicy"
+        notationViewFactoryClassName="DelegationConnectorViewFactory"
         createCommandClassName="DelegationConnectorCreateCommand"
         reorientCommandClassName="DelegationConnectorReorientCommand">
       <diagramRunTimeClass
@@ -633,6 +652,7 @@
         visualID="4003"
         editPartClassName="PortPartCoordinationProtocolOccurenceEditPart"
         itemSemanticEditPolicyClassName="PortPartCoordinationProtocolOccurenceItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortPartCoordinationProtocolOccurenceViewFactory"
         createCommandClassName="PortPartCoordinationProtocolOccurenceCreateCommand"
         reorientCommandClassName="PortPartCoordinationProtocolOccurenceReorientCommand">
       <diagramRunTimeClass
@@ -653,6 +673,7 @@
         visualID="7005"
         editPartClassName="StaticStructuredComponentComponentCompartmentEditPart"
         itemSemanticEditPolicyClassName="StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="StaticStructuredComponentComponentCompartmentViewFactory"
         canonicalEditPolicyClassName="StaticStructuredComponentComponentCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.3 //@diagram/@childNodes.5"
         title="ComponentCompartment"
