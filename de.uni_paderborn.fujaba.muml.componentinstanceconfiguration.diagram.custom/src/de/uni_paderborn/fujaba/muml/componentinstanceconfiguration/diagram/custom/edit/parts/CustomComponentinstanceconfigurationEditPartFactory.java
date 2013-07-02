@@ -3,11 +3,12 @@ package de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.cust
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
 
+import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart;
-import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteMultiPortInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.MumlEditPartFactory;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstance2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartment2EditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart;
@@ -28,8 +29,6 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 			View view = (View) model;
 
 			switch (MumlVisualIDRegistry.getVisualID(view)) {
-			case DiscreteMultiPortInstanceEditPart.VISUAL_ID:
-
 			case DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart.VISUAL_ID:
 				return new CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartmentEditPart(
 						view);
@@ -37,12 +36,17 @@ public class CustomComponentinstanceconfigurationEditPartFactory extends
 			case DiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart.VISUAL_ID:
 				return new CustomDiscreteMultiPortInstanceDiscreteMultiPortInstanceCompartment2EditPart(
 						view);
+			case AtomicComponentInstanceEditPart.VISUAL_ID:
+				return new CustomAtomicComponentInstanceEditPart(view);
+
+			case AtomicComponentInstance2EditPart.VISUAL_ID:
+				return new CustomAtomicComponentInstance2EditPart(view);
+
+			case StructuredComponentInstance2EditPart.VISUAL_ID:
+				return new CustomStructuredComponentInstance2EditPart(view);
 
 			case StructuredComponentInstanceEditPart.VISUAL_ID:
 				return new CustomStructuredComponentInstanceEditPart(view);
-
-			case AtomicComponentInstanceEditPart.VISUAL_ID:
-				return new CustomAtomicComponentInstanceEditPart(view);
 
 			case StructuredComponentInstanceComponentInstanceContentsCompartmentEditPart.VISUAL_ID:
 				return new CustomStructuredComponentInstanceComponentInstanceContentsCompartmentEditPart(
