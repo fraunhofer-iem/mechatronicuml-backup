@@ -24,7 +24,7 @@ public class DiagramPluginXmlTest {
 			"de.uni_paderborn.fujaba.muml.component.diagram",
 			"de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram",
 			"de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram",
-			"de.uni_paderborn.fujaba.muml.deployment.diagram",
+			//"de.uni_paderborn.fujaba.muml.deployment.diagram",
 			"de.uni_paderborn.fujaba.muml.messagetype.diagram",
 			"de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram",
 			"de.uni_paderborn.fujaba.muml.realtimestatechart.diagram" };
