@@ -27,7 +27,9 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
+import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
 import de.uni_paderborn.fujaba.common.emf.edit.ui.ExtensibleCreationDialog;
+import de.uni_paderborn.fujaba.common.emf.edit.ui.elementinitializer.IElementInitializer;
 
 public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
@@ -141,8 +143,16 @@ public class ObjectCreationDialogExtension extends AbstractDialogExtension {
 
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-
+				// Get instance class
+				EClass instanceClass = getInstanceClass();
+				
+				// Create object
 				final EObject newObject = EcoreUtil.create(getInstanceClass());
+				
+				// Initialize object
+				for (IElementInitializer initializer : FujabaCommonPlugin.getElementInitializers(instanceClass)) {
+					initializer.initialize(newObject);
+				}
 
 				if (objectsListDialogExtension != null) {
 					objectsListDialogExtension.addListItem(newObject);

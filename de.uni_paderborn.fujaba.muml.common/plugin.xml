@@ -159,6 +159,14 @@
          
       </propertySections>
    </extension>
+   
+   <!-- Initialization for ClockConstraints using the CreationDialog -->
+   <extension
+         point="de.uni_paderborn.fujaba.common.elementInitializer">
+         <initializer
+               initializer="de.uni_paderborn.fujaba.muml.common.elementinitializer.ClockConstraintElementInitializer"
+               qualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint"/>
+   </extension>
  
  
 </plugin>

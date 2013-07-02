@@ -4,24 +4,35 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.ENamedElement;
+import org.eclipse.emf.ecore.EObject;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
+import de.uni_paderborn.fujaba.common.emf.edit.ui.elementinitializer.IElementInitializer;
+
 public class FujabaCommonPlugin implements BundleActivator {
 
-	// This is the ID from your extension point
+	// The IDs of your extension points
 	private static final String CUSTOM_ITEM_PROVIDER_ADAPTER_FACTORIES_EXTENSION_POINT = "de.uni_paderborn.fujaba.common.customItemProviderAdapterFactories";
+	
+	private static final String ELEMENT_INITIALIZER_EXTENSION_POINT = "de.uni_paderborn.fujaba.common.elementInitializer";
 
 	private static FujabaCommonPlugin instance;
 
 	private static BundleContext context;
+	
+	private static Map<String, List<IElementInitializer>> elementInitializers;
 
 	static BundleContext getContext() {
 		return context;
@@ -30,6 +41,7 @@ public class FujabaCommonPlugin implements BundleActivator {
 	public static FujabaCommonPlugin getInstance() {
 		return FujabaCommonPlugin.instance;
 	}
+	
 
 	/*
 	 * (non-Javadoc)
@@ -41,6 +53,66 @@ public class FujabaCommonPlugin implements BundleActivator {
 	public void start(BundleContext bundleContext) throws Exception {
 		FujabaCommonPlugin.context = bundleContext;
 		FujabaCommonPlugin.instance = this;
+		getElementInitializersMap(); // initialize map when plugin starts to reduce later durations
+	}
+	
+	public static List<IElementInitializer> getElementInitializers(EClass eClass) {
+		// TODO can this be done in a nicer way to get the qualified class name?
+		String qualifiedClassName = eClass.getInstanceClassName();
+	
+		return getElementInitializers(qualifiedClassName);
+	}
+
+	public static List<IElementInitializer> getElementInitializers(String qualifiedClassName) {
+		Map<String, List<IElementInitializer>> map = getElementInitializersMap();
+		if (map.containsKey(qualifiedClassName) && map.get(qualifiedClassName) != null) {
+			return map.get(qualifiedClassName);
+		}
+		return Collections.emptyList();
+	}
+
+	private static Map<String, List<IElementInitializer>> getElementInitializersMap() {
+		if (elementInitializers == null) {
+			elementInitializers = new HashMap<String, List<IElementInitializer>>();
+			List<IConfigurationElement> elements = Arrays
+					.asList(Platform
+							.getExtensionRegistry()
+							.getConfigurationElementsFor(
+									ELEMENT_INITIALIZER_EXTENSION_POINT));
+			
+			for (IConfigurationElement element : elements) {
+				// Read className
+				String className = element.getAttribute("qualifiedClassName");
+				if (className == null) {
+					continue;
+				}
+				
+				// Get or create list
+				List<IElementInitializer> list = elementInitializers.get(className);
+				if (list == null) {
+					list = new ArrayList<IElementInitializer>();
+					elementInitializers.put(className, list);
+				}
+				
+				// Read initializer
+				IElementInitializer initializer = null;
+				try {
+					Object object = element.createExecutableExtension("initializer");
+					if (object instanceof IElementInitializer) {
+						initializer = (IElementInitializer) object;
+					}
+				} catch (CoreException e) {
+					e.printStackTrace();
+				} 
+				
+				// Add to list
+				if (initializer != null) {
+					list.add(initializer);
+				}
+			}
+
+		}
+		return elementInitializers;
 	}
 
 	/*
