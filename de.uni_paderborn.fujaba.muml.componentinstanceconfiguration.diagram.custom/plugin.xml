@@ -28,7 +28,7 @@
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
-      <metamodel nsURI="http://www.fujaba.de/muml/instance/0.3.15">
+      <metamodel nsURI="http://www.fujaba.de/muml/instance/0.3.18">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"
 		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteSinglePortInstanceEditHelperAdvice"
@@ -38,7 +38,7 @@
    </extension>
    
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
-      <metamodel nsURI="http://www.fujaba.de/muml/instance/0.3.15">
+      <metamodel nsURI="http://www.fujaba.de/muml/instance/0.3.18">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"
 		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteMultiPortInstanceEditHelperAdvice"
