@@ -110,7 +110,7 @@ public class AbsoluteDeadlineItemProvider extends DeadlineItemProvider
 			
 		}
 		
-		sb.append(" ∈ [");
+		sb.append(" \u2208 [");
 		
 		if (deadline.getLowerBound() != null) {
 			sb.append(deadline.getLowerBound().toString());
