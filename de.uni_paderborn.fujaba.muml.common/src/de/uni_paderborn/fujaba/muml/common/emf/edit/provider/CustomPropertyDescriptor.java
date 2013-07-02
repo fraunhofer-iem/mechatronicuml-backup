@@ -225,7 +225,7 @@ public class CustomPropertyDescriptor extends PropertyDescriptor {
 			String initialString = "";
 			if (!oldValues.isEmpty()) {
 				EObject eobject = (EObject) oldValues.iterator().next();
-				initialString = LanguageResource.serializeEObject(eobject,
+				initialString = LanguageResource.serializeEObjectSafe(eobject,
 						dialog.getContainerObject());
 				if (initialString == null) {
 					initialString = "// warning: existing expressions will be replaced!";

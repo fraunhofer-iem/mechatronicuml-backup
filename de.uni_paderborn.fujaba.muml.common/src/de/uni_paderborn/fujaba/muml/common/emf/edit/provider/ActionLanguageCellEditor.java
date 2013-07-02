@@ -70,8 +70,8 @@ public class ActionLanguageCellEditor extends TextCellEditor {
 	@Override
 	public void doSetValue(Object value) {
 		if (value instanceof EObject) {
-			System.out.println(value);
-			value = LanguageResource.serializeEObject((EObject) value, container);
+			//System.out.println(value);
+			value = LanguageResource.serializeEObjectSafe((EObject) value, container);
 		}
 		super.doSetValue(value == null ? "" : value);
 	}

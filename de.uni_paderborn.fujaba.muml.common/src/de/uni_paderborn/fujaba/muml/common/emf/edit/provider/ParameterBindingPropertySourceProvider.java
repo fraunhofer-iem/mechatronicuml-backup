@@ -177,7 +177,7 @@ public class ParameterBindingPropertySourceProvider implements
 							.getValue();
 					return literalExpression.getValue();
 				} else if (binding.getValue() instanceof Expression) {
-					return LanguageResource.serializeEObject(binding.getValue(),
+					return LanguageResource.serializeEObjectSafe(binding.getValue(),
 							(EObject) object);
 				}
 			}
