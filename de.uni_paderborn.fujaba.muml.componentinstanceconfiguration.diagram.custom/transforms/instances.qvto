@@ -249,10 +249,13 @@ mapping DiscretePort::multi(part : ComponentPart, portPart : PortPart) : Discret
 }
 mapping DiscretePort::singleDiscrete(part : ComponentPart, portPart : PortPart, id : Integer) : DiscreteSinglePortInstance {
 	type := self;
+	name := self.name;
 }
 mapping ContinuousPort::singleContinuous(part : ComponentPart, portPart : PortPart, id : Integer) : ContinuousPortInstance {
 	type := self;
+	name := self.name;
 }
 mapping HybridPort::singleHybrid(part : ComponentPart, portPart : PortPart, id : Integer) : HybridPortInstance {
 	type := self;
+	name := self.name;
 }
