@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+
+
+    
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.3.18">
+      
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.TransitionAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Transition_4003"
+		  class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.TransitionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+
+      </metamodel>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Transition_4003"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.TransitionAdvice"/>
+      </binding>
+   </extension>
   
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <viewProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartViewProvider">
