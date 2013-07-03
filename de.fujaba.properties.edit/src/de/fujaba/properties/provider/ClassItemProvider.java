@@ -127,6 +127,7 @@ public class ClassItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PropertiesPackage.Literals.CLASS__PROPERTIES);
+			childrenFeatures.add(PropertiesPackage.Literals.CLASS__PROPERTY_CATEGORIES);
 		}
 		return childrenFeatures;
 	}
@@ -185,6 +186,7 @@ public class ClassItemProvider
 
 		switch (notification.getFeatureID(de.fujaba.properties.Class.class)) {
 			case PropertiesPackage.CLASS__PROPERTIES:
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -206,6 +208,11 @@ public class ClassItemProvider
 			(createChildParameter
 				(PropertiesPackage.Literals.CLASS__PROPERTIES,
 				 PropertiesFactory.eINSTANCE.createProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.CLASS__PROPERTY_CATEGORIES,
+				 PropertiesFactory.eINSTANCE.createPropertyCategory()));
 	}
 
 	/**

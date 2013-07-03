@@ -23,6 +23,7 @@ import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.Plugin;
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
+import de.fujaba.properties.PropertyCategory;
 import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyReference;
@@ -113,6 +114,8 @@ public class PropertiesValidator extends EObjectValidator {
 				return validatePackage((de.fujaba.properties.Package)value, diagnostics, context);
 			case PropertiesPackage.CLASS:
 				return validateClass((de.fujaba.properties.Class)value, diagnostics, context);
+			case PropertiesPackage.PROPERTY_CATEGORY:
+				return validatePropertyCategory((PropertyCategory)value, diagnostics, context);
 			case PropertiesPackage.PROPERTY:
 				return validateProperty((Property)value, diagnostics, context);
 			case PropertiesPackage.PROPERTY_SECTION:
@@ -302,6 +305,15 @@ public class PropertiesValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePropertyCategory(PropertyCategory propertyCategory, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(propertyCategory, diagnostics, context);
 	}
 
 	/**

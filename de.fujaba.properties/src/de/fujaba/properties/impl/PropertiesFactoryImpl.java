@@ -22,6 +22,7 @@ import de.fujaba.properties.Plugin;
 import de.fujaba.properties.PropertiesFactory;
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
+import de.fujaba.properties.PropertyCategory;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyReference;
 import de.fujaba.properties.PropertyTab;
@@ -43,7 +44,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 */
 	public static PropertiesFactory init() {
 		try {
-			PropertiesFactory thePropertiesFactory = (PropertiesFactory)EPackage.Registry.INSTANCE.getEFactory("http://de.fujaba.properties/0.1"); 
+			PropertiesFactory thePropertiesFactory = (PropertiesFactory)EPackage.Registry.INSTANCE.getEFactory(PropertiesPackage.eNS_URI);
 			if (thePropertiesFactory != null) {
 				return thePropertiesFactory;
 			}
@@ -77,6 +78,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.PROPERTY_TAB: return createPropertyTab();
 			case PropertiesPackage.PACKAGE: return createPackage();
 			case PropertiesPackage.CLASS: return createClass();
+			case PropertiesPackage.PROPERTY_CATEGORY: return createPropertyCategory();
 			case PropertiesPackage.PROPERTY: return createProperty();
 			case PropertiesPackage.TEXT_PROPERTY_SECTION: return createTextPropertySection();
 			case PropertiesPackage.COMBO_BOX_PROPERTY_SECTION: return createComboBoxPropertySection();
@@ -140,6 +142,16 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public de.fujaba.properties.Class createClass() {
 		ClassImpl class_ = new ClassImpl();
 		return class_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PropertyCategory createPropertyCategory() {
+		PropertyCategoryImpl propertyCategory = new PropertyCategoryImpl();
+		return propertyCategory;
 	}
 
 	/**

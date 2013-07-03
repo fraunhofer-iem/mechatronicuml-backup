@@ -75,6 +75,16 @@
         eType="#//Package" eOpposite="#//Package/classes"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true" eOpposite="#//Property/clazz"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyCategories" upperBound="-1"
+        eType="#//PropertyCategory" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyCategory">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vertical" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" eOpposite="#//Property/category"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eStructuralFeatures xsi:type="ecore:EReference" name="genFeature" lowerBound="1"
@@ -87,6 +97,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tooltip" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="clazz" lowerBound="1" eType="#//Class"
         eOpposite="#//Class/properties"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//PropertyCategory"
+        eOpposite="#//PropertyCategory/properties"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertySection" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"

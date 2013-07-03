@@ -7,8 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: 
- de.fujaba.properties,
+Export-Package: de.fujaba.properties,
  de.fujaba.properties.impl,
  de.fujaba.properties.util
 Require-Bundle: org.eclipse.core.runtime,

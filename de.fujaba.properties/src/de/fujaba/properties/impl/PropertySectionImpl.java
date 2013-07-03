@@ -58,7 +58,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	 */
 	public Property getProperty() {
 		if (eContainerFeatureID() != PropertiesPackage.PROPERTY_SECTION__PROPERTY) return null;
-		return (Property)eContainer();
+		return (Property)eInternalContainer();
 	}
 
 	/**

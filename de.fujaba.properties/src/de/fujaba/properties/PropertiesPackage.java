@@ -336,13 +336,68 @@ public interface PropertiesPackage extends EPackage {
 	int CLASS__PROPERTIES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Property Categories</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__PROPERTY_CATEGORIES = 3;
+
+	/**
 	 * The number of structural features of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_FEATURE_COUNT = 3;
+	int CLASS_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyCategoryImpl <em>Property Category</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.PropertyCategoryImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyCategory()
+	 * @generated
+	 */
+	int PROPERTY_CATEGORY = 5;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY__TITLE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Vertical</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY__VERTICAL = 1;
+
+	/**
+	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY__PROPERTIES = 2;
+
+	/**
+	 * The number of structural features of the '<em>Property Category</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyImpl <em>Property</em>}' class.
@@ -352,7 +407,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 5;
+	int PROPERTY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Gen Feature</b></em>' reference.
@@ -409,13 +464,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY__CLAZZ = 5;
 
 	/**
+	 * The feature id for the '<em><b>Category</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__CATEGORY = 6;
+
+	/**
 	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = 6;
+	int PROPERTY_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertySectionImpl <em>Property Section</em>}' class.
@@ -425,7 +489,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertySection()
 	 * @generated
 	 */
-	int PROPERTY_SECTION = 6;
+	int PROPERTY_SECTION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -453,7 +517,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTextPropertySection()
 	 * @generated
 	 */
-	int TEXT_PROPERTY_SECTION = 7;
+	int TEXT_PROPERTY_SECTION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -490,7 +554,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getComboBoxPropertySection()
 	 * @generated
 	 */
-	int COMBO_BOX_PROPERTY_SECTION = 8;
+	int COMBO_BOX_PROPERTY_SECTION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -518,7 +582,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertySection()
 	 * @generated
 	 */
-	int CHECKBOX_PROPERTY_SECTION = 9;
+	int CHECKBOX_PROPERTY_SECTION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -546,7 +610,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getRadioPropertySection()
 	 * @generated
 	 */
-	int RADIO_PROPERTY_SECTION = 10;
+	int RADIO_PROPERTY_SECTION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -574,7 +638,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getListPropertySection()
 	 * @generated
 	 */
-	int LIST_PROPERTY_SECTION = 11;
+	int LIST_PROPERTY_SECTION = 12;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -602,7 +666,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getGroupPropertySection()
 	 * @generated
 	 */
-	int GROUP_PROPERTY_SECTION = 12;
+	int GROUP_PROPERTY_SECTION = 13;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -639,7 +703,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertySection()
 	 * @generated
 	 */
-	int CUSTOM_PROPERTY_SECTION = 13;
+	int CUSTOM_PROPERTY_SECTION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -676,7 +740,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyFilter()
 	 * @generated
 	 */
-	int PROPERTY_FILTER = 14;
+	int PROPERTY_FILTER = 15;
 
 	/**
 	 * The number of structural features of the '<em>Property Filter</em>' class.
@@ -695,7 +759,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyFilter()
 	 * @generated
 	 */
-	int OCL_PROPERTY_FILTER = 15;
+	int OCL_PROPERTY_FILTER = 16;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -724,7 +788,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyReference()
 	 * @generated
 	 */
-	int PROPERTY_REFERENCE = 16;
+	int PROPERTY_REFERENCE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Active</b></em>' attribute.
@@ -1036,6 +1100,60 @@ public interface PropertiesPackage extends EPackage {
 	EReference getClass_Properties();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.fujaba.properties.Class#getPropertyCategories <em>Property Categories</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Property Categories</em>'.
+	 * @see de.fujaba.properties.Class#getPropertyCategories()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_PropertyCategories();
+
+	/**
+	 * Returns the meta object for class '{@link de.fujaba.properties.PropertyCategory <em>Property Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Property Category</em>'.
+	 * @see de.fujaba.properties.PropertyCategory
+	 * @generated
+	 */
+	EClass getPropertyCategory();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.PropertyCategory#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see de.fujaba.properties.PropertyCategory#getTitle()
+	 * @see #getPropertyCategory()
+	 * @generated
+	 */
+	EAttribute getPropertyCategory_Title();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.PropertyCategory#isVertical <em>Vertical</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Vertical</em>'.
+	 * @see de.fujaba.properties.PropertyCategory#isVertical()
+	 * @see #getPropertyCategory()
+	 * @generated
+	 */
+	EAttribute getPropertyCategory_Vertical();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.fujaba.properties.PropertyCategory#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Properties</em>'.
+	 * @see de.fujaba.properties.PropertyCategory#getProperties()
+	 * @see #getPropertyCategory()
+	 * @generated
+	 */
+	EReference getPropertyCategory_Properties();
+
+	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.Property <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1110,6 +1228,17 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProperty_Clazz();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.fujaba.properties.Property#getCategory <em>Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Category</em>'.
+	 * @see de.fujaba.properties.Property#getCategory()
+	 * @see #getProperty()
+	 * @generated
+	 */
+	EReference getProperty_Category();
 
 	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.PropertySection <em>Property Section</em>}'.
@@ -1539,6 +1668,48 @@ public interface PropertiesPackage extends EPackage {
 		EReference CLASS__PROPERTIES = eINSTANCE.getClass_Properties();
 
 		/**
+		 * The meta object literal for the '<em><b>Property Categories</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__PROPERTY_CATEGORIES = eINSTANCE.getClass_PropertyCategories();
+
+		/**
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyCategoryImpl <em>Property Category</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fujaba.properties.impl.PropertyCategoryImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyCategory()
+		 * @generated
+		 */
+		EClass PROPERTY_CATEGORY = eINSTANCE.getPropertyCategory();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_CATEGORY__TITLE = eINSTANCE.getPropertyCategory_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Vertical</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_CATEGORY__VERTICAL = eINSTANCE.getPropertyCategory_Vertical();
+
+		/**
+		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY_CATEGORY__PROPERTIES = eINSTANCE.getPropertyCategory_Properties();
+
+		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyImpl <em>Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1595,6 +1766,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTY__CLAZZ = eINSTANCE.getProperty_Clazz();
+
+		/**
+		 * The meta object literal for the '<em><b>Category</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY__CATEGORY = eINSTANCE.getProperty_Category();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertySectionImpl <em>Property Section</em>}' class.

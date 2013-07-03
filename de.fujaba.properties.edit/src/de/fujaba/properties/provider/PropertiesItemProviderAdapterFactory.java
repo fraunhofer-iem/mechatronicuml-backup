@@ -191,6 +191,29 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.PropertyCategory} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PropertyCategoryItemProvider propertyCategoryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fujaba.properties.PropertyCategory}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPropertyCategoryAdapter() {
+		if (propertyCategoryItemProvider == null) {
+			propertyCategoryItemProvider = new PropertyCategoryItemProvider(this);
+		}
+
+		return propertyCategoryItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.Property} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -524,6 +547,7 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (propertyTabItemProvider != null) propertyTabItemProvider.dispose();
 		if (packageItemProvider != null) packageItemProvider.dispose();
 		if (classItemProvider != null) classItemProvider.dispose();
+		if (propertyCategoryItemProvider != null) propertyCategoryItemProvider.dispose();
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
 		if (textPropertySectionItemProvider != null) textPropertySectionItemProvider.dispose();
 		if (comboBoxPropertySectionItemProvider != null) comboBoxPropertySectionItemProvider.dispose();

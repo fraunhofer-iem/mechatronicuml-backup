@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.fujaba.properties.Class#getGenClass <em>Gen Class</em>}</li>
  *   <li>{@link de.fujaba.properties.Class#getPackage <em>Package</em>}</li>
  *   <li>{@link de.fujaba.properties.Class#getProperties <em>Properties</em>}</li>
+ *   <li>{@link de.fujaba.properties.Class#getPropertyCategories <em>Property Categories</em>}</li>
  * </ul>
  * </p>
  *
@@ -101,5 +102,21 @@ public interface Class extends EObject {
 	 * @generated
 	 */
 	EList<Property> getProperties();
+
+	/**
+	 * Returns the value of the '<em><b>Property Categories</b></em>' containment reference list.
+	 * The list contents are of type {@link de.fujaba.properties.PropertyCategory}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Property Categories</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Property Categories</em>' containment reference list.
+	 * @see de.fujaba.properties.PropertiesPackage#getClass_PropertyCategories()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<PropertyCategory> getPropertyCategories();
 
 } // Class

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
+import de.fujaba.properties.PropertyCategory;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +35,7 @@ import de.fujaba.properties.Property;
  *   <li>{@link de.fujaba.properties.impl.ClassImpl#getGenClass <em>Gen Class</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.ClassImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.ClassImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.ClassImpl#getPropertyCategories <em>Property Categories</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +61,16 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 	 * @ordered
 	 */
 	protected EList<Property> properties;
+
+	/**
+	 * The cached value of the '{@link #getPropertyCategories() <em>Property Categories</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPropertyCategories()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PropertyCategory> propertyCategories;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +136,7 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 	 */
 	public de.fujaba.properties.Package getPackage() {
 		if (eContainerFeatureID() != PropertiesPackage.CLASS__PACKAGE) return null;
-		return (de.fujaba.properties.Package)eContainer();
+		return (de.fujaba.properties.Package)eInternalContainer();
 	}
 
 	/**
@@ -175,6 +187,18 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<PropertyCategory> getPropertyCategories() {
+		if (propertyCategories == null) {
+			propertyCategories = new EObjectContainmentEList<PropertyCategory>(PropertyCategory.class, this, PropertiesPackage.CLASS__PROPERTY_CATEGORIES);
+		}
+		return propertyCategories;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -201,6 +225,8 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 				return basicSetPackage(null, msgs);
 			case PropertiesPackage.CLASS__PROPERTIES:
 				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+				return ((InternalEList<?>)getPropertyCategories()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -234,6 +260,8 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 				return getPackage();
 			case PropertiesPackage.CLASS__PROPERTIES:
 				return getProperties();
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+				return getPropertyCategories();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,6 +285,10 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 				getProperties().clear();
 				getProperties().addAll((Collection<? extends Property>)newValue);
 				return;
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+				getPropertyCategories().clear();
+				getPropertyCategories().addAll((Collection<? extends PropertyCategory>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -278,6 +310,9 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 			case PropertiesPackage.CLASS__PROPERTIES:
 				getProperties().clear();
 				return;
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+				getPropertyCategories().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -296,6 +331,8 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 				return getPackage() != null;
 			case PropertiesPackage.CLASS__PROPERTIES:
 				return properties != null && !properties.isEmpty();
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+				return propertyCategories != null && !propertyCategories.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

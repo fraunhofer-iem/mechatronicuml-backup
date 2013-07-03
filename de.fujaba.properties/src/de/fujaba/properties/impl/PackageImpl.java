@@ -135,7 +135,7 @@ public class PackageImpl extends EObjectImpl implements de.fujaba.properties.Pac
 	 */
 	public PropertyGenerator getGenerator() {
 		if (eContainerFeatureID() != PropertiesPackage.PACKAGE__GENERATOR) return null;
-		return (PropertyGenerator)eContainer();
+		return (PropertyGenerator)eInternalContainer();
 	}
 
 	/**

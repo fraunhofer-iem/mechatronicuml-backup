@@ -71,6 +71,15 @@ public interface PropertiesFactory extends EFactory {
 	Class createClass();
 
 	/**
+	 * Returns a new object of class '<em>Property Category</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Property Category</em>'.
+	 * @generated
+	 */
+	PropertyCategory createPropertyCategory();
+
+	/**
 	 * Returns a new object of class '<em>Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

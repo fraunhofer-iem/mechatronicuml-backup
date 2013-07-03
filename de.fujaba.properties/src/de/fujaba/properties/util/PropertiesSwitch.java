@@ -19,6 +19,7 @@ import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.Plugin;
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
+import de.fujaba.properties.PropertyCategory;
 import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyReference;
@@ -111,6 +112,12 @@ public class PropertiesSwitch<T> extends Switch<T> {
 			case PropertiesPackage.CLASS: {
 				de.fujaba.properties.Class class_ = (de.fujaba.properties.Class)theEObject;
 				T result = caseClass(class_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.PROPERTY_CATEGORY: {
+				PropertyCategory propertyCategory = (PropertyCategory)theEObject;
+				T result = casePropertyCategory(propertyCategory);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -270,6 +277,21 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseClass(de.fujaba.properties.Class object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Property Category</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Property Category</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePropertyCategory(PropertyCategory object) {
 		return null;
 	}
 
