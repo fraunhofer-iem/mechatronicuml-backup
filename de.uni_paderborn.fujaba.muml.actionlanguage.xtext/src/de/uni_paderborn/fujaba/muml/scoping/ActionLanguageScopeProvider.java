@@ -64,15 +64,15 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		initLists();
 	}
 	
-	IScope scope_TypedNamedElement(TypedNamedElementExpression typedNamedElementExpression, EReference ref) {
-		EObject container = typedNamedElementExpression.eContainer();
+	IScope scope_TypedNamedElement(EObject context, EReference ref) {
+		EObject container = context.eContainer();
 		if (container instanceof Assignment
-				&& ((Assignment) container).getLhs_typedNamedElementExpression() == typedNamedElementExpression) {
+				&& ((Assignment) container).getLhs_typedNamedElementExpression() == context) {
 			// do not return hybrid in ports
-			return createScope(filterHybridPorts(getAvailableTypedNamedElementList(typedNamedElementExpression), true));
+			return createScope(filterHybridPorts(getAvailableTypedNamedElementList(context), true));
 		}
 		// do not return hybrid out ports
-		return createScope(filterHybridPorts(getAvailableTypedNamedElementList(typedNamedElementExpression), false));
+		return createScope(filterHybridPorts(getAvailableTypedNamedElementList(context), false));
 	}
 	
 	IScope scope_DataType(Variable variable, EReference ref) {
