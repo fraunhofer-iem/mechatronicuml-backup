@@ -69,6 +69,13 @@ public class MumlCommonPlugin implements BundleActivator {
 	}
 
 	public static void fillDefaultItemProviderFactories(List<AdapterFactory> factories) {
+		List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+				.getInstance().getCustomItemProviderAdapterFactories(ID, true);
+		List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
+				.getInstance().getCustomItemProviderAdapterFactories(ID, false);
+
+		// Custom Factories with positive priority
+		factories.addAll(positivePriorityFactories);
 
 		// Default Factories
 		factories
@@ -104,6 +111,9 @@ public class MumlCommonPlugin implements BundleActivator {
 		factories.add(new ModelinstanceItemProviderAdapterFactory());
 		factories.add(new ProtocolItemProviderAdapterFactory());
 
+		// Custom Factories with negative priority
+		factories.addAll(negativePriorityFactories);
+		
 		factories.add(new ResourceItemProviderAdapterFactory());
 		factories.add(new ReflectiveItemProviderAdapterFactory());
 	}
