@@ -20,6 +20,9 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 
+import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
+import de.uni_paderborn.fujaba.muml.common.MumlCommonPlugin;
+
 public class MumlPropertySection extends AdvancedPropertySection implements
 		IPropertySourceProvider {
 
@@ -89,10 +92,23 @@ public class MumlPropertySection extends AdvancedPropertySection implements
 
 	protected AdapterFactory getAdapterFactory(Object object) {
 		AdapterFactoryEditingDomain editingDomain = getEditingDomainFor(object);
-		if (editingDomain != null) {
-			return editingDomain.getAdapterFactory();
+		ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory();
+			
+		List<AdapterFactory> positiveFactories =  FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(MumlCommonPlugin.ID, true);
+		List<AdapterFactory> negativeFactories =  FujabaCommonPlugin.getInstance().getCustomItemProviderAdapterFactories(MumlCommonPlugin.ID, false);
+		
+		for (AdapterFactory factory : positiveFactories) {
+			adapterFactory.addAdapterFactory(factory);		
 		}
-		return null;
+		
+		if (editingDomain != null && editingDomain.getAdapterFactory() != null) {
+			adapterFactory.addAdapterFactory(editingDomain.getAdapterFactory());
+		}
+			
+		for (AdapterFactory factory : negativeFactories) {
+			adapterFactory.addAdapterFactory(factory);		
+		}
+		return adapterFactory;
 	}
 
 	protected AdapterFactoryEditingDomain getEditingDomainFor(Object object) {

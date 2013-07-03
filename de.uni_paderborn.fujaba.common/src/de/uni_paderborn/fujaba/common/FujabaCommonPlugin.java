@@ -14,8 +14,6 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.emf.ecore.EObject;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -33,6 +31,10 @@ public class FujabaCommonPlugin implements BundleActivator {
 	private static BundleContext context;
 	
 	private static Map<String, List<IElementInitializer>> elementInitializers;
+	
+	private Map<String, List<AdapterFactory>> negativePriorityAdapterFactories = new HashMap<String, List<AdapterFactory>>();
+	
+	private Map<String, List<AdapterFactory>> positivePriorityAdapterFactories = new HashMap<String, List<AdapterFactory>>();
 
 	static BundleContext getContext() {
 		return context;
@@ -162,6 +164,16 @@ public class FujabaCommonPlugin implements BundleActivator {
 
 	public List<AdapterFactory> getCustomItemProviderAdapterFactories(
 			String pluginid, boolean positivePriority) {
+		// Read from cache
+		if (positivePriority && positivePriorityAdapterFactories.containsKey(pluginid)) {
+			return positivePriorityAdapterFactories.get(pluginid);
+		}
+		if (!positivePriority && negativePriorityAdapterFactories.containsKey(pluginid)) {
+			return negativePriorityAdapterFactories.get(pluginid);
+		}
+		
+		
+		// Not in cache
 		List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 		
 		Assert.isNotNull(pluginid, "The argument pluginid must not be null");
@@ -213,6 +225,14 @@ public class FujabaCommonPlugin implements BundleActivator {
 		} catch (CoreException ex) {
 			System.out.println(ex.getMessage());
 		}
+		
+		if (positivePriority) {
+			positivePriorityAdapterFactories.put(pluginid, factories);
+		}
+		if (!positivePriority && negativePriorityAdapterFactories != null) {
+			negativePriorityAdapterFactories.put(pluginid, factories);
+		}
+		
 		return factories;
 	}
 }
