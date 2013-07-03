@@ -12,7 +12,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -21,13 +20,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 /**
- * This is the item provider adapter for a {@link de.fujaba.properties.ListPropertySection} object.
+ * This is the item provider adapter for a {@link de.fujaba.properties.ListPropertyEditor} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ListPropertySectionItemProvider
-	extends PropertySectionItemProvider
+public class ListPropertyEditorItemProvider
+	extends PropertyEditorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -40,7 +39,7 @@ public class ListPropertySectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ListPropertySectionItemProvider(AdapterFactory adapterFactory) {
+	public ListPropertyEditorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,14 +59,14 @@ public class ListPropertySectionItemProvider
 	}
 
 	/**
-	 * This returns ListPropertySection.gif.
+	 * This returns ListPropertyEditor.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ListPropertySection"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ListPropertyEditor"));
 	}
 
 	/**
@@ -78,7 +77,7 @@ public class ListPropertySectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ListPropertySection_type");
+		return getString("_UI_ListPropertyEditor_type");
 	}
 
 	/**

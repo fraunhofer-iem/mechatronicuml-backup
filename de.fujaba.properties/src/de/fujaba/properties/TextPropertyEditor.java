@@ -1,29 +1,25 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties;
 
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Text Property Section</b></em>'.
+ * A representation of the model object '<em><b>Text Property Editor</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.fujaba.properties.TextPropertySection#isMultiLine <em>Multi Line</em>}</li>
+ *   <li>{@link de.fujaba.properties.TextPropertyEditor#isMultiLine <em>Multi Line</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.fujaba.properties.PropertiesPackage#getTextPropertySection()
+ * @see de.fujaba.properties.PropertiesPackage#getTextPropertyEditor()
  * @model
  * @generated
  */
-public interface TextPropertySection extends PropertySection {
+public interface TextPropertyEditor extends PropertyEditor {
 	/**
 	 * Returns the value of the '<em><b>Multi Line</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,14 +30,14 @@ public interface TextPropertySection extends PropertySection {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Multi Line</em>' attribute.
 	 * @see #setMultiLine(boolean)
-	 * @see de.fujaba.properties.PropertiesPackage#getTextPropertySection_MultiLine()
+	 * @see de.fujaba.properties.PropertiesPackage#getTextPropertyEditor_MultiLine()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isMultiLine();
 
 	/**
-	 * Sets the value of the '{@link de.fujaba.properties.TextPropertySection#isMultiLine <em>Multi Line</em>}' attribute.
+	 * Sets the value of the '{@link de.fujaba.properties.TextPropertyEditor#isMultiLine <em>Multi Line</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Multi Line</em>' attribute.
@@ -50,4 +46,4 @@ public interface TextPropertySection extends PropertySection {
 	 */
 	void setMultiLine(boolean value);
 
-} // TextPropertySection
+} // TextPropertyEditor

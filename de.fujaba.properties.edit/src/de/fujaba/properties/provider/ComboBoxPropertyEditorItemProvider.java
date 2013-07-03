@@ -7,33 +7,26 @@
 package de.fujaba.properties.provider;
 
 
-import de.fujaba.properties.PropertiesPackage;
-import de.fujaba.properties.TextPropertySection;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.fujaba.properties.TextPropertySection} object.
+ * This is the item provider adapter for a {@link de.fujaba.properties.ComboBoxPropertyEditor} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TextPropertySectionItemProvider
-	extends PropertySectionItemProvider
+public class ComboBoxPropertyEditorItemProvider
+	extends PropertyEditorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -46,7 +39,7 @@ public class TextPropertySectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextPropertySectionItemProvider(AdapterFactory adapterFactory) {
+	public ComboBoxPropertyEditorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,42 +54,19 @@ public class TextPropertySectionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMultiLinePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Multi Line feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMultiLinePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TextPropertySection_multiLine_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TextPropertySection_multiLine_feature", "_UI_TextPropertySection_type"),
-				 PropertiesPackage.Literals.TEXT_PROPERTY_SECTION__MULTI_LINE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns TextPropertySection.gif.
+	 * This returns ComboBoxPropertyEditor.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TextPropertySection"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComboBoxPropertyEditor"));
 	}
 
 	/**
@@ -107,8 +77,7 @@ public class TextPropertySectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		TextPropertySection textPropertySection = (TextPropertySection)object;
-		return getString("_UI_TextPropertySection_type") + " " + textPropertySection.isMultiLine();
+		return getString("_UI_ComboBoxPropertyEditor_type");
 	}
 
 	/**
@@ -121,12 +90,6 @@ public class TextPropertySectionItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(TextPropertySection.class)) {
-			case PropertiesPackage.TEXT_PROPERTY_SECTION__MULTI_LINE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

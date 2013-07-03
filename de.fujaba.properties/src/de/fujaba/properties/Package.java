@@ -1,13 +1,11 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**

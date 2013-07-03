@@ -1,17 +1,17 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package de.fujaba.properties.provider;
 
-
-import de.fujaba.properties.CustomPropertySection;
-import de.fujaba.properties.PropertiesPackage;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -22,14 +22,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.TextPropertyEditor;
+
 /**
- * This is the item provider adapter for a {@link de.fujaba.properties.CustomPropertySection} object.
+ * This is the item provider adapter for a {@link de.fujaba.properties.TextPropertyEditor} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CustomPropertySectionItemProvider
-	extends PropertySectionItemProvider
+public class TextPropertyEditorItemProvider
+	extends PropertyEditorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -42,7 +45,7 @@ public class CustomPropertySectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CustomPropertySectionItemProvider(AdapterFactory adapterFactory) {
+	public TextPropertyEditorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -57,42 +60,42 @@ public class CustomPropertySectionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFullyQualifiedClassNamePropertyDescriptor(object);
+			addMultiLinePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Fully Qualified Class Name feature.
+	 * This adds a property descriptor for the Multi Line feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFullyQualifiedClassNamePropertyDescriptor(Object object) {
+	protected void addMultiLinePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CustomPropertySection_fullyQualifiedClassName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CustomPropertySection_fullyQualifiedClassName_feature", "_UI_CustomPropertySection_type"),
-				 PropertiesPackage.Literals.CUSTOM_PROPERTY_SECTION__FULLY_QUALIFIED_CLASS_NAME,
+				 getString("_UI_TextPropertyEditor_multiLine_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TextPropertyEditor_multiLine_feature", "_UI_TextPropertyEditor_type"),
+				 PropertiesPackage.Literals.TEXT_PROPERTY_EDITOR__MULTI_LINE,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This returns CustomPropertySection.gif.
+	 * This returns TextPropertyEditor.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CustomPropertySection"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TextPropertyEditor"));
 	}
 
 	/**
@@ -103,10 +106,8 @@ public class CustomPropertySectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CustomPropertySection)object).getFullyQualifiedClassName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_CustomPropertySection_type") :
-			getString("_UI_CustomPropertySection_type") + " " + label;
+		TextPropertyEditor textPropertyEditor = (TextPropertyEditor)object;
+		return getString("_UI_TextPropertyEditor_type") + " " + textPropertyEditor.isMultiLine();
 	}
 
 	/**
@@ -120,8 +121,8 @@ public class CustomPropertySectionItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(CustomPropertySection.class)) {
-			case PropertiesPackage.CUSTOM_PROPERTY_SECTION__FULLY_QUALIFIED_CLASS_NAME:
+		switch (notification.getFeatureID(TextPropertyEditor.class)) {
+			case PropertiesPackage.TEXT_PROPERTY_EDITOR__MULTI_LINE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

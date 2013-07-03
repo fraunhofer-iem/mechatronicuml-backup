@@ -1,32 +1,28 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties.util;
 
-import de.fujaba.properties.CheckboxPropertySection;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
-
-import de.fujaba.properties.ComboBoxPropertySection;
-import de.fujaba.properties.CustomPropertySection;
-import de.fujaba.properties.GroupPropertySection;
-import de.fujaba.properties.ListPropertySection;
+import de.fujaba.properties.CheckboxPropertyEditor;
+import de.fujaba.properties.ComboBoxPropertyEditor;
+import de.fujaba.properties.CustomPropertyEditor;
+import de.fujaba.properties.ListPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
+import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.Plugin;
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyCategory;
+import de.fujaba.properties.PropertyEditor;
 import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
-import de.fujaba.properties.PropertyReference;
-import de.fujaba.properties.PropertySection;
 import de.fujaba.properties.PropertyTab;
-import de.fujaba.properties.RadioPropertySection;
-import de.fujaba.properties.TextPropertySection;
+import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.TextPropertyEditor;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -127,58 +123,58 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.PROPERTY_SECTION: {
-				PropertySection propertySection = (PropertySection)theEObject;
-				T result = casePropertySection(propertySection);
+			case PropertiesPackage.PROPERTY_EDITOR: {
+				PropertyEditor propertyEditor = (PropertyEditor)theEObject;
+				T result = casePropertyEditor(propertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.TEXT_PROPERTY_SECTION: {
-				TextPropertySection textPropertySection = (TextPropertySection)theEObject;
-				T result = caseTextPropertySection(textPropertySection);
-				if (result == null) result = casePropertySection(textPropertySection);
+			case PropertiesPackage.TEXT_PROPERTY_EDITOR: {
+				TextPropertyEditor textPropertyEditor = (TextPropertyEditor)theEObject;
+				T result = caseTextPropertyEditor(textPropertyEditor);
+				if (result == null) result = casePropertyEditor(textPropertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.COMBO_BOX_PROPERTY_SECTION: {
-				ComboBoxPropertySection comboBoxPropertySection = (ComboBoxPropertySection)theEObject;
-				T result = caseComboBoxPropertySection(comboBoxPropertySection);
-				if (result == null) result = casePropertySection(comboBoxPropertySection);
+			case PropertiesPackage.COMBO_BOX_PROPERTY_EDITOR: {
+				ComboBoxPropertyEditor comboBoxPropertyEditor = (ComboBoxPropertyEditor)theEObject;
+				T result = caseComboBoxPropertyEditor(comboBoxPropertyEditor);
+				if (result == null) result = casePropertyEditor(comboBoxPropertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.CHECKBOX_PROPERTY_SECTION: {
-				CheckboxPropertySection checkboxPropertySection = (CheckboxPropertySection)theEObject;
-				T result = caseCheckboxPropertySection(checkboxPropertySection);
-				if (result == null) result = casePropertySection(checkboxPropertySection);
+			case PropertiesPackage.CHECKBOX_PROPERTY_EDITOR: {
+				CheckboxPropertyEditor checkboxPropertyEditor = (CheckboxPropertyEditor)theEObject;
+				T result = caseCheckboxPropertyEditor(checkboxPropertyEditor);
+				if (result == null) result = casePropertyEditor(checkboxPropertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.RADIO_PROPERTY_SECTION: {
-				RadioPropertySection radioPropertySection = (RadioPropertySection)theEObject;
-				T result = caseRadioPropertySection(radioPropertySection);
-				if (result == null) result = casePropertySection(radioPropertySection);
+			case PropertiesPackage.RADIO_PROPERTY_EDITOR: {
+				RadioPropertyEditor radioPropertyEditor = (RadioPropertyEditor)theEObject;
+				T result = caseRadioPropertyEditor(radioPropertyEditor);
+				if (result == null) result = casePropertyEditor(radioPropertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.LIST_PROPERTY_SECTION: {
-				ListPropertySection listPropertySection = (ListPropertySection)theEObject;
-				T result = caseListPropertySection(listPropertySection);
-				if (result == null) result = casePropertySection(listPropertySection);
+			case PropertiesPackage.LIST_PROPERTY_EDITOR: {
+				ListPropertyEditor listPropertyEditor = (ListPropertyEditor)theEObject;
+				T result = caseListPropertyEditor(listPropertyEditor);
+				if (result == null) result = casePropertyEditor(listPropertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.GROUP_PROPERTY_SECTION: {
-				GroupPropertySection groupPropertySection = (GroupPropertySection)theEObject;
-				T result = caseGroupPropertySection(groupPropertySection);
-				if (result == null) result = casePropertySection(groupPropertySection);
+			case PropertiesPackage.OBJECT_PROPERTY_EDITOR: {
+				ObjectPropertyEditor objectPropertyEditor = (ObjectPropertyEditor)theEObject;
+				T result = caseObjectPropertyEditor(objectPropertyEditor);
+				if (result == null) result = casePropertyEditor(objectPropertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PropertiesPackage.CUSTOM_PROPERTY_SECTION: {
-				CustomPropertySection customPropertySection = (CustomPropertySection)theEObject;
-				T result = caseCustomPropertySection(customPropertySection);
-				if (result == null) result = casePropertySection(customPropertySection);
+			case PropertiesPackage.CUSTOM_PROPERTY_EDITOR: {
+				CustomPropertyEditor customPropertyEditor = (CustomPropertyEditor)theEObject;
+				T result = caseCustomPropertyEditor(customPropertyEditor);
+				if (result == null) result = casePropertyEditor(customPropertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -192,12 +188,6 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				OCLPropertyFilter oclPropertyFilter = (OCLPropertyFilter)theEObject;
 				T result = caseOCLPropertyFilter(oclPropertyFilter);
 				if (result == null) result = casePropertyFilter(oclPropertyFilter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case PropertiesPackage.PROPERTY_REFERENCE: {
-				PropertyReference propertyReference = (PropertyReference)theEObject;
-				T result = casePropertyReference(propertyReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -311,122 +301,122 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Property Editor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePropertySection(PropertySection object) {
+	public T casePropertyEditor(PropertyEditor object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Text Property Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Text Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Text Property Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Text Property Editor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTextPropertySection(TextPropertySection object) {
+	public T caseTextPropertyEditor(TextPropertyEditor object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Combo Box Property Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Combo Box Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Combo Box Property Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Combo Box Property Editor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComboBoxPropertySection(ComboBoxPropertySection object) {
+	public T caseComboBoxPropertyEditor(ComboBoxPropertyEditor object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Checkbox Property Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Checkbox Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Checkbox Property Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Checkbox Property Editor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCheckboxPropertySection(CheckboxPropertySection object) {
+	public T caseCheckboxPropertyEditor(CheckboxPropertyEditor object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Radio Property Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Radio Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Radio Property Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Radio Property Editor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRadioPropertySection(RadioPropertySection object) {
+	public T caseRadioPropertyEditor(RadioPropertyEditor object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>List Property Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>List Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>List Property Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>List Property Editor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseListPropertySection(ListPropertySection object) {
+	public T caseListPropertyEditor(ListPropertyEditor object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Group Property Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Object Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Group Property Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Object Property Editor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGroupPropertySection(GroupPropertySection object) {
+	public T caseObjectPropertyEditor(ObjectPropertyEditor object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Custom Property Section</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Custom Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Custom Property Section</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Custom Property Editor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCustomPropertySection(CustomPropertySection object) {
+	public T caseCustomPropertyEditor(CustomPropertyEditor object) {
 		return null;
 	}
 
@@ -457,21 +447,6 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOCLPropertyFilter(OCLPropertyFilter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property Reference</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePropertyReference(PropertyReference object) {
 		return null;
 	}
 

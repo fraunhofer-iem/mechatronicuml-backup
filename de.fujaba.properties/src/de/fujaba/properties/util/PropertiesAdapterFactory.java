@@ -1,33 +1,30 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties.util;
 
-import de.fujaba.properties.CheckboxPropertySection;
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
-
-import de.fujaba.properties.ComboBoxPropertySection;
-import de.fujaba.properties.CustomPropertySection;
-import de.fujaba.properties.GroupPropertySection;
-import de.fujaba.properties.ListPropertySection;
+import de.fujaba.properties.CheckboxPropertyEditor;
+import de.fujaba.properties.ComboBoxPropertyEditor;
+import de.fujaba.properties.CustomPropertyEditor;
+import de.fujaba.properties.ListPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
+import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.Plugin;
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyCategory;
+import de.fujaba.properties.PropertyEditor;
 import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
-import de.fujaba.properties.PropertyReference;
-import de.fujaba.properties.PropertySection;
 import de.fujaba.properties.PropertyTab;
-import de.fujaba.properties.RadioPropertySection;
-import de.fujaba.properties.TextPropertySection;
+import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.TextPropertyEditor;
+
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notifier;
+
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,36 +111,36 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 				return createPropertyAdapter();
 			}
 			@Override
-			public Adapter casePropertySection(PropertySection object) {
-				return createPropertySectionAdapter();
+			public Adapter casePropertyEditor(PropertyEditor object) {
+				return createPropertyEditorAdapter();
 			}
 			@Override
-			public Adapter caseTextPropertySection(TextPropertySection object) {
-				return createTextPropertySectionAdapter();
+			public Adapter caseTextPropertyEditor(TextPropertyEditor object) {
+				return createTextPropertyEditorAdapter();
 			}
 			@Override
-			public Adapter caseComboBoxPropertySection(ComboBoxPropertySection object) {
-				return createComboBoxPropertySectionAdapter();
+			public Adapter caseComboBoxPropertyEditor(ComboBoxPropertyEditor object) {
+				return createComboBoxPropertyEditorAdapter();
 			}
 			@Override
-			public Adapter caseCheckboxPropertySection(CheckboxPropertySection object) {
-				return createCheckboxPropertySectionAdapter();
+			public Adapter caseCheckboxPropertyEditor(CheckboxPropertyEditor object) {
+				return createCheckboxPropertyEditorAdapter();
 			}
 			@Override
-			public Adapter caseRadioPropertySection(RadioPropertySection object) {
-				return createRadioPropertySectionAdapter();
+			public Adapter caseRadioPropertyEditor(RadioPropertyEditor object) {
+				return createRadioPropertyEditorAdapter();
 			}
 			@Override
-			public Adapter caseListPropertySection(ListPropertySection object) {
-				return createListPropertySectionAdapter();
+			public Adapter caseListPropertyEditor(ListPropertyEditor object) {
+				return createListPropertyEditorAdapter();
 			}
 			@Override
-			public Adapter caseGroupPropertySection(GroupPropertySection object) {
-				return createGroupPropertySectionAdapter();
+			public Adapter caseObjectPropertyEditor(ObjectPropertyEditor object) {
+				return createObjectPropertyEditorAdapter();
 			}
 			@Override
-			public Adapter caseCustomPropertySection(CustomPropertySection object) {
-				return createCustomPropertySectionAdapter();
+			public Adapter caseCustomPropertyEditor(CustomPropertyEditor object) {
+				return createCustomPropertyEditorAdapter();
 			}
 			@Override
 			public Adapter casePropertyFilter(PropertyFilter object) {
@@ -152,10 +149,6 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseOCLPropertyFilter(OCLPropertyFilter object) {
 				return createOCLPropertyFilterAdapter();
-			}
-			@Override
-			public Adapter casePropertyReference(PropertyReference object) {
-				return createPropertyReferenceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -276,114 +269,114 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.PropertySection <em>Property Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.PropertyEditor <em>Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.fujaba.properties.PropertySection
+	 * @see de.fujaba.properties.PropertyEditor
 	 * @generated
 	 */
-	public Adapter createPropertySectionAdapter() {
+	public Adapter createPropertyEditorAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.TextPropertySection <em>Text Property Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.TextPropertyEditor <em>Text Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.fujaba.properties.TextPropertySection
+	 * @see de.fujaba.properties.TextPropertyEditor
 	 * @generated
 	 */
-	public Adapter createTextPropertySectionAdapter() {
+	public Adapter createTextPropertyEditorAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.ComboBoxPropertySection <em>Combo Box Property Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.ComboBoxPropertyEditor <em>Combo Box Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.fujaba.properties.ComboBoxPropertySection
+	 * @see de.fujaba.properties.ComboBoxPropertyEditor
 	 * @generated
 	 */
-	public Adapter createComboBoxPropertySectionAdapter() {
+	public Adapter createComboBoxPropertyEditorAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.CheckboxPropertySection <em>Checkbox Property Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.CheckboxPropertyEditor <em>Checkbox Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.fujaba.properties.CheckboxPropertySection
+	 * @see de.fujaba.properties.CheckboxPropertyEditor
 	 * @generated
 	 */
-	public Adapter createCheckboxPropertySectionAdapter() {
+	public Adapter createCheckboxPropertyEditorAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.RadioPropertySection <em>Radio Property Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.RadioPropertyEditor <em>Radio Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.fujaba.properties.RadioPropertySection
+	 * @see de.fujaba.properties.RadioPropertyEditor
 	 * @generated
 	 */
-	public Adapter createRadioPropertySectionAdapter() {
+	public Adapter createRadioPropertyEditorAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.ListPropertySection <em>List Property Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.ListPropertyEditor <em>List Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.fujaba.properties.ListPropertySection
+	 * @see de.fujaba.properties.ListPropertyEditor
 	 * @generated
 	 */
-	public Adapter createListPropertySectionAdapter() {
+	public Adapter createListPropertyEditorAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.GroupPropertySection <em>Group Property Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.ObjectPropertyEditor <em>Object Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.fujaba.properties.GroupPropertySection
+	 * @see de.fujaba.properties.ObjectPropertyEditor
 	 * @generated
 	 */
-	public Adapter createGroupPropertySectionAdapter() {
+	public Adapter createObjectPropertyEditorAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.CustomPropertySection <em>Custom Property Section</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.CustomPropertyEditor <em>Custom Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.fujaba.properties.CustomPropertySection
+	 * @see de.fujaba.properties.CustomPropertyEditor
 	 * @generated
 	 */
-	public Adapter createCustomPropertySectionAdapter() {
+	public Adapter createCustomPropertyEditorAdapter() {
 		return null;
 	}
 
@@ -412,20 +405,6 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOCLPropertyFilterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.PropertyReference <em>Property Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.fujaba.properties.PropertyReference
-	 * @generated
-	 */
-	public Adapter createPropertyReferenceAdapter() {
 		return null;
 	}
 

@@ -5,21 +5,21 @@ package de.fujaba.properties;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Custom Property Section</b></em>'.
+ * A representation of the model object '<em><b>Custom Property Editor</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.fujaba.properties.CustomPropertySection#getFullyQualifiedClassName <em>Fully Qualified Class Name</em>}</li>
+ *   <li>{@link de.fujaba.properties.CustomPropertyEditor#getFullyQualifiedClassName <em>Fully Qualified Class Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.fujaba.properties.PropertiesPackage#getCustomPropertySection()
+ * @see de.fujaba.properties.PropertiesPackage#getCustomPropertyEditor()
  * @model
  * @generated
  */
-public interface CustomPropertySection extends PropertySection {
+public interface CustomPropertyEditor extends PropertyEditor {
 	/**
 	 * Returns the value of the '<em><b>Fully Qualified Class Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -30,14 +30,14 @@ public interface CustomPropertySection extends PropertySection {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fully Qualified Class Name</em>' attribute.
 	 * @see #setFullyQualifiedClassName(String)
-	 * @see de.fujaba.properties.PropertiesPackage#getCustomPropertySection_FullyQualifiedClassName()
+	 * @see de.fujaba.properties.PropertiesPackage#getCustomPropertyEditor_FullyQualifiedClassName()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getFullyQualifiedClassName();
 
 	/**
-	 * Sets the value of the '{@link de.fujaba.properties.CustomPropertySection#getFullyQualifiedClassName <em>Fully Qualified Class Name</em>}' attribute.
+	 * Sets the value of the '{@link de.fujaba.properties.CustomPropertyEditor#getFullyQualifiedClassName <em>Fully Qualified Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Fully Qualified Class Name</em>' attribute.
@@ -46,4 +46,4 @@ public interface CustomPropertySection extends PropertySection {
 	 */
 	void setFullyQualifiedClassName(String value);
 
-} // CustomPropertySection
+} // CustomPropertyEditor

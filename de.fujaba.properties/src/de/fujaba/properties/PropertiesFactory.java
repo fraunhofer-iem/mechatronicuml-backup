@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties;
 
@@ -89,67 +85,67 @@ public interface PropertiesFactory extends EFactory {
 	Property createProperty();
 
 	/**
-	 * Returns a new object of class '<em>Text Property Section</em>'.
+	 * Returns a new object of class '<em>Text Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Text Property Section</em>'.
+	 * @return a new object of class '<em>Text Property Editor</em>'.
 	 * @generated
 	 */
-	TextPropertySection createTextPropertySection();
+	TextPropertyEditor createTextPropertyEditor();
 
 	/**
-	 * Returns a new object of class '<em>Combo Box Property Section</em>'.
+	 * Returns a new object of class '<em>Combo Box Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Combo Box Property Section</em>'.
+	 * @return a new object of class '<em>Combo Box Property Editor</em>'.
 	 * @generated
 	 */
-	ComboBoxPropertySection createComboBoxPropertySection();
+	ComboBoxPropertyEditor createComboBoxPropertyEditor();
 
 	/**
-	 * Returns a new object of class '<em>Checkbox Property Section</em>'.
+	 * Returns a new object of class '<em>Checkbox Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Checkbox Property Section</em>'.
+	 * @return a new object of class '<em>Checkbox Property Editor</em>'.
 	 * @generated
 	 */
-	CheckboxPropertySection createCheckboxPropertySection();
+	CheckboxPropertyEditor createCheckboxPropertyEditor();
 
 	/**
-	 * Returns a new object of class '<em>Radio Property Section</em>'.
+	 * Returns a new object of class '<em>Radio Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Radio Property Section</em>'.
+	 * @return a new object of class '<em>Radio Property Editor</em>'.
 	 * @generated
 	 */
-	RadioPropertySection createRadioPropertySection();
+	RadioPropertyEditor createRadioPropertyEditor();
 
 	/**
-	 * Returns a new object of class '<em>List Property Section</em>'.
+	 * Returns a new object of class '<em>List Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>List Property Section</em>'.
+	 * @return a new object of class '<em>List Property Editor</em>'.
 	 * @generated
 	 */
-	ListPropertySection createListPropertySection();
+	ListPropertyEditor createListPropertyEditor();
 
 	/**
-	 * Returns a new object of class '<em>Group Property Section</em>'.
+	 * Returns a new object of class '<em>Object Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Group Property Section</em>'.
+	 * @return a new object of class '<em>Object Property Editor</em>'.
 	 * @generated
 	 */
-	GroupPropertySection createGroupPropertySection();
+	ObjectPropertyEditor createObjectPropertyEditor();
 
 	/**
-	 * Returns a new object of class '<em>Custom Property Section</em>'.
+	 * Returns a new object of class '<em>Custom Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Custom Property Section</em>'.
+	 * @return a new object of class '<em>Custom Property Editor</em>'.
 	 * @generated
 	 */
-	CustomPropertySection createCustomPropertySection();
+	CustomPropertyEditor createCustomPropertyEditor();
 
 	/**
 	 * Returns a new object of class '<em>OCL Property Filter</em>'.
@@ -159,15 +155,6 @@ public interface PropertiesFactory extends EFactory {
 	 * @generated
 	 */
 	OCLPropertyFilter createOCLPropertyFilter();
-
-	/**
-	 * Returns a new object of class '<em>Property Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Property Reference</em>'.
-	 * @generated
-	 */
-	PropertyReference createPropertyReference();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -94,31 +94,28 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
         eType="#//PropertyFilter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tab" lowerBound="1" eType="#//PropertyTab"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="section" eType="#//PropertySection"
-        containment="true" eOpposite="#//PropertySection/property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="section" eType="#//PropertyEditor"
+        containment="true" eOpposite="#//PropertyEditor/property"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tooltip" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="clazz" lowerBound="1" eType="#//Class"
         eOpposite="#//Class/properties"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//PropertyCategory"
         eOpposite="#//PropertyCategory/properties"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertySection" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyEditor" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
         eType="#//Property" eOpposite="#//Property/section"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextPropertySection" eSuperTypes="#//PropertySection">
+  <eClassifiers xsi:type="ecore:EClass" name="TextPropertyEditor" eSuperTypes="#//PropertyEditor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiLine" lowerBound="1"
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComboBoxPropertySection" eSuperTypes="#//PropertySection"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CheckboxPropertySection" eSuperTypes="#//PropertySection"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RadioPropertySection" eSuperTypes="#//PropertySection"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ListPropertySection" eSuperTypes="#//PropertySection"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GroupPropertySection" eSuperTypes="#//PropertySection">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedProperties" upperBound="-1"
-        eType="#//PropertyReference" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CustomPropertySection" eSuperTypes="#//PropertySection">
+  <eClassifiers xsi:type="ecore:EClass" name="ComboBoxPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckboxPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RadioPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ListPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomPropertyEditor" eSuperTypes="#//PropertyEditor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullyQualifiedClassName"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -130,11 +127,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="OCLPropertyFilter" eSuperTypes="#//PropertyFilter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PropertyReference">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
-        eType="#//Property"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -302,37 +302,37 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__SECTION,
-				 PropertiesFactory.eINSTANCE.createTextPropertySection()));
+				 PropertiesFactory.eINSTANCE.createTextPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__SECTION,
-				 PropertiesFactory.eINSTANCE.createComboBoxPropertySection()));
+				 PropertiesFactory.eINSTANCE.createComboBoxPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__SECTION,
-				 PropertiesFactory.eINSTANCE.createCheckboxPropertySection()));
+				 PropertiesFactory.eINSTANCE.createCheckboxPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__SECTION,
-				 PropertiesFactory.eINSTANCE.createRadioPropertySection()));
+				 PropertiesFactory.eINSTANCE.createRadioPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__SECTION,
-				 PropertiesFactory.eINSTANCE.createListPropertySection()));
+				 PropertiesFactory.eINSTANCE.createListPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__SECTION,
-				 PropertiesFactory.eINSTANCE.createGroupPropertySection()));
+				 PropertiesFactory.eINSTANCE.createObjectPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__SECTION,
-				 PropertiesFactory.eINSTANCE.createCustomPropertySection()));
+				 PropertiesFactory.eINSTANCE.createCustomPropertyEditor()));
 	}
 
 	/**

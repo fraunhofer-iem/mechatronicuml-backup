@@ -7,18 +7,12 @@
 package de.fujaba.properties.provider;
 
 
-import de.fujaba.properties.GroupPropertySection;
-import de.fujaba.properties.PropertiesFactory;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -26,20 +20,18 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
+import de.fujaba.properties.PropertiesFactory;
 import de.fujaba.properties.PropertiesPackage;
-import de.fujaba.properties.Property;
-import de.fujaba.properties.PropertySection;
 
 /**
- * This is the item provider adapter for a {@link de.fujaba.properties.GroupPropertySection} object.
+ * This is the item provider adapter for a {@link de.fujaba.properties.ObjectPropertyEditor} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class GroupPropertySectionItemProvider
-	extends PropertySectionItemProvider
+public class ObjectPropertyEditorItemProvider
+	extends PropertyEditorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -52,7 +44,7 @@ public class GroupPropertySectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GroupPropertySectionItemProvider(AdapterFactory adapterFactory) {
+	public ObjectPropertyEditorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -72,44 +64,14 @@ public class GroupPropertySectionItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(PropertiesPackage.Literals.GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns GroupPropertySection.gif.
+	 * This returns ObjectPropertyEditor.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/GroupPropertySection"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ObjectPropertyEditor"));
 	}
 
 	/**
@@ -120,7 +82,7 @@ public class GroupPropertySectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GroupPropertySection_type");
+		return getString("_UI_ObjectPropertyEditor_type");
 	}
 
 	/**
@@ -133,12 +95,6 @@ public class GroupPropertySectionItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(GroupPropertySection.class)) {
-			case PropertiesPackage.GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -152,11 +108,6 @@ public class GroupPropertySectionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PropertiesPackage.Literals.GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES,
-				 PropertiesFactory.eINSTANCE.createPropertyReference()));
 	}
 
 }

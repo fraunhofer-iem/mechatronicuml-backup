@@ -1,31 +1,32 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties.impl;
-
-import java.util.Collection;
-
-import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyCategory;
+import de.fujaba.properties.PropertyEditor;
 import de.fujaba.properties.PropertyFilter;
-import de.fujaba.properties.PropertySection;
 import de.fujaba.properties.PropertyTab;
+
+import java.util.Collection;
+
+import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,7 +86,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * @generated
 	 * @ordered
 	 */
-	protected PropertySection section;
+	protected PropertyEditor section;
 
 	/**
 	 * The default value of the '{@link #getTooltip() <em>Tooltip</em>}' attribute.
@@ -229,7 +230,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertySection getSection() {
+	public PropertyEditor getSection() {
 		return section;
 	}
 
@@ -238,8 +239,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSection(PropertySection newSection, NotificationChain msgs) {
-		PropertySection oldSection = section;
+	public NotificationChain basicSetSection(PropertyEditor newSection, NotificationChain msgs) {
+		PropertyEditor oldSection = section;
 		section = newSection;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__SECTION, oldSection, newSection);
@@ -253,13 +254,13 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSection(PropertySection newSection) {
+	public void setSection(PropertyEditor newSection) {
 		if (newSection != section) {
 			NotificationChain msgs = null;
 			if (section != null)
-				msgs = ((InternalEObject)section).eInverseRemove(this, PropertiesPackage.PROPERTY_SECTION__PROPERTY, PropertySection.class, msgs);
+				msgs = ((InternalEObject)section).eInverseRemove(this, PropertiesPackage.PROPERTY_EDITOR__PROPERTY, PropertyEditor.class, msgs);
 			if (newSection != null)
-				msgs = ((InternalEObject)newSection).eInverseAdd(this, PropertiesPackage.PROPERTY_SECTION__PROPERTY, PropertySection.class, msgs);
+				msgs = ((InternalEObject)newSection).eInverseAdd(this, PropertiesPackage.PROPERTY_EDITOR__PROPERTY, PropertyEditor.class, msgs);
 			msgs = basicSetSection(newSection, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -400,7 +401,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__SECTION:
 				if (section != null)
 					msgs = ((InternalEObject)section).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY__SECTION, null, msgs);
-				return basicSetSection((PropertySection)otherEnd, msgs);
+				return basicSetSection((PropertyEditor)otherEnd, msgs);
 			case PropertiesPackage.PROPERTY__CLAZZ:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -496,7 +497,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				setTab((PropertyTab)newValue);
 				return;
 			case PropertiesPackage.PROPERTY__SECTION:
-				setSection((PropertySection)newValue);
+				setSection((PropertyEditor)newValue);
 				return;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip((String)newValue);
@@ -529,7 +530,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				setTab((PropertyTab)null);
 				return;
 			case PropertiesPackage.PROPERTY__SECTION:
-				setSection((PropertySection)null);
+				setSection((PropertyEditor)null);
 				return;
 			case PropertiesPackage.PROPERTY__TOOLTIP:
 				setTooltip(TOOLTIP_EDEFAULT);

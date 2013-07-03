@@ -1,13 +1,11 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -103,7 +101,7 @@ public interface Property extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Section</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.PropertySection#getProperty <em>Property</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.PropertyEditor#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Section</em>' containment reference isn't clear,
@@ -111,13 +109,13 @@ public interface Property extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Section</em>' containment reference.
-	 * @see #setSection(PropertySection)
+	 * @see #setSection(PropertyEditor)
 	 * @see de.fujaba.properties.PropertiesPackage#getProperty_Section()
-	 * @see de.fujaba.properties.PropertySection#getProperty
+	 * @see de.fujaba.properties.PropertyEditor#getProperty
 	 * @model opposite="property" containment="true"
 	 * @generated
 	 */
-	PropertySection getSection();
+	PropertyEditor getSection();
 
 	/**
 	 * Sets the value of the '{@link de.fujaba.properties.Property#getSection <em>Section</em>}' containment reference.
@@ -127,7 +125,7 @@ public interface Property extends EObject {
 	 * @see #getSection()
 	 * @generated
 	 */
-	void setSection(PropertySection value);
+	void setSection(PropertyEditor value);
 
 	/**
 	 * Returns the value of the '<em><b>Tooltip</b></em>' attribute.

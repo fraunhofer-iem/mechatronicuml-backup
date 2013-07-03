@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties;
 
@@ -10,22 +6,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Property Section</b></em>'.
+ * A representation of the model object '<em><b>Property Editor</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.fujaba.properties.PropertySection#getProperty <em>Property</em>}</li>
+ *   <li>{@link de.fujaba.properties.PropertyEditor#getProperty <em>Property</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.fujaba.properties.PropertiesPackage#getPropertySection()
+ * @see de.fujaba.properties.PropertiesPackage#getPropertyEditor()
  * @model abstract="true"
  * @generated
  */
-public interface PropertySection extends EObject {
-
+public interface PropertyEditor extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Property</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.Property#getSection <em>Section</em>}'.
@@ -37,7 +32,7 @@ public interface PropertySection extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Property</em>' container reference.
 	 * @see #setProperty(Property)
-	 * @see de.fujaba.properties.PropertiesPackage#getPropertySection_Property()
+	 * @see de.fujaba.properties.PropertiesPackage#getPropertyEditor_Property()
 	 * @see de.fujaba.properties.Property#getSection
 	 * @model opposite="section" required="true" transient="false"
 	 * @generated
@@ -45,7 +40,7 @@ public interface PropertySection extends EObject {
 	Property getProperty();
 
 	/**
-	 * Sets the value of the '{@link de.fujaba.properties.PropertySection#getProperty <em>Property</em>}' container reference.
+	 * Sets the value of the '{@link de.fujaba.properties.PropertyEditor#getProperty <em>Property</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Property</em>' container reference.
@@ -53,4 +48,5 @@ public interface PropertySection extends EObject {
 	 * @generated
 	 */
 	void setProperty(Property value);
-} // PropertySection
+
+} // PropertyEditor

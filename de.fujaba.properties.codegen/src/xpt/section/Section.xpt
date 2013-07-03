@@ -2,13 +2,13 @@
 «IMPORT properties»
 «EXTENSION Metamodel»
 
-«DEFINE Section FOR PropertySection»
+«DEFINE Section FOR PropertyEditor»
 public class «property.genFeature.genClass.ecoreClass.name»«property.genFeature.ecoreFeature.name.toFirstUpper()»Section extends «EXPAND superClass» {
 	«EXPAND classBody»
 }
 «ENDDEFINE»
 
-«DEFINE classBody FOR PropertySection»
+«DEFINE classBody FOR PropertyEditor»
 	@Override
 	public org.eclipse.emf.ecore.EStructuralFeature getFeature() {
 		return «property.genFeature.genClass.genPackage.fullyQualifiedName()».«property.genFeature.genClass.genPackage.ecorePackage.name.toFirstUpper()»Package.eINSTANCE.get«property.genFeature.genClass.ecoreClass.name.toFirstUpper()»_«property.genFeature.ecoreFeature.name.toFirstUpper()»();
@@ -22,31 +22,32 @@ public class «property.genFeature.genClass.ecoreClass.name»«property.genFeatu
 	«EXPAND additionalMethods»
 «ENDDEFINE»
 
-«DEFINE additionalMethods FOR PropertySection»
+«DEFINE additionalMethods FOR PropertyEditor»
 «ENDDEFINE»
 
-«DEFINE additionalMethods FOR GroupPropertySection»
+«REM»
+«DEFINE additionalMethods FOR ObjectPropertyEditor»
 	public «property.genFeature.genClass.ecoreClass.name»«property.genFeature.ecoreFeature.name.toFirstUpper()»Section() {
 		«FOREACH referencedProperties.reject(p | p.active == false).property.section.reject(p | p == null) AS this»
 		addSection(new «property.clazz.package.generator.genModel.modelPluginID».properties.«property.genFeature.genClass.genPackage.ecorePackage.name».section.«property.genFeature.genClass.ecoreClass.name»«property.genFeature.ecoreFeature.name.toFirstUpper()»Section());
 		«ENDFOREACH»
 	}
 «ENDDEFINE»
-
-«DEFINE additionalMethods FOR TextPropertySection»
+«ENDREM»
+«DEFINE additionalMethods FOR TextPropertyEditor»
 	@Override
 	protected boolean isMultiLine() {
 		return «IF multiLine»true«ELSE»false«ENDIF»;
 	}
 «ENDDEFINE»
 
-«DEFINE additionalMethods FOR ComboBoxPropertySection»
+«DEFINE additionalMethods FOR ComboBoxPropertyEditor»
 	@Override
 	protected java.util.List<Object> getItems() {
 		return new java.util.ArrayList<Object>();
 	}
 «ENDDEFINE»
-«DEFINE additionalMethods FOR ListPropertySection»
+«DEFINE additionalMethods FOR ListPropertyEditor»
 	@Override
 	protected java.util.List<Object> getItems() {
 		java.util.List<Object> nodes = new java.util.ArrayList<Object>();
@@ -64,7 +65,7 @@ public class «property.genFeature.genClass.ecoreClass.name»«property.genFeatu
 	}
 	
 «ENDDEFINE»
-«DEFINE additionalMethods FOR RadioPropertySection»
+«DEFINE additionalMethods FOR RadioPropertyEditor»
 	@Override
 	protected java.util.List<«property.propertyType()»> getValues() {
 		return «property.propertyType()».VALUES;
@@ -89,11 +90,11 @@ public class «property.genFeature.genClass.ecoreClass.name»«property.genFeatu
 	}
 «ENDDEFINE»
 
-«DEFINE superClass FOR PropertySection»«this.metaType»«ENDDEFINE»
+«DEFINE superClass FOR PropertyEditor»«this.metaType»«ENDDEFINE»
 
-«DEFINE superClass FOR TextPropertySection»de.upb.swt.core.ui.properties.sections.AbstractTextSection«ENDDEFINE»
-«DEFINE superClass FOR GroupPropertySection»de.upb.swt.core.ui.properties.sections.AbstractGroupSection«ENDDEFINE»
-«DEFINE superClass FOR CheckboxPropertySection»de.upb.swt.core.ui.properties.sections.AbstractCheckboxSection«ENDDEFINE»
-«DEFINE superClass FOR ComboBoxPropertySection»de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object>«ENDDEFINE»
-«DEFINE superClass FOR ListPropertySection»de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object>«ENDDEFINE»
-«DEFINE superClass FOR RadioPropertySection»de.upb.swt.core.ui.properties.sections.AbstractRadioGroupSection<«property.propertyType()»>«ENDDEFINE»
+«DEFINE superClass FOR TextPropertyEditor»de.upb.swt.core.ui.properties.sections.AbstractTextSection«ENDDEFINE»
+«DEFINE superClass FOR ObjectPropertyEditor»de.upb.swt.core.ui.properties.sections.AbstractGroupSection«ENDDEFINE»
+«DEFINE superClass FOR CheckboxPropertyEditor»de.upb.swt.core.ui.properties.sections.AbstractCheckboxSection«ENDDEFINE»
+«DEFINE superClass FOR ComboBoxPropertyEditor»de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object>«ENDDEFINE»
+«DEFINE superClass FOR ListPropertyEditor»de.upb.swt.core.ui.properties.sections.AbstractComboSection<Object>«ENDDEFINE»
+«DEFINE superClass FOR RadioPropertyEditor»de.upb.swt.core.ui.properties.sections.AbstractRadioGroupSection<«property.propertyType()»>«ENDDEFINE»

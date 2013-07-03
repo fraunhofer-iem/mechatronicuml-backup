@@ -1,36 +1,33 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties.util;
 
-import de.fujaba.properties.CheckboxPropertySection;
+import de.fujaba.properties.CheckboxPropertyEditor;
+import de.fujaba.properties.ComboBoxPropertyEditor;
+import de.fujaba.properties.CustomPropertyEditor;
+import de.fujaba.properties.ListPropertyEditor;
+import de.fujaba.properties.OCLPropertyFilter;
+import de.fujaba.properties.ObjectPropertyEditor;
+import de.fujaba.properties.Plugin;
+import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.Property;
+import de.fujaba.properties.PropertyCategory;
+import de.fujaba.properties.PropertyEditor;
+import de.fujaba.properties.PropertyFilter;
+import de.fujaba.properties.PropertyGenerator;
+import de.fujaba.properties.PropertyTab;
+import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.TextPropertyEditor;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.fujaba.properties.ComboBoxPropertySection;
-import de.fujaba.properties.CustomPropertySection;
-import de.fujaba.properties.GroupPropertySection;
-import de.fujaba.properties.ListPropertySection;
-import de.fujaba.properties.OCLPropertyFilter;
-import de.fujaba.properties.Plugin;
-import de.fujaba.properties.PropertiesPackage;
-import de.fujaba.properties.Property;
-import de.fujaba.properties.PropertyCategory;
-import de.fujaba.properties.PropertyFilter;
-import de.fujaba.properties.PropertyGenerator;
-import de.fujaba.properties.PropertyReference;
-import de.fujaba.properties.PropertySection;
-import de.fujaba.properties.PropertyTab;
-import de.fujaba.properties.RadioPropertySection;
-import de.fujaba.properties.TextPropertySection;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -118,28 +115,26 @@ public class PropertiesValidator extends EObjectValidator {
 				return validatePropertyCategory((PropertyCategory)value, diagnostics, context);
 			case PropertiesPackage.PROPERTY:
 				return validateProperty((Property)value, diagnostics, context);
-			case PropertiesPackage.PROPERTY_SECTION:
-				return validatePropertySection((PropertySection)value, diagnostics, context);
-			case PropertiesPackage.TEXT_PROPERTY_SECTION:
-				return validateTextPropertySection((TextPropertySection)value, diagnostics, context);
-			case PropertiesPackage.COMBO_BOX_PROPERTY_SECTION:
-				return validateComboBoxPropertySection((ComboBoxPropertySection)value, diagnostics, context);
-			case PropertiesPackage.CHECKBOX_PROPERTY_SECTION:
-				return validateCheckboxPropertySection((CheckboxPropertySection)value, diagnostics, context);
-			case PropertiesPackage.RADIO_PROPERTY_SECTION:
-				return validateRadioPropertySection((RadioPropertySection)value, diagnostics, context);
-			case PropertiesPackage.LIST_PROPERTY_SECTION:
-				return validateListPropertySection((ListPropertySection)value, diagnostics, context);
-			case PropertiesPackage.GROUP_PROPERTY_SECTION:
-				return validateGroupPropertySection((GroupPropertySection)value, diagnostics, context);
-			case PropertiesPackage.CUSTOM_PROPERTY_SECTION:
-				return validateCustomPropertySection((CustomPropertySection)value, diagnostics, context);
+			case PropertiesPackage.PROPERTY_EDITOR:
+				return validatePropertyEditor((PropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.TEXT_PROPERTY_EDITOR:
+				return validateTextPropertyEditor((TextPropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.COMBO_BOX_PROPERTY_EDITOR:
+				return validateComboBoxPropertyEditor((ComboBoxPropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.CHECKBOX_PROPERTY_EDITOR:
+				return validateCheckboxPropertyEditor((CheckboxPropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.RADIO_PROPERTY_EDITOR:
+				return validateRadioPropertyEditor((RadioPropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.LIST_PROPERTY_EDITOR:
+				return validateListPropertyEditor((ListPropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.OBJECT_PROPERTY_EDITOR:
+				return validateObjectPropertyEditor((ObjectPropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.CUSTOM_PROPERTY_EDITOR:
+				return validateCustomPropertyEditor((CustomPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.PROPERTY_FILTER:
 				return validatePropertyFilter((PropertyFilter)value, diagnostics, context);
 			case PropertiesPackage.OCL_PROPERTY_FILTER:
 				return validateOCLPropertyFilter((OCLPropertyFilter)value, diagnostics, context);
-			case PropertiesPackage.PROPERTY_REFERENCE:
-				return validatePropertyReference((PropertyReference)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -330,8 +325,8 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePropertySection(PropertySection propertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(propertySection, diagnostics, context);
+	public boolean validatePropertyEditor(PropertyEditor propertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(propertyEditor, diagnostics, context);
 	}
 
 	/**
@@ -339,8 +334,8 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTextPropertySection(TextPropertySection textPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(textPropertySection, diagnostics, context);
+	public boolean validateTextPropertyEditor(TextPropertyEditor textPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(textPropertyEditor, diagnostics, context);
 	}
 
 	/**
@@ -348,8 +343,8 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComboBoxPropertySection(ComboBoxPropertySection comboBoxPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(comboBoxPropertySection, diagnostics, context);
+	public boolean validateComboBoxPropertyEditor(ComboBoxPropertyEditor comboBoxPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(comboBoxPropertyEditor, diagnostics, context);
 	}
 
 	/**
@@ -357,8 +352,8 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCheckboxPropertySection(CheckboxPropertySection checkboxPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(checkboxPropertySection, diagnostics, context);
+	public boolean validateCheckboxPropertyEditor(CheckboxPropertyEditor checkboxPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(checkboxPropertyEditor, diagnostics, context);
 	}
 
 	/**
@@ -366,8 +361,8 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRadioPropertySection(RadioPropertySection radioPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(radioPropertySection, diagnostics, context);
+	public boolean validateRadioPropertyEditor(RadioPropertyEditor radioPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(radioPropertyEditor, diagnostics, context);
 	}
 
 	/**
@@ -375,8 +370,8 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateListPropertySection(ListPropertySection listPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(listPropertySection, diagnostics, context);
+	public boolean validateListPropertyEditor(ListPropertyEditor listPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(listPropertyEditor, diagnostics, context);
 	}
 
 	/**
@@ -384,8 +379,8 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateGroupPropertySection(GroupPropertySection groupPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(groupPropertySection, diagnostics, context);
+	public boolean validateObjectPropertyEditor(ObjectPropertyEditor objectPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(objectPropertyEditor, diagnostics, context);
 	}
 
 	/**
@@ -393,8 +388,8 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCustomPropertySection(CustomPropertySection customPropertySection, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(customPropertySection, diagnostics, context);
+	public boolean validateCustomPropertyEditor(CustomPropertyEditor customPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(customPropertyEditor, diagnostics, context);
 	}
 
 	/**
@@ -413,15 +408,6 @@ public class PropertiesValidator extends EObjectValidator {
 	 */
 	public boolean validateOCLPropertyFilter(OCLPropertyFilter oclPropertyFilter, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(oclPropertyFilter, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePropertyReference(PropertyReference propertyReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(propertyReference, diagnostics, context);
 	}
 
 	/**

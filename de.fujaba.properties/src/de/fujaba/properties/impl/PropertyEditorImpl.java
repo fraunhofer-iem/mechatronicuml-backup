@@ -1,43 +1,42 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties.impl;
 
+import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.Property;
+import de.fujaba.properties.PropertyEditor;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import de.fujaba.properties.PropertiesPackage;
-import de.fujaba.properties.Property;
-import de.fujaba.properties.PropertySection;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Property Section</b></em>'.
+ * An implementation of the model object '<em><b>Property Editor</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fujaba.properties.impl.PropertySectionImpl#getProperty <em>Property</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyEditorImpl#getProperty <em>Property</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class PropertySectionImpl extends EObjectImpl implements PropertySection {
+public abstract class PropertyEditorImpl extends EObjectImpl implements PropertyEditor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertySectionImpl() {
+	protected PropertyEditorImpl() {
 		super();
 	}
 
@@ -48,7 +47,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PropertiesPackage.Literals.PROPERTY_SECTION;
+		return PropertiesPackage.Literals.PROPERTY_EDITOR;
 	}
 
 	/**
@@ -57,7 +56,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	 * @generated
 	 */
 	public Property getProperty() {
-		if (eContainerFeatureID() != PropertiesPackage.PROPERTY_SECTION__PROPERTY) return null;
+		if (eContainerFeatureID() != PropertiesPackage.PROPERTY_EDITOR__PROPERTY) return null;
 		return (Property)eInternalContainer();
 	}
 
@@ -67,7 +66,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	 * @generated
 	 */
 	public NotificationChain basicSetProperty(Property newProperty, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newProperty, PropertiesPackage.PROPERTY_SECTION__PROPERTY, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newProperty, PropertiesPackage.PROPERTY_EDITOR__PROPERTY, msgs);
 		return msgs;
 	}
 
@@ -77,7 +76,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	 * @generated
 	 */
 	public void setProperty(Property newProperty) {
-		if (newProperty != eInternalContainer() || (eContainerFeatureID() != PropertiesPackage.PROPERTY_SECTION__PROPERTY && newProperty != null)) {
+		if (newProperty != eInternalContainer() || (eContainerFeatureID() != PropertiesPackage.PROPERTY_EDITOR__PROPERTY && newProperty != null)) {
 			if (EcoreUtil.isAncestor(this, newProperty))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -89,7 +88,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_SECTION__PROPERTY, newProperty, newProperty));
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_EDITOR__PROPERTY, newProperty, newProperty));
 	}
 
 	/**
@@ -100,7 +99,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PropertiesPackage.PROPERTY_SECTION__PROPERTY:
+			case PropertiesPackage.PROPERTY_EDITOR__PROPERTY:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetProperty((Property)otherEnd, msgs);
@@ -116,7 +115,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PropertiesPackage.PROPERTY_SECTION__PROPERTY:
+			case PropertiesPackage.PROPERTY_EDITOR__PROPERTY:
 				return basicSetProperty(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -130,7 +129,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case PropertiesPackage.PROPERTY_SECTION__PROPERTY:
+			case PropertiesPackage.PROPERTY_EDITOR__PROPERTY:
 				return eInternalContainer().eInverseRemove(this, PropertiesPackage.PROPERTY__SECTION, Property.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -144,7 +143,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PropertiesPackage.PROPERTY_SECTION__PROPERTY:
+			case PropertiesPackage.PROPERTY_EDITOR__PROPERTY:
 				return getProperty();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -158,7 +157,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PropertiesPackage.PROPERTY_SECTION__PROPERTY:
+			case PropertiesPackage.PROPERTY_EDITOR__PROPERTY:
 				setProperty((Property)newValue);
 				return;
 		}
@@ -173,7 +172,7 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PropertiesPackage.PROPERTY_SECTION__PROPERTY:
+			case PropertiesPackage.PROPERTY_EDITOR__PROPERTY:
 				setProperty((Property)null);
 				return;
 		}
@@ -188,10 +187,10 @@ public abstract class PropertySectionImpl extends EObjectImpl implements Propert
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PropertiesPackage.PROPERTY_SECTION__PROPERTY:
+			case PropertiesPackage.PROPERTY_EDITOR__PROPERTY:
 				return getProperty() != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PropertySectionImpl
+} //PropertyEditorImpl

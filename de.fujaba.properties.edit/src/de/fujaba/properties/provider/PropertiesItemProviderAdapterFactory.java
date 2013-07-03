@@ -6,15 +6,12 @@
  */
 package de.fujaba.properties.provider;
 
-import de.fujaba.properties.util.PropertiesAdapterFactory;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -26,6 +23,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import de.fujaba.properties.util.PropertiesAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -237,164 +236,164 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.TextPropertySection} instances.
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.TextPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TextPropertySectionItemProvider textPropertySectionItemProvider;
+	protected TextPropertyEditorItemProvider textPropertyEditorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.fujaba.properties.TextPropertySection}.
+	 * This creates an adapter for a {@link de.fujaba.properties.TextPropertyEditor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createTextPropertySectionAdapter() {
-		if (textPropertySectionItemProvider == null) {
-			textPropertySectionItemProvider = new TextPropertySectionItemProvider(this);
+	public Adapter createTextPropertyEditorAdapter() {
+		if (textPropertyEditorItemProvider == null) {
+			textPropertyEditorItemProvider = new TextPropertyEditorItemProvider(this);
 		}
 
-		return textPropertySectionItemProvider;
+		return textPropertyEditorItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.ComboBoxPropertySection} instances.
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.ComboBoxPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComboBoxPropertySectionItemProvider comboBoxPropertySectionItemProvider;
+	protected ComboBoxPropertyEditorItemProvider comboBoxPropertyEditorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.fujaba.properties.ComboBoxPropertySection}.
+	 * This creates an adapter for a {@link de.fujaba.properties.ComboBoxPropertyEditor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createComboBoxPropertySectionAdapter() {
-		if (comboBoxPropertySectionItemProvider == null) {
-			comboBoxPropertySectionItemProvider = new ComboBoxPropertySectionItemProvider(this);
+	public Adapter createComboBoxPropertyEditorAdapter() {
+		if (comboBoxPropertyEditorItemProvider == null) {
+			comboBoxPropertyEditorItemProvider = new ComboBoxPropertyEditorItemProvider(this);
 		}
 
-		return comboBoxPropertySectionItemProvider;
+		return comboBoxPropertyEditorItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.CheckboxPropertySection} instances.
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.CheckboxPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CheckboxPropertySectionItemProvider checkboxPropertySectionItemProvider;
+	protected CheckboxPropertyEditorItemProvider checkboxPropertyEditorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.fujaba.properties.CheckboxPropertySection}.
+	 * This creates an adapter for a {@link de.fujaba.properties.CheckboxPropertyEditor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCheckboxPropertySectionAdapter() {
-		if (checkboxPropertySectionItemProvider == null) {
-			checkboxPropertySectionItemProvider = new CheckboxPropertySectionItemProvider(this);
+	public Adapter createCheckboxPropertyEditorAdapter() {
+		if (checkboxPropertyEditorItemProvider == null) {
+			checkboxPropertyEditorItemProvider = new CheckboxPropertyEditorItemProvider(this);
 		}
 
-		return checkboxPropertySectionItemProvider;
+		return checkboxPropertyEditorItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.RadioPropertySection} instances.
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.RadioPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RadioPropertySectionItemProvider radioPropertySectionItemProvider;
+	protected RadioPropertyEditorItemProvider radioPropertyEditorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.fujaba.properties.RadioPropertySection}.
+	 * This creates an adapter for a {@link de.fujaba.properties.RadioPropertyEditor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createRadioPropertySectionAdapter() {
-		if (radioPropertySectionItemProvider == null) {
-			radioPropertySectionItemProvider = new RadioPropertySectionItemProvider(this);
+	public Adapter createRadioPropertyEditorAdapter() {
+		if (radioPropertyEditorItemProvider == null) {
+			radioPropertyEditorItemProvider = new RadioPropertyEditorItemProvider(this);
 		}
 
-		return radioPropertySectionItemProvider;
+		return radioPropertyEditorItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.ListPropertySection} instances.
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.ListPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ListPropertySectionItemProvider listPropertySectionItemProvider;
+	protected ListPropertyEditorItemProvider listPropertyEditorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.fujaba.properties.ListPropertySection}.
+	 * This creates an adapter for a {@link de.fujaba.properties.ListPropertyEditor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createListPropertySectionAdapter() {
-		if (listPropertySectionItemProvider == null) {
-			listPropertySectionItemProvider = new ListPropertySectionItemProvider(this);
+	public Adapter createListPropertyEditorAdapter() {
+		if (listPropertyEditorItemProvider == null) {
+			listPropertyEditorItemProvider = new ListPropertyEditorItemProvider(this);
 		}
 
-		return listPropertySectionItemProvider;
+		return listPropertyEditorItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.GroupPropertySection} instances.
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.ObjectPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GroupPropertySectionItemProvider groupPropertySectionItemProvider;
+	protected ObjectPropertyEditorItemProvider objectPropertyEditorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.fujaba.properties.GroupPropertySection}.
+	 * This creates an adapter for a {@link de.fujaba.properties.ObjectPropertyEditor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createGroupPropertySectionAdapter() {
-		if (groupPropertySectionItemProvider == null) {
-			groupPropertySectionItemProvider = new GroupPropertySectionItemProvider(this);
+	public Adapter createObjectPropertyEditorAdapter() {
+		if (objectPropertyEditorItemProvider == null) {
+			objectPropertyEditorItemProvider = new ObjectPropertyEditorItemProvider(this);
 		}
 
-		return groupPropertySectionItemProvider;
+		return objectPropertyEditorItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.CustomPropertySection} instances.
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.CustomPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CustomPropertySectionItemProvider customPropertySectionItemProvider;
+	protected CustomPropertyEditorItemProvider customPropertyEditorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.fujaba.properties.CustomPropertySection}.
+	 * This creates an adapter for a {@link de.fujaba.properties.CustomPropertyEditor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCustomPropertySectionAdapter() {
-		if (customPropertySectionItemProvider == null) {
-			customPropertySectionItemProvider = new CustomPropertySectionItemProvider(this);
+	public Adapter createCustomPropertyEditorAdapter() {
+		if (customPropertyEditorItemProvider == null) {
+			customPropertyEditorItemProvider = new CustomPropertyEditorItemProvider(this);
 		}
 
-		return customPropertySectionItemProvider;
+		return customPropertyEditorItemProvider;
 	}
 
 	/**
@@ -418,29 +417,6 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		}
 
 		return oclPropertyFilterItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.PropertyReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PropertyReferenceItemProvider propertyReferenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.fujaba.properties.PropertyReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPropertyReferenceAdapter() {
-		if (propertyReferenceItemProvider == null) {
-			propertyReferenceItemProvider = new PropertyReferenceItemProvider(this);
-		}
-
-		return propertyReferenceItemProvider;
 	}
 
 	/**
@@ -549,15 +525,14 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (classItemProvider != null) classItemProvider.dispose();
 		if (propertyCategoryItemProvider != null) propertyCategoryItemProvider.dispose();
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
-		if (textPropertySectionItemProvider != null) textPropertySectionItemProvider.dispose();
-		if (comboBoxPropertySectionItemProvider != null) comboBoxPropertySectionItemProvider.dispose();
-		if (checkboxPropertySectionItemProvider != null) checkboxPropertySectionItemProvider.dispose();
-		if (radioPropertySectionItemProvider != null) radioPropertySectionItemProvider.dispose();
-		if (listPropertySectionItemProvider != null) listPropertySectionItemProvider.dispose();
-		if (groupPropertySectionItemProvider != null) groupPropertySectionItemProvider.dispose();
-		if (customPropertySectionItemProvider != null) customPropertySectionItemProvider.dispose();
+		if (textPropertyEditorItemProvider != null) textPropertyEditorItemProvider.dispose();
+		if (comboBoxPropertyEditorItemProvider != null) comboBoxPropertyEditorItemProvider.dispose();
+		if (checkboxPropertyEditorItemProvider != null) checkboxPropertyEditorItemProvider.dispose();
+		if (radioPropertyEditorItemProvider != null) radioPropertyEditorItemProvider.dispose();
+		if (listPropertyEditorItemProvider != null) listPropertyEditorItemProvider.dispose();
+		if (objectPropertyEditorItemProvider != null) objectPropertyEditorItemProvider.dispose();
+		if (customPropertyEditorItemProvider != null) customPropertyEditorItemProvider.dispose();
 		if (oclPropertyFilterItemProvider != null) oclPropertyFilterItemProvider.dispose();
-		if (propertyReferenceItemProvider != null) propertyReferenceItemProvider.dispose();
 	}
 
 }

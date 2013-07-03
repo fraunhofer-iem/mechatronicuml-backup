@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties.provider;
 
@@ -12,25 +8,21 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link de.fujaba.properties.PropertySection} object.
+ * This is the item provider adapter for a {@link de.fujaba.properties.CheckboxPropertyEditor} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropertySectionItemProvider
-	extends ItemProviderAdapter
+public class CheckboxPropertyEditorItemProvider
+	extends PropertyEditorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -43,7 +35,7 @@ public class PropertySectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertySectionItemProvider(AdapterFactory adapterFactory) {
+	public CheckboxPropertyEditorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,6 +55,17 @@ public class PropertySectionItemProvider
 	}
 
 	/**
+	 * This returns CheckboxPropertyEditor.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CheckboxPropertyEditor"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,7 +73,7 @@ public class PropertySectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_PropertySection_type");
+		return getString("_UI_CheckboxPropertyEditor_type");
 	}
 
 	/**
@@ -96,17 +99,6 @@ public class PropertySectionItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return PropertiesEditPlugin.INSTANCE;
 	}
 
 }

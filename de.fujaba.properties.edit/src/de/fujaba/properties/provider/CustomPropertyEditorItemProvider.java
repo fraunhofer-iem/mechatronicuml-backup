@@ -1,33 +1,34 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties.provider;
 
 
+import de.fujaba.properties.CustomPropertyEditor;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import de.fujaba.properties.PropertiesPackage;
 
 /**
- * This is the item provider adapter for a {@link de.fujaba.properties.ComboBoxPropertySection} object.
+ * This is the item provider adapter for a {@link de.fujaba.properties.CustomPropertyEditor} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComboBoxPropertySectionItemProvider
-	extends PropertySectionItemProvider
+public class CustomPropertyEditorItemProvider
+	extends PropertyEditorItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -40,7 +41,7 @@ public class ComboBoxPropertySectionItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComboBoxPropertySectionItemProvider(AdapterFactory adapterFactory) {
+	public CustomPropertyEditorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,19 +56,42 @@ public class ComboBoxPropertySectionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addFullyQualifiedClassNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns ComboBoxPropertySection.gif.
+	 * This adds a property descriptor for the Fully Qualified Class Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFullyQualifiedClassNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CustomPropertyEditor_fullyQualifiedClassName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CustomPropertyEditor_fullyQualifiedClassName_feature", "_UI_CustomPropertyEditor_type"),
+				 PropertiesPackage.Literals.CUSTOM_PROPERTY_EDITOR__FULLY_QUALIFIED_CLASS_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns CustomPropertyEditor.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComboBoxPropertySection"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CustomPropertyEditor"));
 	}
 
 	/**
@@ -78,7 +102,10 @@ public class ComboBoxPropertySectionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ComboBoxPropertySection_type");
+		String label = ((CustomPropertyEditor)object).getFullyQualifiedClassName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_CustomPropertyEditor_type") :
+			getString("_UI_CustomPropertyEditor_type") + " " + label;
 	}
 
 	/**
@@ -91,6 +118,12 @@ public class ComboBoxPropertySectionItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(CustomPropertyEditor.class)) {
+			case PropertiesPackage.CUSTOM_PROPERTY_EDITOR__FULLY_QUALIFIED_CLASS_NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

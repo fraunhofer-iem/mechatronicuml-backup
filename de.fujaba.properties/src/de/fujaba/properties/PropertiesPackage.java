@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties;
 
@@ -491,14 +487,14 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY_FEATURE_COUNT = 7;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertySectionImpl <em>Property Section</em>}' class.
+	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.PropertySectionImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertySection()
+	 * @see de.fujaba.properties.impl.PropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyEditor()
 	 * @generated
 	 */
-	int PROPERTY_SECTION = 7;
+	int PROPERTY_EDITOR = 7;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -507,26 +503,26 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_SECTION__PROPERTY = 0;
+	int PROPERTY_EDITOR__PROPERTY = 0;
 
 	/**
-	 * The number of structural features of the '<em>Property Section</em>' class.
+	 * The number of structural features of the '<em>Property Editor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_SECTION_FEATURE_COUNT = 1;
+	int PROPERTY_EDITOR_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.TextPropertySectionImpl <em>Text Property Section</em>}' class.
+	 * The meta object id for the '{@link de.fujaba.properties.impl.TextPropertyEditorImpl <em>Text Property Editor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.TextPropertySectionImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTextPropertySection()
+	 * @see de.fujaba.properties.impl.TextPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTextPropertyEditor()
 	 * @generated
 	 */
-	int TEXT_PROPERTY_SECTION = 8;
+	int TEXT_PROPERTY_EDITOR = 8;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -535,7 +531,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+	int TEXT_PROPERTY_EDITOR__PROPERTY = PROPERTY_EDITOR__PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Multi Line</b></em>' attribute.
@@ -544,26 +540,26 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROPERTY_SECTION__MULTI_LINE = PROPERTY_SECTION_FEATURE_COUNT + 0;
+	int TEXT_PROPERTY_EDITOR__MULTI_LINE = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Text Property Section</em>' class.
+	 * The number of structural features of the '<em>Text Property Editor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 1;
+	int TEXT_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.ComboBoxPropertySectionImpl <em>Combo Box Property Section</em>}' class.
+	 * The meta object id for the '{@link de.fujaba.properties.impl.ComboBoxPropertyEditorImpl <em>Combo Box Property Editor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.ComboBoxPropertySectionImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getComboBoxPropertySection()
+	 * @see de.fujaba.properties.impl.ComboBoxPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getComboBoxPropertyEditor()
 	 * @generated
 	 */
-	int COMBO_BOX_PROPERTY_SECTION = 9;
+	int COMBO_BOX_PROPERTY_EDITOR = 9;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -572,26 +568,26 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMBO_BOX_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+	int COMBO_BOX_PROPERTY_EDITOR__PROPERTY = PROPERTY_EDITOR__PROPERTY;
 
 	/**
-	 * The number of structural features of the '<em>Combo Box Property Section</em>' class.
+	 * The number of structural features of the '<em>Combo Box Property Editor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMBO_BOX_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 0;
+	int COMBO_BOX_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.CheckboxPropertySectionImpl <em>Checkbox Property Section</em>}' class.
+	 * The meta object id for the '{@link de.fujaba.properties.impl.CheckboxPropertyEditorImpl <em>Checkbox Property Editor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.CheckboxPropertySectionImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertySection()
+	 * @see de.fujaba.properties.impl.CheckboxPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertyEditor()
 	 * @generated
 	 */
-	int CHECKBOX_PROPERTY_SECTION = 10;
+	int CHECKBOX_PROPERTY_EDITOR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -600,26 +596,26 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHECKBOX_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+	int CHECKBOX_PROPERTY_EDITOR__PROPERTY = PROPERTY_EDITOR__PROPERTY;
 
 	/**
-	 * The number of structural features of the '<em>Checkbox Property Section</em>' class.
+	 * The number of structural features of the '<em>Checkbox Property Editor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHECKBOX_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 0;
+	int CHECKBOX_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.RadioPropertySectionImpl <em>Radio Property Section</em>}' class.
+	 * The meta object id for the '{@link de.fujaba.properties.impl.RadioPropertyEditorImpl <em>Radio Property Editor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.RadioPropertySectionImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getRadioPropertySection()
+	 * @see de.fujaba.properties.impl.RadioPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getRadioPropertyEditor()
 	 * @generated
 	 */
-	int RADIO_PROPERTY_SECTION = 11;
+	int RADIO_PROPERTY_EDITOR = 11;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -628,26 +624,26 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RADIO_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+	int RADIO_PROPERTY_EDITOR__PROPERTY = PROPERTY_EDITOR__PROPERTY;
 
 	/**
-	 * The number of structural features of the '<em>Radio Property Section</em>' class.
+	 * The number of structural features of the '<em>Radio Property Editor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RADIO_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 0;
+	int RADIO_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.ListPropertySectionImpl <em>List Property Section</em>}' class.
+	 * The meta object id for the '{@link de.fujaba.properties.impl.ListPropertyEditorImpl <em>List Property Editor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.ListPropertySectionImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getListPropertySection()
+	 * @see de.fujaba.properties.impl.ListPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getListPropertyEditor()
 	 * @generated
 	 */
-	int LIST_PROPERTY_SECTION = 12;
+	int LIST_PROPERTY_EDITOR = 12;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -656,26 +652,26 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LIST_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+	int LIST_PROPERTY_EDITOR__PROPERTY = PROPERTY_EDITOR__PROPERTY;
 
 	/**
-	 * The number of structural features of the '<em>List Property Section</em>' class.
+	 * The number of structural features of the '<em>List Property Editor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LIST_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 0;
+	int LIST_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.GroupPropertySectionImpl <em>Group Property Section</em>}' class.
+	 * The meta object id for the '{@link de.fujaba.properties.impl.ObjectPropertyEditorImpl <em>Object Property Editor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.GroupPropertySectionImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getGroupPropertySection()
+	 * @see de.fujaba.properties.impl.ObjectPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getObjectPropertyEditor()
 	 * @generated
 	 */
-	int GROUP_PROPERTY_SECTION = 13;
+	int OBJECT_PROPERTY_EDITOR = 13;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -684,35 +680,26 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+	int OBJECT_PROPERTY_EDITOR__PROPERTY = PROPERTY_EDITOR__PROPERTY;
 
 	/**
-	 * The feature id for the '<em><b>Referenced Properties</b></em>' containment reference list.
+	 * The number of structural features of the '<em>Object Property Editor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES = PROPERTY_SECTION_FEATURE_COUNT + 0;
+	int OBJECT_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Group Property Section</em>' class.
+	 * The meta object id for the '{@link de.fujaba.properties.impl.CustomPropertyEditorImpl <em>Custom Property Editor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GROUP_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.CustomPropertySectionImpl <em>Custom Property Section</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.CustomPropertySectionImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertySection()
+	 * @see de.fujaba.properties.impl.CustomPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertyEditor()
 	 * @generated
 	 */
-	int CUSTOM_PROPERTY_SECTION = 14;
+	int CUSTOM_PROPERTY_EDITOR = 14;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -721,7 +708,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_PROPERTY_SECTION__PROPERTY = PROPERTY_SECTION__PROPERTY;
+	int CUSTOM_PROPERTY_EDITOR__PROPERTY = PROPERTY_EDITOR__PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Fully Qualified Class Name</b></em>' attribute.
@@ -730,16 +717,16 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_PROPERTY_SECTION__FULLY_QUALIFIED_CLASS_NAME = PROPERTY_SECTION_FEATURE_COUNT + 0;
+	int CUSTOM_PROPERTY_EDITOR__FULLY_QUALIFIED_CLASS_NAME = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Custom Property Section</em>' class.
+	 * The number of structural features of the '<em>Custom Property Editor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_PROPERTY_SECTION_FEATURE_COUNT = PROPERTY_SECTION_FEATURE_COUNT + 1;
+	int CUSTOM_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyFilterImpl <em>Property Filter</em>}' class.
@@ -787,44 +774,6 @@ public interface PropertiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int OCL_PROPERTY_FILTER_FEATURE_COUNT = PROPERTY_FILTER_FEATURE_COUNT + 1;
-
-
-	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyReferenceImpl <em>Property Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.PropertyReferenceImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyReference()
-	 * @generated
-	 */
-	int PROPERTY_REFERENCE = 17;
-
-	/**
-	 * The feature id for the '<em><b>Active</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_REFERENCE__ACTIVE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_REFERENCE__PROPERTY = 1;
-
-	/**
-	 * The number of structural features of the '<em>Property Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_REFERENCE_FEATURE_COUNT = 2;
 
 
 	/**
@@ -1261,128 +1210,117 @@ public interface PropertiesPackage extends EPackage {
 	EReference getProperty_Category();
 
 	/**
-	 * Returns the meta object for class '{@link de.fujaba.properties.PropertySection <em>Property Section</em>}'.
+	 * Returns the meta object for class '{@link de.fujaba.properties.PropertyEditor <em>Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Property Section</em>'.
-	 * @see de.fujaba.properties.PropertySection
+	 * @return the meta object for class '<em>Property Editor</em>'.
+	 * @see de.fujaba.properties.PropertyEditor
 	 * @generated
 	 */
-	EClass getPropertySection();
+	EClass getPropertyEditor();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.fujaba.properties.PropertySection#getProperty <em>Property</em>}'.
+	 * Returns the meta object for the container reference '{@link de.fujaba.properties.PropertyEditor#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Property</em>'.
-	 * @see de.fujaba.properties.PropertySection#getProperty()
-	 * @see #getPropertySection()
+	 * @see de.fujaba.properties.PropertyEditor#getProperty()
+	 * @see #getPropertyEditor()
 	 * @generated
 	 */
-	EReference getPropertySection_Property();
+	EReference getPropertyEditor_Property();
 
 	/**
-	 * Returns the meta object for class '{@link de.fujaba.properties.TextPropertySection <em>Text Property Section</em>}'.
+	 * Returns the meta object for class '{@link de.fujaba.properties.TextPropertyEditor <em>Text Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Text Property Section</em>'.
-	 * @see de.fujaba.properties.TextPropertySection
+	 * @return the meta object for class '<em>Text Property Editor</em>'.
+	 * @see de.fujaba.properties.TextPropertyEditor
 	 * @generated
 	 */
-	EClass getTextPropertySection();
+	EClass getTextPropertyEditor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.fujaba.properties.TextPropertySection#isMultiLine <em>Multi Line</em>}'.
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.TextPropertyEditor#isMultiLine <em>Multi Line</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Multi Line</em>'.
-	 * @see de.fujaba.properties.TextPropertySection#isMultiLine()
-	 * @see #getTextPropertySection()
+	 * @see de.fujaba.properties.TextPropertyEditor#isMultiLine()
+	 * @see #getTextPropertyEditor()
 	 * @generated
 	 */
-	EAttribute getTextPropertySection_MultiLine();
+	EAttribute getTextPropertyEditor_MultiLine();
 
 	/**
-	 * Returns the meta object for class '{@link de.fujaba.properties.ComboBoxPropertySection <em>Combo Box Property Section</em>}'.
+	 * Returns the meta object for class '{@link de.fujaba.properties.ComboBoxPropertyEditor <em>Combo Box Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Combo Box Property Section</em>'.
-	 * @see de.fujaba.properties.ComboBoxPropertySection
+	 * @return the meta object for class '<em>Combo Box Property Editor</em>'.
+	 * @see de.fujaba.properties.ComboBoxPropertyEditor
 	 * @generated
 	 */
-	EClass getComboBoxPropertySection();
+	EClass getComboBoxPropertyEditor();
 
 	/**
-	 * Returns the meta object for class '{@link de.fujaba.properties.CheckboxPropertySection <em>Checkbox Property Section</em>}'.
+	 * Returns the meta object for class '{@link de.fujaba.properties.CheckboxPropertyEditor <em>Checkbox Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Checkbox Property Section</em>'.
-	 * @see de.fujaba.properties.CheckboxPropertySection
+	 * @return the meta object for class '<em>Checkbox Property Editor</em>'.
+	 * @see de.fujaba.properties.CheckboxPropertyEditor
 	 * @generated
 	 */
-	EClass getCheckboxPropertySection();
+	EClass getCheckboxPropertyEditor();
 
 	/**
-	 * Returns the meta object for class '{@link de.fujaba.properties.RadioPropertySection <em>Radio Property Section</em>}'.
+	 * Returns the meta object for class '{@link de.fujaba.properties.RadioPropertyEditor <em>Radio Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Radio Property Section</em>'.
-	 * @see de.fujaba.properties.RadioPropertySection
+	 * @return the meta object for class '<em>Radio Property Editor</em>'.
+	 * @see de.fujaba.properties.RadioPropertyEditor
 	 * @generated
 	 */
-	EClass getRadioPropertySection();
+	EClass getRadioPropertyEditor();
 
 	/**
-	 * Returns the meta object for class '{@link de.fujaba.properties.ListPropertySection <em>List Property Section</em>}'.
+	 * Returns the meta object for class '{@link de.fujaba.properties.ListPropertyEditor <em>List Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>List Property Section</em>'.
-	 * @see de.fujaba.properties.ListPropertySection
+	 * @return the meta object for class '<em>List Property Editor</em>'.
+	 * @see de.fujaba.properties.ListPropertyEditor
 	 * @generated
 	 */
-	EClass getListPropertySection();
+	EClass getListPropertyEditor();
 
 	/**
-	 * Returns the meta object for class '{@link de.fujaba.properties.GroupPropertySection <em>Group Property Section</em>}'.
+	 * Returns the meta object for class '{@link de.fujaba.properties.ObjectPropertyEditor <em>Object Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Group Property Section</em>'.
-	 * @see de.fujaba.properties.GroupPropertySection
+	 * @return the meta object for class '<em>Object Property Editor</em>'.
+	 * @see de.fujaba.properties.ObjectPropertyEditor
 	 * @generated
 	 */
-	EClass getGroupPropertySection();
+	EClass getObjectPropertyEditor();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.fujaba.properties.GroupPropertySection#getReferencedProperties <em>Referenced Properties</em>}'.
+	 * Returns the meta object for class '{@link de.fujaba.properties.CustomPropertyEditor <em>Custom Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Referenced Properties</em>'.
-	 * @see de.fujaba.properties.GroupPropertySection#getReferencedProperties()
-	 * @see #getGroupPropertySection()
+	 * @return the meta object for class '<em>Custom Property Editor</em>'.
+	 * @see de.fujaba.properties.CustomPropertyEditor
 	 * @generated
 	 */
-	EReference getGroupPropertySection_ReferencedProperties();
+	EClass getCustomPropertyEditor();
 
 	/**
-	 * Returns the meta object for class '{@link de.fujaba.properties.CustomPropertySection <em>Custom Property Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Custom Property Section</em>'.
-	 * @see de.fujaba.properties.CustomPropertySection
-	 * @generated
-	 */
-	EClass getCustomPropertySection();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.fujaba.properties.CustomPropertySection#getFullyQualifiedClassName <em>Fully Qualified Class Name</em>}'.
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.CustomPropertyEditor#getFullyQualifiedClassName <em>Fully Qualified Class Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Fully Qualified Class Name</em>'.
-	 * @see de.fujaba.properties.CustomPropertySection#getFullyQualifiedClassName()
-	 * @see #getCustomPropertySection()
+	 * @see de.fujaba.properties.CustomPropertyEditor#getFullyQualifiedClassName()
+	 * @see #getCustomPropertyEditor()
 	 * @generated
 	 */
-	EAttribute getCustomPropertySection_FullyQualifiedClassName();
+	EAttribute getCustomPropertyEditor_FullyQualifiedClassName();
 
 	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.PropertyFilter <em>Property Filter</em>}'.
@@ -1414,38 +1352,6 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOCLPropertyFilter_Expression();
-
-	/**
-	 * Returns the meta object for class '{@link de.fujaba.properties.PropertyReference <em>Property Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Property Reference</em>'.
-	 * @see de.fujaba.properties.PropertyReference
-	 * @generated
-	 */
-	EClass getPropertyReference();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.fujaba.properties.PropertyReference#isActive <em>Active</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Active</em>'.
-	 * @see de.fujaba.properties.PropertyReference#isActive()
-	 * @see #getPropertyReference()
-	 * @generated
-	 */
-	EAttribute getPropertyReference_Active();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.fujaba.properties.PropertyReference#getProperty <em>Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Property</em>'.
-	 * @see de.fujaba.properties.PropertyReference#getProperty()
-	 * @see #getPropertyReference()
-	 * @generated
-	 */
-	EReference getPropertyReference_Property();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1804,14 +1710,14 @@ public interface PropertiesPackage extends EPackage {
 		EReference PROPERTY__CATEGORY = eINSTANCE.getProperty_Category();
 
 		/**
-		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertySectionImpl <em>Property Section</em>}' class.
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.fujaba.properties.impl.PropertySectionImpl
-		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertySection()
+		 * @see de.fujaba.properties.impl.PropertyEditorImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyEditor()
 		 * @generated
 		 */
-		EClass PROPERTY_SECTION = eINSTANCE.getPropertySection();
+		EClass PROPERTY_EDITOR = eINSTANCE.getPropertyEditor();
 
 		/**
 		 * The meta object literal for the '<em><b>Property</b></em>' container reference feature.
@@ -1819,17 +1725,17 @@ public interface PropertiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY_SECTION__PROPERTY = eINSTANCE.getPropertySection_Property();
+		EReference PROPERTY_EDITOR__PROPERTY = eINSTANCE.getPropertyEditor_Property();
 
 		/**
-		 * The meta object literal for the '{@link de.fujaba.properties.impl.TextPropertySectionImpl <em>Text Property Section</em>}' class.
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.TextPropertyEditorImpl <em>Text Property Editor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.fujaba.properties.impl.TextPropertySectionImpl
-		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTextPropertySection()
+		 * @see de.fujaba.properties.impl.TextPropertyEditorImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTextPropertyEditor()
 		 * @generated
 		 */
-		EClass TEXT_PROPERTY_SECTION = eINSTANCE.getTextPropertySection();
+		EClass TEXT_PROPERTY_EDITOR = eINSTANCE.getTextPropertyEditor();
 
 		/**
 		 * The meta object literal for the '<em><b>Multi Line</b></em>' attribute feature.
@@ -1837,75 +1743,67 @@ public interface PropertiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXT_PROPERTY_SECTION__MULTI_LINE = eINSTANCE.getTextPropertySection_MultiLine();
+		EAttribute TEXT_PROPERTY_EDITOR__MULTI_LINE = eINSTANCE.getTextPropertyEditor_MultiLine();
 
 		/**
-		 * The meta object literal for the '{@link de.fujaba.properties.impl.ComboBoxPropertySectionImpl <em>Combo Box Property Section</em>}' class.
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.ComboBoxPropertyEditorImpl <em>Combo Box Property Editor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.fujaba.properties.impl.ComboBoxPropertySectionImpl
-		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getComboBoxPropertySection()
+		 * @see de.fujaba.properties.impl.ComboBoxPropertyEditorImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getComboBoxPropertyEditor()
 		 * @generated
 		 */
-		EClass COMBO_BOX_PROPERTY_SECTION = eINSTANCE.getComboBoxPropertySection();
+		EClass COMBO_BOX_PROPERTY_EDITOR = eINSTANCE.getComboBoxPropertyEditor();
 
 		/**
-		 * The meta object literal for the '{@link de.fujaba.properties.impl.CheckboxPropertySectionImpl <em>Checkbox Property Section</em>}' class.
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.CheckboxPropertyEditorImpl <em>Checkbox Property Editor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.fujaba.properties.impl.CheckboxPropertySectionImpl
-		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertySection()
+		 * @see de.fujaba.properties.impl.CheckboxPropertyEditorImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertyEditor()
 		 * @generated
 		 */
-		EClass CHECKBOX_PROPERTY_SECTION = eINSTANCE.getCheckboxPropertySection();
+		EClass CHECKBOX_PROPERTY_EDITOR = eINSTANCE.getCheckboxPropertyEditor();
 
 		/**
-		 * The meta object literal for the '{@link de.fujaba.properties.impl.RadioPropertySectionImpl <em>Radio Property Section</em>}' class.
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.RadioPropertyEditorImpl <em>Radio Property Editor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.fujaba.properties.impl.RadioPropertySectionImpl
-		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getRadioPropertySection()
+		 * @see de.fujaba.properties.impl.RadioPropertyEditorImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getRadioPropertyEditor()
 		 * @generated
 		 */
-		EClass RADIO_PROPERTY_SECTION = eINSTANCE.getRadioPropertySection();
+		EClass RADIO_PROPERTY_EDITOR = eINSTANCE.getRadioPropertyEditor();
 
 		/**
-		 * The meta object literal for the '{@link de.fujaba.properties.impl.ListPropertySectionImpl <em>List Property Section</em>}' class.
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.ListPropertyEditorImpl <em>List Property Editor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.fujaba.properties.impl.ListPropertySectionImpl
-		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getListPropertySection()
+		 * @see de.fujaba.properties.impl.ListPropertyEditorImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getListPropertyEditor()
 		 * @generated
 		 */
-		EClass LIST_PROPERTY_SECTION = eINSTANCE.getListPropertySection();
+		EClass LIST_PROPERTY_EDITOR = eINSTANCE.getListPropertyEditor();
 
 		/**
-		 * The meta object literal for the '{@link de.fujaba.properties.impl.GroupPropertySectionImpl <em>Group Property Section</em>}' class.
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.ObjectPropertyEditorImpl <em>Object Property Editor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.fujaba.properties.impl.GroupPropertySectionImpl
-		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getGroupPropertySection()
+		 * @see de.fujaba.properties.impl.ObjectPropertyEditorImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getObjectPropertyEditor()
 		 * @generated
 		 */
-		EClass GROUP_PROPERTY_SECTION = eINSTANCE.getGroupPropertySection();
+		EClass OBJECT_PROPERTY_EDITOR = eINSTANCE.getObjectPropertyEditor();
 
 		/**
-		 * The meta object literal for the '<em><b>Referenced Properties</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.CustomPropertyEditorImpl <em>Custom Property Editor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.fujaba.properties.impl.CustomPropertyEditorImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertyEditor()
 		 * @generated
 		 */
-		EReference GROUP_PROPERTY_SECTION__REFERENCED_PROPERTIES = eINSTANCE.getGroupPropertySection_ReferencedProperties();
-
-		/**
-		 * The meta object literal for the '{@link de.fujaba.properties.impl.CustomPropertySectionImpl <em>Custom Property Section</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.fujaba.properties.impl.CustomPropertySectionImpl
-		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertySection()
-		 * @generated
-		 */
-		EClass CUSTOM_PROPERTY_SECTION = eINSTANCE.getCustomPropertySection();
+		EClass CUSTOM_PROPERTY_EDITOR = eINSTANCE.getCustomPropertyEditor();
 
 		/**
 		 * The meta object literal for the '<em><b>Fully Qualified Class Name</b></em>' attribute feature.
@@ -1913,7 +1811,7 @@ public interface PropertiesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CUSTOM_PROPERTY_SECTION__FULLY_QUALIFIED_CLASS_NAME = eINSTANCE.getCustomPropertySection_FullyQualifiedClassName();
+		EAttribute CUSTOM_PROPERTY_EDITOR__FULLY_QUALIFIED_CLASS_NAME = eINSTANCE.getCustomPropertyEditor_FullyQualifiedClassName();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyFilterImpl <em>Property Filter</em>}' class.
@@ -1942,32 +1840,6 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OCL_PROPERTY_FILTER__EXPRESSION = eINSTANCE.getOCLPropertyFilter_Expression();
-
-		/**
-		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyReferenceImpl <em>Property Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.fujaba.properties.impl.PropertyReferenceImpl
-		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyReference()
-		 * @generated
-		 */
-		EClass PROPERTY_REFERENCE = eINSTANCE.getPropertyReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Active</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROPERTY_REFERENCE__ACTIVE = eINSTANCE.getPropertyReference_Active();
-
-		/**
-		 * The meta object literal for the '<em><b>Property</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROPERTY_REFERENCE__PROPERTY = eINSTANCE.getPropertyReference_Property();
 
 	}
 

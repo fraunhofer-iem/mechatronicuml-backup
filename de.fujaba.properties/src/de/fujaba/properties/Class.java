@@ -1,13 +1,11 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.fujaba.properties;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -91,7 +89,7 @@ public interface Class extends EObject {
 	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.Property#getClazz <em>Clazz</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Properties</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Properties</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

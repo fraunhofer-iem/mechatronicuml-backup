@@ -1,0 +1,39 @@
+/**
+ */
+package de.fujaba.properties.impl;
+
+import de.fujaba.properties.ComboBoxPropertyEditor;
+import de.fujaba.properties.PropertiesPackage;
+
+import org.eclipse.emf.ecore.EClass;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Combo Box Property Editor</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
+public class ComboBoxPropertyEditorImpl extends PropertyEditorImpl implements ComboBoxPropertyEditor {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComboBoxPropertyEditorImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return PropertiesPackage.Literals.COMBO_BOX_PROPERTY_EDITOR;
+	}
+
+} //ComboBoxPropertyEditorImpl

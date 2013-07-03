@@ -53,21 +53,21 @@ mapping inout PropertyGenerator::generator() {
 		-- reconcile all packages
 		packages->map reconcilePackage(defaultTab);
 		
-		-- initialize newly created GroupPropertySections
-		packages.classes.properties.section[GroupPropertySection]->forEach(section) {
-			if section.container().oclIsKindOf(Property) then {
-			var prop : Property := section._property;//container().oclAsType(Property);
-				packages.classes->select(c |
-					prop.genFeature.ecoreFeature.eType.oclAsType(ecore::EClass).eAllSuperTypes->including(prop.genFeature.ecoreFeature.eType.oclAsType(ecore::EClass))->includes(c.genClass.ecoreClass)).properties->select(p | 
-						-- reject eopposite
-						((not p.genFeature.ecoreFeature.oclIsKindOf(ecore::EReference)) or p.genFeature.ecoreFeature.oclAsType(ecore::EReference).eOpposite != prop.genFeature.ecoreFeature)
-						-- reject existing property references
-						and not section.referencedProperties._property->includes(p)
-				)->forEach(prp) {
-					section.referencedProperties += new PropertyReference(prp);
-				}
-			} endif;
-		}
+		-- initialize newly created GroupPropertyEditors
+--		packages.classes.properties.section[GroupPropertyEditor]->forEach(section) {
+--			if section.container().oclIsKindOf(Property) then {
+--			var prop : Property := section._property;//container().oclAsType(Property);
+--				packages.classes->select(c |
+--					prop.genFeature.ecoreFeature.eType.oclAsType(ecore::EClass).eAllSuperTypes->including(prop.genFeature.ecoreFeature.eType.oclAsType(ecore::EClass))->includes(c.genClass.ecoreClass)).properties->select(p | 
+--						-- reject eopposite
+--						((not p.genFeature.ecoreFeature.oclIsKindOf(ecore::EReference)) or p.genFeature.ecoreFeature.oclAsType(ecore::EReference).eOpposite != prop.genFeature.ecoreFeature)
+--						-- reject existing property references
+--						and not section.referencedProperties._property->includes(p)
+--				)->forEach(prp) {
+--					section.referencedProperties += new PropertyReference(prp);
+--				}
+--			} endif;
+--		}
 	} endif;
 }
 
@@ -113,32 +113,32 @@ mapping Class::createProperty(_feature : GenFeature, _tab : PropertyTab) : Prope
 	section := _feature->map section()->any(true);
 }
 
-mapping GenFeature::section() : PropertySection
+mapping GenFeature::section() : PropertyEditor
 	disjuncts 
 	GenFeature::checkboxSection,
 	GenFeature::listSection, 
 	GenFeature::radioSection,
-	GenFeature::groupSection,
+	GenFeature::objectSection,
 	GenFeature::textSection;
 
 
-mapping GenFeature::checkboxSection() : CheckboxPropertySection when {self.ecoreFeature.eType.name = 'EBoolean'} {
+mapping GenFeature::checkboxSection() : CheckboxPropertyEditor when {self.ecoreFeature.eType.name = 'EBoolean'} {
 }
 
 
-mapping GenFeature::listSection() : ListPropertySection when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.upperBound > 1} {
+mapping GenFeature::listSection() : ListPropertyEditor when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.upperBound > 1} {
 }
 
-mapping GenFeature::radioSection() : RadioPropertySection when {self.ecoreFeature.eType.oclIsKindOf(EEnum)} {
-}
-
-
-
-mapping GenFeature::groupSection() : GroupPropertySection when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.oclAsType(EReference).containment and self.ecoreFeature.upperBound = 1} {
+mapping GenFeature::radioSection() : RadioPropertyEditor when {self.ecoreFeature.eType.oclIsKindOf(EEnum)} {
 }
 
 
-mapping GenFeature::textSection() : TextPropertySection when {self.ecoreFeature.oclIsKindOf(EAttribute) and self.ecoreFeature.eType.name != 'EBoolean' and not self.ecoreFeature.eType.oclIsKindOf(EEnum) } {
+
+mapping GenFeature::objectSection() : ObjectPropertyEditor when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.oclAsType(EReference).containment and self.ecoreFeature.upperBound = 1} {
+}
+
+
+mapping GenFeature::textSection() : TextPropertyEditor when {self.ecoreFeature.oclIsKindOf(EAttribute) and self.ecoreFeature.eType.name != 'EBoolean' and not self.ecoreFeature.eType.oclIsKindOf(EEnum) } {
 	multiLine := self.propertyMultiLine;
 }
 
@@ -164,7 +164,7 @@ constructor PropertyTab::PropertyTab(_id : String, _name : String) {
 	name := _name;
 }
 
-constructor PropertyReference::PropertyReference(prp : Property) {
-	_property := prp;
-	active := true;
-}
+--constructor PropertyReference::PropertyReference(prp : Property) {
+--	_property := prp;
+--	active := true;
+--}
