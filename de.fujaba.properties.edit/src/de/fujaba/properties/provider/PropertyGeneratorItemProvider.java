@@ -68,6 +68,7 @@ public class PropertyGeneratorItemProvider
 			super.getPropertyDescriptors(object);
 
 			addGenModelPropertyDescriptor(object);
+			addReferencedGeneratorsPropertyDescriptor(object);
 			addPluginPropertyDescriptor(object);
 			addDefaultTabPropertyDescriptor(object);
 			addContributorIdPropertyDescriptor(object);
@@ -92,6 +93,28 @@ public class PropertyGeneratorItemProvider
 				 getString("_UI_PropertyGenerator_genModel_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyGenerator_genModel_feature", "_UI_PropertyGenerator_type"),
 				 PropertiesPackage.Literals.PROPERTY_GENERATOR__GEN_MODEL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Referenced Generators feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReferencedGeneratorsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PropertyGenerator_referencedGenerators_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyGenerator_referencedGenerators_feature", "_UI_PropertyGenerator_type"),
+				 PropertiesPackage.Literals.PROPERTY_GENERATOR__REFERENCED_GENERATORS,
 				 true,
 				 false,
 				 true,

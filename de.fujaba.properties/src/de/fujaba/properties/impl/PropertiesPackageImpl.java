@@ -267,7 +267,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyGenerator_Plugin() {
+	public EReference getPropertyGenerator_ReferencedGenerators() {
 		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -276,7 +276,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyGenerator_DefaultTab() {
+	public EReference getPropertyGenerator_Plugin() {
 		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -285,7 +285,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyGenerator_Tabs() {
+	public EReference getPropertyGenerator_DefaultTab() {
 		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -294,7 +294,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyGenerator_Packages() {
+	public EReference getPropertyGenerator_Tabs() {
 		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -303,8 +303,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPropertyGenerator_ContributorId() {
-		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(5);
+	public EReference getPropertyGenerator_Packages() {
+		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -312,7 +312,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPropertyGenerator_SourceFolder() {
+	public EAttribute getPropertyGenerator_ContributorId() {
 		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -321,7 +321,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPropertyGenerator_PrereconcileQvtoTransformation() {
+	public EAttribute getPropertyGenerator_SourceFolder() {
 		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -330,8 +330,17 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPropertyGenerator_PostreconcileQvtoTransformation() {
+	public EAttribute getPropertyGenerator_PrereconcileQvtoTransformation() {
 		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPropertyGenerator_PostreconcileQvtoTransformation() {
+		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -787,6 +796,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		// Create classes and their features
 		propertyGeneratorEClass = createEClass(PROPERTY_GENERATOR);
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__GEN_MODEL);
+		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__REFERENCED_GENERATORS);
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__PLUGIN);
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__DEFAULT_TAB);
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__TABS);
@@ -905,6 +915,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		// Initialize classes and features; add operations and parameters
 		initEClass(propertyGeneratorEClass, PropertyGenerator.class, "PropertyGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPropertyGenerator_GenModel(), theGenModelPackage.getGenModel(), null, "genModel", null, 1, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyGenerator_ReferencedGenerators(), this.getPropertyGenerator(), null, "referencedGenerators", null, 0, -1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyGenerator_Plugin(), this.getPlugin(), null, "plugin", null, 1, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyGenerator_DefaultTab(), this.getPropertyTab(), null, "defaultTab", null, 0, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyGenerator_Tabs(), this.getPropertyTab(), null, "tabs", null, 0, -1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

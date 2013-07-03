@@ -80,13 +80,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY_GENERATOR__GEN_MODEL = 0;
 
 	/**
+	 * The feature id for the '<em><b>Referenced Generators</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_GENERATOR__REFERENCED_GENERATORS = 1;
+
+	/**
 	 * The feature id for the '<em><b>Plugin</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__PLUGIN = 1;
+	int PROPERTY_GENERATOR__PLUGIN = 2;
 
 	/**
 	 * The feature id for the '<em><b>Default Tab</b></em>' reference.
@@ -95,7 +104,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__DEFAULT_TAB = 2;
+	int PROPERTY_GENERATOR__DEFAULT_TAB = 3;
 
 	/**
 	 * The feature id for the '<em><b>Tabs</b></em>' containment reference list.
@@ -104,7 +113,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__TABS = 3;
+	int PROPERTY_GENERATOR__TABS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Packages</b></em>' containment reference list.
@@ -113,7 +122,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__PACKAGES = 4;
+	int PROPERTY_GENERATOR__PACKAGES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Contributor Id</b></em>' attribute.
@@ -122,7 +131,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__CONTRIBUTOR_ID = 5;
+	int PROPERTY_GENERATOR__CONTRIBUTOR_ID = 6;
 
 	/**
 	 * The feature id for the '<em><b>Source Folder</b></em>' attribute.
@@ -131,7 +140,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__SOURCE_FOLDER = 6;
+	int PROPERTY_GENERATOR__SOURCE_FOLDER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Prereconcile Qvto Transformation</b></em>' attribute.
@@ -140,7 +149,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION = 7;
+	int PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Postreconcile Qvto Transformation</b></em>' attribute.
@@ -149,7 +158,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION = 8;
+	int PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION = 9;
 
 	/**
 	 * The number of structural features of the '<em>Property Generator</em>' class.
@@ -158,7 +167,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR_FEATURE_COUNT = 9;
+	int PROPERTY_GENERATOR_FEATURE_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PluginImpl <em>Plugin</em>}' class.
@@ -840,6 +849,17 @@ public interface PropertiesPackage extends EPackage {
 	EReference getPropertyGenerator_GenModel();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.fujaba.properties.PropertyGenerator#getReferencedGenerators <em>Referenced Generators</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Referenced Generators</em>'.
+	 * @see de.fujaba.properties.PropertyGenerator#getReferencedGenerators()
+	 * @see #getPropertyGenerator()
+	 * @generated
+	 */
+	EReference getPropertyGenerator_ReferencedGenerators();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link de.fujaba.properties.PropertyGenerator#getPlugin <em>Plugin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1466,6 +1486,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTY_GENERATOR__GEN_MODEL = eINSTANCE.getPropertyGenerator_GenModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Referenced Generators</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY_GENERATOR__REFERENCED_GENERATORS = eINSTANCE.getPropertyGenerator_ReferencedGenerators();
 
 		/**
 		 * The meta object literal for the '<em><b>Plugin</b></em>' containment reference feature.

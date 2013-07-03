@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getGenModel <em>Gen Model</em>}</li>
+ *   <li>{@link de.fujaba.properties.PropertyGenerator#getReferencedGenerators <em>Referenced Generators</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getPlugin <em>Plugin</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getDefaultTab <em>Default Tab</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getTabs <em>Tabs</em>}</li>
@@ -61,6 +62,22 @@ public interface PropertyGenerator extends EObject {
 	 * @generated
 	 */
 	void setGenModel(GenModel value);
+
+	/**
+	 * Returns the value of the '<em><b>Referenced Generators</b></em>' reference list.
+	 * The list contents are of type {@link de.fujaba.properties.PropertyGenerator}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Referenced Generators</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Referenced Generators</em>' reference list.
+	 * @see de.fujaba.properties.PropertiesPackage#getPropertyGenerator_ReferencedGenerators()
+	 * @model
+	 * @generated
+	 */
+	EList<PropertyGenerator> getReferencedGenerators();
 
 	/**
 	 * Returns the value of the '<em><b>Plugin</b></em>' containment reference.

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.fujaba.properties.Plugin;
@@ -33,6 +34,7 @@ import de.fujaba.properties.PropertyTab;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getGenModel <em>Gen Model</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getReferencedGenerators <em>Referenced Generators</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getPlugin <em>Plugin</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getDefaultTab <em>Default Tab</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getTabs <em>Tabs</em>}</li>
@@ -56,6 +58,16 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	 * @ordered
 	 */
 	protected GenModel genModel;
+
+	/**
+	 * The cached value of the '{@link #getReferencedGenerators() <em>Referenced Generators</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReferencedGenerators()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PropertyGenerator> referencedGenerators;
 
 	/**
 	 * The cached value of the '{@link #getPlugin() <em>Plugin</em>}' containment reference.
@@ -232,6 +244,18 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 		genModel = newGenModel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_GENERATOR__GEN_MODEL, oldGenModel, genModel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PropertyGenerator> getReferencedGenerators() {
+		if (referencedGenerators == null) {
+			referencedGenerators = new EObjectResolvingEList<PropertyGenerator>(PropertyGenerator.class, this, PropertiesPackage.PROPERTY_GENERATOR__REFERENCED_GENERATORS);
+		}
+		return referencedGenerators;
 	}
 
 	/**
@@ -467,6 +491,8 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 			case PropertiesPackage.PROPERTY_GENERATOR__GEN_MODEL:
 				if (resolve) return getGenModel();
 				return basicGetGenModel();
+			case PropertiesPackage.PROPERTY_GENERATOR__REFERENCED_GENERATORS:
+				return getReferencedGenerators();
 			case PropertiesPackage.PROPERTY_GENERATOR__PLUGIN:
 				return getPlugin();
 			case PropertiesPackage.PROPERTY_GENERATOR__DEFAULT_TAB:
@@ -499,6 +525,10 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 		switch (featureID) {
 			case PropertiesPackage.PROPERTY_GENERATOR__GEN_MODEL:
 				setGenModel((GenModel)newValue);
+				return;
+			case PropertiesPackage.PROPERTY_GENERATOR__REFERENCED_GENERATORS:
+				getReferencedGenerators().clear();
+				getReferencedGenerators().addAll((Collection<? extends PropertyGenerator>)newValue);
 				return;
 			case PropertiesPackage.PROPERTY_GENERATOR__PLUGIN:
 				setPlugin((Plugin)newValue);
@@ -541,6 +571,9 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 			case PropertiesPackage.PROPERTY_GENERATOR__GEN_MODEL:
 				setGenModel((GenModel)null);
 				return;
+			case PropertiesPackage.PROPERTY_GENERATOR__REFERENCED_GENERATORS:
+				getReferencedGenerators().clear();
+				return;
 			case PropertiesPackage.PROPERTY_GENERATOR__PLUGIN:
 				setPlugin((Plugin)null);
 				return;
@@ -579,6 +612,8 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 		switch (featureID) {
 			case PropertiesPackage.PROPERTY_GENERATOR__GEN_MODEL:
 				return genModel != null;
+			case PropertiesPackage.PROPERTY_GENERATOR__REFERENCED_GENERATORS:
+				return referencedGenerators != null && !referencedGenerators.isEmpty();
 			case PropertiesPackage.PROPERTY_GENERATOR__PLUGIN:
 				return plugin != null;
 			case PropertiesPackage.PROPERTY_GENERATOR__DEFAULT_TAB:

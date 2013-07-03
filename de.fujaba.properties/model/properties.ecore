@@ -15,6 +15,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genModel" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedGenerators" upperBound="-1"
+        eType="#//PropertyGenerator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="plugin" lowerBound="1"
         eType="#//Plugin" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="defaultTab" eType="#//PropertyTab"/>
