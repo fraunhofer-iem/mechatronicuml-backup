@@ -1,12 +1,10 @@
 package test.editor;
 
 import de.fujaba.properties.runtime.editors.CategoryPropertyEditor;
+import de.fujaba.properties.runtime.editors.CheckboxPropertyEditor;
 import de.fujaba.properties.runtime.editors.IPropertyEditor;
 import de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor;
-import de.fujaba.properties.runtime.editors.ObjectPropertyEditor;
-import de.fujaba.properties.runtime.editors.OptionPropertyEditor;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-
 
 /**
  * @generated
@@ -40,8 +38,8 @@ public class StateEditor extends CategoryPropertyEditor {
 	 * @generated
 	 */
 	private IPropertyEditor getFeature1Editor() {
-		return new OptionPropertyEditor(
-				RealtimestatechartPackage.Literals.STATE__INITIAL, true);
+		return new CheckboxPropertyEditor(
+				RealtimestatechartPackage.Literals.STATE__INITIAL);
 
 	}
 

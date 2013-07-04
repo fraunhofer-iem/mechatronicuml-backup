@@ -16,4 +16,7 @@ public interface IPropertyEditor {
 
 	void dispose();
 
+	String getTab();
+	
+	void setTab(String tab);
 }

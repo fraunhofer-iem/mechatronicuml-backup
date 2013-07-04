@@ -32,6 +32,7 @@
     <propertyEditors>
        <propertyEditor
              editor="test.editor.StateEditor"
+             tab="base"
              type="de.uni_paderborn.fujaba.muml.realtimestatechart.State">
        </propertyEditor>
     </propertyEditors>

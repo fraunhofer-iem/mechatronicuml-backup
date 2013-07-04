@@ -118,10 +118,23 @@ public class RuntimePlugin extends AbstractUIPlugin {
 
 		return getPropertyEditors(qualifiedName);
 	}
+	
+	public static List<IPropertyEditor> getPropertyEditors(String type, String tab) {
+		if (tab == null) {
+			return Collections.emptyList();
+		}
+		List<IPropertyEditor> selectedEditors = new ArrayList<IPropertyEditor>();
+		for (IPropertyEditor editor : getPropertyEditors(type)) {
+			if (tab.equals(editor.getTab())) {
+				selectedEditors.add(editor);
+			}
+		}
+		return selectedEditors;
+	}
 
-	public static List<IPropertyEditor> getPropertyEditors(String string) {
+	public static List<IPropertyEditor> getPropertyEditors(String type) {
 		List<IPropertyEditor> list = getDefault().getPropertyEditorsMap().get(
-				string);
+				type);
 		if (list != null) {
 			return list;
 		}
@@ -142,21 +155,24 @@ public class RuntimePlugin extends AbstractUIPlugin {
 			for (IConfigurationElement toplevel : elements) {
 				for (IConfigurationElement element : toplevel.getChildren()) {
 
-					// Read className
-					String classifier = element.getAttribute("type");
-					if (classifier == null) {
+					// Read type
+					String type = element.getAttribute("type");
+					if (type == null) {
 						continue;
 					}
 
-					// Get or create list
+					// Get or create list for that type
 					List<IPropertyEditor> list = propertyEditorsMap
-							.get(classifier);
+							.get(type);
 					if (list == null) {
 						list = new ArrayList<IPropertyEditor>();
-						propertyEditorsMap.put(classifier, list);
+						propertyEditorsMap.put(type, list);
 					}
+					
+					// Read tab
+					String tab = element.getAttribute("tab");
 
-					// Read initializer
+					// Read editor
 					IPropertyEditor editor = null;
 					try {
 						Object object = element
@@ -167,6 +183,9 @@ public class RuntimePlugin extends AbstractUIPlugin {
 					} catch (CoreException e) {
 						e.printStackTrace();
 					}
+					
+					// Set Tab
+					editor.setTab(tab);
 
 					// Add to list
 					if (editor != null) {
@@ -179,6 +198,10 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 
 	public static String makeHumanReadable(String camelCased) {
+		return makeHumanReadable(camelCased, false);
+	}
+
+	public static String makeHumanReadable(String camelCased, boolean firstUpper) {
 		StringBuffer buffer = new StringBuffer();
 		boolean newWord = true, oldWord = true;
 		for (int p = 0; p < camelCased.length(); p++) {
@@ -189,6 +212,9 @@ public class RuntimePlugin extends AbstractUIPlugin {
 			}
 			oldWord = newWord;
 			buffer.append(c);
+		}
+		if (buffer.length() != 0 && firstUpper) {
+			return buffer.substring(0, 1).toUpperCase() + buffer.substring(1);
 		}
 		return buffer.toString();
 	}

@@ -57,7 +57,7 @@
 
    <element name="propertyEditor">
       <complexType>
-         <attribute name="type" type="string">
+         <attribute name="type" type="string" use="required">
             <annotation>
                <documentation>
                   
@@ -67,7 +67,14 @@
                </appinfo>
             </annotation>
          </attribute>
-         <attribute name="editor" type="string">
+         <attribute name="tab" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="editor" type="string" use="required">
             <annotation>
                <documentation>
                   

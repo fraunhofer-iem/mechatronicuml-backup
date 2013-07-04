@@ -96,9 +96,7 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 	protected void inputChanged() {
 		super.inputChanged();
 		navigatedEditor.setInput(value);
-
-		String featureName = RuntimePlugin.makeHumanReadable(feature.getName());
-		navigatedEditor.setTitle(featureName);
+		updateTitle();
 	}
 	
 	@Override
@@ -106,6 +104,12 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 		super.valueChanged();
 		refresh();
 		navigatedEditor.setInput(value);
+		updateTitle();
+	}
+	
+	private void updateTitle() {
+		String featureName = RuntimePlugin.makeHumanReadable(feature.getName());
+		navigatedEditor.setTitle(featureName);
 	}
 
 	public void refresh() {
