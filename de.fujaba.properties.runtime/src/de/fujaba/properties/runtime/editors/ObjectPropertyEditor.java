@@ -48,18 +48,14 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 			String name = element.eClass().getName();
 			setTitle(RuntimePlugin.makeHumanReadable(name) + " Properties");
 			
-			
 			// Add new property editors for all subclasses
-			Set<String> registeredTypes = RuntimePlugin.getRegisteredPropertyEditorTypes();
 			List<EClass> ecoreTypes = new ArrayList<EClass>();
 			ecoreTypes.add(element.eClass());
 			ecoreTypes.addAll(element.eClass().getEAllSuperTypes());
 			for (EClass ecoreType : ecoreTypes) {
-				if (registeredTypes.contains(ecoreType.getInstanceClassName())) {
-					for (IPropertyEditor editor : RuntimePlugin.getPropertyEditors(ecoreType)) {
-						addPropertyEditor(editor);
-						
-					}
+				for (IPropertyEditor editor : RuntimePlugin.getPropertyEditors(ecoreType)) {
+					addPropertyEditor(editor);
+					
 				}
 			}
 		}

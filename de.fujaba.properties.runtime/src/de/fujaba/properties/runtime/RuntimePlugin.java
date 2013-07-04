@@ -9,8 +9,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
@@ -18,12 +20,14 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -184,7 +188,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 						e.printStackTrace();
 					}
 					
-					// Set Tab
+					// Set Tab information
 					editor.setTab(tab);
 
 					// Add to list
@@ -247,6 +251,27 @@ public class RuntimePlugin extends AbstractUIPlugin {
 			}
 		}
 		return eClasses; 
+	}
+
+	public static Object resolveSemanticObject(Object object) {
+		if (object instanceof IStructuredSelection) {
+			for (Object unresolved : ((IStructuredSelection) object).toArray()) {
+				Object resolved = resolveSemanticObject(unresolved);
+				if (resolved != null) {
+					return resolved;
+				}
+			}
+			return null;
+		}
+		if(object instanceof EObject) {
+			return (EObject) object;
+		} else if(object instanceof IAdaptable) {
+			IAdaptable adaptable = (IAdaptable)object;
+			if(adaptable.getAdapter(EObject.class) != null) {
+				return (EObject)adaptable.getAdapter(EObject.class);
+			}
+		}
+		return null;
 	}
 
 }

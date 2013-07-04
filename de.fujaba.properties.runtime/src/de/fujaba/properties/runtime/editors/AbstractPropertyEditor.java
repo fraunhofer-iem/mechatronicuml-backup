@@ -41,5 +41,4 @@ public abstract class AbstractPropertyEditor implements
 	public String getTab() {
 		return tab;
 	}
-
 }
