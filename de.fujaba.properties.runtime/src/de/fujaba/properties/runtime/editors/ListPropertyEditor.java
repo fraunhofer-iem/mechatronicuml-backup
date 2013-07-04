@@ -16,5 +16,4 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		// TODO Auto-generated method stub
 		
 	}
-
 }
