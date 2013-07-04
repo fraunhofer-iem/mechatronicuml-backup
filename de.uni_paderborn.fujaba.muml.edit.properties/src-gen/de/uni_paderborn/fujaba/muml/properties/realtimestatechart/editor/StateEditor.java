@@ -1,0 +1,207 @@
+package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
+
+public class StateEditor
+		extends
+			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+
+	/**
+	 * @generated
+	 */
+	public StateEditor() {
+	}
+
+	/**
+	 * @generated
+	 */
+	public void initialize() {
+
+		addStateEmbeddedRegionsEditor(null, true);
+
+		addStateDoEventEditor(null, true);
+
+		addStateExitEventEditor(null, true);
+
+		addStateEntryEventEditor(null, true);
+
+		addStateInvariantsEditor(null, true);
+
+		addStateInitialEditor(null, true);
+
+		addStateFinalEditor(null, true);
+
+		addStateUrgentEditor(null, true);
+
+		addStateChannelsEditor(null, true);
+
+		addStateConnectionPointsEditor(null, true);
+
+		super.initialize();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addStateEmbeddedRegionsEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateEmbeddedRegionsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateEmbeddedRegionsEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_EmbeddedRegions());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateDoEventEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateDoEventEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateDoEventEditor() {
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_DoEvent());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateExitEventEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateExitEventEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateExitEventEditor() {
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_ExitEvent());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateEntryEventEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateEntryEventEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateEntryEventEditor() {
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_EntryEvent());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateInvariantsEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateInvariantsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateInvariantsEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_Invariants());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateInitialEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateInitialEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateInitialEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_Initial());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateFinalEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateFinalEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateFinalEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_Final());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateUrgentEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateUrgentEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateUrgentEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_Urgent());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateChannelsEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateChannelsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateChannelsEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_Channels());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateConnectionPointsEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateConnectionPointsEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateConnectionPointsEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_ConnectionPoints());
+
+	}
+
+	//
+	// Overwritten property settings
+	//
+
+}

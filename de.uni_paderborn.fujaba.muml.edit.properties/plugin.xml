@@ -2,7 +2,7 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-<!-- FOREACH tabs -->
+
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
           <propertyTab
@@ -11,48 +11,574 @@
              label="Experimental"/>
           
       </propertyTabs>
+  </extension>
 
-</extension>
 
-<!-- (also one section per tab) -->
-<extension
-      point="org.eclipse.ui.views.properties.tabbed.propertySections">
-   <propertySections
-         contributorId="de.uni_paderborn.fujaba.muml.common.properties">
-      <propertySection
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+          <propertySection
             class="de.fujaba.properties.runtime.sections.ObjectPropertySection"
             filter="de.fujaba.properties.runtime.filter.ElementFilter"
             id="base"
             tab="base">
-         <input
+             <input
                type="org.eclipse.emf.ecore.EObject">
-         </input>
-      </propertySection>
-   </propertySections>
-</extension>
-<!-- ENDFOREACH -->
- 
- <extension
-       point="de.fujaba.properties.runtime.propertyEditor">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+ <extension point="de.fujaba.properties.runtime.propertyEditor">
     <propertyEditors>
+    
        <propertyEditor
-             editor="test.editor.StateEditor"
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.DeadlineEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Deadline">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.AbsoluteDeadlineEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.RelativeDeadlineEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ClockEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Clock">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.RegionEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Region">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateEditor"
              tab="base"
              type="de.uni_paderborn.fujaba.muml.realtimestatechart.State">
        </propertyEditor>
-    </propertyEditors>
- </extension>
-
-
- 
- <extension
-       point="de.fujaba.properties.runtime.propertyEditor">
-    <propertyEditors>
+    
        <propertyEditor
-             editor="test.editor.NamedElementEditor"
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.VertexEditor"
              tab="base"
-             type="org.storydriven.core.NamedElement">
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex">
        </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.TransitionEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Transition">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ClockConstraintEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ActionEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Action">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.AsynchronousMessageEventEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.DoEventEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EntryOrExitEventEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.EntryOrExitEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.SynchronizationChannelEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.SynchronizationEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.PrioritizedElementEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.RealtimeStatechartEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EventEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Event">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.TransitionEventEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.TransitionEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateEventEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.MessageEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Message">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EntryEventEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ExitEventEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateConnectionPointEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EntryPointEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.EntryPoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ExitPointEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.types.editor.ArrayDataTypeEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.types.ArrayDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.types.editor.PrimitiveDataTypeEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.types.PrimitiveDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.types.DataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.types.editor.RangedPrimitiveDataTypeEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.behavior.editor.BehavioralElementEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.behavior.BehavioralElement">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.behavior.editor.BehaviorEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.behavior.Behavior">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.behavior.editor.VariableEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.behavior.Variable">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.behavior.editor.OperationEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.behavior.Operation">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.behavior.editor.ParameterEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.behavior.Parameter">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.behavior.editor.ParameterBindingEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.behavior.ParameterBinding">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.behavior.editor.TypedNamedElementEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.ComponentEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.Component">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.PortEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.Port">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.ContinuousPortEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.ContinuousPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.DiscretePortEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.DiscretePort">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.ComponentPartEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.ComponentPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.StaticStructuredComponentEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.AtomicComponentEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.AtomicComponent">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.AssemblyConnectorEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.AssemblyConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.DelegationConnectorEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.DelegationConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.PortConnectorEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.PortConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.HybridPortEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.HybridPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.StructuredComponentEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.StructuredComponent">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.CoordinationProtocolOccurrenceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.DirectedTypedPortEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.component.editor.PortPartEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.component.PortPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.msgtype.MessageType">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeRepositoryEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CardinalityEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.valuetype.Cardinality">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.TimeValueEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.valuetype.TimeValue">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.NaturalNumberEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.RangeEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.valuetype.Range">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.protocol.editor.AbstractCoordinationSpecificationEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.protocol.editor.CoordinationProtocolEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.protocol.editor.RoleEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.protocol.Role">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.protocol.editor.RoleConnectorEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.protocol.RoleConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.protocol.editor.ConnectorQualityOfServiceAssumptionsEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.ComponentInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.ComponentInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.PortConnectorInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.PortInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.PortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.AssemblyConnectorInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.DelegationConnectorInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.ComponentInstanceConfigurationEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.ContinuousPortInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.HybridPortInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.HybridPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.DiscretePortInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.DiscreteSinglePortInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.DiscreteMultiPortInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.DiscreteMultiPortInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.CoordinationProtocolInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.StructuredComponentInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.instance.editor.AtomicComponentInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstraintEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.constraint.Constraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.constraint.editor.ModelingConstraintEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.constraint.ModelingConstraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.constraint.editor.VerifiableConstraintEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.constraint.VerifiableConstraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.constraint.editor.TextualConstraintEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.constraint.TextualConstraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.connector.Connector">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.connector.ConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteSingleInteractionEndpointInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteMultiInteractionEndpointInstanceEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             editor="de.uni_paderborn.fujaba.muml.properties.connector.editor.MessageBufferEditor"
+             tab="base"
+             type="de.uni_paderborn.fujaba.muml.connector.MessageBuffer">
+       </propertyEditor>
+    
     </propertyEditors>
  </extension>
 

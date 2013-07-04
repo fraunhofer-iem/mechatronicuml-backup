@@ -8,177 +8,30 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>de.fujaba.properties.runtime</requiredBundles>
   </plugin>
   <tabs id="base" name="Experimental"/>
-  <packages>
-    <genPackage href="muml.genmodel#//muml/types"/>
-    <classes>
-      <genClass href="muml.genmodel#//muml/types/ArrayDataType"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/types/ArrayDataType/type"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/types/ArrayDataType/cardinality"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.2/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.2/@properties.1"/>
-        </section>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/types/PrimitiveDataType"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/types/PrimitiveDataType/primitiveType"/>
-        <section xsi:type="de.fujaba:RadioPropertySection"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/types/RangedPrimitiveDataType"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/types/RangedPrimitiveDataType/rangedType"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/types/RangedPrimitiveDataType/range"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.3/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.3/@properties.1"/>
-        </section>
-      </properties>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="muml.genmodel#//muml/msgtype"/>
-    <classes>
-      <genClass href="muml.genmodel#//muml/msgtype/MessageType"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/msgtype/MessageType/parameters"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/msgtype/MessageType/repository"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/msgtype/MessageTypeRepository"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/msgtype/MessageTypeRepository/messageTypes"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="muml.genmodel#//muml/constraint"/>
-    <classes>
-      <genClass href="muml.genmodel#//muml/constraint/Constraint"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/constraint/Constraint/correctness"/>
-        <section xsi:type="de.fujaba:RadioPropertySection"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/constraint/Constraint/background"/>
-        <section xsi:type="de.fujaba:CheckboxPropertySection"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/constraint/Constraint/constrainableElement"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/constraint/TextualConstraint"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/constraint/TextualConstraint/textualExpression"/>
-        <section xsi:type="de.fujaba:GroupPropertySection"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/constraint/ConstrainableElement"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/constraint/ConstrainableElement/constraint"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="muml.genmodel#//muml/protocol"/>
-    <classes>
-      <genClass href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.3/@classes.2/@properties.1"/>
-          <referencedProperties active="true" property="//@packages.9/@classes.1/@properties.0"/>
-        </section>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/protocol/Role"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/protocol/Role/coordinationProtocol"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/protocol/RoleConnector"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/protocol/RoleConnector/coordinationProtocol"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.3/@classes.3/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.3/@classes.3/@properties.1"/>
-          <referencedProperties active="true" property="//@packages.3/@classes.3/@properties.2"/>
-        </section>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.1"/>
-        </section>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.1"/>
-        </section>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
-        <section xsi:type="de.fujaba:CheckboxPropertySection"/>
-      </properties>
-    </classes>
-  </packages>
   <packages>
     <genPackage href="muml.genmodel#//muml/realtimestatechart"/>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Deadline"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Deadline/upperBound"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Deadline/lowerBound"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.0/@classes.0">
       <genClass href="muml.genmodel#//muml/realtimestatechart/AbsoluteDeadline"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/AbsoluteDeadline/clock"/>
       </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.0">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/RelativeDeadline"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Clock"/>
@@ -186,76 +39,57 @@
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Clock/statechart"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.0/@classes.15">
       <genClass href="muml.genmodel#//muml/realtimestatechart/Region"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Region/embeddedStatechart"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.4/@classes.15/@properties.1"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.15/@properties.2"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.15/@properties.3"/>
-          <referencedProperties active="true" property="//@packages.7/@classes.1/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.7/@classes.1/@properties.1"/>
-          <referencedProperties active="true" property="//@packages.7/@classes.1/@properties.2"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Region/parentState"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.0/@classes.6">
       <genClass href="muml.genmodel#//muml/realtimestatechart/State"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/embeddedRegions"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/doEvent"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.4/@classes.10/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.16/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.10/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/exitEvent"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.4/@classes.11/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.11/@properties.1"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.16/@properties.0"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/entryEvent"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.4/@classes.11/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.11/@properties.1"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.16/@properties.0"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/invariants"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/initial"/>
-        <section xsi:type="de.fujaba:CheckboxPropertySection"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/final"/>
-        <section xsi:type="de.fujaba:CheckboxPropertySection"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/urgent"/>
-        <section xsi:type="de.fujaba:CheckboxPropertySection"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/channels"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/parentStatechart"/>
@@ -265,26 +99,22 @@
       <genClass href="muml.genmodel#//muml/realtimestatechart/Vertex"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Vertex/outgoingTransitions"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Vertex/incomingTransitions"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Vertex/allSuperVertices"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.0/@classes.15">
       <genClass href="muml.genmodel#//muml/realtimestatechart/Transition"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/synchronization"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.4/@classes.13/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.13/@properties.1"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.13/@properties.2"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/target"/>
@@ -297,107 +127,89 @@
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/clockResets"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/clockConstraints"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/absoluteDeadlines"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/relativeDeadline"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.4/@classes.0/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.0/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/blockable"/>
-        <section xsi:type="de.fujaba:CheckboxPropertySection"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/guard"/>
-        <section xsi:type="de.fujaba:GroupPropertySection"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/events"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/action"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.4/@classes.8/@properties.0"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/urgent"/>
-        <section xsi:type="de.fujaba:CheckboxPropertySection"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/ClockConstraint"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/ClockConstraint/bound"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/ClockConstraint/clock"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/ClockConstraint/operator"/>
-        <section xsi:type="de.fujaba:RadioPropertySection"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Action"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Action/expressions"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.0/@classes.18">
       <genClass href="muml.genmodel#//muml/realtimestatechart/AsynchronousMessageEvent"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/AsynchronousMessageEvent/message"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.4/@classes.17/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.4/@classes.17/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.0/@classes.19">
       <genClass href="muml.genmodel#//muml/realtimestatechart/DoEvent"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/DoEvent/action"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.4/@classes.8/@properties.0"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/DoEvent/period"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.0/@classes.19">
       <genClass href="muml.genmodel#//muml/realtimestatechart/EntryOrExitEvent"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/EntryOrExitEvent/clockResets"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/EntryOrExitEvent/action"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.4/@classes.8/@properties.0"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -416,44 +228,50 @@
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Synchronization/kind"/>
-        <section xsi:type="de.fujaba:RadioPropertySection"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Synchronization/selectorExpression"/>
-        <section xsi:type="de.fujaba:GroupPropertySection"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/PrioritizedElement"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/PrioritizedElement/priority"/>
-        <section xsi:type="de.fujaba:TextPropertySection"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.2/@classes.1">
       <genClass href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/parentRegion"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/transitions"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/states"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/clocks"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Event"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Event/kind"/>
-        <section xsi:type="de.fujaba:RadioPropertySection"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.17">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/TransitionEvent"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.17">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/StateEvent"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Message"/>
@@ -462,176 +280,58 @@
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Message/parameterBinding"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.0/@classes.12">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/EntryEvent"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.12">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/ExitEvent"/>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.6">
       <genClass href="muml.genmodel#//muml/realtimestatechart/StateConnectionPoint"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/StateConnectionPoint/state"/>
       </properties>
     </classes>
-  </packages>
-  <packages>
-    <genPackage href="muml.genmodel#//muml/component"/>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/Component"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/Component/ports"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/Component/componentType"/>
-        <section xsi:type="de.fujaba:RadioPropertySection"/>
-      </properties>
+    <classes superClasses="//@packages.0/@classes.23">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/EntryPoint"/>
     </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/Port"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/Port/component"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/DiscretePort"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/DiscretePort/refinedRole"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/ComponentPart"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/ComponentPart/componentType"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/ComponentPart/parentComponent"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/ComponentPart/cardinality"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.0/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.0/@properties.1"/>
-        </section>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/ComponentPart/portParts"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/PortConnector"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/PortConnector/parentComponent"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/HybridPort"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/HybridPort/samplingInterval"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.1/@properties.1"/>
-        </section>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/StructuredComponent"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/StructuredComponent/embeddedComponentParts"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/StructuredComponent/connectors"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/StructuredComponent/coordinationProtocolOccurences"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/coordinationProtocol"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/portParts"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/DirectedTypedPort"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/kind"/>
-        <section xsi:type="de.fujaba:RadioPropertySection"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/optional"/>
-        <section xsi:type="de.fujaba:CheckboxPropertySection"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/PortPart"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/PortPart/portType"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/PortPart/componentPart"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/component/PortPart/coordinationProtocolOccurence"/>
-      </properties>
+    <classes superClasses="//@packages.0/@classes.23">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/ExitPoint"/>
     </classes>
   </packages>
   <packages>
-    <genPackage href="muml.genmodel#//muml/instance"/>
-    <classes>
-      <genClass href="muml.genmodel#//muml/instance/ComponentInstance"/>
+    <genPackage href="muml.genmodel#//muml/types"/>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="muml.genmodel#//muml/types/ArrayDataType"/>
       <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentType"/>
+        <genFeature href="muml.genmodel#//muml/types/ArrayDataType/type"/>
       </properties>
       <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/portInstances"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <genFeature href="muml.genmodel#//muml/types/ArrayDataType/cardinality"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="muml.genmodel#//muml/types/PrimitiveDataType"/>
       <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentPart"/>
+        <genFeature href="muml.genmodel#//muml/types/PrimitiveDataType/primitiveType"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes>
-      <genClass href="muml.genmodel#//muml/instance/PortInstance"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/instance/PortInstance/componentInstance"/>
-      </properties>
+      <genClass href="muml.genmodel#//muml/types/DataType"/>
     </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration"/>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="muml.genmodel#//muml/types/RangedPrimitiveDataType"/>
       <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/componentInstances"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <genFeature href="muml.genmodel#//muml/types/RangedPrimitiveDataType/rangedType"/>
       </properties>
       <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/portConnectorInstances"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/instance/CoordinationProtocolInstance"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/portInstances"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocolOccurrence"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/instance/StructuredComponentInstance"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="muml.genmodel#//muml/instance/StructuredComponentInstance/embeddedCIC"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.6/@classes.2/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.6/@classes.2/@properties.1"/>
-        </section>
+        <genFeature href="muml.genmodel#//muml/types/RangedPrimitiveDataType/range"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
   </packages>
@@ -650,18 +350,18 @@
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/behavior/Behavior/operations"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/behavior/Behavior/variables"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.2/@classes.6">
       <genClass href="muml.genmodel#//muml/behavior/Variable"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/behavior/Variable/initializeExpression"/>
-        <section xsi:type="de.fujaba:GroupPropertySection"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -671,12 +371,15 @@
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/behavior/Operation/implementations"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/behavior/Operation/parameters"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.6">
+      <genClass href="muml.genmodel#//muml/behavior/Parameter"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/behavior/ParameterBinding"/>
@@ -685,7 +388,7 @@
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/behavior/ParameterBinding/value"/>
-        <section xsi:type="de.fujaba:GroupPropertySection"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -696,58 +399,350 @@
     </classes>
   </packages>
   <packages>
+    <genPackage href="muml.genmodel#//muml/component"/>
+    <classes superClasses="//@packages.8/@classes.4">
+      <genClass href="muml.genmodel#//muml/component/Component"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/Component/ports"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/Component/componentType"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.9/@classes.0 //@packages.1/@classes.2 //@packages.8/@classes.4">
+      <genClass href="muml.genmodel#//muml/component/Port"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/Port/component"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.13">
+      <genClass href="muml.genmodel#//muml/component/ContinuousPort"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.1 //@packages.9/@classes.4">
+      <genClass href="muml.genmodel#//muml/component/DiscretePort"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/DiscretePort/refinedRole"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.2">
+      <genClass href="muml.genmodel#//muml/component/ComponentPart"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/ComponentPart/componentType"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/ComponentPart/parentComponent"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/ComponentPart/cardinality"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/ComponentPart/portParts"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.11">
+      <genClass href="muml.genmodel#//muml/component/StaticStructuredComponent"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.0 //@packages.2/@classes.0">
+      <genClass href="muml.genmodel#//muml/component/AtomicComponent"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.9">
+      <genClass href="muml.genmodel#//muml/component/AssemblyConnector"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.9">
+      <genClass href="muml.genmodel#//muml/component/DelegationConnector"/>
+    </classes>
+    <classes superClasses="//@packages.9/@classes.1">
+      <genClass href="muml.genmodel#//muml/component/PortConnector"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/PortConnector/parentComponent"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.13">
+      <genClass href="muml.genmodel#//muml/component/HybridPort"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/HybridPort/samplingInterval"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.0">
+      <genClass href="muml.genmodel#//muml/component/StructuredComponent"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/StructuredComponent/embeddedComponentParts"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/StructuredComponent/connectors"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/StructuredComponent/coordinationProtocolOccurences"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/coordinationProtocol"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/portParts"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.1 //@packages.2/@classes.6">
+      <genClass href="muml.genmodel#//muml/component/DirectedTypedPort"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/kind"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/optional"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.9/@classes.0 //@packages.1/@classes.2">
+      <genClass href="muml.genmodel#//muml/component/PortPart"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/PortPart/portType"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/PortPart/componentPart"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/component/PortPart/coordinationProtocolOccurence"/>
+      </properties>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="muml.genmodel#//muml/msgtype"/>
+    <classes>
+      <genClass href="muml.genmodel#//muml/msgtype/MessageType"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/msgtype/MessageType/parameters"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/msgtype/MessageType/repository"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/msgtype/MessageTypeRepository"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/msgtype/MessageTypeRepository/messageTypes"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+  </packages>
+  <packages>
     <genPackage href="muml.genmodel#//muml/valuetype"/>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/Cardinality"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.2/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.2/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.2/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.2/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/TimeValue"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/value"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.2/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.2/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/unit"/>
-        <section xsi:type="de.fujaba:TextPropertySection"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/NaturalNumber"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
-        <section xsi:type="de.fujaba:TextPropertySection"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/valuetype/NaturalNumber/infinity"/>
-        <section xsi:type="de.fujaba:CheckboxPropertySection"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/Range"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/valuetype/Range/lowerBound"/>
-        <section xsi:type="de.fujaba:TextPropertySection"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/valuetype/Range/upperBound"/>
-        <section xsi:type="de.fujaba:TextPropertySection"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+      </properties>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="muml.genmodel#//muml/protocol"/>
+    <classes superClasses="//@packages.8/@classes.4">
+      <genClass href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roles"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification/roleConnector"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.6/@classes.0">
+      <genClass href="muml.genmodel#//muml/protocol/CoordinationProtocol"/>
+    </classes>
+    <classes superClasses="//@packages.9/@classes.4 //@packages.1/@classes.2">
+      <genClass href="muml.genmodel#//muml/protocol/Role"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/protocol/Role/coordinationProtocol"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.9/@classes.1">
+      <genClass href="muml.genmodel#//muml/protocol/RoleConnector"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/protocol/RoleConnector/coordinationProtocol"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="muml.genmodel#//muml/instance"/>
+    <classes>
+      <genClass href="muml.genmodel#//muml/instance/ComponentInstance"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentType"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/portInstances"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentPart"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.9/@classes.3">
+      <genClass href="muml.genmodel#//muml/instance/PortConnectorInstance"/>
+    </classes>
+    <classes superClasses="//@packages.9/@classes.2">
+      <genClass href="muml.genmodel#//muml/instance/PortInstance"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/instance/PortInstance/componentInstance"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.7/@classes.1">
+      <genClass href="muml.genmodel#//muml/instance/AssemblyConnectorInstance"/>
+    </classes>
+    <classes superClasses="//@packages.7/@classes.1">
+      <genClass href="muml.genmodel#//muml/instance/DelegationConnectorInstance"/>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/componentInstances"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/portConnectorInstances"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.7/@classes.2">
+      <genClass href="muml.genmodel#//muml/instance/ContinuousPortInstance"/>
+    </classes>
+    <classes superClasses="//@packages.7/@classes.2">
+      <genClass href="muml.genmodel#//muml/instance/HybridPortInstance"/>
+    </classes>
+    <classes superClasses="//@packages.9/@classes.5 //@packages.7/@classes.2">
+      <genClass href="muml.genmodel#//muml/instance/DiscretePortInstance"/>
+    </classes>
+    <classes superClasses="//@packages.7/@classes.8 //@packages.9/@classes.6">
+      <genClass href="muml.genmodel#//muml/instance/DiscreteSinglePortInstance"/>
+    </classes>
+    <classes superClasses="//@packages.7/@classes.8 //@packages.9/@classes.7">
+      <genClass href="muml.genmodel#//muml/instance/DiscreteMultiPortInstance"/>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/instance/CoordinationProtocolInstance"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/portInstances"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocolOccurrence"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.7/@classes.0">
+      <genClass href="muml.genmodel#//muml/instance/StructuredComponentInstance"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/instance/StructuredComponentInstance/embeddedCIC"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.7/@classes.0">
+      <genClass href="muml.genmodel#//muml/instance/AtomicComponentInstance"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="muml.genmodel#//muml/constraint"/>
+    <classes>
+      <genClass href="muml.genmodel#//muml/constraint/Constraint"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/constraint/Constraint/correctness"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/constraint/Constraint/background"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/constraint/Constraint/constrainableElement"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.8/@classes.0">
+      <genClass href="muml.genmodel#//muml/constraint/ModelingConstraint"/>
+    </classes>
+    <classes superClasses="//@packages.8/@classes.0">
+      <genClass href="muml.genmodel#//muml/constraint/VerifiableConstraint"/>
+    </classes>
+    <classes superClasses="//@packages.8/@classes.2">
+      <genClass href="muml.genmodel#//muml/constraint/TextualConstraint"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/constraint/TextualConstraint/textualExpression"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/constraint/ConstrainableElement"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="muml.genmodel#//muml/constraint/ConstrainableElement/constraint"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
   </packages>
@@ -757,21 +752,21 @@
       <genClass href="muml.genmodel#//muml/connector/ConnectorEndpoint"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpoint/connectors"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/connector/Connector"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/connector/ConnectorEndpointInstance"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpointInstance/connectorInstances"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpointInstance/type"/>
@@ -784,18 +779,18 @@
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/ConnectorInstance/connectorEndpointInstances"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.2/@classes.0 //@packages.9/@classes.0 //@packages.8/@classes.4">
       <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/adaptationBehavior"/>
@@ -805,17 +800,17 @@
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.0/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.0/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.9/@classes.2">
+      <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpointInstance"/>
+    </classes>
+    <classes superClasses="//@packages.9/@classes.5">
       <genClass href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
@@ -827,11 +822,11 @@
         <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
       </properties>
     </classes>
-    <classes>
+    <classes superClasses="//@packages.9/@classes.5">
       <genClass href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/first"/>
@@ -844,14 +839,11 @@
       <genClass href="muml.genmodel#//muml/connector/MessageBuffer"/>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/bufferSize"/>
-        <section xsi:type="de.fujaba:GroupPropertySection">
-          <referencedProperties active="true" property="//@packages.8/@classes.2/@properties.0"/>
-          <referencedProperties active="true" property="//@packages.8/@classes.2/@properties.1"/>
-        </section>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/messageType"/>
-        <section xsi:type="de.fujaba:ListPropertySection"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/discreteInteractionEndpoint"/>
