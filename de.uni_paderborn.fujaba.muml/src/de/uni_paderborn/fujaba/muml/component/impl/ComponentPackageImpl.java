@@ -1163,7 +1163,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getDiscretePort_CoordinationProtocol(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if refinedRole.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\trefinedRole.coordinationProtocol\r\nendif"
+			 "derivation", "if refinedRole.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\trefinedRole.coordinationProtocol.oclIsKindOf(CoordinationProtocol) ).oclAsType (CoordinationProtocol)\t\r\nendif\r\n"
 		   });				
 		addAnnotation
 		  (componentPartEClass, 

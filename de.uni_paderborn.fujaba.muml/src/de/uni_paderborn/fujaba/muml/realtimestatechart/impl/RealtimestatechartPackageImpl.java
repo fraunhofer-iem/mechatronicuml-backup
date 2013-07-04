@@ -481,17 +481,8 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRegion_EmbedsHistoryStatechart() {
-		return (EAttribute)regionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getRegion_Name() {
-		return (EAttribute)regionEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)regionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1365,7 +1356,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		regionEClass = createEClass(REGION);
 		createEReference(regionEClass, REGION__EMBEDDED_STATECHART);
 		createEReference(regionEClass, REGION__PARENT_STATE);
-		createEAttribute(regionEClass, REGION__EMBEDS_HISTORY_STATECHART);
 		createEAttribute(regionEClass, REGION__NAME);
 
 		stateEClass = createEClass(STATE);
@@ -1567,7 +1557,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEClass(regionEClass, Region.class, "Region", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRegion_EmbeddedStatechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_ParentRegion(), "embeddedStatechart", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegion_ParentState(), this.getState(), this.getState_EmbeddedRegions(), "parentState", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRegion_EmbedsHistoryStatechart(), theEcorePackage.getEBoolean(), "embedsHistoryStatechart", null, 1, 1, Region.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRegion_Name(), ecorePackage.getEString(), "name", null, 0, 1, Region.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1729,7 +1718,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																	
+		   });															
 		addAnnotation
 		  (stateEClass, 
 		   source, 
@@ -1782,12 +1771,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";														
-		addAnnotation
-		  (getRegion_EmbedsHistoryStatechart(), 
-		   source, 
-		   new String[] {
-			 "derivation", "if embeddedStatechart.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\tembeddedStatechart.history\r\nendif"
-		   });			
 		addAnnotation
 		  (getRegion_Name(), 
 		   source, 
@@ -1924,7 +1907,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->notEmpty()",
-			 "OneOutgoingTransitionPerRegion", "-- all regions of the parent state have exactly one state that the EntryPoint connects to\r\nself.state.embeddedRegions->forAll(r | \r\n\tr.embeddedStatechart.states->select(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)\r\n\t)->size() = 1\r\n)"
+			 "OneOutgoingTransitionPerRegion", "-- all regions of the parent state must have exactly one state that the EntryPoint connects to\r\nself.state.embeddedRegions->forAll(r | \r\n\tr.embeddedStatechart.states->select(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)\r\n\t)->size() = 1\r\n)"
 		   });				
 		addAnnotation
 		  (exitPointEClass, 

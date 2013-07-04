@@ -125,7 +125,7 @@
           <details key="documentation" value="Derives the coordinationProtocol of the refined port."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if refinedRole.oclIsUndefined() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;refinedRole.coordinationProtocol&#xD;&#xA;endif"/>
+          <details key="derivation" value="if refinedRole.oclIsUndefined() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;refinedRole.coordinationProtocol.oclIsKindOf(CoordinationProtocol) ).oclAsType (CoordinationProtocol)&#x9;&#xD;&#xA;endif&#xD;&#xA;"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -1081,16 +1081,6 @@
           <details key="documentation" value="The state this region is embedded."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="embedsHistoryStatechart"
-          lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if embeddedStatechart.oclIsUndefined() then&#xD;&#xA;&#x9;false&#xD;&#xA;else&#xD;&#xA;&#x9;embeddedStatechart.history&#xD;&#xA;endif"/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This feature exists for GMF. We use it to register a DerivedAttributeAdapter in RegionImpl to be able to get notifications in the CustomRegionEditPart, when the value of &quot;RealtimeStatechart.history&quot; changes."/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false" volatile="true" transient="true" unsettable="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1720,7 +1710,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="AtLeastOneIncomingTransition" value="self.incomingTransitions ->notEmpty()"/>
-        <details key="OneOutgoingTransitionPerRegion" value="-- all regions of the parent state have exactly one state that the EntryPoint connects to&#xD;&#xA;self.state.embeddedRegions->forAll(r | &#xD;&#xA;&#x9;r.embeddedStatechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"/>
+        <details key="OneOutgoingTransitionPerRegion" value="-- all regions of the parent state must have exactly one state that the EntryPoint connects to&#xD;&#xA;self.state.embeddedRegions->forAll(r | &#xD;&#xA;&#x9;r.embeddedStatechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//realtimestatechart/StateConnectionPoint">

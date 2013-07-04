@@ -677,22 +677,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int REGION__PARENT_STATE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Embeds History Statechart</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__EMBEDS_HISTORY_STATECHART = PRIORITIZED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__NAME = PRIORITIZED_ELEMENT_FEATURE_COUNT + 6;
+	int REGION__NAME = PRIORITIZED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Region</em>' class.
@@ -701,7 +692,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 7;
+	int REGION_FEATURE_COUNT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4609,17 +4600,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getRegion_ParentState();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart <em>Embeds History Statechart</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Embeds History Statechart</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EAttribute getRegion_EmbedsHistoryStatechart();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5730,14 +5710,6 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REGION__PARENT_STATE = eINSTANCE.getRegion_ParentState();
-
-		/**
-		 * The meta object literal for the '<em><b>Embeds History Statechart</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REGION__EMBEDS_HISTORY_STATECHART = eINSTANCE.getRegion_EmbedsHistoryStatechart();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

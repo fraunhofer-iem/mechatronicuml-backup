@@ -229,7 +229,6 @@
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/Region">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Region/embeddedStatechart"/>
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Region/parentState"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/Region/embedsHistoryStatechart"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/Region/name"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/State">

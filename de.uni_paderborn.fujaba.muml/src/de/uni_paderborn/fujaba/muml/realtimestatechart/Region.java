@@ -22,7 +22,6 @@ import org.storydriven.core.CommentableElement;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getEmbeddedStatechart <em>Embedded Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getParentState <em>Parent State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart <em>Embeds History Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName <em>Name</em>}</li>
  * </ul>
  * </p>
@@ -89,21 +88,6 @@ public interface Region extends PrioritizedElement, CommentableElement {
 	 * @generated
 	 */
 	void setParentState(State value);
-
-	/**
-	 * Returns the value of the '<em><b>Embeds History Statechart</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * This feature exists for GMF. We use it to register a DerivedAttributeAdapter in RegionImpl to be able to get notifications in the CustomRegionEditPart, when the value of "RealtimeStatechart.history" changes.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Embeds History Statechart</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_EmbedsHistoryStatechart()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if embeddedStatechart.oclIsUndefined() then\r\n\tfalse\r\nelse\r\n\tembeddedStatechart.history\r\nendif'"
-	 * @generated
-	 */
-	boolean isEmbedsHistoryStatechart();
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

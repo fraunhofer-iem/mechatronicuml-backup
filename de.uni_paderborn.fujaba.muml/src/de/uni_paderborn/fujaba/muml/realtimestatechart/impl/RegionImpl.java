@@ -45,7 +45,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getEmbeddedStatechart <em>Embedded Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getParentState <em>Parent State</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#isEmbedsHistoryStatechart <em>Embeds History Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RegionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
@@ -102,16 +101,6 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 	 * @ordered
 	 */
 	protected RealtimeStatechart embeddedStatechart;
-
-	/**
-	 * The cached setting delegate for the '{@link #isEmbedsHistoryStatechart() <em>Embeds History Statechart</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isEmbedsHistoryStatechart()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate EMBEDS_HISTORY_STATECHART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.REGION__EMBEDS_HISTORY_STATECHART).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
@@ -276,15 +265,6 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isEmbedsHistoryStatechart() {
-		return (Boolean)EMBEDS_HISTORY_STATECHART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getName() {
 		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -417,8 +397,6 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 				return getEmbeddedStatechart();
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState();
-			case RealtimestatechartPackage.REGION__EMBEDS_HISTORY_STATECHART:
-				return isEmbedsHistoryStatechart();
 			case RealtimestatechartPackage.REGION__NAME:
 				return getName();
 		}
@@ -500,8 +478,6 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 				return embeddedStatechart != null;
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState() != null;
-			case RealtimestatechartPackage.REGION__EMBEDS_HISTORY_STATECHART:
-				return EMBEDS_HISTORY_STATECHART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.REGION__NAME:
 				return isSetName();
 		}

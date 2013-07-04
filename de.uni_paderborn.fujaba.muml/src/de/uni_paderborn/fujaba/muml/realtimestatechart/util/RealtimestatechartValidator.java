@@ -1218,7 +1218,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state have exactly one state that the EntryPoint connects to\r\n" +
+	protected static final String ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state must have exactly one state that the EntryPoint connects to\r\n" +
 		"self.state.embeddedRegions->forAll(r | \r\n" +
 		"\tr.embeddedStatechart.states->select(s |\r\n" +
 		"\t\ts.incomingTransitions->exists(t | t.source = self)\r\n" +
