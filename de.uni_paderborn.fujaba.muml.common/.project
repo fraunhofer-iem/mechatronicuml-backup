@@ -40,12 +40,11 @@
 			<arguments>
 				<dictionary>
 					<key>src_container</key>
-					<value>/</value>
+					<value>transformations</value>
 				</dictionary>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
-	
 	<natures>
 		<nature>org.eclipse.m2m.qvt.oml.project.QVTONature</nature>
 		<nature>org.eclipse.pde.PluginNature</nature>
