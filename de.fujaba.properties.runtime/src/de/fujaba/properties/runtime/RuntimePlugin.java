@@ -187,12 +187,12 @@ public class RuntimePlugin extends AbstractUIPlugin {
 					} catch (CoreException e) {
 						e.printStackTrace();
 					}
-					
-					// Set Tab information
-					editor.setTab(tab);
 
-					// Add to list
 					if (editor != null) {
+						// Set Tab information
+						editor.setTab(tab);
+						
+						// Add to list
 						list.add(editor);
 					}
 				}

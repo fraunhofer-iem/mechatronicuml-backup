@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -36,7 +37,7 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 	}
 
 	protected ObjectPropertyEditor createNavigatedEditor() {
-		return new ObjectPropertyEditor(true);
+		return new ObjectPropertyEditor("null");
 	}
 
 	@Override
@@ -108,8 +109,7 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 	}
 	
 	private void updateTitle() {
-		String featureName = RuntimePlugin.makeHumanReadable(feature.getName());
-		navigatedEditor.setTitle(featureName);
+		navigatedEditor.setTitle(getFeatureDescription());
 	}
 
 	public void refresh() {

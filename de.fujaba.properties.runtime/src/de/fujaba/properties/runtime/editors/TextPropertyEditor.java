@@ -5,6 +5,8 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
+import de.fujaba.properties.runtime.RuntimePlugin;
+
 public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 
 	public TextPropertyEditor(EStructuralFeature feature) {
@@ -14,10 +16,8 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	public void createControls(Composite parent,
 			TabbedPropertySheetWidgetFactory factory) {
-
-		Composite composite = factory.createComposite(parent);
-		composite.setLayout(new RowLayout());
-		factory.createText(composite, "");
+		factory.createLabel(parent,  RuntimePlugin.makeHumanReadable(feature.getName(), true) + ":");
+		factory.createText(parent, "[default value]");
 	}
 
 }

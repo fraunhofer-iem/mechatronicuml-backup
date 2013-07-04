@@ -16,6 +16,8 @@ import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.swt.widgets.Display;
 
+import de.fujaba.properties.runtime.RuntimePlugin;
+
 public abstract class AbstractStructuralFeaturePropertyEditor extends
 		AbstractPropertyEditor implements IStructuralFeaturePropertyEditor {
 
@@ -23,6 +25,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 	protected EStructuralFeature feature = null;
 	
+	protected EObject element;
 	protected Object value;
 
 	private Adapter adapter = new AdapterImpl() {
@@ -36,13 +39,21 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		this.feature = feature;
 	}
 
+	public String getFeatureDescription() {
+		StringBuffer buffer = new StringBuffer();
+		buffer.append(RuntimePlugin.makeHumanReadable(feature.getName(), true));
+		buffer.append(" of ");
+		buffer.append(RuntimePlugin.makeHumanReadable(element.eClass().getName(), true));
+		return buffer.toString();
+	}
+
 	@Override
 	public EStructuralFeature getFeature() {
 		return feature;
 	}
 
 	public EObject getElement() {
-		return (EObject) input;
+		return element;
 	}
 
 	@Override
@@ -61,12 +72,19 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 	@Override
 	protected void inputChanged() {
+		element = (EObject) input;
+		
+		// calls refresh because of input change
 		super.inputChanged();
+
+		// Update Value
 		Object value = null;
 		if (input != null) {
-			value = ((EObject) input).eGet(feature);
+			value = element.eGet(feature);
 		}
 		updateValue(value);
+		
+		// Update Adapters
 		updateAdapters();
 	}
 
@@ -116,7 +134,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 	
 	protected void addListeners() {
-		registerListener((EObject) input);
+		registerListener(element);
 	}
 
 	protected void registerListener(EObject element) {
@@ -127,14 +145,13 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 
 	public void setValue(Object newValue) {
-		EObject eObject = (EObject) input;
 		EditingDomain editingDomain = AdapterFactoryEditingDomain
-				.getEditingDomainFor(eObject);
+				.getEditingDomainFor(element);
 		if (editingDomain == null) {
-			eObject.eSet(feature, newValue);
+			element.eSet(feature, newValue);
 		} else {
 			editingDomain.getCommandStack().execute(
-					SetCommand.create(editingDomain, eObject, feature, newValue));
+					SetCommand.create(editingDomain, element, feature, newValue));
 		}
 	}
 

@@ -2,33 +2,38 @@ package test.editor;
 
 import org.storydriven.core.CorePackage;
 
-import de.fujaba.properties.runtime.editors.CategoryPropertyEditor;
+import de.fujaba.properties.runtime.editors.ClassPropertyEditor;
 import de.fujaba.properties.runtime.editors.IPropertyEditor;
 import de.fujaba.properties.runtime.editors.TextPropertyEditor;
 
 /**
  * @generated
  */
-public class NamedElementEditor extends CategoryPropertyEditor {
+public class NamedElementEditor extends ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
 	public NamedElementEditor() {
-		addEditors();
 	}
 
 	/**
 	 * @generated
 	 */
-	public void addEditors() {
-		addPropertyEditor(getFeature1Editor());
+	@Override
+	protected void initialize() {
+		addNameEditor(null, true);
+		super.initialize();
+	}
+
+	protected void addNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	private IPropertyEditor getFeature1Editor() {
+	protected IPropertyEditor createNameEditor() {
 		return new TextPropertyEditor(CorePackage.Literals.NAMED_ELEMENT__NAME);
 
 	}

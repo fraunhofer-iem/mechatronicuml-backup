@@ -1,15 +1,18 @@
 package de.fujaba.properties.runtime.editors;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Layout;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
@@ -19,120 +22,168 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 
 	protected Composite childrenComposite;
 
-	private boolean hasTitle;
-
 	private String title;
 
 	private int orientation = SWT.VERTICAL;
 
 	protected TabbedPropertySheetWidgetFactory toolkit;
 
-	protected Map<IPropertyEditor, Composite> propertyEditors = new HashMap<IPropertyEditor, Composite>();
+	protected List<IPropertyEditor> propertyEditors = new ArrayList<IPropertyEditor>();
+
+	protected Map<String, IPropertyEditor> keys = new HashMap<String, IPropertyEditor>();
 
 	/**
-	 * Constructs this CategoryPropertyEditor.
+	 * Constructs this CategoryPropertyEditor without title support.
 	 * 
-	 * @param hasTitle
-	 *            Whether to construct with a title.
 	 */
 	public CategoryPropertyEditor() {
-		this(false, SWT.VERTICAL);
+		this(SWT.VERTICAL, null);
 	}
 
 	/**
 	 * Constructs this CategoryPropertyEditor.
 	 * 
 	 * @param title
-	 *            The title to display.
+	 *            The title to display, if null the Category is constructed
+	 *            without title support. Please use "" to be able to set the
+	 *            title afterwards.
 	 * @param orientation
 	 *            The orientation, can be SWT.HORIZONTAL or SWT.VERTICAL.
 	 */
-	public CategoryPropertyEditor(boolean hasTitle, int orientation) {
-		this.hasTitle = hasTitle;
+	public CategoryPropertyEditor(int orientation, String title) {
 		this.orientation = orientation;
+		this.title = title;
+		initialize();
+	}
+
+	protected void initialize() {
 	}
 
 	public void addPropertyEditor(IPropertyEditor editor) {
-		if (propertyEditors.containsKey(editor)) {
-			return;
-		}
-		// Add to UI only if possible
-		Composite composite = addToUI(editor);
-
-		// Add to map
-		propertyEditors.put(editor, composite);
-
-		childrenChanged();
+		addPropertyEditor(editor, false);
 	}
 
-	private Composite addToUI(IPropertyEditor editor) {
-		if (isUIReady()) {
-			Composite composite = toolkit.createComposite(childrenComposite);
-			composite.setLayout(new FillLayout());
-			editor.createControls(composite, toolkit);
-			return composite;
+	public void addPropertyEditor(IPropertyEditor editor, boolean front) {
+		addPropertyEditor(null, editor, front);
+	}
+
+	public void addPropertyEditor(String key, IPropertyEditor editor,
+			boolean front) {
+		if (!propertyEditors.contains(editor) && !keys.containsKey(key)) {
+			if (isUIReady()) {
+				editor.createControls(childrenComposite, toolkit);
+			}
+			// Adding to front only works before createControls() is invoked.
+			if (front) {
+				propertyEditors.add(0, editor);
+			} else {
+				propertyEditors.add(editor);
+			}
+			if (key != null) {
+				keys.put(key, editor);
+			}
+		}
+	}
+
+	public void removePropertyEditor(IPropertyEditor editor) {
+		if (propertyEditors.contains(editor)) {
+			if (!isUIReady()) {
+				editor.dispose();
+			}
+			propertyEditors.remove(editor);
+			String key = getEditorKey(editor);
+			if (key != null) {
+				keys.remove(key);
+			}
+		}
+	}
+
+	/**
+	 * Gets the editor by using a key.
+	 * 
+	 * @param key
+	 *            The key to use to access the editor.
+	 * @return the editor; never null.
+	 */
+	public IPropertyEditor getEditor(String key) {
+		return keys.get(key);
+	}
+
+	/**
+	 * Gets the key that was used to add the editor.
+	 * 
+	 * @param editor
+	 *            The editor to search a key for.
+	 * 
+	 * @return The key or null, if the editor was added without a key.
+	 */
+	public String getEditorKey(IPropertyEditor editor) {
+		for (String key : keys.keySet()) {
+			if (keys.get(key) == editor) {
+				return key;
+			}
 		}
 		return null;
 	}
 
-	public void removePropertyEditor(IPropertyEditor editor) {
-		// Remove from UI only if possible
-		if (isUIReady()) {
-			Composite composite = propertyEditors.get(editor);
-			if (composite != null) {
-				composite.dispose();
-			}
-		}
-		if (editor != null) {
+	public void clearPropertyEditors() {
+		for (IPropertyEditor editor : propertyEditors) {
 			editor.dispose();
 		}
-
-		// Remove from map
-		propertyEditors.remove(editor);
-
-		childrenChanged();
-	}
-
-	private void childrenChanged() {
-		if (section != null) {
-			section.setExpanded(!propertyEditors.isEmpty());
-		}
-	}
-
-	public void clearPropertyEditors() {
-		// copy to get rid of ConcurrentModificationException when deleting
-		// inside loop
-		Set<IPropertyEditor> editors = new HashSet<IPropertyEditor>();
-		editors.addAll(propertyEditors.keySet());
-		for (IPropertyEditor editor : editors) {
-			removePropertyEditor(editor);
-		}
+		propertyEditors.clear();
 	}
 
 	@Override
 	public void createControls(Composite parent,
 			TabbedPropertySheetWidgetFactory toolkit) {
 		this.toolkit = toolkit;
+		Object layoutData = createLayoutData(parent);
 
-		if (hasTitle) {
+		if (title != null) {
 			section = createSection(parent, toolkit);
 			childrenComposite = toolkit.createComposite(section);
 			section.setClient(childrenComposite);
+			section.setLayoutData(layoutData);
 		} else {
 			childrenComposite = toolkit.createComposite(parent);
+			childrenComposite.setLayoutData(layoutData);
 		}
-		FillLayout layout = new FillLayout(orientation);
-		layout.marginHeight = 10;
-		childrenComposite.setLayout(layout);
+		Layout layout = createLayout();
+		if (layout != null) {
+			childrenComposite.setLayout(layout);
+		}
 
 		// Create initial editor controls that could not yet be created
 		Assert.isTrue(isUIReady());
-		for (IPropertyEditor editor : propertyEditors.keySet()) {
-			propertyEditors.put(editor, addToUI(editor));
+		for (IPropertyEditor editor : propertyEditors) {
+			editor.createControls(childrenComposite, toolkit);
 		}
 
-		childrenChanged();
+		if (section != null) {
+			section.setExpanded(!propertyEditors.isEmpty());
+		}
 
+	}
+
+	protected Layout createLayout() {
+		if (orientation == SWT.VERTICAL) {
+			GridLayout layout = new GridLayout(2, false);
+			return layout;
+		} else if (orientation == SWT.HORIZONTAL) {
+			RowLayout layout = new RowLayout(orientation);
+			layout.marginHeight = 10;
+			layout.spacing = 40;
+			return layout;
+		}
+		return null;
+	}
+
+	protected Object createLayoutData(Composite parent) {
+		Layout layout = parent.getLayout();
+		if (layout instanceof GridLayout) {
+			return new GridData(SWT.FILL, SWT.NONE, true, false, 2, 1);
+		}
+		return null;
 	}
 
 	public boolean isUIReady() {
@@ -194,18 +245,19 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 	@Override
 	public void setInput(Object object) {
 		super.setInput(object);
-		for (IPropertyEditor editor : propertyEditors.keySet()) {
+		for (IPropertyEditor editor : propertyEditors) {
 			editor.setInput(object);
 		}
 	}
 
 	@Override
 	public void dispose() {
+		childrenComposite = null;
+		toolkit = null;
 
-		for (IPropertyEditor editor : propertyEditors.keySet()) {
+		for (IPropertyEditor editor : propertyEditors) {
 			editor.dispose();
 		}
-		title = "";
 	}
 
 	public void setEnabled(boolean enabled) {
