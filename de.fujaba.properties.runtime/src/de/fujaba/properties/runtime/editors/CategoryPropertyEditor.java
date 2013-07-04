@@ -1,14 +1,15 @@
 package de.fujaba.properties.runtime.editors;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
@@ -17,9 +18,9 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 	protected Section section;
 
 	protected Composite childrenComposite;
-	
+
 	private boolean hasTitle;
-	
+
 	private String title;
 
 	private int orientation = SWT.VERTICAL;
@@ -27,7 +28,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 	protected TabbedPropertySheetWidgetFactory toolkit;
 
 	protected Map<IPropertyEditor, Composite> propertyEditors = new HashMap<IPropertyEditor, Composite>();
-
 
 	/**
 	 * Constructs this CategoryPropertyEditor.
@@ -58,10 +58,10 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 		}
 		// Add to UI only if possible
 		Composite composite = addToUI(editor);
-		
+
 		// Add to map
 		propertyEditors.put(editor, composite);
-		
+
 		childrenChanged();
 	}
 
@@ -86,10 +86,10 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 		if (editor != null) {
 			editor.dispose();
 		}
-		
+
 		// Remove from map
 		propertyEditors.remove(editor);
-		
+
 		childrenChanged();
 	}
 
@@ -100,7 +100,11 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 	}
 
 	public void clearPropertyEditors() {
-		for (IPropertyEditor editor : propertyEditors.keySet()) {
+		// copy to get rid of ConcurrentModificationException when deleting
+		// inside loop
+		Set<IPropertyEditor> editors = new HashSet<IPropertyEditor>();
+		editors.addAll(propertyEditors.keySet());
+		for (IPropertyEditor editor : editors) {
 			removePropertyEditor(editor);
 		}
 	}
@@ -120,14 +124,13 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 		FillLayout layout = new FillLayout(orientation);
 		layout.marginHeight = 10;
 		childrenComposite.setLayout(layout);
-	
-		
+
 		// Create initial editor controls that could not yet be created
 		Assert.isTrue(isUIReady());
 		for (IPropertyEditor editor : propertyEditors.keySet()) {
 			propertyEditors.put(editor, addToUI(editor));
 		}
-		
+
 		childrenChanged();
 
 	}
@@ -136,7 +139,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 		return childrenComposite != null && toolkit != null
 				&& !childrenComposite.isDisposed();
 	}
-	
+
 	public String getTitle() {
 		return title;
 	}
@@ -198,7 +201,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 
 	@Override
 	public void dispose() {
-		
+
 		for (IPropertyEditor editor : propertyEditors.keySet()) {
 			editor.dispose();
 		}
