@@ -56,7 +56,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 	@Override
 	public void dispose() {
-		setInput(null); // remove listeners
+		removeListeners();
 	}
 
 	@Override
@@ -78,10 +78,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 
 	protected void updateAdapters() {
-		for (EObject element : hookedObjects) {
-			element.eAdapters().remove(adapter);	
-		}
-		hookedObjects.clear();
+		removeListeners();
 		
 		if (input != null) {
 			addListeners();
@@ -111,6 +108,13 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	protected void valueChanged() {
 	}
 
+	protected void removeListeners() {
+		for (EObject element : hookedObjects) {
+			element.eAdapters().remove(adapter);	
+		}
+		hookedObjects.clear();
+	}
+	
 	protected void addListeners() {
 		registerListener((EObject) input);
 	}

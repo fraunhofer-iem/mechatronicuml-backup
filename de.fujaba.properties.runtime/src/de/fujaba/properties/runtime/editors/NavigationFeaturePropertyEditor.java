@@ -123,6 +123,8 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 	}
 
 	public void dispose() {
+		buttonCreate = null;
+		buttonRemove = null;
 		navigatedEditor.dispose();
 		super.dispose();
 	}
