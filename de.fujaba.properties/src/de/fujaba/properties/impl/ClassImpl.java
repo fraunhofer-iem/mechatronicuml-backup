@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -37,6 +39,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.fujaba.properties.impl.ClassImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.ClassImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.ClassImpl#getPropertyCategories <em>Property Categories</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.ClassImpl#getSuperClasses <em>Super Classes</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.ClassImpl#getAllSuperClasses <em>All Super Classes</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,6 +76,26 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 	 * @ordered
 	 */
 	protected EList<PropertyCategory> propertyCategories;
+
+	/**
+	 * The cached value of the '{@link #getSuperClasses() <em>Super Classes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSuperClasses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<de.fujaba.properties.Class> superClasses;
+
+	/**
+	 * The cached setting delegate for the '{@link #getAllSuperClasses() <em>All Super Classes</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllSuperClasses()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ALL_SUPER_CLASSES__ESETTING_DELEGATE = ((EStructuralFeature.Internal)PropertiesPackage.Literals.CLASS__ALL_SUPER_CLASSES).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,7 +161,7 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 	 */
 	public de.fujaba.properties.Package getPackage() {
 		if (eContainerFeatureID() != PropertiesPackage.CLASS__PACKAGE) return null;
-		return (de.fujaba.properties.Package)eInternalContainer();
+		return (de.fujaba.properties.Package)eContainer();
 	}
 
 	/**
@@ -190,9 +214,31 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 	 */
 	public EList<PropertyCategory> getPropertyCategories() {
 		if (propertyCategories == null) {
-			propertyCategories = new EObjectContainmentEList<PropertyCategory>(PropertyCategory.class, this, PropertiesPackage.CLASS__PROPERTY_CATEGORIES);
+			propertyCategories = new EObjectContainmentWithInverseEList<PropertyCategory>(PropertyCategory.class, this, PropertiesPackage.CLASS__PROPERTY_CATEGORIES, PropertiesPackage.PROPERTY_CATEGORY__CLAZZ);
 		}
 		return propertyCategories;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<de.fujaba.properties.Class> getSuperClasses() {
+		if (superClasses == null) {
+			superClasses = new EObjectResolvingEList<de.fujaba.properties.Class>(de.fujaba.properties.Class.class, this, PropertiesPackage.CLASS__SUPER_CLASSES);
+		}
+		return superClasses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<de.fujaba.properties.Class> getAllSuperClasses() {
+		return (EList<de.fujaba.properties.Class>)ALL_SUPER_CLASSES__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -210,6 +256,8 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 				return basicSetPackage((de.fujaba.properties.Package)otherEnd, msgs);
 			case PropertiesPackage.CLASS__PROPERTIES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProperties()).basicAdd(otherEnd, msgs);
+			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPropertyCategories()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -263,6 +311,10 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 				return getProperties();
 			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
 				return getPropertyCategories();
+			case PropertiesPackage.CLASS__SUPER_CLASSES:
+				return getSuperClasses();
+			case PropertiesPackage.CLASS__ALL_SUPER_CLASSES:
+				return getAllSuperClasses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -290,6 +342,14 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 				getPropertyCategories().clear();
 				getPropertyCategories().addAll((Collection<? extends PropertyCategory>)newValue);
 				return;
+			case PropertiesPackage.CLASS__SUPER_CLASSES:
+				getSuperClasses().clear();
+				getSuperClasses().addAll((Collection<? extends de.fujaba.properties.Class>)newValue);
+				return;
+			case PropertiesPackage.CLASS__ALL_SUPER_CLASSES:
+				getAllSuperClasses().clear();
+				getAllSuperClasses().addAll((Collection<? extends de.fujaba.properties.Class>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -314,6 +374,12 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
 				getPropertyCategories().clear();
 				return;
+			case PropertiesPackage.CLASS__SUPER_CLASSES:
+				getSuperClasses().clear();
+				return;
+			case PropertiesPackage.CLASS__ALL_SUPER_CLASSES:
+				getAllSuperClasses().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -334,6 +400,10 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 				return properties != null && !properties.isEmpty();
 			case PropertiesPackage.CLASS__PROPERTY_CATEGORIES:
 				return propertyCategories != null && !propertyCategories.isEmpty();
+			case PropertiesPackage.CLASS__SUPER_CLASSES:
+				return superClasses != null && !superClasses.isEmpty();
+			case PropertiesPackage.CLASS__ALL_SUPER_CLASSES:
+				return ALL_SUPER_CLASSES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

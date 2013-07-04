@@ -308,7 +308,45 @@ public class PropertiesValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePropertyCategory(PropertyCategory propertyCategory, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(propertyCategory, diagnostics, context);
+		if (!validate_NoCircularContainment(propertyCategory, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(propertyCategory, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(propertyCategory, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(propertyCategory, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(propertyCategory, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(propertyCategory, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(propertyCategory, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(propertyCategory, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(propertyCategory, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePropertyCategory_UniqueFeatures(propertyCategory, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the UniqueFeatures constraint of '<em>Property Category</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePropertyCategory_UniqueFeatures(PropertyCategory propertyCategory, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "UniqueFeatures", getObjectLabel(propertyCategory, context) },
+						 new Object[] { propertyCategory },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

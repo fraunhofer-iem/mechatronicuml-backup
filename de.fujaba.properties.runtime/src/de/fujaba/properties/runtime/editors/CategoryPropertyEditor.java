@@ -72,6 +72,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 		if (!propertyEditors.contains(editor) && !keys.containsKey(key)) {
 			if (isUIReady()) {
 				editor.createControls(childrenComposite, toolkit);
+				childrenComposite.layout();
 			}
 			// Adding to front only works before createControls() is invoked.
 			if (front) {
@@ -181,7 +182,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 	protected Object createLayoutData(Composite parent) {
 		Layout layout = parent.getLayout();
 		if (layout instanceof GridLayout) {
-			return new GridData(SWT.FILL, SWT.NONE, true, false, 2, 1);
+			return new GridData(SWT.FILL, SWT.NONE, false, false, 2, 1);
 		}
 		return null;
 	}
@@ -252,6 +253,12 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 
 	@Override
 	public void dispose() {
+		if (childrenComposite != null) {
+			childrenComposite.dispose();
+		}
+		if (section != null) {
+			section.dispose();
+		}
 		childrenComposite = null;
 		toolkit = null;
 

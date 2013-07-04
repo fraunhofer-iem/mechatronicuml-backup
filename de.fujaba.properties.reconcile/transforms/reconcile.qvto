@@ -85,7 +85,9 @@ mapping inout Package::reconcilePackage(tab : PropertyTab) {
 }
  
 mapping inout Class::reconcileClass(tab : PropertyTab) {
-	
+	-- update list of super classes that can be found using all referenced models
+	self.superClasses := package.generator.referencedGenerators->union(Set { package.generator }).packages.classes->reject(superClass | not superClass.genClass.ecoreClass.isSuperTypeOf(self.genClass.ecoreClass));
+
 	-- generate missing sections
 	self.genClass.genFeatures->select(shouldGenerate())->forEach(feature) {
 		if (not self.properties.genFeature->includes(feature)) then {
@@ -149,7 +151,7 @@ query GenClassifier::shouldGenerate() : Boolean {
 	return false;
 }
 query GenClass::shouldGenerate() : Boolean {
-	return not self.genFeatures->select(shouldGenerate())->isEmpty();
+	return true;
 }
 query GenFeature::shouldGenerate() : Boolean {
 	return not self.ecoreFeature._derived;

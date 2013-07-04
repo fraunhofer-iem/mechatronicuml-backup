@@ -350,13 +350,31 @@ public interface PropertiesPackage extends EPackage {
 	int CLASS__PROPERTY_CATEGORIES = 3;
 
 	/**
+	 * The feature id for the '<em><b>Super Classes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__SUPER_CLASSES = 4;
+
+	/**
+	 * The feature id for the '<em><b>All Super Classes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__ALL_SUPER_CLASSES = 5;
+
+	/**
 	 * The number of structural features of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_FEATURE_COUNT = 4;
+	int CLASS_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyCategoryImpl <em>Property Category</em>}' class.
@@ -396,13 +414,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY_CATEGORY__PROPERTIES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Clazz</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY__CLAZZ = 3;
+
+	/**
 	 * The number of structural features of the '<em>Property Category</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CATEGORY_FEATURE_COUNT = 3;
+	int PROPERTY_CATEGORY_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyImpl <em>Property</em>}' class.
@@ -469,22 +496,13 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY__CLAZZ = 5;
 
 	/**
-	 * The feature id for the '<em><b>Category</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY__CATEGORY = 6;
-
-	/**
 	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = 7;
+	int PROPERTY_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.
@@ -1080,6 +1098,28 @@ public interface PropertiesPackage extends EPackage {
 	EReference getClass_PropertyCategories();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.fujaba.properties.Class#getSuperClasses <em>Super Classes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Super Classes</em>'.
+	 * @see de.fujaba.properties.Class#getSuperClasses()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_SuperClasses();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.fujaba.properties.Class#getAllSuperClasses <em>All Super Classes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>All Super Classes</em>'.
+	 * @see de.fujaba.properties.Class#getAllSuperClasses()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_AllSuperClasses();
+
+	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.PropertyCategory <em>Property Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1121,6 +1161,17 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPropertyCategory_Properties();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.fujaba.properties.PropertyCategory#getClazz <em>Clazz</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Clazz</em>'.
+	 * @see de.fujaba.properties.PropertyCategory#getClazz()
+	 * @see #getPropertyCategory()
+	 * @generated
+	 */
+	EReference getPropertyCategory_Clazz();
 
 	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.Property <em>Property</em>}'.
@@ -1197,17 +1248,6 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProperty_Clazz();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.fujaba.properties.Property#getCategory <em>Category</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Category</em>'.
-	 * @see de.fujaba.properties.Property#getCategory()
-	 * @see #getProperty()
-	 * @generated
-	 */
-	EReference getProperty_Category();
 
 	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.PropertyEditor <em>Property Editor</em>}'.
@@ -1610,6 +1650,22 @@ public interface PropertiesPackage extends EPackage {
 		EReference CLASS__PROPERTY_CATEGORIES = eINSTANCE.getClass_PropertyCategories();
 
 		/**
+		 * The meta object literal for the '<em><b>Super Classes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__SUPER_CLASSES = eINSTANCE.getClass_SuperClasses();
+
+		/**
+		 * The meta object literal for the '<em><b>All Super Classes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__ALL_SUPER_CLASSES = eINSTANCE.getClass_AllSuperClasses();
+
+		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyCategoryImpl <em>Property Category</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1642,6 +1698,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTY_CATEGORY__PROPERTIES = eINSTANCE.getPropertyCategory_Properties();
+
+		/**
+		 * The meta object literal for the '<em><b>Clazz</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY_CATEGORY__CLAZZ = eINSTANCE.getPropertyCategory_Clazz();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyImpl <em>Property</em>}' class.
@@ -1700,14 +1764,6 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTY__CLAZZ = eINSTANCE.getProperty_Clazz();
-
-		/**
-		 * The meta object literal for the '<em><b>Category</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROPERTY__CATEGORY = eINSTANCE.getProperty_Category();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyEditorImpl <em>Property Editor</em>}' class.

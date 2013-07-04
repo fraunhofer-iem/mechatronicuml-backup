@@ -14,6 +14,8 @@ import de.fujaba.properties.runtime.RuntimePlugin;
 
 public class CheckboxPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
+	
+	private Button checkbox;
 
 	public CheckboxPropertyEditor(EStructuralFeature feature) {
 		super(feature);
@@ -25,7 +27,7 @@ public class CheckboxPropertyEditor extends
 	
 		// Create one checkbox for a boolean feature, or enumeration with
 		// two selectable enumerators
-		final Button checkbox = factory.createButton(parent,
+		checkbox = factory.createButton(parent,
 				RuntimePlugin.makeHumanReadable(feature.getName(), true), SWT.CHECK);
 		if (parent.getLayout() instanceof GridLayout) {
 			checkbox.setLayoutData(new GridData(SWT.FILL, SWT.NONE, true, false, 2, 1));
@@ -40,5 +42,21 @@ public class CheckboxPropertyEditor extends
 		// a enumeration
 
 	}
+	
+	@Override
+	protected void valueChanged() {
+		super.valueChanged();
+		if (checkbox != null && !checkbox.isDisposed()) {
+			checkbox.setSelection(Boolean.TRUE.equals(value));
+		}
+	}
+	
+	@Override
+	public void dispose() {
+		super.dispose();
+		checkbox.dispose();
+		checkbox = null;
+	}
+	
 
 }

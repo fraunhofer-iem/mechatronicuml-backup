@@ -75,11 +75,19 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		URL url = FileLocator.find(bundle, path, null);
 		return ImageDescriptor.createFromURL(url);
 	}
+	
 
-	public static Image getImage(String key, Display display) {
+	public static Image getImage(String key) {
 		ImageDescriptor descriptor = plugin.getImageRegistry().getDescriptor(
 				key);
-		return new Image(display, descriptor.getImageData());
+		return new Image(Display.getCurrent(), descriptor.getImageData());
+	}
+
+
+	public static Image getImage(String key, int width, int height) {
+		ImageDescriptor descriptor = plugin.getImageRegistry().getDescriptor(
+				key);
+		return new Image(Display.getCurrent(), descriptor.getImageData().scaledTo(width,  height));
 	}
 
 	/*
@@ -273,5 +281,6 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		}
 		return null;
 	}
+
 
 }

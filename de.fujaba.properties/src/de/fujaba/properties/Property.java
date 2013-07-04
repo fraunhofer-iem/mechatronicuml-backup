@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.fujaba.properties.Property#getSection <em>Section</em>}</li>
  *   <li>{@link de.fujaba.properties.Property#getTooltip <em>Tooltip</em>}</li>
  *   <li>{@link de.fujaba.properties.Property#getClazz <em>Clazz</em>}</li>
- *   <li>{@link de.fujaba.properties.Property#getCategory <em>Category</em>}</li>
  * </ul>
  * </p>
  *
@@ -180,33 +179,5 @@ public interface Property extends EObject {
 	 * @generated
 	 */
 	void setClazz(de.fujaba.properties.Class value);
-
-	/**
-	 * Returns the value of the '<em><b>Category</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.PropertyCategory#getProperties <em>Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Category</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Category</em>' reference.
-	 * @see #setCategory(PropertyCategory)
-	 * @see de.fujaba.properties.PropertiesPackage#getProperty_Category()
-	 * @see de.fujaba.properties.PropertyCategory#getProperties
-	 * @model opposite="properties"
-	 * @generated
-	 */
-	PropertyCategory getCategory();
-
-	/**
-	 * Sets the value of the '{@link de.fujaba.properties.Property#getCategory <em>Category</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Category</em>' reference.
-	 * @see #getCategory()
-	 * @generated
-	 */
-	void setCategory(PropertyCategory value);
 
 } // Property

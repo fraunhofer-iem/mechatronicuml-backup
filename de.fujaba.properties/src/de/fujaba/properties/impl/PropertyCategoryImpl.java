@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#isVertical <em>Vertical</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getClazz <em>Clazz</em>}</li>
  * </ul>
  * </p>
  *
@@ -156,7 +159,7 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 	 */
 	public EList<Property> getProperties() {
 		if (properties == null) {
-			properties = new EObjectWithInverseResolvingEList<Property>(Property.class, this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertiesPackage.PROPERTY__CATEGORY);
+			properties = new EObjectResolvingEList<Property>(Property.class, this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES);
 		}
 		return properties;
 	}
@@ -166,12 +169,54 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
+	public de.fujaba.properties.Class getClazz() {
+		if (eContainerFeatureID() != PropertiesPackage.PROPERTY_CATEGORY__CLAZZ) return null;
+		return (de.fujaba.properties.Class)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetClazz(de.fujaba.properties.Class newClazz, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newClazz, PropertiesPackage.PROPERTY_CATEGORY__CLAZZ, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setClazz(de.fujaba.properties.Class newClazz) {
+		if (newClazz != eInternalContainer() || (eContainerFeatureID() != PropertiesPackage.PROPERTY_CATEGORY__CLAZZ && newClazz != null)) {
+			if (EcoreUtil.isAncestor(this, newClazz))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newClazz != null)
+				msgs = ((InternalEObject)newClazz).eInverseAdd(this, PropertiesPackage.CLASS__PROPERTY_CATEGORIES, de.fujaba.properties.Class.class, msgs);
+			msgs = basicSetClazz(newClazz, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_CATEGORY__CLAZZ, newClazz, newClazz));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProperties()).basicAdd(otherEnd, msgs);
+			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetClazz((de.fujaba.properties.Class)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -184,10 +229,24 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
-				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
+				return basicSetClazz(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
+				return eInternalContainer().eInverseRemove(this, PropertiesPackage.CLASS__PROPERTY_CATEGORIES, de.fujaba.properties.Class.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -204,6 +263,8 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 				return isVertical();
 			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
 				return getProperties();
+			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
+				return getClazz();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -227,6 +288,9 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 				getProperties().clear();
 				getProperties().addAll((Collection<? extends Property>)newValue);
 				return;
+			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
+				setClazz((de.fujaba.properties.Class)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -248,6 +312,9 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
 				getProperties().clear();
 				return;
+			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
+				setClazz((de.fujaba.properties.Class)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,6 +333,8 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 				return vertical != VERTICAL_EDEFAULT;
 			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
 				return properties != null && !properties.isEmpty();
+			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
+				return getClazz() != null;
 		}
 		return super.eIsSet(featureID);
 	}

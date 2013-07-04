@@ -66,6 +66,8 @@ public class ClassItemProvider
 			super.getPropertyDescriptors(object);
 
 			addGenClassPropertyDescriptor(object);
+			addSuperClassesPropertyDescriptor(object);
+			addAllSuperClassesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,6 +114,50 @@ public class ClassItemProvider
 			}
 			
 			});
+	}
+
+	/**
+	 * This adds a property descriptor for the Super Classes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSuperClassesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Class_superClasses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Class_superClasses_feature", "_UI_Class_type"),
+				 PropertiesPackage.Literals.CLASS__SUPER_CLASSES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the All Super Classes feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllSuperClassesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Class_allSuperClasses_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Class_allSuperClasses_feature", "_UI_Class_type"),
+				 PropertiesPackage.Literals.CLASS__ALL_SUPER_CLASSES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

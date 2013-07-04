@@ -41,7 +41,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getSection <em>Section</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getTooltip <em>Tooltip</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getClazz <em>Clazz</em>}</li>
- *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getCategory <em>Category</em>}</li>
  * </ul>
  * </p>
  *
@@ -107,16 +106,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * @ordered
 	 */
 	protected String tooltip = TOOLTIP_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCategory() <em>Category</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCategory()
-	 * @generated
-	 * @ordered
-	 */
-	protected PropertyCategory category;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,7 +285,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 */
 	public de.fujaba.properties.Class getClazz() {
 		if (eContainerFeatureID() != PropertiesPackage.PROPERTY__CLAZZ) return null;
-		return (de.fujaba.properties.Class)eInternalContainer();
+		return (de.fujaba.properties.Class)eContainer();
 	}
 
 	/**
@@ -335,66 +324,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropertyCategory getCategory() {
-		if (category != null && category.eIsProxy()) {
-			InternalEObject oldCategory = (InternalEObject)category;
-			category = (PropertyCategory)eResolveProxy(oldCategory);
-			if (category != oldCategory) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PropertiesPackage.PROPERTY__CATEGORY, oldCategory, category));
-			}
-		}
-		return category;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PropertyCategory basicGetCategory() {
-		return category;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCategory(PropertyCategory newCategory, NotificationChain msgs) {
-		PropertyCategory oldCategory = category;
-		category = newCategory;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__CATEGORY, oldCategory, newCategory);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCategory(PropertyCategory newCategory) {
-		if (newCategory != category) {
-			NotificationChain msgs = null;
-			if (category != null)
-				msgs = ((InternalEObject)category).eInverseRemove(this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertyCategory.class, msgs);
-			if (newCategory != null)
-				msgs = ((InternalEObject)newCategory).eInverseAdd(this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertyCategory.class, msgs);
-			msgs = basicSetCategory(newCategory, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__CATEGORY, newCategory, newCategory));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -406,10 +335,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetClazz((de.fujaba.properties.Class)otherEnd, msgs);
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				if (category != null)
-					msgs = ((InternalEObject)category).eInverseRemove(this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertyCategory.class, msgs);
-				return basicSetCategory((PropertyCategory)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -428,8 +353,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return basicSetSection(null, msgs);
 			case PropertiesPackage.PROPERTY__CLAZZ:
 				return basicSetClazz(null, msgs);
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				return basicSetCategory(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -470,9 +393,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return getTooltip();
 			case PropertiesPackage.PROPERTY__CLAZZ:
 				return getClazz();
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				if (resolve) return getCategory();
-				return basicGetCategory();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -505,9 +425,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__CLAZZ:
 				setClazz((de.fujaba.properties.Class)newValue);
 				return;
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				setCategory((PropertyCategory)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -538,9 +455,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__CLAZZ:
 				setClazz((de.fujaba.properties.Class)null);
 				return;
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				setCategory((PropertyCategory)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -565,8 +479,6 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return TOOLTIP_EDEFAULT == null ? tooltip != null : !TOOLTIP_EDEFAULT.equals(tooltip);
 			case PropertiesPackage.PROPERTY__CLAZZ:
 				return getClazz() != null;
-			case PropertiesPackage.PROPERTY__CATEGORY:
-				return category != null;
 		}
 		return super.eIsSet(featureID);
 	}

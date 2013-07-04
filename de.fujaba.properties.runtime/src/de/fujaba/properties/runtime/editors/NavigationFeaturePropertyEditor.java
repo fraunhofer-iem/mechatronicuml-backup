@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -50,6 +49,9 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 	
 		Composite composite = toolkit.createComposite(section);
 		RowLayout layout = new RowLayout(SWT.HORIZONTAL);
+		layout.marginLeft = layout.marginRight = layout.marginTop = layout.marginBottom = 0;
+		layout.spacing = 5;
+		layout.fill = true;
 		composite.setLayout(layout);
 
 		CCombo combo = toolkit.createCCombo(composite);
@@ -72,7 +74,7 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 		
 		
 		buttonCreate = toolkit.createButton(composite, "", SWT.TOGGLE);
-		buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD, buttonCreate.getDisplay()));
+		buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD, 12, 12));
 		buttonCreate.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				create();
@@ -81,7 +83,7 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 		});
 		
 		buttonRemove = toolkit.createButton(composite, "", SWT.TOGGLE);
-		buttonRemove.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_REMOVE, buttonRemove.getDisplay()));
+		buttonRemove.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_REMOVE, 12, 12));
 		buttonRemove.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				remove();
@@ -89,7 +91,7 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 		});
 		
 		section.setTextClient(composite);
-		section.setSeparatorControl(toolkit.createSeparator(section, SWT.NONE));
+		//section.setSeparatorControl(toolkit.createSeparator(section, SWT.NONE));
 		
 	}
 	

@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.fujaba.properties.Class#getPackage <em>Package</em>}</li>
  *   <li>{@link de.fujaba.properties.Class#getProperties <em>Properties</em>}</li>
  *   <li>{@link de.fujaba.properties.Class#getPropertyCategories <em>Property Categories</em>}</li>
+ *   <li>{@link de.fujaba.properties.Class#getSuperClasses <em>Super Classes</em>}</li>
+ *   <li>{@link de.fujaba.properties.Class#getAllSuperClasses <em>All Super Classes</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,6 +106,7 @@ public interface Class extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Property Categories</b></em>' containment reference list.
 	 * The list contents are of type {@link de.fujaba.properties.PropertyCategory}.
+	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.PropertyCategory#getClazz <em>Clazz</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Property Categories</em>' containment reference list isn't clear,
@@ -112,9 +115,42 @@ public interface Class extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Property Categories</em>' containment reference list.
 	 * @see de.fujaba.properties.PropertiesPackage#getClass_PropertyCategories()
-	 * @model containment="true"
+	 * @see de.fujaba.properties.PropertyCategory#getClazz
+	 * @model opposite="clazz" containment="true"
 	 * @generated
 	 */
 	EList<PropertyCategory> getPropertyCategories();
+
+	/**
+	 * Returns the value of the '<em><b>Super Classes</b></em>' reference list.
+	 * The list contents are of type {@link de.fujaba.properties.Class}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Super Classes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Super Classes</em>' reference list.
+	 * @see de.fujaba.properties.PropertiesPackage#getClass_SuperClasses()
+	 * @model
+	 * @generated
+	 */
+	EList<Class> getSuperClasses();
+
+	/**
+	 * Returns the value of the '<em><b>All Super Classes</b></em>' reference list.
+	 * The list contents are of type {@link de.fujaba.properties.Class}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>All Super Classes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>All Super Classes</em>' reference list.
+	 * @see de.fujaba.properties.PropertiesPackage#getClass_AllSuperClasses()
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL implementation='superClasses->closure(superClasses)'"
+	 * @generated
+	 */
+	EList<Class> getAllSuperClasses();
 
 } // Class
