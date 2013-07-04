@@ -46,7 +46,7 @@
          <propertySection
             id="«property.genFeature.genClass.ecoreClass.name».«property.genFeature.ecoreFeature.name»" 
             tab="«property.tab.id»"
-            class="«(genModel.modelPluginID + '.properties') + '.' + property.genFeature.genClass.genPackage.ecorePackage.name + '.section.' + property.genFeature.genClass.ecoreClass.name + property.genFeature.ecoreFeature.name.toFirstUpper() + 'Section'»">
+            class="«(genModel.modelPluginID + '.properties') + '.' + property.genFeature.genClass.genPackage.ecorePackage.name + '.section.' + property.genFeature.genClass.ecoreClass.name + property.genFeature.ecoreFeature.name.toString().toFirstUpper() + 'Section'»">
             <input type="«property.genFeature.genClass.fullyQualifiedName()»"/>
          </propertySection>
          «ENDFOREACH»

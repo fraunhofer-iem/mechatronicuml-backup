@@ -3,7 +3,7 @@
 «EXTENSION Metamodel»
 
 «DEFINE Section FOR PropertyEditor»
-public class «property.genFeature.genClass.ecoreClass.name»«property.genFeature.ecoreFeature.name.toFirstUpper()»Section extends «EXPAND superClass» {
+public class «property.genFeature.genClass.ecoreClass.name»«property.genFeature.ecoreFeature.name.toString().toFirstUpper()»Section extends «EXPAND superClass» {
 	«EXPAND classBody»
 }
 «ENDDEFINE»
@@ -11,12 +11,12 @@ public class «property.genFeature.genClass.ecoreClass.name»«property.genFeatu
 «DEFINE classBody FOR PropertyEditor»
 	@Override
 	public org.eclipse.emf.ecore.EStructuralFeature getFeature() {
-		return «property.genFeature.genClass.genPackage.fullyQualifiedName()».«property.genFeature.genClass.genPackage.ecorePackage.name.toFirstUpper()»Package.eINSTANCE.get«property.genFeature.genClass.ecoreClass.name.toFirstUpper()»_«property.genFeature.ecoreFeature.name.toFirstUpper()»();
+		return «property.genFeature.genClass.genPackage.fullyQualifiedName()».«property.genFeature.genClass.genPackage.ecorePackage.name.toString().toFirstUpper()»Package.eINSTANCE.get«property.genFeature.genClass.ecoreClass.name.toString().toFirstUpper()»_«property.genFeature.ecoreFeature.name.toString().toFirstUpper()»();
 	}
 
 	@Override
 	protected String getLabelText() {
-		return "«property.genFeature.ecoreFeature.name.toFirstUpper()»";
+		return "«property.genFeature.ecoreFeature.name.toString().toFirstUpper()»";
 	}
 
 	«EXPAND additionalMethods»

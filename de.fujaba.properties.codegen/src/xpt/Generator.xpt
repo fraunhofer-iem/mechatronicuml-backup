@@ -12,7 +12,7 @@
 «ENDFILE-»
 
 «FOREACH packages.classes.properties.select(p | p.section != null) AS property»
-«FILE sourceFolder + "/" + (genModel.modelPluginID + '.properties').replaceAll('\\.', '/') + '/' + property.genFeature.genClass.genPackage.ecorePackage.name + '/section/' + property.genFeature.genClass.ecoreClass.name + property.genFeature.ecoreFeature.name.toFirstUpper() + 'Section.java'»
+«FILE sourceFolder + "/" + (genModel.modelPluginID + '.properties').replaceAll('\\.', '/') + '/' + property.genFeature.genClass.genPackage.ecorePackage.name + '/section/' + property.genFeature.genClass.ecoreClass.name + property.genFeature.ecoreFeature.name.toString().toFirstUpper() + 'Section.java'»
 package «genModel.modelPluginID».properties.«property.genFeature.genClass.genPackage.ecorePackage.name».section;
 «EXPAND section::Section::Section FOR property.section»
 «ENDFILE»
