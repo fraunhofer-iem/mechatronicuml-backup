@@ -41,7 +41,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 */
 	public static PropertiesFactory init() {
 		try {
-			PropertiesFactory thePropertiesFactory = (PropertiesFactory)EPackage.Registry.INSTANCE.getEFactory("http://de.fujaba.properties/0.1"); 
+			PropertiesFactory thePropertiesFactory = (PropertiesFactory)EPackage.Registry.INSTANCE.getEFactory(PropertiesPackage.eNS_URI);
 			if (thePropertiesFactory != null) {
 				return thePropertiesFactory;
 			}

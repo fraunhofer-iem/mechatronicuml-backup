@@ -161,7 +161,7 @@ public class ClassImpl extends EObjectImpl implements de.fujaba.properties.Class
 	 */
 	public de.fujaba.properties.Package getPackage() {
 		if (eContainerFeatureID() != PropertiesPackage.CLASS__PACKAGE) return null;
-		return (de.fujaba.properties.Package)eContainer();
+		return (de.fujaba.properties.Package)eInternalContainer();
 	}
 
 	/**

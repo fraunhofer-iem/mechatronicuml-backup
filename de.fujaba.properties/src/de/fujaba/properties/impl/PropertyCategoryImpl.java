@@ -171,7 +171,7 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 	 */
 	public de.fujaba.properties.Class getClazz() {
 		if (eContainerFeatureID() != PropertiesPackage.PROPERTY_CATEGORY__CLAZZ) return null;
-		return (de.fujaba.properties.Class)eContainer();
+		return (de.fujaba.properties.Class)eInternalContainer();
 	}
 
 	/**
