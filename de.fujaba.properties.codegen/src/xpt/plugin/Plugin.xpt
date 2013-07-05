@@ -15,22 +15,6 @@
 «EXPAND propertyEditor»
 «ENDDEFINE»
 
-
-
-
- 
- <extension
-       point="de.fujaba.properties.runtime.propertyEditor">
-    <propertyEditors>
-       <propertyEditor
-             editor="test.editor.NamedElementEditor"
-             tab="base"
-             type="org.storydriven.core.NamedElement">
-       </propertyEditor>
-    </propertyEditors>
- </extension>
-
-
 «DEFINE propertyTabs FOR PropertyGenerator»
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs contributorId="«contributorId»">
@@ -64,12 +48,11 @@
 
 
 «DEFINE propertyEditor FOR PropertyGenerator»
- <extension point="de.fujaba.properties.runtime.propertyEditor">
+ <extension point="de.fujaba.properties.runtime.propertyEditors">
     <propertyEditors>
     «FOREACH packages.classes AS this»
        <propertyEditor
-             editor="«genQualifiedEditorName()»"
-             tab="base"
+             factory="«genQualifiedEditorName()»$Factory"
              type="«genClass.fullyQualifiedName()»">
        </propertyEditor>
     «ENDFOREACH»

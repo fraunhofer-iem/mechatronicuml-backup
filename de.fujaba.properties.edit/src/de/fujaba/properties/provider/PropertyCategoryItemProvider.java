@@ -3,6 +3,7 @@
 package de.fujaba.properties.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyCategory;
 
 /**
@@ -113,11 +115,11 @@ public class PropertyCategoryItemProvider
 	 * This adds a property descriptor for the Properties feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addPropertiesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_PropertyCategory_properties_feature"),
@@ -128,7 +130,19 @@ public class PropertyCategoryItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null) { 
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				List<Property> choices = new ArrayList<Property>();
+				PropertyCategory category = (PropertyCategory) object;
+				choices.addAll(category.getClazz().getProperties());
+				for (de.fujaba.properties.Class clazz : category.getClazz().getAllSuperClasses()) {
+					choices.addAll(clazz.getProperties());
+				}
+				return choices;
+			}	
+				
+		});
 	}
 
 	/**

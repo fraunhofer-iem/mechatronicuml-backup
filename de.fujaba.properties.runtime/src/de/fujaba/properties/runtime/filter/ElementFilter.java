@@ -13,7 +13,7 @@ public class ElementFilter implements IFilter {
 		Object resolved = RuntimePlugin.resolveSemanticObject(toTest);
 		if (resolved instanceof EObject) {
 			EClass eClass = ((EObject) resolved).eClass();
-			return !RuntimePlugin.getPropertyEditors(eClass).isEmpty();
+			return !RuntimePlugin.getPropertyEditorFactories(eClass).isEmpty();
 		}
 		return false;
 	}

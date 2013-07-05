@@ -3,7 +3,7 @@
 <schema targetNamespace="de.fujaba.properties.runtime" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.fujaba.properties.runtime" id="propertyEditor" name="Property Editor"/>
+         <meta.schema plugin="de.fujaba.properties.runtime" id="propertyEditors" name="Property Editor"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -67,20 +67,13 @@
                </appinfo>
             </annotation>
          </attribute>
-         <attribute name="tab" type="string" use="required">
-            <annotation>
-               <documentation>
-                  
-               </documentation>
-            </annotation>
-         </attribute>
-         <attribute name="editor" type="string" use="required">
+         <attribute name="factory" type="string" use="required">
             <annotation>
                <documentation>
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":IPropertyEditor"/>
+                  <meta.attribute kind="java" basedOn=":de.fujaba.properties.runtime.factory.IPropertyEditorFactory"/>
                </appinfo>
             </annotation>
          </attribute>

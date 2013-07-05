@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
@@ -122,10 +123,12 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 	
 
 	private void refreshButtons() {
-//		buttonCreate.setEnabled(value == null);
-//		buttonRemove.setEnabled(value != null);	
-		buttonCreate.setSelection(value != null);
-		buttonRemove.setSelection(value == null);		
+		if (buttonCreate != null && buttonRemove != null) {
+	//		buttonCreate.setEnabled(value == null);
+	//		buttonRemove.setEnabled(value != null);	
+			buttonCreate.setSelection(value != null);
+			buttonRemove.setSelection(value == null);
+		}
 	}
 
 	public void dispose() {
@@ -137,13 +140,19 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 
 
 	protected void create() {
-		Object newValue = EcoreUtil.create((EClass) feature.getEType());
+		IStructuredSelection selection = (IStructuredSelection)classViewer.getSelection();
+		EClass eClass = (EClass) selection.getFirstElement();
+		Object newValue = EcoreUtil.create(eClass);
 		setValue(newValue);
 		refreshButtons();
+		navigatedEditor.getSection().setExpanded(false);
+		navigatedEditor.getSection().setExpanded(true);
 	}
 	
 	protected void remove() {
 		setValue(null);
 		refreshButtons();
+		navigatedEditor.getSection().setExpanded(true);
+		navigatedEditor.getSection().setExpanded(false);
 	}
 }

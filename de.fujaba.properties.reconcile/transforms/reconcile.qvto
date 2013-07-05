@@ -32,6 +32,9 @@ mapping inout PropertyGenerator::generator() {
 			"de.fujaba.properties.runtime",
 			genModel.modelPluginID
 		};
+		self.referencedGenerators.genModel->forEach(g) {
+			plugin.requiredBundles += g.modelPluginID + '.edit.properties'
+		};
 		
 		-- there must be at least one tab
 		if (tabs->isEmpty()) then {

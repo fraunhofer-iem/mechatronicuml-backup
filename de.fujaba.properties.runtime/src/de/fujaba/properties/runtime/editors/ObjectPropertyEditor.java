@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.swt.SWT;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
+import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
 
 /**
  * Category property editor which automatically adds subeditors based on the
@@ -49,16 +50,16 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 			List<EClass> ecoreTypes = new ArrayList<EClass>();
 			ecoreTypes.add(element.eClass());
 			ecoreTypes.addAll(element.eClass().getEAllSuperTypes());
-			List<IPropertyEditor> foundEditors = null;
+			List<IPropertyEditorFactory> foundFactories = null;
 			for (EClass ecoreType : ecoreTypes) {
-				foundEditors = RuntimePlugin.getPropertyEditors(ecoreType);
-				if (foundEditors != null) {
+				foundFactories = RuntimePlugin.getPropertyEditorFactories(ecoreType);
+				if (foundFactories != null) {
 					break;
 				}
 			}
-			if (foundEditors != null) {
-				for (IPropertyEditor editor : foundEditors) {
-					addPropertyEditor(editor);
+			if (foundFactories != null) {
+				for (IPropertyEditorFactory factory : foundFactories) {
+					addPropertyEditor(factory.createPropertyEditor());
 				}
 			}
 		}

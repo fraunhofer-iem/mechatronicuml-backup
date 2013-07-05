@@ -75,7 +75,7 @@ PropertyCategory genLocalCategory(Property this) :
 
 	
 String genFeatureLiteral(GenFeature this) :
-		genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.ecorePackage.name.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
+		genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
 	
 List[Property] overwrittenProperties(Class this) :
 	propertyCategories.properties.reject(property | this.properties.contains(property));

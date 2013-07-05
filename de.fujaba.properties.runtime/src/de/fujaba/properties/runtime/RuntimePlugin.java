@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IAdaptable;
@@ -35,6 +34,7 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
 import de.fujaba.properties.runtime.editors.IPropertyEditor;
+import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -43,13 +43,13 @@ public class RuntimePlugin extends AbstractUIPlugin {
 
 	private static Map<EReference, List<EClass>> foundEClasses = new HashMap<EReference, List<EClass>>();
 
-	private Map<String, List<IPropertyEditor>> propertyEditorsMap = null;
+	private Map<String, List<IPropertyEditorFactory>> propertyEditorFactoriesMap = null;
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "de.fujaba.properties.runtime"; //$NON-NLS-1$
 
 	public static final String PROPERTY_EDITOR__EXTENSION_POINT_ID = PLUGIN_ID
-			+ ".propertyEditor"; //$NON-NLS-1$
+			+ ".propertyEditors"; //$NON-NLS-1$
 
 	public static final String IMAGE_ADD = "add";
 
@@ -100,7 +100,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		getPropertyEditorsMap();
+		getPropertyEditorFactoriesMap();
 	}
 
 	/*
@@ -124,28 +124,15 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		return plugin;
 	}
 
-	public static List<IPropertyEditor> getPropertyEditors(EClassifier eClass) {
+	public static List<IPropertyEditorFactory> getPropertyEditorFactories(EClassifier eClass) {
 		// TODO can this be done in a nicer way to get the qualified class name?
 		String qualifiedName = eClass.getInstanceClassName();
 
-		return getPropertyEditors(qualifiedName);
-	}
-	
-	public static List<IPropertyEditor> getPropertyEditors(String type, String tab) {
-		if (tab == null) {
-			return Collections.emptyList();
-		}
-		List<IPropertyEditor> selectedEditors = new ArrayList<IPropertyEditor>();
-		for (IPropertyEditor editor : getPropertyEditors(type)) {
-			if (tab.equals(editor.getTab())) {
-				selectedEditors.add(editor);
-			}
-		}
-		return selectedEditors;
+		return getPropertyEditorFactories(qualifiedName);
 	}
 
-	public static List<IPropertyEditor> getPropertyEditors(String type) {
-		List<IPropertyEditor> list = getDefault().getPropertyEditorsMap().get(
+	public static List<IPropertyEditorFactory> getPropertyEditorFactories(String type) {
+		List<IPropertyEditorFactory> list = getDefault().getPropertyEditorFactoriesMap().get(
 				type);
 		if (list != null) {
 			return list;
@@ -154,12 +141,12 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 
 	public static Set<String> getRegisteredPropertyEditorTypes() {
-		return getDefault().getPropertyEditorsMap().keySet();
+		return getDefault().getPropertyEditorFactoriesMap().keySet();
 	}
 
-	private Map<String, List<IPropertyEditor>> getPropertyEditorsMap() {
-		if (propertyEditorsMap == null) {
-			propertyEditorsMap = new HashMap<String, List<IPropertyEditor>>();
+	private Map<String, List<IPropertyEditorFactory>> getPropertyEditorFactoriesMap() {
+		if (propertyEditorFactoriesMap == null) {
+			propertyEditorFactoriesMap = new HashMap<String, List<IPropertyEditorFactory>>();
 			List<IConfigurationElement> elements = Arrays.asList(Platform
 					.getExtensionRegistry().getConfigurationElementsFor(
 							PROPERTY_EDITOR__EXTENSION_POINT_ID));
@@ -174,39 +161,34 @@ public class RuntimePlugin extends AbstractUIPlugin {
 					}
 
 					// Get or create list for that type
-					List<IPropertyEditor> list = propertyEditorsMap
+					List<IPropertyEditorFactory> list = propertyEditorFactoriesMap
 							.get(type);
 					if (list == null) {
-						list = new ArrayList<IPropertyEditor>();
-						propertyEditorsMap.put(type, list);
+						list = new ArrayList<IPropertyEditorFactory>();
+						propertyEditorFactoriesMap.put(type, list);
 					}
-					
-					// Read tab
-					String tab = element.getAttribute("tab");
 
-					// Read editor
-					IPropertyEditor editor = null;
+					// Read factory
+					IPropertyEditorFactory factory = null;
 					try {
 						Object object = element
-								.createExecutableExtension("editor");
-						if (object instanceof IPropertyEditor) {
-							editor = (IPropertyEditor) object;
+								.createExecutableExtension("factory");
+						if (object instanceof IPropertyEditorFactory) {
+							factory = (IPropertyEditorFactory) object;
 						}
 					} catch (CoreException e) {
 						e.printStackTrace();
 					}
 
-					if (editor != null) {
-						// Set Tab information
-						editor.setTab(tab);
+					if (factory != null) {
 						
 						// Add to list
-						list.add(editor);
+						list.add(factory);
 					}
 				}
 			}
 		}
-		return propertyEditorsMap;
+		return propertyEditorFactoriesMap;
 	}
 
 	public static String makeHumanReadable(String camelCased) {

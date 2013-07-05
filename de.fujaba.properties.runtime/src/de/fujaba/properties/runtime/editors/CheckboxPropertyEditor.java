@@ -54,8 +54,10 @@ public class CheckboxPropertyEditor extends
 	@Override
 	public void dispose() {
 		super.dispose();
-		checkbox.dispose();
-		checkbox = null;
+		if (checkbox != null) {
+			checkbox.dispose();
+			checkbox = null;
+		}
 	}
 	
 

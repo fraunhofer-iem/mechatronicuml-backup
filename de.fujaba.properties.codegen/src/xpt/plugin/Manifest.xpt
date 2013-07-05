@@ -1,14 +1,17 @@
 «IMPORT properties»
+«EXTENSION Metamodel»
 
-«DEFINE Manifest FOR Plugin-»
+«DEFINE Manifest FOR PropertyGenerator-»
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Properties
-Bundle-SymbolicName: «name»; singleton:=true
-Bundle-Version: «version»
-Require-Bundle: «EXPAND requiredBundles»
+Bundle-SymbolicName: «plugin.name»; singleton:=true
+Bundle-Version: «plugin.version»
+Require-Bundle: «EXPAND requiredBundles FOR plugin»
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: 
+«FOREACH packages AS this SEPARATOR ',\n'» «genPackageName()».editor«ENDFOREACH»
 «ENDDEFINE»
 
 «DEFINE requiredBundles FOR Plugin-»

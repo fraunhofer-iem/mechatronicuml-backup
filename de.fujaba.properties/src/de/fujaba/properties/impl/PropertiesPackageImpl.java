@@ -1047,7 +1047,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		  (getClass_AllSuperClasses(), 
 		   source, 
 		   new String[] {
-			 "implementation", "self->closure(superClasses)"
+			 "derivation", "self->closure(superClasses)"
 		   });			
 		addAnnotation
 		  (propertyCategoryEClass, 

@@ -3,7 +3,7 @@
 
 «DEFINE Generate FOR PropertyGenerator»
 «FILE 'META-INF/MANIFEST.MF'-»
-«EXPAND plugin::Manifest::Manifest FOR plugin-»
+«EXPAND plugin::Manifest::Manifest-»
 «ENDFILE-»
 
 «FILE 'plugin.xml'-»

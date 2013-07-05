@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
@@ -13,11 +12,15 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Layout;
+import org.eclipse.ui.forms.events.ExpansionEvent;
+import org.eclipse.ui.forms.events.IExpansionListener;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
-public class CategoryPropertyEditor extends AbstractPropertyEditor {
+public class CategoryPropertyEditor extends AbstractPropertyEditor  {
+	protected boolean childrenCreated = false;
+	
 	protected Section section;
 
 	protected Composite childrenComposite;
@@ -70,7 +73,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 	public void addPropertyEditor(String key, IPropertyEditor editor,
 			boolean front) {
 		if (!propertyEditors.contains(editor) && !keys.containsKey(key)) {
-			if (isUIReady()) {
+			if (childrenCreated) {
 				editor.createControls(childrenComposite, toolkit);
 				childrenComposite.layout();
 			}
@@ -88,9 +91,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 
 	public void removePropertyEditor(IPropertyEditor editor) {
 		if (propertyEditors.contains(editor)) {
-			if (!isUIReady()) {
-				editor.dispose();
-			}
+			editor.dispose();
 			propertyEditors.remove(editor);
 			String key = getEditorKey(editor);
 			if (key != null) {
@@ -141,10 +142,45 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 		Object layoutData = createLayoutData(parent);
 
 		if (title != null) {
+			// original:
 			section = createSection(parent, toolkit);
 			childrenComposite = toolkit.createComposite(section);
 			section.setClient(childrenComposite);
 			section.setLayoutData(layoutData);
+			
+			// this version is with border at the left
+//			section = createSection(parent, toolkit);
+//			section.setLayoutData(layoutData);
+//			
+//			Composite container = toolkit.createComposite(section, SWT.NONE);
+//			container.setLayout(new GridLayout(2, false));
+//			Composite border = toolkit.createComposite(container, SWT.NONE);
+//			border.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
+//			border.setBackground(new Color(null, 0, 0, 0));
+//			
+//			childrenComposite = toolkit.createComposite(container, SWT.NONE);
+//			childrenComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+//			section.setClient(container);
+			
+
+			section.addExpansionListener(new IExpansionListener() {
+
+				@Override
+				public void expansionStateChanging(ExpansionEvent e) {
+					
+				}
+
+				@Override
+				public void expansionStateChanged(ExpansionEvent e) {
+					if (e.getState() == true) {
+						createChildren();
+						section.removeExpansionListener(this);
+					}					
+				}
+			});
+			
+			
+			section.setExpanded(false);
 		} else {
 			childrenComposite = toolkit.createComposite(parent);
 			childrenComposite.setLayoutData(layoutData);
@@ -154,21 +190,24 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 			childrenComposite.setLayout(layout);
 		}
 
-		// Create initial editor controls that could not yet be created
-		Assert.isTrue(isUIReady());
-		for (IPropertyEditor editor : propertyEditors) {
-			editor.createControls(childrenComposite, toolkit);
+		// TODO REMOVE
+		createChildren();
+	}
+	
+	protected void createChildren() {
+		if (!childrenCreated) {
+			// Create initial editor controls that could not yet be created
+			for (IPropertyEditor editor : propertyEditors) {
+				editor.createControls(childrenComposite, toolkit);
+			}
+			childrenCreated = true;
 		}
-
-		if (section != null) {
-			section.setExpanded(!propertyEditors.isEmpty());
-		}
-
 	}
 
 	protected Layout createLayout() {
 		if (orientation == SWT.VERTICAL) {
 			GridLayout layout = new GridLayout(2, false);
+			layout.marginWidth = layout.marginRight = 0;
 			return layout;
 		} else if (orientation == SWT.HORIZONTAL) {
 			RowLayout layout = new RowLayout(orientation);
@@ -185,11 +224,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor {
 			return new GridData(SWT.FILL, SWT.NONE, false, false, 2, 1);
 		}
 		return null;
-	}
-
-	public boolean isUIReady() {
-		return childrenComposite != null && toolkit != null
-				&& !childrenComposite.isDisposed();
 	}
 
 	public String getTitle() {

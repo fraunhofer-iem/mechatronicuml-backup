@@ -4,7 +4,7 @@ import org.eclipse.core.runtime.Assert;
 
 /**
  * This ClassPropertyEditor is contained within an ObjectPropertyEditor and is
- * registered using the propertyEditor extension. Subclasses should add
+ * registered using the propertyEditors extension. Subclasses should add
  * properties to it.
  * 
  * @author bingo
