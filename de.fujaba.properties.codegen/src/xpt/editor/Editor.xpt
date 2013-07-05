@@ -1,0 +1,87 @@
+«IMPORT properties»
+«EXTENSION Metamodel»
+
+«DEFINE ClassEditor FOR Class»
+public class «genEditorName()» extends de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+	«EXPAND classBody»
+}
+«ENDDEFINE» 
+
+
+«DEFINE classBody FOR Class»
+	/**
+	 * @generated
+	 */
+	public «genEditorName()»() {
+	}
+
+	«EXPAND initialize»
+	
+	«FOREACH properties.select(p | p.editor != null) AS this-»
+	/**
+	 * @generated
+	 */
+	protected void «genAdder()»(String category, boolean front) {
+		addEditorToCategory(category, «genCreator()»(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
+		return «EXPAND createEditor(this) FOR editor»
+	}
+	«ENDFOREACH»
+	
+	
+	//
+	// Overwritten property settings
+	//
+
+	«FOREACH overwrittenProperties() AS this»
+	@Override
+	protected void «genAdder()»(String category, boolean front) {
+		category = «EXPAND categoryKey-»;
+		super.addNameEditor(category, front);
+	}
+	«ENDFOREACH»
+	
+«ENDDEFINE»
+
+
+«DEFINE initialize FOR Class»
+	/**
+	 * @generated
+	 */
+	public void initialize() {
+		«FOREACH propertyCategories AS this»
+		addSubCategory("«genCategoryKey()»", «title», «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF»);
+		«ENDFOREACH»
+		«FOREACH properties.select(p | p.editor != null) AS this»
+		«genAdder()»(«EXPAND categoryKey-», true);
+		«ENDFOREACH»
+		super.initialize();
+	}
+«ENDDEFINE»
+
+«DEFINE categoryKey FOR Property-»
+«IF genLocalCategory() != null-»
+	"«genLocalCategory().genCategoryKey()-»"
+«ELSE-»
+	null
+«ENDIF-»
+«ENDDEFINE-»
+
+«DEFINE createEditor(Property property) FOR PropertyEditor-»
+new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(«property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR TextPropertyEditor-»
+new de.fujaba.properties.runtime.editors.TextPropertyEditor(«property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
+
+«DEFINE createEditor(Property property) FOR ObjectPropertyEditor-»
+new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(«property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+

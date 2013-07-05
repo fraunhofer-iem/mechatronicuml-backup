@@ -110,7 +110,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
         eType="#//PropertyFilter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tab" lowerBound="1" eType="#//PropertyTab"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="section" eType="#//PropertyEditor"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="editor" eType="#//PropertyEditor"
         containment="true" eOpposite="#//PropertyEditor/property"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tooltip" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="clazz" lowerBound="1" eType="#//Class"
@@ -118,7 +118,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyEditor" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
-        eType="#//Property" eOpposite="#//Property/section"/>
+        eType="#//Property" eOpposite="#//Property/editor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextPropertyEditor" eSuperTypes="#//PropertyEditor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiLine" lowerBound="1"

@@ -48,3 +48,34 @@ Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EDataType 
 
 String propertyType(Property this) :
 	genFeature.ecoreFeature.eType.fullyQualifiedName(genFeature.genClass.genPackage.genModel);
+	
+String genPluginId(PropertyGenerator this) :
+	genModel.modelPluginID + '.properties';
+
+String genPackageName(properties::Package this) :
+	generator.genPluginId() + '.' + genPackage.ecorePackage.name;
+
+String genEditorName(properties::Class this) :
+	genClass.ecoreClass.name.toString() + 'Editor';
+
+String genQualifiedEditorName(properties::Class this) :
+	package.genPackageName() + '.editor.' + genEditorName();
+	
+String genCategoryKey(PropertyCategory this) :
+	"Category1";
+	
+String genAdder(Property this) :
+	'add'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + 'Editor';	
+
+String genCreator(Property this) :
+	'create'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + 'Editor';	
+	
+PropertyCategory genLocalCategory(Property this) : 
+	clazz.propertyCategories.select(category | category.properties.contains(this)).first();
+
+	
+String genFeatureLiteral(GenFeature this) :
+		genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.ecorePackage.name.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
+	
+List[Property] overwrittenProperties(Class this) :
+	propertyCategories.properties.reject(property | this.properties.contains(property));

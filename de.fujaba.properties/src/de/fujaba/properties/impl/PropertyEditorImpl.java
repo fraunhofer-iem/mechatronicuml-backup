@@ -83,7 +83,7 @@ public abstract class PropertyEditorImpl extends EObjectImpl implements Property
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newProperty != null)
-				msgs = ((InternalEObject)newProperty).eInverseAdd(this, PropertiesPackage.PROPERTY__SECTION, Property.class, msgs);
+				msgs = ((InternalEObject)newProperty).eInverseAdd(this, PropertiesPackage.PROPERTY__EDITOR, Property.class, msgs);
 			msgs = basicSetProperty(newProperty, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -130,7 +130,7 @@ public abstract class PropertyEditorImpl extends EObjectImpl implements Property
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case PropertiesPackage.PROPERTY_EDITOR__PROPERTY:
-				return eInternalContainer().eInverseRemove(this, PropertiesPackage.PROPERTY__SECTION, Property.class, msgs);
+				return eInternalContainer().eInverseRemove(this, PropertiesPackage.PROPERTY__EDITOR, Property.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

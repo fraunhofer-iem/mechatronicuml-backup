@@ -10,19 +10,29 @@
 «ENDDEFINE»
 
 «DEFINE extensions FOR PropertyGenerator»
-«EXPAND propertyTabsExtension»
-«EXPAND propertySectionsExtension»
+«EXPAND propertyTabs»
+«EXPAND propertySections»
+«EXPAND propertyEditor»
 «ENDDEFINE»
 
 
 
-«DEFINE propertyTabsExtension FOR PropertyGenerator»
+
+ 
+ <extension
+       point="de.fujaba.properties.runtime.propertyEditor">
+    <propertyEditors>
+       <propertyEditor
+             editor="test.editor.NamedElementEditor"
+             tab="base"
+             type="org.storydriven.core.NamedElement">
+       </propertyEditor>
+    </propertyEditors>
+ </extension>
+
+
+«DEFINE propertyTabs FOR PropertyGenerator»
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
- «EXPAND propertyTabs»
-</extension>
-«ENDDEFINE»
-
-«DEFINE propertyTabs FOR PropertyGenerator-»
       <propertyTabs contributorId="«contributorId»">
           «FOREACH tabs AS this-»
           <propertyTab
@@ -31,25 +41,38 @@
              label="«name»"/>
           «ENDFOREACH»
       </propertyTabs>
+  </extension>
 «ENDDEFINE»
 
-
-«DEFINE propertySectionsExtension FOR PropertyGenerator-»
- <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
- «EXPAND propertySections»
- </extension>
-«ENDDEFINE»
-
-«DEFINE propertySections FOR PropertyGenerator-»
+«DEFINE propertySections FOR PropertyGenerator»
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="«contributorId»">
-         «FOREACH packages.classes.properties.select(p | p.section != null) AS property-»
-         <propertySection
-            id="«property.genFeature.genClass.ecoreClass.name».«property.genFeature.ecoreFeature.name»" 
-            tab="«property.tab.id»"
-            class="«(genModel.modelPluginID + '.properties') + '.' + property.genFeature.genClass.genPackage.ecorePackage.name + '.section.' + property.genFeature.genClass.ecoreClass.name + property.genFeature.ecoreFeature.name.toString().toFirstUpper() + 'Section'»">
-            <input type="«property.genFeature.genClass.fullyQualifiedName()»"/>
-         </propertySection>
-         «ENDFOREACH»
+        «FOREACH tabs AS this-»
+          <propertySection
+            class="de.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="de.fujaba.properties.runtime.filter.ElementFilter"
+            id="«id»"
+            tab="«id»">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+        «ENDFOREACH» 
       </propertySections>
-         
+  </extension>
+«ENDDEFINE»
+
+
+«DEFINE propertyEditor FOR PropertyGenerator»
+ <extension point="de.fujaba.properties.runtime.propertyEditor">
+    <propertyEditors>
+    «FOREACH packages.classes AS this»
+       <propertyEditor
+             editor="«genQualifiedEditorName()»"
+             tab="base"
+             type="«genClass.fullyQualifiedName()»">
+       </propertyEditor>
+    «ENDFOREACH»
+    </propertyEditors>
+ </extension>
 «ENDDEFINE»

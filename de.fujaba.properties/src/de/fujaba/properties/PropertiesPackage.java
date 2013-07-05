@@ -469,13 +469,13 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY__TAB = 2;
 
 	/**
-	 * The feature id for the '<em><b>Section</b></em>' containment reference.
+	 * The feature id for the '<em><b>Editor</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY__SECTION = 3;
+	int PROPERTY__EDITOR = 3;
 
 	/**
 	 * The feature id for the '<em><b>Tooltip</b></em>' attribute.
@@ -1217,15 +1217,15 @@ public interface PropertiesPackage extends EPackage {
 	EReference getProperty_Tab();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.fujaba.properties.Property#getSection <em>Section</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.fujaba.properties.Property#getEditor <em>Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Section</em>'.
-	 * @see de.fujaba.properties.Property#getSection()
+	 * @return the meta object for the containment reference '<em>Editor</em>'.
+	 * @see de.fujaba.properties.Property#getEditor()
 	 * @see #getProperty()
 	 * @generated
 	 */
-	EReference getProperty_Section();
+	EReference getProperty_Editor();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.fujaba.properties.Property#getTooltip <em>Tooltip</em>}'.
@@ -1742,12 +1742,12 @@ public interface PropertiesPackage extends EPackage {
 		EReference PROPERTY__TAB = eINSTANCE.getProperty_Tab();
 
 		/**
-		 * The meta object literal for the '<em><b>Section</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Editor</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY__SECTION = eINSTANCE.getProperty_Section();
+		EReference PROPERTY__EDITOR = eINSTANCE.getProperty_Editor();
 
 		/**
 		 * The meta object literal for the '<em><b>Tooltip</b></em>' attribute feature.

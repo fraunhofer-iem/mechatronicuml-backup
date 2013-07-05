@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface PropertyEditor extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Property</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.Property#getSection <em>Section</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.Property#getEditor <em>Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Property</em>' container reference isn't clear,
@@ -33,8 +33,8 @@ public interface PropertyEditor extends EObject {
 	 * @return the value of the '<em>Property</em>' container reference.
 	 * @see #setProperty(Property)
 	 * @see de.fujaba.properties.PropertiesPackage#getPropertyEditor_Property()
-	 * @see de.fujaba.properties.Property#getSection
-	 * @model opposite="section" required="true" transient="false"
+	 * @see de.fujaba.properties.Property#getEditor
+	 * @model opposite="editor" required="true" transient="false"
 	 * @generated
 	 */
 	Property getProperty();

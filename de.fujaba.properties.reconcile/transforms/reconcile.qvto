@@ -29,7 +29,7 @@ mapping inout PropertyGenerator::generator() {
 			"org.eclipse.core.runtime",
 			"org.eclipse.emf.ecore",
 			"org.eclipse.emf.edit",
-			"de.upb.swt.core.ui.properties",
+			"de.fujaba.properties.runtime",
 			genModel.modelPluginID
 		};
 		
@@ -116,7 +116,7 @@ mapping Package::createClass(_class : GenClass) : Class{
 mapping Class::createProperty(_feature : GenFeature, _tab : PropertyTab) : Property {
 	genFeature := _feature;
 	tab := _tab;
-	section := _feature->map section()->any(true);
+	editor := _feature->map section()->any(true);
 }
 
 mapping GenFeature::section() : PropertyEditor

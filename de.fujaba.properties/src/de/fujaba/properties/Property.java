@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.fujaba.properties.Property#getGenFeature <em>Gen Feature</em>}</li>
  *   <li>{@link de.fujaba.properties.Property#getFilters <em>Filters</em>}</li>
  *   <li>{@link de.fujaba.properties.Property#getTab <em>Tab</em>}</li>
- *   <li>{@link de.fujaba.properties.Property#getSection <em>Section</em>}</li>
+ *   <li>{@link de.fujaba.properties.Property#getEditor <em>Editor</em>}</li>
  *   <li>{@link de.fujaba.properties.Property#getTooltip <em>Tooltip</em>}</li>
  *   <li>{@link de.fujaba.properties.Property#getClazz <em>Clazz</em>}</li>
  * </ul>
@@ -99,32 +99,32 @@ public interface Property extends EObject {
 	void setTab(PropertyTab value);
 
 	/**
-	 * Returns the value of the '<em><b>Section</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Editor</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.PropertyEditor#getProperty <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Section</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Editor</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Section</em>' containment reference.
-	 * @see #setSection(PropertyEditor)
-	 * @see de.fujaba.properties.PropertiesPackage#getProperty_Section()
+	 * @return the value of the '<em>Editor</em>' containment reference.
+	 * @see #setEditor(PropertyEditor)
+	 * @see de.fujaba.properties.PropertiesPackage#getProperty_Editor()
 	 * @see de.fujaba.properties.PropertyEditor#getProperty
 	 * @model opposite="property" containment="true"
 	 * @generated
 	 */
-	PropertyEditor getSection();
+	PropertyEditor getEditor();
 
 	/**
-	 * Sets the value of the '{@link de.fujaba.properties.Property#getSection <em>Section</em>}' containment reference.
+	 * Sets the value of the '{@link de.fujaba.properties.Property#getEditor <em>Editor</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Section</em>' containment reference.
-	 * @see #getSection()
+	 * @param value the new value of the '<em>Editor</em>' containment reference.
+	 * @see #getEditor()
 	 * @generated
 	 */
-	void setSection(PropertyEditor value);
+	void setEditor(PropertyEditor value);
 
 	/**
 	 * Returns the value of the '<em><b>Tooltip</b></em>' attribute.

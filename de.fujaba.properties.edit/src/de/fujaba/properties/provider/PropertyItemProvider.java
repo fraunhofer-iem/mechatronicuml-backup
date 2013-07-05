@@ -184,7 +184,7 @@ public class PropertyItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__FILTERS);
-			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__SECTION);
+			childrenFeatures.add(PropertiesPackage.Literals.PROPERTY__EDITOR);
 		}
 		return childrenFeatures;
 	}
@@ -253,7 +253,7 @@ public class PropertyItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case PropertiesPackage.PROPERTY__FILTERS:
-			case PropertiesPackage.PROPERTY__SECTION:
+			case PropertiesPackage.PROPERTY__EDITOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -278,37 +278,37 @@ public class PropertyItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__SECTION,
+				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createTextPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__SECTION,
+				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createComboBoxPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__SECTION,
+				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createCheckboxPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__SECTION,
+				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createRadioPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__SECTION,
+				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createListPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__SECTION,
+				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createObjectPropertyEditor()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(PropertiesPackage.Literals.PROPERTY__SECTION,
+				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createCustomPropertyEditor()));
 	}
 
