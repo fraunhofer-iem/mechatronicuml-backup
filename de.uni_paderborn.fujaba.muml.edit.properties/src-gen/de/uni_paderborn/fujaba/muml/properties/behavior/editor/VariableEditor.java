@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
 
+/**
+ * @generated
+ */
 public class VariableEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.behavior.editor.TypedNamedElementEditor {
 
 	/**
 	 * @generated
@@ -15,7 +18,7 @@ public class VariableEditor
 	 */
 	public void initialize() {
 
-		addVariableInitializeExpressionEditor(null, true);
+		addVariableInitializeExpressionEditor(null, false);
 
 		super.initialize();
 	}
@@ -42,5 +45,17 @@ public class VariableEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new VariableEditor();
+		}
+	}
 
 }

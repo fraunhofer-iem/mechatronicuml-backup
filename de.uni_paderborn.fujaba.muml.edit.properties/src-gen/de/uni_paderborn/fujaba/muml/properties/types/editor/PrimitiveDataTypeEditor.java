@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.types.editor;
 
+/**
+ * @generated
+ */
 public class PrimitiveDataTypeEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
 
 	/**
 	 * @generated
@@ -42,5 +45,17 @@ public class PrimitiveDataTypeEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new PrimitiveDataTypeEditor();
+		}
+	}
 
 }

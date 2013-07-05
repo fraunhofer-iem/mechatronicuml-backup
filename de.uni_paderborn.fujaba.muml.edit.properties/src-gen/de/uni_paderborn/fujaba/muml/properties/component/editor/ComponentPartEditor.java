@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.component.editor;
 
+/**
+ * @generated
+ */
 public class ComponentPartEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -15,7 +18,7 @@ public class ComponentPartEditor
 	 */
 	public void initialize() {
 
-		addComponentPartCardinalityEditor(null, true);
+		addComponentPartCardinalityEditor(null, false);
 
 		addComponentPartPortPartsEditor(null, true);
 
@@ -62,5 +65,17 @@ public class ComponentPartEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new ComponentPartEditor();
+		}
+	}
 
 }

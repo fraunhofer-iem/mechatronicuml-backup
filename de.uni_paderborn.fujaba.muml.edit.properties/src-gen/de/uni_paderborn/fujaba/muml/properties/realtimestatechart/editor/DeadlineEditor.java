@@ -1,5 +1,8 @@
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
+/**
+ * @generated
+ */
 public class DeadlineEditor
 		extends
 			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
@@ -15,9 +18,9 @@ public class DeadlineEditor
 	 */
 	public void initialize() {
 
-		addDeadlineUpperBoundEditor(null, true);
+		addDeadlineUpperBoundEditor(null, false);
 
-		addDeadlineLowerBoundEditor(null, true);
+		addDeadlineLowerBoundEditor(null, false);
 
 		super.initialize();
 	}
@@ -58,5 +61,17 @@ public class DeadlineEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new DeadlineEditor();
+		}
+	}
 
 }

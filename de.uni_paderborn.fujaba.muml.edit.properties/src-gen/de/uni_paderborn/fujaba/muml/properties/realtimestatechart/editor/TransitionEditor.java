@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
+/**
+ * @generated
+ */
 public class TransitionEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -15,7 +18,7 @@ public class TransitionEditor
 	 */
 	public void initialize() {
 
-		addTransitionSynchronizationEditor(null, true);
+		addTransitionSynchronizationEditor(null, false);
 
 		addTransitionClockResetsEditor(null, true);
 
@@ -23,15 +26,15 @@ public class TransitionEditor
 
 		addTransitionAbsoluteDeadlinesEditor(null, true);
 
-		addTransitionRelativeDeadlineEditor(null, true);
+		addTransitionRelativeDeadlineEditor(null, false);
 
 		addTransitionBlockableEditor(null, true);
 
-		addTransitionGuardEditor(null, true);
+		addTransitionGuardEditor(null, false);
 
 		addTransitionEventsEditor(null, true);
 
-		addTransitionActionEditor(null, true);
+		addTransitionActionEditor(null, false);
 
 		addTransitionUrgentEditor(null, true);
 
@@ -211,5 +214,17 @@ public class TransitionEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new TransitionEditor();
+		}
+	}
 
 }

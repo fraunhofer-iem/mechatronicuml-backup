@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.types.editor;
 
+/**
+ * @generated
+ */
 public class ArrayDataTypeEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
 
 	/**
 	 * @generated
@@ -15,7 +18,7 @@ public class ArrayDataTypeEditor
 	 */
 	public void initialize() {
 
-		addArrayDataTypeCardinalityEditor(null, true);
+		addArrayDataTypeCardinalityEditor(null, false);
 
 		super.initialize();
 	}
@@ -42,5 +45,17 @@ public class ArrayDataTypeEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new ArrayDataTypeEditor();
+		}
+	}
 
 }

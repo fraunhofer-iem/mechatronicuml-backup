@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.msgtype.editor;
 
+/**
+ * @generated
+ */
 public class MessageTypeEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -41,5 +44,17 @@ public class MessageTypeEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new MessageTypeEditor();
+		}
+	}
 
 }

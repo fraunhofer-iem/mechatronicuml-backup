@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
+/**
+ * @generated
+ */
 public class StateEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.VertexEditor {
 
 	/**
 	 * @generated
@@ -15,21 +18,23 @@ public class StateEditor
 	 */
 	public void initialize() {
 
+		addSubCategory("Category1", "Booleans", org.eclipse.swt.SWT.HORIZONTAL);
+
 		addStateEmbeddedRegionsEditor(null, true);
 
-		addStateDoEventEditor(null, true);
+		addStateDoEventEditor(null, false);
 
-		addStateExitEventEditor(null, true);
+		addStateExitEventEditor(null, false);
 
-		addStateEntryEventEditor(null, true);
+		addStateEntryEventEditor(null, false);
 
 		addStateInvariantsEditor(null, true);
 
-		addStateInitialEditor(null, true);
+		addStateInitialEditor("Category1", true);
 
-		addStateFinalEditor(null, true);
+		addStateFinalEditor("Category1", true);
 
-		addStateUrgentEditor(null, true);
+		addStateUrgentEditor("Category1", true);
 
 		addStateChannelsEditor(null, true);
 
@@ -203,5 +208,17 @@ public class StateEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new StateEditor();
+		}
+	}
 
 }

@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.connector.editor;
 
+/**
+ * @generated
+ */
 public class MessageBufferEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -15,7 +18,7 @@ public class MessageBufferEditor
 	 */
 	public void initialize() {
 
-		addMessageBufferBufferSizeEditor(null, true);
+		addMessageBufferBufferSizeEditor(null, false);
 
 		addMessageBufferMessageTypeEditor(null, true);
 
@@ -62,5 +65,17 @@ public class MessageBufferEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new MessageBufferEditor();
+		}
+	}
 
 }

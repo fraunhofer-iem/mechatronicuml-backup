@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
+/**
+ * @generated
+ */
 public class AsynchronousMessageEventEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.TransitionEventEditor {
 
 	/**
 	 * @generated
@@ -15,7 +18,7 @@ public class AsynchronousMessageEventEditor
 	 */
 	public void initialize() {
 
-		addAsynchronousMessageEventMessageEditor(null, true);
+		addAsynchronousMessageEventMessageEditor(null, false);
 
 		super.initialize();
 	}
@@ -42,5 +45,17 @@ public class AsynchronousMessageEventEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new AsynchronousMessageEventEditor();
+		}
+	}
 
 }

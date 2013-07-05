@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.component.editor;
 
+/**
+ * @generated
+ */
 public class HybridPortEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.component.editor.DirectedTypedPortEditor {
 
 	/**
 	 * @generated
@@ -15,7 +18,7 @@ public class HybridPortEditor
 	 */
 	public void initialize() {
 
-		addHybridPortSamplingIntervalEditor(null, true);
+		addHybridPortSamplingIntervalEditor(null, false);
 
 		super.initialize();
 	}
@@ -42,5 +45,17 @@ public class HybridPortEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new HybridPortEditor();
+		}
+	}
 
 }

@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.protocol.editor;
 
+/**
+ * @generated
+ */
 public class ConnectorQualityOfServiceAssumptionsEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -15,9 +18,11 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 */
 	public void initialize() {
 
-		addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null, true);
+		addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null,
+				false);
 
-		addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(null, true);
+		addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(null,
+				false);
 
 		addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(null,
 				true);
@@ -89,5 +94,17 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new ConnectorQualityOfServiceAssumptionsEditor();
+		}
+	}
 
 }

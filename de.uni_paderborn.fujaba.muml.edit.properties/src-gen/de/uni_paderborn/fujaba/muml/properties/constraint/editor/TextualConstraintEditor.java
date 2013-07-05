@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.constraint.editor;
 
+/**
+ * @generated
+ */
 public class TextualConstraintEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
 
 	/**
 	 * @generated
@@ -15,7 +18,7 @@ public class TextualConstraintEditor
 	 */
 	public void initialize() {
 
-		addTextualConstraintTextualExpressionEditor(null, true);
+		addTextualConstraintTextualExpressionEditor(null, false);
 
 		super.initialize();
 	}
@@ -42,5 +45,17 @@ public class TextualConstraintEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new TextualConstraintEditor();
+		}
+	}
 
 }

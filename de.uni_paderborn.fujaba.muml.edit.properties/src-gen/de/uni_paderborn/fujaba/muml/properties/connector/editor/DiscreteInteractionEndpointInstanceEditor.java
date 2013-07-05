@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.connector.editor;
 
+/**
+ * @generated
+ */
 public class DiscreteInteractionEndpointInstanceEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointInstanceEditor {
 
 	/**
 	 * @generated
@@ -21,5 +24,17 @@ public class DiscreteInteractionEndpointInstanceEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new DiscreteInteractionEndpointInstanceEditor();
+		}
+	}
 
 }

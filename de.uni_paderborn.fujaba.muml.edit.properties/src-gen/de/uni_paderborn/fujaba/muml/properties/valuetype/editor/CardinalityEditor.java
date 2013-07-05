@@ -1,5 +1,8 @@
 package de.uni_paderborn.fujaba.muml.properties.valuetype.editor;
 
+/**
+ * @generated
+ */
 public class CardinalityEditor
 		extends
 			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
@@ -15,9 +18,9 @@ public class CardinalityEditor
 	 */
 	public void initialize() {
 
-		addCardinalityLowerBoundEditor(null, true);
+		addCardinalityLowerBoundEditor(null, false);
 
-		addCardinalityUpperBoundEditor(null, true);
+		addCardinalityUpperBoundEditor(null, false);
 
 		super.initialize();
 	}
@@ -60,5 +63,17 @@ public class CardinalityEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new CardinalityEditor();
+		}
+	}
 
 }

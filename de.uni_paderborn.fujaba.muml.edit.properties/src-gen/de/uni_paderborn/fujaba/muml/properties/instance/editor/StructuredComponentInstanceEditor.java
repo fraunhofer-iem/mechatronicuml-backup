@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.instance.editor;
 
+/**
+ * @generated
+ */
 public class StructuredComponentInstanceEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.instance.editor.ComponentInstanceEditor {
 
 	/**
 	 * @generated
@@ -15,7 +18,7 @@ public class StructuredComponentInstanceEditor
 	 */
 	public void initialize() {
 
-		addStructuredComponentInstanceEmbeddedCICEditor(null, true);
+		addStructuredComponentInstanceEmbeddedCICEditor(null, false);
 
 		super.initialize();
 	}
@@ -42,5 +45,17 @@ public class StructuredComponentInstanceEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new StructuredComponentInstanceEditor();
+		}
+	}
 
 }

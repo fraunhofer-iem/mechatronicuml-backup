@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
+/**
+ * @generated
+ */
 public class SynchronizationEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
 
 	/**
 	 * @generated
@@ -17,7 +20,7 @@ public class SynchronizationEditor
 
 		addSynchronizationKindEditor(null, true);
 
-		addSynchronizationSelectorExpressionEditor(null, true);
+		addSynchronizationSelectorExpressionEditor(null, false);
 
 		super.initialize();
 	}
@@ -60,5 +63,17 @@ public class SynchronizationEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new SynchronizationEditor();
+		}
+	}
 
 }

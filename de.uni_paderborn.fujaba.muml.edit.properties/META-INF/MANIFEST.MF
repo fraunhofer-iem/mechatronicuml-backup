@@ -3,6 +3,17 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Properties
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.edit.properties; singleton:=true
 Bundle-Version: 0.1
-Require-Bundle: org.eclipse.emf.ecore,org.eclipse.core.runtime,de.upb.swt.core.ui.properties,de.uni_paderborn.fujaba.muml,org.eclipse.emf.edit,org.eclipse.ui,de.fujaba.properties.runtime
+Require-Bundle: org.eclipse.emf.ecore,org.eclipse.core.runtime,de.upb.swt.core.ui.properties,de.uni_paderborn.fujaba.muml,org.eclipse.emf.edit,org.eclipse.ui,de.fujaba.properties.runtime,de.uni_paderborn.fujaba.muml.edit.properties,org.storydriven.core.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: 
+ de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor,
+ de.uni_paderborn.fujaba.muml.properties.types.editor,
+ de.uni_paderborn.fujaba.muml.properties.behavior.editor,
+ de.uni_paderborn.fujaba.muml.properties.component.editor,
+ de.uni_paderborn.fujaba.muml.properties.msgtype.editor,
+ de.uni_paderborn.fujaba.muml.properties.valuetype.editor,
+ de.uni_paderborn.fujaba.muml.properties.protocol.editor,
+ de.uni_paderborn.fujaba.muml.properties.instance.editor,
+ de.uni_paderborn.fujaba.muml.properties.constraint.editor,
+ de.uni_paderborn.fujaba.muml.properties.connector.editor

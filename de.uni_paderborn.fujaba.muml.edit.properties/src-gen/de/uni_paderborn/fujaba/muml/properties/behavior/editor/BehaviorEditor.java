@@ -1,5 +1,8 @@
 package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
 
+/**
+ * @generated
+ */
 public class BehaviorEditor
 		extends
 			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
@@ -58,5 +61,17 @@ public class BehaviorEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new BehaviorEditor();
+		}
+	}
 
 }

@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
 
+/**
+ * @generated
+ */
 public class ParameterBindingEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
 
 	/**
 	 * @generated
@@ -15,7 +18,7 @@ public class ParameterBindingEditor
 	 */
 	public void initialize() {
 
-		addParameterBindingValueEditor(null, true);
+		addParameterBindingValueEditor(null, false);
 
 		super.initialize();
 	}
@@ -41,5 +44,17 @@ public class ParameterBindingEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new ParameterBindingEditor();
+		}
+	}
 
 }

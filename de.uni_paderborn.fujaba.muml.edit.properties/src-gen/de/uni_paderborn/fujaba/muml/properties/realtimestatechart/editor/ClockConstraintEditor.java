@@ -1,5 +1,8 @@
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
+/**
+ * @generated
+ */
 public class ClockConstraintEditor
 		extends
 			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
@@ -15,7 +18,7 @@ public class ClockConstraintEditor
 	 */
 	public void initialize() {
 
-		addClockConstraintBoundEditor(null, true);
+		addClockConstraintBoundEditor(null, false);
 
 		addClockConstraintOperatorEditor(null, true);
 
@@ -60,5 +63,17 @@ public class ClockConstraintEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new ClockConstraintEditor();
+		}
+	}
 
 }

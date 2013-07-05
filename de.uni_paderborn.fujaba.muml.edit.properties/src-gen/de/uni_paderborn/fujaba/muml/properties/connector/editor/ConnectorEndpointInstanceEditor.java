@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.connector.editor;
 
+/**
+ * @generated
+ */
 public class ConnectorEndpointInstanceEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -43,5 +46,17 @@ public class ConnectorEndpointInstanceEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new ConnectorEndpointInstanceEditor();
+		}
+	}
 
 }

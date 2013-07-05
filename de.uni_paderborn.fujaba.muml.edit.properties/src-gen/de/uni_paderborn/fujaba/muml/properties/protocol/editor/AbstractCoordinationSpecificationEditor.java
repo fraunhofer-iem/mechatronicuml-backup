@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.protocol.editor;
 
+/**
+ * @generated
+ */
 public class AbstractCoordinationSpecificationEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
 
 	/**
 	 * @generated
@@ -17,7 +20,7 @@ public class AbstractCoordinationSpecificationEditor
 
 		addAbstractCoordinationSpecificationRolesEditor(null, true);
 
-		addAbstractCoordinationSpecificationRoleConnectorEditor(null, true);
+		addAbstractCoordinationSpecificationRoleConnectorEditor(null, false);
 
 		super.initialize();
 	}
@@ -63,5 +66,17 @@ public class AbstractCoordinationSpecificationEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new AbstractCoordinationSpecificationEditor();
+		}
+	}
 
 }

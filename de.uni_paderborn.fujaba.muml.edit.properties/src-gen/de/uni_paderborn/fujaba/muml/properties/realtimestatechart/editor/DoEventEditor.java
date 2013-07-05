@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 
+/**
+ * @generated
+ */
 public class DoEventEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateEventEditor {
 
 	/**
 	 * @generated
@@ -15,9 +18,9 @@ public class DoEventEditor
 	 */
 	public void initialize() {
 
-		addDoEventActionEditor(null, true);
+		addDoEventActionEditor(null, false);
 
-		addDoEventPeriodEditor(null, true);
+		addDoEventPeriodEditor(null, false);
 
 		super.initialize();
 	}
@@ -58,5 +61,17 @@ public class DoEventEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new DoEventEditor();
+		}
+	}
 
 }

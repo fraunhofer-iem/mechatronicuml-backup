@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
 
+/**
+ * @generated
+ */
 public class OperationEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -60,5 +63,17 @@ public class OperationEditor
 	//
 	// Overwritten property settings
 	//
+
+	/**
+	 * @generated
+	 */
+	public static class Factory
+			implements
+				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
+			return new OperationEditor();
+		}
+	}
 
 }
