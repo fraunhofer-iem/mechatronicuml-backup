@@ -16,6 +16,7 @@
 «ENDDEFINE»
 
 «DEFINE propertyTabs FOR PropertyGenerator»
+«IF !tabs.isEmpty»
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs contributorId="«contributorId»">
           «FOREACH tabs AS this-»
@@ -26,9 +27,11 @@
           «ENDFOREACH»
       </propertyTabs>
   </extension>
+«ENDIF»
 «ENDDEFINE»
 
 «DEFINE propertySections FOR PropertyGenerator»
+«IF !tabs.isEmpty»
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="«contributorId»">
         «FOREACH tabs AS this-»
@@ -44,6 +47,7 @@
         «ENDFOREACH» 
       </propertySections>
   </extension>
+«ENDIF»
 «ENDDEFINE»
 
 

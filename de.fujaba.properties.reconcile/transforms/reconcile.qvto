@@ -37,14 +37,14 @@ mapping inout PropertyGenerator::generator() {
 		};
 		
 		-- there must be at least one tab
-		if (tabs->isEmpty()) then {
-			tabs := new PropertyTab('base', 'Base');
-		} endif;
+		--if (tabs->isEmpty()) then {
+		--	tabs := new PropertyTab('base', 'Base');
+		--} endif;
 		
 		-- make sure, defaultTab is set
-		if (defaultTab.oclIsUndefined()) then {
-			defaultTab := tabs->first();
-		} endif;
+		--if (defaultTab.oclIsUndefined()) then {
+		--	defaultTab := tabs->first();
+		--} endif;
 		
 		-- generate missing packages
 		self.genModel.allSubobjectsOfType(GenPackage)[GenPackage]->select(shouldGenerate())->forEach(package) {
@@ -107,7 +107,10 @@ mapping inout Class::reconcileClass(tab : PropertyTab) {
 }
 
 mapping inout Property::reconcileProperty() {
-	-- nothing to reconcile currently
+	-- make sure a tab is set
+	if (self.tab = null and self.clazz.package.generator.defaultTab != null) then {
+		self.tab := self.clazz.package.generator.defaultTab;
+	} endif;
 }
 
 mapping PropertyGenerator::createPackage(package : GenPackage) : Package {
