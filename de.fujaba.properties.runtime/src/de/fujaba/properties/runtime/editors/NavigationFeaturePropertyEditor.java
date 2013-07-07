@@ -19,6 +19,8 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.forms.events.ExpansionEvent;
+import org.eclipse.ui.forms.events.IExpansionListener;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
@@ -92,6 +94,22 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 		});
 		
 		section.setTextClient(composite);
+		
+		section.addExpansionListener(new IExpansionListener() {
+
+			@Override
+			public void expansionStateChanging(ExpansionEvent e) {
+				
+			}
+
+			@Override
+			public void expansionStateChanged(ExpansionEvent e) {
+				if (e.getState() == true) {
+					create();
+				}
+			}
+		});
+		
 		//section.setSeparatorControl(toolkit.createSeparator(section, SWT.NONE));
 		
 	}
@@ -140,19 +158,23 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 
 
 	protected void create() {
-		IStructuredSelection selection = (IStructuredSelection)classViewer.getSelection();
-		EClass eClass = (EClass) selection.getFirstElement();
-		Object newValue = EcoreUtil.create(eClass);
-		setValue(newValue);
-		refreshButtons();
-		navigatedEditor.getSection().setExpanded(false);
-		navigatedEditor.getSection().setExpanded(true);
+		if (value == null) {
+			IStructuredSelection selection = (IStructuredSelection)classViewer.getSelection();
+			EClass eClass = (EClass) selection.getFirstElement();
+			Object newValue = EcoreUtil.create(eClass);
+			setValue(newValue);
+			refreshButtons();
+			navigatedEditor.getSection().setExpanded(false);
+			navigatedEditor.getSection().setExpanded(true);
+		}
 	}
 	
 	protected void remove() {
-		setValue(null);
-		refreshButtons();
-		navigatedEditor.getSection().setExpanded(true);
-		navigatedEditor.getSection().setExpanded(false);
+		if (value != null) {
+			setValue(null);
+			refreshButtons();
+			navigatedEditor.getSection().setExpanded(true);
+			navigatedEditor.getSection().setExpanded(false);
+		}
 	}
 }

@@ -3,6 +3,8 @@ package de.fujaba.properties.runtime.editors;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
+import de.fujaba.properties.runtime.sections.ObjectPropertySection;
+
 public interface IPropertyEditor {
 
 	void createControls(Composite parent,
@@ -19,5 +21,7 @@ public interface IPropertyEditor {
 	String getTab();
 	
 	void setTab(String tab);
+	
+	ObjectPropertySection getPropertySection();
 
 }

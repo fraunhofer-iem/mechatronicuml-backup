@@ -21,6 +21,11 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	protected boolean childrenCreated = false;
 	
+	public Color colorInactiveText = new Color(null, 200, 200, 255);
+	public Color colorInactiveBackground = new Color(null, 100, 100, 100);
+	public Color colorActiveText = null;
+	public Color colorActiveBackground = null;
+	
 	protected Section section;
 
 	protected Composite childrenComposite;
@@ -87,6 +92,8 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 				keys.put(key, editor);
 			}
 		}
+		
+		childrenChanged();
 	}
 
 	public void removePropertyEditor(IPropertyEditor editor) {
@@ -97,6 +104,36 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			if (key != null) {
 				keys.remove(key);
 			}
+		}
+		childrenChanged();
+	}
+	
+	
+
+	private void childrenChanged() {
+		
+
+		if (section != null) {
+			
+			if (propertyEditors.isEmpty()) {
+				section.setToggleColor(colorInactiveText);
+//				section.setBackground(COLOR_TEXT_INACTIVE);
+				section.setTitleBarForeground(colorInactiveText);
+//				section.setTitleBarBackground(COLOR_BACKGROUND_INACTIVE);
+				section.setTitleBarGradientBackground(colorInactiveBackground);
+//				section.setTitleBarBorderColor(COLOR_BACKGROUND_INACTIVE);
+
+			} else {
+				section.setToggleColor(colorActiveText);
+				//section.setBackground(COLOR_TEXT_ACTIVE);
+				section.setTitleBarForeground(colorActiveText);
+//				section.setTitleBarBackground(COLOR_BACKGROUND_ACTIVE);
+				section.setTitleBarGradientBackground(colorActiveBackground);
+//				section.setTitleBarBorderColor(COLOR_BACKGROUND_ACTIVE);
+			}
+
+			// TODO: This does not yet work
+			childrenComposite.layout();
 		}
 	}
 
@@ -132,7 +169,9 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		for (IPropertyEditor editor : propertyEditors) {
 			editor.dispose();
 		}
+		keys.clear();
 		propertyEditors.clear();
+		childrenChanged();
 	}
 
 	@Override
@@ -144,6 +183,8 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		if (title != null) {
 			// original:
 			section = createSection(parent, toolkit);
+			colorActiveText = new Color(null, 0, 85, 239);
+			colorActiveBackground = section.getTitleBarGradientBackground();
 			childrenComposite = toolkit.createComposite(section);
 			section.setClient(childrenComposite);
 			section.setLayoutData(layoutData);
@@ -174,13 +215,13 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 				public void expansionStateChanged(ExpansionEvent e) {
 					if (e.getState() == true) {
 						createChildren();
-						section.removeExpansionListener(this);
-					}					
+					}
 				}
 			});
 			
-			
 			section.setExpanded(false);
+			
+			
 		} else {
 			childrenComposite = toolkit.createComposite(parent);
 			childrenComposite.setLayoutData(layoutData);
@@ -202,6 +243,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			}
 			childrenCreated = true;
 		}
+		childrenChanged();
 	}
 
 	protected Layout createLayout() {
@@ -256,12 +298,14 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		// ExpandableComposite.CLIENT_INDENT | ExpandableComposite.COMPACT);
 		// expandableComposite.setText(title);
 
-		Section section = factory.createSection(parent, Section.TITLE_BAR
+		
+		Section section = toolkit.createSection(parent,  Section.TITLE_BAR
 				| Section.TWISTIE | ExpandableComposite.EXPANDED
 				| Section.CLIENT_INDENT);
+		
 		section.setText(title);
 
-		section.setSeparatorControl(factory.createCompositeSeparator(section));
+//		section.setSeparatorControl(factory.createCompositeSeparator(section));
 		// Hyperlink hprlnkNewHyperlink = factory.createHyperlink(section,
 		// "this is desctiption control", SWT.NONE);
 		// factory.paintBordersFor(hprlnkNewHyperlink);
@@ -294,6 +338,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			section.dispose();
 		}
 		childrenComposite = null;
+		section = null;
 		toolkit = null;
 
 		for (IPropertyEditor editor : propertyEditors) {

@@ -33,7 +33,6 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
-import de.fujaba.properties.runtime.editors.IPropertyEditor;
 import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
 
 /**

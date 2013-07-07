@@ -1,8 +1,12 @@
 package de.fujaba.properties.runtime.editors;
 
+import de.fujaba.properties.runtime.sections.ObjectPropertySection;
+
 
 public abstract class AbstractPropertyEditor implements
 		IPropertyEditor {
+	
+	private ObjectPropertySection propertySection;
 	
 	private String tab = null;
 	
@@ -40,5 +44,10 @@ public abstract class AbstractPropertyEditor implements
 	@Override
 	public String getTab() {
 		return tab;
+	}
+
+	@Override
+	public ObjectPropertySection getPropertySection() {
+		return propertySection;
 	}
 }

@@ -1,7 +1,6 @@
 package de.fujaba.properties.runtime.editors;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 

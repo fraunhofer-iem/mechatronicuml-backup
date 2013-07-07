@@ -35,6 +35,7 @@ public class ObjectPropertySection extends AbstractPropertySection {
 		super.createControls(parent, aTabbedPropertySheetPage);
 		TabbedPropertySheetWidgetFactory toolkit = getWidgetFactory();
 		editor.createControls(parent, toolkit);
+		editor.getSection().setSeparatorControl(toolkit.createCompositeSeparator(editor.getSection()));
 	}
 
 	public void setInput(IWorkbenchPart part, ISelection selection) {

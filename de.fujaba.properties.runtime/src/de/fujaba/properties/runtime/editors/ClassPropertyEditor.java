@@ -1,6 +1,5 @@
 package de.fujaba.properties.runtime.editors;
 
-import org.eclipse.core.runtime.Assert;
 
 /**
  * This ClassPropertyEditor is contained within an ObjectPropertyEditor and is
