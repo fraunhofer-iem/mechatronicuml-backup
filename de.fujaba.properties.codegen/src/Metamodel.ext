@@ -61,10 +61,10 @@ String genEditorName(properties::Class this) :
 
 String genQualifiedEditorName(properties::Class this) :
 	package.genPackageName() + '.editor.' + genEditorName();
-	
+
 String genCategoryKey(PropertyCategory this) :
-	"Category1";
-	
+	"de.fujaba.properties.category." + clazz.genClass.ecoreClass.name.toString() + "." + title;
+
 String genAdder(Property this) :
 	'add'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + 'Editor';	
 

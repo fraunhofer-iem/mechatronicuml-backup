@@ -270,6 +270,7 @@ public class PropertiesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(class_, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(class_, diagnostics, context);
 		if (result || diagnostics != null) result &= validateClass_UniqueFeatures(class_, diagnostics, context);
+		if (result || diagnostics != null) result &= validateClass_UniqueCategoryTitles(class_, diagnostics, context);
 		return result;
 	}
 
@@ -297,6 +298,35 @@ public class PropertiesValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniqueFeatures",
 				 CLASS__UNIQUE_FEATURES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the UniqueCategoryTitles constraint of '<em>Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CLASS__UNIQUE_CATEGORY_TITLES__EEXPRESSION = "propertyCategories->isUnique(title)";
+
+	/**
+	 * Validates the UniqueCategoryTitles constraint of '<em>Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateClass_UniqueCategoryTitles(de.fujaba.properties.Class class_, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PropertiesPackage.Literals.CLASS,
+				 class_,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueCategoryTitles",
+				 CLASS__UNIQUE_CATEGORY_TITLES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

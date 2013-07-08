@@ -1001,7 +1001,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		  (classEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniqueFeatures"
+			 "constraints", "UniqueFeatures UniqueCategoryTitles"
 		   });				
 		addAnnotation
 		  (propertyCategoryEClass, 
@@ -1041,7 +1041,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		  (classEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueFeatures", "properties->isUnique(genFeature)"
+			 "UniqueFeatures", "properties->isUnique(genFeature)",
+			 "UniqueCategoryTitles", "propertyCategories->isUnique(title)"
 		   });		
 		addAnnotation
 		  (getClass_AllSuperClasses(), 

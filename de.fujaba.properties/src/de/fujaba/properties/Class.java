@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see de.fujaba.properties.PropertiesPackage#getClass_()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueFeatures'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueFeatures='properties->isUnique(genFeature)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueFeatures UniqueCategoryTitles'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueFeatures='properties->isUnique(genFeature)' UniqueCategoryTitles='propertyCategories->isUnique(title)'"
  * @generated
  */
 public interface Class extends EObject {

@@ -18,7 +18,8 @@ public class StateEditor
 	 */
 	public void initialize() {
 
-		addSubCategory("Category1", "Booleans", org.eclipse.swt.SWT.HORIZONTAL);
+		addSubCategory("de.fujaba.properties.category.State.Booleans",
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL);
 
 		addStateEmbeddedRegionsEditor(null, true);
 
@@ -30,11 +31,14 @@ public class StateEditor
 
 		addStateInvariantsEditor(null, true);
 
-		addStateInitialEditor("Category1", true);
+		addStateInitialEditor("de.fujaba.properties.category.State.Booleans",
+				true);
 
-		addStateFinalEditor("Category1", true);
+		addStateFinalEditor("de.fujaba.properties.category.State.Booleans",
+				true);
 
-		addStateUrgentEditor("Category1", true);
+		addStateUrgentEditor("de.fujaba.properties.category.State.Booleans",
+				true);
 
 		addStateChannelsEditor(null, true);
 

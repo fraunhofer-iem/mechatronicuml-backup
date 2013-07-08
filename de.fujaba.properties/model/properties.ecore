@@ -66,10 +66,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="UniqueFeatures"/>
+      <details key="constraints" value="UniqueFeatures UniqueCategoryTitles"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="UniqueFeatures" value="properties->isUnique(genFeature)"/>
+      <details key="UniqueCategoryTitles" value="propertyCategories->isUnique(title)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genClass" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenClass"/>
