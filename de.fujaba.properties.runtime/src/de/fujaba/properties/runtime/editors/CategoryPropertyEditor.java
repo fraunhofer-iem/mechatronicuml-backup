@@ -18,6 +18,8 @@ import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
+import de.fujaba.properties.runtime.RuntimePlugin;
+
 public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	protected boolean childrenCreated = false;
 	
@@ -132,8 +134,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 //				section.setTitleBarBorderColor(COLOR_BACKGROUND_ACTIVE);
 			}
 
-			// TODO: This does not yet work
-			childrenComposite.layout();
+			RuntimePlugin.revalidateLayout(childrenComposite);
 		}
 	}
 
@@ -213,8 +214,13 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 				@Override
 				public void expansionStateChanged(ExpansionEvent e) {
+					boolean relayouted = false;
 					if (e.getState() == true) {
+						relayouted = !childrenCreated;
 						createChildren();
+					}
+					if (!relayouted) {
+						RuntimePlugin.revalidateLayout(childrenComposite);
 					}
 				}
 			});
