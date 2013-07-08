@@ -26,7 +26,8 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
 
-public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePropertyEditor {
+public class NavigationFeaturePropertyEditor extends
+		AbstractStructuralFeaturePropertyEditor {
 	protected ObjectPropertyEditor navigatedEditor;
 	protected Button buttonCreate;
 	protected Button buttonRemove;
@@ -34,7 +35,8 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 
 	public NavigationFeaturePropertyEditor(EStructuralFeature feature) {
 		super(feature);
-		Assert.isLegal(!feature.isMany(), "Only features with upperBound = 1 are allowed as navigation feature.");
+		Assert.isLegal(!feature.isMany(),
+				"Only features with upperBound = 1 are allowed as navigation feature.");
 		this.navigatedEditor = createNavigatedEditor();
 	}
 
@@ -49,7 +51,7 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 
 		// Initialize section with buttons
 		Section section = navigatedEditor.getSection();
-	
+
 		Composite composite = toolkit.createComposite(section);
 		RowLayout layout = new RowLayout(SWT.HORIZONTAL);
 		layout.marginLeft = layout.marginRight = layout.marginTop = layout.marginBottom = 0;
@@ -74,32 +76,38 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 			combo.setEnabled(false);
 		}
 
-		
-		
 		buttonCreate = toolkit.createButton(composite, "", SWT.TOGGLE);
-		buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD, 12, 12));
+		buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD,
+				12, 12));
 		buttonCreate.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
+				buttonCreate.removeSelectionListener(this);
 				create();
+				RuntimePlugin.revalidateLayout(navigatedEditor.getSection()
+						.getClient());// no idea why this is necessary
+				buttonCreate.addSelectionListener(this);
 			}
 
 		});
-		
+
 		buttonRemove = toolkit.createButton(composite, "", SWT.TOGGLE);
-		buttonRemove.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_REMOVE, 12, 12));
+		buttonRemove.setImage(RuntimePlugin.getImage(
+				RuntimePlugin.IMAGE_REMOVE, 12, 12));
 		buttonRemove.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
+				buttonRemove.removeSelectionListener(this);
 				remove();
+				buttonRemove.addSelectionListener(this);
 			}
 		});
-		
+
 		section.setTextClient(composite);
-		
+
 		section.addExpansionListener(new IExpansionListener() {
 
 			@Override
 			public void expansionStateChanging(ExpansionEvent e) {
-				
+
 			}
 
 			@Override
@@ -109,18 +117,19 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 				}
 			}
 		});
-		
-		//section.setSeparatorControl(toolkit.createSeparator(section, SWT.NONE));
-		
+
+		// section.setSeparatorControl(toolkit.createSeparator(section,
+		// SWT.NONE));
+
 	}
-	
+
 	@Override
 	protected void inputChanged() {
 		super.inputChanged();
 		navigatedEditor.setInput(value);
 		updateTitle();
 	}
-	
+
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
@@ -128,7 +137,7 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 		navigatedEditor.setInput(value);
 		updateTitle();
 	}
-	
+
 	private void updateTitle() {
 		navigatedEditor.setTitle(getFeatureDescription());
 	}
@@ -138,12 +147,11 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 		navigatedEditor.refresh();
 		refreshButtons();
 	}
-	
 
 	private void refreshButtons() {
 		if (buttonCreate != null && buttonRemove != null) {
-	//		buttonCreate.setEnabled(value == null);
-	//		buttonRemove.setEnabled(value != null);	
+			// buttonCreate.setEnabled(value == null);
+			// buttonRemove.setEnabled(value != null);
 			buttonCreate.setSelection(value != null);
 			buttonRemove.setSelection(value == null);
 		}
@@ -156,10 +164,10 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 		super.dispose();
 	}
 
-
 	protected void create() {
 		if (value == null) {
-			IStructuredSelection selection = (IStructuredSelection)classViewer.getSelection();
+			IStructuredSelection selection = (IStructuredSelection) classViewer
+					.getSelection();
 			EClass eClass = (EClass) selection.getFirstElement();
 			Object newValue = EcoreUtil.create(eClass);
 			setValue(newValue);
@@ -168,7 +176,7 @@ public class NavigationFeaturePropertyEditor extends AbstractStructuralFeaturePr
 			navigatedEditor.getSection().setExpanded(true);
 		}
 	}
-	
+
 	protected void remove() {
 		if (value != null) {
 			setValue(null);
