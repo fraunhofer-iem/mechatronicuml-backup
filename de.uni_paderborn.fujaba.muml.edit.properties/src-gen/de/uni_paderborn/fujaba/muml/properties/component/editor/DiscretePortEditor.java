@@ -18,6 +18,14 @@ public class DiscretePortEditor
 	 */
 	public void initialize() {
 
+		addDiscretePortIsDiscreteInPortEditor(null, true);
+
+		addDiscretePortIsDiscreteOutPortEditor(null, true);
+
+		addDiscretePortIsDiscreteInOutPortEditor(null, true);
+
+		addDiscretePortMultiPortEditor(null, true);
+
 		addDiscreteInteractionEndpointSenderMessageTypesEditor(null, true);
 
 		addDiscreteInteractionEndpointReceiverMessageTypesEditor(null, true);
@@ -26,17 +34,88 @@ public class DiscretePortEditor
 
 		addDiscreteInteractionEndpointReceiverMessageBufferEditor(null, true);
 
-		addConnectorEndpointConnectorsEditor(null, true);
-
 		addConstrainableElementConstraintEditor(null, true);
 
-		addCommentableElementCommentEditor(null, true);
+		addConnectorEndpointConnectorsEditor(null, true);
 
 		addNamedElementNameEditor(null, true);
+
+		addCommentableElementCommentEditor(null, true);
 
 		super.initialize();
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addDiscretePortIsDiscreteInPortEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createDiscretePortIsDiscreteInPortEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortIsDiscreteInPortEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getDiscretePort_IsDiscreteInPort());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addDiscretePortIsDiscreteOutPortEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createDiscretePortIsDiscreteOutPortEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortIsDiscreteOutPortEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getDiscretePort_IsDiscreteOutPort());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addDiscretePortIsDiscreteInOutPortEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createDiscretePortIsDiscreteInOutPortEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortIsDiscreteInOutPortEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getDiscretePort_IsDiscreteInOutPort());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addDiscretePortMultiPortEditor(String category, boolean front) {
+		addEditorToCategory(category, createDiscretePortMultiPortEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortMultiPortEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getDiscretePort_MultiPort());
+
+	}
 	/**
 	 * @generated
 	 */
@@ -51,7 +130,7 @@ public class DiscretePortEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointSenderMessageTypesEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_SenderMessageTypes());
 
@@ -70,7 +149,7 @@ public class DiscretePortEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointReceiverMessageTypesEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_ReceiverMessageTypes());
 
@@ -107,27 +186,9 @@ public class DiscretePortEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointReceiverMessageBufferEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConnectorEndpointConnectorsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConnectorEndpointConnectorsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpoint_Connectors());
 
 	}
 	/**
@@ -143,9 +204,43 @@ public class DiscretePortEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstrainableElement_Constraint());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addConnectorEndpointConnectorsEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConnectorEndpointConnectorsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name());
 
 	}
 	/**
@@ -164,22 +259,6 @@ public class DiscretePortEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name());
 
 	}
 

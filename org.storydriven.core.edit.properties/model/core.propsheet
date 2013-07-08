@@ -21,17 +21,17 @@
     </classes>
     <classes>
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement/annotation"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement/extension"/>
-      </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension"/>
       <properties tab="//@tabs.0">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/extendableBase"/>
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/base"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/modelBase"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension/owningAnnotation"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.1">
@@ -44,7 +44,7 @@
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/TypedElement"/>
       <properties tab="//@tabs.0">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/TypedElement/genericType"/>
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/TypedElement/type"/>
       </properties>
     </classes>
   </packages>
@@ -74,24 +74,12 @@
     <classes superClasses="//@packages.1/@classes.0">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/UnaryExpression"/>
       <properties tab="//@tabs.0">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/UnaryExpression/enclosedExpression"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/UnaryExpression/operator"/>
         <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.0">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/BinaryExpression"/>
-      <properties tab="//@tabs.0">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/BinaryExpression/leftExpression"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties tab="//@tabs.0">
-        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/BinaryExpression/rightExpression"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
     </classes>
     <classes superClasses="//@packages.2/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ComparisonExpression"/>

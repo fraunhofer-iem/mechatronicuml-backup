@@ -18,33 +18,11 @@ public class StructuredComponentEditor
 	 */
 	public void initialize() {
 
-		addStructuredComponentEmbeddedComponentPartsEditor(null, true);
-
 		addStructuredComponentConnectorsEditor(null, true);
-
-		addStructuredComponentCoordinationProtocolOccurencesEditor(null, true);
 
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addStructuredComponentEmbeddedComponentPartsEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createStructuredComponentEmbeddedComponentPartsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentEmbeddedComponentPartsEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getStructuredComponent_EmbeddedComponentParts());
-
-	}
 	/**
 	 * @generated
 	 */
@@ -58,29 +36,9 @@ public class StructuredComponentEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentConnectorsEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getStructuredComponent_Connectors());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addStructuredComponentCoordinationProtocolOccurencesEditor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createStructuredComponentCoordinationProtocolOccurencesEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentCoordinationProtocolOccurencesEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getStructuredComponent_CoordinationProtocolOccurences());
 
 	}
 

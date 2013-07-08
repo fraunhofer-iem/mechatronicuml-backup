@@ -22,9 +22,9 @@ public class ComponentEditor
 
 		addComponentComponentTypeEditor(null, true);
 
-		addCommentableElementCommentEditor(null, true);
-
 		addNamedElementNameEditor(null, true);
+
+		addCommentableElementCommentEditor(null, true);
 
 		super.initialize();
 	}
@@ -40,7 +40,7 @@ public class ComponentEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentPortsEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponent_Ports());
 
@@ -66,6 +66,22 @@ public class ComponentEditor
 	/**
 	 * @generated
 	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name());
+
+	}
+	/**
+	 * @generated
+	 */
 	protected void addCommentableElementCommentEditor(String category,
 			boolean front) {
 		addEditorToCategory(category, createCommentableElementCommentEditor(),
@@ -79,22 +95,6 @@ public class ComponentEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name());
 
 	}
 

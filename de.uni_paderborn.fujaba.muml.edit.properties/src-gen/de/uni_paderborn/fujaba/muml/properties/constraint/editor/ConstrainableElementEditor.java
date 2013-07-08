@@ -36,7 +36,7 @@ public class ConstrainableElementEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstrainableElement_Constraint());
 

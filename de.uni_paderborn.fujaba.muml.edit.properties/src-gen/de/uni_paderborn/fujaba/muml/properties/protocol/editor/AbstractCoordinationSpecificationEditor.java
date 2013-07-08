@@ -18,13 +18,9 @@ public class AbstractCoordinationSpecificationEditor
 	 */
 	public void initialize() {
 
-		addAbstractCoordinationSpecificationRolesEditor(null, true);
-
-		addAbstractCoordinationSpecificationRoleConnectorEditor(null, false);
+		addNamedElementNameEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
-
-		addNamedElementNameEditor(null, true);
 
 		super.initialize();
 	}
@@ -32,38 +28,17 @@ public class AbstractCoordinationSpecificationEditor
 	/**
 	 * @generated
 	 */
-	protected void addAbstractCoordinationSpecificationRolesEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createAbstractCoordinationSpecificationRolesEditor(), front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createAbstractCoordinationSpecificationRolesEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-						.getAbstractCoordinationSpecification_Roles());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addAbstractCoordinationSpecificationRoleConnectorEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createAbstractCoordinationSpecificationRoleConnectorEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createAbstractCoordinationSpecificationRoleConnectorEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
-						.getAbstractCoordinationSpecification_RoleConnector());
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name());
 
 	}
 	/**
@@ -82,22 +57,6 @@ public class AbstractCoordinationSpecificationEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name());
 
 	}
 

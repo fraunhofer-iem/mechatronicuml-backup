@@ -18,7 +18,7 @@ public class RegionEditor
 	 */
 	public void initialize() {
 
-		addRegionEmbeddedStatechartEditor(null, false);
+		addRegionNameEditor(null, true);
 
 		addPrioritizedElementPriorityEditor(null, true);
 
@@ -28,19 +28,17 @@ public class RegionEditor
 	/**
 	 * @generated
 	 */
-	protected void addRegionEmbeddedStatechartEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createRegionEmbeddedStatechartEditor(),
-				front);
+	protected void addRegionNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createRegionNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRegionEmbeddedStatechartEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRegionNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getRegion_EmbeddedStatechart());
+						.getRegion_Name());
 
 	}
 	/**

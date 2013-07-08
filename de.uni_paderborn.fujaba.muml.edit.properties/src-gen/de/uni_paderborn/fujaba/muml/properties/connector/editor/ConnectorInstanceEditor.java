@@ -37,7 +37,7 @@ public class ConnectorInstanceEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorInstanceConnectorEndpointInstancesEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorInstance_ConnectorEndpointInstances());
 

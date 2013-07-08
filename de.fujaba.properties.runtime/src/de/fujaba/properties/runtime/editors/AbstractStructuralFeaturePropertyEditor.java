@@ -36,6 +36,10 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		this.feature = feature;
 	}
 
+	public String getLabelText() {
+		return RuntimePlugin.makeHumanReadable(feature.getName(), true) + ":";
+	}
+	
 	public String getFeatureDescription() {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append(RuntimePlugin.makeHumanReadable(feature.getName(), true));

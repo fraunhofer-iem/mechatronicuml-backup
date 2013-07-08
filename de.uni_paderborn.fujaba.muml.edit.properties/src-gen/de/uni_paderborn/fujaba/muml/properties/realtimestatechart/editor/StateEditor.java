@@ -21,15 +21,14 @@ public class StateEditor
 		addSubCategory("de.fujaba.properties.category.State.Booleans",
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL);
 
-		addStateEmbeddedRegionsEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.State.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL);
 
 		addStateDoEventEditor(null, false);
 
 		addStateExitEventEditor(null, false);
 
 		addStateEntryEventEditor(null, false);
-
-		addStateInvariantsEditor(null, true);
 
 		addStateInitialEditor("de.fujaba.properties.category.State.Booleans",
 				true);
@@ -40,29 +39,18 @@ public class StateEditor
 		addStateUrgentEditor("de.fujaba.properties.category.State.Booleans",
 				true);
 
-		addStateChannelsEditor(null, true);
+		addStateInvariantsEditor("de.fujaba.properties.category.State.Lists",
+				true);
 
-		addStateConnectionPointsEditor(null, true);
+		addStateChannelsEditor("de.fujaba.properties.category.State.Lists",
+				true);
+
+		addStateSimpleEditor("de.fujaba.properties.category.State.Booleans",
+				true);
 
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addStateEmbeddedRegionsEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateEmbeddedRegionsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateEmbeddedRegionsEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_EmbeddedRegions());
-
-	}
 	/**
 	 * @generated
 	 */
@@ -109,22 +97,6 @@ public class StateEditor
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_EntryEvent());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addStateInvariantsEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateInvariantsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateInvariantsEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_Invariants());
 
 	}
 	/**
@@ -178,6 +150,22 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
+	protected void addStateInvariantsEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateInvariantsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateInvariantsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_Invariants());
+
+	}
+	/**
+	 * @generated
+	 */
 	protected void addStateChannelsEditor(String category, boolean front) {
 		addEditorToCategory(category, createStateChannelsEditor(), front);
 	}
@@ -186,7 +174,7 @@ public class StateEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateChannelsEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_Channels());
 
@@ -194,18 +182,17 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateConnectionPointsEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateConnectionPointsEditor(),
-				front);
+	protected void addStateSimpleEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateSimpleEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateConnectionPointsEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateSimpleEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_ConnectionPoints());
+						.getState_Simple());
 
 	}
 

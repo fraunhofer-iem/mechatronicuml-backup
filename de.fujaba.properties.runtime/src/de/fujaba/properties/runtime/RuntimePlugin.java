@@ -27,6 +27,7 @@ import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.graphics.Image;
@@ -60,6 +61,10 @@ public class RuntimePlugin extends AbstractUIPlugin {
 
 	public static final String IMAGE_REMOVE = "remove";
 
+	public static final String IMAGE_UP = "up";
+
+	public static final String IMAGE_DOWN = "down";
+	
 	// The shared instance
 	private static RuntimePlugin plugin;
 
@@ -72,6 +77,8 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	protected void initializeImageRegistry(ImageRegistry registry) {
 		registry.put(IMAGE_ADD, createDescriptor("icons/add.png"));
 		registry.put(IMAGE_REMOVE, createDescriptor("icons/remove.png"));
+		registry.put(IMAGE_UP, createDescriptor("icons/up.png"));
+		registry.put(IMAGE_DOWN, createDescriptor("icons/down.png"));
 	}
 
 	private ImageDescriptor createDescriptor(String location) {

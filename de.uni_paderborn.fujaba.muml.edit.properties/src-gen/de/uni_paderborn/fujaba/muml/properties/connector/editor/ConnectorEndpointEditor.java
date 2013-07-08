@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.connector.editor;
  */
 public class ConnectorEndpointEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -20,7 +20,7 @@ public class ConnectorEndpointEditor
 
 		addConnectorEndpointConnectorsEditor(null, true);
 
-		addNamedElementNameEditor(null, true);
+		addCommentableElementCommentEditor(null, true);
 
 		super.initialize();
 	}
@@ -38,7 +38,7 @@ public class ConnectorEndpointEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorEndpoint_Connectors());
 
@@ -46,17 +46,19 @@ public class ConnectorEndpointEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name());
+						.getCommentableElement_Comment());
 
 	}
 

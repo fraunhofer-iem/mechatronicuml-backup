@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
  */
 public class ParameterEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.behavior.editor.TypedNamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -18,7 +18,7 @@ public class ParameterEditor
 	 */
 	public void initialize() {
 
-		addCommentableElementCommentEditor(null, true);
+		addNamedElementNameEditor(null, true);
 
 		super.initialize();
 	}
@@ -26,19 +26,17 @@ public class ParameterEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment());
+						.getNamedElement_Name());
 
 	}
 

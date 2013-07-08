@@ -18,7 +18,28 @@ public class PortConnectorInstanceEditor
 	 */
 	public void initialize() {
 
+		addPortConnectorInstancePortInstancesEditor(null, true);
+
 		super.initialize();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addPortConnectorInstancePortInstancesEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createPortConnectorInstancePortInstancesEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPortConnectorInstancePortInstancesEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+						.getPortConnectorInstance_PortInstances());
+
 	}
 
 	//

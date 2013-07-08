@@ -28,5 +28,10 @@ public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 		}
 		categoryEditor.addPropertyEditor(null, editor, front);
 	}
+	
+	@Override
+	public boolean isInitiallyExpanded() {
+		return true;
+	}
 
 }

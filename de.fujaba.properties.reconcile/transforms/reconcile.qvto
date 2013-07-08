@@ -95,14 +95,14 @@ mapping inout Class::reconcileClass(tab : PropertyTab) {
 		self.superClasses := superClasses;
 	} endif;
 
-	-- generate missing sections
+	-- generate missing properties
 	self.genClass.genFeatures->select(shouldGenerate())->forEach(feature) {
 		if (not self.properties.genFeature->includes(feature)) then {
 			self.properties += self->map createProperty(feature, tab);
 		} endif;
 	};
 	
-	-- reconcile all sections
+	-- reconcile all properties
 	self.properties->map reconcileProperty();
 }
 
@@ -164,7 +164,7 @@ query GenClass::shouldGenerate() : Boolean {
 	return true;
 }
 query GenFeature::shouldGenerate() : Boolean {
-	return not self.ecoreFeature._derived;
+	return self._property != GenPropertyKind::None;
 }
 constructor Plugin::Plugin(genModel : GenModel) {
 	name := genModel.modelPluginID + ".edit.properties";

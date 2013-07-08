@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public class ComponentPartEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -20,11 +20,11 @@ public class ComponentPartEditor
 
 		addComponentPartCardinalityEditor(null, false);
 
-		addComponentPartPortPartsEditor(null, true);
-
-		addNamedElementNameEditor(null, true);
+		addComponentPartMultiPartEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
+
+		addNamedElementNameEditor(null, true);
 
 		super.initialize();
 	}
@@ -50,35 +50,19 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentPartPortPartsEditor(String category,
+	protected void addComponentPartMultiPartEditor(String category,
 			boolean front) {
-		addEditorToCategory(category, createComponentPartPortPartsEditor(),
+		addEditorToCategory(category, createComponentPartMultiPartEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartPortPartsEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartMultiPartEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponentPart_PortParts());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name());
+						.getComponentPart_MultiPart());
 
 	}
 	/**
@@ -97,6 +81,22 @@ public class ComponentPartEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name());
 
 	}
 

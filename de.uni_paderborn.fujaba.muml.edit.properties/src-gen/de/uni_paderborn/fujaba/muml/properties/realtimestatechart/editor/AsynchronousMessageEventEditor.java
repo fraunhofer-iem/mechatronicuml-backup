@@ -18,28 +18,7 @@ public class AsynchronousMessageEventEditor
 	 */
 	public void initialize() {
 
-		addAsynchronousMessageEventMessageEditor(null, false);
-
 		super.initialize();
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addAsynchronousMessageEventMessageEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createAsynchronousMessageEventMessageEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createAsynchronousMessageEventMessageEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getAsynchronousMessageEvent_Message());
-
 	}
 
 	//

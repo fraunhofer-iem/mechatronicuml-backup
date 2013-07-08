@@ -64,5 +64,10 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 			}
 		}
 	}
+	
+	@Override
+	public boolean isInitiallyExpanded() {
+		return false;
+	}
 
 }

@@ -18,31 +18,11 @@ public class UnaryExpressionEditor
 	 */
 	public void initialize() {
 
-		addUnaryExpressionEnclosedExpressionEditor(null, false);
-
 		addUnaryExpressionOperatorEditor(null, true);
 
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addUnaryExpressionEnclosedExpressionEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createUnaryExpressionEnclosedExpressionEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createUnaryExpressionEnclosedExpressionEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
-						.getUnaryExpression_EnclosedExpression());
-
-	}
 	/**
 	 * @generated
 	 */

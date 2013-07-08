@@ -225,7 +225,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 				}
 			});
 			
-			section.setExpanded(false);
+			section.setExpanded(isInitiallyExpanded());
 			
 			
 		} else {
@@ -240,6 +240,9 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		// TODO REMOVE
 		createChildren();
 	}
+	public boolean isInitiallyExpanded() {
+		return true;
+	}
 	
 	protected void createChildren() {
 		if (!childrenCreated) {
@@ -248,8 +251,8 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 				editor.createControls(childrenComposite, toolkit);
 			}
 			childrenCreated = true;
+			childrenChanged();
 		}
-		childrenChanged();
 	}
 
 	protected Layout createLayout() {
@@ -330,8 +333,10 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	@Override
 	public void setInput(Object object) {
 		super.setInput(object);
-		for (IPropertyEditor editor : propertyEditors) {
-			editor.setInput(object);
+		if (childrenCreated) {
+			for (IPropertyEditor editor : propertyEditors) {
+				editor.setInput(object);
+			}
 		}
 	}
 

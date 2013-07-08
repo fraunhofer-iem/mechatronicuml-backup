@@ -22,6 +22,8 @@ public class ConstraintEditor
 
 		addConstraintBackgroundEditor(null, true);
 
+		addConstraintCorrectEditor(null, true);
+
 		super.initialize();
 	}
 
@@ -56,6 +58,22 @@ public class ConstraintEditor
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstraint_Background());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addConstraintCorrectEditor(String category, boolean front) {
+		addEditorToCategory(category, createConstraintCorrectEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstraintCorrectEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstraint_Correct());
 
 	}
 

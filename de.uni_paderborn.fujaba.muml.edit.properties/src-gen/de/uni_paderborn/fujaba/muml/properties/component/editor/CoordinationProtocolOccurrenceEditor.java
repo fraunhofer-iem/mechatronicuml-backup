@@ -36,7 +36,7 @@ public class CoordinationProtocolOccurrenceEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolOccurrencePortPartsEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getCoordinationProtocolOccurrence_PortParts());
 
