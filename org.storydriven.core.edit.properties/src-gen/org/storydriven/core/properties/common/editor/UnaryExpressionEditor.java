@@ -22,6 +22,8 @@ public class UnaryExpressionEditor
 
 		addUnaryExpressionOperatorEditor(null, true);
 
+		addCommentableElementCommentEditor(null, true);
+
 		super.initialize();
 	}
 
@@ -59,6 +61,24 @@ public class UnaryExpressionEditor
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getUnaryExpression_Operator());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment());
 
 	}
 

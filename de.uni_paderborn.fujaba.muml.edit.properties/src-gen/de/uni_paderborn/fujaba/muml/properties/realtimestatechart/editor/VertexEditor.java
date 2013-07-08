@@ -24,6 +24,8 @@ public class VertexEditor
 
 		addVertexAllSuperVerticesEditor(null, true);
 
+		addNamedElementNameEditor(null, true);
+
 		super.initialize();
 	}
 
@@ -79,6 +81,22 @@ public class VertexEditor
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getVertex_AllSuperVertices());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name());
 
 	}
 

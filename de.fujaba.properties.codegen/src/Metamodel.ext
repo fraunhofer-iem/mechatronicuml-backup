@@ -40,6 +40,7 @@ GenClassifier getGenClassifier(ecore::EClassifier this, genmodel::GenModel genMo
 Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClassifier this) :
 	false;
 
+
 Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClass this) :
 	{ classifier }.typeSelect(GenClass).first().ecoreClass == this;
 
@@ -79,3 +80,6 @@ String genFeatureLiteral(GenFeature this) :
 	
 List[Property] overwrittenProperties(Class this) :
 	propertyCategories.properties.reject(property | this.properties.contains(property));
+	
+List[Property] genProperties(Class this) :
+	properties.union(allSuperClasses.reject(superClasses.first()).properties);

@@ -38,6 +38,10 @@ public class TransitionEditor
 
 		addTransitionUrgentEditor(null, true);
 
+		addCommentableElementCommentEditor(null, true);
+
+		addPrioritizedElementPriorityEditor(null, true);
+
 		super.initialize();
 	}
 
@@ -208,6 +212,42 @@ public class TransitionEditor
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Urgent());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addPrioritizedElementPriorityEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getPrioritizedElement_Priority());
 
 	}
 

@@ -24,6 +24,14 @@ public class RealtimeStatechartEditor
 
 		addRealtimeStatechartClocksEditor(null, true);
 
+		addCommentableElementCommentEditor(null, true);
+
+		addBehaviorOperationsEditor(null, true);
+
+		addBehaviorVariablesEditor(null, true);
+
+		addNamedElementNameEditor(null, true);
+
 		super.initialize();
 	}
 
@@ -79,6 +87,72 @@ public class RealtimeStatechartEditor
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_Clocks());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addBehaviorOperationsEditor(String category, boolean front) {
+		addEditorToCategory(category, createBehaviorOperationsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createBehaviorOperationsEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getBehavior_Operations());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addBehaviorVariablesEditor(String category, boolean front) {
+		addEditorToCategory(category, createBehaviorVariablesEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createBehaviorVariablesEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getBehavior_Variables());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name());
 
 	}
 

@@ -24,6 +24,8 @@ public class TextualExpressionEditor
 
 		addTextualExpressionLanguageVersionEditor(null, true);
 
+		addCommentableElementCommentEditor(null, true);
+
 		super.initialize();
 	}
 
@@ -79,6 +81,24 @@ public class TextualExpressionEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_LanguageVersion());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment());
 
 	}
 

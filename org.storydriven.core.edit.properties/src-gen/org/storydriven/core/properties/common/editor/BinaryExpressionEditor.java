@@ -22,6 +22,8 @@ public class BinaryExpressionEditor
 
 		addBinaryExpressionRightExpressionEditor(null, false);
 
+		addCommentableElementCommentEditor(null, true);
+
 		super.initialize();
 	}
 
@@ -59,6 +61,24 @@ public class BinaryExpressionEditor
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getBinaryExpression_RightExpression());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment());
 
 	}
 

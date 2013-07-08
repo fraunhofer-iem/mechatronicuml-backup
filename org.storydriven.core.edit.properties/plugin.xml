@@ -3,6 +3,7 @@
 <plugin>
 
 
+
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
           <propertyTab
@@ -12,6 +13,8 @@
           
       </propertyTabs>
   </extension>
+
+
 
 
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
@@ -28,6 +31,7 @@
          
       </propertySections>
   </extension>
+
 
 
  <extension point="de.fujaba.properties.runtime.propertyEditors">

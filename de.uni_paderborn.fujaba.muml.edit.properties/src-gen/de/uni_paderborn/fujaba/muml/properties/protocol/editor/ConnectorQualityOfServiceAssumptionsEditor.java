@@ -27,6 +27,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(null,
 				true);
 
+		addCommentableElementCommentEditor(null, true);
+
 		super.initialize();
 	}
 
@@ -88,6 +90,24 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions_MessageLossPossible());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment());
 
 	}
 

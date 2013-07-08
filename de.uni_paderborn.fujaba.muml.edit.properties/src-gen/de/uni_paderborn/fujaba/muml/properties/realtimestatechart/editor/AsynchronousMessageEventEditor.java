@@ -20,6 +20,8 @@ public class AsynchronousMessageEventEditor
 
 		addAsynchronousMessageEventMessageEditor(null, false);
 
+		addEventKindEditor(null, true);
+
 		super.initialize();
 	}
 
@@ -39,6 +41,22 @@ public class AsynchronousMessageEventEditor
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getAsynchronousMessageEvent_Message());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addEventKindEditor(String category, boolean front) {
+		addEditorToCategory(category, createEventKindEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createEventKindEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getEvent_Kind());
 
 	}
 

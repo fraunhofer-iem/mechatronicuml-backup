@@ -20,6 +20,8 @@ public class LiteralExpressionEditor
 
 		addLiteralExpressionValueEditor(null, true);
 
+		addCommentableElementCommentEditor(null, true);
+
 		super.initialize();
 	}
 
@@ -39,6 +41,24 @@ public class LiteralExpressionEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getLiteralExpression_Value());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment());
 
 	}
 
