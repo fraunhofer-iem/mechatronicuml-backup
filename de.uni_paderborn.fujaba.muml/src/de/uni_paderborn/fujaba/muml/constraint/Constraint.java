@@ -34,7 +34,7 @@ import org.storydriven.core.ExtendableElement;
 public interface Constraint extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Correctness</b></em>' attribute.
-	 * The default value is <code>"Correctness.UNKNOWN"</code>.
+	 * The default value is <code>"unknown"</code>.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.constraint.Correctness}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45,7 +45,7 @@ public interface Constraint extends ExtendableElement {
 	 * @see de.uni_paderborn.fujaba.muml.constraint.Correctness
 	 * @see #setCorrectness(Correctness)
 	 * @see de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage#getConstraint_Correctness()
-	 * @model default="Correctness.UNKNOWN"
+	 * @model default="unknown"
 	 * @generated
 	 */
 	Correctness getCorrectness();

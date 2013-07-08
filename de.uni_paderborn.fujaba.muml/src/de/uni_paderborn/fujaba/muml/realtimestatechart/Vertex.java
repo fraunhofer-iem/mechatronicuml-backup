@@ -100,7 +100,7 @@ public interface Vertex extends NamedElement {
 	 * Returns the next free higher transition priority that is closest to the value provided as hint.
 	 * \todosd{Rename hint to an understandable name.}
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (; hasOutgoingTransitionOfPriority(hint); hint++);\r\nreturn hint;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='int nextHighestTransitionPriority = hint;\r\nfor (; hasOutgoingTransitionOfPriority(nextHighestTransitionPriority); nextHighestTransitionPriority++);\r\nreturn nextHighestTransitionPriority;'"
 	 * @generated
 	 */
 	int getUniqueTransitionPriority(int hint);

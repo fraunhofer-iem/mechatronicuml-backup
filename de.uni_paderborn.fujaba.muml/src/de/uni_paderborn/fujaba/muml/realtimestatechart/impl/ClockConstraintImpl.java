@@ -63,7 +63,7 @@ public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ComparingOperator OPERATOR_EDEFAULT = ComparingOperator.LESS;
+	protected static final ComparingOperator OPERATOR_EDEFAULT = ComparingOperator.LESS_OR_EQUAL;
 
 	/**
 	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.

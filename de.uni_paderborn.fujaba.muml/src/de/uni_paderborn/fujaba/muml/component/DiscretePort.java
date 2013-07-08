@@ -136,7 +136,7 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	 * @return the value of the '<em>Coordination Protocol</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort_CoordinationProtocol()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if refinedRole.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\trefinedRole.coordinationProtocol.oclIsKindOf(CoordinationProtocol) ).oclAsType (CoordinationProtocol)\t\r\nendif\r\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if refinedRole.oclIsUndefined() then\r\n\tnull\r\nelse\r\n\trefinedRole.coordinationProtocol.oclIsKindOf(protocol::CoordinationProtocol).oclAsType(protocol::CoordinationProtocol)\r\nendif\r\n\r\n\r\n'"
 	 * @generated
 	 */
 	CoordinationProtocol getCoordinationProtocol();

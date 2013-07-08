@@ -30,7 +30,7 @@ package de.uni_paderborn.fujaba.muml.types;
 public interface PrimitiveDataType extends DataType {
 	/**
 	 * Returns the value of the '<em><b>Primitive Type</b></em>' attribute.
-	 * The default value is <code>"PrimitiveTypes.VOID"</code>.
+	 * The default value is <code>"VOID"</code>.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.types.PrimitiveTypes}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -41,7 +41,7 @@ public interface PrimitiveDataType extends DataType {
 	 * @see de.uni_paderborn.fujaba.muml.types.PrimitiveTypes
 	 * @see #setPrimitiveType(PrimitiveTypes)
 	 * @see de.uni_paderborn.fujaba.muml.types.TypesPackage#getPrimitiveDataType_PrimitiveType()
-	 * @model default="PrimitiveTypes.VOID" required="true"
+	 * @model default="VOID" required="true"
 	 * @generated
 	 */
 	PrimitiveTypes getPrimitiveType();

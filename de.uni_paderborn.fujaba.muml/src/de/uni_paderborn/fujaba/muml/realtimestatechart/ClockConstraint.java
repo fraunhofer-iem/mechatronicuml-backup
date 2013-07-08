@@ -94,7 +94,7 @@ public interface ClockConstraint extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
-	 * The default value is <code>"ComparingOperator.LESS_OR_EQUAL"</code>.
+	 * The default value is <code>"LESS_OR_EQUAL"</code>.
 	 * The literals are from the enumeration {@link org.storydriven.core.expressions.common.ComparingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -109,7 +109,7 @@ public interface ClockConstraint extends EObject {
 	 * @see org.storydriven.core.expressions.common.ComparingOperator
 	 * @see #setOperator(ComparingOperator)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getClockConstraint_Operator()
-	 * @model default="ComparingOperator.LESS_OR_EQUAL" required="true"
+	 * @model default="LESS_OR_EQUAL" required="true"
 	 * @generated
 	 */
 	ComparingOperator getOperator();

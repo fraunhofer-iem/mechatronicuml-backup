@@ -125,7 +125,7 @@
           <details key="documentation" value="Derives the coordinationProtocol of the refined port."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if refinedRole.oclIsUndefined() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;refinedRole.coordinationProtocol.oclIsKindOf(CoordinationProtocol) ).oclAsType (CoordinationProtocol)&#x9;&#xD;&#xA;endif&#xD;&#xA;"/>
+          <details key="derivation" value="if refinedRole.oclIsUndefined() then&#xD;&#xA;&#x9;null&#xD;&#xA;else&#xD;&#xA;&#x9;refinedRole.coordinationProtocol.oclIsKindOf(protocol::CoordinationProtocol).oclAsType(protocol::CoordinationProtocol)&#xD;&#xA;endif&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -491,7 +491,7 @@
         <details key="documentation" value="This class represents a constraint. A constraint defines certain properties a system has to fullfill. In terms of model checking a constraint represents the specification of the system."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="correctness" eType="#//constraint/Correctness"
-          defaultValueLiteral="Correctness.UNKNOWN">
+          defaultValueLiteral="unknown">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The correctness of this constraint encoded as a literal of the enum type &quot;Correctness&quot;."/>
         </eAnnotations>
@@ -1084,7 +1084,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           changeable="false" volatile="true" transient="true" unsettable="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="if not self.embeddedStatechart.oclIsUndefined() then&#xD;&#xA;&#x9;if not self.embeddedStatechart.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;self.embeddedStatechart.name&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;null&#xD;&#xA;&#x9;endif&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
+          <details key="derivation" value="if not self.embeddedStatechart.oclIsUndefined() then&#xD;&#xA;&#x9;self.embeddedStatechart.oclIsTypeOf(realtimestatechart::RealtimeStatechart).name&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The name of a region is derived by its conaining Real-Time Statechart"/>
@@ -1113,7 +1113,7 @@
       <eOperations name="getUniqueRegionPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Returns the next free higher region priority that is closest to the value provided as hint."/>
-          <details key="body" value="for (; hasRegionOfPriority(hint); hint++);&#xD;&#xA;return hint;"/>
+          <details key="body" value="int nextHighestPriority=hint;&#xD;&#xA;for (; hasRegionOfPriority(nextHighestPriority); nextHighestPriority++);&#xD;&#xA;return nextHighestPriority;"/>
         </eAnnotations>
         <eParameters name="hint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
@@ -1228,7 +1228,7 @@
       <eOperations name="getUniqueTransitionPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Returns the next free higher transition priority that is closest to the value provided as hint.&#xD;&#xA;\todosd{Rename hint to an understandable name.}"/>
-          <details key="body" value="for (; hasOutgoingTransitionOfPriority(hint); hint++);&#xD;&#xA;return hint;"/>
+          <details key="body" value="int nextHighestTransitionPriority = hint;&#xD;&#xA;for (; hasOutgoingTransitionOfPriority(nextHighestTransitionPriority); nextHighestTransitionPriority++);&#xD;&#xA;return nextHighestTransitionPriority;"/>
         </eAnnotations>
         <eParameters name="hint" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
       </eOperations>
@@ -1404,7 +1404,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
           eType="ecore:EEnum ../../org.storydriven.core/model/core.ecore#//expressions/common/ComparingOperator"
-          defaultValueLiteral="ComparingOperator.LESS_OR_EQUAL">
+          defaultValueLiteral="LESS_OR_EQUAL">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The operator that is used in this clock constraint."/>
         </eAnnotations>
@@ -1782,7 +1782,7 @@
         <details key="documentation" value="This data type represents a primitive data type and refers to the PrimitiveDataType enumeration for specifying the concrete primitive type."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitiveType" lowerBound="1"
-          eType="#//types/PrimitiveTypes" defaultValueLiteral="PrimitiveTypes.VOID">
+          eType="#//types/PrimitiveTypes" defaultValueLiteral="VOID">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Refers to the primitive data type as defined by the PrimitiveDataType enumeration. It defines the actual type."/>
         </eAnnotations>

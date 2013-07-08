@@ -267,7 +267,7 @@ public interface State extends Vertex {
 	 * <!-- begin-model-doc -->
 	 * Returns the next free higher region priority that is closest to the value provided as hint.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (; hasRegionOfPriority(hint); hint++);\r\nreturn hint;'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='int nextHighestPriority=hint;\r\nfor (; hasRegionOfPriority(nextHighestPriority); nextHighestPriority++);\r\nreturn nextHighestPriority;'"
 	 * @generated
 	 */
 	int getUniqueRegionPriority(int hint);

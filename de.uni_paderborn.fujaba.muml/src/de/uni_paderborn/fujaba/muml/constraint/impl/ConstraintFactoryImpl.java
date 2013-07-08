@@ -35,7 +35,7 @@ public class ConstraintFactoryImpl extends EFactoryImpl implements ConstraintFac
 	 */
 	public static ConstraintFactory init() {
 		try {
-			ConstraintFactory theConstraintFactory = (ConstraintFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/constraint/0.3.13"); 
+			ConstraintFactory theConstraintFactory = (ConstraintFactory)EPackage.Registry.INSTANCE.getEFactory(ConstraintPackage.eNS_URI);
 			if (theConstraintFactory != null) {
 				return theConstraintFactory;
 			}
