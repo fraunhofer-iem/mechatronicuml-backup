@@ -22,8 +22,6 @@ public class DoEventEditor
 
 		addDoEventPeriodEditor(null, false);
 
-		addEventKindEditor(null, true);
-
 		super.initialize();
 	}
 
@@ -57,22 +55,6 @@ public class DoEventEditor
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDoEvent_Period());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addEventKindEditor(String category, boolean front) {
-		addEditorToCategory(category, createEventKindEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createEventKindEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getEvent_Kind());
 
 	}
 

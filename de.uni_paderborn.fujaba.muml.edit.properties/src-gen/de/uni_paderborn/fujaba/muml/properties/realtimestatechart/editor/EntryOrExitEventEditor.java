@@ -22,8 +22,6 @@ public class EntryOrExitEventEditor
 
 		addEntryOrExitEventActionEditor(null, false);
 
-		addEventKindEditor(null, true);
-
 		super.initialize();
 	}
 
@@ -61,22 +59,6 @@ public class EntryOrExitEventEditor
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getEntryOrExitEvent_Action());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addEventKindEditor(String category, boolean front) {
-		addEditorToCategory(category, createEventKindEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createEventKindEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getEvent_Kind());
 
 	}
 

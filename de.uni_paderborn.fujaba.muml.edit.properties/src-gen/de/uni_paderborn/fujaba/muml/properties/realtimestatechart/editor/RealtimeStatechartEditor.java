@@ -24,8 +24,6 @@ public class RealtimeStatechartEditor
 
 		addRealtimeStatechartClocksEditor(null, true);
 
-		addCommentableElementCommentEditor(null, true);
-
 		addBehaviorOperationsEditor(null, true);
 
 		addBehaviorVariablesEditor(null, true);
@@ -87,24 +85,6 @@ public class RealtimeStatechartEditor
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_Clocks());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment());
 
 	}
 	/**

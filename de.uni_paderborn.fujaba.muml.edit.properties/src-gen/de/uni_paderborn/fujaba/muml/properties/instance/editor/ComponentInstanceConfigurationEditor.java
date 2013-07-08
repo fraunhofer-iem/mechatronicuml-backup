@@ -23,8 +23,6 @@ public class ComponentInstanceConfigurationEditor
 		addComponentInstanceConfigurationPortConnectorInstancesEditor(null,
 				true);
 
-		addCommentableElementCommentEditor(null, true);
-
 		addNamedElementNameEditor(null, true);
 
 		super.initialize();
@@ -67,24 +65,6 @@ public class ComponentInstanceConfigurationEditor
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstanceConfiguration_PortConnectorInstances());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment());
 
 	}
 	/**

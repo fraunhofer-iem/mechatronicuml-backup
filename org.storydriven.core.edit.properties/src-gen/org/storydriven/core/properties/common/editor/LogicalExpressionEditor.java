@@ -20,12 +20,6 @@ public class LogicalExpressionEditor
 
 		addLogicalExpressionOperatorEditor(null, true);
 
-		addBinaryExpressionLeftExpressionEditor(null, false);
-
-		addBinaryExpressionRightExpressionEditor(null, false);
-
-		addCommentableElementCommentEditor(null, true);
-
 		super.initialize();
 	}
 
@@ -45,60 +39,6 @@ public class LogicalExpressionEditor
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getLogicalExpression_Operator());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addBinaryExpressionLeftExpressionEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createBinaryExpressionLeftExpressionEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createBinaryExpressionLeftExpressionEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
-						.getBinaryExpression_LeftExpression());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addBinaryExpressionRightExpressionEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createBinaryExpressionRightExpressionEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createBinaryExpressionRightExpressionEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
-				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
-						.getBinaryExpression_RightExpression());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment());
 
 	}
 

@@ -82,4 +82,10 @@ List[Property] overwrittenProperties(Class this) :
 	propertyCategories.properties.reject(property | this.properties.contains(property));
 	
 List[Property] genProperties(Class this) :
-	properties.union(allSuperClasses.reject(superClasses.first()).properties);
+	{ this }.union(superClasses.reject(s | s == superClasses.first()).genSuperClasses()).properties;
+	
+List[Class] genSuperClasses(List[Class] this) :
+	if isEmpty then
+		{ }
+	else
+		this.union(superClasses.genSuperClasses());

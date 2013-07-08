@@ -28,11 +28,11 @@ public class DiscreteInteractionEndpointEditor
 
 		addConnectorEndpointConnectorsEditor(null, true);
 
+		addConstrainableElementConstraintEditor(null, true);
+
 		addCommentableElementCommentEditor(null, true);
 
 		addNamedElementNameEditor(null, true);
-
-		addConstrainableElementConstraintEditor(null, true);
 
 		super.initialize();
 	}
@@ -133,6 +133,24 @@ public class DiscreteInteractionEndpointEditor
 	/**
 	 * @generated
 	 */
+	protected void addConstrainableElementConstraintEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConstrainableElementConstraintEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
+
+	}
+	/**
+	 * @generated
+	 */
 	protected void addCommentableElementCommentEditor(String category,
 			boolean front) {
 		addEditorToCategory(category, createCommentableElementCommentEditor(),
@@ -162,24 +180,6 @@ public class DiscreteInteractionEndpointEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConstrainableElementConstraintEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
 
 	}
 

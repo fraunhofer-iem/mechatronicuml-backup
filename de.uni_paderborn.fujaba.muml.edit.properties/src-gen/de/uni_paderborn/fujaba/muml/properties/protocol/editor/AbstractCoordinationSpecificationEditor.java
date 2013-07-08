@@ -22,8 +22,6 @@ public class AbstractCoordinationSpecificationEditor
 
 		addAbstractCoordinationSpecificationRoleConnectorEditor(null, false);
 
-		addConstrainableElementConstraintEditor(null, true);
-
 		addCommentableElementCommentEditor(null, true);
 
 		addNamedElementNameEditor(null, true);
@@ -66,24 +64,6 @@ public class AbstractCoordinationSpecificationEditor
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getAbstractCoordinationSpecification_RoleConnector());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConstrainableElementConstraintEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
 
 	}
 	/**

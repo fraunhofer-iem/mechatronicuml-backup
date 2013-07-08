@@ -18,13 +18,11 @@ public class PortEditor
 	 */
 	public void initialize() {
 
-		addConnectorEndpointConnectorsEditor(null, true);
+		addConstrainableElementConstraintEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
 
 		addNamedElementNameEditor(null, true);
-
-		addConstrainableElementConstraintEditor(null, true);
 
 		super.initialize();
 	}
@@ -32,19 +30,19 @@ public class PortEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorEndpointConnectorsEditor(String category,
+	protected void addConstrainableElementConstraintEditor(String category,
 			boolean front) {
 		addEditorToCategory(category,
-				createConnectorEndpointConnectorsEditor(), front);
+				createConstrainableElementConstraintEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpoint_Connectors());
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
 
 	}
 	/**
@@ -79,24 +77,6 @@ public class PortEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConstrainableElementConstraintEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
 
 	}
 

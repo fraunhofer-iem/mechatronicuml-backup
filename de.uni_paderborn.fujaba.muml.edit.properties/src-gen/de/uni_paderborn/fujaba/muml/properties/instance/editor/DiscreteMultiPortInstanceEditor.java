@@ -18,18 +18,38 @@ public class DiscreteMultiPortInstanceEditor
 	 */
 	public void initialize() {
 
+		addDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(
+				null, true);
+
 		addConnectorEndpointInstanceConnectorInstancesEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
 
 		addNamedElementNameEditor(null, true);
 
-		addDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(
-				null, true);
-
 		super.initialize();
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(
+			String category, boolean front) {
+		addEditorToCategory(
+				category,
+				createDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor() {
+		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances());
+
+	}
 	/**
 	 * @generated
 	 */
@@ -81,26 +101,6 @@ public class DiscreteMultiPortInstanceEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances());
 
 	}
 

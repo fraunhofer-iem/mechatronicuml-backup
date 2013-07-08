@@ -18,31 +18,11 @@ public class DataTypeEditor
 	 */
 	public void initialize() {
 
-		addCommentableElementCommentEditor(null, true);
-
 		addNamedElementNameEditor(null, true);
 
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment());
-
-	}
 	/**
 	 * @generated
 	 */
