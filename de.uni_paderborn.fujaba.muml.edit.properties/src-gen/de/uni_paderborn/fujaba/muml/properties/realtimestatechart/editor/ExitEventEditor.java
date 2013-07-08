@@ -11,6 +11,7 @@ public class ExitEventEditor
 	 * @generated
 	 */
 	public ExitEventEditor() {
+
 	}
 
 	/**

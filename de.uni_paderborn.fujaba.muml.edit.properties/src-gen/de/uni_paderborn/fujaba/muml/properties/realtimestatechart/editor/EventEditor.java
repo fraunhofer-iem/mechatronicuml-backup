@@ -11,6 +11,10 @@ public class EventEditor
 	 * @generated
 	 */
 	public EventEditor() {
+		super(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+
 	}
 
 	/**
@@ -35,6 +39,7 @@ public class EventEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createEventKindEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getEvent_Kind());
 

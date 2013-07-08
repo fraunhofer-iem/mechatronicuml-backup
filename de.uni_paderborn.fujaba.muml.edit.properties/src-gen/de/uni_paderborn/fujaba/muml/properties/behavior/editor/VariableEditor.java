@@ -11,6 +11,7 @@ public class VariableEditor
 	 * @generated
 	 */
 	public VariableEditor() {
+
 	}
 
 	/**
@@ -39,6 +40,7 @@ public class VariableEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createVariableInitializeExpressionEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getVariable_InitializeExpression());
 
@@ -55,6 +57,7 @@ public class VariableEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
 

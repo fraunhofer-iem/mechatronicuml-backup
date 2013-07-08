@@ -11,6 +11,7 @@ public class DirectedTypedPortEditor
 	 * @generated
 	 */
 	public DirectedTypedPortEditor() {
+
 	}
 
 	/**
@@ -44,6 +45,7 @@ public class DirectedTypedPortEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortKindEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_Kind());
 
@@ -62,6 +64,7 @@ public class DirectedTypedPortEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortOptionalEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_Optional());
 
@@ -80,6 +83,7 @@ public class DirectedTypedPortEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortOutPortEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_OutPort());
 
@@ -98,6 +102,7 @@ public class DirectedTypedPortEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortInPortEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_InPort());
 
@@ -114,6 +119,7 @@ public class DirectedTypedPortEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
 

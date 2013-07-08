@@ -11,6 +11,7 @@ public class ClockEditor
 	 * @generated
 	 */
 	public ClockEditor() {
+
 	}
 
 	/**

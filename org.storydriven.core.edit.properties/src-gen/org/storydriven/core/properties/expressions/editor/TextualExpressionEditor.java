@@ -11,6 +11,7 @@ public class TextualExpressionEditor
 	 * @generated
 	 */
 	public TextualExpressionEditor() {
+
 	}
 
 	/**
@@ -41,6 +42,7 @@ public class TextualExpressionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionExpressionTextEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_ExpressionText());
 
@@ -59,6 +61,7 @@ public class TextualExpressionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionLanguageEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_Language());
 
@@ -77,6 +80,7 @@ public class TextualExpressionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionLanguageVersionEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_LanguageVersion());
 

@@ -11,6 +11,7 @@ public class VertexEditor
 	 * @generated
 	 */
 	public VertexEditor() {
+
 	}
 
 	/**

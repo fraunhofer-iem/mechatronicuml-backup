@@ -11,6 +11,10 @@ public class NaturalNumberEditor
 	 * @generated
 	 */
 	public NaturalNumberEditor() {
+		super(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+
 	}
 
 	/**
@@ -37,6 +41,7 @@ public class NaturalNumberEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNaturalNumberValueEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getNaturalNumber_Value());
 
@@ -54,6 +59,7 @@ public class NaturalNumberEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNaturalNumberInfinityEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getNaturalNumber_Infinity());
 

@@ -1,5 +1,7 @@
 package de.fujaba.properties.runtime.editors;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
+
 
 /**
  * This ClassPropertyEditor is contained within an ObjectPropertyEditor and is
@@ -10,10 +12,15 @@ package de.fujaba.properties.runtime.editors;
  * 
  */
 public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
+	
+
+	public ClassPropertyEditor(AdapterFactory adapterFactory) {
+		super(adapterFactory);
+	}
 
 	public CategoryPropertyEditor addSubCategory(String key, String title,
 			int orientation) {
-		CategoryPropertyEditor category = new CategoryPropertyEditor(
+		CategoryPropertyEditor category = new CategoryPropertyEditor(adapterFactory,
 				orientation, title);
 		addPropertyEditor(key, category, false);
 		return category;

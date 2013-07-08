@@ -30,10 +30,12 @@ mapping inout PropertyGenerator::generator() {
 			"org.eclipse.emf.ecore",
 			"org.eclipse.emf.edit",
 			"de.fujaba.properties.runtime",
-			genModel.modelPluginID
+			genModel.modelPluginID,
+			genModel.editPluginID
 		};
 		self.referencedGenerators.genModel->forEach(g) {
-			plugin.requiredBundles += g.modelPluginID + '.edit.properties'
+			plugin.requiredBundles += g.editPluginID;
+			plugin.requiredBundles += g.modelPluginID + '.edit.properties';
 		};
 		
 		-- there must be at least one tab

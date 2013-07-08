@@ -1,5 +1,6 @@
 package de.fujaba.properties.runtime.editors;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
@@ -23,5 +24,7 @@ public interface IPropertyEditor {
 	void setTab(String tab);
 	
 	ObjectPropertySection getPropertySection();
+	
+	AdapterFactory getAdapterFactory();
 
 }

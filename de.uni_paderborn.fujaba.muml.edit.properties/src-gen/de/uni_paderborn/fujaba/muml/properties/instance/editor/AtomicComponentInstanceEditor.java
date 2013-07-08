@@ -11,6 +11,7 @@ public class AtomicComponentInstanceEditor
 	 * @generated
 	 */
 	public AtomicComponentInstanceEditor() {
+
 	}
 
 	/**

@@ -11,6 +11,7 @@ public class VerifiableConstraintEditor
 	 * @generated
 	 */
 	public VerifiableConstraintEditor() {
+
 	}
 
 	/**

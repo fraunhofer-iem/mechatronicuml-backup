@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
@@ -68,6 +69,8 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	// The shared instance
 	private static RuntimePlugin plugin;
 
+	public static AdapterFactory DEFAULT_ADAPTER_FACTORY;
+
 	/**
 	 * The constructor
 	 */
@@ -113,6 +116,12 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		super.start(context);
 		plugin = this;
 		getPropertyEditorFactoriesMap();
+
+		// Create default adapter factory
+		List<AdapterFactory> factories = new ArrayList<AdapterFactory>();
+		factories.add(new org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory());
+		factories.add(new org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory());
+		DEFAULT_ADAPTER_FACTORY = new ComposedAdapterFactory(factories);
 	}
 
 	/*
@@ -124,6 +133,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	 */
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
+		DEFAULT_ADAPTER_FACTORY = null;
 		super.stop(context);
 	}
 

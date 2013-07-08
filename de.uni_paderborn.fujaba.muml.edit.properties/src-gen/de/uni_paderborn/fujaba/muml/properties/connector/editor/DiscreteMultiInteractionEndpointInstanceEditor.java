@@ -11,6 +11,7 @@ public class DiscreteMultiInteractionEndpointInstanceEditor
 	 * @generated
 	 */
 	public DiscreteMultiInteractionEndpointInstanceEditor() {
+
 	}
 
 	/**
@@ -40,6 +41,7 @@ public class DiscreteMultiInteractionEndpointInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances());
 

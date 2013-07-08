@@ -8,6 +8,7 @@
     <requiredBundles>de.fujaba.properties.runtime</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.storydriven.core</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
   </plugin>
   <tabs id="base" name="Base"/>
   <packages>

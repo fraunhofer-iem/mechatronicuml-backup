@@ -11,6 +11,7 @@ public class ParameterBindingEditor
 	 * @generated
 	 */
 	public ParameterBindingEditor() {
+
 	}
 
 	/**
@@ -36,6 +37,7 @@ public class ParameterBindingEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingValueEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getParameterBinding_Value());
 

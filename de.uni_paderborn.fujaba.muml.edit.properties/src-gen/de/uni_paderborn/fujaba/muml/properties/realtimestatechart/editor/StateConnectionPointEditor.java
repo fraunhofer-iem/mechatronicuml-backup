@@ -11,6 +11,7 @@ public class StateConnectionPointEditor
 	 * @generated
 	 */
 	public StateConnectionPointEditor() {
+
 	}
 
 	/**

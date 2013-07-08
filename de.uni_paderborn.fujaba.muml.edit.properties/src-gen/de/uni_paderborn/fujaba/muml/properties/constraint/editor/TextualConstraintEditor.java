@@ -11,6 +11,7 @@ public class TextualConstraintEditor
 	 * @generated
 	 */
 	public TextualConstraintEditor() {
+
 	}
 
 	/**
@@ -43,6 +44,7 @@ public class TextualConstraintEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTextualConstraintTextualExpressionEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getTextualConstraint_TextualExpression());
 
@@ -60,6 +62,7 @@ public class TextualConstraintEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstraintCorrectnessEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstraint_Correctness());
 
@@ -76,6 +79,7 @@ public class TextualConstraintEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstraintBackgroundEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstraint_Background());
 
@@ -92,6 +96,7 @@ public class TextualConstraintEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstraintCorrectEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstraint_Correct());
 

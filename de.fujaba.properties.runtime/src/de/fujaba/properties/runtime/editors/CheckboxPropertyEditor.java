@@ -1,5 +1,6 @@
 package de.fujaba.properties.runtime.editors;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -17,8 +18,8 @@ public class CheckboxPropertyEditor extends
 	
 	private Button checkbox;
 
-	public CheckboxPropertyEditor(EStructuralFeature feature) {
-		super(feature);
+	public CheckboxPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
+		super(adapterFactory, feature);
 	}
 
 	@Override

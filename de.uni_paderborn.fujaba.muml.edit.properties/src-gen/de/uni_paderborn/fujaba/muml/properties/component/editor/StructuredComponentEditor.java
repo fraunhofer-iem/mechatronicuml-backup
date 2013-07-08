@@ -11,6 +11,7 @@ public class StructuredComponentEditor
 	 * @generated
 	 */
 	public StructuredComponentEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class StructuredComponentEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentConnectorsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getStructuredComponent_Connectors());
 

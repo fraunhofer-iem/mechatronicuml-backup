@@ -12,10 +12,15 @@
 
 «FOREACH packages.classes AS class»
 «FILE sourceFolder + "/" + class.genQualifiedEditorName().replaceAll('\\.', '/') + '.java'»
-package «class.package.genPackageName() + '.editor'»;
+package «class.package.genPackageName()».editor;
 «EXPAND editor::Editor::ClassEditor FOR class»
 «ENDFILE»
 «ENDFOREACH»
+
+«FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/util/PropertiesUtil.java"»
+package «genPluginId()».util;
+«EXPAND util::Utility::Utility»
+«ENDFILE»
 «ENDDEFINE»
 
 «DEFINE ClassEditor FOR Class»

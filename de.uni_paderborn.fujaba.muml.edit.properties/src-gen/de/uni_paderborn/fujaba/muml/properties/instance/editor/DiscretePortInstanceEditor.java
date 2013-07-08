@@ -11,6 +11,7 @@ public class DiscretePortInstanceEditor
 	 * @generated
 	 */
 	public DiscretePortInstanceEditor() {
+
 	}
 
 	/**
@@ -49,6 +50,7 @@ public class DiscretePortInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortInstanceReceiverMessageTypesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getDiscretePortInstance_ReceiverMessageTypes());
 
@@ -67,6 +69,7 @@ public class DiscretePortInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortInstanceSenderMessageTypesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getDiscretePortInstance_SenderMessageTypes());
 
@@ -85,6 +88,7 @@ public class DiscretePortInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortInstanceReceiverMessageBufferEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getDiscretePortInstance_ReceiverMessageBuffer());
 
@@ -103,6 +107,7 @@ public class DiscretePortInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPortInstancePortConnectorInstancesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getPortInstance_PortConnectorInstances());
 
@@ -122,6 +127,7 @@ public class DiscretePortInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointInstanceConnectorInstancesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorEndpointInstance_ConnectorInstances());
 
@@ -138,6 +144,7 @@ public class DiscretePortInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
 
@@ -156,6 +163,7 @@ public class DiscretePortInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
 

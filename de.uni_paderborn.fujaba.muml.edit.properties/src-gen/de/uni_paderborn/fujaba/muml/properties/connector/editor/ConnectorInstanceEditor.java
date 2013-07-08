@@ -11,6 +11,7 @@ public class ConnectorInstanceEditor
 	 * @generated
 	 */
 	public ConnectorInstanceEditor() {
+
 	}
 
 	/**
@@ -38,6 +39,7 @@ public class ConnectorInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorInstanceConnectorEndpointInstancesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorInstance_ConnectorEndpointInstances());
 

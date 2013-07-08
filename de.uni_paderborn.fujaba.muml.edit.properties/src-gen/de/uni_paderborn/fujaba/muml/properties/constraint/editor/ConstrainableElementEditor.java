@@ -11,6 +11,10 @@ public class ConstrainableElementEditor
 	 * @generated
 	 */
 	public ConstrainableElementEditor() {
+		super(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+
 	}
 
 	/**
@@ -37,6 +41,7 @@ public class ConstrainableElementEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstrainableElement_Constraint());
 

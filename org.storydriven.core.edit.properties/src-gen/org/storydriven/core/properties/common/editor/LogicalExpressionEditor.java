@@ -11,6 +11,7 @@ public class LogicalExpressionEditor
 	 * @generated
 	 */
 	public LogicalExpressionEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class LogicalExpressionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createLogicalExpressionOperatorEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getLogicalExpression_Operator());
 

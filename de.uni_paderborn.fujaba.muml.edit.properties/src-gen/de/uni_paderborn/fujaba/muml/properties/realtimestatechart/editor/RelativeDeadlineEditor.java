@@ -11,6 +11,7 @@ public class RelativeDeadlineEditor
 	 * @generated
 	 */
 	public RelativeDeadlineEditor() {
+
 	}
 
 	/**

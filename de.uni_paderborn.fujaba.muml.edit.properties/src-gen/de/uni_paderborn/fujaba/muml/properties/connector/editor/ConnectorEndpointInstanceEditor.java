@@ -11,6 +11,7 @@ public class ConnectorEndpointInstanceEditor
 	 * @generated
 	 */
 	public ConnectorEndpointInstanceEditor() {
+
 	}
 
 	/**
@@ -40,6 +41,7 @@ public class ConnectorEndpointInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointInstanceConnectorInstancesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorEndpointInstance_ConnectorInstances());
 
@@ -58,6 +60,7 @@ public class ConnectorEndpointInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
 

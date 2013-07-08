@@ -11,6 +11,7 @@ public class ContinuousPortInstanceEditor
 	 * @generated
 	 */
 	public ContinuousPortInstanceEditor() {
+
 	}
 
 	/**

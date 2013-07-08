@@ -11,6 +11,7 @@ public class TimeValueEditor
 	 * @generated
 	 */
 	public TimeValueEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class TimeValueEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueValueEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getTimeValue_Value());
 
@@ -53,6 +55,7 @@ public class TimeValueEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueUnitEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getTimeValue_Unit());
 

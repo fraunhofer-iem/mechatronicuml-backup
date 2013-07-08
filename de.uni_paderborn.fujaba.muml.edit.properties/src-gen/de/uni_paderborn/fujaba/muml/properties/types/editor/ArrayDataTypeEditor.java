@@ -11,6 +11,7 @@ public class ArrayDataTypeEditor
 	 * @generated
 	 */
 	public ArrayDataTypeEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class ArrayDataTypeEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createArrayDataTypeCardinalityEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
 						.getArrayDataType_Cardinality());
 

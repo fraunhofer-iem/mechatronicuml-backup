@@ -11,6 +11,7 @@ public class CoordinationProtocolInstanceEditor
 	 * @generated
 	 */
 	public CoordinationProtocolInstanceEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class CoordinationProtocolInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolInstancePortInstancesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getCoordinationProtocolInstance_PortInstances());
 

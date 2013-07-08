@@ -11,6 +11,10 @@ public class ClockConstraintEditor
 	 * @generated
 	 */
 	public ClockConstraintEditor() {
+		super(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+
 	}
 
 	/**
@@ -37,6 +41,7 @@ public class ClockConstraintEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createClockConstraintBoundEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getClockConstraint_Bound());
 
@@ -55,6 +60,7 @@ public class ClockConstraintEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createClockConstraintOperatorEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getClockConstraint_Operator());
 

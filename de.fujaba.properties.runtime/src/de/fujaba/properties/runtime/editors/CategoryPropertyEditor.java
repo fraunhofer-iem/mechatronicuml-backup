@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
@@ -46,8 +47,8 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	 * Constructs this CategoryPropertyEditor without title support.
 	 * 
 	 */
-	public CategoryPropertyEditor() {
-		this(SWT.VERTICAL, null);
+	public CategoryPropertyEditor(AdapterFactory adapterFactory) {
+		this(adapterFactory, SWT.VERTICAL, null);
 	}
 
 	/**
@@ -60,7 +61,8 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	 * @param orientation
 	 *            The orientation, can be SWT.HORIZONTAL or SWT.VERTICAL.
 	 */
-	public CategoryPropertyEditor(int orientation, String title) {
+	public CategoryPropertyEditor(AdapterFactory adapterFactory, int orientation, String title) {
+		super(adapterFactory);
 		this.orientation = orientation;
 		this.title = title;
 		initialize();

@@ -11,6 +11,7 @@ public class CoordinationProtocolOccurrenceEditor
 	 * @generated
 	 */
 	public CoordinationProtocolOccurrenceEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class CoordinationProtocolOccurrenceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolOccurrencePortPartsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getCoordinationProtocolOccurrence_PortParts());
 

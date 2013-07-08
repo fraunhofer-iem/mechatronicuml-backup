@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EObject;
@@ -32,7 +33,8 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		}
 	};
 
-	public AbstractStructuralFeaturePropertyEditor(EStructuralFeature feature) {
+	public AbstractStructuralFeaturePropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
+		super(adapterFactory);
 		this.feature = feature;
 	}
 

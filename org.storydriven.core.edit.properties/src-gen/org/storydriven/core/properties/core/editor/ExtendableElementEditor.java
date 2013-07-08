@@ -11,6 +11,9 @@ public class ExtendableElementEditor
 	 * @generated
 	 */
 	public ExtendableElementEditor() {
+		super(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+				.getAdapterFactory());
+
 	}
 
 	/**

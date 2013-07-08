@@ -11,6 +11,10 @@ public class DeadlineEditor
 	 * @generated
 	 */
 	public DeadlineEditor() {
+		super(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+
 	}
 
 	/**
@@ -37,6 +41,7 @@ public class DeadlineEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDeadlineUpperBoundEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDeadline_UpperBound());
 
@@ -53,6 +58,7 @@ public class DeadlineEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDeadlineLowerBoundEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDeadline_LowerBound());
 

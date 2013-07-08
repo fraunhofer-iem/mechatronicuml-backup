@@ -11,6 +11,7 @@ public class DelegationConnectorInstanceEditor
 	 * @generated
 	 */
 	public DelegationConnectorInstanceEditor() {
+
 	}
 
 	/**

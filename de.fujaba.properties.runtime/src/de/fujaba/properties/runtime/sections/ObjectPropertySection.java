@@ -27,7 +27,7 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	}
 
 	protected ObjectPropertyEditor createObjectPropertyEditor() {
-		return new ObjectPropertyEditor("null");
+		return new ObjectPropertyEditor(null, "null");
 	}
 
 	public void createControls(Composite parent,

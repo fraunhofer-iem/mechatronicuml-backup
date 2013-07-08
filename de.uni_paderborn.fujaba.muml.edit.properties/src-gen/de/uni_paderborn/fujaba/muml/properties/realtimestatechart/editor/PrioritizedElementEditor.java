@@ -11,6 +11,10 @@ public class PrioritizedElementEditor
 	 * @generated
 	 */
 	public PrioritizedElementEditor() {
+		super(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+
 	}
 
 	/**
@@ -37,6 +41,7 @@ public class PrioritizedElementEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getPrioritizedElement_Priority());
 

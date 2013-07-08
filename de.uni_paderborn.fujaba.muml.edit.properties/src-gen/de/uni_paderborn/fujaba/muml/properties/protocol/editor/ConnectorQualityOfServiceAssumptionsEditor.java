@@ -11,6 +11,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 * @generated
 	 */
 	public ConnectorQualityOfServiceAssumptionsEditor() {
+
 	}
 
 	/**
@@ -46,6 +47,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMinMessageDelayEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions_MinMessageDelay());
 
@@ -66,6 +68,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions_MaxMessageDelay());
 
@@ -86,6 +89,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions_MessageLossPossible());
 

@@ -11,6 +11,7 @@ public class HybridPortInstanceEditor
 	 * @generated
 	 */
 	public HybridPortInstanceEditor() {
+
 	}
 
 	/**

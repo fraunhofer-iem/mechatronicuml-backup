@@ -11,6 +11,7 @@ public class PrimitiveDataTypeEditor
 	 * @generated
 	 */
 	public PrimitiveDataTypeEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class PrimitiveDataTypeEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrimitiveDataTypePrimitiveTypeEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
 						.getPrimitiveDataType_PrimitiveType());
 

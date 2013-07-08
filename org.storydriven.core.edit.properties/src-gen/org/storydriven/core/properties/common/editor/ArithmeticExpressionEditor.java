@@ -11,6 +11,7 @@ public class ArithmeticExpressionEditor
 	 * @generated
 	 */
 	public ArithmeticExpressionEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class ArithmeticExpressionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createArithmeticExpressionOperatorEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getArithmeticExpression_Operator());
 

@@ -11,6 +11,7 @@ public class MessageBufferEditor
 	 * @generated
 	 */
 	public MessageBufferEditor() {
+
 	}
 
 	/**
@@ -41,6 +42,7 @@ public class MessageBufferEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageBufferBufferSizeEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getMessageBuffer_BufferSize());
 
@@ -59,6 +61,7 @@ public class MessageBufferEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageBufferMessageTypeEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getMessageBuffer_MessageType());
 
@@ -77,6 +80,7 @@ public class MessageBufferEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
 

@@ -11,6 +11,7 @@ public class ExtensionEditor
 	 * @generated
 	 */
 	public ExtensionEditor() {
+
 	}
 
 	/**

@@ -11,6 +11,7 @@ public class CoordinationProtocolEditor
 	 * @generated
 	 */
 	public CoordinationProtocolEditor() {
+
 	}
 
 	/**

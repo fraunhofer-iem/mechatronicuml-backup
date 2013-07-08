@@ -11,6 +11,7 @@ public class EntryPointEditor
 	 * @generated
 	 */
 	public EntryPointEditor() {
+
 	}
 
 	/**

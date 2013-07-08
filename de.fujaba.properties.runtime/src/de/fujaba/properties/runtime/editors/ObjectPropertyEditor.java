@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.swt.SWT;
@@ -21,8 +22,8 @@ import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
  */
 public class ObjectPropertyEditor extends CategoryPropertyEditor {
 
-	public ObjectPropertyEditor(String title) {
-		super(SWT.VERTICAL, title);
+	public ObjectPropertyEditor(AdapterFactory adapterFactory, String title) {
+		super(adapterFactory, SWT.VERTICAL, title);
 		
 	}
 

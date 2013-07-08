@@ -11,6 +11,7 @@ public class ComponentInstanceConfigurationEditor
 	 * @generated
 	 */
 	public ComponentInstanceConfigurationEditor() {
+
 	}
 
 	/**
@@ -43,6 +44,7 @@ public class ComponentInstanceConfigurationEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceConfigurationComponentInstancesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstanceConfiguration_ComponentInstances());
 
@@ -63,6 +65,7 @@ public class ComponentInstanceConfigurationEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceConfigurationPortConnectorInstancesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstanceConfiguration_PortConnectorInstances());
 
@@ -81,6 +84,7 @@ public class ComponentInstanceConfigurationEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
 

@@ -1,5 +1,6 @@
 package de.fujaba.properties.runtime.editors;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
@@ -10,13 +11,11 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
-import de.fujaba.properties.runtime.RuntimePlugin;
-
 public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	protected Text text;
 
-	public TextPropertyEditor(EStructuralFeature feature) {
-		super(feature);
+	public TextPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
+		super(adapterFactory, feature);
 	}
 
 	@Override

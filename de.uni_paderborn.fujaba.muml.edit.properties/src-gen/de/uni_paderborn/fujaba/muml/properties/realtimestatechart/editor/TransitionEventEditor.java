@@ -11,6 +11,7 @@ public class TransitionEventEditor
 	 * @generated
 	 */
 	public TransitionEventEditor() {
+
 	}
 
 	/**

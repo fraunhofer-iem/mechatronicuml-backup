@@ -11,6 +11,7 @@ public class RealtimeStatechartEditor
 	 * @generated
 	 */
 	public RealtimeStatechartEditor() {
+
 	}
 
 	/**
@@ -53,6 +54,7 @@ public class RealtimeStatechartEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartTransitionsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_Transitions());
 
@@ -71,6 +73,7 @@ public class RealtimeStatechartEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartStatesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_States());
 
@@ -89,6 +92,7 @@ public class RealtimeStatechartEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartClocksEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_Clocks());
 
@@ -107,6 +111,7 @@ public class RealtimeStatechartEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartFlatEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_Flat());
 
@@ -125,6 +130,7 @@ public class RealtimeStatechartEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartEmbeddedEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_Embedded());
 
@@ -143,6 +149,7 @@ public class RealtimeStatechartEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartAllAvailableVariablesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_AllAvailableVariables());
 
@@ -161,6 +168,7 @@ public class RealtimeStatechartEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartAllAvailableOperationsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_AllAvailableOperations());
 
@@ -177,6 +185,7 @@ public class RealtimeStatechartEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
 
@@ -195,6 +204,7 @@ public class RealtimeStatechartEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
 

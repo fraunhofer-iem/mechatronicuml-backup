@@ -11,6 +11,7 @@ public class SynchronizationEditor
 	 * @generated
 	 */
 	public SynchronizationEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class SynchronizationEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationKindEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronization_Kind());
 
@@ -55,6 +57,7 @@ public class SynchronizationEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationSelectorExpressionEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronization_SelectorExpression());
 

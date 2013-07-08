@@ -11,6 +11,7 @@ public class RoleConnectorEditor
 	 * @generated
 	 */
 	public RoleConnectorEditor() {
+
 	}
 
 	/**
@@ -41,6 +42,7 @@ public class RoleConnectorEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRoleConnectorConnectorQualityOfServiceAssumptionsEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getRoleConnector_ConnectorQualityOfServiceAssumptions());
 
@@ -57,6 +59,7 @@ public class RoleConnectorEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRoleConnectorRolesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getRoleConnector_Roles());
 

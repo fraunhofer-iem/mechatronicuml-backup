@@ -11,6 +11,7 @@ public class BinaryExpressionEditor
 	 * @generated
 	 */
 	public BinaryExpressionEditor() {
+
 	}
 
 	/**

@@ -11,6 +11,7 @@ public class ParameterEditor
 	 * @generated
 	 */
 	public ParameterEditor() {
+
 	}
 
 	/**
@@ -35,6 +36,7 @@ public class ParameterEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
 

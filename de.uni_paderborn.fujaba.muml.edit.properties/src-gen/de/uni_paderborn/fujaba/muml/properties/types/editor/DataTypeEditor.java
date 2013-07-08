@@ -11,6 +11,7 @@ public class DataTypeEditor
 	 * @generated
 	 */
 	public DataTypeEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class DataTypeEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
 

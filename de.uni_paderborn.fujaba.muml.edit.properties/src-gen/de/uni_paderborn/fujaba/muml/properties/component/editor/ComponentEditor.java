@@ -11,6 +11,7 @@ public class ComponentEditor
 	 * @generated
 	 */
 	public ComponentEditor() {
+
 	}
 
 	/**
@@ -41,6 +42,7 @@ public class ComponentEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentPortsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponent_Ports());
 
@@ -59,6 +61,7 @@ public class ComponentEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentTypeEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponent_ComponentType());
 
@@ -75,6 +78,7 @@ public class ComponentEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
 
@@ -93,6 +97,7 @@ public class ComponentEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
 

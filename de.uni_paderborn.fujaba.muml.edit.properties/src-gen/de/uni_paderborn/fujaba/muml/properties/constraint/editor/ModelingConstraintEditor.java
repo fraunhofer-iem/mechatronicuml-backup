@@ -11,6 +11,7 @@ public class ModelingConstraintEditor
 	 * @generated
 	 */
 	public ModelingConstraintEditor() {
+
 	}
 
 	/**

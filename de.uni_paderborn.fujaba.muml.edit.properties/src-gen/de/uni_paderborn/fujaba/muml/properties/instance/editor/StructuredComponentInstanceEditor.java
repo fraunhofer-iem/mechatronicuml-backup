@@ -11,6 +11,7 @@ public class StructuredComponentInstanceEditor
 	 * @generated
 	 */
 	public StructuredComponentInstanceEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class StructuredComponentInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentInstanceEmbeddedCICEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getStructuredComponentInstance_EmbeddedCIC());
 

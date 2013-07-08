@@ -11,6 +11,7 @@ public class ExpressionEditor
 	 * @generated
 	 */
 	public ExpressionEditor() {
+
 	}
 
 	/**

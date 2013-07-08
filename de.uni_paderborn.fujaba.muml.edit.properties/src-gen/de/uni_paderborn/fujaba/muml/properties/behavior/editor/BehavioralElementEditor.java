@@ -11,6 +11,10 @@ public class BehavioralElementEditor
 	 * @generated
 	 */
 	public BehavioralElementEditor() {
+		super(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+
 	}
 
 	/**

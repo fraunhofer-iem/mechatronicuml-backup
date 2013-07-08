@@ -11,6 +11,7 @@ public class RegionEditor
 	 * @generated
 	 */
 	public RegionEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class RegionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRegionNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRegion_Name());
 
@@ -55,6 +57,7 @@ public class RegionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getPrioritizedElement_Priority());
 

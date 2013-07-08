@@ -11,6 +11,7 @@ public class UnaryExpressionEditor
 	 * @generated
 	 */
 	public UnaryExpressionEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class UnaryExpressionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createUnaryExpressionOperatorEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getUnaryExpression_Operator());
 

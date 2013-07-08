@@ -11,6 +11,7 @@ public class DoEventEditor
 	 * @generated
 	 */
 	public DoEventEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class DoEventEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDoEventActionEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDoEvent_Action());
 
@@ -53,6 +55,7 @@ public class DoEventEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDoEventPeriodEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDoEvent_Period());
 

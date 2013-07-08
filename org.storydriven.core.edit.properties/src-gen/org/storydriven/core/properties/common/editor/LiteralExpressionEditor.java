@@ -11,6 +11,7 @@ public class LiteralExpressionEditor
 	 * @generated
 	 */
 	public LiteralExpressionEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class LiteralExpressionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createLiteralExpressionValueEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getLiteralExpression_Value());
 

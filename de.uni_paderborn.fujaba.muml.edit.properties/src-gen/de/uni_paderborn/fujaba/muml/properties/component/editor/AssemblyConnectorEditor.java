@@ -11,6 +11,7 @@ public class AssemblyConnectorEditor
 	 * @generated
 	 */
 	public AssemblyConnectorEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class AssemblyConnectorEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createAssemblyConnectorPortPartsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getAssemblyConnector_PortParts());
 

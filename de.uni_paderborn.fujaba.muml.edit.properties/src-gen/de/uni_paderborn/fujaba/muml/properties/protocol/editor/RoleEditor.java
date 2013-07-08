@@ -11,6 +11,7 @@ public class RoleEditor
 	 * @generated
 	 */
 	public RoleEditor() {
+
 	}
 
 	/**
@@ -51,6 +52,7 @@ public class RoleEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRoleMultiRoleEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getRole_MultiRole());
 
@@ -70,6 +72,7 @@ public class RoleEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointSenderMessageTypesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_SenderMessageTypes());
 
@@ -89,6 +92,7 @@ public class RoleEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointReceiverMessageTypesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_ReceiverMessageTypes());
 
@@ -107,6 +111,7 @@ public class RoleEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointCardinalityEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_Cardinality());
 
@@ -126,6 +131,7 @@ public class RoleEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointReceiverMessageBufferEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
 
@@ -144,6 +150,7 @@ public class RoleEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstrainableElement_Constraint());
 
@@ -162,6 +169,7 @@ public class RoleEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorEndpoint_Connectors());
 
@@ -178,6 +186,7 @@ public class RoleEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
 
@@ -196,6 +205,7 @@ public class RoleEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
 

@@ -11,6 +11,7 @@ public class ComparisonExpressionEditor
 	 * @generated
 	 */
 	public ComparisonExpressionEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class ComparisonExpressionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComparisonExpressionOperatorEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getComparisonExpression_Operator());
 

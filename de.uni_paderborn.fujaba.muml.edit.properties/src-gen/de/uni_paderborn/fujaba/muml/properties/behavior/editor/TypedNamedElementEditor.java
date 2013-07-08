@@ -11,6 +11,7 @@ public class TypedNamedElementEditor
 	 * @generated
 	 */
 	public TypedNamedElementEditor() {
+
 	}
 
 	/**

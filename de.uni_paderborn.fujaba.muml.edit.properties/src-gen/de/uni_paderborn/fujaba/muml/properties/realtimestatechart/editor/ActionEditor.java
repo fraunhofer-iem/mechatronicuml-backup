@@ -11,6 +11,7 @@ public class ActionEditor
 	 * @generated
 	 */
 	public ActionEditor() {
+
 	}
 
 	/**
@@ -35,6 +36,7 @@ public class ActionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createActionExpressionsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getAction_Expressions());
 

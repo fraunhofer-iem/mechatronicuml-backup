@@ -11,6 +11,7 @@ public class MessageEditor
 	 * @generated
 	 */
 	public MessageEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class MessageEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageParameterBindingEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getMessage_ParameterBinding());
 

@@ -11,6 +11,10 @@ public class CardinalityEditor
 	 * @generated
 	 */
 	public CardinalityEditor() {
+		super(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+
 	}
 
 	/**

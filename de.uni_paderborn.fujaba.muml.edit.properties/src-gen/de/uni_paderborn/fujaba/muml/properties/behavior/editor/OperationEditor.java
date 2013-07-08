@@ -11,6 +11,7 @@ public class OperationEditor
 	 * @generated
 	 */
 	public OperationEditor() {
+
 	}
 
 	/**
@@ -41,6 +42,7 @@ public class OperationEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationImplementationsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getOperation_Implementations());
 
@@ -57,6 +59,7 @@ public class OperationEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationParametersEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getOperation_Parameters());
 
@@ -75,6 +78,7 @@ public class OperationEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
 

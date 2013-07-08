@@ -3,6 +3,7 @@ package de.fujaba.properties.runtime.editors;
 import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -33,15 +34,15 @@ public class NavigationFeaturePropertyEditor extends
 	protected Button buttonRemove;
 	protected ComboViewer classViewer;
 
-	public NavigationFeaturePropertyEditor(EStructuralFeature feature) {
-		super(feature);
+	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
+		super(adapterFactory, feature);
 		Assert.isLegal(!feature.isMany(),
 				"Only features with upperBound = 1 are allowed as navigation feature.");
 		this.navigatedEditor = createNavigatedEditor();
 	}
 
 	protected ObjectPropertyEditor createNavigatedEditor() {
-		return new ObjectPropertyEditor("null");
+		return new ObjectPropertyEditor(adapterFactory, "null");
 	}
 
 	@Override

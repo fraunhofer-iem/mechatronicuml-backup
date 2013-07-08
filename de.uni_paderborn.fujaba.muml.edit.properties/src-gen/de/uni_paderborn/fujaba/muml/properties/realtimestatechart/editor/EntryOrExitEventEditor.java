@@ -11,6 +11,7 @@ public class EntryOrExitEventEditor
 	 * @generated
 	 */
 	public EntryOrExitEventEditor() {
+
 	}
 
 	/**
@@ -39,6 +40,7 @@ public class EntryOrExitEventEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createEntryOrExitEventClockResetsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getEntryOrExitEvent_ClockResets());
 
@@ -57,6 +59,7 @@ public class EntryOrExitEventEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createEntryOrExitEventActionEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getEntryOrExitEvent_Action());
 

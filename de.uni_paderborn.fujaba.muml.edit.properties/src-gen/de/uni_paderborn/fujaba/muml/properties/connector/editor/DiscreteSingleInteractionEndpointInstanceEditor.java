@@ -11,6 +11,7 @@ public class DiscreteSingleInteractionEndpointInstanceEditor
 	 * @generated
 	 */
 	public DiscreteSingleInteractionEndpointInstanceEditor() {
+
 	}
 
 	/**

@@ -11,6 +11,10 @@ public class RangeEditor
 	 * @generated
 	 */
 	public RangeEditor() {
+		super(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+
 	}
 
 	/**
@@ -37,6 +41,7 @@ public class RangeEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRangeLowerBoundEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getRange_LowerBound());
 
@@ -53,6 +58,7 @@ public class RangeEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRangeUpperBoundEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getRange_UpperBound());
 

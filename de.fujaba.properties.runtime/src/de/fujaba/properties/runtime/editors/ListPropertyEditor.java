@@ -1,10 +1,13 @@
 package de.fujaba.properties.runtime.editors;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
-import org.eclipse.jface.viewers.ListViewer;
+import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -19,10 +22,10 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 import de.fujaba.properties.runtime.RuntimePlugin;
 
 public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
-	protected ListViewer listViewer;
+	protected TableViewer tableViewer;
 
-	public ListPropertyEditor(EStructuralFeature feature) {
-		super(feature);
+	public ListPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
+		super(adapterFactory, feature);
 	}
 
 	@Override
@@ -46,24 +49,13 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		listContainer.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		
 		
-		org.eclipse.swt.widgets.List list = toolkit.createList(listContainer,
+		org.eclipse.swt.widgets.Table table = toolkit.createTable(listContainer,
 				SWT.BORDER);
-		list.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		table.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
-		listViewer = new ListViewer(list);
-		listViewer.setContentProvider(ArrayContentProvider.getInstance());
-
-		// TODO: Use AdapterFactoryLabelProvider
-		listViewer.setLabelProvider(new LabelProvider() {
-			@Override
-			public String getText(Object element) {
-				if (element instanceof EObject) {
-					return ((EObject) element).eClass().getName();
-				}
-				return super.getText(element);
-			}
-		});
-		
+		tableViewer = new TableViewer(table);
+		tableViewer.setContentProvider(ArrayContentProvider.getInstance());
+		tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
 		// Button container and buttons
 		Composite buttonContainer = toolkit.createComposite(listContainer);
@@ -124,6 +116,6 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
-		listViewer.setInput(value);
+		tableViewer.setInput(value);
 	}
 }

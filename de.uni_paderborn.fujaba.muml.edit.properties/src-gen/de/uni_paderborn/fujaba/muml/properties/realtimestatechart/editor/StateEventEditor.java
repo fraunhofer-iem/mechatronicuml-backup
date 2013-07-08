@@ -11,6 +11,7 @@ public class StateEventEditor
 	 * @generated
 	 */
 	public StateEventEditor() {
+
 	}
 
 	/**

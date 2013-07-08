@@ -11,6 +11,7 @@ public class PortConnectorInstanceEditor
 	 * @generated
 	 */
 	public PortConnectorInstanceEditor() {
+
 	}
 
 	/**
@@ -37,6 +38,7 @@ public class PortConnectorInstanceEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPortConnectorInstancePortInstancesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getPortConnectorInstance_PortInstances());
 

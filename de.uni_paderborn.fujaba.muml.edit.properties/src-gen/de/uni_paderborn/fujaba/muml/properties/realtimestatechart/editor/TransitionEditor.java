@@ -11,6 +11,7 @@ public class TransitionEditor
 	 * @generated
 	 */
 	public TransitionEditor() {
+
 	}
 
 	/**
@@ -63,6 +64,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionSynchronizationEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Synchronization());
 
@@ -80,6 +82,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionClockResetsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_ClockResets());
 
@@ -98,6 +101,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionClockConstraintsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_ClockConstraints());
 
@@ -116,6 +120,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionAbsoluteDeadlinesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_AbsoluteDeadlines());
 
@@ -134,6 +139,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionRelativeDeadlineEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_RelativeDeadline());
 
@@ -150,6 +156,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionBlockableEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Blockable());
 
@@ -166,6 +173,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionGuardEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Guard());
 
@@ -182,6 +190,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionEventsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Events());
 
@@ -198,6 +207,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionActionEditor() {
 		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Action());
 
@@ -214,6 +224,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionUrgentEditor() {
 		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Urgent());
 
@@ -232,6 +243,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionReceiverMessageTypesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_ReceiverMessageTypes());
 
@@ -250,6 +262,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionSenderMessageTypesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_SenderMessageTypes());
 
@@ -268,6 +281,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
 
@@ -286,6 +300,7 @@ public class TransitionEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getPrioritizedElement_Priority());
 

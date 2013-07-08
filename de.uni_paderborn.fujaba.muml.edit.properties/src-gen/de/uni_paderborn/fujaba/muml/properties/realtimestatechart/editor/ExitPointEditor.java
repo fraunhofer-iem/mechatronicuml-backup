@@ -11,6 +11,7 @@ public class ExitPointEditor
 	 * @generated
 	 */
 	public ExitPointEditor() {
+
 	}
 
 	/**

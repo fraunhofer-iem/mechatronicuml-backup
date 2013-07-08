@@ -11,6 +11,7 @@ public class StaticStructuredComponentEditor
 	 * @generated
 	 */
 	public StaticStructuredComponentEditor() {
+
 	}
 
 	/**

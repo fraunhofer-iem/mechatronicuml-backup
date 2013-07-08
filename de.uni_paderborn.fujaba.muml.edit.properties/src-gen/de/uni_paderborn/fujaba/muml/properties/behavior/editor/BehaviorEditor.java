@@ -11,6 +11,10 @@ public class BehaviorEditor
 	 * @generated
 	 */
 	public BehaviorEditor() {
+		super(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+
 	}
 
 	/**
@@ -37,6 +41,7 @@ public class BehaviorEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createBehaviorOperationsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavior_Operations());
 
@@ -53,6 +58,7 @@ public class BehaviorEditor
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createBehaviorVariablesEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavior_Variables());
 

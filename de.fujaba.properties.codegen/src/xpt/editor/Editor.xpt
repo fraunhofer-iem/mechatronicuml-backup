@@ -24,6 +24,9 @@ public class «genEditorName()» extends «EXPAND extends-» {
 	 * @generated
 	 */
 	public «genEditorName()»() {
+		«IF superClasses.isEmpty-»
+		super(«package.generator.genPluginId()».util.PropertiesUtil.INSTANCE.getAdapterFactory());
+		«ENDIF»
 	}
 
 	/**
@@ -103,18 +106,18 @@ public class «genEditorName()» extends «EXPAND extends-» {
 «ENDDEFINE-»
 
 «DEFINE createEditor(Property property) FOR PropertyEditor-»
-new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(«property.genFeature.genFeatureLiteral()»);
+new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR TextPropertyEditor-»
-new de.fujaba.properties.runtime.editors.TextPropertyEditor(«property.genFeature.genFeatureLiteral()»);
+new de.fujaba.properties.runtime.editors.TextPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR ListPropertyEditor-»
-new de.fujaba.properties.runtime.editors.ListPropertyEditor(«property.genFeature.genFeatureLiteral()»);
+new de.fujaba.properties.runtime.editors.ListPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR ObjectPropertyEditor-»
-new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(«property.genFeature.genFeatureLiteral()»);
+new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 

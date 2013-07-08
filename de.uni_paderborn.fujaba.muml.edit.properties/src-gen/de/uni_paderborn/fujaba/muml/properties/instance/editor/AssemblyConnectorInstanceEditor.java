@@ -11,6 +11,7 @@ public class AssemblyConnectorInstanceEditor
 	 * @generated
 	 */
 	public AssemblyConnectorInstanceEditor() {
+
 	}
 
 	/**
