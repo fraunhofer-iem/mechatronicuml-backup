@@ -17,6 +17,7 @@ import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
 
 import org.eclipse.emf.ecore.EObject;
@@ -133,6 +134,13 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				TextPropertyEditor textPropertyEditor = (TextPropertyEditor)theEObject;
 				T result = caseTextPropertyEditor(textPropertyEditor);
 				if (result == null) result = casePropertyEditor(textPropertyEditor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.SPINNER_PROPERTY_EDITOR: {
+				SpinnerPropertyEditor spinnerPropertyEditor = (SpinnerPropertyEditor)theEObject;
+				T result = caseSpinnerPropertyEditor(spinnerPropertyEditor);
+				if (result == null) result = casePropertyEditor(spinnerPropertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -327,6 +335,21 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTextPropertyEditor(TextPropertyEditor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Spinner Property Editor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Spinner Property Editor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSpinnerPropertyEditor(SpinnerPropertyEditor object) {
 		return null;
 	}
 

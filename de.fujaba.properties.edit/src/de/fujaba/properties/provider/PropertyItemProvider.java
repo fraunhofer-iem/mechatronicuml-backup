@@ -284,6 +284,11 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__EDITOR,
+				 PropertiesFactory.eINSTANCE.createSpinnerPropertyEditor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createComboBoxPropertyEditor()));
 
 		newChildDescriptors.add

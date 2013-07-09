@@ -16,6 +16,7 @@ import de.fujaba.properties.PropertyCategory;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
 
 import org.eclipse.emf.ecore.EClass;
@@ -78,6 +79,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.PROPERTY_CATEGORY: return createPropertyCategory();
 			case PropertiesPackage.PROPERTY: return createProperty();
 			case PropertiesPackage.TEXT_PROPERTY_EDITOR: return createTextPropertyEditor();
+			case PropertiesPackage.SPINNER_PROPERTY_EDITOR: return createSpinnerPropertyEditor();
 			case PropertiesPackage.COMBO_BOX_PROPERTY_EDITOR: return createComboBoxPropertyEditor();
 			case PropertiesPackage.CHECKBOX_PROPERTY_EDITOR: return createCheckboxPropertyEditor();
 			case PropertiesPackage.RADIO_PROPERTY_EDITOR: return createRadioPropertyEditor();
@@ -168,6 +170,16 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public TextPropertyEditor createTextPropertyEditor() {
 		TextPropertyEditorImpl textPropertyEditor = new TextPropertyEditorImpl();
 		return textPropertyEditor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SpinnerPropertyEditor createSpinnerPropertyEditor() {
+		SpinnerPropertyEditorImpl spinnerPropertyEditor = new SpinnerPropertyEditorImpl();
+		return spinnerPropertyEditor;
 	}
 
 	/**

@@ -18,6 +18,7 @@ import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
 
 import de.fujaba.properties.util.PropertiesValidator;
@@ -103,6 +104,13 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * @generated
 	 */
 	private EClass textPropertyEditorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass spinnerPropertyEditorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -652,6 +660,24 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSpinnerPropertyEditor() {
+		return spinnerPropertyEditorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSpinnerPropertyEditor_Digits() {
+		return (EAttribute)spinnerPropertyEditorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComboBoxPropertyEditor() {
 		return comboBoxPropertyEditorEClass;
 	}
@@ -820,6 +846,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		textPropertyEditorEClass = createEClass(TEXT_PROPERTY_EDITOR);
 		createEAttribute(textPropertyEditorEClass, TEXT_PROPERTY_EDITOR__MULTI_LINE);
 
+		spinnerPropertyEditorEClass = createEClass(SPINNER_PROPERTY_EDITOR);
+		createEAttribute(spinnerPropertyEditorEClass, SPINNER_PROPERTY_EDITOR__DIGITS);
+
 		comboBoxPropertyEditorEClass = createEClass(COMBO_BOX_PROPERTY_EDITOR);
 
 		checkboxPropertyEditorEClass = createEClass(CHECKBOX_PROPERTY_EDITOR);
@@ -872,6 +901,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		// Add supertypes to classes
 		textPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
+		spinnerPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		comboBoxPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		checkboxPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		radioPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
@@ -937,6 +967,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		initEClass(textPropertyEditorEClass, TextPropertyEditor.class, "TextPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTextPropertyEditor_MultiLine(), theEcorePackage.getEBoolean(), "multiLine", null, 1, 1, TextPropertyEditor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(spinnerPropertyEditorEClass, SpinnerPropertyEditor.class, "SpinnerPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSpinnerPropertyEditor_Digits(), theEcorePackage.getEInt(), "digits", "0", 1, 1, SpinnerPropertyEditor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(comboBoxPropertyEditorEClass, ComboBoxPropertyEditor.class, "ComboBoxPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

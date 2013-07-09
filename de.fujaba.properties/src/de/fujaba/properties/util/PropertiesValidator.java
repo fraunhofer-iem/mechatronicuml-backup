@@ -17,6 +17,7 @@ import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
 
 import java.util.Map;
@@ -119,6 +120,8 @@ public class PropertiesValidator extends EObjectValidator {
 				return validatePropertyEditor((PropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.TEXT_PROPERTY_EDITOR:
 				return validateTextPropertyEditor((TextPropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.SPINNER_PROPERTY_EDITOR:
+				return validateSpinnerPropertyEditor((SpinnerPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.COMBO_BOX_PROPERTY_EDITOR:
 				return validateComboBoxPropertyEditor((ComboBoxPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.CHECKBOX_PROPERTY_EDITOR:
@@ -404,6 +407,15 @@ public class PropertiesValidator extends EObjectValidator {
 	 */
 	public boolean validateTextPropertyEditor(TextPropertyEditor textPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(textPropertyEditor, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSpinnerPropertyEditor(SpinnerPropertyEditor spinnerPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(spinnerPropertyEditor, diagnostics, context);
 	}
 
 	/**

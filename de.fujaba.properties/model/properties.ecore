@@ -125,6 +125,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiLine" lowerBound="1"
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpinnerPropertyEditor" eSuperTypes="#//PropertyEditor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="digits" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComboBoxPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="CheckboxPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="RadioPropertyEditor" eSuperTypes="#//PropertyEditor"/>

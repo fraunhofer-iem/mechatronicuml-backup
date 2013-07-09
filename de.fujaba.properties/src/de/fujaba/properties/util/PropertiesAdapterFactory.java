@@ -17,6 +17,7 @@ import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -117,6 +118,10 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTextPropertyEditor(TextPropertyEditor object) {
 				return createTextPropertyEditorAdapter();
+			}
+			@Override
+			public Adapter caseSpinnerPropertyEditor(SpinnerPropertyEditor object) {
+				return createSpinnerPropertyEditorAdapter();
 			}
 			@Override
 			public Adapter caseComboBoxPropertyEditor(ComboBoxPropertyEditor object) {
@@ -293,6 +298,20 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTextPropertyEditorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.SpinnerPropertyEditor <em>Spinner Property Editor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fujaba.properties.SpinnerPropertyEditor
+	 * @generated
+	 */
+	public Adapter createSpinnerPropertyEditorAdapter() {
 		return null;
 	}
 

@@ -94,6 +94,15 @@ public interface PropertiesFactory extends EFactory {
 	TextPropertyEditor createTextPropertyEditor();
 
 	/**
+	 * Returns a new object of class '<em>Spinner Property Editor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Spinner Property Editor</em>'.
+	 * @generated
+	 */
+	SpinnerPropertyEditor createSpinnerPropertyEditor();
+
+	/**
 	 * Returns a new object of class '<em>Combo Box Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

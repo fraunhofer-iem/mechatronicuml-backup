@@ -63,6 +63,9 @@
     <genClasses ecoreClass="properties.ecore#//TextPropertyEditor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//TextPropertyEditor/multiLine"/>
     </genClasses>
+    <genClasses ecoreClass="properties.ecore#//SpinnerPropertyEditor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//SpinnerPropertyEditor/digits"/>
+    </genClasses>
     <genClasses ecoreClass="properties.ecore#//ComboBoxPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//CheckboxPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//RadioPropertyEditor"/>

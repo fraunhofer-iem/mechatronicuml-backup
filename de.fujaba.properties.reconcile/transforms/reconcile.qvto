@@ -133,6 +133,7 @@ mapping GenFeature::section() : PropertyEditor
 	GenFeature::listSection, 
 	GenFeature::radioSection,
 	GenFeature::objectSection,
+	GenFeature::spinnerSection,
 	GenFeature::textSection;
 
 
@@ -152,9 +153,18 @@ mapping GenFeature::objectSection() : ObjectPropertyEditor when {self.ecoreFeatu
 }
 
 
+mapping GenFeature::spinnerSection() : SpinnerPropertyEditor when {self.ecoreFeature.oclIsKindOf(EAttribute) and (self.ecoreFeature.eType.name = 'EInt' or self.ecoreFeature.eType.name = 'EDouble'  or self.ecoreFeature.eType.name = 'EFloat') } {
+	digits := 0;
+	if (self.ecoreFeature.eType.name = 'EDouble'  or self.ecoreFeature.eType.name = 'EFloat') then {
+		digits := 3;
+	} endif;
+}
+
+
 mapping GenFeature::textSection() : TextPropertyEditor when {self.ecoreFeature.oclIsKindOf(EAttribute) and self.ecoreFeature.eType.name != 'EBoolean' and not self.ecoreFeature.eType.oclIsKindOf(EEnum) } {
 	multiLine := self.propertyMultiLine;
 }
+
 
 query GenPackage::shouldGenerate() : Boolean {
 	return not self.genClassifiers->select(shouldGenerate())->isEmpty();
@@ -166,7 +176,7 @@ query GenClass::shouldGenerate() : Boolean {
 	return true;
 }
 query GenFeature::shouldGenerate() : Boolean {
-	return self._property != GenPropertyKind::None;
+	return self._property != GenPropertyKind::None and self.ecoreFeature.changeable;
 }
 constructor Plugin::Plugin(genModel : GenModel) {
 	name := genModel.modelPluginID + ".edit.properties";

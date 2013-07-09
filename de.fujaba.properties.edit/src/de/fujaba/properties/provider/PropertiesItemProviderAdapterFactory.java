@@ -259,6 +259,29 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.SpinnerPropertyEditor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SpinnerPropertyEditorItemProvider spinnerPropertyEditorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fujaba.properties.SpinnerPropertyEditor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSpinnerPropertyEditorAdapter() {
+		if (spinnerPropertyEditorItemProvider == null) {
+			spinnerPropertyEditorItemProvider = new SpinnerPropertyEditorItemProvider(this);
+		}
+
+		return spinnerPropertyEditorItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.ComboBoxPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -526,6 +549,7 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (propertyCategoryItemProvider != null) propertyCategoryItemProvider.dispose();
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
 		if (textPropertyEditorItemProvider != null) textPropertyEditorItemProvider.dispose();
+		if (spinnerPropertyEditorItemProvider != null) spinnerPropertyEditorItemProvider.dispose();
 		if (comboBoxPropertyEditorItemProvider != null) comboBoxPropertyEditorItemProvider.dispose();
 		if (checkboxPropertyEditorItemProvider != null) checkboxPropertyEditorItemProvider.dispose();
 		if (radioPropertyEditorItemProvider != null) radioPropertyEditorItemProvider.dispose();
