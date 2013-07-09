@@ -1,12 +1,14 @@
 package de.fujaba.properties.runtime.editors;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
@@ -28,9 +30,9 @@ public class SpinnerPropertyEditor extends
 		factory.createLabel(parent, getLabelText());
 
 		spinner = new Spinner(parent, SWT.NONE);
-		if (parent.getLayout() instanceof GridLayout) {
-			spinner.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
-		}
+//		if (parent.getLayout() instanceof GridLayout) {
+//			spinner.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+//		}
 		spinner.addKeyListener(new org.eclipse.swt.events.KeyAdapter() {
 			public void keyReleased(org.eclipse.swt.events.KeyEvent e) {
 				if (e.keyCode == 13) {
@@ -44,6 +46,17 @@ public class SpinnerPropertyEditor extends
 				modify();
 			}
 		});
+		
+		spinner.addModifyListener(new ModifyListener() {
+			@Override
+			public void modifyText(ModifyEvent e) {
+				// If we do not have the focus, the focusLost event will not be fired.
+				// Probably the spinbuttons were used, so we must call modify().
+				if (!spinner.isFocusControl()) {
+					modify();
+				}
+			}
+		});
 
 		spinner.setMinimum(Integer.MIN_VALUE);
 		spinner.setMaximum(Integer.MAX_VALUE);
@@ -55,8 +68,17 @@ public class SpinnerPropertyEditor extends
 	}
 
 	protected void modify() {
-		String newValue = spinner.getText();
-		if (!newValue.equals(value)) {
+		double doubleValue = spinner.getSelection() / Math.pow(10, digits);
+		Object newValue = null;
+		EDataType dataType = ((EAttribute)feature).getEAttributeType();
+		if (dataType.getName() == "EInt") {
+			newValue = (int) doubleValue;
+		} else if (dataType.getName() == "EFloat"){
+			newValue = (float) doubleValue;
+		} else if (dataType.getName() == "EDouble") {
+			newValue = doubleValue;
+		}
+		if (newValue != null && !newValue.equals(value)) {
 			setValue(newValue);
 		}
 	}
