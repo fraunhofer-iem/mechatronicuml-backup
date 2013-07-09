@@ -81,17 +81,17 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		super.inputChanged();
 
 		// Update Value
-		Object value = null;
-		if (input != null) {
-			value = element.eGet(feature);
-		}
-		updateValue(value);
+		updateValue();
 		
 		// Update Adapters
 		updateAdapters();
 	}
 
-	private void updateValue(Object newValue) {
+	private void updateValue() {
+		Object newValue = null;
+		if (element != null) {
+			newValue = element.eGet(feature);
+		}
 		if (newValue != value) {
 			value = newValue;
 			valueChanged();
@@ -122,7 +122,10 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 	protected void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == feature) {
-			updateValue(notification.getNewValue());
+			updateValue();
+			if (feature.isMany()) { // many features are always stored in the same collection.
+				valueChanged();
+			}
 		}
 	}
 	
