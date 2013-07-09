@@ -425,7 +425,7 @@
       <propertyCategories title="Booleans" open="true" localProperties="//@packages.3/@classes.7/@properties.8 //@packages.3/@classes.7/@properties.12"/>
       <propertyCategories title="Guards" vertical="true" localProperties="//@packages.3/@classes.7/@properties.9 //@packages.3/@classes.7/@properties.5"/>
       <propertyCategories title="Deadlines" vertical="true" localProperties="//@packages.3/@classes.7/@properties.6 //@packages.3/@classes.7/@properties.7"/>
-      <propertyCategories title="Actions" localProperties="//@packages.3/@classes.7/@properties.11 //@packages.3/@classes.7/@properties.4 //@packages.3/@classes.7/@properties.10"/>
+      <propertyCategories title="Actions" vertical="true" localProperties="//@packages.3/@classes.7/@properties.11 //@packages.3/@classes.7/@properties.4 //@packages.3/@classes.7/@properties.10"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="#//@packages.3/@classes.15"/>

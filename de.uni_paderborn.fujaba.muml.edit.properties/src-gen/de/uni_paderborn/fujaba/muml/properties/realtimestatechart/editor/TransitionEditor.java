@@ -29,7 +29,7 @@ public class TransitionEditor
 				"Deadlines", org.eclipse.swt.SWT.VERTICAL, false);
 
 		addSubCategory("de.fujaba.properties.category.Transition.Actions",
-				"Actions", org.eclipse.swt.SWT.HORIZONTAL, false);
+				"Actions", org.eclipse.swt.SWT.VERTICAL, false);
 
 		addTransitionSynchronizationEditor(null, false);
 
