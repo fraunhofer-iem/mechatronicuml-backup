@@ -19,6 +19,9 @@ public class TransitionEditor
 	 */
 	public void initialize() {
 
+		addSubCategory("de.fujaba.properties.category.Transition.Booleans",
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL);
+
 		addTransitionSynchronizationEditor(null, false);
 
 		addTransitionClockResetsEditor(null, true);
@@ -29,7 +32,8 @@ public class TransitionEditor
 
 		addTransitionRelativeDeadlineEditor(null, false);
 
-		addTransitionBlockableEditor(null, true);
+		addTransitionBlockableEditor(
+				"de.fujaba.properties.category.Transition.Booleans", true);
 
 		addTransitionGuardEditor(null, false);
 
@@ -37,11 +41,12 @@ public class TransitionEditor
 
 		addTransitionActionEditor(null, false);
 
-		addTransitionUrgentEditor(null, true);
-
-		addPrioritizedElementPriorityEditor(null, true);
+		addTransitionUrgentEditor(
+				"de.fujaba.properties.category.Transition.Booleans", true);
 
 		addCommentableElementCommentEditor(null, true);
+
+		addPrioritizedElementPriorityEditor(null, true);
 
 		super.initialize();
 	}
@@ -228,25 +233,6 @@ public class TransitionEditor
 	/**
 	 * @generated
 	 */
-	protected void addPrioritizedElementPriorityEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
-		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getPrioritizedElement_Priority(), 0);
-
-	}
-	/**
-	 * @generated
-	 */
 	protected void addCommentableElementCommentEditor(String category,
 			boolean front) {
 		addEditorToCategory(category, createCommentableElementCommentEditor(),
@@ -261,6 +247,25 @@ public class TransitionEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addPrioritizedElementPriorityEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
+		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getPrioritizedElement_Priority(), 0);
 
 	}
 

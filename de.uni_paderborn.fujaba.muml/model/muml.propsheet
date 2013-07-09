@@ -18,65 +18,237 @@
   </plugin>
   <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
   <packages>
-    <genPackage href="muml.genmodel#//muml/realtimestatechart"/>
-    <classes superClasses="//@packages.0/@classes.6">
-      <genClass href="muml.genmodel#//muml/realtimestatechart/State"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/embeddedRegions"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/doEvent"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/exitEvent"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/entryEvent"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/invariants"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/initial"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/final"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/urgent"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/channels"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/parentStatechart"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <propertyCategories title="Booleans" vertical="false" properties="//@packages.0/@classes.0/@properties.5 //@packages.0/@classes.0/@properties.6 //@packages.0/@classes.0/@properties.7"/>
+    <genPackage href="muml.genmodel#//muml/protocol"/>
+    <classes>
+      <genClass href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification"/>
+      <superClasses href="#//@packages.1/@classes.4"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
+    <classes superClasses="//@packages.0/@classes.0">
+      <genClass href="muml.genmodel#//muml/protocol/CoordinationProtocol"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.4 //@packages.8/@classes.2">
+      <genClass href="muml.genmodel#//muml/protocol/Role"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/protocol/Role/coordinationProtocol"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.1">
+      <genClass href="muml.genmodel#//muml/protocol/RoleConnector"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/protocol/RoleConnector/coordinationProtocol"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.0/@classes.4/@propertyCategories.0">
+        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Booleans" localProperties="//@packages.0/@classes.4/@properties.2"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="muml.genmodel#//muml/constraint"/>
+    <classes>
+      <genClass href="muml.genmodel#//muml/constraint/Constraint"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/constraint/Constraint/correctness"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.1/@classes.0/@propertyCategories.0">
+        <genFeature href="muml.genmodel#//muml/constraint/Constraint/background"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/constraint/Constraint/constrainableElement"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <propertyCategories title="Booleans" localProperties="//@packages.1/@classes.0/@properties.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.0">
+      <genClass href="muml.genmodel#//muml/constraint/ModelingConstraint"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.0">
+      <genClass href="muml.genmodel#//muml/constraint/VerifiableConstraint"/>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/constraint/TextualConstraint"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/constraint/TextualConstraint/textualExpression"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+      <superClasses href="#//@packages.1/@classes.2"/>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/constraint/ConstrainableElement"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/constraint/ConstrainableElement/constraint"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="muml.genmodel#//muml/connector"/>
+    <classes>
+      <genClass href="muml.genmodel#//muml/connector/ConnectorEndpoint"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpoint/connectors"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/connector/Connector"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/connector/ConnectorEndpointInstance"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpointInstance/connectorInstances"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpointInstance/type"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/connector/ConnectorInstance"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/ConnectorInstance/type"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/ConnectorInstance/connectorEndpointInstances"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.4 //@packages.6/@classes.0 //@packages.2/@classes.0">
+      <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/adaptationBehavior"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.2">
+      <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpointInstance"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.5">
+      <genClass href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/next"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.5">
+      <genClass href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/first"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/last"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/connector/MessageBuffer"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/bufferSize"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/messageType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/discreteInteractionEndpoint"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="muml.genmodel#//muml/realtimestatechart"/>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Deadline"/>
       <properties>
@@ -90,14 +262,14 @@
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
-    <classes superClasses="//@packages.0/@classes.1">
+    <classes superClasses="//@packages.3/@classes.0">
       <genClass href="muml.genmodel#//muml/realtimestatechart/AbsoluteDeadline"/>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/AbsoluteDeadline/clock"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
     </classes>
-    <classes superClasses="//@packages.0/@classes.1">
+    <classes superClasses="//@packages.3/@classes.0">
       <genClass href="muml.genmodel#//muml/realtimestatechart/RelativeDeadline"/>
     </classes>
     <classes>
@@ -114,25 +286,75 @@
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Region/parentState"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <superClasses href="#//@packages.0/@classes.15"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="#//@packages.3/@classes.15"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.6">
+      <genClass href="muml.genmodel#//muml/realtimestatechart/State"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/doEvent"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/exitEvent"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/entryEvent"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.5/@propertyCategories.1">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/invariants"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.5/@propertyCategories.0">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/initial"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.5/@propertyCategories.0">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/final"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.5/@propertyCategories.0">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/urgent"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.5/@propertyCategories.1">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/channels"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/parentStatechart"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <propertyCategories title="Booleans" localProperties="//@packages.3/@classes.5/@properties.6 //@packages.3/@classes.5/@properties.5 //@packages.3/@classes.5/@properties.4"/>
+      <propertyCategories title="Lists" localProperties="//@packages.3/@classes.5/@properties.7 //@packages.3/@classes.5/@properties.3"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Vertex"/>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Vertex/outgoingTransitions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Vertex/incomingTransitions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Vertex/allSuperVertices"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
@@ -175,7 +397,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
-      <properties>
+      <properties category="//@packages.3/@classes.7/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/blockable"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
@@ -195,14 +417,15 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
-      <properties>
+      <properties category="//@packages.3/@classes.7/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/urgent"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
+      <propertyCategories title="Booleans" localProperties="//@packages.3/@classes.7/@properties.8 //@packages.3/@classes.7/@properties.12"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
-      <superClasses href="#//@packages.0/@classes.15"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="#//@packages.3/@classes.15"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/ClockConstraint"/>
@@ -230,10 +453,10 @@
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.18">
+    <classes superClasses="//@packages.3/@classes.18">
       <genClass href="muml.genmodel#//muml/realtimestatechart/AsynchronousMessageEvent"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.19">
+    <classes superClasses="//@packages.3/@classes.19">
       <genClass href="muml.genmodel#//muml/realtimestatechart/DoEvent"/>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/DoEvent/action"/>
@@ -246,7 +469,7 @@
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
-    <classes superClasses="//@packages.0/@classes.19">
+    <classes superClasses="//@packages.3/@classes.19">
       <genClass href="muml.genmodel#//muml/realtimestatechart/EntryOrExitEvent"/>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/EntryOrExitEvent/clockResets"/>
@@ -319,9 +542,9 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <superClasses href="#//@packages.8/@classes.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="#//@packages.6/@classes.1"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Event"/>
@@ -331,10 +554,10 @@
         <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
-    <classes superClasses="//@packages.0/@classes.17">
+    <classes superClasses="//@packages.3/@classes.17">
       <genClass href="muml.genmodel#//muml/realtimestatechart/TransitionEvent"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.17">
+    <classes superClasses="//@packages.3/@classes.17">
       <genClass href="muml.genmodel#//muml/realtimestatechart/StateEvent"/>
     </classes>
     <classes>
@@ -350,149 +573,155 @@
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.12">
+    <classes superClasses="//@packages.3/@classes.12">
       <genClass href="muml.genmodel#//muml/realtimestatechart/EntryEvent"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.12">
+    <classes superClasses="//@packages.3/@classes.12">
       <genClass href="muml.genmodel#//muml/realtimestatechart/ExitEvent"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.6">
+    <classes superClasses="//@packages.3/@classes.6">
       <genClass href="muml.genmodel#//muml/realtimestatechart/StateConnectionPoint"/>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/StateConnectionPoint/state"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
     </classes>
-    <classes superClasses="//@packages.0/@classes.23">
+    <classes superClasses="//@packages.3/@classes.23">
       <genClass href="muml.genmodel#//muml/realtimestatechart/EntryPoint"/>
     </classes>
-    <classes superClasses="//@packages.0/@classes.23">
+    <classes superClasses="//@packages.3/@classes.23">
       <genClass href="muml.genmodel#//muml/realtimestatechart/ExitPoint"/>
     </classes>
   </packages>
   <packages>
-    <genPackage href="muml.genmodel#//muml/types"/>
-    <classes superClasses="//@packages.1/@classes.2">
-      <genClass href="muml.genmodel#//muml/types/ArrayDataType"/>
+    <genPackage href="muml.genmodel#//muml/component"/>
+    <classes>
+      <genClass href="muml.genmodel#//muml/component/Component"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/types/ArrayDataType/type"/>
+        <genFeature href="muml.genmodel#//muml/component/Component/ports"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
-        <genFeature href="muml.genmodel#//muml/types/ArrayDataType/cardinality"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.1/@classes.2">
-      <genClass href="muml.genmodel#//muml/types/PrimitiveDataType"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/types/PrimitiveDataType/primitiveType"/>
+        <genFeature href="muml.genmodel#//muml/component/Component/componentType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/types/DataType"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="#//@packages.1/@classes.4"/>
     </classes>
-    <classes superClasses="//@packages.1/@classes.2">
-      <genClass href="muml.genmodel#//muml/types/RangedPrimitiveDataType"/>
+    <classes superClasses="//@packages.1/@classes.4 //@packages.2/@classes.0 //@packages.8/@classes.2">
+      <genClass href="muml.genmodel#//muml/component/Port"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/types/RangedPrimitiveDataType/rangedType"/>
+        <genFeature href="muml.genmodel#//muml/component/Port/component"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
     </classes>
-  </packages>
-  <packages>
-    <genPackage href="muml.genmodel#//muml/constraint"/>
-    <classes>
-      <genClass href="muml.genmodel#//muml/constraint/Constraint"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/constraint/Constraint/correctness"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/constraint/Constraint/background"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/constraint/Constraint/constrainableElement"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+    <classes superClasses="//@packages.4/@classes.13">
+      <genClass href="muml.genmodel#//muml/component/ContinuousPort"/>
     </classes>
-    <classes superClasses="//@packages.2/@classes.0">
-      <genClass href="muml.genmodel#//muml/constraint/ModelingConstraint"/>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.0">
-      <genClass href="muml.genmodel#//muml/constraint/VerifiableConstraint"/>
+    <classes superClasses="//@packages.2/@classes.4 //@packages.4/@classes.1">
+      <genClass href="muml.genmodel#//muml/component/DiscretePort"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/component/DiscretePort/refinedRole"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
     </classes>
     <classes>
-      <genClass href="muml.genmodel#//muml/constraint/TextualConstraint"/>
+      <genClass href="muml.genmodel#//muml/component/ComponentPart"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/constraint/TextualConstraint/textualExpression"/>
+        <genFeature href="muml.genmodel#//muml/component/ComponentPart/componentType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/component/ComponentPart/parentComponent"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/component/ComponentPart/cardinality"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
-      <superClasses href="#//@packages.2/@classes.2"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="#//@packages.8/@classes.2"/>
     </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/constraint/ConstrainableElement"/>
+    <classes superClasses="//@packages.4/@classes.11">
+      <genClass href="muml.genmodel#//muml/component/StaticStructuredComponent"/>
+    </classes>
+    <classes superClasses="//@packages.6/@classes.0 //@packages.4/@classes.0">
+      <genClass href="muml.genmodel#//muml/component/AtomicComponent"/>
+    </classes>
+    <classes superClasses="//@packages.4/@classes.9">
+      <genClass href="muml.genmodel#//muml/component/AssemblyConnector"/>
+    </classes>
+    <classes superClasses="//@packages.4/@classes.9">
+      <genClass href="muml.genmodel#//muml/component/DelegationConnector"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.1">
+      <genClass href="muml.genmodel#//muml/component/PortConnector"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/constraint/ConstrainableElement/constraint"/>
+        <genFeature href="muml.genmodel#//muml/component/PortConnector/parentComponent"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.4/@classes.13">
+      <genClass href="muml.genmodel#//muml/component/HybridPort"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/component/HybridPort/samplingInterval"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.4/@classes.0">
+      <genClass href="muml.genmodel#//muml/component/StructuredComponent"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/component/StructuredComponent/connectors"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>
-  </packages>
-  <packages>
-    <genPackage href="muml.genmodel#//muml/valuetype"/>
     <classes>
-      <genClass href="muml.genmodel#//muml/valuetype/Cardinality"/>
+      <genClass href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/coordinationProtocol"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/portParts"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/valuetype/TimeValue"/>
+    <classes superClasses="//@packages.4/@classes.1 //@packages.6/@classes.6">
+      <genClass href="muml.genmodel#//muml/component/DirectedTypedPort"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/value"/>
+        <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/kind"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/unit"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/valuetype/NaturalNumber"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/valuetype/NaturalNumber/infinity"/>
+      <properties category="//@packages.4/@classes.13/@propertyCategories.0">
+        <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/optional"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
+      <propertyCategories title="Booleans" localProperties="//@packages.4/@classes.13/@properties.1"/>
     </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/valuetype/Range"/>
+    <classes superClasses="//@packages.2/@classes.0 //@packages.8/@classes.2">
+      <genClass href="muml.genmodel#//muml/component/PortPart"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/valuetype/Range/lowerBound"/>
+        <genFeature href="muml.genmodel#//muml/component/PortPart/portType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>
       <properties>
-        <genFeature href="muml.genmodel#//muml/valuetype/Range/upperBound"/>
+        <genFeature href="muml.genmodel#//muml/component/PortPart/componentPart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/component/PortPart/coordinationProtocolOccurence"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
     </classes>
   </packages>
@@ -521,279 +750,6 @@
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="muml.genmodel#//muml/connector"/>
-    <classes>
-      <genClass href="muml.genmodel#//muml/connector/ConnectorEndpoint"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpoint/connectors"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/connector/Connector"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/connector/ConnectorEndpointInstance"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpointInstance/connectorInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpointInstance/type"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/connector/ConnectorInstance"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/ConnectorInstance/type"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/ConnectorInstance/connectorEndpointInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-    <classes superClasses="//@packages.8/@classes.0 //@packages.5/@classes.0 //@packages.2/@classes.4">
-      <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/adaptationBehavior"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.5/@classes.2">
-      <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpointInstance"/>
-    </classes>
-    <classes superClasses="//@packages.5/@classes.5">
-      <genClass href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/next"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.5/@classes.5">
-      <genClass href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/first"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/last"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/connector/MessageBuffer"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/bufferSize"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/messageType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/discreteInteractionEndpoint"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="muml.genmodel#//muml/protocol"/>
-    <classes>
-      <genClass href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="#//@packages.2/@classes.4"/>
-    </classes>
-    <classes superClasses="//@packages.6/@classes.0">
-      <genClass href="muml.genmodel#//muml/protocol/CoordinationProtocol"/>
-    </classes>
-    <classes superClasses="//@packages.5/@classes.4 //@packages.1/@classes.2">
-      <genClass href="muml.genmodel#//muml/protocol/Role"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/protocol/Role/coordinationProtocol"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.5/@classes.1">
-      <genClass href="muml.genmodel#//muml/protocol/RoleConnector"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/protocol/RoleConnector/coordinationProtocol"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-  </packages>
-  <packages>
-    <genPackage href="muml.genmodel#//muml/instance"/>
-    <classes>
-      <genClass href="muml.genmodel#//muml/instance/ComponentInstance"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/portInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentPart"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-    </classes>
-    <classes superClasses="//@packages.5/@classes.3">
-      <genClass href="muml.genmodel#//muml/instance/PortConnectorInstance"/>
-    </classes>
-    <classes superClasses="//@packages.5/@classes.2">
-      <genClass href="muml.genmodel#//muml/instance/PortInstance"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/instance/PortInstance/componentInstance"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.7/@classes.1">
-      <genClass href="muml.genmodel#//muml/instance/AssemblyConnectorInstance"/>
-    </classes>
-    <classes superClasses="//@packages.7/@classes.1">
-      <genClass href="muml.genmodel#//muml/instance/DelegationConnectorInstance"/>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/componentInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/portConnectorInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-    <classes superClasses="//@packages.7/@classes.2">
-      <genClass href="muml.genmodel#//muml/instance/ContinuousPortInstance"/>
-    </classes>
-    <classes superClasses="//@packages.7/@classes.2">
-      <genClass href="muml.genmodel#//muml/instance/HybridPortInstance"/>
-    </classes>
-    <classes superClasses="//@packages.5/@classes.5 //@packages.7/@classes.2">
-      <genClass href="muml.genmodel#//muml/instance/DiscretePortInstance"/>
-    </classes>
-    <classes superClasses="//@packages.5/@classes.6 //@packages.7/@classes.8">
-      <genClass href="muml.genmodel#//muml/instance/DiscreteSinglePortInstance"/>
-    </classes>
-    <classes superClasses="//@packages.7/@classes.8 //@packages.5/@classes.7">
-      <genClass href="muml.genmodel#//muml/instance/DiscreteMultiPortInstance"/>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/instance/CoordinationProtocolInstance"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/portInstances"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocolOccurrence"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-    </classes>
-    <classes superClasses="//@packages.7/@classes.0">
-      <genClass href="muml.genmodel#//muml/instance/StructuredComponentInstance"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/instance/StructuredComponentInstance/embeddedCIC"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.7/@classes.0">
-      <genClass href="muml.genmodel#//muml/instance/AtomicComponentInstance"/>
     </classes>
   </packages>
   <packages>
@@ -829,7 +785,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
-      <superClasses href="#//@packages.8/@classes.6"/>
+      <superClasses href="#//@packages.6/@classes.6"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
     <classes>
@@ -853,7 +809,7 @@
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/behavior/Parameter"/>
-      <superClasses href="#//@packages.8/@classes.6"/>
+      <superClasses href="#//@packages.6/@classes.6"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
     <classes>
@@ -879,133 +835,174 @@
     </classes>
   </packages>
   <packages>
-    <genPackage href="muml.genmodel#//muml/component"/>
+    <genPackage href="muml.genmodel#//muml/instance"/>
     <classes>
-      <genClass href="muml.genmodel#//muml/component/Component"/>
+      <genClass href="muml.genmodel#//muml/instance/ComponentInstance"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/Component/ports"/>
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/portInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/Component/componentType"/>
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentPart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.3">
+      <genClass href="muml.genmodel#//muml/instance/PortConnectorInstance"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.2">
+      <genClass href="muml.genmodel#//muml/instance/PortInstance"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/instance/PortInstance/componentInstance"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.7/@classes.1">
+      <genClass href="muml.genmodel#//muml/instance/AssemblyConnectorInstance"/>
+    </classes>
+    <classes superClasses="//@packages.7/@classes.1">
+      <genClass href="muml.genmodel#//muml/instance/DelegationConnectorInstance"/>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/componentInstances"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/portConnectorInstances"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="#//@packages.2/@classes.4"/>
     </classes>
-    <classes superClasses="//@packages.5/@classes.0 //@packages.1/@classes.2 //@packages.2/@classes.4">
-      <genClass href="muml.genmodel#//muml/component/Port"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/component/Port/component"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
+    <classes superClasses="//@packages.7/@classes.2">
+      <genClass href="muml.genmodel#//muml/instance/ContinuousPortInstance"/>
     </classes>
-    <classes superClasses="//@packages.9/@classes.13">
-      <genClass href="muml.genmodel#//muml/component/ContinuousPort"/>
+    <classes superClasses="//@packages.7/@classes.2">
+      <genClass href="muml.genmodel#//muml/instance/HybridPortInstance"/>
     </classes>
-    <classes superClasses="//@packages.5/@classes.4 //@packages.9/@classes.1">
-      <genClass href="muml.genmodel#//muml/component/DiscretePort"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/component/DiscretePort/refinedRole"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
+    <classes superClasses="//@packages.7/@classes.2 //@packages.2/@classes.5">
+      <genClass href="muml.genmodel#//muml/instance/DiscretePortInstance"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.6 //@packages.7/@classes.8">
+      <genClass href="muml.genmodel#//muml/instance/DiscreteSinglePortInstance"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.7 //@packages.7/@classes.8">
+      <genClass href="muml.genmodel#//muml/instance/DiscreteMultiPortInstance"/>
     </classes>
     <classes>
-      <genClass href="muml.genmodel#//muml/component/ComponentPart"/>
+      <genClass href="muml.genmodel#//muml/instance/CoordinationProtocolInstance"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/ComponentPart/componentType"/>
+        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/portInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/ComponentPart/parentComponent"/>
+        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocolOccurrence"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/component/ComponentPart/cardinality"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="#//@packages.1/@classes.2"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
-    <classes superClasses="//@packages.9/@classes.11">
-      <genClass href="muml.genmodel#//muml/component/StaticStructuredComponent"/>
-    </classes>
-    <classes superClasses="//@packages.9/@classes.0 //@packages.8/@classes.0">
-      <genClass href="muml.genmodel#//muml/component/AtomicComponent"/>
-    </classes>
-    <classes superClasses="//@packages.9/@classes.9">
-      <genClass href="muml.genmodel#//muml/component/AssemblyConnector"/>
-    </classes>
-    <classes superClasses="//@packages.9/@classes.9">
-      <genClass href="muml.genmodel#//muml/component/DelegationConnector"/>
-    </classes>
-    <classes superClasses="//@packages.5/@classes.1">
-      <genClass href="muml.genmodel#//muml/component/PortConnector"/>
+    <classes superClasses="//@packages.7/@classes.0">
+      <genClass href="muml.genmodel#//muml/instance/StructuredComponentInstance"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/PortConnector/parentComponent"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.9/@classes.13">
-      <genClass href="muml.genmodel#//muml/component/HybridPort"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/component/HybridPort/samplingInterval"/>
+        <genFeature href="muml.genmodel#//muml/instance/StructuredComponentInstance/embeddedCIC"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
-    <classes superClasses="//@packages.9/@classes.0">
-      <genClass href="muml.genmodel#//muml/component/StructuredComponent"/>
+    <classes superClasses="//@packages.7/@classes.0">
+      <genClass href="muml.genmodel#//muml/instance/AtomicComponentInstance"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="muml.genmodel#//muml/types"/>
+    <classes superClasses="//@packages.8/@classes.2">
+      <genClass href="muml.genmodel#//muml/types/ArrayDataType"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/StructuredComponent/connectors"/>
+        <genFeature href="muml.genmodel#//muml/types/ArrayDataType/type"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/types/ArrayDataType/cardinality"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence"/>
+    <classes superClasses="//@packages.8/@classes.2">
+      <genClass href="muml.genmodel#//muml/types/PrimitiveDataType"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/coordinationProtocol"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/portParts"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-    <classes superClasses="//@packages.8/@classes.6 //@packages.9/@classes.1">
-      <genClass href="muml.genmodel#//muml/component/DirectedTypedPort"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/kind"/>
+        <genFeature href="muml.genmodel#//muml/types/PrimitiveDataType/primitiveType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/types/DataType"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes superClasses="//@packages.8/@classes.2">
+      <genClass href="muml.genmodel#//muml/types/RangedPrimitiveDataType"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/optional"/>
+        <genFeature href="muml.genmodel#//muml/types/RangedPrimitiveDataType/rangedType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+      </properties>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="muml.genmodel#//muml/valuetype"/>
+    <classes>
+      <genClass href="muml.genmodel#//muml/valuetype/Cardinality"/>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/valuetype/TimeValue"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/value"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/unit"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+    </classes>
+    <classes>
+      <genClass href="muml.genmodel#//muml/valuetype/NaturalNumber"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.9/@classes.2/@propertyCategories.0">
+        <genFeature href="muml.genmodel#//muml/valuetype/NaturalNumber/infinity"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
+      <propertyCategories title="Booleans" localProperties="//@packages.9/@classes.2/@properties.1"/>
     </classes>
-    <classes superClasses="//@packages.5/@classes.0 //@packages.1/@classes.2">
-      <genClass href="muml.genmodel#//muml/component/PortPart"/>
+    <classes>
+      <genClass href="muml.genmodel#//muml/valuetype/Range"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/PortPart/portType"/>
+        <genFeature href="muml.genmodel#//muml/valuetype/Range/lowerBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/PortPart/componentPart"/>
+        <genFeature href="muml.genmodel#//muml/valuetype/Range/upperBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/component/PortPart/coordinationProtocolOccurence"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
   </packages>

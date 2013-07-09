@@ -19,9 +19,13 @@ public class ConstraintEditor
 	 */
 	public void initialize() {
 
+		addSubCategory("de.fujaba.properties.category.Constraint.Booleans",
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL);
+
 		addConstraintCorrectnessEditor(null, true);
 
-		addConstraintBackgroundEditor(null, true);
+		addConstraintBackgroundEditor(
+				"de.fujaba.properties.category.Constraint.Booleans", true);
 
 		super.initialize();
 	}

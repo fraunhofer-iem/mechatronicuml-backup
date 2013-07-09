@@ -8,7 +8,6 @@ main() {
 	properties.rootObjects()[Property]->select(p | p.genFeature.ecoreFeature.eType.name = 'NaturalNumber')->forEach(prop) {
 		prop->map naturalNumberSection();
 	}
-	
 }
 
 mapping inout Property::naturalNumberSection() {

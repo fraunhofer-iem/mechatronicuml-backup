@@ -23,7 +23,8 @@ public class TextualConstraintEditor
 
 		addConstraintCorrectnessEditor(null, true);
 
-		addConstraintBackgroundEditor(null, true);
+		addConstraintBackgroundEditor(
+				"de.fujaba.properties.category.Constraint.Booleans", true);
 
 		super.initialize();
 	}

@@ -22,7 +22,8 @@ public class StateEditor
 		addSubCategory("de.fujaba.properties.category.State.Booleans",
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL);
 
-		addStateEmbeddedRegionsEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.State.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL);
 
 		addStateDoEventEditor(null, false);
 
@@ -30,7 +31,8 @@ public class StateEditor
 
 		addStateEntryEventEditor(null, false);
 
-		addStateInvariantsEditor(null, true);
+		addStateInvariantsEditor("de.fujaba.properties.category.State.Lists",
+				true);
 
 		addStateInitialEditor("de.fujaba.properties.category.State.Booleans",
 				true);
@@ -41,30 +43,12 @@ public class StateEditor
 		addStateUrgentEditor("de.fujaba.properties.category.State.Booleans",
 				true);
 
-		addStateChannelsEditor(null, true);
-
-		addStateConnectionPointsEditor(null, true);
+		addStateChannelsEditor("de.fujaba.properties.category.State.Lists",
+				true);
 
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addStateEmbeddedRegionsEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateEmbeddedRegionsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateEmbeddedRegionsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_EmbeddedRegions());
-
-	}
 	/**
 	 * @generated
 	 */
@@ -199,24 +183,6 @@ public class StateEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_Channels());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addStateConnectionPointsEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateConnectionPointsEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateConnectionPointsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getState_ConnectionPoints());
 
 	}
 
