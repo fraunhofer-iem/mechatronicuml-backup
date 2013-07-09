@@ -62,6 +62,7 @@ public class PropertyCategoryItemProvider
 
 			addTitlePropertyDescriptor(object);
 			addVerticalPropertyDescriptor(object);
+			addOpenPropertyDescriptor(object);
 			addOverriddenPropertiesPropertyDescriptor(object);
 			addLocalPropertiesPropertyDescriptor(object);
 		}
@@ -104,6 +105,28 @@ public class PropertyCategoryItemProvider
 				 getString("_UI_PropertyCategory_vertical_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyCategory_vertical_feature", "_UI_PropertyCategory_type"),
 				 PropertiesPackage.Literals.PROPERTY_CATEGORY__VERTICAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Open feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOpenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PropertyCategory_open_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyCategory_open_feature", "_UI_PropertyCategory_type"),
+				 PropertiesPackage.Literals.PROPERTY_CATEGORY__OPEN,
 				 true,
 				 false,
 				 false,
@@ -167,7 +190,16 @@ public class PropertyCategoryItemProvider
 				 null) {
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
-				return ((PropertyCategory) object).getClazz().getProperties();
+				PropertyCategory category = (PropertyCategory) object;
+				
+				List<Property> properties = new ArrayList<Property>();
+				for (Property property: category.getClazz().getProperties()) {
+					if (property.getCategory() == null || property.getCategory() == category) {
+						properties.add(property);
+					}
+				}
+				
+				return properties;
 			}		
 		});
 	}
@@ -211,6 +243,7 @@ public class PropertyCategoryItemProvider
 		switch (notification.getFeatureID(PropertyCategory.class)) {
 			case PropertiesPackage.PROPERTY_CATEGORY__TITLE:
 			case PropertiesPackage.PROPERTY_CATEGORY__VERTICAL:
+			case PropertiesPackage.PROPERTY_CATEGORY__OPEN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

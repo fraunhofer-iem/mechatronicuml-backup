@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.fujaba.properties.PropertyCategory#getTitle <em>Title</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyCategory#isVertical <em>Vertical</em>}</li>
+ *   <li>{@link de.fujaba.properties.PropertyCategory#isOpen <em>Open</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyCategory#getOverriddenProperties <em>Overridden Properties</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyCategory#getClazz <em>Clazz</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyCategory#getLocalProperties <em>Local Properties</em>}</li>
@@ -80,6 +81,33 @@ public interface PropertyCategory extends EObject {
 	 * @generated
 	 */
 	void setVertical(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Open</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Open</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Open</em>' attribute.
+	 * @see #setOpen(boolean)
+	 * @see de.fujaba.properties.PropertiesPackage#getPropertyCategory_Open()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
+	boolean isOpen();
+
+	/**
+	 * Sets the value of the '{@link de.fujaba.properties.PropertyCategory#isOpen <em>Open</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Open</em>' attribute.
+	 * @see #isOpen()
+	 * @generated
+	 */
+	void setOpen(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Overridden Properties</b></em>' reference list.

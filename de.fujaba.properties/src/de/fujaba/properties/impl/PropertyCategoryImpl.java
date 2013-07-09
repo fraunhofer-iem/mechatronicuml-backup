@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#isVertical <em>Vertical</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#isOpen <em>Open</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getOverriddenProperties <em>Overridden Properties</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getLocalProperties <em>Local Properties</em>}</li>
@@ -81,6 +82,26 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 	 * @ordered
 	 */
 	protected boolean vertical = VERTICAL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isOpen() <em>Open</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOpen()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean OPEN_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isOpen() <em>Open</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isOpen()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean open = OPEN_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getOverriddenProperties() <em>Overridden Properties</em>}' reference list.
@@ -161,6 +182,27 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 		vertical = newVertical;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_CATEGORY__VERTICAL, oldVertical, vertical));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isOpen() {
+		return open;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOpen(boolean newOpen) {
+		boolean oldOpen = open;
+		open = newOpen;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_CATEGORY__OPEN, oldOpen, open));
 	}
 
 	/**
@@ -289,6 +331,8 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 				return getTitle();
 			case PropertiesPackage.PROPERTY_CATEGORY__VERTICAL:
 				return isVertical();
+			case PropertiesPackage.PROPERTY_CATEGORY__OPEN:
+				return isOpen();
 			case PropertiesPackage.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES:
 				return getOverriddenProperties();
 			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
@@ -313,6 +357,9 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 				return;
 			case PropertiesPackage.PROPERTY_CATEGORY__VERTICAL:
 				setVertical((Boolean)newValue);
+				return;
+			case PropertiesPackage.PROPERTY_CATEGORY__OPEN:
+				setOpen((Boolean)newValue);
 				return;
 			case PropertiesPackage.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES:
 				getOverriddenProperties().clear();
@@ -343,6 +390,9 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 			case PropertiesPackage.PROPERTY_CATEGORY__VERTICAL:
 				setVertical(VERTICAL_EDEFAULT);
 				return;
+			case PropertiesPackage.PROPERTY_CATEGORY__OPEN:
+				setOpen(OPEN_EDEFAULT);
+				return;
 			case PropertiesPackage.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES:
 				getOverriddenProperties().clear();
 				return;
@@ -368,6 +418,8 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case PropertiesPackage.PROPERTY_CATEGORY__VERTICAL:
 				return vertical != VERTICAL_EDEFAULT;
+			case PropertiesPackage.PROPERTY_CATEGORY__OPEN:
+				return open != OPEN_EDEFAULT;
 			case PropertiesPackage.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES:
 				return overriddenProperties != null && !overriddenProperties.isEmpty();
 			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
@@ -392,6 +444,8 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 		result.append(title);
 		result.append(", vertical: ");
 		result.append(vertical);
+		result.append(", open: ");
+		result.append(open);
 		result.append(')');
 		return result.toString();
 	}

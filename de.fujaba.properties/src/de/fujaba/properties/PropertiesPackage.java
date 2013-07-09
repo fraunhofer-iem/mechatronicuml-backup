@@ -405,13 +405,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY_CATEGORY__VERTICAL = 1;
 
 	/**
+	 * The feature id for the '<em><b>Open</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_CATEGORY__OPEN = 2;
+
+	/**
 	 * The feature id for the '<em><b>Overridden Properties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES = 2;
+	int PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES = 3;
 
 	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' container reference.
@@ -420,7 +429,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CATEGORY__CLAZZ = 3;
+	int PROPERTY_CATEGORY__CLAZZ = 4;
 
 	/**
 	 * The feature id for the '<em><b>Local Properties</b></em>' reference list.
@@ -429,7 +438,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CATEGORY__LOCAL_PROPERTIES = 4;
+	int PROPERTY_CATEGORY__LOCAL_PROPERTIES = 5;
 
 	/**
 	 * The number of structural features of the '<em>Property Category</em>' class.
@@ -438,7 +447,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CATEGORY_FEATURE_COUNT = 5;
+	int PROPERTY_CATEGORY_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyImpl <em>Property</em>}' class.
@@ -1207,6 +1216,17 @@ public interface PropertiesPackage extends EPackage {
 	EAttribute getPropertyCategory_Vertical();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.PropertyCategory#isOpen <em>Open</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Open</em>'.
+	 * @see de.fujaba.properties.PropertyCategory#isOpen()
+	 * @see #getPropertyCategory()
+	 * @generated
+	 */
+	EAttribute getPropertyCategory_Open();
+
+	/**
 	 * Returns the meta object for the reference list '{@link de.fujaba.properties.PropertyCategory#getOverriddenProperties <em>Overridden Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1788,6 +1808,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROPERTY_CATEGORY__VERTICAL = eINSTANCE.getPropertyCategory_Vertical();
+
+		/**
+		 * The meta object literal for the '<em><b>Open</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTY_CATEGORY__OPEN = eINSTANCE.getPropertyCategory_Open();
 
 		/**
 		 * The meta object literal for the '<em><b>Overridden Properties</b></em>' reference list feature.
