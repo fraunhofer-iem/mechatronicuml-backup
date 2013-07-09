@@ -72,14 +72,13 @@ String genCreator(Property this) :
 	'create'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + 'Editor';	
 	
 PropertyCategory genLocalCategory(Property this) : 
-	clazz.propertyCategories.select(category | category.properties.contains(this)).first();
-
+	category;
 	
 String genFeatureLiteral(GenFeature this) :
 		genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
 	
-List[Property] overwrittenProperties(Class this) :
-	propertyCategories.properties.reject(property | this.properties.contains(property));
+List[Property] overriddenProperties(Class this) :
+	propertyCategories.overriddenProperties;
 	
 List[Property] genProperties(Class this) :
 	{ this }.union(superClasses.reject(s | s == superClasses.first()).genSuperClasses()).properties;

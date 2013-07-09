@@ -78,15 +78,29 @@ mapping inout PropertyGenerator::generator() {
 
 mapping inout Package::reconcilePackage(tab : PropertyTab) {
 	
+	var newClasses : OrderedSet(Class);
+	
+	
 	-- generate missing classes
 	self.genPackage.genClasses->select(shouldGenerate())->forEach(_class) {
 		if (not self.classes.genClass->includes(_class)) then {
-			self.classes += self->map createClass(_class);
+			newClasses += self->map createClass(_class);
 		} endif;
 	};
 	
+	if (not newClasses->isEmpty()) then {
+		classes += newClasses;
+	} endif;
+	
+	
 	-- reconcile all classes
 	classes->map reconcileClass(tab);
+	
+	
+	if (not newClasses->isEmpty()) then {
+		classes->map initializeCategories()
+	} endif;
+	
 }
  
 mapping inout Class::reconcileClass(tab : PropertyTab) {
@@ -103,6 +117,7 @@ mapping inout Class::reconcileClass(tab : PropertyTab) {
 			self.properties += self->map createProperty(feature, tab);
 		} endif;
 	};
+
 	
 	-- reconcile all properties
 	self.properties->map reconcileProperty();
@@ -121,6 +136,19 @@ mapping PropertyGenerator::createPackage(package : GenPackage) : Package {
 mapping Package::createClass(_class : GenClass) : Class{
 	genClass := _class;
 }
+
+
+mapping inout Class::initializeCategories() {
+	-- create categories for new class
+	
+	-- booleans in one category
+	var booleanProperties : OrderedSet(Property) := self.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'EBoolean');
+	if (not booleanProperties->isEmpty()) then {
+		var category : PropertyCategory := new PropertyCategory('Booleans', booleanProperties);
+		propertyCategories := propertyCategories->including(category);
+	} endif;
+}
+
 mapping Class::createProperty(_feature : GenFeature, _tab : PropertyTab) : Property {
 	genFeature := _feature;
 	tab := _tab;
@@ -176,7 +204,7 @@ query GenClass::shouldGenerate() : Boolean {
 	return true;
 }
 query GenFeature::shouldGenerate() : Boolean {
-	return self._property != GenPropertyKind::None and self.ecoreFeature.changeable;
+	return self._property != GenPropertyKind::None and self.ecoreFeature.changeable and not self.ecoreFeature._derived;
 }
 constructor Plugin::Plugin(genModel : GenModel) {
 	name := genModel.modelPluginID + ".edit.properties";
@@ -188,7 +216,8 @@ constructor PropertyTab::PropertyTab(_id : String, _name : String) {
 	name := _name;
 }
 
---constructor PropertyReference::PropertyReference(prp : Property) {
---	_property := prp;
---	active := true;
---}
+constructor PropertyCategory::PropertyCategory(_title : String,  _localProperties : OrderedSet(Property)) {
+	title := _title;
+	localProperties := _localProperties;
+	vertical := false;
+}

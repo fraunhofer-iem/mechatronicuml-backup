@@ -543,7 +543,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyCategory_Properties() {
+	public EReference getPropertyCategory_OverriddenProperties() {
 		return (EReference)propertyCategoryEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -554,6 +554,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 */
 	public EReference getPropertyCategory_Clazz() {
 		return (EReference)propertyCategoryEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPropertyCategory_LocalProperties() {
+		return (EReference)propertyCategoryEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -617,6 +626,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 */
 	public EReference getProperty_Clazz() {
 		return (EReference)propertyEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProperty_Category() {
+		return (EReference)propertyEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -829,8 +847,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		propertyCategoryEClass = createEClass(PROPERTY_CATEGORY);
 		createEAttribute(propertyCategoryEClass, PROPERTY_CATEGORY__TITLE);
 		createEAttribute(propertyCategoryEClass, PROPERTY_CATEGORY__VERTICAL);
-		createEReference(propertyCategoryEClass, PROPERTY_CATEGORY__PROPERTIES);
+		createEReference(propertyCategoryEClass, PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES);
 		createEReference(propertyCategoryEClass, PROPERTY_CATEGORY__CLAZZ);
+		createEReference(propertyCategoryEClass, PROPERTY_CATEGORY__LOCAL_PROPERTIES);
 
 		propertyEClass = createEClass(PROPERTY);
 		createEReference(propertyEClass, PROPERTY__GEN_FEATURE);
@@ -839,6 +858,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		createEReference(propertyEClass, PROPERTY__EDITOR);
 		createEAttribute(propertyEClass, PROPERTY__TOOLTIP);
 		createEReference(propertyEClass, PROPERTY__CLAZZ);
+		createEReference(propertyEClass, PROPERTY__CATEGORY);
 
 		propertyEditorEClass = createEClass(PROPERTY_EDITOR);
 		createEReference(propertyEditorEClass, PROPERTY_EDITOR__PROPERTY);
@@ -950,9 +970,10 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		initEClass(propertyCategoryEClass, PropertyCategory.class, "PropertyCategory", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPropertyCategory_Title(), theEcorePackage.getEString(), "title", null, 0, 1, PropertyCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPropertyCategory_Vertical(), theEcorePackage.getEBoolean(), "vertical", "true", 1, 1, PropertyCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPropertyCategory_Properties(), this.getProperty(), null, "properties", null, 0, -1, PropertyCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyCategory_Vertical(), theEcorePackage.getEBoolean(), "vertical", "false", 1, 1, PropertyCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyCategory_OverriddenProperties(), this.getProperty(), null, "overriddenProperties", null, 0, -1, PropertyCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyCategory_Clazz(), this.getClass_(), this.getClass_PropertyCategories(), "clazz", null, 1, 1, PropertyCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPropertyCategory_LocalProperties(), this.getProperty(), this.getProperty_Category(), "localProperties", null, 0, -1, PropertyCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProperty_GenFeature(), theGenModelPackage.getGenFeature(), null, "genFeature", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -961,6 +982,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEReference(getProperty_Editor(), this.getPropertyEditor(), this.getPropertyEditor_Property(), "editor", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProperty_Tooltip(), theEcorePackage.getEString(), "tooltip", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperty_Clazz(), this.getClass_(), this.getClass_Properties(), "clazz", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperty_Category(), this.getPropertyCategory(), this.getPropertyCategory_LocalProperties(), "category", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEditorEClass, PropertyEditor.class, "PropertyEditor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPropertyEditor_Property(), this.getProperty(), this.getProperty_Editor(), "property", null, 1, 1, PropertyEditor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1087,7 +1109,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		  (propertyCategoryEClass, 
 		   source, 
 		   new String[] {
-			 "OnlyFeaturesFromClassOrSubclasses", "properties->reject(p | not clazz.allSuperClasses->contains(p.clazz))->isEmpty()"
+			 "OverriddenPropertiesFromSubclassesOnly", "overriddenProperties->reject(p | not clazz.allSuperClasses->reject(clazz)->contains(p.clazz))->isEmpty()"
 		   });
 	}
 

@@ -63,7 +63,7 @@ public class «genEditorName()» extends «EXPAND extends-» {
 	// Overwritten property settings
 	//
 
-	«FOREACH overwrittenProperties() AS this»
+	«FOREACH overriddenProperties() AS this»
 	/**
 	 * @generated
 	 */
