@@ -42,7 +42,7 @@ public class NavigationFeaturePropertyEditor extends
 	}
 
 	protected ObjectPropertyEditor createNavigatedEditor() {
-		return new ObjectPropertyEditor(adapterFactory, "null");
+		return new ObjectPropertyEditor(adapterFactory, "null", false);
 	}
 
 	@Override

@@ -22,8 +22,8 @@ import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
  */
 public class ObjectPropertyEditor extends CategoryPropertyEditor {
 
-	public ObjectPropertyEditor(AdapterFactory adapterFactory, String title) {
-		super(adapterFactory, SWT.VERTICAL, title, false);
+	public ObjectPropertyEditor(AdapterFactory adapterFactory, String title, boolean initiallyOpen) {
+		super(adapterFactory, SWT.VERTICAL, title, initiallyOpen);
 		
 	}
 
