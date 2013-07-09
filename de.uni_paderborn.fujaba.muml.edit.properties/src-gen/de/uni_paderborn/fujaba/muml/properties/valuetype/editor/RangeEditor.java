@@ -64,10 +64,6 @@ public class RangeEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

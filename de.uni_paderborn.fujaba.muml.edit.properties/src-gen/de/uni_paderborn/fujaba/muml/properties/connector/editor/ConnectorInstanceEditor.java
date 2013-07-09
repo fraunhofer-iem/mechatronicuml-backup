@@ -45,10 +45,6 @@ public class ConnectorInstanceEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

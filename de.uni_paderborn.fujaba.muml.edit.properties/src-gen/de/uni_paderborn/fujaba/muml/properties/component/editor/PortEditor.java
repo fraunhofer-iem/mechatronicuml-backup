@@ -84,10 +84,6 @@ public class PortEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

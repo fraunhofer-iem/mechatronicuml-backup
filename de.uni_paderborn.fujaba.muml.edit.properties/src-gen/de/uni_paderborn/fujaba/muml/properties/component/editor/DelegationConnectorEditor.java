@@ -22,10 +22,6 @@ public class DelegationConnectorEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

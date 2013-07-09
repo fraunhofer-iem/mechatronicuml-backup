@@ -100,10 +100,6 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

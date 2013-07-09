@@ -22,10 +22,6 @@ public class DiscreteSingleInteractionEndpointInstanceEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

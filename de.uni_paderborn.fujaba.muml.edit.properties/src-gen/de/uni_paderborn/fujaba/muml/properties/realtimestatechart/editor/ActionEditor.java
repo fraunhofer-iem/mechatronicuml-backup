@@ -42,10 +42,6 @@ public class ActionEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

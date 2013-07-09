@@ -22,10 +22,6 @@ public class RangedPrimitiveDataTypeEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

@@ -86,10 +86,6 @@ public class MessageBufferEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

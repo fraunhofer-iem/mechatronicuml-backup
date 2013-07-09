@@ -22,10 +22,6 @@ public class ExitPointEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

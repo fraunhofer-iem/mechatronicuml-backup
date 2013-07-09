@@ -124,10 +124,6 @@ public class AtomicComponentEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

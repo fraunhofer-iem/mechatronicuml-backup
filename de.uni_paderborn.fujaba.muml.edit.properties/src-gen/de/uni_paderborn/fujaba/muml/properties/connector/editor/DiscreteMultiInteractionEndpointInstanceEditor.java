@@ -47,10 +47,6 @@ public class DiscreteMultiInteractionEndpointInstanceEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

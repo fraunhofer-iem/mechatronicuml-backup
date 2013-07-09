@@ -66,10 +66,6 @@ public class ConstraintEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

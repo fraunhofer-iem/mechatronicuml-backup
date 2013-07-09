@@ -84,10 +84,6 @@ public class TextualConstraintEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

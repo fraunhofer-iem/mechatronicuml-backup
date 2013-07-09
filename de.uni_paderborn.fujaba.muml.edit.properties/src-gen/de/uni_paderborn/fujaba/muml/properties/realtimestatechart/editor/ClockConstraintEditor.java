@@ -66,10 +66,6 @@ public class ClockConstraintEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

@@ -63,10 +63,6 @@ public class AbstractCoordinationSpecificationEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

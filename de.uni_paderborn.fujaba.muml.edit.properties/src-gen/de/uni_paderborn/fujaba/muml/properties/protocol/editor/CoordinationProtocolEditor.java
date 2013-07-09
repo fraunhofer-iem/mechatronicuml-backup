@@ -22,10 +22,6 @@ public class CoordinationProtocolEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

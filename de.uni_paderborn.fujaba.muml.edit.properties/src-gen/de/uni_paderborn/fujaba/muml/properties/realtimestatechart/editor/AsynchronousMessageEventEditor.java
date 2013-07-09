@@ -22,10 +22,6 @@ public class AsynchronousMessageEventEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

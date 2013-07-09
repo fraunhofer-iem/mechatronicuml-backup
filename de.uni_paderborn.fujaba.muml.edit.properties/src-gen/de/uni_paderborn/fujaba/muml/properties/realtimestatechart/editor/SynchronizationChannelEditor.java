@@ -44,10 +44,6 @@ public class SynchronizationChannelEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

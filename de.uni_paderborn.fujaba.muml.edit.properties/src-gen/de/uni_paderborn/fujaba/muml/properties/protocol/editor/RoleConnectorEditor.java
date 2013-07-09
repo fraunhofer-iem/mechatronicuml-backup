@@ -46,10 +46,6 @@ public class RoleConnectorEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

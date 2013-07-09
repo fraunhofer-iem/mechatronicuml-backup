@@ -84,10 +84,6 @@ public class ComponentPartEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

@@ -22,10 +22,6 @@ public class StaticStructuredComponentEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

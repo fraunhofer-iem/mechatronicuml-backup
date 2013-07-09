@@ -47,10 +47,6 @@ public class PrioritizedElementEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

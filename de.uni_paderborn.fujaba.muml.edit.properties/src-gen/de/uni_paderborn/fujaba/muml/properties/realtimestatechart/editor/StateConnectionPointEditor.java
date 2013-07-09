@@ -22,10 +22,6 @@ public class StateConnectionPointEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

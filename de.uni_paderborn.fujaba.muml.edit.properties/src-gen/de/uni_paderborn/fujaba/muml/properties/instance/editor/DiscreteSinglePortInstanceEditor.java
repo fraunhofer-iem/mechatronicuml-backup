@@ -85,10 +85,6 @@ public class DiscreteSinglePortInstanceEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

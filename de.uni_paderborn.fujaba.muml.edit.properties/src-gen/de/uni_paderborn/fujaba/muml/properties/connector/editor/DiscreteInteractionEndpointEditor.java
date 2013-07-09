@@ -171,10 +171,6 @@ public class DiscreteInteractionEndpointEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

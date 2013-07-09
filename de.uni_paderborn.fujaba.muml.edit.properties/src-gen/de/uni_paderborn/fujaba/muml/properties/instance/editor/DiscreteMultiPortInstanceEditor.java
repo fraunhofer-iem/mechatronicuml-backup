@@ -85,10 +85,6 @@ public class DiscreteMultiPortInstanceEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

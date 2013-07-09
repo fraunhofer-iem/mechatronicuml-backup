@@ -61,10 +61,6 @@ public class TimeValueEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

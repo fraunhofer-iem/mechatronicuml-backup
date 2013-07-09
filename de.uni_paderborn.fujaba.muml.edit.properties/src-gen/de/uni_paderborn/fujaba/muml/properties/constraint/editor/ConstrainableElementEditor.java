@@ -47,10 +47,6 @@ public class ConstrainableElementEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

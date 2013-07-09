@@ -43,10 +43,6 @@ public class ParameterBindingEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

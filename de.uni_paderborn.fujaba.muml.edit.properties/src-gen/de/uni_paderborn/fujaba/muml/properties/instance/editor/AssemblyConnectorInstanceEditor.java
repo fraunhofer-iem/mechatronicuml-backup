@@ -22,10 +22,6 @@ public class AssemblyConnectorInstanceEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

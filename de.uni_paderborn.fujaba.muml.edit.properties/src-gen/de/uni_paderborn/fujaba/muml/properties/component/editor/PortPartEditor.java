@@ -63,10 +63,6 @@ public class PortPartEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

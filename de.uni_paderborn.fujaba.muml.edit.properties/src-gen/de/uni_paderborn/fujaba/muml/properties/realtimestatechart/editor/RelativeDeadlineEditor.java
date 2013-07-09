@@ -22,10 +22,6 @@ public class RelativeDeadlineEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

@@ -66,10 +66,6 @@ public class ConnectorEndpointInstanceEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

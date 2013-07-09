@@ -22,10 +22,6 @@ public class TypedNamedElementEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

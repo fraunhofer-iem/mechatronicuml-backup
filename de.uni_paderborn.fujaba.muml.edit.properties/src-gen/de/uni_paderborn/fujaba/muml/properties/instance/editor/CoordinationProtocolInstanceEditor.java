@@ -44,10 +44,6 @@ public class CoordinationProtocolInstanceEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

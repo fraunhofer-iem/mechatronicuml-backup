@@ -22,10 +22,6 @@ public class PortConnectorInstanceEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

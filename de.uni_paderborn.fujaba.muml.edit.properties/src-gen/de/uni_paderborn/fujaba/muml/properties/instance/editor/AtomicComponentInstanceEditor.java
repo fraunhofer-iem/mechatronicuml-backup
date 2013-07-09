@@ -22,10 +22,6 @@ public class AtomicComponentInstanceEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

@@ -44,10 +44,6 @@ public class ParameterEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

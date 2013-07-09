@@ -22,10 +22,6 @@ public class AbsoluteDeadlineEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

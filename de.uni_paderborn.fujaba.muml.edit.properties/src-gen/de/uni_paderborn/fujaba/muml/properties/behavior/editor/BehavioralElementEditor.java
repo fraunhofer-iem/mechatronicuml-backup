@@ -25,10 +25,6 @@ public class BehavioralElementEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

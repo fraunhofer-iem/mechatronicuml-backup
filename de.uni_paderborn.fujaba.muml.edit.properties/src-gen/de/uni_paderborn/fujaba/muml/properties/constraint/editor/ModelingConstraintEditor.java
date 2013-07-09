@@ -22,10 +22,6 @@ public class ModelingConstraintEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

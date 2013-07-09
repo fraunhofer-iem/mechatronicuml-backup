@@ -44,10 +44,6 @@ public class StructuredComponentInstanceEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

@@ -63,10 +63,6 @@ public class SynchronizationEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

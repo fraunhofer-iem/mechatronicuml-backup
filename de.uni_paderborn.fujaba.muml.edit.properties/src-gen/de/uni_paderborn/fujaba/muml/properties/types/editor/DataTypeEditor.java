@@ -44,10 +44,6 @@ public class DataTypeEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

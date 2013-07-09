@@ -90,10 +90,6 @@ public class ComponentInstanceConfigurationEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

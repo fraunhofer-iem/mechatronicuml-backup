@@ -64,10 +64,6 @@ public class MessageTypeEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

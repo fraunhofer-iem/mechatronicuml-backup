@@ -285,10 +285,6 @@ public class TransitionEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

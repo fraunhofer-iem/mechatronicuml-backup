@@ -105,10 +105,6 @@ public class ComponentEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

@@ -64,10 +64,6 @@ public class DeadlineEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

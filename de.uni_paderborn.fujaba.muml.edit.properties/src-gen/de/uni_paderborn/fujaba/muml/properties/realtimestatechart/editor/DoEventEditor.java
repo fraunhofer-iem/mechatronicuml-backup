@@ -61,10 +61,6 @@ public class DoEventEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

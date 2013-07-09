@@ -19,11 +19,12 @@ public class RealtimeStatechartEditor
 	 */
 	public void initialize() {
 
-		addRealtimeStatechartTransitionsEditor(null, true);
+		addSubCategory(
+				"de.fujaba.properties.category.RealtimeStatechart.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, false);
 
-		addRealtimeStatechartStatesEditor(null, true);
-
-		addRealtimeStatechartClocksEditor(null, true);
+		addRealtimeStatechartClocksEditor(
+				"de.fujaba.properties.category.RealtimeStatechart.Lists", true);
 
 		addCommentableElementCommentEditor(null, true);
 
@@ -34,44 +35,6 @@ public class RealtimeStatechartEditor
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addRealtimeStatechartTransitionsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createRealtimeStatechartTransitionsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartTransitionsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getRealtimeStatechart_Transitions());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addRealtimeStatechartStatesEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createRealtimeStatechartStatesEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartStatesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getRealtimeStatechart_States());
-
-	}
 	/**
 	 * @generated
 	 */
@@ -114,6 +77,7 @@ public class RealtimeStatechartEditor
 	 * @generated
 	 */
 	protected void addBehaviorOperationsEditor(String category, boolean front) {
+		category = "de.fujaba.properties.category.RealtimeStatechart.Lists";
 		addEditorToCategory(category, createBehaviorOperationsEditor(), front);
 	}
 
@@ -131,6 +95,7 @@ public class RealtimeStatechartEditor
 	 * @generated
 	 */
 	protected void addBehaviorVariablesEditor(String category, boolean front) {
+		category = "de.fujaba.properties.category.RealtimeStatechart.Lists";
 		addEditorToCategory(category, createBehaviorVariablesEditor(), front);
 	}
 
@@ -144,10 +109,6 @@ public class RealtimeStatechartEditor
 						.getBehavior_Variables());
 
 	}
-
-	//
-	// Overwritten property settings
-	//
 
 	/**
 	 * @generated

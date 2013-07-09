@@ -22,10 +22,6 @@ public class ContinuousPortEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

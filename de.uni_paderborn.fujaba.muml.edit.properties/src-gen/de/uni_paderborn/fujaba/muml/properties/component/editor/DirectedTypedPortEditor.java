@@ -89,10 +89,6 @@ public class DirectedTypedPortEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

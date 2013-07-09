@@ -65,10 +65,6 @@ public class EntryOrExitEventEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

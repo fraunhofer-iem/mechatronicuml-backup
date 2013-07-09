@@ -64,10 +64,6 @@ public class BehaviorEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

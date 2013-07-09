@@ -44,10 +44,6 @@ public class PrimitiveDataTypeEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

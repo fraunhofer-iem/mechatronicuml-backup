@@ -533,18 +533,17 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/transitions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/states"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties>
+      <properties category="//@packages.3/@classes.16/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/clocks"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
+      <propertyCategories title="Lists" overriddenProperties="//@packages.6/@classes.1/@properties.1 //@packages.6/@classes.1/@properties.2" localProperties="//@packages.3/@classes.16/@properties.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="#//@packages.6/@classes.1"/>

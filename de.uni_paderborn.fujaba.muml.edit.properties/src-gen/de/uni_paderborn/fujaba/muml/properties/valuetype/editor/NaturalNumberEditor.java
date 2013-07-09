@@ -69,10 +69,6 @@ public class NaturalNumberEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */
