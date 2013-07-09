@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public class PortPartEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor {
 
 	/**
 	 * @generated
@@ -19,8 +19,6 @@ public class PortPartEditor
 	 */
 	public void initialize() {
 
-		addConnectorEndpointConnectorsEditor(null, true);
-
 		addNamedElementNameEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
@@ -28,25 +26,6 @@ public class PortPartEditor
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addConnectorEndpointConnectorsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConnectorEndpointConnectorsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpoint_Connectors());
-
-	}
 	/**
 	 * @generated
 	 */

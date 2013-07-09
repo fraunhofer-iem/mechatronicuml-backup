@@ -13,6 +13,136 @@
     <propertyEditors>
     
        <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.State">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.DeadlineEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Deadline">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.AbsoluteDeadlineEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.RelativeDeadlineEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ClockEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Clock">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.RegionEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Region">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.VertexEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.TransitionEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Transition">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ClockConstraintEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ActionEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Action">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.AsynchronousMessageEventEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.DoEventEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EntryOrExitEventEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.EntryOrExitEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.SynchronizationChannelEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.SynchronizationEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.PrioritizedElementEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.RealtimeStatechartEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EventEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Event">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.TransitionEventEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.TransitionEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateEventEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.MessageEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Message">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EntryEventEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ExitEventEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateConnectionPointEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EntryPointEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.EntryPoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ExitPointEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.types.editor.ArrayDataTypeEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.types.ArrayDataType">
        </propertyEditor>
@@ -58,6 +188,81 @@
        </propertyEditor>
     
        <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CardinalityEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.Cardinality">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.TimeValueEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.TimeValue">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.NaturalNumberEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.RangeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.Range">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.msgtype.MessageType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeRepositoryEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.Connector">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.ConnectorInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteSingleInteractionEndpointInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteMultiInteractionEndpointInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.MessageBufferEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.MessageBuffer">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.protocol.editor.AbstractCoordinationSpecificationEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification">
        </propertyEditor>
@@ -80,26 +285,6 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.protocol.editor.ConnectorQualityOfServiceAssumptionsEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CardinalityEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.Cardinality">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.TimeValueEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.TimeValue">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.NaturalNumberEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.RangeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.Range">
        </propertyEditor>
     
        <propertyEditor
@@ -208,16 +393,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.msgtype.MessageType">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeRepositoryEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.ComponentEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.component.Component">
        </propertyEditor>
@@ -290,181 +465,6 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortPartEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.component.PortPart">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.DeadlineEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Deadline">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.AbsoluteDeadlineEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.RelativeDeadlineEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ClockEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Clock">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.RegionEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Region">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.State">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.VertexEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.TransitionEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Transition">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ClockConstraintEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ActionEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Action">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.AsynchronousMessageEventEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.DoEventEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EntryOrExitEventEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.EntryOrExitEvent">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.SynchronizationChannelEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.SynchronizationEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.PrioritizedElementEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.PrioritizedElement">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.RealtimeStatechartEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EventEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Event">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.TransitionEventEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.TransitionEvent">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateEventEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.StateEvent">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.MessageEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.Message">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EntryEventEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ExitEventEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateConnectionPointEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EntryPointEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.EntryPoint">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.ExitPointEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.realtimestatechart.ExitPoint">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.Connector">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.ConnectorInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteSingleInteractionEndpointInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteMultiInteractionEndpointInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.MessageBufferEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.MessageBuffer">
        </propertyEditor>
     
     </propertyEditors>

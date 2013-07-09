@@ -21,8 +21,6 @@ public class ComponentPartEditor
 
 		addComponentPartCardinalityEditor(null, false);
 
-		addComponentPartMultiPartEditor(null, true);
-
 		addCommentableElementCommentEditor(null, true);
 
 		addNamedElementNameEditor(null, true);
@@ -47,25 +45,6 @@ public class ComponentPartEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponentPart_Cardinality());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addComponentPartMultiPartEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createComponentPartMultiPartEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartMultiPartEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponentPart_MultiPart());
 
 	}
 	/**

@@ -39,13 +39,9 @@ public class TransitionEditor
 
 		addTransitionUrgentEditor(null, true);
 
-		addTransitionReceiverMessageTypesEditor(null, true);
-
-		addTransitionSenderMessageTypesEditor(null, true);
+		addPrioritizedElementPriorityEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
-
-		addPrioritizedElementPriorityEditor(null, true);
 
 		super.initialize();
 	}
@@ -232,39 +228,20 @@ public class TransitionEditor
 	/**
 	 * @generated
 	 */
-	protected void addTransitionReceiverMessageTypesEditor(String category,
+	protected void addPrioritizedElementPriorityEditor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createTransitionReceiverMessageTypesEditor(), front);
+		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionReceiverMessageTypesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
+		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getTransition_ReceiverMessageTypes());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addTransitionSenderMessageTypesEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createTransitionSenderMessageTypesEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionSenderMessageTypesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getTransition_SenderMessageTypes());
+						.getPrioritizedElement_Priority(), 0);
 
 	}
 	/**
@@ -284,25 +261,6 @@ public class TransitionEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addPrioritizedElementPriorityEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getPrioritizedElement_Priority());
 
 	}
 

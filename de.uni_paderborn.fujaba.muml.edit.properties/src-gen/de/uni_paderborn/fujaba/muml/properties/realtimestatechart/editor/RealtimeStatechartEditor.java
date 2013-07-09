@@ -25,14 +25,6 @@ public class RealtimeStatechartEditor
 
 		addRealtimeStatechartClocksEditor(null, true);
 
-		addRealtimeStatechartFlatEditor(null, true);
-
-		addRealtimeStatechartEmbeddedEditor(null, true);
-
-		addRealtimeStatechartAllAvailableVariablesEditor(null, true);
-
-		addRealtimeStatechartAllAvailableOperationsEditor(null, true);
-
 		addNamedElementNameEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
@@ -95,82 +87,6 @@ public class RealtimeStatechartEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_Clocks());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addRealtimeStatechartFlatEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createRealtimeStatechartFlatEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartFlatEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getRealtimeStatechart_Flat());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addRealtimeStatechartEmbeddedEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createRealtimeStatechartEmbeddedEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartEmbeddedEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getRealtimeStatechart_Embedded());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addRealtimeStatechartAllAvailableVariablesEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createRealtimeStatechartAllAvailableVariablesEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartAllAvailableVariablesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getRealtimeStatechart_AllAvailableVariables());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addRealtimeStatechartAllAvailableOperationsEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createRealtimeStatechartAllAvailableOperationsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartAllAvailableOperationsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getRealtimeStatechart_AllAvailableOperations());
 
 	}
 	/**

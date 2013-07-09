@@ -19,29 +19,7 @@ public class AssemblyConnectorEditor
 	 */
 	public void initialize() {
 
-		addAssemblyConnectorPortPartsEditor(null, true);
-
 		super.initialize();
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addAssemblyConnectorPortPartsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createAssemblyConnectorPortPartsEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createAssemblyConnectorPortPartsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getAssemblyConnector_PortParts());
-
 	}
 
 	//

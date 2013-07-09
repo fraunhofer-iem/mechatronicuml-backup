@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
  */
 public class VariableEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.behavior.editor.TypedNamedElementEditor {
 
 	/**
 	 * @generated
@@ -21,7 +21,7 @@ public class VariableEditor
 
 		addVariableInitializeExpressionEditor(null, false);
 
-		addNamedElementNameEditor(null, true);
+		addCommentableElementCommentEditor(null, true);
 
 		super.initialize();
 	}
@@ -48,18 +48,20 @@ public class VariableEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name());
+						.getCommentableElement_Comment());
 
 	}
 

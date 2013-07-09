@@ -19,14 +19,6 @@ public class DiscretePortInstanceEditor
 	 */
 	public void initialize() {
 
-		addDiscretePortInstanceReceiverMessageTypesEditor(null, true);
-
-		addDiscretePortInstanceSenderMessageTypesEditor(null, true);
-
-		addDiscretePortInstanceReceiverMessageBufferEditor(null, true);
-
-		addPortInstancePortConnectorInstancesEditor(null, true);
-
 		addConnectorEndpointInstanceConnectorInstancesEditor(null, true);
 
 		addNamedElementNameEditor(null, true);
@@ -36,82 +28,6 @@ public class DiscretePortInstanceEditor
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addDiscretePortInstanceReceiverMessageTypesEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDiscretePortInstanceReceiverMessageTypesEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortInstanceReceiverMessageTypesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getDiscretePortInstance_ReceiverMessageTypes());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addDiscretePortInstanceSenderMessageTypesEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDiscretePortInstanceSenderMessageTypesEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortInstanceSenderMessageTypesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getDiscretePortInstance_SenderMessageTypes());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addDiscretePortInstanceReceiverMessageBufferEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDiscretePortInstanceReceiverMessageBufferEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortInstanceReceiverMessageBufferEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getDiscretePortInstance_ReceiverMessageBuffer());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addPortInstancePortConnectorInstancesEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createPortInstancePortConnectorInstancesEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPortInstancePortConnectorInstancesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getPortInstance_PortConnectorInstances());
-
-	}
 	/**
 	 * @generated
 	 */

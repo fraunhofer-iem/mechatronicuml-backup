@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.protocol.editor;
  */
 public class AbstractCoordinationSpecificationEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -19,30 +19,13 @@ public class AbstractCoordinationSpecificationEditor
 	 */
 	public void initialize() {
 
-		addNamedElementNameEditor(null, true);
-
 		addCommentableElementCommentEditor(null, true);
+
+		addConstrainableElementConstraintEditor(null, true);
 
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name());
-
-	}
 	/**
 	 * @generated
 	 */
@@ -60,6 +43,25 @@ public class AbstractCoordinationSpecificationEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addConstrainableElementConstraintEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConstrainableElementConstraintEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
 
 	}
 

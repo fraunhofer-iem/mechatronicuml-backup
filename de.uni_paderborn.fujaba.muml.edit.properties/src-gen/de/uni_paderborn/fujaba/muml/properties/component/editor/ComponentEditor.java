@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public class ComponentEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -23,9 +23,9 @@ public class ComponentEditor
 
 		addComponentComponentTypeEditor(null, true);
 
-		addNamedElementNameEditor(null, true);
-
 		addCommentableElementCommentEditor(null, true);
+
+		addConstrainableElementConstraintEditor(null, true);
 
 		super.initialize();
 	}
@@ -69,23 +69,6 @@ public class ComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name());
-
-	}
-	/**
-	 * @generated
-	 */
 	protected void addCommentableElementCommentEditor(String category,
 			boolean front) {
 		addEditorToCategory(category, createCommentableElementCommentEditor(),
@@ -100,6 +83,25 @@ public class ComponentEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addConstrainableElementConstraintEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConstrainableElementConstraintEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
 
 	}
 

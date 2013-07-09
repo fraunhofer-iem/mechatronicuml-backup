@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public class DirectedTypedPortEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.component.editor.PortEditor {
+			de.uni_paderborn.fujaba.muml.properties.behavior.editor.TypedNamedElementEditor {
 
 	/**
 	 * @generated
@@ -23,11 +23,13 @@ public class DirectedTypedPortEditor
 
 		addDirectedTypedPortOptionalEditor(null, true);
 
-		addDirectedTypedPortOutPortEditor(null, true);
+		addConnectorEndpointConnectorsEditor(null, true);
 
-		addDirectedTypedPortInPortEditor(null, true);
+		addConstrainableElementConstraintEditor(null, true);
 
 		addNamedElementNameEditor(null, true);
+
+		addCommentableElementCommentEditor(null, true);
 
 		super.initialize();
 	}
@@ -72,39 +74,39 @@ public class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDirectedTypedPortOutPortEditor(String category,
+	protected void addConnectorEndpointConnectorsEditor(String category,
 			boolean front) {
-		addEditorToCategory(category, createDirectedTypedPortOutPortEditor(),
-				front);
+		addEditorToCategory(category,
+				createConnectorEndpointConnectorsEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortOutPortEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getDirectedTypedPort_OutPort());
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
 
 	}
 	/**
 	 * @generated
 	 */
-	protected void addDirectedTypedPortInPortEditor(String category,
+	protected void addConstrainableElementConstraintEditor(String category,
 			boolean front) {
-		addEditorToCategory(category, createDirectedTypedPortInPortEditor(),
-				front);
+		addEditorToCategory(category,
+				createConstrainableElementConstraintEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortInPortEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getDirectedTypedPort_InPort());
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
 
 	}
 	/**
@@ -122,6 +124,25 @@ public class DirectedTypedPortEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment());
 
 	}
 
