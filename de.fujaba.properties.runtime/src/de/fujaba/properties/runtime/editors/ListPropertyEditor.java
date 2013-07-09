@@ -80,7 +80,9 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 
 		org.eclipse.swt.widgets.Table table = toolkit.createTable(
 				listContainer, SWT.BORDER);
-		table.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		GridData tableGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+		tableGridData.minimumWidth = 120;
+		table.setLayoutData(tableGridData);
 
 		tableViewer = new TableViewer(table);
 		tableViewer.setContentProvider(ArrayContentProvider.getInstance());
