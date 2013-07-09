@@ -21,7 +21,7 @@ public class DirectedTypedPortEditor
 
 		addSubCategory(
 				"de.fujaba.properties.category.DirectedTypedPort.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL);
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, false);
 
 		addDirectedTypedPortKindEditor(null, true);
 

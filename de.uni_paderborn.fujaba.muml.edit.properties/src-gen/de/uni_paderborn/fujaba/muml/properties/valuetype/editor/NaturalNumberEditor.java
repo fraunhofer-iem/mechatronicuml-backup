@@ -23,7 +23,7 @@ public class NaturalNumberEditor
 	public void initialize() {
 
 		addSubCategory("de.fujaba.properties.category.NaturalNumber.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL);
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, false);
 
 		addNaturalNumberValueEditor(null, true);
 

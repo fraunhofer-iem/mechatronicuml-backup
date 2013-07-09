@@ -24,6 +24,8 @@ import de.fujaba.properties.runtime.RuntimePlugin;
 public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	protected boolean childrenCreated = false;
 	
+	protected boolean initiallyExpanded = false;
+	
 	public Color colorInactiveText = new Color(null, 200, 200, 255);
 	public Color colorInactiveBackground = new Color(null, 100, 100, 100);
 	public Color colorActiveText = null;
@@ -48,7 +50,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	 * 
 	 */
 	public CategoryPropertyEditor(AdapterFactory adapterFactory) {
-		this(adapterFactory, SWT.VERTICAL, null);
+		this(adapterFactory, SWT.VERTICAL, null, false);
 	}
 
 	/**
@@ -61,10 +63,11 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	 * @param orientation
 	 *            The orientation, can be SWT.HORIZONTAL or SWT.VERTICAL.
 	 */
-	public CategoryPropertyEditor(AdapterFactory adapterFactory, int orientation, String title) {
+	public CategoryPropertyEditor(AdapterFactory adapterFactory, int orientation, String title, boolean initiallyExpanded) {
 		super(adapterFactory);
 		this.orientation = orientation;
 		this.title = title;
+		this.initiallyExpanded = initiallyExpanded;
 		initialize();
 	}
 
@@ -227,7 +230,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 				}
 			});
 			
-			section.setExpanded(isInitiallyExpanded());
+			section.setExpanded(initiallyExpanded);
 			
 			
 		} else {
@@ -241,9 +244,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 		// TODO REMOVE
 		createChildren();
-	}
-	public boolean isInitiallyExpanded() {
-		return true;
 	}
 	
 	protected void createChildren() {

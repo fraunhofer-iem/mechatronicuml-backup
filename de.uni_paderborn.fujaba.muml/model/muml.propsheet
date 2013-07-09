@@ -339,8 +339,8 @@
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/parentStatechart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <propertyCategories title="Booleans" localProperties="//@packages.3/@classes.5/@properties.6 //@packages.3/@classes.5/@properties.5 //@packages.3/@classes.5/@properties.4"/>
-      <propertyCategories title="Lists" localProperties="//@packages.3/@classes.5/@properties.7 //@packages.3/@classes.5/@properties.3"/>
+      <propertyCategories title="Booleans" open="true" localProperties="//@packages.3/@classes.5/@properties.6 //@packages.3/@classes.5/@properties.5 //@packages.3/@classes.5/@properties.4"/>
+      <propertyCategories title="Lists" open="true" localProperties="//@packages.3/@classes.5/@properties.7 //@packages.3/@classes.5/@properties.3"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Vertex"/>
@@ -377,22 +377,22 @@
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/statechart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <properties>
+      <properties category="//@packages.3/@classes.7/@propertyCategories.3">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/clockResets"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties>
+      <properties category="//@packages.3/@classes.7/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/clockConstraints"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties>
+      <properties category="//@packages.3/@classes.7/@propertyCategories.2">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/absoluteDeadlines"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties>
+      <properties category="//@packages.3/@classes.7/@propertyCategories.2">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/relativeDeadline"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
@@ -402,17 +402,17 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <properties>
+      <properties category="//@packages.3/@classes.7/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/guard"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
-      <properties>
+      <properties category="//@packages.3/@classes.7/@propertyCategories.3">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/events"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties>
+      <properties category="//@packages.3/@classes.7/@propertyCategories.3">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/action"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
@@ -422,7 +422,10 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" localProperties="//@packages.3/@classes.7/@properties.8 //@packages.3/@classes.7/@properties.12"/>
+      <propertyCategories title="Booleans" open="true" localProperties="//@packages.3/@classes.7/@properties.8 //@packages.3/@classes.7/@properties.12"/>
+      <propertyCategories title="Guards" vertical="true" localProperties="//@packages.3/@classes.7/@properties.9 //@packages.3/@classes.7/@properties.5"/>
+      <propertyCategories title="Deadlines" vertical="true" localProperties="//@packages.3/@classes.7/@properties.6 //@packages.3/@classes.7/@properties.7"/>
+      <propertyCategories title="Actions" localProperties="//@packages.3/@classes.7/@properties.11 //@packages.3/@classes.7/@properties.4 //@packages.3/@classes.7/@properties.10"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="#//@packages.3/@classes.15"/>

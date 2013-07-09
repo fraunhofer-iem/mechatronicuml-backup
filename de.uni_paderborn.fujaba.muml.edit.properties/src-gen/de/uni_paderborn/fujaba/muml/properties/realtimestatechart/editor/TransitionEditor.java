@@ -20,26 +20,42 @@ public class TransitionEditor
 	public void initialize() {
 
 		addSubCategory("de.fujaba.properties.category.Transition.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL);
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addSubCategory("de.fujaba.properties.category.Transition.Guards",
+				"Guards", org.eclipse.swt.SWT.VERTICAL, false);
+
+		addSubCategory("de.fujaba.properties.category.Transition.Deadlines",
+				"Deadlines", org.eclipse.swt.SWT.VERTICAL, false);
+
+		addSubCategory("de.fujaba.properties.category.Transition.Actions",
+				"Actions", org.eclipse.swt.SWT.HORIZONTAL, false);
 
 		addTransitionSynchronizationEditor(null, false);
 
-		addTransitionClockResetsEditor(null, true);
+		addTransitionClockResetsEditor(
+				"de.fujaba.properties.category.Transition.Actions", true);
 
-		addTransitionClockConstraintsEditor(null, true);
+		addTransitionClockConstraintsEditor(
+				"de.fujaba.properties.category.Transition.Guards", true);
 
-		addTransitionAbsoluteDeadlinesEditor(null, true);
+		addTransitionAbsoluteDeadlinesEditor(
+				"de.fujaba.properties.category.Transition.Deadlines", true);
 
-		addTransitionRelativeDeadlineEditor(null, false);
+		addTransitionRelativeDeadlineEditor(
+				"de.fujaba.properties.category.Transition.Deadlines", false);
 
 		addTransitionBlockableEditor(
 				"de.fujaba.properties.category.Transition.Booleans", true);
 
-		addTransitionGuardEditor(null, false);
+		addTransitionGuardEditor(
+				"de.fujaba.properties.category.Transition.Guards", false);
 
-		addTransitionEventsEditor(null, true);
+		addTransitionEventsEditor(
+				"de.fujaba.properties.category.Transition.Actions", true);
 
-		addTransitionActionEditor(null, false);
+		addTransitionActionEditor(
+				"de.fujaba.properties.category.Transition.Actions", false);
 
 		addTransitionUrgentEditor(
 				"de.fujaba.properties.category.Transition.Booleans", true);

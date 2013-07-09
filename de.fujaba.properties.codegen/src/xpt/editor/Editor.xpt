@@ -34,7 +34,7 @@ public class «genEditorName()» extends «EXPAND extends-» {
 	 */
 	public void initialize() {
 		«FOREACH propertyCategories AS this»
-		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF»);
+		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
 		«ENDFOREACH»
 		«FOREACH genProperties().select(p | p.editor != null) AS this»
 			«EXPAND addEditor FOR editor»

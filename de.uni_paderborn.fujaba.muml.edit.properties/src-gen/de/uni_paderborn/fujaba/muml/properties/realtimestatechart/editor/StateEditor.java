@@ -20,10 +20,10 @@ public class StateEditor
 	public void initialize() {
 
 		addSubCategory("de.fujaba.properties.category.State.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL);
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		addSubCategory("de.fujaba.properties.category.State.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL);
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		addStateDoEventEditor(null, false);
 

@@ -21,7 +21,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 
 		addSubCategory(
 				"de.fujaba.properties.category.ConnectorQualityOfServiceAssumptions.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL);
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, false);
 
 		addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null,
 				false);

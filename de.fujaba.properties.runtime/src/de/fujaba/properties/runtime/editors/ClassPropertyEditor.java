@@ -16,12 +16,13 @@ public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 
 	public ClassPropertyEditor(AdapterFactory adapterFactory) {
 		super(adapterFactory);
+		initiallyExpanded = true;
 	}
 
 	public CategoryPropertyEditor addSubCategory(String key, String title,
-			int orientation) {
+			int orientation, boolean initiallyExpanded) {
 		CategoryPropertyEditor category = new CategoryPropertyEditor(adapterFactory,
-				orientation, title);
+				orientation, title, initiallyExpanded);
 		addPropertyEditor(key, category, false);
 		return category;
 	}
@@ -34,11 +35,6 @@ public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 			categoryEditor = (CategoryPropertyEditor) subEditor;
 		}
 		categoryEditor.addPropertyEditor(null, editor, front);
-	}
-	
-	@Override
-	public boolean isInitiallyExpanded() {
-		return true;
 	}
 
 }

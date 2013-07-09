@@ -23,7 +23,7 @@ import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
 public class ObjectPropertyEditor extends CategoryPropertyEditor {
 
 	public ObjectPropertyEditor(AdapterFactory adapterFactory, String title) {
-		super(adapterFactory, SWT.VERTICAL, title);
+		super(adapterFactory, SWT.VERTICAL, title, false);
 		
 	}
 
@@ -66,9 +66,4 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 		}
 	}
 	
-	@Override
-	public boolean isInitiallyExpanded() {
-		return false;
-	}
-
 }
