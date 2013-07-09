@@ -55,7 +55,7 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
-		if (text != null) {
+		if (text != null && !text.getText().equals(value.toString())) {
 			text.setText(value.toString());
 		}
 	}
