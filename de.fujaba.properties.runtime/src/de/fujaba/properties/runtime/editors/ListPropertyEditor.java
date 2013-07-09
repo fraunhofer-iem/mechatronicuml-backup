@@ -209,6 +209,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		super.valueChanged();
 		tableViewer.removeSelectionChangedListener(selectionChangedListener);
 		tableViewer.setInput(value);
+		RuntimePlugin.revalidateLayout(tableViewer.getTable());
 		tableViewer.addSelectionChangedListener(selectionChangedListener);
 
 		
