@@ -11,6 +11,7 @@ import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Spinner;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 public class SpinnerPropertyEditor extends
@@ -26,10 +27,10 @@ public class SpinnerPropertyEditor extends
 
 	@Override
 	public void createControls(Composite parent,
-			TabbedPropertySheetWidgetFactory factory) {
-		factory.createLabel(parent, getLabelText());
-
-		spinner = new Spinner(parent, SWT.NONE);
+			TabbedPropertySheetWidgetFactory toolkit) {
+		toolkit.createLabel(parent, getLabelText());
+		
+		spinner = new Spinner(parent, toolkit.getBorderStyle() | toolkit.getOrientation());
 //		if (parent.getLayout() instanceof GridLayout) {
 //			spinner.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 //		}
