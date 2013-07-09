@@ -71,9 +71,6 @@ String genAdder(Property this) :
 String genCreator(Property this) :
 	'create'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + 'Editor';	
 	
-PropertyCategory genLocalCategory(Property this) : 
-	category;
-	
 String genFeatureLiteral(GenFeature this) :
 		genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
 	

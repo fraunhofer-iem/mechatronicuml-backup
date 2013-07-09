@@ -42,36 +42,37 @@ public class «genEditorName()» extends «EXPAND extends-» {
 		super.initialize();
 	}
 	
-	«FOREACH genProperties().select(p | p.editor != null) AS this-»
+	«FOREACH genProperties().select(p | p.editor != null) AS property-»
 	/**
 	 * @generated
 	 */
-	protected void «genAdder()»(String category, boolean front) {
-		addEditorToCategory(category, «genCreator()»(), front);
+	protected void «property.genAdder()»(String category, boolean front) {
+		«IF !propertyCategories.select(c | c.overriddenProperties.contains(property)).isEmpty-»
+		category = "«propertyCategories.select(c | c.overriddenProperties.contains(property)).first().genCategoryKey()»";
+		«ENDIF-»
+		addEditorToCategory(category, «property.genCreator()»(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
-		return «EXPAND createEditor(this) FOR editor»
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor «property.genCreator()»() {
+		return «EXPAND createEditor(property) FOR property.editor»
 	}
 	«ENDFOREACH»
 	
+	«FOREACH propertyCategories AS this»
+		«FOREACH overriddenProperties.select(p | { clazz.superClasses.first() }.genSuperClasses().contains(p.clazz)) AS property»
 	
-	//
-	// Overwritten property settings
-	//
-
-	«FOREACH overriddenProperties() AS this»
 	/**
 	 * @generated
 	 */
 	@Override
-	protected void «genAdder()»(String category, boolean front) {
-		category = «EXPAND categoryKey-»;
-		super.addNameEditor(category, front);
+	protected void «property.genAdder()»(String category, boolean front) {
+		category = "«genCategoryKey()»";
+		super.«property.genAdder()»(category, front);
 	}
+		«ENDFOREACH»
 	«ENDFOREACH»
 	
 	/**
@@ -95,11 +96,9 @@ public class «genEditorName()» extends «EXPAND extends-» {
 «ENDDEFINE»
 
 
-
-
 «DEFINE categoryKey FOR Property-»
-«IF genLocalCategory() != null-»
-	"«genLocalCategory().genCategoryKey()-»"
+«IF category != null-»
+	"«category.genCategoryKey()-»"
 «ELSE-»
 	null
 «ENDIF-»
