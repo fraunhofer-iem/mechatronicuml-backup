@@ -24,10 +24,6 @@ public class ExtendableElementEditor
 		super.initialize();
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

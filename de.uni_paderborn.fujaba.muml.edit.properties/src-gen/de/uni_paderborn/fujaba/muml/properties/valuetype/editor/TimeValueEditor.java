@@ -57,7 +57,7 @@ public class TimeValueEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getTimeValue_Unit());
+						.getTimeValue_Unit(), false);
 
 	}
 

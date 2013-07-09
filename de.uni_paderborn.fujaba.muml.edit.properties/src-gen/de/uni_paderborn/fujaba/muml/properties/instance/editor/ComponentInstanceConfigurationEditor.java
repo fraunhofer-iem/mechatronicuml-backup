@@ -86,7 +86,7 @@ public class ComponentInstanceConfigurationEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment());
+						.getCommentableElement_Comment(), true);
 
 	}
 

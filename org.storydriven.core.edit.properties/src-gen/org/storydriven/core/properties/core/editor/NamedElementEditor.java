@@ -38,13 +38,9 @@ public class NamedElementEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name());
+						.getNamedElement_Name(), false);
 
 	}
-
-	//
-	// Overwritten property settings
-	//
 
 	/**
 	 * @generated

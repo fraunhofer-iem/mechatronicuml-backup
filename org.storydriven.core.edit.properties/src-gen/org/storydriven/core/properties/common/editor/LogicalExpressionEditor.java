@@ -44,10 +44,6 @@ public class LogicalExpressionEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

@@ -44,10 +44,6 @@ public class UnaryExpressionEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

@@ -47,7 +47,7 @@ public class NaturalNumberEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getNaturalNumber_Value());
+						.getNaturalNumber_Value(), false);
 
 	}
 	/**

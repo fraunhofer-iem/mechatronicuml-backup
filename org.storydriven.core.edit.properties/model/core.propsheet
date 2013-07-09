@@ -17,7 +17,7 @@
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor" multiLine="true"/>
       </properties>
     </classes>
     <classes>

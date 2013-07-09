@@ -44,7 +44,7 @@ public class TextualExpressionEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
-						.getTextualExpression_ExpressionText());
+						.getTextualExpression_ExpressionText(), false);
 
 	}
 	/**
@@ -63,7 +63,7 @@ public class TextualExpressionEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
-						.getTextualExpression_Language());
+						.getTextualExpression_Language(), false);
 
 	}
 	/**
@@ -82,13 +82,9 @@ public class TextualExpressionEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
-						.getTextualExpression_LanguageVersion());
+						.getTextualExpression_LanguageVersion(), false);
 
 	}
-
-	//
-	// Overwritten property settings
-	//
 
 	/**
 	 * @generated

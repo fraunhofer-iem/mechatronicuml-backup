@@ -82,7 +82,7 @@ public class AtomicComponentEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name());
+						.getNamedElement_Name(), false);
 
 	}
 	/**
@@ -101,7 +101,7 @@ public class AtomicComponentEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment());
+						.getCommentableElement_Comment(), true);
 
 	}
 	/**

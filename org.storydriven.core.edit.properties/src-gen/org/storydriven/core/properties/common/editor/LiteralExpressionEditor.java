@@ -40,13 +40,9 @@ public class LiteralExpressionEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
-						.getLiteralExpression_Value());
+						.getLiteralExpression_Value(), false);
 
 	}
-
-	//
-	// Overwritten property settings
-	//
 
 	/**
 	 * @generated

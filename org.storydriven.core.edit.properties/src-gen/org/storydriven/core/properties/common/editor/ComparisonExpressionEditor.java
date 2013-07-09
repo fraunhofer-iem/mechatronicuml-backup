@@ -44,10 +44,6 @@ public class ComparisonExpressionEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

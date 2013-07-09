@@ -43,7 +43,7 @@ public class RangeEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getRange_LowerBound());
+						.getRange_LowerBound(), false);
 
 	}
 	/**
@@ -60,7 +60,7 @@ public class RangeEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getRange_UpperBound());
+						.getRange_UpperBound(), false);
 
 	}
 

@@ -44,10 +44,6 @@ public class ArithmeticExpressionEditor
 
 	}
 
-	//
-	// Overwritten property settings
-	//
-
 	/**
 	 * @generated
 	 */

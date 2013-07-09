@@ -13,19 +13,29 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	protected Text text;
+	protected boolean multiLine;
 
-	public TextPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
+	public TextPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature, boolean multiLine) {
 		super(adapterFactory, feature);
+		this.multiLine = multiLine;
 	}
 
 	@Override
 	public void createControls(Composite parent,
 			TabbedPropertySheetWidgetFactory factory) {
-		factory.createLabel(parent, getLabelText());
-
-		text = factory.createText(parent, "");
+		factory.createLabel(parent, getLabelText()).setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
+		int style = 0;
+		if (multiLine) {
+			style |= SWT.MULTI | SWT.V_SCROLL;
+		}
+		text = factory.createText(parent, "", style);
 		if (parent.getLayout() instanceof GridLayout) {
-			text.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
+			if (multiLine) {
+				gridData.minimumHeight = 80;
+				gridData.heightHint = 80;
+			}
+			text.setLayoutData(gridData);
 		}
 		text.addKeyListener(new org.eclipse.swt.events.KeyAdapter() {
 			public void keyReleased(org.eclipse.swt.events.KeyEvent e) {
