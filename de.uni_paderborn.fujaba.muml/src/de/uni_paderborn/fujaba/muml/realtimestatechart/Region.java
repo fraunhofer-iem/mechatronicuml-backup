@@ -100,7 +100,7 @@ public interface Region extends PrioritizedElement, CommentableElement {
 	 * @see #isSetName()
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_Name()
 	 * @model unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.embeddedStatechart.oclIsUndefined() then\r\n\tself.embeddedStatechart.oclIsTypeOf(realtimestatechart::RealtimeStatechart).name\r\nelse\r\n\tnull\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.embeddedStatechart.oclIsUndefined() then\r\n\tself.embeddedStatechart.oclAsType(realtimestatechart::RealtimeStatechart).name\r\nelse\r\n\tnull\r\nendif'"
 	 * @generated
 	 */
 	String getName();

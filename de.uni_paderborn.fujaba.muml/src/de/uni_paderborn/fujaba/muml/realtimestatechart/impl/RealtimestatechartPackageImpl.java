@@ -1775,7 +1775,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getRegion_Name(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if not self.embeddedStatechart.oclIsUndefined() then\r\n\tself.embeddedStatechart.oclIsTypeOf(realtimestatechart::RealtimeStatechart).name\r\nelse\r\n\tnull\r\nendif"
+			 "derivation", "if not self.embeddedStatechart.oclIsUndefined() then\r\n\tself.embeddedStatechart.oclAsType(realtimestatechart::RealtimeStatechart).name\r\nelse\r\n\tnull\r\nendif"
 		   });					
 		addAnnotation
 		  (stateEClass, 
