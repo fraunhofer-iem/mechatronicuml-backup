@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
@@ -126,7 +127,7 @@ public class VertexItemProvider
 				 getString("_UI_Vertex_allSuperVertices_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Vertex_allSuperVertices_feature", "_UI_Vertex_type"),
 				 RealtimestatechartPackage.Literals.VERTEX__ALL_SUPER_VERTICES,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
@@ -158,6 +159,12 @@ public class VertexItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Vertex.class)) {
+			case RealtimestatechartPackage.VERTEX__ALL_SUPER_VERTICES:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
