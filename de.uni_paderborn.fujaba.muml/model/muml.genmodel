@@ -257,7 +257,7 @@
             propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Vertex/outgoingTransitions"/>
         <genFeatures notify="false" createChild="false" propertyCategory="Transitions"
             propertySortChoices="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Vertex/incomingTransitions"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/Vertex/allSuperVertices"/>
         <genOperations ecoreOperation="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf">
           <genParameters ecoreParameter="muml.ecore#//realtimestatechart/Vertex/isSuperVertexOf/vertex"/>
