@@ -12,6 +12,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.swt.widgets.Display;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
@@ -24,7 +27,10 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	protected EStructuralFeature feature = null;
 	
 	protected EObject element;
+	
 	protected Object value;
+	
+	protected IItemPropertyDescriptor itemPropertyDescriptor;
 
 	private Adapter adapter = new AdapterImpl() {
 		@Override
@@ -77,6 +83,19 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	protected void inputChanged() {
 		element = (EObject) input;
 		
+		// Reset itemPropertyDescriptor
+		itemPropertyDescriptor = null;
+		if (adapterFactory != null && input != null) {
+			IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(input,
+					IItemPropertySource.class);
+			for (IItemPropertyDescriptor descriptor : ips.getPropertyDescriptors(input)) {
+				if (feature.equals(descriptor.getFeature(input))) {
+					itemPropertyDescriptor = descriptor;
+					break;
+				}
+			}
+		}
+		
 		// calls refresh because of input change
 		super.inputChanged();
 
@@ -86,11 +105,22 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		// Update Adapters
 		updateAdapters();
 	}
+	
+	private Object unwrap(Object value) {
+		if (value instanceof ItemPropertyDescriptor.PropertyValueWrapper) {
+			return ((ItemPropertyDescriptor.PropertyValueWrapper) value).getEditableValue(value);
+		}
+		return value;
+	}
 
 	private void updateValue() {
 		Object newValue = null;
 		if (element != null) {
-			newValue = element.eGet(feature);
+			if (itemPropertyDescriptor != null) {
+				newValue = unwrap(itemPropertyDescriptor.getPropertyValue(element));
+			} else {
+				newValue = element.eGet(feature);
+			}
 		}
 		if (newValue != value) {
 			value = newValue;
@@ -151,13 +181,17 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 
 	public void setValue(Object newValue) {
-		EditingDomain editingDomain = AdapterFactoryEditingDomain
-				.getEditingDomainFor(element);
-		if (editingDomain == null) {
-			element.eSet(feature, newValue);
+		if (itemPropertyDescriptor != null) {
+			itemPropertyDescriptor.setPropertyValue(element, newValue);
 		} else {
-			editingDomain.getCommandStack().execute(
-					SetCommand.create(editingDomain, element, feature, newValue));
+			EditingDomain editingDomain = AdapterFactoryEditingDomain
+					.getEditingDomainFor(element);
+			if (editingDomain == null) {
+				element.eSet(feature, newValue);
+			} else {
+				editingDomain.getCommandStack().execute(
+						SetCommand.create(editingDomain, element, feature, newValue));
+			}
 		}
 	}
 
