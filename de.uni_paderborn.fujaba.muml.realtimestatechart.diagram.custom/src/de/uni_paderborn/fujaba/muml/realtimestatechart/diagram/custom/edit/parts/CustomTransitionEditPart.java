@@ -18,6 +18,13 @@ public class CustomTransitionEditPart extends TransitionEditPart {
 	}
 
 	@Override
+	public void activate() {
+		super.activate();
+		updatePriority();
+		updateUrgent();
+	}
+
+	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		Object feature = notification.getFeature();
 		if (RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY
@@ -25,9 +32,14 @@ public class CustomTransitionEditPart extends TransitionEditPart {
 
 			updatePriority();
 
-		} else if (RealtimestatechartPackage.Literals.TRANSITION__SOURCE.equals(feature)) {
+		} else if (RealtimestatechartPackage.Literals.TRANSITION__SOURCE
+				.equals(feature)) {
 			updatePriority();
+		} else if (RealtimestatechartPackage.Literals.TRANSITION__URGENT
+				.equals(feature)) {
+			updateUrgent();
 		}
+
 		super.handleNotificationEvent(notification);
 	}
 
@@ -38,10 +50,18 @@ public class CustomTransitionEditPart extends TransitionEditPart {
 		figure.showPriority(transition.getSource() instanceof State);
 	}
 
-	@Override
-	public void activate() {
-		super.activate();
-		updatePriority();
+	/**
+	 * If a transition is urgent, then the line should be solid, else dashed.
+	 * @since MUML 0.4
+	 */
+	private void updateUrgent() {
+		Transition transition = (Transition) getNotationView().getElement();
+		CustomTransitionFigure figure = ((CustomTransitionFigure) getFigure());
+		if (transition.isUrgent()) {
+			figure.setLineStyle(org.eclipse.swt.SWT.LINE_SOLID);
+		} else {
+			figure.setLineStyle(org.eclipse.swt.SWT.LINE_DASH);
+		}
 	}
 
 	protected Connection createConnectionFigure() {
