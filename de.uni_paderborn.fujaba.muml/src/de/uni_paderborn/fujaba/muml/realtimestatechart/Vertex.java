@@ -76,7 +76,8 @@ public interface Vertex extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>All Super Vertices</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getVertex_AllSuperVertices()
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsKindOf(State)\r\nthen self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif)->asOrderedSet()\r\nelse\r\n   if self.oclIsKindOf(StateConnectionPoint)\r\n   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif))->asOrderedSet()\r\n   else OrderedSet{ }\r\n   endif\r\nendif'"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.oclIsKindOf(State)\r\nthen self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif)->asOrderedSet()\r\nelse\r\n   if self.oclIsKindOf(StateConnectionPoint)\r\n   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif))->asOrderedSet()\r\n   else OrderedSet{ }\r\n   endif\r\nendif'"
 	 * @generated
 	 */
 	EList<Vertex> getAllSuperVertices();

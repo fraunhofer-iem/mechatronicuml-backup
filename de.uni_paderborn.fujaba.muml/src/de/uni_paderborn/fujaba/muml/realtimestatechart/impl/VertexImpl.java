@@ -241,10 +241,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				getIncomingTransitions().clear();
 				getIncomingTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
-			case RealtimestatechartPackage.VERTEX__ALL_SUPER_VERTICES:
-				getAllSuperVertices().clear();
-				getAllSuperVertices().addAll((Collection<? extends Vertex>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -262,9 +258,6 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 				return;
 			case RealtimestatechartPackage.VERTEX__INCOMING_TRANSITIONS:
 				getIncomingTransitions().clear();
-				return;
-			case RealtimestatechartPackage.VERTEX__ALL_SUPER_VERTICES:
-				getAllSuperVertices().clear();
 				return;
 		}
 		super.eUnset(featureID);

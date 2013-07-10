@@ -647,7 +647,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" eType="#//component/PortPart"
           changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="componentInstance.componentPart.portParts->select(type = self.type)->any(true)"/>
+          <details key="derivation" value="componentInstance.componentPart.portParts->any(portPart | portPart.portType = self.type)"/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -1082,7 +1082,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" volatile="true" transient="true" unsettable="true" derived="true">
+          changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if not self.embeddedStatechart.oclIsUndefined() then&#xD;&#xA;&#x9;self.embeddedStatechart.oclAsType(realtimestatechart::RealtimeStatechart).name&#xD;&#xA;else&#xD;&#xA;&#x9;null&#xD;&#xA;endif"/>
         </eAnnotations>
@@ -1252,7 +1252,8 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allSuperVertices" upperBound="-1"
-          eType="#//realtimestatechart/Vertex">
+          eType="#//realtimestatechart/Vertex" changeable="false" volatile="true"
+          transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if self.oclIsKindOf(State)&#xD;&#xA;then self.oclAsType(State)->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif)->asOrderedSet()&#xD;&#xA;else&#xD;&#xA;   if self.oclIsKindOf(StateConnectionPoint)&#xD;&#xA;   then let state : State = self.oclAsType(StateConnectionPoint).state in state->union(state->closure(s | if s.parentStatechart.embedded then s.parentStatechart.parentRegion.parentState else null endif))->asOrderedSet()&#xD;&#xA;   else OrderedSet{ }&#xD;&#xA;   endif&#xD;&#xA;endif"/>
         </eAnnotations>

@@ -97,22 +97,11 @@ public interface Region extends PrioritizedElement, CommentableElement {
 	 * The name of a region is derived by its conaining Real-Time Statechart
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #isSetName()
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRegion_Name()
-	 * @model unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not self.embeddedStatechart.oclIsUndefined() then\r\n\tself.embeddedStatechart.oclAsType(realtimestatechart::RealtimeStatechart).name\r\nelse\r\n\tnull\r\nendif'"
 	 * @generated
 	 */
 	String getName();
-
-	/**
-	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName <em>Name</em>}' attribute is set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return whether the value of the '<em>Name</em>' attribute is set.
-	 * @see #getName()
-	 * @generated
-	 */
-	boolean isSetName();
 
 } // Region

@@ -274,15 +274,6 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetName() {
-		return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Extension getExtension(EClass type) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -479,7 +470,7 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 			case RealtimestatechartPackage.REGION__PARENT_STATE:
 				return getParentState() != null;
 			case RealtimestatechartPackage.REGION__NAME:
-				return isSetName();
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
