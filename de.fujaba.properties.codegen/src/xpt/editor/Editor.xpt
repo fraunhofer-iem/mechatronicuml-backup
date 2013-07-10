@@ -115,7 +115,7 @@ new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(adapterFactory, �
 
 
 «DEFINE createEditor(Property property) FOR TextPropertyEditor-»
-new de.fujaba.properties.runtime.editors.TextPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+new de.fujaba.properties.runtime.editors.TextPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()», «multiLine»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR ListPropertyEditor-»
