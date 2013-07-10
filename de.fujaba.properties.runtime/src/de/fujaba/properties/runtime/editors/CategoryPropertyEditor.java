@@ -222,7 +222,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 					boolean relayouted = false;
 					if (e.getState() == true) {
 						relayouted = !childrenCreated;
-						createChildren();
+						createChildren(); // ### on demand creation of children
 					}
 					if (!relayouted) {
 						RuntimePlugin.revalidateLayout(childrenComposite);
@@ -242,7 +242,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			childrenComposite.setLayout(layout);
 		}
 
-		// TODO REMOVE
+		// TODO Remove, to let the children be created on demand, see ### (faster).
 		createChildren();
 	}
 	
