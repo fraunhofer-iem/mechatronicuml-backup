@@ -282,7 +282,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int CONSTRAINT___GET_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -291,7 +291,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int CONSTRAINT___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -300,7 +300,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int CONSTRAINT___GET_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -309,7 +309,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int CONSTRAINT___PROVIDE_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Constraint</em>' class.
@@ -535,7 +535,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODELING_CONSTRAINT___GET_EXTENSION__ECLASS = CONSTRAINT___GET_EXTENSION__ECLASS;
+	int MODELING_CONSTRAINT___GET_EXTENSION__ECLASS_1 = CONSTRAINT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -544,7 +544,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODELING_CONSTRAINT___PROVIDE_EXTENSION__ECLASS = CONSTRAINT___PROVIDE_EXTENSION__ECLASS;
+	int MODELING_CONSTRAINT___PROVIDE_EXTENSION__ECLASS_1 = CONSTRAINT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -553,7 +553,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODELING_CONSTRAINT___GET_ANNOTATION__STRING = CONSTRAINT___GET_ANNOTATION__STRING;
+	int MODELING_CONSTRAINT___GET_ANNOTATION__STRING_1 = CONSTRAINT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -562,7 +562,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODELING_CONSTRAINT___PROVIDE_ANNOTATION__STRING = CONSTRAINT___PROVIDE_ANNOTATION__STRING;
+	int MODELING_CONSTRAINT___PROVIDE_ANNOTATION__STRING_1 = CONSTRAINT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Modeling Constraint</em>' class.
@@ -788,7 +788,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFIABLE_CONSTRAINT___GET_EXTENSION__ECLASS = CONSTRAINT___GET_EXTENSION__ECLASS;
+	int VERIFIABLE_CONSTRAINT___GET_EXTENSION__ECLASS_1 = CONSTRAINT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -797,7 +797,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFIABLE_CONSTRAINT___PROVIDE_EXTENSION__ECLASS = CONSTRAINT___PROVIDE_EXTENSION__ECLASS;
+	int VERIFIABLE_CONSTRAINT___PROVIDE_EXTENSION__ECLASS_1 = CONSTRAINT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -806,7 +806,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFIABLE_CONSTRAINT___GET_ANNOTATION__STRING = CONSTRAINT___GET_ANNOTATION__STRING;
+	int VERIFIABLE_CONSTRAINT___GET_ANNOTATION__STRING_1 = CONSTRAINT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -815,7 +815,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFIABLE_CONSTRAINT___PROVIDE_ANNOTATION__STRING = CONSTRAINT___PROVIDE_ANNOTATION__STRING;
+	int VERIFIABLE_CONSTRAINT___PROVIDE_ANNOTATION__STRING_1 = CONSTRAINT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Verifiable Constraint</em>' class.
@@ -1050,7 +1050,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXTUAL_CONSTRAINT___GET_EXTENSION__ECLASS = VERIFIABLE_CONSTRAINT___GET_EXTENSION__ECLASS;
+	int TEXTUAL_CONSTRAINT___GET_EXTENSION__ECLASS_1 = VERIFIABLE_CONSTRAINT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1059,7 +1059,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXTUAL_CONSTRAINT___PROVIDE_EXTENSION__ECLASS = VERIFIABLE_CONSTRAINT___PROVIDE_EXTENSION__ECLASS;
+	int TEXTUAL_CONSTRAINT___PROVIDE_EXTENSION__ECLASS_1 = VERIFIABLE_CONSTRAINT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1068,7 +1068,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXTUAL_CONSTRAINT___GET_ANNOTATION__STRING = VERIFIABLE_CONSTRAINT___GET_ANNOTATION__STRING;
+	int TEXTUAL_CONSTRAINT___GET_ANNOTATION__STRING_1 = VERIFIABLE_CONSTRAINT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1077,7 +1077,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXTUAL_CONSTRAINT___PROVIDE_ANNOTATION__STRING = VERIFIABLE_CONSTRAINT___PROVIDE_ANNOTATION__STRING;
+	int TEXTUAL_CONSTRAINT___PROVIDE_ANNOTATION__STRING_1 = VERIFIABLE_CONSTRAINT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Textual Constraint</em>' class.

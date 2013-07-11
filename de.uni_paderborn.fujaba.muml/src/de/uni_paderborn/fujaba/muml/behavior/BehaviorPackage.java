@@ -349,7 +349,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int TYPED_NAMED_ELEMENT___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -358,7 +358,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int TYPED_NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -367,7 +367,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int TYPED_NAMED_ELEMENT___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -376,7 +376,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int TYPED_NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Typed Named Element</em>' class.
@@ -602,7 +602,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE___GET_EXTENSION__ECLASS = TYPED_NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int VARIABLE___GET_EXTENSION__ECLASS_1 = TYPED_NAMED_ELEMENT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -611,7 +611,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE___PROVIDE_EXTENSION__ECLASS = TYPED_NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int VARIABLE___PROVIDE_EXTENSION__ECLASS_1 = TYPED_NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -620,7 +620,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE___GET_ANNOTATION__STRING = TYPED_NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int VARIABLE___GET_ANNOTATION__STRING_1 = TYPED_NAMED_ELEMENT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -629,7 +629,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE___PROVIDE_ANNOTATION__STRING = TYPED_NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int VARIABLE___PROVIDE_ANNOTATION__STRING_1 = TYPED_NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Variable</em>' class.
@@ -864,7 +864,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int OPERATION___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -873,7 +873,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int OPERATION___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -882,7 +882,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int OPERATION___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -891,7 +891,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int OPERATION___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Operation</em>' class.
@@ -1108,7 +1108,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER___GET_EXTENSION__ECLASS = TYPED_NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int PARAMETER___GET_EXTENSION__ECLASS_1 = TYPED_NAMED_ELEMENT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1117,7 +1117,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER___PROVIDE_EXTENSION__ECLASS = TYPED_NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int PARAMETER___PROVIDE_EXTENSION__ECLASS_1 = TYPED_NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1126,7 +1126,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER___GET_ANNOTATION__STRING = TYPED_NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int PARAMETER___GET_ANNOTATION__STRING_1 = TYPED_NAMED_ELEMENT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1135,7 +1135,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER___PROVIDE_ANNOTATION__STRING = TYPED_NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int PARAMETER___PROVIDE_ANNOTATION__STRING_1 = TYPED_NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -1344,7 +1344,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int PARAMETER_BINDING___GET_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1353,7 +1353,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int PARAMETER_BINDING___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1362,7 +1362,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int PARAMETER_BINDING___GET_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1371,7 +1371,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_BINDING___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int PARAMETER_BINDING___PROVIDE_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Parameter Binding</em>' class.

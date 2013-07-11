@@ -7,12 +7,15 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.command.SetCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,6 +28,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
 /**
@@ -62,6 +66,7 @@ public class StateItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEmbeddedRegionsPropertyDescriptor(object);
 			addDoEventPropertyDescriptor(object);
 			addExitEventPropertyDescriptor(object);
 			addEntryEventPropertyDescriptor(object);
@@ -75,6 +80,62 @@ public class StateItemProvider
 			addParentStatechartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Embedded Regions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addEmbeddedRegionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(new ItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_embeddedRegions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_embeddedRegions_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null) {
+	
+				@Override
+				public void setPropertyValue(Object object, Object value) {
+					// Cast new value as collection, as this is a many-feature
+					Collection<?> newValues = ((Collection<?>) value);
+					
+					// Collect all existing priorities in an array
+					int i = 0;
+					int[] priorities = new int[newValues.size()];
+					for (Object region : newValues) {
+						priorities[i] = ((Region) region).getPriority();
+						i++;
+					}
+					
+					// Sort the array in ascending order
+					java.util.Arrays.sort(priorities);
+					
+					// Apply the sorted priority
+					i = 0;
+				    EditingDomain editingDomain = getEditingDomain(object);
+					for (Object region : newValues) {
+						 editingDomain.getCommandStack().execute(SetCommand.create(editingDomain, getCommandOwner(region), RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY, priorities[i]));
+						i++;
+					}
+					
+					// not okay, as it removes all diagram information!
+					//super.setPropertyValue(object, new ArrayList<Object>());
+					
+					// Set the new elements
+					super.setPropertyValue(object, value);
+
+				}
+				
+		});
 	}
 
 	/**

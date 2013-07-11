@@ -293,7 +293,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int COMPONENT___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -302,7 +302,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int COMPONENT___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -311,7 +311,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int COMPONENT___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -320,7 +320,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int COMPONENT___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -564,7 +564,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS;
+	int PORT___GET_EXTENSION__ECLASS_1 = ConnectorPackage.CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -573,7 +573,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS;
+	int PORT___PROVIDE_EXTENSION__ECLASS_1 = ConnectorPackage.CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -582,7 +582,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT___GET_ANNOTATION__STRING = ConnectorPackage.CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING;
+	int PORT___GET_ANNOTATION__STRING_1 = ConnectorPackage.CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -591,7 +591,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT___PROVIDE_ANNOTATION__STRING = ConnectorPackage.CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING;
+	int PORT___PROVIDE_ANNOTATION__STRING_1 = ConnectorPackage.CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
@@ -880,7 +880,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT___GET_EXTENSION__ECLASS = PORT___GET_EXTENSION__ECLASS;
+	int DIRECTED_TYPED_PORT___GET_EXTENSION__ECLASS_1 = PORT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -889,7 +889,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT___PROVIDE_EXTENSION__ECLASS = PORT___PROVIDE_EXTENSION__ECLASS;
+	int DIRECTED_TYPED_PORT___PROVIDE_EXTENSION__ECLASS_1 = PORT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -898,7 +898,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT___GET_ANNOTATION__STRING = PORT___GET_ANNOTATION__STRING;
+	int DIRECTED_TYPED_PORT___GET_ANNOTATION__STRING_1 = PORT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -907,7 +907,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT___PROVIDE_ANNOTATION__STRING = PORT___PROVIDE_ANNOTATION__STRING;
+	int DIRECTED_TYPED_PORT___PROVIDE_ANNOTATION__STRING_1 = PORT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Directed Typed Port</em>' class.
@@ -1196,7 +1196,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT___GET_EXTENSION__ECLASS = DIRECTED_TYPED_PORT___GET_EXTENSION__ECLASS;
+	int CONTINUOUS_PORT___GET_EXTENSION__ECLASS_1 = DIRECTED_TYPED_PORT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1205,7 +1205,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT___PROVIDE_EXTENSION__ECLASS = DIRECTED_TYPED_PORT___PROVIDE_EXTENSION__ECLASS;
+	int CONTINUOUS_PORT___PROVIDE_EXTENSION__ECLASS_1 = DIRECTED_TYPED_PORT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1214,7 +1214,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT___GET_ANNOTATION__STRING = DIRECTED_TYPED_PORT___GET_ANNOTATION__STRING;
+	int CONTINUOUS_PORT___GET_ANNOTATION__STRING_1 = DIRECTED_TYPED_PORT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1223,7 +1223,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_PORT___PROVIDE_ANNOTATION__STRING = DIRECTED_TYPED_PORT___PROVIDE_ANNOTATION__STRING;
+	int CONTINUOUS_PORT___PROVIDE_ANNOTATION__STRING_1 = DIRECTED_TYPED_PORT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Continuous Port</em>' class.
@@ -1584,7 +1584,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT___GET_EXTENSION__ECLASS = PORT___GET_EXTENSION__ECLASS;
+	int DISCRETE_PORT___GET_EXTENSION__ECLASS_1 = PORT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1593,7 +1593,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT___PROVIDE_EXTENSION__ECLASS = PORT___PROVIDE_EXTENSION__ECLASS;
+	int DISCRETE_PORT___PROVIDE_EXTENSION__ECLASS_1 = PORT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1602,7 +1602,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT___GET_ANNOTATION__STRING = PORT___GET_ANNOTATION__STRING;
+	int DISCRETE_PORT___GET_ANNOTATION__STRING_1 = PORT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1611,7 +1611,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT___PROVIDE_ANNOTATION__STRING = PORT___PROVIDE_ANNOTATION__STRING;
+	int DISCRETE_PORT___PROVIDE_ANNOTATION__STRING_1 = PORT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Discrete Port</em>' class.
@@ -1864,7 +1864,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int COMPONENT_PART___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1873,7 +1873,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int COMPONENT_PART___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1882,7 +1882,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int COMPONENT_PART___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1891,7 +1891,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_PART___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int COMPONENT_PART___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Part</em>' class.
@@ -2171,7 +2171,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT___GET_EXTENSION__ECLASS = COMPONENT___GET_EXTENSION__ECLASS;
+	int STRUCTURED_COMPONENT___GET_EXTENSION__ECLASS_1 = COMPONENT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2180,7 +2180,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT___PROVIDE_EXTENSION__ECLASS = COMPONENT___PROVIDE_EXTENSION__ECLASS;
+	int STRUCTURED_COMPONENT___PROVIDE_EXTENSION__ECLASS_1 = COMPONENT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2189,7 +2189,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT___GET_ANNOTATION__STRING = COMPONENT___GET_ANNOTATION__STRING;
+	int STRUCTURED_COMPONENT___GET_ANNOTATION__STRING_1 = COMPONENT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2198,7 +2198,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT___PROVIDE_ANNOTATION__STRING = COMPONENT___PROVIDE_ANNOTATION__STRING;
+	int STRUCTURED_COMPONENT___PROVIDE_ANNOTATION__STRING_1 = COMPONENT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -2487,7 +2487,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_STRUCTURED_COMPONENT___GET_EXTENSION__ECLASS = STRUCTURED_COMPONENT___GET_EXTENSION__ECLASS;
+	int STATIC_STRUCTURED_COMPONENT___GET_EXTENSION__ECLASS_1 = STRUCTURED_COMPONENT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2496,7 +2496,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_STRUCTURED_COMPONENT___PROVIDE_EXTENSION__ECLASS = STRUCTURED_COMPONENT___PROVIDE_EXTENSION__ECLASS;
+	int STATIC_STRUCTURED_COMPONENT___PROVIDE_EXTENSION__ECLASS_1 = STRUCTURED_COMPONENT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2505,7 +2505,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_STRUCTURED_COMPONENT___GET_ANNOTATION__STRING = STRUCTURED_COMPONENT___GET_ANNOTATION__STRING;
+	int STATIC_STRUCTURED_COMPONENT___GET_ANNOTATION__STRING_1 = STRUCTURED_COMPONENT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2514,7 +2514,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_STRUCTURED_COMPONENT___PROVIDE_ANNOTATION__STRING = STRUCTURED_COMPONENT___PROVIDE_ANNOTATION__STRING;
+	int STATIC_STRUCTURED_COMPONENT___PROVIDE_ANNOTATION__STRING_1 = STRUCTURED_COMPONENT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -2767,7 +2767,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT___GET_EXTENSION__ECLASS = COMPONENT___GET_EXTENSION__ECLASS;
+	int ATOMIC_COMPONENT___GET_EXTENSION__ECLASS_1 = COMPONENT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2776,7 +2776,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT___PROVIDE_EXTENSION__ECLASS = COMPONENT___PROVIDE_EXTENSION__ECLASS;
+	int ATOMIC_COMPONENT___PROVIDE_EXTENSION__ECLASS_1 = COMPONENT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2785,7 +2785,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT___GET_ANNOTATION__STRING = COMPONENT___GET_ANNOTATION__STRING;
+	int ATOMIC_COMPONENT___GET_ANNOTATION__STRING_1 = COMPONENT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2794,7 +2794,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT___PROVIDE_ANNOTATION__STRING = COMPONENT___PROVIDE_ANNOTATION__STRING;
+	int ATOMIC_COMPONENT___PROVIDE_ANNOTATION__STRING_1 = COMPONENT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.
@@ -3020,7 +3020,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONNECTOR___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS;
+	int PORT_CONNECTOR___GET_EXTENSION__ECLASS_1 = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3029,7 +3029,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONNECTOR___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___PROVIDE_EXTENSION__ECLASS;
+	int PORT_CONNECTOR___PROVIDE_EXTENSION__ECLASS_1 = ConnectorPackage.CONNECTOR___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3038,7 +3038,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONNECTOR___GET_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___GET_ANNOTATION__STRING;
+	int PORT_CONNECTOR___GET_ANNOTATION__STRING_1 = ConnectorPackage.CONNECTOR___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3047,7 +3047,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_CONNECTOR___PROVIDE_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___PROVIDE_ANNOTATION__STRING;
+	int PORT_CONNECTOR___PROVIDE_ANNOTATION__STRING_1 = ConnectorPackage.CONNECTOR___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Port Connector</em>' class.
@@ -3282,7 +3282,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR___GET_EXTENSION__ECLASS = PORT_CONNECTOR___GET_EXTENSION__ECLASS;
+	int ASSEMBLY_CONNECTOR___GET_EXTENSION__ECLASS_1 = PORT_CONNECTOR___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3291,7 +3291,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR___PROVIDE_EXTENSION__ECLASS = PORT_CONNECTOR___PROVIDE_EXTENSION__ECLASS;
+	int ASSEMBLY_CONNECTOR___PROVIDE_EXTENSION__ECLASS_1 = PORT_CONNECTOR___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3300,7 +3300,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR___GET_ANNOTATION__STRING = PORT_CONNECTOR___GET_ANNOTATION__STRING;
+	int ASSEMBLY_CONNECTOR___GET_ANNOTATION__STRING_1 = PORT_CONNECTOR___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3309,7 +3309,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR___PROVIDE_ANNOTATION__STRING = PORT_CONNECTOR___PROVIDE_ANNOTATION__STRING;
+	int ASSEMBLY_CONNECTOR___PROVIDE_ANNOTATION__STRING_1 = PORT_CONNECTOR___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Assembly Connector</em>' class.
@@ -3544,7 +3544,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_CONNECTOR___GET_EXTENSION__ECLASS = PORT_CONNECTOR___GET_EXTENSION__ECLASS;
+	int DELEGATION_CONNECTOR___GET_EXTENSION__ECLASS_1 = PORT_CONNECTOR___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3553,7 +3553,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_CONNECTOR___PROVIDE_EXTENSION__ECLASS = PORT_CONNECTOR___PROVIDE_EXTENSION__ECLASS;
+	int DELEGATION_CONNECTOR___PROVIDE_EXTENSION__ECLASS_1 = PORT_CONNECTOR___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3562,7 +3562,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_CONNECTOR___GET_ANNOTATION__STRING = PORT_CONNECTOR___GET_ANNOTATION__STRING;
+	int DELEGATION_CONNECTOR___GET_ANNOTATION__STRING_1 = PORT_CONNECTOR___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3571,7 +3571,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_CONNECTOR___PROVIDE_ANNOTATION__STRING = PORT_CONNECTOR___PROVIDE_ANNOTATION__STRING;
+	int DELEGATION_CONNECTOR___PROVIDE_ANNOTATION__STRING_1 = PORT_CONNECTOR___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Delegation Connector</em>' class.
@@ -3869,7 +3869,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT___GET_EXTENSION__ECLASS = DIRECTED_TYPED_PORT___GET_EXTENSION__ECLASS;
+	int HYBRID_PORT___GET_EXTENSION__ECLASS_1 = DIRECTED_TYPED_PORT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3878,7 +3878,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT___PROVIDE_EXTENSION__ECLASS = DIRECTED_TYPED_PORT___PROVIDE_EXTENSION__ECLASS;
+	int HYBRID_PORT___PROVIDE_EXTENSION__ECLASS_1 = DIRECTED_TYPED_PORT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3887,7 +3887,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT___GET_ANNOTATION__STRING = DIRECTED_TYPED_PORT___GET_ANNOTATION__STRING;
+	int HYBRID_PORT___GET_ANNOTATION__STRING_1 = DIRECTED_TYPED_PORT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3896,7 +3896,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int HYBRID_PORT___PROVIDE_ANNOTATION__STRING = DIRECTED_TYPED_PORT___PROVIDE_ANNOTATION__STRING;
+	int HYBRID_PORT___PROVIDE_ANNOTATION__STRING_1 = DIRECTED_TYPED_PORT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Hybrid Port</em>' class.
@@ -4113,7 +4113,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int COORDINATION_PROTOCOL_OCCURRENCE___GET_EXTENSION__ECLASS_1 = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -4122,7 +4122,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int COORDINATION_PROTOCOL_OCCURRENCE___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -4131,7 +4131,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int COORDINATION_PROTOCOL_OCCURRENCE___GET_ANNOTATION__STRING_1 = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -4140,7 +4140,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int COORDINATION_PROTOCOL_OCCURRENCE___PROVIDE_ANNOTATION__STRING_1 = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Coordination Protocol Occurrence</em>' class.
@@ -4393,7 +4393,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_PART___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS;
+	int PORT_PART___GET_EXTENSION__ECLASS_1 = ConnectorPackage.CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -4402,7 +4402,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_PART___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS;
+	int PORT_PART___PROVIDE_EXTENSION__ECLASS_1 = ConnectorPackage.CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -4411,7 +4411,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_PART___GET_ANNOTATION__STRING = ConnectorPackage.CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING;
+	int PORT_PART___GET_ANNOTATION__STRING_1 = ConnectorPackage.CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -4420,7 +4420,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_PART___PROVIDE_ANNOTATION__STRING = ConnectorPackage.CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING;
+	int PORT_PART___PROVIDE_ANNOTATION__STRING_1 = ConnectorPackage.CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Port Part</em>' class.

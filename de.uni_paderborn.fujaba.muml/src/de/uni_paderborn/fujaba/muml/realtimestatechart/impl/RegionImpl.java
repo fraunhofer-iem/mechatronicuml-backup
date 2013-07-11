@@ -560,10 +560,10 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 		}
 		if (baseClass == ExtendableElement.class) {
 			switch (baseOperationID) {
-				case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return RealtimestatechartPackage.REGION___GET_EXTENSION__ECLASS;
-				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS: return RealtimestatechartPackage.REGION___PROVIDE_EXTENSION__ECLASS;
-				case CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING: return RealtimestatechartPackage.REGION___GET_ANNOTATION__STRING;
-				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING: return RealtimestatechartPackage.REGION___PROVIDE_ANNOTATION__STRING;
+				case CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS: return RealtimestatechartPackage.REGION___GET_EXTENSION__ECLASS_1;
+				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS: return RealtimestatechartPackage.REGION___PROVIDE_EXTENSION__ECLASS_1;
+				case CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING: return RealtimestatechartPackage.REGION___GET_ANNOTATION__STRING_1;
+				case CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING: return RealtimestatechartPackage.REGION___PROVIDE_ANNOTATION__STRING_1;
 				default: return -1;
 			}
 		}
@@ -583,13 +583,13 @@ public class RegionImpl extends PrioritizedElementImpl implements Region {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case RealtimestatechartPackage.REGION___GET_EXTENSION__ECLASS:
+			case RealtimestatechartPackage.REGION___GET_EXTENSION__ECLASS_1:
 				return getExtension((EClass)arguments.get(0));
-			case RealtimestatechartPackage.REGION___PROVIDE_EXTENSION__ECLASS:
+			case RealtimestatechartPackage.REGION___PROVIDE_EXTENSION__ECLASS_1:
 				return provideExtension((EClass)arguments.get(0));
-			case RealtimestatechartPackage.REGION___GET_ANNOTATION__STRING:
+			case RealtimestatechartPackage.REGION___GET_ANNOTATION__STRING_1:
 				return getAnnotation((String)arguments.get(0));
-			case RealtimestatechartPackage.REGION___PROVIDE_ANNOTATION__STRING:
+			case RealtimestatechartPackage.REGION___PROVIDE_ANNOTATION__STRING_1:
 				return provideAnnotation((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);

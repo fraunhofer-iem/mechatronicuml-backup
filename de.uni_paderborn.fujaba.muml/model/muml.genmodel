@@ -232,7 +232,7 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/Region/name"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//realtimestatechart/State">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/State/embeddedRegions"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/State/embeddedRegions"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/State/doEvent"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/State/exitEvent"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/State/entryEvent"/>

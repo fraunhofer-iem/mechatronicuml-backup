@@ -266,7 +266,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -275,7 +275,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -284,7 +284,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -293,7 +293,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Endpoint</em>' class.
@@ -501,7 +501,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int CONNECTOR___GET_EXTENSION__ECLASS_1 = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -510,7 +510,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int CONNECTOR___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -519,7 +519,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int CONNECTOR___GET_ANNOTATION__STRING_1 = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -528,7 +528,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int CONNECTOR___PROVIDE_ANNOTATION__STRING_1 = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Connector</em>' class.
@@ -754,7 +754,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int CONNECTOR_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -763,7 +763,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int CONNECTOR_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -772,7 +772,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int CONNECTOR_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -781,7 +781,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int CONNECTOR_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Endpoint Instance</em>' class.
@@ -998,7 +998,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int CONNECTOR_INSTANCE___GET_EXTENSION__ECLASS_1 = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1007,7 +1007,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int CONNECTOR_INSTANCE___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1016,7 +1016,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int CONNECTOR_INSTANCE___GET_ANNOTATION__STRING_1 = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1025,7 +1025,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_INSTANCE___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int CONNECTOR_INSTANCE___PROVIDE_ANNOTATION__STRING_1 = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Instance</em>' class.
@@ -1315,7 +1315,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT___GET_EXTENSION__ECLASS = CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS;
+	int DISCRETE_INTERACTION_ENDPOINT___GET_EXTENSION__ECLASS_1 = CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1324,7 +1324,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT___PROVIDE_EXTENSION__ECLASS = CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS;
+	int DISCRETE_INTERACTION_ENDPOINT___PROVIDE_EXTENSION__ECLASS_1 = CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1333,7 +1333,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT___GET_ANNOTATION__STRING = CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING;
+	int DISCRETE_INTERACTION_ENDPOINT___GET_ANNOTATION__STRING_1 = CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1342,7 +1342,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT___PROVIDE_ANNOTATION__STRING = CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING;
+	int DISCRETE_INTERACTION_ENDPOINT___PROVIDE_ANNOTATION__STRING_1 = CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Discrete Interaction Endpoint</em>' class.
@@ -1568,7 +1568,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS = CONNECTOR_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS;
+	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS_1 = CONNECTOR_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1577,7 +1577,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS = CONNECTOR_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
+	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS_1 = CONNECTOR_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1586,7 +1586,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING = CONNECTOR_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING;
+	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING_1 = CONNECTOR_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1595,7 +1595,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING = CONNECTOR_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING;
+	int DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING_1 = CONNECTOR_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Discrete Interaction Endpoint Instance</em>' class.
@@ -1848,7 +1848,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS;
+	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS_1 = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1857,7 +1857,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
+	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS_1 = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1866,7 +1866,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING;
+	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING_1 = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1875,7 +1875,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING;
+	int DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING_1 = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Discrete Single Interaction Endpoint Instance</em>' class.
@@ -2129,7 +2129,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS;
+	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS_1 = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2138,7 +2138,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS;
+	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS_1 = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_EXTENSION__ECLASS_1;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2147,7 +2147,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING;
+	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING_1 = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___GET_ANNOTATION__STRING_1;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2156,7 +2156,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING;
+	int DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING_1 = DISCRETE_INTERACTION_ENDPOINT_INSTANCE___PROVIDE_ANNOTATION__STRING_1;
 
 	/**
 	 * The number of operations of the '<em>Discrete Multi Interaction Endpoint Instance</em>' class.
@@ -2392,7 +2392,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int MESSAGE_BUFFER___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2401,7 +2401,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int MESSAGE_BUFFER___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2410,7 +2410,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int MESSAGE_BUFFER___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2419,7 +2419,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_BUFFER___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int MESSAGE_BUFFER___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Message Buffer</em>' class.

@@ -339,8 +339,13 @@
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/parentStatechart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
+      <properties category="//@packages.3/@classes.5/@propertyCategories.1">
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/State/embeddedRegions"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+      </properties>
       <propertyCategories title="Booleans" open="true" localProperties="//@packages.3/@classes.5/@properties.6 //@packages.3/@classes.5/@properties.5 //@packages.3/@classes.5/@properties.4"/>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.3/@classes.5/@properties.7 //@packages.3/@classes.5/@properties.3"/>
+      <propertyCategories title="Lists" open="true" localProperties="//@packages.3/@classes.5/@properties.7 //@packages.3/@classes.5/@properties.3 //@packages.3/@classes.5/@properties.10"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Vertex"/>

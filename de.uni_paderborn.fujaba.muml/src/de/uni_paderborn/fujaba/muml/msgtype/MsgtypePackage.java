@@ -280,7 +280,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int MESSAGE_TYPE___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -289,7 +289,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int MESSAGE_TYPE___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -298,7 +298,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int MESSAGE_TYPE___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -307,7 +307,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int MESSAGE_TYPE___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Message Type</em>' class.
@@ -525,7 +525,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int MESSAGE_TYPE_REPOSITORY___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -534,7 +534,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int MESSAGE_TYPE_REPOSITORY___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -543,7 +543,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int MESSAGE_TYPE_REPOSITORY___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -552,7 +552,7 @@ public interface MsgtypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_TYPE_REPOSITORY___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int MESSAGE_TYPE_REPOSITORY___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Message Type Repository</em>' class.
