@@ -1,10 +1,13 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.parts;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.PointList;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
