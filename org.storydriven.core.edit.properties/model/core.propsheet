@@ -4,11 +4,11 @@
   <plugin name="org.storydriven.core.edit.properties" version="0.1">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
     <requiredBundles>de.fujaba.properties.runtime</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.storydriven.core</requiredBundles>
-    <requiredBundles>org.storydriven.core.edit</requiredBundles>
   </plugin>
   <tabs id="base" name="Experimental"/>
   <packages>
