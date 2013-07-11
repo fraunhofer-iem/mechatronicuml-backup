@@ -231,6 +231,10 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 
 		
 		
+		applySelection();
+	}
+	
+	private void applySelection() {
 		// Set selection
 		ISelection sel;
 		if (selection == null) {
@@ -240,7 +244,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		}
 		tableViewer.setSelection(sel);
 	}
-	
+
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		if (!isDisposed()) {
@@ -263,7 +267,16 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	public void refresh() {
 		super.refresh();
-		tableViewer.refresh();
+		
+		if (!tableViewer.getTable().isDisposed()) {
+			// Refresh table viewer without loosing selection
+			EObject selection = this.selection;
+			tableViewer.refresh();
+			this.selection = selection;
+			if (value != null) {
+				applySelection();
+			}
+		}
 		//RuntimePlugin.revalidateLayout(tableViewer.getTable());
 	}
 	
