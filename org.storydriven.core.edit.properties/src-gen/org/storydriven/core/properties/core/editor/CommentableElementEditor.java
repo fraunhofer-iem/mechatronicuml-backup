@@ -11,7 +11,16 @@ public class CommentableElementEditor
 	 * @generated
 	 */
 	public CommentableElementEditor() {
+		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+				.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public CommentableElementEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

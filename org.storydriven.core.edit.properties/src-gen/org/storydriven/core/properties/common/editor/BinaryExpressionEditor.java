@@ -11,7 +11,16 @@ public class BinaryExpressionEditor
 	 * @generated
 	 */
 	public BinaryExpressionEditor() {
+		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+				.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public BinaryExpressionEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

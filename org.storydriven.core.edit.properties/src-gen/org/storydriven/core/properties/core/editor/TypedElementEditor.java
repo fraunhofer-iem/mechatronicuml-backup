@@ -11,7 +11,16 @@ public class TypedElementEditor
 	 * @generated
 	 */
 	public TypedElementEditor() {
+		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+				.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public TypedElementEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

@@ -11,7 +11,16 @@ public class TextualExpressionEditor
 	 * @generated
 	 */
 	public TextualExpressionEditor() {
+		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+				.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public TextualExpressionEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

@@ -11,7 +11,16 @@ public class ArithmeticExpressionEditor
 	 * @generated
 	 */
 	public ArithmeticExpressionEditor() {
+		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+				.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public ArithmeticExpressionEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

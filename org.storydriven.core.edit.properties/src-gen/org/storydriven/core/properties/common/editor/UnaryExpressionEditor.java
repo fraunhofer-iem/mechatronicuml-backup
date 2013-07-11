@@ -11,7 +11,16 @@ public class UnaryExpressionEditor
 	 * @generated
 	 */
 	public UnaryExpressionEditor() {
+		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+				.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public UnaryExpressionEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**
