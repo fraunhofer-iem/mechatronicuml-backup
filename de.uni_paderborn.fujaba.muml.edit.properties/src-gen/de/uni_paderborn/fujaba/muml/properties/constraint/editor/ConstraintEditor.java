@@ -11,7 +11,17 @@ public class ConstraintEditor
 	 * @generated
 	 */
 	public ConstraintEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public ConstraintEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

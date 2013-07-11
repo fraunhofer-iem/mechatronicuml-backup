@@ -11,7 +11,17 @@ public class VertexEditor
 	 * @generated
 	 */
 	public VertexEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public VertexEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

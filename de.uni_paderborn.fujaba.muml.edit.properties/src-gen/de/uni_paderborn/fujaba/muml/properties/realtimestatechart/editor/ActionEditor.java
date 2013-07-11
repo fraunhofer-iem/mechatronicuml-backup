@@ -11,7 +11,17 @@ public class ActionEditor
 	 * @generated
 	 */
 	public ActionEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public ActionEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

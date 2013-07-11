@@ -11,7 +11,17 @@ public class TimeValueEditor
 	 * @generated
 	 */
 	public TimeValueEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public TimeValueEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

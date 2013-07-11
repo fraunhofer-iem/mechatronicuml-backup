@@ -11,7 +11,17 @@ public class ArrayDataTypeEditor
 	 * @generated
 	 */
 	public ArrayDataTypeEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public ArrayDataTypeEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

@@ -11,7 +11,17 @@ public class CoordinationProtocolEditor
 	 * @generated
 	 */
 	public CoordinationProtocolEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public CoordinationProtocolEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

@@ -11,7 +11,17 @@ public class StateEditor
 	 * @generated
 	 */
 	public StateEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public StateEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**
@@ -45,6 +55,9 @@ public class StateEditor
 
 		addStateChannelsEditor("de.fujaba.properties.category.State.Lists",
 				true);
+
+		addStateEmbeddedRegionsEditor(
+				"de.fujaba.properties.category.State.Lists", true);
 
 		super.initialize();
 	}
@@ -183,6 +196,23 @@ public class StateEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_Channels());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateEmbeddedRegionsEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateEmbeddedRegionsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateEmbeddedRegionsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_EmbeddedRegions());
 
 	}
 

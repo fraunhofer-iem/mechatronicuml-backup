@@ -11,7 +11,17 @@ public class AbsoluteDeadlineEditor
 	 * @generated
 	 */
 	public AbsoluteDeadlineEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public AbsoluteDeadlineEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

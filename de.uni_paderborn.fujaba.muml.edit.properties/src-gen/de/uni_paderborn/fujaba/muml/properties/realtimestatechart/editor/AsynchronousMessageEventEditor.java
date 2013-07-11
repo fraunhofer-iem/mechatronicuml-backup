@@ -11,7 +11,17 @@ public class AsynchronousMessageEventEditor
 	 * @generated
 	 */
 	public AsynchronousMessageEventEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public AsynchronousMessageEventEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

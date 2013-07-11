@@ -11,7 +11,17 @@ public class ConnectorEndpointInstanceEditor
 	 * @generated
 	 */
 	public ConnectorEndpointInstanceEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public ConnectorEndpointInstanceEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

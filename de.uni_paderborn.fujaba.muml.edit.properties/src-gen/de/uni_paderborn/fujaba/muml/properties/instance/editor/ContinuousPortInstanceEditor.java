@@ -11,7 +11,17 @@ public class ContinuousPortInstanceEditor
 	 * @generated
 	 */
 	public ContinuousPortInstanceEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public ContinuousPortInstanceEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

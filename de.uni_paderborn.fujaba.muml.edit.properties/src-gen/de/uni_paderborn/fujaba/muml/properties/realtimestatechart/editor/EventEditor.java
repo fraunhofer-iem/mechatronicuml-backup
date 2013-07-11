@@ -11,10 +11,17 @@ public class EventEditor
 	 * @generated
 	 */
 	public EventEditor() {
-		super(
+		this(
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public EventEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

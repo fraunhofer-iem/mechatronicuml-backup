@@ -11,7 +11,17 @@ public class PrimitiveDataTypeEditor
 	 * @generated
 	 */
 	public PrimitiveDataTypeEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public PrimitiveDataTypeEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

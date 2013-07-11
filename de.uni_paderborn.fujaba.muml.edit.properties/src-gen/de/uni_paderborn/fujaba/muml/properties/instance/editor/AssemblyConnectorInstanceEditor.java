@@ -11,7 +11,17 @@ public class AssemblyConnectorInstanceEditor
 	 * @generated
 	 */
 	public AssemblyConnectorInstanceEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public AssemblyConnectorInstanceEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

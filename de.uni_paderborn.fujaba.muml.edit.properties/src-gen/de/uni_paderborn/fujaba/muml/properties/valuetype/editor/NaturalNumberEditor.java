@@ -11,10 +11,17 @@ public class NaturalNumberEditor
 	 * @generated
 	 */
 	public NaturalNumberEditor() {
-		super(
+		this(
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public NaturalNumberEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

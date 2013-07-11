@@ -11,10 +11,17 @@ public class CardinalityEditor
 	 * @generated
 	 */
 	public CardinalityEditor() {
-		super(
+		this(
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public CardinalityEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

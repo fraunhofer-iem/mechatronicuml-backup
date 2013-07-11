@@ -11,7 +11,17 @@ public class DiscreteSinglePortInstanceEditor
 	 * @generated
 	 */
 	public DiscreteSinglePortInstanceEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public DiscreteSinglePortInstanceEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

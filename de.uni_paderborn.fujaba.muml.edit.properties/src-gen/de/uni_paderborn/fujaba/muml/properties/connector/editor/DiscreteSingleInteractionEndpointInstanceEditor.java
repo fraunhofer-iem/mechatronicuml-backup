@@ -11,7 +11,17 @@ public class DiscreteSingleInteractionEndpointInstanceEditor
 	 * @generated
 	 */
 	public DiscreteSingleInteractionEndpointInstanceEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstanceEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

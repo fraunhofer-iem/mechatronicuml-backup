@@ -11,7 +11,17 @@ public class DiscreteMultiPortInstanceEditor
 	 * @generated
 	 */
 	public DiscreteMultiPortInstanceEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public DiscreteMultiPortInstanceEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

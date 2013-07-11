@@ -11,10 +11,17 @@ public class BehaviorEditor
 	 * @generated
 	 */
 	public BehaviorEditor() {
-		super(
+		this(
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public BehaviorEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**

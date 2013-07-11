@@ -11,7 +11,17 @@ public class MessageTypeRepositoryEditor
 	 * @generated
 	 */
 	public MessageTypeRepositoryEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory());
+	}
 
+	/**
+	 * @generated
+	 */
+	public MessageTypeRepositoryEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**
