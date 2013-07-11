@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Properties
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.edit.properties; singleton:=true
-Bundle-Version: 0.1
+Bundle-Version: 0.4.0.qualifier
 Require-Bundle: de.uni_paderborn.fujaba.muml.edit,org.eclipse.emf.ecore,org.eclipse.core.runtime,de.uni_paderborn.fujaba.muml,org.eclipse.emf.edit,de.fujaba.properties.runtime,org.eclipse.ui,org.storydriven.core.edit,org.storydriven.core.edit.properties
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Properties
 Bundle-SymbolicName: org.storydriven.core.edit.properties; singleton:=true
-Bundle-Version: 0.1
+Bundle-Version: 0.4.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,org.eclipse.core.runtime,org.storydriven.core.edit,org.eclipse.emf.edit,de.fujaba.properties.runtime,org.eclipse.ui,org.storydriven.core
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
