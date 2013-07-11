@@ -5,6 +5,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -14,6 +16,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	protected Text text;
 	protected boolean multiLine;
+	protected String currentValue = "";
 
 	public TextPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature, boolean multiLine) {
 		super(adapterFactory, feature);
@@ -37,6 +40,15 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			}
 			text.setLayoutData(gridData);
 		}
+		text.addModifyListener(new ModifyListener() {
+
+			@Override
+			public void modifyText(ModifyEvent e) {
+				currentValue = text.getText();
+			}
+			
+		});
+		
 		text.addKeyListener(new org.eclipse.swt.events.KeyAdapter() {
 			public void keyReleased(org.eclipse.swt.events.KeyEvent e) {
 				if (e.keyCode == 13) {
@@ -56,7 +68,9 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	}
 
 	protected void modify() {
-		String newValue = text.getText();
+		// Do not read from text field, as it could have been disposed, see comment in dispose()
+		//String newValue = text.getText();
+		String newValue = currentValue; 
 		if (!newValue.equals(value)) {
 			setValue(newValue);
 		}
@@ -71,14 +85,19 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	public void refresh() {
 		super.refresh();
-
 		String val = "";
 		if (value != null) {
 			val = value.toString();
 		}
 
-		if (text != null && !text.getText().equals(val)) {
+		if (text != null && !text.isDisposed() && !text.getText().equals(val)) {
 			text.setText(val);
 		}
+	}
+	
+	@Override
+	public void dispose() {
+		modify(); // If dialog was closed before text lost focus
+		super.dispose();
 	}
 }

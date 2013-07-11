@@ -30,6 +30,9 @@ public class PropertyEditorWizardPage extends WizardPage implements IPropertyEdi
 
 		setControl(container);
 	}
+	
+	
+	
 
 	@Override
 	public void dispose() {

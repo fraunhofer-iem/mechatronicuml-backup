@@ -12,9 +12,7 @@ public class PropertiesWizard extends Wizard {
 	private CompoundCommand compoundCommand = new CompoundCommand("Properties Modification");
 
 	private AdapterFactory adapterFactory;
-	
-	boolean canceled = false;
-	
+		
 	public PropertiesWizard(AdapterFactory adapterFactory) {
 		this.adapterFactory = adapterFactory;
 		setWindowTitle("Properties");
@@ -22,15 +20,14 @@ public class PropertiesWizard extends Wizard {
 	
 	@Override
 	public boolean performFinish() {
-		canceled = false;
+		return true;
+	}
+	
+	@Override
+	public boolean performCancel() {
 		return true;
 	}
 
-	@Override
-	public boolean performCancel() {
-		canceled = true;
-		return true;
-	}
 
 	public CompoundCommand getCompoundCommand() {
 		return compoundCommand;

@@ -380,13 +380,13 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		ChangeCommand changeCommand = new ChangeCommand(notifier) {
 			@Override
 			protected void doExecute() {
-				wizardDialog.open();				
+				wizardDialog.open();
 			}
 		};
 		changeCommand.setLabel("Modify Properties");
 		EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(notifier);
 		editingDomain.getCommandStack().execute(changeCommand);
-		
+
 		if (wizardDialog.getReturnCode() != Window.OK) {
 			editingDomain.getCommandStack().undo();
 		}
