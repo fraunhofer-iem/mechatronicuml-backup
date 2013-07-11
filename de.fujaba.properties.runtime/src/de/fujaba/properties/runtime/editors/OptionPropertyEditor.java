@@ -4,7 +4,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public class OptionPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
@@ -15,7 +15,7 @@ public class OptionPropertyEditor extends
 
 	@Override
 	public void createControls(Composite parent,
-			TabbedPropertySheetWidgetFactory factory) {
+			FormToolkit factory) {
 		Composite composite = factory.createComposite(parent);
 		composite.setLayout(new RowLayout());
 		// Create two option buttons for a boolean feature, or multiple for

@@ -1,5 +1,6 @@
 package de.fujaba.properties.runtime.editors;
 
+import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
@@ -64,4 +65,5 @@ public abstract class AbstractPropertyEditor implements
 	public AdapterFactory getAdapterFactory() {
 		return adapterFactory;
 	}
+
 }

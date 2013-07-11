@@ -4,15 +4,13 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Spinner;
-import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public class SpinnerPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
@@ -27,7 +25,7 @@ public class SpinnerPropertyEditor extends
 
 	@Override
 	public void createControls(Composite parent,
-			TabbedPropertySheetWidgetFactory toolkit) {
+			FormToolkit toolkit) {
 		toolkit.createLabel(parent, getLabelText());
 		
 		spinner = new Spinner(parent, toolkit.getBorderStyle() | toolkit.getOrientation());

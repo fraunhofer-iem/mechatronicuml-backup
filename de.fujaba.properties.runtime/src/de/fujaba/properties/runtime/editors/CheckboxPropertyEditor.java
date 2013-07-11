@@ -9,7 +9,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
 
@@ -23,12 +23,12 @@ public class CheckboxPropertyEditor extends
 	}
 
 	@Override
-	public void createControls(Composite parent,
-			TabbedPropertySheetWidgetFactory factory) {
+	public void createControls(Composite parent, FormToolkit toolkit) {
+
 	
 		// Create one checkbox for a boolean feature, or enumeration with
 		// two selectable enumerators
-		checkbox = factory.createButton(parent,
+		checkbox = toolkit.createButton(parent,
 				RuntimePlugin.makeHumanReadable(feature.getName(), true), SWT.CHECK);
 		if (parent.getLayout() instanceof GridLayout) {
 			checkbox.setLayoutData(new GridData(SWT.FILL, SWT.NONE, true, false, 2, 1));
@@ -60,6 +60,5 @@ public class CheckboxPropertyEditor extends
 			checkbox = null;
 		}
 	}
-	
 
 }

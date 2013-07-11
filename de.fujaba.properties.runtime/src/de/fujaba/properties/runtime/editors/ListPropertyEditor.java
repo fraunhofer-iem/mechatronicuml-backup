@@ -9,6 +9,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -24,7 +26,7 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
 
@@ -58,8 +60,8 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	}
 
 	@Override
-	public void createControls(Composite parent,
-			TabbedPropertySheetWidgetFactory toolkit) {
+	public void createControls(final Composite parent,
+			FormToolkit toolkit) {
 
 		// Outer container
 		Composite container = toolkit.createComposite(parent);
@@ -89,6 +91,14 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		tableViewer.setLabelProvider(new AdapterFactoryLabelProvider(
 				adapterFactory));
 		tableViewer.addSelectionChangedListener(selectionChangedListener);
+		tableViewer.addDoubleClickListener(new IDoubleClickListener() {
+			@Override
+			public void doubleClick(DoubleClickEvent event) {
+				if (selection != null) {
+					RuntimePlugin.showEditElementDialog(adapterFactory, selection);
+				}
+			}
+		});
 
 		// Button container and buttons
 		Composite buttonContainer = toolkit.createComposite(listContainer);
@@ -147,7 +157,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	}
 
 	protected void add() {
-		// TODO: How to do this? Open a new dialog etc.?
+		RuntimePlugin.showCreateElementDialog(adapterFactory, element, feature);
 	}
 
 	protected void remove() {

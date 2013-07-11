@@ -17,10 +17,15 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -28,7 +33,9 @@ import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.LabelProvider;
+import org.eclipse.jface.window.Window;
+import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.graphics.Image;
@@ -41,7 +48,11 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
+import de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor;
+import de.fujaba.properties.runtime.editors.ObjectPropertyEditor;
 import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
+import de.fujaba.properties.runtime.wizard.PropertiesWizard;
+import de.fujaba.properties.runtime.wizard.PropertyEditorWizardPage;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -313,6 +324,40 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		if (c instanceof Composite) {
 			Composite composite = (Composite) c;
 			composite.layout(true, true);
+		}
+	}
+
+	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject element) {
+		PropertiesWizard wizard = new PropertiesWizard(adapterFactory, element);
+		ObjectPropertyEditor editor = new ObjectPropertyEditor(adapterFactory, "Object properties", true);
+		editor.setInput(element);
+		wizard.addPage(new PropertyEditorWizardPage(editor));
+		showWizardWithUndo(wizard, element);
+	}
+
+	public static void showCreateElementDialog(AdapterFactory adapterFactory, EObject container,
+			EStructuralFeature feature) {
+		PropertiesWizard wizard = new PropertiesWizard(adapterFactory);
+		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature);
+		editor.setInput(container);
+		wizard.addPage(new PropertyEditorWizardPage(editor));
+		showWizardWithUndo(wizard, container);
+	}
+
+	public static void showWizardWithUndo(Wizard wizard, Notifier notifier) {
+		final WizardDialog wizardDialog = new WizardDialog(Display.getCurrent().getActiveShell(), wizard);
+		ChangeCommand changeCommand = new ChangeCommand(notifier) {
+			@Override
+			protected void doExecute() {
+				wizardDialog.open();				
+			}
+		};
+		changeCommand.setLabel("Modify Properties");
+		EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(notifier);
+		editingDomain.getCommandStack().execute(changeCommand);
+		
+		if (wizardDialog.getReturnCode() != Window.OK) {
+			editingDomain.getCommandStack().undo();
 		}
 	}
 

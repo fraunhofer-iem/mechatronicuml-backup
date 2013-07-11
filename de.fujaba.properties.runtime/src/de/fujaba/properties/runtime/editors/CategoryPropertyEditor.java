@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
@@ -16,8 +17,8 @@ import org.eclipse.swt.widgets.Layout;
 import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.events.IExpansionListener;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
 
@@ -39,7 +40,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	private int orientation = SWT.VERTICAL;
 
-	protected TabbedPropertySheetWidgetFactory toolkit;
+	protected FormToolkit toolkit;
 
 	protected List<IPropertyEditor> propertyEditors = new ArrayList<IPropertyEditor>();
 
@@ -182,7 +183,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	@Override
 	public void createControls(Composite parent,
-			TabbedPropertySheetWidgetFactory toolkit) {
+			FormToolkit toolkit) {
 		this.toolkit = toolkit;
 		Object layoutData = createLayoutData(parent);
 
@@ -291,7 +292,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	}
 
 	protected Section createSection(Composite parent,
-			TabbedPropertySheetWidgetFactory factory) {
+			FormToolkit factory) {
 		// int expansionStyle = 0;
 		// * TREE_NODE, TWISTIE,
 		// * CLIENT_INDENT, COMPACT, FOCUS_TITLE,
@@ -335,11 +336,11 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	@Override
 	public void setInput(Object object) {
 		super.setInput(object);
-		if (childrenCreated) {
+//		if (childrenCreated) {
 			for (IPropertyEditor editor : propertyEditors) {
 				editor.setInput(object);
 			}
-		}
+//		}
 	}
 
 	@Override
@@ -372,3 +373,4 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	}
 
 }
+

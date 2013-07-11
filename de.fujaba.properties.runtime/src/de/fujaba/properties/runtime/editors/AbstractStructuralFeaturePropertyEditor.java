@@ -3,12 +3,14 @@ package de.fujaba.properties.runtime.editors;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -179,13 +181,13 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			element.eAdapters().add(adapter);
 		}
 	}
+	
+	public void setValue(final Object newValue) {
 
-	public void setValue(Object newValue) {
 		if (itemPropertyDescriptor != null) {
 			itemPropertyDescriptor.setPropertyValue(element, newValue);
 		} else {
-			EditingDomain editingDomain = AdapterFactoryEditingDomain
-					.getEditingDomainFor(element);
+			EditingDomain editingDomain = getEditingDomain(element);
 			if (editingDomain == null) {
 				element.eSet(feature, newValue);
 			} else {
@@ -193,6 +195,10 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 						SetCommand.create(editingDomain, element, feature, newValue));
 			}
 		}
+	}
+	
+	public EditingDomain getEditingDomain(Object object) {
+		return AdapterFactoryEditingDomain.getEditingDomainFor(object);
 	}
 
 }

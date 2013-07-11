@@ -60,7 +60,8 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 			}
 			if (foundFactories != null) {
 				for (IPropertyEditorFactory factory : foundFactories) {
-					addPropertyEditor(factory.createPropertyEditor());
+					IPropertyEditor editor = factory.createPropertyEditor();
+					addPropertyEditor(editor);
 				}
 			}
 		}

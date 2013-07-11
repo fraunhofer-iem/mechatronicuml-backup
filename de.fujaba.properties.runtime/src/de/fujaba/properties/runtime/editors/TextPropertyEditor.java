@@ -9,7 +9,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	protected Text text;
@@ -22,7 +22,7 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 
 	@Override
 	public void createControls(Composite parent,
-			TabbedPropertySheetWidgetFactory factory) {
+			FormToolkit factory) {
 		factory.createLabel(parent, getLabelText()).setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 		int style = 0;
 		if (multiLine) {
@@ -65,8 +65,20 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
-		if (text != null && !text.getText().equals(value.toString())) {
-			text.setText(value.toString());
+		refresh();
+	}
+	
+	@Override
+	public void refresh() {
+		super.refresh();
+
+		String val = "";
+		if (value != null) {
+			val = value.toString();
+		}
+
+		if (text != null && !text.getText().equals(val)) {
+			text.setText(val);
 		}
 	}
 }
