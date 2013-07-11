@@ -177,8 +177,8 @@ public class NavigationFeaturePropertyEditor extends
 		if (buttonCreate != null && buttonRemove != null) {
 			// buttonCreate.setEnabled(value == null);
 			// buttonRemove.setEnabled(value != null);
-			buttonCreate.setSelection(value != null);
-			buttonRemove.setSelection(value == null);
+			buttonCreate.setSelection(isSet());
+			buttonRemove.setSelection(!isSet());
 		}
 	}
 
