@@ -1,3 +1,4 @@
+
 package de.fujaba.properties.runtime.editors;
 
 import java.util.ArrayList;
@@ -37,17 +38,33 @@ public class NavigationFeaturePropertyEditor extends
 	protected Button buttonRemove;
 	protected ComboViewer classViewer;
 	private EObject manyValue;
+	private boolean createMode = false;
+	private boolean initiallyOpen = false;
 
 	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
-			EStructuralFeature feature) {
+			EStructuralFeature feature, boolean initiallyOpen) {
 		super(adapterFactory, feature);
-//		Assert.isLegal(!feature.isMany(),
-//				"Only features with upperBound = 1 are allowed as navigation feature.");
+		this.initiallyOpen = initiallyOpen;
 		this.navigatedEditor = createNavigatedEditor();
+		createMode = feature.isMany();
+	}
+	
+	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
+			EStructuralFeature feature) {
+		this(adapterFactory, feature, false);
+	}
+
+
+	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
+			EStructuralFeature feature, boolean initiallyOpen, EObject currentValue) {
+		this(adapterFactory, feature, initiallyOpen);
+		Assert.isLegal(feature.isMany());
+		manyValue = currentValue;
+		createMode = currentValue == null;
 	}
 
 	protected ObjectPropertyEditor createNavigatedEditor() {
-		return new ObjectPropertyEditor(adapterFactory, "null", false);
+		return new ObjectPropertyEditor(adapterFactory, "null", initiallyOpen);
 	}
 
 	@Override
@@ -156,7 +173,7 @@ public class NavigationFeaturePropertyEditor extends
 	}
 	
 	public String getFeatureDescription() {
-		if (feature.isMany()) {
+		if (createMode) {
 			String featureName = RuntimePlugin.makeHumanReadable(feature.getName()).toLowerCase();
 			if (feature.isMany()) {
 				featureName = RuntimePlugin.makeSingular(featureName);

@@ -96,7 +96,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			@Override
 			public void doubleClick(DoubleClickEvent event) {
 				if (selection != null) {
-					RuntimePlugin.showEditElementDialog(adapterFactory, selection);
+					RuntimePlugin.showEditElementDialog(adapterFactory, element, feature, selection);
 				}
 			}
 		});

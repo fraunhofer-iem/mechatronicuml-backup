@@ -47,6 +47,7 @@ public class PropertyEditorWizardPage extends WizardPage implements IPropertyEdi
 		if (visible) {
 			// set focus
 			getControl().setFocus();
+			editor.refresh();
 		}
 	}
 

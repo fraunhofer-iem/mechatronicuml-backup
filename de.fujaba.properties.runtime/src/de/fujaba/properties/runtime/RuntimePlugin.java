@@ -327,6 +327,8 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		}
 	}
 
+	
+	// TODO: Unify the following dialog creation methods
 	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject element) {
 		PropertiesWizard wizard = new PropertiesWizard(adapterFactory);
 		ObjectPropertyEditor editor = new ObjectPropertyEditor(adapterFactory, "Object properties", true);
@@ -341,7 +343,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	public static void showCreateElementDialog(AdapterFactory adapterFactory, EObject container,
 			EStructuralFeature feature) {
 		PropertiesWizard wizard = new PropertiesWizard(adapterFactory);
-		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature);
+		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, true);
 		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
 
 		// Get Element Name
@@ -366,6 +368,39 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		wizard.setInput(container);
 		showWizardWithUndo(wizard, container);
 	}
+	
+	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject container, EStructuralFeature feature, EObject currentValue) {
+		PropertiesWizard wizard = new PropertiesWizard(adapterFactory);
+		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, true, currentValue);
+		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
+
+		// Get Element Name
+		String elementName = container.eClass().getName();
+		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(container, IItemLabelProvider.class);
+		if (labelProvider != null) {
+			elementName = labelProvider.getText(container);
+		}
+		
+		// Get feature name
+		String featureName = makeHumanReadable(feature.getName()).toLowerCase();
+		if (feature.isMany()) {
+			featureName = makeSingular(featureName);
+		}
+		
+		// Set Title and Description
+		page.setTitle(String.format("Modify %s", feature.getEType().getName()));
+		page.setDescription(String.format("Changes properties of the existing %s", featureName, elementName));
+	
+		// Add page, set input and show wizard
+		wizard.addPage(page);
+		wizard.setInput(container);
+		showWizardWithUndo(wizard, container);
+	}
+	
+	
+	
+	
+	
 	
 	public static String makeSingular(String word) {
 		if (word.charAt(word.length() - 1) == 's') {
