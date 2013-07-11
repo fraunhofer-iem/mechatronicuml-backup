@@ -97,9 +97,8 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 
 	private ImageDescriptor createDescriptor(String location) {
-		Bundle bundle = Platform.getBundle(PLUGIN_ID);
 		IPath path = new Path(location);
-		URL url = FileLocator.find(bundle, path, null);
+		URL url = FileLocator.find(getDefault().getBundle(), path, null);
 		return ImageDescriptor.createFromURL(url);
 	}
 	
