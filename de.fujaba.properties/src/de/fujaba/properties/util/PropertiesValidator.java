@@ -159,6 +159,7 @@ public class PropertiesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(propertyGenerator, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(propertyGenerator, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePropertyGenerator_UniquePackages(propertyGenerator, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePropertyGenerator_NoSelfReference(propertyGenerator, diagnostics, context);
 		return result;
 	}
 
@@ -186,6 +187,35 @@ public class PropertiesValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniquePackages",
 				 PROPERTY_GENERATOR__UNIQUE_PACKAGES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the NoSelfReference constraint of '<em>Property Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PROPERTY_GENERATOR__NO_SELF_REFERENCE__EEXPRESSION = "not referencedGenerators->includes(self)";
+
+	/**
+	 * Validates the NoSelfReference constraint of '<em>Property Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePropertyGenerator_NoSelfReference(PropertyGenerator propertyGenerator, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PropertiesPackage.Literals.PROPERTY_GENERATOR,
+				 propertyGenerator,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NoSelfReference",
+				 PROPERTY_GENERATOR__NO_SELF_REFERENCE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

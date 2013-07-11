@@ -7,6 +7,7 @@
 package de.fujaba.properties.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -102,11 +103,11 @@ public class PropertyGeneratorItemProvider
 	 * This adds a property descriptor for the Referenced Generators feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addReferencedGeneratorsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_PropertyGenerator_referencedGenerators_feature"),
@@ -117,7 +118,14 @@ public class PropertyGeneratorItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				Collection<?> choices = new ArrayList<Object>(super.getChoiceOfValues(object));
+				choices.remove(object); // Do not allow self references
+				return choices;
+			}	
+		});
 	}
 
 	/**

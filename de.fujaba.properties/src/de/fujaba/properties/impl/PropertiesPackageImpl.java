@@ -1055,7 +1055,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		  (propertyGeneratorEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniquePackages"
+			 "constraints", "UniquePackages NoSelfReference"
 		   });				
 		addAnnotation
 		  (packageEClass, 
@@ -1089,7 +1089,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		  (propertyGeneratorEClass, 
 		   source, 
 		   new String[] {
-			 "UniquePackages", "packages->isUnique(genPackage)"
+			 "UniquePackages", "packages->isUnique(genPackage)",
+			 "NoSelfReference", "not referencedGenerators->includes(self)"
 		   });		
 		addAnnotation
 		  (propertyTabEClass.getEOperations().get(0), 

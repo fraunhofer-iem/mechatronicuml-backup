@@ -30,8 +30,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see de.fujaba.properties.PropertiesPackage#getPropertyGenerator()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePackages'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePackages='packages->isUnique(genPackage)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePackages NoSelfReference'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePackages='packages->isUnique(genPackage)' NoSelfReference='not referencedGenerators->includes(self)'"
  * @generated
  */
 public interface PropertyGenerator extends EObject {

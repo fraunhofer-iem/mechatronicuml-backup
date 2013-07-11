@@ -8,10 +8,11 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyGenerator">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="UniquePackages"/>
+      <details key="constraints" value="UniquePackages NoSelfReference"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
       <details key="UniquePackages" value="packages->isUnique(genPackage)"/>
+      <details key="NoSelfReference" value="not referencedGenerators->includes(self)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genModel" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenModel"/>

@@ -46,8 +46,10 @@
     <genClasses ecoreClass="properties.ecore#//PropertyCategory">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyCategory/title"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyCategory/vertical"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//PropertyCategory/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//PropertyCategory/open"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//PropertyCategory/overriddenProperties"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//PropertyCategory/clazz"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//PropertyCategory/localProperties"/>
     </genClasses>
     <genClasses ecoreClass="properties.ecore#//Property">
       <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Property/genFeature"/>
@@ -56,6 +58,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference properties.ecore#//Property/editor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Property/tooltip"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//Property/clazz"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Property/category"/>
     </genClasses>
     <genClasses image="false" ecoreClass="properties.ecore#//PropertyEditor">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//PropertyEditor/property"/>
