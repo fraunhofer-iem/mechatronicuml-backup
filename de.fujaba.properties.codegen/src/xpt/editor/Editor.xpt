@@ -24,9 +24,14 @@ public class «genEditorName()» extends «EXPAND extends-» {
 	 * @generated
 	 */
 	public «genEditorName()»() {
-		«IF superClasses.isEmpty-»
-		super(«package.generator.genPluginId()».util.PropertiesUtil.INSTANCE.getAdapterFactory());
-		«ENDIF»
+		this(«package.generator.genPluginId()».util.PropertiesUtil.INSTANCE.getAdapterFactory());
+	}
+	
+	/**
+	 * @generated
+	 */
+	public «genEditorName()»(org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
+		super(adapterFactory);
 	}
 
 	/**
