@@ -142,7 +142,9 @@ public class NavigationFeaturePropertyEditor extends
 
 		// section.setSeparatorControl(toolkit.createSeparator(section,
 		// SWT.NONE));
-
+		if (createMode) {
+			create();
+		}
 	}
 
 	@Override

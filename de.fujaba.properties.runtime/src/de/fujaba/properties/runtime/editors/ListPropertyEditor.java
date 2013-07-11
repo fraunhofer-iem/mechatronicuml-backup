@@ -82,8 +82,8 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 				false));
 
 		org.eclipse.swt.widgets.Table table = toolkit.createTable(
-				listContainer, SWT.BORDER);
-		GridData tableGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+				listContainer, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
+		GridData tableGridData = new GridData(SWT.FILL, SWT.FILL, false, false);
 		tableGridData.minimumWidth = 120;
 		table.setLayoutData(tableGridData);
 
@@ -264,6 +264,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	public void refresh() {
 		super.refresh();
 		tableViewer.refresh();
+		//RuntimePlugin.revalidateLayout(tableViewer.getTable());
 	}
 	
 }
