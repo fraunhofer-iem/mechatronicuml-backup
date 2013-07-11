@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -219,6 +220,8 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
+		updateAdapters(); // we register an adapter for each value, see addListeners()
+		
 		tableViewer.removeSelectionChangedListener(selectionChangedListener);
 		tableViewer.setInput(value);
 		tableViewer.addSelectionChangedListener(selectionChangedListener);
@@ -237,4 +240,30 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		}
 		tableViewer.setSelection(sel);
 	}
+	
+	@Override
+	protected void handleNotificationEvent(Notification notification) {
+		if (!isDisposed()) {
+			refresh();
+		}
+		super.handleNotificationEvent(notification);
+	}
+
+	// Hook into every EObject of our values
+	@Override
+	protected void addListeners() {
+		super.addListeners();
+		for (Object object : (Collection<?>)(value)) {
+			if (object instanceof EObject) {
+				registerListener((EObject) object);
+			}
+		}
+	}
+	
+	@Override
+	public void refresh() {
+		super.refresh();
+		tableViewer.refresh();
+	}
+	
 }

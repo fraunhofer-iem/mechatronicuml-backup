@@ -39,16 +39,22 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		Object input = RuntimePlugin.resolveSemanticObject(selection);
-		editor.setInput(input);
+		if (!editor.isDisposed()) {
+			editor.setInput(input);
+		}
 	}
 
 	public void refresh() {
 		super.refresh();
-		editor.refresh();
+		if (!editor.isDisposed()) {
+			editor.refresh();
+		}
 	}
 	
 	public void dispose() {
-		editor.dispose();
+		if (!editor.isDisposed()) {
+			editor.dispose();
+		}
 		super.dispose();
 	}
 

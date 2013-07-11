@@ -78,6 +78,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 	@Override
 	public void dispose() {
+		super.dispose();
 		removeListeners();
 	}
 

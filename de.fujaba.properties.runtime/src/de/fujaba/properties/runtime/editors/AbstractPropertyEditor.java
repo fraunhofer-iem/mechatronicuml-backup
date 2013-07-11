@@ -9,12 +9,9 @@ import de.fujaba.properties.runtime.sections.ObjectPropertySection;
 
 public abstract class AbstractPropertyEditor implements
 		IPropertyEditor {
-	
-	private ObjectPropertySection propertySection;
-	
-	private String tab = null;
-	
+
 	protected Object input = null;
+	protected boolean disposed = false;
 	
 	protected AdapterFactory adapterFactory = null;
 	
@@ -36,6 +33,10 @@ public abstract class AbstractPropertyEditor implements
 	protected void inputChanged() {
 		refresh();
 	}
+	
+	public void dispose() {
+		disposed = true;
+	}
 
 	@Override
 	public Object getInput() {
@@ -45,25 +46,15 @@ public abstract class AbstractPropertyEditor implements
 	@Override
 	public void refresh() {
 	}
-	
-	@Override
-	public void setTab(String tab) {
-		this.tab = tab;
-	}
 
-	@Override
-	public String getTab() {
-		return tab;
-	}
-
-	@Override
-	public ObjectPropertySection getPropertySection() {
-		return propertySection;
-	}
-	
 	@Override
 	public AdapterFactory getAdapterFactory() {
 		return adapterFactory;
+	}
+	
+	@Override
+	public boolean isDisposed() {
+		return disposed;
 	}
 
 }

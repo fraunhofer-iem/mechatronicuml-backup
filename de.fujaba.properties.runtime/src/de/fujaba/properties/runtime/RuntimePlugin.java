@@ -27,6 +27,7 @@ import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
@@ -328,10 +329,13 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 
 	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject element) {
-		PropertiesWizard wizard = new PropertiesWizard(adapterFactory, element);
+		PropertiesWizard wizard = new PropertiesWizard(adapterFactory);
 		ObjectPropertyEditor editor = new ObjectPropertyEditor(adapterFactory, "Object properties", true);
-		editor.setInput(element);
-		wizard.addPage(new PropertyEditorWizardPage(editor));
+		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
+		page.setTitle(String.format("Modify ", element.eClass().getName()));
+		page.setDescription(String.format("Changes properties of the existing %s", element.eClass().getName()));
+		wizard.addPage(page);
+		wizard.setInput(element);
 		showWizardWithUndo(wizard, element);
 	}
 
@@ -339,9 +343,36 @@ public class RuntimePlugin extends AbstractUIPlugin {
 			EStructuralFeature feature) {
 		PropertiesWizard wizard = new PropertiesWizard(adapterFactory);
 		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature);
-		editor.setInput(container);
-		wizard.addPage(new PropertyEditorWizardPage(editor));
+		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
+
+		// Get Element Name
+		String elementName = container.eClass().getName();
+		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(container, IItemLabelProvider.class);
+		if (labelProvider != null) {
+			elementName = labelProvider.getText(container);
+		}
+		
+		// Get feature name
+		String featureName = makeHumanReadable(feature.getName()).toLowerCase();
+		if (feature.isMany()) {
+			featureName = makeSingular(featureName);
+		}
+		
+		// Set Title and Description
+		page.setTitle(String.format("Create new %s", feature.getEType().getName()));
+		page.setDescription(String.format("Creates a new %s for the %s.", featureName, elementName));
+	
+		// Add page, set input and show wizard
+		wizard.addPage(page);
+		wizard.setInput(container);
 		showWizardWithUndo(wizard, container);
+	}
+	
+	public static String makeSingular(String word) {
+		if (word.charAt(word.length() - 1) == 's') {
+			word = word.substring(0, word.length() - 1);
+		}
+		return word;
 	}
 
 	public static void showWizardWithUndo(Wizard wizard, Notifier notifier) {

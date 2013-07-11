@@ -154,6 +154,18 @@ public class NavigationFeaturePropertyEditor extends
 	private void updateTitle() {
 		navigatedEditor.setTitle(getFeatureDescription());
 	}
+	
+	public String getFeatureDescription() {
+		if (feature.isMany()) {
+			String featureName = RuntimePlugin.makeHumanReadable(feature.getName()).toLowerCase();
+			if (feature.isMany()) {
+				featureName = RuntimePlugin.makeSingular(featureName);
+			}
+			return "New " + featureName;
+		}
+		return super.getFeatureDescription();
+	}
+
 
 	public void refresh() {
 		super.refresh();

@@ -174,7 +174,9 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	public void clearPropertyEditors() {
 		for (IPropertyEditor editor : propertyEditors) {
-			editor.dispose();
+			if (!editor.isDisposed()) {
+				editor.dispose();
+			}
 		}
 		keys.clear();
 		propertyEditors.clear();
@@ -338,13 +340,16 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		super.setInput(object);
 //		if (childrenCreated) {
 			for (IPropertyEditor editor : propertyEditors) {
-				editor.setInput(object);
+				if (!editor.isDisposed()) {
+					editor.setInput(object);
+				}
 			}
 //		}
 	}
 
 	@Override
 	public void dispose() {
+		super.dispose();
 		if (childrenComposite != null) {
 			childrenComposite.dispose();
 		}
@@ -356,7 +361,9 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		toolkit = null;
 
 		for (IPropertyEditor editor : propertyEditors) {
-			editor.dispose();
+			if (!editor.isDisposed()) {
+				editor.dispose();
+			}
 		}
 	}
 
