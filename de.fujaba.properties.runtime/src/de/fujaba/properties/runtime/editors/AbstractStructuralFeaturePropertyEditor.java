@@ -1,16 +1,18 @@
 package de.fujaba.properties.runtime.editors;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -200,6 +202,32 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	
 	public EditingDomain getEditingDomain(Object object) {
 		return AdapterFactoryEditingDomain.getEditingDomainFor(object);
+	}
+	
+	protected Collection<?> getChoices() {
+		Collection<?> choices = null;
+		if (feature.getEType() == EcorePackage.Literals.EBOOLEAN) {
+			choices = Arrays.asList(new Boolean[] { true, false });
+		}
+		if (choices == null && itemPropertyDescriptor != null) {
+			choices = itemPropertyDescriptor.getChoiceOfValues(input);
+		}
+		if (choices == null) {
+			choices = Collections.emptyList();
+		}
+		
+		// Make sure optional <=> choices.contains(null)
+		boolean optional = feature.getLowerBound() <= 0;
+		if (optional != choices.contains(null)) {
+			choices = new ArrayList<Object>(choices); // make choices modifiable
+			if (optional) {
+				choices.add(null);
+			} else {
+				choices.remove(null);
+			}
+		}
+		
+		return choices;
 	}
 
 }

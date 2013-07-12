@@ -1,33 +1,27 @@
 package de.fujaba.properties.runtime.editors;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.layout.RowData;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public class OptionPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
-
+	private ILabelProvider labelProvider;
 	private FormToolkit toolkit;
 	private Composite composite;
 	private Map<Object, Button> buttons = new HashMap<Object, Button>();
@@ -56,6 +50,8 @@ public class OptionPropertyEditor extends
 		composite = toolkit.createComposite(parent);
 		composite.setLayout(rowLayout);
 		updateChoices(input);
+		
+		labelProvider = new AdapterFactoryLabelProvider(adapterFactory);
 	}
 	
 	@Override
@@ -80,9 +76,9 @@ public class OptionPropertyEditor extends
 			buttons.clear();
 			
 			if (input != null) {
-				Collection<?> choices = getChoices(input);
+				Collection<?> choices = getChoices();
 				for (final Object choice : choices) {
-					String label = getLabel(choice);
+					String label = labelProvider.getText(choice);
 					Button button = toolkit.createButton(composite, label, SWT.RADIO);
 					button.addSelectionListener(new SelectionAdapter() {
 						@Override
@@ -99,44 +95,29 @@ public class OptionPropertyEditor extends
 		}
 	}
 
-	// TODO: Pull up to AbstractStructuralFeaturePropertyEditor; make protected
-	private Collection<?> getChoices(Object input) {
-		Collection<?> choices = null;
-		if (feature.getEType() == EcorePackage.Literals.EBOOLEAN) {
-			return Arrays.asList(new Boolean[] { true, false });
-		}
-		if (choices == null && itemPropertyDescriptor != null) {
-			choices = itemPropertyDescriptor.getChoiceOfValues(input);
-		}
-		if (choices == null) {
-			choices = Collections.emptyList();
-		}
-		return choices;
-	}
-
 	protected void modify(Object newValue) {
 		setValue(newValue);
 	}
 
-	private String getLabel(Object choice) {
-		String label = null;
-
-		if (choice instanceof Enumerator) {
-			label = ((Enumerator) choice).getLiteral();
-		}
-		
-		if (label == null) {
-			IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(choice,
-					IItemLabelProvider.class);
-			if (labelProvider != null) {
-				label = labelProvider.getText(choice);
-			}
-		}
-		if (label == null) {
-			label = choice.toString();
-		}
-		return label;
-	}
+//	private String getLabel(Object choice) {
+//		String label = null;
+//
+//		if (choice instanceof Enumerator) {
+//			label = ((Enumerator) choice).getLiteral();
+//		}
+//		
+//		if (label == null) {
+//			IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(choice,
+//					IItemLabelProvider.class);
+//			if (labelProvider != null) {
+//				label = labelProvider.getText(choice);
+//			}
+//		}
+//		if (label == null) {
+//			label = choice.toString();
+//		}
+//		return label;
+//	}
 	
 	@Override
 	protected void valueChanged() {

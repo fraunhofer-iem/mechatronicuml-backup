@@ -1,18 +1,19 @@
 package de.fujaba.properties.runtime.editors;
 
-import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.jface.viewers.ILabelProvider;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
-import de.fujaba.properties.runtime.sections.ObjectPropertySection;
 
 
 public abstract class AbstractPropertyEditor implements
 		IPropertyEditor {
 
 	protected Object input = null;
-	protected boolean disposed = false;
 	
+	protected boolean disposed = false;
+		
 	protected AdapterFactory adapterFactory = null;
 	
 	public AbstractPropertyEditor(AdapterFactory adapterFactory) {
@@ -56,5 +57,5 @@ public abstract class AbstractPropertyEditor implements
 	public boolean isDisposed() {
 		return disposed;
 	}
-
+	
 }

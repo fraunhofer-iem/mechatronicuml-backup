@@ -122,6 +122,10 @@ new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(adapterFactory, �
 new de.fujaba.properties.runtime.editors.OptionPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
+«DEFINE createEditor(Property property) FOR ComboBoxPropertyEditor-»
+new de.fujaba.properties.runtime.editors.ComboPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
 «DEFINE createEditor(Property property) FOR TextPropertyEditor-»
 new de.fujaba.properties.runtime.editors.TextPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()», «multiLine»);
 «ENDDEFINE»
