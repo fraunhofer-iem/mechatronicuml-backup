@@ -10,6 +10,7 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
@@ -25,13 +26,16 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 
 	@Override
 	public void createControls(Composite parent,
-			FormToolkit factory) {
-		factory.createLabel(parent, getLabelText()).setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
+			FormToolkit toolkit) {
+		Label label = toolkit.createLabel(parent, getLabelText());
+		if (parent.getLayout() instanceof GridLayout) {
+			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
+		}
 		int style = 0;
 		if (multiLine) {
 			style |= SWT.MULTI | SWT.V_SCROLL;
 		}
-		text = factory.createText(parent, "", style);
+		text = toolkit.createText(parent, "", style);
 		if (parent.getLayout() instanceof GridLayout) {
 			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
 			if (multiLine) {
