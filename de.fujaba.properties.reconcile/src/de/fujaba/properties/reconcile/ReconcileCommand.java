@@ -11,7 +11,10 @@ import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 
+import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.PropertyGenerator;
+import de.fujaba.properties.Reconciler;
+import de.fujaba.properties.TransformationPosition;
 
 public class ReconcileCommand extends ChangeCommand {
 
@@ -32,25 +35,51 @@ public class ReconcileCommand extends ChangeCommand {
 	}
 
 	@Override
+	protected boolean prepare() {
+		// Prevent execution if reconciler is not present or disabled
+		if (generator.getReconciler() == null) {
+			return false;
+		}
+		if (generator.getReconciler().isEnabled() == false) {
+			return false;
+		}
+		return super.prepare();
+	}
+
+	@Override
 	protected void doExecute() {
-		// pre reconcile
-		if (generator.getPrereconcileQvtoTransformation() != null) {
-			URI uri = URI.createPlatformResourceURI(
-					generator.getPrereconcileQvtoTransformation(), true);
-			transform(PropertiesReconcilePlugin.getDefault()
-					.createTransformationExecutor(uri));
+		Reconciler reconciler = generator.getReconciler();
+
+		// pre reconcile transformations
+		for (CustomTransformation transformation : reconciler
+				.getCustomTransformations()) {
+			if (transformation.getPosition() == TransformationPosition.PRE_RECONCILE
+					&& transformation.isEnabled()
+					&& transformation.getUri() != null) {
+
+				URI uri = URI.createPlatformResourceURI(
+						transformation.getUri(), true);
+				transform(PropertiesReconcilePlugin.getDefault()
+						.createTransformationExecutor(uri));
+			}
 		}
 
 		// reconcile
 		transform(PropertiesReconcilePlugin.getDefault()
 				.getDefaultTransformationExecutor(false));
 
-		// post reconcile
-		if (generator.getPostreconcileQvtoTransformation() != null) {
-			URI uri = URI.createPlatformResourceURI(
-					generator.getPostreconcileQvtoTransformation(), true);
-			transform(PropertiesReconcilePlugin.getDefault()
-					.createTransformationExecutor(uri));
+		// post reconcile transformations
+		for (CustomTransformation transformation : reconciler
+				.getCustomTransformations()) {
+			if (transformation.getPosition() == TransformationPosition.POST_RECONCILE
+					&& transformation.isEnabled()
+					&& transformation.getUri() != null) {
+
+				URI uri = URI.createPlatformResourceURI(
+						transformation.getUri(), true);
+				transform(PropertiesReconcilePlugin.getDefault()
+						.createTransformationExecutor(uri));
+			}
 		}
 	}
 

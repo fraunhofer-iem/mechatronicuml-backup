@@ -98,6 +98,52 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.Reconciler} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReconcilerItemProvider reconcilerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fujaba.properties.Reconciler}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReconcilerAdapter() {
+		if (reconcilerItemProvider == null) {
+			reconcilerItemProvider = new ReconcilerItemProvider(this);
+		}
+
+		return reconcilerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.CustomTransformation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CustomTransformationItemProvider customTransformationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fujaba.properties.CustomTransformation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCustomTransformationAdapter() {
+		if (customTransformationItemProvider == null) {
+			customTransformationItemProvider = new CustomTransformationItemProvider(this);
+		}
+
+		return customTransformationItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.Plugin} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -542,6 +588,8 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	 */
 	public void dispose() {
 		if (propertyGeneratorItemProvider != null) propertyGeneratorItemProvider.dispose();
+		if (reconcilerItemProvider != null) reconcilerItemProvider.dispose();
+		if (customTransformationItemProvider != null) customTransformationItemProvider.dispose();
 		if (pluginItemProvider != null) pluginItemProvider.dispose();
 		if (propertyTabItemProvider != null) propertyTabItemProvider.dispose();
 		if (packageItemProvider != null) packageItemProvider.dispose();

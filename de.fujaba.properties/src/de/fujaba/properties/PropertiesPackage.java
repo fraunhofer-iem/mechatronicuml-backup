@@ -4,6 +4,7 @@ package de.fujaba.properties;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -67,13 +68,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY_GENERATOR = 0;
 
 	/**
+	 * The feature id for the '<em><b>Reconciler</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY_GENERATOR__RECONCILER = 0;
+
+	/**
 	 * The feature id for the '<em><b>Gen Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__GEN_MODEL = 0;
+	int PROPERTY_GENERATOR__GEN_MODEL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Referenced Generators</b></em>' reference list.
@@ -82,7 +92,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__REFERENCED_GENERATORS = 1;
+	int PROPERTY_GENERATOR__REFERENCED_GENERATORS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Plugin</b></em>' containment reference.
@@ -91,7 +101,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__PLUGIN = 2;
+	int PROPERTY_GENERATOR__PLUGIN = 3;
 
 	/**
 	 * The feature id for the '<em><b>Default Tab</b></em>' reference.
@@ -100,7 +110,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__DEFAULT_TAB = 3;
+	int PROPERTY_GENERATOR__DEFAULT_TAB = 4;
 
 	/**
 	 * The feature id for the '<em><b>Tabs</b></em>' containment reference list.
@@ -109,7 +119,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__TABS = 4;
+	int PROPERTY_GENERATOR__TABS = 5;
 
 	/**
 	 * The feature id for the '<em><b>Packages</b></em>' containment reference list.
@@ -118,7 +128,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__PACKAGES = 5;
+	int PROPERTY_GENERATOR__PACKAGES = 6;
 
 	/**
 	 * The feature id for the '<em><b>Contributor Id</b></em>' attribute.
@@ -127,7 +137,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__CONTRIBUTOR_ID = 6;
+	int PROPERTY_GENERATOR__CONTRIBUTOR_ID = 7;
 
 	/**
 	 * The feature id for the '<em><b>Source Folder</b></em>' attribute.
@@ -136,25 +146,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR__SOURCE_FOLDER = 7;
-
-	/**
-	 * The feature id for the '<em><b>Prereconcile Qvto Transformation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION = 8;
-
-	/**
-	 * The feature id for the '<em><b>Postreconcile Qvto Transformation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION = 9;
+	int PROPERTY_GENERATOR__SOURCE_FOLDER = 8;
 
 	/**
 	 * The number of structural features of the '<em>Property Generator</em>' class.
@@ -163,7 +155,117 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_GENERATOR_FEATURE_COUNT = 10;
+	int PROPERTY_GENERATOR_FEATURE_COUNT = 9;
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.ReconcilerImpl <em>Reconciler</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.ReconcilerImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getReconciler()
+	 * @generated
+	 */
+	int RECONCILER = 1;
+
+	/**
+	 * The feature id for the '<em><b>Enabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONCILER__ENABLED = 0;
+
+	/**
+	 * The feature id for the '<em><b>Reconcile Packages</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONCILER__RECONCILE_PACKAGES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Reconcile Classes</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONCILER__RECONCILE_CLASSES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Reconcile Properties</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONCILER__RECONCILE_PROPERTIES = 3;
+
+	/**
+	 * The feature id for the '<em><b>Custom Transformations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONCILER__CUSTOM_TRANSFORMATIONS = 4;
+
+	/**
+	 * The number of structural features of the '<em>Reconciler</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONCILER_FEATURE_COUNT = 5;
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.CustomTransformationImpl <em>Custom Transformation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.CustomTransformationImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomTransformation()
+	 * @generated
+	 */
+	int CUSTOM_TRANSFORMATION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Uri</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_TRANSFORMATION__URI = 0;
+
+	/**
+	 * The feature id for the '<em><b>Enabled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_TRANSFORMATION__ENABLED = 1;
+
+	/**
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_TRANSFORMATION__POSITION = 2;
+
+	/**
+	 * The number of structural features of the '<em>Custom Transformation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOM_TRANSFORMATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PluginImpl <em>Plugin</em>}' class.
@@ -173,7 +275,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPlugin()
 	 * @generated
 	 */
-	int PLUGIN = 1;
+	int PLUGIN = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -219,7 +321,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyTab()
 	 * @generated
 	 */
-	int PROPERTY_TAB = 2;
+	int PROPERTY_TAB = 4;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -265,7 +367,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPackage()
 	 * @generated
 	 */
-	int PACKAGE = 3;
+	int PACKAGE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Gen Package</b></em>' reference.
@@ -311,7 +413,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 4;
+	int CLASS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Gen Class</b></em>' reference.
@@ -384,7 +486,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyCategory()
 	 * @generated
 	 */
-	int PROPERTY_CATEGORY = 5;
+	int PROPERTY_CATEGORY = 7;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -457,7 +559,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 6;
+	int PROPERTY = 8;
 
 	/**
 	 * The feature id for the '<em><b>Gen Feature</b></em>' reference.
@@ -539,7 +641,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyEditor()
 	 * @generated
 	 */
-	int PROPERTY_EDITOR = 7;
+	int PROPERTY_EDITOR = 9;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -567,7 +669,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTextPropertyEditor()
 	 * @generated
 	 */
-	int TEXT_PROPERTY_EDITOR = 8;
+	int TEXT_PROPERTY_EDITOR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -604,7 +706,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getSpinnerPropertyEditor()
 	 * @generated
 	 */
-	int SPINNER_PROPERTY_EDITOR = 9;
+	int SPINNER_PROPERTY_EDITOR = 11;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -641,7 +743,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getComboBoxPropertyEditor()
 	 * @generated
 	 */
-	int COMBO_BOX_PROPERTY_EDITOR = 10;
+	int COMBO_BOX_PROPERTY_EDITOR = 12;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -669,7 +771,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertyEditor()
 	 * @generated
 	 */
-	int CHECKBOX_PROPERTY_EDITOR = 11;
+	int CHECKBOX_PROPERTY_EDITOR = 13;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -697,7 +799,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getRadioPropertyEditor()
 	 * @generated
 	 */
-	int RADIO_PROPERTY_EDITOR = 12;
+	int RADIO_PROPERTY_EDITOR = 14;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -725,7 +827,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getListPropertyEditor()
 	 * @generated
 	 */
-	int LIST_PROPERTY_EDITOR = 13;
+	int LIST_PROPERTY_EDITOR = 15;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -753,7 +855,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getObjectPropertyEditor()
 	 * @generated
 	 */
-	int OBJECT_PROPERTY_EDITOR = 14;
+	int OBJECT_PROPERTY_EDITOR = 16;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -781,7 +883,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertyEditor()
 	 * @generated
 	 */
-	int CUSTOM_PROPERTY_EDITOR = 15;
+	int CUSTOM_PROPERTY_EDITOR = 17;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -818,7 +920,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyFilter()
 	 * @generated
 	 */
-	int PROPERTY_FILTER = 16;
+	int PROPERTY_FILTER = 18;
 
 	/**
 	 * The number of structural features of the '<em>Property Filter</em>' class.
@@ -837,7 +939,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyFilter()
 	 * @generated
 	 */
-	int OCL_PROPERTY_FILTER = 17;
+	int OCL_PROPERTY_FILTER = 19;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -859,6 +961,17 @@ public interface PropertiesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.fujaba.properties.TransformationPosition <em>Transformation Position</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.TransformationPosition
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTransformationPosition()
+	 * @generated
+	 */
+	int TRANSFORMATION_POSITION = 20;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.PropertyGenerator <em>Property Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -867,6 +980,17 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPropertyGenerator();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.fujaba.properties.PropertyGenerator#getReconciler <em>Reconciler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Reconciler</em>'.
+	 * @see de.fujaba.properties.PropertyGenerator#getReconciler()
+	 * @see #getPropertyGenerator()
+	 * @generated
+	 */
+	EReference getPropertyGenerator_Reconciler();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.fujaba.properties.PropertyGenerator#getGenModel <em>Gen Model</em>}'.
@@ -957,26 +1081,112 @@ public interface PropertiesPackage extends EPackage {
 	EAttribute getPropertyGenerator_SourceFolder();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.fujaba.properties.PropertyGenerator#getPrereconcileQvtoTransformation <em>Prereconcile Qvto Transformation</em>}'.
+	 * Returns the meta object for class '{@link de.fujaba.properties.Reconciler <em>Reconciler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Prereconcile Qvto Transformation</em>'.
-	 * @see de.fujaba.properties.PropertyGenerator#getPrereconcileQvtoTransformation()
-	 * @see #getPropertyGenerator()
+	 * @return the meta object for class '<em>Reconciler</em>'.
+	 * @see de.fujaba.properties.Reconciler
 	 * @generated
 	 */
-	EAttribute getPropertyGenerator_PrereconcileQvtoTransformation();
+	EClass getReconciler();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.fujaba.properties.PropertyGenerator#getPostreconcileQvtoTransformation <em>Postreconcile Qvto Transformation</em>}'.
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.Reconciler#isEnabled <em>Enabled</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Postreconcile Qvto Transformation</em>'.
-	 * @see de.fujaba.properties.PropertyGenerator#getPostreconcileQvtoTransformation()
-	 * @see #getPropertyGenerator()
+	 * @return the meta object for the attribute '<em>Enabled</em>'.
+	 * @see de.fujaba.properties.Reconciler#isEnabled()
+	 * @see #getReconciler()
 	 * @generated
 	 */
-	EAttribute getPropertyGenerator_PostreconcileQvtoTransformation();
+	EAttribute getReconciler_Enabled();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.Reconciler#isReconcilePackages <em>Reconcile Packages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reconcile Packages</em>'.
+	 * @see de.fujaba.properties.Reconciler#isReconcilePackages()
+	 * @see #getReconciler()
+	 * @generated
+	 */
+	EAttribute getReconciler_ReconcilePackages();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.Reconciler#isReconcileClasses <em>Reconcile Classes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reconcile Classes</em>'.
+	 * @see de.fujaba.properties.Reconciler#isReconcileClasses()
+	 * @see #getReconciler()
+	 * @generated
+	 */
+	EAttribute getReconciler_ReconcileClasses();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.Reconciler#isReconcileProperties <em>Reconcile Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Reconcile Properties</em>'.
+	 * @see de.fujaba.properties.Reconciler#isReconcileProperties()
+	 * @see #getReconciler()
+	 * @generated
+	 */
+	EAttribute getReconciler_ReconcileProperties();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.fujaba.properties.Reconciler#getCustomTransformations <em>Custom Transformations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Custom Transformations</em>'.
+	 * @see de.fujaba.properties.Reconciler#getCustomTransformations()
+	 * @see #getReconciler()
+	 * @generated
+	 */
+	EReference getReconciler_CustomTransformations();
+
+	/**
+	 * Returns the meta object for class '{@link de.fujaba.properties.CustomTransformation <em>Custom Transformation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Custom Transformation</em>'.
+	 * @see de.fujaba.properties.CustomTransformation
+	 * @generated
+	 */
+	EClass getCustomTransformation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.CustomTransformation#getUri <em>Uri</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uri</em>'.
+	 * @see de.fujaba.properties.CustomTransformation#getUri()
+	 * @see #getCustomTransformation()
+	 * @generated
+	 */
+	EAttribute getCustomTransformation_Uri();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.CustomTransformation#isEnabled <em>Enabled</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Enabled</em>'.
+	 * @see de.fujaba.properties.CustomTransformation#isEnabled()
+	 * @see #getCustomTransformation()
+	 * @generated
+	 */
+	EAttribute getCustomTransformation_Enabled();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.CustomTransformation#getPosition <em>Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Position</em>'.
+	 * @see de.fujaba.properties.CustomTransformation#getPosition()
+	 * @see #getCustomTransformation()
+	 * @generated
+	 */
+	EAttribute getCustomTransformation_Position();
 
 	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.Plugin <em>Plugin</em>}'.
@@ -1512,6 +1722,16 @@ public interface PropertiesPackage extends EPackage {
 	EAttribute getOCLPropertyFilter_Expression();
 
 	/**
+	 * Returns the meta object for enum '{@link de.fujaba.properties.TransformationPosition <em>Transformation Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Transformation Position</em>'.
+	 * @see de.fujaba.properties.TransformationPosition
+	 * @generated
+	 */
+	EEnum getTransformationPosition();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1542,6 +1762,14 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROPERTY_GENERATOR = eINSTANCE.getPropertyGenerator();
+
+		/**
+		 * The meta object literal for the '<em><b>Reconciler</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTY_GENERATOR__RECONCILER = eINSTANCE.getPropertyGenerator_Reconciler();
 
 		/**
 		 * The meta object literal for the '<em><b>Gen Model</b></em>' reference feature.
@@ -1608,20 +1836,88 @@ public interface PropertiesPackage extends EPackage {
 		EAttribute PROPERTY_GENERATOR__SOURCE_FOLDER = eINSTANCE.getPropertyGenerator_SourceFolder();
 
 		/**
-		 * The meta object literal for the '<em><b>Prereconcile Qvto Transformation</b></em>' attribute feature.
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.ReconcilerImpl <em>Reconciler</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.fujaba.properties.impl.ReconcilerImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getReconciler()
 		 * @generated
 		 */
-		EAttribute PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION = eINSTANCE.getPropertyGenerator_PrereconcileQvtoTransformation();
+		EClass RECONCILER = eINSTANCE.getReconciler();
 
 		/**
-		 * The meta object literal for the '<em><b>Postreconcile Qvto Transformation</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Enabled</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION = eINSTANCE.getPropertyGenerator_PostreconcileQvtoTransformation();
+		EAttribute RECONCILER__ENABLED = eINSTANCE.getReconciler_Enabled();
+
+		/**
+		 * The meta object literal for the '<em><b>Reconcile Packages</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECONCILER__RECONCILE_PACKAGES = eINSTANCE.getReconciler_ReconcilePackages();
+
+		/**
+		 * The meta object literal for the '<em><b>Reconcile Classes</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECONCILER__RECONCILE_CLASSES = eINSTANCE.getReconciler_ReconcileClasses();
+
+		/**
+		 * The meta object literal for the '<em><b>Reconcile Properties</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECONCILER__RECONCILE_PROPERTIES = eINSTANCE.getReconciler_ReconcileProperties();
+
+		/**
+		 * The meta object literal for the '<em><b>Custom Transformations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONCILER__CUSTOM_TRANSFORMATIONS = eINSTANCE.getReconciler_CustomTransformations();
+
+		/**
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.CustomTransformationImpl <em>Custom Transformation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fujaba.properties.impl.CustomTransformationImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomTransformation()
+		 * @generated
+		 */
+		EClass CUSTOM_TRANSFORMATION = eINSTANCE.getCustomTransformation();
+
+		/**
+		 * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CUSTOM_TRANSFORMATION__URI = eINSTANCE.getCustomTransformation_Uri();
+
+		/**
+		 * The meta object literal for the '<em><b>Enabled</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CUSTOM_TRANSFORMATION__ENABLED = eINSTANCE.getCustomTransformation_Enabled();
+
+		/**
+		 * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CUSTOM_TRANSFORMATION__POSITION = eINSTANCE.getCustomTransformation_Position();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PluginImpl <em>Plugin</em>}' class.
@@ -2056,6 +2352,16 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OCL_PROPERTY_FILTER__EXPRESSION = eINSTANCE.getOCLPropertyFilter_Expression();
+
+		/**
+		 * The meta object literal for the '{@link de.fujaba.properties.TransformationPosition <em>Transformation Position</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fujaba.properties.TransformationPosition
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTransformationPosition()
+		 * @generated
+		 */
+		EEnum TRANSFORMATION_POSITION = eINSTANCE.getTransformationPosition();
 
 	}
 

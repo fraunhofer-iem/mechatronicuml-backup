@@ -7,6 +7,7 @@ import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
 
+import de.fujaba.properties.Reconciler;
 import java.util.Collection;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getReconciler <em>Reconciler</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getGenModel <em>Gen Model</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getReferencedGenerators <em>Referenced Generators</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getPlugin <em>Plugin</em>}</li>
@@ -42,14 +44,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getPackages <em>Packages</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getContributorId <em>Contributor Id</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getSourceFolder <em>Source Folder</em>}</li>
- *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getPrereconcileQvtoTransformation <em>Prereconcile Qvto Transformation</em>}</li>
- *   <li>{@link de.fujaba.properties.impl.PropertyGeneratorImpl#getPostreconcileQvtoTransformation <em>Postreconcile Qvto Transformation</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenerator {
+	/**
+	 * The cached value of the '{@link #getReconciler() <em>Reconciler</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReconciler()
+	 * @generated
+	 * @ordered
+	 */
+	protected Reconciler reconciler;
+
 	/**
 	 * The cached value of the '{@link #getGenModel() <em>Gen Model</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -151,46 +161,6 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	protected String sourceFolder = SOURCE_FOLDER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPrereconcileQvtoTransformation() <em>Prereconcile Qvto Transformation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrereconcileQvtoTransformation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PRERECONCILE_QVTO_TRANSFORMATION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPrereconcileQvtoTransformation() <em>Prereconcile Qvto Transformation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrereconcileQvtoTransformation()
-	 * @generated
-	 * @ordered
-	 */
-	protected String prereconcileQvtoTransformation = PRERECONCILE_QVTO_TRANSFORMATION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPostreconcileQvtoTransformation() <em>Postreconcile Qvto Transformation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostreconcileQvtoTransformation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String POSTRECONCILE_QVTO_TRANSFORMATION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPostreconcileQvtoTransformation() <em>Postreconcile Qvto Transformation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPostreconcileQvtoTransformation()
-	 * @generated
-	 * @ordered
-	 */
-	protected String postreconcileQvtoTransformation = POSTRECONCILE_QVTO_TRANSFORMATION_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -207,6 +177,49 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	@Override
 	protected EClass eStaticClass() {
 		return PropertiesPackage.Literals.PROPERTY_GENERATOR;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Reconciler getReconciler() {
+		return reconciler;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetReconciler(Reconciler newReconciler, NotificationChain msgs) {
+		Reconciler oldReconciler = reconciler;
+		reconciler = newReconciler;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_GENERATOR__RECONCILER, oldReconciler, newReconciler);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReconciler(Reconciler newReconciler) {
+		if (newReconciler != reconciler) {
+			NotificationChain msgs = null;
+			if (reconciler != null)
+				msgs = ((InternalEObject)reconciler).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY_GENERATOR__RECONCILER, null, msgs);
+			if (newReconciler != null)
+				msgs = ((InternalEObject)newReconciler).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PropertiesPackage.PROPERTY_GENERATOR__RECONCILER, null, msgs);
+			msgs = basicSetReconciler(newReconciler, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_GENERATOR__RECONCILER, newReconciler, newReconciler));
 	}
 
 	/**
@@ -411,48 +424,6 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPrereconcileQvtoTransformation() {
-		return prereconcileQvtoTransformation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPrereconcileQvtoTransformation(String newPrereconcileQvtoTransformation) {
-		String oldPrereconcileQvtoTransformation = prereconcileQvtoTransformation;
-		prereconcileQvtoTransformation = newPrereconcileQvtoTransformation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION, oldPrereconcileQvtoTransformation, prereconcileQvtoTransformation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getPostreconcileQvtoTransformation() {
-		return postreconcileQvtoTransformation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPostreconcileQvtoTransformation(String newPostreconcileQvtoTransformation) {
-		String oldPostreconcileQvtoTransformation = postreconcileQvtoTransformation;
-		postreconcileQvtoTransformation = newPostreconcileQvtoTransformation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION, oldPostreconcileQvtoTransformation, postreconcileQvtoTransformation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -471,6 +442,8 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case PropertiesPackage.PROPERTY_GENERATOR__RECONCILER:
+				return basicSetReconciler(null, msgs);
 			case PropertiesPackage.PROPERTY_GENERATOR__PLUGIN:
 				return basicSetPlugin(null, msgs);
 			case PropertiesPackage.PROPERTY_GENERATOR__TABS:
@@ -489,6 +462,8 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case PropertiesPackage.PROPERTY_GENERATOR__RECONCILER:
+				return getReconciler();
 			case PropertiesPackage.PROPERTY_GENERATOR__GEN_MODEL:
 				if (resolve) return getGenModel();
 				return basicGetGenModel();
@@ -507,10 +482,6 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 				return getContributorId();
 			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
 				return getSourceFolder();
-			case PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION:
-				return getPrereconcileQvtoTransformation();
-			case PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION:
-				return getPostreconcileQvtoTransformation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -524,6 +495,9 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case PropertiesPackage.PROPERTY_GENERATOR__RECONCILER:
+				setReconciler((Reconciler)newValue);
+				return;
 			case PropertiesPackage.PROPERTY_GENERATOR__GEN_MODEL:
 				setGenModel((GenModel)newValue);
 				return;
@@ -551,12 +525,6 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
 				setSourceFolder((String)newValue);
 				return;
-			case PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION:
-				setPrereconcileQvtoTransformation((String)newValue);
-				return;
-			case PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION:
-				setPostreconcileQvtoTransformation((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -569,6 +537,9 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case PropertiesPackage.PROPERTY_GENERATOR__RECONCILER:
+				setReconciler((Reconciler)null);
+				return;
 			case PropertiesPackage.PROPERTY_GENERATOR__GEN_MODEL:
 				setGenModel((GenModel)null);
 				return;
@@ -593,12 +564,6 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
 				setSourceFolder(SOURCE_FOLDER_EDEFAULT);
 				return;
-			case PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION:
-				setPrereconcileQvtoTransformation(PRERECONCILE_QVTO_TRANSFORMATION_EDEFAULT);
-				return;
-			case PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION:
-				setPostreconcileQvtoTransformation(POSTRECONCILE_QVTO_TRANSFORMATION_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -611,6 +576,8 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case PropertiesPackage.PROPERTY_GENERATOR__RECONCILER:
+				return reconciler != null;
 			case PropertiesPackage.PROPERTY_GENERATOR__GEN_MODEL:
 				return genModel != null;
 			case PropertiesPackage.PROPERTY_GENERATOR__REFERENCED_GENERATORS:
@@ -627,10 +594,6 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 				return CONTRIBUTOR_ID_EDEFAULT == null ? contributorId != null : !CONTRIBUTOR_ID_EDEFAULT.equals(contributorId);
 			case PropertiesPackage.PROPERTY_GENERATOR__SOURCE_FOLDER:
 				return SOURCE_FOLDER_EDEFAULT == null ? sourceFolder != null : !SOURCE_FOLDER_EDEFAULT.equals(sourceFolder);
-			case PropertiesPackage.PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION:
-				return PRERECONCILE_QVTO_TRANSFORMATION_EDEFAULT == null ? prereconcileQvtoTransformation != null : !PRERECONCILE_QVTO_TRANSFORMATION_EDEFAULT.equals(prereconcileQvtoTransformation);
-			case PropertiesPackage.PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION:
-				return POSTRECONCILE_QVTO_TRANSFORMATION_EDEFAULT == null ? postreconcileQvtoTransformation != null : !POSTRECONCILE_QVTO_TRANSFORMATION_EDEFAULT.equals(postreconcileQvtoTransformation);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -649,10 +612,6 @@ public class PropertyGeneratorImpl extends EObjectImpl implements PropertyGenera
 		result.append(contributorId);
 		result.append(", sourceFolder: ");
 		result.append(sourceFolder);
-		result.append(", prereconcileQvtoTransformation: ");
-		result.append(prereconcileQvtoTransformation);
-		result.append(", postreconcileQvtoTransformation: ");
-		result.append(postreconcileQvtoTransformation);
 		result.append(')');
 		return result.toString();
 	}

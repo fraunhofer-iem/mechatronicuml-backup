@@ -5,6 +5,7 @@ package de.fujaba.properties.util;
 import de.fujaba.properties.CheckboxPropertyEditor;
 import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
+import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
@@ -17,9 +18,11 @@ import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.Reconciler;
 import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
 
+import de.fujaba.properties.TransformationPosition;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -104,6 +107,10 @@ public class PropertiesValidator extends EObjectValidator {
 		switch (classifierID) {
 			case PropertiesPackage.PROPERTY_GENERATOR:
 				return validatePropertyGenerator((PropertyGenerator)value, diagnostics, context);
+			case PropertiesPackage.RECONCILER:
+				return validateReconciler((Reconciler)value, diagnostics, context);
+			case PropertiesPackage.CUSTOM_TRANSFORMATION:
+				return validateCustomTransformation((CustomTransformation)value, diagnostics, context);
 			case PropertiesPackage.PLUGIN:
 				return validatePlugin((Plugin)value, diagnostics, context);
 			case PropertiesPackage.PROPERTY_TAB:
@@ -138,6 +145,8 @@ public class PropertiesValidator extends EObjectValidator {
 				return validatePropertyFilter((PropertyFilter)value, diagnostics, context);
 			case PropertiesPackage.OCL_PROPERTY_FILTER:
 				return validateOCLPropertyFilter((OCLPropertyFilter)value, diagnostics, context);
+			case PropertiesPackage.TRANSFORMATION_POSITION:
+				return validateTransformationPosition((TransformationPosition)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -219,6 +228,24 @@ public class PropertiesValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconciler(Reconciler reconciler, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(reconciler, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCustomTransformation(CustomTransformation customTransformation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(customTransformation, diagnostics, context);
 	}
 
 	/**
@@ -518,6 +545,15 @@ public class PropertiesValidator extends EObjectValidator {
 	 */
 	public boolean validateOCLPropertyFilter(OCLPropertyFilter oclPropertyFilter, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(oclPropertyFilter, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransformationPosition(TransformationPosition transformationPosition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

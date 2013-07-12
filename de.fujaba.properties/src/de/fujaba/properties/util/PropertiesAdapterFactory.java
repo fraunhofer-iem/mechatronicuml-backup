@@ -5,6 +5,7 @@ package de.fujaba.properties.util;
 import de.fujaba.properties.CheckboxPropertyEditor;
 import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
+import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
@@ -17,6 +18,7 @@ import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.Reconciler;
 import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
 
@@ -86,6 +88,14 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePropertyGenerator(PropertyGenerator object) {
 				return createPropertyGeneratorAdapter();
+			}
+			@Override
+			public Adapter caseReconciler(Reconciler object) {
+				return createReconcilerAdapter();
+			}
+			@Override
+			public Adapter caseCustomTransformation(CustomTransformation object) {
+				return createCustomTransformationAdapter();
 			}
 			@Override
 			public Adapter casePlugin(Plugin object) {
@@ -186,6 +196,34 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPropertyGeneratorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.Reconciler <em>Reconciler</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fujaba.properties.Reconciler
+	 * @generated
+	 */
+	public Adapter createReconcilerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.CustomTransformation <em>Custom Transformation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fujaba.properties.CustomTransformation
+	 * @generated
+	 */
+	public Adapter createCustomTransformationAdapter() {
 		return null;
 	}
 

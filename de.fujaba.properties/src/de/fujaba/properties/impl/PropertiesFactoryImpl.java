@@ -5,6 +5,7 @@ package de.fujaba.properties.impl;
 import de.fujaba.properties.CheckboxPropertyEditor;
 import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
+import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
@@ -16,10 +17,13 @@ import de.fujaba.properties.PropertyCategory;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.Reconciler;
 import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
 
+import de.fujaba.properties.TransformationPosition;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -72,6 +76,8 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case PropertiesPackage.PROPERTY_GENERATOR: return createPropertyGenerator();
+			case PropertiesPackage.RECONCILER: return createReconciler();
+			case PropertiesPackage.CUSTOM_TRANSFORMATION: return createCustomTransformation();
 			case PropertiesPackage.PLUGIN: return createPlugin();
 			case PropertiesPackage.PROPERTY_TAB: return createPropertyTab();
 			case PropertiesPackage.PACKAGE: return createPackage();
@@ -97,9 +103,59 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case PropertiesPackage.TRANSFORMATION_POSITION:
+				return createTransformationPositionFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case PropertiesPackage.TRANSFORMATION_POSITION:
+				return convertTransformationPositionToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PropertyGenerator createPropertyGenerator() {
 		PropertyGeneratorImpl propertyGenerator = new PropertyGeneratorImpl();
 		return propertyGenerator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Reconciler createReconciler() {
+		ReconcilerImpl reconciler = new ReconcilerImpl();
+		return reconciler;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CustomTransformation createCustomTransformation() {
+		CustomTransformationImpl customTransformation = new CustomTransformationImpl();
+		return customTransformation;
 	}
 
 	/**
@@ -250,6 +306,26 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public OCLPropertyFilter createOCLPropertyFilter() {
 		OCLPropertyFilterImpl oclPropertyFilter = new OCLPropertyFilterImpl();
 		return oclPropertyFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TransformationPosition createTransformationPositionFromString(EDataType eDataType, String initialValue) {
+		TransformationPosition result = TransformationPosition.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTransformationPositionToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

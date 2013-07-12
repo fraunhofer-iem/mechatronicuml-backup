@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link de.fujaba.properties.PropertyGenerator#getReconciler <em>Reconciler</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getGenModel <em>Gen Model</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getReferencedGenerators <em>Referenced Generators</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getPlugin <em>Plugin</em>}</li>
@@ -24,8 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getPackages <em>Packages</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getContributorId <em>Contributor Id</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyGenerator#getSourceFolder <em>Source Folder</em>}</li>
- *   <li>{@link de.fujaba.properties.PropertyGenerator#getPrereconcileQvtoTransformation <em>Prereconcile Qvto Transformation</em>}</li>
- *   <li>{@link de.fujaba.properties.PropertyGenerator#getPostreconcileQvtoTransformation <em>Postreconcile Qvto Transformation</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +34,32 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface PropertyGenerator extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Reconciler</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reconciler</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reconciler</em>' containment reference.
+	 * @see #setReconciler(Reconciler)
+	 * @see de.fujaba.properties.PropertiesPackage#getPropertyGenerator_Reconciler()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Reconciler getReconciler();
+
+	/**
+	 * Sets the value of the '{@link de.fujaba.properties.PropertyGenerator#getReconciler <em>Reconciler</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reconciler</em>' containment reference.
+	 * @see #getReconciler()
+	 * @generated
+	 */
+	void setReconciler(Reconciler value);
+
 	/**
 	 * Returns the value of the '<em><b>Gen Model</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -215,57 +240,5 @@ public interface PropertyGenerator extends EObject {
 	 * @generated
 	 */
 	void setSourceFolder(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Prereconcile Qvto Transformation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Prereconcile Qvto Transformation</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Prereconcile Qvto Transformation</em>' attribute.
-	 * @see #setPrereconcileQvtoTransformation(String)
-	 * @see de.fujaba.properties.PropertiesPackage#getPropertyGenerator_PrereconcileQvtoTransformation()
-	 * @model
-	 * @generated
-	 */
-	String getPrereconcileQvtoTransformation();
-
-	/**
-	 * Sets the value of the '{@link de.fujaba.properties.PropertyGenerator#getPrereconcileQvtoTransformation <em>Prereconcile Qvto Transformation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prereconcile Qvto Transformation</em>' attribute.
-	 * @see #getPrereconcileQvtoTransformation()
-	 * @generated
-	 */
-	void setPrereconcileQvtoTransformation(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Postreconcile Qvto Transformation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Postreconcile Qvto Transformation</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Postreconcile Qvto Transformation</em>' attribute.
-	 * @see #setPostreconcileQvtoTransformation(String)
-	 * @see de.fujaba.properties.PropertiesPackage#getPropertyGenerator_PostreconcileQvtoTransformation()
-	 * @model
-	 * @generated
-	 */
-	String getPostreconcileQvtoTransformation();
-
-	/**
-	 * Sets the value of the '{@link de.fujaba.properties.PropertyGenerator#getPostreconcileQvtoTransformation <em>Postreconcile Qvto Transformation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Postreconcile Qvto Transformation</em>' attribute.
-	 * @see #getPostreconcileQvtoTransformation()
-	 * @generated
-	 */
-	void setPostreconcileQvtoTransformation(String value);
 
 } // PropertyGenerator

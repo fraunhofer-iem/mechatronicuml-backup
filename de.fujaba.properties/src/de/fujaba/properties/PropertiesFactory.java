@@ -31,6 +31,24 @@ public interface PropertiesFactory extends EFactory {
 	PropertyGenerator createPropertyGenerator();
 
 	/**
+	 * Returns a new object of class '<em>Reconciler</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Reconciler</em>'.
+	 * @generated
+	 */
+	Reconciler createReconciler();
+
+	/**
+	 * Returns a new object of class '<em>Custom Transformation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Custom Transformation</em>'.
+	 * @generated
+	 */
+	CustomTransformation createCustomTransformation();
+
+	/**
 	 * Returns a new object of class '<em>Plugin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -604,13 +604,13 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 	protected void reconcile(final PropertyGenerator generator) {
 		
 		ReconcileCommand recordingCommand = new ReconcileCommand(generator);
-		
-		getEditingDomain().getCommandStack().execute(recordingCommand);
-
-		if (!recordingCommand.hasChanged()) {
-			getEditingDomain().getCommandStack().undo(); // TODO: Redo is still possible; how to do this elegantly?
+		if (recordingCommand.canExecute()) {
+			getEditingDomain().getCommandStack().execute(recordingCommand);
+	
+			if (!recordingCommand.hasChanged()) {
+				getEditingDomain().getCommandStack().undo(); // TODO: Redo is still possible; how to do this elegantly?
+			}
 		}
-
 	}
 	
 

@@ -5,6 +5,7 @@ package de.fujaba.properties.impl;
 import de.fujaba.properties.CheckboxPropertyEditor;
 import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
+import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
@@ -18,15 +19,18 @@ import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.PropertyTab;
 import de.fujaba.properties.RadioPropertyEditor;
+import de.fujaba.properties.Reconciler;
 import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
 
+import de.fujaba.properties.TransformationPosition;
 import de.fujaba.properties.util.PropertiesValidator;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -48,6 +52,20 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * @generated
 	 */
 	private EClass propertyGeneratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reconcilerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass customTransformationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,6 +187,13 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	private EClass oclPropertyFilterEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum transformationPositionEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -255,7 +280,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyGenerator_GenModel() {
+	public EReference getPropertyGenerator_Reconciler() {
 		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -264,7 +289,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyGenerator_ReferencedGenerators() {
+	public EReference getPropertyGenerator_GenModel() {
 		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -273,7 +298,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyGenerator_Plugin() {
+	public EReference getPropertyGenerator_ReferencedGenerators() {
 		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -282,7 +307,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyGenerator_DefaultTab() {
+	public EReference getPropertyGenerator_Plugin() {
 		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -291,7 +316,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyGenerator_Tabs() {
+	public EReference getPropertyGenerator_DefaultTab() {
 		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -300,7 +325,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPropertyGenerator_Packages() {
+	public EReference getPropertyGenerator_Tabs() {
 		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -309,8 +334,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPropertyGenerator_ContributorId() {
-		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(6);
+	public EReference getPropertyGenerator_Packages() {
+		return (EReference)propertyGeneratorEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -318,7 +343,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPropertyGenerator_SourceFolder() {
+	public EAttribute getPropertyGenerator_ContributorId() {
 		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -327,7 +352,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPropertyGenerator_PrereconcileQvtoTransformation() {
+	public EAttribute getPropertyGenerator_SourceFolder() {
 		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -336,8 +361,89 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPropertyGenerator_PostreconcileQvtoTransformation() {
-		return (EAttribute)propertyGeneratorEClass.getEStructuralFeatures().get(9);
+	public EClass getReconciler() {
+		return reconcilerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReconciler_Enabled() {
+		return (EAttribute)reconcilerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReconciler_ReconcilePackages() {
+		return (EAttribute)reconcilerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReconciler_ReconcileClasses() {
+		return (EAttribute)reconcilerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReconciler_ReconcileProperties() {
+		return (EAttribute)reconcilerEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getReconciler_CustomTransformations() {
+		return (EReference)reconcilerEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCustomTransformation() {
+		return customTransformationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCustomTransformation_Uri() {
+		return (EAttribute)customTransformationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCustomTransformation_Enabled() {
+		return (EAttribute)customTransformationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCustomTransformation_Position() {
+		return (EAttribute)customTransformationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -795,6 +901,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getTransformationPosition() {
+		return transformationPositionEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PropertiesFactory getPropertiesFactory() {
 		return (PropertiesFactory)getEFactoryInstance();
 	}
@@ -819,6 +934,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		// Create classes and their features
 		propertyGeneratorEClass = createEClass(PROPERTY_GENERATOR);
+		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__RECONCILER);
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__GEN_MODEL);
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__REFERENCED_GENERATORS);
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__PLUGIN);
@@ -827,8 +943,18 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		createEReference(propertyGeneratorEClass, PROPERTY_GENERATOR__PACKAGES);
 		createEAttribute(propertyGeneratorEClass, PROPERTY_GENERATOR__CONTRIBUTOR_ID);
 		createEAttribute(propertyGeneratorEClass, PROPERTY_GENERATOR__SOURCE_FOLDER);
-		createEAttribute(propertyGeneratorEClass, PROPERTY_GENERATOR__PRERECONCILE_QVTO_TRANSFORMATION);
-		createEAttribute(propertyGeneratorEClass, PROPERTY_GENERATOR__POSTRECONCILE_QVTO_TRANSFORMATION);
+
+		reconcilerEClass = createEClass(RECONCILER);
+		createEAttribute(reconcilerEClass, RECONCILER__ENABLED);
+		createEAttribute(reconcilerEClass, RECONCILER__RECONCILE_PACKAGES);
+		createEAttribute(reconcilerEClass, RECONCILER__RECONCILE_CLASSES);
+		createEAttribute(reconcilerEClass, RECONCILER__RECONCILE_PROPERTIES);
+		createEReference(reconcilerEClass, RECONCILER__CUSTOM_TRANSFORMATIONS);
+
+		customTransformationEClass = createEClass(CUSTOM_TRANSFORMATION);
+		createEAttribute(customTransformationEClass, CUSTOM_TRANSFORMATION__URI);
+		createEAttribute(customTransformationEClass, CUSTOM_TRANSFORMATION__ENABLED);
+		createEAttribute(customTransformationEClass, CUSTOM_TRANSFORMATION__POSITION);
 
 		pluginEClass = createEClass(PLUGIN);
 		createEAttribute(pluginEClass, PLUGIN__NAME);
@@ -896,6 +1022,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		oclPropertyFilterEClass = createEClass(OCL_PROPERTY_FILTER);
 		createEAttribute(oclPropertyFilterEClass, OCL_PROPERTY_FILTER__EXPRESSION);
+
+		// Create enums
+		transformationPositionEEnum = createEEnum(TRANSFORMATION_POSITION);
 	}
 
 	/**
@@ -942,6 +1071,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(propertyGeneratorEClass, PropertyGenerator.class, "PropertyGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPropertyGenerator_Reconciler(), this.getReconciler(), null, "reconciler", null, 0, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyGenerator_GenModel(), theGenModelPackage.getGenModel(), null, "genModel", null, 1, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyGenerator_ReferencedGenerators(), this.getPropertyGenerator(), null, "referencedGenerators", null, 0, -1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPropertyGenerator_Plugin(), this.getPlugin(), null, "plugin", null, 1, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -950,8 +1080,18 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEReference(getPropertyGenerator_Packages(), this.getPackage(), this.getPackage_Generator(), "packages", null, 0, -1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPropertyGenerator_ContributorId(), ecorePackage.getEString(), "contributorId", null, 1, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPropertyGenerator_SourceFolder(), ecorePackage.getEString(), "sourceFolder", "src-gen", 1, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPropertyGenerator_PrereconcileQvtoTransformation(), ecorePackage.getEString(), "prereconcileQvtoTransformation", null, 0, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPropertyGenerator_PostreconcileQvtoTransformation(), ecorePackage.getEString(), "postreconcileQvtoTransformation", null, 0, 1, PropertyGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(reconcilerEClass, Reconciler.class, "Reconciler", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getReconciler_Enabled(), theEcorePackage.getEBoolean(), "enabled", "true", 1, 1, Reconciler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReconciler_ReconcilePackages(), theEcorePackage.getEBoolean(), "reconcilePackages", "true", 0, 1, Reconciler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReconciler_ReconcileClasses(), theEcorePackage.getEBoolean(), "reconcileClasses", "true", 0, 1, Reconciler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReconciler_ReconcileProperties(), theEcorePackage.getEBoolean(), "reconcileProperties", "true", 0, 1, Reconciler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconciler_CustomTransformations(), this.getCustomTransformation(), null, "customTransformations", null, 0, -1, Reconciler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(customTransformationEClass, CustomTransformation.class, "CustomTransformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCustomTransformation_Uri(), theEcorePackage.getEString(), "uri", null, 0, 1, CustomTransformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCustomTransformation_Enabled(), theEcorePackage.getEBoolean(), "enabled", "true", 1, 1, CustomTransformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCustomTransformation_Position(), this.getTransformationPosition(), "position", "POST_RECONCILE", 1, 1, CustomTransformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pluginEClass, Plugin.class, "Plugin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlugin_Name(), theEcorePackage.getEString(), "name", null, 1, 1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1024,6 +1164,11 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		initEClass(oclPropertyFilterEClass, OCLPropertyFilter.class, "OCLPropertyFilter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOCLPropertyFilter_Expression(), ecorePackage.getEString(), "expression", null, 1, 1, OCLPropertyFilter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(transformationPositionEEnum, TransformationPosition.class, "TransformationPosition");
+		addEEnumLiteral(transformationPositionEEnum, TransformationPosition.PRE_RECONCILE);
+		addEEnumLiteral(transformationPositionEEnum, TransformationPosition.POST_RECONCILE);
 
 		// Create resource
 		createResource(eNS_URI);

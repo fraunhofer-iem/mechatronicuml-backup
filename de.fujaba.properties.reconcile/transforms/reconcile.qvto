@@ -56,7 +56,9 @@ mapping inout PropertyGenerator::generator() {
 		};
 		
 		-- reconcile all packages
-		packages->map reconcilePackage(defaultTab);
+		if (self.reconciler.reconcilePackages) then {
+			packages->map reconcilePackage(defaultTab);
+		} endif;
 		
 		-- initialize newly created GroupPropertyEditors
 --		packages.classes.properties.section[GroupPropertyEditor]->forEach(section) {
@@ -93,13 +95,15 @@ mapping inout Package::reconcilePackage(tab : PropertyTab) {
 	} endif;
 	
 	
-	-- reconcile all classes
-	classes->map reconcileClass(tab);
+	if (generator.reconciler.reconcileClasses) then {
+		-- reconcile all classes
+		classes->map reconcileClass(tab);
 	
-	
-	if (not newClasses->isEmpty()) then {
-		classes->map initializeCategories()
+		if (not newClasses->isEmpty()) then {
+			classes->map initializeCategories()
+		} endif;
 	} endif;
+	
 	
 }
  
@@ -120,7 +124,9 @@ mapping inout Class::reconcileClass(tab : PropertyTab) {
 
 	
 	-- reconcile all properties
-	self.properties->map reconcileProperty();
+	if (package.generator.reconciler.reconcileProperties) then {
+		self.properties->map reconcileProperty();
+	} endif;
 }
 
 mapping inout Property::reconcileProperty() {
@@ -152,7 +158,10 @@ mapping inout Class::initializeCategories() {
 mapping Class::createProperty(_feature : GenFeature, _tab : PropertyTab) : Property {
 	genFeature := _feature;
 	tab := _tab;
-	editor := _feature->map section()->any(true);
+
+	if (self.package.generator.reconciler.reconcileProperties) then {
+		editor := _feature->map section()->any(true);
+	} endif;
 }
 
 mapping GenFeature::section() : PropertyEditor

@@ -14,6 +14,8 @@
       <details key="UniquePackages" value="packages->isUnique(genPackage)"/>
       <details key="NoSelfReference" value="not referencedGenerators->includes(self)"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reconciler" eType="#//Reconciler"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genModel" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.codegen.ecore/model/GenModel.ecore#//GenModel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="referencedGenerators" upperBound="-1"
@@ -29,10 +31,31 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceFolder" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="src-gen"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prereconcileQvtoTransformation"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postreconcileQvtoTransformation"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reconciler">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconcilePackages" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconcileClasses" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconcileProperties" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customTransformations"
+        upperBound="-1" eType="#//CustomTransformation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomTransformation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+        eType="#//TransformationPosition" defaultValueLiteral="POST_RECONCILE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TransformationPosition">
+    <eLiterals name="PRE_RECONCILE" value="1"/>
+    <eLiterals name="POST_RECONCILE" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Plugin">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
