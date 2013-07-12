@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <de.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fujaba="http://de.fujaba.properties/0.1" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler/>
   <genModel href="../../org.storydriven.core/model/core.uml.genmodel#/"/>
   <plugin name="org.storydriven.core.edit.properties" version="0.4.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
