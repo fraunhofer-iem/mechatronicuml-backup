@@ -118,6 +118,9 @@ new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(adapterFactory, 
 new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()», «digits»);
 «ENDDEFINE»
 
+«DEFINE createEditor(Property property) FOR RadioPropertyEditor-»
+new de.fujaba.properties.runtime.editors.OptionPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR TextPropertyEditor-»
 new de.fujaba.properties.runtime.editors.TextPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()», «multiLine»);
