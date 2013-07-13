@@ -238,17 +238,17 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	protected void valueChanged() {
 		super.valueChanged();
 		updateAdapters(); // we register an adapter for each value, see addListeners()
-		
-		tableViewer.removeSelectionChangedListener(selectionChangedListener);
-		tableViewer.setInput(value);
-		tableViewer.addSelectionChangedListener(selectionChangedListener);
 
-		// Relayout because item size could have been changed
-		RuntimePlugin.revalidateLayout(tableViewer.getTable());
-
-		
-		
-		applySelection();
+		if (tableViewer != null) {
+			tableViewer.removeSelectionChangedListener(selectionChangedListener);
+			tableViewer.setInput(value);
+			tableViewer.addSelectionChangedListener(selectionChangedListener);
+			
+			// Relayout because item size could have been changed
+			RuntimePlugin.revalidateLayout(tableViewer.getTable());
+			
+			applySelection();
+		}
 	}
 	
 	private void applySelection() {
@@ -285,7 +285,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	public void refresh() {
 		super.refresh();
 		
-		if (!tableViewer.getTable().isDisposed()) {
+		if (tableViewer != null && !tableViewer.getTable().isDisposed()) {
 			// Refresh table viewer without loosing selection
 			EObject selection = this.selection;
 			tableViewer.refresh();

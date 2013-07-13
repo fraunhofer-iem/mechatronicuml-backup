@@ -130,8 +130,11 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 				newValue = element.eGet(feature);
 			}
 		}
-		if (newValue != value) {
+		if (newValue != value || (value != null && !value.equals(newValue))) {
 			value = newValue;
+			if (feature.isMany()) { // copy collection
+				value = new ArrayList<Object>((Collection<?>) value);
+			}
 			valueChanged();
 		}
 	}
@@ -161,9 +164,6 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	protected void handleNotificationEvent(Notification notification) {
 		if (notification.getFeature() == feature) {
 			updateValue();
-			if (feature.isMany()) { // many features are always stored in the same collection.
-				valueChanged();
-			}
 		}
 	}
 

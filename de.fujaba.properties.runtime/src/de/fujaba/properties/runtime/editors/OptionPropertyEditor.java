@@ -31,6 +31,8 @@ public class OptionPropertyEditor extends
 	@Override
 	public void createControls(Composite parent,
 			FormToolkit toolkit) {
+		labelProvider = new AdapterFactoryLabelProvider(adapterFactory);
+
 		this.toolkit = toolkit;
 		if (parent.getLayout() instanceof RowLayout) {
 			Composite container = new Composite(parent, SWT.NONE);
@@ -49,7 +51,6 @@ public class OptionPropertyEditor extends
 		composite.setLayout(rowLayout);
 		updateChoices(input);
 		
-		labelProvider = new AdapterFactoryLabelProvider(adapterFactory);
 	}
 	
 	@Override
