@@ -49,7 +49,7 @@ public class CommentableElementEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+						.getCommentableElement_Comment(), false);
 
 	}
 

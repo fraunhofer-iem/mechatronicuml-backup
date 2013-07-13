@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class TransitionEditor
 		extends
-			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -29,50 +29,36 @@ public class TransitionEditor
 	 */
 	public void initialize() {
 
-		addSubCategory("de.fujaba.properties.category.Transition.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addSubCategory("de.fujaba.properties.category.Transition.Guards",
-				"Guards", org.eclipse.swt.SWT.VERTICAL, false);
-
-		addSubCategory("de.fujaba.properties.category.Transition.Deadlines",
-				"Deadlines", org.eclipse.swt.SWT.VERTICAL, false);
-
-		addSubCategory("de.fujaba.properties.category.Transition.Actions",
-				"Actions", org.eclipse.swt.SWT.VERTICAL, false);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		addTransitionSynchronizationEditor(null, false);
 
-		addTransitionClockResetsEditor(
-				"de.fujaba.properties.category.Transition.Actions", true);
+		addTransitionClockResetsEditor("de.fujaba.properties.category.Lists",
+				true);
 
 		addTransitionClockConstraintsEditor(
-				"de.fujaba.properties.category.Transition.Guards", true);
+				"de.fujaba.properties.category.Lists", true);
 
 		addTransitionAbsoluteDeadlinesEditor(
-				"de.fujaba.properties.category.Transition.Deadlines", true);
+				"de.fujaba.properties.category.Lists", true);
 
-		addTransitionRelativeDeadlineEditor(
-				"de.fujaba.properties.category.Transition.Deadlines", false);
+		addTransitionRelativeDeadlineEditor(null, false);
 
-		addTransitionBlockableEditor(
-				"de.fujaba.properties.category.Transition.Booleans", true);
+		addTransitionBlockableEditor("de.fujaba.properties.category.Booleans",
+				true);
 
-		addTransitionGuardEditor(
-				"de.fujaba.properties.category.Transition.Guards", false);
+		addTransitionGuardEditor(null, false);
 
-		addTransitionEventsEditor(
-				"de.fujaba.properties.category.Transition.Actions", true);
+		addTransitionEventsEditor("de.fujaba.properties.category.Lists", true);
 
-		addTransitionActionEditor(
-				"de.fujaba.properties.category.Transition.Actions", false);
+		addTransitionActionEditor(null, false);
 
-		addTransitionUrgentEditor(
-				"de.fujaba.properties.category.Transition.Booleans", true);
-
-		addCommentableElementCommentEditor(null, true);
-
-		addPrioritizedElementPriorityEditor(null, true);
+		addTransitionUrgentEditor("de.fujaba.properties.category.Booleans",
+				true);
 
 		super.initialize();
 	}
@@ -254,44 +240,6 @@ public class TransitionEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Urgent());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addPrioritizedElementPriorityEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
-		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getPrioritizedElement_Priority(), 0);
 
 	}
 

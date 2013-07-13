@@ -29,29 +29,7 @@ public class ParameterEditor
 	 */
 	public void initialize() {
 
-		addCommentableElementCommentEditor(null, true);
-
 		super.initialize();
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
-
 	}
 
 	/**

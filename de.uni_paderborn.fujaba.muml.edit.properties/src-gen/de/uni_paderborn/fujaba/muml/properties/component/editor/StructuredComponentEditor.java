@@ -29,7 +29,11 @@ public class StructuredComponentEditor
 	 */
 	public void initialize() {
 
-		addStructuredComponentConnectorsEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addStructuredComponentConnectorsEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}

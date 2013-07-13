@@ -29,7 +29,11 @@ public class ConstrainableElementEditor
 	 */
 	public void initialize() {
 
-		addConstrainableElementConstraintEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addConstrainableElementConstraintEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}

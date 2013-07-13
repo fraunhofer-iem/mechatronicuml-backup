@@ -29,7 +29,11 @@ public class MessageEditor
 	 */
 	public void initialize() {
 
-		addMessageParameterBindingEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addMessageParameterBindingEditor("de.fujaba.properties.category.Lists",
+				true);
 
 		super.initialize();
 	}

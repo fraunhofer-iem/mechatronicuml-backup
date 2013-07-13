@@ -29,11 +29,13 @@ public class MessageBufferEditor
 	 */
 	public void initialize() {
 
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		addMessageBufferBufferSizeEditor(null, false);
 
-		addMessageBufferMessageTypeEditor(null, true);
-
-		addCommentableElementCommentEditor(null, true);
+		addMessageBufferMessageTypeEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}
@@ -74,25 +76,6 @@ public class MessageBufferEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getMessageBuffer_MessageType());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
 
 	}
 

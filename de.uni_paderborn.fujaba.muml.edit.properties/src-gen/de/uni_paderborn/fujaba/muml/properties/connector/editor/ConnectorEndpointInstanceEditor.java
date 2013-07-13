@@ -29,9 +29,11 @@ public class ConnectorEndpointInstanceEditor
 	 */
 	public void initialize() {
 
-		addConnectorEndpointInstanceConnectorInstancesEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addCommentableElementCommentEditor(null, true);
+		addConnectorEndpointInstanceConnectorInstancesEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}
@@ -54,25 +56,6 @@ public class ConnectorEndpointInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorEndpointInstance_ConnectorInstances());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
 
 	}
 

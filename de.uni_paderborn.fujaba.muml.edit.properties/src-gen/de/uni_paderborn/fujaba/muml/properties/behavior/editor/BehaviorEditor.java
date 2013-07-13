@@ -29,9 +29,12 @@ public class BehaviorEditor
 	 */
 	public void initialize() {
 
-		addBehaviorOperationsEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addBehaviorVariablesEditor(null, true);
+		addBehaviorOperationsEditor("de.fujaba.properties.category.Lists", true);
+
+		addBehaviorVariablesEditor("de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}

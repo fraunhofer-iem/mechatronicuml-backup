@@ -29,7 +29,11 @@ public class EntryOrExitEventEditor
 	 */
 	public void initialize() {
 
-		addEntryOrExitEventClockResetsEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addEntryOrExitEventClockResetsEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		addEntryOrExitEventActionEditor(null, false);
 

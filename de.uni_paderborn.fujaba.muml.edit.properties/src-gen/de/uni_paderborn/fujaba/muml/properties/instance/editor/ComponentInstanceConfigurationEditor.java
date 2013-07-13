@@ -29,12 +29,14 @@ public class ComponentInstanceConfigurationEditor
 	 */
 	public void initialize() {
 
-		addComponentInstanceConfigurationComponentInstancesEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addComponentInstanceConfigurationPortConnectorInstancesEditor(null,
-				true);
+		addComponentInstanceConfigurationComponentInstancesEditor(
+				"de.fujaba.properties.category.Lists", true);
 
-		addCommentableElementCommentEditor(null, true);
+		addComponentInstanceConfigurationPortConnectorInstancesEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}
@@ -78,25 +80,6 @@ public class ComponentInstanceConfigurationEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstanceConfiguration_PortConnectorInstances());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
 
 	}
 

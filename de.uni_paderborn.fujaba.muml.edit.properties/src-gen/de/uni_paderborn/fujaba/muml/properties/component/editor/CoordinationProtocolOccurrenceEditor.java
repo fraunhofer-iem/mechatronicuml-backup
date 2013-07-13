@@ -29,7 +29,11 @@ public class CoordinationProtocolOccurrenceEditor
 	 */
 	public void initialize() {
 
-		addCoordinationProtocolOccurrencePortPartsEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addCoordinationProtocolOccurrencePortPartsEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}

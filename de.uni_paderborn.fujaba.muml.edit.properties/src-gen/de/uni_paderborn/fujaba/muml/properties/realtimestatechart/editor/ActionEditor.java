@@ -29,7 +29,10 @@ public class ActionEditor
 	 */
 	public void initialize() {
 
-		addActionExpressionsEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addActionExpressionsEditor("de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}

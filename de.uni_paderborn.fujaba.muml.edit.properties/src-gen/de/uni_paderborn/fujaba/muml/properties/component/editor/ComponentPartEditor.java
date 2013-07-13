@@ -31,9 +31,9 @@ public class ComponentPartEditor
 
 		addComponentPartCardinalityEditor(null, false);
 
-		addCommentableElementCommentEditor(null, true);
-
 		addNamedElementNameEditor(null, true);
+
+		addCommentableElementCommentEditor(null, true);
 
 		super.initialize();
 	}
@@ -60,6 +60,23 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name(), false);
+
+	}
+	/**
+	 * @generated
+	 */
 	protected void addCommentableElementCommentEditor(String category,
 			boolean front) {
 		addEditorToCategory(category, createCommentableElementCommentEditor(),
@@ -73,24 +90,7 @@ public class ComponentPartEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
+						.getCommentableElement_Comment(), false);
 
 	}
 

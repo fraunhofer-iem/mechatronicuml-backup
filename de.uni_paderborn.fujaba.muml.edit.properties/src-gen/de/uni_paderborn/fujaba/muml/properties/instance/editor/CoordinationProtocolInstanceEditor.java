@@ -29,7 +29,11 @@ public class CoordinationProtocolInstanceEditor
 	 */
 	public void initialize() {
 
-		addCoordinationProtocolInstancePortInstancesEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addCoordinationProtocolInstancePortInstancesEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}

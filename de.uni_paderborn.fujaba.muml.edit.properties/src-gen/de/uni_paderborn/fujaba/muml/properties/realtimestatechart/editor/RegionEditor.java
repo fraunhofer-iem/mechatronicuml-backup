@@ -29,29 +29,7 @@ public class RegionEditor
 	 */
 	public void initialize() {
 
-		addPrioritizedElementPriorityEditor(null, true);
-
 		super.initialize();
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addPrioritizedElementPriorityEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
-		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getPrioritizedElement_Priority(), 0);
-
 	}
 
 	/**

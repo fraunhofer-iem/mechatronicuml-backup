@@ -29,55 +29,16 @@ public class AtomicComponentEditor
 	 */
 	public void initialize() {
 
-		addComponentPortsEditor(null, true);
-
-		addComponentComponentTypeEditor(null, true);
-
 		addNamedElementNameEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
 
-		addConstrainableElementConstraintEditor(null, true);
+		addConstrainableElementConstraintEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addComponentPortsEditor(String category, boolean front) {
-		addEditorToCategory(category, createComponentPortsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentPortsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponent_Ports());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addComponentComponentTypeEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createComponentComponentTypeEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentTypeEditor() {
-		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponent_ComponentType());
-
-	}
 	/**
 	 * @generated
 	 */
@@ -111,7 +72,7 @@ public class AtomicComponentEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+						.getCommentableElement_Comment(), false);
 
 	}
 	/**

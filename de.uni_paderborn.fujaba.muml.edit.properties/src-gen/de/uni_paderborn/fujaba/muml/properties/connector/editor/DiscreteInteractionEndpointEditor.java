@@ -29,15 +29,19 @@ public class DiscreteInteractionEndpointEditor
 	 */
 	public void initialize() {
 
-		addDiscreteInteractionEndpointSenderMessageTypesEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addDiscreteInteractionEndpointReceiverMessageTypesEditor(null, true);
+		addDiscreteInteractionEndpointSenderMessageTypesEditor(
+				"de.fujaba.properties.category.Lists", true);
+
+		addDiscreteInteractionEndpointReceiverMessageTypesEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		addDiscreteInteractionEndpointCardinalityEditor(null, false);
 
-		addDiscreteInteractionEndpointReceiverMessageBufferEditor(null, true);
-
-		addConnectorEndpointConnectorsEditor(null, true);
+		addDiscreteInteractionEndpointReceiverMessageBufferEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		addNamedElementNameEditor(null, true);
 
@@ -128,25 +132,6 @@ public class DiscreteInteractionEndpointEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorEndpointConnectorsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConnectorEndpointConnectorsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpoint_Connectors());
-
-	}
-	/**
-	 * @generated
-	 */
 	protected void addNamedElementNameEditor(String category, boolean front) {
 		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
@@ -177,7 +162,7 @@ public class DiscreteInteractionEndpointEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+						.getCommentableElement_Comment(), false);
 
 	}
 

@@ -29,7 +29,11 @@ public class ComponentInstanceEditor
 	 */
 	public void initialize() {
 
-		addComponentInstancePortInstancesEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addComponentInstancePortInstancesEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}

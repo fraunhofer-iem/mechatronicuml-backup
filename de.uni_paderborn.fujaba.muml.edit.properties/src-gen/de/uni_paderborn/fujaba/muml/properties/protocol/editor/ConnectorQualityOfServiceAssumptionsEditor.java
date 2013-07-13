@@ -29,9 +29,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 */
 	public void initialize() {
 
-		addSubCategory(
-				"de.fujaba.properties.category.ConnectorQualityOfServiceAssumptions.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, false);
+		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null,
 				false);
@@ -40,8 +39,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 				false);
 
 		addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(
-				"de.fujaba.properties.category.ConnectorQualityOfServiceAssumptions.Booleans",
-				true);
+				"de.fujaba.properties.category.Booleans", true);
 
 		super.initialize();
 	}

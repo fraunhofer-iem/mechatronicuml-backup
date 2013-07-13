@@ -29,7 +29,11 @@ public class ConnectorInstanceEditor
 	 */
 	public void initialize() {
 
-		addConnectorInstanceConnectorEndpointInstancesEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addConnectorInstanceConnectorEndpointInstancesEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}

@@ -46,7 +46,7 @@ public class UnaryExpressionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createUnaryExpressionOperatorEditor() {
-		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getUnaryExpression_Operator());

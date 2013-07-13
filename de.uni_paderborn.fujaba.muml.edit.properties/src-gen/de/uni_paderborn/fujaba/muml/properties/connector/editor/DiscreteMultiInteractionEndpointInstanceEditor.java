@@ -29,8 +29,11 @@ public class DiscreteMultiInteractionEndpointInstanceEditor
 	 */
 	public void initialize() {
 
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		addDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(
-				null, true);
+				"de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}

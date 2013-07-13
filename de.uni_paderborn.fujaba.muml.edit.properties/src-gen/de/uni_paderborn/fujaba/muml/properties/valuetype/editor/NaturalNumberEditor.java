@@ -29,13 +29,13 @@ public class NaturalNumberEditor
 	 */
 	public void initialize() {
 
-		addSubCategory("de.fujaba.properties.category.NaturalNumber.Booleans",
-				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, false);
+		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		addNaturalNumberValueEditor(null, true);
 
 		addNaturalNumberInfinityEditor(
-				"de.fujaba.properties.category.NaturalNumber.Booleans", true);
+				"de.fujaba.properties.category.Booleans", true);
 
 		super.initialize();
 	}
