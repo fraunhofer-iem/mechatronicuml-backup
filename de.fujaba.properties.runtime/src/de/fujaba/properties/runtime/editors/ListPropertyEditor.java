@@ -167,7 +167,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			RuntimePlugin.showCreateElementDialog(adapterFactory, element, feature);
 		} else {
 			
-			Object newObject = RuntimePlugin.showReferenceElementDialog(adapterFactory, getChoices());
+			Object newObject = RuntimePlugin.showReferenceElementDialog(adapterFactory, getChoices(), (Collection<?>) value);
 
 			// Add object, if one was selected
 			if (newObject != null) {

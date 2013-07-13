@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.jface.viewers.IColorProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
@@ -22,10 +23,12 @@ import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Tree;
@@ -37,19 +40,20 @@ public class ElementSelectionWizardPage extends WizardPage {
 	private Object element;
 	private TreeViewer treeViewer;
 	private AdapterFactory adapterFactory;
-	private Collection<?> validChoices;
+	private Collection<?> choices;
 	private Collection<Resource> resources = new ArrayList<Resource>();
 	private String filter = null;
 	private Collection<Object> filteredChoices;
 	private Collection<Object> allFilteredChoices = new ArrayList<Object>();
+	private Collection<IElementValidator> elementValidators = new ArrayList<IElementValidator>();
 
-	public ElementSelectionWizardPage(AdapterFactory adapterFactory, Collection<?> validChoices) {
+	public ElementSelectionWizardPage(AdapterFactory adapterFactory, Collection<?> choices) {
 		super("Element selection");
 		setTitle("Select existing Element");
 		setDescription("Select an existing element to be added.");
 		this.adapterFactory = adapterFactory;
-		this.validChoices = new ArrayList<Object>(validChoices);
-		this.validChoices.remove(null);
+		this.choices = new ArrayList<Object>(choices);
+		this.choices.remove(null);
 	}
 
 	@Override
@@ -131,7 +135,8 @@ public class ElementSelectionWizardPage extends WizardPage {
 			}
 			
 		});
-		treeViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
+		
+		treeViewer.setLabelProvider(new ColorLabelProvider(adapterFactory));
 		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			@Override
@@ -142,7 +147,19 @@ public class ElementSelectionWizardPage extends WizardPage {
 					newElement = ((IStructuredSelection) event.getSelection())
 							.iterator().next();
 				}
-				boolean valid = isValidElement(newElement);
+				boolean valid = choices.contains(newElement);
+				String newError = null;
+				for (IElementValidator validator : elementValidators) {
+					String validationError = validator.validate(newElement);
+					if (validationError != null) {
+						newError = validationError;
+						break;
+					}
+				}
+				if (newError != null) {
+					valid = false;
+				}
+				setErrorMessage(newError);
 				setPageComplete(valid);
 
 				element = null;
@@ -185,7 +202,7 @@ public class ElementSelectionWizardPage extends WizardPage {
 		filteredChoices = new ArrayList<Object>();
 		allFilteredChoices = new ArrayList<Object>();
 		resources.clear();
-		for (Object choice : validChoices) {
+		for (Object choice : choices) {
 			if (filterSelect(choice)) {
 				filteredChoices.add(choice);
 				
@@ -232,12 +249,37 @@ public class ElementSelectionWizardPage extends WizardPage {
 		}
 	}
 
-	protected boolean isValidElement(Object newElement) {
-		return validChoices.contains(newElement);
-	}
 
 	public Object getElement() {
 		return element;
 	}
+	
+	
+	public interface IElementValidator {
+		String validate(Object element);
+	}
+	
+	public void addElementValidator(IElementValidator validator) {
+		elementValidators.add(validator);
+	}	
+	
+	public void removeElementValidator(IElementValidator validator) {
+		elementValidators.remove(validator);
+	}
 
+	private class ColorLabelProvider extends AdapterFactoryLabelProvider implements IColorProvider {
+
+		public ColorLabelProvider(AdapterFactory adapterFactory) {
+			super(adapterFactory);
+		}
+		
+		@Override
+		public Color getForeground(Object object) {
+			if (!choices.contains(object)) {
+				return Display.getDefault().getSystemColor(SWT.COLOR_DARK_GRAY);
+			}
+			return super.getForeground(object);
+		}
+		
+	}
 }

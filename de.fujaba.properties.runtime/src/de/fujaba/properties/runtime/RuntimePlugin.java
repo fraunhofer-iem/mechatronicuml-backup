@@ -54,6 +54,7 @@ import de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor;
 import de.fujaba.properties.runtime.editors.ObjectPropertyEditor;
 import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
 import de.fujaba.properties.runtime.wizard.ElementSelectionWizardPage;
+import de.fujaba.properties.runtime.wizard.ElementSelectionWizardPage.IElementValidator;
 import de.fujaba.properties.runtime.wizard.PropertiesWizard;
 import de.fujaba.properties.runtime.wizard.PropertyEditorWizardPage;
 
@@ -412,11 +413,21 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	
 
 	public static Object showReferenceElementDialog(
-			AdapterFactory adapterFactory, Collection<?> collection) {
+			AdapterFactory adapterFactory, Collection<?> choices, final Collection<?> currentValues) {
 		PropertiesWizard wizard = new PropertiesWizard();
 		wizard.setWindowTitle("Selection");
-		ElementSelectionWizardPage page = new ElementSelectionWizardPage(adapterFactory, collection);
+		ElementSelectionWizardPage page = new ElementSelectionWizardPage(adapterFactory, choices);
 		wizard.addPage(page);
+		page.addElementValidator(new IElementValidator() {
+			@Override
+			public String validate(Object element) {
+				if (currentValues.contains(element)) {
+					return "This value is already referenced.";
+				}
+				return null;
+			}
+			
+		});
 		final WizardDialog wizardDialog = new WizardDialog(Display.getCurrent().getActiveShell(), wizard);
 		if (wizardDialog.open() == Window.OK) {
 			return page.getElement();
