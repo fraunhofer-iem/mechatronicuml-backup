@@ -61,7 +61,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.1/@classes.0/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.0/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
@@ -72,7 +72,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.1/@classes.1/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.1/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
     <classes>
@@ -86,7 +86,7 @@
         <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpointInstance/type"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.1/@classes.2/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.2/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
@@ -101,7 +101,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.1/@classes.3/@properties.1"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.3/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
     <classes superClasses="//@packages.5/@classes.4 //@packages.1/@classes.0 //@packages.3/@classes.0">
@@ -134,7 +134,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.1/@classes.4/@properties.0 //@packages.1/@classes.4/@properties.1 //@packages.1/@classes.4/@properties.5"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.4/@properties.0 //@packages.1/@classes.4/@properties.1 //@packages.1/@classes.4/@properties.5"/>
     </classes>
     <classes superClasses="//@packages.1/@classes.2">
       <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpointInstance"/>
@@ -169,7 +169,7 @@
         <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/last"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.1/@classes.7/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.7/@properties.0"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/connector/MessageBuffer"/>
@@ -187,7 +187,7 @@
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/discreteInteractionEndpoint"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.1/@classes.8/@properties.1"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.8/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
@@ -223,7 +223,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" localProperties="//@packages.2/@classes.2/@properties.1"/>
+      <propertyCategories title="Booleans" open="true" properties="//@packages.2/@classes.2/@properties.1"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/Range"/>
@@ -264,7 +264,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.3/@classes.1/@properties.1 //@packages.3/@classes.1/@properties.2"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.3/@classes.1/@properties.1 //@packages.3/@classes.1/@properties.2"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/behavior/Variable"/>
@@ -292,7 +292,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.3/@classes.3/@properties.1 //@packages.3/@classes.3/@properties.2"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.3/@classes.3/@properties.1 //@packages.3/@classes.3/@properties.2"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
@@ -340,7 +340,7 @@
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentPart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.4/@classes.0/@properties.1"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.4/@classes.0/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
@@ -371,7 +371,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.4/@classes.5/@properties.0 //@packages.4/@classes.5/@properties.1"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.4/@classes.5/@properties.0 //@packages.4/@classes.5/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
@@ -401,7 +401,7 @@
         <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocolOccurrence"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.4/@classes.11/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.4/@classes.11/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
     <classes superClasses="//@packages.4/@classes.0">
@@ -434,7 +434,7 @@
         <genFeature href="muml.genmodel#//muml/constraint/Constraint/constrainableElement"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" localProperties="//@packages.5/@classes.0/@properties.1"/>
+      <propertyCategories title="Booleans" open="true" properties="//@packages.5/@classes.0/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
     <classes superClasses="//@packages.5/@classes.0">
@@ -460,7 +460,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.5/@classes.4/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.5/@classes.4/@properties.0"/>
     </classes>
   </packages>
   <packages>
@@ -477,7 +477,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.6/@classes.0/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.6/@classes.0/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="#//@packages.5/@classes.4"/>
@@ -552,7 +552,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.6/@classes.11/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.6/@classes.11/@properties.0"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence"/>
@@ -565,7 +565,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.6/@classes.12/@properties.1"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.6/@classes.12/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
     <classes superClasses="//@packages.3/@classes.6 //@packages.6/@classes.1">
@@ -580,7 +580,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" localProperties="//@packages.6/@classes.13/@properties.1"/>
+      <propertyCategories title="Booleans" open="true" properties="//@packages.6/@classes.13/@properties.1"/>
     </classes>
     <classes superClasses="//@packages.1/@classes.0 //@packages.0/@classes.2">
       <genClass href="muml.genmodel#//muml/component/PortPart"/>
@@ -611,7 +611,7 @@
         <genFeature href="muml.genmodel#//muml/msgtype/MessageType/repository"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.7/@classes.0/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.7/@classes.0/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
@@ -622,7 +622,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.7/@classes.1/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.7/@classes.1/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
@@ -725,8 +725,8 @@
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/parentStatechart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" localProperties="//@packages.8/@classes.5/@properties.5 //@packages.8/@classes.5/@properties.6 //@packages.8/@classes.5/@properties.7"/>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.8/@classes.5/@properties.0 //@packages.8/@classes.5/@properties.4 //@packages.8/@classes.5/@properties.8 //@packages.8/@classes.5/@properties.9"/>
+      <propertyCategories title="Booleans" open="true" properties="//@packages.8/@classes.5/@properties.5 //@packages.8/@classes.5/@properties.6 //@packages.8/@classes.5/@properties.7"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.5/@properties.0 //@packages.8/@classes.5/@properties.4 //@packages.8/@classes.5/@properties.8 //@packages.8/@classes.5/@properties.9"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/Vertex"/>
@@ -740,7 +740,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.8/@classes.6/@properties.0 //@packages.8/@classes.6/@properties.1"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.6/@properties.0 //@packages.8/@classes.6/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
     <classes>
@@ -807,8 +807,8 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" localProperties="//@packages.8/@classes.7/@properties.8 //@packages.8/@classes.7/@properties.12"/>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.8/@classes.7/@properties.4 //@packages.8/@classes.7/@properties.5 //@packages.8/@classes.7/@properties.6 //@packages.8/@classes.7/@properties.10"/>
+      <propertyCategories title="Booleans" open="true" properties="//@packages.8/@classes.7/@properties.8 //@packages.8/@classes.7/@properties.12"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.7/@properties.4 //@packages.8/@classes.7/@properties.5 //@packages.8/@classes.7/@properties.6 //@packages.8/@classes.7/@properties.10"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="#//@packages.8/@classes.15"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
@@ -837,7 +837,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.8/@classes.9/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.9/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
     <classes superClasses="//@packages.8/@classes.18">
@@ -868,7 +868,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.8/@classes.12/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.12/@properties.0"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/SynchronizationChannel"/>
@@ -930,7 +930,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.8/@classes.16/@properties.1 //@packages.8/@classes.16/@properties.2 //@packages.8/@classes.16/@properties.3"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.16/@properties.1 //@packages.8/@classes.16/@properties.2 //@packages.8/@classes.16/@properties.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="#//@packages.3/@classes.1"/>
@@ -960,7 +960,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" localProperties="//@packages.8/@classes.20/@properties.1"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.20/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
     <classes superClasses="//@packages.8/@classes.12">
@@ -1030,7 +1030,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" localProperties="//@packages.9/@classes.4/@properties.2"/>
+      <propertyCategories title="Booleans" open="true" properties="//@packages.9/@classes.4/@properties.2"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
   </packages>
