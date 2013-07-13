@@ -11,9 +11,11 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.edit.command.SetCommand;
+import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -198,20 +200,42 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 	
 	public void setValue(final Object newValue) {
+		EditingDomain editingDomain = getEditingDomain(element);
+		editingDomain.getCommandStack().execute(new ChangeCommand(element) {
+
+			@Override
+			protected void doExecute() {
+				internalSetValue(newValue);
+			}
+		
+		});
+		
+	}
+	
+	protected void internalSetValue(Object newValue) {
+		Object oldValue = value;
+		if (feature.isMany()) { // copy list
+			oldValue = new ArrayList<Object>((Collection<?>)oldValue);
+		}
 
 		if (itemPropertyDescriptor != null) {
 			itemPropertyDescriptor.setPropertyValue(element, newValue);
 		} else {
-			EditingDomain editingDomain = getEditingDomain(element);
-			if (editingDomain == null) {
-				element.eSet(feature, newValue);
-			} else {
-				editingDomain.getCommandStack().execute(
-						SetCommand.create(editingDomain, element, feature, newValue));
+			element.eSet(feature, newValue);
+		}
+		
+		// Delete values that are not contained anymore
+		if (feature instanceof EReference && ((EReference)feature).isContainment()) {
+			if (!feature.isMany() && oldValue != null && newValue == null ) {
+				DeleteCommand.create(getEditingDomain(element), oldValue).execute();
+			} else if (feature.isMany()) {
+				List<?> oldValues = new ArrayList<Object>((Collection<?>) oldValue);
+				oldValues.removeAll((Collection<?>) newValue);
+				DeleteCommand.create(getEditingDomain(element), oldValues).execute();
 			}
 		}
 	}
-	
+
 	public EditingDomain getEditingDomain(Object object) {
 		return AdapterFactoryEditingDomain.getEditingDomainFor(object);
 	}
