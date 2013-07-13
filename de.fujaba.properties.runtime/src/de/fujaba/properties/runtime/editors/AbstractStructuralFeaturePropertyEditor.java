@@ -35,7 +35,8 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	protected Object value;
 	
 	protected IItemPropertyDescriptor itemPropertyDescriptor;
-
+	protected List<IValueChangedListener> valueChangedListeners = new ArrayList<IValueChangedListener>();
+	
 	private Adapter adapter = new AdapterImpl() {
 		@Override
 		public void notifyChanged(Notification msg) {
@@ -163,8 +164,19 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			}
 		}
 	}
+
+	public void addValueChangedListener(IValueChangedListener listener) {
+		valueChangedListeners.add(listener);
+	}
+	
+	public void removeValueChangedListener(IValueChangedListener listener) {
+		valueChangedListeners.remove(listener);
+	}
 	
 	protected void valueChanged() {
+		for (IValueChangedListener listener : valueChangedListeners) {
+			listener.valueChanged(value);
+		}
 	}
 
 	protected void removeListeners() {

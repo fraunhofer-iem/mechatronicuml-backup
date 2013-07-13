@@ -1,8 +1,9 @@
 package de.fujaba.properties.runtime.editors;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-import org.eclipse.jface.viewers.ILabelProvider;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
 

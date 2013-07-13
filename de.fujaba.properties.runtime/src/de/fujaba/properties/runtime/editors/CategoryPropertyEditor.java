@@ -99,9 +99,10 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			if (key != null) {
 				keys.put(key, editor);
 			}
+
+			childrenChanged();
 		}
 		
-		childrenChanged();
 	}
 
 	public void removePropertyEditor(IPropertyEditor editor) {
@@ -112,8 +113,8 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			if (key != null) {
 				keys.remove(key);
 			}
+			childrenChanged();
 		}
-		childrenChanged();
 	}
 	
 	

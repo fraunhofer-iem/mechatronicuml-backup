@@ -252,4 +252,6 @@ public class NavigationFeaturePropertyEditor extends
 			return value != null;
 		}
 	}
+
+
 }

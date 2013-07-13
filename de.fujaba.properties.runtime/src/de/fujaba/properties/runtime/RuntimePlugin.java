@@ -3,6 +3,7 @@ package de.fujaba.properties.runtime;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -46,9 +47,9 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.ExpandBar;
 import org.eclipse.swt.widgets.ExpandItem;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
+import de.fujaba.properties.runtime.editors.IValueChangedListener;
 import de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor;
 import de.fujaba.properties.runtime.editors.ObjectPropertyEditor;
 import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
@@ -344,7 +345,18 @@ public class RuntimePlugin extends AbstractUIPlugin {
 			EStructuralFeature feature) {
 		PropertiesWizard wizard = new PropertiesWizard(adapterFactory);
 		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, true);
-		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
+		
+		final PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
+		editor.addValueChangedListener(new IValueChangedListener() {
+			Collection<?> initialElements = null;
+			@Override
+			public void valueChanged(Object newValue) {
+				if (initialElements == null) {
+					initialElements = new ArrayList<Object>((Collection<?>)newValue);
+				}
+				page.setPageComplete(!initialElements.equals(newValue));
+			}
+		});
 
 		// Get Element Name
 		String elementName = container.eClass().getName();
