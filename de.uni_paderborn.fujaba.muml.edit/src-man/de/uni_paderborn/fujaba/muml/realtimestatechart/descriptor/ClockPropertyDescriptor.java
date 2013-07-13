@@ -29,7 +29,7 @@ public class ClockPropertyDescriptor extends ItemPropertyDescriptor {
 	public Collection<?> getChoiceOfValues(Object object) {
 		Collection<Clock> choices = new ArrayList<Clock>();
 		
-		if (!feature.isMany()) {
+		if (!feature.isRequired()) {
 			choices.add(null);
 		}
 		
