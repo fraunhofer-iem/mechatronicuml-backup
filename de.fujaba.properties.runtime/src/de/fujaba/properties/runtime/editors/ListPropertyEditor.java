@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -58,6 +60,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	public ListPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
 		super(adapterFactory, feature);
+		Assert.isLegal(feature instanceof EReference && feature.isMany());
 	}
 
 	@Override
@@ -158,7 +161,21 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	}
 
 	protected void add() {
-		RuntimePlugin.showCreateElementDialog(adapterFactory, element, feature);
+		// this cast is safe, as we assert this in the constructor.
+		EReference reference = (EReference) feature;
+		if (reference.isContainment()) {
+			RuntimePlugin.showCreateElementDialog(adapterFactory, element, feature);
+		} else {
+			
+			Object newObject = RuntimePlugin.showReferenceElementDialog(adapterFactory, getChoices());
+
+			// Add object, if one was selected
+			if (newObject != null) {
+				List<Object> newValue = new ArrayList<Object>((Collection<?>)value);
+				newValue.add(newObject);
+				setValue(newValue);
+			}
+		}
 	}
 
 	protected void remove() {

@@ -53,6 +53,7 @@ import de.fujaba.properties.runtime.editors.IValueChangedListener;
 import de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor;
 import de.fujaba.properties.runtime.editors.ObjectPropertyEditor;
 import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
+import de.fujaba.properties.runtime.wizard.ElementSelectionWizardPage;
 import de.fujaba.properties.runtime.wizard.PropertiesWizard;
 import de.fujaba.properties.runtime.wizard.PropertyEditorWizardPage;
 
@@ -331,19 +332,19 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	
 	// TODO: Unify the following dialog creation methods
 	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject element) {
-		PropertiesWizard wizard = new PropertiesWizard(adapterFactory);
+		PropertiesWizard wizard = new PropertiesWizard();
 		ObjectPropertyEditor editor = new ObjectPropertyEditor(adapterFactory, "Object properties", true);
 		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
 		page.setTitle(String.format("Modify ", element.eClass().getName()));
 		page.setDescription(String.format("Changes properties of the existing %s", element.eClass().getName()));
 		wizard.addPage(page);
-		wizard.setInput(element);
+		page.setInput(element);
 		showWizardWithUndo(wizard, element);
 	}
 
 	public static void showCreateElementDialog(AdapterFactory adapterFactory, EObject container,
 			EStructuralFeature feature) {
-		PropertiesWizard wizard = new PropertiesWizard(adapterFactory);
+		PropertiesWizard wizard = new PropertiesWizard();
 		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, true);
 		
 		final PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
@@ -377,12 +378,12 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	
 		// Add page, set input and show wizard
 		wizard.addPage(page);
-		wizard.setInput(container);
+		page.setInput(container);
 		showWizardWithUndo(wizard, container);
 	}
 	
 	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject container, EStructuralFeature feature, EObject currentValue) {
-		PropertiesWizard wizard = new PropertiesWizard(adapterFactory);
+		PropertiesWizard wizard = new PropertiesWizard();
 		NavigationFeaturePropertyEditor editor = new NavigationFeaturePropertyEditor(adapterFactory, feature, true, currentValue);
 		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
 
@@ -405,8 +406,22 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	
 		// Add page, set input and show wizard
 		wizard.addPage(page);
-		wizard.setInput(container);
+		page.setInput(container);
 		showWizardWithUndo(wizard, container);
+	}
+	
+
+	public static Object showReferenceElementDialog(
+			AdapterFactory adapterFactory, Collection<?> collection) {
+		PropertiesWizard wizard = new PropertiesWizard();
+		wizard.setWindowTitle("Selection");
+		ElementSelectionWizardPage page = new ElementSelectionWizardPage(adapterFactory, collection);
+		wizard.addPage(page);
+		final WizardDialog wizardDialog = new WizardDialog(Display.getCurrent().getActiveShell(), wizard);
+		if (wizardDialog.open() == Window.OK) {
+			return page.getElement();
+		}
+		return null;
 	}
 	
 	
@@ -437,6 +452,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 			editingDomain.getCommandStack().undo();
 		}
 	}
+
 
 
 }

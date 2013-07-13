@@ -10,7 +10,7 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 
 import de.fujaba.properties.runtime.editors.IPropertyEditor;
 
-public class PropertyEditorWizardPage extends WizardPage implements IPropertyEditor {
+public class PropertyEditorWizardPage extends WizardPage {
 	private IPropertyEditor editor;
 
 	public PropertyEditorWizardPage(IPropertyEditor editor) {
@@ -26,13 +26,16 @@ public class PropertyEditorWizardPage extends WizardPage implements IPropertyEdi
 		container.setLayout(new FillLayout(SWT.VERTICAL));
 		FormToolkit toolkit = new FormToolkit(container.getDisplay());
 		
-		createControls(container, toolkit);
+		ScrolledForm form = toolkit.createScrolledForm(container);
+		// toolkit.paintBordersFor(form);
+//		toolkit.decorateFormHeading(form.getForm());
+//		form.setText("Eclipse Forms API Example");
+		form.getBody().setLayout(new FillLayout(SWT.VERTICAL));
 
+		editor.createControls(form.getBody(), toolkit);
+		
 		setControl(container);
 	}
-	
-	
-	
 
 	@Override
 	public void dispose() {
@@ -51,42 +54,20 @@ public class PropertyEditorWizardPage extends WizardPage implements IPropertyEdi
 		}
 	}
 
-	@Override
-	public void createControls(Composite parent, FormToolkit toolkit) {
-		ScrolledForm form = toolkit.createScrolledForm(parent);
-		// toolkit.paintBordersFor(form);
-//		toolkit.decorateFormHeading(form.getForm());
-//		form.setText("Eclipse Forms API Example");
-		form.getBody().setLayout(new FillLayout(SWT.VERTICAL));
-
-		editor.createControls(form.getBody(), toolkit);
-	}
-
-	@Override
 	public void setInput(Object object) {
 		if (!editor.isDisposed()) {
 			editor.setInput(object);
 		}
 	}
 
-	@Override
 	public Object getInput() {
 		return editor.getInput();
 	}
 
-	@Override
-	public void refresh() {
-		if (!editor.isDisposed()) {
-			editor.refresh();
-		}
-	}
-
-	@Override
 	public AdapterFactory getAdapterFactory() {
 		return editor.getAdapterFactory();
 	}
 
-	@Override
 	public boolean isDisposed() {
 		return editor.isDisposed();
 	}

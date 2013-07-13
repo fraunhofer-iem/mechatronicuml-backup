@@ -1,8 +1,5 @@
 package de.fujaba.properties.runtime.editors;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
