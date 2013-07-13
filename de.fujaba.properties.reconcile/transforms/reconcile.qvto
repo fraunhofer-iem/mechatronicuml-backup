@@ -60,21 +60,6 @@ mapping inout PropertyGenerator::generator() {
 			packages->map reconcilePackage(defaultTab);
 		} endif;
 		
-		-- initialize newly created GroupPropertyEditors
---		packages.classes.properties.section[GroupPropertyEditor]->forEach(section) {
---			if section.container().oclIsKindOf(Property) then {
---			var prop : Property := section._property;//container().oclAsType(Property);
---				packages.classes->select(c |
---					prop.genFeature.ecoreFeature.eType.oclAsType(ecore::EClass).eAllSuperTypes->including(prop.genFeature.ecoreFeature.eType.oclAsType(ecore::EClass))->includes(c.genClass.ecoreClass)).properties->select(p | 
---						-- reject eopposite
---						((not p.genFeature.ecoreFeature.oclIsKindOf(ecore::EReference)) or p.genFeature.ecoreFeature.oclAsType(ecore::EReference).eOpposite != prop.genFeature.ecoreFeature)
---						-- reject existing property references
---						and not section.referencedProperties._property->includes(p)
---				)->forEach(prp) {
---					section.referencedProperties += new PropertyReference(prp);
---				}
---			} endif;
---		}
 	} endif;
 }
 
@@ -151,6 +136,13 @@ mapping inout Class::initializeCategories() {
 	var booleanProperties : OrderedSet(Property) := self.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'EBoolean');
 	if (not booleanProperties->isEmpty()) then {
 		var category : PropertyCategory := new PropertyCategory('Booleans', true, booleanProperties);
+		propertyCategories := propertyCategories->including(category);
+	} endif;
+	
+	-- lists in one category
+	var listProperties : OrderedSet(Property) := self.properties->select(p | p.genFeature.ecoreFeature.oclIsKindOf(EReference) and p.genFeature.ecoreFeature.upperBound > 1);
+	if (not listProperties->isEmpty()) then {
+		var category : PropertyCategory := new PropertyCategory('Lists', true, listProperties);
 		propertyCategories := propertyCategories->including(category);
 	} endif;
 }

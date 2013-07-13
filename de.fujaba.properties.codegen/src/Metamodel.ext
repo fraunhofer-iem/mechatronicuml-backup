@@ -63,7 +63,7 @@ String genQualifiedEditorName(properties::Class this) :
 	package.genPackageName() + '.editor.' + genEditorName();
 
 String genCategoryKey(PropertyCategory this) :
-	"de.fujaba.properties.category." + clazz.genClass.ecoreClass.name.toString() + "." + title;
+	"de.fujaba.properties.category." + /*clazz.genClass.ecoreClass.name.toString() + "." +*/ title; // Reuse categories from super classes!
 
 String genAdder(Property this) :
 	'add'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + 'Editor';	
@@ -77,11 +77,11 @@ String genFeatureLiteral(GenFeature this) :
 List[Property] overriddenProperties(Class this) :
 	propertyCategories.overriddenProperties;
 	
-List[Property] genProperties(Class this) :
-	{ this }.union(superClasses.reject(s | s == superClasses.first()).genSuperClasses()).properties;
+Set[Property] genProperties(Class this) :
+	{ this }.union(superClasses.genSuperClasses()).properties.without(genInheritedProperties());
 	
-List[Class] genSuperClasses(List[Class] this) :
-	if isEmpty then
-		{ }
-	else
-		this.union(superClasses.genSuperClasses());
+Set[Property] genInheritedProperties(Class this) :
+	{ superClasses.first() }.genSuperClasses().properties;
+	
+Set[Class] genSuperClasses(Class this) :
+	superClasses.union(superClasses.genSuperClasses());
