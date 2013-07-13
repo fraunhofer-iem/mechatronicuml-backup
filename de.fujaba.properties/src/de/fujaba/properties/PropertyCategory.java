@@ -17,15 +17,13 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.fujaba.properties.PropertyCategory#getTitle <em>Title</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyCategory#isVertical <em>Vertical</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyCategory#isOpen <em>Open</em>}</li>
- *   <li>{@link de.fujaba.properties.PropertyCategory#getOverriddenProperties <em>Overridden Properties</em>}</li>
  *   <li>{@link de.fujaba.properties.PropertyCategory#getClazz <em>Clazz</em>}</li>
- *   <li>{@link de.fujaba.properties.PropertyCategory#getLocalProperties <em>Local Properties</em>}</li>
+ *   <li>{@link de.fujaba.properties.PropertyCategory#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.fujaba.properties.PropertiesPackage#getPropertyCategory()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueFeatures'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OverriddenPropertiesFromSubclassesOnly='overriddenProperties->reject(p | not clazz.allSuperClasses->reject(clazz)->contains(p.clazz))->isEmpty()'"
+ * @model
  * @generated
  */
 public interface PropertyCategory extends EObject {
@@ -110,22 +108,6 @@ public interface PropertyCategory extends EObject {
 	void setOpen(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Overridden Properties</b></em>' reference list.
-	 * The list contents are of type {@link de.fujaba.properties.Property}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Overridden Properties</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Overridden Properties</em>' reference list.
-	 * @see de.fujaba.properties.PropertiesPackage#getPropertyCategory_OverriddenProperties()
-	 * @model
-	 * @generated
-	 */
-	EList<Property> getOverriddenProperties();
-
-	/**
 	 * Returns the value of the '<em><b>Clazz</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.Class#getPropertyCategories <em>Property Categories</em>}'.
 	 * <!-- begin-user-doc -->
@@ -154,21 +136,21 @@ public interface PropertyCategory extends EObject {
 	void setClazz(de.fujaba.properties.Class value);
 
 	/**
-	 * Returns the value of the '<em><b>Local Properties</b></em>' reference list.
+	 * Returns the value of the '<em><b>Properties</b></em>' reference list.
 	 * The list contents are of type {@link de.fujaba.properties.Property}.
 	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.Property#getCategory <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Local Properties</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Properties</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Local Properties</em>' reference list.
-	 * @see de.fujaba.properties.PropertiesPackage#getPropertyCategory_LocalProperties()
+	 * @return the value of the '<em>Properties</em>' reference list.
+	 * @see de.fujaba.properties.PropertiesPackage#getPropertyCategory_Properties()
 	 * @see de.fujaba.properties.Property#getCategory
 	 * @model opposite="category"
 	 * @generated
 	 */
-	EList<Property> getLocalProperties();
+	EList<Property> getProperties();
 
 } // PropertyCategory

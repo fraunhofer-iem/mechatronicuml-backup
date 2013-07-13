@@ -380,9 +380,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 		if (newCategory != category) {
 			NotificationChain msgs = null;
 			if (category != null)
-				msgs = ((InternalEObject)category).eInverseRemove(this, PropertiesPackage.PROPERTY_CATEGORY__LOCAL_PROPERTIES, PropertyCategory.class, msgs);
+				msgs = ((InternalEObject)category).eInverseRemove(this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertyCategory.class, msgs);
 			if (newCategory != null)
-				msgs = ((InternalEObject)newCategory).eInverseAdd(this, PropertiesPackage.PROPERTY_CATEGORY__LOCAL_PROPERTIES, PropertyCategory.class, msgs);
+				msgs = ((InternalEObject)newCategory).eInverseAdd(this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertyCategory.class, msgs);
 			msgs = basicSetCategory(newCategory, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -408,7 +408,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return basicSetClazz((de.fujaba.properties.Class)otherEnd, msgs);
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				if (category != null)
-					msgs = ((InternalEObject)category).eInverseRemove(this, PropertiesPackage.PROPERTY_CATEGORY__LOCAL_PROPERTIES, PropertyCategory.class, msgs);
+					msgs = ((InternalEObject)category).eInverseRemove(this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertyCategory.class, msgs);
 				return basicSetCategory((PropertyCategory)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);

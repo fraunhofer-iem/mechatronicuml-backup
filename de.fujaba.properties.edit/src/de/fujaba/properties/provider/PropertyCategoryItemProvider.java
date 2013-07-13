@@ -63,8 +63,7 @@ public class PropertyCategoryItemProvider
 			addTitlePropertyDescriptor(object);
 			addVerticalPropertyDescriptor(object);
 			addOpenPropertyDescriptor(object);
-			addOverriddenPropertiesPropertyDescriptor(object);
-			addLocalPropertiesPropertyDescriptor(object);
+			addPropertiesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -136,52 +135,19 @@ public class PropertyCategoryItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Overridden Properties feature.
+	 * This adds a property descriptor for the Properties feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addOverriddenPropertiesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-		(new ItemPropertyDescriptor
-			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyCategory_overriddenProperties_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyCategory_overriddenProperties_feature", "_UI_PropertyCategory_type"),
-				 PropertiesPackage.Literals.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null) { 
-		@Override
-		public Collection<?> getChoiceOfValues(Object object) {
-			List<Property> choices = new ArrayList<Property>();
-			PropertyCategory category = (PropertyCategory) object;
-			for (de.fujaba.properties.Class clazz : category.getClazz().getAllSuperClasses()) {
-				choices.addAll(clazz.getProperties());
-			}
-			return choices;
-		}	
-			
-	});
-	}
-
-	/**
-	 * This adds a property descriptor for the Local Properties feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addLocalPropertiesPropertyDescriptor(Object object) {
+	protected void addPropertiesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PropertyCategory_localProperties_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyCategory_localProperties_feature", "_UI_PropertyCategory_type"),
-				 PropertiesPackage.Literals.PROPERTY_CATEGORY__LOCAL_PROPERTIES,
+				 getString("_UI_PropertyCategory_properties_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyCategory_properties_feature", "_UI_PropertyCategory_type"),
+				 PropertiesPackage.Literals.PROPERTY_CATEGORY__PROPERTIES,
 				 true,
 				 false,
 				 true,
@@ -203,6 +169,75 @@ public class PropertyCategoryItemProvider
 			}		
 		});
 	}
+
+//	/**
+//	 * This adds a property descriptor for the Overridden Properties feature.
+//	 * <!-- begin-user-doc -->
+//	 * <!-- end-user-doc -->
+//	 * @generated NOT
+//	 */
+//	protected void addOverriddenPropertiesPropertyDescriptor(Object object) {
+//		itemPropertyDescriptors.add
+//		(new ItemPropertyDescriptor
+//			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_PropertyCategory_overriddenProperties_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyCategory_overriddenProperties_feature", "_UI_PropertyCategory_type"),
+//				 PropertiesPackage.Literals.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES,
+//				 true,
+//				 false,
+//				 true,
+//				 null,
+//				 null,
+//				 null) { 
+//		@Override
+//		public Collection<?> getChoiceOfValues(Object object) {
+//			List<Property> choices = new ArrayList<Property>();
+//			PropertyCategory category = (PropertyCategory) object;
+//			for (de.fujaba.properties.Class clazz : category.getClazz().getAllSuperClasses()) {
+//				choices.addAll(clazz.getProperties());
+//			}
+//			return choices;
+//		}	
+//			
+//	});
+//	}
+
+//	/**
+//	 * This adds a property descriptor for the Local Properties feature.
+//	 * <!-- begin-user-doc -->
+//	 * <!-- end-user-doc -->
+//	 * @generated NOT
+//	 */
+//	protected void addLocalPropertiesPropertyDescriptor(Object object) {
+//		itemPropertyDescriptors.add
+//			(new ItemPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_PropertyCategory_localProperties_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyCategory_localProperties_feature", "_UI_PropertyCategory_type"),
+//				 PropertiesPackage.Literals.PROPERTY_CATEGORY__LOCAL_PROPERTIES,
+//				 true,
+//				 false,
+//				 true,
+//				 null,
+//				 null,
+//				 null) {
+//			@Override
+//			public Collection<?> getChoiceOfValues(Object object) {
+//				PropertyCategory category = (PropertyCategory) object;
+//				
+//				List<Property> properties = new ArrayList<Property>();
+//				for (Property property: category.getClazz().getProperties()) {
+//					if (property.getCategory() == null || property.getCategory() == category) {
+//						properties.add(property);
+//					}
+//				}
+//				
+//				return properties;
+//			}		
+//		});
+//	}
 
 	/**
 	 * This returns PropertyCategory.gif.

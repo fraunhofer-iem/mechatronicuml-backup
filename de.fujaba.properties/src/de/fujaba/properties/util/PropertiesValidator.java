@@ -331,6 +331,7 @@ public class PropertiesValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(class_, diagnostics, context);
 		if (result || diagnostics != null) result &= validateClass_UniqueFeatures(class_, diagnostics, context);
 		if (result || diagnostics != null) result &= validateClass_UniqueCategoryTitles(class_, diagnostics, context);
+		if (result || diagnostics != null) result &= validateClass_PropertiesFromSelfOrSuperclasses(class_, diagnostics, context);
 		return result;
 	}
 
@@ -393,50 +394,41 @@ public class PropertiesValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the PropertiesFromSelfOrSuperclasses constraint of '<em>Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CLASS__PROPERTIES_FROM_SELF_OR_SUPERCLASSES__EEXPRESSION = "properties->forAll(p | Set { self }->union(allSuperClasses).genClass.ecoreClass->includes(p.genFeature.ecoreFeature.eContainingClass))";
+
+	/**
+	 * Validates the PropertiesFromSelfOrSuperclasses constraint of '<em>Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateClass_PropertiesFromSelfOrSuperclasses(de.fujaba.properties.Class class_, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(PropertiesPackage.Literals.CLASS,
+				 class_,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PropertiesFromSelfOrSuperclasses",
+				 CLASS__PROPERTIES_FROM_SELF_OR_SUPERCLASSES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validatePropertyCategory(PropertyCategory propertyCategory, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(propertyCategory, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(propertyCategory, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(propertyCategory, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(propertyCategory, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(propertyCategory, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(propertyCategory, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(propertyCategory, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(propertyCategory, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(propertyCategory, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePropertyCategory_UniqueFeatures(propertyCategory, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * Validates the UniqueFeatures constraint of '<em>Property Category</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePropertyCategory_UniqueFeatures(PropertyCategory propertyCategory, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "UniqueFeatures", getObjectLabel(propertyCategory, context) },
-						 new Object[] { propertyCategory },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return validate_EveryDefaultConstraint(propertyCategory, diagnostics, context);
 	}
 
 	/**

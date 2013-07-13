@@ -516,31 +516,22 @@ public interface PropertiesPackage extends EPackage {
 	int PROPERTY_CATEGORY__OPEN = 2;
 
 	/**
-	 * The feature id for the '<em><b>Overridden Properties</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES = 3;
-
-	/**
 	 * The feature id for the '<em><b>Clazz</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CATEGORY__CLAZZ = 4;
+	int PROPERTY_CATEGORY__CLAZZ = 3;
 
 	/**
-	 * The feature id for the '<em><b>Local Properties</b></em>' reference list.
+	 * The feature id for the '<em><b>Properties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CATEGORY__LOCAL_PROPERTIES = 5;
+	int PROPERTY_CATEGORY__PROPERTIES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Property Category</em>' class.
@@ -549,7 +540,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_CATEGORY_FEATURE_COUNT = 6;
+	int PROPERTY_CATEGORY_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyImpl <em>Property</em>}' class.
@@ -1437,17 +1428,6 @@ public interface PropertiesPackage extends EPackage {
 	EAttribute getPropertyCategory_Open();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.fujaba.properties.PropertyCategory#getOverriddenProperties <em>Overridden Properties</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Overridden Properties</em>'.
-	 * @see de.fujaba.properties.PropertyCategory#getOverriddenProperties()
-	 * @see #getPropertyCategory()
-	 * @generated
-	 */
-	EReference getPropertyCategory_OverriddenProperties();
-
-	/**
 	 * Returns the meta object for the container reference '{@link de.fujaba.properties.PropertyCategory#getClazz <em>Clazz</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1459,15 +1439,15 @@ public interface PropertiesPackage extends EPackage {
 	EReference getPropertyCategory_Clazz();
 
 	/**
-	 * Returns the meta object for the reference list '{@link de.fujaba.properties.PropertyCategory#getLocalProperties <em>Local Properties</em>}'.
+	 * Returns the meta object for the reference list '{@link de.fujaba.properties.PropertyCategory#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Local Properties</em>'.
-	 * @see de.fujaba.properties.PropertyCategory#getLocalProperties()
+	 * @return the meta object for the reference list '<em>Properties</em>'.
+	 * @see de.fujaba.properties.PropertyCategory#getProperties()
 	 * @see #getPropertyCategory()
 	 * @generated
 	 */
-	EReference getPropertyCategory_LocalProperties();
+	EReference getPropertyCategory_Properties();
 
 	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.Property <em>Property</em>}'.
@@ -2114,14 +2094,6 @@ public interface PropertiesPackage extends EPackage {
 		EAttribute PROPERTY_CATEGORY__OPEN = eINSTANCE.getPropertyCategory_Open();
 
 		/**
-		 * The meta object literal for the '<em><b>Overridden Properties</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES = eINSTANCE.getPropertyCategory_OverriddenProperties();
-
-		/**
 		 * The meta object literal for the '<em><b>Clazz</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2130,12 +2102,12 @@ public interface PropertiesPackage extends EPackage {
 		EReference PROPERTY_CATEGORY__CLAZZ = eINSTANCE.getPropertyCategory_Clazz();
 
 		/**
-		 * The meta object literal for the '<em><b>Local Properties</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROPERTY_CATEGORY__LOCAL_PROPERTIES = eINSTANCE.getPropertyCategory_LocalProperties();
+		EReference PROPERTY_CATEGORY__PROPERTIES = eINSTANCE.getPropertyCategory_Properties();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.PropertyImpl <em>Property</em>}' class.

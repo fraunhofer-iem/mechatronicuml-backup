@@ -41,45 +41,50 @@ public class «genEditorName()» extends «EXPAND extends-» {
 		«FOREACH propertyCategories AS this»
 		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
 		«ENDFOREACH»
-		«FOREACH genProperties().select(p | p.editor != null) AS this»
+		«FOREACH genLocalProperties().select(p | p.editor != null) AS this»
 			«EXPAND addEditor FOR editor»
 		«ENDFOREACH»
 		super.initialize();
 	}
-	
-	«FOREACH genProperties().select(p | p.editor != null) AS property-»
+
+	«FOREACH genLocalProperties().select(p | p.editor != null) AS this-»
 	/**
 	 * @generated
 	 */
-	protected void «property.genAdder()»(String category, boolean front) {
-		«IF !propertyCategories.select(c | c.overriddenProperties.contains(property)).isEmpty-»
-		category = "«propertyCategories.select(c | c.overriddenProperties.contains(property)).first().genCategoryKey()»";
-		«ENDIF-»
-		addEditorToCategory(category, «property.genCreator()»(), front);
+	protected void «genAdder()»(String category, boolean front) {
+		addEditorToCategory(category, «genCreator()»(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor «property.genCreator()»() {
-		return «EXPAND createEditor(property) FOR property.editor»
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
+		return «EXPAND createEditor(this) FOR editor»
 	}
 	«ENDFOREACH»
-	
-	«FOREACH propertyCategories AS this»
-		«FOREACH overriddenProperties.select(p | { clazz.superClasses.first() }.genSuperClasses().contains(p.clazz)) AS property»
-	
+
+	«FOREACH genOverriddenProperties() AS this»
 	/**
 	 * @generated
 	 */
 	@Override
-	protected void «property.genAdder()»(String category, boolean front) {
-		category = "«genCategoryKey()»";
-		super.«property.genAdder()»(category, front);
+	protected void «genAdder()»(String category, boolean front) {
+		«IF editor != null»
+		category = "«category.genCategoryKey()»";
+		front = «EXPAND front FOR editor»
+		super.«genAdder()»(category, front);
+		«ENDIF»
 	}
-		«ENDFOREACH»
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
+		return «EXPAND createEditor(this) FOR editor»
+	}
 	«ENDFOREACH»
-	
+
 	/**
 	 * @generated
 	 */
@@ -89,17 +94,19 @@ public class «genEditorName()» extends «EXPAND extends-» {
 			return new «genEditorName()»();
 		}
 	}
-	
+
 «ENDDEFINE»
 
 «DEFINE addEditor FOR PropertyEditor»
-«property.genAdder()»(«EXPAND categoryKey FOR property-», true);
+«property.genAdder()»(«EXPAND categoryKey FOR property-», «EXPAND front»);
 «ENDDEFINE»
 
 «DEFINE addEditor FOR ObjectPropertyEditor»
-«property.genAdder()»(«EXPAND categoryKey FOR property-», false);
+«property.genAdder()»(«EXPAND categoryKey FOR property-», «EXPAND front»);
 «ENDDEFINE»
 
+«DEFINE front FOR PropertyEditor»true«ENDDEFINE»
+«DEFINE front FOR ObjectPropertyEditor»false«ENDDEFINE»
 
 «DEFINE categoryKey FOR Property-»
 «IF category != null-»

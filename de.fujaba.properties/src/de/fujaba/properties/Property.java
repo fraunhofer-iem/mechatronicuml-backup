@@ -183,7 +183,7 @@ public interface Property extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Category</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.PropertyCategory#getLocalProperties <em>Local Properties</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.fujaba.properties.PropertyCategory#getProperties <em>Properties</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Category</em>' reference isn't clear,
@@ -193,8 +193,8 @@ public interface Property extends EObject {
 	 * @return the value of the '<em>Category</em>' reference.
 	 * @see #setCategory(PropertyCategory)
 	 * @see de.fujaba.properties.PropertiesPackage#getProperty_Category()
-	 * @see de.fujaba.properties.PropertyCategory#getLocalProperties
-	 * @model opposite="localProperties"
+	 * @see de.fujaba.properties.PropertyCategory#getProperties
+	 * @model opposite="properties"
 	 * @generated
 	 */
 	PropertyCategory getCategory();

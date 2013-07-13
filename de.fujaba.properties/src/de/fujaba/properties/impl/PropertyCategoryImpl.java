@@ -34,9 +34,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#isVertical <em>Vertical</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#isOpen <em>Open</em>}</li>
- *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getOverriddenProperties <em>Overridden Properties</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getClazz <em>Clazz</em>}</li>
- *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getLocalProperties <em>Local Properties</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyCategoryImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -104,24 +103,14 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 	protected boolean open = OPEN_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOverriddenProperties() <em>Overridden Properties</em>}' reference list.
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOverriddenProperties()
+	 * @see #getProperties()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Property> overriddenProperties;
-
-	/**
-	 * The cached value of the '{@link #getLocalProperties() <em>Local Properties</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocalProperties()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> localProperties;
+	protected EList<Property> properties;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,18 +199,6 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Property> getOverriddenProperties() {
-		if (overriddenProperties == null) {
-			overriddenProperties = new EObjectResolvingEList<Property>(Property.class, this, PropertiesPackage.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES);
-		}
-		return overriddenProperties;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public de.fujaba.properties.Class getClazz() {
 		if (eContainerFeatureID() != PropertiesPackage.PROPERTY_CATEGORY__CLAZZ) return null;
 		return (de.fujaba.properties.Class)eInternalContainer();
@@ -263,11 +240,11 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Property> getLocalProperties() {
-		if (localProperties == null) {
-			localProperties = new EObjectWithInverseResolvingEList<Property>(Property.class, this, PropertiesPackage.PROPERTY_CATEGORY__LOCAL_PROPERTIES, PropertiesPackage.PROPERTY__CATEGORY);
+	public EList<Property> getProperties() {
+		if (properties == null) {
+			properties = new EObjectWithInverseResolvingEList<Property>(Property.class, this, PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES, PropertiesPackage.PROPERTY__CATEGORY);
 		}
-		return localProperties;
+		return properties;
 	}
 
 	/**
@@ -283,8 +260,8 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetClazz((de.fujaba.properties.Class)otherEnd, msgs);
-			case PropertiesPackage.PROPERTY_CATEGORY__LOCAL_PROPERTIES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLocalProperties()).basicAdd(otherEnd, msgs);
+			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProperties()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -299,8 +276,8 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 		switch (featureID) {
 			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
 				return basicSetClazz(null, msgs);
-			case PropertiesPackage.PROPERTY_CATEGORY__LOCAL_PROPERTIES:
-				return ((InternalEList<?>)getLocalProperties()).basicRemove(otherEnd, msgs);
+			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
+				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -333,12 +310,10 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 				return isVertical();
 			case PropertiesPackage.PROPERTY_CATEGORY__OPEN:
 				return isOpen();
-			case PropertiesPackage.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES:
-				return getOverriddenProperties();
 			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
 				return getClazz();
-			case PropertiesPackage.PROPERTY_CATEGORY__LOCAL_PROPERTIES:
-				return getLocalProperties();
+			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
+				return getProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -361,16 +336,12 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 			case PropertiesPackage.PROPERTY_CATEGORY__OPEN:
 				setOpen((Boolean)newValue);
 				return;
-			case PropertiesPackage.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES:
-				getOverriddenProperties().clear();
-				getOverriddenProperties().addAll((Collection<? extends Property>)newValue);
-				return;
 			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
 				setClazz((de.fujaba.properties.Class)newValue);
 				return;
-			case PropertiesPackage.PROPERTY_CATEGORY__LOCAL_PROPERTIES:
-				getLocalProperties().clear();
-				getLocalProperties().addAll((Collection<? extends Property>)newValue);
+			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
+				getProperties().clear();
+				getProperties().addAll((Collection<? extends Property>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -393,14 +364,11 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 			case PropertiesPackage.PROPERTY_CATEGORY__OPEN:
 				setOpen(OPEN_EDEFAULT);
 				return;
-			case PropertiesPackage.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES:
-				getOverriddenProperties().clear();
-				return;
 			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
 				setClazz((de.fujaba.properties.Class)null);
 				return;
-			case PropertiesPackage.PROPERTY_CATEGORY__LOCAL_PROPERTIES:
-				getLocalProperties().clear();
+			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
+				getProperties().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -420,12 +388,10 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 				return vertical != VERTICAL_EDEFAULT;
 			case PropertiesPackage.PROPERTY_CATEGORY__OPEN:
 				return open != OPEN_EDEFAULT;
-			case PropertiesPackage.PROPERTY_CATEGORY__OVERRIDDEN_PROPERTIES:
-				return overriddenProperties != null && !overriddenProperties.isEmpty();
 			case PropertiesPackage.PROPERTY_CATEGORY__CLAZZ:
 				return getClazz() != null;
-			case PropertiesPackage.PROPERTY_CATEGORY__LOCAL_PROPERTIES:
-				return localProperties != null && !localProperties.isEmpty();
+			case PropertiesPackage.PROPERTY_CATEGORY__PROPERTIES:
+				return properties != null && !properties.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
