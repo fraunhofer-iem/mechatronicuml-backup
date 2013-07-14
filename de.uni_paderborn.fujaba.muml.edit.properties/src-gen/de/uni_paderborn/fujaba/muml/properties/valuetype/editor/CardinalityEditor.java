@@ -29,7 +29,48 @@ public class CardinalityEditor
 	 */
 	public void initialize() {
 
+		addCardinalityLowerBoundEditor(null, true);
+
+		addCardinalityUpperBoundEditor(null, true);
+
 		super.initialize();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addCardinalityLowerBoundEditor(String category, boolean front) {
+		addEditorToCategory(category, createCardinalityLowerBoundEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityLowerBoundEditor() {
+		return new de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+						.getCardinality_LowerBound());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCardinalityUpperBoundEditor(String category, boolean front) {
+		addEditorToCategory(category, createCardinalityUpperBoundEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityUpperBoundEditor() {
+		return new de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+						.getCardinality_UpperBound());
+
 	}
 
 	/**

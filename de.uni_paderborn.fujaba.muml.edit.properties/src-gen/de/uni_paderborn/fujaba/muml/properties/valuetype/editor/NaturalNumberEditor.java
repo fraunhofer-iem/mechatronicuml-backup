@@ -29,13 +29,7 @@ public class NaturalNumberEditor
 	 */
 	public void initialize() {
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		addNaturalNumberValueEditor(null, true);
-
-		addNaturalNumberInfinityEditor(
-				"de.fujaba.properties.category.Booleans", true);
 
 		super.initialize();
 	}
@@ -55,24 +49,6 @@ public class NaturalNumberEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getNaturalNumber_Value(), false);
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addNaturalNumberInfinityEditor(String category, boolean front) {
-		addEditorToCategory(category, createNaturalNumberInfinityEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNaturalNumberInfinityEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getNaturalNumber_Infinity());
 
 	}
 

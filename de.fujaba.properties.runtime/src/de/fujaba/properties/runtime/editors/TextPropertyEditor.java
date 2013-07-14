@@ -89,6 +89,10 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	public void refresh() {
 		super.refresh();
+		setText(value);
+	}
+	
+	protected void setText(Object value) {
 		String val = "";
 		if (value != null) {
 			val = value.toString();
@@ -96,9 +100,9 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 
 		if (text != null && !text.isDisposed() && !text.getText().equals(val)) {
 			text.setText(val);
-		}
+		}		
 	}
-	
+
 	@Override
 	public void dispose() {
 		modify(); // If dialog was closed before text lost focus

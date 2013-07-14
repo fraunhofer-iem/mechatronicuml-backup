@@ -5,11 +5,23 @@ modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
 modeltype Properties uses properties('http://de.fujaba.properties/0.1');
 
 main() {
-	properties.rootObjects()[Property]->select(p | p.genFeature.ecoreFeature.eType.name = 'NaturalNumber')->forEach(prop) {
-		prop->map naturalNumberSection();
+	properties.rootObjects()[PropertyGenerator]->map generator();
+}
+
+
+mapping inout PropertyGenerator::generator() {
+	self.plugin.requiredBundles += "de.uni_paderborn.fujaba.muml.common";
+	
+	self.packages.classes.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'NaturalNumber')->forEach(prop) {
+		prop->map createNaturalNumberEditor();
 	}
 }
 
-mapping inout Property::naturalNumberSection() {
-	//self.section := new CustomPropertySection("")
+mapping inout Property::createNaturalNumberEditor() {
+	self.editor := new CustomPropertyEditor("de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor");
 }
+
+constructor CustomPropertyEditor::CustomPropertyEditor(className : String) {
+	fullyQualifiedClassName := className;
+}
+

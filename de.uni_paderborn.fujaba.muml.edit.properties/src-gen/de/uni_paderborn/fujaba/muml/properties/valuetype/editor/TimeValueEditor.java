@@ -29,7 +29,7 @@ public class TimeValueEditor
 	 */
 	public void initialize() {
 
-		addTimeValueValueEditor(null, false);
+		addTimeValueValueEditor(null, true);
 
 		addTimeValueUnitEditor(null, true);
 
@@ -47,7 +47,7 @@ public class TimeValueEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueValueEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getTimeValue_Value());

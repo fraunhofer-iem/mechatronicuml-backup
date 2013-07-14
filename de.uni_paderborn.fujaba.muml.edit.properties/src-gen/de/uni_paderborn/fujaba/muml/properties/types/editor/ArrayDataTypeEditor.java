@@ -29,7 +29,7 @@ public class ArrayDataTypeEditor
 	 */
 	public void initialize() {
 
-		addArrayDataTypeCardinalityEditor(null, false);
+		addArrayDataTypeCardinalityEditor(null, true);
 
 		super.initialize();
 	}
@@ -47,7 +47,7 @@ public class ArrayDataTypeEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createArrayDataTypeCardinalityEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
 						.getArrayDataType_Cardinality());

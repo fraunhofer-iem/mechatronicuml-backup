@@ -32,7 +32,7 @@ public class MessageBufferEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addMessageBufferBufferSizeEditor(null, false);
+		addMessageBufferBufferSizeEditor(null, true);
 
 		addMessageBufferMessageTypeEditor(
 				"de.fujaba.properties.category.Lists", true);
@@ -53,7 +53,7 @@ public class MessageBufferEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageBufferBufferSizeEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getMessageBuffer_BufferSize());
