@@ -200,16 +200,17 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 	
 	public void setValue(final Object newValue) {
-		EditingDomain editingDomain = getEditingDomain(element);
-		editingDomain.getCommandStack().execute(new ChangeCommand(element) {
-
-			@Override
-			protected void doExecute() {
-				internalSetValue(newValue);
-			}
-		
-		});
-		
+		if (value == null && newValue != null || !value.equals(newValue)) {
+			EditingDomain editingDomain = getEditingDomain(element);
+			editingDomain.getCommandStack().execute(new ChangeCommand(element) {
+	
+				@Override
+				protected void doExecute() {
+					internalSetValue(newValue);
+				}
+			
+			});
+		}
 	}
 	
 	protected void internalSetValue(Object newValue) {
