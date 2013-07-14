@@ -145,3 +145,6 @@ new de.fujaba.properties.runtime.editors.ListPropertyEditor(adapterFactory, «pr
 new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
+«DEFINE createEditor(Property property) FOR CustomPropertyEditor-»
+new «fullyQualifiedClassName»(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»

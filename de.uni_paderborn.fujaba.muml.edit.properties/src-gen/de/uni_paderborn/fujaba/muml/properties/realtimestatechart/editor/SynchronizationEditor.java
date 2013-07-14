@@ -31,7 +31,7 @@ public class SynchronizationEditor
 
 		addSynchronizationKindEditor(null, true);
 
-		addSynchronizationSelectorExpressionEditor(null, false);
+		addSynchronizationSelectorExpressionEditor(null, true);
 
 		super.initialize();
 	}
@@ -66,7 +66,7 @@ public class SynchronizationEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationSelectorExpressionEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronization_SelectorExpression());

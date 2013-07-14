@@ -29,7 +29,7 @@ public class ParameterBindingEditor
 	 */
 	public void initialize() {
 
-		addParameterBindingValueEditor(null, false);
+		addParameterBindingValueEditor(null, true);
 
 		super.initialize();
 	}
@@ -46,7 +46,7 @@ public class ParameterBindingEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingValueEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getParameterBinding_Value());
