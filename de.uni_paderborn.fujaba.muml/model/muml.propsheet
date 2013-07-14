@@ -2,6 +2,7 @@
 <de.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fujaba="http://de.fujaba.properties/0.1" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
   <reconciler>
     <customTransformations uri="/de.uni_paderborn.fujaba.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations uri="/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="muml.genmodel#/"/>
   <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
@@ -15,6 +16,7 @@
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.storydriven.core.edit</requiredBundles>
     <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui</requiredBundles>
   </plugin>
   <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
   <packages>
@@ -271,7 +273,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/behavior/Variable/initializeExpression"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <superClasses href="#//@packages.3/@classes.6"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -285,7 +287,7 @@
       <properties category="//@packages.3/@classes.3/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/behavior/Operation/implementations"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <properties category="//@packages.3/@classes.3/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/behavior/Operation/parameters"/>
@@ -310,7 +312,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/behavior/ParameterBinding/value"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
@@ -790,7 +792,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/guard"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <properties category="//@packages.8/@classes.7/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/events"/>
@@ -835,7 +837,7 @@
       <properties category="//@packages.8/@classes.9/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Action/expressions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.9/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
@@ -897,7 +899,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Synchronization/selectorExpression"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
