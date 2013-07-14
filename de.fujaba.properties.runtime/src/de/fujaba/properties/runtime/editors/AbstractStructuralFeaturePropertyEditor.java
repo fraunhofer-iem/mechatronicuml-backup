@@ -200,8 +200,9 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 	
 	public void setValue(final Object newValue) {
-		if (value == null && newValue != null || !value.equals(newValue)) {
-			EditingDomain editingDomain = getEditingDomain(element);
+		boolean changed = value == null && newValue != null || !value.equals(newValue);
+		EditingDomain editingDomain = getEditingDomain(element);
+		if (changed && editingDomain != null) {
 			editingDomain.getCommandStack().execute(new ChangeCommand(element) {
 	
 				@Override

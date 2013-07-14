@@ -94,13 +94,16 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 
 	private void applySelection(Object selection) {
 		// Set selection
-		ISelection sel;
-		if (value == null) {
-			sel = new StructuredSelection();
-		} else {
-			sel = new StructuredSelection(selection);
+		Collection<?> comboInput = (Collection<?>) comboViewer.getInput();
+		if (comboInput != null && comboInput.contains(selection)) {
+			ISelection sel;
+			if (selection == null) {
+				sel = new StructuredSelection();
+			} else {
+				sel = new StructuredSelection(selection);
+			}
+			comboViewer.setSelection(sel);
 		}
-		comboViewer.setSelection(sel);
 	}
 
 	
