@@ -1,5 +1,6 @@
 package de.uni_paderborn.fujaba.muml.ui.properties;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -33,6 +34,7 @@ public class XtextPropertyEditor extends
 	public XtextPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
 		super(adapterFactory, feature);
+		Assert.isLegal(!feature.isMany());
 	}
 
 	private static final String languageName = "de.uni_paderborn.fujaba.muml.ActionLanguage";

@@ -51,14 +51,13 @@ public class TransitionEditor
 		addTransitionBlockableEditor("de.fujaba.properties.category.Booleans",
 				true);
 
+		addTransitionEventsEditor(null, true);
+
+		addTransitionActionEditor("de.fujaba.properties.category.Lists", false);
+
+		addTransitionUrgentEditor(null, true);
+
 		addTransitionGuardEditor(null, true);
-
-		addTransitionEventsEditor("de.fujaba.properties.category.Lists", true);
-
-		addTransitionActionEditor(null, false);
-
-		addTransitionUrgentEditor("de.fujaba.properties.category.Booleans",
-				true);
 
 		super.initialize();
 	}
@@ -177,23 +176,6 @@ public class TransitionEditor
 	/**
 	 * @generated
 	 */
-	protected void addTransitionGuardEditor(String category, boolean front) {
-		addEditorToCategory(category, createTransitionGuardEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionGuardEditor() {
-		return new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getTransition_Guard());
-
-	}
-	/**
-	 * @generated
-	 */
 	protected void addTransitionEventsEditor(String category, boolean front) {
 		addEditorToCategory(category, createTransitionEventsEditor(), front);
 	}
@@ -240,6 +222,23 @@ public class TransitionEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Urgent());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addTransitionGuardEditor(String category, boolean front) {
+		addEditorToCategory(category, createTransitionGuardEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionGuardEditor() {
+		return new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getTransition_Guard());
 
 	}
 

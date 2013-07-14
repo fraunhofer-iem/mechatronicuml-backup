@@ -32,7 +32,7 @@ public class ActionEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addActionExpressionsEditor("de.fujaba.properties.category.Lists", true);
+		addActionExpressionsEditor(null, true);
 
 		super.initialize();
 	}
@@ -48,7 +48,7 @@ public class ActionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createActionExpressionsEditor() {
-		return new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getAction_Expressions());

@@ -32,34 +32,14 @@ public class OperationEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addOperationImplementationsEditor(
-				"de.fujaba.properties.category.Lists", true);
-
 		addOperationParametersEditor("de.fujaba.properties.category.Lists",
 				true);
+
+		addOperationImplementationsEditor(null, true);
 
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addOperationImplementationsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createOperationImplementationsEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationImplementationsEditor() {
-		return new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getOperation_Implementations());
-
-	}
 	/**
 	 * @generated
 	 */
@@ -75,6 +55,25 @@ public class OperationEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getOperation_Parameters());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addOperationImplementationsEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createOperationImplementationsEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationImplementationsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getOperation_Implementations());
 
 	}
 
