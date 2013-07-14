@@ -28,6 +28,7 @@ public class XtextPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
 
 	private boolean updating = false;
+	private boolean saving = false;
 
 	public XtextPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
@@ -60,8 +61,10 @@ public class XtextPropertyEditor extends
 		}
 
 		private void save(String text) throws CoreException {
+			saving = true;
 			Expression expression = parseExpression(text);
 			setValue(expression);
+			saving = false;
 		}
 		
 		private Expression parseExpression(String text) throws CoreException {
@@ -110,11 +113,13 @@ public class XtextPropertyEditor extends
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
-		String text = LanguageResource.serializeEObjectSafe((EObject) value, element);
-		if (text == null) {
-			text = "";
+		if (!saving) {
+			String text = LanguageResource.serializeEObjectSafe((EObject) value, element);
+			if (text == null) {
+				text = "";
+			}
+			updateText(text);
 		}
-		updateText(text);
 	}
 
 	private void updateText(String text) {
