@@ -135,14 +135,16 @@ mapping inout Class::initializeCategories() {
 	-- booleans in one category
 	var booleanProperties : OrderedSet(Property) := self.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'EBoolean');
 	if (not booleanProperties->isEmpty()) then {
-		var category : PropertyCategory := new PropertyCategory('Booleans', true, booleanProperties);
+		var category : PropertyCategory := new PropertyCategory('Booleans', true);
+		category.properties := booleanProperties;
 		propertyCategories := propertyCategories->including(category);
 	} endif;
 	
 	-- lists in one category
 	var listProperties : OrderedSet(Property) := self.properties->select(p | p.genFeature.ecoreFeature.oclIsKindOf(EReference) and p.genFeature.ecoreFeature.upperBound > 1);
 	if (not listProperties->isEmpty()) then {
-		var category : PropertyCategory := new PropertyCategory('Lists', true, listProperties);
+		var category : PropertyCategory := new PropertyCategory('Lists', true);
+		category.properties := listProperties;
 		propertyCategories := propertyCategories->including(category);
 	} endif;
 }
@@ -222,9 +224,8 @@ constructor PropertyTab::PropertyTab(_id : String, _name : String) {
 	name := _name;
 }
 
-constructor PropertyCategory::PropertyCategory(_title : String, _open : Boolean, _localProperties : OrderedSet(Property)) {
+constructor PropertyCategory::PropertyCategory(_title : String, _open : Boolean) {
 	title := _title;
 	open := _open;
-	localProperties := _localProperties;
 	vertical := false;
 }
