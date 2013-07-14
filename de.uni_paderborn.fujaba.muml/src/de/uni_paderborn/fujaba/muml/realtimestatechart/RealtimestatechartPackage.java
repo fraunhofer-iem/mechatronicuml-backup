@@ -407,7 +407,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int CLOCK___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -416,7 +416,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int CLOCK___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -425,7 +425,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int CLOCK___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -434,7 +434,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLOCK___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int CLOCK___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Clock</em>' class.
@@ -836,7 +836,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___GET_EXTENSION__ECLASS_1 = PRIORITIZED_ELEMENT_OPERATION_COUNT + 15;
+	int REGION___GET_EXTENSION__ECLASS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 15;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -845,7 +845,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___PROVIDE_EXTENSION__ECLASS_1 = PRIORITIZED_ELEMENT_OPERATION_COUNT + 16;
+	int REGION___PROVIDE_EXTENSION__ECLASS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 16;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -854,7 +854,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___GET_ANNOTATION__STRING_1 = PRIORITIZED_ELEMENT_OPERATION_COUNT + 17;
+	int REGION___GET_ANNOTATION__STRING = PRIORITIZED_ELEMENT_OPERATION_COUNT + 17;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -863,7 +863,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___PROVIDE_ANNOTATION__STRING_1 = PRIORITIZED_ELEMENT_OPERATION_COUNT + 18;
+	int REGION___PROVIDE_ANNOTATION__STRING = PRIORITIZED_ELEMENT_OPERATION_COUNT + 18;
 
 	/**
 	 * The number of operations of the '<em>Region</em>' class.
@@ -1079,7 +1079,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int VERTEX___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1088,7 +1088,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int VERTEX___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1097,7 +1097,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int VERTEX___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1106,7 +1106,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERTEX___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int VERTEX___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Is Super Vertex Of</em>' operation.
@@ -1466,7 +1466,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE___GET_EXTENSION__ECLASS_1 = VERTEX___GET_EXTENSION__ECLASS_1;
+	int STATE___GET_EXTENSION__ECLASS = VERTEX___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1475,7 +1475,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE___PROVIDE_EXTENSION__ECLASS_1 = VERTEX___PROVIDE_EXTENSION__ECLASS_1;
+	int STATE___PROVIDE_EXTENSION__ECLASS = VERTEX___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1484,7 +1484,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE___GET_ANNOTATION__STRING_1 = VERTEX___GET_ANNOTATION__STRING_1;
+	int STATE___GET_ANNOTATION__STRING = VERTEX___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1493,7 +1493,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE___PROVIDE_ANNOTATION__STRING_1 = VERTEX___PROVIDE_ANNOTATION__STRING_1;
+	int STATE___PROVIDE_ANNOTATION__STRING = VERTEX___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Is Super Vertex Of</em>' operation.
@@ -1889,7 +1889,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___GET_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int TRANSITION___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1898,7 +1898,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int TRANSITION___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1907,7 +1907,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___GET_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int TRANSITION___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1916,7 +1916,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___PROVIDE_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int TRANSITION___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -2159,7 +2159,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int ACTION___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2168,7 +2168,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int ACTION___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2177,7 +2177,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int ACTION___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2186,7 +2186,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int ACTION___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -2609,7 +2609,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int SYNCHRONIZATION_CHANNEL___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2618,7 +2618,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int SYNCHRONIZATION_CHANNEL___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2627,7 +2627,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int SYNCHRONIZATION_CHANNEL___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2636,7 +2636,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION_CHANNEL___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int SYNCHRONIZATION_CHANNEL___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Synchronization Channel</em>' class.
@@ -2843,7 +2843,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION___GET_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int SYNCHRONIZATION___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -2852,7 +2852,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int SYNCHRONIZATION___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -2861,7 +2861,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION___GET_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int SYNCHRONIZATION___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -2870,7 +2870,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYNCHRONIZATION___PROVIDE_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int SYNCHRONIZATION___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Synchronization</em>' class.
@@ -3186,7 +3186,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int REALTIME_STATECHART___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3195,7 +3195,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int REALTIME_STATECHART___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3204,7 +3204,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int REALTIME_STATECHART___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3213,7 +3213,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REALTIME_STATECHART___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int REALTIME_STATECHART___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Is Super Statechart Of</em>' operation.
@@ -3448,7 +3448,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___GET_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int MESSAGE___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3457,7 +3457,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int MESSAGE___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3466,7 +3466,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___GET_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int MESSAGE___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3475,7 +3475,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE___PROVIDE_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int MESSAGE___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Message</em>' class.
@@ -3820,7 +3820,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_CONNECTION_POINT___GET_EXTENSION__ECLASS_1 = VERTEX___GET_EXTENSION__ECLASS_1;
+	int STATE_CONNECTION_POINT___GET_EXTENSION__ECLASS = VERTEX___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -3829,7 +3829,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_CONNECTION_POINT___PROVIDE_EXTENSION__ECLASS_1 = VERTEX___PROVIDE_EXTENSION__ECLASS_1;
+	int STATE_CONNECTION_POINT___PROVIDE_EXTENSION__ECLASS = VERTEX___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -3838,7 +3838,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_CONNECTION_POINT___GET_ANNOTATION__STRING_1 = VERTEX___GET_ANNOTATION__STRING_1;
+	int STATE_CONNECTION_POINT___GET_ANNOTATION__STRING = VERTEX___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -3847,7 +3847,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_CONNECTION_POINT___PROVIDE_ANNOTATION__STRING_1 = VERTEX___PROVIDE_ANNOTATION__STRING_1;
+	int STATE_CONNECTION_POINT___PROVIDE_ANNOTATION__STRING = VERTEX___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Is Super Vertex Of</em>' operation.
@@ -4109,7 +4109,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_POINT___GET_EXTENSION__ECLASS_1 = STATE_CONNECTION_POINT___GET_EXTENSION__ECLASS_1;
+	int ENTRY_POINT___GET_EXTENSION__ECLASS = STATE_CONNECTION_POINT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -4118,7 +4118,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_POINT___PROVIDE_EXTENSION__ECLASS_1 = STATE_CONNECTION_POINT___PROVIDE_EXTENSION__ECLASS_1;
+	int ENTRY_POINT___PROVIDE_EXTENSION__ECLASS = STATE_CONNECTION_POINT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -4127,7 +4127,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_POINT___GET_ANNOTATION__STRING_1 = STATE_CONNECTION_POINT___GET_ANNOTATION__STRING_1;
+	int ENTRY_POINT___GET_ANNOTATION__STRING = STATE_CONNECTION_POINT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -4136,7 +4136,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTRY_POINT___PROVIDE_ANNOTATION__STRING_1 = STATE_CONNECTION_POINT___PROVIDE_ANNOTATION__STRING_1;
+	int ENTRY_POINT___PROVIDE_ANNOTATION__STRING = STATE_CONNECTION_POINT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Is Super Vertex Of</em>' operation.
@@ -4398,7 +4398,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXIT_POINT___GET_EXTENSION__ECLASS_1 = STATE_CONNECTION_POINT___GET_EXTENSION__ECLASS_1;
+	int EXIT_POINT___GET_EXTENSION__ECLASS = STATE_CONNECTION_POINT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -4407,7 +4407,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXIT_POINT___PROVIDE_EXTENSION__ECLASS_1 = STATE_CONNECTION_POINT___PROVIDE_EXTENSION__ECLASS_1;
+	int EXIT_POINT___PROVIDE_EXTENSION__ECLASS = STATE_CONNECTION_POINT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -4416,7 +4416,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXIT_POINT___GET_ANNOTATION__STRING_1 = STATE_CONNECTION_POINT___GET_ANNOTATION__STRING_1;
+	int EXIT_POINT___GET_ANNOTATION__STRING = STATE_CONNECTION_POINT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -4425,7 +4425,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXIT_POINT___PROVIDE_ANNOTATION__STRING_1 = STATE_CONNECTION_POINT___PROVIDE_ANNOTATION__STRING_1;
+	int EXIT_POINT___PROVIDE_ANNOTATION__STRING = STATE_CONNECTION_POINT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Is Super Vertex Of</em>' operation.

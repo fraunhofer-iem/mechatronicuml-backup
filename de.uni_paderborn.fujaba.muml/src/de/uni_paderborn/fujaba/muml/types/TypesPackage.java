@@ -258,7 +258,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int DATA_TYPE___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -267,7 +267,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int DATA_TYPE___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -276,7 +276,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int DATA_TYPE___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -285,7 +285,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_TYPE___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int DATA_TYPE___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Data Type</em>' class.
@@ -511,7 +511,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE___GET_EXTENSION__ECLASS_1 = DATA_TYPE___GET_EXTENSION__ECLASS_1;
+	int ARRAY_DATA_TYPE___GET_EXTENSION__ECLASS = DATA_TYPE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -520,7 +520,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE___PROVIDE_EXTENSION__ECLASS_1 = DATA_TYPE___PROVIDE_EXTENSION__ECLASS_1;
+	int ARRAY_DATA_TYPE___PROVIDE_EXTENSION__ECLASS = DATA_TYPE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -529,7 +529,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE___GET_ANNOTATION__STRING_1 = DATA_TYPE___GET_ANNOTATION__STRING_1;
+	int ARRAY_DATA_TYPE___GET_ANNOTATION__STRING = DATA_TYPE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -538,7 +538,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARRAY_DATA_TYPE___PROVIDE_ANNOTATION__STRING_1 = DATA_TYPE___PROVIDE_ANNOTATION__STRING_1;
+	int ARRAY_DATA_TYPE___PROVIDE_ANNOTATION__STRING = DATA_TYPE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Array Data Type</em>' class.
@@ -755,7 +755,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_DATA_TYPE___GET_EXTENSION__ECLASS_1 = DATA_TYPE___GET_EXTENSION__ECLASS_1;
+	int PRIMITIVE_DATA_TYPE___GET_EXTENSION__ECLASS = DATA_TYPE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -764,7 +764,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_DATA_TYPE___PROVIDE_EXTENSION__ECLASS_1 = DATA_TYPE___PROVIDE_EXTENSION__ECLASS_1;
+	int PRIMITIVE_DATA_TYPE___PROVIDE_EXTENSION__ECLASS = DATA_TYPE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -773,7 +773,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_DATA_TYPE___GET_ANNOTATION__STRING_1 = DATA_TYPE___GET_ANNOTATION__STRING_1;
+	int PRIMITIVE_DATA_TYPE___GET_ANNOTATION__STRING = DATA_TYPE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -782,7 +782,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_DATA_TYPE___PROVIDE_ANNOTATION__STRING_1 = DATA_TYPE___PROVIDE_ANNOTATION__STRING_1;
+	int PRIMITIVE_DATA_TYPE___PROVIDE_ANNOTATION__STRING = DATA_TYPE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Primitive Data Type</em>' class.
@@ -1008,7 +1008,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RANGED_PRIMITIVE_DATA_TYPE___GET_EXTENSION__ECLASS_1 = DATA_TYPE___GET_EXTENSION__ECLASS_1;
+	int RANGED_PRIMITIVE_DATA_TYPE___GET_EXTENSION__ECLASS = DATA_TYPE___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1017,7 +1017,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RANGED_PRIMITIVE_DATA_TYPE___PROVIDE_EXTENSION__ECLASS_1 = DATA_TYPE___PROVIDE_EXTENSION__ECLASS_1;
+	int RANGED_PRIMITIVE_DATA_TYPE___PROVIDE_EXTENSION__ECLASS = DATA_TYPE___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1026,7 +1026,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RANGED_PRIMITIVE_DATA_TYPE___GET_ANNOTATION__STRING_1 = DATA_TYPE___GET_ANNOTATION__STRING_1;
+	int RANGED_PRIMITIVE_DATA_TYPE___GET_ANNOTATION__STRING = DATA_TYPE___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1035,7 +1035,7 @@ public interface TypesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RANGED_PRIMITIVE_DATA_TYPE___PROVIDE_ANNOTATION__STRING_1 = DATA_TYPE___PROVIDE_ANNOTATION__STRING_1;
+	int RANGED_PRIMITIVE_DATA_TYPE___PROVIDE_ANNOTATION__STRING = DATA_TYPE___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Ranged Primitive Data Type</em>' class.

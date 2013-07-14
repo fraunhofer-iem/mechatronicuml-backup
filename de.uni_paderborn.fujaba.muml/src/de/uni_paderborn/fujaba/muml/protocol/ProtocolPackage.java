@@ -287,7 +287,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION___GET_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int ABSTRACT_COORDINATION_SPECIFICATION___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -296,7 +296,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -305,7 +305,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION___GET_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int ABSTRACT_COORDINATION_SPECIFICATION___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -314,7 +314,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_ANNOTATION__STRING_1 = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Abstract Coordination Specification</em>' class.
@@ -568,7 +568,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___GET_EXTENSION__ECLASS_1 = ABSTRACT_COORDINATION_SPECIFICATION___GET_EXTENSION__ECLASS_1;
+	int COORDINATION_PROTOCOL___GET_EXTENSION__ECLASS = ABSTRACT_COORDINATION_SPECIFICATION___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -577,7 +577,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___PROVIDE_EXTENSION__ECLASS_1 = ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_EXTENSION__ECLASS_1;
+	int COORDINATION_PROTOCOL___PROVIDE_EXTENSION__ECLASS = ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -586,7 +586,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___GET_ANNOTATION__STRING_1 = ABSTRACT_COORDINATION_SPECIFICATION___GET_ANNOTATION__STRING_1;
+	int COORDINATION_PROTOCOL___GET_ANNOTATION__STRING = ABSTRACT_COORDINATION_SPECIFICATION___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -595,7 +595,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL___PROVIDE_ANNOTATION__STRING_1 = ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_ANNOTATION__STRING_1;
+	int COORDINATION_PROTOCOL___PROVIDE_ANNOTATION__STRING = ABSTRACT_COORDINATION_SPECIFICATION___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Coordination Protocol</em>' class.
@@ -911,7 +911,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_EXTENSION__ECLASS_1 = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT___GET_EXTENSION__ECLASS_1;
+	int ROLE___GET_EXTENSION__ECLASS = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -920,7 +920,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___PROVIDE_EXTENSION__ECLASS_1 = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT___PROVIDE_EXTENSION__ECLASS_1;
+	int ROLE___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -929,7 +929,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_ANNOTATION__STRING_1 = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT___GET_ANNOTATION__STRING_1;
+	int ROLE___GET_ANNOTATION__STRING = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -938,7 +938,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___PROVIDE_ANNOTATION__STRING_1 = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT___PROVIDE_ANNOTATION__STRING_1;
+	int ROLE___PROVIDE_ANNOTATION__STRING = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -1163,7 +1163,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___GET_EXTENSION__ECLASS_1 = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS_1;
+	int ROLE_CONNECTOR___GET_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1172,7 +1172,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___PROVIDE_EXTENSION__ECLASS_1 = ConnectorPackage.CONNECTOR___PROVIDE_EXTENSION__ECLASS_1;
+	int ROLE_CONNECTOR___PROVIDE_EXTENSION__ECLASS = ConnectorPackage.CONNECTOR___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1181,7 +1181,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___GET_ANNOTATION__STRING_1 = ConnectorPackage.CONNECTOR___GET_ANNOTATION__STRING_1;
+	int ROLE_CONNECTOR___GET_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1190,7 +1190,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_CONNECTOR___PROVIDE_ANNOTATION__STRING_1 = ConnectorPackage.CONNECTOR___PROVIDE_ANNOTATION__STRING_1;
+	int ROLE_CONNECTOR___PROVIDE_ANNOTATION__STRING = ConnectorPackage.CONNECTOR___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Role Connector</em>' class.
@@ -1417,7 +1417,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS___GET_EXTENSION__ECLASS_1 = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1426,7 +1426,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1435,7 +1435,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS___GET_ANNOTATION__STRING_1 = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1444,7 +1444,7 @@ public interface ProtocolPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS___PROVIDE_ANNOTATION__STRING_1 = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int CONNECTOR_QUALITY_OF_SERVICE_ASSUMPTIONS___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Connector Quality Of Service Assumptions</em>' class.

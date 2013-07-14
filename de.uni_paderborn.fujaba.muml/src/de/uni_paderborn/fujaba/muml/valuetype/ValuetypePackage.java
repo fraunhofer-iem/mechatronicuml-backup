@@ -306,7 +306,7 @@ public interface ValuetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_VALUE___GET_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int TIME_VALUE___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -315,7 +315,7 @@ public interface ValuetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_VALUE___PROVIDE_EXTENSION__ECLASS_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int TIME_VALUE___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -324,7 +324,7 @@ public interface ValuetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_VALUE___GET_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int TIME_VALUE___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -333,7 +333,7 @@ public interface ValuetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_VALUE___PROVIDE_ANNOTATION__STRING_1 = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int TIME_VALUE___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>To String</em>' operation.

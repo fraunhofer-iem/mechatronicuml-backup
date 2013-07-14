@@ -466,8 +466,8 @@
         disposableProviderFactory="true" ecorePackage="muml.ecore#//valuetype">
       <genDataTypes ecoreDataType="muml.ecore#//valuetype/TimeUnit"/>
       <genClasses ecoreClass="muml.ecore#//valuetype/Cardinality">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//valuetype/Cardinality/lowerBound"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//valuetype/Cardinality/upperBound"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//valuetype/Cardinality/lowerBound"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//valuetype/Cardinality/upperBound"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//valuetype/TimeValue">
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//valuetype/TimeValue/value"/>

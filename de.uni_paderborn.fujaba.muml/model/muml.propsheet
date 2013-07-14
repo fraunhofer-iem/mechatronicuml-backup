@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <de.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fujaba="http://de.fujaba.properties/0.1" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
   <reconciler>
-    <customTransformations uri="/de.uni_paderborn.fujaba.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations uri="/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
     <customTransformations uri="/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="muml.genmodel#/"/>
@@ -17,6 +17,7 @@
     <requiredBundles>org.storydriven.core.edit</requiredBundles>
     <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.common</requiredBundles>
   </plugin>
   <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
   <packages>
@@ -30,7 +31,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/types/ArrayDataType/cardinality"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.2">
@@ -178,7 +179,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/bufferSize"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.8/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/messageType"/>
@@ -198,13 +199,23 @@
     <genPackage href="muml.genmodel#//muml/valuetype"/>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/Cardinality"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor"/>
+      </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/TimeValue"/>
       <properties>
         <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/value"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/unit"/>
@@ -220,12 +231,10 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties category="//@packages.2/@classes.2/@propertyCategories.0">
+      <properties>
         <genFeature href="muml.genmodel#//muml/valuetype/NaturalNumber/infinity"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" properties="//@packages.2/@classes.2/@properties.1"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/Range"/>
