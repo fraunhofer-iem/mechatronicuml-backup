@@ -143,7 +143,7 @@ public class XtextPropertyEditor extends
 		}
 	}
 
-	private void updateText(String text) {
+	private synchronized void updateText(String text) {
 		if (!text.equals(embeddedXtextEditor.getDocument().get())) {
 			updating = true;
 			embeddedXtextEditor.update(text);
