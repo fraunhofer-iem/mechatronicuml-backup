@@ -24,6 +24,7 @@ import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
@@ -46,6 +47,16 @@ public class ElementSelectionWizardPage extends WizardPage {
 	private Collection<Object> filteredChoices;
 	private Collection<Object> allFilteredChoices = new ArrayList<Object>();
 	private Collection<IElementValidator> elementValidators = new ArrayList<IElementValidator>();
+	private ViewerFilter treeViewerFilter = new ViewerFilter() {
+
+		@Override
+		public boolean select(Viewer viewer, Object parentElement,
+				Object element) {
+			return allFilteredChoices.contains(element);
+		}
+		
+	};
+	public static final String MESSAGE_NO_ELEMENTS_FOUND = "No results found";
 
 	public ElementSelectionWizardPage(AdapterFactory adapterFactory, Collection<?> choices) {
 		super("Element selection");
@@ -72,7 +83,7 @@ public class ElementSelectionWizardPage extends WizardPage {
 		Label label = toolkit.createLabel(form.getBody(), "Search:");
 		label.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false));
 
-		final Text text = toolkit.createText(form.getBody(), "", SWT.NONE);
+		final Text text = toolkit.createText(form.getBody(), "", SWT.BORDER);
 		text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		text.addModifyListener(new ModifyListener() {
 
@@ -83,7 +94,7 @@ public class ElementSelectionWizardPage extends WizardPage {
 			
 		});
 
-		final Tree tree = toolkit.createTree(form.getBody(), SWT.NONE);
+		final Tree tree = toolkit.createTree(form.getBody(), SWT.BORDER);
 		tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
 		treeViewer = new TreeViewer(tree);
 		treeViewer.setContentProvider(new ITreeContentProvider() {
@@ -99,7 +110,10 @@ public class ElementSelectionWizardPage extends WizardPage {
 
 			@Override
 			public Object[] getElements(Object inputElement) {
-				return ((Collection<?>) inputElement).toArray();
+				if (inputElement instanceof Collection) {
+					return ((Collection<?>) inputElement).toArray();
+				}
+				return new Object[] { inputElement };
 			}
 
 			@Override
@@ -116,8 +130,10 @@ public class ElementSelectionWizardPage extends WizardPage {
 			public Object getParent(Object element) {
 				if (element instanceof Resource) {
 					return null;
+				} else if (element instanceof EObject) {
+					return ((EObject) element).eContainer();
 				}
-				return ((EObject) element).eContainer();
+				return null;
 			}
 
 			@Override
@@ -126,17 +142,7 @@ public class ElementSelectionWizardPage extends WizardPage {
 			}
 			
 		});
-		treeViewer.addFilter(new ViewerFilter() {
-
-			@Override
-			public boolean select(Viewer viewer, Object parentElement,
-					Object element) {
-				return allFilteredChoices.contains(element);
-			}
-			
-		});
-		
-		treeViewer.setLabelProvider(new ColorLabelProvider(adapterFactory));
+		treeViewer.setLabelProvider(new TreeViewerLabelProvider(adapterFactory));
 		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			@Override
@@ -179,7 +185,6 @@ public class ElementSelectionWizardPage extends WizardPage {
 			}
 		});
 		
-		treeViewer.setInput(resources);
 		setFilter("");
 	
 		setControl(container);
@@ -193,7 +198,15 @@ public class ElementSelectionWizardPage extends WizardPage {
 		if (this.filter == null || !filter.equals(this.filter)) {
 			this.filter = filter;
 			recalculateFilteredObjects();
-			treeViewer.setInput(resources);
+			if (resources.isEmpty()) {
+				treeViewer.setFilters(new ViewerFilter[] { });
+				treeViewer.setInput(MESSAGE_NO_ELEMENTS_FOUND);
+				treeViewer.getTree().setEnabled(false);
+			} else {
+				treeViewer.setFilters(new ViewerFilter[] { treeViewerFilter } );
+				treeViewer.setInput(resources);
+				treeViewer.getTree().setEnabled(true);
+			}
 			selectFirst();
 		}
 	}
@@ -267,10 +280,26 @@ public class ElementSelectionWizardPage extends WizardPage {
 		elementValidators.remove(validator);
 	}
 
-	private class ColorLabelProvider extends AdapterFactoryLabelProvider implements IColorProvider {
+	private class TreeViewerLabelProvider extends AdapterFactoryLabelProvider implements IColorProvider {
 
-		public ColorLabelProvider(AdapterFactory adapterFactory) {
+		public TreeViewerLabelProvider(AdapterFactory adapterFactory) {
 			super(adapterFactory);
+		}
+		
+		@Override
+		public String getText(Object object) {
+			if (object instanceof String) {
+				return (String) object;
+			}
+			return super.getText(object);
+		}
+		
+		@Override
+		public Image getImage(Object object) {
+			if (MESSAGE_NO_ELEMENTS_FOUND.equals(object)) {
+				return null;
+			}
+			return super.getImage(object);
 		}
 		
 		@Override
