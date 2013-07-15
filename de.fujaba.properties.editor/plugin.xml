@@ -10,6 +10,9 @@
 
 <plugin>
 
+<!-- DEACTIVATED new wizard, because it does not work yet -->
+
+<!--
    <extension point="org.eclipse.ui.newWizards">
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -24,6 +27,7 @@
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
+-->
 
    <extension point="org.eclipse.ui.editors">
       <editor
@@ -35,5 +39,50 @@
             contributorClass="de.fujaba.properties.presentation.PropertiesActionBarContributor">
       </editor>
    </extension>
+   
+    <extension
+        point="org.eclipse.core.expressions.definitions">
+     <definition
+           id="de.fujaba.properties.expression.genmodelfile">
+	    <iterate
+           ifEmpty="false"
+           operator="and">
+	       <adapt type="org.eclipse.core.resources.IResource">
+	          <test property="org.eclipse.core.resources.name" 
+	                value="*.genmodel"/>
+	       </adapt>
+	    </iterate>
+     </definition>
+    </extension>
+
+    <extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	          locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+       <command
+             commandId="de.fujaba.properties.initializePropsheet"
+             icon="icons/full/obj16/PropertiesModelFile.gif"
+             id="de.fujaba.properties.initializePropsheet"
+             label="Initialize Propsheet Model"
+             style="push">
+          <visibleWhen
+                checkEnabled="false">
+             <reference
+                   definitionId="de.fujaba.properties.expression.genmodelfile">
+             </reference>
+          </visibleWhen>
+       </command>
+	   </menuContribution>
+	</extension>
+
+    <extension point="org.eclipse.ui.commands">
+		<command
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.fujaba.properties.presentation.InitializePropsheetHandler"
+			id="de.fujaba.properties.initializePropsheet"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+
 
 </plugin>
