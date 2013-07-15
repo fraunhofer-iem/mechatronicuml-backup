@@ -8,6 +8,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -28,8 +30,10 @@ import de.uni_paderborn.fujaba.muml.ui.xtfo.EmbeddedXtextEditor;
 public class XtextPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
 
+	private boolean active = false;
 	private boolean updating = false;
 	private boolean saving = false;
+	
 
 	public XtextPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
@@ -52,31 +56,9 @@ public class XtextPropertyEditor extends
 			// using the resource directly isn't "thread safe"
 			// because the resource might have been changed again after we
 			// checked it via getErrors()...
-			try {
-				String text = embeddedXtextEditor.getDocument().get();
-				save(text);
-				// System.out.println("valid");
-			} catch (CoreException e) {
-				// System.out.println("invalid");
-				// text is invalid
+			if (active) {
+				modify();
 			}
-		}
-
-		private void save(String text) throws CoreException {
-			saving = true;
-			Expression expression = parseExpression(text);
-			setValue(expression);
-			saving = false;
-		}
-		
-		private Expression parseExpression(String text) throws CoreException {
-			ILoadResult loadResult = LanguageResource.loadFromString(text, element);
-			if (loadResult.hasError()) {
-				String pluginId = "FIXME"; //ActionLanguageActivator.getInstance().getBundle().getSymbolicName();
-				IStatus status = new Status(IStatus.ERROR, pluginId, IStatus.ERROR, loadResult.getError(), null);
-				throw new CoreException(status);
-			}
-			return (Expression) loadResult.getEObject();
 		}
 
 	}
@@ -109,8 +91,45 @@ public class XtextPropertyEditor extends
 		embeddedXtextEditor = new EmbeddedXtextEditor(container, injector);
 		saveModelListener = new SaveModelListener();
 		embeddedXtextEditor.getDocument().addModelListener(saveModelListener);
-
+		embeddedXtextEditor.getViewer().getTextWidget().addFocusListener(new FocusListener() {
+			public void focusGained(FocusEvent e) {
+				active = true;				
+			}
+			public void focusLost(FocusEvent e) {
+				modify();
+				active = false;
+			}
+		});
 	}
+
+	private void modify() {
+		String text = embeddedXtextEditor.getDocument().get();
+		try {
+			save(text);
+			// System.out.println("valid");
+		} catch (CoreException e) {
+			// System.out.println("invalid");
+			// text is invalid
+		}
+	}
+
+	private synchronized void save(String text) throws CoreException {
+		saving = true;
+		Expression expression = parseExpression(text);
+		setValue(expression);
+		saving = false;
+	}
+	
+	private Expression parseExpression(String text) throws CoreException {
+		ILoadResult loadResult = LanguageResource.loadFromString(text, element);
+		if (loadResult.hasError()) {
+			String pluginId = "FIXME"; //ActionLanguageActivator.getInstance().getBundle().getSymbolicName();
+			IStatus status = new Status(IStatus.ERROR, pluginId, IStatus.ERROR, loadResult.getError(), null);
+			throw new CoreException(status);
+		}
+		return (Expression) loadResult.getEObject();
+	}
+
 
 	@Override
 	protected void valueChanged() {
