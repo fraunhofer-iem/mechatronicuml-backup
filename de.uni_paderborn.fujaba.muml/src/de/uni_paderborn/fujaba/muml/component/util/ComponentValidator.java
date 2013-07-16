@@ -172,6 +172,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(component, diagnostics, context);
 		return result;
 	}
 
@@ -199,6 +200,36 @@ public class ComponentValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniquePortNames",
 				 COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the SoftwareComponentsMustNotHaveContinuousPorts constraint of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COMPONENT__SOFTWARE_COMPONENTS_MUST_NOT_HAVE_CONTINUOUS_PORTS__EEXPRESSION = "-- Components with component type \"SOFTARE_COMPONENT\" must not have continuous ports.\n" +
+		"componentType = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort)->isEmpty()";
+
+	/**
+	 * Validates the SoftwareComponentsMustNotHaveContinuousPorts constraint of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.COMPONENT,
+				 component,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SoftwareComponentsMustNotHaveContinuousPorts",
+				 COMPONENT__SOFTWARE_COMPONENTS_MUST_NOT_HAVE_CONTINUOUS_PORTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -623,6 +654,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentAllowsNoHybridPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ValidComponentType(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(staticStructuredComponent, diagnostics, context);
@@ -649,6 +681,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentAllowsNoHybridPorts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ValidComponentType(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(structuredComponent, diagnostics, context);
@@ -921,6 +954,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentRequiresBehavior(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_ValidComponentType(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentValidPorts(atomicComponent, diagnostics, context);
