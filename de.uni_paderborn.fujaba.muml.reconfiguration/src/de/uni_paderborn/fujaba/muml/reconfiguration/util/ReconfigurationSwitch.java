@@ -23,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
@@ -136,8 +137,8 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 			case ReconfigurationPackage.CONTROLLER: {
 				Controller controller = (Controller)theEObject;
 				T result = caseController(controller);
-				if (result == null) result = caseBehavioralElement(controller);
 				if (result == null) result = caseNamedElement(controller);
+				if (result == null) result = caseBehavioralElement(controller);
 				if (result == null) result = caseCommentableElement(controller);
 				if (result == null) result = caseExtendableElement(controller);
 				if (result == null) result = defaultCase(theEObject);
@@ -242,8 +243,8 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				ReconfigurationController reconfigurationController = (ReconfigurationController)theEObject;
 				T result = caseReconfigurationController(reconfigurationController);
 				if (result == null) result = caseController(reconfigurationController);
-				if (result == null) result = caseBehavioralElement(reconfigurationController);
 				if (result == null) result = caseNamedElement(reconfigurationController);
+				if (result == null) result = caseBehavioralElement(reconfigurationController);
 				if (result == null) result = caseCommentableElement(reconfigurationController);
 				if (result == null) result = caseExtendableElement(reconfigurationController);
 				if (result == null) result = defaultCase(theEObject);
@@ -254,8 +255,8 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				T result = caseRuleBasedReconfigurationController(ruleBasedReconfigurationController);
 				if (result == null) result = caseReconfigurationController(ruleBasedReconfigurationController);
 				if (result == null) result = caseController(ruleBasedReconfigurationController);
-				if (result == null) result = caseBehavioralElement(ruleBasedReconfigurationController);
 				if (result == null) result = caseNamedElement(ruleBasedReconfigurationController);
+				if (result == null) result = caseBehavioralElement(ruleBasedReconfigurationController);
 				if (result == null) result = caseCommentableElement(ruleBasedReconfigurationController);
 				if (result == null) result = caseExtendableElement(ruleBasedReconfigurationController);
 				if (result == null) result = defaultCase(theEObject);

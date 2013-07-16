@@ -166,7 +166,7 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 	 */
 	public ReconfigurationExecutionPort getReconfigurationExecutionPort() {
 		if (eContainerFeatureID() != ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT) return null;
-		return (ReconfigurationExecutionPort)eContainer();
+		return (ReconfigurationExecutionPort)eInternalContainer();
 	}
 
 	/**

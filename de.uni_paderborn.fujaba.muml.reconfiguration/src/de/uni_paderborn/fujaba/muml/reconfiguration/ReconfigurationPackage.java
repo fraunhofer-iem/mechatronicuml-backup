@@ -450,22 +450,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int CONTROLLER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER__BEHAVIOR = BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
-
-	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__ANNOTATION = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 0;
+	int CONTROLLER__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -474,7 +465,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__EXTENSION = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 1;
+	int CONTROLLER__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -483,7 +474,16 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__NAME = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 2;
+	int CONTROLLER__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__BEHAVIOR = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -492,7 +492,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__COMMENT = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 3;
+	int CONTROLLER__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Structured Component</b></em>' container reference.
@@ -501,7 +501,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER__STRUCTURED_COMPONENT = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 4;
+	int CONTROLLER__STRUCTURED_COMPONENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Controller</em>' class.
@@ -510,7 +510,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_FEATURE_COUNT = BehaviorPackage.BEHAVIORAL_ELEMENT_FEATURE_COUNT + 5;
+	int CONTROLLER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationControllerImpl <em>Controller</em>}' class.
@@ -1552,15 +1552,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int MANAGER_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_CONTROLLER__BEHAVIOR = CONTROLLER__BEHAVIOR;
-
-	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1586,6 +1577,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_CONTROLLER__NAME = CONTROLLER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_CONTROLLER__BEHAVIOR = CONTROLLER__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1615,15 +1615,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_CONTROLLER_FEATURE_COUNT = CONTROLLER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RULE_BASED_RECONFIGURATION_CONTROLLER__BEHAVIOR = RECONFIGURATION_CONTROLLER__BEHAVIOR;
-
-	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1649,6 +1640,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RULE_BASED_RECONFIGURATION_CONTROLLER__NAME = RECONFIGURATION_CONTROLLER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RULE_BASED_RECONFIGURATION_CONTROLLER__BEHAVIOR = RECONFIGURATION_CONTROLLER__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.

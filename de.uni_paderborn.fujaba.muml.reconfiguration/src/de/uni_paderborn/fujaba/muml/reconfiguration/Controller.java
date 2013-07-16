@@ -31,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
  * @model abstract="true"
  * @generated
  */
-public interface Controller extends BehavioralElement, NamedElement, CommentableElement {
+public interface Controller extends NamedElement, BehavioralElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Structured Component</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent#getController <em>Controller</em>}'.

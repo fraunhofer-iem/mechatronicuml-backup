@@ -6,6 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
+import de.uni_paderborn.fujaba.muml.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -26,6 +29,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.Extension;
 import org.storydriven.core.NamedElement;
 
+import org.storydriven.core.impl.NamedElementImpl;
 import de.uni_paderborn.fujaba.muml.behavior.impl.BehavioralElementImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
@@ -38,9 +42,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl#getAnnotations <em>Annotation</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl#getExtensions <em>Extension</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl#getStructuredComponent <em>Structured Component</em>}</li>
  * </ul>
@@ -48,46 +50,16 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  *
  * @generated
  */
-public abstract class ControllerImpl extends BehavioralElementImpl implements Controller {
+public abstract class ControllerImpl extends NamedElementImpl implements Controller {
 	/**
-	 * The cached value of the '{@link #getAnnotations() <em>Annotation</em>}' containment reference list.
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAnnotations()
+	 * @see #getBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EAnnotation> annotations;
-
-	/**
-	 * The cached value of the '{@link #getExtensions() <em>Extension</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getExtensions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Extension> extensions;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
+	protected Behavior behavior;
 
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
@@ -133,11 +105,16 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EAnnotation> getAnnotations() {
-		if (annotations == null) {
-			annotations = new EObjectContainmentEList.Resolving<EAnnotation>(EAnnotation.class, this, ReconfigurationPackage.CONTROLLER__ANNOTATION);
+	public Behavior getBehavior() {
+		if (behavior != null && behavior.eIsProxy()) {
+			InternalEObject oldBehavior = (InternalEObject)behavior;
+			behavior = (Behavior)eResolveProxy(oldBehavior);
+			if (behavior != oldBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.CONTROLLER__BEHAVIOR, oldBehavior, behavior));
+			}
 		}
-		return annotations;
+		return behavior;
 	}
 
 	/**
@@ -145,11 +122,23 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Extension> getExtensions() {
-		if (extensions == null) {
-			extensions = new EObjectContainmentWithInverseEList.Resolving<Extension>(Extension.class, this, ReconfigurationPackage.CONTROLLER__EXTENSION, CorePackage.EXTENSION__EXTENDABLE_BASE);
+	public Behavior basicGetBehavior() {
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBehavior(Behavior newBehavior, NotificationChain msgs) {
+		Behavior oldBehavior = behavior;
+		behavior = newBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.CONTROLLER__BEHAVIOR, oldBehavior, newBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return extensions;
+		return msgs;
 	}
 
 	/**
@@ -157,20 +146,18 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.CONTROLLER__NAME, oldName, name));
+	public void setBehavior(Behavior newBehavior) {
+		if (newBehavior != behavior) {
+			NotificationChain msgs = null;
+			if (behavior != null)
+				msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+			if (newBehavior != null)
+				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+			msgs = basicSetBehavior(newBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.CONTROLLER__BEHAVIOR, newBehavior, newBehavior));
 	}
 
 	/**
@@ -201,7 +188,7 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	 */
 	public ReconfigurableStructuredComponent getStructuredComponent() {
 		if (eContainerFeatureID() != ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT) return null;
-		return (ReconfigurableStructuredComponent)eContainer();
+		return (ReconfigurableStructuredComponent)eInternalContainer();
 	}
 
 	/**
@@ -240,56 +227,14 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Extension getExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Extension provideExtension(EClass type) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation getAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAnnotation provideAnnotation(String source) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReconfigurationPackage.CONTROLLER__EXTENSION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getExtensions()).basicAdd(otherEnd, msgs);
+			case ReconfigurationPackage.CONTROLLER__BEHAVIOR:
+				if (behavior != null)
+					msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				return basicSetBehavior((Behavior)otherEnd, msgs);
 			case ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -306,10 +251,8 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReconfigurationPackage.CONTROLLER__ANNOTATION:
-				return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
-			case ReconfigurationPackage.CONTROLLER__EXTENSION:
-				return ((InternalEList<?>)getExtensions()).basicRemove(otherEnd, msgs);
+			case ReconfigurationPackage.CONTROLLER__BEHAVIOR:
+				return basicSetBehavior(null, msgs);
 			case ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT:
 				return basicSetStructuredComponent(null, msgs);
 		}
@@ -338,12 +281,9 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ReconfigurationPackage.CONTROLLER__ANNOTATION:
-				return getAnnotations();
-			case ReconfigurationPackage.CONTROLLER__EXTENSION:
-				return getExtensions();
-			case ReconfigurationPackage.CONTROLLER__NAME:
-				return getName();
+			case ReconfigurationPackage.CONTROLLER__BEHAVIOR:
+				if (resolve) return getBehavior();
+				return basicGetBehavior();
 			case ReconfigurationPackage.CONTROLLER__COMMENT:
 				return getComment();
 			case ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT:
@@ -361,16 +301,8 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ReconfigurationPackage.CONTROLLER__ANNOTATION:
-				getAnnotations().clear();
-				getAnnotations().addAll((Collection<? extends EAnnotation>)newValue);
-				return;
-			case ReconfigurationPackage.CONTROLLER__EXTENSION:
-				getExtensions().clear();
-				getExtensions().addAll((Collection<? extends Extension>)newValue);
-				return;
-			case ReconfigurationPackage.CONTROLLER__NAME:
-				setName((String)newValue);
+			case ReconfigurationPackage.CONTROLLER__BEHAVIOR:
+				setBehavior((Behavior)newValue);
 				return;
 			case ReconfigurationPackage.CONTROLLER__COMMENT:
 				setComment((String)newValue);
@@ -390,14 +322,8 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.CONTROLLER__ANNOTATION:
-				getAnnotations().clear();
-				return;
-			case ReconfigurationPackage.CONTROLLER__EXTENSION:
-				getExtensions().clear();
-				return;
-			case ReconfigurationPackage.CONTROLLER__NAME:
-				setName(NAME_EDEFAULT);
+			case ReconfigurationPackage.CONTROLLER__BEHAVIOR:
+				setBehavior((Behavior)null);
 				return;
 			case ReconfigurationPackage.CONTROLLER__COMMENT:
 				setComment(COMMENT_EDEFAULT);
@@ -417,12 +343,8 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.CONTROLLER__ANNOTATION:
-				return annotations != null && !annotations.isEmpty();
-			case ReconfigurationPackage.CONTROLLER__EXTENSION:
-				return extensions != null && !extensions.isEmpty();
-			case ReconfigurationPackage.CONTROLLER__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ReconfigurationPackage.CONTROLLER__BEHAVIOR:
+				return behavior != null;
 			case ReconfigurationPackage.CONTROLLER__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT:
@@ -438,21 +360,9 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
+		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (derivedFeatureID) {
-				case ReconfigurationPackage.CONTROLLER__ANNOTATION: return CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
-				case ReconfigurationPackage.CONTROLLER__EXTENSION: return CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (derivedFeatureID) {
-				case ReconfigurationPackage.CONTROLLER__NAME: return CorePackage.NAMED_ELEMENT__NAME;
+				case ReconfigurationPackage.CONTROLLER__BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -472,21 +382,9 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EObject.class) {
+		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == ExtendableElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.EXTENDABLE_ELEMENT__ANNOTATION: return ReconfigurationPackage.CONTROLLER__ANNOTATION;
-				case CorePackage.EXTENDABLE_ELEMENT__EXTENSION: return ReconfigurationPackage.CONTROLLER__EXTENSION;
-				default: return -1;
-			}
-		}
-		if (baseClass == NamedElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.NAMED_ELEMENT__NAME: return ReconfigurationPackage.CONTROLLER__NAME;
+				case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ReconfigurationPackage.CONTROLLER__BEHAVIOR;
 				default: return -1;
 			}
 		}
@@ -509,9 +407,7 @@ public abstract class ControllerImpl extends BehavioralElementImpl implements Co
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", comment: ");
+		result.append(" (comment: ");
 		result.append(comment);
 		result.append(')');
 		return result.toString();

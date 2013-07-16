@@ -30,7 +30,7 @@ import org.storydriven.core.CommentableElement;
  * @model
  * @generated
  */
-public interface Region extends PrioritizedElement, CommentableElement {
+public interface Region extends CommentableElement, PrioritizedElement {
 	/**
 	 * Returns the value of the '<em><b>Embedded Statechart</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart#getParentRegion <em>Parent Region</em>}'.

@@ -131,8 +131,8 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.REGION: {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
-				if (result == null) result = casePrioritizedElement(region);
 				if (result == null) result = caseCommentableElement(region);
+				if (result == null) result = casePrioritizedElement(region);
 				if (result == null) result = caseExtendableElement(region);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

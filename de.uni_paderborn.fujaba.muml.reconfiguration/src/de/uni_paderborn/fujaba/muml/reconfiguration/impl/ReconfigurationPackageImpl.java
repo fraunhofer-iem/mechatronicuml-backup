@@ -1039,8 +1039,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		StructdatatypePackage theStructdatatypePackage = (StructdatatypePackage)EPackage.Registry.INSTANCE.getEPackage(StructdatatypePackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
-		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
@@ -1057,8 +1057,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurableStructuredComponentEClass.getESuperTypes().add(theComponentPackage.getStructuredComponent());
 		reconfigurableStructuredComponentEClass.getESuperTypes().add(this.getReconfigurableComponent());
 		reconfigurationPortEClass.getESuperTypes().add(theComponentPackage.getDiscretePort());
-		controllerEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
 		controllerEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		controllerEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
 		controllerEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		managerEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		managerEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());

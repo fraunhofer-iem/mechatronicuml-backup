@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -25,6 +26,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.NamedElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
@@ -39,7 +41,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
  * @generated
  */
 public class ControllerItemProvider
-	extends BehavioralElementItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -67,30 +69,30 @@ public class ControllerItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addBehaviorPropertyDescriptor(object);
 			addCommentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Behavior feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addBehaviorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 CorePackage.Literals.NAMED_ELEMENT__NAME,
+				 getString("_UI_BehavioralElement_behavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehavioralElement_behavior_feature", "_UI_BehavioralElement_type"),
+				 BehaviorPackage.Literals.BEHAVIORAL_ELEMENT__BEHAVIOR,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -115,37 +117,6 @@ public class ControllerItemProvider
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
-			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -174,13 +145,8 @@ public class ControllerItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Controller.class)) {
-			case ReconfigurationPackage.CONTROLLER__NAME:
 			case ReconfigurationPackage.CONTROLLER__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ReconfigurationPackage.CONTROLLER__ANNOTATION:
-			case ReconfigurationPackage.CONTROLLER__EXTENSION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -196,11 +162,6 @@ public class ControllerItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
-				 EcoreFactory.eINSTANCE.createEAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter

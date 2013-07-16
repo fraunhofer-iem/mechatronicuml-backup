@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl;
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -33,7 +34,7 @@ public class StructdatatypeFactoryImpl extends EFactoryImpl implements Structdat
 	 */
 	public static StructdatatypeFactory init() {
 		try {
-			StructdatatypeFactory theStructdatatypeFactory = (StructdatatypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18"); 
+			StructdatatypeFactory theStructdatatypeFactory = (StructdatatypeFactory)EPackage.Registry.INSTANCE.getEFactory(StructdatatypePackage.eNS_URI);
 			if (theStructdatatypeFactory != null) {
 				return theStructdatatypeFactory;
 			}

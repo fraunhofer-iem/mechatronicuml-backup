@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.0"?><!--
---><plugin>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+<plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
+      <!-- @generated MumlReconfiguration -->
       <package class="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage" genModel="model/MumlReconfiguration.genmodel" uri="http://www.fujaba.de/muml/reconfiguration/0.3.18"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
+      <!-- @generated MumlReconfiguration -->
       <package class="de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage" genModel="model/MumlReconfiguration.genmodel" uri="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
+      <!-- @generated MumlReconfiguration -->
       <package class="de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage" genModel="model/MumlReconfiguration.genmodel" uri="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18"/>
    </extension>
 

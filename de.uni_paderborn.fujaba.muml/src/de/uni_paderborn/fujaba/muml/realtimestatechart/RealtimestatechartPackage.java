@@ -596,49 +596,13 @@ public interface RealtimestatechartPackage extends EPackage {
 	int PRIORITIZED_ELEMENT = 15;
 
 	/**
-	 * The feature id for the '<em><b>Priority</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIORITIZED_ELEMENT__PRIORITY = 0;
-
-	/**
-	 * The number of structural features of the '<em>Prioritized Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIORITIZED_ELEMENT_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Prioritized Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIORITIZED_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Priority</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__PRIORITY = PRIORITIZED_ELEMENT__PRIORITY;
-
-	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__ANNOTATION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 0;
+	int REGION__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -647,7 +611,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__EXTENSION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 1;
+	int REGION__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -656,7 +620,16 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__COMMENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 2;
+	int REGION__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__PRIORITY = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Embedded Statechart</b></em>' containment reference.
@@ -665,7 +638,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__EMBEDDED_STATECHART = PRIORITIZED_ELEMENT_FEATURE_COUNT + 3;
+	int REGION__EMBEDDED_STATECHART = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent State</b></em>' container reference.
@@ -674,7 +647,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__PARENT_STATE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 4;
+	int REGION__PARENT_STATE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -683,7 +656,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION__NAME = PRIORITIZED_ELEMENT_FEATURE_COUNT + 5;
+	int REGION__NAME = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Region</em>' class.
@@ -692,7 +665,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 6;
+	int REGION_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -701,7 +674,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___ECLASS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 0;
+	int REGION___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -710,7 +683,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___EIS_PROXY = PRIORITIZED_ELEMENT_OPERATION_COUNT + 1;
+	int REGION___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -719,7 +692,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___ERESOURCE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 2;
+	int REGION___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -728,7 +701,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___ECONTAINER = PRIORITIZED_ELEMENT_OPERATION_COUNT + 3;
+	int REGION___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -737,7 +710,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___ECONTAINING_FEATURE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 4;
+	int REGION___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -746,7 +719,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___ECONTAINMENT_FEATURE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 5;
+	int REGION___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -755,7 +728,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___ECONTENTS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 6;
+	int REGION___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -764,7 +737,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___EALL_CONTENTS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 7;
+	int REGION___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -773,7 +746,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___ECROSS_REFERENCES = PRIORITIZED_ELEMENT_OPERATION_COUNT + 8;
+	int REGION___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -782,7 +755,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___EGET__ESTRUCTURALFEATURE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 9;
+	int REGION___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -791,7 +764,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___EGET__ESTRUCTURALFEATURE_BOOLEAN = PRIORITIZED_ELEMENT_OPERATION_COUNT + 10;
+	int REGION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -800,7 +773,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___ESET__ESTRUCTURALFEATURE_OBJECT = PRIORITIZED_ELEMENT_OPERATION_COUNT + 11;
+	int REGION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -809,7 +782,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___EIS_SET__ESTRUCTURALFEATURE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 12;
+	int REGION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -818,7 +791,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___EUNSET__ESTRUCTURALFEATURE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 13;
+	int REGION___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -827,7 +800,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___EINVOKE__EOPERATION_ELIST = PRIORITIZED_ELEMENT_OPERATION_COUNT + 14;
+	int REGION___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -836,7 +809,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___GET_EXTENSION__ECLASS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 15;
+	int REGION___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -845,7 +818,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___PROVIDE_EXTENSION__ECLASS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 16;
+	int REGION___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -854,7 +827,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___GET_ANNOTATION__STRING = PRIORITIZED_ELEMENT_OPERATION_COUNT + 17;
+	int REGION___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -863,7 +836,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION___PROVIDE_ANNOTATION__STRING = PRIORITIZED_ELEMENT_OPERATION_COUNT + 18;
+	int REGION___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Region</em>' class.
@@ -872,7 +845,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_OPERATION_COUNT = PRIORITIZED_ELEMENT_OPERATION_COUNT + 19;
+	int REGION_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2880,6 +2853,33 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYNCHRONIZATION_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIORITIZED_ELEMENT__PRIORITY = 0;
+
+	/**
+	 * The number of structural features of the '<em>Prioritized Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIORITIZED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Prioritized Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIORITIZED_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl <em>Realtime Statechart</em>}' class.

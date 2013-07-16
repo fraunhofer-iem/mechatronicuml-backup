@@ -70,7 +70,7 @@ public class ExecutorSpecificationEntryImpl extends ExtendableElementImpl implem
 	 */
 	public Executor getExecutor() {
 		if (eContainerFeatureID() != ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR) return null;
-		return (Executor)eContainer();
+		return (Executor)eInternalContainer();
 	}
 
 	/**

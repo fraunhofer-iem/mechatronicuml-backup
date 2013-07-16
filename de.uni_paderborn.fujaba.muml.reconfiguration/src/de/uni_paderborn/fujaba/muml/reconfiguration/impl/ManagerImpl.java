@@ -186,7 +186,7 @@ public class ManagerImpl extends CommentableElementImpl implements Manager {
 	 */
 	public RuleBasedReconfigurationController getReconfigurationController() {
 		if (eContainerFeatureID() != ReconfigurationPackage.MANAGER__RECONFIGURATION_CONTROLLER) return null;
-		return (RuleBasedReconfigurationController)eContainer();
+		return (RuleBasedReconfigurationController)eInternalContainer();
 	}
 
 	/**

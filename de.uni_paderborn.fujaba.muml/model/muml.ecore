@@ -1065,7 +1065,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//realtimestatechart/PrioritizedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement #//realtimestatechart/PrioritizedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Regions enables hierarchy and parallelism. Each state can have zero, one or more regions."/>
       </eAnnotations>

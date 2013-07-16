@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -47,7 +48,7 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	 */
 	public static ReconfigurationFactory init() {
 		try {
-			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/0.3.18"); 
+			ReconfigurationFactory theReconfigurationFactory = (ReconfigurationFactory)EPackage.Registry.INSTANCE.getEFactory(ReconfigurationPackage.eNS_URI);
 			if (theReconfigurationFactory != null) {
 				return theReconfigurationFactory;
 			}

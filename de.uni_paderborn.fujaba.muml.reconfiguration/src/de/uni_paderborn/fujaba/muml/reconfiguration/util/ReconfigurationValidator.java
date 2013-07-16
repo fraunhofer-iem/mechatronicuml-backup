@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.component.util.ComponentValidator;
 import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
+import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
