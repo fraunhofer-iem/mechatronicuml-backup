@@ -15,16 +15,6 @@
 <extension point="org.eclipse.emf.ecore.generated_package">
       <package class="de.uni_paderborn.fujaba.muml.MumlPackage" genModel="model/muml.genmodel" uri="http://www.fujaba.de/muml/0.2.2"/>
    </extension>
-<!--
-   deactivated runtime migration using edapt
-
-   <extension point="org.eclipse.emf.edapt.migrators">
-      <migrator path="model/muml.history">
-      </migrator>
-   </extension>
--->
-<!-- generated extensions, are recognized by the emfgen tag -->
-
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
       <!-- @generated muml -->

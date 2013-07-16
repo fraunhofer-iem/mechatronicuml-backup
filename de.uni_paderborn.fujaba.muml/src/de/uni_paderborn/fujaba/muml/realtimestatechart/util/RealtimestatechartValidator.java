@@ -808,31 +808,35 @@ public class RealtimestatechartValidator extends MumlValidator {
 	}
 
 	/**
+	 * The cached validation expression for the StateConnectionPointOutgoingTransitionsMustBeUrgent constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__STATE_CONNECTION_POINT_OUTGOING_TRANSITIONS_MUST_BE_URGENT__EEXPRESSION = "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
+		"\timplies (\r\n" +
+		"\t\tself.urgent\r\n" +
+		"\t)";
+
+	/**
 	 * Validates the StateConnectionPointOutgoingTransitionsMustBeUrgent constraint of '<em>Transition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateTransition_StateConnectionPointOutgoingTransitionsMustBeUrgent(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "StateConnectionPointOutgoingTransitionsMustBeUrgent", getObjectLabel(transition, context) },
-						 new Object[] { transition },
-						 context));
-			}
-			return false;
-		}
-		return true;
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "StateConnectionPointOutgoingTransitionsMustBeUrgent",
+				 TRANSITION__STATE_CONNECTION_POINT_OUTGOING_TRANSITIONS_MUST_BE_URGENT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
