@@ -66,7 +66,7 @@ public interface DirectedTypedPort extends Port, TypedNamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Decides the direction of a continous port.
+	 * Decides if this port is optional.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Optional</em>' attribute.
 	 * @see #setOptional(boolean)
