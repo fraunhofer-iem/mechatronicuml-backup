@@ -28,7 +28,8 @@ import org.storydriven.core.expressions.Expression;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getSynchronization()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SelectorExpressionNecessary SelectorExpressionForbidden'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SelectorExpressionNecessary='-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\nnot syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()' SelectorExpressionForbidden='-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\nnot syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())'"
  * @generated
  */
 public interface Synchronization extends ExtendableElement {

@@ -171,6 +171,7 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(portInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(portInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultiplePortConnectorInstances(portInstance, diagnostics, context);
 		return result;
 	}
 
@@ -203,6 +204,36 @@ public class InstanceValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "PortInstanceMustReferencePortType",
 				 PORT_INSTANCE__PORT_INSTANCE_MUST_REFERENCE_PORT_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the PortInstanceNotMultiplePortConnectorInstances constraint of '<em>Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_PORT_CONNECTOR_INSTANCES__EEXPRESSION = "-- PortInstance must not have multiple connector instances assigned.\n" +
+		"portConnectorInstances->size() <= 1";
+
+	/**
+	 * Validates the PortInstanceNotMultiplePortConnectorInstances constraint of '<em>Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePortInstance_PortInstanceNotMultiplePortConnectorInstances(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.PORT_INSTANCE,
+				 portInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PortInstanceNotMultiplePortConnectorInstances",
+				 PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_PORT_CONNECTOR_INSTANCES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -291,6 +322,7 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(continuousPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(continuousPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultiplePortConnectorInstances(continuousPortInstance, diagnostics, context);
 		return result;
 	}
 
@@ -310,6 +342,7 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hybridPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hybridPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultiplePortConnectorInstances(hybridPortInstance, diagnostics, context);
 		return result;
 	}
 
@@ -329,6 +362,7 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discretePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultiplePortConnectorInstances(discretePortInstance, diagnostics, context);
 		return result;
 	}
 
@@ -348,6 +382,7 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discreteSinglePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteSinglePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultiplePortConnectorInstances(discreteSinglePortInstance, diagnostics, context);
 		return result;
 	}
 
@@ -367,6 +402,7 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discreteMultiPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteMultiPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultiplePortConnectorInstances(discreteMultiPortInstance, diagnostics, context);
 		return result;
 	}
 

@@ -899,7 +899,78 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateSynchronization(Synchronization synchronization, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(synchronization, diagnostics, context);
+		if (!validate_NoCircularContainment(synchronization, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(synchronization, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(synchronization, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(synchronization, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(synchronization, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(synchronization, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(synchronization, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(synchronization, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(synchronization, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSynchronization_SelectorExpressionNecessary(synchronization, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSynchronization_SelectorExpressionForbidden(synchronization, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the SelectorExpressionNecessary constraint of '<em>Synchronization</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SYNCHRONIZATION__SELECTOR_EXPRESSION_NECESSARY__EEXPRESSION = "-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\n" +
+		"not syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()";
+
+	/**
+	 * Validates the SelectorExpressionNecessary constraint of '<em>Synchronization</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSynchronization_SelectorExpressionNecessary(Synchronization synchronization, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION,
+				 synchronization,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SelectorExpressionNecessary",
+				 SYNCHRONIZATION__SELECTOR_EXPRESSION_NECESSARY__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the SelectorExpressionForbidden constraint of '<em>Synchronization</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String SYNCHRONIZATION__SELECTOR_EXPRESSION_FORBIDDEN__EEXPRESSION = "-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\n" +
+		"not syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())";
+
+	/**
+	 * Validates the SelectorExpressionForbidden constraint of '<em>Synchronization</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSynchronization_SelectorExpressionForbidden(Synchronization synchronization, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.SYNCHRONIZATION,
+				 synchronization,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SelectorExpressionForbidden",
+				 SYNCHRONIZATION__SELECTOR_EXPRESSION_FORBIDDEN__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

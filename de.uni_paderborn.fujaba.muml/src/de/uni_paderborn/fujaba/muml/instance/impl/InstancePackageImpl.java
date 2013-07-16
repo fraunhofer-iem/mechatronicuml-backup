@@ -797,7 +797,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (portInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "PortInstanceMustReferencePortType"
+			 "constraints", "PortInstanceMustReferencePortType PortInstanceNotMultiplePortConnectorInstances"
 		   });												
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
@@ -837,7 +837,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (portInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "PortInstanceMustReferencePortType", "-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif"
+			 "PortInstanceMustReferencePortType", "-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif",
+			 "PortInstanceNotMultiplePortConnectorInstances", "-- PortInstance must not have multiple connector instances assigned.\nportConnectorInstances->size() <= 1"
 		   });			
 		addAnnotation
 		  (getPortInstance_PortType(), 

@@ -1730,7 +1730,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent "
-		   });																																										
+		   });																																							
+		addAnnotation
+		  (synchronizationEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "SelectorExpressionNecessary SelectorExpressionForbidden"
+		   });						
 		addAnnotation
 		  (prioritizedElementEClass, 
 		   source, 
@@ -1851,7 +1857,14 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\nif b.oclIsUndefined() then\n\tOrderedSet { }\nelse\n\tif b.oclIsKindOf(component::DiscretePort) then\n\t\tb.oclAsType(component::DiscretePort).senderMessageTypes\n\telse\n\t\tif b.oclIsKindOf(protocol::Role) then\n\t\t\tb.oclAsType(protocol::Role).senderMessageTypes\n\t\telse\n\t\t\tOrderedSet { }\n\t\tendif\n\tendif\nendif"
-		   });																							
+		   });																				
+		addAnnotation
+		  (synchronizationEClass, 
+		   source, 
+		   new String[] {
+			 "SelectorExpressionNecessary", "-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\nnot syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()",
+			 "SelectorExpressionForbidden", "-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\nnot syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())"
+		   });						
 		addAnnotation
 		  (prioritizedElementEClass, 
 		   source, 
