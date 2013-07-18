@@ -55,11 +55,7 @@ public class MUML2UPPAAL extends Model2Model {
 	
 	@Before
 	public void setUp() throws Exception {
-		
-		// Initialize the model
-	    MumlPackage.eINSTANCE.eClass();
-	    UppaalPackage.eINSTANCE.eClass();
-	    
+		 
 	    // Register the XMI resource factory for the .fujaba and .uppaal extensions
 
 	    Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
