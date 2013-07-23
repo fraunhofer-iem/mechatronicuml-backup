@@ -48,7 +48,7 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 	 */
 	public static ActionlanguageFactory init() {
 		try {
-			ActionlanguageFactory theActionlanguageFactory = (ActionlanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.3.19"); 
+			ActionlanguageFactory theActionlanguageFactory = (ActionlanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.4.0"); 
 			if (theActionlanguageFactory != null) {
 				return theActionlanguageFactory;
 			}

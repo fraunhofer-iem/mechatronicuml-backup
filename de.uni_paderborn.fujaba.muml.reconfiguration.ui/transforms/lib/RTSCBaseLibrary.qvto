@@ -14,7 +14,7 @@ modeltype realtimestatechart uses muml::realtimestatechart('http://www.fujaba.de
 modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
 modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
 
-modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.3.19');
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 
 
 -- this library contains queries and constructors for generating RealtimeStatecharts

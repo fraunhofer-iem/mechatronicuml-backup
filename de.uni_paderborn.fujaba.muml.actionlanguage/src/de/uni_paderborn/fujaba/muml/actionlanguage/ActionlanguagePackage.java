@@ -49,7 +49,7 @@ public interface ActionlanguagePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/actionlanguage/0.3.19";
+	String eNS_URI = "http://www.fujaba.de/muml/actionlanguage/0.4.0";
 
 	/**
 	 * The package namespace name.
