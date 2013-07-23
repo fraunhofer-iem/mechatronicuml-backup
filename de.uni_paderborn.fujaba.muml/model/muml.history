@@ -22491,5 +22491,7 @@
     <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#/"
         featureName="nsURI" dataValue="http://www.fujaba.de/muml/actionlanguage/0.4.0"
         oldDataValue="http://www.fujaba.de/muml/actionlanguage/0.3.19"/>
+    <changes xsi:type="history:Set" element="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#/"
+        featureName="nsURI" dataValue="http://www.fujaba.de/modelinstance/0.4.0" oldDataValue="http://www.fujaba.de/modelinstance/0.3.15"/>
   </releases>
 </history:History>
