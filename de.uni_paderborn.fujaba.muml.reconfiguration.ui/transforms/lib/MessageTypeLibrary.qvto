@@ -6,10 +6,10 @@ modeltype core uses core('http://www.storydriven.org/core/0.3.1');
 modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.3.15");
 
 -- muml models 
-modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.2.2");
-modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.2.2");
-modeltype types uses muml::types("http://www.fujaba.de/muml/0.2.2");
-modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.2.2");
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
 
 library MessageTypeLibrary;
 
