@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml" nsURI="http://www.fujaba.de/muml/0.2.2" nsPrefix="muml">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="muml" nsURI="http://www.fujaba.de/muml/0.4.0" nsPrefix="muml">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel"/>
-  <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/component/0.3.20"
+  <eSubpackages name="component" nsURI="http://www.fujaba.de/muml/component/0.4.0"
       nsPrefix="component">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -477,7 +477,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/constraint/0.3.13"
+  <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/constraint/0.4.0"
       nsPrefix="constraint">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The package constraint provides abstract super classes for modeling different&#xD;&#xA;kinds of constraints that may be attached to ConstrainableElements of the&#xD;&#xA;MechatronicUML meta-model. "/>
@@ -561,8 +561,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/instance/0.3.18"
-      nsPrefix="instance">
+  <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/instance/0.4.0" nsPrefix="instance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -831,8 +830,7 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="protocol" nsURI="http://www.fujaba.de/muml/protocol/0.3.20"
-      nsPrefix="protocol">
+  <eSubpackages name="protocol" nsURI="http://www.fujaba.de/muml/protocol/0.4.0" nsPrefix="protocol">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1016,7 +1014,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/realtimestatechart/0.3.18"
+  <eSubpackages name="realtimestatechart" nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0"
       nsPrefix="realtimestatechart">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1736,7 +1734,7 @@
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="msgtype" nsURI="http://www.fujaba.de/muml/msgtype/0.3.6" nsPrefix="msgtype">
+  <eSubpackages name="msgtype" nsURI="http://www.fujaba.de/muml/msgtype/0.4.0" nsPrefix="msgtype">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1773,7 +1771,7 @@
           eOpposite="#//msgtype/MessageType/repository"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="types" nsURI="http://www.fujaba.de/muml/types/0.3.18" nsPrefix="types">
+  <eSubpackages name="types" nsURI="http://www.fujaba.de/muml/types/0.4.0" nsPrefix="types">
     <eClassifiers xsi:type="ecore:EClass" name="ArrayDataType" eSuperTypes="#//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This data type represents an array data type and specifies the maximum cardinality of inner data types."/>
@@ -1822,7 +1820,7 @@
           eType="#//valuetype/Range" containment="true"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="connector" nsURI="http://www.fujaba.de/muml/connector/0.3.15"
+  <eSubpackages name="connector" nsURI="http://www.fujaba.de/muml/connector/0.4.0"
       nsPrefix="connector">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -1947,7 +1945,7 @@
       </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/valuetype/0.3.18"
+  <eSubpackages name="valuetype" nsURI="http://www.fujaba.de/muml/valuetype/0.4.0"
       nsPrefix="valueType">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
@@ -2047,8 +2045,7 @@
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="1"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="behavior" nsURI="http://www.fujaba.de/muml/behavior/0.3.17"
-      nsPrefix="behavior">
+  <eSubpackages name="behavior" nsURI="http://www.fujaba.de/muml/behavior/0.4.0" nsPrefix="behavior">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
