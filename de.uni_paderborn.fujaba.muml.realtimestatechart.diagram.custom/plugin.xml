@@ -5,7 +5,7 @@
 
     
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
-      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.3.18">
+      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
       
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.TransitionAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Transition_4003"

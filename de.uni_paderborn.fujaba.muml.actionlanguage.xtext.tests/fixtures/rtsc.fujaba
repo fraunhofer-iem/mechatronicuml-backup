@@ -6,9 +6,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:component="http://www.fujaba.de/muml/component/0.3.18"
     xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.3.15"
-    xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.3.6"
-    xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.3.18"
-    xmlns:types="http://www.fujaba.de/muml/types/0.3.18"
+    xmlns:msgtype="http://www.fujaba.de/muml/msgtype/0.4.0"
+    xmlns:realtimestatechart="http://www.fujaba.de/muml/realtimestatechart/0.4.0"
+    xmlns:types="http://www.fujaba.de/muml/types/0.4.0"
     xmi:id="_VT1VcLe2EeKdhdSR8ySkxQ">
   <categories
       xmi:id="_VT1Vcbe2EeKdhdSR8ySkxQ"

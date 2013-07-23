@@ -30,7 +30,7 @@ public class MumlFactoryImpl extends EFactoryImpl implements MumlFactory {
 	 */
 	public static MumlFactory init() {
 		try {
-			MumlFactory theMumlFactory = (MumlFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/0.2.2"); 
+			MumlFactory theMumlFactory = (MumlFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/0.4.0"); 
 			if (theMumlFactory != null) {
 				return theMumlFactory;
 			}

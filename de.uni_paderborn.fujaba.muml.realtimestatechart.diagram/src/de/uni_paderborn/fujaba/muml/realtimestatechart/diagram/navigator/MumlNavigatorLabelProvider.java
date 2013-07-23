@@ -79,43 +79,43 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechart2EditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.3.18?RealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3043); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_3043); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ClockConstraintEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.3.18?ClockConstraint", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ClockConstraint", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ClockConstraint_3036); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.3.18?EntryEvent", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?EntryEvent", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryEvent_3033); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.StateEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.3.18?State", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.State_3032); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?State", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.State_3032); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.3.18?EntryPoint", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?EntryPoint", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.EntryPoint_3040); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RegionEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.3.18?Region", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?Region", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Region_3042); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www.fujaba.de/muml/realtimestatechart/0.3.18?RealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.3.18?ExitPoint", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ExitPoint", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitPoint_3041); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.3.18?ExitEvent", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?ExitEvent", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.ExitEvent_3035); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.3.18?DoEvent", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?DoEvent", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.DoEvent_3034); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.SynchronizationChannelEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.3.18?SynchronizationChannel", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037); //$NON-NLS-1$
+					"Navigator?Node?http://www.fujaba.de/muml/realtimestatechart/0.4.0?SynchronizationChannel", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.SynchronizationChannel_3037); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?http://www.fujaba.de/muml/realtimestatechart/0.3.18?Transition", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003); //$NON-NLS-1$
+					"Navigator?Link?http://www.fujaba.de/muml/realtimestatechart/0.4.0?Transition", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.Transition_4003); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.RealtimeStatechartEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?TopLevelNode?http://www.fujaba.de/muml/realtimestatechart/0.3.18?RealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007); //$NON-NLS-1$
+					"Navigator?TopLevelNode?http://www.fujaba.de/muml/realtimestatechart/0.4.0?RealtimeStatechart", de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.providers.MumlElementTypes.RealtimeStatechart_2007); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}

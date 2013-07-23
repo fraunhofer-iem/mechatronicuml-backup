@@ -49,7 +49,7 @@ public interface InstancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/instance/0.3.18";
+	String eNS_URI = "http://www.fujaba.de/muml/instance/0.4.0";
 
 	/**
 	 * The package namespace name.

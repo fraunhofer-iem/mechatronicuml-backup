@@ -47,7 +47,7 @@ public interface MsgtypePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/msgtype/0.3.6";
+	String eNS_URI = "http://www.fujaba.de/muml/msgtype/0.4.0";
 
 	/**
 	 * The package namespace name.

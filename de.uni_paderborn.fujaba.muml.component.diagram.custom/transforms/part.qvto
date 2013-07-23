@@ -1,9 +1,9 @@
 transformation InstantiationTransformation(inout input : ComponentPackage);
 
-modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.2.2');
-modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.2.2');
-modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.2.2');
-modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.2.2');
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
 
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 

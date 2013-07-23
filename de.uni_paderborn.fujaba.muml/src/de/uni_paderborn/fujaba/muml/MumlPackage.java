@@ -43,7 +43,7 @@ public interface MumlPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.fujaba.de/muml/0.2.2";
+	String eNS_URI = "http://www.fujaba.de/muml/0.4.0";
 
 	/**
 	 * The package namespace name.
