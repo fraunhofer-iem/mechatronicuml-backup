@@ -82,7 +82,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 					"Navigator?Node?http://www.fujaba.de/muml/protocol/0.4.0?Role", de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.Role_3006); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www.fujaba.de/modelinstance/0.3.15?ModelElementCategory", de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http://www.fujaba.de/modelinstance/0.4.0?ModelElementCategory", de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.edit.parts.AbstractCoordinationSpecificationRolesEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/protocol/0.4.0?AbstractCoordinationSpecification?roles", de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.providers.MumlElementTypes.AbstractCoordinationSpecificationRoles_4007); //$NON-NLS-1$

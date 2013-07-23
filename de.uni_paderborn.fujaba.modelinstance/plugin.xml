@@ -13,7 +13,7 @@
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <?emfgen generated="true"?>
-      <package class="de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage" genModel="model/modelinstance.genmodel" uri="http://www.fujaba.de/modelinstance/0.3.15"/>
+      <package class="de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage" genModel="model/modelinstance.genmodel" uri="http://www.fujaba.de/modelinstance/0.4.0"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">

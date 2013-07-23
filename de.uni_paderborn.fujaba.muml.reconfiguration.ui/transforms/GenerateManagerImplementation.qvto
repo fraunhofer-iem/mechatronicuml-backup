@@ -8,7 +8,7 @@ import transforms.lib.ProjectSpecificConstants;
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
 modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
 modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
-modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.3.15");
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
 
 -- muml models 
 modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");

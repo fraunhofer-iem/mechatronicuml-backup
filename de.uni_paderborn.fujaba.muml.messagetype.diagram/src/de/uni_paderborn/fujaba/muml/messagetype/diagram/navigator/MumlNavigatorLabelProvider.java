@@ -81,7 +81,7 @@ public class MumlNavigatorLabelProvider extends LabelProvider implements
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Diagram?http://www.fujaba.de/modelinstance/0.3.15?ModelElementCategory", de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
+					"Navigator?Diagram?http://www.fujaba.de/modelinstance/0.4.0?ModelElementCategory", de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.ModelElementCategory_1000); //$NON-NLS-1$
 		case de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?http://www.fujaba.de/muml/msgtype/0.4.0?MessageTypeRepository", de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlElementTypes.MessageTypeRepository_2008); //$NON-NLS-1$
