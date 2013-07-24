@@ -3,7 +3,7 @@
 --><plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
+      
       <package class="de.uni_paderborn.fujaba.muml.runtime.RuntimePackage" genModel="model/RuntimeModel.genmodel" uri="http://www.fujaba.de/muml/runtime/0.3.20"/>
    </extension>
 

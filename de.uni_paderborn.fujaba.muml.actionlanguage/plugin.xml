@@ -3,7 +3,7 @@
 --><plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
+      
       <package class="de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage" genModel="model/actionlanguage.genmodel" uri="http://www.fujaba.de/muml/actionlanguage/0.4.0"/>
    </extension>
 

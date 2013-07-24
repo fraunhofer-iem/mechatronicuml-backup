@@ -12,12 +12,12 @@
 <extension-point id="version" name="version" schema="schema/version.exsd"/>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
+      
       <package class="de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage" genModel="model/modelinstance.genmodel" uri="http://www.fujaba.de/modelinstance/0.4.0"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      <?emfgen generated="true"?>
+      
       <parser class="de.uni_paderborn.fujaba.modelinstance.util.ModelinstanceResourceFactoryImpl" type="fujaba"/>
    </extension>
 

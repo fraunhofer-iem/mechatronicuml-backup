@@ -13,7 +13,7 @@
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <?emfgen generated="true"?>
+      
       <factory class="de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://www.fujaba.de/modelinstance/0.4.0"/>
    </extension>
 

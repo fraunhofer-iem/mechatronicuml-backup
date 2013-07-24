@@ -10,7 +10,7 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <?emfgen generated="true"?>
+      
       <package class="de.fujaba.properties.PropertiesPackage" genModel="model/properties.genmodel" uri="http://de.fujaba.properties/0.1"/>
    </extension>
    
