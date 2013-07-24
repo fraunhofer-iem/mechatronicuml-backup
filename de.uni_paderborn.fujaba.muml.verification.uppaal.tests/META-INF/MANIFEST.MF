@@ -1,14 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: UPPAAL Verification Tests
+Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.junit;bundle-version="4.10.0",
  de.uni_paderborn.fujaba.muml.verification.uppaal.job;bundle-version="1.0.0",
  org.eclipse.emf.compare;bundle-version="3.0.0",
  org.eclipse.emf.ecore;bundle-version="2.8.3",
  de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.verification.uppaal;bundle-version="1.0.0"
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.tests
