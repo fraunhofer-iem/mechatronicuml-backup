@@ -321,7 +321,7 @@ public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implem
 	 */
 	public RealtimeStatechartInstance getParentRealtimeStatechartInstance() {
 		if (eContainerFeatureID() != RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE) return null;
-		return (RealtimeStatechartInstance)eContainer();
+		return (RealtimeStatechartInstance)eInternalContainer();
 	}
 
 	/**

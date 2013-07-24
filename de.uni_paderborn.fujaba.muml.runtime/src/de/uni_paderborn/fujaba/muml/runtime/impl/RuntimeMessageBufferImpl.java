@@ -125,7 +125,7 @@ public class RuntimeMessageBufferImpl extends ExtendableElementImpl implements R
 	 */
 	public RuntimeBehavioralElement getRuntimeBehavioralElement() {
 		if (eContainerFeatureID() != RuntimePackage.RUNTIME_MESSAGE_BUFFER__RUNTIME_BEHAVIORAL_ELEMENT) return null;
-		return (RuntimeBehavioralElement)eContainer();
+		return (RuntimeBehavioralElement)eInternalContainer();
 	}
 
 	/**

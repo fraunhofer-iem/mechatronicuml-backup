@@ -163,7 +163,7 @@ public class MessageOnConnectorImpl extends ExtendableElementImpl implements Mes
 	 */
 	public RuntimeConnectorInstance getRuntimeConnectorInstance() {
 		if (eContainerFeatureID() != RuntimePackage.MESSAGE_ON_CONNECTOR__RUNTIME_CONNECTOR_INSTANCE) return null;
-		return (RuntimeConnectorInstance)eContainer();
+		return (RuntimeConnectorInstance)eInternalContainer();
 	}
 
 	/**

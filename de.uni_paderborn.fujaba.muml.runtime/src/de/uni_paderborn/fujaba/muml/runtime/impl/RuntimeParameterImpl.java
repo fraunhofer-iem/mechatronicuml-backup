@@ -90,7 +90,7 @@ public class RuntimeParameterImpl extends NamedElementImpl implements RuntimePar
 	 */
 	public RuntimeMessage getMessage() {
 		if (eContainerFeatureID() != RuntimePackage.RUNTIME_PARAMETER__MESSAGE) return null;
-		return (RuntimeMessage)eContainer();
+		return (RuntimeMessage)eInternalContainer();
 	}
 
 	/**

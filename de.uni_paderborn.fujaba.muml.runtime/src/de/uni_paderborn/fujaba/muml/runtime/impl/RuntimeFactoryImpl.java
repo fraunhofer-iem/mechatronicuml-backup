@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.runtime.impl;
 
+import de.uni_paderborn.fujaba.muml.runtime.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -44,7 +45,7 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 */
 	public static RuntimeFactory init() {
 		try {
-			RuntimeFactory theRuntimeFactory = (RuntimeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/runtime/0.3.20"); 
+			RuntimeFactory theRuntimeFactory = (RuntimeFactory)EPackage.Registry.INSTANCE.getEFactory(RuntimePackage.eNS_URI);
 			if (theRuntimeFactory != null) {
 				return theRuntimeFactory;
 			}
