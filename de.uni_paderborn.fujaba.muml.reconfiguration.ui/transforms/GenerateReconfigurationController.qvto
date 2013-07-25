@@ -10,7 +10,6 @@ modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
 modeltype component uses muml::component("http://www.fujaba.de/muml/0.4.0");
 modeltype connector uses muml::connector("http://www.fujaba.de/muml/0.4.0");
 modeltype constraints uses muml::constraint("http://www.fujaba.de/muml/0.4.0");
-modeltype deployment uses muml::deployment("http://www.fujaba.de/muml/0.4.0");
 modeltype instance uses muml::instance("http://www.fujaba.de/muml/0.4.0");
 modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
 modeltype protocol uses muml::protocol("http://www.fujaba.de/muml/0.4.0");
