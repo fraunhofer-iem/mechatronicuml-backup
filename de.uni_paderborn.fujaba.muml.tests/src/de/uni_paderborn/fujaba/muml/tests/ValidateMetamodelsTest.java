@@ -39,6 +39,11 @@ public class ValidateMetamodelsTest {
 
 		TestUtilities
 				.registerWorkspaceProject("de.uni_paderborn.fujaba.muml.tests");
+		
+		
+		// XXX
+		org.eclipse.ocl.ecore.OCL.initialize(null);
+		org.eclipse.ocl.ecore.OCL.initialize(resourceSet);
 
 		// Extensions to Factory
 		Map<String, Object> extensionToFactoryMap = resourceSet

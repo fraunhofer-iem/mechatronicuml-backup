@@ -73,7 +73,7 @@ public class MetamodelOCLTest extends TraverseTest {
 		// warnings as errors)
 		benv.setOption(ProblemOption.CLOSURE_ITERATOR,
 				ProblemHandler.Severity.OK);
-
+		
 		// initialize OCL in ecore
 		EOperation.Internal.InvocationDelegate.Factory.Registry.INSTANCE.put(
 				"http://www.eclipse.org/emf/2002/Ecore/OCL",
@@ -94,6 +94,10 @@ public class MetamodelOCLTest extends TraverseTest {
 		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
 		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
 				new XMIResourceFactoryImpl());
+		
+		// XXX
+		org.eclipse.ocl.ecore.OCL.initialize(null);
+		org.eclipse.ocl.ecore.OCL.initialize(resourceSet);
 
 		// Register Packages
 		EcorePackage.eINSTANCE.eClass();
