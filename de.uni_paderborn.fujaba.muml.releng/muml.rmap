@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.umlrt\.udbm(\..+)?" searchPathRef="udbmbinding"/>
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.reachanalysis(\..+)?" searchPathRef="storychecking"/>
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.timedstorydiagram(\..+)?" searchPathRef="storychecking"/>
 <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.model\.componentstorydiagram\.diagram(\..+)?" searchPathRef="muml2"/>
-  <rm:locator pattern="(^de\.uni_paderborn\.fujaba(\..+)?|^de\.fujaba(\..+)?|^de\.fujaba\.modelinstance\.editor(\..+)?|^org\.storydriven\.core(\..+)?)" searchPathRef="muml"/>
+  <rm:locator pattern="(^de\.uni_paderborn\.fujaba(\..+)?|^de\.fujaba(\..+)?|^de\.fujaba\.modelinstance\.editor(\..+)?|^org\.storydriven\.core(\..+)?)" searchPathRef="muml" failOnError="false"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?|^de\.upb\.swt(\..+)?)" searchPathRef="storydriven" failOnError="false"/>
-  <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2"/>
+  <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2" failOnError="false"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification(\..+)?" searchPathRef="verification"/>
   <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="eclipse_kepler"/>
   <rm:locator pattern="^org\.eclipse\.emf\.edapt(\..+)?" searchPathRef="edapt"/>
@@ -68,8 +71,24 @@
     </rm:provider>
   </rm:searchPath>
   <rm:searchPath name="verification">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
       <rm:uri format="file:///{0}/verification/{1}/">
+        <bc:propertyRef key="workspace.root"/>
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="udbmbinding">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
+      <rm:uri format="file:///{0}/udbm/UDBMBinding/">
+        <bc:propertyRef key="workspace.root"/>
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="storychecking">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
+      <rm:uri format="file:///{0}/storychecking/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
