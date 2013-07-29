@@ -4,6 +4,7 @@
   <rm:locator pattern="(^de\.uni_paderborn\.fujaba(\..+)?|^de\.fujaba(\..+)?|^de\.fujaba\.modelinstance\.editor(\..+)?|^org\.storydriven\.core(\..+)?)" searchPathRef="muml"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?|^de\.upb\.swt(\..+)?)" searchPathRef="storydriven" failOnError="false"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2"/>
+  <rm:locator pattern="(^de\.uni_paderborn\.fujaba\.muml\.verification(\..+)?)" searchPathRef="verification"/>
   <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="eclipse_kepler"/>
   <rm:locator pattern="^org\.eclipse\.emf\.edapt(\..+)?" searchPathRef="edapt"/>
   <rm:locator pattern="^org\.apache(\..+)?" searchPathRef="eclipse"/>
@@ -63,6 +64,14 @@
   <rm:searchPath name="edapt">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
       <rm:uri format="http://download.eclipse.org/edapt/update-site?importType=binary">
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="verification">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+      <rm:uri format="file:///{0}/verification/{1}/">
+        <bc:propertyRef key="workspace.root"/>
+        <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
