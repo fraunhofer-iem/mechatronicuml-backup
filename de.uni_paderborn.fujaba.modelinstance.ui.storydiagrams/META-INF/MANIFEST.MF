@@ -8,12 +8,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: messages
 Require-Bundle: de.uni_paderborn.fujaba.modelinstance.ui;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.modelinstance;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.modelinstance.edit;bundle-version="0.3.1",
- org.storydriven.storydiagrams.diagram.custom;bundle-version="1.0.0",
- org.storydriven.core;bundle-version="1.0.0",
- org.storydriven.core.edit;bundle-version="1.0.0",
- org.storydriven.storydiagrams;bundle-version="1.0.0",
  org.storydriven.storydiagrams.diagram;bundle-version="0.2.0",
- org.storydriven.storydiagrams.edit;bundle-version="1.0.0",
  org.storydriven.storydiagrams.editor;bundle-version="1.0.0"

@@ -25,7 +25,6 @@ import de.uni_paderborn.fujaba.muml.instance.DiscretePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
-import de.uni_paderborn.fujaba.muml.runtime.*;
 import de.uni_paderborn.fujaba.muml.runtime.MessageOnConnector;
 import de.uni_paderborn.fujaba.muml.runtime.MultiRoleInstance;
 import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;

@@ -4,6 +4,7 @@
 package de.uni_paderborn.fujaba.muml.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class ActionLanguageAntlrTokenFileProvider implements IAntlrTokenFileProvider {

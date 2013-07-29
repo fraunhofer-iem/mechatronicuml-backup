@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.provider;
 
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -21,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.StateConnectionPoint;
 
 /**

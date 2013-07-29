@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.util;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -16,6 +15,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.AssignOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
@@ -26,6 +26,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IncrementDecrementOperator;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
+import de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelectorKind;

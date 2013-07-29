@@ -3,14 +3,19 @@
 */
 package de.uni_paderborn.fujaba.muml.parseTreeConstruction;
 
-import org.eclipse.emf.ecore.*;
-import org.eclipse.xtext.*;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Alternatives;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.Group;
+import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
 import org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor;
 
-import de.uni_paderborn.fujaba.muml.services.ActionLanguageGrammarAccess;
-
 import com.google.inject.Inject;
+
+import de.uni_paderborn.fujaba.muml.services.ActionLanguageGrammarAccess;
 
 @SuppressWarnings("all")
 public class ActionLanguageParsetreeConstructor extends AbstractParseTreeConstructor {

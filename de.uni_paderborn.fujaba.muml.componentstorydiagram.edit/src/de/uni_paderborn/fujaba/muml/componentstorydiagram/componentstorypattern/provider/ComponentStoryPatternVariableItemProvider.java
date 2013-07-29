@@ -29,9 +29,6 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.provider.BindingOperatorPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.provider.BindingSemanticsPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.provider.BindingStatePropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.provider.ComponentStoryDiagramEditPlugin;
 
 /**

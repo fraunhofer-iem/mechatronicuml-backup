@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.util;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -15,6 +14,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Assignment;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
 import de.uni_paderborn.fujaba.muml.actionlanguage.DiscreteInteractionEndpointReference;
@@ -23,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.actionlanguage.ForLoop;
 import de.uni_paderborn.fujaba.muml.actionlanguage.IfStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.LocalVariableDeclarationStatement;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Loop;
+import de.uni_paderborn.fujaba.muml.actionlanguage.NondeterministicChoiceExpression;
 import de.uni_paderborn.fujaba.muml.actionlanguage.OperationCall;
 import de.uni_paderborn.fujaba.muml.actionlanguage.PositionSelector;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ReturnStatement;

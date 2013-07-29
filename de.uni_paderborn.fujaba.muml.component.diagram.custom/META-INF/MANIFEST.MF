@@ -5,13 +5,11 @@ Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.component.diagram.custom;singl
 Bundle-Version: 0.4.0.qualifier
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.0",
- de.uni_paderborn.fujaba.muml.common;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.component.diagram;bundle-version="0.3.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
-Import-Package: org.eclipse.core.expressions,
- org.eclipse.m2m.qvt.oml
+Import-Package: org.eclipse.m2m.qvt.oml
 Bundle-Activator: de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator
 Export-Package: de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands,
  de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts,

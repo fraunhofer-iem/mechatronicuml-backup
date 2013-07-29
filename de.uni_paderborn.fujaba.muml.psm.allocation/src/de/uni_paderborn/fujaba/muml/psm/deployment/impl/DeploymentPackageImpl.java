@@ -15,15 +15,13 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
-import de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorPackageImpl;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
+import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.psm.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.psm.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.psm.deployment.DeploymentFactory;
@@ -34,18 +32,9 @@ import de.uni_paderborn.fujaba.muml.psm.deployment.HardwarePort;
 import de.uni_paderborn.fujaba.muml.psm.deployment.HardwarePortDirectionKind;
 import de.uni_paderborn.fujaba.muml.psm.deployment.LinkQualityOfService;
 import de.uni_paderborn.fujaba.muml.psm.deployment.util.DeploymentValidator;
-import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.instance.impl.InstancePackageImpl;
-import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
-import de.uni_paderborn.fujaba.muml.msgtype.impl.MsgtypePackageImpl;
-import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
-import de.uni_paderborn.fujaba.muml.protocol.impl.ProtocolPackageImpl;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimestatechartPackageImpl;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
-import de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-import de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl;
 
 /**
  * <!-- begin-user-doc -->

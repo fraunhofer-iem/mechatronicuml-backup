@@ -4,15 +4,8 @@ Bundle-Name: MechatronicUML Common Plugin
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.common;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.4.1",
- org.eclipse.emf.edit.ui;bundle-version="2.6.0",
- de.uni_paderborn.fujaba.muml;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
- org.storydriven.core.edit,
+Require-Bundle: de.uni_paderborn.fujaba.common;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.actionlanguage.xtext;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.modelinstance;bundle-version="0.3.1",
- de.uni_paderborn.fujaba.modelinstance.edit;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.modelinstance.ui;bundle-version="0.3.1",
  org.eclipse.ui.ide;bundle-version="3.7.0",

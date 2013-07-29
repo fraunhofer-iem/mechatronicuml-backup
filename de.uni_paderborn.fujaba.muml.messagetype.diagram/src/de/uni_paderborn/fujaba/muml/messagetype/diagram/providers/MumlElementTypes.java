@@ -16,8 +16,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
-
 /**
  * @generated
  */

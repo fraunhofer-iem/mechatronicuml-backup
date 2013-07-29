@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EObject;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 public class PortInstanceEditPolicy extends PortTypeEditPolicy {
 	@Override

@@ -26,7 +26,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.CommentableElementItemProvider;
 
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.psm.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.psm.deployment.LinkQualityOfService;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;

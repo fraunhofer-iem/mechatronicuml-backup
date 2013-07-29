@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.actionlanguage.Block;
+import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryOrExitEvent;

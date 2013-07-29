@@ -30,7 +30,6 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorFactory;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
-import de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;

@@ -26,12 +26,12 @@ import org.storydriven.core.impl.ExtendableElementImpl;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.psm.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.psm.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.psm.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.psm.deployment.HardwarePort;
 import de.uni_paderborn.fujaba.muml.psm.deployment.LinkQualityOfService;
-import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 
 /**
  * <!-- begin-user-doc -->

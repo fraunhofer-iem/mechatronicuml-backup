@@ -26,10 +26,6 @@ import org.eclipse.xtext.ui.editor.model.IXtextModelListener;
 import com.google.inject.Injector;
 
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
-import de.uni_paderborn.fujaba.muml.storage.ActionStorage;
-import de.uni_paderborn.fujaba.muml.storage.GuardStorage;
-import de.uni_paderborn.fujaba.muml.storage.IModelStorage;
-import de.uni_paderborn.fujaba.muml.storage.SynchronizationStorage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.DoEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EntryEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ExitEvent;
@@ -37,6 +33,10 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEven
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart;
+import de.uni_paderborn.fujaba.muml.storage.ActionStorage;
+import de.uni_paderborn.fujaba.muml.storage.GuardStorage;
+import de.uni_paderborn.fujaba.muml.storage.IModelStorage;
+import de.uni_paderborn.fujaba.muml.storage.SynchronizationStorage;
 import de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator;
 import de.uni_paderborn.fujaba.muml.ui.xtfo.EmbeddedXtextEditor;
 

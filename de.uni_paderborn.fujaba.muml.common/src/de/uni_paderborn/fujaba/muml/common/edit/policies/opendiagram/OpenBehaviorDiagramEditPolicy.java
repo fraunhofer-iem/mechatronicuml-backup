@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.gmf.runtime.notation.HintedDiagramLinkStyle;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;

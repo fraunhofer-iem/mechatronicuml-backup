@@ -22,12 +22,12 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.psm.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.psm.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.psm.deployment.HardwareNode;
 import de.uni_paderborn.fujaba.muml.psm.deployment.HardwareNodeKind;
 import de.uni_paderborn.fujaba.muml.psm.deployment.HardwarePort;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 
 /**
  * <!-- begin-user-doc -->

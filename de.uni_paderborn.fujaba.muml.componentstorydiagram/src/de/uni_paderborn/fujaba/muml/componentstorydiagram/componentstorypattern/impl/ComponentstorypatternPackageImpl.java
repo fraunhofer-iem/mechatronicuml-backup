@@ -17,7 +17,6 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
@@ -35,7 +34,6 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.util.ComponentstorypatternValidator;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControlflowPackageImpl;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ComponentstorydiagramPackageImpl;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 

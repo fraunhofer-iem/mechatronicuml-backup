@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.component.provider;
 
 
-import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -26,11 +25,11 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.NamedElementItemProvider;
-import org.storydriven.core.provider.CommentableElementItemProvider;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.component.Component;
+import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;

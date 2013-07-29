@@ -31,8 +31,6 @@ import de.uni_paderborn.fujaba.muml.constraint.Correctness;
 import de.uni_paderborn.fujaba.muml.constraint.ModelingConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.TextualConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableConstraint;
-
-
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;

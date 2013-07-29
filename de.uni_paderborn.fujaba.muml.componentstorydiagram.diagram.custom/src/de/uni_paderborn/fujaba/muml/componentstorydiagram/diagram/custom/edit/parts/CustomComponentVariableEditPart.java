@@ -18,8 +18,8 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentS
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityActivityCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityEditPart;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityEditPart.ActivityFigure;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentVariableItemSemanticEditPolicy;
 
 public class CustomComponentVariableEditPart extends ComponentVariableEditPart {

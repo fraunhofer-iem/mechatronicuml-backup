@@ -6,24 +6,19 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.impl;
 
-import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
-import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.expressions.Expression;
-
 import org.storydriven.core.expressions.impl.ExpressionImpl;
+
+import de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage;
+import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,11 +2,10 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage;
 
-import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
-
-import de.uni_paderborn.fujaba.muml.valuetype.Range;
-
 import org.storydriven.core.expressions.Expression;
+
+import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
+import de.uni_paderborn.fujaba.muml.valuetype.Range;
 
 /**
  * <!-- begin-user-doc -->

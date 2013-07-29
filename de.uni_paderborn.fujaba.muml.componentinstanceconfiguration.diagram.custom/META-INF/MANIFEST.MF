@@ -4,7 +4,6 @@ Bundle-Name: Componentinstanceconfiguration Diagram-Editor (Customizations)
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties;bundle-version="1.4.0",
- de.uni_paderborn.fujaba.muml.common;bundle-version="0.3.1",
  de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram;bundle-version="0.3.1",
  org.eclipse.m2m.qvt.oml;bundle-version="3.0.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

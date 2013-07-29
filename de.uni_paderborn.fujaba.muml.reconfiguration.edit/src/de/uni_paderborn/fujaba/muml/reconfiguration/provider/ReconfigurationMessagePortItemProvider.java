@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,8 +19,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 

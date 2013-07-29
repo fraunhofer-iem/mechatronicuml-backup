@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.psm;
 
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
 /**

@@ -9,8 +9,6 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.storydriven.core.ExtendableElement;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-
 /**
  * @generated
  */

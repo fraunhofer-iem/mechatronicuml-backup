@@ -26,13 +26,12 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 import de.uni_paderborn.fujaba.muml.psm.deployment.DeploymentPackage;
 import de.uni_paderborn.fujaba.muml.psm.deployment.HardwareNode;
 import de.uni_paderborn.fujaba.muml.psm.deployment.HardwarePort;
-import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.deployment.HardwarePort} object.

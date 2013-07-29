@@ -16,8 +16,6 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-
 /**
  * @generated
  */

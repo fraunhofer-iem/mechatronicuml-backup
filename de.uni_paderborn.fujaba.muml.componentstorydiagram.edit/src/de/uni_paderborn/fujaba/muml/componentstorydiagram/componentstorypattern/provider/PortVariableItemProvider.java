@@ -22,7 +22,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.provider.TypePropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 
 /**

@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.provider;
 
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 

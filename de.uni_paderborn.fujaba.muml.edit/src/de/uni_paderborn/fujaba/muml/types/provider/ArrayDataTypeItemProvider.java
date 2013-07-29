@@ -26,7 +26,6 @@ import de.uni_paderborn.fujaba.muml.types.ArrayDataType;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.valuetype.provider.NaturalNumberItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.types.ArrayDataType} object.
