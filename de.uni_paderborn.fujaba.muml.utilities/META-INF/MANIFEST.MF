@@ -4,7 +4,7 @@ Bundle-Name: MechatronicUML Utilities
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.utilities;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-Activator: de.uni_paderborn.fujaba.muml.utilities.UtilitiesPlugin
-Require-Bundle: org.eclipse.ui,
+Require-Bundle: org.eclipse.ui;bundle-version="3.103.0",
  org.eclipse.gmf.runtime.diagram.core;bundle-version="1.4.0",
  org.eclipse.ui.ide;bundle-version="3.6.2",
  de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1",
