@@ -209,8 +209,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT__SOFTWARE_COMPONENTS_MUST_NOT_HAVE_CONTINUOUS_PORTS__EEXPRESSION = "-- Components with component type \"SOFTARE_COMPONENT\" must not have continuous ports.\n" +
-		"componentType = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort)->isEmpty()";
+	protected static final String COMPONENT__SOFTWARE_COMPONENTS_MUST_NOT_HAVE_CONTINUOUS_PORTS__EEXPRESSION = "-- Components with component type \"SOFTARE_COMPONENT\" must not have continuous ports.\r\n" +
+		"componentType = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort))->isEmpty()";
 
 	/**
 	 * Validates the SoftwareComponentsMustNotHaveContinuousPorts constraint of '<em>Component</em>'.

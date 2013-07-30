@@ -34,7 +34,7 @@ public class ProtocolFactoryImpl extends EFactoryImpl implements ProtocolFactory
 	 */
 	public static ProtocolFactory init() {
 		try {
-			ProtocolFactory theProtocolFactory = (ProtocolFactory)EPackage.Registry.INSTANCE.getEFactory(ProtocolPackage.eNS_URI);
+			ProtocolFactory theProtocolFactory = (ProtocolFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/protocol/0.4.0"); 
 			if (theProtocolFactory != null) {
 				return theProtocolFactory;
 			}

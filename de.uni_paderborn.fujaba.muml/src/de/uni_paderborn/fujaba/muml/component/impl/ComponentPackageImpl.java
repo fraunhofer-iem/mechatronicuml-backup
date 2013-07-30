@@ -1115,7 +1115,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "UniquePortNames", "self.ports->isUnique(name)",
-			 "SoftwareComponentsMustNotHaveContinuousPorts", "-- Components with component type \"SOFTARE_COMPONENT\" must not have continuous ports.\ncomponentType = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort)->isEmpty()"
+			 "SoftwareComponentsMustNotHaveContinuousPorts", "-- Components with component type \"SOFTARE_COMPONENT\" must not have continuous ports.\r\ncomponentType = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort))->isEmpty()"
 		   });						
 		addAnnotation
 		  (getPort_PortConnectors(), 
