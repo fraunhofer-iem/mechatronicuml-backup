@@ -1219,7 +1219,7 @@
       <expressions
           body="--(&#xD;&#xA;--if self.state.channels->first() = self then&#xD;&#xA;--&#x9;'channel: '&#xD;&#xA;--else&#xD;&#xA;--&#x9;''&#xD;&#xA;--endif&#xD;&#xA;--&#xD;&#xA;--).concat(&#xD;&#xA;--&#x9;if self.name.oclIsUndefined() then 'null' else self.name endif&#xD;&#xA;--).concat(&#xD;&#xA;--&#x9;if self.selectorType.name.oclIsUndefined() then '' else '['.concat(self.selectorType.name).concat(']') endif&#xD;&#xA;--).concat(&#xD;&#xA;--if self.state.channels->last() = self then&#xD;&#xA;--&#x9;';'&#xD;&#xA;--else&#xD;&#xA;--&#x9;','&#xD;&#xA;--endif&#xD;&#xA;--)"/>
       <expressions
-          body="--self.parentState.getUniqueRegionPriority(0)"/>
+          body="--self.parentState.embeddedRegions.priority->max() + 1"/>
       <expressions
           body="--'statechart'"/>
       <expressions

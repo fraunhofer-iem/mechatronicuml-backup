@@ -207,7 +207,7 @@
                       xsi:type="ecore:EAttribute"
                       href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/PrioritizedElement/priority"/>
                   <value
-                      body="self.parentState.getUniqueRegionPriority(0)"/>
+                      body="self.parentState.embeddedRegions.priority->max() + 1"/>
                 </initializers>
                 <initializers
                     xsi:type="gmfmap:ReferenceNewElementSpec">
