@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
-  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.umlrt\.udbm\.java(\..+)?" searchPathRef="udbmbinding2"/>
-  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.umlrt\.udbm(\..+)?" searchPathRef="udbmbinding"/>
+  <rm:locator pattern="(^de\.uni_paderborn\.fujaba\.udbm(\..+)?|^de\.uni_paderborn\.fujaba\.umlrt\.udbm\.java(\..+)?)" searchPathRef="udbmbinding"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.reachanalysis(\..+)?" searchPathRef="storychecking"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.timedstorydiagram(\..+)?" searchPathRef="storychecking"/>
 <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.model\.componentstorydiagram\.diagram(\..+)?" searchPathRef="muml2"/>
@@ -81,15 +80,7 @@
   </rm:searchPath>
   <rm:searchPath name="udbmbinding">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
-      <rm:uri format="file:///{0}/udbm/UDBMBinding/">
-        <bc:propertyRef key="workspace.root"/>
-        <bc:propertyRef key="buckminster.component"/>
-      </rm:uri>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="udbmbinding2">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
-      <rm:uri format="file:///{0}/udbm/JavaUDBMServer/">
+      <rm:uri format="file:///{0}/udbm/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
