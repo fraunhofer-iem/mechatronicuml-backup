@@ -19,6 +19,7 @@
   <rm:locator pattern="^org\.junit(\..+)?" searchPathRef="eclipse"/>
   <rm:locator pattern="^org\.junit4(\..+)?" searchPathRef="eclipse"/>
   <rm:locator pattern="^org\.hamcrest(\..+)?" searchPathRef="eclipse"/>
+  <rm:locator pattern="^org\.eclipse\.gmf(\..+)?" searchPathRef="eclipse_kepler"/>
   <rm:locator pattern="^org\.eclipse(\..+)?" searchPathRef="eclipse"/>
   <rm:searchPath name="muml">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="true" source="true">
