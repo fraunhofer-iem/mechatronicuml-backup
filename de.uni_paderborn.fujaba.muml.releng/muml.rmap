@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
-  <rm:locator pattern="(^de\.uni_paderborn\.fujaba\.udbm(\..+)?|^de\.uni_paderborn\.fujaba\.umlrt\.udbm\.java(\..+)?)" searchPathRef="udbmbinding"/>
+  <rm:locator pattern="(^de\.uni_paderborn\.fujaba\.udbm(\..+)?|^de\.uni_paderborn\.fujaba\.umlrt\.udbm(\..+)?)" searchPathRef="udbmbinding"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.reachanalysis(\..+)?" searchPathRef="storychecking"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.timedstorydiagram(\..+)?" searchPathRef="storychecking"/>
 <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.model\.componentstorydiagram\.diagram(\..+)?" searchPathRef="muml2"/>
