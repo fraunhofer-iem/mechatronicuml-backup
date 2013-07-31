@@ -93,6 +93,10 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	
 
 	private void applySelection(Object selection) {
+		if (comboViewer == null) {
+			return;
+		}
+
 		// Set selection
 		Collection<?> comboInput = (Collection<?>) comboViewer.getInput();
 		if (comboInput != null && comboInput.contains(selection)) {
@@ -110,6 +114,8 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	@Override
 	public void refresh() {
 		super.refresh();
-		comboViewer.refresh();
+		if (comboViewer != null) {
+			comboViewer.refresh();
+		}
 	}
 }
