@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.instance.editor;
  */
 public class DiscreteSinglePortInstanceEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteSingleInteractionEndpointInstanceEditor {
+			de.uni_paderborn.fujaba.muml.properties.instance.editor.DiscretePortInstanceEditor {
 
 	/**
 	 * @generated

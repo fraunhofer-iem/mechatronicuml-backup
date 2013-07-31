@@ -13,88 +13,13 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.ArrayDataTypeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.types.ArrayDataType">
+             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.msgtype.MessageType">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.PrimitiveDataTypeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.types.PrimitiveDataType">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.types.DataType">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.RangedPrimitiveDataTypeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.Connector">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.ConnectorInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteSingleInteractionEndpointInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteMultiInteractionEndpointInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.MessageBufferEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.MessageBuffer">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CardinalityEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.Cardinality">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.TimeValueEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.TimeValue">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.NaturalNumberEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.RangeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.Range">
+             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeRepositoryEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository">
        </propertyEditor>
     
        <propertyEditor
@@ -228,88 +153,88 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.ComponentEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.Component">
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.Port">
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.Connector">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.ContinuousPortEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.ContinuousPort">
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.DiscretePortEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.DiscretePort">
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.ConnectorInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.ComponentPartEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.ComponentPart">
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.StaticStructuredComponentEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent">
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.AtomicComponentEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.AtomicComponent">
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteSingleInteractionEndpointInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.AssemblyConnectorEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.AssemblyConnector">
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteMultiInteractionEndpointInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.DelegationConnectorEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.DelegationConnector">
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.MessageBufferEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.MessageBuffer">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortConnectorEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.PortConnector">
+             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.ArrayDataTypeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.types.ArrayDataType">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.HybridPortEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.HybridPort">
+             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.PrimitiveDataTypeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.types.PrimitiveDataType">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.StructuredComponentEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.StructuredComponent">
+             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.types.DataType">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.CoordinationProtocolOccurrenceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence">
+             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.RangedPrimitiveDataTypeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.DirectedTypedPortEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort">
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CardinalityEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.Cardinality">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortPartEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.PortPart">
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.TimeValueEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.TimeValue">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.msgtype.MessageType">
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.NaturalNumberEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeRepositoryEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository">
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.RangeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.Range">
        </propertyEditor>
     
        <propertyEditor
@@ -465,6 +390,81 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.protocol.editor.ConnectorQualityOfServiceAssumptionsEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.ComponentEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.Component">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.Port">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.ContinuousPortEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.ContinuousPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.DiscretePortEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.DiscretePort">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.ComponentPartEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.ComponentPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.StaticStructuredComponentEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.AtomicComponentEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.AtomicComponent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.AssemblyConnectorEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.AssemblyConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.DelegationConnectorEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.DelegationConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortConnectorEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.PortConnector">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.HybridPortEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.HybridPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.StructuredComponentEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.StructuredComponent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.CoordinationProtocolOccurrenceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.DirectedTypedPortEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.DirectedTypedPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortPartEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.PortPart">
        </propertyEditor>
     
     </propertyEditors>

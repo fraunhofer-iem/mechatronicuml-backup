@@ -32,7 +32,7 @@ public class ActionEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addActionExpressionsEditor(null, true);
+		addActionExpressionsEditor("de.fujaba.properties.category.Lists", true);
 
 		super.initialize();
 	}

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
  */
 public class OperationEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -32,31 +32,15 @@ public class OperationEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addOperationImplementationsEditor(
+				"de.fujaba.properties.category.Lists", true);
+
 		addOperationParametersEditor("de.fujaba.properties.category.Lists",
 				true);
-
-		addOperationImplementationsEditor(null, true);
 
 		super.initialize();
 	}
 
-	/**
-	 * @generated
-	 */
-	protected void addOperationParametersEditor(String category, boolean front) {
-		addEditorToCategory(category, createOperationParametersEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationParametersEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getOperation_Parameters());
-
-	}
 	/**
 	 * @generated
 	 */
@@ -74,6 +58,23 @@ public class OperationEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getOperation_Implementations());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addOperationParametersEditor(String category, boolean front) {
+		addEditorToCategory(category, createOperationParametersEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationParametersEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getOperation_Parameters());
 
 	}
 

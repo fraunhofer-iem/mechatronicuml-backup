@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.connector.editor;
  */
 public class DiscreteInteractionEndpointEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor {
 
 	/**
 	 * @generated
@@ -42,10 +42,6 @@ public class DiscreteInteractionEndpointEditor
 
 		addDiscreteInteractionEndpointReceiverMessageBufferEditor(
 				"de.fujaba.properties.category.Lists", true);
-
-		addNamedElementNameEditor(null, true);
-
-		addCommentableElementCommentEditor(null, true);
 
 		super.initialize();
 	}
@@ -127,42 +123,6 @@ public class DiscreteInteractionEndpointEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), false);
 
 	}
 

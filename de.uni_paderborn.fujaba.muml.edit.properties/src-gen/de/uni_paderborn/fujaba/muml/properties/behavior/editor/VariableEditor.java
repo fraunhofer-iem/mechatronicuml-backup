@@ -29,7 +29,7 @@ public class VariableEditor
 	 */
 	public void initialize() {
 
-		addVariableInitializeExpressionEditor(null, true);
+		addVariableInitializeExpressionEditor(null, false);
 
 		super.initialize();
 	}
@@ -47,7 +47,7 @@ public class VariableEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createVariableInitializeExpressionEditor() {
-		return new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getVariable_InitializeExpression());

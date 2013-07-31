@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.instance.editor;
  */
 public class ComponentInstanceConfigurationEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated

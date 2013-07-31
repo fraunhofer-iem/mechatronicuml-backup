@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public class DirectedTypedPortEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.behavior.editor.TypedNamedElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.component.editor.PortEditor {
 
 	/**
 	 * @generated
@@ -36,14 +36,6 @@ public class DirectedTypedPortEditor
 
 		addDirectedTypedPortOptionalEditor(
 				"de.fujaba.properties.category.Booleans", true);
-
-		addConnectorEndpointConnectorsEditor(
-				"de.fujaba.properties.category.Lists", true);
-
-		addConstrainableElementConstraintEditor(
-				"de.fujaba.properties.category.Lists", true);
-
-		addCommentableElementCommentEditor(null, true);
 
 		super.initialize();
 	}
@@ -83,63 +75,6 @@ public class DirectedTypedPortEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_Optional());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConnectorEndpointConnectorsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConnectorEndpointConnectorsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpoint_Connectors());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConstrainableElementConstraintEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), false);
 
 	}
 

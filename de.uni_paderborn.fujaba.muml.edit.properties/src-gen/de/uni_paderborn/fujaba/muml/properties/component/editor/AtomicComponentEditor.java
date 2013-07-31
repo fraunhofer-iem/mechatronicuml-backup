@@ -29,12 +29,12 @@ public class AtomicComponentEditor
 	 */
 	public void initialize() {
 
-		addNamedElementNameEditor(null, true);
+		addConstrainableElementConstraintEditor(
+				"de.fujaba.properties.category.Lists", true);
 
 		addCommentableElementCommentEditor(null, true);
 
-		addConstrainableElementConstraintEditor(
-				"de.fujaba.properties.category.Lists", true);
+		addNamedElementNameEditor(null, true);
 
 		super.initialize();
 	}
@@ -42,18 +42,20 @@ public class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	protected void addConstrainableElementConstraintEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConstrainableElementConstraintEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
 
 	}
 	/**
@@ -78,20 +80,18 @@ public class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addConstrainableElementConstraintEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name(), false);
 
 	}
 

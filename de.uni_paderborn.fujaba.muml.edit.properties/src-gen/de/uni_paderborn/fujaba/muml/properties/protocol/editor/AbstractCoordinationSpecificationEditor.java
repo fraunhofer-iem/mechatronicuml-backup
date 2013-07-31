@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.protocol.editor;
  */
 public class AbstractCoordinationSpecificationEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
 
 	/**
 	 * @generated
