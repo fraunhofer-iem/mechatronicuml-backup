@@ -9,6 +9,9 @@
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2" failOnError="false"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification(\..+)?" searchPathRef="verification"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.simulink(\..+)?" searchPathRef="simulation"/>
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.actionLanguage\.matlab(\..+)?" searchPathRef="simulation"/>
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba2simulink(\..+)?" searchPathRef="simulation"/>
+  <rm:locator pattern="^de\.upb\.swt\.qvt\.tgg(\..+)?" searchPathRef="tgg"/>  
   <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="eclipse_kepler"/>
   <rm:locator pattern="^org\.eclipse\.emf\.edapt(\..+)?" searchPathRef="edapt"/>
   <rm:locator pattern="^org\.apache(\..+)?" searchPathRef="eclipse"/>
@@ -95,12 +98,18 @@
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
-  </rm:searchPath>
+  </rm:searchPath>  
   <rm:searchPath name="storychecking">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
       <rm:uri format="file:///{0}/storychecking/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="tgg">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+      <rm:uri format="http://dsd-serv.uni-paderborn.de/svn/updatesites/trunk/de.upb.swt.qvt.tgg-updatesite/3.7">
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
