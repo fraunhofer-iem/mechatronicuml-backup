@@ -24,4 +24,8 @@
          id="de.uni_paderborn.fujaba.muml.pim.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.simulink.feature"
+         version="0.0.0"/>
+
 </feature>
