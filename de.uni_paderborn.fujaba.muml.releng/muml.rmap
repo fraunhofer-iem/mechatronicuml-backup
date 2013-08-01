@@ -8,6 +8,7 @@
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?|^de\.upb\.swt(\..+)?)" searchPathRef="storydriven" failOnError="false"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2" failOnError="false"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification(\..+)?" searchPathRef="verification"/>
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.simulink(\..+)?" searchPathRef="simulation"/>
   <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="eclipse_kepler"/>
   <rm:locator pattern="^org\.eclipse\.emf\.edapt(\..+)?" searchPathRef="edapt"/>
   <rm:locator pattern="^org\.apache(\..+)?" searchPathRef="eclipse"/>
@@ -74,6 +75,14 @@
   <rm:searchPath name="verification">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
       <rm:uri format="file:///{0}/verification/{1}/">
+        <bc:propertyRef key="workspace.root"/>
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="simulation">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
+      <rm:uri format="file:///{0}/simulation/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
