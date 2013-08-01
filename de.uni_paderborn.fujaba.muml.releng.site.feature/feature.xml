@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="de.uni_paderborn.fujaba.muml.releng.site.feature"
-      label="MUMLUpdateSite"
+      label="MechatronicUML"
       version="1.0.0.qualifier">
 
    <description url="http://www.example.com/description">
@@ -17,11 +17,11 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.feature"
+         id="de.uni_paderborn.fujaba.muml.verification.feature"
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.verification.feature"
+         id="de.uni_paderborn.fujaba.muml.pim.feature"
          version="0.0.0"/>
 
 </feature>
