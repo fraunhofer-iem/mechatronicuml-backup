@@ -29,10 +29,6 @@
          version="0.0.0"/>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.feature"
-         version="0.0.0"/>
-
-   <includes
          id="de.uni_paderborn.fujaba.simulink.example.pingPong_feature"
          version="0.0.0"/>
 
