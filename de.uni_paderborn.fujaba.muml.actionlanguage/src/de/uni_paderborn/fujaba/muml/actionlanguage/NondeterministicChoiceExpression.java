@@ -13,7 +13,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Range;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The nondeterministic choice expression selects a value from an internal of integers
+ * The nondeterministic choice expression selects a value from an interval of integers
  * nondeterministically. It may be used to abstract from computations or interactions
  * that will modify a value of a variable, but are not yet implementable, e.g., within
  * a real-time coordination protocol. Nondeterministic choice expressions may only

@@ -14,7 +14,7 @@ import org.storydriven.core.ExtendableElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a constraint. A constraint defines certain properties a system has to fullfill. In terms of model checking a constraint represents the specification of the system.
+ * This class represents a constraint. A constraint defines certain properties a system has to fulfill. In terms of model checking, a constraint represents the specification of the system.
  * <!-- end-model-doc -->
  *
  * <p>

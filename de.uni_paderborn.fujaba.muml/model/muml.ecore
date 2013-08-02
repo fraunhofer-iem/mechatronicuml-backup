@@ -489,7 +489,7 @@
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a constraint. A constraint defines certain properties a system has to fullfill. In terms of model checking a constraint represents the specification of the system."/>
+        <details key="documentation" value="This class represents a constraint. A constraint defines certain properties a system has to fulfill. In terms of model checking, a constraint represents the specification of the system."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="correctness" eType="#//constraint/Correctness"
           defaultValueLiteral="unknown">
