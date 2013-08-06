@@ -616,11 +616,12 @@
         <details key="documentation" value="A port instance is a port of a component at instance level."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="PortInstanceMustReferencePortType PortInstanceNotMultiplePortConnectorInstances"/>
+        <details key="constraints" value="PortInstanceMustReferencePortType PortInstanceExactlyOneAssemblyConnectorInstance PortInstanceExactlyOneDelegationConnectorInstance"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="PortInstanceMustReferencePortType" value="-- The type of a port instance must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined()) then&#xD;&#xA;self.type.oclIsKindOf(component::Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
-        <details key="PortInstanceNotMultiplePortConnectorInstances" value="-- PortInstance must not have multiple connector instances assigned.&#xA;portConnectorInstances->size() &lt;= 1"/>
+        <details key="PortInstanceExactlyOneAssemblyConnectorInstance" value="-- PortInstance must have exactly one Assembly Connector Instance assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(AssemblyConnectorInstance))->size() = 1"/>
+        <details key="PortInstanceExactlyOneDelegationConnectorInstance" value="-- PortInstance of Structured Component Instance must have exactly one Delegation Connector Instance assigned.&#xA;(not componentInstance.componentType.oclIsUndefined() and componentInstance.componentType.oclIsKindOf(component::StructuredComponent))&#xA;implies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() = 1"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
           eType="#//component/Port" changeable="false" volatile="true" transient="true"

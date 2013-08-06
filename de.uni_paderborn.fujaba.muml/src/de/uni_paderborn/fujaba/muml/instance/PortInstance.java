@@ -33,8 +33,8 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortInstance()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PortInstanceMustReferencePortType PortInstanceNotMultiplePortConnectorInstances'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PortInstanceMustReferencePortType='-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif' PortInstanceNotMultiplePortConnectorInstances='-- PortInstance must not have multiple connector instances assigned.\nportConnectorInstances->size() <= 1'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PortInstanceMustReferencePortType PortInstanceExactlyOneAssemblyConnectorInstance PortInstanceExactlyOneDelegationConnectorInstance'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL PortInstanceMustReferencePortType='-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif' PortInstanceExactlyOneAssemblyConnectorInstance='-- PortInstance must have exactly one Assembly Connector Instance assigned.\nportConnectorInstances->select(ci | ci.oclIsKindOf(AssemblyConnectorInstance))->size() = 1' PortInstanceExactlyOneDelegationConnectorInstance='-- PortInstance of Structured Component Instance must have exactly one Delegation Connector Instance assigned.\n(not componentInstance.componentType.oclIsUndefined() and componentInstance.componentType.oclIsKindOf(component::StructuredComponent))\nimplies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() = 1'"
  * @generated
  */
 public interface PortInstance extends ConnectorEndpointInstance {

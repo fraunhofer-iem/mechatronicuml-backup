@@ -795,7 +795,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (portInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "PortInstanceMustReferencePortType PortInstanceNotMultiplePortConnectorInstances"
+			 "constraints", "PortInstanceMustReferencePortType PortInstanceExactlyOneAssemblyConnectorInstance PortInstanceExactlyOneDelegationConnectorInstance"
 		   });												
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
@@ -836,7 +836,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "PortInstanceMustReferencePortType", "-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif",
-			 "PortInstanceNotMultiplePortConnectorInstances", "-- PortInstance must not have multiple connector instances assigned.\nportConnectorInstances->size() <= 1"
+			 "PortInstanceExactlyOneAssemblyConnectorInstance", "-- PortInstance must have exactly one Assembly Connector Instance assigned.\nportConnectorInstances->select(ci | ci.oclIsKindOf(AssemblyConnectorInstance))->size() = 1",
+			 "PortInstanceExactlyOneDelegationConnectorInstance", "-- PortInstance of Structured Component Instance must have exactly one Delegation Connector Instance assigned.\n(not componentInstance.componentType.oclIsUndefined() and componentInstance.componentType.oclIsKindOf(component::StructuredComponent))\nimplies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() = 1"
 		   });			
 		addAnnotation
 		  (getPortInstance_PortType(), 
