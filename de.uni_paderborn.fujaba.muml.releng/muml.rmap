@@ -76,7 +76,7 @@
     </rm:provider>
   </rm:searchPath>
   <rm:searchPath name="verification">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="local" mutable="false" source="false">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="local" mutable="false" source="true">
       <rm:uri format="file:///{0}/verification/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
@@ -84,7 +84,7 @@
     </rm:provider>
   </rm:searchPath>
   <rm:searchPath name="simulation">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="true">
       <rm:uri format="file:///{0}/simulation/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
@@ -92,7 +92,7 @@
     </rm:provider>
   </rm:searchPath>
   <rm:searchPath name="udbmbinding">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="true">
       <rm:uri format="file:///{0}/udbm/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
@@ -100,7 +100,7 @@
     </rm:provider>
   </rm:searchPath>  
   <rm:searchPath name="storychecking">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="false">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="true">
       <rm:uri format="file:///{0}/storychecking/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
@@ -108,7 +108,7 @@
     </rm:provider>
   </rm:searchPath>
   <rm:searchPath name="tgg">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="true">
       <rm:uri format="http://dsd-serv.uni-paderborn.de/svn/updatesites/trunk/de.upb.swt.qvt.tgg-updatesite/3.7">
       </rm:uri>
     </rm:provider>
