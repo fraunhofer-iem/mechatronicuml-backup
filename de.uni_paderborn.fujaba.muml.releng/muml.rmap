@@ -3,7 +3,6 @@
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification(\..+)?" searchPathRef="verification"/>
   <rm:locator pattern="(^de\.uni_paderborn\.fujaba\.udbm(\..+)?|^de\.uni_paderborn\.fujaba\.umlrt\.udbm(\..+)?)" searchPathRef="udbmbinding"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.reachanalysis(\..+)?" searchPathRef="storychecking"/>
-  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.timedstorydiagram(\..+)?" searchPathRef="storychecking"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.simulink(\..+)?" searchPathRef="simulation"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.actionLanguage\.matlab(\..+)?" searchPathRef="simulation"/>
   <rm:locator pattern="^de\.upb\.swt\.qvt(\..+)?" searchPathRef="tgg"/>
@@ -108,7 +107,7 @@
     </rm:provider>
   </rm:searchPath>
   <rm:searchPath name="tgg">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="true">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" mutable="false" source="false">
       <rm:uri format="http://dsd-serv.uni-paderborn.de/svn/updatesites/trunk/de.upb.swt.qvt.tgg-updatesite/3.7">
       </rm:uri>
     </rm:provider>
