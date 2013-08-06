@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification(\..+)?" searchPathRef="verification"/>
   <rm:locator pattern="(^de\.uni_paderborn\.fujaba\.udbm(\..+)?|^de\.uni_paderborn\.fujaba\.umlrt\.udbm(\..+)?)" searchPathRef="udbmbinding"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.reachanalysis(\..+)?" searchPathRef="storychecking"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.timedstorydiagram(\..+)?" searchPathRef="storychecking"/>
@@ -7,7 +8,6 @@
   <rm:locator pattern="(^de\.uni_paderborn\.fujaba(\..+)?|^de\.fujaba(\..+)?|^de\.fujaba\.modelinstance\.editor(\..+)?|^org\.storydriven\.core(\..+)?)" searchPathRef="muml" failOnError="false"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?|^de\.upb\.swt(\..+)?)" searchPathRef="storydriven" failOnError="false"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2" failOnError="false"/>
-  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification(\..+)?" searchPathRef="verification"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.simulink(\..+)?" searchPathRef="simulation"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.actionLanguage\.matlab(\..+)?" searchPathRef="simulation"/>
   <rm:locator pattern="^de\.upb\.swt\.qvt(\..+)?" searchPathRef="tgg"/>
