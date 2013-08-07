@@ -62,8 +62,6 @@ public class TestUtilities {
 		// no idea why, but this is necessary two times :)
 		absoluteProjectPath.append('/');
 		absoluteProjectPath.append(projectName);
-		
-		String ref = absoluteProjectPath.toString();
 
 		// Register platform mapping for project
 		EcorePlugin.getPlatformResourceMap().put(projectName,
