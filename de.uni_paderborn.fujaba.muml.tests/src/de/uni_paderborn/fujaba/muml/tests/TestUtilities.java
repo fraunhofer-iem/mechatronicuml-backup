@@ -2,7 +2,12 @@ package de.uni_paderborn.fujaba.muml.tests;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URL;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
@@ -43,8 +48,13 @@ public class TestUtilities {
 	}
 
 	public static void registerWorkspaceProject(String projectName) {
+				
 		// Find out absolute path of project
 		StringBuffer absoluteProjectPath = new StringBuffer();
+		
+		// XXX: new File("") yields the working directory of the running JVM
+		// the lines below assume that this working directory is always a project folder (de.uni_paderborn.fujaba.muml.tests) under the workspace root
+		// however, the working directory can be changed in the JUnit launch configuration and might differ from this project folder
 		absoluteProjectPath.append(new File("").getAbsoluteFile()
 				.getParentFile());
 		absoluteProjectPath.append('/');
@@ -52,9 +62,15 @@ public class TestUtilities {
 		// no idea why, but this is necessary two times :)
 		absoluteProjectPath.append('/');
 		absoluteProjectPath.append(projectName);
+		
+		String ref = absoluteProjectPath.toString();
 
 		// Register platform mapping for project
 		EcorePlugin.getPlatformResourceMap().put(projectName,
-				URI.createFileURI(absoluteProjectPath.toString()));
+				URI.createFileURI(
+				//project.getLocation().toOSString()
+				absoluteProjectPath.toString()
+		)
+		);
 	}
 }
