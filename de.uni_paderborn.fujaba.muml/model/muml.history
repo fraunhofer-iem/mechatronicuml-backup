@@ -22524,5 +22524,184 @@
     <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
         featureName="value" dataValue="-- PortInstance of Structured Component Instance must have exactly one Delegation Connector Instance assigned.&#xA;(not componentInstance.componentType.oclIsUndefined() and componentInstance.componentType.oclIsKindOf(component::StructuredComponent))&#xA;implies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() = 1"
         oldDataValue="-- PortInstance of Structured Component Instance must have exactly one Delegation Connector Instance assigned.&#xA;componentInstance.componentType.oclIsKindOf(component::StructuredComponent) implies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() = 1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="PortInstanceNotMultipleAssemblyConnectorInstance"
+        oldDataValue="PortInstanceExactlyOneAssemblyConnectorInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(AssemblyConnectorInstance))->size() &lt;= 1"
+        oldDataValue="-- PortInstance must have exactly one Assembly Connector Instance assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(AssemblyConnectorInstance))->size() = 1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="-- PortInstance must not have multiple Delegation Connector Instances assigned.&#xA;implies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() &lt;= 1"
+        oldDataValue="-- PortInstance of Structured Component Instance must have exactly one Delegation Connector Instance assigned.&#xA;(not componentInstance.componentType.oclIsUndefined() and componentInstance.componentType.oclIsKindOf(component::StructuredComponent))&#xA;implies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() = 1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="key" dataValue="PortInstanceNotMultipleDelegationConnectorInstances"
+        oldDataValue="PortInstanceExactlyOneDelegationConnectorInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="PortInstanceNotMultipleAssemblyConnectorInstances"
+        oldDataValue="PortInstanceNotMultipleAssemblyConnectorInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceExactlyOneDelegationConnectorInstance"
+        oldDataValue="PortInstanceMustReferencePortType PortInstanceExactlyOneAssemblyConnectorInstance PortInstanceExactlyOneDelegationConnectorInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances"
+        oldDataValue="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceExactlyOneDelegationConnectorInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="-- PortInstance must not have multiple Delegation Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() &lt;= 1"
+        oldDataValue="-- PortInstance must not have multiple Delegation Connector Instances assigned.&#xA;implies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() &lt;= 1"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="not self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 &lt;> ci)))->isEmpty()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="key" dataValue="DelegateToEmbeddedCIC"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- Delegation Connector Instance must delegate to embedded Component Instance Configuration&#xA;not self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 &lt;> ci)))->isEmpty()"
+        oldDataValue="not self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 &lt;> ci)))->isEmpty()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="DelegateToEmbeddedCIC" oldDataValue=""/>
+    <changes xsi:type="history:Create" target="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+          featureName="key" dataValue="PortInstanceNotMultipleDelegationConnectorInstances"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+          featureName="value" dataValue="-- PortInstance must not have multiple Delegation Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() &lt;= 1"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="PortInstanceAtLeastOneDelegationConnectorInstances"
+        oldDataValue="PortInstanceNotMultipleDelegationConnectorInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="-- PortInstance at Structured Component have a Delegation Connector Instance assigned&#xA;componentInstance.oclIsKindOf(StructuredComponentInstance) implies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() = 1"
+        oldDataValue="-- PortInstance must not have multiple Delegation Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() &lt;= 1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="PortInstanceNeedsDelegationConnectorInstances"
+        oldDataValue="PortInstanceAtLeastOneDelegationConnectorInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="PortInstanceNeedsDelegationConnectorInstance"
+        oldDataValue="PortInstanceNeedsDelegationConnectorInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceNeedsDelegationConnectorInstance"
+        oldDataValue="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="key" dataValue="PortInstanceMustDelegateToEmbeddedCIC" oldDataValue="PortInstanceNeedsDelegationConnectorInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceMustDelegateToEmbeddedCIC"
+        oldDataValue="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceNeedsDelegationConnectorInstance"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        featureName="value" dataValue="-- PortInstance at Structured Component must delegate to embedded CIC&#xA;componentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance))->isEmpty()"
+        oldDataValue="-- PortInstance at Structured Component have a Delegation Connector Instance assigned&#xA;componentInstance.oclIsKindOf(StructuredComponentInstance) implies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() = 1"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4">
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+          featureName="key" dataValue="PortInstanceMustDelegateToEmbeddedCIC"/>
+      <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+          featureName="value" dataValue="-- PortInstance at Structured Component must delegate to embedded CIC&#xA;componentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance))->isEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="key" dataValue="PortInstanceNeedsAssemblyOrUpwardsDelegation"
+        oldDataValue="PortInstanceMustDelegateToEmbeddedCIC"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="key" dataValue="PortInstanceNeedsDelegationToParentOrAssembly"
+        oldDataValue="PortInstanceNeedsAssemblyOrUpwardsDelegation"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        featureName="value" dataValue="-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclIsKindOf(StructuredComponentInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)&#xA;)->isEmpty() or&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->isEmpty()"
+        oldDataValue="-- PortInstance at Structured Component must delegate to embedded CIC&#xA;componentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance))->isEmpty()"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        featureName="value" dataValue="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceMustDelegateToEmbeddedCIC PortInstanceNeedsDelegationToParentOrAssembly"
+        oldDataValue="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceMustDelegateToEmbeddedCIC"/>
+    <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance"
+        referenceName="eAnnotations" element="#//@releases.16/@changes.399/@element">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.399/@element"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.399/@element"
+        referenceName="details" element="#//@releases.16/@changes.399/@element/@details.0">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.399/@element/@details.0"
+          featureName="key" dataValue="constraints"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.399/@element/@details.0"
+          featureName="value" dataValue="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceMustDelegateToEmbeddedCIC PortInstanceNeedsDelegationToParentOrAssembly"/>
+    </changes>
+    <changes xsi:type="history:Create" target="muml.ecore#//instance/DiscretePortInstance"
+        referenceName="eAnnotations" element="#//@releases.16/@changes.398/@element">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.398/@element"
+          featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.398/@element"
+        referenceName="details" element="#//@releases.16/@changes.397/@element">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.397/@element"
+          featureName="key" dataValue="PortInstanceMustReferencePortType"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.397/@element"
+          featureName="value" dataValue="-- The type of a port instance must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined()) then&#xD;&#xA;self.type.oclIsKindOf(component::Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.398/@element"
+        referenceName="details" element="#//@releases.16/@changes.398/@element/@details.0">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.398/@element/@details.0"
+          featureName="key" dataValue="PortInstanceNotMultipleAssemblyConnectorInstances"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.398/@element/@details.0"
+          featureName="value" dataValue="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(AssemblyConnectorInstance))->size() &lt;= 1"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.398/@element"
+        referenceName="details" element="#//@releases.16/@changes.398/@element/@details.1">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.398/@element/@details.1"
+          featureName="key" dataValue="PortInstanceNotMultipleDelegationConnectorInstances"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.398/@element/@details.1"
+          featureName="value" dataValue="-- PortInstance must not have multiple Delegation Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() &lt;= 1"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.398/@element"
+        referenceName="details" element="#//@releases.16/@changes.396/@element">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.396/@element"
+          featureName="key" dataValue="PortInstanceMustDelegateToEmbeddedCIC"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.396/@element"
+          featureName="value" dataValue="-- PortInstance at Structured Component must delegate to embedded CIC&#xA;componentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance))->isEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.398/@element"
+        referenceName="details" element="#//@releases.16/@changes.395/@element">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.395/@element"
+          featureName="key" dataValue="PortInstanceNeedsDelegationToParentOrAssembly"/>
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.395/@element"
+          featureName="value" dataValue="-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclIsKindOf(StructuredComponentInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)&#xA;)->isEmpty() or&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->isEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="#//@releases.16/@changes.398/@element"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="PortInstanceNeedsDelegationToParentOrAssembly"
+          value="-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclIsKindOf(StructuredComponentInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)&#xA;)->isEmpty() or&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->isEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="#//@releases.16/@changes.398/@element"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="PortInstanceMustDelegateToEmbeddedCIC"
+          value="-- PortInstance at Structured Component must delegate to embedded CIC&#xA;componentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance))->isEmpty()"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="#//@releases.16/@changes.398/@element"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="PortInstanceMustReferencePortType"
+          value="-- The type of a port instance must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined()) then&#xD;&#xA;self.type.oclIsKindOf(component::Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//instance/DiscretePortInstance"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="PortInstanceNotMultipleAssemblyConnectorInstances" value="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(AssemblyConnectorInstance))->size() &lt;= 1"/>
+        <details key="PortInstanceNotMultipleDelegationConnectorInstances" value="-- PortInstance must not have multiple Delegation Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() &lt;= 1"/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//instance/DiscretePortInstance"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceMustDelegateToEmbeddedCIC PortInstanceNeedsDelegationToParentOrAssembly"/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance and &#xA;&#x9;&#x9;((self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)&#xA;&#x9;&#x9;implies&#xA;&#x9;&#x9;()&#xA;&#x9;)&#xA;)->size() &lt;= 1"
+        oldDataValue="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(AssemblyConnectorInstance))->size() &lt;= 1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance and &#xA;&#x9;&#x9;((self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)&#xA;&#x9;&#x9;implies&#xA;&#x9;&#x9;(nach-unten)&#xA;&#x9;)&#xA;)->size() &lt;= 1"
+        oldDataValue="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance and &#xA;&#x9;&#x9;((self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)&#xA;&#x9;&#x9;implies&#xA;&#x9;&#x9;()&#xA;&#x9;)&#xA;)->size() &lt;= 1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance and&#xA;&#x9;(&#xA;&#x9;&#x9;(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)&#xA;&#x9;&#x9;implies&#xA;&#x9;&#x9;componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(AssemblyConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance)&#xA;&#x9;)&#xA;)->size() &lt;= 1"
+        oldDataValue="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance and &#xA;&#x9;&#x9;((self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)&#xA;&#x9;&#x9;implies&#xA;&#x9;&#x9;(nach-unten)&#xA;&#x9;)&#xA;)->size() &lt;= 1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        featureName="value" dataValue="-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance and&#xA;&#x9;(&#xA;&#x9;&#x9;(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)&#xA;&#x9;&#x9;implies&#xA;&#x9;&#x9;componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance)&#xA;&#x9;)&#xA;)->size() &lt;= 1"
+        oldDataValue="-- PortInstance must not have multiple Delegation Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() &lt;= 1"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        featureName="value" dataValue="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->size() &lt;= 1"
+        oldDataValue="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance and&#xA;&#x9;(&#xA;&#x9;&#x9;(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)&#xA;&#x9;&#x9;implies&#xA;&#x9;&#x9;componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(AssemblyConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance)&#xA;&#x9;)&#xA;)->size() &lt;= 1"/>
   </releases>
 </history:History>

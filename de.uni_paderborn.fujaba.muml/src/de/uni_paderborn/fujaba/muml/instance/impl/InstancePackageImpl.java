@@ -795,13 +795,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (portInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "PortInstanceMustReferencePortType PortInstanceExactlyOneAssemblyConnectorInstance PortInstanceExactlyOneDelegationConnectorInstance"
+			 "constraints", "PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceMustDelegateToEmbeddedCIC PortInstanceNeedsDelegationToParentOrAssembly"
 		   });												
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", ""
+			 "constraints", "DelegateToEmbeddedCIC"
 		   });							
 		addAnnotation
 		  (componentInstanceConfigurationEClass, 
@@ -836,8 +836,10 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "PortInstanceMustReferencePortType", "-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif",
-			 "PortInstanceExactlyOneAssemblyConnectorInstance", "-- PortInstance must have exactly one Assembly Connector Instance assigned.\nportConnectorInstances->select(ci | ci.oclIsKindOf(AssemblyConnectorInstance))->size() = 1",
-			 "PortInstanceExactlyOneDelegationConnectorInstance", "-- PortInstance of Structured Component Instance must have exactly one Delegation Connector Instance assigned.\n(not componentInstance.componentType.oclIsUndefined() and componentInstance.componentType.oclIsKindOf(component::StructuredComponent))\nimplies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() = 1"
+			 "PortInstanceNotMultipleAssemblyConnectorInstances", "-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.\nportConnectorInstances->select(\n\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n)->size() <= 1",
+			 "PortInstanceNotMultipleDelegationConnectorInstances", "-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.\nportConnectorInstances->select(\n\tci | ci.oclIsKindOf(DelegationConnectorInstance and\n\t(\n\t\t(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)\n\t\timplies\n\t\tcomponentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance)\n\t)\n)->size() <= 1",
+			 "PortInstanceMustDelegateToEmbeddedCIC", "-- PortInstance at Structured Component must delegate to embedded CIC\ncomponentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance))->isEmpty()",
+			 "PortInstanceNeedsDelegationToParentOrAssembly", "-- PortInstance needs a Delegation Connector Instance to the parent component\'s port or an Assembly Connector Instance to a port within this CIC.\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(DelegationConnectorInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)\n)->isEmpty() or\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n)->isEmpty()"
 		   });			
 		addAnnotation
 		  (getPortInstance_PortType(), 
@@ -867,7 +869,8 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (delegationConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "OneDelegationInstancePerPortInstance", "-- FIXME\r\nnot self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"
+			 "OneDelegationInstancePerPortInstance", "-- FIXME\r\nnot self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1",
+			 "DelegateToEmbeddedCIC", "-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\nnot self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 <> ci)))->isEmpty()"
 		   });			
 		addAnnotation
 		  (getDelegationConnectorInstance_DelegationConnectorType(), 

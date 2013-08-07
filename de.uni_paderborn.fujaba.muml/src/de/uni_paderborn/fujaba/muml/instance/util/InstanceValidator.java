@@ -171,8 +171,10 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(portInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(portInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(portInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneAssemblyConnectorInstance(portInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneDelegationConnectorInstance(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleAssemblyConnectorInstances(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleDelegationConnectorInstances(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(portInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNeedsDelegationToParentOrAssembly(portInstance, diagnostics, context);
 		return result;
 	}
 
@@ -211,21 +213,23 @@ public class InstanceValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the PortInstanceExactlyOneAssemblyConnectorInstance constraint of '<em>Port Instance</em>'.
+	 * The cached validation expression for the PortInstanceNotMultipleAssemblyConnectorInstances constraint of '<em>Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PORT_INSTANCE__PORT_INSTANCE_EXACTLY_ONE_ASSEMBLY_CONNECTOR_INSTANCE__EEXPRESSION = "-- PortInstance must have exactly one Assembly Connector Instance assigned.\n" +
-		"portConnectorInstances->select(ci | ci.oclIsKindOf(AssemblyConnectorInstance))->size() = 1";
+	protected static final String PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_ASSEMBLY_CONNECTOR_INSTANCES__EEXPRESSION = "-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.\n" +
+		"portConnectorInstances->select(\n" +
+		"\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n" +
+		")->size() <= 1";
 
 	/**
-	 * Validates the PortInstanceExactlyOneAssemblyConnectorInstance constraint of '<em>Port Instance</em>'.
+	 * Validates the PortInstanceNotMultipleAssemblyConnectorInstances constraint of '<em>Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePortInstance_PortInstanceExactlyOneAssemblyConnectorInstance(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validatePortInstance_PortInstanceNotMultipleAssemblyConnectorInstances(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(InstancePackage.Literals.PORT_INSTANCE,
@@ -233,30 +237,36 @@ public class InstanceValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "PortInstanceExactlyOneAssemblyConnectorInstance",
-				 PORT_INSTANCE__PORT_INSTANCE_EXACTLY_ONE_ASSEMBLY_CONNECTOR_INSTANCE__EEXPRESSION,
+				 "PortInstanceNotMultipleAssemblyConnectorInstances",
+				 PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_ASSEMBLY_CONNECTOR_INSTANCES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the PortInstanceExactlyOneDelegationConnectorInstance constraint of '<em>Port Instance</em>'.
+	 * The cached validation expression for the PortInstanceNotMultipleDelegationConnectorInstances constraint of '<em>Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PORT_INSTANCE__PORT_INSTANCE_EXACTLY_ONE_DELEGATION_CONNECTOR_INSTANCE__EEXPRESSION = "-- PortInstance of Structured Component Instance must have exactly one Delegation Connector Instance assigned.\n" +
-		"(not componentInstance.componentType.oclIsUndefined() and componentInstance.componentType.oclIsKindOf(component::StructuredComponent))\n" +
-		"implies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() = 1";
+	protected static final String PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_DELEGATION_CONNECTOR_INSTANCES__EEXPRESSION = "-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.\n" +
+		"portConnectorInstances->select(\n" +
+		"\tci | ci.oclIsKindOf(DelegationConnectorInstance and\n" +
+		"\t(\n" +
+		"\t\t(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)\n" +
+		"\t\timplies\n" +
+		"\t\tcomponentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance)\n" +
+		"\t)\n" +
+		")->size() <= 1";
 
 	/**
-	 * Validates the PortInstanceExactlyOneDelegationConnectorInstance constraint of '<em>Port Instance</em>'.
+	 * Validates the PortInstanceNotMultipleDelegationConnectorInstances constraint of '<em>Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePortInstance_PortInstanceExactlyOneDelegationConnectorInstance(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validatePortInstance_PortInstanceNotMultipleDelegationConnectorInstances(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(InstancePackage.Literals.PORT_INSTANCE,
@@ -264,8 +274,75 @@ public class InstanceValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "PortInstanceExactlyOneDelegationConnectorInstance",
-				 PORT_INSTANCE__PORT_INSTANCE_EXACTLY_ONE_DELEGATION_CONNECTOR_INSTANCE__EEXPRESSION,
+				 "PortInstanceNotMultipleDelegationConnectorInstances",
+				 PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_DELEGATION_CONNECTOR_INSTANCES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the PortInstanceMustDelegateToEmbeddedCIC constraint of '<em>Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PORT_INSTANCE__PORT_INSTANCE_MUST_DELEGATE_TO_EMBEDDED_CIC__EEXPRESSION = "-- PortInstance at Structured Component must delegate to embedded CIC\n" +
+		"componentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance))->isEmpty()";
+
+	/**
+	 * Validates the PortInstanceMustDelegateToEmbeddedCIC constraint of '<em>Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.PORT_INSTANCE,
+				 portInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PortInstanceMustDelegateToEmbeddedCIC",
+				 PORT_INSTANCE__PORT_INSTANCE_MUST_DELEGATE_TO_EMBEDDED_CIC__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the PortInstanceNeedsDelegationToParentOrAssembly constraint of '<em>Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PORT_INSTANCE__PORT_INSTANCE_NEEDS_DELEGATION_TO_PARENT_OR_ASSEMBLY__EEXPRESSION = "-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.\n" +
+		"not portConnectorInstances->select(\n" +
+		"\tci | ci.oclIsKindOf(DelegationConnectorInstance)\n" +
+		"\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\n" +
+		"\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)\n" +
+		")->isEmpty() or\n" +
+		"not portConnectorInstances->select(\n" +
+		"\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n" +
+		")->isEmpty()";
+
+	/**
+	 * Validates the PortInstanceNeedsDelegationToParentOrAssembly constraint of '<em>Port Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePortInstance_PortInstanceNeedsDelegationToParentOrAssembly(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.PORT_INSTANCE,
+				 portInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PortInstanceNeedsDelegationToParentOrAssembly",
+				 PORT_INSTANCE__PORT_INSTANCE_NEEDS_DELEGATION_TO_PARENT_OR_ASSEMBLY__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -286,7 +363,47 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateDelegationConnectorInstance(DelegationConnectorInstance delegationConnectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(delegationConnectorInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(delegationConnectorInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnectorInstance_DelegateToEmbeddedCIC(delegationConnectorInstance, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the DelegateToEmbeddedCIC constraint of '<em>Delegation Connector Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION_CONNECTOR_INSTANCE__DELEGATE_TO_EMBEDDED_CIC__EEXPRESSION = "-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\n" +
+		"not self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 <> ci)))->isEmpty()";
+
+	/**
+	 * Validates the DelegateToEmbeddedCIC constraint of '<em>Delegation Connector Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegationConnectorInstance_DelegateToEmbeddedCIC(DelegationConnectorInstance delegationConnectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.DELEGATION_CONNECTOR_INSTANCE,
+				 delegationConnectorInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DelegateToEmbeddedCIC",
+				 DELEGATION_CONNECTOR_INSTANCE__DELEGATE_TO_EMBEDDED_CIC__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -354,8 +471,10 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(continuousPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(continuousPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(continuousPortInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneAssemblyConnectorInstance(continuousPortInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneDelegationConnectorInstance(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleAssemblyConnectorInstances(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleDelegationConnectorInstances(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(continuousPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNeedsDelegationToParentOrAssembly(continuousPortInstance, diagnostics, context);
 		return result;
 	}
 
@@ -375,8 +494,10 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(hybridPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(hybridPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(hybridPortInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneAssemblyConnectorInstance(hybridPortInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneDelegationConnectorInstance(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleAssemblyConnectorInstances(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleDelegationConnectorInstances(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(hybridPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNeedsDelegationToParentOrAssembly(hybridPortInstance, diagnostics, context);
 		return result;
 	}
 
@@ -396,8 +517,10 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discretePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discretePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(discretePortInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneAssemblyConnectorInstance(discretePortInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneDelegationConnectorInstance(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleAssemblyConnectorInstances(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleDelegationConnectorInstances(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(discretePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNeedsDelegationToParentOrAssembly(discretePortInstance, diagnostics, context);
 		return result;
 	}
 
@@ -417,8 +540,10 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discreteSinglePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteSinglePortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(discreteSinglePortInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneAssemblyConnectorInstance(discreteSinglePortInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneDelegationConnectorInstance(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleAssemblyConnectorInstances(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleDelegationConnectorInstances(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(discreteSinglePortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNeedsDelegationToParentOrAssembly(discreteSinglePortInstance, diagnostics, context);
 		return result;
 	}
 
@@ -438,8 +563,10 @@ public class InstanceValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(discreteMultiPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(discreteMultiPortInstance, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustReferencePortType(discreteMultiPortInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneAssemblyConnectorInstance(discreteMultiPortInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceExactlyOneDelegationConnectorInstance(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleAssemblyConnectorInstances(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNotMultipleDelegationConnectorInstances(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceMustDelegateToEmbeddedCIC(discreteMultiPortInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortInstance_PortInstanceNeedsDelegationToParentOrAssembly(discreteMultiPortInstance, diagnostics, context);
 		return result;
 	}
 
