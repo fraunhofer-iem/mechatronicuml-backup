@@ -9,6 +9,7 @@
           <propertyTab
              category="domain"
              id="base"
+             afterTab="property.tab.domain.advanced"
              label="Experimental"/>
           
       </propertyTabs>
