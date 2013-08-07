@@ -211,9 +211,11 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 				}
 			
 			}); 
-			
+
 			// If the value could not be applied, refresh editor!
-			if (value == null && newValue != null || !value.equals(newValue)) {
+			if ((value != null && !value.equals(newValue))
+					|| (newValue != null && !newValue.equals(value))
+					|| ((value == null) != (newValue == null))) {
 				valueChanged();
 			}
 		}
@@ -230,7 +232,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		} else {
 			element.eSet(feature, newValue);
 		}
-	if (feature instanceof EReference && ((EReference)feature).isContainment()) {
+		if (feature instanceof EReference && ((EReference)feature).isContainment()) {
 			if (!feature.isMany() && oldValue != null && newValue == null ) {
 				DeleteCommand.create(getEditingDomain(element), oldValue).execute();
 			} else if (feature.isMany()) {

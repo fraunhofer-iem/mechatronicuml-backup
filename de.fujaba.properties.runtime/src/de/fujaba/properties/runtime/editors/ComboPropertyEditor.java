@@ -79,8 +79,10 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		// Problem: AbstractListViewer does not allow null!
 		choices.remove(null);
 		
-		comboViewer.setInput(choices);
-		
+		if (comboViewer != null) {
+			comboViewer.setInput(choices);
+		}
+
 		applySelection(value);
 		
 	}
