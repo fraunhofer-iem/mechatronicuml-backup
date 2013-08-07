@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.expressions.common.ComparingOperator;
 
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
+import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * @model
  * @generated
  */
-public interface ClockConstraint extends EObject {
+public interface ClockConstraint extends ExtendableElement {
 	/**
 	 * Returns the value of the '<em><b>Bound</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

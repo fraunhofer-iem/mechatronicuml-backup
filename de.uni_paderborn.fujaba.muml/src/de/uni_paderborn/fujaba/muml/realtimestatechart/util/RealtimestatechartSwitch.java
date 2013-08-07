@@ -142,6 +142,7 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				T result = caseState(state);
 				if (result == null) result = caseVertex(state);
 				if (result == null) result = caseNamedElement(state);
+				if (result == null) result = caseCommentableElement(state);
 				if (result == null) result = caseExtendableElement(state);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -150,6 +151,7 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				Vertex vertex = (Vertex)theEObject;
 				T result = caseVertex(vertex);
 				if (result == null) result = caseNamedElement(vertex);
+				if (result == null) result = caseCommentableElement(vertex);
 				if (result == null) result = caseExtendableElement(vertex);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -166,6 +168,7 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 			case RealtimestatechartPackage.CLOCK_CONSTRAINT: {
 				ClockConstraint clockConstraint = (ClockConstraint)theEObject;
 				T result = caseClockConstraint(clockConstraint);
+				if (result == null) result = caseExtendableElement(clockConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -283,6 +286,7 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				T result = caseStateConnectionPoint(stateConnectionPoint);
 				if (result == null) result = caseVertex(stateConnectionPoint);
 				if (result == null) result = caseNamedElement(stateConnectionPoint);
+				if (result == null) result = caseCommentableElement(stateConnectionPoint);
 				if (result == null) result = caseExtendableElement(stateConnectionPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -293,6 +297,7 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				if (result == null) result = caseStateConnectionPoint(entryPoint);
 				if (result == null) result = caseVertex(entryPoint);
 				if (result == null) result = caseNamedElement(entryPoint);
+				if (result == null) result = caseCommentableElement(entryPoint);
 				if (result == null) result = caseExtendableElement(entryPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -303,6 +308,7 @@ public class RealtimestatechartSwitch<T> extends Switch<T> {
 				if (result == null) result = caseStateConnectionPoint(exitPoint);
 				if (result == null) result = caseVertex(exitPoint);
 				if (result == null) result = caseNamedElement(exitPoint);
+				if (result == null) result = caseCommentableElement(exitPoint);
 				if (result == null) result = caseExtendableElement(exitPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

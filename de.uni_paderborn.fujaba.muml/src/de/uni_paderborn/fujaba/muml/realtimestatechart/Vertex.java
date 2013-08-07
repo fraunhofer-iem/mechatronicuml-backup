@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart;
 
 import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
 /**
@@ -31,7 +32,7 @@ import org.storydriven.core.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface Vertex extends NamedElement {
+public interface Vertex extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Outgoing Transitions</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Transition}.

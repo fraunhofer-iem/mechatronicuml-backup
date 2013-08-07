@@ -10,6 +10,7 @@ package de.uni_paderborn.fujaba.muml.valuetype.provider;
 import java.util.Collection;
 import java.util.List;
 
+import java.util.concurrent.TimeUnit;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;

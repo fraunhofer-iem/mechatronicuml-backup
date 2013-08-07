@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.storydriven.core.expressions.common.ComparingOperator;
 
+import org.storydriven.core.impl.ExtendableElementImpl;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
@@ -34,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *
  * @generated
  */
-public class ClockConstraintImpl extends EObjectImpl implements ClockConstraint {
+public class ClockConstraintImpl extends ExtendableElementImpl implements ClockConstraint {
 	/**
 	 * The cached value of the '{@link #getBound() <em>Bound</em>}' containment reference.
 	 * <!-- begin-user-doc -->

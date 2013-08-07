@@ -27,6 +27,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.storydriven.core.expressions.common.ComparingOperator;
+import org.storydriven.core.provider.ExtendableElementItemProvider;
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
@@ -44,7 +46,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDe
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class ClockConstraintItemProvider extends ItemProviderAdapter implements
+public class ClockConstraintItemProvider extends ExtendableElementItemProvider implements
 		IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
