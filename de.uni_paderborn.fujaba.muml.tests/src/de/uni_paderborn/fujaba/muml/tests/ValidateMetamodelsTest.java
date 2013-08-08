@@ -1,11 +1,9 @@
 package de.uni_paderborn.fujaba.muml.tests;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -39,11 +37,6 @@ public class ValidateMetamodelsTest {
 
 		TestUtilities
 				.registerWorkspaceProject("de.uni_paderborn.fujaba.muml.tests");
-		
-		
-		// XXX
-		org.eclipse.ocl.ecore.OCL.initialize(null);
-		org.eclipse.ocl.ecore.OCL.initialize(resourceSet);
 
 		// Extensions to Factory
 		Map<String, Object> extensionToFactoryMap = resourceSet

@@ -94,10 +94,6 @@ public class MetamodelOCLTest extends TraverseTest {
 		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
 		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
 				new XMIResourceFactoryImpl());
-		
-		// XXX
-		org.eclipse.ocl.ecore.OCL.initialize(null);
-		org.eclipse.ocl.ecore.OCL.initialize(resourceSet);
 
 		// Register Packages
 		EcorePackage.eINSTANCE.eClass();

@@ -1,6 +1,5 @@
 package de.uni_paderborn.fujaba.muml.tests.packages;
 
-import java.io.FileNotFoundException;
 import java.util.Collection;
 import java.util.Map;
 
