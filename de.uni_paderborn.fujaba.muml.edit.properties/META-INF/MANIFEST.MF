@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Properties
+Bundle-Name: MechatronicUML Edit Properties
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.edit.properties; singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
@@ -21,3 +21,4 @@ Export-Package:
  de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor,
  de.uni_paderborn.fujaba.muml.properties.protocol.editor,
  de.uni_paderborn.fujaba.muml.properties.component.editor
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
