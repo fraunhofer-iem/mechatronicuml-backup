@@ -1722,7 +1722,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="AtLeastOneIncomingTransition" value="self.incomingTransitions ->notEmpty()"/>
-        <details key="OneOutgoingTransitionPerRegion" value="-- all regions of the parent state must have exactly one state that the EntryPoint connects to&#xD;&#xA;self.state.embeddedRegions->forAll(r | &#xD;&#xA;&#x9;r.embeddedStatechart.states->select(s |&#xD;&#xA;&#x9;&#x9;s.incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)&#xD;&#xA;&#x9;)->size() = 1&#xD;&#xA;)"/>
+        <details key="OneOutgoingTransitionPerRegion" value="-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to&#xD;&#xA;self.state.embeddedRegions->forAll(r |&#xD;&#xA;&#x9;self.outgoingTransitions->one(t |&#xD;&#xA;&#x9;&#x9;(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//realtimestatechart/StateConnectionPoint">
@@ -1733,7 +1733,7 @@
         <details key="documentation" value="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. The ExitPoint is assigned to a state. An ExitPoint is used to jointly deactivate dedicated inner states of embedded statecharts."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="AtLeastOneIncomingTransitionPerRegion" value="-- all regions of the parent state have at least one state that connects to the ExitPoint&#xD;&#xA;self.state.embeddedRegions->forAll(r | &#xD;&#xA;&#x9;r.embeddedStatechart.states->exists(s |&#xD;&#xA;&#x9;&#x9;s.outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;s.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
+        <details key="AtLeastOneIncomingTransitionPerRegion" value="-- all regions of the parent state must have at least one vertex that connects to the ExitPoint&#xD;&#xA;self.state.embeddedRegions->forAll(r |&#xD;&#xA;&#x9;self.incomingTransitions->exists(t |&#xD;&#xA;&#x9;&#x9;(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
         <details key="OneOutgoingTransition" value="self.outgoingTransitions->size() = 1"/>
       </eAnnotations>
     </eClassifiers>

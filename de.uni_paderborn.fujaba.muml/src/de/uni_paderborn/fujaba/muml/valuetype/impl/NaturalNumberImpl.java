@@ -151,7 +151,7 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(String value) {
+	public void setValue(final String value) {
 		if (value == null || value.equals("*")) {
 			setInfinity(true);
 			return;
@@ -188,7 +188,7 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean equals(EObject o) {
+	public boolean equals(final EObject o) {
 		if (o instanceof NaturalNumber) {
 			NaturalNumber naturalNumber = (NaturalNumber) o;
 			// Value of infinity must be equal

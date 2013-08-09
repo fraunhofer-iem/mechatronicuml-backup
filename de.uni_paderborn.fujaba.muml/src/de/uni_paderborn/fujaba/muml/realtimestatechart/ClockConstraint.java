@@ -6,11 +6,10 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart;
 
-import org.eclipse.emf.ecore.EObject;
+import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.expressions.common.ComparingOperator;
 
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
-import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->

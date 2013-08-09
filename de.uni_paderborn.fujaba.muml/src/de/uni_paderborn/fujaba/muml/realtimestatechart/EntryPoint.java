@@ -19,7 +19,7 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart;
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getEntryPoint()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtLeastOneIncomingTransition OneOutgoingTransitionPerRegion'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneIncomingTransition='self.incomingTransitions ->notEmpty()' OneOutgoingTransitionPerRegion='-- all regions of the parent state must have exactly one state that the EntryPoint connects to\r\nself.state.embeddedRegions->forAll(r | \r\n\tr.embeddedStatechart.states->select(s |\r\n\t\ts.incomingTransitions->exists(t | t.source = self)\r\n\t\tor\r\n\t\ts.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)\r\n\t)->size() = 1\r\n)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AtLeastOneIncomingTransition='self.incomingTransitions ->notEmpty()' OneOutgoingTransitionPerRegion='-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to\r\nself.state.embeddedRegions->forAll(r |\r\n\tself.outgoingTransitions->one(t |\r\n\t\t(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)\r\n\t\tor\r\n\t\t(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion = r)\r\n\t)\r\n)'"
  * @generated
  */
 public interface EntryPoint extends StateConnectionPoint {

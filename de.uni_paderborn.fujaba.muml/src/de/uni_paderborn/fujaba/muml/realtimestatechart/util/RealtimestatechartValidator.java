@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.util;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -14,7 +13,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
@@ -1293,13 +1291,13 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state must have exactly one state that the EntryPoint connects to\r\n" +
-		"self.state.embeddedRegions->forAll(r | \r\n" +
-		"\tr.embeddedStatechart.states->select(s |\r\n" +
-		"\t\ts.incomingTransitions->exists(t | t.source = self)\r\n" +
+	protected static final String ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to\r\n" +
+		"self.state.embeddedRegions->forAll(r |\r\n" +
+		"\tself.outgoingTransitions->one(t |\r\n" +
+		"\t\t(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)\r\n" +
 		"\t\tor\r\n" +
-		"\t\ts.connectionPoints->select(oclIsKindOf(EntryPoint)).incomingTransitions->exists(t | t.source = self)\r\n" +
-		"\t)->size() = 1\r\n" +
+		"\t\t(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion = r)\r\n" +
+		"\t)\r\n" +
 		")";
 
 	/**
@@ -1350,12 +1348,12 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String EXIT_POINT__AT_LEAST_ONE_INCOMING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state have at least one state that connects to the ExitPoint\r\n" +
-		"self.state.embeddedRegions->forAll(r | \r\n" +
-		"\tr.embeddedStatechart.states->exists(s |\r\n" +
-		"\t\ts.outgoingTransitions->exists(t | t.target = self)\r\n" +
+	protected static final String EXIT_POINT__AT_LEAST_ONE_INCOMING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state must have at least one vertex that connects to the ExitPoint\r\n" +
+		"self.state.embeddedRegions->forAll(r |\r\n" +
+		"\tself.incomingTransitions->exists(t |\r\n" +
+		"\t\t(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)\r\n" +
 		"\t\tor\r\n" +
-		"\t\ts.connectionPoints->select(oclIsKindOf(ExitPoint)).outgoingTransitions->exists(t | t.target = self)\r\n" +
+		"\t\t(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion = r)\r\n" +
 		"\t)\r\n" +
 		")";
 
