@@ -283,20 +283,6 @@ public class GrammarTest {
 		assertTrue(expression.getEnclosedExpression() instanceof TypedNamedElementExpression);
 		assertEquals(UnaryOperator.DECREMENT, expression.getOperator());
 	}
-
-	@Test
-	public void testUnaryExpressionPlus() {
-		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := +foo ; }");
-		assertTrue(expression.getEnclosedExpression() instanceof TypedNamedElementExpression);
-		assertEquals(UnaryOperator.PLUS, expression.getOperator());
-	}
-	
-	@Test
-	public void testUnaryExpressionPlusParentheses() {
-		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := + (foo) ; }");
-		assertTrue(expression.getEnclosedExpression() instanceof TypedNamedElementExpression);
-		assertEquals(UnaryOperator.PLUS, expression.getOperator());
-	}
 	
 	@Test
 	public void testUnaryExpressionMinus() {
