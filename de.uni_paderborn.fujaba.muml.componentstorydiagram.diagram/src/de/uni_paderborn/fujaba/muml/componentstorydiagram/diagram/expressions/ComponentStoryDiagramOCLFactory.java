@@ -71,7 +71,7 @@ public class ComponentStoryDiagramOCLFactory {
 					"----Create AssemblyVariable between PortVariables of PartVariables\r\n--not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"----Create AssemblyVariable between PortVariables of different PartVariables\r\n--self.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() <> oppositeEnd.eContainer()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"----Start creation of DelegationVariable at PortVariable of ComponentVariable\r\n--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"----End creation of DelegationVariable at PortVariable of PartVariable\r\n--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.eContainer().eContainer()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"----End creation of DelegationVariable at PortVariable of PartVariable\r\n--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

@@ -569,7 +569,7 @@
       <sourceEnd
           body="--Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
       <targetEnd
-          body="--End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.eContainer().eContainer()"/>
+          body="--End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
     </creationConstraints>
   </links>
   <diagram>

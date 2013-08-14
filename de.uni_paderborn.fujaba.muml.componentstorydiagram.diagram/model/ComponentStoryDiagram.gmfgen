@@ -1601,7 +1601,7 @@
           body="----Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.eContainer().eContainer()"/>
+          body="----End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
     </providers>
   </expressionProviders>
   <labelParsers
