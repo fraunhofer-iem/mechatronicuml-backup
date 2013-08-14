@@ -2801,12 +2801,6 @@ ruleUnaryPreOperator returns [Enumerator current=null]
         $current = grammarAccess.getUnaryPreOperatorAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_1, grammarAccess.getUnaryPreOperatorAccess().getMINUSEnumLiteralDeclaration_1()); 
     }
-)
-    |(	enumLiteral_2='+' 
-	{
-        $current = grammarAccess.getUnaryPreOperatorAccess().getPLUSEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_2, grammarAccess.getUnaryPreOperatorAccess().getPLUSEnumLiteralDeclaration_2()); 
-    }
 ));
 
 

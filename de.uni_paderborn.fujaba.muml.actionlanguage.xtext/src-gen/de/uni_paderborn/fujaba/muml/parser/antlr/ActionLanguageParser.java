@@ -3,10 +3,9 @@
 */
 package de.uni_paderborn.fujaba.muml.parser.antlr;
 
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-
 import com.google.inject.Inject;
 
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import de.uni_paderborn.fujaba.muml.services.ActionLanguageGrammarAccess;
 
 public class ActionLanguageParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {

@@ -252,7 +252,7 @@ UnaryPreExpression returns expressions::Expression:
 ;
 
 enum UnaryPreOperator returns commonExpressions::UnaryOperator:
-	NOT='not' | MINUS='-' | PLUS='+'
+	NOT='not' | MINUS='-' 
 ;
 
 // end of UnaryPreExpression
