@@ -1848,13 +1848,6 @@ rule__UnaryPreOperator__Alternatives
 { after(grammarAccess.getUnaryPreOperatorAccess().getMINUSEnumLiteralDeclaration_1()); }
 )
 
-    |(
-{ before(grammarAccess.getUnaryPreOperatorAccess().getPLUSEnumLiteralDeclaration_2()); }
-(	'+' 
-)
-{ after(grammarAccess.getUnaryPreOperatorAccess().getPLUSEnumLiteralDeclaration_2()); }
-)
-
 ;
 finally {
 	restoreStackSize(stackSize);
