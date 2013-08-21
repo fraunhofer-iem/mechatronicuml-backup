@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.component.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -25,8 +26,13 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.HybridPort;
+import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
@@ -120,6 +126,48 @@ public class HybridPortItemProvider
 				 "Sampling Interval",
 				 null,
 				 rootPropertyDescriptor));
+	}
+	
+
+	@Override
+	protected void addDataTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(new ItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TypedNamedElement_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TypedNamedElement_dataType_feature", "_UI_TypedNamedElement_type"),
+				 BehaviorPackage.Literals.TYPED_NAMED_ELEMENT__DATA_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null) {
+
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				Collection<Object> choices = new ArrayList<Object>();
+				//  Implemented using a blacklist (Components and Ports are forbidden)
+				// TODO: Does a whitelist make more sense here?
+				for (Object value : super.getChoiceOfValues(object)) {
+					if (value instanceof Component) {
+						continue;
+					}
+					if (value instanceof Port) {
+						continue;
+					}
+					if (value instanceof ComponentPart) {
+						continue;
+					}
+					if (value instanceof PortPart) {
+						continue;
+					}
+					choices.add(value);
+				}
+				return choices;
+			}
+		});
 	}
 
 	/**
