@@ -56,7 +56,7 @@ public abstract class PackageTest extends TraverseTest {
 				EPackage _package = (EPackage) element;
 				String nsUri = _package.getNsURI();
 				if (uris.contains(nsUri)) {
-					uris.remove(nsUri);
+					while (uris.remove(nsUri)); // Remove all occurrences
 				} else if (isRequiredPackage(_package)) {
 					problems.add("MISSING: "
 							+ name
