@@ -88,7 +88,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 					text = text.substring(1);
 					c = text.charAt(0);
 				}
-				return "[" + text + "]";
+				return "[" + text + "] ";
 			}
 		}
 		return "";
