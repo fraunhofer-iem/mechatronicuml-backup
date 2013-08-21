@@ -24,6 +24,9 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.common";
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.muml.common";
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.modelinstance.ui";
+    
+    -- For Custom Property Tab (MUML #459)
+    model.plugin.requiredPlugins += "de.fujaba.properties.runtime";
 
     
     -- set default colors
@@ -42,7 +45,24 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     	parser.extensibleViaService := true;
     };
     
-    -- Remove Property Sheet, as we are providing our own
-    model.propertySheet := null;
+    -- Add Custom Property Tab (MUML #459)
+    -- Does not work quite correctly (adds lots of tabs??)
+    -- Currently the gmfgen was adapted manually
+    --if (model.propertySheet.tabs[GenCustomPropertyTab]->select(className = "de.fujaba.properties.runtime.sections.ObjectPropertySection")->isEmpty()) then {
+    --	var tab : GenCustomPropertyTab := new GenCustomPropertyTab("experimental", "Experiental", "de.fujaba.properties.runtime.sections.ObjectPropertySection");
+    --	tab.filter := new CustomTabFilter("de.fujaba.properties.runtime.filter.ElementFilter");
+    --	model.propertySheet.tabs += tab;
+    --} endif;
+    
   }
+}
+
+constructor GenCustomPropertyTab::GenCustomPropertyTab(_iD : String, _label : String, _className : String) {
+	iD = _iD;
+	label = _label;
+	className = _className;
+}
+
+constructor CustomTabFilter::CustomTabFilter(_className : String) {
+	className = _className;
 }

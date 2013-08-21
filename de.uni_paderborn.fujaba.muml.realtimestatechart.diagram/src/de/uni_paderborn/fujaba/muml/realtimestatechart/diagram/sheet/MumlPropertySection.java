@@ -14,6 +14,7 @@ import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.properties.sections.AdvancedPropertySection;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.tooling.runtime.sheet.DefaultPropertySection;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.ui.IWorkbenchPart;
@@ -23,7 +24,7 @@ import org.eclipse.ui.views.properties.IPropertySourceProvider;
 /**
  * @generated
  */
-public class MumlPropertySection extends AdvancedPropertySection implements
+public class MumlPropertySection extends DefaultPropertySection implements
 		IPropertySourceProvider {
 
 	/**
@@ -51,53 +52,13 @@ public class MumlPropertySection extends AdvancedPropertySection implements
 	}
 
 	/**
-	 * @generated
-	 */
-	protected IPropertySourceProvider getPropertySourceProvider() {
-		return this;
-	}
-
-	/**
 	 * Modify/unwrap selection.
 	 * @generated
 	 */
+	@Override
 	protected Object transformSelection(Object selected) {
-
-		if (selected instanceof EditPart) {
-			Object model = ((EditPart) selected).getModel();
-			return model instanceof View ? ((View) model).getElement() : null;
-		}
-		if (selected instanceof View) {
-			return ((View) selected).getElement();
-		}
-		if (selected instanceof IAdaptable) {
-			View view = (View) ((IAdaptable) selected).getAdapter(View.class);
-			if (view != null) {
-				return view.getElement();
-			}
-		}
+		selected = /*super.*/transformSelectionToDomain(selected);
 		return selected;
-	}
-
-	/**
-	 * @generated
-	 */
-	public void setInput(IWorkbenchPart part, ISelection selection) {
-		if (selection.isEmpty()
-				|| false == selection instanceof StructuredSelection) {
-			super.setInput(part, selection);
-			return;
-		}
-		final StructuredSelection structuredSelection = ((StructuredSelection) selection);
-		ArrayList transformedSelection = new ArrayList(
-				structuredSelection.size());
-		for (Iterator it = structuredSelection.iterator(); it.hasNext();) {
-			Object r = transformSelection(it.next());
-			if (r != null) {
-				transformedSelection.add(r);
-			}
-		}
-		super.setInput(part, new StructuredSelection(transformedSelection));
 	}
 
 	/**

@@ -58,7 +58,7 @@
     <moveParticipant
           class="de.uni_paderborn.fujaba.muml.common.refactoring.DiagramMoveParticipant"
           id="de.uni_paderborn.fujaba.muml.common.refactoring.diagramMoveParticipant"
-          name="Move MUML Diagran Files">
+          name="Move MUML Diagram Files">
        <enablement>
           <adapt
                 type="org.eclipse.core.resources.IResource">
@@ -95,70 +95,6 @@
           </adapt></enablement>
     </moveParticipant>
   </extension>
-  
-  
-  <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
-      <propertyContributor
-            contributorId="de.uni_paderborn.fujaba.muml.common.properties"
-            typeMapper="de.uni_paderborn.fujaba.muml.common.sheet.MumlTypeMapper"
-            labelProvider="de.uni_paderborn.fujaba.muml.common.sheet.MumlSheetLabelProvider">
-         <propertyCategory category="domain"/>
-         <propertyCategory category="visual"/>
-         <propertyCategory category="extra"/>
-      </propertyContributor>
-   </extension>
-
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
-      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
-         <propertyTab
-             category="visual"
-             id="property.tab.AppearancePropertySection"
-             label="Appearance"/>
-          <propertyTab
-             category="visual"
-             id="property.tab.DiagramPropertySection"
-             label="Rulers &amp; Grid"/>
-         
-          <!-- this was in the category extra, to put it to the bottom -->
-          <propertyTab
-             category="domain"
-             id="property.tab.domain.advanced"
-             label="Advanced"/>
-      </propertyTabs>
-   </extension>
-
-   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
-      <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
-         <propertySection id="property.section.ConnectorAppearancePropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection>
-         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection> 
-         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
-            tab="property.tab.AppearancePropertySection">
-         </propertySection>     
-         <propertySection id="property.section.RulerGridPropertySection" 
-            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
-            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
-            tab="property.tab.DiagramPropertySection">
-         </propertySection>     
-         <propertySection
-            id="property.tab.domain.advanced" 
-            tab="property.tab.domain.advanced"
-            class="de.uni_paderborn.fujaba.muml.common.sheet.MumlPropertySection">
-            <input type="org.eclipse.emf.ecore.EObject"/>
-            <!--<input type="de.uni_paderborn.fujaba.muml.XXX.diagram.navigator.MumlAbstractNavigatorItem"/> -->
-         </propertySection>
-         
-      </propertySections>
-   </extension>
    
    <!-- Initialization for ClockConstraints using the CreationDialog -->
    <extension

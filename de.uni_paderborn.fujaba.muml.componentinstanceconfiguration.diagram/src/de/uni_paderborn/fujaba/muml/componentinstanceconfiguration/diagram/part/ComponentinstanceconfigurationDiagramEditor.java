@@ -95,7 +95,7 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 	 * @generated
 	 */
 	public String getContributorId() {
-		return "de.uni_paderborn.fujaba.muml.common.properties";
+		return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.ID;
 	}
 
 	/**
@@ -103,11 +103,6 @@ public class ComponentinstanceconfigurationDiagramEditor extends
 	 */
 	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class type) {
-
-		// Deactivated, see MUML #459
-		//if (type == org.eclipse.ui.views.properties.IPropertySheetPage.class) {
-		//	return null;
-		//}
 		if (type == IShowInTargetList.class) {
 			return new IShowInTargetList() {
 				public String[] getShowInTargetIds() {

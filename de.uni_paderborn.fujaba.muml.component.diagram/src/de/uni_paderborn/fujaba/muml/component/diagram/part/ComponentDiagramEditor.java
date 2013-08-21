@@ -37,6 +37,7 @@ import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ShowInContext;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
 
 /**
  * @generated
@@ -89,20 +90,7 @@ public class ComponentDiagramEditor extends DiagramDocumentEditor implements
 	 * @generated
 	 */
 	public String getContributorId() {
-		return "de.uni_paderborn.fujaba.muml.common.properties";
-	}
-
-	/**
-	 * @generated
-	 */
-	@SuppressWarnings("rawtypes")
-	public Object getAdapter(Class type) {
-
-		// Deactivated, see MUML #459
-		//if (type == org.eclipse.ui.views.properties.IPropertySheetPage.class) {
-		//	return null;
-		//}
-		return super.getAdapter(type);
+		return de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin.ID;
 	}
 
 	/**

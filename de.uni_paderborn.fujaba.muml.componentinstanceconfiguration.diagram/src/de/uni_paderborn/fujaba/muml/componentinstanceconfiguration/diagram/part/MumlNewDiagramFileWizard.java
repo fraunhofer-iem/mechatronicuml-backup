@@ -192,7 +192,7 @@ public class MumlNewDiagramFileWizard extends Wizard {
 		 * @generated
 		 */
 		protected boolean validatePage() {
-			if (selectedModelElement == null) {
+			if (getModelElement() == null) {
 				setErrorMessage(de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.Messages.MumlNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
@@ -200,7 +200,7 @@ public class MumlNewDiagramFileWizard extends Wizard {
 					.getInstance()
 					.provides(
 							new CreateDiagramViewOperation(
-									new EObjectAdapter(selectedModelElement),
+									new EObjectAdapter(getModelElement()),
 									de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.MODEL_ID,
 									de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.ComponentinstanceconfigurationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null

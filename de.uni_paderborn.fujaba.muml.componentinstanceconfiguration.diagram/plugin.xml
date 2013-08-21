@@ -695,6 +695,101 @@
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">
       <?gmfgen generated="true"?>
    </extension>
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram"
+            labelProvider="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.sheet.MumlSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="Advanced"/>
+
+          <propertyTab
+             category="extra"
+             id="property.tab.experimental"
+             label="%tab.experimental"/>
+
+
+      </propertyTabs>
+   </extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.sheet.MumlPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.navigator.MumlAbstractNavigatorItem"/>
+         </propertySection>
+         <propertySection
+            id="property.section.experimental" 
+            tab="property.tab.experimental"
+            filter="de.fujaba.properties.runtime.filter.ElementFilter"
+            class="de.fujaba.properties.runtime.sections.ObjectPropertySection">
+         </propertySection>
+      </propertySections>
+   </extension>
+
+<extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <?gmfgen generated="true"?>
+      <propertyTabs
+            contributorId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram">
+         <propertyTab
+               label="Base"
+               category="domain"
+               id="Base">
+         </propertyTab>
+         <propertyTab
+               label="Documentation"
+               category="extra"
+               id="Documentation"
+               afterTab="Documentation">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+
 
    <!-- optionally, specify keybindings -->
 

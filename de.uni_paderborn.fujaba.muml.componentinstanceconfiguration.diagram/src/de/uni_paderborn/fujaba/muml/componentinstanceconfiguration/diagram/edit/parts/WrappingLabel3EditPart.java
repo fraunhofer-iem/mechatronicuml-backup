@@ -36,6 +36,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.directedit.TextDirectEditManager2;
 import org.eclipse.gmf.tooling.runtime.draw2d.labels.SimpleLabelDelegate;
+import org.eclipse.gmf.tooling.runtime.edit.policies.DefaultNodeLabelDragPolicy;
 import org.eclipse.gmf.tooling.runtime.edit.policies.labels.IRefreshableFeedbackEditPolicy;
 import org.eclipse.gmf.tooling.runtime.ocl.tracker.HasOclTracker;
 import org.eclipse.gmf.tooling.runtime.ocl.tracker.OclTracker;
@@ -100,9 +101,8 @@ public class WrappingLabel3EditPart extends CompartmentEditPart implements
 				new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.policies.MumlTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
 				new LabelDirectEditPolicy());
-		installEditPolicy(
-				EditPolicy.PRIMARY_DRAG_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.ComponentInstanceConfigurationDiagramEditPart.NodeLabelDragPolicy());
+		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
+				new DefaultNodeLabelDragPolicy());
 	}
 
 	/**
