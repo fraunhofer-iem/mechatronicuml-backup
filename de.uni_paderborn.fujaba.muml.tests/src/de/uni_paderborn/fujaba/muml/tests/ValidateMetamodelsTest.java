@@ -52,7 +52,7 @@ public class ValidateMetamodelsTest {
 		EcorePackage.eINSTANCE.eClass();
 		GenModelPackage.eINSTANCE.eClass();
 		
-		String text = "";
+		String text = "Package URIS:\n";
 		for (String key : EPackage.Registry.INSTANCE.keySet()) {
 			Object value = EPackage.Registry.INSTANCE.get(key);
 			text += key + " => " + value + "\n";
