@@ -51,13 +51,6 @@ public class ValidateMetamodelsTest {
 		// Register Packages
 		EcorePackage.eINSTANCE.eClass();
 		GenModelPackage.eINSTANCE.eClass();
-		
-		String text = "Package URIS:\n";
-		for (String key : EPackage.Registry.INSTANCE.keySet()) {
-			Object value = EPackage.Registry.INSTANCE.get(key);
-			text += key + " => " + value + "\n";
-		}
-		Assert.fail(text);
 
 		// Load resource (CAUTION: Order is important; dependant metamodels must
 		// be loaded first, else proxies are not resolved correctly...)
