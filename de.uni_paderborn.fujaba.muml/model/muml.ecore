@@ -63,7 +63,7 @@
         <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole ReceiverPortRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
+        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="DiscretePortRequiresMessageTypes" value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
@@ -621,7 +621,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="PortInstanceMustReferencePortType" value="-- The type of a port instance must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined()) then&#xD;&#xA;self.type.oclIsKindOf(component::Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
         <details key="PortInstanceNotMultipleAssemblyConnectorInstances" value="-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->size() &lt;= 1"/>
-        <details key="PortInstanceNotMultipleDelegationConnectorInstances" value="-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance and&#xA;&#x9;(&#xA;&#x9;&#x9;(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)&#xA;&#x9;&#x9;implies&#xA;&#x9;&#x9;componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance)&#xA;&#x9;)&#xA;)->size() &lt;= 1"/>
+        <details key="PortInstanceNotMultipleDelegationConnectorInstances" value="-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.&#xA;portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance) and&#xA;&#x9;(&#xA;&#x9;&#x9;(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance))&#xA;&#x9;&#x9;implies&#xA;&#x9;&#x9;componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance)&#xA;&#x9;)&#xA;)->size() &lt;= 1"/>
         <details key="PortInstanceMustDelegateToEmbeddedCIC" value="-- PortInstance at Structured Component must delegate to embedded CIC&#xA;componentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance))->isEmpty()"/>
         <details key="PortInstanceNeedsDelegationToParentOrAssembly" value="-- PortInstance needs a Delegation Connector Instance to the parent component's port or an Assembly Connector Instance to a port within this CIC.&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(DelegationConnectorInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclIsKindOf(StructuredComponentInstance)&#xA;&#x9;and ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi &lt;> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)&#xA;)->isEmpty() or&#xA;not portConnectorInstances->select(&#xA;&#x9;ci | ci.oclIsKindOf(AssemblyConnectorInstance)&#xA;)->isEmpty()"/>
       </eAnnotations>
@@ -1722,7 +1722,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="AtLeastOneIncomingTransition" value="self.incomingTransitions ->notEmpty()"/>
-        <details key="OneOutgoingTransitionPerRegion" value="-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to&#xD;&#xA;self.state.embeddedRegions->forAll(r |&#xD;&#xA;&#x9;self.outgoingTransitions->one(t |&#xD;&#xA;&#x9;&#x9;(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
+        <details key="OneOutgoingTransitionPerRegion" value="-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to&#xD;&#xA;(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |&#xD;&#xA;&#x9;self.outgoingTransitions->one(t |&#xD;&#xA;&#x9;&#x9;(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExitPoint" eSuperTypes="#//realtimestatechart/StateConnectionPoint">
@@ -1733,7 +1733,7 @@
         <details key="documentation" value="An ExitPoint is an intermediate pseudostate which makes it possible to chain transitions between different hierarchy levels. The ExitPoint is assigned to a state. An ExitPoint is used to jointly deactivate dedicated inner states of embedded statecharts."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="AtLeastOneIncomingTransitionPerRegion" value="-- all regions of the parent state must have at least one vertex that connects to the ExitPoint&#xD;&#xA;self.state.embeddedRegions->forAll(r |&#xD;&#xA;&#x9;self.incomingTransitions->exists(t |&#xD;&#xA;&#x9;&#x9;(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
+        <details key="AtLeastOneIncomingTransitionPerRegion" value="-- all regions of the parent state must have at least one vertex that connects to the ExitPoint&#xD;&#xA;(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |&#xD;&#xA;&#x9;self.incomingTransitions->exists(t |&#xD;&#xA;&#x9;&#x9;(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion = r)&#xD;&#xA;&#x9;)&#xD;&#xA;)"/>
         <details key="OneOutgoingTransition" value="self.outgoingTransitions->size() = 1"/>
       </eAnnotations>
     </eClassifiers>
@@ -1964,7 +1964,7 @@
         <details key="constraints" value="LowerBoundMustBeLessOrEqualThanUpperBound"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="LowerBoundMustBeLessOrEqualThanUpperBound" value="-- lower bound of cardinality must be less or equal than upper bound&#xD;&#xA;((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))&#xD;&#xA;and (self.lowerBound.infinity implies self.upperBound.infinity)"/>
+        <details key="LowerBoundMustBeLessOrEqualThanUpperBound" value="-- lower bound of cardinality must be less or equal than upper bound&#xD;&#xA;(not self.lowerBound.oclIsUndefined() and not self.upperBound.oclIsUndefined()) implies&#xA;(&#xA;&#x9;((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))&#xD;&#xA;&#x9;and (self.lowerBound.infinity implies self.upperBound.infinity)&#xA;)"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="lowerBound" lowerBound="1"
           eType="#//valuetype/NaturalNumber" containment="true">
