@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.util;
 
+import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -13,6 +14,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
@@ -1292,7 +1294,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String ENTRY_POINT__ONE_OUTGOING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to\r\n" +
-		"self.state.embeddedRegions->forAll(r |\r\n" +
+		"(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |\r\n" +
 		"\tself.outgoingTransitions->one(t |\r\n" +
 		"\t\t(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)\r\n" +
 		"\t\tor\r\n" +
@@ -1349,7 +1351,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String EXIT_POINT__AT_LEAST_ONE_INCOMING_TRANSITION_PER_REGION__EEXPRESSION = "-- all regions of the parent state must have at least one vertex that connects to the ExitPoint\r\n" +
-		"self.state.embeddedRegions->forAll(r |\r\n" +
+		"(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |\r\n" +
 		"\tself.incomingTransitions->exists(t |\r\n" +
 		"\t\t(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)\r\n" +
 		"\t\tor\r\n" +

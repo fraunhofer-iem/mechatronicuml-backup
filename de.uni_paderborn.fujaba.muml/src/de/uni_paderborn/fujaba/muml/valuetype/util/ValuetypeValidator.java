@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.valuetype.util;
 
+import de.uni_paderborn.fujaba.muml.valuetype.*;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -14,6 +15,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
@@ -133,8 +135,11 @@ public class ValuetypeValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String CARDINALITY__LOWER_BOUND_MUST_BE_LESS_OR_EQUAL_THAN_UPPER_BOUND__EEXPRESSION = "-- lower bound of cardinality must be less or equal than upper bound\r\n" +
-		"((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\r\n" +
-		"and (self.lowerBound.infinity implies self.upperBound.infinity)";
+		"(not self.lowerBound.oclIsUndefined() and not self.upperBound.oclIsUndefined()) implies\n" +
+		"(\n" +
+		"\t((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\r\n" +
+		"\tand (self.lowerBound.infinity implies self.upperBound.infinity)\n" +
+		")";
 
 	/**
 	 * Validates the LowerBoundMustBeLessOrEqualThanUpperBound constraint of '<em>Cardinality</em>'.

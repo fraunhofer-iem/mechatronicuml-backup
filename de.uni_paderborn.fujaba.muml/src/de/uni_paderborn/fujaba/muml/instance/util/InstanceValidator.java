@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.instance.util;
 
+import de.uni_paderborn.fujaba.muml.instance.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -13,6 +14,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
@@ -250,9 +252,9 @@ public class InstanceValidator extends MumlValidator {
 	 */
 	protected static final String PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_DELEGATION_CONNECTOR_INSTANCES__EEXPRESSION = "-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.\n" +
 		"portConnectorInstances->select(\n" +
-		"\tci | ci.oclIsKindOf(DelegationConnectorInstance and\n" +
+		"\tci | ci.oclIsKindOf(DelegationConnectorInstance) and\n" +
 		"\t(\n" +
-		"\t\t(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance)\n" +
+		"\t\t(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance))\n" +
 		"\t\timplies\n" +
 		"\t\tcomponentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance)\n" +
 		"\t)\n" +

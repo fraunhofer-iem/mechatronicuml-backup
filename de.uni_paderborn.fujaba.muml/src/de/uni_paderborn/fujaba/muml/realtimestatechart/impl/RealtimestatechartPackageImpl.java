@@ -1920,13 +1920,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->notEmpty()",
-			 "OneOutgoingTransitionPerRegion", "-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to\r\nself.state.embeddedRegions->forAll(r |\r\n\tself.outgoingTransitions->one(t |\r\n\t\t(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)\r\n\t\tor\r\n\t\t(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion = r)\r\n\t)\r\n)"
+			 "OneOutgoingTransitionPerRegion", "-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to\r\n(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |\r\n\tself.outgoingTransitions->one(t |\r\n\t\t(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)\r\n\t\tor\r\n\t\t(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion = r)\r\n\t)\r\n)"
 		   });				
 		addAnnotation
 		  (exitPointEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOneIncomingTransitionPerRegion", "-- all regions of the parent state must have at least one vertex that connects to the ExitPoint\r\nself.state.embeddedRegions->forAll(r |\r\n\tself.incomingTransitions->exists(t |\r\n\t\t(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)\r\n\t\tor\r\n\t\t(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion = r)\r\n\t)\r\n)",
+			 "AtLeastOneIncomingTransitionPerRegion", "-- all regions of the parent state must have at least one vertex that connects to the ExitPoint\r\n(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |\r\n\tself.incomingTransitions->exists(t |\r\n\t\t(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)\r\n\t\tor\r\n\t\t(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion = r)\r\n\t)\r\n)",
 			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1"
 		   });
 	}

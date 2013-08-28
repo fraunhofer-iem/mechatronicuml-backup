@@ -515,7 +515,7 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		  (cardinalityEClass, 
 		   source, 
 		   new String[] {
-			 "LowerBoundMustBeLessOrEqualThanUpperBound", "-- lower bound of cardinality must be less or equal than upper bound\r\n((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\r\nand (self.lowerBound.infinity implies self.upperBound.infinity)"
+			 "LowerBoundMustBeLessOrEqualThanUpperBound", "-- lower bound of cardinality must be less or equal than upper bound\r\n(not self.lowerBound.oclIsUndefined() and not self.upperBound.oclIsUndefined()) implies\n(\n\t((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\r\n\tand (self.lowerBound.infinity implies self.upperBound.infinity)\n)"
 		   });							
 		addAnnotation
 		  (naturalNumberEClass, 

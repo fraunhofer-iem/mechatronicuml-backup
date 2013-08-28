@@ -114,7 +114,7 @@ public class SynchronizationChannelImpl extends NamedElementImpl implements Sync
 	 */
 	public State getState() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.SYNCHRONIZATION_CHANNEL__STATE) return null;
-		return (State)eInternalContainer();
+		return (State)eContainer();
 	}
 
 	/**
