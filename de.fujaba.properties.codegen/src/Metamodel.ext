@@ -75,13 +75,10 @@ String genFeatureLiteral(GenFeature this) :
 		genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
 	
 Set[Property] genLocalProperties(Class this) :
-	{ this }.union(superClasses.genSuperClasses()).properties.without(genInheritedProperties()).without(genOverriddenProperties());
+	{ this }.union(superClasses.allSuperClasses).properties.without(genInheritedProperties()).without(genOverriddenProperties());
 	
 Set[Property] genInheritedProperties(Class this) :
-	{ superClasses.first() }.genSuperClasses().properties;
+	superClasses.select(e | e == superClasses.first()).allSuperClasses.properties;
 
 Set[Property] genOverriddenProperties(Class this) :
 	properties.select(p | p.genFeature.ecoreFeature.eContainingClass != genClass.ecoreClass);
-
-Set[Class] genSuperClasses(Class this) :
-	superClasses.union(superClasses.genSuperClasses());

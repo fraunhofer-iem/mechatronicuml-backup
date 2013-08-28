@@ -16,7 +16,7 @@ public class «genEditorName()» extends «EXPAND extends-» {
 «ELSE-»
 	«superClasses.first().genQualifiedEditorName()»
 «ENDIF-»
-«ENDDEFINE-»
+«ENDDEFINE»
 
 
 «DEFINE classBody FOR Class»
@@ -114,7 +114,7 @@ public class «genEditorName()» extends «EXPAND extends-» {
 «ELSE-»
 	null
 «ENDIF-»
-«ENDDEFINE-»
+«ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR PropertyEditor-»
 new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
