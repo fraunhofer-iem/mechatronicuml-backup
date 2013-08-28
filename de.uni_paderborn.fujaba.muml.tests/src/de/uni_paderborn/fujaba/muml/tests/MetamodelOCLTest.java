@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.ocl.OCL;
@@ -40,6 +41,7 @@ import org.eclipse.ocl.options.ProblemOption;
 import org.eclipse.ocl.util.OCLUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.tests.resource.IResourceVisitor;
 import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
@@ -97,6 +99,8 @@ public class MetamodelOCLTest extends TraverseTest {
 
 		// Register Packages
 		EcorePackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
+		
 		
 		// URIMap for Ecore.ecore
 		Map uriMap = resourceSet.getURIConverter().getURIMap(); 
@@ -108,8 +112,17 @@ public class MetamodelOCLTest extends TraverseTest {
 		TestUtilities.registerWorkspaceProject("org.storydriven.core");
 
 		// Load resource and add model package
+
+		Resource coreModel = TestUtilities.loadResource(resourceSet,
+				"org.storydriven.core", "/model/core.ecore");
+
+		
 		Resource mumlModel = TestUtilities.loadResource(resourceSet,
 				"de.uni_paderborn.fujaba.muml", "/model/muml.ecore");
+
+
+		
+		EcoreUtil.resolveAll(resourceSet);
 		EPackage muml = (EPackage) mumlModel.getContents().get(0);
 		packages.add(muml);
 
