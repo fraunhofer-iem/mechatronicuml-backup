@@ -220,6 +220,12 @@ public class FujabaNewwizardPlugin extends AbstractUIPlugin {
 
 			// Put this entry into the map
 			if (editorId != null) {
+				IDiagramInformation existingDiagramInformation = map.get(editorId);
+				if (existingDiagramInformation != null) {
+					// Append top level nodes to existing diagram information
+					existingDiagramInformation.getTopLevelNodes().putAll(diagramInformation.getTopLevelNodes());
+					diagramInformation = existingDiagramInformation;
+				}
 				map.put(editorId, diagramInformation);
 			}
 		}
