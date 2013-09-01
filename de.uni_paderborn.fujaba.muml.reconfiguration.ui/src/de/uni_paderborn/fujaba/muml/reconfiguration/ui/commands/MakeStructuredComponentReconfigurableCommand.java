@@ -109,6 +109,37 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 				
 				editingDomain = editPart.getEditingDomain();
 				
+				ModelElementCategory category = (ModelElementCategory) sc.eContainer();
+				
+				editingDomain.getCommandStack().execute(new StaticStructuredComponentTransformationCommand(sc));
+			
+				ReconfigurableStructuredComponent reconfComponent = getReconfigurableStructuredComponent(category);
+				IDiagramInformation diagramInformation = getDiagramInformation(reconfComponent); //null
+				Collection<EObject> elements = new HashSet<EObject>();
+				elements.add(reconfComponent);
+				PreferencesHint preferencesHint = new PreferencesHint(diagramInformation.getPreferencesHint());
+				
+				//create view request
+				CreateViewRequest createViewRequest = getCreatePersistedViewsRequest(diagram, elements, diagramInformation, preferencesHint);
+				
+				//get create view command
+				Command cmd = getCreateViewCommand(createViewRequest, diagram);
+				
+				if (cmd != null && cmd.canExecute()) {
+					SetViewMutabilityCommand.makeMutable(new EObjectAdapter(diagram))
+							.execute();
+					executeCreateViewsCommand(cmd, diagram);
+				}
+
+				try {
+					Map<?, ?> saveOptions = DiagramEditorUtil.getSaveOptions();
+					reconfComponent.eResource().save(saveOptions);
+					diagram.eResource().save(saveOptions);
+				} catch (IOException e) {
+					FujabaNewwizardPlugin.getDefault().logError(
+							"Unable to store model and diagramResource resources", e); //$NON-NLS-1$
+				}
+				
 				
 				
 				
@@ -123,45 +154,13 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 					//create new editing domain because no editing domain exists yet
 					ResourceSet rset = sc.eResource().getResourceSet();
 					editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(rset);
+					
+					editingDomain.getCommandStack().execute(new StaticStructuredComponentTransformationCommand(sc));
 				}
 			} else {
 				//there is an object within the selection, which is not supported -> ignore
 				continue;
-			}
-						
-			ModelElementCategory category = (ModelElementCategory) sc.eContainer();
-			
-			editingDomain.getCommandStack().execute(new StaticStructuredComponentTransformationCommand(sc));
-		
-			//TODO only if Edit Part
-			ReconfigurableStructuredComponent reconfComponent = getReconfigurableStructuredComponent(category);
-			IDiagramInformation diagramInformation = getDiagramInformation(reconfComponent); //null
-			Collection<EObject> elements = new HashSet<EObject>();
-			elements.add(reconfComponent);
-			PreferencesHint preferencesHint = new PreferencesHint(diagramInformation.getPreferencesHint());
-			
-			//create view request
-			CreateViewRequest createViewRequest = getCreatePersistedViewsRequest(diagram, elements, diagramInformation, preferencesHint);
-			
-			//get create view command
-			Command cmd = getCreateViewCommand(createViewRequest, diagram);
-			
-			if (cmd != null && cmd.canExecute()) {
-				SetViewMutabilityCommand.makeMutable(new EObjectAdapter(diagram))
-						.execute();
-				executeCreateViewsCommand(cmd, diagram);
-			}
-
-			try {
-				Map<?, ?> saveOptions = DiagramEditorUtil.getSaveOptions();
-				reconfComponent.eResource().save(saveOptions);
-				diagram.eResource().save(saveOptions);
-			} catch (IOException e) {
-				FujabaNewwizardPlugin.getDefault().logError(
-						"Unable to store model and diagramResource resources", e); //$NON-NLS-1$
-			}
-			
-			
+			}		
 		}
 		
 		return null;
@@ -203,7 +202,7 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 			System.out.println(result.getMessage());
 		}
 		
-		//TODO ist reconf in inputComponent?
+		//TODO add reconf to inputComponent
 		
 		
 	}
