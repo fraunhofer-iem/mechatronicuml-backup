@@ -233,7 +233,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentComponentCompartmentEditPart) {
 			return getPrimaryShape().getFigureChildren();
 		}
 		if (editPart instanceof IBorderItemEditPart) {

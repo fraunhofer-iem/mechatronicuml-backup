@@ -12,22 +12,31 @@ public class CustomReconfigurationEditPartFactory extends
 	public EditPart createEditPart(EditPart context, Object model) {
 		if (model instanceof View) {
 			View view = (View) model;
-			
+
 			int visualid = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 					.getVisualID(view);
-			
+
 			int reconfid = de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID;
-			
+
 			switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 					.getVisualID(view)) {
 
 			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart(
 						view);
+
+			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentComponentCompartmentEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentComponentCompartmentEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentNameEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentNameEditPart(
+						view);
+
 			}
 		}
-		
 		return super.createEditPart(context, model);
+
 	}
-	
+
 }
