@@ -78,6 +78,9 @@ public class OptionPropertyEditor extends
 				Collection<?> choices = getChoices();
 				for (final Object choice : choices) {
 					String label = labelProvider.getText(choice);
+					if (choice == null) {
+						label = "null";
+					}
 					Button button = toolkit.createButton(composite, label, SWT.RADIO);
 					button.addSelectionListener(new SelectionAdapter() {
 						@Override
@@ -129,16 +132,12 @@ public class OptionPropertyEditor extends
 		super.refresh();
 
 		Button selectedButton = buttons.get(value);
-		if (selectedButton == null) {
-			// Deselect all buttons that were selected
-			for (Button button : buttons.values()) {
-				if (!button.isDisposed() && button.getSelection()) {
-					button.setSelection(false);
-				}
+		
+		// Deselect all buttons that were selected
+		for (Button button : buttons.values()) {
+			if (!button.isDisposed()) {
+				button.setSelection(button == selectedButton);
 			}
-		} else if (!selectedButton.isDisposed() && !selectedButton.getSelection()) {
-			// Select the right button, if it was unselected
-			selectedButton.setSelection(true);
 		}
 	}
 }
