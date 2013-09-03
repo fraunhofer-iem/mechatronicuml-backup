@@ -869,7 +869,6 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (delegationConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "OneDelegationInstancePerPortInstance", "-- FIXME\r\nnot self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1",
 			 "DelegateToEmbeddedCIC", "-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\nnot self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 <> ci)))->isEmpty()"
 		   });			
 		addAnnotation

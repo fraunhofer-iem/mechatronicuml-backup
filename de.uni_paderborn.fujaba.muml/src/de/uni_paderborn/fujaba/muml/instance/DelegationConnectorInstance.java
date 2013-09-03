@@ -26,7 +26,7 @@ import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDelegationConnectorInstance()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DelegateToEmbeddedCIC'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OneDelegationInstancePerPortInstance='-- FIXME\r\nnot self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1' DelegateToEmbeddedCIC='-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\nnot self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 <> ci)))->isEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DelegateToEmbeddedCIC='-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\nnot self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 <> ci)))->isEmpty()'"
  * @generated
  */
 public interface DelegationConnectorInstance extends PortConnectorInstance {

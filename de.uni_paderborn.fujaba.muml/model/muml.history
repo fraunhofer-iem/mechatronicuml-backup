@@ -1734,104 +1734,104 @@
             featureName="value" dataValue="This class represents a delegation connector. A delegation connector &#xD;&#xA;connects a port of a structured component type and a port part of &#xD;&#xA;component part the structured component contains.&#xD;&#xA;The delegation has no behavior. In a running system, the port of the structured&#xD;&#xA;component and the port of the component part will be the same object like &#xD;&#xA;interfaces of classes where interface and class are the same object at runtime."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector"
-          referenceName="eAnnotations" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="eAnnotations" element="#//@releases.16/@changes.416/@element">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.416/@element"
+          referenceName="details" element="#//@releases.16/@changes.416/@element/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
             featureName="key" dataValue="constraints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
             featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector"
-          referenceName="eAnnotations" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="eAnnotations" element="#//@releases.16/@changes.417/@element">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.0"
             featureName="key" dataValue="ValidContinuousPortDirections"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.0"
             featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind = self.toContinuousPort.kind"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.1">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.1"
             featureName="key" dataValue="DelegationBetweenContinuousPortsRequiresSameDataType"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.1"
             featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.type = self.toContinuousPort.type"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.2">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.2"
             featureName="key" dataValue="DelegationBetweenDiscretePortsRequiresSameCoordinationPattern"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.2"
             featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.3">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.3"
             featureName="key" dataValue="DelegationBetweenDiscretePortsRequiresSameRoles"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.3"
             featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have the same roles&#xA;&#x9;&#x9;self.fromDiscretePort.refines.name = self.toDiscretePort.refines.name&#xA;else&#xA;&#x9;true&#xA;endif"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.4">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.4"
             featureName="key" dataValue="DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.4"
             featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()&#xA;and self.fromPort.isMultiPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;-- the target port is a multi port&#xA;&#x9;&#x9;self.toPort.isMultiPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;-- the target part is a multi part&#xA;&#x9;&#x9;self.componentPart.isMultiPart&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.5">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.5"
             featureName="key" dataValue="ValidDiscreteInPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.5"
             featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.6">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.6"
             featureName="key" dataValue="ValidDiscreteOutPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.6"
             featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.7">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.7"
             featureName="key" dataValue="ValidDiscreteInOutPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.7"
             featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.8">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.8"
             featureName="key" dataValue="ValidContinuousInPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.8"
             featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.9">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.9"
             featureName="key" dataValue="ValidContinuousOutPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.9"
             featureName="value" dataValue="-- not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) &#xD;&#xA;&#xD;&#xA;not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort)&#xD;&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.10">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.10"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.10">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.10"
             featureName="key" dataValue="ValidHybridInPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.10"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.10"
             featureName="value" dataValue="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xD;&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.11">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.11"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+          referenceName="details" element="#//@releases.16/@changes.417/@element/@details.11">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.11"
             featureName="key" dataValue="ValidHybridOutPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.11"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.11"
             featureName="value" dataValue="not self.fromHybridPort.oclIsUndefined() &#xD;&#xA;and &#xD;&#xA;self.fromHybridPort.isHybridOutPort &#xD;&#xA;implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) "/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//component" referenceName="eClassifiers"
@@ -1865,111 +1865,111 @@
             featureName="value" dataValue="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector"
-          referenceName="eAnnotations" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
+          referenceName="eAnnotations" element="#//@releases.16/@changes.414/@element">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.414/@element"
+          referenceName="details" element="#//@releases.16/@changes.414/@element/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
             featureName="key" dataValue="constraints"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
             featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector"
-          referenceName="eAnnotations" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+          referenceName="eAnnotations" element="#//@releases.16/@changes.415/@element">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element"
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.0">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.0"
             featureName="key" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.0"
             featureName="value" dataValue="(self.fromPort.cardinality.upperBound.value &lt;= 1 and self.from.cardinality.upperBound.value &lt;= 1)&#xD;&#xA;implies&#xD;&#xA;self.fromPort &lt;> self.toPort"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.1">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.1"
             featureName="key" dataValue="ValidContinuousPortDirections"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.1"
             featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind &lt;> self.toContinuousPort.kind"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.2">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.2"
             featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresCoordinationPattern"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.2"
             featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination pattern&#xA;&#x9;not self.coordinationPattern.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.3">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.3"
             featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.3"
             featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.4">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.4"
             featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresDifferentRoles"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.4"
             featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.5">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.5"
             featureName="key" dataValue="AssemblyBetweenDiscretePortsSameMessageInterfaces"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.5"
             featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- message interfaces must be compatible&#xA;&#x9;self.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface&#xA;&#x9;and&#xA;&#x9;self.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface&#xA;else&#xA;&#x9;true&#xA;endif"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.6">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.6"
             featureName="key" dataValue="ValidDiscreteInPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.6"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.6"
             featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.7">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.7"
             featureName="key" dataValue="ValidDiscreteOutPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.7"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.7"
             featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.8">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.8"
             featureName="key" dataValue="ValidDiscreteInOutPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.8"
             featureName="value" dataValue="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.9">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.9"
             featureName="key" dataValue="ValidContinuousInPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.9"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.9"
             featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.10">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.10"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.10">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.10"
             featureName="key" dataValue="ValidContinuousOutPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.10"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.10"
             featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.11">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.11"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.11">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.11"
             featureName="key" dataValue="ValidHybridInPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.11"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.11"
             featureName="value" dataValue="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"/>
       </changes>
-      <changes xsi:type="history:Create" target="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.12">
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.12"
+      <changes xsi:type="history:Create" target="#//@releases.16/@changes.415/@element"
+          referenceName="details" element="#//@releases.16/@changes.415/@element/@details.12">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.12"
             featureName="key" dataValue="ValidHybridOutPortCombination"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.12"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.12"
             featureName="value" dataValue="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
       </changes>
       <changes xsi:type="history:Create" target="#//@releases.5/@changes.87/@element"
@@ -2344,10 +2344,10 @@
             featureName="source" dataValue="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-          referenceName="details" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0">
-        <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+          referenceName="details" element="#//@releases.16/@changes.418/@element">
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.418/@element"
             featureName="key" dataValue="OneDelegationInstancePerPortInstance"/>
-        <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+        <changes xsi:type="history:Set" element="#//@releases.16/@changes.418/@element"
             featureName="value" dataValue="not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"/>
       </changes>
       <changes xsi:type="history:Create" target="muml.ecore#//instance/DelegationConnectorInstance"
@@ -16069,7 +16069,7 @@
         featureName="eSuperTypes" referenceValue="muml.ecore#//types/DataType"/>
     <changes xsi:type="history:Set" element="#//@releases.4/@changes.75/@element"
         featureName="name" dataValue="PartDataType"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.8"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.8"
         featureName="value" dataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort)&#xD;&#xA;&#x9;)"
         oldDataValue="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
     <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart" featureName="nsURI"
@@ -17498,9 +17498,9 @@
     <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.5"
         featureName="value" dataValue="if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.multiPort implies self.refines.multiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"
         oldDataValue="if not (self.refines.oclIsUndefined() and self.refines.cardinality.oclIsUndefined() and self.refines.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.multiPort implies self.refines.isMultiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="" oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
         featureName="value" dataValue="" oldDataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="StructuredComponentNoHybridPort ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts HybridStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
@@ -19474,57 +19474,57 @@
     <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/senderMessageTypes/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in&#xA;if b.oclIsUndefined() then&#xA;&#x9;OrderedSet { }&#xA;else&#xA;&#x9;if b.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;b.oclAsType(component::DiscretePort).senderMessageTypes&#xA;&#x9;else&#xA;&#x9;&#x9;if b.oclIsKindOf(protocol::Role) then&#xA;&#x9;&#x9;&#x9;b.oclAsType(protocol::Role).senderMessageTypes&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;OrderedSet { }&#xA;&#x9;&#x9;endif&#xA;&#x9;endif&#xA;endif"
         oldDataValue="let b : core::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in&#xA;if b.oclIsUndefined() then&#xA;&#x9;OrderedSet { }&#xA;else&#xA;&#x9;if b.oclIsKindOf(component::DiscretePort) then&#xA;&#x9;&#x9;b.oclAsType(component::DiscretePort).senderMessageTypes&#xA;&#x9;else&#xA;&#x9;&#x9;if b.oclIsKindOf(protocol::Role) then&#xA;&#x9;&#x9;&#x9;b.oclAsType(protocol::Role).senderMessageTypes&#xA;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;OrderedSet { }&#xA;&#x9;&#x9;endif&#xA;&#x9;endif&#xA;endif"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts"
         oldDataValue=""/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections"
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern"
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern "
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles"
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern "/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination"
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination"
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination "
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination"
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination "/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination"
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
         featureName="value" dataValue="ValidContinuousPortDirections " oldDataValue=""/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
         featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType"
         oldDataValue="ValidContinuousPortDirections "/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
         featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern"
         oldDataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
         featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles"
         oldDataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
         featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"
         oldDataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
         featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
         oldDataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"/>
     <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
@@ -19716,37 +19716,37 @@
     <changes xsi:type="history:Set" element="muml.ecore#//component/DiscretePort/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The role of a coordination protocol that this port refines."
         oldDataValue="The role of a coordination pattern that this port refines."/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.2"
         featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresCoordinationProtocol"
         oldDataValue="AssemblyBetweenDiscretePortsRequiresCoordinationPattern"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.3"
         featureName="key" dataValue="AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol"
         oldDataValue="AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationProtocol AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
         oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationPattern AssemblyBetweenDiscretePortsRequiresSameCoordinationPattern AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.2"
         featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination protocol&#xA;&#x9;not self.coordinationPattern.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"
         oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination pattern&#xA;&#x9;not self.coordinationPattern.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.3"
         featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same coordination protocol&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"
         oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/coordinationProtocolOccurence/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The coordination protocol that defines the protocol of this assembly.&#xD;&#xA;&#xD;&#xA;\todosd{Why does it reference the CoordinationProtocol and not the CoordinationProtocolOccurence?}"
         oldDataValue="The coordination pattern that defines the protocol of this assembly.&#xD;&#xA;&#xD;&#xA;\todosd{Why does it reference the CoordinationPattern and not the PatternOccurence?}"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.4"
         featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the coordination protocol has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"
         oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the pattern has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.3"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.3"
         featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same coordination protocol&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationProtocol = self.toDiscretePort.refines.coordinationProtocol&#xA;else&#xA;&#x9;true&#xA;endif"
         oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same coordination protocol&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
         featureName="value" dataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"
         oldDataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationPattern DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.2"
         featureName="key" dataValue="DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol"
         oldDataValue="DelegationBetweenDiscretePortsRequiresSameCoordinationPattern"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.2"
         featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same coordination protocol&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationProtocol = self.toDiscretePort.refines.coordinationProtocol&#xA;else&#xA;&#x9;true&#xA;endif"
         oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same pattern&#xA;&#x9;&#x9;self.fromDiscretePort.refines.coordinationPattern = self.toDiscretePort.refines.coordinationPattern&#xA;else&#xA;&#x9;true&#xA;endif"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/CoordinationProtocolOccurrence/coordinationProtocol/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
@@ -19800,10 +19800,10 @@
     <changes xsi:type="history:Set" element="muml.ecore#//instance/DiscretePortInstance/refinedRole/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
         featureName="value" dataValue="The role of a coordination protocol that the port type of this port instance refines."
         oldDataValue="The role of a coordination pattern that the port type of this port instance refines."/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.2"
         featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination protocol&#xA;&#x9;not self.coordinationProtocol.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"
         oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination protocol&#xA;&#x9;not self.coordinationPattern.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.4"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.4"
         featureName="value" dataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the coordination protocol has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationProtocol.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"
         oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refines.oclIsUndefined() and not self.toDiscretePort.refines.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the coordination protocol has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refines.coordinationPattern.roles->size() = 2 implies (self.fromDiscretePort.refines.name &lt;> self.toDiscretePort.refines.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component" featureName="nsURI"
@@ -20090,7 +20090,7 @@
     <changes xsi:type="history:Set" element="muml.ecore#//component/StructuredComponent/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="-- A structured component allows no hybrid ports.&#xD;&#xA;self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"
         oldDataValue="self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.2"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.415/@element/@details.2"
         featureName="value" dataValue="-- assembly between two discrete ports requires a coordination protocol&#xD;&#xA;if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xD;&#xA;&#x9;not self.coordinationProtocol.oclIsUndefined()&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"
         oldDataValue="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- assembly between two discrete ports requires a coordination protocol&#xA;&#x9;not self.coordinationProtocol.oclIsUndefined()&#xA;else&#xA;&#x9;true&#xA;endif"/>
     <changes xsi:type="history:Set" element="muml.ecore#//connector/Connector/connectorEndpoints"
@@ -20099,18 +20099,18 @@
         featureName="unique" dataValue="false" oldDataValue="true"/>
     <changes xsi:type="history:Set" element="#//@releases.15/@changes.445/@element"
         featureName="unique" dataValue="false" oldDataValue="true"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.416/@element/@details.0"
         featureName="value" dataValue="" oldDataValue="ValidContinuousPortDirections DelegationBetweenContinuousPortsRequiresSameDataType DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
-    <changes xsi:type="history:Create" target="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.12">
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.12"
+    <changes xsi:type="history:Create" target="#//@releases.16/@changes.417/@element"
+        referenceName="details" element="#//@releases.16/@changes.417/@element/@details.12">
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.12"
           featureName="key" dataValue="ValidHybridOutPortCombination"/>
-      <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.12"
+      <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.12"
           featureName="value" dataValue="not self.fromHybridPort.oclIsUndefined() &#xD;&#xA;and &#xD;&#xA;self.fromHybridPort.isHybridOutPort &#xD;&#xA;implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) "/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.12"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.12"
         featureName="key" dataValue="ValidPortDirections" oldDataValue="ValidHybridOutPortCombination"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.12"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.12"
         featureName="value" dataValue="-- direction of directed typed ports must be correct identical"
         oldDataValue="not self.fromHybridPort.oclIsUndefined() &#xD;&#xA;and &#xD;&#xA;self.fromHybridPort.isHybridOutPort &#xD;&#xA;implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) "/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/PortDirectionKind"
@@ -20133,10 +20133,10 @@
       <changes xsi:type="history:Set" element="muml.ecore#//component/DirectedTypedPort/optional/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"
           featureName="value" dataValue="Decides the direction of a continous port."/>
     </changes>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.12"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.12"
         featureName="value" dataValue="-- direction of two connected directed typed ports must be identical"
         oldDataValue="-- direction of directed typed ports must be correct identical"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/DelegationConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.12"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.417/@element/@details.12"
         featureName="value" dataValue="-- direction of two connected directed typed ports must be identical&#xD;&#xA;self.ports ->forAll(p1, p2 | p1.oclIsKindOf(DirectedTypedPort) and p2.oclIsKindOf(DirectedTypedPort) )"
         oldDataValue="-- direction of two connected directed typed ports must be identical"/>
     <changes xsi:type="history:Create" target="muml.ecore#//types" referenceName="eClassifiers"
@@ -20856,7 +20856,7 @@
         oldDataValue="self.portParts.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xD;&#xA;&#x9;implies&#xD;&#xA;&#x9;self.fromContinuousPort.kind = self.toContinuousPort.kind"/>
     <changes xsi:type="history:Set" element="muml.ecore#//component/CoordinationProtocolOccurrence/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="OnlyDiscretePortParts" oldDataValue=""/>
-    <changes xsi:type="history:Set" element="muml.ecore#//component/AssemblyConnector/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.414/@element/@details.0"
         featureName="value" dataValue="" oldDataValue="NoSelfAssembliesForSinglePortsOfSingleParts ValidContinuousPortDirections AssemblyBetweenDiscretePortsRequiresCoordinationProtocol AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsSameMessageInterfaces ValidDiscreteInPortCombination ValidDiscreteOutPortCombination ValidDiscreteInOutPortCombination ValidContinuousInPortCombination ValidContinuousOutPortCombination ValidHybridInPortCombination ValidHybridOutPortCombination"/>
     <changes xsi:type="history:Set" element="#//@releases.15/@changes.445/@element"
         featureName="eType" referenceValue="muml.ecore#//component/PortPart" oldReferenceValue="muml.ecore#//component/Port"/>
@@ -21664,12 +21664,12 @@
     <changes xsi:type="history:Set" element="muml.ecore#//instance/PortInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="-- A port instance type must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined())&#xD;&#xA;then&#xD;&#xA;self.type->oclIsKindOf(Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"
         oldDataValue="-- A port instance type must be a port type&#xD;&#xA;if (not self.type->oclIsUndefined())&#xD;&#xA;then&#xD;&#xA;self.type->isKindOf(Port)&#xD;&#xA;else&#xD;&#xA;false&#xD;&#xA;endif"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.418/@element"
         featureName="value" dataValue="-- this must be adapted&#xD;&#xA;not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"
         oldDataValue="not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"/>
     <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
         featureName="value" dataValue="" oldDataValue="OneDelegationInstancePerPortInstance"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
+    <changes xsi:type="history:Set" element="#//@releases.16/@changes.418/@element"
         featureName="value" dataValue="-- FIXME&#xD;&#xA;not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"
         oldDataValue="-- this must be adapted&#xD;&#xA;not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"/>
     <changes xsi:type="history:Set" element="muml.ecore#//realtimestatechart/Transition/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
@@ -22549,12 +22549,12 @@
         featureName="value" dataValue="-- PortInstance must not have multiple Delegation Connector Instances assigned.&#xA;portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() &lt;= 1"
         oldDataValue="-- PortInstance must not have multiple Delegation Connector Instances assigned.&#xA;implies portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance))->size() &lt;= 1"/>
     <changes xsi:type="history:Create" target="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
-        referenceName="details" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+        referenceName="details" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="not self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 &lt;> ci)))->isEmpty()"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="key" dataValue="DelegateToEmbeddedCIC"/>
-    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.1"
+    <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="-- Delegation Connector Instance must delegate to embedded Component Instance Configuration&#xA;not self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 &lt;> ci)))->isEmpty()"
         oldDataValue="not self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 &lt;> ci)))->isEmpty()"/>
     <changes xsi:type="history:Set" element="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"
@@ -22728,5 +22728,61 @@
     <changes xsi:type="history:Set" element="muml.ecore#//valuetype/Cardinality/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"
         featureName="value" dataValue="-- lower bound of cardinality must be less or equal than upper bound&#xD;&#xA;(not self.lowerBound.oclIsUndefined() and not self.upperBound.oclIsUndefined()) implies&#xA;(&#xA;&#x9;((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))&#xD;&#xA;&#x9;and (self.lowerBound.infinity implies self.upperBound.infinity)&#xA;)"
         oldDataValue="-- lower bound of cardinality must be less or equal than upper bound&#xD;&#xA;((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value &lt;= self.upperBound.value))&#xD;&#xA;and (self.lowerBound.infinity implies self.upperBound.infinity)"/>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/AssemblyConnector"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value=""/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/AssemblyConnector"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="NoSelfAssembliesForSinglePortsOfSingleParts" value="(self.ports[0].cardinality.upperBound.value &lt;= 1 and self.ports[0].cardinality.upperBound.value &lt;= 1)&#xD;&#xA;implies&#xD;&#xA;self.ports[0] &lt;> self.ports[1]"/>
+        <details key="ValidContinuousPortDirections" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind &lt;> self.toContinuousPort.kind"/>
+        <details key="AssemblyBetweenDiscretePortsRequiresCoordinationProtocol" value="-- assembly between two discrete ports requires a coordination protocol&#xD;&#xA;if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xD;&#xA;&#x9;not self.coordinationProtocol.oclIsUndefined()&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+        <details key="AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol"
+            value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refinedRole.oclIsUndefined() and not self.toDiscretePort.refinedRole.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same coordination protocol&#xA;&#x9;&#x9;self.fromDiscretePort.refinedRole.coordinationProtocol = self.toDiscretePort.refinedRole.coordinationProtocol&#xA;else&#xA;&#x9;true&#xA;endif"/>
+        <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refinedRole.oclIsUndefined() and not self.toDiscretePort.refinedRole.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have different roles (unless the coordination protocol has only one role)&#xA;&#x9;&#x9;(self.fromDiscretePort.refinedRole.coordinationProtocol.roles->size() = 2 implies (self.fromDiscretePort.refinedRole.name &lt;> self.toDiscretePort.refinedRole.name))&#xA;else&#xA;&#x9;true&#xA;endif"/>
+        <details key="AssemblyBetweenDiscretePortsSameMessageInterfaces" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;-- message interfaces must be compatible&#xA;&#x9;self.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface&#xA;&#x9;and&#xA;&#x9;self.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface&#xA;else&#xA;&#x9;true&#xA;endif"/>
+        <details key="ValidDiscreteInPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort&#xA;&#x9;)"/>
+        <details key="ValidDiscreteOutPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort&#xA;&#x9;)"/>
+        <details key="ValidDiscreteInOutPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort&#xA;&#x9;)"/>
+        <details key="ValidContinuousInPortCombination" value="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort&#xA;&#x9;)"/>
+        <details key="ValidContinuousOutPortCombination" value="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort&#xA;&#x9;)"/>
+        <details key="ValidHybridInPortCombination" value="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort&#xA;&#x9;)"/>
+        <details key="ValidHybridOutPortCombination" value="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xA;&#x9;)"/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/DelegationConnector"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value=""/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//component/DelegationConnector"
+        referenceName="eAnnotations">
+      <element xsi:type="ecore:EAnnotation" source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="ValidContinuousPortDirections" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.kind = self.toContinuousPort.kind"/>
+        <details key="DelegationBetweenContinuousPortsRequiresSameDataType" value="not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()&#xA;&#x9;implies&#xA;&#x9;self.fromContinuousPort.type = self.toContinuousPort.type"/>
+        <details key="DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol"
+            value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refinedRole.oclIsUndefined() and not self.toDiscretePort.refinedRole.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both refinements must belong to the same coordination protocol&#xA;&#x9;&#x9;self.fromDiscretePort.refinedRole.coordinationProtocol = self.toDiscretePort.refinedRole.coordinationProtocol&#xA;else&#xA;&#x9;true&#xA;endif"/>
+        <details key="DelegationBetweenDiscretePortsRequiresSameRoles" value="if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then&#xA;&#x9;not self.fromDiscretePort.refinedRole.oclIsUndefined() and not self.toDiscretePort.refinedRole.oclIsUndefined()&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;-- both ports should have the same roles&#xA;&#x9;&#x9;self.fromDiscretePort.refinedRole.name = self.toDiscretePort.refinedRole.name&#xA;else&#xA;&#x9;true&#xA;endif"/>
+        <details key="DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"
+            value="not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()&#xA;and self.fromPort.isMultiPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;-- the target port is a multi port&#xA;&#x9;&#x9;self.toPort.isMultiPort&#xA;&#x9;&#x9;or&#xA;&#x9;&#x9;-- the target part is a multi part&#xA;&#x9;&#x9;self.componentPart.isMultiPart&#xA;&#x9;)"/>
+        <details key="ValidDiscreteInPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort&#xA;&#x9;)"/>
+        <details key="ValidDiscreteOutPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort&#xA;&#x9;)"/>
+        <details key="ValidDiscreteInOutPortCombination" value="not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort&#xA;&#x9;implies (&#xA;&#x9;&#x9;not self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort&#xA;&#x9;)"/>
+        <details key="ValidContinuousInPortCombination" value="not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort)&#xD;&#xA;&#x9;)"/>
+        <details key="ValidContinuousOutPortCombination" value="-- not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) &#xD;&#xA;&#xD;&#xA;not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort)&#xD;&#xA;&#x9;&#x9;or&#xD;&#xA;&#x9;&#x9;(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort)&#xD;&#xA;&#x9;)"/>
+        <details key="ValidHybridInPortCombination" value="not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort&#xD;&#xA;&#x9;)"/>
+        <details key="ValidHybridOutPortCombination" value="not self.fromHybridPort.oclIsUndefined() &#xD;&#xA;and &#xD;&#xA;self.fromHybridPort.isHybridOutPort &#xD;&#xA;implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) "/>
+        <details key="ValidPortDirections" value="-- direction of two connected directed typed ports must be identical&#xD;&#xA;self.ports ->forAll(p1, p2 | p1.oclIsKindOf(DirectedTypedPort) and p2.oclIsKindOf(DirectedTypedPort) )"/>
+      </element>
+    </changes>
+    <changes xsi:type="history:Delete" target="muml.ecore#//instance/DelegationConnectorInstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"
+        referenceName="details">
+      <element xsi:type="ecore:EStringToStringMapEntry" key="OneDelegationInstancePerPortInstance"
+          value="-- FIXME&#xD;&#xA;not self.source.oclIsUndefined() implies self.source.outgoingConnectorInstances->select(x | x.oclIsKindOf(DelegationInstance))->size() = 1"/>
+    </changes>
   </releases>
 </history:History>

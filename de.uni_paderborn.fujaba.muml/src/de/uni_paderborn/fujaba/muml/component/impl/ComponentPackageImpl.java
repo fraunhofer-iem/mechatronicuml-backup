@@ -1075,19 +1075,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts AtomicComponentsNamesMustBeUnique"
-		   });				
-		addAnnotation
-		  (assemblyConnectorEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", ""
-		   });							
-		addAnnotation
-		  (delegationConnectorEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", ""
-		   });																	
+		   });																						
 		addAnnotation
 		  (structuredComponentEClass, 
 		   source, 
@@ -1189,24 +1177,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "AtomicComponentsNamesMustBeUnique", "AtomicComponent.allInstances().name->count(self.name) = 1"
 		   });						
 		addAnnotation
-		  (assemblyConnectorEClass, 
-		   source, 
-		   new String[] {
-			 "NoSelfAssembliesForSinglePortsOfSingleParts", "(self.ports[0].cardinality.upperBound.value <= 1 and self.ports[0].cardinality.upperBound.value <= 1)\r\nimplies\r\nself.ports[0] <> self.ports[1]",
-			 "ValidContinuousPortDirections", "not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()\n\timplies\n\tself.fromContinuousPort.kind <> self.toContinuousPort.kind",
-			 "AssemblyBetweenDiscretePortsRequiresCoordinationProtocol", "-- assembly between two discrete ports requires a coordination protocol\r\nif not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\r\n\tnot self.coordinationProtocol.oclIsUndefined()\r\nelse\r\n\ttrue\r\nendif",
-			 "AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\tnot self.fromDiscretePort.refinedRole.oclIsUndefined() and not self.toDiscretePort.refinedRole.oclIsUndefined()\n\t\tand\n\t\t-- both refinements must belong to the same coordination protocol\n\t\tself.fromDiscretePort.refinedRole.coordinationProtocol = self.toDiscretePort.refinedRole.coordinationProtocol\nelse\n\ttrue\nendif",
-			 "AssemblyBetweenDiscretePortsRequiresDifferentRoles", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\tnot self.fromDiscretePort.refinedRole.oclIsUndefined() and not self.toDiscretePort.refinedRole.oclIsUndefined()\n\t\tand\n\t\t-- both ports should have different roles (unless the coordination protocol has only one role)\n\t\t(self.fromDiscretePort.refinedRole.coordinationProtocol.roles->size() = 2 implies (self.fromDiscretePort.refinedRole.name <> self.toDiscretePort.refinedRole.name))\nelse\n\ttrue\nendif",
-			 "AssemblyBetweenDiscretePortsSameMessageInterfaces", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\t-- message interfaces must be compatible\n\tself.fromDiscretePort.senderMessageInterface = self.toDiscretePort.receiverMessageInterface\n\tand\n\tself.fromDiscretePort.receiverMessageInterface = self.toDiscretePort.senderMessageInterface\nelse\n\ttrue\nendif",
-			 "ValidDiscreteInPortCombination", "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort\n\timplies (\n\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort\n\t)",
-			 "ValidDiscreteOutPortCombination", "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort\n\timplies (\n\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort\n\t)",
-			 "ValidDiscreteInOutPortCombination", "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort\n\timplies (\n\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort\n\t)",
-			 "ValidContinuousInPortCombination", "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort\n\timplies (\n\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n\t\tor\n\t\tnot self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort\n\t)",
-			 "ValidContinuousOutPortCombination", "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort\n\timplies (\n\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n\t\tor\n\t\tnot self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort\n\t)",
-			 "ValidHybridInPortCombination", "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort\n\timplies (\n\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort\n\t)",
-			 "ValidHybridOutPortCombination", "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridOutPort\n\timplies (\n\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\n\t)"
-		   });			
-		addAnnotation
 		  (getAssemblyConnector_CoordinationProtocolOccurence(), 
 		   source, 
 		   new String[] {
@@ -1217,25 +1187,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)->asOrderedSet()"
-		   });				
-		addAnnotation
-		  (delegationConnectorEClass, 
-		   source, 
-		   new String[] {
-			 "ValidContinuousPortDirections", "not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()\n\timplies\n\tself.fromContinuousPort.kind = self.toContinuousPort.kind",
-			 "DelegationBetweenContinuousPortsRequiresSameDataType", "not self.fromContinuousPort.oclIsUndefined() and not self.toContinuousPort.oclIsUndefined()\n\timplies\n\tself.fromContinuousPort.type = self.toContinuousPort.type",
-			 "DelegationBetweenDiscretePortsRequiresSameCoordinationProtocol", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\tnot self.fromDiscretePort.refinedRole.oclIsUndefined() and not self.toDiscretePort.refinedRole.oclIsUndefined()\n\t\tand\n\t\t-- both refinements must belong to the same coordination protocol\n\t\tself.fromDiscretePort.refinedRole.coordinationProtocol = self.toDiscretePort.refinedRole.coordinationProtocol\nelse\n\ttrue\nendif",
-			 "DelegationBetweenDiscretePortsRequiresSameRoles", "if not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined() then\n\tnot self.fromDiscretePort.refinedRole.oclIsUndefined() and not self.toDiscretePort.refinedRole.oclIsUndefined()\n\t\tand\n\t\t-- both ports should have the same roles\n\t\tself.fromDiscretePort.refinedRole.name = self.toDiscretePort.refinedRole.name\nelse\n\ttrue\nendif",
-			 "DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart", "not self.fromDiscretePort.oclIsUndefined() and not self.toDiscretePort.oclIsUndefined()\nand self.fromPort.isMultiPort\n\timplies (\n\t\t-- the target port is a multi port\n\t\tself.toPort.isMultiPort\n\t\tor\n\t\t-- the target part is a multi part\n\t\tself.componentPart.isMultiPart\n\t)",
-			 "ValidDiscreteInPortCombination", "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInPort\n\timplies (\n\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInPort\n\t)",
-			 "ValidDiscreteOutPortCombination", "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteOutPort\n\timplies (\n\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteOutPort\n\t)",
-			 "ValidDiscreteInOutPortCombination", "not self.fromDiscretePort.oclIsUndefined() and self.fromDiscretePort.isDiscreteInOutPort\n\timplies (\n\t\tnot self.toDiscretePort.oclIsUndefined() and self.toDiscretePort.isDiscreteInOutPort\n\t)",
-			 "ValidContinuousInPortCombination", "not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousInPort\r\n\timplies (\r\n\t\t(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort)\r\n\t\tor\r\n\t\t(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridInPort)\r\n\t)",
-			 "ValidContinuousOutPortCombination", "-- not self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort implies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) \r\n\r\nnot self.fromContinuousPort.oclIsUndefined() and self.fromContinuousPort.isContinuousOutPort\r\n\timplies (\r\n\t\t(not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort)\r\n\t\tor\r\n\t\t(not self.toHybridPort.oclIsUndefined() and self.toHybridPort.isHybridOutPort)\r\n\t)",
-			 "ValidHybridInPortCombination", "not self.fromHybridPort.oclIsUndefined() and self.fromHybridPort.isHybridInPort\r\n\timplies (\r\n\t\tnot self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousInPort\r\n\t)",
-			 "ValidHybridOutPortCombination", "not self.fromHybridPort.oclIsUndefined() \r\nand \r\nself.fromHybridPort.isHybridOutPort \r\nimplies (not self.toContinuousPort.oclIsUndefined() and self.toContinuousPort.isContinuousOutPort) ",
-			 "ValidPortDirections", "-- direction of two connected directed typed ports must be identical\r\nself.ports ->forAll(p1, p2 | p1.oclIsKindOf(DirectedTypedPort) and p2.oclIsKindOf(DirectedTypedPort) )"
-		   });		
+		   });			
 		addAnnotation
 		  (getDelegationConnector_PortPart(), 
 		   source, 
