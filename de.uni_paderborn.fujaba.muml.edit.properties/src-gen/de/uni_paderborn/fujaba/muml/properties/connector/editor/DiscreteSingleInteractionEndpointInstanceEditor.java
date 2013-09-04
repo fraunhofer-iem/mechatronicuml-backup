@@ -10,10 +10,10 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	public DiscreteSingleInteractionEndpointInstanceEditor(
+	public DiscreteSingleInteractionEndpointInstanceEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,12 +23,19 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor(
-				null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor(
+					null, true);
+		}
 
-		addDiscreteSingleInteractionEndpointInstanceNextEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDiscreteSingleInteractionEndpointInstanceNextEditor(null, true);
+		}
 
-		addDiscreteSingleInteractionEndpointInstancePreviousEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDiscreteSingleInteractionEndpointInstancePreviousEditor(null,
+					true);
+		}
 
 	}
 

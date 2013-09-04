@@ -10,10 +10,10 @@ public abstract class ComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	public ComponentInstanceEditor(
+	public ComponentInstanceEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,12 +26,18 @@ public abstract class ComponentInstanceEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addComponentInstanceComponentTypeEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addComponentInstanceComponentTypeEditor(null, true);
+		}
 
-		addComponentInstancePortInstancesEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addComponentInstancePortInstancesEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addComponentInstanceComponentPartEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addComponentInstanceComponentPartEditor(null, true);
+		}
 
 	}
 

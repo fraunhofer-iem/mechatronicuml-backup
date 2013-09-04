@@ -10,10 +10,10 @@ public class CardinalityEditor
 	/**
 	 * @generated
 	 */
-	public CardinalityEditor(
+	public CardinalityEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,9 +23,13 @@ public class CardinalityEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addCardinalityLowerBoundEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addCardinalityLowerBoundEditor(null, true);
+		}
 
-		addCardinalityUpperBoundEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addCardinalityUpperBoundEditor(null, true);
+		}
 
 	}
 
@@ -73,8 +77,9 @@ public class CardinalityEditor
 	/**
 	 * @generated
 	 */
-	public CardinalityEditor() {
+	public CardinalityEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
@@ -88,8 +93,9 @@ public class CardinalityEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new CardinalityEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new CardinalityEditor(tab);
 		}
 	}
 

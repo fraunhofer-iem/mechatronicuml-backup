@@ -10,10 +10,10 @@ public class MessageEditor
 	/**
 	 * @generated
 	 */
-	public MessageEditor(
+	public MessageEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,10 +26,14 @@ public class MessageEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addMessageInstanceOfEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addMessageInstanceOfEditor(null, true);
+		}
 
-		addMessageParameterBindingEditor("de.fujaba.properties.category.Lists",
-				true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addMessageParameterBindingEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
 	}
 
@@ -77,8 +81,9 @@ public class MessageEditor
 	/**
 	 * @generated
 	 */
-	public MessageEditor() {
+	public MessageEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -92,8 +97,9 @@ public class MessageEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new MessageEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new MessageEditor(tab);
 		}
 	}
 

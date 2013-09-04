@@ -10,10 +10,10 @@ public class CoordinationProtocolOccurrenceEditor
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrenceEditor(
+	public CoordinationProtocolOccurrenceEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,10 +26,15 @@ public class CoordinationProtocolOccurrenceEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addCoordinationProtocolOccurrenceCoordinationProtocolEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addCoordinationProtocolOccurrenceCoordinationProtocolEditor(null,
+					true);
+		}
 
-		addCoordinationProtocolOccurrencePortPartsEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addCoordinationProtocolOccurrencePortPartsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
 	}
 
@@ -81,8 +86,9 @@ public class CoordinationProtocolOccurrenceEditor
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrenceEditor() {
+	public CoordinationProtocolOccurrenceEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -96,8 +102,9 @@ public class CoordinationProtocolOccurrenceEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new CoordinationProtocolOccurrenceEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new CoordinationProtocolOccurrenceEditor(tab);
 		}
 	}
 

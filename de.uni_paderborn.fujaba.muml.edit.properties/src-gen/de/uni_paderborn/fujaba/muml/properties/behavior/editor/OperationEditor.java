@@ -10,10 +10,10 @@ public class OperationEditor
 	/**
 	 * @generated
 	 */
-	public OperationEditor(
+	public OperationEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,15 +26,23 @@ public class OperationEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addOperationReturnTypeEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addOperationReturnTypeEditor(null, true);
+		}
 
-		addOperationImplementationsEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addOperationImplementationsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addOperationParametersEditor("de.fujaba.properties.category.Lists",
-				true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addOperationParametersEditor("de.fujaba.properties.category.Lists",
+					true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 
@@ -118,8 +126,9 @@ public class OperationEditor
 	/**
 	 * @generated
 	 */
-	public OperationEditor() {
+	public OperationEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -133,8 +142,9 @@ public class OperationEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new OperationEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new OperationEditor(tab);
 		}
 	}
 

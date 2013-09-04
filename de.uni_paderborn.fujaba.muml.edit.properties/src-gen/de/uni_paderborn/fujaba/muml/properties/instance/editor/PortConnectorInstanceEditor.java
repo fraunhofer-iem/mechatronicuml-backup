@@ -5,15 +5,15 @@ package de.uni_paderborn.fujaba.muml.properties.instance.editor;
  */
 public abstract class PortConnectorInstanceEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorInstanceEditor {
 
 	/**
 	 * @generated
 	 */
-	public PortConnectorInstanceEditor(
+	public PortConnectorInstanceEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**

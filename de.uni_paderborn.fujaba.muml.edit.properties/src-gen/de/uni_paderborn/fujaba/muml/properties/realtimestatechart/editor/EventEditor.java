@@ -10,10 +10,10 @@ public abstract class EventEditor
 	/**
 	 * @generated
 	 */
-	public EventEditor(
+	public EventEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public abstract class EventEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addEventKindEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addEventKindEditor(null, true);
+		}
 
 	}
 

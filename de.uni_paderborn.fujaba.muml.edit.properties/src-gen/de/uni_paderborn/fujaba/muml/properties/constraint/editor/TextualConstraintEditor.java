@@ -10,10 +10,10 @@ public class TextualConstraintEditor
 	/**
 	 * @generated
 	 */
-	public TextualConstraintEditor(
+	public TextualConstraintEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public class TextualConstraintEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addTextualConstraintTextualExpressionEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTextualConstraintTextualExpressionEditor(null, true);
+		}
 
 	}
 
@@ -54,8 +56,9 @@ public class TextualConstraintEditor
 	/**
 	 * @generated
 	 */
-	public TextualConstraintEditor() {
+	public TextualConstraintEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
@@ -69,8 +72,9 @@ public class TextualConstraintEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new TextualConstraintEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new TextualConstraintEditor(tab);
 		}
 	}
 

@@ -10,10 +10,10 @@ public class CoordinationProtocolEditor
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolEditor(
+	public CoordinationProtocolEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -32,8 +32,9 @@ public class CoordinationProtocolEditor
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolEditor() {
+	public CoordinationProtocolEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
@@ -47,8 +48,9 @@ public class CoordinationProtocolEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new CoordinationProtocolEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new CoordinationProtocolEditor(tab);
 		}
 	}
 

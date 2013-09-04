@@ -10,10 +10,10 @@ public class EntryPointEditor
 	/**
 	 * @generated
 	 */
-	public EntryPointEditor(
+	public EntryPointEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -32,8 +32,9 @@ public class EntryPointEditor
 	/**
 	 * @generated
 	 */
-	public EntryPointEditor() {
+	public EntryPointEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -47,8 +48,9 @@ public class EntryPointEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new EntryPointEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new EntryPointEditor(tab);
 		}
 	}
 

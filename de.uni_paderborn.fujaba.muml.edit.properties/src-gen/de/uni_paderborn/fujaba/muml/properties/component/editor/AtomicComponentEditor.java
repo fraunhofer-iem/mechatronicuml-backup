@@ -10,10 +10,10 @@ public class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	public AtomicComponentEditor(
+	public AtomicComponentEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -22,6 +22,30 @@ public class AtomicComponentEditor
 	@Override
 	protected void createProperties() {
 		super.createProperties();
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addBehavioralElementBehaviorEditor(null, true);
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addBehavioralElementBehaviorEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createBehavioralElementBehaviorEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehaviorEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getBehavioralElement_Behavior());
 
 	}
 
@@ -32,8 +56,9 @@ public class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	public AtomicComponentEditor() {
+	public AtomicComponentEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -47,8 +72,9 @@ public class AtomicComponentEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new AtomicComponentEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new AtomicComponentEditor(tab);
 		}
 	}
 

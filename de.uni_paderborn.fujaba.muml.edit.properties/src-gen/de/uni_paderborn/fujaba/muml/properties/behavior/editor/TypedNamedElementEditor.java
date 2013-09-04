@@ -10,10 +10,10 @@ public abstract class TypedNamedElementEditor
 	/**
 	 * @generated
 	 */
-	public TypedNamedElementEditor(
+	public TypedNamedElementEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public abstract class TypedNamedElementEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addTypedNamedElementDataTypeEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTypedNamedElementDataTypeEditor(null, true);
+		}
 
 	}
 

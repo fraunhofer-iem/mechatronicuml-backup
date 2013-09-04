@@ -10,10 +10,10 @@ public class AbsoluteDeadlineEditor
 	/**
 	 * @generated
 	 */
-	public AbsoluteDeadlineEditor(
+	public AbsoluteDeadlineEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public class AbsoluteDeadlineEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addAbsoluteDeadlineClockEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addAbsoluteDeadlineClockEditor(null, true);
+		}
 
 	}
 
@@ -53,8 +55,9 @@ public class AbsoluteDeadlineEditor
 	/**
 	 * @generated
 	 */
-	public AbsoluteDeadlineEditor() {
+	public AbsoluteDeadlineEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -68,8 +71,9 @@ public class AbsoluteDeadlineEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new AbsoluteDeadlineEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new AbsoluteDeadlineEditor(tab);
 		}
 	}
 

@@ -10,10 +10,10 @@ public class SynchronizationEditor
 	/**
 	 * @generated
 	 */
-	public SynchronizationEditor(
+	public SynchronizationEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,11 +23,17 @@ public class SynchronizationEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSynchronizationSyncChannelEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addSynchronizationSyncChannelEditor(null, true);
+		}
 
-		addSynchronizationKindEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addSynchronizationKindEditor(null, true);
+		}
 
-		addSynchronizationSelectorExpressionEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addSynchronizationSelectorExpressionEditor(null, true);
+		}
 
 	}
 
@@ -94,8 +100,9 @@ public class SynchronizationEditor
 	/**
 	 * @generated
 	 */
-	public SynchronizationEditor() {
+	public SynchronizationEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -109,8 +116,9 @@ public class SynchronizationEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new SynchronizationEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new SynchronizationEditor(tab);
 		}
 	}
 

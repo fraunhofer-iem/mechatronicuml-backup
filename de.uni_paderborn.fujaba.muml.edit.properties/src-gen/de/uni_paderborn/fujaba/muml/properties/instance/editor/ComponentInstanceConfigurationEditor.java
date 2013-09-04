@@ -10,10 +10,10 @@ public class ComponentInstanceConfigurationEditor
 	/**
 	 * @generated
 	 */
-	public ComponentInstanceConfigurationEditor(
+	public ComponentInstanceConfigurationEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,13 +26,19 @@ public class ComponentInstanceConfigurationEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addComponentInstanceConfigurationComponentInstancesEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addComponentInstanceConfigurationComponentInstancesEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addComponentInstanceConfigurationPortConnectorInstancesEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addComponentInstanceConfigurationPortConnectorInstancesEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 
@@ -104,8 +110,9 @@ public class ComponentInstanceConfigurationEditor
 	/**
 	 * @generated
 	 */
-	public ComponentInstanceConfigurationEditor() {
+	public ComponentInstanceConfigurationEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
@@ -119,8 +126,9 @@ public class ComponentInstanceConfigurationEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new ComponentInstanceConfigurationEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new ComponentInstanceConfigurationEditor(tab);
 		}
 	}
 

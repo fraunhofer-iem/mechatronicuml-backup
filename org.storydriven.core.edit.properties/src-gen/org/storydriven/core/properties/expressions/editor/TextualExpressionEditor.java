@@ -10,10 +10,10 @@ public class TextualExpressionEditor
 	/**
 	 * @generated
 	 */
-	public TextualExpressionEditor(
+	public TextualExpressionEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,11 +23,17 @@ public class TextualExpressionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addTextualExpressionExpressionTextEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTextualExpressionExpressionTextEditor(null, true);
+		}
 
-		addTextualExpressionLanguageEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTextualExpressionLanguageEditor(null, true);
+		}
 
-		addTextualExpressionLanguageVersionEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTextualExpressionLanguageVersionEditor(null, true);
+		}
 
 	}
 
@@ -96,8 +102,8 @@ public class TextualExpressionEditor
 	/**
 	 * @generated
 	 */
-	public TextualExpressionEditor() {
-		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+	public TextualExpressionEditor(String tab) {
+		this(tab, org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
 				.getAdapterFactory(),
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression());
@@ -110,8 +116,9 @@ public class TextualExpressionEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new TextualExpressionEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new TextualExpressionEditor(tab);
 		}
 	}
 

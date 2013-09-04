@@ -10,10 +10,10 @@ public abstract class TransitionEventEditor
 	/**
 	 * @generated
 	 */
-	public TransitionEventEditor(
+	public TransitionEventEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**

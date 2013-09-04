@@ -10,10 +10,10 @@ public class TimeValueEditor
 	/**
 	 * @generated
 	 */
-	public TimeValueEditor(
+	public TimeValueEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,9 +23,13 @@ public class TimeValueEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addTimeValueValueEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTimeValueValueEditor(null, true);
+		}
 
-		addTimeValueUnitEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTimeValueUnitEditor(null, true);
+		}
 
 	}
 
@@ -71,8 +75,9 @@ public class TimeValueEditor
 	/**
 	 * @generated
 	 */
-	public TimeValueEditor() {
+	public TimeValueEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
@@ -86,8 +91,9 @@ public class TimeValueEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new TimeValueEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new TimeValueEditor(tab);
 		}
 	}
 

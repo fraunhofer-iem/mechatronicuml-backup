@@ -10,10 +10,10 @@ public abstract class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	public DirectedTypedPortEditor(
+	public DirectedTypedPortEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,10 +26,18 @@ public abstract class DirectedTypedPortEditor
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addDirectedTypedPortKindEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDirectedTypedPortKindEditor(null, true);
+		}
 
-		addDirectedTypedPortOptionalEditor(
-				"de.fujaba.properties.category.Booleans", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDirectedTypedPortOptionalEditor(
+					"de.fujaba.properties.category.Booleans", true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTypedNamedElementDataTypeEditor(null, true);
+		}
 
 	}
 
@@ -68,6 +76,25 @@ public abstract class DirectedTypedPortEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_Optional());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addTypedNamedElementDataTypeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createTypedNamedElementDataTypeEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTypedNamedElementDataTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getTypedNamedElement_DataType());
 
 	}
 

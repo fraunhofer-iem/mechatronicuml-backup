@@ -10,10 +10,10 @@ public abstract class VertexEditor
 	/**
 	 * @generated
 	 */
-	public VertexEditor(
+	public VertexEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,13 +26,19 @@ public abstract class VertexEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addVertexOutgoingTransitionsEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addVertexOutgoingTransitionsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addVertexIncomingTransitionsEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addVertexIncomingTransitionsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 

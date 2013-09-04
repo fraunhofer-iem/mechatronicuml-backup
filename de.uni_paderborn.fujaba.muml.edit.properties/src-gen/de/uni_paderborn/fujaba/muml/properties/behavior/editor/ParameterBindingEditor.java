@@ -10,10 +10,10 @@ public class ParameterBindingEditor
 	/**
 	 * @generated
 	 */
-	public ParameterBindingEditor(
+	public ParameterBindingEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,9 +23,13 @@ public class ParameterBindingEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addParameterBindingParameterEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addParameterBindingParameterEditor(null, true);
+		}
 
-		addParameterBindingValueEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addParameterBindingValueEditor(null, true);
+		}
 
 	}
 
@@ -74,8 +78,9 @@ public class ParameterBindingEditor
 	/**
 	 * @generated
 	 */
-	public ParameterBindingEditor() {
+	public ParameterBindingEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -89,8 +94,9 @@ public class ParameterBindingEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new ParameterBindingEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new ParameterBindingEditor(tab);
 		}
 	}
 

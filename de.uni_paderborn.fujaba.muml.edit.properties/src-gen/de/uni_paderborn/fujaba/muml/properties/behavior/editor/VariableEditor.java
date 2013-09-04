@@ -10,10 +10,10 @@ public class VariableEditor
 	/**
 	 * @generated
 	 */
-	public VariableEditor(
+	public VariableEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,9 +23,13 @@ public class VariableEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addVariableInitializeExpressionEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addVariableInitializeExpressionEditor(null, true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 
@@ -75,8 +79,9 @@ public class VariableEditor
 	/**
 	 * @generated
 	 */
-	public VariableEditor() {
+	public VariableEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -90,8 +95,9 @@ public class VariableEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new VariableEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new VariableEditor(tab);
 		}
 	}
 

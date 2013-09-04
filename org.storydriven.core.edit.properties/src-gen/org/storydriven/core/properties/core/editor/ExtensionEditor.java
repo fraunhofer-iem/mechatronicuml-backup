@@ -10,10 +10,10 @@ public abstract class ExtensionEditor
 	/**
 	 * @generated
 	 */
-	public ExtensionEditor(
+	public ExtensionEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**

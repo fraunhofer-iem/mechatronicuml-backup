@@ -10,10 +10,10 @@ public class RegionEditor
 	/**
 	 * @generated
 	 */
-	public RegionEditor(
+	public RegionEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,9 +23,13 @@ public class RegionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addRegionParentStateEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addRegionParentStateEditor(null, true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 
@@ -73,8 +77,9 @@ public class RegionEditor
 	/**
 	 * @generated
 	 */
-	public RegionEditor() {
+	public RegionEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -88,8 +93,9 @@ public class RegionEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new RegionEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new RegionEditor(tab);
 		}
 	}
 

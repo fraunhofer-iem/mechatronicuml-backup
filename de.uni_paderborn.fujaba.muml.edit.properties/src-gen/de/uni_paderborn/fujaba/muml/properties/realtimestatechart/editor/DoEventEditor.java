@@ -10,10 +10,10 @@ public class DoEventEditor
 	/**
 	 * @generated
 	 */
-	public DoEventEditor(
+	public DoEventEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,9 +23,13 @@ public class DoEventEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addDoEventActionEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDoEventActionEditor(null, true);
+		}
 
-		addDoEventPeriodEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDoEventPeriodEditor(null, true);
+		}
 
 	}
 
@@ -71,8 +75,9 @@ public class DoEventEditor
 	/**
 	 * @generated
 	 */
-	public DoEventEditor() {
+	public DoEventEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -86,8 +91,9 @@ public class DoEventEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new DoEventEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new DoEventEditor(tab);
 		}
 	}
 

@@ -10,10 +10,10 @@ public class LogicalExpressionEditor
 	/**
 	 * @generated
 	 */
-	public LogicalExpressionEditor(
+	public LogicalExpressionEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public class LogicalExpressionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addLogicalExpressionOperatorEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addLogicalExpressionOperatorEditor(null, true);
+		}
 
 	}
 
@@ -54,8 +56,9 @@ public class LogicalExpressionEditor
 	/**
 	 * @generated
 	 */
-	public LogicalExpressionEditor() {
+	public LogicalExpressionEditor(String tab) {
 		this(
+				tab,
 				org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
@@ -69,8 +72,9 @@ public class LogicalExpressionEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new LogicalExpressionEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new LogicalExpressionEditor(tab);
 		}
 	}
 

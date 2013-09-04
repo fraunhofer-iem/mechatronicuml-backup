@@ -10,10 +10,10 @@ public class MessageBufferEditor
 	/**
 	 * @generated
 	 */
-	public MessageBufferEditor(
+	public MessageBufferEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,14 +26,22 @@ public class MessageBufferEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addMessageBufferBufferSizeEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addMessageBufferBufferSizeEditor(null, true);
+		}
 
-		addMessageBufferMessageTypeEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addMessageBufferMessageTypeEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addMessageBufferDiscreteInteractionEndpointEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addMessageBufferDiscreteInteractionEndpointEditor(null, true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 
@@ -121,8 +129,9 @@ public class MessageBufferEditor
 	/**
 	 * @generated
 	 */
-	public MessageBufferEditor() {
+	public MessageBufferEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -136,8 +145,9 @@ public class MessageBufferEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new MessageBufferEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new MessageBufferEditor(tab);
 		}
 	}
 

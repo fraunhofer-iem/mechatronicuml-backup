@@ -10,10 +10,10 @@ public abstract class CommentableElementEditor
 	/**
 	 * @generated
 	 */
-	public CommentableElementEditor(
+	public CommentableElementEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public abstract class CommentableElementEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 
@@ -43,7 +45,7 @@ public abstract class CommentableElementEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), false);
+						.getCommentableElement_Comment(), true);
 
 	}
 

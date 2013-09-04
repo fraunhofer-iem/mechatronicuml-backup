@@ -10,10 +10,10 @@ public class ClockConstraintEditor
 	/**
 	 * @generated
 	 */
-	public ClockConstraintEditor(
+	public ClockConstraintEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,11 +23,17 @@ public class ClockConstraintEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addClockConstraintBoundEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addClockConstraintBoundEditor(null, true);
+		}
 
-		addClockConstraintClockEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addClockConstraintClockEditor(null, true);
+		}
 
-		addClockConstraintOperatorEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addClockConstraintOperatorEditor(null, true);
+		}
 
 	}
 
@@ -92,8 +98,9 @@ public class ClockConstraintEditor
 	/**
 	 * @generated
 	 */
-	public ClockConstraintEditor() {
+	public ClockConstraintEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -107,8 +114,9 @@ public class ClockConstraintEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new ClockConstraintEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new ClockConstraintEditor(tab);
 		}
 	}
 

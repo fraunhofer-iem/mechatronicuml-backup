@@ -10,10 +10,10 @@ public class StaticStructuredComponentEditor
 	/**
 	 * @generated
 	 */
-	public StaticStructuredComponentEditor(
+	public StaticStructuredComponentEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -32,8 +32,9 @@ public class StaticStructuredComponentEditor
 	/**
 	 * @generated
 	 */
-	public StaticStructuredComponentEditor() {
+	public StaticStructuredComponentEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -47,8 +48,9 @@ public class StaticStructuredComponentEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new StaticStructuredComponentEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new StaticStructuredComponentEditor(tab);
 		}
 	}
 

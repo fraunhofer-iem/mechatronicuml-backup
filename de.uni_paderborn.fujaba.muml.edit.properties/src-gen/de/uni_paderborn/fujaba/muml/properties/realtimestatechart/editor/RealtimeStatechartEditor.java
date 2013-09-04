@@ -5,15 +5,15 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class RealtimeStatechartEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.behavior.editor.BehaviorEditor {
 
 	/**
 	 * @generated
 	 */
-	public RealtimeStatechartEditor(
+	public RealtimeStatechartEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,18 +26,32 @@ public class RealtimeStatechartEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addRealtimeStatechartParentRegionEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addRealtimeStatechartParentRegionEditor(null, true);
+		}
 
-		addRealtimeStatechartTransitionsEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addRealtimeStatechartTransitionsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addRealtimeStatechartStatesEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addRealtimeStatechartStatesEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addRealtimeStatechartClocksEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addRealtimeStatechartClocksEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addNamedElementNameEditor(null, true);
+		}
 
 	}
 
@@ -136,6 +150,23 @@ public class RealtimeStatechartEditor
 						.getCommentableElement_Comment(), false);
 
 	}
+	/**
+	 * @generated
+	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name(), false);
+
+	}
 
 	//
 	// instantiation
@@ -144,8 +175,9 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	public RealtimeStatechartEditor() {
+	public RealtimeStatechartEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -159,8 +191,9 @@ public class RealtimeStatechartEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new RealtimeStatechartEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new RealtimeStatechartEditor(tab);
 		}
 	}
 

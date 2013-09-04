@@ -10,10 +10,10 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	/**
 	 * @generated
 	 */
-	public ConnectorQualityOfServiceAssumptionsEditor(
+	public ConnectorQualityOfServiceAssumptionsEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,12 +26,20 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null,
+					true);
+		}
 
-		addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(null,
+					true);
+		}
 
-		addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(
-				"de.fujaba.properties.category.Booleans", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(
+					"de.fujaba.properties.category.Booleans", true);
+		}
 
 	}
 
@@ -106,8 +114,9 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	/**
 	 * @generated
 	 */
-	public ConnectorQualityOfServiceAssumptionsEditor() {
+	public ConnectorQualityOfServiceAssumptionsEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
@@ -121,8 +130,9 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new ConnectorQualityOfServiceAssumptionsEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new ConnectorQualityOfServiceAssumptionsEditor(tab);
 		}
 	}
 

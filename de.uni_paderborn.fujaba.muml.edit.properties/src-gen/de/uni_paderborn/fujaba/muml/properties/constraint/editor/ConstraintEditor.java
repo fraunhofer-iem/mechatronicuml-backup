@@ -10,10 +10,10 @@ public abstract class ConstraintEditor
 	/**
 	 * @generated
 	 */
-	public ConstraintEditor(
+	public ConstraintEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,12 +26,18 @@ public abstract class ConstraintEditor
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addConstraintCorrectnessEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConstraintCorrectnessEditor(null, true);
+		}
 
-		addConstraintBackgroundEditor("de.fujaba.properties.category.Booleans",
-				true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConstraintBackgroundEditor(
+					"de.fujaba.properties.category.Booleans", true);
+		}
 
-		addConstraintConstrainableElementEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConstraintConstrainableElementEditor(null, true);
+		}
 
 	}
 

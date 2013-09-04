@@ -10,10 +10,10 @@ public abstract class ConnectorEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	public ConnectorEndpointInstanceEditor(
+	public ConnectorEndpointInstanceEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,12 +26,18 @@ public abstract class ConnectorEndpointInstanceEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addConnectorEndpointInstanceConnectorInstancesEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConnectorEndpointInstanceConnectorInstancesEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addConnectorEndpointInstanceTypeEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConnectorEndpointInstanceTypeEditor(null, true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 

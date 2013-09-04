@@ -5,15 +5,15 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public abstract class PortEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
 
 	/**
 	 * @generated
 	 */
-	public PortEditor(
+	public PortEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,11 +23,21 @@ public abstract class PortEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addPortComponentEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addNamedElementNameEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addPortComponentEditor(null, true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConnectorEndpointConnectorsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
+
+		if (getTab() == null || "constraint".equals(getTab())) {
+			addConstrainableElementConstraintEditor(null, true);
+		}
 
 	}
 
@@ -51,37 +61,39 @@ public abstract class PortEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
+	protected void addConnectorEndpointConnectorsEditor(String category,
 			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
+		addEditorToCategory(category,
+				createConnectorEndpointConnectorsEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), false);
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addConstrainableElementConstraintEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConstrainableElementConstraintEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
 
 	}
 

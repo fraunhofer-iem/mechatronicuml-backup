@@ -10,10 +10,10 @@ public class AssemblyConnectorInstanceEditor
 	/**
 	 * @generated
 	 */
-	public AssemblyConnectorInstanceEditor(
+	public AssemblyConnectorInstanceEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -32,8 +32,9 @@ public class AssemblyConnectorInstanceEditor
 	/**
 	 * @generated
 	 */
-	public AssemblyConnectorInstanceEditor() {
+	public AssemblyConnectorInstanceEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
@@ -47,8 +48,9 @@ public class AssemblyConnectorInstanceEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new AssemblyConnectorInstanceEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new AssemblyConnectorInstanceEditor(tab);
 		}
 	}
 

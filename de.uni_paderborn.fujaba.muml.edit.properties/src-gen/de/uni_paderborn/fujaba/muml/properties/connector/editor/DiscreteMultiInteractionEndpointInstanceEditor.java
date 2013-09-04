@@ -10,10 +10,10 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	public DiscreteMultiInteractionEndpointInstanceEditor(
+	public DiscreteMultiInteractionEndpointInstanceEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,12 +26,18 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addDiscreteMultiInteractionEndpointInstanceFirstEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDiscreteMultiInteractionEndpointInstanceFirstEditor(null, true);
+		}
 
-		addDiscreteMultiInteractionEndpointInstanceLastEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDiscreteMultiInteractionEndpointInstanceLastEditor(null, true);
+		}
 
 	}
 

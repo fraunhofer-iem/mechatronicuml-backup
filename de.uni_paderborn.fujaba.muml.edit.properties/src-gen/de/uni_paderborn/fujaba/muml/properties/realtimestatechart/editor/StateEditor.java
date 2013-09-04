@@ -10,10 +10,10 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	public StateEditor(
+	public StateEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -29,29 +29,53 @@ public class StateEditor
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addStateEmbeddedRegionsEditor("de.fujaba.properties.category.Lists",
-				true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateEmbeddedRegionsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addStateDoEventEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateDoEventEditor(null, true);
+		}
 
-		addStateExitEventEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateExitEventEditor(null, true);
+		}
 
-		addStateEntryEventEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateEntryEventEditor(null, true);
+		}
 
-		addStateInvariantsEditor("de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateInvariantsEditor("de.fujaba.properties.category.Lists",
+					true);
+		}
 
-		addStateInitialEditor("de.fujaba.properties.category.Booleans", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateInitialEditor("de.fujaba.properties.category.Booleans",
+					true);
+		}
 
-		addStateFinalEditor("de.fujaba.properties.category.Booleans", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateFinalEditor("de.fujaba.properties.category.Booleans", true);
+		}
 
-		addStateUrgentEditor("de.fujaba.properties.category.Booleans", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateUrgentEditor("de.fujaba.properties.category.Booleans", true);
+		}
 
-		addStateChannelsEditor("de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateChannelsEditor("de.fujaba.properties.category.Lists", true);
+		}
 
-		addStateConnectionPointsEditor("de.fujaba.properties.category.Lists",
-				true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateConnectionPointsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addStateParentStatechartEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStateParentStatechartEditor(null, true);
+		}
 
 	}
 
@@ -252,8 +276,9 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	public StateEditor() {
+	public StateEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -267,8 +292,9 @@ public class StateEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new StateEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new StateEditor(tab);
 		}
 	}
 

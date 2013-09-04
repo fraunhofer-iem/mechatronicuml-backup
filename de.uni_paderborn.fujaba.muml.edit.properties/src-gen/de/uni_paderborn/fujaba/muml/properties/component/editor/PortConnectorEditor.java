@@ -5,15 +5,15 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public abstract class PortConnectorEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEditor {
 
 	/**
 	 * @generated
 	 */
-	public PortConnectorEditor(
+	public PortConnectorEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public abstract class PortConnectorEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addPortConnectorParentComponentEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addPortConnectorParentComponentEditor(null, true);
+		}
 
 	}
 

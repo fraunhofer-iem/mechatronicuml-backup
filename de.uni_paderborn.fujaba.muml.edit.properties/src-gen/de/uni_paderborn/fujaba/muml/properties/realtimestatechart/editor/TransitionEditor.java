@@ -10,10 +10,10 @@ public class TransitionEditor
 	/**
 	 * @generated
 	 */
-	public TransitionEditor(
+	public TransitionEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -29,38 +29,67 @@ public class TransitionEditor
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addTransitionSynchronizationEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionSynchronizationEditor(null, true);
+		}
 
-		addTransitionTargetEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionTargetEditor(null, true);
+		}
 
-		addTransitionSourceEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionSourceEditor(null, true);
+		}
 
-		addTransitionStatechartEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionStatechartEditor(null, true);
+		}
 
-		addTransitionClockResetsEditor("de.fujaba.properties.category.Lists",
-				true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionClockResetsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addTransitionClockConstraintsEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionClockConstraintsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addTransitionAbsoluteDeadlinesEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionAbsoluteDeadlinesEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addTransitionRelativeDeadlineEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionRelativeDeadlineEditor(null, true);
+		}
 
-		addTransitionBlockableEditor("de.fujaba.properties.category.Booleans",
-				true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionBlockableEditor(
+					"de.fujaba.properties.category.Booleans", true);
+		}
 
-		addTransitionGuardEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionGuardEditor(null, true);
+		}
 
-		addTransitionEventsEditor("de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionEventsEditor("de.fujaba.properties.category.Lists",
+					true);
+		}
 
-		addTransitionActionEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionActionEditor(null, true);
+		}
 
-		addTransitionUrgentEditor("de.fujaba.properties.category.Booleans",
-				true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionUrgentEditor("de.fujaba.properties.category.Booleans",
+					true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 
@@ -321,8 +350,9 @@ public class TransitionEditor
 	/**
 	 * @generated
 	 */
-	public TransitionEditor() {
+	public TransitionEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -336,8 +366,9 @@ public class TransitionEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new TransitionEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new TransitionEditor(tab);
 		}
 	}
 

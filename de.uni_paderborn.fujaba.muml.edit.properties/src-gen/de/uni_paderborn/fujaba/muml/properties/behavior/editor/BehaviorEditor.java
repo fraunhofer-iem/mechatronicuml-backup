@@ -10,10 +10,10 @@ public abstract class BehaviorEditor
 	/**
 	 * @generated
 	 */
-	public BehaviorEditor(
+	public BehaviorEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,11 +26,19 @@ public abstract class BehaviorEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addBehaviorBehavioralElementEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addBehaviorBehavioralElementEditor(null, true);
+		}
 
-		addBehaviorOperationsEditor("de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addBehaviorOperationsEditor("de.fujaba.properties.category.Lists",
+					true);
+		}
 
-		addBehaviorVariablesEditor("de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addBehaviorVariablesEditor("de.fujaba.properties.category.Lists",
+					true);
+		}
 
 	}
 

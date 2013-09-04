@@ -10,10 +10,10 @@ public class PortPartEditor
 	/**
 	 * @generated
 	 */
-	public PortPartEditor(
+	public PortPartEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,11 +23,25 @@ public class PortPartEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addPortPartPortTypeEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addPortPartComponentPartEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addPortPartPortTypeEditor(null, true);
+		}
 
-		addPortPartCoordinationProtocolOccurenceEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addPortPartComponentPartEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addPortPartCoordinationProtocolOccurenceEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConnectorEndpointConnectorsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
 	}
 
@@ -85,6 +99,25 @@ public class PortPartEditor
 						.getPortPart_CoordinationProtocolOccurence());
 
 	}
+	/**
+	 * @generated
+	 */
+	protected void addConnectorEndpointConnectorsEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConnectorEndpointConnectorsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
+
+	}
 
 	//
 	// instantiation
@@ -93,8 +126,9 @@ public class PortPartEditor
 	/**
 	 * @generated
 	 */
-	public PortPartEditor() {
+	public PortPartEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -108,8 +142,9 @@ public class PortPartEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new PortPartEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new PortPartEditor(tab);
 		}
 	}
 

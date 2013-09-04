@@ -10,10 +10,10 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
-	public ComponentPartEditor(
+	public ComponentPartEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,11 +23,17 @@ public class ComponentPartEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addComponentPartComponentTypeEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addComponentPartComponentTypeEditor(null, true);
+		}
 
-		addComponentPartParentComponentEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addComponentPartParentComponentEditor(null, true);
+		}
 
-		addComponentPartCardinalityEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addComponentPartCardinalityEditor(null, true);
+		}
 
 	}
 
@@ -96,8 +102,9 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
-	public ComponentPartEditor() {
+	public ComponentPartEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -111,8 +118,9 @@ public class ComponentPartEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new ComponentPartEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new ComponentPartEditor(tab);
 		}
 	}
 

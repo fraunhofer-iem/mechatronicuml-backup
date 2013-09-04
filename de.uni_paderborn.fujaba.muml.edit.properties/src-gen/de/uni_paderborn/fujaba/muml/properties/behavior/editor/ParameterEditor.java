@@ -10,10 +10,10 @@ public class ParameterEditor
 	/**
 	 * @generated
 	 */
-	public ParameterEditor(
+	public ParameterEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public class ParameterEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 
@@ -54,8 +56,9 @@ public class ParameterEditor
 	/**
 	 * @generated
 	 */
-	public ParameterEditor() {
+	public ParameterEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -69,8 +72,9 @@ public class ParameterEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new ParameterEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new ParameterEditor(tab);
 		}
 	}
 

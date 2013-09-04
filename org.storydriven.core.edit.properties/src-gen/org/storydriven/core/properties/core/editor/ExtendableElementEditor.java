@@ -10,10 +10,10 @@ public abstract class ExtendableElementEditor
 	/**
 	 * @generated
 	 */
-	public ExtendableElementEditor(
+	public ExtendableElementEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**

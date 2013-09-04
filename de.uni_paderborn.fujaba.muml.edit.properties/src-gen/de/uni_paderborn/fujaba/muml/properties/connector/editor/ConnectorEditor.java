@@ -10,10 +10,10 @@ public abstract class ConnectorEditor
 	/**
 	 * @generated
 	 */
-	public ConnectorEditor(
+	public ConnectorEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,8 +26,10 @@ public abstract class ConnectorEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addConnectorConnectorEndpointsEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConnectorConnectorEndpointsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
 	}
 

@@ -10,10 +10,10 @@ public abstract class AbstractCoordinationSpecificationEditor
 	/**
 	 * @generated
 	 */
-	public AbstractCoordinationSpecificationEditor(
+	public AbstractCoordinationSpecificationEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,9 +23,13 @@ public abstract class AbstractCoordinationSpecificationEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addNamedElementNameEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addNamedElementNameEditor(null, true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 

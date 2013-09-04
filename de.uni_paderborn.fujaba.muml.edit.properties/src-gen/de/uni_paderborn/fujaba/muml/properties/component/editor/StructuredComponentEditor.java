@@ -10,10 +10,10 @@ public abstract class StructuredComponentEditor
 	/**
 	 * @generated
 	 */
-	public StructuredComponentEditor(
+	public StructuredComponentEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,8 +26,10 @@ public abstract class StructuredComponentEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addStructuredComponentConnectorsEditor(
-				"de.fujaba.properties.category.Lists", true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStructuredComponentConnectorsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
 	}
 

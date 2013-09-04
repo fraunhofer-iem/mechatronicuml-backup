@@ -10,10 +10,10 @@ public abstract class DeadlineEditor
 	/**
 	 * @generated
 	 */
-	public DeadlineEditor(
+	public DeadlineEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,9 +23,13 @@ public abstract class DeadlineEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addDeadlineUpperBoundEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDeadlineUpperBoundEditor(null, true);
+		}
 
-		addDeadlineLowerBoundEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDeadlineLowerBoundEditor(null, true);
+		}
 
 	}
 

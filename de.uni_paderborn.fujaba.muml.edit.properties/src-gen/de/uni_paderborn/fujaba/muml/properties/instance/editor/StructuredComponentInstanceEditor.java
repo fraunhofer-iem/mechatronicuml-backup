@@ -10,10 +10,10 @@ public class StructuredComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	public StructuredComponentInstanceEditor(
+	public StructuredComponentInstanceEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public class StructuredComponentInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addStructuredComponentInstanceEmbeddedCICEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStructuredComponentInstanceEmbeddedCICEditor(null, true);
+		}
 
 	}
 
@@ -54,8 +56,9 @@ public class StructuredComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	public StructuredComponentInstanceEditor() {
+	public StructuredComponentInstanceEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
@@ -69,8 +72,9 @@ public class StructuredComponentInstanceEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new StructuredComponentInstanceEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new StructuredComponentInstanceEditor(tab);
 		}
 	}
 

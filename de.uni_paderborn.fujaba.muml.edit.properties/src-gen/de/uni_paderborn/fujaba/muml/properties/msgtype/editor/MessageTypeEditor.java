@@ -10,10 +10,10 @@ public class MessageTypeEditor
 	/**
 	 * @generated
 	 */
-	public MessageTypeEditor(
+	public MessageTypeEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -26,12 +26,18 @@ public class MessageTypeEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addMessageTypeParametersEditor("de.fujaba.properties.category.Lists",
-				true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addMessageTypeParametersEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
 
-		addMessageTypeRepositoryEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addMessageTypeRepositoryEditor(null, true);
+		}
 
-		addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
 
 	}
 
@@ -98,8 +104,9 @@ public class MessageTypeEditor
 	/**
 	 * @generated
 	 */
-	public MessageTypeEditor() {
+	public MessageTypeEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
@@ -113,8 +120,9 @@ public class MessageTypeEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new MessageTypeEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new MessageTypeEditor(tab);
 		}
 	}
 

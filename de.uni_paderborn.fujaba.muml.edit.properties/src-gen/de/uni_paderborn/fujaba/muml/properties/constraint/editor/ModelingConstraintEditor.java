@@ -10,10 +10,10 @@ public abstract class ModelingConstraintEditor
 	/**
 	 * @generated
 	 */
-	public ModelingConstraintEditor(
+	public ModelingConstraintEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**

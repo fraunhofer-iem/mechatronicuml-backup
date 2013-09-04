@@ -11,15 +11,15 @@
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.storydriven.core</requiredBundles>
   </plugin>
-  <tabs id="base" name="Experimental"/>
-  <tabs id="comment" name="Comment" afterTab="base"/>
+  <tabs id="property.tab.experimental" name="Experimental"/>
+  <tabs id="property.tab.comment" name="Comment" afterTab="property.tab.experimental"/>
   <packages>
     <genPackage href="../../org.storydriven.core/model/core.uml.genmodel#//core"/>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement"/>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.1">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.fujaba:TextPropertyEditor" multiLine="true"/>
       </properties>
     </classes>
     <classes>

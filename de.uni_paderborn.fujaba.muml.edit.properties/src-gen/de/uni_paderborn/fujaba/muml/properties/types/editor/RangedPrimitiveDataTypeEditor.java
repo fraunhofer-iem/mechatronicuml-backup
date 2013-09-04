@@ -10,10 +10,10 @@ public class RangedPrimitiveDataTypeEditor
 	/**
 	 * @generated
 	 */
-	public RangedPrimitiveDataTypeEditor(
+	public RangedPrimitiveDataTypeEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public class RangedPrimitiveDataTypeEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addRangedPrimitiveDataTypeRangedTypeEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addRangedPrimitiveDataTypeRangedTypeEditor(null, true);
+		}
 
 	}
 
@@ -54,8 +56,9 @@ public class RangedPrimitiveDataTypeEditor
 	/**
 	 * @generated
 	 */
-	public RangedPrimitiveDataTypeEditor() {
+	public RangedPrimitiveDataTypeEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
@@ -69,8 +72,9 @@ public class RangedPrimitiveDataTypeEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new RangedPrimitiveDataTypeEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new RangedPrimitiveDataTypeEditor(tab);
 		}
 	}
 

@@ -10,10 +10,10 @@ public class UnaryExpressionEditor
 	/**
 	 * @generated
 	 */
-	public UnaryExpressionEditor(
+	public UnaryExpressionEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,7 +23,9 @@ public class UnaryExpressionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addUnaryExpressionOperatorEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addUnaryExpressionOperatorEditor(null, true);
+		}
 
 	}
 
@@ -54,8 +56,9 @@ public class UnaryExpressionEditor
 	/**
 	 * @generated
 	 */
-	public UnaryExpressionEditor() {
+	public UnaryExpressionEditor(String tab) {
 		this(
+				tab,
 				org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
@@ -69,8 +72,9 @@ public class UnaryExpressionEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new UnaryExpressionEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new UnaryExpressionEditor(tab);
 		}
 	}
 

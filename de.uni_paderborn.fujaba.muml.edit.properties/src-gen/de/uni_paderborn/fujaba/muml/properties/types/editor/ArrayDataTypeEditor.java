@@ -10,10 +10,10 @@ public class ArrayDataTypeEditor
 	/**
 	 * @generated
 	 */
-	public ArrayDataTypeEditor(
+	public ArrayDataTypeEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -23,9 +23,13 @@ public class ArrayDataTypeEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addArrayDataTypeTypeEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addArrayDataTypeTypeEditor(null, true);
+		}
 
-		addArrayDataTypeCardinalityEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addArrayDataTypeCardinalityEditor(null, true);
+		}
 
 	}
 
@@ -73,8 +77,9 @@ public class ArrayDataTypeEditor
 	/**
 	 * @generated
 	 */
-	public ArrayDataTypeEditor() {
+	public ArrayDataTypeEditor(String tab) {
 		this(
+				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
@@ -88,8 +93,9 @@ public class ArrayDataTypeEditor
 			implements
 				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new ArrayDataTypeEditor();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+				String tab) {
+			return new ArrayDataTypeEditor(tab);
 		}
 	}
 
