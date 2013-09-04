@@ -40,7 +40,6 @@ GenClassifier getGenClassifier(ecore::EClassifier this, genmodel::GenModel genMo
 Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClassifier this) :
 	false;
 
-
 Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClass this) :
 	{ classifier }.typeSelect(GenClass).first().ecoreClass == this;
 
@@ -88,3 +87,14 @@ Set[Property] genInheritedProperties(Class this) :
 
 Set[Property] genOverriddenProperties(Class this) :
 	properties.select(p | p.genFeature.ecoreFeature.eContainingClass != genClass.ecoreClass);
+
+	
+Boolean shouldGenerateEditor(Property this) :
+	editor != null && editor.shouldGenerate();
+
+Boolean shouldGenerate(PropertyEditor this) :
+	true;
+	
+Boolean shouldGenerate(NoPropertyEditor this) :
+	false;
+	

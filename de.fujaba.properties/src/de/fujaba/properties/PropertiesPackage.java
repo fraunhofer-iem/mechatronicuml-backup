@@ -660,7 +660,95 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTextPropertyEditor()
 	 * @generated
 	 */
-	int TEXT_PROPERTY_EDITOR = 10;
+	int TEXT_PROPERTY_EDITOR = 11;
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.SpinnerPropertyEditorImpl <em>Spinner Property Editor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.SpinnerPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getSpinnerPropertyEditor()
+	 * @generated
+	 */
+	int SPINNER_PROPERTY_EDITOR = 12;
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.ComboBoxPropertyEditorImpl <em>Combo Box Property Editor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.ComboBoxPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getComboBoxPropertyEditor()
+	 * @generated
+	 */
+	int COMBO_BOX_PROPERTY_EDITOR = 13;
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.CheckboxPropertyEditorImpl <em>Checkbox Property Editor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.CheckboxPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertyEditor()
+	 * @generated
+	 */
+	int CHECKBOX_PROPERTY_EDITOR = 14;
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.RadioPropertyEditorImpl <em>Radio Property Editor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.RadioPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getRadioPropertyEditor()
+	 * @generated
+	 */
+	int RADIO_PROPERTY_EDITOR = 15;
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.ListPropertyEditorImpl <em>List Property Editor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.ListPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getListPropertyEditor()
+	 * @generated
+	 */
+	int LIST_PROPERTY_EDITOR = 16;
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.ObjectPropertyEditorImpl <em>Object Property Editor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.ObjectPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getObjectPropertyEditor()
+	 * @generated
+	 */
+	int OBJECT_PROPERTY_EDITOR = 17;
+
+	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.NoPropertyEditorImpl <em>No Property Editor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.NoPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getNoPropertyEditor()
+	 * @generated
+	 */
+	int NO_PROPERTY_EDITOR = 10;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NO_PROPERTY_EDITOR__PROPERTY = PROPERTY_EDITOR__PROPERTY;
+
+	/**
+	 * The number of structural features of the '<em>No Property Editor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NO_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -690,16 +778,6 @@ public interface PropertiesPackage extends EPackage {
 	int TEXT_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.SpinnerPropertyEditorImpl <em>Spinner Property Editor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.SpinnerPropertyEditorImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getSpinnerPropertyEditor()
-	 * @generated
-	 */
-	int SPINNER_PROPERTY_EDITOR = 11;
-
-	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -727,16 +805,6 @@ public interface PropertiesPackage extends EPackage {
 	int SPINNER_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.ComboBoxPropertyEditorImpl <em>Combo Box Property Editor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.ComboBoxPropertyEditorImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getComboBoxPropertyEditor()
-	 * @generated
-	 */
-	int COMBO_BOX_PROPERTY_EDITOR = 12;
-
-	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -753,16 +821,6 @@ public interface PropertiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMBO_BOX_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.CheckboxPropertyEditorImpl <em>Checkbox Property Editor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.CheckboxPropertyEditorImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCheckboxPropertyEditor()
-	 * @generated
-	 */
-	int CHECKBOX_PROPERTY_EDITOR = 13;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -783,16 +841,6 @@ public interface PropertiesPackage extends EPackage {
 	int CHECKBOX_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.RadioPropertyEditorImpl <em>Radio Property Editor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.RadioPropertyEditorImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getRadioPropertyEditor()
-	 * @generated
-	 */
-	int RADIO_PROPERTY_EDITOR = 14;
-
-	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -811,16 +859,6 @@ public interface PropertiesPackage extends EPackage {
 	int RADIO_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.ListPropertyEditorImpl <em>List Property Editor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.ListPropertyEditorImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getListPropertyEditor()
-	 * @generated
-	 */
-	int LIST_PROPERTY_EDITOR = 15;
-
-	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -837,16 +875,6 @@ public interface PropertiesPackage extends EPackage {
 	 * @ordered
 	 */
 	int LIST_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link de.fujaba.properties.impl.ObjectPropertyEditorImpl <em>Object Property Editor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.fujaba.properties.impl.ObjectPropertyEditorImpl
-	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getObjectPropertyEditor()
-	 * @generated
-	 */
-	int OBJECT_PROPERTY_EDITOR = 16;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -874,7 +902,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertyEditor()
 	 * @generated
 	 */
-	int CUSTOM_PROPERTY_EDITOR = 17;
+	int CUSTOM_PROPERTY_EDITOR = 18;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -911,7 +939,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyFilter()
 	 * @generated
 	 */
-	int PROPERTY_FILTER = 18;
+	int PROPERTY_FILTER = 19;
 
 	/**
 	 * The number of structural features of the '<em>Property Filter</em>' class.
@@ -930,7 +958,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyFilter()
 	 * @generated
 	 */
-	int OCL_PROPERTY_FILTER = 19;
+	int OCL_PROPERTY_FILTER = 20;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -959,7 +987,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTransformationPosition()
 	 * @generated
 	 */
-	int TRANSFORMATION_POSITION = 20;
+	int TRANSFORMATION_POSITION = 21;
 
 
 	/**
@@ -1650,6 +1678,16 @@ public interface PropertiesPackage extends EPackage {
 	EClass getObjectPropertyEditor();
 
 	/**
+	 * Returns the meta object for class '{@link de.fujaba.properties.NoPropertyEditor <em>No Property Editor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>No Property Editor</em>'.
+	 * @see de.fujaba.properties.NoPropertyEditor
+	 * @generated
+	 */
+	EClass getNoPropertyEditor();
+
+	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.CustomPropertyEditor <em>Custom Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2278,6 +2316,16 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OBJECT_PROPERTY_EDITOR = eINSTANCE.getObjectPropertyEditor();
+
+		/**
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.NoPropertyEditorImpl <em>No Property Editor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fujaba.properties.impl.NoPropertyEditorImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getNoPropertyEditor()
+		 * @generated
+		 */
+		EClass NO_PROPERTY_EDITOR = eINSTANCE.getNoPropertyEditor();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.CustomPropertyEditorImpl <em>Custom Property Editor</em>}' class.

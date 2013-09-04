@@ -7,6 +7,7 @@ import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
 import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
+import de.fujaba.properties.NoPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.Plugin;
@@ -141,6 +142,13 @@ public class PropertiesSwitch<T> extends Switch<T> {
 			case PropertiesPackage.PROPERTY_EDITOR: {
 				PropertyEditor propertyEditor = (PropertyEditor)theEObject;
 				T result = casePropertyEditor(propertyEditor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.NO_PROPERTY_EDITOR: {
+				NoPropertyEditor noPropertyEditor = (NoPropertyEditor)theEObject;
+				T result = caseNoPropertyEditor(noPropertyEditor);
+				if (result == null) result = casePropertyEditor(noPropertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -469,6 +477,21 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseObjectPropertyEditor(ObjectPropertyEditor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>No Property Editor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>No Property Editor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNoPropertyEditor(NoPropertyEditor object) {
 		return null;
 	}
 

@@ -112,7 +112,7 @@ public interface Property extends EObject {
 	 * @see #setEditor(PropertyEditor)
 	 * @see de.fujaba.properties.PropertiesPackage#getProperty_Editor()
 	 * @see de.fujaba.properties.PropertyEditor#getProperty
-	 * @model opposite="property" containment="true"
+	 * @model opposite="property" containment="true" required="true"
 	 * @generated
 	 */
 	PropertyEditor getEditor();

@@ -7,6 +7,7 @@ import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
 import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
+import de.fujaba.properties.NoPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.Plugin;
@@ -124,6 +125,10 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePropertyEditor(PropertyEditor object) {
 				return createPropertyEditorAdapter();
+			}
+			@Override
+			public Adapter caseNoPropertyEditor(NoPropertyEditor object) {
+				return createNoPropertyEditorAdapter();
 			}
 			@Override
 			public Adapter caseTextPropertyEditor(TextPropertyEditor object) {
@@ -420,6 +425,20 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createObjectPropertyEditorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fujaba.properties.NoPropertyEditor <em>No Property Editor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fujaba.properties.NoPropertyEditor
+	 * @generated
+	 */
+	public Adapter createNoPropertyEditorAdapter() {
 		return null;
 	}
 

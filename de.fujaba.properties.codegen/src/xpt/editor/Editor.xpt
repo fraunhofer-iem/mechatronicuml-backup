@@ -37,12 +37,12 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 		«FOREACH genLocalProperties().select(e | e.category != null).category.toSet() AS this»
 		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
 		«ENDFOREACH»
-		«FOREACH genLocalProperties().select(p | p.editor != null) AS this»
+		«FOREACH genLocalProperties().select(p | p.shouldGenerateEditor()) AS this»
 			«EXPAND addEditor FOR editor»
 		«ENDFOREACH»
 	}
 
-	«FOREACH genLocalProperties().select(p | p.editor != null) AS this-»
+	«FOREACH genLocalProperties().select(p | p.shouldGenerateEditor()) AS this-»
 	/**
 	 * @generated
 	 */
@@ -127,6 +127,10 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR PropertyEditor-»
+UNKNOWN PROPERTY EDITOR
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR CheckboxPropertyEditor-»
 new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 

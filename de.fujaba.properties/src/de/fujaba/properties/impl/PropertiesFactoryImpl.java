@@ -7,6 +7,7 @@ import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
 import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
+import de.fujaba.properties.NoPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.Plugin;
@@ -46,7 +47,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 */
 	public static PropertiesFactory init() {
 		try {
-			PropertiesFactory thePropertiesFactory = (PropertiesFactory)EPackage.Registry.INSTANCE.getEFactory(PropertiesPackage.eNS_URI);
+			PropertiesFactory thePropertiesFactory = (PropertiesFactory)EPackage.Registry.INSTANCE.getEFactory("http://de.fujaba.properties/0.1"); 
 			if (thePropertiesFactory != null) {
 				return thePropertiesFactory;
 			}
@@ -84,6 +85,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.CLASS: return createClass();
 			case PropertiesPackage.PROPERTY_CATEGORY: return createPropertyCategory();
 			case PropertiesPackage.PROPERTY: return createProperty();
+			case PropertiesPackage.NO_PROPERTY_EDITOR: return createNoPropertyEditor();
 			case PropertiesPackage.TEXT_PROPERTY_EDITOR: return createTextPropertyEditor();
 			case PropertiesPackage.SPINNER_PROPERTY_EDITOR: return createSpinnerPropertyEditor();
 			case PropertiesPackage.COMBO_BOX_PROPERTY_EDITOR: return createComboBoxPropertyEditor();
@@ -286,6 +288,16 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public ObjectPropertyEditor createObjectPropertyEditor() {
 		ObjectPropertyEditorImpl objectPropertyEditor = new ObjectPropertyEditorImpl();
 		return objectPropertyEditor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NoPropertyEditor createNoPropertyEditor() {
+		NoPropertyEditorImpl noPropertyEditor = new NoPropertyEditorImpl();
+		return noPropertyEditor;
 	}
 
 	/**

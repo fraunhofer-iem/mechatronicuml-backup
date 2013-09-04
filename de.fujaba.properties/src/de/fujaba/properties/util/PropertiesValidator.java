@@ -2,11 +2,24 @@
  */
 package de.fujaba.properties.util;
 
+import java.util.Map;
+
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.emf.ecore.util.EcoreValidator;
+
 import de.fujaba.properties.CheckboxPropertyEditor;
 import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
 import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
+import de.fujaba.properties.NoPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.Plugin;
@@ -21,17 +34,7 @@ import de.fujaba.properties.RadioPropertyEditor;
 import de.fujaba.properties.Reconciler;
 import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
-
 import de.fujaba.properties.TransformationPosition;
-import java.util.Map;
-
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -125,6 +128,8 @@ public class PropertiesValidator extends EObjectValidator {
 				return validateProperty((Property)value, diagnostics, context);
 			case PropertiesPackage.PROPERTY_EDITOR:
 				return validatePropertyEditor((PropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.NO_PROPERTY_EDITOR:
+				return validateNoPropertyEditor((NoPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.TEXT_PROPERTY_EDITOR:
 				return validateTextPropertyEditor((TextPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.SPINNER_PROPERTY_EDITOR:
@@ -517,6 +522,15 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateNoPropertyEditor(NoPropertyEditor noPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(noPropertyEditor, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateCustomPropertyEditor(CustomPropertyEditor customPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(customPropertyEditor, diagnostics, context);
 	}
@@ -560,6 +574,34 @@ public class PropertiesValidator extends EObjectValidator {
 		// Specialize this to return a resource locator for messages specific to this validator.
 		// Ensure that you remove @generated or mark it @generated NOT
 		return super.getResourceLocator();
+	}
+	
+	// Added to modify error message, which is displayed, if no property editor was set.
+	@Override
+	protected boolean validate_MultiplicityConforms(EObject eObject,
+			EStructuralFeature eStructuralFeature, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		  if (eStructuralFeature == PropertiesPackage.Literals.PROPERTY__EDITOR)
+		    {
+		      if (eStructuralFeature.isUnsettable() ? !eObject.eIsSet(eStructuralFeature) : eObject.eGet(eStructuralFeature, false) == null)
+		      {
+		        if (diagnostics != null)
+		        {
+		          diagnostics.add
+		            (new BasicDiagnostic
+		              (Diagnostic.WARNING,
+		               EcoreValidator.DIAGNOSTIC_SOURCE,
+		               EcoreValidator.EOBJECT__EVERY_MULTIPCITY_CONFORMS,
+		               "Property Editor should be set for \"" + getObjectLabel(eObject, context) + "\".\nIf you do not need one, please explicitely set \"No Property Editor\".",
+		               new Object [] { eObject, eStructuralFeature }
+		               ));
+		        }
+		      }
+		      return true;
+		    }
+		
+		return super.validate_MultiplicityConforms(eObject, eStructuralFeature,
+				diagnostics, context);
 	}
 
 } //PropertiesValidator

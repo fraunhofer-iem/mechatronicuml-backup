@@ -307,6 +307,11 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__EDITOR,
+				 PropertiesFactory.eINSTANCE.createNoPropertyEditor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createTextPropertyEditor()));
 
 		newChildDescriptors.add
