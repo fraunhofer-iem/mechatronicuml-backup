@@ -24,8 +24,8 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	/**
 	 * @generated
 	 */
-	public «genEditorName()»(org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
-		super(adapterFactory, eClass);
+	public «genEditorName()»(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
+		super(tab, adapterFactory, eClass);
 	}
 
 	/**
@@ -91,8 +91,8 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	/**
 	 * @generated
 	 */
-	public «genEditorName()»() {
-		this(«package.generator.genPluginId()».util.PropertiesUtil.INSTANCE.getAdapterFactory(), «this.genClass.genClassLiteral()»);
+	public «genEditorName()»(String tab) {
+		this(tab, «package.generator.genPluginId()».util.PropertiesUtil.INSTANCE.getAdapterFactory(), «this.genClass.genClassLiteral()»);
 	}
 	
 	/**
@@ -100,15 +100,17 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	 */
 	public static class Factory implements de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new «genEditorName()»();
+		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+			return new «genEditorName()»(tab);
 		}
 	}
 «ENDIF»
 «ENDDEFINE»
 
 «DEFINE addEditor FOR PropertyEditor»
+	if (getTab() == null || "«property.tab.id»".equals(getTab())) {
 «property.genAdder()»(«EXPAND categoryKey FOR property-», «EXPAND front»);
+	}
 «ENDDEFINE»
 
 «DEFINE addEditor FOR ObjectPropertyEditor»

@@ -18,19 +18,20 @@ import de.fujaba.properties.runtime.editors.ObjectPropertyEditor;
  */
 public class ObjectPropertySection extends AbstractPropertySection {
 
-	protected ObjectPropertyEditor editor;
+	protected ObjectPropertyEditor editor = null;
 
-	public ObjectPropertySection() {
-		editor = createObjectPropertyEditor();
-	}
 
-	protected ObjectPropertyEditor createObjectPropertyEditor() {
-		return new ObjectPropertyEditor(null, "null", true);
+	protected ObjectPropertyEditor createObjectPropertyEditor(String tabId) {
+		return new ObjectPropertyEditor(tabId, null, "null", true);
 	}
 
 	public void createControls(Composite parent,
 			TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
+		
+		String tabId = aTabbedPropertySheetPage.getSelectedTab().getId();
+		editor = createObjectPropertyEditor(tabId);
+
 		FormToolkit toolkit = getWidgetFactory();
 		editor.createControls(parent, toolkit);
 		editor.getSection().setSeparatorControl(toolkit.createCompositeSeparator(editor.getSection()));
@@ -39,14 +40,14 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
 		Object input = RuntimePlugin.resolveSemanticObject(selection);
-		if (!editor.isDisposed()) {
+		if (editor != null && !editor.isDisposed()) {
 			editor.setInput(input);
 		}
 	}
 
 	public void refresh() {
 		super.refresh();
-		if (!editor.isDisposed()) {
+		if (editor != null && !editor.isDisposed()) {
 			editor.refresh();
 		}
 	}

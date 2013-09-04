@@ -22,9 +22,11 @@ import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
  */
 public class ObjectPropertyEditor extends CategoryPropertyEditor {
 
-	public ObjectPropertyEditor(AdapterFactory adapterFactory, String title, boolean initiallyOpen) {
+	private String tab;
+	
+	public ObjectPropertyEditor(String tab, AdapterFactory adapterFactory, String title, boolean initiallyOpen) {
 		super(adapterFactory, SWT.VERTICAL, title, initiallyOpen);
-		
+		this.tab = tab;
 	}
 
 	@Override
@@ -60,7 +62,7 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 			}
 			if (foundFactories != null) {
 				for (IPropertyEditorFactory factory : foundFactories) {
-					IPropertyEditor editor = factory.createPropertyEditor();
+					IPropertyEditor editor = factory.createPropertyEditor(tab);
 					addPropertyEditor(editor);
 				}
 			}

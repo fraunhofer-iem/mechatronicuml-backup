@@ -334,7 +334,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	// TODO: Unify the following dialog creation methods
 	public static void showEditElementDialog(AdapterFactory adapterFactory, EObject element) {
 		PropertiesWizard wizard = new PropertiesWizard();
-		ObjectPropertyEditor editor = new ObjectPropertyEditor(adapterFactory, "Object properties", true);
+		ObjectPropertyEditor editor = new ObjectPropertyEditor(null, adapterFactory, "Object properties", true);
 		PropertyEditorWizardPage page = new PropertyEditorWizardPage(editor);
 		page.setTitle(String.format("Modify ", element.eClass().getName()));
 		page.setDescription(String.format("Changes properties of the existing %s", element.eClass().getName()));

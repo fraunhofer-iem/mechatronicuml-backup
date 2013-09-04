@@ -18,14 +18,21 @@ import org.eclipse.emf.ecore.EClass;
  */
 public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 	
+	private String tab;
+	
 	private EClass eClass;
 
-	public ClassPropertyEditor(AdapterFactory adapterFactory, EClass eClass) {
+	public ClassPropertyEditor(String tab, AdapterFactory adapterFactory, EClass eClass) {
 		super(adapterFactory);
 		this.eClass = eClass;
+		this.tab = tab;
 		initiallyExpanded = true;
 		createProperties();
 		sortProperties();
+	}
+	
+	public String getTab() {
+		return tab;
 	}
 
 	public CategoryPropertyEditor addSubCategory(String key, String title,

@@ -66,7 +66,7 @@ public class NavigationFeaturePropertyEditor extends
 	}
 
 	protected ObjectPropertyEditor createNavigatedEditor() {
-		return new ObjectPropertyEditor(adapterFactory, "null", initiallyOpen);
+		return new ObjectPropertyEditor(null, adapterFactory, "null", initiallyOpen);
 	}
 
 	@Override
