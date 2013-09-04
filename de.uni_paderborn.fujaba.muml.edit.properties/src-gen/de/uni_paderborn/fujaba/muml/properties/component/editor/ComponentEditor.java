@@ -3,31 +3,25 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
 /**
  * @generated
  */
-public class ComponentEditor
+public abstract class ComponentEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
-
-	/**
-	 * @generated
-	 */
-	public ComponentEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
 	 */
 	public ComponentEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -36,7 +30,11 @@ public class ComponentEditor
 
 		addComponentComponentTypeEditor(null, true);
 
-		super.initialize();
+		addConstrainableElementConstraintEditor(
+				"de.fujaba.properties.category.Lists", true);
+
+		addCommentableElementCommentEditor(null, true);
+
 	}
 
 	/**
@@ -75,17 +73,43 @@ public class ComponentEditor
 						.getComponent_ComponentType());
 
 	}
+	/**
+	 * @generated
+	 */
+	protected void addConstrainableElementConstraintEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConstrainableElementConstraintEditor(), front);
+	}
 
 	/**
 	 * @generated
 	 */
-	public static class Factory
-			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new ComponentEditor();
-		}
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment(), false);
+
 	}
 
 }

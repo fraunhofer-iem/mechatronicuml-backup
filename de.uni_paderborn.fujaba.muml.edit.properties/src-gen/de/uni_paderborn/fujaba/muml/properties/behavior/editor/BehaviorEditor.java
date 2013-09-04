@@ -3,31 +3,25 @@ package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
 /**
  * @generated
  */
-public class BehaviorEditor
+public abstract class BehaviorEditor
 		extends
 			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public BehaviorEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public BehaviorEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -36,7 +30,6 @@ public class BehaviorEditor
 
 		addBehaviorVariablesEditor("de.fujaba.properties.category.Lists", true);
 
-		super.initialize();
 	}
 
 	/**
@@ -72,18 +65,6 @@ public class BehaviorEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavior_Variables());
 
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory
-			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new BehaviorEditor();
-		}
 	}
 
 }

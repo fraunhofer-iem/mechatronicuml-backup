@@ -10,27 +10,21 @@ public class LiteralExpressionEditor
 	/**
 	 * @generated
 	 */
-	public LiteralExpressionEditor() {
-		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
-				.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public LiteralExpressionEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addLiteralExpressionValueEditor(null, true);
 
-		super.initialize();
 	}
 
 	/**
@@ -51,6 +45,21 @@ public class LiteralExpressionEditor
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getLiteralExpression_Value(), false);
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public LiteralExpressionEditor() {
+		this(
+				org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
+						.getLiteralExpression());
 	}
 
 	/**

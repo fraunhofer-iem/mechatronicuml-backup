@@ -3,45 +3,26 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 /**
  * @generated
  */
-public class StateConnectionPointEditor
+public abstract class StateConnectionPointEditor
 		extends
 			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.VertexEditor {
 
 	/**
 	 * @generated
 	 */
-	public StateConnectionPointEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public StateConnectionPointEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
-		super.initialize();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory
-			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new StateConnectionPointEditor();
-		}
 	}
 
 }

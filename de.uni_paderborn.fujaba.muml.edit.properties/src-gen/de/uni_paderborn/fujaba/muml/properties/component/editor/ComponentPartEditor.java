@@ -5,37 +5,28 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public class ComponentPartEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
-
-	/**
-	 * @generated
-	 */
-	public ComponentPartEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
 	 */
 	public ComponentPartEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addComponentPartCardinalityEditor(null, false);
 
 		addCommentableElementCommentEditor(null, true);
 
-		addNamedElementNameEditor(null, true);
-
-		super.initialize();
 	}
 
 	/**
@@ -76,22 +67,20 @@ public class ComponentPartEditor
 						.getCommentableElement_Comment(), false);
 
 	}
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
+
+	//
+	// instantiation
+	//
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
-
+	public ComponentPartEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getComponentPart());
 	}
 
 	/**

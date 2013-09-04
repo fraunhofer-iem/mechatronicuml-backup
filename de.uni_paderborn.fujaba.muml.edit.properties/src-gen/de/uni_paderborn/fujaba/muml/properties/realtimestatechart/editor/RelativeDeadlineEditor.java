@@ -10,26 +10,34 @@ public class RelativeDeadlineEditor
 	/**
 	 * @generated
 	 */
+	public RelativeDeadlineEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void createProperties() {
+		super.createProperties();
+
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
 	public RelativeDeadlineEditor() {
 		this(
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
-	public RelativeDeadlineEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void initialize() {
-
-		super.initialize();
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getRelativeDeadline());
 	}
 
 	/**

@@ -5,7 +5,51 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class RegionEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.PrioritizedElementEditor {
+
+	/**
+	 * @generated
+	 */
+	public RegionEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void createProperties() {
+		super.createProperties();
+
+		addCommentableElementCommentEditor(null, true);
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment(), false);
+
+	}
+
+	//
+	// instantiation
+	//
 
 	/**
 	 * @generated
@@ -13,23 +57,9 @@ public class RegionEditor
 	public RegionEditor() {
 		this(
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
-	public RegionEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void initialize() {
-
-		super.initialize();
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getRegion());
 	}
 
 	/**

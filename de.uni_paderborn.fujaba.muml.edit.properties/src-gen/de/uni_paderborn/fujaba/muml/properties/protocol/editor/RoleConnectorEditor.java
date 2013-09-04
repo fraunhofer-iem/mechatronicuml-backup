@@ -10,28 +10,21 @@ public class RoleConnectorEditor
 	/**
 	 * @generated
 	 */
-	public RoleConnectorEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public RoleConnectorEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addRoleConnectorConnectorQualityOfServiceAssumptionsEditor(null, false);
 
-		super.initialize();
 	}
 
 	/**
@@ -54,6 +47,21 @@ public class RoleConnectorEditor
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getRoleConnector_ConnectorQualityOfServiceAssumptions());
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public RoleConnectorEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+						.getRoleConnector());
 	}
 
 	/**

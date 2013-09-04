@@ -3,44 +3,26 @@ package org.storydriven.core.properties.core.editor;
 /**
  * @generated
  */
-public class ExtendableElementEditor
+public abstract class ExtendableElementEditor
 		extends
 			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public ExtendableElementEditor() {
-		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
-				.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public ExtendableElementEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
-		super.initialize();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory
-			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new ExtendableElementEditor();
-		}
 	}
 
 }

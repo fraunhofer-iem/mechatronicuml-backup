@@ -12,11 +12,12 @@
     <requiredBundles>org.storydriven.core</requiredBundles>
   </plugin>
   <tabs id="base" name="Experimental"/>
+  <tabs id="comment" name="Comment" afterTab="base"/>
   <packages>
     <genPackage href="../../org.storydriven.core/model/core.uml.genmodel#//core"/>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement"/>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.1">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
         <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>

@@ -9,8 +9,11 @@
           <propertyTab
              category="domain"
              id="base"
-             afterTab="property.tab.domain.advanced"
              label="Experimental"/>
+          <propertyTab
+             category="domain"
+             id="comment"
+             label="Comment"/>
           
       </propertyTabs>
   </extension>
@@ -29,6 +32,15 @@
                type="org.eclipse.emf.ecore.EObject">
              </input>
           </propertySection>
+          <propertySection
+            class="de.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="de.fujaba.properties.runtime.filter.ElementFilter"
+            id="comment"
+            tab="comment">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
          
       </propertySections>
   </extension>
@@ -39,36 +51,6 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="org.storydriven.core.properties.core.editor.CommentableElementEditor$Factory"
-             type="org.storydriven.core.CommentableElement">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.storydriven.core.properties.core.editor.ExtendableElementEditor$Factory"
-             type="org.storydriven.core.ExtendableElement">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.storydriven.core.properties.core.editor.ExtensionEditor$Factory"
-             type="org.storydriven.core.Extension">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.storydriven.core.properties.core.editor.NamedElementEditor$Factory"
-             type="org.storydriven.core.NamedElement">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.storydriven.core.properties.core.editor.TypedElementEditor$Factory"
-             type="org.storydriven.core.TypedElement">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.storydriven.core.properties.expressions.editor.ExpressionEditor$Factory"
-             type="org.storydriven.core.expressions.Expression">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="org.storydriven.core.properties.expressions.editor.TextualExpressionEditor$Factory"
              type="org.storydriven.core.expressions.TextualExpression">
        </propertyEditor>
@@ -76,11 +58,6 @@
        <propertyEditor
              factory="org.storydriven.core.properties.common.editor.UnaryExpressionEditor$Factory"
              type="org.storydriven.core.expressions.common.UnaryExpression">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="org.storydriven.core.properties.common.editor.BinaryExpressionEditor$Factory"
-             type="org.storydriven.core.expressions.common.BinaryExpression">
        </propertyEditor>
     
        <propertyEditor

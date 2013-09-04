@@ -10,28 +10,21 @@ public class PrimitiveDataTypeEditor
 	/**
 	 * @generated
 	 */
-	public PrimitiveDataTypeEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public PrimitiveDataTypeEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addPrimitiveDataTypePrimitiveTypeEditor(null, true);
 
-		super.initialize();
 	}
 
 	/**
@@ -52,6 +45,21 @@ public class PrimitiveDataTypeEditor
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
 						.getPrimitiveDataType_PrimitiveType());
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public PrimitiveDataTypeEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+						.getPrimitiveDataType());
 	}
 
 	/**

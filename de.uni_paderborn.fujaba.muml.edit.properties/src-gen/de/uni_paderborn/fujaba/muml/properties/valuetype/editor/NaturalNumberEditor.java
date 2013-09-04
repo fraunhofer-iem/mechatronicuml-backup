@@ -10,24 +10,18 @@ public class NaturalNumberEditor
 	/**
 	 * @generated
 	 */
-	public NaturalNumberEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public NaturalNumberEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -37,7 +31,6 @@ public class NaturalNumberEditor
 		addNaturalNumberInfinityEditor(
 				"de.fujaba.properties.category.Booleans", true);
 
-		super.initialize();
 	}
 
 	/**
@@ -74,6 +67,21 @@ public class NaturalNumberEditor
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getNaturalNumber_Infinity());
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public NaturalNumberEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+						.getNaturalNumber());
 	}
 
 	/**

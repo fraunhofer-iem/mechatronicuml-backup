@@ -10,26 +10,56 @@ public class ParameterEditor
 	/**
 	 * @generated
 	 */
+	public ParameterEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void createProperties() {
+		super.createProperties();
+
+		addCommentableElementCommentEditor(null, true);
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment(), false);
+
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
 	public ParameterEditor() {
 		this(
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
-	public ParameterEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void initialize() {
-
-		super.initialize();
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getParameter());
 	}
 
 	/**

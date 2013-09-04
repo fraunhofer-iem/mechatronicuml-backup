@@ -10,28 +10,21 @@ public class HybridPortEditor
 	/**
 	 * @generated
 	 */
-	public HybridPortEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public HybridPortEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addHybridPortSamplingIntervalEditor(null, false);
 
-		super.initialize();
 	}
 
 	/**
@@ -52,6 +45,21 @@ public class HybridPortEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getHybridPort_SamplingInterval());
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public HybridPortEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getHybridPort());
 	}
 
 	/**

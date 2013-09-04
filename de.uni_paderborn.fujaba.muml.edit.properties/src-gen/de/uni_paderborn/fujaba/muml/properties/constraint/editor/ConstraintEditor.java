@@ -3,31 +3,25 @@ package de.uni_paderborn.fujaba.muml.properties.constraint.editor;
 /**
  * @generated
  */
-public class ConstraintEditor
+public abstract class ConstraintEditor
 		extends
 			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
 
 	/**
 	 * @generated
 	 */
-	public ConstraintEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public ConstraintEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -37,7 +31,6 @@ public class ConstraintEditor
 		addConstraintBackgroundEditor("de.fujaba.properties.category.Booleans",
 				true);
 
-		super.initialize();
 	}
 
 	/**
@@ -74,18 +67,6 @@ public class ConstraintEditor
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstraint_Background());
 
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory
-			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new ConstraintEditor();
-		}
 	}
 
 }

@@ -10,26 +10,34 @@ public class RangedPrimitiveDataTypeEditor
 	/**
 	 * @generated
 	 */
+	public RangedPrimitiveDataTypeEditor(
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void createProperties() {
+		super.createProperties();
+
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
 	public RangedPrimitiveDataTypeEditor() {
 		this(
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
-	public RangedPrimitiveDataTypeEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
-	}
-
-	/**
-	 * @generated
-	 */
-	public void initialize() {
-
-		super.initialize();
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+						.getRangedPrimitiveDataType());
 	}
 
 	/**

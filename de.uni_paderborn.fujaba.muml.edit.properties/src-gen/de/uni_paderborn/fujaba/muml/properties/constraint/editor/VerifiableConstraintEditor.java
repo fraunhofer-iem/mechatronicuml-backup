@@ -3,45 +3,26 @@ package de.uni_paderborn.fujaba.muml.properties.constraint.editor;
 /**
  * @generated
  */
-public class VerifiableConstraintEditor
+public abstract class VerifiableConstraintEditor
 		extends
 			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstraintEditor {
 
 	/**
 	 * @generated
 	 */
-	public VerifiableConstraintEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public VerifiableConstraintEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
-		super.initialize();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory
-			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new VerifiableConstraintEditor();
-		}
 	}
 
 }

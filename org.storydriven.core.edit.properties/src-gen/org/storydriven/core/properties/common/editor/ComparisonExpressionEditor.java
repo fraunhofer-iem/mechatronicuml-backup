@@ -10,27 +10,21 @@ public class ComparisonExpressionEditor
 	/**
 	 * @generated
 	 */
-	public ComparisonExpressionEditor() {
-		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
-				.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public ComparisonExpressionEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addComparisonExpressionOperatorEditor(null, true);
 
-		super.initialize();
 	}
 
 	/**
@@ -51,6 +45,21 @@ public class ComparisonExpressionEditor
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getComparisonExpression_Operator());
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public ComparisonExpressionEditor() {
+		this(
+				org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
+						.getComparisonExpression());
 	}
 
 	/**

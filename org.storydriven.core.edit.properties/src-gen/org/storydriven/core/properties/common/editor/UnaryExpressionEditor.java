@@ -10,27 +10,21 @@ public class UnaryExpressionEditor
 	/**
 	 * @generated
 	 */
-	public UnaryExpressionEditor() {
-		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
-				.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public UnaryExpressionEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addUnaryExpressionOperatorEditor(null, true);
 
-		super.initialize();
 	}
 
 	/**
@@ -51,6 +45,21 @@ public class UnaryExpressionEditor
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getUnaryExpression_Operator());
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public UnaryExpressionEditor() {
+		this(
+				org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
+						.getUnaryExpression());
 	}
 
 	/**

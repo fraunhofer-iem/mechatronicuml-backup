@@ -3,31 +3,25 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
 /**
  * @generated
  */
-public class DirectedTypedPortEditor
+public abstract class DirectedTypedPortEditor
 		extends
 			de.uni_paderborn.fujaba.muml.properties.component.editor.PortEditor {
 
 	/**
 	 * @generated
 	 */
-	public DirectedTypedPortEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public DirectedTypedPortEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -37,7 +31,6 @@ public class DirectedTypedPortEditor
 		addDirectedTypedPortOptionalEditor(
 				"de.fujaba.properties.category.Booleans", true);
 
-		super.initialize();
 	}
 
 	/**
@@ -76,18 +69,6 @@ public class DirectedTypedPortEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_Optional());
 
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory
-			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new DirectedTypedPortEditor();
-		}
 	}
 
 }

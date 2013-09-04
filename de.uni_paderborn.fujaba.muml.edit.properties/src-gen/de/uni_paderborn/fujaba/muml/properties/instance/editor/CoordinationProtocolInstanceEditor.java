@@ -10,24 +10,18 @@ public class CoordinationProtocolInstanceEditor
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolInstanceEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public CoordinationProtocolInstanceEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -35,7 +29,6 @@ public class CoordinationProtocolInstanceEditor
 		addCoordinationProtocolInstancePortInstancesEditor(
 				"de.fujaba.properties.category.Lists", true);
 
-		super.initialize();
 	}
 
 	/**
@@ -56,6 +49,21 @@ public class CoordinationProtocolInstanceEditor
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getCoordinationProtocolInstance_PortInstances());
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public CoordinationProtocolInstanceEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+						.getCoordinationProtocolInstance());
 	}
 
 	/**

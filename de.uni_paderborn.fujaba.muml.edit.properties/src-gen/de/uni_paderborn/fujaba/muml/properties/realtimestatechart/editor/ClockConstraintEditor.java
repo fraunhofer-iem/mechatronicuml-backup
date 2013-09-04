@@ -5,35 +5,28 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class ClockConstraintEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
-
-	/**
-	 * @generated
-	 */
-	public ClockConstraintEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
+			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
 
 	/**
 	 * @generated
 	 */
 	public ClockConstraintEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addClockConstraintBoundEditor(null, false);
 
 		addClockConstraintOperatorEditor(null, true);
 
-		super.initialize();
 	}
 
 	/**
@@ -71,6 +64,21 @@ public class ClockConstraintEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getClockConstraint_Operator());
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public ClockConstraintEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getClockConstraint());
 	}
 
 	/**

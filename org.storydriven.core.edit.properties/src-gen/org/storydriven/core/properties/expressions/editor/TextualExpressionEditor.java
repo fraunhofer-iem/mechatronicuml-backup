@@ -10,23 +10,18 @@ public class TextualExpressionEditor
 	/**
 	 * @generated
 	 */
-	public TextualExpressionEditor() {
-		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
-				.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public TextualExpressionEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addTextualExpressionExpressionTextEditor(null, true);
 
@@ -34,7 +29,6 @@ public class TextualExpressionEditor
 
 		addTextualExpressionLanguageVersionEditor(null, true);
 
-		super.initialize();
 	}
 
 	/**
@@ -93,6 +87,20 @@ public class TextualExpressionEditor
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_LanguageVersion(), false);
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public TextualExpressionEditor() {
+		this(org.storydriven.core.properties.util.PropertiesUtil.INSTANCE
+				.getAdapterFactory(),
+				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
+						.getTextualExpression());
 	}
 
 	/**

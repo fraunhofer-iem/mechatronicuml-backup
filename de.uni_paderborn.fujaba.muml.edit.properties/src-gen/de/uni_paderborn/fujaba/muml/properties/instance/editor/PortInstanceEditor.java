@@ -3,45 +3,26 @@ package de.uni_paderborn.fujaba.muml.properties.instance.editor;
 /**
  * @generated
  */
-public class PortInstanceEditor
+public abstract class PortInstanceEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
-
-	/**
-	 * @generated
-	 */
-	public PortInstanceEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointInstanceEditor {
 
 	/**
 	 * @generated
 	 */
 	public PortInstanceEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
-		super.initialize();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory
-			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new PortInstanceEditor();
-		}
 	}
 
 }

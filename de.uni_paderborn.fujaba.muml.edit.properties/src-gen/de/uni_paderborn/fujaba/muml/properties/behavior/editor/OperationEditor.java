@@ -5,42 +5,54 @@ package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
  */
 public class OperationEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
-
-	/**
-	 * @generated
-	 */
-	public OperationEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
 	 */
 	public OperationEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addOperationImplementationsEditor(
-				"de.fujaba.properties.category.Lists", true);
-
 		addOperationParametersEditor("de.fujaba.properties.category.Lists",
 				true);
 
-		super.initialize();
+		addOperationImplementationsEditor(
+				"de.fujaba.properties.category.Lists", true);
+
+		addCommentableElementCommentEditor(null, true);
+
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addOperationParametersEditor(String category, boolean front) {
+		addEditorToCategory(category, createOperationParametersEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationParametersEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getOperation_Parameters());
+
+	}
 	/**
 	 * @generated
 	 */
@@ -63,19 +75,36 @@ public class OperationEditor
 	/**
 	 * @generated
 	 */
-	protected void addOperationParametersEditor(String category, boolean front) {
-		addEditorToCategory(category, createOperationParametersEditor(), front);
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationParametersEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getOperation_Parameters());
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment(), false);
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public OperationEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getOperation());
 	}
 
 	/**

@@ -10,24 +10,18 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	/**
 	 * @generated
 	 */
-	public ConnectorQualityOfServiceAssumptionsEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public ConnectorQualityOfServiceAssumptionsEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -41,7 +35,6 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(
 				"de.fujaba.properties.category.Booleans", true);
 
-		super.initialize();
 	}
 
 	/**
@@ -106,6 +99,21 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions_MessageLossPossible());
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public ConnectorQualityOfServiceAssumptionsEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+						.getConnectorQualityOfServiceAssumptions());
 	}
 
 	/**

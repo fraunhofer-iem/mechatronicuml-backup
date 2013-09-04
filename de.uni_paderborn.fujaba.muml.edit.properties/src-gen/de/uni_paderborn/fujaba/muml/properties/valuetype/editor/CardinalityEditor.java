@@ -10,30 +10,23 @@ public class CardinalityEditor
 	/**
 	 * @generated
 	 */
-	public CardinalityEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public CardinalityEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addCardinalityLowerBoundEditor(null, true);
 
 		addCardinalityUpperBoundEditor(null, true);
 
-		super.initialize();
 	}
 
 	/**
@@ -71,6 +64,21 @@ public class CardinalityEditor
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getCardinality_UpperBound());
 
+	}
+
+	//
+	// instantiation
+	//
+
+	/**
+	 * @generated
+	 */
+	public CardinalityEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+						.getCardinality());
 	}
 
 	/**

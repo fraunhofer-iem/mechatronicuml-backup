@@ -3,31 +3,25 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
 /**
  * @generated
  */
-public class EntryOrExitEventEditor
+public abstract class EntryOrExitEventEditor
 		extends
 			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.StateEventEditor {
 
 	/**
 	 * @generated
 	 */
-	public EntryOrExitEventEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public EntryOrExitEventEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
@@ -37,7 +31,6 @@ public class EntryOrExitEventEditor
 
 		addEntryOrExitEventActionEditor(null, false);
 
-		super.initialize();
 	}
 
 	/**
@@ -77,18 +70,6 @@ public class EntryOrExitEventEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getEntryOrExitEvent_Action());
 
-	}
-
-	/**
-	 * @generated
-	 */
-	public static class Factory
-			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
-		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor() {
-			return new EntryOrExitEventEditor();
-		}
 	}
 
 }

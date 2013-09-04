@@ -10,35 +10,85 @@ public class AtomicComponentEditor
 	/**
 	 * @generated
 	 */
-	public AtomicComponentEditor() {
-		this(
-				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
-						.getAdapterFactory());
-	}
-
-	/**
-	 * @generated
-	 */
 	public AtomicComponentEditor(
-			org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
+
+		addComponentPortsEditor("de.fujaba.properties.category.Lists", true);
+
+		addComponentComponentTypeEditor(null, true);
+
+		addNamedElementNameEditor(null, true);
 
 		addConstrainableElementConstraintEditor(
 				"de.fujaba.properties.category.Lists", true);
 
 		addCommentableElementCommentEditor(null, true);
 
-		addNamedElementNameEditor(null, true);
-
-		super.initialize();
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addComponentPortsEditor(String category, boolean front) {
+		addEditorToCategory(category, createComponentPortsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentPortsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getComponent_Ports());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addComponentComponentTypeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComponentComponentTypeEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getComponent_ComponentType());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name(), false);
+
+	}
 	/**
 	 * @generated
 	 */
@@ -77,22 +127,20 @@ public class AtomicComponentEditor
 						.getCommentableElement_Comment(), false);
 
 	}
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
+
+	//
+	// instantiation
+	//
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
-
+	public AtomicComponentEditor() {
+		this(
+				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
+						.getAdapterFactory(),
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getAtomicComponent());
 	}
 
 	/**
