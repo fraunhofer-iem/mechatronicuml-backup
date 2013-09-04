@@ -176,7 +176,7 @@ mapping GenFeature::checkboxSection() : CheckboxPropertyEditor when {self.ecoreF
 mapping GenFeature::listSection() : ListPropertyEditor when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.upperBound > 1} {
 }
 
-mapping GenFeature::comboSection() : ComboBoxPropertyEditor when {self.ecoreFeature.eType.oclIsKindOf(EEnum) and self.ecoreFeature.eType.oclAsType(EEnum).eLiterals->size() > 3} {
+mapping GenFeature::comboSection() : ComboBoxPropertyEditor when {self.ecoreFeature.oclIsKindOf(EReference) and self.ecoreFeature.upperBound = 1 or (self.ecoreFeature.eType.oclIsKindOf(EEnum) and self.ecoreFeature.eType.oclAsType(EEnum).eLiterals->size() > 3)} {
 }
 
 

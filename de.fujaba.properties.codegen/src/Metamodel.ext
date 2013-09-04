@@ -70,15 +70,21 @@ String genAdder(Property this) :
 
 String genCreator(Property this) :
 	'create'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + 'Editor';	
-	
+
+
+String genClassLiteral(GenClass this) :
+	genPackage.fullyQualifiedName() + '.' + genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + ecoreClass.name.toString().toFirstUpper() + '()';
+
+
 String genFeatureLiteral(GenFeature this) :
-		genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
+	genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
 	
 Set[Property] genLocalProperties(Class this) :
-	{ this }.union(superClasses.allSuperClasses).properties.without(genInheritedProperties()).without(genOverriddenProperties());
+	{ this }.union(allSuperClasses).properties.without(genInheritedProperties()).without(genOverriddenProperties());
 	
 Set[Property] genInheritedProperties(Class this) :
-	superClasses.select(e | e == superClasses.first()).allSuperClasses.properties;
+	/* This select makes sure we do not get a NullPointerException!*/
+	superClasses.select(e | e == superClasses.first()).union(superClasses.select(e | e == superClasses.first()).allSuperClasses).properties;
 
 Set[Property] genOverriddenProperties(Class this) :
 	properties.select(p | p.genFeature.ecoreFeature.eContainingClass != genClass.ecoreClass);

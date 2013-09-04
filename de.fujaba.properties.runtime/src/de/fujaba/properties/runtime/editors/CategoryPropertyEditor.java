@@ -1,6 +1,7 @@
 package de.fujaba.properties.runtime.editors;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +42,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	protected FormToolkit toolkit;
 
-	protected List<IPropertyEditor> propertyEditors = new ArrayList<IPropertyEditor>();
+	private List<IPropertyEditor> propertyEditors = new ArrayList<IPropertyEditor>();
 
 	protected Map<String, IPropertyEditor> keys = new HashMap<String, IPropertyEditor>();
 
@@ -68,10 +69,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		this.orientation = orientation;
 		this.title = title;
 		this.initiallyExpanded = initiallyExpanded;
-		initialize();
-	}
-
-	protected void initialize() {
 	}
 
 	public void addPropertyEditor(IPropertyEditor editor) {
@@ -80,6 +77,11 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	public void addPropertyEditor(IPropertyEditor editor, boolean front) {
 		addPropertyEditor(null, editor, front);
+	}
+	
+	public void sortEditors(Comparator<IPropertyEditor> comparator) {
+		java.util.Collections.sort(propertyEditors, comparator);
+		
 	}
 
 	public void addPropertyEditor(String key, IPropertyEditor editor,

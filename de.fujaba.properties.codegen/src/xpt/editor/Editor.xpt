@@ -5,7 +5,7 @@
 /**
  * @generated
  */
-public class «genEditorName()» extends «EXPAND extends-» {
+public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorName()» extends «EXPAND extends-» {
 	«EXPAND classBody»
 }
 «ENDDEFINE» 
@@ -20,31 +20,26 @@ public class «genEditorName()» extends «EXPAND extends-» {
 
 
 «DEFINE classBody FOR Class»
+
 	/**
 	 * @generated
 	 */
-	public «genEditorName()»() {
-		this(«package.generator.genPluginId()».util.PropertiesUtil.INSTANCE.getAdapterFactory());
-	}
-	
-	/**
-	 * @generated
-	 */
-	public «genEditorName()»(org.eclipse.emf.common.notify.AdapterFactory adapterFactory) {
-		super(adapterFactory);
+	public «genEditorName()»(org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
+		super(adapterFactory, eClass);
 	}
 
 	/**
 	 * @generated
 	 */
-	public void initialize() {
+	@Override
+	protected void createProperties() {
+		super.createProperties();
 		«FOREACH propertyCategories AS this»
 		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
 		«ENDFOREACH»
 		«FOREACH genLocalProperties().select(p | p.editor != null) AS this»
 			«EXPAND addEditor FOR editor»
 		«ENDFOREACH»
-		super.initialize();
 	}
 
 	«FOREACH genLocalProperties().select(p | p.editor != null) AS this-»
@@ -85,6 +80,21 @@ public class «genEditorName()» extends «EXPAND extends-» {
 	}
 	«ENDFOREACH»
 
+«IF !genClass.ecoreClass.abstract»
+
+
+	//
+	// instantiation
+	//
+	
+	
+	/**
+	 * @generated
+	 */
+	public «genEditorName()»() {
+		this(«package.generator.genPluginId()».util.PropertiesUtil.INSTANCE.getAdapterFactory(), «this.genClass.genClassLiteral()»);
+	}
+	
 	/**
 	 * @generated
 	 */
@@ -94,7 +104,7 @@ public class «genEditorName()» extends «EXPAND extends-» {
 			return new «genEditorName()»();
 		}
 	}
-
+«ENDIF»
 «ENDDEFINE»
 
 «DEFINE addEditor FOR PropertyEditor»

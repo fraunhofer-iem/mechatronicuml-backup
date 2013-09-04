@@ -54,7 +54,7 @@
 «DEFINE propertyEditor FOR PropertyGenerator»
  <extension point="de.fujaba.properties.runtime.propertyEditors">
     <propertyEditors>
-    «FOREACH packages.classes AS this»
+    «FOREACH packages.classes.reject(e | e.genClass.ecoreClass.abstract) AS this»
        <propertyEditor
              factory="«genQualifiedEditorName()»$Factory"
              type="«genClass.fullyQualifiedName()»">
