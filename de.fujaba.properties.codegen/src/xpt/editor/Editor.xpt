@@ -34,7 +34,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	@Override
 	protected void createProperties() {
 		super.createProperties();
-		«FOREACH propertyCategories AS this»
+		«FOREACH genLocalProperties().select(e | e.category != null).category.toSet() AS this»
 		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
 		«ENDFOREACH»
 		«FOREACH genLocalProperties().select(p | p.editor != null) AS this»

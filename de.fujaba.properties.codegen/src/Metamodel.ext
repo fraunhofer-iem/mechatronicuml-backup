@@ -81,7 +81,7 @@ String genFeatureLiteral(GenFeature this) :
 	
 Set[Property] genLocalProperties(Class this) :
 	{ this }.union(allSuperClasses).properties.without(genInheritedProperties()).without(genOverriddenProperties());
-	
+
 Set[Property] genInheritedProperties(Class this) :
 	/* This select makes sure we do not get a NullPointerException!*/
 	superClasses.select(e | e == superClasses.first()).union(superClasses.select(e | e == superClasses.first()).allSuperClasses).properties;
