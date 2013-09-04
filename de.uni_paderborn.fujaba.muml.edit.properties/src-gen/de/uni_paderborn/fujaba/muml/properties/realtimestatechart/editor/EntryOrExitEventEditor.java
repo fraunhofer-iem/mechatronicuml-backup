@@ -29,7 +29,7 @@ public abstract class EntryOrExitEventEditor
 		addEntryOrExitEventClockResetsEditor(
 				"de.fujaba.properties.category.Lists", true);
 
-		addEntryOrExitEventActionEditor(null, false);
+		addEntryOrExitEventActionEditor(null, true);
 
 	}
 
@@ -65,7 +65,7 @@ public abstract class EntryOrExitEventEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createEntryOrExitEventActionEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getEntryOrExitEvent_Action());

@@ -29,6 +29,10 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 		addDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(
 				"de.fujaba.properties.category.Lists", true);
 
+		addDiscreteMultiInteractionEndpointInstanceFirstEditor(null, true);
+
+		addDiscreteMultiInteractionEndpointInstanceLastEditor(null, true);
+
 	}
 
 	/**
@@ -50,6 +54,46 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addDiscreteMultiInteractionEndpointInstanceFirstEditor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createDiscreteMultiInteractionEndpointInstanceFirstEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteMultiInteractionEndpointInstanceFirstEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getDiscreteMultiInteractionEndpointInstance_First());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addDiscreteMultiInteractionEndpointInstanceLastEditor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createDiscreteMultiInteractionEndpointInstanceLastEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteMultiInteractionEndpointInstanceLastEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getDiscreteMultiInteractionEndpointInstance_Last());
 
 	}
 

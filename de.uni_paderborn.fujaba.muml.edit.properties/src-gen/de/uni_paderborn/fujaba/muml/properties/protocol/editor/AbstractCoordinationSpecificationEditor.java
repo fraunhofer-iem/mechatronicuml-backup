@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.protocol.editor;
  */
 public abstract class AbstractCoordinationSpecificationEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
 
 	/**
 	 * @generated
@@ -23,8 +23,7 @@ public abstract class AbstractCoordinationSpecificationEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addConstrainableElementConstraintEditor(
-				"de.fujaba.properties.category.Lists", true);
+		addNamedElementNameEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
 
@@ -33,20 +32,18 @@ public abstract class AbstractCoordinationSpecificationEditor
 	/**
 	 * @generated
 	 */
-	protected void addConstrainableElementConstraintEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name(), false);
 
 	}
 	/**

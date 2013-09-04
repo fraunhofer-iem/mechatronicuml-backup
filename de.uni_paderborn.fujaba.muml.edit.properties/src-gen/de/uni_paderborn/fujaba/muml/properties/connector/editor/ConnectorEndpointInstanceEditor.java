@@ -29,6 +29,8 @@ public abstract class ConnectorEndpointInstanceEditor
 		addConnectorEndpointInstanceConnectorInstancesEditor(
 				"de.fujaba.properties.category.Lists", true);
 
+		addConnectorEndpointInstanceTypeEditor(null, true);
+
 		addCommentableElementCommentEditor(null, true);
 
 	}
@@ -51,6 +53,25 @@ public abstract class ConnectorEndpointInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorEndpointInstance_ConnectorInstances());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addConnectorEndpointInstanceTypeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConnectorEndpointInstanceTypeEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointInstanceTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpointInstance_Type());
 
 	}
 	/**

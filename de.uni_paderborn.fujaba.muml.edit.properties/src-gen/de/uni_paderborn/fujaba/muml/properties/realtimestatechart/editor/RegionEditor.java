@@ -23,10 +23,29 @@ public class RegionEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addRegionParentStateEditor(null, true);
+
 		addCommentableElementCommentEditor(null, true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addRegionParentStateEditor(String category, boolean front) {
+		addEditorToCategory(category, createRegionParentStateEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRegionParentStateEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getRegion_ParentState());
+
+	}
 	/**
 	 * @generated
 	 */

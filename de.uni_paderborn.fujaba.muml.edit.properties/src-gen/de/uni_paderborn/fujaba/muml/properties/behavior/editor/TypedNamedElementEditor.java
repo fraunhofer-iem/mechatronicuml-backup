@@ -23,6 +23,28 @@ public abstract class TypedNamedElementEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addTypedNamedElementDataTypeEditor(null, true);
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addTypedNamedElementDataTypeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createTypedNamedElementDataTypeEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTypedNamedElementDataTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getTypedNamedElement_DataType());
+
 	}
 
 }

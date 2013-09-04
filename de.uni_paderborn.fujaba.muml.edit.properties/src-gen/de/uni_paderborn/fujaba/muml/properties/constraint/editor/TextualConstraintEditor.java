@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.constraint.editor;
  */
 public class TextualConstraintEditor
 		extends
-			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.constraint.editor.VerifiableConstraintEditor {
 
 	/**
 	 * @generated
@@ -23,12 +23,7 @@ public class TextualConstraintEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addTextualConstraintTextualExpressionEditor(null, false);
-
-		addConstraintCorrectnessEditor(null, true);
-
-		addConstraintBackgroundEditor("de.fujaba.properties.category.Booleans",
-				true);
+		addTextualConstraintTextualExpressionEditor(null, true);
 
 	}
 
@@ -45,45 +40,10 @@ public class TextualConstraintEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTextualConstraintTextualExpressionEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getTextualConstraint_TextualExpression());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConstraintCorrectnessEditor(String category, boolean front) {
-		addEditorToCategory(category, createConstraintCorrectnessEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstraintCorrectnessEditor() {
-		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstraint_Correctness());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConstraintBackgroundEditor(String category, boolean front) {
-		addEditorToCategory(category, createConstraintBackgroundEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstraintBackgroundEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstraint_Background());
 
 	}
 

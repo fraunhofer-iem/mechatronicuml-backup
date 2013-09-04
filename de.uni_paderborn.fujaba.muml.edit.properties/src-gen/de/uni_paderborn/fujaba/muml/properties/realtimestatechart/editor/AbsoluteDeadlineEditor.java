@@ -23,6 +23,27 @@ public class AbsoluteDeadlineEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addAbsoluteDeadlineClockEditor(null, true);
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addAbsoluteDeadlineClockEditor(String category, boolean front) {
+		addEditorToCategory(category, createAbsoluteDeadlineClockEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createAbsoluteDeadlineClockEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getAbsoluteDeadline_Clock());
+
 	}
 
 	//

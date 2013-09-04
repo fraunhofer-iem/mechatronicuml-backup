@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.msgtype.editor;
  */
 public class MessageTypeRepositoryEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -29,7 +29,7 @@ public class MessageTypeRepositoryEditor
 		addMessageTypeRepositoryMessageTypesEditor(
 				"de.fujaba.properties.category.Lists", true);
 
-		addNamedElementNameEditor(null, true);
+		addCommentableElementCommentEditor(null, true);
 
 	}
 
@@ -55,18 +55,20 @@ public class MessageTypeRepositoryEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
+						.getCommentableElement_Comment(), false);
 
 	}
 

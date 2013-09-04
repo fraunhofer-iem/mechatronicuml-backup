@@ -23,20 +23,20 @@ public class StateEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		addStateEmbeddedRegionsEditor("de.fujaba.properties.category.Lists",
 				true);
 
-		addStateDoEventEditor(null, false);
+		addStateDoEventEditor(null, true);
 
-		addStateExitEventEditor(null, false);
+		addStateExitEventEditor(null, true);
 
-		addStateEntryEventEditor(null, false);
+		addStateEntryEventEditor(null, true);
 
 		addStateInvariantsEditor("de.fujaba.properties.category.Lists", true);
 
@@ -50,6 +50,8 @@ public class StateEditor
 
 		addStateConnectionPointsEditor("de.fujaba.properties.category.Lists",
 				true);
+
+		addStateParentStatechartEditor(null, true);
 
 	}
 
@@ -81,7 +83,7 @@ public class StateEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateDoEventEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_DoEvent());
@@ -98,7 +100,7 @@ public class StateEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateExitEventEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_ExitEvent());
@@ -115,7 +117,7 @@ public class StateEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateEntryEventEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_EntryEvent());
@@ -222,6 +224,24 @@ public class StateEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_ConnectionPoints());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addStateParentStatechartEditor(String category, boolean front) {
+		addEditorToCategory(category, createStateParentStatechartEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateParentStatechartEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getState_ParentStatechart());
 
 	}
 

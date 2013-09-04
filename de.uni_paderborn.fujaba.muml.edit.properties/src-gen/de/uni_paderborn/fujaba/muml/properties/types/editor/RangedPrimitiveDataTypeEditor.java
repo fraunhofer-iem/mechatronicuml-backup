@@ -23,6 +23,28 @@ public class RangedPrimitiveDataTypeEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addRangedPrimitiveDataTypeRangedTypeEditor(null, true);
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addRangedPrimitiveDataTypeRangedTypeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createRangedPrimitiveDataTypeRangedTypeEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRangedPrimitiveDataTypeRangedTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+						.getRangedPrimitiveDataType_RangedType());
+
 	}
 
 	//

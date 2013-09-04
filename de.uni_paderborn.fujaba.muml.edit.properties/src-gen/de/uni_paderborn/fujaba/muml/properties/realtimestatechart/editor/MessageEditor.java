@@ -26,11 +26,30 @@ public class MessageEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addMessageInstanceOfEditor(null, true);
+
 		addMessageParameterBindingEditor("de.fujaba.properties.category.Lists",
 				true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addMessageInstanceOfEditor(String category, boolean front) {
+		addEditorToCategory(category, createMessageInstanceOfEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageInstanceOfEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getMessage_InstanceOf());
+
+	}
 	/**
 	 * @generated
 	 */

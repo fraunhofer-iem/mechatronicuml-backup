@@ -23,6 +23,28 @@ public abstract class StateConnectionPointEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addStateConnectionPointStateEditor(null, true);
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addStateConnectionPointStateEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createStateConnectionPointStateEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateConnectionPointStateEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getStateConnectionPoint_State());
+
 	}
 
 }

@@ -31,6 +31,8 @@ public class MessageBufferEditor
 		addMessageBufferMessageTypeEditor(
 				"de.fujaba.properties.category.Lists", true);
 
+		addMessageBufferDiscreteInteractionEndpointEditor(null, true);
+
 		addCommentableElementCommentEditor(null, true);
 
 	}
@@ -71,6 +73,25 @@ public class MessageBufferEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getMessageBuffer_MessageType());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addMessageBufferDiscreteInteractionEndpointEditor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createMessageBufferDiscreteInteractionEndpointEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageBufferDiscreteInteractionEndpointEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getMessageBuffer_DiscreteInteractionEndpoint());
 
 	}
 	/**

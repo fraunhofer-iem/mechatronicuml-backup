@@ -23,12 +23,33 @@ public class SynchronizationEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSynchronizationSyncChannelEditor(null, true);
+
 		addSynchronizationKindEditor(null, true);
 
-		addSynchronizationSelectorExpressionEditor(null, false);
+		addSynchronizationSelectorExpressionEditor(null, true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addSynchronizationSyncChannelEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createSynchronizationSyncChannelEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationSyncChannelEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getSynchronization_SyncChannel());
+
+	}
 	/**
 	 * @generated
 	 */
@@ -59,7 +80,7 @@ public class SynchronizationEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationSelectorExpressionEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronization_SelectorExpression());

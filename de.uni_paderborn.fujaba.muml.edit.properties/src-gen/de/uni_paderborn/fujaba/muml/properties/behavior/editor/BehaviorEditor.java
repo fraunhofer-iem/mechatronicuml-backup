@@ -26,12 +26,33 @@ public abstract class BehaviorEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addBehaviorBehavioralElementEditor(null, true);
+
 		addBehaviorOperationsEditor("de.fujaba.properties.category.Lists", true);
 
 		addBehaviorVariablesEditor("de.fujaba.properties.category.Lists", true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addBehaviorBehavioralElementEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createBehaviorBehavioralElementEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createBehaviorBehavioralElementEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getBehavior_BehavioralElement());
+
+	}
 	/**
 	 * @generated
 	 */

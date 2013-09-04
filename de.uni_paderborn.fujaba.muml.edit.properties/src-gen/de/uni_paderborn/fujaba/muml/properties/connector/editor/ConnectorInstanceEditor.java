@@ -26,11 +26,31 @@ public abstract class ConnectorInstanceEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addConnectorInstanceTypeEditor(null, true);
+
 		addConnectorInstanceConnectorEndpointInstancesEditor(
 				"de.fujaba.properties.category.Lists", true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addConnectorInstanceTypeEditor(String category, boolean front) {
+		addEditorToCategory(category, createConnectorInstanceTypeEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorInstanceTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorInstance_Type());
+
+	}
 	/**
 	 * @generated
 	 */

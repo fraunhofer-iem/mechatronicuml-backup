@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.connector.editor;
  */
 public abstract class DiscreteInteractionEndpointEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.behavior.editor.BehavioralElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
 
 	/**
 	 * @generated
@@ -26,23 +26,31 @@ public abstract class DiscreteInteractionEndpointEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		addDiscreteInteractionEndpointSenderMessageTypesEditor(
 				"de.fujaba.properties.category.Lists", true);
 
 		addDiscreteInteractionEndpointReceiverMessageTypesEditor(
 				"de.fujaba.properties.category.Lists", true);
 
-		addDiscreteInteractionEndpointCardinalityEditor(null, false);
+		addDiscreteInteractionEndpointAdaptationBehaviorEditor(null, true);
+
+		addDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor(null,
+				true);
+
+		addDiscreteInteractionEndpointCardinalityEditor(null, true);
 
 		addDiscreteInteractionEndpointReceiverMessageBufferEditor(
+				"de.fujaba.properties.category.Lists", true);
+
+		addConnectorEndpointConnectorsEditor(
 				"de.fujaba.properties.category.Lists", true);
 
 		addNamedElementNameEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
-
-		addConstrainableElementConstraintEditor(
-				"de.fujaba.properties.category.Lists", true);
 
 	}
 
@@ -89,6 +97,47 @@ public abstract class DiscreteInteractionEndpointEditor
 	/**
 	 * @generated
 	 */
+	protected void addDiscreteInteractionEndpointAdaptationBehaviorEditor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createDiscreteInteractionEndpointAdaptationBehaviorEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointAdaptationBehaviorEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getDiscreteInteractionEndpoint_AdaptationBehavior());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor(
+			String category, boolean front) {
+		addEditorToCategory(
+				category,
+				createDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior());
+
+	}
+	/**
+	 * @generated
+	 */
 	protected void addDiscreteInteractionEndpointCardinalityEditor(
 			String category, boolean front) {
 		addEditorToCategory(category,
@@ -99,7 +148,7 @@ public abstract class DiscreteInteractionEndpointEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointCardinalityEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_Cardinality());
@@ -123,6 +172,25 @@ public abstract class DiscreteInteractionEndpointEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addConnectorEndpointConnectorsEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConnectorEndpointConnectorsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
 
 	}
 	/**
@@ -159,25 +227,6 @@ public abstract class DiscreteInteractionEndpointEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment(), false);
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConstrainableElementConstraintEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
 
 	}
 

@@ -23,10 +23,31 @@ public class RoleConnectorEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addRoleConnectorConnectorQualityOfServiceAssumptionsEditor(null, false);
+		addRoleConnectorCoordinationProtocolEditor(null, true);
+
+		addRoleConnectorConnectorQualityOfServiceAssumptionsEditor(null, true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addRoleConnectorCoordinationProtocolEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createRoleConnectorCoordinationProtocolEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRoleConnectorCoordinationProtocolEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
+						.getRoleConnector_CoordinationProtocol());
+
+	}
 	/**
 	 * @generated
 	 */
@@ -42,7 +63,7 @@ public class RoleConnectorEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRoleConnectorConnectorQualityOfServiceAssumptionsEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getRoleConnector_ConnectorQualityOfServiceAssumptions());

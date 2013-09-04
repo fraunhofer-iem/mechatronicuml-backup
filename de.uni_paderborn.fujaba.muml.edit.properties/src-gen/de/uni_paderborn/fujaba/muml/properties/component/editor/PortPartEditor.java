@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public class PortPartEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor {
+			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
 
 	/**
 	 * @generated
@@ -22,6 +22,67 @@ public class PortPartEditor
 	@Override
 	protected void createProperties() {
 		super.createProperties();
+
+		addPortPartPortTypeEditor(null, true);
+
+		addPortPartComponentPartEditor(null, true);
+
+		addPortPartCoordinationProtocolOccurenceEditor(null, true);
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addPortPartPortTypeEditor(String category, boolean front) {
+		addEditorToCategory(category, createPortPartPortTypeEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPortPartPortTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getPortPart_PortType());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addPortPartComponentPartEditor(String category, boolean front) {
+		addEditorToCategory(category, createPortPartComponentPartEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPortPartComponentPartEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getPortPart_ComponentPart());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addPortPartCoordinationProtocolOccurenceEditor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createPortPartCoordinationProtocolOccurenceEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPortPartCoordinationProtocolOccurenceEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getPortPart_CoordinationProtocolOccurence());
 
 	}
 

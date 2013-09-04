@@ -23,7 +23,7 @@ public class VariableEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addVariableInitializeExpressionEditor(null, false);
+		addVariableInitializeExpressionEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
 
@@ -42,7 +42,7 @@ public class VariableEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createVariableInitializeExpressionEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getVariable_InitializeExpression());

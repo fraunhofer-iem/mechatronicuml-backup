@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.msgtype.editor;
  */
 public class MessageTypeEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -29,7 +29,9 @@ public class MessageTypeEditor
 		addMessageTypeParametersEditor("de.fujaba.properties.category.Lists",
 				true);
 
-		addNamedElementNameEditor(null, true);
+		addMessageTypeRepositoryEditor(null, true);
+
+		addCommentableElementCommentEditor(null, true);
 
 	}
 
@@ -54,18 +56,38 @@ public class MessageTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	protected void addMessageTypeRepositoryEditor(String category, boolean front) {
+		addEditorToCategory(category, createMessageTypeRepositoryEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageTypeRepositoryEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
+						.getMessageType_Repository());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
+						.getCommentableElement_Comment(), false);
 
 	}
 

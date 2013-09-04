@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class RealtimeStatechartEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.behavior.editor.BehaviorEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -26,6 +26,8 @@ public class RealtimeStatechartEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addRealtimeStatechartParentRegionEditor(null, true);
+
 		addRealtimeStatechartTransitionsEditor(
 				"de.fujaba.properties.category.Lists", true);
 
@@ -35,12 +37,29 @@ public class RealtimeStatechartEditor
 		addRealtimeStatechartClocksEditor(
 				"de.fujaba.properties.category.Lists", true);
 
-		addNamedElementNameEditor(null, true);
-
 		addCommentableElementCommentEditor(null, true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addRealtimeStatechartParentRegionEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createRealtimeStatechartParentRegionEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartParentRegionEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getRealtimeStatechart_ParentRegion());
+
+	}
 	/**
 	 * @generated
 	 */
@@ -96,23 +115,6 @@ public class RealtimeStatechartEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_Clocks());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
 
 	}
 	/**

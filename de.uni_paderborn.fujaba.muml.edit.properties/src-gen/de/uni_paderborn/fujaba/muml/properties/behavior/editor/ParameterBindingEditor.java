@@ -23,10 +23,31 @@ public class ParameterBindingEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addParameterBindingValueEditor(null, false);
+		addParameterBindingParameterEditor(null, true);
+
+		addParameterBindingValueEditor(null, true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addParameterBindingParameterEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createParameterBindingParameterEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingParameterEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getParameterBinding_Parameter());
+
+	}
 	/**
 	 * @generated
 	 */
@@ -39,7 +60,7 @@ public class ParameterBindingEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingValueEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getParameterBinding_Value());

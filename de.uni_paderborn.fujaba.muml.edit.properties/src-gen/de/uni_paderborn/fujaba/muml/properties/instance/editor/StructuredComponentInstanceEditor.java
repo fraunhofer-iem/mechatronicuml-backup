@@ -23,7 +23,7 @@ public class StructuredComponentInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addStructuredComponentInstanceEmbeddedCICEditor(null, false);
+		addStructuredComponentInstanceEmbeddedCICEditor(null, true);
 
 	}
 
@@ -40,7 +40,7 @@ public class StructuredComponentInstanceEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentInstanceEmbeddedCICEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getStructuredComponentInstance_EmbeddedCIC());

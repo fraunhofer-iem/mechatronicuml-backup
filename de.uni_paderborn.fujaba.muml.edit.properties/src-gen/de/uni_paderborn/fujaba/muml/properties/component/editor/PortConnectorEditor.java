@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public abstract class PortConnectorEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEditor {
+			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
@@ -22,6 +22,28 @@ public abstract class PortConnectorEditor
 	@Override
 	protected void createProperties() {
 		super.createProperties();
+
+		addPortConnectorParentComponentEditor(null, true);
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addPortConnectorParentComponentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createPortConnectorParentComponentEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPortConnectorParentComponentEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getPortConnector_ParentComponent());
 
 	}
 

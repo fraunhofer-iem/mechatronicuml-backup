@@ -26,11 +26,13 @@ public class OperationEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addOperationParametersEditor("de.fujaba.properties.category.Lists",
-				true);
+		addOperationReturnTypeEditor(null, true);
 
 		addOperationImplementationsEditor(
 				"de.fujaba.properties.category.Lists", true);
+
+		addOperationParametersEditor("de.fujaba.properties.category.Lists",
+				true);
 
 		addCommentableElementCommentEditor(null, true);
 
@@ -39,18 +41,18 @@ public class OperationEditor
 	/**
 	 * @generated
 	 */
-	protected void addOperationParametersEditor(String category, boolean front) {
-		addEditorToCategory(category, createOperationParametersEditor(), front);
+	protected void addOperationReturnTypeEditor(String category, boolean front) {
+		addEditorToCategory(category, createOperationReturnTypeEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationParametersEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationReturnTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getOperation_Parameters());
+						.getOperation_ReturnType());
 
 	}
 	/**
@@ -70,6 +72,23 @@ public class OperationEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getOperation_Implementations());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addOperationParametersEditor(String category, boolean front) {
+		addEditorToCategory(category, createOperationParametersEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationParametersEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getOperation_Parameters());
 
 	}
 	/**

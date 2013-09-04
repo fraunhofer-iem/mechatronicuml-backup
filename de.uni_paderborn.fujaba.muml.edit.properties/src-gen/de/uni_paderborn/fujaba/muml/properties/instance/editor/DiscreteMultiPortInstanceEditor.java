@@ -23,31 +23,6 @@ public class DiscreteMultiPortInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(
-				"de.fujaba.properties.category.Lists", true);
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteMultiInteractionEndpointInstanceSubInteractionEndpointInstancesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteMultiInteractionEndpointInstance_SubInteractionEndpointInstances());
-
 	}
 
 	//

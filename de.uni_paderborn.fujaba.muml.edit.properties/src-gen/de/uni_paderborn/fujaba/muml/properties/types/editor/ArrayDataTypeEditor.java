@@ -23,10 +23,29 @@ public class ArrayDataTypeEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addArrayDataTypeTypeEditor(null, true);
+
 		addArrayDataTypeCardinalityEditor(null, true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addArrayDataTypeTypeEditor(String category, boolean front) {
+		addEditorToCategory(category, createArrayDataTypeTypeEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createArrayDataTypeTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+						.getArrayDataType_Type());
+
+	}
 	/**
 	 * @generated
 	 */

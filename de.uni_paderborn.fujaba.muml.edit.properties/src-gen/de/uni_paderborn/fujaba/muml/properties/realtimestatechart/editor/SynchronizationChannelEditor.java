@@ -23,10 +23,52 @@ public class SynchronizationChannelEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSynchronizationChannelStateEditor(null, true);
+
+		addSynchronizationChannelSelectorTypeEditor(null, true);
+
 		addCommentableElementCommentEditor(null, true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addSynchronizationChannelStateEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createSynchronizationChannelStateEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationChannelStateEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getSynchronizationChannel_State());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addSynchronizationChannelSelectorTypeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createSynchronizationChannelSelectorTypeEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationChannelSelectorTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getSynchronizationChannel_SelectorType());
+
+	}
 	/**
 	 * @generated
 	 */

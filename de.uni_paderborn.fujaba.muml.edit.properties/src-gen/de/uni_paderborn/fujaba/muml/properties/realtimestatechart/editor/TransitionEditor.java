@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class TransitionEditor
 		extends
-			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.PrioritizedElementEditor {
 
 	/**
 	 * @generated
@@ -23,13 +23,19 @@ public class TransitionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addTransitionSynchronizationEditor(null, false);
+		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addTransitionSynchronizationEditor(null, true);
+
+		addTransitionTargetEditor(null, true);
+
+		addTransitionSourceEditor(null, true);
+
+		addTransitionStatechartEditor(null, true);
 
 		addTransitionClockResetsEditor("de.fujaba.properties.category.Lists",
 				true);
@@ -40,21 +46,19 @@ public class TransitionEditor
 		addTransitionAbsoluteDeadlinesEditor(
 				"de.fujaba.properties.category.Lists", true);
 
-		addTransitionRelativeDeadlineEditor(null, false);
+		addTransitionRelativeDeadlineEditor(null, true);
 
 		addTransitionBlockableEditor("de.fujaba.properties.category.Booleans",
 				true);
 
-		addTransitionGuardEditor(null, false);
+		addTransitionGuardEditor(null, true);
 
 		addTransitionEventsEditor("de.fujaba.properties.category.Lists", true);
 
-		addTransitionActionEditor(null, false);
+		addTransitionActionEditor(null, true);
 
 		addTransitionUrgentEditor("de.fujaba.properties.category.Booleans",
 				true);
-
-		addPrioritizedElementPriorityEditor(null, true);
 
 		addCommentableElementCommentEditor(null, true);
 
@@ -73,10 +77,61 @@ public class TransitionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionSynchronizationEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Synchronization());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addTransitionTargetEditor(String category, boolean front) {
+		addEditorToCategory(category, createTransitionTargetEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionTargetEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getTransition_Target());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addTransitionSourceEditor(String category, boolean front) {
+		addEditorToCategory(category, createTransitionSourceEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionSourceEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getTransition_Source());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addTransitionStatechartEditor(String category, boolean front) {
+		addEditorToCategory(category, createTransitionStatechartEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionStatechartEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getTransition_Statechart());
 
 	}
 	/**
@@ -148,7 +203,7 @@ public class TransitionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionRelativeDeadlineEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_RelativeDeadline());
@@ -182,7 +237,7 @@ public class TransitionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionGuardEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Guard());
@@ -216,7 +271,7 @@ public class TransitionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionActionEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Action());
@@ -237,25 +292,6 @@ public class TransitionEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Urgent());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addPrioritizedElementPriorityEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
-		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getPrioritizedElement_Priority(), 0);
 
 	}
 	/**

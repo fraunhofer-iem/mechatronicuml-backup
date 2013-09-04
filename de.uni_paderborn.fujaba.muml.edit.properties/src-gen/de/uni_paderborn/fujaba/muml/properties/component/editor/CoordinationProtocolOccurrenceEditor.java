@@ -26,11 +26,34 @@ public class CoordinationProtocolOccurrenceEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addCoordinationProtocolOccurrenceCoordinationProtocolEditor(null, true);
+
 		addCoordinationProtocolOccurrencePortPartsEditor(
 				"de.fujaba.properties.category.Lists", true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addCoordinationProtocolOccurrenceCoordinationProtocolEditor(
+			String category, boolean front) {
+		addEditorToCategory(
+				category,
+				createCoordinationProtocolOccurrenceCoordinationProtocolEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolOccurrenceCoordinationProtocolEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getCoordinationProtocolOccurrence_CoordinationProtocol());
+
+	}
 	/**
 	 * @generated
 	 */

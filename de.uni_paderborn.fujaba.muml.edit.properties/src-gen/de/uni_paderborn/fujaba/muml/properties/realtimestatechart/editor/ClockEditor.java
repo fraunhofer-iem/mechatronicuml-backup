@@ -23,6 +23,26 @@ public class ClockEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addClockStatechartEditor(null, true);
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addClockStatechartEditor(String category, boolean front) {
+		addEditorToCategory(category, createClockStatechartEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createClockStatechartEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getClock_Statechart());
+
 	}
 
 	//

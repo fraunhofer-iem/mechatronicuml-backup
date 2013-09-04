@@ -31,6 +31,8 @@ public abstract class ConstraintEditor
 		addConstraintBackgroundEditor("de.fujaba.properties.category.Booleans",
 				true);
 
+		addConstraintConstrainableElementEditor(null, true);
+
 	}
 
 	/**
@@ -66,6 +68,25 @@ public abstract class ConstraintEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstraint_Background());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addConstraintConstrainableElementEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConstraintConstrainableElementEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstraintConstrainableElementEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstraint_ConstrainableElement());
 
 	}
 

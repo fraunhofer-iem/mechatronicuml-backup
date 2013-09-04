@@ -23,10 +23,35 @@ public abstract class ConnectorEndpointEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addConnectorEndpointConnectorsEditor(
+				"de.fujaba.properties.category.Lists", true);
+
 		addCommentableElementCommentEditor(null, true);
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addConnectorEndpointConnectorsEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConnectorEndpointConnectorsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
+
+	}
 	/**
 	 * @generated
 	 */
