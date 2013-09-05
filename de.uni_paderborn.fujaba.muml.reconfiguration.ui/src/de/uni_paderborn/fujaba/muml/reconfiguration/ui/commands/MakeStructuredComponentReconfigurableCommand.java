@@ -201,10 +201,28 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 					.println("A QVT-O ERROR occured while execution the transformation. Message was:");
 			System.out.println(result.getMessage());
 		}
+
+		//reconfigurable component should be contained in inputComponent ModelExtent
+		ReconfigurableStructuredComponent reconfComp = getReconfigurableComponentFromModelExtent(inputComponent);
 		
-		//TODO add reconf to inputComponent
+		if(reconfComp != null){
+			//add to category
+			category.getModelElements().add(reconfComp);
+		}
+	}
+	
+	private ReconfigurableStructuredComponent getReconfigurableComponentFromModelExtent(ModelExtent ext){
 		
+		ReconfigurableStructuredComponent result = null;
 		
+		//iterate contents of the model extent
+		for(Object curObj : ext.getContents()){
+			if(curObj instanceof ReconfigurableStructuredComponent){
+				result = (ReconfigurableStructuredComponent) curObj;
+			}
+		}
+		
+		return result;
 	}
 	
 	/**

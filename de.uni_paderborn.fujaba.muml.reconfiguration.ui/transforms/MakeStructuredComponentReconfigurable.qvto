@@ -37,15 +37,11 @@ main() {
 	-- parse input parameters
 	var oldComponent : StaticStructuredComponent := inputComponent.rootObjects()[StaticStructuredComponent] -> any(true);
 	var rootNode : RootNode := category.rootObjects()[RootNode] -> any(true);
-	var componentCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.components.category') -> any(true);
 
 	var newComponent : ReconfigurableStructuredComponent := map createReconfigurableComponent(oldComponent);
 	
 	-- update reference such that they point to the newComponent instead of the oldComponent
 	map updateReferencesToComponent(rootNode, oldComponent, newComponent);
-	
-	-- add new component to the model element category
-	componentCategory.modelElements += newComponent;
 	
 	-- delete old component
 	inputComponent.removeElement(oldComponent);
