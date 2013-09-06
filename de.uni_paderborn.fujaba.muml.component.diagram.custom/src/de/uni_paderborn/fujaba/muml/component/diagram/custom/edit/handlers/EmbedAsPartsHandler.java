@@ -191,13 +191,9 @@ public class EmbedAsPartsHandler extends AbstractHandler {
 				final org.eclipse.gef.commands.Command cmd, Diagram diagram) {
 			Map<String, Boolean> options = null;
 
-			// If still activating... set unprotected mode
-			options = Collections.singletonMap(Transaction.OPTION_UNPROTECTED,
-					Boolean.TRUE);
-
 			AbstractEMFOperation operation = new AbstractEMFOperation(
 					TransactionUtil.getEditingDomain(diagram),
-					StringStatics.BLANK, options) {
+					StringStatics.BLANK, Collections.emptyMap()) {
 
 				protected IStatus doExecute(IProgressMonitor monitor,
 						IAdaptable info) throws ExecutionException {
