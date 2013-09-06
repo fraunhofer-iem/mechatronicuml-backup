@@ -53,7 +53,7 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	}
 	
 	public void dispose() {
-		if (!editor.isDisposed()) {
+		if (editor != null && !editor.isDisposed()) {
 			editor.dispose();
 		}
 		super.dispose();
