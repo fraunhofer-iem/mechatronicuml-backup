@@ -2,11 +2,9 @@ package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.handlers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -19,7 +17,6 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.ChangeCommand;
-import org.eclipse.emf.transaction.Transaction;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.emf.workspace.AbstractEMFOperation;
@@ -189,7 +186,6 @@ public class EmbedAsPartsHandler extends AbstractHandler {
 
 		protected void executeCreateViewsCommand(
 				final org.eclipse.gef.commands.Command cmd, Diagram diagram) {
-			Map<String, Boolean> options = null;
 
 			AbstractEMFOperation operation = new AbstractEMFOperation(
 					TransactionUtil.getEditingDomain(diagram),
