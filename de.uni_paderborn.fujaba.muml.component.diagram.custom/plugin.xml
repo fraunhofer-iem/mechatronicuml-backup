@@ -30,18 +30,45 @@
                   </with></and>
             </visibleWhen>
          </command>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
+               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
+               label="Embed As Parts"
+               style="push">
+            <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false">
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart">
+                        </instanceof>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
       </menuContribution>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
       <command
             categoryId="de.uni_paderborn.fujaba"
-            defaultHandler="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.CopyRolePropertiesToPort"
+            defaultHandler="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.handlers.CopyRolePropertiesToPortHandler"
             description="Copy Properties defined in the Role to the Port."
             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.copyRolePropertiesToPort"
             name="Copy Role Properties To Port">
       </command>
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.handlers.EmbedAsPartsHandler"
+            description="Embeds Atomic Components as Component Parts in a new Structured Component."
+            id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
+            name="Embed As Parts">
+      </command>
    </extension>
+   
 
    
    <!-- editpart provider -->

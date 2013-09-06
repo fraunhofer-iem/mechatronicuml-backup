@@ -1,5 +1,9 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
@@ -8,10 +12,13 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.m2m.qvt.oml.BasicModelExtent;
+import org.eclipse.m2m.qvt.oml.ModelExtent;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.CreatePortPartsCommand;
+import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.ExecuteQvtoTransformationCommand;
+import de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 
@@ -111,8 +118,15 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		if (editingDomain != null) {
 			ComponentPart componentPart = (ComponentPart) getNotationView()
 					.getElement();
-			CreatePortPartsCommand command = new CreatePortPartsCommand(
-					componentPart);
+			
+
+			ModelExtent inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { componentPart }));
+			
+			List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { inputExtent });
+			
+			ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
+					Activator.PART_TRANSFORMATION,
+					modelExtents);
 			editingDomain.getCommandStack().execute(command);
 		}
 	}

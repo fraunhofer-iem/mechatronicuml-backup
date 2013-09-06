@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands;
+package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.handlers;
 
 import java.util.Iterator;
 
@@ -26,9 +26,9 @@ import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart;
 
-public class CopyRolePropertiesToPort extends AbstractHandler {
+public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 
-	public CopyRolePropertiesToPort() {
+	public CopyRolePropertiesToPortHandler() {
 	}
 
 	@Override

@@ -1,0 +1,31 @@
+transformation InstantiationTransformation(in input : ComponentPackage, out output : ComponentPackage);
+
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+main() {
+
+	var atomicComponents : Set(AtomicComponent) := input.rootObjects()[AtomicComponent];
+
+	if (not atomicComponents->isEmpty()) then {
+		var structuredComponent : StaticStructuredComponent := new StaticStructuredComponent("");
+		
+		atomicComponents->forEach(atomicComponent) {
+			structuredComponent.embeddedComponentParts += new ComponentPart(atomicComponent);
+		};
+	} endif;
+	
+}
+
+
+constructor StaticStructuredComponent::StaticStructuredComponent(_name : String) {
+	name := _name;
+}
+
+constructor ComponentPart::ComponentPart(_type : Component) {
+	componentType := _type;
+}
