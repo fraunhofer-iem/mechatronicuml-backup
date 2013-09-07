@@ -411,23 +411,26 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		showWizardWithUndo(wizard, container);
 	}
 	
+	public static Object showReferenceElementDialog(
+			AdapterFactory adapterFactory, Collection<?> choices) {
+		return showReferenceElementDialog(adapterFactory, choices, null);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static Object showReferenceElementDialog(
+			AdapterFactory adapterFactory, Collection<?> choices, Object defaultValue) {
+		return showReferenceElementDialog(adapterFactory, choices, defaultValue, Collections.EMPTY_LIST);
+	}
 
 	public static Object showReferenceElementDialog(
-			AdapterFactory adapterFactory, Collection<?> choices, final Collection<?> currentValues) {
+			AdapterFactory adapterFactory, Collection<?> choices, Object defaultValue, List<IElementValidator> validators) {
 		PropertiesWizard wizard = new PropertiesWizard();
 		wizard.setWindowTitle("Selection");
-		ElementSelectionWizardPage page = new ElementSelectionWizardPage(adapterFactory, choices);
+		ElementSelectionWizardPage page = new ElementSelectionWizardPage(adapterFactory, choices, defaultValue);
 		wizard.addPage(page);
-		page.addElementValidator(new IElementValidator() {
-			@Override
-			public String validate(Object element) {
-				if (currentValues.contains(element)) {
-					return "This value is already referenced.";
-				}
-				return null;
-			}
-			
-		});
+		for (IElementValidator validator : validators) {
+			page.addElementValidator(validator);
+		}
 		final WizardDialog wizardDialog = new WizardDialog(Display.getCurrent().getActiveShell(), wizard);
 		if (wizardDialog.open() == Window.OK) {
 			return page.getElement();

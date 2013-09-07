@@ -1,6 +1,7 @@
 package de.fujaba.properties.runtime.editors;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -32,6 +33,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
+import de.fujaba.properties.runtime.wizard.ElementSelectionWizardPage.IElementValidator;
 
 public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	protected TableViewer tableViewer;
@@ -166,8 +168,19 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		if (reference.isContainment()) {
 			RuntimePlugin.showCreateElementDialog(adapterFactory, element, feature);
 		} else {
+			final Collection<?> currentValues = (Collection<?>) value;
 			
-			Object newObject = RuntimePlugin.showReferenceElementDialog(adapterFactory, getChoices(), (Collection<?>) value);
+			IElementValidator validator = new IElementValidator() {
+				@Override
+				public String validate(Object element) {
+					if (currentValues.contains(element)) {
+						return "This value is already referenced.";
+					}
+					return null;
+				}
+
+			};
+			Object newObject = RuntimePlugin.showReferenceElementDialog(adapterFactory, getChoices(), Arrays.asList(new IElementValidator[] { validator }));
 
 			// Add object, if one was selected
 			if (newObject != null) {

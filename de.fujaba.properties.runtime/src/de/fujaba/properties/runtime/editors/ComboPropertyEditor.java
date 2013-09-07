@@ -1,6 +1,9 @@
 package de.fujaba.properties.runtime.editors;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -13,18 +16,30 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
+import de.fujaba.properties.runtime.RuntimePlugin;
+
 public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	protected ComboViewer comboViewer;
-
+	
+	protected boolean hasSearchButton;
+	
 	public ComboPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
+		this(adapterFactory, feature, true);
+	}
+
+	public ComboPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature, boolean hasSearchButton) {
 		super(adapterFactory, feature);
+		this.hasSearchButton = hasSearchButton;
 	}
 
 	@Override
@@ -33,6 +48,12 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		Label label = toolkit.createLabel(parent, getLabelText());
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
+		}
+		
+		if (hasSearchButton) {
+			parent = new Composite(parent, SWT.NONE);
+			parent.setLayout(new GridLayout(2, false));
+			parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		}
 
 		Combo combo = new Combo(parent, SWT.BORDER);
@@ -61,6 +82,18 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 
 			
 		});
+		
+		if (hasSearchButton) {
+			Button searchButton = new Button(parent, SWT.PUSH);
+			searchButton.setText("...");
+			searchButton.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false));
+			searchButton.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					search();
+				}
+			});
+		}
 
 		refresh();
 
@@ -118,6 +151,16 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		super.refresh();
 		if (comboViewer != null) {
 			comboViewer.refresh();
+		}
+	}
+	
+	public void search() {
+		@SuppressWarnings("unchecked")
+		Object selectedElement = RuntimePlugin.showReferenceElementDialog(adapterFactory, getChoices(), value, Collections.EMPTY_LIST);
+
+		// Add object, if one was selected
+		if (selectedElement != null) {
+			setValue(selectedElement);
 		}
 	}
 }

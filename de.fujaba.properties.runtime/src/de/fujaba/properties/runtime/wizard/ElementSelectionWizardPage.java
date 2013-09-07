@@ -2,9 +2,11 @@ package de.fujaba.properties.runtime.wizard;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -38,12 +40,14 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 
 public class ElementSelectionWizardPage extends WizardPage {
 
+	private Object defaultElement;
 	private Object element;
 	private TreeViewer treeViewer;
 	private AdapterFactory adapterFactory;
 	private Collection<?> choices;
 	private Collection<Resource> resources = new ArrayList<Resource>();
-	private String filter = null;
+	private String filterText = null;
+	private List<String> filterWords = new ArrayList<String>();
 	private Collection<Object> filteredChoices;
 	private Collection<Object> allFilteredChoices = new ArrayList<Object>();
 	private Collection<IElementValidator> elementValidators = new ArrayList<IElementValidator>();
@@ -58,13 +62,14 @@ public class ElementSelectionWizardPage extends WizardPage {
 	};
 	public static final String MESSAGE_NO_ELEMENTS_FOUND = "No results found";
 
-	public ElementSelectionWizardPage(AdapterFactory adapterFactory, Collection<?> choices) {
+	public ElementSelectionWizardPage(AdapterFactory adapterFactory, Collection<?> choices, Object defaultElement) {
 		super("Element selection");
 		setTitle("Select existing Element");
 		setDescription("Select an existing element to be added.");
 		this.adapterFactory = adapterFactory;
 		this.choices = new ArrayList<Object>(choices);
 		this.choices.remove(null);
+		this.defaultElement = defaultElement;
 	}
 
 	@Override
@@ -186,6 +191,8 @@ public class ElementSelectionWizardPage extends WizardPage {
 		});
 		
 		setFilter("");
+		
+		
 	
 		setControl(container);
 
@@ -195,9 +202,26 @@ public class ElementSelectionWizardPage extends WizardPage {
 		if (filter == null) {
 			filter = "";
 		}
-		if (this.filter == null || !filter.equals(this.filter)) {
-			this.filter = filter;
+		if (this.filterText == null || !filter.equals(this.filterText)) {
+			this.filterText = filter;
+			filterWords = getWords(filter); 
+			
+			// Save previous filtered choices to be able to compare them to the new choices
+			List<Object> previousFilteredChoices = new ArrayList<Object>();
+			if (filteredChoices != null) {
+				previousFilteredChoices.addAll(filteredChoices);
+			}
+			
+			// Recalculate filtered choices
 			recalculateFilteredObjects();
+			
+			// Check if it changed
+			if (previousFilteredChoices.equals(filteredChoices)) {
+				// nothing to do, if the list of filtered choices did not change
+				return;
+			}
+			
+			// It changed, now apply the new choices as input for the treeViewer
 			if (resources.isEmpty()) {
 				treeViewer.setFilters(new ViewerFilter[] { });
 				treeViewer.setInput(MESSAGE_NO_ELEMENTS_FOUND);
@@ -207,8 +231,39 @@ public class ElementSelectionWizardPage extends WizardPage {
 				treeViewer.setInput(resources);
 				treeViewer.getTree().setEnabled(true);
 			}
-			selectFirst();
+			
+			// Select default element or first element
+			boolean selected = false;
+			if (defaultElement != null) {
+				selected = selectElement(defaultElement);
+			}
+			if (!selected) {
+				selectFirst();
+			}
 		}
+	}
+
+	private static List<String> getWords(String text) {
+		List<String> words = new ArrayList<String>();
+		StringBuffer currentWord = new StringBuffer();
+		boolean newWord = false;
+		for (int p = 0; p < text.length(); p++) {
+			char ch = text.charAt(p);
+			if (Character.isWhitespace(ch)) {
+				newWord = true;
+			} else {
+				if (newWord && currentWord.length() > 0) {
+					words.add(currentWord.toString());
+					currentWord = new StringBuffer();
+				}
+				currentWord.append(ch);
+				newWord = false;
+			}
+		}
+		if (currentWord.length() > 0) {
+			words.add(currentWord.toString());
+		}
+		return words;
 	}
 
 	private void recalculateFilteredObjects() {
@@ -235,33 +290,56 @@ public class ElementSelectionWizardPage extends WizardPage {
 	}
 
 	private boolean filterSelect(Object choice) {
-		if (filter == null || filter.isEmpty()) {
+		if (filterWords.isEmpty()) {
 			return true;
 		}
-		if (false == choice instanceof EObject) {
+		if (false == choice instanceof EObject) { // this also works as null check
 			return false;
 		}
 		
 		EObject element = (EObject) choice;
-		for (EAttribute attribute : element.eClass().getEAllAttributes()) {
-			String value = element.eGet(attribute).toString();
-			if (value.toLowerCase().contains(filter)) {
-				return true;
+		EClass eClass = element.eClass();
+		if (eClass == null) {
+			return false;
+		}
+		for (EAttribute attribute : eClass.getEAllAttributes()) {
+			Object attributeValue = element.eGet(attribute);
+			if (attributeValue != null) {
+				String stringValue = attributeValue.toString();
+				boolean valid = true;
+				for (String filterWord : filterWords) {
+					if (!stringValue.toLowerCase().contains(filterWord) && !eClass.getName().toLowerCase().contains(filterWord) && !element.toString().contains(filterWord)) {
+						valid = false;
+						break;
+					}
+				}
+				if (valid) {
+					return true;
+				}
 			}
 		}
 		
 		return false;
 	}
 
-	private void selectFirst() {
+	
+	public boolean selectFirst() {
 		if (!filteredChoices.isEmpty()) {
-			Object selectedElement = filteredChoices.iterator().next();
-			treeViewer.expandAll();
-			treeViewer.setSelection(new StructuredSelection(selectedElement), true);
-			treeViewer.reveal(selectedElement);
+			Object firstElement = filteredChoices.iterator().next();
+			return selectElement(firstElement);
 		}
+		return false;
 	}
-
+	public boolean selectElement(Object element) {
+		if (filteredChoices.contains(element)) {
+			treeViewer.expandAll();
+			treeViewer.setSelection(new StructuredSelection(element), true);
+			treeViewer.reveal(element);
+			return true;
+		}
+		return false;
+	}
+	
 
 	public Object getElement() {
 		return element;

@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -259,8 +260,8 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			choices = Collections.emptyList();
 		}
 		
-		// Make sure optional <=> choices.contains(null)
-		boolean optional = feature.getLowerBound() <= 0;
+		// Make sure optional <=> choices.contains(null) is equivalent
+		boolean optional = feature.getLowerBound() <= 0 && false == feature.getEType() instanceof EEnum; // enums should not be optional, as they do not seem to support setting null as value.
 		if (optional != choices.contains(null)) {
 			choices = new ArrayList<Object>(choices); // make choices modifiable
 			if (optional) {
