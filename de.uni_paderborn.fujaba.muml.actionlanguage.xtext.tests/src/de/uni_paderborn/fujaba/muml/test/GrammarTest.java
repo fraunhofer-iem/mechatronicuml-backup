@@ -253,35 +253,51 @@ public class GrammarTest {
 	@Test
 	public void testPostIncrement() {
 		// post increment
-		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := bar++ ; }");
-		assertTrue(expression.getEnclosedExpression() instanceof TypedNamedElementExpression);
-		TypedNamedElementExpression typedNamedElementExpression = (TypedNamedElementExpression) expression.getEnclosedExpression();
+		Assignment expression = (Assignment) getAssignmentRHS("{ foo := bar++ ; }");
+		assertTrue(expression.getLhs_typedNamedElementExpression() instanceof TypedNamedElementExpression);
+		TypedNamedElementExpression typedNamedElementExpression = expression.getLhs_typedNamedElementExpression();
 		assertEquals("bar", typedNamedElementExpression.getTypedNamedElement().getName());
-		assertEquals(UnaryOperator.INCREMENT, expression.getOperator());
+		assertEquals(IncrementDecrementOperator.INCREMENT, expression.getIncrementDecrementOperator());
+	}
+	
+	@Test
+	public void testPostIncrementTopLevel() {
+		// post increment top level
+		Assignment expression = (Assignment) getModel("{ bar++ ; }");
+		assertTrue(expression.getLhs_typedNamedElementExpression() instanceof TypedNamedElementExpression);
+		TypedNamedElementExpression typedNamedElementExpression = expression.getLhs_typedNamedElementExpression();
+		assertEquals("bar", typedNamedElementExpression.getTypedNamedElement().getName());
+		assertEquals(IncrementDecrementOperator.INCREMENT, expression.getIncrementDecrementOperator());
 	}
 	
 	@Test
 	public void testPostIncrementParentheses() {
 		// post increment with parentheses
-		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := (bar)++ ; }");
-		assertTrue(expression.getEnclosedExpression() instanceof TypedNamedElementExpression);
-		assertEquals(UnaryOperator.INCREMENT, expression.getOperator());
+		loadFromString("{ foo := (bar)++ ; }");
+		assertTrue(loadResult.hasError());
 	}
 	
 	@Test
 	public void testPostIncrementParenthesesNoAttributeExpression() {
-		// type checking should fail here (only attributes in parentheses)
-		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := (bar + 1) ++ ; }");
-		assertTrue(expression.getEnclosedExpression() instanceof ArithmeticExpression);
-		assertEquals(UnaryOperator.INCREMENT, expression.getOperator());
+		// only typed named elements are allowed
+		loadFromString("{ foo := (bar + 1) ++ ; }");
+		assertTrue(loadResult.hasError());
 	}
 	
 	@Test
 	public void testPostDecrement() {
 		// post decrement
-		UnaryExpression expression = (UnaryExpression) getAssignmentRHS("{ foo := bar-- ; }");
-		assertTrue(expression.getEnclosedExpression() instanceof TypedNamedElementExpression);
-		assertEquals(UnaryOperator.DECREMENT, expression.getOperator());
+		Assignment expression = (Assignment) getAssignmentRHS("{ foo := bar-- ; }");
+		assertTrue(expression.getLhs_typedNamedElementExpression() instanceof TypedNamedElementExpression);
+		assertEquals(IncrementDecrementOperator.DECREMENT, expression.getIncrementDecrementOperator());
+	}
+	
+	@Test
+	public void testPostDecrementTopLevel() {
+		// post decrement top level
+		Assignment expression = (Assignment) getModel("{ bar-- ; }");
+		assertTrue(expression.getLhs_typedNamedElementExpression() instanceof TypedNamedElementExpression);
+		assertEquals(IncrementDecrementOperator.DECREMENT, expression.getIncrementDecrementOperator());
 	}
 	
 	@Test
@@ -295,8 +311,8 @@ public class GrammarTest {
 	public void testUnaryInArithmeticExpression() {
 		ArithmeticExpression expression = (ArithmeticExpression) getAssignmentRHS("{ bar := bar-- + 4 ; }");
 		assertEquals(ArithmeticOperator.PLUS, expression.getOperator());
-		assertTrue(expression.getLeftExpression() instanceof UnaryExpression);
-		assertEquals(UnaryOperator.DECREMENT, ((UnaryExpression) expression.getLeftExpression()).getOperator());
+		assertTrue(expression.getLeftExpression() instanceof Assignment);
+		assertEquals(IncrementDecrementOperator.DECREMENT, ((Assignment) expression.getLeftExpression()).getIncrementDecrementOperator());
 		assertTrue(expression.getRightExpression() instanceof LiteralExpression);
 	}
 	
