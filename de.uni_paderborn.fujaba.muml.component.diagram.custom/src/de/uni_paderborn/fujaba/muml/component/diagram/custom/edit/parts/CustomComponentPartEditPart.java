@@ -118,16 +118,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 		if (editingDomain != null) {
 			ComponentPart componentPart = (ComponentPart) getNotationView()
 					.getElement();
-			
-
-			ModelExtent inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { componentPart }));
-			
-			List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { inputExtent });
-			
-			ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-					Activator.PART_TRANSFORMATION,
-					modelExtents);
-			editingDomain.getCommandStack().execute(command);
+			Activator.updateComponentPart(editingDomain, componentPart);
 		}
 	}
 
