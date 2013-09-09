@@ -33,7 +33,7 @@
          <command
                commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
                id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
-               label="Embed As Parts"
+               label="Embed Selected Components As Parts in a new Structured Component"
                style="push">
             <visibleWhen>
                <and>

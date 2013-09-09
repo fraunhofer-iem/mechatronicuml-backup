@@ -1,7 +1,6 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.handlers;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -34,13 +33,12 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.m2m.qvt.oml.BasicModelExtent;
-import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.storydriven.core.ExtendableElement;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
-import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.ExecuteQvtoTransformationCommand;
+import de.uni_paderborn.fujaba.muml.component.Component;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin;
 import de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry;
@@ -58,7 +56,7 @@ public class EmbedAsPartsHandler extends AbstractHandler {
 
 		Diagram diagram = null;
 		
-		List<EObject> objects = new ArrayList<EObject>();
+		List<Component> objects = new ArrayList<Component>();
 		
 		for (Object sel : ((IStructuredSelection) selection).toArray()) {
 			if (false == sel instanceof GraphicalEditPart) {
@@ -72,8 +70,8 @@ public class EmbedAsPartsHandler extends AbstractHandler {
 			}
 			
 			EObject object = editPart.resolveSemanticElement();
-			if (object != null) {
-				objects.add(object);
+			if (object instanceof Component) {
+				objects.add((Component) object);
 			}
 		}
 
@@ -91,57 +89,44 @@ public class EmbedAsPartsHandler extends AbstractHandler {
 
 		private TransactionalEditingDomain editingDomain;
 
-		private List<EObject> objects;
+		private List<Component> components;
 
 		private Diagram diagram;
 
 		public EmbedAsPartsCommand(TransactionalEditingDomain editingDomain,
-				List<EObject> objects, Diagram diagram) {
-			super(new ArrayList<Notifier>(objects));
-			this.objects = objects;
+				List<Component> components, Diagram diagram) {
+			super(new ArrayList<Notifier>(components));
+			this.components = components;
 			this.editingDomain = editingDomain;
 			this.diagram = diagram;
 		}
 
 		@Override
 		protected void doExecute() {
-			ModelExtent inputExtent = new BasicModelExtent(objects);
+			StructuredComponent structuredComponent = Activator.createStructuredComponentWithEmbeddedParts(editingDomain, components);
 
-			ModelExtent outputExtent = new BasicModelExtent();
-
-			List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] {
-					inputExtent, outputExtent });
-
-			ExecuteQvtoTransformationCommand createCommand = new ExecuteQvtoTransformationCommand(
-					Activator.EMBED_TRANSFORMATION, modelExtents);
-
-			editingDomain.getCommandStack().execute(createCommand);
-
-			// Get created object from output extent
-			EObject createdObject = null;
-			if (!outputExtent.getContents().isEmpty()) {
-				createdObject = outputExtent.getContents().get(0);
-			}
-			
-			// Add to model element category
-			if (!objects.isEmpty()) {
-				EObject container = objects.get(0).eContainer();
-				if (container instanceof ModelElementCategory
-						&& createdObject != null) {
-					((ModelElementCategory) container).getModelElements().add(
-							(ExtendableElement) createdObject);
+			// Add new StructuredComponent to ModelElementCategory
+			if (structuredComponent != null && !components.isEmpty()) {
+				EObject container = components.get(0).eContainer();
+				if (container instanceof ModelElementCategory) {
+					((ModelElementCategory) container).getModelElements().add(structuredComponent);
 				}
 			}
+
+			// Create PortParts
+			for (ComponentPart componentPart : structuredComponent.getEmbeddedComponentParts()) {
+				Activator.updateComponentPart(editingDomain, componentPart);
+			}
+			
 			
 			// Create view
-
 			List<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>();
 
 			int visualID = MumlVisualIDRegistry
-					.getNodeVisualID(diagram, createdObject);
+					.getNodeVisualID(diagram, structuredComponent);
 			String hint = MumlVisualIDRegistry.getType(visualID);
 			if (hint != null) {
-				IAdaptable elementAdapter = new ElementAdapter(createdObject, hint);
+				IAdaptable elementAdapter = new ElementAdapter(structuredComponent, hint);
 				CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
 						elementAdapter, Node.class, hint, ViewUtil.APPEND,
 						true,

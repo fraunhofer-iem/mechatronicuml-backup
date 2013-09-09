@@ -1,12 +1,23 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.custom.part;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.m2m.qvt.oml.BasicModelExtent;
+import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
+
+import de.uni_paderborn.fujaba.muml.component.Component;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
+import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.ExecuteQvtoTransformationCommand;
 
 public class Activator extends AbstractUIPlugin {
 
@@ -57,6 +68,43 @@ public class Activator extends AbstractUIPlugin {
 		return transformationExecutor;
 	}
 
+	public static StructuredComponent createStructuredComponentWithEmbeddedParts(EditingDomain editingDomain, List<Component> components) {
+		ModelExtent inputExtent = new BasicModelExtent(components);
+
+		ModelExtent outputExtent = new BasicModelExtent();
+
+		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] {
+				inputExtent, outputExtent });
+
+		ExecuteQvtoTransformationCommand createCommand = new ExecuteQvtoTransformationCommand(
+				Activator.EMBED_TRANSFORMATION, modelExtents);
+
+		editingDomain.getCommandStack().execute(createCommand);
+
+		// Get created object from output extent
+		EObject createdObject = null;
+		if (!outputExtent.getContents().isEmpty()) {
+			createdObject = outputExtent.getContents().get(0);
+		}
+		
+		// Return StructuredComponent
+		if (createdObject instanceof StructuredComponent) {
+			return (StructuredComponent) createdObject;
+		}
+		return null;
+	}
+	
+	public static void updateComponentPart(EditingDomain editingDomain, ComponentPart componentPart) {
+		ModelExtent inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { componentPart }));
+		
+		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { inputExtent });
+		
+		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
+				Activator.PART_TRANSFORMATION,
+				modelExtents);
+		editingDomain.getCommandStack().execute(command);
+	}
+	
 	public void stop(BundleContext context) throws Exception {
 		instance = null;
 		transformationExecutors.clear();
