@@ -105,8 +105,12 @@ public class EmbedAsPartsHandler extends AbstractHandler {
 		protected void doExecute() {
 			StructuredComponent structuredComponent = Activator.createStructuredComponentWithEmbeddedParts(editingDomain, components);
 
+			if (structuredComponent == null) {
+				return;
+			}
+			
 			// Add new StructuredComponent to ModelElementCategory
-			if (structuredComponent != null && !components.isEmpty()) {
+			if (!components.isEmpty()) {
 				EObject container = components.get(0).eContainer();
 				if (container instanceof ModelElementCategory) {
 					((ModelElementCategory) container).getModelElements().add(structuredComponent);

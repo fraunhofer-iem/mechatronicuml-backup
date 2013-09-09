@@ -9,13 +9,13 @@ modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
 main() {
 
-	var atomicComponents : Set(AtomicComponent) := input.rootObjects()[AtomicComponent];
+	var components : Set(Component) := input.rootObjects()[Component];
 
-	if (not atomicComponents->isEmpty()) then {
+	if (not components->isEmpty()) then {
 		var structuredComponent : StaticStructuredComponent := new StaticStructuredComponent("");
 		
-		atomicComponents->forEach(atomicComponent) {
-			structuredComponent.embeddedComponentParts += new ComponentPart(atomicComponent);
+		components->forEach(component) {
+			structuredComponent.embeddedComponentParts += new ComponentPart(component);
 		};
 	} endif;
 	

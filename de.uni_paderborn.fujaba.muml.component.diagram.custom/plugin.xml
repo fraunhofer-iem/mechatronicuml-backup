@@ -40,10 +40,16 @@
                   <with
                         variable="selection">
                      <iterate
-                           ifEmpty="false">
-                        <instanceof
-                              value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart">
-                        </instanceof>
+                           ifEmpty="false"
+                           operator="or">
+                        <or>
+                           <instanceof
+                                 value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart">
+                           </instanceof>
+                           <instanceof
+                                 value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart">
+                           </instanceof>
+                        </or>
                      </iterate>
                   </with>
                </and>
