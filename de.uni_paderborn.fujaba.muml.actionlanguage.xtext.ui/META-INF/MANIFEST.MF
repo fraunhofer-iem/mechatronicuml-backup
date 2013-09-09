@@ -14,7 +14,10 @@ Require-Bundle: org.eclipse.ui.ide,
  de.uni_paderborn.fujaba.muml.actionlanguage.xtext;bundle-version="0.3.1";visibility:=reexport,
  de.uni_paderborn.fujaba.muml.realtimestatechart.diagram;bundle-version="0.3.1",
  de.fujaba.properties.runtime;bundle-version="0.4.0",
- org.eclipse.jdt.core
+ org.eclipse.jdt.core,
+ org.eclipse.ui.editors,
+ org.eclipse.ui,
+ org.antlr.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Activator: de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator
 Import-Package: org.apache.log4j;version="1.2.15",
@@ -23,4 +26,5 @@ Import-Package: org.apache.log4j;version="1.2.15",
 Export-Package: de.uni_paderborn.fujaba.muml.ui.contentassist,
  de.uni_paderborn.fujaba.muml.ui.contentassist.antlr,
  de.uni_paderborn.fujaba.muml.ui.internal,
- de.uni_paderborn.fujaba.muml.ui.properties
+ de.uni_paderborn.fujaba.muml.ui.properties,
+ de.uni_paderborn.fujaba.muml.ui.quickfix
