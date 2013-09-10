@@ -5,6 +5,9 @@
   <rm:locator pattern="(^de\.uni_paderborn\.fujaba\.udbm(\..+)?|^de\.uni_paderborn\.fujaba\.umlrt\.udbm(\..+)?)" searchPathRef="udbmbinding"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.reachanalysis(\..+)?" searchPathRef="storychecking"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.simulink(\..+)?" searchPathRef="simulation"/>
+  
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.model.\.gen(\..+)?|^de\.uni_paderborn\.fujaba\.muml\.gen(\..+)?" searchPathRef="modelica"/>
+  
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.actionLanguage\.matlab(\..+)?" searchPathRef="simulation"/>
   <rm:locator pattern="^de\.upb\.swt\.qvt(\..+)?" searchPathRef="tgg"/>
   <rm:locator pattern="^com\.tools\.logging(\..+)?" searchPathRef="tgg"/>
@@ -91,6 +94,16 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
+  
+  <rm:searchPath name="modelica">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="true">
+      <rm:uri format="file:///{0}/modelica/{1}/">
+        <bc:propertyRef key="workspace.root"/>
+        <bc:propertyRef key="buckminster.component"/>
+      </rm:uri>
+    </rm:provider>
+  </rm:searchPath>
+  
   <rm:searchPath name="udbmbinding">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="true">
       <rm:uri format="file:///{0}/udbm/{1}/">
