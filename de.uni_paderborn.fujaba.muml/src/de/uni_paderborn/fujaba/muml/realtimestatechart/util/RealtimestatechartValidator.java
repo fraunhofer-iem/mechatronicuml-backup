@@ -784,6 +784,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		"\t\tself.triggerMessageEvent.oclIsUndefined()\r\n" +
 		"\t\tand self.clockConstraints->isEmpty()\r\n" +
 		"\t\tand self.guard.oclIsUndefined()\r\n" +
+		"\t\tand self.synchronization.oclIsUndefined()\r\n" +
 		"\t)";
 
 	/**
