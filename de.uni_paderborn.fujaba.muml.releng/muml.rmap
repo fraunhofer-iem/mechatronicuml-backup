@@ -92,7 +92,6 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
-  
   <rm:searchPath name="modelica">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="true">
       <rm:uri format="file:///{0}/modelica/{1}/">
@@ -101,7 +100,6 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
-  
   <rm:searchPath name="udbmbinding">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="true">
       <rm:uri format="file:///{0}/udbm/{1}/">
