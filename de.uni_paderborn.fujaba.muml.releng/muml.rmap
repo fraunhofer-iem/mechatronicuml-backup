@@ -4,9 +4,9 @@
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification(\..+)?" searchPathRef="verification"/>
   <rm:locator pattern="(^de\.uni_paderborn\.fujaba\.udbm(\..+)?|^de\.uni_paderborn\.fujaba\.umlrt\.udbm(\..+)?)" searchPathRef="udbmbinding"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.reachanalysis(\..+)?" searchPathRef="storychecking"/>
-  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.simulink(\..+)?" searchPathRef="simulation"/>
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.simulink(\..+)?" searchPathRef="matlab"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.model\.gen(\..+)?|^de\.uni_paderborn\.fujaba\.muml\.gen(\..+)?" searchPathRef="modelica"/>  
-  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.actionLanguage\.matlab(\..+)?" searchPathRef="simulation"/>
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.actionLanguage\.matlab(\..+)?" searchPathRef="matlab"/>
   <rm:locator pattern="^de\.upb\.swt\.qvt(\..+)?" searchPathRef="tgg"/>
   <rm:locator pattern="^com\.tools\.logging(\..+)?" searchPathRef="tgg"/>
 <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.model\.componentstorydiagram\.diagram(\..+)?" searchPathRef="muml2"/>
@@ -84,9 +84,9 @@
       </rm:uri>
     </rm:provider>
   </rm:searchPath>
-  <rm:searchPath name="simulation">
+  <rm:searchPath name="matlab">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local" mutable="false" source="true">
-      <rm:uri format="file:///{0}/simulation/{1}/">
+      <rm:uri format="file:///{0}/matlab/{1}/">
         <bc:propertyRef key="workspace.root"/>
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
