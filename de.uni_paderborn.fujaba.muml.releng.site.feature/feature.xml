@@ -32,8 +32,8 @@
          id="de.uni_paderborn.fujaba.muml.example.sectionEntry.feature"
          version="0.0.0"/>
 
-   <includes
+   <!--includes
          id="de.uni_paderborn.fujaba.muml.model.gen.modelica.feature"
-         version="0.0.0"/>
+         version="0.0.0"/-->
 
 </feature>
