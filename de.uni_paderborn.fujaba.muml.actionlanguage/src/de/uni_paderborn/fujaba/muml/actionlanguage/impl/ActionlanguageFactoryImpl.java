@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.actionlanguage.impl;
 
+import de.uni_paderborn.fujaba.muml.actionlanguage.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -49,7 +50,7 @@ public class ActionlanguageFactoryImpl extends EFactoryImpl implements Actionlan
 	 */
 	public static ActionlanguageFactory init() {
 		try {
-			ActionlanguageFactory theActionlanguageFactory = (ActionlanguageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/actionlanguage/0.4.0"); 
+			ActionlanguageFactory theActionlanguageFactory = (ActionlanguageFactory)EPackage.Registry.INSTANCE.getEFactory(ActionlanguagePackage.eNS_URI);
 			if (theActionlanguageFactory != null) {
 				return theActionlanguageFactory;
 			}

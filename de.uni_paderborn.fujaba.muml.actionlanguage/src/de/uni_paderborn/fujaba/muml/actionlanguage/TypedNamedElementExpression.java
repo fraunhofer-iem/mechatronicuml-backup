@@ -44,7 +44,7 @@ public interface TypedNamedElementExpression extends Expression {
 	 * @return the value of the '<em>Typed Named Element</em>' reference.
 	 * @see #setTypedNamedElement(TypedNamedElement)
 	 * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getTypedNamedElementExpression_TypedNamedElement()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	TypedNamedElement getTypedNamedElement();
