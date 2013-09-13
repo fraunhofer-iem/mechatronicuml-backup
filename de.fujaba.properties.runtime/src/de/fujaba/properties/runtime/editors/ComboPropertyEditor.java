@@ -68,6 +68,9 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 
 		      @Override
 		      public void handleEvent(final Event event) {
+		    	// Remove possibility to use the scroll wheel in the ComboPropertyEditor to change values,
+		    	// because it often happend accidently when the user only wanted to scroll
+		    	// the complete properties page and accidently had a ComboBox under his mouse.
 		        event.doit = false;
 		      }
 		    });
