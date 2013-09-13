@@ -1,9 +1,7 @@
 package de.fujaba.properties.runtime.editors;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -23,7 +21,9 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
@@ -47,7 +47,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 			FormToolkit toolkit) {
 		Label label = toolkit.createLabel(parent, getLabelText());
 		if (parent.getLayout() instanceof GridLayout) {
-			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
+			label.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 		}
 		
 		if (hasSearchButton) {
@@ -56,7 +56,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 			parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		}
 
-		Combo combo = new Combo(parent, SWT.BORDER);
+		Combo combo = new Combo(parent, SWT.BORDER | SWT.DROP_DOWN | SWT.READ_ONLY);
 		comboViewer = new ComboViewer(combo);
 		comboViewer.setContentProvider(ArrayContentProvider.getInstance());
 		comboViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
@@ -64,6 +64,14 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
 			combo.setLayoutData(gridData);
 		}
+		comboViewer.getCombo().addListener(SWT.MouseWheel, new Listener() {
+
+		      @Override
+		      public void handleEvent(final Event event) {
+		        event.doit = false;
+		      }
+		    });
+
 		comboViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			
 			@Override
