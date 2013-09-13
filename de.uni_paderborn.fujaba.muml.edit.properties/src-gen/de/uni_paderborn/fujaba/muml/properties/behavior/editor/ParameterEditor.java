@@ -45,7 +45,7 @@ public class ParameterEditor
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), false);
+						.getCommentableElement_Comment(), true);
 
 	}
 

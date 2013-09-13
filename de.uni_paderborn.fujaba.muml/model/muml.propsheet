@@ -593,7 +593,7 @@
       <properties category="//@packages.5/@classes.9/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Action/expressions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.5/@classes.9/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
@@ -946,7 +946,7 @@
       <properties category="//@packages.7/@classes.3/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/behavior/Operation/implementations"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <properties category="//@packages.7/@classes.3/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/behavior/Operation/parameters"/>
