@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Properties
+Bundle-Name: MechatronicUML Tabbed Properties
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.edit.properties; singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Require-Bundle: de.uni_paderborn.fujaba.muml.edit,org.eclipse.emf.ecore,org.eclipse.core.runtime,de.uni_paderborn.fujaba.muml,org.eclipse.emf.edit,de.fujaba.properties.runtime,org.eclipse.ui,org.storydriven.core.edit,org.storydriven.core.edit.properties,de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui,de.uni_paderborn.fujaba.muml.common
@@ -17,3 +17,4 @@ Export-Package:
  de.uni_paderborn.fujaba.muml.properties.behavior.editor,
  de.uni_paderborn.fujaba.muml.properties.valuetype.editor,
  de.uni_paderborn.fujaba.muml.properties.protocol.editor
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

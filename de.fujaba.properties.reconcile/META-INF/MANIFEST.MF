@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Reconcile
+Bundle-Name: Fujaba Properties Reconciler
 Bundle-SymbolicName: de.fujaba.properties.reconcile
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.fujaba.properties.reconcile.PropertiesReconcilePlugin
@@ -12,3 +12,4 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.fujaba.properties.reconcile
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

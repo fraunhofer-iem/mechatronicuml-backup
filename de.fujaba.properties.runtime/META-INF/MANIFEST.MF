@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Properties Runtime
+Bundle-Name: Fujaba Properties Runtime
 Bundle-SymbolicName: de.fujaba.properties.runtime;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-Activator: de.fujaba.properties.runtime.RuntimePlugin
@@ -13,3 +13,4 @@ Export-Package: de.fujaba.properties.runtime.editors,
  de.fujaba.properties.runtime.factory,
  de.fujaba.properties.runtime.filter,
  de.fujaba.properties.runtime.sections
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
