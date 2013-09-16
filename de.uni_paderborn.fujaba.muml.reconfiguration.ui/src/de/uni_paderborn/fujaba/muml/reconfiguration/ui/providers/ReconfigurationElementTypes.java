@@ -46,6 +46,7 @@ public class ReconfigurationElementTypes {
 
 
 	public static final IElementType ReconfigurableStructuredComponent_2076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableStructuredComponent_2076"); //$NON-NLS-1$
+	public static final IElementType ReconfigurationMessagePort_3076= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ui.createReconfigurationMessagePort_3076"); //$NON-NLS-1$
 	
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
@@ -87,6 +88,10 @@ public class ReconfigurationElementTypes {
 					ReconfigurableStructuredComponent_2076,
 					de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 							.getReconfigurableStructuredComponent());
+			elements.put(
+					ReconfigurationMessagePort_3076,
+					de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+							.getReconfigurationMessagePort());
 
 		}
 		return (ENamedElement) elements.get(type);
@@ -106,6 +111,7 @@ public class ReconfigurationElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ReconfigurableStructuredComponent_2076);
+			KNOWN_ELEMENT_TYPES.add(ReconfigurationMessagePort_3076);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -118,7 +124,10 @@ public class ReconfigurationElementTypes {
 
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID:
 			return ReconfigurableStructuredComponent_2076;
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
+			return ReconfigurationMessagePort_3076;
 		}
+		
 		return null;
 	}
 
@@ -133,7 +142,7 @@ public class ReconfigurationElementTypes {
 		 */
 		@Override
 		public boolean isKnownElementType(IElementType elementType) {
-			return de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes
+			return de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes
 					.isKnownElementType(elementType);
 		}
 
@@ -142,7 +151,7 @@ public class ReconfigurationElementTypes {
 		 */
 		@Override
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes
+			return de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes
 					.getElementType(visualID);
 		}
 
@@ -152,7 +161,7 @@ public class ReconfigurationElementTypes {
 		@Override
 		public ENamedElement getDefiningNamedElement(
 				IAdaptable elementTypeAdapter) {
-			return de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes
+			return de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes
 					.getElement(elementTypeAdapter);
 		}
 	};

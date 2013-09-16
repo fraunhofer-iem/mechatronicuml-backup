@@ -107,6 +107,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 						.getVisualID(childView)) {
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -146,15 +147,15 @@ public class ReconfigurableStructuredComponentEditPart extends
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentNameEditPart) {
-			((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentNameEditPart) childEditPart)
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) {
+			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) childEditPart)
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentComponentCompartmentEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChildren();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentComponentCompartmentEditPart) childEditPart)
+			pane.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -168,6 +169,16 @@ public class ReconfigurableStructuredComponentEditPart extends
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
+					PositionConstants.SOUTH);
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
+							.getFigure(), locator);
+			return true;
+		}
+		
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
 			getBorderedFigure()
@@ -206,6 +217,14 @@ public class ReconfigurableStructuredComponentEditPart extends
 							.getFigure());
 			return true;
 		}
+		
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) {
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.remove(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart) childEditPart)
+							.getFigure());
+			return true;
+		}
 		return false;
 	}
 
@@ -233,7 +252,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentComponentCompartmentEditPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) {
 			return getPrimaryShape().getFigureChildren();
 		}
 		if (editPart instanceof IBorderItemEditPart) {

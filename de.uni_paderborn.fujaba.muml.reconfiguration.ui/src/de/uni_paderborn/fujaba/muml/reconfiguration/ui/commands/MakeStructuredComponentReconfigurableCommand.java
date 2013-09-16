@@ -75,6 +75,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComp
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
 
 public class MakeStructuredComponentReconfigurableCommand extends AbstractHandler {
+	
+	private ReconfigurableStructuredComponent rsc;
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -113,7 +115,7 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 				
 				editingDomain.getCommandStack().execute(new StaticStructuredComponentTransformationCommand(sc));
 			
-				ReconfigurableStructuredComponent reconfComponent = getReconfigurableStructuredComponent(category);
+				ReconfigurableStructuredComponent reconfComponent = rsc;
 				IDiagramInformation diagramInformation = getDiagramInformation(reconfComponent); //null
 				Collection<EObject> elements = new HashSet<EObject>();
 				elements.add(reconfComponent);
@@ -209,6 +211,7 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 			//add to category
 			category.getModelElements().add(reconfComp);
 		}
+		rsc=reconfComp;
 	}
 	
 	private ReconfigurableStructuredComponent getReconfigurableComponentFromModelExtent(ModelExtent ext){
@@ -352,13 +355,6 @@ public class MakeStructuredComponentReconfigurableCommand extends AbstractHandle
 			}
 		}
 		
-		private ReconfigurableStructuredComponent getReconfigurableStructuredComponent(ModelElementCategory category){
-			for(ExtendableElement curElement : category.getModelElements()){
-				if(curElement instanceof ReconfigurableStructuredComponent)
-					return (ReconfigurableStructuredComponent)curElement;
-			}
-			return null;
-		}
 		
 		protected void executeCreateViewsCommand(final Command cmd, Diagram diagram) {
 			Map<String, Boolean> options = null;

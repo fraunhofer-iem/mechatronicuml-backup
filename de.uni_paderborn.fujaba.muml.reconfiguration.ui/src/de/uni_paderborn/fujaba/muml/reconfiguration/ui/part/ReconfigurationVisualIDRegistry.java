@@ -120,6 +120,21 @@ public class ReconfigurationVisualIDRegistry {
 				return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID;
 			}
 			break;
+			
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID:
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getDiscretePort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getContinuousPort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID;
+			}
+			if (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE.getReconfigurationMessagePort().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID;
+			}
+			break;
+
 		}
 		return -1;
 	}
