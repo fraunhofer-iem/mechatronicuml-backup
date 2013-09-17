@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -236,8 +237,13 @@ public class BatchDiagramCreationWizard extends Wizard implements INewWizard {
 			Map<String, IDiagramInformation> map) {
 		for (IDiagramInformation information : map.values()) {
 			String modelId = information.getModelId();
+			
+			EClass elementClass = information.getDiagramElementClass();
+			if (elementClass == null) {
+				continue;
+			}
 			boolean useCategory = ModelinstancePackage.Literals.MODEL_ELEMENT_CATEGORY
-					.isSuperTypeOf(information.getDiagramElementClass());
+					.isSuperTypeOf(elementClass);
 			if (!useCategory && isValidDiagramElement(modelId, element)) {
 				Collection<EObject> contents = Collections.emptyList();
 				return new ElementInformation(element, contents, information);
