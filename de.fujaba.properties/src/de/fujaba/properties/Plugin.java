@@ -14,7 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link de.fujaba.properties.Plugin#getId <em>Id</em>}</li>
  *   <li>{@link de.fujaba.properties.Plugin#getName <em>Name</em>}</li>
+ *   <li>{@link de.fujaba.properties.Plugin#getVendor <em>Vendor</em>}</li>
  *   <li>{@link de.fujaba.properties.Plugin#getVersion <em>Version</em>}</li>
  *   <li>{@link de.fujaba.properties.Plugin#getRequiredBundles <em>Required Bundles</em>}</li>
  * </ul>
@@ -25,6 +27,32 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Plugin extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see de.fujaba.properties.PropertiesPackage#getPlugin_Id()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link de.fujaba.properties.Plugin#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,6 +78,32 @@ public interface Plugin extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Vendor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Vendor</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Vendor</em>' attribute.
+	 * @see #setVendor(String)
+	 * @see de.fujaba.properties.PropertiesPackage#getPlugin_Vendor()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getVendor();
+
+	/**
+	 * Sets the value of the '{@link de.fujaba.properties.Plugin#getVendor <em>Vendor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Vendor</em>' attribute.
+	 * @see #getVendor()
+	 * @generated
+	 */
+	void setVendor(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Version</b></em>' attribute.

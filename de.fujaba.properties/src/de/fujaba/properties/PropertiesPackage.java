@@ -278,13 +278,31 @@ public interface PropertiesPackage extends EPackage {
 	int PLUGIN = 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLUGIN__ID = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLUGIN__NAME = 0;
+	int PLUGIN__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Vendor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLUGIN__VENDOR = 2;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -293,7 +311,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLUGIN__VERSION = 1;
+	int PLUGIN__VERSION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Required Bundles</b></em>' attribute list.
@@ -302,7 +320,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLUGIN__REQUIRED_BUNDLES = 2;
+	int PLUGIN__REQUIRED_BUNDLES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Plugin</em>' class.
@@ -311,7 +329,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLUGIN_FEATURE_COUNT = 3;
+	int PLUGIN_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.PropertyTabImpl <em>Property Tab</em>}' class.
@@ -1218,6 +1236,17 @@ public interface PropertiesPackage extends EPackage {
 	EClass getPlugin();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.Plugin#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see de.fujaba.properties.Plugin#getId()
+	 * @see #getPlugin()
+	 * @generated
+	 */
+	EAttribute getPlugin_Id();
+
+	/**
 	 * Returns the meta object for the attribute '{@link de.fujaba.properties.Plugin#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1227,6 +1256,17 @@ public interface PropertiesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPlugin_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fujaba.properties.Plugin#getVendor <em>Vendor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Vendor</em>'.
+	 * @see de.fujaba.properties.Plugin#getVendor()
+	 * @see #getPlugin()
+	 * @generated
+	 */
+	EAttribute getPlugin_Vendor();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.fujaba.properties.Plugin#getVersion <em>Version</em>}'.
@@ -1948,12 +1988,28 @@ public interface PropertiesPackage extends EPackage {
 		EClass PLUGIN = eINSTANCE.getPlugin();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLUGIN__ID = eINSTANCE.getPlugin_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute PLUGIN__NAME = eINSTANCE.getPlugin_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Vendor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLUGIN__VENDOR = eINSTANCE.getPlugin_Vendor();
 
 		/**
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.

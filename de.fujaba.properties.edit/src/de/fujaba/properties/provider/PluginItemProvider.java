@@ -62,11 +62,35 @@ public class PluginItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIdPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addVendorPropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
 			addRequiredBundlesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Plugin_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Plugin_id_feature", "_UI_Plugin_type"),
+				 PropertiesPackage.Literals.PLUGIN__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -83,6 +107,28 @@ public class PluginItemProvider
 				 getString("_UI_Plugin_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Plugin_name_feature", "_UI_Plugin_type"),
 				 PropertiesPackage.Literals.PLUGIN__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Vendor feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVendorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Plugin_vendor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Plugin_vendor_feature", "_UI_Plugin_type"),
+				 PropertiesPackage.Literals.PLUGIN__VENDOR,
 				 true,
 				 false,
 				 false,
@@ -172,7 +218,9 @@ public class PluginItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Plugin.class)) {
+			case PropertiesPackage.PLUGIN__ID:
 			case PropertiesPackage.PLUGIN__NAME:
+			case PropertiesPackage.PLUGIN__VENDOR:
 			case PropertiesPackage.PLUGIN__VERSION:
 			case PropertiesPackage.PLUGIN__REQUIRED_BUNDLES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

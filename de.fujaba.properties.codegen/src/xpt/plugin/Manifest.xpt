@@ -4,14 +4,15 @@
 «DEFINE Manifest FOR PropertyGenerator-»
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Properties
-Bundle-SymbolicName: «plugin.name»; singleton:=true
+Bundle-Name: «plugin.name»
+Bundle-SymbolicName: «plugin.id»; singleton:=true
 Bundle-Version: «plugin.version»
 Require-Bundle: «EXPAND requiredBundles FOR plugin»
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: 
 «FOREACH packages AS this SEPARATOR ',\n'» «genPackageName()».editor«ENDFOREACH»
+Bundle-Vendor: «plugin.vendor»
 «ENDDEFINE»
 
 «DEFINE requiredBundles FOR Plugin-»

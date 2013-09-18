@@ -468,7 +468,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlugin_Name() {
+	public EAttribute getPlugin_Id() {
 		return (EAttribute)pluginEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -477,7 +477,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlugin_Version() {
+	public EAttribute getPlugin_Name() {
 		return (EAttribute)pluginEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -486,8 +486,26 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPlugin_RequiredBundles() {
+	public EAttribute getPlugin_Vendor() {
 		return (EAttribute)pluginEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlugin_Version() {
+		return (EAttribute)pluginEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPlugin_RequiredBundles() {
+		return (EAttribute)pluginEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -965,7 +983,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		createEAttribute(customTransformationEClass, CUSTOM_TRANSFORMATION__POSITION);
 
 		pluginEClass = createEClass(PLUGIN);
+		createEAttribute(pluginEClass, PLUGIN__ID);
 		createEAttribute(pluginEClass, PLUGIN__NAME);
+		createEAttribute(pluginEClass, PLUGIN__VENDOR);
 		createEAttribute(pluginEClass, PLUGIN__VERSION);
 		createEAttribute(pluginEClass, PLUGIN__REQUIRED_BUNDLES);
 
@@ -1104,7 +1124,9 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEAttribute(getCustomTransformation_Position(), this.getTransformationPosition(), "position", "POST_RECONCILE", 1, 1, CustomTransformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pluginEClass, Plugin.class, "Plugin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPlugin_Id(), theEcorePackage.getEString(), "id", null, 1, 1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlugin_Name(), theEcorePackage.getEString(), "name", null, 1, 1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlugin_Vendor(), theEcorePackage.getEString(), "vendor", null, 1, 1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlugin_Version(), theEcorePackage.getEString(), "version", null, 1, 1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlugin_RequiredBundles(), theEcorePackage.getEString(), "requiredBundles", null, 0, -1, Plugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

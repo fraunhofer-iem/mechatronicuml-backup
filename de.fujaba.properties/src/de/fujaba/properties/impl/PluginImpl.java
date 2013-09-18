@@ -25,7 +25,9 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.fujaba.properties.impl.PluginImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PluginImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PluginImpl#getVendor <em>Vendor</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PluginImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PluginImpl#getRequiredBundles <em>Required Bundles</em>}</li>
  * </ul>
@@ -34,6 +36,26 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * @generated
  */
 public class PluginImpl extends EObjectImpl implements Plugin {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -53,6 +75,26 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getVendor() <em>Vendor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVendor()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VENDOR_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getVendor() <em>Vendor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVendor()
+	 * @generated
+	 * @ordered
+	 */
+	protected String vendor = VENDOR_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
@@ -108,6 +150,27 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PLUGIN__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getName() {
 		return name;
 	}
@@ -122,6 +185,27 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PLUGIN__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getVendor() {
+		return vendor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVendor(String newVendor) {
+		String oldVendor = vendor;
+		vendor = newVendor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PLUGIN__VENDOR, oldVendor, vendor));
 	}
 
 	/**
@@ -165,8 +249,12 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case PropertiesPackage.PLUGIN__ID:
+				return getId();
 			case PropertiesPackage.PLUGIN__NAME:
 				return getName();
+			case PropertiesPackage.PLUGIN__VENDOR:
+				return getVendor();
 			case PropertiesPackage.PLUGIN__VERSION:
 				return getVersion();
 			case PropertiesPackage.PLUGIN__REQUIRED_BUNDLES:
@@ -184,8 +272,14 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case PropertiesPackage.PLUGIN__ID:
+				setId((String)newValue);
+				return;
 			case PropertiesPackage.PLUGIN__NAME:
 				setName((String)newValue);
+				return;
+			case PropertiesPackage.PLUGIN__VENDOR:
+				setVendor((String)newValue);
 				return;
 			case PropertiesPackage.PLUGIN__VERSION:
 				setVersion((String)newValue);
@@ -206,8 +300,14 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case PropertiesPackage.PLUGIN__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case PropertiesPackage.PLUGIN__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case PropertiesPackage.PLUGIN__VENDOR:
+				setVendor(VENDOR_EDEFAULT);
 				return;
 			case PropertiesPackage.PLUGIN__VERSION:
 				setVersion(VERSION_EDEFAULT);
@@ -227,8 +327,12 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case PropertiesPackage.PLUGIN__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case PropertiesPackage.PLUGIN__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case PropertiesPackage.PLUGIN__VENDOR:
+				return VENDOR_EDEFAULT == null ? vendor != null : !VENDOR_EDEFAULT.equals(vendor);
 			case PropertiesPackage.PLUGIN__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 			case PropertiesPackage.PLUGIN__REQUIRED_BUNDLES:
@@ -247,8 +351,12 @@ public class PluginImpl extends EObjectImpl implements Plugin {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", name: ");
 		result.append(name);
+		result.append(", vendor: ");
+		result.append(vendor);
 		result.append(", version: ");
 		result.append(version);
 		result.append(", requiredBundles: ");
