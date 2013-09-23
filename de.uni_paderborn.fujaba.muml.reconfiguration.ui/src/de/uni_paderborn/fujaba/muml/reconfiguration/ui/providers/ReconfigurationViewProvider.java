@@ -284,24 +284,24 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5012 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
-		label5012.setLayoutConstraint(NotationFactory.eINSTANCE
-				.createLocation());
-		Location location5012 = (Location) label5012.getLayoutConstraint();
-		location5012.setX(0);
-		location5012.setY(5);
-		Node label5025 = createLabel(
-				node,
-				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
-		label5025.setLayoutConstraint(NotationFactory.eINSTANCE
-				.createLocation());
-		Location location5025 = (Location) label5025.getLayoutConstraint();
-		location5025.setX(0);
-		location5025.setY(5);
+//		Node label5012 = createLabel(
+//				node,
+//				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+//						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
+//		label5012.setLayoutConstraint(NotationFactory.eINSTANCE
+//				.createLocation());
+//		Location location5012 = (Location) label5012.getLayoutConstraint();
+//		location5012.setX(0);
+//		location5012.setY(5);
+//		Node label5025 = createLabel(
+//				node,
+//				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+//						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+//		label5025.setLayoutConstraint(NotationFactory.eINSTANCE
+//				.createLocation());
+//		Location location5025 = (Location) label5025.getLayoutConstraint();
+//		location5025.setX(0);
+//		location5025.setY(5);
 		return node;
 	}
 
