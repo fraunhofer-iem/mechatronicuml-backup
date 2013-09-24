@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_285c8CCUEeORXrc2WdVotw" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_285c8SCUEeORXrc2WdVotw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_286EACCUEeORXrc2WdVotw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_286EASCUEeORXrc2WdVotw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_286EAiCUEeORXrc2WdVotw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="properties.ecore#//PropertyGenerator/contributorId"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EAyCUEeORXrc2WdVotw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_286EBCCUEeORXrc2WdVotw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="properties.ecore#//PropertyGenerator/sourceFolder"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EBSCUEeORXrc2WdVotw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_286EBiCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_286EByCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_286ECCCUEeORXrc2WdVotw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_286ECSCUEeORXrc2WdVotw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_286ECiCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_286ECyCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_286EDCCUEeORXrc2WdVotw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_286EDSCUEeORXrc2WdVotw" fontColor="4210752" fontName="Bitstream Vera Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="properties.ecore#//PropertyGenerator"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_286EDiCUEeORXrc2WdVotw" x="408" y="420"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_286EDyCUEeORXrc2WdVotw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_286EECCUEeORXrc2WdVotw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_286EESCUEeORXrc2WdVotw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_286EEiCUEeORXrc2WdVotw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="properties.ecore#//Reconciler/enabled"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EEyCUEeORXrc2WdVotw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_286EFCCUEeORXrc2WdVotw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="properties.ecore#//Reconciler/reconcilePackages"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EFSCUEeORXrc2WdVotw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_286EFiCUEeORXrc2WdVotw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="properties.ecore#//Reconciler/reconcileClasses"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EFyCUEeORXrc2WdVotw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_286EGCCUEeORXrc2WdVotw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="properties.ecore#//Reconciler/reconcileProperties"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EGSCUEeORXrc2WdVotw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_286EGiCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_286EGyCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_286EHCCUEeORXrc2WdVotw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_286EHSCUEeORXrc2WdVotw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_286EHiCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_286EHyCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_286EICCUEeORXrc2WdVotw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_286EISCUEeORXrc2WdVotw" fontColor="4210752" fontName="Bitstream Vera Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="properties.ecore#//Reconciler"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_286EIiCUEeORXrc2WdVotw" x="6" y="396"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_286EIyCUEeORXrc2WdVotw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_286EJCCUEeORXrc2WdVotw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_286EJSCUEeORXrc2WdVotw" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_286EJiCUEeORXrc2WdVotw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="properties.ecore#//CustomTransformation/uri"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EJyCUEeORXrc2WdVotw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_286EKCCUEeORXrc2WdVotw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="properties.ecore#//CustomTransformation/enabled"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EKSCUEeORXrc2WdVotw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_286EKiCUEeORXrc2WdVotw" type="2001">
+        <element xmi:type="ecore:EAttribute" href="properties.ecore#//CustomTransformation/position"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EKyCUEeORXrc2WdVotw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_286ELCCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_286ELSCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_286ELiCUEeORXrc2WdVotw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_286ELyCUEeORXrc2WdVotw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_286EMCCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_286EMSCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_286EMiCUEeORXrc2WdVotw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_286EMyCUEeORXrc2WdVotw" fontColor="4210752" fontName="Bitstream Vera Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="properties.ecore#//CustomTransformation"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_286ENCCUEeORXrc2WdVotw" x="-24" y="618"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_286ENSCUEeORXrc2WdVotw" type="1005">
+    <children xmi:type="notation:Node" xmi:id="_286ENiCUEeORXrc2WdVotw" type="4010"/>
+    <children xmi:type="notation:Node" xmi:id="_286ENyCUEeORXrc2WdVotw" type="5008">
+      <children xmi:type="notation:Node" xmi:id="_286EOCCUEeORXrc2WdVotw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="properties.ecore#//TransformationPosition/PRE_RECONCILE"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EOSCUEeORXrc2WdVotw"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_286EOiCUEeORXrc2WdVotw" type="2006">
+        <element xmi:type="ecore:EEnumLiteral" href="properties.ecore#//TransformationPosition/POST_RECONCILE"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_286EOyCUEeORXrc2WdVotw"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_286EPCCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_286EPSCUEeORXrc2WdVotw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_286EPiCUEeORXrc2WdVotw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_286EPyCUEeORXrc2WdVotw" fontColor="4210752" fontName="Bitstream Vera Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EEnum" href="properties.ecore#//TransformationPosition"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_286EQCCUEeORXrc2WdVotw" x="414" y="624"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_286EQSCUEeORXrc2WdVotw"/>
+  <element xmi:type="ecore:EPackage" href="properties.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_286EQiCUEeORXrc2WdVotw" type="3002" source="_285c8SCUEeORXrc2WdVotw" target="_286EDyCUEeORXrc2WdVotw">
+    <children xmi:type="notation:Node" xmi:id="_286EQyCUEeORXrc2WdVotw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_286ERCCUEeORXrc2WdVotw" x="-32" y="-18"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_286ERSCUEeORXrc2WdVotw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_286ERiCUEeORXrc2WdVotw" x="-5" y="18"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_286ERyCUEeORXrc2WdVotw" routing="Rectilinear" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_286ESCCUEeORXrc2WdVotw" fontName="Bitstream Vera Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="properties.ecore#//PropertyGenerator/reconciler"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_286ESSCUEeORXrc2WdVotw" points="[-37, 36, 252, -60]$[-139, 36, 150, -60]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_286ESiCUEeORXrc2WdVotw" id="(0.16593886462882096,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_286ESyCUEeORXrc2WdVotw" id="(0.5,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_286ETCCUEeORXrc2WdVotw" type="3002" source="_285c8SCUEeORXrc2WdVotw" target="_285c8SCUEeORXrc2WdVotw">
+    <children xmi:type="notation:Node" xmi:id="_286ETSCUEeORXrc2WdVotw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_286ETiCUEeORXrc2WdVotw" x="-90" y="-22"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_286ETyCUEeORXrc2WdVotw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_286EUCCUEeORXrc2WdVotw" x="34" y="8"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_286EUSCUEeORXrc2WdVotw" routing="Rectilinear" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_286EUiCUEeORXrc2WdVotw" fontName="Bitstream Vera Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="properties.ecore#//PropertyGenerator/referencedGenerators"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_286EUyCUEeORXrc2WdVotw" points="[114, -21, 114, -21]$[163, -21, 163, -21]$[163, 69, 163, 69]$[79, 69, 79, 69]$[79, 39, 79, 39]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_286EVCCUEeORXrc2WdVotw" type="3002" source="_286EDyCUEeORXrc2WdVotw" target="_286EIyCUEeORXrc2WdVotw">
+    <children xmi:type="notation:Node" xmi:id="_286EVSCUEeORXrc2WdVotw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_286EViCUEeORXrc2WdVotw" x="1" y="-113"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_286EVyCUEeORXrc2WdVotw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_286EWCCUEeORXrc2WdVotw" x="-5" y="21"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_286EWSCUEeORXrc2WdVotw" routing="Rectilinear" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_286EWiCUEeORXrc2WdVotw" fontName="Bitstream Vera Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="properties.ecore#//Reconciler/customTransformations"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_286EWyCUEeORXrc2WdVotw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_286EXCCUEeORXrc2WdVotw" id="(0.5,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_286EXSCUEeORXrc2WdVotw" id="(0.528125,1.0)"/>
+  </edges>
+</notation:Diagram>
