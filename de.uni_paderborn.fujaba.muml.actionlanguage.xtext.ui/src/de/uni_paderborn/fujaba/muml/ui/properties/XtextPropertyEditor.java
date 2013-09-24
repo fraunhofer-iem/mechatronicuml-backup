@@ -1,6 +1,8 @@
 package de.uni_paderborn.fujaba.muml.ui.properties;
 
-import org.eclipse.core.runtime.Assert;
+import java.util.Collection;
+import java.util.Collections;
+
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -38,7 +40,6 @@ public class XtextPropertyEditor extends
 	public XtextPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
 		super(adapterFactory, feature);
-		Assert.isLegal(!feature.isMany());
 	}
 
 	private static final String languageName = "de.uni_paderborn.fujaba.muml.ActionLanguage";
@@ -108,6 +109,7 @@ public class XtextPropertyEditor extends
 			save(text);
 			// System.out.println("valid");
 		} catch (CoreException e) {
+			e.printStackTrace();
 			// System.out.println("invalid");
 			// text is invalid
 		}
@@ -116,10 +118,29 @@ public class XtextPropertyEditor extends
 	private synchronized void save(String text) throws CoreException {
 		saving = true;
 		Expression expression = parseExpression(text);
-		setValue(expression);
+		setSingleValue(expression);
 		saving = false;
 	}
 	
+	private void setSingleValue(Object singleValue) {
+		if (feature.isMany()) {
+			setValue(Collections.singletonList(singleValue));
+		} else {
+			setValue(singleValue);
+		}
+	}
+
+	private Object getSingleValue() {
+		if (feature.isMany()) {
+			Collection<?> values = (Collection<?>) value;
+			if (!values.isEmpty()) {
+				return values.iterator().next();
+			}
+			return null;
+		}
+		return value;
+	}
+
 	private Expression parseExpression(String text) throws CoreException {
 		ILoadResult loadResult = LanguageResource.loadFromString(text, element);
 		if (loadResult.hasError()) {
@@ -135,7 +156,7 @@ public class XtextPropertyEditor extends
 	protected void valueChanged() {
 		super.valueChanged();
 		if (!saving) {
-			String text = LanguageResource.serializeEObjectSafe((EObject) value, element);
+			String text = LanguageResource.serializeEObjectSafe((EObject) getSingleValue(), element);
 			if (text == null) {
 				text = "";
 			}
@@ -144,7 +165,7 @@ public class XtextPropertyEditor extends
 	}
 
 	private synchronized void updateText(String text) {
-		if (!text.equals(embeddedXtextEditor.getDocument().get())) {
+		if (embeddedXtextEditor != null && !text.equals(embeddedXtextEditor.getDocument().get())) {
 			updating = true;
 			embeddedXtextEditor.update(text);
 			updating = false;
@@ -157,5 +178,7 @@ public class XtextPropertyEditor extends
 				.removeModelListener(saveModelListener);
 		super.dispose();
 	}
+	
+	
 
 }

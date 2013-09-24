@@ -11,7 +11,7 @@ main() {
 mapping inout PropertyGenerator::generator() {
 	self.plugin.requiredBundles += "de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui";
 	
-	self.packages.classes.properties->select(p | not p.genFeature.ecoreFeature.many and p.genFeature.ecoreFeature.eType.name = 'Expression')->forEach(prop) {
+	self.packages.classes.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'Expression')->forEach(prop) {
 		prop->map createXtextEditor();
 	}
 }
