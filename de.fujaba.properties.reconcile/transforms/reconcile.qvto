@@ -215,7 +215,8 @@ query GenFeature::shouldGenerate() : Boolean {
 	return self._property != GenPropertyKind::None and self.ecoreFeature.changeable and not self.ecoreFeature._derived;
 }
 constructor Plugin::Plugin(genModel : GenModel) {
-	name := genModel.modelPluginID + ".edit.properties";
+	id := genModel.modelPluginID + ".edit.properties";
+	name := "Properties";
 	version := '0.1';
 }
 
