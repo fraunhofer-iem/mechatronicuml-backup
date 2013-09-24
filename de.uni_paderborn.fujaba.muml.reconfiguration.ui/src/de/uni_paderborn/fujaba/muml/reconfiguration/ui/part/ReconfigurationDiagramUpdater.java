@@ -14,11 +14,14 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import org.storydriven.core.ExtendableElement;
 
+import de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater;
+
 /**
  * @generated
  */
 public class ReconfigurationDiagramUpdater {
 
+	//XXX extend MumlDiagramUpdater
 	/**
 	 * @generated
 	 */
@@ -134,6 +137,11 @@ public class ReconfigurationDiagramUpdater {
 				continue;
 			}
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;

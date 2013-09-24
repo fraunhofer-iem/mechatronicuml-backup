@@ -31,12 +31,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class ReconfigurationMessagePortEditPart extends BorderedBorderItemEditPart {
+public class ReconfigurationExecutionPortEditPart extends BorderedBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3076;
+	public static final int VISUAL_ID = 3077;
 
 	/**
 	 * @generated
@@ -51,7 +51,7 @@ public class ReconfigurationMessagePortEditPart extends BorderedBorderItemEditPa
 	/**
 	 * @generated
 	 */
-	public ReconfigurationMessagePortEditPart(View view) {
+	public ReconfigurationExecutionPortEditPart(View view) {
 		super(view);
 	}
 
@@ -124,7 +124,7 @@ public class ReconfigurationMessagePortEditPart extends BorderedBorderItemEditPa
 	protected IFigure createNodeShape() {
 		primaryShape = new de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure();
 		org.eclipse.draw2d.Label label = new Label();
-		label.setText("RM");
+		label.setText("RE");
 		primaryShape.add(label);
 		
 		return primaryShape;

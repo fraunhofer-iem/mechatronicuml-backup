@@ -47,6 +47,7 @@ public class ReconfigurationElementTypes {
 
 	public static final IElementType ReconfigurableStructuredComponent_2076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableStructuredComponent_2076"); //$NON-NLS-1$
 	public static final IElementType ReconfigurationMessagePort_3076= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ui.createReconfigurationMessagePort_3076"); //$NON-NLS-1$
+	public static final IElementType ReconfigurationExecutionPort_3077= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ui.createReconfigurationExecutionPort_3077");
 	
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
@@ -92,6 +93,10 @@ public class ReconfigurationElementTypes {
 					ReconfigurationMessagePort_3076,
 					de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 							.getReconfigurationMessagePort());
+			elements.put(
+					ReconfigurationExecutionPort_3077,
+					de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+							.getReconfigurationExecutionPort());
 
 		}
 		return (ENamedElement) elements.get(type);
@@ -112,6 +117,7 @@ public class ReconfigurationElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(ReconfigurableStructuredComponent_2076);
 			KNOWN_ELEMENT_TYPES.add(ReconfigurationMessagePort_3076);
+			KNOWN_ELEMENT_TYPES.add(ReconfigurationExecutionPort_3077);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -126,6 +132,8 @@ public class ReconfigurationElementTypes {
 			return ReconfigurableStructuredComponent_2076;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
 			return ReconfigurationMessagePort_3076;
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
+			return ReconfigurationExecutionPort_3077;
 		}
 		
 		return null;

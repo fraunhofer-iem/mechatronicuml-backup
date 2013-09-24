@@ -13,9 +13,6 @@ public class CustomReconfigurationEditPartFactory extends
 		if (model instanceof View) {
 			View view = (View) model;
 
-			int visualId = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-					.getVisualID(view);
-
 			switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 					.getVisualID(view)) {
 
@@ -23,7 +20,12 @@ public class CustomReconfigurationEditPartFactory extends
 				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart(
 						view);
 			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
-				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart(view);
+				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart(
+						view);
+
+			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart(
+						view);
 			}
 		}
 		return super.createEditPart(context, model);

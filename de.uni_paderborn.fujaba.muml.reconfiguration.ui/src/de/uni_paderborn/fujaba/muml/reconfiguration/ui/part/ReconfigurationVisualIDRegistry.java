@@ -40,6 +40,7 @@ public class ReconfigurationVisualIDRegistry {
 	// .getVisualID(view.getType());
 	// }
 	//
+	
 	// copied from
 	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
 	public static String getModelID(View view) {
@@ -136,6 +137,12 @@ public class ReconfigurationVisualIDRegistry {
 					.getReconfigurationMessagePort().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID;
+			}
+			
+			if (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getReconfigurationExecutionPort().isSuperTypeOf(
+							domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID;
 			}
 			
 			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
