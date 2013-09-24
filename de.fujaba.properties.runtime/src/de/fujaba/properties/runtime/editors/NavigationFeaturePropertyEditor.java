@@ -111,30 +111,32 @@ public class NavigationFeaturePropertyEditor extends
 
 		});
 
-		buttonCreate = toolkit.createButton(composite, "", SWT.TOGGLE);
-		buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD,
-				12, 12));
-		buttonCreate.addSelectionListener(new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent e) {
-				buttonCreate.removeSelectionListener(this);
-				create();
-				RuntimePlugin.revalidateLayout(navigatedEditor.getSection()
-						.getClient());// no idea why this is necessary
-				buttonCreate.addSelectionListener(this);
-			}
-
-		});
-
-		buttonRemove = toolkit.createButton(composite, "", SWT.TOGGLE);
-		buttonRemove.setImage(RuntimePlugin.getImage(
-				RuntimePlugin.IMAGE_REMOVE, 12, 12));
-		buttonRemove.addSelectionListener(new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent e) {
-				buttonRemove.removeSelectionListener(this);
-				remove();
-				buttonRemove.addSelectionListener(this);
-			}
-		});
+		if (!createMode) {
+			buttonCreate = toolkit.createButton(composite, "", SWT.TOGGLE);
+			buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD,
+					12, 12));
+			buttonCreate.addSelectionListener(new SelectionAdapter() {
+				public void widgetSelected(SelectionEvent e) {
+					buttonCreate.removeSelectionListener(this);
+					create();
+					RuntimePlugin.revalidateLayout(navigatedEditor.getSection()
+							.getClient());// no idea why this is necessary
+					buttonCreate.addSelectionListener(this);
+				}
+	
+			});
+	
+			buttonRemove = toolkit.createButton(composite, "", SWT.TOGGLE);
+			buttonRemove.setImage(RuntimePlugin.getImage(
+					RuntimePlugin.IMAGE_REMOVE, 12, 12));
+			buttonRemove.addSelectionListener(new SelectionAdapter() {
+				public void widgetSelected(SelectionEvent e) {
+					buttonRemove.removeSelectionListener(this);
+					remove();
+					buttonRemove.addSelectionListener(this);
+				}
+			});
+		}
 
 		section.setTextClient(composite);
 
