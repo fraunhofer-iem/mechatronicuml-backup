@@ -20,7 +20,7 @@ public class JMergePostProcessor implements PostProcessor {
 		this.model = model;
 	}
 
-	@Override
+	//@Override This override causes problems when deploying as plugin.
 	public void beforeWriteAndClose(FileHandle file) {
 		if (model == null || !model.canMerge()) {
 			return;
@@ -56,7 +56,7 @@ public class JMergePostProcessor implements PostProcessor {
 		return builder.toString();
 	}
 
-	@Override
+	//@Override This override causes problems when deploying as plugin.
 	public void afterClose(FileHandle impl) {
 		// do nothing
 	}
