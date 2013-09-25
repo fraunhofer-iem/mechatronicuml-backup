@@ -78,9 +78,9 @@ public class Generator {
 			throw new UnsupportedOperationException(
 					"No plugin element defined!");
 		}
-		if (plugin.getName() == null) {
+		if (plugin.getId() == null) {
 			throw new UnsupportedOperationException(
-					"Plugin: No name specified!");
+					"Plugin: No plugin id specified!");
 		}
 		
 		String sourceFolder = "src-gen";
@@ -90,7 +90,7 @@ public class Generator {
 
 		// create project
 		IProject project = ResourcesPlugin.getWorkspace().getRoot()
-				.getProject(plugin.getName());
+				.getProject(plugin.getId());
 		if (!project.exists()) {
 			createProject(project, Arrays.asList(new String[] { sourceFolder }),
 					new NullProgressMonitor());
