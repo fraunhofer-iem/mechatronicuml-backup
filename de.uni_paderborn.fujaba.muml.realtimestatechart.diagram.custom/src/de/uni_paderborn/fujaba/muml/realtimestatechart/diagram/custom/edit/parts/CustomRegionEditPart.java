@@ -41,8 +41,6 @@ public class CustomRegionEditPart extends RegionEditPart {
 		return (Region) getNotationView().getElement();
 	}
 
-
-
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 //		Object feature = notification.getFeature();

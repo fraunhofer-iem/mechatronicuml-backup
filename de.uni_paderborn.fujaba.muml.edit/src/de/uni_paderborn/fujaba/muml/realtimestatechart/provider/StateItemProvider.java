@@ -13,8 +13,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.command.SetCommand;
-import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,8 +25,8 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.PrioritizedElementContainmentItemPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.State} object.
@@ -44,6 +42,8 @@ public class StateItemProvider
 		ITreeItemContentProvider,
 		IItemLabelProvider,
 		IItemPropertySource {
+	
+
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -88,53 +88,19 @@ public class StateItemProvider
 	 * @generated NOT
 	 */
 	protected void addEmbeddedRegionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_State_embeddedRegions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_State_embeddedRegions_feature", "_UI_State_type"),
-				 RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null) {
-	
-				@Override
-				public void setPropertyValue(Object object, Object value) {
-					// Cast new value as collection, as this is a many-feature
-					Collection<?> newValues = ((Collection<?>) value);
-					
-					// Collect all existing priorities in an array
-					int i = 0;
-					int[] priorities = new int[newValues.size()];
-					for (Object region : newValues) {
-						priorities[i] = ((Region) region).getPriority();
-						i++;
-					}
-					
-					// Sort the array in ascending order
-					java.util.Arrays.sort(priorities);
-					
-					// Apply the sorted priority
-					i = 0;
-				    EditingDomain editingDomain = getEditingDomain(object);
-					for (Object region : newValues) {
-						 editingDomain.getCommandStack().execute(SetCommand.create(editingDomain, getCommandOwner(region), RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY, priorities[i]));
-						i++;
-					}
-					
-					// not okay, as it removes all diagram information!
-					//super.setPropertyValue(object, new ArrayList<Object>());
-					
-					// Set the new elements
-					super.setPropertyValue(object, value);
-
-				}
-				
-		});
+		itemPropertyDescriptors.add(
+			new PrioritizedElementContainmentItemPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_State_embeddedRegions_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_State_embeddedRegions_feature", "_UI_State_type"),
+				RealtimestatechartPackage.Literals.STATE__EMBEDDED_REGIONS,
+				true,
+				false,
+				false,
+				null,
+				null,
+				null));
 	}
 
 	/**

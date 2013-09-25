@@ -1,14 +1,23 @@
 package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.parts;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 import org.eclipse.draw2d.Connection;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.figures.TransitionPriorityDecoration;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.TransitionEditPart;
 
 public class CustomTransitionEditPart extends TransitionEditPart {
@@ -30,6 +39,7 @@ public class CustomTransitionEditPart extends TransitionEditPart {
 		if (RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY
 				.equals(feature)) {
 
+			// Update priority visualization
 			updatePriority();
 
 		} else if (RealtimestatechartPackage.Literals.TRANSITION__SOURCE
@@ -44,10 +54,28 @@ public class CustomTransitionEditPart extends TransitionEditPart {
 	}
 
 	private void updatePriority() {
-		Transition transition = (Transition) getNotationView().getElement();
+		// Update visualiation
+		Transition transition = (Transition) resolveSemanticElement();
 		CustomTransitionFigure figure = ((CustomTransitionFigure) getFigure());
 		figure.setPriority(transition.getPriority());
 		figure.showPriority(transition.getSource() instanceof State);
+		
+
+		// Update order of outgoing transitions at source vertex
+		Vertex sourceVertex = transition.getSource();
+		List<Transition> transitions = new ArrayList<Transition>(sourceVertex.getOutgoingTransitions());
+		Collections.sort(transitions, new Comparator<Transition>() {
+			@Override
+			public int compare(Transition lhs, Transition rhs) {
+				return lhs.getPriority() - rhs.getPriority();
+			}
+		});
+		Command command = SetCommand.create(
+								getEditingDomain(),
+								sourceVertex,
+								RealtimestatechartPackage.Literals.VERTEX__OUTGOING_TRANSITIONS,
+								transitions);
+		getEditingDomain().getCommandStack().execute(command);
 	}
 
 	/**

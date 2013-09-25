@@ -28,6 +28,7 @@ import org.storydriven.core.provider.NamedElementItemProvider;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.PrioritizedElementContainmentItemPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex} object.
@@ -98,11 +99,11 @@ public class VertexItemProvider
 	 * This adds a property descriptor for the Outgoing Transitions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addOutgoingTransitionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new PrioritizedElementContainmentItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Vertex_outgoingTransitions_feature"),
