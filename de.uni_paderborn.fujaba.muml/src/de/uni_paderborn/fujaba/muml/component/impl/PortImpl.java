@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.NamedElement;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.Port;
@@ -115,7 +117,7 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 	 */
 	public Component getComponent() {
 		if (eContainerFeatureID() != ComponentPackage.PORT__COMPONENT) return null;
-		return (Component)eInternalContainer();
+		return (Component)eContainer();
 	}
 
 	/**

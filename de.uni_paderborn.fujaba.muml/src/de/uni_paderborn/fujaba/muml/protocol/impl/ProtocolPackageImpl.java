@@ -438,7 +438,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractCoordinationSpecificationEClass, AbstractCoordinationSpecification.class, "AbstractCoordinationSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractCoordinationSpecification_Roles(), this.getRole(), this.getRole_CoordinationProtocol(), "roles", null, 2, 2, AbstractCoordinationSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractCoordinationSpecification_Roles(), this.getRole(), this.getRole_CoordinationProtocol(), "roles", null, 1, 2, AbstractCoordinationSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAbstractCoordinationSpecification_RoleConnector(), this.getRoleConnector(), this.getRoleConnector_CoordinationProtocol(), "roleConnector", null, 1, 1, AbstractCoordinationSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coordinationProtocolEClass, CoordinationProtocol.class, "CoordinationProtocol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -489,7 +489,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (abstractCoordinationSpecificationEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniqueRoleNames RoleMessageTypesMustBeCompatible"
+			 "constraints", "UniqueRoleNames RoleMessageTypesMustBeCompatible SingleRoleImpliesMultiRole"
 		   });						
 		addAnnotation
 		  (coordinationProtocolEClass, 
@@ -524,7 +524,8 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "UniqueRoleNames", "self.roles->isUnique(name)",
-			 "RoleMessageTypesMustBeCompatible", "-- Roles should be compatibe w.r.t. message types\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes = role2.receiverMessageTypes\r\n)"
+			 "RoleMessageTypesMustBeCompatible", "-- Roles should be compatibe w.r.t. message types\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes = role2.receiverMessageTypes\r\n)",
+			 "SingleRoleImpliesMultiRole", "-- Only one role exists, so it must be a Multi Role.\r\nself.roles->size() = 1 implies self.roles->any(true).multiRole"
 		   });						
 		addAnnotation
 		  (coordinationProtocolEClass, 

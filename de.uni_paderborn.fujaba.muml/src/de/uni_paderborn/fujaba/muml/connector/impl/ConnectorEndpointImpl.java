@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.impl.CommentableElementImpl;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
@@ -48,7 +49,6 @@ public abstract class ConnectorEndpointImpl extends NamedElementImpl implements 
 	 * @ordered
 	 */
 	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
-
 	/**
 	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -58,7 +58,6 @@ public abstract class ConnectorEndpointImpl extends NamedElementImpl implements 
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' reference list.
 	 * <!-- begin-user-doc -->

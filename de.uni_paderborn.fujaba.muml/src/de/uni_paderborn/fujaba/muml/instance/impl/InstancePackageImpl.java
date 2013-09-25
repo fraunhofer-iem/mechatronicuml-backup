@@ -905,7 +905,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getDiscretePortInstance_ReceiverMessageBuffer(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if self.refinedRole.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tself.refinedRole.receiverMessageBuffer\r\nendif"
+			 "derivation", "if (not self.portType.oclIsUndefined()) and self.portType.oclIsKindOf(component::DiscretePort) then\n\tself.portType.oclAsType(component::DiscretePort).receiverMessageBuffer\nelse\n\tOrderedSet { }\nendif"
 		   });			
 		addAnnotation
 		  (getDiscretePortInstance_RefinedRole(), 

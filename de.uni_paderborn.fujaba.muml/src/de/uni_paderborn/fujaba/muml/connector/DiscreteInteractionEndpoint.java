@@ -8,6 +8,7 @@ package de.uni_paderborn.fujaba.muml.connector;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.storydriven.core.NamedElement;
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;

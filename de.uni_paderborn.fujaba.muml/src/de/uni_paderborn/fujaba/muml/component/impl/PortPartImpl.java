@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.storydriven.core.CorePackage;
+import org.storydriven.core.NamedElement;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
@@ -21,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorEndpointImpl;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -133,7 +136,7 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 	 */
 	public ComponentPart getComponentPart() {
 		if (eContainerFeatureID() != ComponentPackage.PORT_PART__COMPONENT_PART) return null;
-		return (ComponentPart)eInternalContainer();
+		return (ComponentPart)eContainer();
 	}
 
 	/**

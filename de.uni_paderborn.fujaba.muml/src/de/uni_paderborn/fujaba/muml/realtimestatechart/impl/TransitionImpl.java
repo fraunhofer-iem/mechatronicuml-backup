@@ -529,7 +529,7 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 */
 	public RealtimeStatechart getStatechart() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.TRANSITION__STATECHART) return null;
-		return (RealtimeStatechart)eInternalContainer();
+		return (RealtimeStatechart)eContainer();
 	}
 
 	/**

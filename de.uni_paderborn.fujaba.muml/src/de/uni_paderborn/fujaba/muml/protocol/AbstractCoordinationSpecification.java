@@ -27,8 +27,8 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueRoleNames RoleMessageTypesMustBeCompatible'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='self.roles->isUnique(name)' RoleMessageTypesMustBeCompatible='-- Roles should be compatibe w.r.t. message types\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes = role2.receiverMessageTypes\r\n)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueRoleNames RoleMessageTypesMustBeCompatible SingleRoleImpliesMultiRole'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='self.roles->isUnique(name)' RoleMessageTypesMustBeCompatible='-- Roles should be compatibe w.r.t. message types\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes = role2.receiverMessageTypes\r\n)' SingleRoleImpliesMultiRole='-- Only one role exists, so it must be a Multi Role.\r\nself.roles->size() = 1 implies self.roles->any(true).multiRole'"
  * @generated
  */
 public interface AbstractCoordinationSpecification extends NamedElement, ConstrainableElement, CommentableElement {
@@ -44,7 +44,7 @@ public interface AbstractCoordinationSpecification extends NamedElement, Constra
 	 * @return the value of the '<em>Roles</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification_Roles()
 	 * @see de.uni_paderborn.fujaba.muml.protocol.Role#getCoordinationProtocol
-	 * @model opposite="coordinationProtocol" containment="true" lower="2" upper="2"
+	 * @model opposite="coordinationProtocol" containment="true" required="true" upper="2"
 	 * @generated
 	 */
 	EList<Role> getRoles();
