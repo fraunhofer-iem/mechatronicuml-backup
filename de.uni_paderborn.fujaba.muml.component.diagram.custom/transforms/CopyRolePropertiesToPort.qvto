@@ -28,6 +28,15 @@ helper copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode 
 	-- get role
 	var theRole := thePort.refinedRole;
 	
+	-- check constraint
+	-- multi port => roleAndAdaptationBehavior must be set
+	assert fatal (
+		(theRole.cardinality.upperBound.value > 1)
+		implies
+		(not theRole.roleAndAdaptationBehavior.oclIsUndefined())
+	)
+	with log("Multi Role must have 'roleAndAdaptationBehavior' property set!");
+
 	-- copy cardinality (creating a new one, to force notification in the diagram)
 	thePort.cardinality := theRole.cardinality.map copyCardinality();
 	
@@ -67,7 +76,7 @@ helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort, inout th
 		} else {
 			-- multi port, RTSC is referenced by roleAndAdaptationBehavior
 			thePort.roleAndAdaptationBehavior := (theRole.roleAndAdaptationBehavior.deepclone()).oclAsType(RealtimeStatechart);
-			
+
 			-- contain copied RTSC in resource
 			storeRealtimeStatechart(thePort.roleAndAdaptationBehavior.oclAsType(RealtimeStatechart), theRootNode, thePort.component.oclAsType(AtomicComponent));
 			
