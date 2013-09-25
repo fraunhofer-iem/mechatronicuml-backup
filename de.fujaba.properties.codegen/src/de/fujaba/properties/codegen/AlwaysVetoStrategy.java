@@ -5,7 +5,7 @@ import org.eclipse.xpand2.output.VetoStrategy;
 
 public class AlwaysVetoStrategy implements VetoStrategy {
 
-	@Override
+	//@Override This override causes problems when deploying as plugin.
 	public boolean hasVeto(FileHandle handle) {
 		return true;
 	}
