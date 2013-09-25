@@ -63,10 +63,6 @@ public class ValidateMetamodelsTest {
 		projects.add(new String[] { "de.uni_paderborn.fujaba.muml", "/model/muml.ecore" });
 		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.actionlanguage",
 				"/model/actionlanguage.ecore" });
-		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.reconfiguration",
-				"/model/MumlReconfiguration.ecore" });
-		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.componentstorydiagram",
-				"/model/ComponentStoryDiagram.ecore" });
 
 		for (String[] path : projects) {
 			try {
