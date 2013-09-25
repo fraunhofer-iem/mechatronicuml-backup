@@ -30,7 +30,7 @@ helper modelElementCategoryKey(genDiagram : gmfgen::GenDiagram) : String {
 		}
 		
 		else{
-			return getReflectionPackageName(genDiagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgtype', '\\.messagetype') + ".category";
+			return getReflectionPackageName(genDiagram.topLevelNodes->first().getDomainMetaClass().genPackage).xpandReplaceAll('\\.model', '').xpandReplaceAll('\\.component', '\\.components').xpandReplaceAll('\\.msgtype', '\\.messagetype').xpandReplaceAll('\\.platforminstance', '\\.platform') + ".category";
 			}
 	};
 }
@@ -43,6 +43,9 @@ switch {
 		
 		case (genDiagram.domainDiagramElement.ecoreClass.name = 'ResourceInstanceRepository'){
 				return 'resource';
+		}
+		case (genDiagram.domainDiagramElement.ecoreClass.name = 'HWPlatformInstanceConfiguration'){
+				return 'platform';
 		}
 		
 		else{
