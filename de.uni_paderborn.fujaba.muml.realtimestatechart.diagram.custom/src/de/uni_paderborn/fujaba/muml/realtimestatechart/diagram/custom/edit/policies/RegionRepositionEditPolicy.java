@@ -13,6 +13,7 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
+import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.core.commands.AddCommand;
@@ -56,8 +57,32 @@ public class RegionRepositionEditPolicy extends
 		policy.setResizeDirections(0);
 		return policy;
 	}
+	
+	@Override
+	public void showTargetFeedback(Request request) {
+		// Make sure a Region is moved (and not a ConnectionPoint, see #723)
+		if (request instanceof ChangeBoundsRequest) {
+			List<?> parts = ((ChangeBoundsRequest) request).getEditParts();
+			for (Object part : parts) {
+				if (part instanceof GraphicalEditPart) {
+					Object model = ((GraphicalEditPart) part).resolveSemanticElement();
+					if (false == model instanceof Region) {
+						// Do not show the feedback
+						return;
+					}
+				}
+			}
+		}
+		
+		// Show the feedback
+		super.showTargetFeedback(request);
+	}
+
 
 	protected Command createMoveChildCommand(EditPart child, EditPart after) {
+		if (child == null || after == null) {
+			return null;
+		}
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost())
 				.getEditingDomain();
 		State element = (State) ((GraphicalEditPart) getHost())
