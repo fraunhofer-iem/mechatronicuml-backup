@@ -2,8 +2,12 @@ package de.uni_paderborn.fujaba.muml.common.edit.policies.ports;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
+import org.eclipse.gmf.runtime.notation.NotationPackage;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.statechart.StateEditPolicy;
@@ -49,8 +53,26 @@ public class ConnectionPointEditPolicy extends
 
 	protected CustomBorderItemLocator createCustomLocator(
 			BorderItemLocator original) {
-		return new CustomBorderItemLocator(original.getParentFigure(),
+		CustomBorderItemLocator locator = new CustomBorderItemLocator(original.getParentFigure(),
 				original.getPreferredSideOfParent());
+		
+		// Copying the Constraint is not possible, because BorderItemLocator.getConstraint() is protected.
+		// So we recalculate it.
+		// Copied from AbstractBorderItemEditPart.refreshBounds()
+		GraphicalEditPart host = (GraphicalEditPart) getHost();
+		int x = ((Integer) host.getStructuralFeatureValue(NotationPackage.eINSTANCE
+			.getLocation_X())).intValue();
+		int y = ((Integer) host.getStructuralFeatureValue(NotationPackage.eINSTANCE
+			.getLocation_Y())).intValue();
+		Point loc = new Point(x, y);
+		int width = ((Integer) host.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		int height = ((Integer) host.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		Dimension size = new Dimension(width, height);
+		locator.setConstraint(new Rectangle(
+			loc, size));
+		
+		// Return the locator
+		return locator;
 	}
 
 	@Override
