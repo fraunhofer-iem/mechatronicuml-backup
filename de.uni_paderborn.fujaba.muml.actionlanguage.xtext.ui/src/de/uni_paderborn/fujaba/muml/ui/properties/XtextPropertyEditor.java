@@ -115,7 +115,7 @@ public class XtextPropertyEditor extends
 		}
 	}
 
-	private synchronized void save(String text) throws CoreException {
+	private void save(String text) throws CoreException {
 		saving = true;
 		Expression expression = parseExpression(text);
 		setSingleValue(expression);
