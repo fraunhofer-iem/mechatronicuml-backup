@@ -247,7 +247,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID),
+						.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID),
 				false, false, false, false);
 		
 		createCompartment(

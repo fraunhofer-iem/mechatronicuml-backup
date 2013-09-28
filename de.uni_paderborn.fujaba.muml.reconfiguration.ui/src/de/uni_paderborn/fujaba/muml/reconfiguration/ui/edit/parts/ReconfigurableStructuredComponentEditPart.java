@@ -274,6 +274,9 @@ public class ReconfigurableStructuredComponentEditPart extends
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) {
 			return getPrimaryShape().getFigureChildren();
 		}
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) {
+			return getPrimaryShape().getFigureChildren();
+		}
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
