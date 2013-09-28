@@ -156,7 +156,13 @@ public class XtextPropertyEditor extends
 	protected void valueChanged() {
 		super.valueChanged();
 		if (!saving) {
-			String text = LanguageResource.serializeEObjectSafe((EObject) getSingleValue(), element);
+			
+			String text = null;
+			try {
+				text = LanguageResource.serializeEObjectSafe((EObject) getSingleValue(), element);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			if (text == null) {
 				text = "";
 			}
