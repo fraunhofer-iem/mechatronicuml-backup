@@ -66,30 +66,37 @@ public class XtextPropertyEditor extends
 
 	@Override
 	public void createControls(Composite parent, FormToolkit toolkit) {
-		// Create label
-		Label label = toolkit.createLabel(parent, getLabelText());
+
+		// Outer container
+		Composite container = toolkit.createComposite(parent);
 		if (parent.getLayout() instanceof GridLayout) {
-			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
+			container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
+					true, 2, 1));
 		}
+		container.setLayout(new GridLayout(1, false));
+		
+		// Create label
+		Label label = toolkit.createLabel(container, getLabelText());
+		label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 
 		// Create container with border
-		Composite container = toolkit.createComposite(parent, SWT.BORDER);
+		Composite innerContainer = toolkit.createComposite(container, SWT.BORDER);
 		if (parent.getLayout() instanceof GridLayout) {
 			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 			gridData.minimumWidth = 400;
 			gridData.minimumHeight = 100;
-			container.setLayoutData(gridData);
+			innerContainer.setLayoutData(gridData);
 		}
 		GridLayout gridLayout = new GridLayout(1, false);
 		gridLayout.horizontalSpacing = gridLayout.verticalSpacing = 0;
 		gridLayout.marginWidth = gridLayout.marginHeight = 0;
-		container.setLayout(gridLayout);
+		innerContainer.setLayout(gridLayout);
 
 		// Create embedded xtext editor
 		Injector injector = ActionLanguageActivator.getInstance().getInjector(
 				languageName);
 		LanguageResource.setInjector(injector);
-		embeddedXtextEditor = new EmbeddedXtextEditor(container, injector);
+		embeddedXtextEditor = new EmbeddedXtextEditor(innerContainer, injector);
 		saveModelListener = new SaveModelListener();
 		embeddedXtextEditor.getDocument().addModelListener(saveModelListener);
 		embeddedXtextEditor.getViewer().getTextWidget().addFocusListener(new FocusListener() {
