@@ -143,7 +143,14 @@ public class ReconfigurationVisualIDRegistry {
 					.getReconfigurationExecutionPort().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID;
-			}
+			}	
+			
+			if (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+					.getRuleBasedReconfigurationController().isSuperTypeOf(
+							domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID;
+			}	
+			
 			
 			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getDiscretePort().isSuperTypeOf(domainElement.eClass())) {
@@ -153,7 +160,7 @@ public class ReconfigurationVisualIDRegistry {
 					.getContinuousPort().isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID;
 			}
-			
+
 			break;
 
 		}

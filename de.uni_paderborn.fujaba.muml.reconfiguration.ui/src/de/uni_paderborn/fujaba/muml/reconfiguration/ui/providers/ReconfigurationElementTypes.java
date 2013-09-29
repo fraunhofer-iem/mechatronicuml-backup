@@ -48,6 +48,7 @@ public class ReconfigurationElementTypes {
 	public static final IElementType ReconfigurableStructuredComponent_2076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableStructuredComponent_2076"); //$NON-NLS-1$
 	public static final IElementType ReconfigurationMessagePort_3076= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ui.createReconfigurationMessagePort_3076"); //$NON-NLS-1$
 	public static final IElementType ReconfigurationExecutionPort_3077= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ui.createReconfigurationExecutionPort_3077");
+	public static final IElementType RuleBasedReconfigurationControllerEditPart_7076= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ui.createRuleBasedReconfigurationControllerEditPart_7076");
 	
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
@@ -97,6 +98,10 @@ public class ReconfigurationElementTypes {
 					ReconfigurationExecutionPort_3077,
 					de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 							.getReconfigurationExecutionPort());
+			elements.put(
+					RuleBasedReconfigurationControllerEditPart_7076,
+					de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+							.getRuleBasedReconfigurationController());
 
 		}
 		return (ENamedElement) elements.get(type);
@@ -118,6 +123,7 @@ public class ReconfigurationElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ReconfigurableStructuredComponent_2076);
 			KNOWN_ELEMENT_TYPES.add(ReconfigurationMessagePort_3076);
 			KNOWN_ELEMENT_TYPES.add(ReconfigurationExecutionPort_3077);
+			KNOWN_ELEMENT_TYPES.add(RuleBasedReconfigurationControllerEditPart_7076);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -134,6 +140,8 @@ public class ReconfigurationElementTypes {
 			return ReconfigurationMessagePort_3076;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
 			return ReconfigurationExecutionPort_3077;
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID:
+			return RuleBasedReconfigurationControllerEditPart_7076;
 		}
 		
 		return null;

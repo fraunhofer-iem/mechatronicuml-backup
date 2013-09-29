@@ -19,12 +19,12 @@ import de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStruct
 /**
  * @generated
  */
-public class ReconfigurableStructuredComponentCompartmentEditPart extends
+public class RuleBasedReconfigurationControllerEditPart extends
 ShapeCompartmentEditPart {
 
 	public static final int VISUAL_ID = 7076;
 
-	public ReconfigurableStructuredComponentCompartmentEditPart(View view) {
+	public RuleBasedReconfigurationControllerEditPart(View view) {
 		super(view);
 	}
 
@@ -73,7 +73,7 @@ ShapeCompartmentEditPart {
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ReconfigurableStructuredComponentCompartmentCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStructuredComponentComponentCompartmentCanonicalEditPolicy());
 	}
 
 	/**

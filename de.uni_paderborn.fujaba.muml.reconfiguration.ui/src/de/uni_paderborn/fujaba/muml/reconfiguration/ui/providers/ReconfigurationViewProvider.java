@@ -99,6 +99,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID:
 					// case
 					// de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 					// case
@@ -125,6 +126,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID == visualID
 				|| de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID == visualID
+				|| de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID == visualID
 		// ||
 		// de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID
 		// == visualID
@@ -191,6 +193,9 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
 			return createReconfigurationExecutionPort_3077(domainElement,
 					containerView, index, persisted, preferencesHint);
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID:
+			return createRuleBasedReconfigurationController_7076(domainElement,
+					containerView, index, persisted, preferencesHint);
 
 		default:
 			return super.createNode(semanticAdapter, containerView,
@@ -244,12 +249,12 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));
 		// XXX .getType into ReconfigurationVisualIDRegistry
-		createCompartment(
-				node,
-				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID),
-				false, false, false, false);
-		
+		// createCompartment(
+		// node,
+		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+		// .getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ControllerEditPart.VISUAL_ID),
+		// false, false, false, false);
+
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
@@ -316,7 +321,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		location5025.setY(5);
 		return node;
 	}
-	
+
 	public Node createReconfigurationExecutionPort_3077(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -374,6 +379,18 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		location5025.setX(0);
 		location5025.setY(5);
 		return node;
+	}
+
+	public Node createRuleBasedReconfigurationController_7076(
+			EObject domainElement, View containerView, int index,
+			boolean persisted, PreferencesHint preferencesHint) {
+
+		Node rv = NotationFactory.eINSTANCE.createBasicCompartment();
+
+		rv.setType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, rv, ViewUtil.APPEND, true);
+		return rv;
 	}
 
 	// copied from

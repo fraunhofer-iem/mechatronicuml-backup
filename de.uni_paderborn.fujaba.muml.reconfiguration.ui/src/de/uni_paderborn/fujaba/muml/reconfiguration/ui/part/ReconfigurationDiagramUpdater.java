@@ -146,6 +146,16 @@ public class ReconfigurationDiagramUpdater {
 						childElement, visualID));
 				continue;
 			}
+			
+		}
+		if(modelElement.getController()!=null){
+			de.uni_paderborn.fujaba.muml.reconfiguration.Controller childElement = (de.uni_paderborn.fujaba.muml.reconfiguration.Controller) modelElement.getController();
+			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+						childElement, visualID));
+			}
 		}
 
 		return result;
