@@ -271,6 +271,8 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			RowLayout layout = new RowLayout(orientation);
 			layout.marginHeight = 10;
 			layout.spacing = 40;
+			layout.fill = true;
+			layout.pack = false;
 			return layout;
 		}
 		return null;
@@ -290,7 +292,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	public void setTitle(String title) {
 		this.title = title;
-		if (section != null) {
+		if (section != null && !section.isDisposed()) {
 			section.setText(title);
 		}
 	}
