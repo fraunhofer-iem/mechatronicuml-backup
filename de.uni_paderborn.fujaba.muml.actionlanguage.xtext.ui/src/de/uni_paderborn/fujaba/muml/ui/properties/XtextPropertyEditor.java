@@ -81,12 +81,11 @@ public class XtextPropertyEditor extends
 
 		// Create container with border
 		Composite innerContainer = toolkit.createComposite(container, SWT.BORDER);
-		if (parent.getLayout() instanceof GridLayout) {
-			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
-			gridData.minimumWidth = 400;
-			gridData.minimumHeight = 100;
-			innerContainer.setLayoutData(gridData);
-		}
+		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+		gridData.minimumWidth = 200;
+		gridData.minimumHeight = 100;
+		innerContainer.setLayoutData(gridData);
+		
 		GridLayout gridLayout = new GridLayout(1, false);
 		gridLayout.horizontalSpacing = gridLayout.verticalSpacing = 0;
 		gridLayout.marginWidth = gridLayout.marginHeight = 0;
