@@ -71,9 +71,9 @@ ShapeCompartmentEditPart {
 						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStructuredComponentComponentCompartmentCanonicalEditPolicy());
+//		installEditPolicy(
+//				EditPolicyRoles.CANONICAL_ROLE,
+//				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStructuredComponentComponentCompartmentCanonicalEditPolicy());
 	}
 
 	/**

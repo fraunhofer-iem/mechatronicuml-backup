@@ -33,7 +33,7 @@ public class ReconfigurationDiagramUpdater {
 			return getModelElementCategory_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
 			return getAtomicComponent_2006SemanticChildren(view);
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID:
 			return getReconfigurableStructuredComponent_2076SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
 			return getComponentPart_3012SemanticChildren(view);

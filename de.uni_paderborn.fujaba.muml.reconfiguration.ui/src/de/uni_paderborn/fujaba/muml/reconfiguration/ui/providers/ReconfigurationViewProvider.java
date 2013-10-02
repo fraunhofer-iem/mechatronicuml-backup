@@ -386,10 +386,10 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 			boolean persisted, PreferencesHint preferencesHint) {
 
 		Node rv = NotationFactory.eINSTANCE.createBasicCompartment();
-
+		rv.setElement(domainElement);
 		rv.setType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, rv, ViewUtil.APPEND, true);
+		ViewUtil.insertChildView(containerView, rv, 1, true);
 		return rv;
 	}
 

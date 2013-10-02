@@ -160,6 +160,14 @@ public class ReconfigurableStructuredComponentEditPart extends
 					.getFigure());
 			return true;
 		}
+		
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart) {
+			IFigure pane = getPrimaryShape().getFigureChildren();
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
+			pane.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
@@ -181,7 +189,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 		
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
+					PositionConstants.WEST);
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) childEditPart)
@@ -191,7 +199,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 		
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
+					PositionConstants.EAST);
 			getBorderedFigure()
 					.getBorderItemContainer()
 					.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart) childEditPart)
