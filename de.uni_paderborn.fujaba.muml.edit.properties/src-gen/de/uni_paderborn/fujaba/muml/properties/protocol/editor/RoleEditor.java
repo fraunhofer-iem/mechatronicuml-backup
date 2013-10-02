@@ -26,9 +26,6 @@ public class RoleEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addRoleCoordinationProtocolEditor(null, true);
 		}
@@ -58,11 +55,6 @@ public class RoleEditor
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addDiscreteInteractionEndpointReceiverMessageBufferEditor(
-					"de.fujaba.properties.category.Lists", true);
-		}
-
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addConnectorEndpointConnectorsEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}
 
@@ -213,25 +205,6 @@ public class RoleEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConnectorEndpointConnectorsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConnectorEndpointConnectorsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpoint_Connectors());
 
 	}
 	/**

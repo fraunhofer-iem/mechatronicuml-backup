@@ -61,10 +61,10 @@ public class TimeValueEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueUnitEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getTimeValue_Unit(), false);
+						.getTimeValue_Unit());
 
 	}
 

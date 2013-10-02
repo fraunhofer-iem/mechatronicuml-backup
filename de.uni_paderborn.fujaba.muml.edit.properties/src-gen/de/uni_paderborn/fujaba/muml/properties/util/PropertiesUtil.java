@@ -48,6 +48,9 @@ public class PropertiesUtil {
 			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
 		factories
+				.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
+
+		factories
 				.add(new de.uni_paderborn.fujaba.muml.types.provider.TypesItemProviderAdapterFactory());
 
 		factories
@@ -55,9 +58,6 @@ public class PropertiesUtil {
 
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.constraint.provider.ConstraintItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
 
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());

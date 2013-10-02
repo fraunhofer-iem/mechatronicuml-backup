@@ -38,36 +38,6 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.ArrayDataTypeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.types.ArrayDataType">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.PrimitiveDataTypeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.types.PrimitiveDataType">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.RangedPrimitiveDataTypeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.msgtype.MessageType">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeRepositoryEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.constraint.editor.TextualConstraintEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.constraint.TextualConstraint">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.ContinuousPortEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.component.ContinuousPort">
        </propertyEditor>
@@ -115,6 +85,36 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortPartEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.component.PortPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.ArrayDataTypeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.types.ArrayDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.PrimitiveDataTypeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.types.PrimitiveDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.types.editor.RangedPrimitiveDataTypeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.types.RangedPrimitiveDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.msgtype.MessageType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeRepositoryEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.msgtype.MessageTypeRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.constraint.editor.TextualConstraintEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.constraint.TextualConstraint">
        </propertyEditor>
     
        <propertyEditor

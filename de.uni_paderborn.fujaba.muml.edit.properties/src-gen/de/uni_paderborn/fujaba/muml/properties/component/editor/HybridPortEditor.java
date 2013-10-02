@@ -23,9 +23,7 @@ public class HybridPortEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addHybridPortSamplingIntervalEditor(null, true);
-		}
+		addHybridPortSamplingIntervalEditor(null, false);
 
 	}
 
@@ -42,7 +40,7 @@ public class HybridPortEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createHybridPortSamplingIntervalEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getHybridPort_SamplingInterval());

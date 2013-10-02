@@ -23,16 +23,12 @@ public abstract class DirectedTypedPortEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addDirectedTypedPortKindEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDirectedTypedPortOptionalEditor(
-					"de.fujaba.properties.category.Booleans", true);
+			addDirectedTypedPortOptionalEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {

@@ -31,10 +31,6 @@ public abstract class ComponentEditor
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addComponentComponentTypeEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addNamedElementNameEditor(null, true);
 		}
 
@@ -59,25 +55,6 @@ public abstract class ComponentEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponent_Ports());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addComponentComponentTypeEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createComponentComponentTypeEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentTypeEditor() {
-		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponent_ComponentType());
 
 	}
 	/**
