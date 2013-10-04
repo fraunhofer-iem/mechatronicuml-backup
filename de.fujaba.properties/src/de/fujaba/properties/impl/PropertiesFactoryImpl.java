@@ -2,12 +2,18 @@
  */
 package de.fujaba.properties.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
 import de.fujaba.properties.CheckboxPropertyEditor;
 import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
 import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
-import de.fujaba.properties.NoPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.Plugin;
@@ -21,16 +27,7 @@ import de.fujaba.properties.RadioPropertyEditor;
 import de.fujaba.properties.Reconciler;
 import de.fujaba.properties.SpinnerPropertyEditor;
 import de.fujaba.properties.TextPropertyEditor;
-
 import de.fujaba.properties.TransformationPosition;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,7 +82,6 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.CLASS: return createClass();
 			case PropertiesPackage.PROPERTY_CATEGORY: return createPropertyCategory();
 			case PropertiesPackage.PROPERTY: return createProperty();
-			case PropertiesPackage.NO_PROPERTY_EDITOR: return createNoPropertyEditor();
 			case PropertiesPackage.TEXT_PROPERTY_EDITOR: return createTextPropertyEditor();
 			case PropertiesPackage.SPINNER_PROPERTY_EDITOR: return createSpinnerPropertyEditor();
 			case PropertiesPackage.COMBO_BOX_PROPERTY_EDITOR: return createComboBoxPropertyEditor();
@@ -288,16 +284,6 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public ObjectPropertyEditor createObjectPropertyEditor() {
 		ObjectPropertyEditorImpl objectPropertyEditor = new ObjectPropertyEditorImpl();
 		return objectPropertyEditor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NoPropertyEditor createNoPropertyEditor() {
-		NoPropertyEditorImpl noPropertyEditor = new NoPropertyEditorImpl();
-		return noPropertyEditor;
 	}
 
 	/**

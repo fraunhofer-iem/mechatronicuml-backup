@@ -443,29 +443,6 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.NoPropertyEditor} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NoPropertyEditorItemProvider noPropertyEditorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.fujaba.properties.NoPropertyEditor}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createNoPropertyEditorAdapter() {
-		if (noPropertyEditorItemProvider == null) {
-			noPropertyEditorItemProvider = new NoPropertyEditorItemProvider(this);
-		}
-
-		return noPropertyEditorItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.CustomPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -619,7 +596,6 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (classItemProvider != null) classItemProvider.dispose();
 		if (propertyCategoryItemProvider != null) propertyCategoryItemProvider.dispose();
 		if (propertyItemProvider != null) propertyItemProvider.dispose();
-		if (noPropertyEditorItemProvider != null) noPropertyEditorItemProvider.dispose();
 		if (textPropertyEditorItemProvider != null) textPropertyEditorItemProvider.dispose();
 		if (spinnerPropertyEditorItemProvider != null) spinnerPropertyEditorItemProvider.dispose();
 		if (comboBoxPropertyEditorItemProvider != null) comboBoxPropertyEditorItemProvider.dispose();

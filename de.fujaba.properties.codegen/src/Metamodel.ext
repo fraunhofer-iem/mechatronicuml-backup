@@ -90,11 +90,4 @@ Set[Property] genOverriddenProperties(Class this) :
 
 	
 Boolean shouldGenerateEditor(Property this) :
-	editor != null && editor.shouldGenerate();
-
-Boolean shouldGenerate(PropertyEditor this) :
-	true;
-	
-Boolean shouldGenerate(NoPropertyEditor this) :
-	false;
-	
+	editor != null;

@@ -2,10 +2,10 @@
  */
 package de.fujaba.properties.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.PropertiesPackage;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

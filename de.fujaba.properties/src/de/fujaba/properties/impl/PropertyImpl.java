@@ -2,31 +2,26 @@
  */
 package de.fujaba.properties.impl;
 
+import java.util.Collection;
+
+import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.Property;
 import de.fujaba.properties.PropertyCategory;
 import de.fujaba.properties.PropertyEditor;
 import de.fujaba.properties.PropertyFilter;
 import de.fujaba.properties.PropertyTab;
-
-import java.util.Collection;
-
-import org.eclipse.emf.codegen.ecore.genmodel.GenFeature;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getTooltip <em>Tooltip</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getClazz <em>Clazz</em>}</li>
  *   <li>{@link de.fujaba.properties.impl.PropertyImpl#getCategory <em>Category</em>}</li>
+ *   <li>{@link de.fujaba.properties.impl.PropertyImpl#isReconcile <em>Reconcile</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,6 +113,26 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * @ordered
 	 */
 	protected PropertyCategory category;
+
+	/**
+	 * The default value of the '{@link #isReconcile() <em>Reconcile</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isReconcile()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean RECONCILE_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isReconcile() <em>Reconcile</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isReconcile()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean reconcile = RECONCILE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -395,6 +411,27 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isReconcile() {
+		return reconcile;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReconcile(boolean newReconcile) {
+		boolean oldReconcile = reconcile;
+		reconcile = newReconcile;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.PROPERTY__RECONCILE, oldReconcile, reconcile));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -473,6 +510,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				if (resolve) return getCategory();
 				return basicGetCategory();
+			case PropertiesPackage.PROPERTY__RECONCILE:
+				return isReconcile();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -508,6 +547,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				setCategory((PropertyCategory)newValue);
 				return;
+			case PropertiesPackage.PROPERTY__RECONCILE:
+				setReconcile((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -541,6 +583,9 @@ public class PropertyImpl extends EObjectImpl implements Property {
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				setCategory((PropertyCategory)null);
 				return;
+			case PropertiesPackage.PROPERTY__RECONCILE:
+				setReconcile(RECONCILE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -567,6 +612,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 				return getClazz() != null;
 			case PropertiesPackage.PROPERTY__CATEGORY:
 				return category != null;
+			case PropertiesPackage.PROPERTY__RECONCILE:
+				return reconcile != RECONCILE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -583,6 +630,8 @@ public class PropertyImpl extends EObjectImpl implements Property {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (tooltip: ");
 		result.append(tooltip);
+		result.append(", reconcile: ");
+		result.append(reconcile);
 		result.append(')');
 		return result.toString();
 	}

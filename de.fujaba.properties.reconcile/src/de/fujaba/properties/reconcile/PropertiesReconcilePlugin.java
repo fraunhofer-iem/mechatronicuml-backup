@@ -62,7 +62,7 @@ public class PropertiesReconcilePlugin extends AbstractUIPlugin {
 	}
 
 	public TransformationExecutor getDefaultTransformationExecutor() {
-		return getDefaultTransformationExecutor(false);
+		return getDefaultTransformationExecutor(true);
 	}
 
 	public TransformationExecutor getDefaultTransformationExecutor(

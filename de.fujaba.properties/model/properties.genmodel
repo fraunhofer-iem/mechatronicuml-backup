@@ -35,7 +35,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//CustomTransformation/position"/>
     </genClasses>
     <genClasses ecoreClass="properties.ecore#//Plugin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Plugin/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Plugin/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Plugin/vendor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Plugin/version"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Plugin/requiredBundles"/>
     </genClasses>
@@ -73,11 +75,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Property/tooltip"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//Property/clazz"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference properties.ecore#//Property/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//Property/reconcile"/>
     </genClasses>
     <genClasses image="false" ecoreClass="properties.ecore#//PropertyEditor">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference properties.ecore#//PropertyEditor/property"/>
     </genClasses>
-    <genClasses ecoreClass="properties.ecore#//NoPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//TextPropertyEditor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//TextPropertyEditor/multiLine"/>
     </genClasses>

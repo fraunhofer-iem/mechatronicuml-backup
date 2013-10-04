@@ -142,12 +142,14 @@
         eOpposite="#//Class/properties"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="category" eType="#//PropertyCategory"
         eOpposite="#//PropertyCategory/properties"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconcile" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+        defaultValueLiteral="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PropertyEditor" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="property" lowerBound="1"
         eType="#//Property" eOpposite="#//Property/editor"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NoPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="TextPropertyEditor" eSuperTypes="#//PropertyEditor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiLine" lowerBound="1"
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>

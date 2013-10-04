@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.fujaba.properties.Property#getTooltip <em>Tooltip</em>}</li>
  *   <li>{@link de.fujaba.properties.Property#getClazz <em>Clazz</em>}</li>
  *   <li>{@link de.fujaba.properties.Property#getCategory <em>Category</em>}</li>
+ *   <li>{@link de.fujaba.properties.Property#isReconcile <em>Reconcile</em>}</li>
  * </ul>
  * </p>
  *
@@ -208,5 +209,32 @@ public interface Property extends EObject {
 	 * @generated
 	 */
 	void setCategory(PropertyCategory value);
+
+	/**
+	 * Returns the value of the '<em><b>Reconcile</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Reconcile</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reconcile</em>' attribute.
+	 * @see #setReconcile(boolean)
+	 * @see de.fujaba.properties.PropertiesPackage#getProperty_Reconcile()
+	 * @model default="true" required="true"
+	 * @generated
+	 */
+	boolean isReconcile();
+
+	/**
+	 * Sets the value of the '{@link de.fujaba.properties.Property#isReconcile <em>Reconcile</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reconcile</em>' attribute.
+	 * @see #isReconcile()
+	 * @generated
+	 */
+	void setReconcile(boolean value);
 
 } // Property

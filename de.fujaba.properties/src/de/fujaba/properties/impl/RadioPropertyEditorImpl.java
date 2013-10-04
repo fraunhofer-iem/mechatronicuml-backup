@@ -2,10 +2,10 @@
  */
 package de.fujaba.properties.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.fujaba.properties.PropertiesPackage;
 import de.fujaba.properties.RadioPropertyEditor;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

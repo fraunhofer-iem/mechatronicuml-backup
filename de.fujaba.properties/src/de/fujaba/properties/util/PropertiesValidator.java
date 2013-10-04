@@ -19,7 +19,6 @@ import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
 import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
-import de.fujaba.properties.NoPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.Plugin;
@@ -128,8 +127,6 @@ public class PropertiesValidator extends EObjectValidator {
 				return validateProperty((Property)value, diagnostics, context);
 			case PropertiesPackage.PROPERTY_EDITOR:
 				return validatePropertyEditor((PropertyEditor)value, diagnostics, context);
-			case PropertiesPackage.NO_PROPERTY_EDITOR:
-				return validateNoPropertyEditor((NoPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.TEXT_PROPERTY_EDITOR:
 				return validateTextPropertyEditor((TextPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.SPINNER_PROPERTY_EDITOR:
@@ -515,15 +512,6 @@ public class PropertiesValidator extends EObjectValidator {
 	 */
 	public boolean validateObjectPropertyEditor(ObjectPropertyEditor objectPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(objectPropertyEditor, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateNoPropertyEditor(NoPropertyEditor noPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(noPropertyEditor, diagnostics, context);
 	}
 
 	/**

@@ -8,12 +8,17 @@ main() {
 	properties.rootObjects()[PropertyGenerator]->map generator();
 }
 
-
 mapping inout PropertyGenerator::generator() {
 	self.plugin.requiredBundles += "de.uni_paderborn.fujaba.muml.common";
 	
 	self.packages.classes.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'NaturalNumber')->forEach(prop) {
-		prop->map createNaturalNumberEditor();
+		if (prop.editor.oclIsUndefined() or prop.editor.oclAsType(CustomPropertyEditor).fullyQualifiedClassName <> 'de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor') then {
+			prop->map createNaturalNumberEditor();
+			-- make sure the default reconciler does not change this back to ObjectPropertyEditor
+			-- normally no problem (because we would change it back), but the editor would become dirty
+			-- without an understandable reason for the user
+			prop.reconcile := false;
+		} endif;
 	}
 }
 

@@ -2,31 +2,25 @@
  */
 package de.fujaba.properties.impl;
 
-import de.fujaba.properties.PropertiesPackage;
-import de.fujaba.properties.Property;
-import de.fujaba.properties.PropertyCategory;
-
 import java.util.Collection;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenClass;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.Property;
+import de.fujaba.properties.PropertyCategory;
 
 /**
  * <!-- begin-user-doc -->

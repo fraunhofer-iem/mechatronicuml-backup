@@ -2,20 +2,17 @@
  */
 package de.fujaba.properties.impl;
 
-import de.fujaba.properties.PropertiesPackage;
-import de.fujaba.properties.PropertyTab;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.WrappedException;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
+import de.fujaba.properties.PropertiesPackage;
+import de.fujaba.properties.PropertyTab;
 
 /**
  * <!-- begin-user-doc -->
