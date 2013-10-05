@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.instance.editor;
  */
 public class DiscreteSinglePortInstanceEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteSingleInteractionEndpointInstanceEditor {
+			de.uni_paderborn.fujaba.muml.properties.instance.editor.DiscretePortInstanceEditor {
 
 	/**
 	 * @generated
@@ -24,7 +24,17 @@ public class DiscreteSinglePortInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addPortInstanceComponentInstanceEditor(null, true);
+			addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor(
+					null, true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDiscreteSingleInteractionEndpointInstanceNextEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addDiscreteSingleInteractionEndpointInstancePreviousEditor(null,
+					true);
 		}
 
 	}
@@ -32,20 +42,63 @@ public class DiscreteSinglePortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addPortInstanceComponentInstanceEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createPortInstanceComponentInstanceEditor(), front);
+	protected void addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor(
+			String category, boolean front) {
+		addEditorToCategory(
+				category,
+				createDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPortInstanceComponentInstanceEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor() {
 		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getPortInstance_ComponentInstance());
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addDiscreteSingleInteractionEndpointInstanceNextEditor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createDiscreteSingleInteractionEndpointInstanceNextEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstanceNextEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getDiscreteSingleInteractionEndpointInstance_Next());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addDiscreteSingleInteractionEndpointInstancePreviousEditor(
+			String category, boolean front) {
+		addEditorToCategory(
+				category,
+				createDiscreteSingleInteractionEndpointInstancePreviousEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstancePreviousEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getDiscreteSingleInteractionEndpointInstance_Previous());
 
 	}
 

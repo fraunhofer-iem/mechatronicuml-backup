@@ -23,9 +23,7 @@ public class ClockConstraintEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addClockConstraintBoundEditor(null, true);
-		}
+		addClockConstraintBoundEditor(null, false);
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addClockConstraintClockEditor(null, true);
@@ -48,7 +46,7 @@ public class ClockConstraintEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createClockConstraintBoundEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getClockConstraint_Bound());

@@ -23,8 +23,12 @@ public abstract class ConstrainableElementEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "constraint".equals(getTab())) {
-			addConstrainableElementConstraintEditor(null, true);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConstrainableElementConstraintEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 	}

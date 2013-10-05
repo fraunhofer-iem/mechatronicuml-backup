@@ -27,9 +27,7 @@ public class ParameterBindingEditor
 			addParameterBindingParameterEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addParameterBindingValueEditor(null, true);
-		}
+		addParameterBindingValueEditor(null, false);
 
 	}
 
@@ -64,7 +62,7 @@ public class ParameterBindingEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingValueEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getParameterBinding_Value());

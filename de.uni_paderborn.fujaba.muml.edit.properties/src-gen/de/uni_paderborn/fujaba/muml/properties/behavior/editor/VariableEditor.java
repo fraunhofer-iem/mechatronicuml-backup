@@ -23,9 +23,7 @@ public class VariableEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addVariableInitializeExpressionEditor(null, true);
-		}
+		addVariableInitializeExpressionEditor(null, false);
 
 		if (getTab() == null || "property.tab.comment".equals(getTab())) {
 			addCommentableElementCommentEditor(null, true);
@@ -46,7 +44,7 @@ public class VariableEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createVariableInitializeExpressionEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getVariable_InitializeExpression());

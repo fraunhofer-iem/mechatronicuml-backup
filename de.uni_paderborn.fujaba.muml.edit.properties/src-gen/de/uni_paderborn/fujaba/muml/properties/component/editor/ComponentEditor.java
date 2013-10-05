@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public abstract class ComponentEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -26,16 +26,24 @@ public abstract class ComponentEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addComponentPortsEditor("de.fujaba.properties.category.Lists", true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addComponentComponentTypeEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addNamedElementNameEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.comment".equals(getTab())) {
-			addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConstrainableElementConstraintEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 	}
@@ -60,6 +68,25 @@ public abstract class ComponentEditor
 	/**
 	 * @generated
 	 */
+	protected void addComponentComponentTypeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComponentComponentTypeEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentTypeEditor() {
+		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getComponent_ComponentType());
+
+	}
+	/**
+	 * @generated
+	 */
 	protected void addNamedElementNameEditor(String category, boolean front) {
 		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
@@ -77,20 +104,20 @@ public abstract class ComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementCommentEditor(String category,
+	protected void addConstrainableElementConstraintEditor(String category,
 			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
+		addEditorToCategory(category,
+				createConstrainableElementConstraintEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
 
 	}
 

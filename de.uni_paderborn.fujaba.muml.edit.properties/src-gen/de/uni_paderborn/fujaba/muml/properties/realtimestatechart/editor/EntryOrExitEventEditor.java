@@ -31,9 +31,7 @@ public abstract class EntryOrExitEventEditor
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addEntryOrExitEventActionEditor(null, true);
-		}
+		addEntryOrExitEventActionEditor(null, false);
 
 	}
 
@@ -69,7 +67,7 @@ public abstract class EntryOrExitEventEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createEntryOrExitEventActionEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getEntryOrExitEvent_Action());

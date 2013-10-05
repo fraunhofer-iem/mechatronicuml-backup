@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
  */
 public class OperationEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -40,8 +40,8 @@ public class OperationEditor
 					true);
 		}
 
-		if (getTab() == null || "property.tab.comment".equals(getTab())) {
-			addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -76,7 +76,7 @@ public class OperationEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOperationImplementationsEditor() {
-		return new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getOperation_Implementations());
@@ -102,20 +102,18 @@ public class OperationEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+						.getNamedElement_Name(), false);
 
 	}
 

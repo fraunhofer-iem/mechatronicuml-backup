@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.protocol.editor;
  */
 public class RoleEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.DiscreteInteractionEndpointEditor {
 
 	/**
 	 * @generated
@@ -23,47 +23,8 @@ public class RoleEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addRoleCoordinationProtocolEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointSenderMessageTypesEditor(
-					"de.fujaba.properties.category.Lists", true);
-		}
-
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageTypesEditor(
-					"de.fujaba.properties.category.Lists", true);
-		}
-
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointAdaptationBehaviorEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor(null,
-					true);
-		}
-
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointCardinalityEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageBufferEditor(
-					"de.fujaba.properties.category.Lists", true);
-		}
-
-		if (getTab() == null || "constraint".equals(getTab())) {
-			addConstrainableElementConstraintEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addBehavioralElementBehaviorEditor(null, true);
 		}
 
 	}
@@ -85,164 +46,6 @@ public class RoleEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getRole_CoordinationProtocol());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addDiscreteInteractionEndpointSenderMessageTypesEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDiscreteInteractionEndpointSenderMessageTypesEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointSenderMessageTypesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteInteractionEndpoint_SenderMessageTypes());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addDiscreteInteractionEndpointReceiverMessageTypesEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDiscreteInteractionEndpointReceiverMessageTypesEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointReceiverMessageTypesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteInteractionEndpoint_ReceiverMessageTypes());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addDiscreteInteractionEndpointAdaptationBehaviorEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDiscreteInteractionEndpointAdaptationBehaviorEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointAdaptationBehaviorEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteInteractionEndpoint_AdaptationBehavior());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor(
-			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addDiscreteInteractionEndpointCardinalityEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDiscreteInteractionEndpointCardinalityEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointCardinalityEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteInteractionEndpoint_Cardinality());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addDiscreteInteractionEndpointReceiverMessageBufferEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDiscreteInteractionEndpointReceiverMessageBufferEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointReceiverMessageBufferEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addConstrainableElementConstraintEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addBehavioralElementBehaviorEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createBehavioralElementBehaviorEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehaviorEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getBehavioralElement_Behavior());
 
 	}
 

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public abstract class DirectedTypedPortEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.component.editor.PortEditor {
+			de.uni_paderborn.fujaba.muml.properties.behavior.editor.TypedNamedElementEditor {
 
 	/**
 	 * @generated
@@ -23,16 +23,36 @@ public abstract class DirectedTypedPortEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addDirectedTypedPortKindEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDirectedTypedPortOptionalEditor(null, true);
+			addDirectedTypedPortOptionalEditor(
+					"de.fujaba.properties.category.Booleans", true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addTypedNamedElementDataTypeEditor(null, true);
+			addPortComponentEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConnectorEndpointConnectorsEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConstrainableElementConstraintEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 	}
@@ -77,20 +97,75 @@ public abstract class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addTypedNamedElementDataTypeEditor(String category,
+	protected void addPortComponentEditor(String category, boolean front) {
+		addEditorToCategory(category, createPortComponentEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPortComponentEditor() {
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getPort_Component());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addConnectorEndpointConnectorsEditor(String category,
 			boolean front) {
-		addEditorToCategory(category, createTypedNamedElementDataTypeEditor(),
+		addEditorToCategory(category,
+				createConnectorEndpointConnectorsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTypedNamedElementDataTypeEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getTypedNamedElement_DataType());
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment(), true);
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addConstrainableElementConstraintEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConstrainableElementConstraintEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
 
 	}
 

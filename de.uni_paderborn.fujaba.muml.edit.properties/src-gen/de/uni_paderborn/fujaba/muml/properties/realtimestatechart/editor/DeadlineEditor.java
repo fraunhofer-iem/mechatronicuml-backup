@@ -23,13 +23,9 @@ public abstract class DeadlineEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDeadlineUpperBoundEditor(null, true);
-		}
+		addDeadlineUpperBoundEditor(null, false);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDeadlineLowerBoundEditor(null, true);
-		}
+		addDeadlineLowerBoundEditor(null, false);
 
 	}
 
@@ -44,7 +40,7 @@ public abstract class DeadlineEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDeadlineUpperBoundEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDeadline_UpperBound());
@@ -61,7 +57,7 @@ public abstract class DeadlineEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDeadlineLowerBoundEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDeadline_LowerBound());

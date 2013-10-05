@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public abstract class VertexEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -36,8 +36,8 @@ public abstract class VertexEditor
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.comment".equals(getTab())) {
-			addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -83,20 +83,18 @@ public abstract class VertexEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+						.getNamedElement_Name(), false);
 
 	}
 

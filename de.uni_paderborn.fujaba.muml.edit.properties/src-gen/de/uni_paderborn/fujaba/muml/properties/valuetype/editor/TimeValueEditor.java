@@ -23,9 +23,7 @@ public class TimeValueEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addTimeValueValueEditor(null, true);
-		}
+		addTimeValueValueEditor(null, false);
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addTimeValueUnitEditor(null, true);
@@ -44,7 +42,7 @@ public class TimeValueEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueValueEditor() {
-		return new de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getTimeValue_Value());
@@ -61,10 +59,10 @@ public class TimeValueEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueUnitEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getTimeValue_Unit());
+						.getTimeValue_Unit(), false);
 
 	}
 

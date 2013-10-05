@@ -34,17 +34,11 @@ public class StateEditor
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addStateDoEventEditor(null, true);
-		}
+		addStateDoEventEditor(null, false);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addStateExitEventEditor(null, true);
-		}
+		addStateExitEventEditor(null, false);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addStateEntryEventEditor(null, true);
-		}
+		addStateEntryEventEditor(null, false);
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addStateInvariantsEditor("de.fujaba.properties.category.Lists",
@@ -107,7 +101,7 @@ public class StateEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateDoEventEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_DoEvent());
@@ -124,7 +118,7 @@ public class StateEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateExitEventEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_ExitEvent());
@@ -141,7 +135,7 @@ public class StateEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStateEntryEventEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_EntryEvent());

@@ -23,9 +23,7 @@ public class TextualConstraintEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addTextualConstraintTextualExpressionEditor(null, true);
-		}
+		addTextualConstraintTextualExpressionEditor(null, false);
 
 	}
 
@@ -42,7 +40,7 @@ public class TextualConstraintEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTextualConstraintTextualExpressionEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getTextualConstraint_TextualExpression());

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.connector.editor;
  */
 public abstract class ConnectorEndpointInstanceEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -23,20 +23,16 @@ public abstract class ConnectorEndpointInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addConnectorEndpointInstanceConnectorInstancesEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addConnectorEndpointInstanceConnectorInstancesEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addConnectorEndpointInstanceTypeEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.comment".equals(getTab())) {
-			addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -83,20 +79,18 @@ public abstract class ConnectorEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+						.getNamedElement_Name(), false);
 
 	}
 

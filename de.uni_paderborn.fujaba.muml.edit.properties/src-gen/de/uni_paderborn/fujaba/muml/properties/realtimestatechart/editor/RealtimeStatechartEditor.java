@@ -45,12 +45,12 @@ public class RealtimeStatechartEditor
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.comment".equals(getTab())) {
-			addCommentableElementCommentEditor(null, true);
-		}
-
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addNamedElementNameEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
 		}
 
 	}
@@ -134,6 +134,23 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name(), false);
+
+	}
+	/**
+	 * @generated
+	 */
 	protected void addCommentableElementCommentEditor(String category,
 			boolean front) {
 		addEditorToCategory(category, createCommentableElementCommentEditor(),
@@ -148,23 +165,6 @@ public class RealtimeStatechartEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment(), true);
-
-	}
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
 
 	}
 

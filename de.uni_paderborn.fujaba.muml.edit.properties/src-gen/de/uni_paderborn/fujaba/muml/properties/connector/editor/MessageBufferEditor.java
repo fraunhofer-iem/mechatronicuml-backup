@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.connector.editor;
  */
 public class MessageBufferEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -23,24 +23,18 @@ public class MessageBufferEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addMessageBufferBufferSizeEditor(null, false);
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addMessageBufferBufferSizeEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addMessageBufferMessageTypeEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addMessageBufferMessageTypeEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addMessageBufferDiscreteInteractionEndpointEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.comment".equals(getTab())) {
-			addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -58,7 +52,7 @@ public class MessageBufferEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageBufferBufferSizeEditor() {
-		return new de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getMessageBuffer_BufferSize());
@@ -105,20 +99,18 @@ public class MessageBufferEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
-				front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+						.getNamedElement_Name(), false);
 
 	}
 

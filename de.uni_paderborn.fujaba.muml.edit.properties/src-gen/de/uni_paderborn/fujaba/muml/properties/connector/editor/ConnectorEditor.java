@@ -23,12 +23,8 @@ public abstract class ConnectorEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addConnectorConnectorEndpointsEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addConnectorConnectorEndpointsEditor(null, true);
 		}
 
 	}

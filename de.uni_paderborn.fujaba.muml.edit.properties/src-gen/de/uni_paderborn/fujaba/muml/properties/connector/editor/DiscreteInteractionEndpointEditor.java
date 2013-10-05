@@ -27,13 +27,11 @@ public abstract class DiscreteInteractionEndpointEditor
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointSenderMessageTypesEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addDiscreteInteractionEndpointSenderMessageTypesEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageTypesEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addDiscreteInteractionEndpointReceiverMessageTypesEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
@@ -45,17 +43,16 @@ public abstract class DiscreteInteractionEndpointEditor
 					true);
 		}
 
+		addDiscreteInteractionEndpointCardinalityEditor(null, false);
+
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointCardinalityEditor(null, true);
+			addDiscreteInteractionEndpointReceiverMessageBufferEditor(null,
+					true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageBufferEditor(
+			addConstrainableElementConstraintEditor(
 					"de.fujaba.properties.category.Lists", true);
-		}
-
-		if (getTab() == null || "constraint".equals(getTab())) {
-			addConstrainableElementConstraintEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
@@ -158,7 +155,7 @@ public abstract class DiscreteInteractionEndpointEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointCardinalityEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_Cardinality());

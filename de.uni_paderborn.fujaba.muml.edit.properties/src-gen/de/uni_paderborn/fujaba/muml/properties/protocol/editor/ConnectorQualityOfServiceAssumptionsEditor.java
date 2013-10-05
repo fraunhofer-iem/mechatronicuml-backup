@@ -26,15 +26,11 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null,
-					true);
-		}
+		addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null,
+				false);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(null,
-					true);
-		}
+		addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(null,
+				false);
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(
@@ -58,7 +54,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMinMessageDelayEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions_MinMessageDelay());
@@ -79,7 +75,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions_MaxMessageDelay());

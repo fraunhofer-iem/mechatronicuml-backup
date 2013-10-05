@@ -23,13 +23,9 @@ public class DoEventEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDoEventActionEditor(null, true);
-		}
+		addDoEventActionEditor(null, false);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDoEventPeriodEditor(null, true);
-		}
+		addDoEventPeriodEditor(null, false);
 
 	}
 
@@ -44,7 +40,7 @@ public class DoEventEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDoEventActionEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDoEvent_Action());
@@ -61,7 +57,7 @@ public class DoEventEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDoEventPeriodEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDoEvent_Period());

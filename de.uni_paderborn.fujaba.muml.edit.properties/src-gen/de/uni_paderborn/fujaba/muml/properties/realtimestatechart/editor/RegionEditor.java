@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class RegionEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.PrioritizedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -27,8 +27,8 @@ public class RegionEditor
 			addRegionParentStateEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.comment".equals(getTab())) {
-			addCommentableElementCommentEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addPrioritizedElementPriorityEditor(null, true);
 		}
 
 	}
@@ -53,20 +53,20 @@ public class RegionEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementCommentEditor(String category,
+	protected void addPrioritizedElementPriorityEditor(String category,
 			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
+		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
+		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getPrioritizedElement_Priority(), 0);
 
 	}
 

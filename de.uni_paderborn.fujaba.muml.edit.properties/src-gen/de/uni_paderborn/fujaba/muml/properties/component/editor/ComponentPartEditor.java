@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public class ComponentPartEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -31,8 +31,10 @@ public class ComponentPartEditor
 			addComponentPartParentComponentEditor(null, true);
 		}
 
+		addComponentPartCardinalityEditor(null, false);
+
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addComponentPartCardinalityEditor(null, true);
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -88,10 +90,27 @@ public class ComponentPartEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartCardinalityEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponentPart_Cardinality());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name(), false);
 
 	}
 

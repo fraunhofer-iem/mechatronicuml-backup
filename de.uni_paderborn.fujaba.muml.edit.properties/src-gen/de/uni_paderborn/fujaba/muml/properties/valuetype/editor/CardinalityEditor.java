@@ -23,13 +23,9 @@ public class CardinalityEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addCardinalityLowerBoundEditor(null, true);
-		}
+		addCardinalityLowerBoundEditor(null, false);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addCardinalityUpperBoundEditor(null, true);
-		}
+		addCardinalityUpperBoundEditor(null, false);
 
 	}
 
@@ -45,7 +41,7 @@ public class CardinalityEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityLowerBoundEditor() {
-		return new de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getCardinality_LowerBound());
@@ -63,7 +59,7 @@ public class CardinalityEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityUpperBoundEditor() {
-		return new de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getCardinality_UpperBound());

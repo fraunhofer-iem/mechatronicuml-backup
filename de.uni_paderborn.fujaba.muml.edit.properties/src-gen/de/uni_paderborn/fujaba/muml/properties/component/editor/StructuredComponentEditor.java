@@ -23,6 +23,34 @@ public abstract class StructuredComponentEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addStructuredComponentConnectorsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addStructuredComponentConnectorsEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createStructuredComponentConnectorsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentConnectorsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getStructuredComponent_Connectors());
+
 	}
 
 }

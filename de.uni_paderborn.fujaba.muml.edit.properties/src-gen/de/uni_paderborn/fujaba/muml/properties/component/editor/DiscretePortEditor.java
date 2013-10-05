@@ -23,21 +23,16 @@ public class DiscretePortEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addDiscretePortRefinedRoleEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointSenderMessageTypesEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addDiscreteInteractionEndpointSenderMessageTypesEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageTypesEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addDiscreteInteractionEndpointReceiverMessageTypesEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
@@ -49,13 +44,11 @@ public class DiscretePortEditor
 					true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointCardinalityEditor(null, true);
-		}
+		addDiscreteInteractionEndpointCardinalityEditor(null, false);
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageBufferEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addDiscreteInteractionEndpointReceiverMessageBufferEditor(null,
+					true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
@@ -177,7 +170,7 @@ public class DiscretePortEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointCardinalityEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_Cardinality());

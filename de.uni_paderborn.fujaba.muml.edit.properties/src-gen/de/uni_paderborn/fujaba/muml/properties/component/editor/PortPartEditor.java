@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public class PortPartEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor {
 
 	/**
 	 * @generated

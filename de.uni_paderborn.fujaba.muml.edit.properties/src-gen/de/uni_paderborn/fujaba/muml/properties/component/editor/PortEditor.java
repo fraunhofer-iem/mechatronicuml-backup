@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public abstract class PortEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
+			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor {
 
 	/**
 	 * @generated
@@ -23,12 +23,16 @@ public abstract class PortEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addPortComponentEditor(null, true);
 		}
 
-		if (getTab() == null || "constraint".equals(getTab())) {
-			addConstrainableElementConstraintEditor(null, true);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addConstrainableElementConstraintEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 	}
