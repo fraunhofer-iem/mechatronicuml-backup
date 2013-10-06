@@ -59,6 +59,7 @@ public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 	
 	protected void sortProperties() {
 		final List<EClass> sortedSuperTypes = getSortedSuperTypes();
+		sortedSuperTypes.add(eClass);
 		
 		sortEditors(new Comparator<IPropertyEditor>() {
 
