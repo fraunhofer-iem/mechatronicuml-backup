@@ -122,7 +122,10 @@ mapping inout Property::reconcileProperty() {
 		} endif;
 		
 		-- set the right editor
-		self->map editor();
+		var newEditor := self->map editor()->any(true);
+		if (newEditor <> self.editor) then {
+			self.editor := newEditor;
+		} endif;
 	} endif;
 }
 
@@ -160,7 +163,7 @@ mapping Class::createProperty(_feature : GenFeature, _tab : PropertyTab) : Prope
 	_reconcile := true;
 }
 
-mapping inout Property::editor()
+mapping inout Property::editor() : PropertyEditor
 	disjuncts 
 	Property::objectEditor,
 	Property::checkboxEditor,
@@ -171,58 +174,68 @@ mapping inout Property::editor()
 	Property::textEditor;
 
 
-mapping inout Property::objectEditor() when {self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.oclAsType(EReference).containment and self.genFeature.ecoreFeature.upperBound = 1} {
-	if (self.editor.oclIsUndefined() or not self.editor.oclIsKindOf(ObjectPropertyEditor)) then {
-		self.editor := new ObjectPropertyEditor();
-	} endif;	
-}
-
-mapping inout Property::checkboxEditor() when {self.genFeature.ecoreFeature.eType.name = 'EBoolean'} {
-	if (self.editor.oclIsUndefined() or not self.editor.oclIsKindOf(CheckboxPropertyEditor)) then {
-		self.editor := new CheckboxPropertyEditor();
-	} endif;
-}
-
-
-mapping inout Property::listEditor() when {self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound > 1} {
-	if (self.editor.oclIsUndefined() or not self.editor.oclIsKindOf(ListPropertyEditor)) then {
-		self.editor := new ListPropertyEditor();
-	} endif;
-}
-
-mapping inout Property::comboEditor() when {self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound = 1 and not self.genFeature.ecoreFeature.oclAsType(EReference).containment or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) and self.genFeature.ecoreFeature.eType.oclAsType(EEnum).eLiterals->size() > 3)} {
-	if (self.editor.oclIsUndefined() or not self.editor.oclIsKindOf(ComboBoxPropertyEditor)) then {
-		self.editor := new ComboBoxPropertyEditor();
-	} endif;
-}
-
-mapping inout Property::radioEditor() when {self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum)} {
-	if (self.editor.oclIsUndefined() or not self.editor.oclIsKindOf(RadioPropertyEditor)) then {
-		self.editor := new RadioPropertyEditor();
-	} endif;
-}
-
-mapping inout Property::spinnerEditor() when {self.genFeature.ecoreFeature.oclIsKindOf(EAttribute) and (self.genFeature.ecoreFeature.eType.name = 'EInt' or self.genFeature.ecoreFeature.eType.name = 'EDouble'  or self.genFeature.ecoreFeature.eType.name = 'EFloat') } {
-	if (self.editor.oclIsUndefined() or not self.editor.oclIsKindOf(SpinnerPropertyEditor)) then {
-		self.editor := new SpinnerPropertyEditor();
-	} endif;
-
-	var digits := 0;
-	if (self.genFeature.ecoreFeature.eType.name = 'EDouble'  or self.genFeature.ecoreFeature.eType.name = 'EFloat') then {
-		digits := 3;
-	} endif;
-	
-	self.editor.oclAsType(SpinnerPropertyEditor).digits := digits;	
-}
-
-mapping inout Property::textEditor() when {self.genFeature.ecoreFeature.oclIsKindOf(EAttribute) and self.genFeature.ecoreFeature.eType.name != 'EBoolean' and not self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) } {
+mapping Property::objectEditor() : ObjectPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.oclAsType(EReference).containment and self.genFeature.ecoreFeature.upperBound = 1} {
 	init {
-		if (self.editor.oclIsUndefined() or not self.editor.oclIsKindOf(TextPropertyEditor)) then {
-			self.editor := new TextPropertyEditor();
+		if (not self.editor.oclIsUndefined() and  self.editor.oclIsKindOf(ObjectPropertyEditor)) then {
+			result := self.editor.oclAsType(ObjectPropertyEditor);
+		} endif;
+	}	
+}
+
+mapping Property::checkboxEditor() : CheckboxPropertyEditor when {self.genFeature.ecoreFeature.eType.name = 'EBoolean'} {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(CheckboxPropertyEditor)) then {
+			result := self.editor.oclAsType(CheckboxPropertyEditor);
 		} endif;
 	}
+}
+
+
+mapping Property::listEditor() : ListPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound > 1} {
+	init {
+		if (not self.editor.oclIsUndefined() and  self.editor.oclIsKindOf(ListPropertyEditor)) then {
+			result := self.editor.oclAsType(ListPropertyEditor);
+		} endif;
+	}
+}
+
+mapping Property::comboEditor() : ComboBoxPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound = 1 and not self.genFeature.ecoreFeature.oclAsType(EReference).containment or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) and self.genFeature.ecoreFeature.eType.oclAsType(EEnum).eLiterals->size() > 3)} {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(ComboBoxPropertyEditor)) then {
+			result := self.editor.oclAsType(ComboBoxPropertyEditor);
+		} endif;
+	}
+}
+mapping inout Property::radioEditor() : RadioPropertyEditor when {self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum)} {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(RadioPropertyEditor)) then {
+			result := self.editor.oclAsType(RadioPropertyEditor);
+		} endif;
+	}
+}
+
+mapping Property::spinnerEditor() : SpinnerPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EAttribute) and (self.genFeature.ecoreFeature.eType.name = 'EInt' or self.genFeature.ecoreFeature.eType.name = 'EDouble'  or self.genFeature.ecoreFeature.eType.name = 'EFloat') } {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(SpinnerPropertyEditor)) then {
+			result := self.editor.oclAsType(SpinnerPropertyEditor);
+		} endif;
+	}
+	var _digits := 0;
+	if (self.genFeature.ecoreFeature.eType.name = 'EDouble'  or self.genFeature.ecoreFeature.eType.name = 'EFloat') then {
+		_digits := 3;
+	} endif;
 	
-	self.editor.oclAsType(TextPropertyEditor).multiLine := self.genFeature.propertyMultiLine;
+	digits := _digits;
+}
+
+mapping Property::textEditor() : TextPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EAttribute) and self.genFeature.ecoreFeature.eType.name != 'EBoolean' and not self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) } {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(TextPropertyEditor)) then {
+			result := self.editor.oclAsType(TextPropertyEditor);
+		} endif;
+	}
+
+	multiLine := self.genFeature.propertyMultiLine;
 }
 
 
@@ -255,21 +268,4 @@ constructor PropertyCategory::PropertyCategory(_title : String, _open : Boolean)
 	title := _title;
 	open := _open;
 	vertical := false;
-}
-
-constructor ObjectPropertyEditor::ObjectPropertyEditor() {
-}
-constructor TextPropertyEditor::TextPropertyEditor() {
-}
-constructor CheckboxPropertyEditor::CheckboxPropertyEditor() {
-}
-constructor ComboBoxPropertyEditor::ComboBoxPropertyEditor() {
-}
-constructor SpinnerPropertyEditor::SpinnerPropertyEditor() {
-}
-constructor RadioPropertyEditor::RadioPropertyEditor() {
-}
-constructor ListPropertyEditor::ListPropertyEditor() {
-}
-constructor CustomPropertyEditor::CustomPropertyEditor() {
 }
