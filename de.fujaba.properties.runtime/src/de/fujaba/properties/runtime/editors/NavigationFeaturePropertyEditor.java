@@ -42,6 +42,7 @@ public class NavigationFeaturePropertyEditor extends
 	private EObject manyValue;
 	private boolean createMode = false;
 	private boolean initiallyOpen = false;
+	private EClass selectedClass = null;
 
 	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature, boolean initiallyOpen) {
@@ -82,36 +83,39 @@ public class NavigationFeaturePropertyEditor extends
 		layout.spacing = 5;
 		layout.fill = true;
 		composite.setLayout(layout);
-		
-		Combo combo = new Combo(section, SWT.BORDER);
-		section.setDescriptionControl(combo);
-		classViewer = new ComboViewer(combo);
-		classViewer.setContentProvider(ArrayContentProvider.getInstance());
-		classViewer.setLabelProvider(new LabelProvider() {
-			public String getText(Object element) {
-				return ((EClass) element).getName();
-			}
-		});
+
 		List<EClass> eClasses = RuntimePlugin.getEClasses((EReference) feature);
-		classViewer.setInput(eClasses);
-		if (!eClasses.isEmpty()) {
-			classViewer.setSelection(new StructuredSelection(eClasses.get(0)));
-		}
-		if (eClasses.size() == 1) {
-			combo.setEnabled(false);
-		}
-		classViewer.addSelectionChangedListener(new ISelectionChangedListener() {
-			
-			@Override
-			public void selectionChanged(SelectionChangedEvent event) {
-				if (isSet()) {
-					remove();
-					create();
+		
+		if (eClasses.size() > 1) {
+			Combo combo = new Combo(section, SWT.BORDER);
+			classViewer = new ComboViewer(combo);
+			classViewer.setContentProvider(ArrayContentProvider.getInstance());
+			classViewer.setLabelProvider(new LabelProvider() {
+				public String getText(Object element) {
+					return ((EClass) element).getName();
 				}
+			});
+			section.setDescriptionControl(combo);
+		
+			classViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+				
+				@Override
+				public void selectionChanged(SelectionChangedEvent event) {
+					IStructuredSelection selection = (IStructuredSelection) classViewer
+							.getSelection();
+					selectedClass = (EClass) selection.getFirstElement();
+					if (isSet()) {
+						remove();
+						create();
+					}
+				}
+			});
+			classViewer.setInput(eClasses);
+			if (!eClasses.isEmpty()) {
+				classViewer.setSelection(new StructuredSelection(eClasses.get(0)));
 			}
-
-		});
-
+		}
+		selectedClass = eClasses.get(0);
 		if (!createMode) {
 			buttonCreate = toolkit.createButton(composite, "", SWT.TOGGLE);
 			buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD,
@@ -226,10 +230,7 @@ public class NavigationFeaturePropertyEditor extends
 
 	protected void create() {
 		if (!isSet()) {
-			IStructuredSelection selection = (IStructuredSelection) classViewer
-					.getSelection();
-			EClass eClass = (EClass) selection.getFirstElement();
-			Object newValue = EcoreUtil.create(eClass);
+			Object newValue = EcoreUtil.create(selectedClass);
 			if (feature.isMany()) {
 				manyValue = (EObject) newValue;
 				List<Object> newValues = new ArrayList<Object>();
