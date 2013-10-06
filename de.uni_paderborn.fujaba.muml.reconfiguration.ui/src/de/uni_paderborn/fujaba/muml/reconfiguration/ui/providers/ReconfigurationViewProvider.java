@@ -255,10 +255,11 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		// .getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ControllerEditPart.VISUAL_ID),
 		// false, false, false, false);
 
+		if(((de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent) domainElement).getController()==null)
 		createCompartment(
 				node,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID),
+						.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID),
 				false, false, false, false);
 		return node;
 	}
@@ -390,6 +391,12 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		rv.setType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, rv, 1, true);
+		
+		createCompartment(
+				containerView,
+				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID),
+				false, false, false, false);
 		return rv;
 	}
 

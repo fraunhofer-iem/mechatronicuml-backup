@@ -39,6 +39,8 @@ public class ReconfigurationDiagramUpdater {
 			return getComponentPart_3012SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart.VISUAL_ID:
 			return getStaticStructuredComponentComponentCompartment_7005SemanticChildren(view);
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID:
+			return getReconfigurableStructuredComponentCompartment_7077SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -201,6 +203,46 @@ public class ReconfigurationDiagramUpdater {
 			return Collections.emptyList();
 		}
 		de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent) containerView
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getEmbeddedComponentParts()
+				.iterator(); it.hasNext();) {
+			de.uni_paderborn.fujaba.muml.component.ComponentPart childElement = (de.uni_paderborn.fujaba.muml.component.ComponentPart) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getCoordinationProtocolOccurences()
+				.iterator(); it.hasNext();) {
+			de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence childElement = (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence) it
+					.next();
+			int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+		}
+
+		return result;
+	}
+	
+	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getReconfigurableStructuredComponentCompartment_7077SemanticChildren(
+			View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent) containerView
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getEmbeddedComponentParts()

@@ -149,7 +149,7 @@ public class ReconfigurationVisualIDRegistry {
 					.getRuleBasedReconfigurationController().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID;
-			}	
+			}
 			
 			
 			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE

@@ -153,10 +153,10 @@ public class ReconfigurableStructuredComponentEditPart extends
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChildren();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) childEditPart)
+			pane.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) childEditPart)
 					.getFigure());
 			return true;
 		}
@@ -216,24 +216,10 @@ public class ReconfigurableStructuredComponentEditPart extends
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getFigureChildren();
-			pane.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) childEditPart)
+			pane.remove(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) childEditPart)
 					.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) childEditPart)
-							.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
-							.getFigure());
 			return true;
 		}
 		
@@ -252,6 +238,31 @@ public class ReconfigurableStructuredComponentEditPart extends
 							.getFigure());
 			return true;
 		}
+
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart) {
+			IFigure pane = getPrimaryShape().getFigureChildren();
+			pane.remove(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart) childEditPart)
+					.getFigure());
+			return true;
+		}
+
+		
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) childEditPart)
+							.getFigure());
+			return true;
+		}
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) {
+			getBorderedFigure()
+					.getBorderItemContainer()
+					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
+							.getFigure());
+			return true;
+		}
+		
+		
 		return false;
 	}
 
@@ -279,7 +290,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentComponentCompartmentEditPart) {
+		if (editPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) {
 			return getPrimaryShape().getFigureChildren();
 		}
 		if (editPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart) {
