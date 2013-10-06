@@ -3,7 +3,9 @@ package de.fujaba.properties.runtime.editors;
 import java.util.Collection;
 import java.util.Collections;
 
+import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -34,11 +36,14 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	protected boolean hasSearchButton;
 	
 	public ComboPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
-		this(adapterFactory, feature, true);
+		this(adapterFactory, feature, feature instanceof EReference);
 	}
 
 	public ComboPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature, boolean hasSearchButton) {
 		super(adapterFactory, feature);
+		if (hasSearchButton) {
+			Assert.isLegal(feature instanceof EReference, "Currently, only references can be searched via search dialog.");
+		}
 		this.hasSearchButton = hasSearchButton;
 	}
 
