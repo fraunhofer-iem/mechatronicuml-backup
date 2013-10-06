@@ -82,8 +82,9 @@ public class NavigationFeaturePropertyEditor extends
 		layout.spacing = 5;
 		layout.fill = true;
 		composite.setLayout(layout);
-
-		Combo combo = new Combo(composite, SWT.BORDER);
+		
+		Combo combo = new Combo(section, SWT.BORDER);
+		section.setDescriptionControl(combo);
 		classViewer = new ComboViewer(combo);
 		classViewer.setContentProvider(ArrayContentProvider.getInstance());
 		classViewer.setLabelProvider(new LabelProvider() {
