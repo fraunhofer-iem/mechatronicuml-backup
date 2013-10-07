@@ -12,7 +12,7 @@ mapping inout PropertyGenerator::generator() {
 	self.plugin.requiredBundles += "de.uni_paderborn.fujaba.muml.common";
 	
 	self.packages.classes.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'NaturalNumber')->forEach(prop) {
-		if (prop.editor.oclIsUndefined() or prop.editor.oclAsType(CustomPropertyEditor).fullyQualifiedClassName <> 'de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor') then {
+		if (prop.editor[TextPropertyEditor]->select(multiLine = false)->isEmpty()) then {
 			prop->map createNaturalNumberEditor();
 			-- make sure the default reconciler does not change this back to ObjectPropertyEditor
 			-- normally no problem (because we would change it back), but the editor would become dirty
@@ -23,10 +23,10 @@ mapping inout PropertyGenerator::generator() {
 }
 
 mapping inout Property::createNaturalNumberEditor() {
-	self.editor := new CustomPropertyEditor("de.uni_paderborn.fujaba.muml.common.properties.NaturalNumberTextEditor");
+	self.editor := new TextPropertyEditor(false);
 }
 
-constructor CustomPropertyEditor::CustomPropertyEditor(className : String) {
-	fullyQualifiedClassName := className;
+constructor TextPropertyEditor::TextPropertyEditor(_multiLine : Boolean) {
+	multiLine := _multiLine;
 }
 
