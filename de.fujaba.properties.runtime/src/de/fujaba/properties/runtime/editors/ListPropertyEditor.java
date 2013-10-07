@@ -195,8 +195,10 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			// Add object, if one was selected
 			if (newObject != null) {
 				List<Object> newValue = new ArrayList<Object>((Collection<?>)value);
-				newValue.add(newObject);
-				setValue(newValue);
+				if (!newValue.contains(newObject)) {
+					newValue.add(newObject);
+					setValue(newValue);
+				}
 			}
 		}
 	}
