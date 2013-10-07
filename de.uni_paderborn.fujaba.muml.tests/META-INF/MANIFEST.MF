@@ -13,3 +13,7 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
  org.storydriven.storydiagrams;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Export-Package: de.uni_paderborn.fujaba.muml.tests,
+ de.uni_paderborn.fujaba.muml.tests.emfcompare,
+ de.uni_paderborn.fujaba.muml.tests.packages,
+ de.uni_paderborn.fujaba.muml.tests.resource
