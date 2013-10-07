@@ -5,9 +5,6 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="The base package for the muml action language. It is an extension to the core.ecore expression package.&#xD;&#xA;The action language contains block definition, control structures like conditional statements and loops, assignments, and variable and operation call expressions. "/>
   </eAnnotations>
-  <eAnnotations source="http://www.eclipse.org/edapt">
-    <details key="historyURI" value="../../de.uni_paderborn.fujaba.muml/model/muml.history"/>
-  </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
