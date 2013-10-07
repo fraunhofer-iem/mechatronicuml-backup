@@ -6,7 +6,8 @@ Bundle-Version: 0.4.0.qualifier
 Bundle-Activator: de.fujaba.properties.runtime.RuntimePlugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.300";visibility:=reexport,
- org.eclipse.emf.edit.ui
+ org.eclipse.emf.edit.ui,
+ org.eclipse.gef;bundle-version="3.9.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.fujaba.properties.runtime.editors,

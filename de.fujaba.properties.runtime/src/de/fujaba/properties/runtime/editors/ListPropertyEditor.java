@@ -6,17 +6,20 @@ import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.gef.EditPartViewer;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -30,6 +33,9 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
@@ -160,6 +166,37 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		buttonRemove.setEnabled(selection != null);
 		buttonUp.setEnabled(selection != null && selection != first);
 		buttonDown.setEnabled(selection != null && selection != last);
+		
+		// Update current editor's selection
+		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		IEditorPart editorPart = null;
+		if (window != null && window.getActivePage() != null) {
+			editorPart = window.getActivePage().getActiveEditor();
+		}
+		ISelectionProvider selectionProvider = null;
+		if (editorPart != null && editorPart.getSite() != null) {
+			selectionProvider = editorPart.getSite().getSelectionProvider();
+		}
+		if (selection == null) {
+			// do not remove selection, as it closes the properties
+			//selectionProvider.setSelection(new StructuredSelection());
+		} else if (selectionProvider instanceof EditPartViewer) {
+			List<Object> selectedElements = new ArrayList<Object>();
+			EditPartViewer viewer = (EditPartViewer) selectionProvider;
+			for (Object part : viewer.getEditPartRegistry().values()) {
+				if (part instanceof IAdaptable) {
+					Object model = ((IAdaptable) part).getAdapter(EObject.class);
+					if (model == selection) {
+						selectedElements.add(part);
+					}
+				}
+			}
+			selectionProvider.setSelection(new StructuredSelection(selectedElements));
+		} else if (selectionProvider != null) {
+			
+			selectionProvider.setSelection(new StructuredSelection(selection));
+		}
+		
 	}
 
 	protected void add() {
