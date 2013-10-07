@@ -635,15 +635,6 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE__EXTENSION = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__NAME = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -678,6 +669,15 @@ public interface ProtocolPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROLE__CONSTRAINT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__NAME = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.

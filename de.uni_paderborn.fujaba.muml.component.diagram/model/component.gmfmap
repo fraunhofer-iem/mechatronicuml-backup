@@ -278,11 +278,12 @@
               <domainMetaElement
                   href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortPart"/>
               <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
+                  xsi:type="gmfmap:FeatureLabelMapping"
+                  readOnly="true">
                 <diagramLabel
                     href="component.gmfgraph#PortRefinementLabel"/>
                 <features
-                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
+                    href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortPart/name"/>
               </labelMappings>
               <diagramNode
                   href="component.gmfgraph#Port"/>

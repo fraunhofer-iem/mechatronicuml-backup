@@ -87,7 +87,6 @@ public class ConnectorSwitch<T> extends Switch<T> {
 			case ConnectorPackage.CONNECTOR_ENDPOINT: {
 				ConnectorEndpoint connectorEndpoint = (ConnectorEndpoint)theEObject;
 				T result = caseConnectorEndpoint(connectorEndpoint);
-				if (result == null) result = caseNamedElement(connectorEndpoint);
 				if (result == null) result = caseCommentableElement(connectorEndpoint);
 				if (result == null) result = caseExtendableElement(connectorEndpoint);
 				if (result == null) result = defaultCase(theEObject);

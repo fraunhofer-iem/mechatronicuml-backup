@@ -99,6 +99,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/coordinationProtocolOccurence"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/refinedRole"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/PortPart/name"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml"

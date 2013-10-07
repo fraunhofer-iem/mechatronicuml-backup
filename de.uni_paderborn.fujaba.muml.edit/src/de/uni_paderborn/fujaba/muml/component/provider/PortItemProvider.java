@@ -67,6 +67,7 @@ public class PortItemProvider
 			super.getPropertyDescriptors(object);
 
 			addConstraintPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addComponentPropertyDescriptor(object);
 			addPortConnectorsPropertyDescriptor(object);
 		}
@@ -91,6 +92,28 @@ public class PortItemProvider
 				 false,
 				 false,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 CorePackage.Literals.NAMED_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -206,6 +229,7 @@ public class PortItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Port.class)) {
+			case ComponentPackage.PORT__NAME:
 			case ComponentPackage.PORT__PORT_CONNECTORS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

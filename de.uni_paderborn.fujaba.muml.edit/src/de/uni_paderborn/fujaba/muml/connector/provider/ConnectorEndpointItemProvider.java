@@ -37,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
  * @generated
  */
 public class ConnectorEndpointItemProvider
-	extends NamedElementItemProvider
+	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -65,32 +65,9 @@ public class ConnectorEndpointItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
 			addConnectorsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -123,7 +100,7 @@ public class ConnectorEndpointItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConnectorEndpoint)object).getName();
+		String label = ((ConnectorEndpoint)object).getComment();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ConnectorEndpoint_type") :
 			getString("_UI_ConnectorEndpoint_type") + " " + label;
@@ -139,12 +116,6 @@ public class ConnectorEndpointItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ConnectorEndpoint.class)) {
-			case ConnectorPackage.CONNECTOR_ENDPOINT__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

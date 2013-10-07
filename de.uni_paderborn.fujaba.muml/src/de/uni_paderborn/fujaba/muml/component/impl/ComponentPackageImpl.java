@@ -623,6 +623,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPortPart_Name() {
+		return (EAttribute)portPartEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getDirectedTypedPort_OutPort() {
 		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(2);
 	}
@@ -875,6 +884,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(portPartEClass, PORT_PART__COMPONENT_PART);
 		createEReference(portPartEClass, PORT_PART__COORDINATION_PROTOCOL_OCCURENCE);
 		createEReference(portPartEClass, PORT_PART__REFINED_ROLE);
+		createEAttribute(portPartEClass, PORT_PART__NAME);
 
 		// Create enums
 		componentKindEEnum = createEEnum(COMPONENT_KIND);
@@ -943,7 +953,6 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		directedTypedPortEClass.getESuperTypes().add(this.getPort());
 		directedTypedPortEClass.getESuperTypes().add(theBehaviorPackage.getTypedNamedElement());
 		portPartEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
-		portPartEClass.getESuperTypes().add(theTypesPackage.getDataType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1015,6 +1024,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getPortPart_ComponentPart(), this.getComponentPart(), this.getComponentPart_PortParts(), "componentPart", null, 1, 1, PortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortPart_CoordinationProtocolOccurence(), this.getCoordinationProtocolOccurrence(), this.getCoordinationProtocolOccurrence_PortParts(), "coordinationProtocolOccurence", null, 0, 1, PortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortPart_RefinedRole(), theProtocolPackage.getRole(), null, "refinedRole", null, 0, 1, PortPart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPortPart_Name(), theEcorePackage.getEString(), "name", null, 0, 1, PortPart.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(componentKindEEnum, ComponentKind.class, "ComponentKind");
@@ -1087,7 +1097,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyDiscretePortParts"
-		   });											
+		   });													
 	}
 
 	/**
@@ -1247,7 +1257,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.portType.oclIsKindOf(DiscretePort)) then\r\nself.portType.oclAsType(DiscretePort).refinedRole\r\nelse\r\nnull\r\nendif"
-		   });
+		   });		
+		addAnnotation
+		  (getPortPart_Name(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if portType.name.oclIsUndefined() then\n\tnull\nelse\n\tportType.name\nendif"
+		   });	
 	}
 
 } //ComponentPackageImpl

@@ -22,6 +22,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getComponentPart <em>Component Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getRefinedRole <em>Refined Role</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * @model
  * @generated
  */
-public interface PortPart extends ConnectorEndpoint, DataType {
+public interface PortPart extends ConnectorEndpoint {
 	/**
 	 * Returns the value of the '<em><b>Port Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -126,5 +127,31 @@ public interface PortPart extends ConnectorEndpoint, DataType {
 	 * @generated
 	 */
 	Role getRefinedRole();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The name of the port type.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortPart_Name()
+	 * @model transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if portType.name.oclIsUndefined() then\n\tnull\nelse\n\tportType.name\nendif'"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // PortPart

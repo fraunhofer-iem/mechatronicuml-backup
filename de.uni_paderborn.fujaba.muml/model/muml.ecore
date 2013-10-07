@@ -420,7 +420,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PortPart" eSuperTypes="#//connector/ConnectorEndpoint #//types/DataType">
+    <eClassifiers xsi:type="ecore:EClass" name="PortPart" eSuperTypes="#//connector/ConnectorEndpoint">
       <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
           eType="#//component/Port"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" lowerBound="1"
@@ -434,6 +434,15 @@
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if (self.portType.oclIsKindOf(DiscretePort)) then&#xD;&#xA;self.portType.oclAsType(DiscretePort).refinedRole&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if portType.name.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.name&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The name of the port type."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -1793,7 +1802,7 @@
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpoint" abstract="true"
-        eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
           eType="#//connector/Connector" eOpposite="#//connector/Connector/connectorEndpoints"/>
     </eClassifiers>
@@ -1816,7 +1825,7 @@
           eOpposite="#//connector/ConnectorEndpointInstance/connectorInstances"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpoint" abstract="true"
-        eSuperTypes="#//connector/ConnectorEndpoint #//behavior/BehavioralElement #//constraint/ConstrainableElement">
+        eSuperTypes="#//connector/ConnectorEndpoint #//behavior/BehavioralElement #//constraint/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An interaction point for discrete communication via asynchronous messages. This class generalizes concepts of classes DiscretePort and Role."/>
       </eAnnotations>

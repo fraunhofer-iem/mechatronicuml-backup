@@ -197,6 +197,7 @@ public class PortPartItemProvider
 
 		switch (notification.getFeatureID(PortPart.class)) {
 			case ComponentPackage.PORT_PART__REFINED_ROLE:
+			case ComponentPackage.PORT_PART__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

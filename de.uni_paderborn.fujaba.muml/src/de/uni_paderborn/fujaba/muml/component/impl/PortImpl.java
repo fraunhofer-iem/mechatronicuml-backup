@@ -39,6 +39,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortImpl#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortImpl#getComponent <em>Component</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortImpl#getPortConnectors <em>Port Connectors</em>}</li>
  * </ul>
@@ -56,6 +57,26 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 	 * @ordered
 	 */
 	protected EList<Constraint> constraint;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached setting delegate for the '{@link #getPortConnectors() <em>Port Connectors</em>}' reference list.
@@ -108,6 +129,27 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, ComponentPackage.PORT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
 		}
 		return constraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT__NAME, oldName, name));
 	}
 
 	/**
@@ -220,6 +262,8 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 		switch (featureID) {
 			case ComponentPackage.PORT__CONSTRAINT:
 				return getConstraint();
+			case ComponentPackage.PORT__NAME:
+				return getName();
 			case ComponentPackage.PORT__COMPONENT:
 				return getComponent();
 			case ComponentPackage.PORT__PORT_CONNECTORS:
@@ -241,6 +285,9 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 				getConstraint().clear();
 				getConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
+			case ComponentPackage.PORT__NAME:
+				setName((String)newValue);
+				return;
 			case ComponentPackage.PORT__COMPONENT:
 				setComponent((Component)newValue);
 				return;
@@ -259,6 +306,9 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 			case ComponentPackage.PORT__CONSTRAINT:
 				getConstraint().clear();
 				return;
+			case ComponentPackage.PORT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case ComponentPackage.PORT__COMPONENT:
 				setComponent((Component)null);
 				return;
@@ -276,6 +326,8 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 		switch (featureID) {
 			case ComponentPackage.PORT__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
+			case ComponentPackage.PORT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ComponentPackage.PORT__COMPONENT:
 				return getComponent() != null;
 			case ComponentPackage.PORT__PORT_CONNECTORS:
@@ -294,6 +346,12 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 		if (baseClass == ConstrainableElement.class) {
 			switch (derivedFeatureID) {
 				case ComponentPackage.PORT__CONSTRAINT: return ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
+				default: return -1;
+			}
+		}
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case ComponentPackage.PORT__NAME: return CorePackage.NAMED_ELEMENT__NAME;
 				default: return -1;
 			}
 		}
@@ -318,12 +376,34 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 				default: return -1;
 			}
 		}
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.NAMED_ELEMENT__NAME: return ComponentPackage.PORT__NAME;
+				default: return -1;
+			}
+		}
 		if (baseClass == DataType.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //PortImpl

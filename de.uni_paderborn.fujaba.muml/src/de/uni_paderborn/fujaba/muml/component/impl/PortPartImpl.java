@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.storydriven.core.CorePackage;
-import org.storydriven.core.NamedElement;
+
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
@@ -23,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorEndpointImpl;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getComponentPart <em>Component Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getRefinedRole <em>Refined Role</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,12 +73,27 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 	protected EStructuralFeature.Internal.SettingDelegate REFINED_ROLE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT_PART__REFINED_ROLE).getSettingDelegate();
 
 	/**
+	 * The cached setting delegate for the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see #getName()
 	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate NAME__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT_PART__NAME).getSettingDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	protected PortPartImpl() {
 		super();
+
+		// Install a notification adapter
+		DerivedAttributeAdapter requiredDerivedAdapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.PORT_PART__NAME);
+		requiredDerivedAdapter.addNavigatedDependency(ComponentPackage.Literals.PORT_PART__PORT_TYPE, CorePackage.Literals.NAMED_ELEMENT__NAME);
+
 	}
 
 	/**
@@ -253,6 +268,24 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return (String)NAME__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		NAME__ESETTING_DELEGATE.dynamicSet(this, null, 0, newName);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -317,6 +350,8 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 			case ComponentPackage.PORT_PART__REFINED_ROLE:
 				if (resolve) return getRefinedRole();
 				return basicGetRefinedRole();
+			case ComponentPackage.PORT_PART__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -337,6 +372,9 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 				return;
 			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE:
 				setCoordinationProtocolOccurence((CoordinationProtocolOccurrence)newValue);
+				return;
+			case ComponentPackage.PORT_PART__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -359,6 +397,9 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE:
 				setCoordinationProtocolOccurence((CoordinationProtocolOccurrence)null);
 				return;
+			case ComponentPackage.PORT_PART__NAME:
+				NAME__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -379,6 +420,8 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 				return coordinationProtocolOccurence != null;
 			case ComponentPackage.PORT_PART__REFINED_ROLE:
 				return REFINED_ROLE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.PORT_PART__NAME:
+				return NAME__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

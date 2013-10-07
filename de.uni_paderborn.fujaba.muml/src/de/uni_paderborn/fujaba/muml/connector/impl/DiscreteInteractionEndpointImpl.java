@@ -41,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getName <em>Name</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
@@ -72,6 +73,26 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * @ordered
 	 */
 	protected EList<Constraint> constraint;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference list.
@@ -222,6 +243,27 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
 		}
 		return constraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME, oldName, name));
 	}
 
 	/**
@@ -433,6 +475,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				return basicGetBehavior();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return getConstraint();
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
+				return getName();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
 				return getSenderMessageTypes();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES:
@@ -466,6 +510,9 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				getConstraint().clear();
 				getConstraint().addAll((Collection<? extends Constraint>)newValue);
+				return;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
+				setName((String)newValue);
 				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
 				getSenderMessageTypes().clear();
@@ -506,6 +553,9 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				getConstraint().clear();
 				return;
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
 				getSenderMessageTypes().clear();
 				return;
@@ -540,6 +590,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				return behavior != null;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 				return constraint != null && !constraint.isEmpty();
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES:
 				return senderMessageTypes != null && !senderMessageTypes.isEmpty();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES:
@@ -575,6 +627,12 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				default: return -1;
 			}
 		}
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME: return CorePackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -597,7 +655,29 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				default: return -1;
 			}
 		}
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case CorePackage.NAMED_ELEMENT__NAME: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME;
+				default: return -1;
+			}
+		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DiscreteInteractionEndpointImpl

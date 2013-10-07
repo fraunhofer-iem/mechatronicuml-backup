@@ -26,7 +26,7 @@ import org.storydriven.core.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface ConnectorEndpoint extends NamedElement, CommentableElement {
+public interface ConnectorEndpoint extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Connectors</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.connector.Connector}.

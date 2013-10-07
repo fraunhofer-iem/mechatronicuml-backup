@@ -125,12 +125,12 @@ public class ConnectorAdapterFactory extends AdapterFactoryImpl {
 				return createExtendableElementAdapter();
 			}
 			@Override
-			public Adapter caseNamedElement(NamedElement object) {
-				return createNamedElementAdapter();
-			}
-			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
 				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
 			}
 			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {

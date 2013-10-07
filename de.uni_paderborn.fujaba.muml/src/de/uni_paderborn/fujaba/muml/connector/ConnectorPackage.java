@@ -77,7 +77,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int CONNECTOR_ENDPOINT__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -86,16 +86,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR_ENDPOINT__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int CONNECTOR_ENDPOINT__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -104,7 +95,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int CONNECTOR_ENDPOINT__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
@@ -113,7 +104,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT__CONNECTORS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CONNECTOR_ENDPOINT__CONNECTORS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Endpoint</em>' class.
@@ -122,7 +113,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CONNECTOR_ENDPOINT_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -131,7 +122,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___ECLASS = CorePackage.NAMED_ELEMENT___ECLASS;
+	int CONNECTOR_ENDPOINT___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -140,7 +131,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___EIS_PROXY = CorePackage.NAMED_ELEMENT___EIS_PROXY;
+	int CONNECTOR_ENDPOINT___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -149,7 +140,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___ERESOURCE = CorePackage.NAMED_ELEMENT___ERESOURCE;
+	int CONNECTOR_ENDPOINT___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -158,7 +149,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___ECONTAINER = CorePackage.NAMED_ELEMENT___ECONTAINER;
+	int CONNECTOR_ENDPOINT___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -167,7 +158,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___ECONTAINING_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINING_FEATURE;
+	int CONNECTOR_ENDPOINT___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -176,7 +167,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___ECONTAINMENT_FEATURE = CorePackage.NAMED_ELEMENT___ECONTAINMENT_FEATURE;
+	int CONNECTOR_ENDPOINT___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -185,7 +176,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___ECONTENTS = CorePackage.NAMED_ELEMENT___ECONTENTS;
+	int CONNECTOR_ENDPOINT___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -194,7 +185,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___EALL_CONTENTS = CorePackage.NAMED_ELEMENT___EALL_CONTENTS;
+	int CONNECTOR_ENDPOINT___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -203,7 +194,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___ECROSS_REFERENCES = CorePackage.NAMED_ELEMENT___ECROSS_REFERENCES;
+	int CONNECTOR_ENDPOINT___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -212,7 +203,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___EGET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int CONNECTOR_ENDPOINT___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -221,7 +212,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.NAMED_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int CONNECTOR_ENDPOINT___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -230,7 +221,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.NAMED_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int CONNECTOR_ENDPOINT___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -239,7 +230,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___EIS_SET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int CONNECTOR_ENDPOINT___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -248,7 +239,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___EUNSET__ESTRUCTURALFEATURE = CorePackage.NAMED_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int CONNECTOR_ENDPOINT___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -257,7 +248,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___EINVOKE__EOPERATION_ELIST = CorePackage.NAMED_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int CONNECTOR_ENDPOINT___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -266,7 +257,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___GET_EXTENSION__ECLASS;
+	int CONNECTOR_ENDPOINT___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -275,7 +266,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS = CorePackage.NAMED_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int CONNECTOR_ENDPOINT___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -284,7 +275,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___GET_ANNOTATION__STRING;
+	int CONNECTOR_ENDPOINT___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -293,7 +284,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING = CorePackage.NAMED_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int CONNECTOR_ENDPOINT___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Endpoint</em>' class.
@@ -302,7 +293,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_ENDPOINT_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int CONNECTOR_ENDPOINT_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.connector.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -1065,15 +1056,6 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_INTERACTION_ENDPOINT__EXTENSION = CONNECTOR_ENDPOINT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_INTERACTION_ENDPOINT__NAME = CONNECTOR_ENDPOINT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1110,13 +1092,22 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT = CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT__NAME = CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
+	int DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -1125,7 +1116,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
+	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES = CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -1134,7 +1125,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
+	int DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -1143,7 +1134,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
+	int DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR = CONNECTOR_ENDPOINT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -1152,7 +1143,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__CARDINALITY = CONNECTOR_ENDPOINT_FEATURE_COUNT + 6;
+	int DISCRETE_INTERACTION_ENDPOINT__CARDINALITY = CONNECTOR_ENDPOINT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
@@ -1161,7 +1152,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER = CONNECTOR_ENDPOINT_FEATURE_COUNT + 7;
+	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER = CONNECTOR_ENDPOINT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Interaction Endpoint</em>' class.
@@ -1170,7 +1161,7 @@ public interface ConnectorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT = CONNECTOR_ENDPOINT_FEATURE_COUNT + 8;
+	int DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT = CONNECTOR_ENDPOINT_FEATURE_COUNT + 9;
 
 
 	/**

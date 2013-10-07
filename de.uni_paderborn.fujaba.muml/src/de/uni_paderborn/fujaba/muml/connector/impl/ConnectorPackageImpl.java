@@ -590,7 +590,6 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		connectorEndpointEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		connectorEndpointEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		connectorEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		connectorEndpointInstanceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
@@ -599,6 +598,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		discreteInteractionEndpointEClass.getESuperTypes().add(this.getConnectorEndpoint());
 		discreteInteractionEndpointEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
 		discreteInteractionEndpointEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
+		discreteInteractionEndpointEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		discreteInteractionEndpointInstanceEClass.getESuperTypes().add(this.getConnectorEndpointInstance());
 		discreteSingleInteractionEndpointInstanceEClass.getESuperTypes().add(this.getDiscreteInteractionEndpointInstance());
 		discreteMultiInteractionEndpointInstanceEClass.getESuperTypes().add(this.getDiscreteInteractionEndpointInstance());

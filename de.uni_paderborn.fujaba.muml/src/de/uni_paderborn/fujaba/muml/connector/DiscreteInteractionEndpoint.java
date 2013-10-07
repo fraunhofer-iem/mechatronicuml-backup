@@ -42,7 +42,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReceivingInteractionEndpointRequiresMessageBuffer='self.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))'"
  * @generated
  */
-public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, BehavioralElement, ConstrainableElement {
+public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, BehavioralElement, ConstrainableElement, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.msgtype.MessageType}.

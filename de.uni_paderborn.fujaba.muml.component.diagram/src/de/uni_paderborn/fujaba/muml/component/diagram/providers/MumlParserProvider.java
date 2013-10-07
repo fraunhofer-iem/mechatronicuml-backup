@@ -139,8 +139,8 @@ public class MumlParserProvider extends AbstractProvider implements
 	 */
 	private IParser getPortPartName_5034Parser() {
 		if (portPartName_5034Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
+			EAttribute[] features = new EAttribute[] { de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getPortPart_Name() };
 			de.uni_paderborn.fujaba.muml.component.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.component.diagram.parsers.MessageFormatParser(
 					features);
 			portPartName_5034Parser = parser;

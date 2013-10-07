@@ -360,15 +360,6 @@ public interface ComponentPackage extends EPackage {
 	int PORT__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__NAME = ConnectorPackage.CONNECTOR_ENDPOINT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,13 +387,22 @@ public interface ComponentPackage extends EPackage {
 	int PORT__CONSTRAINT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__NAME = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__COMPONENT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
+	int PORT__COMPONENT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
@@ -411,7 +411,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PORT_CONNECTORS = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
+	int PORT__PORT_CONNECTORS = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -420,7 +420,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
+	int PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -631,15 +631,6 @@ public interface ComponentPackage extends EPackage {
 	int DIRECTED_TYPED_PORT__EXTENSION = PORT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_TYPED_PORT__NAME = PORT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -665,6 +656,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DIRECTED_TYPED_PORT__CONSTRAINT = PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__NAME = PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -947,15 +947,6 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT__EXTENSION = DIRECTED_TYPED_PORT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT__NAME = DIRECTED_TYPED_PORT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -981,6 +972,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT__CONSTRAINT = DIRECTED_TYPED_PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__NAME = DIRECTED_TYPED_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -1263,15 +1263,6 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__EXTENSION = PORT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT__NAME = PORT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1297,6 +1288,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_PORT__CONSTRAINT = PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__NAME = PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -3611,15 +3611,6 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__EXTENSION = DIRECTED_TYPED_PORT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__NAME = DIRECTED_TYPED_PORT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3645,6 +3636,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int HYBRID_PORT__CONSTRAINT = DIRECTED_TYPED_PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__NAME = DIRECTED_TYPED_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -4180,15 +4180,6 @@ public interface ComponentPackage extends EPackage {
 	int PORT_PART__EXTENSION = ConnectorPackage.CONNECTOR_ENDPOINT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT_PART__NAME = ConnectorPackage.CONNECTOR_ENDPOINT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4243,13 +4234,22 @@ public interface ComponentPackage extends EPackage {
 	int PORT_PART__REFINED_ROLE = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_PART__NAME = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Port Part</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_PART_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
+	int PORT_PART_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4849,6 +4849,17 @@ public interface ComponentPackage extends EPackage {
 	EReference getPortPart_RefinedRole();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.component.PortPart#getName()
+	 * @see #getPortPart()
+	 * @generated
+	 */
+	EAttribute getPortPart_Name();
+
+	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#isOutPort <em>Out Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5372,6 +5383,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT_PART__REFINED_ROLE = eINSTANCE.getPortPart_RefinedRole();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_PART__NAME = eINSTANCE.getPortPart_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Out Port</b></em>' attribute feature.

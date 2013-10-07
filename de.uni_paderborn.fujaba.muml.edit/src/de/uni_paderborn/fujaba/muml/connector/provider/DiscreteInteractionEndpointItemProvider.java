@@ -73,6 +73,7 @@ public class DiscreteInteractionEndpointItemProvider
 
 			addBehaviorPropertyDescriptor(object);
 			addConstraintPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addSenderMessageTypesPropertyDescriptor(object);
 			addReceiverMessageTypesPropertyDescriptor(object);
 			addAdaptationBehaviorPropertyDescriptor(object);
@@ -123,6 +124,28 @@ public class DiscreteInteractionEndpointItemProvider
 				 false,
 				 false,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 CorePackage.Literals.NAMED_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -344,6 +367,9 @@ public class DiscreteInteractionEndpointItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DiscreteInteractionEndpoint.class)) {
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
