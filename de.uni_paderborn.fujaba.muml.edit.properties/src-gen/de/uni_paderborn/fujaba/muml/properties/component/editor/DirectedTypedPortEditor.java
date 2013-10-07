@@ -29,6 +29,9 @@ public abstract class DirectedTypedPortEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addDirectedTypedPortKindEditor(null, true);
 		}
@@ -43,7 +46,8 @@ public abstract class DirectedTypedPortEditor
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addConnectorEndpointConnectorsEditor(null, true);
+			addConstrainableElementConstraintEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.comment".equals(getTab())) {
@@ -51,7 +55,7 @@ public abstract class DirectedTypedPortEditor
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addConstrainableElementConstraintEditor(
+			addConnectorEndpointConnectorsEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}
 
@@ -69,7 +73,7 @@ public abstract class DirectedTypedPortEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortKindEditor() {
-		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_Kind());
@@ -114,20 +118,20 @@ public abstract class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorEndpointConnectorsEditor(String category,
+	protected void addConstrainableElementConstraintEditor(String category,
 			boolean front) {
 		addEditorToCategory(category,
-				createConnectorEndpointConnectorsEditor(), front);
+				createConstrainableElementConstraintEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpoint_Connectors());
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getConstrainableElement_Constraint());
 
 	}
 	/**
@@ -152,20 +156,20 @@ public abstract class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addConstrainableElementConstraintEditor(String category,
+	protected void addConnectorEndpointConnectorsEditor(String category,
 			boolean front) {
 		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
+				createConnectorEndpointConnectorsEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
 		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
 
 	}
 

@@ -63,10 +63,10 @@ public class RegionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
-		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getPrioritizedElement_Priority(), 0);
+						.getPrioritizedElement_Priority());
 
 	}
 

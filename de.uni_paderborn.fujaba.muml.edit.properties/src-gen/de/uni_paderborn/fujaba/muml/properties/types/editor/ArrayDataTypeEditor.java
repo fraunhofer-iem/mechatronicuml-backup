@@ -27,7 +27,9 @@ public class ArrayDataTypeEditor
 			addArrayDataTypeTypeEditor(null, true);
 		}
 
-		addArrayDataTypeCardinalityEditor(null, false);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addArrayDataTypeCardinalityEditor(null, true);
+		}
 
 	}
 
@@ -61,10 +63,10 @@ public class ArrayDataTypeEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createArrayDataTypeCardinalityEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
-						.getArrayDataType_Cardinality());
+						.getArrayDataType_Cardinality(), false);
 
 	}
 

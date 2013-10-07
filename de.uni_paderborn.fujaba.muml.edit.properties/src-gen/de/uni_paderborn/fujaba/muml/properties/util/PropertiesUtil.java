@@ -48,16 +48,13 @@ public class PropertiesUtil {
 			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.provider.RealtimestatechartItemProviderAdapterFactory());
 
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.instance.provider.InstanceItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.valuetype.provider.ValuetypeItemProviderAdapterFactory());
 
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.msgtype.provider.MsgtypeItemProviderAdapterFactory());
@@ -76,6 +73,9 @@ public class PropertiesUtil {
 
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
+
+		factories
+				.add(new de.uni_paderborn.fujaba.muml.connector.provider.ConnectorItemProviderAdapterFactory());
 
 		factories
 				.add(new org.storydriven.core.provider.CoreItemProviderAdapterFactory());

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.connector.editor;
  */
 public abstract class DiscreteInteractionEndpointEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.connector.editor.ConnectorEndpointEditor {
+			de.uni_paderborn.fujaba.muml.properties.behavior.editor.BehavioralElementEditor {
 
 	/**
 	 * @generated
@@ -26,12 +26,20 @@ public abstract class DiscreteInteractionEndpointEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointSenderMessageTypesEditor(null, true);
+			addDiscreteInteractionEndpointSenderMessageTypesEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageTypesEditor(null, true);
+			addDiscreteInteractionEndpointReceiverMessageTypesEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
@@ -46,8 +54,8 @@ public abstract class DiscreteInteractionEndpointEditor
 		addDiscreteInteractionEndpointCardinalityEditor(null, false);
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageBufferEditor(null,
-					true);
+			addDiscreteInteractionEndpointReceiverMessageBufferEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
@@ -56,7 +64,16 @@ public abstract class DiscreteInteractionEndpointEditor
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addBehavioralElementBehaviorEditor(null, true);
+			addConnectorEndpointConnectorsEditor(
+					"de.fujaba.properties.category.Lists", true);
+		}
+
+		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -203,20 +220,56 @@ public abstract class DiscreteInteractionEndpointEditor
 	/**
 	 * @generated
 	 */
-	protected void addBehavioralElementBehaviorEditor(String category,
+	protected void addConnectorEndpointConnectorsEditor(String category,
 			boolean front) {
-		addEditorToCategory(category, createBehavioralElementBehaviorEditor(),
+		addEditorToCategory(category,
+				createConnectorEndpointConnectorsEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
+		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehaviorEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getBehavioralElement_Behavior());
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment(), true);
+
+	}
+	/**
+	 * @generated
+	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name(), false);
 
 	}
 

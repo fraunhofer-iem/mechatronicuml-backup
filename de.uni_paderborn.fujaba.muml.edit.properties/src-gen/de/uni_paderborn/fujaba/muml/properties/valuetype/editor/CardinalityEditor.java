@@ -23,9 +23,13 @@ public class CardinalityEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addCardinalityLowerBoundEditor(null, false);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addCardinalityLowerBoundEditor(null, true);
+		}
 
-		addCardinalityUpperBoundEditor(null, false);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addCardinalityUpperBoundEditor(null, true);
+		}
 
 	}
 
@@ -41,10 +45,10 @@ public class CardinalityEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityLowerBoundEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getCardinality_LowerBound());
+						.getCardinality_LowerBound(), false);
 
 	}
 	/**
@@ -59,10 +63,10 @@ public class CardinalityEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityUpperBoundEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getCardinality_UpperBound());
+						.getCardinality_UpperBound(), false);
 
 	}
 

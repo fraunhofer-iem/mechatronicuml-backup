@@ -38,8 +38,23 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.MessageBufferEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.connector.MessageBuffer">
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CardinalityEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.Cardinality">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.NaturalNumberEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.RangeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.Range">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.TimeValueEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.valuetype.TimeValue">
        </propertyEditor>
     
        <propertyEditor
@@ -183,26 +198,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CardinalityEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.Cardinality">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.TimeValueEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.TimeValue">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.NaturalNumberEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.RangeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.valuetype.Range">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.msgtype.editor.MessageTypeEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.msgtype.MessageType">
        </propertyEditor>
@@ -320,6 +315,11 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortPartEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.component.PortPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.connector.editor.MessageBufferEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.connector.MessageBuffer">
        </propertyEditor>
     
     </propertyEditors>

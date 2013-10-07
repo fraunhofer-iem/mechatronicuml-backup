@@ -65,7 +65,9 @@ public class TransitionEditor
 					"de.fujaba.properties.category.Booleans", true);
 		}
 
-		addTransitionGuardEditor(null, false);
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addTransitionGuardEditor(null, true);
+		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addTransitionEventsEditor("de.fujaba.properties.category.Lists",
@@ -258,7 +260,7 @@ public class TransitionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTransitionGuardEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Guard());
@@ -328,10 +330,10 @@ public class TransitionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
-		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getPrioritizedElement_Priority(), 0);
+						.getPrioritizedElement_Priority());
 
 	}
 

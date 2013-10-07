@@ -23,10 +23,16 @@ public class MessageBufferEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addMessageBufferBufferSizeEditor(null, false);
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addMessageBufferMessageTypeEditor(null, true);
+			addMessageBufferBufferSizeEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+			addMessageBufferMessageTypeEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
@@ -52,10 +58,10 @@ public class MessageBufferEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageBufferBufferSizeEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getMessageBuffer_BufferSize());
+						.getMessageBuffer_BufferSize(), false);
 
 	}
 	/**

@@ -23,16 +23,21 @@ public class DiscretePortEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
 			addDiscretePortRefinedRoleEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointSenderMessageTypesEditor(null, true);
+			addDiscreteInteractionEndpointSenderMessageTypesEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageTypesEditor(null, true);
+			addDiscreteInteractionEndpointReceiverMessageTypesEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
@@ -47,8 +52,8 @@ public class DiscretePortEditor
 		addDiscreteInteractionEndpointCardinalityEditor(null, false);
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageBufferEditor(null,
-					true);
+			addDiscreteInteractionEndpointReceiverMessageBufferEditor(
+					"de.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.experimental".equals(getTab())) {

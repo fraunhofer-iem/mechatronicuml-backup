@@ -48,10 +48,10 @@ public class NaturalNumberEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNaturalNumberValueEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getNaturalNumber_Value(), false);
+						.getNaturalNumber_Value());
 
 	}
 	/**
