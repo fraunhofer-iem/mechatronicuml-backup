@@ -32,9 +32,12 @@ import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
+import org.eclipse.gef.EditPartViewer;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
@@ -46,6 +49,9 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.ExpandBar;
 import org.eclipse.swt.widgets.ExpandItem;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -464,6 +470,40 @@ public class RuntimePlugin extends AbstractUIPlugin {
 
 		if (wizardDialog.getReturnCode() != Window.OK) {
 			editingDomain.getCommandStack().undo();
+		}
+	}
+
+	public static void setCurrentEditorSelection(List<Object> selection) {
+		if (selection == null) {
+			selection = Collections.emptyList();
+		}
+		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		IEditorPart editorPart = null;
+		if (window != null && window.getActivePage() != null) {
+			editorPart = window.getActivePage().getActiveEditor();
+		}
+		ISelectionProvider selectionProvider = null;
+		if (editorPart != null && editorPart.getSite() != null) {
+			selectionProvider = editorPart.getSite().getSelectionProvider();
+		}
+		if (selection.isEmpty()) {
+			// do not remove selection, as it closes the properties
+			//selectionProvider.setSelection(new StructuredSelection());
+		} else if (selectionProvider instanceof EditPartViewer) {
+			List<Object> selectedElements = new ArrayList<Object>();
+			EditPartViewer viewer = (EditPartViewer) selectionProvider;
+			for (Object part : viewer.getEditPartRegistry().values()) {
+				if (part instanceof IAdaptable) {
+					Object model = ((IAdaptable) part).getAdapter(EObject.class);
+					if (selection.contains(model)) {
+						selectedElements.add(part);
+					}
+				}
+			}
+			selectionProvider.setSelection(new StructuredSelection(selectedElements));
+		} else if (selectionProvider != null) {
+			// Currently we only want to set the selection of graphical editors
+			//selectionProvider.setSelection(new StructuredSelection(selection));
 		}
 	}
 
