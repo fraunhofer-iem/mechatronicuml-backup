@@ -112,7 +112,8 @@ public abstract class AbstractOpenDiagramEditPolicy extends OpenEditPolicy {
 					new BaseWorkbenchContentProvider()) {
 				protected TreeViewer createTreeViewer(Composite parent) {
 					TreeViewer treeViewer = super.createTreeViewer(parent);
-					treeViewer.expandAll();
+					// #484: DEACTIVATED expandAll() because it made problems (diagram could not be saved anymore etc.)
+					// treeViewer.expandAll();
 					return treeViewer;
 				}
 			};
