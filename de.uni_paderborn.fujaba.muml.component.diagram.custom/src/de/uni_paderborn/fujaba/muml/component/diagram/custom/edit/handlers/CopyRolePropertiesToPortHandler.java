@@ -14,17 +14,20 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart;
+import de.uni_paderborn.fujaba.muml.protocol.Role;
 
 public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 
@@ -33,28 +36,43 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
+		IWorkbenchWindow window = HandlerUtil
+				.getActiveWorkbenchWindowChecked(event);
 
-		//get and process current selection
+		// get and process current selection
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
-		
-		//collect all StaticStructureComponents from the selection
-		Iterator iter = ((IStructuredSelection) selection).iterator();
-		while(iter.hasNext()){
-			GraphicalEditPart editPart = (GraphicalEditPart) iter.next();
-			
-			//add StaticStructuredComponent to list
-			if(editPart instanceof DiscretePortEditPart){
-				DiscretePort port = (DiscretePort) ((View) editPart.getModel()).getElement();
 
-				if (port.getRefinedRole() == null)
-					continue;
-				
-				ICommandProxy cmd = new ICommandProxy(
-						new PortChangeCommand(editPart
-								.getEditingDomain(), port));
-				cmd.execute();
+		// collect all StaticStructureComponents from the selection
+		Iterator iter = ((IStructuredSelection) selection).iterator();
+		while (iter.hasNext()) {
+			GraphicalEditPart editPart = (GraphicalEditPart) iter.next();
+
+			// add StaticStructuredComponent to list
+			if (editPart instanceof DiscretePortEditPart) {
+				DiscretePort port = (DiscretePort) ((View) editPart.getModel())
+						.getElement();
+
+				Role role = port.getRefinedRole();
+				if (role == null) {
+					MessageDialog
+							.openInformation(window.getShell(),
+									"Role not specified",
+									"Refined Role must be set for this Port, to copy the Role properties.");
+				} else if (role.getCardinality() != null
+						&& role.getCardinality().getUpperBound().getValue() > 1
+						&& role.getRoleAndAdaptationBehavior() == null) {
+					MessageDialog
+							.openInformation(window.getShell(),
+									"RoleAndAdaptationBehavior not set",
+									"The multi Role needs to specify a \"RoleAndAdaptationBehavior\".");
+
+				} else {
+					ICommandProxy cmd = new ICommandProxy(new PortChangeCommand(
+							editPart.getEditingDomain(), port));
+					cmd.execute();
+				}
 			}
-			
+
 		}
 
 		return null;
@@ -70,8 +88,8 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 	class PortChangeCommand extends AbstractTransactionalCommand {
 		DiscretePort thePort = null;
 
-		public PortChangeCommand(
-				TransactionalEditingDomain editingDomain, DiscretePort source) {
+		public PortChangeCommand(TransactionalEditingDomain editingDomain,
+				DiscretePort source) {
 			super(editingDomain, "Copy role properties to port", null);
 			this.thePort = source;
 		}
@@ -89,7 +107,7 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 					transformationURI);
 			ExecutionContextImpl context = new ExecutionContextImpl();
 
-			//create model extent
+			// create model extent
 			BasicModelExtent portInput = new BasicModelExtent();
 			portInput.add(thePort);
 			portInput.add(getRootNode(thePort));
@@ -97,19 +115,22 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 			// execute transformation
 			ExecutionDiagnostic result = executor.execute(context, portInput);
 			if (result.getSeverity() != ExecutionDiagnostic.OK) {
-				String message = "QVT-O ERROR on rule transformation. Message was:" + result.getMessage();
+				String message = "QVT-O ERROR on rule transformation. Message was:"
+						+ result.getMessage();
 				return CommandResult.newErrorCommandResult(message);
 			}
-			
+
 			return CommandResult.newOKCommandResult();
 		}
-		
+
 		/**
-		 * Returns the root node of the resource the contains the port given as a parameter.
+		 * Returns the root node of the resource the contains the port given as
+		 * a parameter.
+		 * 
 		 * @param thePort
 		 * @return
 		 */
-		private RootNode getRootNode(DiscretePort thePort){
+		private RootNode getRootNode(DiscretePort thePort) {
 			return (RootNode) thePort.getComponent().eContainer().eContainer();
 		}
 	}

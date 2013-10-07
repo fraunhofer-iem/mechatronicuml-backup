@@ -28,6 +28,8 @@ helper copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode 
 	-- get role
 	var theRole := thePort.refinedRole;
 	
+	assert fatal (theRole != null) with log ("Refined Role must be specified");
+	
 	-- check constraint
 	-- multi port => roleAndAdaptationBehavior must be set
 	assert fatal (
