@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="psm" nsURI="http://www.fujaba.de/muml/psm/0.1" nsPrefix="psm">
-  <eAnnotations source="http://www.eclipse.org/edapt">
-    <details key="historyURI" value="../../de.uni_paderborn.fujaba.muml/model/muml.history"/>
-  </eAnnotations>
   <eSubpackages name="deployment" nsURI="http://www.fujaba.de/muml/deployment/0.3.11"
       nsPrefix="deployment">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -100,7 +97,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//deployment/HardwarePortDirectionKind"
-          defaultValueLiteral="">
+          defaultValueLiteral="IN_OUT">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="A HardwarePort is of kind in, out, or in/out. &#xD;&#xA;Depending on its kind it can receive, send, or receive and send messages. "/>
         </eAnnotations>
