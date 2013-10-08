@@ -168,9 +168,9 @@ mapping inout Property::editor() : PropertyEditor
 	Property::objectEditor,
 	Property::checkboxEditor,
 	Property::listEditor, 
-	Property::comboEditor,
 	Property::radioEditor,
 	Property::spinnerEditor,
+	Property::comboEditor,
 	Property::textEditor;
 
 
@@ -199,13 +199,6 @@ mapping Property::listEditor() : ListPropertyEditor when {self.genFeature.ecoreF
 	}
 }
 
-mapping Property::comboEditor() : ComboBoxPropertyEditor when {(self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound = 1 and not self.genFeature.ecoreFeature.oclAsType(EReference).containment) or self.genFeature.ecoreFeature.eType.oclIsKindOf(EDataType) or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) and self.genFeature.ecoreFeature.eType.oclAsType(EEnum).eLiterals->size() > 3)} {
-	init {
-		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(ComboBoxPropertyEditor)) then {
-			result := self.editor.oclAsType(ComboBoxPropertyEditor);
-		} endif;
-	}
-}
 mapping inout Property::radioEditor() : RadioPropertyEditor when {self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum)} {
 	init {
 		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(RadioPropertyEditor)) then {
@@ -214,7 +207,7 @@ mapping inout Property::radioEditor() : RadioPropertyEditor when {self.genFeatur
 	}
 }
 
-mapping Property::spinnerEditor() : SpinnerPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EAttribute) and (self.genFeature.ecoreFeature.eType.name = 'EInt' or self.genFeature.ecoreFeature.eType.name = 'EDouble'  or self.genFeature.ecoreFeature.eType.name = 'EFloat') } {
+mapping Property::spinnerEditor() : SpinnerPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EAttribute) and (self.genFeature.ecoreFeature.eType.name = 'EInt' or self.genFeature.ecoreFeature.eType.name = 'ELong' or self.genFeature.ecoreFeature.eType.name = 'EDouble'  or self.genFeature.ecoreFeature.eType.name = 'EFloat') } {
 	init {
 		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(SpinnerPropertyEditor)) then {
 			result := self.editor.oclAsType(SpinnerPropertyEditor);
@@ -228,6 +221,13 @@ mapping Property::spinnerEditor() : SpinnerPropertyEditor when {self.genFeature.
 	digits := _digits;
 }
 
+mapping Property::comboEditor() : ComboBoxPropertyEditor when {(self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound = 1 and not self.genFeature.ecoreFeature.oclAsType(EReference).containment) or self.genFeature.ecoreFeature.eType.oclIsKindOf(EDataType) or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) and self.genFeature.ecoreFeature.eType.oclAsType(EEnum).eLiterals->size() > 3)} {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(ComboBoxPropertyEditor)) then {
+			result := self.editor.oclAsType(ComboBoxPropertyEditor);
+		} endif;
+	}
+}
 mapping Property::textEditor() : TextPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EAttribute) and self.genFeature.ecoreFeature.eType.name != 'EBoolean' and not self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) } {
 	init {
 		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(TextPropertyEditor)) then {
