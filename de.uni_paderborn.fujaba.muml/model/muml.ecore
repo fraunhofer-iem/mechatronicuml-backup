@@ -819,7 +819,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="UniqueRoleNames" value="self.roles->isUnique(name)"/>
-        <details key="RoleMessageTypesMustBeCompatible" value="-- Roles should be compatibe w.r.t. message types&#xD;&#xA;self.roles->forAll(role1 : Role, role2 : Role |&#xD;&#xA;   role1 &lt;> role2&#xD;&#xA;   implies&#xD;&#xA;   role1.senderMessageTypes = role2.receiverMessageTypes&#xD;&#xA;)"/>
+        <details key="RoleMessageTypesMustBeCompatible" value="-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes&#xD;&#xA;self.roles->forAll(role1 : Role, role2 : Role |&#xD;&#xA;   role1 &lt;> role2&#xD;&#xA;   implies&#xD;&#xA;   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()&#xD;&#xA;)"/>
         <details key="SingleRoleImpliesMultiRole" value="-- Only one role exists, so it must be a Multi Role.&#xD;&#xA;self.roles->size() = 1 implies self.roles->any(true).multiRole"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1"

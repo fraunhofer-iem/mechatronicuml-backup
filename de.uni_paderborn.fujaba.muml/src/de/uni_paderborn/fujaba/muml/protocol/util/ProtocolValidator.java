@@ -175,11 +175,11 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ABSTRACT_COORDINATION_SPECIFICATION__ROLE_MESSAGE_TYPES_MUST_BE_COMPATIBLE__EEXPRESSION = "-- Roles should be compatibe w.r.t. message types\r\n" +
+	protected static final String ABSTRACT_COORDINATION_SPECIFICATION__ROLE_MESSAGE_TYPES_MUST_BE_COMPATIBLE__EEXPRESSION = "-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes\r\n" +
 		"self.roles->forAll(role1 : Role, role2 : Role |\r\n" +
 		"   role1 <> role2\r\n" +
 		"   implies\r\n" +
-		"   role1.senderMessageTypes = role2.receiverMessageTypes\r\n" +
+		"   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()\r\n" +
 		")";
 
 	/**

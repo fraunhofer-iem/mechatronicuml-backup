@@ -524,7 +524,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		   source, 
 		   new String[] {
 			 "UniqueRoleNames", "self.roles->isUnique(name)",
-			 "RoleMessageTypesMustBeCompatible", "-- Roles should be compatibe w.r.t. message types\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes = role2.receiverMessageTypes\r\n)",
+			 "RoleMessageTypesMustBeCompatible", "-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()\r\n)",
 			 "SingleRoleImpliesMultiRole", "-- Only one role exists, so it must be a Multi Role.\r\nself.roles->size() = 1 implies self.roles->any(true).multiRole"
 		   });						
 		addAnnotation

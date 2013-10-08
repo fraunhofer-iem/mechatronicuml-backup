@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getAbstractCoordinationSpecification()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueRoleNames RoleMessageTypesMustBeCompatible SingleRoleImpliesMultiRole'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='self.roles->isUnique(name)' RoleMessageTypesMustBeCompatible='-- Roles should be compatibe w.r.t. message types\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes = role2.receiverMessageTypes\r\n)' SingleRoleImpliesMultiRole='-- Only one role exists, so it must be a Multi Role.\r\nself.roles->size() = 1 implies self.roles->any(true).multiRole'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='self.roles->isUnique(name)' RoleMessageTypesMustBeCompatible='-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()\r\n)' SingleRoleImpliesMultiRole='-- Only one role exists, so it must be a Multi Role.\r\nself.roles->size() = 1 implies self.roles->any(true).multiRole'"
  * @generated
  */
 public interface AbstractCoordinationSpecification extends NamedElement, ConstrainableElement, CommentableElement {
