@@ -125,6 +125,8 @@ public class XtextPropertyEditor extends
 		try {
 			Expression expression = parseExpression(text);
 			setSingleValue(expression);
+		} catch (CoreException e) {
+			// eat (this exception is about a syntax error)
 		} finally {
 			saving--;
 		}
