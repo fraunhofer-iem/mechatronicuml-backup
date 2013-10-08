@@ -33,9 +33,8 @@ public class XtextPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
 
 	private boolean active = false;
-	private boolean updating = false;
-	private boolean saving = false;
-	
+	private int updating = 0;
+	private int saving = 0;
 
 	public XtextPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
@@ -51,7 +50,7 @@ public class XtextPropertyEditor extends
 
 		@Override
 		public void modelChanged(XtextResource resource) {
-			if (updating) {
+			if (updating > 0) {
 				return;
 			}
 			// using the resource directly isn't "thread safe"
@@ -103,8 +102,8 @@ public class XtextPropertyEditor extends
 				active = true;				
 			}
 			public void focusLost(FocusEvent e) {
-				modify();
 				active = false;
+				modify();
 			}
 		});
 	}
@@ -122,10 +121,13 @@ public class XtextPropertyEditor extends
 	}
 
 	private void save(String text) throws CoreException {
-		saving = true;
-		Expression expression = parseExpression(text);
-		setSingleValue(expression);
-		saving = false;
+		saving++;
+		try {
+			Expression expression = parseExpression(text);
+			setSingleValue(expression);
+		} finally {
+			saving--;
+		}
 	}
 	
 	private void setSingleValue(Object singleValue) {
@@ -161,7 +163,7 @@ public class XtextPropertyEditor extends
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
-		if (!saving) {
+		if (saving == 0) {
 			
 			String text = null;
 			try {
@@ -176,11 +178,14 @@ public class XtextPropertyEditor extends
 		}
 	}
 
-	private synchronized void updateText(String text) {
+	private void updateText(String text) {
 		if (embeddedXtextEditor != null && !text.equals(embeddedXtextEditor.getDocument().get())) {
-			updating = true;
-			embeddedXtextEditor.update(text);
-			updating = false;
+			updating++;
+			try {
+				embeddedXtextEditor.update(text);
+			} finally {
+				updating--;
+			}
 		}
 	}
 
