@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.deployment.impl;
 
+import de.uni_paderborn.fujaba.muml.psm.deployment.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -39,7 +40,7 @@ public class DeploymentFactoryImpl extends EFactoryImpl implements DeploymentFac
 	 */
 	public static DeploymentFactory init() {
 		try {
-			DeploymentFactory theDeploymentFactory = (DeploymentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/deployment/0.3.11"); 
+			DeploymentFactory theDeploymentFactory = (DeploymentFactory)EPackage.Registry.INSTANCE.getEFactory(DeploymentPackage.eNS_URI);
 			if (theDeploymentFactory != null) {
 				return theDeploymentFactory;
 			}

@@ -211,7 +211,7 @@ public class LinkQualityOfServiceImpl extends CommentableElementImpl implements 
 	 */
 	public Deployment getDeployment() {
 		if (eContainerFeatureID() != DeploymentPackage.LINK_QUALITY_OF_SERVICE__DEPLOYMENT) return null;
-		return (Deployment)eContainer();
+		return (Deployment)eInternalContainer();
 	}
 
 	/**

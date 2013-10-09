@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see de.uni_paderborn.fujaba.muml.psm.PsmFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/edapt historyURI='../../de.uni_paderborn.fujaba.muml/model/muml.history'"
  * @generated
  */
 public interface PsmPackage extends EPackage {

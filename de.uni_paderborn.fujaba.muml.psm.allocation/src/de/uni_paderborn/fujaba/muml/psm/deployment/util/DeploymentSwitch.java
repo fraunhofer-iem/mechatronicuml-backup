@@ -15,6 +15,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
+import de.uni_paderborn.fujaba.muml.psm.deployment.*;
 import de.uni_paderborn.fujaba.muml.psm.deployment.CommunicationLink;
 import de.uni_paderborn.fujaba.muml.psm.deployment.Deployment;
 import de.uni_paderborn.fujaba.muml.psm.deployment.DeploymentPackage;
@@ -100,8 +101,8 @@ public class DeploymentSwitch<T> extends Switch<T> {
 			case DeploymentPackage.HARDWARE_PORT: {
 				HardwarePort hardwarePort = (HardwarePort)theEObject;
 				T result = caseHardwarePort(hardwarePort);
-				if (result == null) result = caseConnectorEndpoint(hardwarePort);
 				if (result == null) result = caseNamedElement(hardwarePort);
+				if (result == null) result = caseConnectorEndpoint(hardwarePort);
 				if (result == null) result = caseExtendableElement(hardwarePort);
 				if (result == null) result = caseCommentableElement(hardwarePort);
 				if (result == null) result = defaultCase(theEObject);

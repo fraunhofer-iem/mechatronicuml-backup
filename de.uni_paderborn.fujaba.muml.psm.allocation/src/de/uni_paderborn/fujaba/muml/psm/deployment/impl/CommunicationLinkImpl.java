@@ -171,7 +171,7 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	 */
 	public Deployment getDeployment() {
 		if (eContainerFeatureID() != DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT) return null;
-		return (Deployment)eContainer();
+		return (Deployment)eInternalContainer();
 	}
 
 	/**

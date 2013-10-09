@@ -90,7 +90,7 @@ public interface HardwarePort extends NamedElement, CommentableElement, Connecto
 
 	/**
 	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * The default value is <code>"IN_OUT"</code>.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.psm.deployment.HardwarePortDirectionKind}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -106,7 +106,7 @@ public interface HardwarePort extends NamedElement, CommentableElement, Connecto
 	 * @see de.uni_paderborn.fujaba.muml.psm.deployment.HardwarePortDirectionKind
 	 * @see #setKind(HardwarePortDirectionKind)
 	 * @see de.uni_paderborn.fujaba.muml.psm.deployment.DeploymentPackage#getHardwarePort_Kind()
-	 * @model default=""
+	 * @model default="IN_OUT"
 	 * @generated
 	 */
 	HardwarePortDirectionKind getKind();

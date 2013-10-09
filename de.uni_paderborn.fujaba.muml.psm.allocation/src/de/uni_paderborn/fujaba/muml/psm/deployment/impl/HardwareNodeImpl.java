@@ -154,7 +154,7 @@ public class HardwareNodeImpl extends NamedElementImpl implements HardwareNode {
 	 */
 	public Deployment getDeployment() {
 		if (eContainerFeatureID() != DeploymentPackage.HARDWARE_NODE__DEPLOYMENT) return null;
-		return (Deployment)eContainer();
+		return (Deployment)eInternalContainer();
 	}
 
 	/**

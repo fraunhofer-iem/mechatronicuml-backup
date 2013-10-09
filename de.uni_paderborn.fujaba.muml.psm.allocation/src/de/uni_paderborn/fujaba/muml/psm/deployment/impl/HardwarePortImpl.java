@@ -100,7 +100,7 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final HardwarePortDirectionKind KIND_EDEFAULT = HardwarePortDirectionKind.IN;
+	protected static final HardwarePortDirectionKind KIND_EDEFAULT = HardwarePortDirectionKind.IN_OUT;
 
 	/**
 	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -181,7 +181,7 @@ public class HardwarePortImpl extends NamedElementImpl implements HardwarePort {
 	 */
 	public HardwareNode getHardwareNode() {
 		if (eContainerFeatureID() != DeploymentPackage.HARDWARE_PORT__HARDWARE_NODE) return null;
-		return (HardwareNode)eContainer();
+		return (HardwareNode)eInternalContainer();
 	}
 
 	/**
