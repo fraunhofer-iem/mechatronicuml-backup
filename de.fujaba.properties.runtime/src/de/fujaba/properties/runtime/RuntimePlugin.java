@@ -32,6 +32,7 @@ import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
@@ -495,7 +496,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 			for (Object part : viewer.getEditPartRegistry().values()) {
 				if (part instanceof IAdaptable) {
 					Object model = ((IAdaptable) part).getAdapter(EObject.class);
-					if (selection.contains(model)) {
+					if (selection.contains(model) && ((EditPart) part).isSelectable()) {
 						selectedElements.add(part);
 					}
 				}
