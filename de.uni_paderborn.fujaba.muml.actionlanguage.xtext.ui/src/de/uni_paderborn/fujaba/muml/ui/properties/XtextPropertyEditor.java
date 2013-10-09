@@ -123,10 +123,15 @@ public class XtextPropertyEditor extends
 	private void save(String text) throws CoreException {
 		saving++;
 		try {
-			Expression expression = parseExpression(text);
-			setSingleValue(expression);
+			if (text == null || text.isEmpty()) {
+				setSingleValue(null);
+			} else {
+				Expression expression = parseExpression(text);
+				setSingleValue(expression);
+			}
 		} catch (CoreException e) {
-			// eat (this exception is about a syntax error)
+			// eat this exception; it complains about a syntax error,
+			// which is shown to the user in the document anyway.
 		} finally {
 			saving--;
 		}
@@ -134,7 +139,11 @@ public class XtextPropertyEditor extends
 	
 	private void setSingleValue(Object singleValue) {
 		if (feature.isMany()) {
-			setValue(Collections.singletonList(singleValue));
+			if (singleValue == null) {
+				setValue(Collections.emptyList());
+			} else {
+				setValue(Collections.singletonList(singleValue));
+			}
 		} else {
 			setValue(singleValue);
 		}
