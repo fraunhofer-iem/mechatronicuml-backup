@@ -74,7 +74,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		Composite container = toolkit.createComposite(parent);
 		if (parent.getLayout() instanceof GridLayout) {
 			container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
-					false, 2, 1));
+					true, 2, 1));
 		}
 		container.setLayout(new GridLayout(1, false));
 
@@ -85,11 +85,11 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		Composite listContainer = toolkit.createComposite(container);
 		listContainer.setLayout(new GridLayout(2, false));
 		listContainer.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
-				false));
+				true));
 
 		org.eclipse.swt.widgets.Table table = toolkit.createTable(
 				listContainer, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
-		GridData tableGridData = new GridData(SWT.FILL, SWT.FILL, false, false);
+		GridData tableGridData = new GridData(SWT.FILL, SWT.FILL, false, true);
 		tableGridData.minimumWidth = 120;
 		table.setLayoutData(tableGridData);
 
@@ -136,7 +136,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 				.getImage(RuntimePlugin.IMAGE_UP, 12, 12));
 		buttonUp.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				move(true);
+				move(-1);
 			}
 		});
 
@@ -145,7 +145,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 				12, 12));
 		buttonDown.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				move(false);
+				move(1);
 			}
 		});
 	}
@@ -224,7 +224,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		setValue(newValues);
 	}
 
-	protected void move(boolean up) {
+	protected void move(int amount) {
 		@SuppressWarnings("unchecked")
 		Collection<Object> values = (Collection<Object>) value;
 
@@ -235,12 +235,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		}
 
 		// Calculate new index
-		int newIndex = index;
-		if (up) {
-			newIndex--;
-		} else {
-			newIndex++;
-		}
+		int newIndex = index + amount;
 
 		// Move
 		List<Object> newValues = new ArrayList<Object>(values);
@@ -269,9 +264,10 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			tableViewer.setInput(value);
 			tableViewer.addSelectionChangedListener(selectionChangedListener);
 			
-			// Relayout because item size could have been changed
-			RuntimePlugin.revalidateLayout(tableViewer.getTable());
-			
+//			// Relayout because item size could have been changed
+//			tableViewer.refresh(true);
+//			RuntimePlugin.revalidateLayout(tableViewer.getTable());
+//			
 			applySelection();
 		}
 	}
@@ -318,8 +314,13 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			if (value != null) {
 				applySelection();
 			}
+			
+
+			// Relayout because item size could have been changed
+			tableViewer.refresh(true);
+			RuntimePlugin.revalidateLayout(tableViewer.getTable());
 		}
-		//RuntimePlugin.revalidateLayout(tableViewer.getTable());
+
 	}
 	
 }
