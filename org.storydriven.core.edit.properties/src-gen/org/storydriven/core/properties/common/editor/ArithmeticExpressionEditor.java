@@ -23,7 +23,7 @@ public class ArithmeticExpressionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addArithmeticExpressionOperatorEditor(null, true);
 		}
 
@@ -42,7 +42,7 @@ public class ArithmeticExpressionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createArithmeticExpressionOperatorEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getArithmeticExpression_Operator());

@@ -29,19 +29,19 @@ public abstract class ComponentEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addComponentPortsEditor("de.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addComponentComponentTypeEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addNamedElementNameEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConstrainableElementConstraintEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}

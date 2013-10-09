@@ -23,15 +23,15 @@ public class SynchronizationEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addSynchronizationSyncChannelEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addSynchronizationKindEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addSynchronizationSelectorExpressionEditor(null, true);
 		}
 

@@ -23,11 +23,11 @@ public class RegionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addRegionParentStateEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addPrioritizedElementPriorityEditor(null, true);
 		}
 

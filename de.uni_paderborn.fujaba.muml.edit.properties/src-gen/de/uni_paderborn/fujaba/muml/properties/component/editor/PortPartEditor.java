@@ -26,19 +26,19 @@ public class PortPartEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addPortPartPortTypeEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addPortPartComponentPartEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addPortPartCoordinationProtocolOccurenceEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConnectorEndpointConnectorsEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}

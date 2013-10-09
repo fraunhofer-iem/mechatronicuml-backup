@@ -23,17 +23,17 @@ public class ComponentPartEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addComponentPartComponentTypeEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addComponentPartParentComponentEditor(null, true);
 		}
 
 		addComponentPartCardinalityEditor(null, false);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addNamedElementNameEditor(null, true);
 		}
 

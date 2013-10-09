@@ -32,38 +32,38 @@ public abstract class DiscreteInteractionEndpointEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteInteractionEndpointSenderMessageTypesEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteInteractionEndpointReceiverMessageTypesEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteInteractionEndpointAdaptationBehaviorEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor(null,
 					true);
 		}
 
 		addDiscreteInteractionEndpointCardinalityEditor(null, false);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteInteractionEndpointReceiverMessageBufferEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConstrainableElementConstraintEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConnectorEndpointConnectorsEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}
@@ -72,7 +72,7 @@ public abstract class DiscreteInteractionEndpointEditor
 			addCommentableElementCommentEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addNamedElementNameEditor(null, true);
 		}
 

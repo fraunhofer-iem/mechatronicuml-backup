@@ -554,8 +554,8 @@
 
           <propertyTab
              category="extra"
-             id="property.tab.experimental"
-             label="%tab.experimental"/>
+             id="property.tab.general"
+             label="%tab.general"/>
 
 
           <propertyTab
@@ -598,8 +598,8 @@
             <input type="org.eclipse.gef.EditPart"/>
          </propertySection>
          <propertySection
-            id="property.section.experimental" 
-            tab="property.tab.experimental"
+            id="property.section.general" 
+            tab="property.tab.general"
             filter="de.fujaba.properties.runtime.filter.ElementFilter"
             class="de.fujaba.properties.runtime.sections.ObjectPropertySection">
          </propertySection>

@@ -2,7 +2,7 @@
 <de.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fujaba="http://de.fujaba.properties/0.1" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
   <reconciler/>
   <genModel href="../../org.storydriven.core/model/core.uml.genmodel#/"/>
-  <plugin name="org.storydriven.core.edit.properties" version="0.4.0.qualifier">
+  <plugin id="org.storydriven.core.edit.properties" name="Storydriven Properties" vendor="SDM" version="0.4.0.qualifier">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.storydriven.core.edit</requiredBundles>
@@ -11,13 +11,13 @@
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.storydriven.core</requiredBundles>
   </plugin>
-  <tabs id="property.tab.experimental" name="Experimental"/>
-  <tabs id="property.tab.comment" name="Comment" afterTab="property.tab.experimental"/>
+  <tabs id="property.tab.general" name="General"/>
+  <tabs id="property.tab.comment" name="Comment" afterTab="property.tab.general"/>
   <packages>
     <genPackage href="../../org.storydriven.core/model/core.uml.genmodel#//core"/>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement"/>
-      <properties tab="//@tabs.1">
+      <properties tab="//@tabs.1" reconcile="false">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
         <editor xsi:type="de.fujaba:TextPropertyEditor" multiLine="true"/>
       </properties>
@@ -66,7 +66,7 @@
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/UnaryExpression"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/UnaryExpression/operator"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.0">
@@ -76,21 +76,21 @@
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ComparisonExpression"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ComparisonExpression/operator"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.2/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ArithmeticExpression"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ArithmeticExpression/operator"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.2/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LogicalExpression"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LogicalExpression/operator"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.0">

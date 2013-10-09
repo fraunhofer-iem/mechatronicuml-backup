@@ -23,7 +23,7 @@ public abstract class TypedNamedElementEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addTypedNamedElementDataTypeEditor(null, true);
 		}
 

@@ -23,7 +23,7 @@ public class AtomicComponentEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addBehavioralElementBehaviorEditor(null, true);
 		}
 

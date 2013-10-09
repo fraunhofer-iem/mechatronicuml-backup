@@ -32,7 +32,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(null,
 				false);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(
 					"de.fujaba.properties.category.Booleans", true);
 		}

@@ -32,20 +32,20 @@ public abstract class DirectedTypedPortEditor
 		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDirectedTypedPortKindEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDirectedTypedPortOptionalEditor(
 					"de.fujaba.properties.category.Booleans", true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addPortComponentEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConstrainableElementConstraintEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}
@@ -54,7 +54,7 @@ public abstract class DirectedTypedPortEditor
 			addCommentableElementCommentEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConnectorEndpointConnectorsEditor(
 					"de.fujaba.properties.category.Lists", true);
 		}

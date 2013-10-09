@@ -25,11 +25,11 @@ public class ClockConstraintEditor
 
 		addClockConstraintBoundEditor(null, false);
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addClockConstraintClockEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addClockConstraintOperatorEditor(null, true);
 		}
 

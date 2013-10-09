@@ -23,16 +23,16 @@ public class DiscreteSinglePortInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor(
 					null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteSingleInteractionEndpointInstanceNextEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.experimental".equals(getTab())) {
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteSingleInteractionEndpointInstancePreviousEditor(null,
 					true);
 		}
