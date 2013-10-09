@@ -28,13 +28,19 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	public void createControls(Composite parent,
 			TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
-		
+
 		String tabId = aTabbedPropertySheetPage.getSelectedTab().getId();
 		editor = createObjectPropertyEditor(tabId);
 
 		FormToolkit toolkit = getWidgetFactory();
 		editor.createControls(parent, toolkit);
 		editor.getSection().setSeparatorControl(toolkit.createCompositeSeparator(editor.getSection()));
+		
+	}
+	
+	@Override
+	public boolean shouldUseExtraSpace() {
+		return true;
 	}
 
 	public void setInput(IWorkbenchPart part, ISelection selection) {
