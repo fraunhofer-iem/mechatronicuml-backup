@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.component.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,7 +25,11 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
+import de.uni_paderborn.fujaba.muml.types.ArrayDataType;
+import de.uni_paderborn.fujaba.muml.types.PrimitiveDataType;
 
 
 /**
@@ -70,27 +75,40 @@ public class DirectedTypedPortItemProvider
 		}
 		return itemPropertyDescriptors;
 	}
+	
 
 	/**
 	 * This adds a property descriptor for the Data Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TypedNamedElement_dataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TypedNamedElement_dataType_feature", "_UI_TypedNamedElement_type"),
-				 BehaviorPackage.Literals.TYPED_NAMED_ELEMENT__DATA_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		(new ItemPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_TypedNamedElement_dataType_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_TypedNamedElement_dataType_feature", "_UI_TypedNamedElement_type"),
+			 BehaviorPackage.Literals.TYPED_NAMED_ELEMENT__DATA_TYPE,
+			 true,
+			 false,
+			 true,
+			 null,
+			 null,
+			 null) {
+
+		@Override
+		public Collection<?> getChoiceOfValues(Object object) {
+			Collection<Object> choices = new ArrayList<Object>();
+			for (Object value : super.getChoiceOfValues(object)) {
+				if (value instanceof PrimitiveDataType || value instanceof ArrayDataType) {
+					choices.add(value);
+				}
+			}
+			return choices;
+		}
+	});
 	}
 
 	/**

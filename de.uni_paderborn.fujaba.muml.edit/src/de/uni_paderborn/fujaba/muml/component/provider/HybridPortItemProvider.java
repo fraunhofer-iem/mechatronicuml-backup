@@ -127,48 +127,7 @@ public class HybridPortItemProvider
 				 null,
 				 rootPropertyDescriptor));
 	}
-	
 
-	@Override
-	protected void addDataTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TypedNamedElement_dataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TypedNamedElement_dataType_feature", "_UI_TypedNamedElement_type"),
-				 BehaviorPackage.Literals.TYPED_NAMED_ELEMENT__DATA_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null) {
-
-			@Override
-			public Collection<?> getChoiceOfValues(Object object) {
-				Collection<Object> choices = new ArrayList<Object>();
-				//  Implemented using a blacklist (Components and Ports are forbidden)
-				// TODO: Does a whitelist make more sense here?
-				for (Object value : super.getChoiceOfValues(object)) {
-					if (value instanceof Component) {
-						continue;
-					}
-					if (value instanceof Port) {
-						continue;
-					}
-					if (value instanceof ComponentPart) {
-						continue;
-					}
-					if (value instanceof PortPart) {
-						continue;
-					}
-					choices.add(value);
-				}
-				return choices;
-			}
-		});
-	}
 
 	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
