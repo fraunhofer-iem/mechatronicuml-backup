@@ -49,14 +49,14 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 			String name = element.eClass().getName();
 			setTitle(RuntimePlugin.makeHumanReadable(name) + " Properties");
 			
-			// Add new property editors for the first working subclass found
+			// Add new property editors for the first working super class found
 			List<EClass> ecoreTypes = new ArrayList<EClass>();
 			ecoreTypes.add(element.eClass());
 			ecoreTypes.addAll(element.eClass().getEAllSuperTypes());
 			List<IPropertyEditorFactory> foundFactories = null;
 			for (EClass ecoreType : ecoreTypes) {
 				foundFactories = RuntimePlugin.getPropertyEditorFactories(ecoreType);
-				if (foundFactories != null) {
+				if (foundFactories != null && !foundFactories.isEmpty()) {
 					break;
 				}
 			}
