@@ -16,7 +16,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Layout;
 import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.events.IExpansionListener;
-import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 
@@ -33,17 +32,11 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	public Color colorActiveBackground = null;
 	
 	protected Section section;
-
 	protected Composite childrenComposite;
-
 	private String title;
-
 	private int orientation = SWT.VERTICAL;
-
 	protected FormToolkit toolkit;
-
 	private List<IPropertyEditor> propertyEditors = new ArrayList<IPropertyEditor>();
-
 	protected Map<String, IPropertyEditor> keys = new HashMap<String, IPropertyEditor>();
 
 	/**
@@ -121,25 +114,16 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	
 
 	private void childrenChanged() {
-		
-
 		if (section != null) {
-			
 			if (propertyEditors.isEmpty()) {
 				section.setToggleColor(colorInactiveText);
-//				section.setBackground(COLOR_TEXT_INACTIVE);
 				section.setTitleBarForeground(colorInactiveText);
-//				section.setTitleBarBackground(COLOR_BACKGROUND_INACTIVE);
 				section.setTitleBarGradientBackground(colorInactiveBackground);
-//				section.setTitleBarBorderColor(COLOR_BACKGROUND_INACTIVE);
 
 			} else {
 				section.setToggleColor(colorActiveText);
-				//section.setBackground(COLOR_TEXT_ACTIVE);
 				section.setTitleBarForeground(colorActiveText);
-//				section.setTitleBarBackground(COLOR_BACKGROUND_ACTIVE);
 				section.setTitleBarGradientBackground(colorActiveBackground);
-//				section.setTitleBarBorderColor(COLOR_BACKGROUND_ACTIVE);
 			}
 
 			RuntimePlugin.revalidateLayout(childrenComposite);
@@ -192,29 +176,14 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		Object layoutData = createLayoutData(parent);
 
 		if (title != null) {
-			// original:
 			section = createSection(parent, toolkit);
+			
 			colorActiveText = new Color(null, 0, 85, 239);
 			colorActiveBackground = section.getTitleBarGradientBackground();
 			childrenComposite = toolkit.createComposite(section);
+			childrenComposite.setLayoutData(layoutData);
 			section.setClient(childrenComposite);
 			section.setLayoutData(layoutData);
-			
-			// this version is with border at the left
-//			section = createSection(parent, toolkit);
-//			section.setLayoutData(layoutData);
-//			
-//			Composite container = toolkit.createComposite(section, SWT.NONE);
-//			container.setLayout(new GridLayout(2, false));
-//			Composite border = toolkit.createComposite(container, SWT.NONE);
-//			border.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
-//			border.setBackground(new Color(null, 0, 0, 0));
-//			
-//			childrenComposite = toolkit.createComposite(container, SWT.NONE);
-//			childrenComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-//			section.setClient(container);
-			
-
 			section.addExpansionListener(new IExpansionListener() {
 
 				@Override
@@ -234,7 +203,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 					}
 				}
 			});
-			
 			section.setExpanded(initiallyExpanded);
 			
 			
@@ -270,9 +238,10 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		} else if (orientation == SWT.HORIZONTAL) {
 			RowLayout layout = new RowLayout(orientation);
 			layout.marginHeight = 10;
-			layout.spacing = 40;
+			layout.spacing = 20;
 			layout.fill = true;
-			layout.pack = false;
+			layout.pack = true;
+			layout.wrap = true;
 			return layout;
 		}
 		return null;
@@ -281,7 +250,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	protected Object createLayoutData(Composite parent) {
 		Layout layout = parent.getLayout();
 		if (layout instanceof GridLayout) {
-			return new GridData(SWT.FILL, SWT.NONE, false, false, 2, 1);
+			return new GridData(SWT.FILL, SWT.NONE, true, false, 2, 1);
 		}
 		return null;
 	}
@@ -297,58 +266,21 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		}
 	}
 
-	protected Section createSection(Composite parent,
-			FormToolkit factory) {
-		// int expansionStyle = 0;
-		// * TREE_NODE, TWISTIE,
-		// * CLIENT_INDENT, COMPACT, FOCUS_TITLE,
-		// * LEFT_TEXT_CLIENT_ALIGNMENT, NO_TITLE
-
-		// ExpandableComposite expandableComposite =
-		// factory.createExpandableComposite(
-		// parent, expansionStyle);
-		// expandableComposite.setLayout(new FillLayout());
-
-		// ExpandableComposite expandableComposite =
-		// factory.createExpandableComposite(
-		// parent,
-		// ExpandableComposite.TWISTIE | ExpandableComposite.EXPANDED |
-		// ExpandableComposite.CLIENT_INDENT | ExpandableComposite.COMPACT);
-		// expandableComposite.setText(title);
-
-		
-		Section section = toolkit.createSection(parent,  Section.TITLE_BAR
-				| Section.TWISTIE | ExpandableComposite.EXPANDED
-				| Section.CLIENT_INDENT);
-		
+	protected Section createSection(Composite parent, FormToolkit factory) {
+		Section section = toolkit.createSection(parent, Section.TITLE_BAR
+				| Section.TWISTIE | Section.EXPANDED | Section.CLIENT_INDENT);
 		section.setText(title);
-
-//		section.setSeparatorControl(factory.createCompositeSeparator(section));
-		// Hyperlink hprlnkNewHyperlink = factory.createHyperlink(section,
-		// "this is desctiption control", SWT.NONE);
-		// factory.paintBordersFor(hprlnkNewHyperlink);
-		// section.setDescriptionControl(hprlnkNewHyperlink);
-
-		// section.setDescription("TEST");
-
-		// Menu menu = new Menu(section);
-		// MenuItem item = new MenuItem(menu, SWT.NONE);
-		// item.setText("test");
-		// section.setMenu(menu);
-
 		return section;
 	}
 
 	@Override
 	public void setInput(Object object) {
 		super.setInput(object);
-//		if (childrenCreated) {
-			for (IPropertyEditor editor : propertyEditors) {
-				if (!editor.isDisposed()) {
-					editor.setInput(object);
-				}
+		for (IPropertyEditor editor : propertyEditors) {
+			if (!editor.isDisposed()) {
+				editor.setInput(object);
 			}
-//		}
+		}
 	}
 
 	@Override
