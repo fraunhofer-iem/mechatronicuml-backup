@@ -78,7 +78,6 @@ helper createPortParts(inout componentPart : ComponentPart) {
 -- instantiate port part that references the given port
 constructor PortPart::PortPart(type : Port) {
 	portType := type;
-	name := type.name;
 }
 
 constructor CoordinationProtocolOccurrence::CoordinationProtocolOccurrence(p : CoordinationProtocol) {
