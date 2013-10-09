@@ -116,7 +116,7 @@ public class NavigationFeaturePropertyEditor extends
 			}
 		}
 		selectedClass = eClasses.get(0);
-		if (!createMode) {
+		if (!feature.isMany()) {
 			buttonCreate = toolkit.createButton(composite, "", SWT.TOGGLE);
 			buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD,
 					12, 12));
