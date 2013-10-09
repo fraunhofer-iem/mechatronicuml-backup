@@ -4,11 +4,14 @@ import java.util.Collection;
 import java.util.Collections;
 
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.jface.text.source.AnnotationModel;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
@@ -18,7 +21,9 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextModelListener;
+import org.eclipse.xtext.ui.editor.model.XtextDocument;
 import org.storydriven.core.expressions.Expression;
 
 import com.google.inject.Injector;
@@ -45,7 +50,7 @@ public class XtextPropertyEditor extends
 
 	private EmbeddedXtextEditor embeddedXtextEditor;
 	private SaveModelListener saveModelListener;
-
+	
 	class SaveModelListener implements IXtextModelListener {
 
 		@Override
@@ -53,6 +58,7 @@ public class XtextPropertyEditor extends
 			if (updating > 0) {
 				return;
 			}
+
 			// using the resource directly isn't "thread safe"
 			// because the resource might have been changed again after we
 			// checked it via getErrors()...
@@ -97,6 +103,33 @@ public class XtextPropertyEditor extends
 		embeddedXtextEditor = new EmbeddedXtextEditor(innerContainer, injector);
 		saveModelListener = new SaveModelListener();
 		embeddedXtextEditor.getDocument().addModelListener(saveModelListener);
+		//embeddedXtextEditor.getDocument()
+		final XtextDocument document = (XtextDocument) embeddedXtextEditor.getDocument();
+		final Job validationJob = document.getValidationJob();
+		document.setValidationJob(new Job(validationJob.getName()) {
+
+			@Override
+			protected IStatus run(IProgressMonitor monitor) {
+				// Check if the text is empty and remove markers
+				if (document.get() == null || document.get().isEmpty()) {
+					removeMarkers();
+					return Status.OK_STATUS;
+				}
+				
+				// Run Xtext validation normally
+				validationJob.schedule();
+				try {
+					validationJob.join();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					return Status.CANCEL_STATUS;
+				}
+				return validationJob.getResult();
+			}
+			
+		});
+		
+
 		embeddedXtextEditor.getViewer().getTextWidget().addFocusListener(new FocusListener() {
 			public void focusGained(FocusEvent e) {
 				active = true;				
@@ -125,6 +158,7 @@ public class XtextPropertyEditor extends
 		try {
 			if (text == null || text.isEmpty()) {
 				setSingleValue(null);
+
 			} else {
 				Expression expression = parseExpression(text);
 				setSingleValue(expression);
@@ -137,6 +171,16 @@ public class XtextPropertyEditor extends
 		}
 	}
 	
+
+	protected boolean isRelevantAnnotationType(String type) {
+		return type.equals(XtextEditor.ERROR_ANNOTATION_TYPE) || type.equals(XtextEditor.WARNING_ANNOTATION_TYPE) || type.equals(XtextEditor.INFO_ANNOTATION_TYPE);
+	}
+	
+	private void removeMarkers() {
+		AnnotationModel annotationModel = (AnnotationModel) embeddedXtextEditor.getViewer().getAnnotationModel();
+		annotationModel.removeAllAnnotations();
+	}
+
 	private void setSingleValue(Object singleValue) {
 		if (feature.isMany()) {
 			if (singleValue == null) {
