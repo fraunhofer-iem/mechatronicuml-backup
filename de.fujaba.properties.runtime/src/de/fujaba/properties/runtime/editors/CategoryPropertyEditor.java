@@ -203,7 +203,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 					}
 				}
 			});
-			section.setExpanded(initiallyExpanded);
 			
 			
 		} else {
@@ -215,8 +214,13 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			childrenComposite.setLayout(layout);
 		}
 
-		// TODO Remove, to let the children be created on demand, see ### (faster).
-		createChildren();
+		if (title == null || initiallyExpanded) {
+			createChildren();
+		}
+		
+		if (section != null) {
+			section.setExpanded(initiallyExpanded);
+		}
 	}
 	
 	protected void createChildren() {
