@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -63,6 +62,7 @@ import de.fujaba.properties.runtime.factory.IPropertyEditorFactory;
 import de.fujaba.properties.runtime.wizard.ElementSelectionWizardPage;
 import de.fujaba.properties.runtime.wizard.ElementSelectionWizardPage.IElementValidator;
 import de.fujaba.properties.runtime.wizard.PropertiesWizard;
+import de.fujaba.properties.runtime.wizard.PropertiesWizardDialog;
 import de.fujaba.properties.runtime.wizard.PropertyEditorWizardPage;
 
 /**
@@ -458,29 +458,17 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 
 	public static void showWizardWithUndo(Wizard wizard, Notifier notifier) {
-		final WizardDialog wizardDialog = new WizardDialog(Display.getCurrent().getActiveShell(), wizard);
-		ChangeCommand changeCommand = new ChangeCommand(notifier) {
-			@Override
-			protected void doExecute() {
-				// MUML #734
-				// Disable block on open, so that Eclipse can process UI events (necessary for starting jobs)
-				wizardDialog.setBlockOnOpen(false);
-				
-				// Open the wizard
-				wizardDialog.open();
-			}
-		};
-		changeCommand.setLabel("Modify Properties");
+		final PropertiesWizardDialog wizardDialog = new PropertiesWizardDialog(Display.getCurrent().getActiveShell(), wizard);
 		EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(notifier);
-		editingDomain.getCommandStack().execute(changeCommand);
+		wizardDialog.openWithUndo(editingDomain, notifier);
 
-		if (wizardDialog.getReturnCode() != Window.OK) {
-			editingDomain.getCommandStack().undo();
-		}
+	}
+	public static void setCurrentEditorSelection(List<Object> selection) {
+		setCurrentEditorSelection(selection, false);
 	}
 
-	public static void setCurrentEditorSelection(List<Object> selection) {
-		if (selection == null) {
+	public static void setCurrentEditorSelection(List<Object> selection, boolean allowEmpty) {
+		if (selection == null || selection.isEmpty()) {
 			selection = Collections.emptyList();
 		}
 		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
@@ -506,7 +494,9 @@ public class RuntimePlugin extends AbstractUIPlugin {
 					}
 				}
 			}
-			selectionProvider.setSelection(new StructuredSelection(selectedElements));
+			if (!selectedElements.isEmpty() || allowEmpty) {
+				selectionProvider.setSelection(new StructuredSelection(selectedElements));
+			}
 		} else if (selectionProvider != null) {
 			// Currently we only want to set the selection of graphical editors
 			//selectionProvider.setSelection(new StructuredSelection(selection));
