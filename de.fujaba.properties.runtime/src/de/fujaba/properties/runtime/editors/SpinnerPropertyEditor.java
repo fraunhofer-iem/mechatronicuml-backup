@@ -4,6 +4,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.ModifyEvent;
@@ -28,7 +29,9 @@ public class SpinnerPropertyEditor extends
 			FormToolkit toolkit) {
 		toolkit.createLabel(parent, getLabelText());
 		
-		spinner = new Spinner(parent, toolkit.getBorderStyle() | toolkit.getOrientation());
+		spinner = new Spinner(parent, SWT.BORDER | toolkit.getOrientation());
+		toolkit.paintBordersFor(spinner);
+		toolkit.adapt(spinner);
 //		if (parent.getLayout() instanceof GridLayout) {
 //			spinner.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 //		}
