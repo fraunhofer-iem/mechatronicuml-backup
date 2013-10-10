@@ -462,6 +462,11 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		ChangeCommand changeCommand = new ChangeCommand(notifier) {
 			@Override
 			protected void doExecute() {
+				// MUML #734
+				// Disable block on open, so that Eclipse can process UI events (necessary for starting jobs)
+				wizardDialog.setBlockOnOpen(false);
+				
+				// Open the wizard
 				wizardDialog.open();
 			}
 		};
