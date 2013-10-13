@@ -75,7 +75,7 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		// Do not read from text field, as it could have been disposed, see comment in dispose()
 		//String newValue = text.getText();
 		String newValue = currentValue; 
-		if (!newValue.equals(value)) {
+		if (text != null && !newValue.equals(value)) {
 			setValue(newValue);
 		}
 	}
