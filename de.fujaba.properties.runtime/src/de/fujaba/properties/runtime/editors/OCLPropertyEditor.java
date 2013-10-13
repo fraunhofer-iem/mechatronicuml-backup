@@ -79,7 +79,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 					}
 
 				});
-		refreshSelection(element);
+		updateContext();
 		refresh();
 	}
 
@@ -105,7 +105,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	@Override
 	protected void inputChanged() {
 		super.inputChanged();
-		refreshSelection(element);
+		updateContext();
 	}
 
 	@Override
@@ -122,8 +122,19 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 			embeddedXtextEditor.update(text);
 		}
 	}
+	
+	private void updateContext() {
+		// Find Class object by running up the containment hierarchy and use it as context element
+		EObject object = element;
+		while (object != null && false == object instanceof de.fujaba.properties.Class) {
+			object = object.eContainer();
+		}
+		if (object != null) {
+			updateContext(object);
+		}
+	}
 
-	private void refreshSelection(final Object selected) {
+	private void updateContext(final Object selected) {
 		final BaseDocument editorDocument = (BaseDocument) embeddedXtextEditor
 				.getDocument();
 		editorDocument.modify(new IUnitOfWork<Object, XtextResource>() {
