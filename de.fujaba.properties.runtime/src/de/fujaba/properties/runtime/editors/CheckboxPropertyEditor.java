@@ -9,6 +9,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
@@ -25,7 +26,6 @@ public class CheckboxPropertyEditor extends
 	@Override
 	public void createControls(Composite parent, FormToolkit toolkit) {
 
-	
 		// Create one checkbox for a boolean feature, or enumeration with
 		// two selectable enumerators
 		checkbox = toolkit.createButton(parent,
@@ -59,6 +59,19 @@ public class CheckboxPropertyEditor extends
 			checkbox.dispose();
 			checkbox = null;
 		}
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+		for (Control control : new Control[] { checkbox }) {
+			if (control != null && !control.isDisposed()) {
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+		super.setVisible(visible); // relayout parent
 	}
 
 }

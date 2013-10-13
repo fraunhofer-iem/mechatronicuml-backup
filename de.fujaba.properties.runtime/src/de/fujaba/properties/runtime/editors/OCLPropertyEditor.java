@@ -17,6 +17,7 @@ import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.xtext.resource.XtextResource;
@@ -29,6 +30,7 @@ import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 import com.google.inject.Injector;
 
 public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
+	private Composite composite;
 	private EmbeddedXtextEditor embeddedXtextEditor;
 	protected int saving = 0;
 
@@ -43,7 +45,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 		}
-		Composite composite = new Composite(parent, SWT.BORDER);
+		composite = new Composite(parent, SWT.BORDER);
 		if (parent.getLayout() instanceof GridLayout) {
 			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
 			gridData.minimumHeight = 80;
@@ -157,5 +159,19 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	public void dispose() {
 		modify(); // If dialog was closed before text lost focus
 		super.dispose();
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+		for (Control control : new Control[] { composite }) {
+			if (control != null && !control.isDisposed()) {
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+		super.setVisible(visible); // relayout parent
+		
 	}
 }

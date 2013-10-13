@@ -13,6 +13,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Layout;
 import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.events.IExpansionListener;
@@ -223,7 +224,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		}
 	}
 	
-	protected void createChildren() {
+		protected void createChildren() {
 		if (!childrenCreated) {
 			// Create initial editor controls that could not yet be created
 			for (IPropertyEditor editor : propertyEditors) {
@@ -319,5 +320,18 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		return section;
 	}
 
+	@Override
+	public void setVisible(boolean visible) {
+		for (Control control : new Control[] { section }) {
+			if (control != null && !control.isDisposed()) {
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+		super.setVisible(visible); // relayout parent
+	}
+	
 }
 

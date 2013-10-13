@@ -10,15 +10,17 @@ import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
+	protected Label label;
 	protected Text text;
 	protected boolean multiLine;
 	protected String currentValue = "";
-
+	
 	public TextPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature, boolean multiLine) {
 		super(adapterFactory, feature);
 		this.multiLine = multiLine;
@@ -27,7 +29,7 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	public void createControls(Composite parent,
 			FormToolkit toolkit) {
-		Label label = toolkit.createLabel(parent, getLabelText());
+		label = toolkit.createLabel(parent, getLabelText());
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 		}
@@ -107,5 +109,18 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	public void dispose() {
 		modify(); // If dialog was closed before text lost focus
 		super.dispose();
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+		for (Control control : new Control[] { label, text }) {
+			if (control != null && !control.isDisposed()) {
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+		super.setVisible(visible); // relayout parent
 	}
 }

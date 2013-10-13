@@ -11,10 +11,12 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public class OptionPropertyEditor extends
@@ -139,5 +141,18 @@ public class OptionPropertyEditor extends
 				button.setSelection(button == selectedButton);
 			}
 		}
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+		for (Control control : new Control[] { composite }) {
+			if (control != null && !control.isDisposed()) {
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+		super.setVisible(visible); // relayout parent
 	}
 }

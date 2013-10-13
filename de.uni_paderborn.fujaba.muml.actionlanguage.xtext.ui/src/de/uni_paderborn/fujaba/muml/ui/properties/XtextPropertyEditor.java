@@ -18,10 +18,10 @@ import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextModelListener;
 import org.eclipse.xtext.ui.editor.model.XtextDocument;
 import org.storydriven.core.expressions.Expression;
@@ -36,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.ui.xtfo.EmbeddedXtextEditor;
 
 public class XtextPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
-
+	private Composite container;
 	private boolean active = false;
 	private int updating = 0;
 	private int saving = 0;
@@ -73,7 +73,7 @@ public class XtextPropertyEditor extends
 	public void createControls(Composite parent, FormToolkit toolkit) {
 
 		// Outer container
-		Composite container = toolkit.createComposite(parent);
+		container = toolkit.createComposite(parent);
 		if (parent.getLayout() instanceof GridLayout) {
 			container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 					true, 2, 1));
@@ -246,6 +246,19 @@ public class XtextPropertyEditor extends
 					.removeModelListener(saveModelListener);
 		}
 		super.dispose();
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+		for (Control control : new Control[] { container }) {
+			if (control != null && !control.isDisposed()) {
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+		super.setVisible(visible);
 	}
 	
 	

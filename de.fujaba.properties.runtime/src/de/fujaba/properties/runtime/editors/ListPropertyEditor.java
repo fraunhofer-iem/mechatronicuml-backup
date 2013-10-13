@@ -30,6 +30,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
@@ -43,6 +44,8 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	private Button buttonRemove;
 	private Button buttonUp;
 	private Button buttonDown;
+	
+	private Composite container;
 
 	private ISelectionChangedListener selectionChangedListener = new ISelectionChangedListener() {
 		@Override
@@ -71,7 +74,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			FormToolkit toolkit) {
 
 		// Outer container
-		Composite container = toolkit.createComposite(parent);
+		container = toolkit.createComposite(parent);
 		if (parent.getLayout() instanceof GridLayout) {
 			container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 					true, 2, 1));
@@ -327,6 +330,20 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			RuntimePlugin.revalidateLayout(tableViewer.getTable());
 		}
 
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+		for (Control control : new Control[] { container }) {
+			if (control != null && !control.isDisposed()) {
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+			super.setVisible(visible); // relayout parent
+		
 	}
 	
 }

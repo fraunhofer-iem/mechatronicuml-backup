@@ -24,6 +24,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
@@ -32,9 +33,14 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import de.fujaba.properties.runtime.RuntimePlugin;
 
 public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
-	protected ComboViewer comboViewer;
 	
 	protected boolean hasSearchButton;
+	
+	protected Label label;
+	
+	protected ComboViewer comboViewer;
+	
+	protected Button searchButton;
 	
 	public ComboPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
 		this(adapterFactory, feature, feature instanceof EReference);
@@ -51,7 +57,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	@Override
 	public void createControls(Composite parent,
 			FormToolkit toolkit) {
-		Label label = toolkit.createLabel(parent, getLabelText());
+		label = toolkit.createLabel(parent, getLabelText());
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 		}
@@ -101,7 +107,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		});
 		
 		if (hasSearchButton) {
-			Button searchButton = new Button(parent, SWT.PUSH);
+			searchButton = new Button(parent, SWT.PUSH);
 			searchButton.setText("...");
 			searchButton.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false));
 			searchButton.addSelectionListener(new SelectionAdapter() {
@@ -179,5 +185,18 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		if (selectedElements != null && !selectedElements.isEmpty()) {
 			setValue(selectedElements.get(0));
 		}
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+		for (Control control : new Control[] { label, comboViewer.getCombo(), searchButton }) {
+			if (control != null && !control.isDisposed()) {
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+		super.setVisible(visible); // relayout parent
 	}
 }

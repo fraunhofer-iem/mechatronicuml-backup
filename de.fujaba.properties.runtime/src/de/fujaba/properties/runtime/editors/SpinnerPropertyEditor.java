@@ -9,12 +9,16 @@ import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public class SpinnerPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
+	protected Label label;
 	protected Spinner spinner;
 	protected int digits;
 
@@ -27,7 +31,7 @@ public class SpinnerPropertyEditor extends
 	@Override
 	public void createControls(Composite parent,
 			FormToolkit toolkit) {
-		toolkit.createLabel(parent, getLabelText());
+		label = toolkit.createLabel(parent, getLabelText());
 		
 		spinner = new Spinner(parent, SWT.BORDER | toolkit.getOrientation());
 		toolkit.paintBordersFor(spinner);
@@ -97,5 +101,18 @@ public class SpinnerPropertyEditor extends
 				spinner.setSelection(newValue);
 			}
 		}
+	}
+
+	@Override
+	public void setVisible(boolean visible) {
+		for (Control control : new Control[] { label, spinner }) {
+			if (control != null && !control.isDisposed()) {
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+		super.setVisible(visible); // relayout parent
 	}
 }
