@@ -36,6 +36,10 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 			gridData.heightHint = 80;
 			composite.setLayoutData(gridData);
 		}
+		GridLayout gridLayout = new GridLayout(1, false);
+		gridLayout.horizontalSpacing = gridLayout.verticalSpacing = 0;
+		gridLayout.marginWidth = gridLayout.marginHeight = 0;
+		composite.setLayout(gridLayout);
 		
 		// create ocl editor
 		Injector injector = XtextConsolePlugin.getInstance().getInjector(EssentialOCLPlugin.LANGUAGE_ID);
