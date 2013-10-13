@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="de.fujaba.properties.contributor">
+          <propertyTab
+             category="domain"
+             id="de.fujaba.properties.tab.general"
+             label="General"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="de.fujaba.properties.contributor">
+          <propertySection
+            class="de.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="de.fujaba.properties.runtime.filter.ElementFilter"
+            id="de.fujaba.properties.tab.general"
+            tab="de.fujaba.properties.tab.general">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="de.fujaba.properties.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.PropertyGeneratorEditor$Factory"
+             type="de.fujaba.properties.PropertyGenerator">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.ReconcilerEditor$Factory"
+             type="de.fujaba.properties.Reconciler">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.CustomTransformationEditor$Factory"
+             type="de.fujaba.properties.CustomTransformation">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.PluginEditor$Factory"
+             type="de.fujaba.properties.Plugin">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.PropertyTabEditor$Factory"
+             type="de.fujaba.properties.PropertyTab">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.PackageEditor$Factory"
+             type="de.fujaba.properties.Package">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.ClassEditor$Factory"
+             type="de.fujaba.properties.Class">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.PropertyCategoryEditor$Factory"
+             type="de.fujaba.properties.PropertyCategory">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.PropertyEditor$Factory"
+             type="de.fujaba.properties.Property">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.TextPropertyEditorEditor$Factory"
+             type="de.fujaba.properties.TextPropertyEditor">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.SpinnerPropertyEditorEditor$Factory"
+             type="de.fujaba.properties.SpinnerPropertyEditor">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.ComboBoxPropertyEditorEditor$Factory"
+             type="de.fujaba.properties.ComboBoxPropertyEditor">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.CheckboxPropertyEditorEditor$Factory"
+             type="de.fujaba.properties.CheckboxPropertyEditor">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.RadioPropertyEditorEditor$Factory"
+             type="de.fujaba.properties.RadioPropertyEditor">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.ListPropertyEditorEditor$Factory"
+             type="de.fujaba.properties.ListPropertyEditor">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.ObjectPropertyEditorEditor$Factory"
+             type="de.fujaba.properties.ObjectPropertyEditor">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.OCLPropertyEditorEditor$Factory"
+             type="de.fujaba.properties.OCLPropertyEditor">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.CustomPropertyEditorEditor$Factory"
+             type="de.fujaba.properties.CustomPropertyEditor">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.fujaba.properties.properties.properties.editor.OCLPropertyFilterEditor$Factory"
+             type="de.fujaba.properties.OCLPropertyFilter">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+</plugin>
