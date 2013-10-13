@@ -190,14 +190,20 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 				}
 
 			};
-			Object newObject = RuntimePlugin.showReferenceElementDialog(adapterFactory, getChoices(), Arrays.asList(new IElementValidator[] { validator }));
+			List<Object> newObjects = RuntimePlugin.showReferenceElementDialog(adapterFactory, getChoices(), Arrays.asList(new IElementValidator[] { validator }));
 
-			// Add object, if one was selected
-			if (newObject != null) {
-				List<Object> newValue = new ArrayList<Object>((Collection<?>)value);
-				if (!newValue.contains(newObject)) {
-					newValue.add(newObject);
-					setValue(newValue);
+			// Add objects that were selected
+			if (newObjects != null && !newObjects.isEmpty()) {
+				List<Object> newValues = new ArrayList<Object>((Collection<?>)value);
+				boolean changed = false;
+				for (Object newObject : newObjects) {
+					if (!newValues.contains(newObject)) {
+						newValues.add(newObject);
+						changed = true;
+					}
+				}
+				if (changed) {
+					setValue(newValues);		
 				}
 			}
 		}

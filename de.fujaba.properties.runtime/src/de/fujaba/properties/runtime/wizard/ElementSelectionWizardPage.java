@@ -2,6 +2,7 @@ package de.fujaba.properties.runtime.wizard;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -43,7 +44,7 @@ import org.eclipse.ui.forms.widgets.ScrolledForm;
 public class ElementSelectionWizardPage extends WizardPage {
 
 	private Object defaultElement;
-	private Object element;
+	private List<Object> selectedElements = new ArrayList<Object>();
 	private TreeViewer treeViewer;
 	private AdapterFactory adapterFactory;
 	private Collection<?> choices;
@@ -101,7 +102,7 @@ public class ElementSelectionWizardPage extends WizardPage {
 			
 		});
 
-		final Tree tree = toolkit.createTree(form.getBody(), SWT.BORDER);
+		final Tree tree = toolkit.createTree(form.getBody(), SWT.BORDER | SWT.MULTI);
 		tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
 		treeViewer = new TreeViewer(tree);
 		treeViewer.setContentProvider(new ITreeContentProvider() {
@@ -154,31 +155,36 @@ public class ElementSelectionWizardPage extends WizardPage {
 
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
+				selectedElements.clear();
+
 				Object newElement = null;
-				if (event.getSelection() instanceof IStructuredSelection
-						&& !event.getSelection().isEmpty()) {
-					newElement = ((IStructuredSelection) event.getSelection())
-							.iterator().next();
-				}
-				boolean valid = choices.contains(newElement);
-				String newError = null;
-				for (IElementValidator validator : elementValidators) {
-					String validationError = validator.validate(newElement);
-					if (validationError != null) {
-						newError = validationError;
-						break;
+				if (event.getSelection() instanceof IStructuredSelection) {
+					Iterator<?> it = ((IStructuredSelection) event.getSelection())
+							.iterator();
+					while (it.hasNext()) {
+						newElement = it.next();
+
+						boolean valid = choices.contains(newElement);
+						String newError = null;
+						for (IElementValidator validator : elementValidators) {
+							String validationError = validator.validate(newElement);
+							if (validationError != null) {
+								newError = validationError;
+								break;
+							}
+						}
+						if (newError != null) {
+							valid = false;
+						}
+						setErrorMessage(newError);
+						setPageComplete(valid);
+
+						if (valid) {
+							selectedElements.add(newElement);
+						}
 					}
 				}
-				if (newError != null) {
-					valid = false;
-				}
-				setErrorMessage(newError);
-				setPageComplete(valid);
-
-				element = null;
-				if (valid) {
-					element = newElement;
-				}
+				
 			}
 
 		});
@@ -192,6 +198,9 @@ public class ElementSelectionWizardPage extends WizardPage {
 		tree.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
+				if (e.character == 0) {
+					return;
+				}
 				text.setFocus();
 				text.setText(String.valueOf(e.character));
 				text.setSelection(1);
@@ -350,8 +359,8 @@ public class ElementSelectionWizardPage extends WizardPage {
 	}
 	
 
-	public Object getElement() {
-		return element;
+	public List<Object> getElements() {
+		return selectedElements;
 	}
 	
 	
