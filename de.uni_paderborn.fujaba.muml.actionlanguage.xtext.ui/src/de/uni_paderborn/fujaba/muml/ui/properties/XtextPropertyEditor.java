@@ -103,7 +103,7 @@ public class XtextPropertyEditor extends
 		embeddedXtextEditor = new EmbeddedXtextEditor(innerContainer, injector);
 		saveModelListener = new SaveModelListener();
 		embeddedXtextEditor.getDocument().addModelListener(saveModelListener);
-		//embeddedXtextEditor.getDocument()
+
 		final XtextDocument document = (XtextDocument) embeddedXtextEditor.getDocument();
 		final Job validationJob = document.getValidationJob();
 		document.setValidationJob(new Job(validationJob.getName()) {
@@ -169,11 +169,6 @@ public class XtextPropertyEditor extends
 		} finally {
 			saving--;
 		}
-	}
-	
-
-	protected boolean isRelevantAnnotationType(String type) {
-		return type.equals(XtextEditor.ERROR_ANNOTATION_TYPE) || type.equals(XtextEditor.WARNING_ANNOTATION_TYPE) || type.equals(XtextEditor.INFO_ANNOTATION_TYPE);
 	}
 	
 	private void removeMarkers() {
