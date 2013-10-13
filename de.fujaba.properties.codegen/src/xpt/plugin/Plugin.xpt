@@ -8,11 +8,48 @@
 «EXPAND extensions-»
 </plugin>
 «ENDDEFINE»
-
+<propertyContributor
+          contributorId="de.fujaba.properties.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
 «DEFINE extensions FOR PropertyGenerator»
+«EXPAND propertyContributor»
 «EXPAND propertyTabs»
 «EXPAND propertySections»
 «EXPAND propertyEditor»
+«ENDDEFINE»
+
+«DEFINE propertyContributor FOR PropertyGenerator»
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="«contributorId»">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
 «ENDDEFINE»
 
 «DEFINE propertyTabs FOR PropertyGenerator»

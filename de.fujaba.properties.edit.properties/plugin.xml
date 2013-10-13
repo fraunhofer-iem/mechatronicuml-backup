@@ -3,6 +3,26 @@
 <plugin>
 
 
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="de.fujaba.properties.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
 
 <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs contributorId="de.fujaba.properties.contributor">
