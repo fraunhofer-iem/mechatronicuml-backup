@@ -130,44 +130,16 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 			object = object.eContainer();
 		}
 		if (object != null) {
-			updateContext(object);
+			de.fujaba.properties.Class clazz = (de.fujaba.properties.Class) object;
+			updateContext(clazz.getGenClass().getEcoreClassifier());
 		}
 	}
 
-	private void updateContext(final Object selected) {
+	private void updateContext(final EClassifier contextClassifier) {
 		final BaseDocument editorDocument = (BaseDocument) embeddedXtextEditor
 				.getDocument();
 		editorDocument.modify(new IUnitOfWork<Object, XtextResource>() {
 			public Value exec(XtextResource resource) throws Exception {
-				EObject contextObject = null;
-				EClassifier contextClassifier = null;
-				Object selectedObject = selected;
-				if (selectedObject instanceof IOutlineNode) {
-					if (selectedObject instanceof EObjectNode) {
-						EObjectNode selectedObjectNode = (EObjectNode) selectedObject;
-						contextObject = null;
-						contextClassifier = selectedObjectNode.getEClass();
-					} else if (selectedObject instanceof EStructuralFeatureNode) {
-						contextObject = null;
-						contextClassifier = ((EStructuralFeatureNode) selectedObject)
-								.getEStructuralFeature().getEContainingClass();
-					} else {
-						contextObject = null;
-						contextClassifier = null;
-					}
-				} else {
-					if (selectedObject instanceof IAdaptable) {
-						selectedObject = ((IAdaptable) selectedObject)
-								.getAdapter(EObject.class);
-					}
-					if (selectedObject instanceof EObject) {
-						contextObject = (EObject) selectedObject;
-						contextClassifier = contextObject.eClass();
-					} else {
-						contextObject = null;
-						contextClassifier = null;
-					}
-				}
 				editorDocument.setContext((EssentialOCLCSResource) resource,
 						contextClassifier, null);
 				return null;
