@@ -241,8 +241,10 @@ public class XtextPropertyEditor extends
 
 	@Override
 	public void dispose() {
-		embeddedXtextEditor.getDocument()
-				.removeModelListener(saveModelListener);
+		if (embeddedXtextEditor != null) {
+			embeddedXtextEditor.getDocument()
+					.removeModelListener(saveModelListener);
+		}
 		super.dispose();
 	}
 	
