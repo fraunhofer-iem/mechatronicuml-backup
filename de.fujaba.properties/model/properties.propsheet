@@ -68,7 +68,7 @@
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/CustomTransformation"/>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.0" tooltip="">
         <genFeature href="properties.genmodel#//properties/CustomTransformation/uri"/>
         <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>

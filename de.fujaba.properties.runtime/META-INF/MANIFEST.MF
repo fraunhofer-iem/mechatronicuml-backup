@@ -11,7 +11,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.examples.xtext.console;bundle-version="3.2.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.fujaba.properties.runtime.editors,
+Export-Package: de.fujaba.properties.runtime,
+ de.fujaba.properties.runtime.editors,
  de.fujaba.properties.runtime.factory,
  de.fujaba.properties.runtime.filter,
  de.fujaba.properties.runtime.sections

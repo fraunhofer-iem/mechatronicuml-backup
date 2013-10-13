@@ -15,7 +15,6 @@ import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
@@ -46,14 +45,11 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.change.ChangeDescription;
-import org.eclipse.emf.ecore.change.util.ChangeRecorder;
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EContentAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
@@ -71,7 +67,6 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
-import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
@@ -81,6 +76,8 @@ import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.viewers.ColumnWeightData;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -93,11 +90,6 @@ import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.m2m.qvt.oml.BasicModelExtent;
-import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
-import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
-import org.eclipse.m2m.qvt.oml.ModelExtent;
-import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.dnd.DND;
@@ -129,22 +121,28 @@ import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
-import org.eclipse.ui.views.properties.PropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
 import de.fujaba.properties.PropertyGenerator;
 import de.fujaba.properties.provider.PropertiesItemProviderAdapterFactory;
-import de.fujaba.properties.reconcile.PropertiesReconcilePlugin;
 import de.fujaba.properties.reconcile.ReconcileCommand;
+import de.fujaba.properties.runtime.RuntimePlugin;
 
 /**
  * This is an example of a Properties model editor. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ * @implements ITabbedPropertySheetPageContributor
  * @generated NOT
  */
 public class PropertiesEditor extends MultiPageEditorPart implements
 		IEditingDomainProvider, ISelectionProvider, IMenuListener,
-		IViewerProvider, IGotoMarker {
+		IViewerProvider, IGotoMarker, ITabbedPropertySheetPageContributor {
+	
+	/**
+	 * @generated NOT
+	 */
+	public static final String PROPERTIES_CONTRIBUTOR = "de.fujaba.properties.contributor";
 
 	/**
 	 * This keeps track of the editing domain that is used to track all changes
@@ -186,12 +184,10 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 	protected TreeViewer contentOutlineViewer;
 
 	/**
-	 * This is the property sheet page. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @generated
+	 * This is the property sheet page.
+	 * @generated NOT
 	 */
-	protected PropertySheetPage propertySheetPage;
+	protected TabbedPropertySheetPage propertySheetPage;
 
 	/**
 	 * This is the viewer that shadows the selection in the content outline. The
@@ -1078,6 +1074,20 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 					selectionViewer.setSelection(new StructuredSelection(
 							editingDomain.getResourceSet().getResources()
 									.get(0)), true);
+					selectionViewer.addDoubleClickListener(new IDoubleClickListener() {
+
+						@Override
+						public void doubleClick(DoubleClickEvent event) {
+							if (event.getSelection() instanceof IStructuredSelection) {
+								Object selectedElement = ((IStructuredSelection)event.getSelection()).getFirstElement();
+								if (selectedElement != null) {
+									RuntimePlugin.showEditElementDialog(adapterFactory, (EObject) selectedElement);
+								}
+							}
+						}
+						
+					});
+
 					viewerPane.setTitle(editingDomain.getResourceSet());
 
 					new AdapterFactoryTreeEditor(selectionViewer.getTree(),
@@ -1460,35 +1470,18 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 	}
 
 	/**
-	 * This accesses a cached version of the property sheet. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * 
-	 * @generated
+	 * This accesses a cached version of the property sheet.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
-	public IPropertySheetPage getPropertySheetPage() {
-		if (propertySheetPage == null) {
-			propertySheetPage = new ExtendedPropertySheetPage(editingDomain) {
-				@Override
-				public void setSelectionToViewer(List<?> selection) {
-					PropertiesEditor.this.setSelectionToViewer(selection);
-					PropertiesEditor.this.setFocus();
-				}
-
-				@Override
-				public void setActionBars(IActionBars actionBars) {
-					super.setActionBars(actionBars);
-					getActionBarContributor().shareGlobalActions(this,
-							actionBars);
-				}
-			};
-			propertySheetPage
-					.setPropertySourceProvider(new AdapterFactoryContentProvider(
-							adapterFactory));
-		}
-
-		return propertySheetPage;
-	}
-
+	 public IPropertySheetPage getPropertySheetPage() {
+	     if (propertySheetPage == null || propertySheetPage.getControl().isDisposed()) {
+	        propertySheetPage = new TabbedPropertySheetPage(this);
+	     }
+	    return propertySheetPage;
+	 }
+	
 	/**
 	 * This deals with how we want selection in the outliner to affect the other
 	 * views. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1952,5 +1945,14 @@ public class PropertiesEditor extends MultiPageEditorPart implements
 		// resourceToDiagnosticMap.put(mainResource, diagnostic);
 		// }
 	}
+
+	/** (non-Javadoc)
+	 * @see org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor#getContributorId()
+	 * @generated NOT
+	 */
+	public String getContributorId() {
+	    return PROPERTIES_CONTRIBUTOR;
+	}
+
 
 }
