@@ -426,14 +426,14 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	@SuppressWarnings("unchecked")
 	public static List<Object> showReferenceElementDialog(
 			AdapterFactory adapterFactory, Collection<?> choices, Object defaultValue) {
-		return showReferenceElementDialog(adapterFactory, choices, defaultValue, Collections.EMPTY_LIST);
+		return showReferenceElementDialog(adapterFactory, choices, defaultValue, Collections.EMPTY_LIST, true);
 	}
 
 	public static List<Object> showReferenceElementDialog(
-			AdapterFactory adapterFactory, Collection<?> choices, Object defaultValue, List<IElementValidator> validators) {
+			AdapterFactory adapterFactory, Collection<?> choices, Object defaultValue, List<IElementValidator> validators, boolean multi) {
 		PropertiesWizard wizard = new PropertiesWizard();
 		wizard.setWindowTitle("Selection");
-		ElementSelectionWizardPage page = new ElementSelectionWizardPage(adapterFactory, choices, defaultValue);
+		ElementSelectionWizardPage page = new ElementSelectionWizardPage(adapterFactory, choices, defaultValue, multi);
 		wizard.addPage(page);
 		for (IElementValidator validator : validators) {
 			page.addElementValidator(validator);

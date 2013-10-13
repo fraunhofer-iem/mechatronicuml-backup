@@ -1,10 +1,12 @@
 package de.fujaba.properties.runtime.wizard;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.forms.IFormColors;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 
@@ -26,7 +28,14 @@ public class PropertyEditorWizardPage extends WizardPage {
 		container.setLayout(new FillLayout(SWT.VERTICAL));
 		FormToolkit toolkit = new FormToolkit(container.getDisplay());
 		
-		ScrolledForm form = toolkit.createScrolledForm(container);
+		//ScrolledForm form = toolkit.createScrolledForm(container);
+		ScrolledForm form = new ScrolledForm(container, SWT.V_SCROLL
+				| toolkit.getOrientation());
+		form.setExpandHorizontal(true);
+		form.setExpandVertical(true);
+		form.setBackground(toolkit.getColors().getBackground());
+		form.setForeground(toolkit.getColors().getColor(IFormColors.TITLE));
+		form.setFont(JFaceResources.getHeaderFont());
 		// toolkit.paintBordersFor(form);
 //		toolkit.decorateFormHeading(form.getForm());
 //		form.setText("Eclipse Forms API Example");

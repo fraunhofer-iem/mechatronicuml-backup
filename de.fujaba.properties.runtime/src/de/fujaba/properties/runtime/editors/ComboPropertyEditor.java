@@ -2,6 +2,7 @@ package de.fujaba.properties.runtime.editors;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -172,11 +173,11 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	
 	public void search() {
 		@SuppressWarnings("unchecked")
-		Object selectedElement = RuntimePlugin.showReferenceElementDialog(adapterFactory, getChoices(), value, Collections.EMPTY_LIST);
+		List<Object> selectedElements = RuntimePlugin.showReferenceElementDialog(adapterFactory, getChoices(), value, Collections.EMPTY_LIST, false);
 
 		// Add object, if one was selected
-		if (selectedElement != null) {
-			setValue(selectedElement);
+		if (selectedElements != null && !selectedElements.isEmpty()) {
+			setValue(selectedElements.get(0));
 		}
 	}
 }
