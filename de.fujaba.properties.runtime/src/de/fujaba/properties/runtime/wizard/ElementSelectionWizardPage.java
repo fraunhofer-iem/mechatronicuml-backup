@@ -63,10 +63,12 @@ public class ElementSelectionWizardPage extends WizardPage {
 		}
 		
 	};
+	private boolean multi;
 	public static final String MESSAGE_NO_ELEMENTS_FOUND = "No results found";
 
-	public ElementSelectionWizardPage(AdapterFactory adapterFactory, Collection<?> choices, Object defaultElement) {
+	public ElementSelectionWizardPage(AdapterFactory adapterFactory, Collection<?> choices, Object defaultElement, boolean multi) {
 		super("Element selection");
+		this.multi = multi;
 		setTitle("Select existing Element");
 		setDescription("Select an existing element to be added.");
 		this.adapterFactory = adapterFactory;
@@ -102,7 +104,11 @@ public class ElementSelectionWizardPage extends WizardPage {
 			
 		});
 
-		final Tree tree = toolkit.createTree(form.getBody(), SWT.BORDER | SWT.MULTI);
+		int style = SWT.BORDER;
+		if (multi) {
+			style |= SWT.MULTI;
+		}
+		final Tree tree = toolkit.createTree(form.getBody(), style);
 		tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
 		treeViewer = new TreeViewer(tree);
 		treeViewer.setContentProvider(new ITreeContentProvider() {
