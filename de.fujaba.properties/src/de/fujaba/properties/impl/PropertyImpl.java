@@ -312,7 +312,7 @@ public class PropertyImpl extends EObjectImpl implements Property {
 	 */
 	public de.fujaba.properties.Class getClazz() {
 		if (eContainerFeatureID() != PropertiesPackage.PROPERTY__CLAZZ) return null;
-		return (de.fujaba.properties.Class)eContainer();
+		return (de.fujaba.properties.Class)eInternalContainer();
 	}
 
 	/**

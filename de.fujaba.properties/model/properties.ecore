@@ -164,6 +164,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="RadioPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OCLPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="CustomPropertyEditor" eSuperTypes="#//PropertyEditor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullyQualifiedClassName"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

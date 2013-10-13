@@ -443,6 +443,29 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.OCLPropertyEditor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OCLPropertyEditorItemProvider oclPropertyEditorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fujaba.properties.OCLPropertyEditor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOCLPropertyEditorAdapter() {
+		if (oclPropertyEditorItemProvider == null) {
+			oclPropertyEditorItemProvider = new OCLPropertyEditorItemProvider(this);
+		}
+
+		return oclPropertyEditorItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.fujaba.properties.CustomPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -603,6 +626,7 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (radioPropertyEditorItemProvider != null) radioPropertyEditorItemProvider.dispose();
 		if (listPropertyEditorItemProvider != null) listPropertyEditorItemProvider.dispose();
 		if (objectPropertyEditorItemProvider != null) objectPropertyEditorItemProvider.dispose();
+		if (oclPropertyEditorItemProvider != null) oclPropertyEditorItemProvider.dispose();
 		if (customPropertyEditorItemProvider != null) customPropertyEditorItemProvider.dispose();
 		if (oclPropertyFilterItemProvider != null) oclPropertyFilterItemProvider.dispose();
 	}

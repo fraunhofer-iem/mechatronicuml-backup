@@ -72,7 +72,7 @@ String genCreator(Property this) :
 
 
 String genClassLiteral(GenClass this) :
-	genPackage.fullyQualifiedName() + '.' + genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + ecoreClass.name.toString().toFirstUpper() + '()';
+	genPackage.fullyQualifiedName() + '.' + genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + ecoreClass.name.toString().toFirstUpper() + (if ecoreClass.name.toString().toFirstUpper() == "Class" then '_' else '') + '()';
 
 
 String genFeatureLiteral(GenFeature this) :

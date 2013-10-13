@@ -20,6 +20,7 @@ import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
 import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
+import de.fujaba.properties.OCLPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.Plugin;
@@ -163,6 +164,13 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * @generated
 	 */
 	private EClass objectPropertyEditorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass oclPropertyEditorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -873,6 +881,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOCLPropertyEditor() {
+		return oclPropertyEditorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCustomPropertyEditor() {
 		return customPropertyEditorEClass;
 	}
@@ -1034,6 +1051,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		objectPropertyEditorEClass = createEClass(OBJECT_PROPERTY_EDITOR);
 
+		oclPropertyEditorEClass = createEClass(OCL_PROPERTY_EDITOR);
+
 		customPropertyEditorEClass = createEClass(CUSTOM_PROPERTY_EDITOR);
 		createEAttribute(customPropertyEditorEClass, CUSTOM_PROPERTY_EDITOR__FULLY_QUALIFIED_CLASS_NAME);
 
@@ -1085,6 +1104,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		radioPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		listPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		objectPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
+		oclPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		customPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		oclPropertyFilterEClass.getESuperTypes().add(this.getPropertyFilter());
 
@@ -1174,6 +1194,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEClass(listPropertyEditorEClass, ListPropertyEditor.class, "ListPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(objectPropertyEditorEClass, ObjectPropertyEditor.class, "ObjectPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(oclPropertyEditorEClass, OCLPropertyEditor.class, "OCLPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(customPropertyEditorEClass, CustomPropertyEditor.class, "CustomPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomPropertyEditor_FullyQualifiedClassName(), ecorePackage.getEString(), "fullyQualifiedClassName", null, 1, 1, CustomPropertyEditor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

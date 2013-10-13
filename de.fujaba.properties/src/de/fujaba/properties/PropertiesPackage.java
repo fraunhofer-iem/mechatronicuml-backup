@@ -894,6 +894,34 @@ public interface PropertiesPackage extends EPackage {
 	int OBJECT_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.fujaba.properties.impl.OCLPropertyEditorImpl <em>OCL Property Editor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fujaba.properties.impl.OCLPropertyEditorImpl
+	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyEditor()
+	 * @generated
+	 */
+	int OCL_PROPERTY_EDITOR = 17;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCL_PROPERTY_EDITOR__PROPERTY = PROPERTY_EDITOR__PROPERTY;
+
+	/**
+	 * The number of structural features of the '<em>OCL Property Editor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OCL_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.fujaba.properties.impl.CustomPropertyEditorImpl <em>Custom Property Editor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -901,7 +929,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertyEditor()
 	 * @generated
 	 */
-	int CUSTOM_PROPERTY_EDITOR = 17;
+	int CUSTOM_PROPERTY_EDITOR = 18;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -938,7 +966,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getPropertyFilter()
 	 * @generated
 	 */
-	int PROPERTY_FILTER = 18;
+	int PROPERTY_FILTER = 19;
 
 	/**
 	 * The number of structural features of the '<em>Property Filter</em>' class.
@@ -957,7 +985,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyFilter()
 	 * @generated
 	 */
-	int OCL_PROPERTY_FILTER = 19;
+	int OCL_PROPERTY_FILTER = 20;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -986,7 +1014,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getTransformationPosition()
 	 * @generated
 	 */
-	int TRANSFORMATION_POSITION = 20;
+	int TRANSFORMATION_POSITION = 21;
 
 
 	/**
@@ -1710,6 +1738,16 @@ public interface PropertiesPackage extends EPackage {
 	EClass getObjectPropertyEditor();
 
 	/**
+	 * Returns the meta object for class '{@link de.fujaba.properties.OCLPropertyEditor <em>OCL Property Editor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>OCL Property Editor</em>'.
+	 * @see de.fujaba.properties.OCLPropertyEditor
+	 * @generated
+	 */
+	EClass getOCLPropertyEditor();
+
+	/**
 	 * Returns the meta object for class '{@link de.fujaba.properties.CustomPropertyEditor <em>Custom Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2362,6 +2400,16 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OBJECT_PROPERTY_EDITOR = eINSTANCE.getObjectPropertyEditor();
+
+		/**
+		 * The meta object literal for the '{@link de.fujaba.properties.impl.OCLPropertyEditorImpl <em>OCL Property Editor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fujaba.properties.impl.OCLPropertyEditorImpl
+		 * @see de.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyEditor()
+		 * @generated
+		 */
+		EClass OCL_PROPERTY_EDITOR = eINSTANCE.getOCLPropertyEditor();
 
 		/**
 		 * The meta object literal for the '{@link de.fujaba.properties.impl.CustomPropertyEditorImpl <em>Custom Property Editor</em>}' class.

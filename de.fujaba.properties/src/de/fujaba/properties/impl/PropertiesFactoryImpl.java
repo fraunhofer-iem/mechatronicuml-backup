@@ -14,6 +14,7 @@ import de.fujaba.properties.ComboBoxPropertyEditor;
 import de.fujaba.properties.CustomPropertyEditor;
 import de.fujaba.properties.CustomTransformation;
 import de.fujaba.properties.ListPropertyEditor;
+import de.fujaba.properties.OCLPropertyEditor;
 import de.fujaba.properties.OCLPropertyFilter;
 import de.fujaba.properties.ObjectPropertyEditor;
 import de.fujaba.properties.Plugin;
@@ -44,7 +45,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 */
 	public static PropertiesFactory init() {
 		try {
-			PropertiesFactory thePropertiesFactory = (PropertiesFactory)EPackage.Registry.INSTANCE.getEFactory("http://de.fujaba.properties/0.1"); 
+			PropertiesFactory thePropertiesFactory = (PropertiesFactory)EPackage.Registry.INSTANCE.getEFactory(PropertiesPackage.eNS_URI);
 			if (thePropertiesFactory != null) {
 				return thePropertiesFactory;
 			}
@@ -89,6 +90,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.RADIO_PROPERTY_EDITOR: return createRadioPropertyEditor();
 			case PropertiesPackage.LIST_PROPERTY_EDITOR: return createListPropertyEditor();
 			case PropertiesPackage.OBJECT_PROPERTY_EDITOR: return createObjectPropertyEditor();
+			case PropertiesPackage.OCL_PROPERTY_EDITOR: return createOCLPropertyEditor();
 			case PropertiesPackage.CUSTOM_PROPERTY_EDITOR: return createCustomPropertyEditor();
 			case PropertiesPackage.OCL_PROPERTY_FILTER: return createOCLPropertyFilter();
 			default:
@@ -284,6 +286,16 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public ObjectPropertyEditor createObjectPropertyEditor() {
 		ObjectPropertyEditorImpl objectPropertyEditor = new ObjectPropertyEditorImpl();
 		return objectPropertyEditor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OCLPropertyEditor createOCLPropertyEditor() {
+		OCLPropertyEditorImpl oclPropertyEditor = new OCLPropertyEditorImpl();
+		return oclPropertyEditor;
 	}
 
 	/**

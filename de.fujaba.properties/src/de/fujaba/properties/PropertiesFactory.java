@@ -166,6 +166,15 @@ public interface PropertiesFactory extends EFactory {
 	ObjectPropertyEditor createObjectPropertyEditor();
 
 	/**
+	 * Returns a new object of class '<em>OCL Property Editor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>OCL Property Editor</em>'.
+	 * @generated
+	 */
+	OCLPropertyEditor createOCLPropertyEditor();
+
+	/**
 	 * Returns a new object of class '<em>Custom Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

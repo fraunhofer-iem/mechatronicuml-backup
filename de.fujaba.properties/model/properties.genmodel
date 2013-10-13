@@ -91,6 +91,7 @@
     <genClasses ecoreClass="properties.ecore#//RadioPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//ListPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//ObjectPropertyEditor"/>
+    <genClasses ecoreClass="properties.ecore#//OCLPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//CustomPropertyEditor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute properties.ecore#//CustomPropertyEditor/fullyQualifiedClassName"/>
     </genClasses>
