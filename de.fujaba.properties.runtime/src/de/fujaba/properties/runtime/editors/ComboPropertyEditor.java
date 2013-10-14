@@ -137,6 +137,11 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	@Override
 	protected void inputChanged() {		
 		super.inputChanged();
+		setInput();
+	}
+	
+	private void setInput() {
+		Object value = this.value;
 
 		Collection<?> choices = getChoices();
 
@@ -148,7 +153,6 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		}
 
 		applySelection(value);
-		
 	}
 
 	@Override
@@ -183,6 +187,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		if (comboViewer != null) {
 			comboViewer.refresh();
 		}
+		setInput();
 	}
 	
 	public void search() {
