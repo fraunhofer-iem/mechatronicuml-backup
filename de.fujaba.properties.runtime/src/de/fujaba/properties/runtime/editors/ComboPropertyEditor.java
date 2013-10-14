@@ -38,6 +38,8 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	
 	protected Label label;
 	
+	protected Composite composite;
+	
 	protected ComboViewer comboViewer;
 	
 	protected Button searchButton;
@@ -63,7 +65,8 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		}
 		
 		if (hasSearchButton) {
-			parent = new Composite(parent, SWT.NONE);
+			composite = new Composite(parent, SWT.NONE);
+			parent = composite; // use the composite as parent from now on
 			parent.setLayout(new GridLayout(2, false));
 			parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		}
@@ -189,7 +192,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 
 	@Override
 	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { label, comboViewer.getCombo(), searchButton }) {
+		for (Control control : new Control[] { label, comboViewer.getCombo(), searchButton, composite }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
 				if (control.getLayoutData() instanceof GridData) {
