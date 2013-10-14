@@ -115,6 +115,11 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	
 
 	private void childrenChanged() {
+		updateHeaderColors();
+		layout();
+	}
+	
+	private void updateHeaderColors() {
 		if (section != null) {
 			if (propertyEditors.isEmpty()) {
 				section.setToggleColor(colorInactiveText);
@@ -126,8 +131,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 				section.setTitleBarForeground(colorActiveText);
 				section.setTitleBarGradientBackground(colorActiveBackground);
 			}
-
-			layout();
 		}
 	}
 
@@ -169,6 +172,15 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		propertyEditors.clear();
 		childrenChanged();
 	}
+	
+	@Override
+	protected void inputChanged() {
+		super.inputChanged();
+		if (section != null && section.isExpanded()) {
+			createChildren();
+		}
+		updateHeaderColors();
+	}
 
 	@Override
 	public void createControls(Composite parent,
@@ -195,14 +207,10 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 				@Override
 				public void expansionStateChanged(ExpansionEvent e) {
-					boolean relayouted = false;
 					if (e.getState() == true) {
-						relayouted = !childrenCreated;
 						createChildren(); // ### on demand creation of children
 					}
-					if (!relayouted) {
-						layout();
-					}
+					
 				}
 			});
 			
@@ -223,13 +231,16 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		if (section != null) {
 			section.setExpanded(initiallyExpanded);
 		}
+
+		updateHeaderColors();
 	}
 	
-		protected void createChildren() {
+	protected void createChildren() {
 		if (!childrenCreated) {
 			// Create initial editor controls that could not yet be created
 			for (IPropertyEditor editor : propertyEditors) {
 				editor.createControls(childrenComposite, toolkit);
+				editor.refresh();
 			}
 			childrenCreated = true;
 			childrenChanged();

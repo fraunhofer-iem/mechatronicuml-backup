@@ -239,10 +239,10 @@ public class NavigationFeaturePropertyEditor extends
 				newValues.add(manyValue);
 				newValue = newValues;
 			}
-			setValue(newValue);
-			refreshButtons();
 			navigatedEditor.getSection().setExpanded(false);
 			navigatedEditor.getSection().setExpanded(true);
+			setValue(newValue);
+			refreshButtons();
 		}
 	}
 

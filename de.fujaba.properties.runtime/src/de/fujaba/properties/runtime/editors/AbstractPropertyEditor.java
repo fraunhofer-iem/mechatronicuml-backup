@@ -126,8 +126,9 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	}
 	
 	public void layout() {
-		RuntimePlugin.revalidateLayout(parentComposite);
-		
+		if (parentComposite != null) {
+			RuntimePlugin.revalidateLayout(parentComposite);
+		}
 		// XXX: The following only works in the Properties View, not in the dialog.
 		
 //		Composite composite = parentComposite;

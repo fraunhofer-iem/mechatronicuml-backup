@@ -189,7 +189,7 @@ public class XtextPropertyEditor extends
 	}
 
 	private Object getSingleValue() {
-		if (feature.isMany()) {
+		if (feature.isMany() && value != null) {
 			Collection<?> values = (Collection<?>) value;
 			if (!values.isEmpty()) {
 				return values.iterator().next();
@@ -214,18 +214,21 @@ public class XtextPropertyEditor extends
 	protected void valueChanged() {
 		super.valueChanged();
 		if (saving == 0) {
-			
-			String text = null;
-			try {
-				text = LanguageResource.serializeEObjectSafe((EObject) getSingleValue(), element);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			if (text == null) {
-				text = "";
-			}
-			updateText(text);
+			updateText();
 		}
+	}
+	
+	private void updateText() {
+		String text = null;
+		try {
+			text = LanguageResource.serializeEObjectSafe((EObject) getSingleValue(), element);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (text == null) {
+			text = "";
+		}
+		updateText(text);
 	}
 
 	private void updateText(String text) {
@@ -258,6 +261,14 @@ public class XtextPropertyEditor extends
 				}
 			}
 		}
+	}
+	
+	@Override
+	public void refresh() {
+		super.refresh();
+		if (saving == 0) {
+			updateText();
+		};
 	}
 	
 	
