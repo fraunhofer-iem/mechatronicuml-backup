@@ -227,6 +227,10 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			element.eAdapters().add(adapter);
 		}
 	}
+
+	public void setDefaultValue() {
+		setValue(feature.getDefaultValue());
+	}
 	
 	public void setValue(final Object newValue) {
 		boolean changed = (value == null) != (newValue == null) || (value != null && newValue != null && !value.equals(newValue));
@@ -325,7 +329,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 
 			@Override
 			public void notifyChanged(Notification notification) {
-				updateVisibility(true);
+				updateVisibility(true, true);
 			}
 
 		});
@@ -392,6 +396,22 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	protected void removeEventAdapters() {
 		for (Adapter adapter : eventAdapters.keySet()) {
 			unregisterEventAdapter(adapter);
+		}
+	}
+	
+	public void updateVisibility(boolean relayout, boolean setDefaultValue) {
+		boolean visibleBefore = isVisible();
+		
+		super.updateVisibility(relayout);
+
+		// Only set default value, if we are hiding the editor and it was not hidden before.
+		if (isVisible() || !visibleBefore) {
+			setDefaultValue = false;
+		}
+
+		// Set default value if necessary and requested.
+		if (setDefaultValue) {
+			setDefaultValue();
 		}
 	}
 

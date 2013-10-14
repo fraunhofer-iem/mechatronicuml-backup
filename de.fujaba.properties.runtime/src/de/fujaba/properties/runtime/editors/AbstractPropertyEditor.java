@@ -112,6 +112,10 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 			layout();
 		}
 	}
+	
+	public boolean isVisible() {
+		return visible;
+	}
 
 	public void show() {
 		setVisible(true);
