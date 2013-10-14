@@ -188,7 +188,7 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	}
 
 	@Override
-	public void setVisible(boolean visible) {
+	protected void doSetVisible(boolean visible) {
 		for (Control control : new Control[] { label, comboViewer.getCombo(), searchButton }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
@@ -197,6 +197,5 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 				}
 			}
 		}
-		super.setVisible(visible); // relayout parent
 	}
 }

@@ -41,10 +41,12 @@ public class AbsoluteDeadlineEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createAbsoluteDeadlineClockEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getAbsoluteDeadline_Clock());
+
+		return editor;
 
 	}
 

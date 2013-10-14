@@ -271,7 +271,7 @@ public class NavigationFeaturePropertyEditor extends
 	}
 
 	@Override
-	public void setVisible(boolean visible) {
+	protected void doSetVisible(boolean visible) {
 		navigatedEditor.setVisible(visible);
 	}
 }

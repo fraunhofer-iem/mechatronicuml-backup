@@ -4,17 +4,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -22,6 +26,17 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.jface.viewers.IFilter;
+import org.eclipse.ocl.ParserException;
+import org.eclipse.ocl.Query;
+import org.eclipse.ocl.ecore.OCL.Helper;
+import org.eclipse.ocl.ecore.OCLExpression;
+import org.eclipse.ocl.examples.eventmanager.EventFilter;
+import org.eclipse.ocl.examples.eventmanager.EventManager;
+import org.eclipse.ocl.examples.eventmanager.EventManagerFactory;
+import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzer;
+import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzerFactory;
+import org.eclipse.ocl.examples.impactanalyzer.util.OCLFactory;
 import org.eclipse.swt.widgets.Display;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
@@ -30,6 +45,10 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		AbstractPropertyEditor implements IStructuralFeaturePropertyEditor {
 
 	private List<EObject> hookedObjects = new ArrayList<EObject>();
+	
+	private Map<Adapter, ResourceSet> eventAdapters = new HashMap<Adapter, ResourceSet>();
+
+	private Map<Adapter, OCLExpression> unregisteredOCLExpressions = new HashMap<Adapter, OCLExpression>();
 
 	protected EStructuralFeature feature = null;
 	
@@ -86,6 +105,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	public void dispose() {
 		super.dispose();
 		removeListeners();
+		removeEventAdapters();
 	}
 
 	@Override
@@ -113,6 +133,14 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		
 		// Update Adapters
 		updateAdapters();
+		
+		// Register those expressions that could not be registered before, because no editing domain was known before the first inputChanged() call
+		if (!unregisteredOCLExpressions.isEmpty()) {
+			for(Adapter adapter : unregisteredOCLExpressions.keySet()) {
+				OCLExpression expression = unregisteredOCLExpressions.get(adapter);
+				registerOCLAdapter(expression, adapter);
+			}
+		}
 	}
 	
 	private Object unwrap(Object value) {
@@ -273,5 +301,99 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		
 		return choices;
 	}
+
+	public ResourceSet getResourceSet() {
+		if (element != null) {
+			return element.eResource().getResourceSet();
+		}
+		return null;
+	}
+	/**
+	 * Convenience method that creates an OCL expression, registers it with an
+	 * Impact Analyzer and uses it as visibility filter.
+	 * 
+	 * It updates the visibility of this editor each time the Impact Analyzer
+	 * decides it might be necessary.
+	 * @param context 
+	 * 
+	 * @param oclExpression
+	 *            The oclExpression to use.
+	 */
+	public void addVisibilityFilter(String oclExpression, EClassifier context) {
+
+		IFilter filter = createOCLFilter(oclExpression, context, new AdapterImpl() {
+
+			@Override
+			public void notifyChanged(Notification notification) {
+				updateVisibility(true);
+			}
+
+		});
+		if (filter != null) {
+			addVisibilityFilter(filter);
+		}
+	}
+
+	private IFilter createOCLFilter(String oclExpression, EClassifier context, Adapter adapter) {
+		
+		try {
+			Helper helper = RuntimePlugin.OCL_ECORE.createOCLHelper();
+			helper.setAttributeContext(context, feature);
+			OCLExpression expression = helper.createQuery(oclExpression);
+			registerOCLAdapter(expression, adapter)	;
+			
+			final Query<EClassifier, ?, ?> query = RuntimePlugin.OCL_ECORE.createQuery(expression);		 
+			return new IFilter() {
+
+				@Override
+				public boolean select(Object toTest) {
+					return Boolean.TRUE.equals(query.evaluate(input));
+				}
+				
+			};
+		} catch (ParserException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public boolean registerOCLAdapter(OCLExpression expression, Adapter adapter) {
+		ResourceSet myResourceSet = getResourceSet();
+		if (myResourceSet == null) {
+			unregisteredOCLExpressions.put(adapter, expression);
+			return false;
+		}
+		unregisteredOCLExpressions.remove(adapter);
+
+		final ImpactAnalyzer impactAnalyzer = ImpactAnalyzerFactory.INSTANCE
+				.createImpactAnalyzer(expression, // the expression to
+													// re-evaluate incrementally
+						false, // whether to re-evaluate when new context
+								// objects appear
+						OCLFactory.getInstance());
+
+		EventFilter filter = impactAnalyzer.createFilterForExpression();
+		EventManager eventManager = EventManagerFactory.eINSTANCE
+				.getEventManagerFor(myResourceSet);
+		eventManager.subscribe(filter, adapter);
+
+		// store adapter to unregister them in dispose()
+		eventAdapters.put(adapter, myResourceSet);
+		return true;
+	}
+
+	public void unregisterEventAdapter(Adapter adapter) {
+		ResourceSet myResourceSet = eventAdapters.get(adapter);
+		EventManager eventManager = EventManagerFactory.eINSTANCE
+				.getEventManagerFor(myResourceSet);
+		eventManager.unsubscribe(adapter);
+	}
+
+	protected void removeEventAdapters() {
+		for (Adapter adapter : eventAdapters.keySet()) {
+			unregisterEventAdapter(adapter);
+		}
+	}
+
 
 }

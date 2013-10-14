@@ -50,12 +50,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 		addEditorToCategory(category, «genCreator()»(), front);
 	}
 
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
-		return «EXPAND createEditor(this) FOR editor»
-	}
+	«EXPAND createMethod(false)»
 	«ENDFOREACH»
 
 	«FOREACH genOverriddenProperties() AS this»
@@ -71,13 +66,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 		«ENDIF»
 	}
 
-	/**
-	 * @generated
-	 */
-	@Override
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
-		return «EXPAND createEditor(this) FOR editor»
-	}
+	«EXPAND createMethod(true)»
 	«ENDFOREACH»
 
 «IF !genClass.ecoreClass.abstract»
@@ -105,6 +94,21 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 		}
 	}
 «ENDIF»
+«ENDDEFINE»
+
+«DEFINE createMethod(Boolean override) FOR Property»
+	/**
+	 * @generated
+	 */
+	«IF override-»
+	@Override
+	«ENDIF-»
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «EXPAND createEditor(this) FOR editor»
+		«EXPAND addFilter("editor") FOREACH filters»
+		return editor;
+
+	}
 «ENDDEFINE»
 
 «DEFINE addEditor FOR PropertyEditor»
@@ -167,4 +171,10 @@ new de.fujaba.properties.runtime.editors.OCLPropertyEditor(adapterFactory, «pro
 
 «DEFINE createEditor(Property property) FOR CustomPropertyEditor-»
 new «fullyQualifiedClassName»(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
+«DEFINE addFilter(String editorVar) FOR PropertyFilter»«ENDDEFINE»
+
+«DEFINE addFilter(String editorVar) FOR OCLPropertyFilter»
+ 		«editorVar».addVisibilityFilter("«expression»", getEClass());
 «ENDDEFINE»

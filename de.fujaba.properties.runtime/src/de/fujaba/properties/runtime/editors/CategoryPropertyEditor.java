@@ -321,7 +321,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	}
 
 	@Override
-	public void setVisible(boolean visible) {
+	protected void doSetVisible(boolean visible) {
 		for (Control control : new Control[] { section }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
@@ -330,7 +330,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 				}
 			}
 		}
-		super.setVisible(visible); // relayout parent
 	}
 	
 }

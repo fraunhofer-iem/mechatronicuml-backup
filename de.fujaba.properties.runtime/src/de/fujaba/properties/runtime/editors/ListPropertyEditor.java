@@ -333,7 +333,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	}
 
 	@Override
-	public void setVisible(boolean visible) {
+	protected void doSetVisible(boolean visible) {
 		for (Control control : new Control[] { container }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
@@ -342,8 +342,6 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 				}
 			}
 		}
-			super.setVisible(visible); // relayout parent
-		
 	}
 	
 }

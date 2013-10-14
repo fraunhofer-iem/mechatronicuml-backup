@@ -101,5 +101,9 @@ public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 
 		return allClasses;
 	}
+	
+	public EClass getEClass() {
+		return eClass;
+	}
 
 }

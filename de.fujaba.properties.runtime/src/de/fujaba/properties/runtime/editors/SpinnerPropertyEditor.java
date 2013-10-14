@@ -104,7 +104,7 @@ public class SpinnerPropertyEditor extends
 	}
 
 	@Override
-	public void setVisible(boolean visible) {
+	protected void doSetVisible(boolean visible) {
 		for (Control control : new Control[] { label, spinner }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
@@ -113,6 +113,5 @@ public class SpinnerPropertyEditor extends
 				}
 			}
 		}
-		super.setVisible(visible); // relayout parent
 	}
 }

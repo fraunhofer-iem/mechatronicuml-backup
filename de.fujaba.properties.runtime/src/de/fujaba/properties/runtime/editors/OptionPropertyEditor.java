@@ -144,7 +144,7 @@ public class OptionPropertyEditor extends
 	}
 
 	@Override
-	public void setVisible(boolean visible) {
+	protected void doSetVisible(boolean visible) {
 		for (Control control : new Control[] { composite }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
@@ -153,6 +153,5 @@ public class OptionPropertyEditor extends
 				}
 			}
 		}
-		super.setVisible(visible); // relayout parent
 	}
 }

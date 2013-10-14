@@ -44,12 +44,15 @@ public class RangeEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRangeLowerBoundEditor() {
-		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getRange_LowerBound(), 0);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -61,10 +64,12 @@ public class RangeEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createRangeUpperBoundEditor() {
-		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getRange_UpperBound(), 0);
+
+		return editor;
 
 	}
 

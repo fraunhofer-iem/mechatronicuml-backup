@@ -62,7 +62,7 @@ public class CheckboxPropertyEditor extends
 	}
 
 	@Override
-	public void setVisible(boolean visible) {
+	protected void doSetVisible(boolean visible) {
 		for (Control control : new Control[] { checkbox }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
@@ -71,7 +71,6 @@ public class CheckboxPropertyEditor extends
 				}
 			}
 		}
-		super.setVisible(visible); // relayout parent
 	}
 
 }

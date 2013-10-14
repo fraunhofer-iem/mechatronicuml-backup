@@ -1,7 +1,9 @@
 package de.fujaba.properties.runtime.editors;
 
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IFilter;
+import org.eclipse.ocl.examples.pivot.OCLExpression;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
@@ -26,4 +28,5 @@ public interface IPropertyEditor {
 	void removeVisibilityFilter(IFilter filter);
 
 	void setVisible(boolean visible);
+
 }

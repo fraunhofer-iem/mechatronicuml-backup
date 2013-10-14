@@ -249,7 +249,7 @@ public class XtextPropertyEditor extends
 	}
 
 	@Override
-	public void setVisible(boolean visible) {
+	protected void doSetVisible(boolean visible) {
 		for (Control control : new Control[] { container }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
@@ -258,7 +258,6 @@ public class XtextPropertyEditor extends
 				}
 			}
 		}
-		super.setVisible(visible);
 	}
 	
 	
