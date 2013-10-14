@@ -126,13 +126,17 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	}
 	
 	public void layout() {
-		Composite composite = parentComposite;
-		while (composite != null && false == composite instanceof PageBook) {
-			composite = composite.getParent();
-		}
-		if (composite != null) {
-			composite.layout(true, true);
-		}
+		RuntimePlugin.revalidateLayout(parentComposite);
+		
+		// XXX: The following only works in the Properties View, not in the dialog.
+		
+//		Composite composite = parentComposite;
+//		while (composite != null && false == composite instanceof PageBook) {
+//			composite = composite.getParent();
+//		}
+//		if (composite != null) {
+//			composite.layout(true, true);
+//		}
 	}
 
 	protected abstract void doSetVisible(boolean visible);
