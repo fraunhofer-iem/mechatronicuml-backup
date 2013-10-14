@@ -317,14 +317,14 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		super.refresh();
 		
 		if (tableViewer != null && !tableViewer.getTable().isDisposed()) {
-			// Refresh table viewer without loosing selection
+			// Refresh table viewer without loosing selection (XXX still a hack)
 			EObject selection = this.selection;
-			tableViewer.refresh();
+			tableViewer.setInput(null);
+			tableViewer.setInput(value);
 			this.selection = selection;
 			if (value != null) {
 				applySelection();
 			}
-			
 
 			// Relayout because item size could have been changed
 			tableViewer.refresh(true);
