@@ -44,7 +44,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	 * 
 	 */
 	public CategoryPropertyEditor(AdapterFactory adapterFactory) {
-		this(adapterFactory, SWT.VERTICAL, null, false);
+		this(adapterFactory, SWT.VERTICAL, null, false, false);
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	 * @param orientation
 	 *            The orientation, can be SWT.HORIZONTAL or SWT.VERTICAL.
 	 */
-	public CategoryPropertyEditor(AdapterFactory adapterFactory, int orientation, String title, boolean initiallyExpanded) {
+	public CategoryPropertyEditor(AdapterFactory adapterFactory, int orientation, String title, boolean initiallyExpanded, final boolean hideIfEmpty) {
 		super(adapterFactory);
 		this.orientation = orientation;
 		this.title = title;
@@ -67,7 +67,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 			@Override
 			public boolean select(Object toTest) {
-				return !propertyEditors.isEmpty();
+				return !propertyEditors.isEmpty() || !hideIfEmpty;
 			}
 			
 		});

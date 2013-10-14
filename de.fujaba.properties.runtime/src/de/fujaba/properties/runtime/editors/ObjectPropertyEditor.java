@@ -25,7 +25,7 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 	private String tab;
 	
 	public ObjectPropertyEditor(String tab, AdapterFactory adapterFactory, String title, boolean initiallyOpen) {
-		super(adapterFactory, SWT.VERTICAL, title, initiallyOpen);
+		super(adapterFactory, SWT.VERTICAL, title, initiallyOpen, false);
 		this.tab = tab;
 	}
 

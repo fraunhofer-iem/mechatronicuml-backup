@@ -38,7 +38,7 @@ public abstract class ClassPropertyEditor extends CategoryPropertyEditor {
 	public CategoryPropertyEditor addSubCategory(String key, String title,
 			int orientation, boolean initiallyExpanded) {
 		CategoryPropertyEditor category = new CategoryPropertyEditor(adapterFactory,
-				orientation, title, initiallyExpanded);
+				orientation, title, initiallyExpanded, true);
 		addPropertyEditor(key, category, false);
 		return category;
 	}
