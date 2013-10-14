@@ -219,7 +219,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 					if (e.getState() == true) {
 						createChildren(); // ### on demand creation of children
 					}
-					
+					layout();
 				}
 			});
 			
