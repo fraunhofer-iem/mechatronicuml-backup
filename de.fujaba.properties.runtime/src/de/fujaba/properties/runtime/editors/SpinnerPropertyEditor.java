@@ -18,6 +18,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public class SpinnerPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
+	private int selection;
 	protected Label label;
 	protected Spinner spinner;
 	protected int digits;
@@ -57,6 +58,7 @@ public class SpinnerPropertyEditor extends
 		spinner.addModifyListener(new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent e) {
+				selection = spinner.getSelection();
 				// If we do not have the focus, the focusLost event will not be fired.
 				// Probably the spinbuttons were used, so we must call modify().
 				if (!spinner.isFocusControl()) {
@@ -75,7 +77,7 @@ public class SpinnerPropertyEditor extends
 	}
 
 	protected void modify() {
-		double doubleValue = spinner.getSelection() / Math.pow(10, digits);
+		double doubleValue = selection / Math.pow(10, digits);
 		Object newValue = null;
 		EDataType dataType = ((EAttribute)feature).getEAttributeType();
 		if (dataType.getName() == "EInt") {
@@ -93,8 +95,12 @@ public class SpinnerPropertyEditor extends
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
+		applyValue();
+	}
+	
+	private void applyValue() {
 
-		if (spinner != null) {
+		if (spinner != null && !spinner.isDisposed() && value != null) {
 			double factor = Math.pow(10, digits);
 			int newValue = (int) (Double.parseDouble(value.toString()) * factor);
 
@@ -102,6 +108,18 @@ public class SpinnerPropertyEditor extends
 				spinner.setSelection(newValue);
 			}
 		}
+	}
+	
+	@Override
+	public void refresh() {
+		super.refresh();
+		applyValue();
+	}
+	
+	@Override
+	public void dispose() {
+		super.dispose();
+		modify();
 	}
 
 	@Override
