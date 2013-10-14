@@ -124,6 +124,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	private void childrenChanged() {
 		updateHeaderColors();
+		updateVisibility(true);
 		layout();
 	}
 	
