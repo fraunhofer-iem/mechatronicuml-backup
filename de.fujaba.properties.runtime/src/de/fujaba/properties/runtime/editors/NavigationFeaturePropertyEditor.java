@@ -72,6 +72,8 @@ public class NavigationFeaturePropertyEditor extends
 
 	@Override
 	public void createControls(Composite parent, FormToolkit toolkit) {
+		super.createControls(parent, toolkit);
+
 		navigatedEditor.createControls(parent, toolkit);
 
 		// Initialize section with buttons
@@ -124,8 +126,7 @@ public class NavigationFeaturePropertyEditor extends
 				public void widgetSelected(SelectionEvent e) {
 					buttonCreate.removeSelectionListener(this);
 					create();
-					RuntimePlugin.revalidateLayout(navigatedEditor.getSection()
-							.getClient());// no idea why this is necessary
+					layout();
 					buttonCreate.addSelectionListener(this);
 				}
 	

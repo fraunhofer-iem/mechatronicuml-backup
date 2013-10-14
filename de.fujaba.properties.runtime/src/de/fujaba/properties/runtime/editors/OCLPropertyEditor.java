@@ -41,6 +41,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 
 	@Override
 	public void createControls(Composite parent, FormToolkit toolkit) {
+		super.createControls(parent, toolkit);
 		Label label = toolkit.createLabel(parent, getLabelText());
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
@@ -113,7 +114,11 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
-		updateText(value.toString());
+		if (value == null) {
+			updateText("");
+		} else {
+			updateText(value.toString());
+		}
 		refresh();
 	}
 

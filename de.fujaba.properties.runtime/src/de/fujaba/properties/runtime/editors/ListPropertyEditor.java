@@ -72,6 +72,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	public void createControls(final Composite parent,
 			FormToolkit toolkit) {
+		super.createControls(parent, toolkit);
 
 		// Outer container
 		container = toolkit.createComposite(parent);
@@ -327,7 +328,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 
 			// Relayout because item size could have been changed
 			tableViewer.refresh(true);
-			RuntimePlugin.revalidateLayout(tableViewer.getTable());
+			layout();
 		}
 
 	}

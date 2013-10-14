@@ -59,13 +59,18 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	@Override
 	public void createControls(Composite parent,
 			FormToolkit toolkit) {
+		super.createControls(parent, toolkit);
 		label = toolkit.createLabel(parent, getLabelText());
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 		}
 		
 		if (hasSearchButton) {
-			composite = new Composite(parent, SWT.NONE);
+			composite = new Composite(parent, SWT.NONE) {
+				public void layout (Control [] changed, int flags) {
+					super.layout(changed, flags);
+				}
+			};
 			parent = composite; // use the composite as parent from now on
 			parent.setLayout(new GridLayout(2, false));
 			parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));

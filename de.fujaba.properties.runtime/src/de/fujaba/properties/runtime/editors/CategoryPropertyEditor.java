@@ -127,7 +127,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 				section.setTitleBarGradientBackground(colorActiveBackground);
 			}
 
-			RuntimePlugin.revalidateLayout(childrenComposite);
+			layout();
 		}
 	}
 
@@ -173,6 +173,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	@Override
 	public void createControls(Composite parent,
 			FormToolkit toolkit) {
+		super.createControls(parent, toolkit);
 		this.toolkit = toolkit;
 		Object layoutData = createLayoutData(parent);
 
@@ -200,7 +201,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 						createChildren(); // ### on demand creation of children
 					}
 					if (!relayouted) {
-						RuntimePlugin.revalidateLayout(childrenComposite);
+						layout();
 					}
 				}
 			});

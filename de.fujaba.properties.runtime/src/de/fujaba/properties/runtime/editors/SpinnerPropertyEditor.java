@@ -31,6 +31,7 @@ public class SpinnerPropertyEditor extends
 	@Override
 	public void createControls(Composite parent,
 			FormToolkit toolkit) {
+		super.createControls(parent, toolkit);
 		label = toolkit.createLabel(parent, getLabelText());
 		
 		spinner = new Spinner(parent, SWT.BORDER | toolkit.getOrientation());

@@ -3,19 +3,11 @@ package de.fujaba.properties.runtime.editors;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.IFilter;
-import org.eclipse.ocl.examples.eventmanager.EventFilter;
-import org.eclipse.ocl.examples.eventmanager.EventManager;
-import org.eclipse.ocl.examples.eventmanager.EventManagerFactory;
-import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzer;
-import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzerFactory;
-import org.eclipse.ocl.examples.impactanalyzer.util.OCLFactory;
-import org.eclipse.ocl.expressions.OCLExpression;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.ui.part.PageBook;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
 
@@ -117,7 +109,7 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 		// Relayout parent if requested
 		if (relayout && parentComposite != null) {
-			RuntimePlugin.revalidateLayout(parentComposite);
+			layout();
 		}
 	}
 
@@ -127,6 +119,16 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	public void hide() {
 		setVisible(false);
+	}
+	
+	public void layout() {
+		Composite composite = parentComposite;
+		while (composite != null && false == composite instanceof PageBook) {
+			composite = composite.getParent();
+		}
+		if (composite != null) {
+			composite.layout(true, true);
+		}
 	}
 
 	protected abstract void doSetVisible(boolean visible);
