@@ -62,7 +62,7 @@ public class GenmodelTest extends TraverseTest {
 	/**
 	 * The genmodel resource to work on (will be loaded in setUpBeforeClass()).
 	 */
-	private static Resource genmodel;
+	protected static Resource genmodel;
 
 	private static ILabelProvider defaultLabelProvider = new ILabelProvider() {
 
@@ -88,7 +88,7 @@ public class GenmodelTest extends TraverseTest {
 		}
 	};
 
-	private static ILabelProvider qualifiedLabelProvider = new QualifiedLabelProvider(defaultLabelProvider);
+	protected static ILabelProvider qualifiedLabelProvider = new QualifiedLabelProvider(defaultLabelProvider);
 
 
 	/**
