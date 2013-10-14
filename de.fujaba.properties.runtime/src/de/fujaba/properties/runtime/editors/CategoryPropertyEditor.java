@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.GridData;
@@ -19,8 +20,6 @@ import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.events.IExpansionListener;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
-
-import de.fujaba.properties.runtime.RuntimePlugin;
 
 public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	protected boolean childrenCreated = false;
@@ -63,6 +62,15 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		this.orientation = orientation;
 		this.title = title;
 		this.initiallyExpanded = initiallyExpanded;
+		
+		addVisibilityFilter(new IFilter() {
+
+			@Override
+			public boolean select(Object toTest) {
+				return !propertyEditors.isEmpty();
+			}
+			
+		});
 	}
 
 	public void addPropertyEditor(IPropertyEditor editor) {
@@ -233,6 +241,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		}
 
 		updateHeaderColors();
+		updateVisibility(true);
 	}
 	
 	protected void createChildren() {

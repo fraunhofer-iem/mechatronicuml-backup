@@ -23,9 +23,13 @@ public abstract class DeadlineEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addDeadlineUpperBoundEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addDeadlineUpperBoundEditor(null, false);
+		}
 
-		addDeadlineLowerBoundEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addDeadlineLowerBoundEditor(null, false);
+		}
 
 	}
 

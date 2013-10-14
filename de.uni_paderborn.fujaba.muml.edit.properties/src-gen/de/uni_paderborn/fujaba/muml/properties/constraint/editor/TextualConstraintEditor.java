@@ -23,7 +23,9 @@ public class TextualConstraintEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addTextualConstraintTextualExpressionEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addTextualConstraintTextualExpressionEditor(null, false);
+		}
 
 	}
 

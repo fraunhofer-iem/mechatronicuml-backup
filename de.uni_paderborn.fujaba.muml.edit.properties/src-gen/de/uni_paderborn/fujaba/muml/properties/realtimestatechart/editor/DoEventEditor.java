@@ -23,9 +23,13 @@ public class DoEventEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addDoEventActionEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addDoEventActionEditor(null, false);
+		}
 
-		addDoEventPeriodEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addDoEventPeriodEditor(null, false);
+		}
 
 	}
 

@@ -31,7 +31,9 @@ public class ComponentPartEditor
 			addComponentPartParentComponentEditor(null, true);
 		}
 
-		addComponentPartCardinalityEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addComponentPartCardinalityEditor(null, false);
+		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addNamedElementNameEditor(null, true);

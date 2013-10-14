@@ -23,7 +23,9 @@ public class StructuredComponentInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addStructuredComponentInstanceEmbeddedCICEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addStructuredComponentInstanceEmbeddedCICEditor(null, false);
+		}
 
 	}
 

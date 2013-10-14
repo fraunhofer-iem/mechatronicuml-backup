@@ -23,7 +23,9 @@ public class ClockConstraintEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addClockConstraintBoundEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addClockConstraintBoundEditor(null, false);
+		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addClockConstraintClockEditor(null, true);

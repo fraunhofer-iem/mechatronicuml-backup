@@ -55,7 +55,9 @@ public class RoleEditor
 					true);
 		}
 
-		addDiscreteInteractionEndpointCardinalityEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addDiscreteInteractionEndpointCardinalityEditor(null, false);
+		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteInteractionEndpointReceiverMessageBufferEditor(

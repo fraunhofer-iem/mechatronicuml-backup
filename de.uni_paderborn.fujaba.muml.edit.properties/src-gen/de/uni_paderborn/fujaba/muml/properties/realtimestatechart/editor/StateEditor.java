@@ -34,11 +34,17 @@ public class StateEditor
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		addStateDoEventEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addStateDoEventEditor(null, false);
+		}
 
-		addStateExitEventEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addStateExitEventEditor(null, false);
+		}
 
-		addStateEntryEventEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addStateEntryEventEditor(null, false);
+		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addStateInvariantsEditor("de.fujaba.properties.category.Lists",

@@ -25,6 +25,8 @@ public interface IPropertyEditor {
 	
 	void removeVisibilityFilter(IFilter filter);
 
-	void setVisible(boolean visible);
+	void setVisible(boolean visible, boolean relayout, boolean force);
+	
+	void updateVisibility(boolean relayout);
 
 }

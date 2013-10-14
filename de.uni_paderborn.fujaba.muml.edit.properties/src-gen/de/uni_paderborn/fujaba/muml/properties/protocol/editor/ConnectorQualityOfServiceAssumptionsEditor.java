@@ -26,11 +26,15 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null,
-				false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null,
+					false);
+		}
 
-		addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(null,
-				false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(null,
+					false);
+		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(

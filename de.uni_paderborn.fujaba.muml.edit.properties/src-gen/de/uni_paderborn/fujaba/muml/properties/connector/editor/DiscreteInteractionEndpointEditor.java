@@ -48,7 +48,9 @@ public abstract class DiscreteInteractionEndpointEditor
 					true);
 		}
 
-		addDiscreteInteractionEndpointCardinalityEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addDiscreteInteractionEndpointCardinalityEditor(null, false);
+		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteInteractionEndpointReceiverMessageBufferEditor(

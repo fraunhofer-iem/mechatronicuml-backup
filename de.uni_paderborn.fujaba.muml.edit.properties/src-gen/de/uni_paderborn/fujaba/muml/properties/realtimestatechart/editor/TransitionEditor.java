@@ -29,7 +29,9 @@ public class TransitionEditor
 		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addTransitionSynchronizationEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addTransitionSynchronizationEditor(null, false);
+		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addTransitionTargetEditor(null, true);
@@ -58,7 +60,9 @@ public class TransitionEditor
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		addTransitionRelativeDeadlineEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addTransitionRelativeDeadlineEditor(null, false);
+		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addTransitionBlockableEditor(
@@ -74,7 +78,9 @@ public class TransitionEditor
 					true);
 		}
 
-		addTransitionActionEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addTransitionActionEditor(null, false);
+		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addTransitionUrgentEditor("de.fujaba.properties.category.Booleans",

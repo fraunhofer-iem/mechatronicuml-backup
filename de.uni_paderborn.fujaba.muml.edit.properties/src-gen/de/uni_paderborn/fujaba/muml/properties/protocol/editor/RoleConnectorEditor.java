@@ -27,7 +27,10 @@ public class RoleConnectorEditor
 			addRoleConnectorCoordinationProtocolEditor(null, true);
 		}
 
-		addRoleConnectorConnectorQualityOfServiceAssumptionsEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addRoleConnectorConnectorQualityOfServiceAssumptionsEditor(null,
+					false);
+		}
 
 	}
 

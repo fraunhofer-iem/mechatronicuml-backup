@@ -23,7 +23,9 @@ public class HybridPortEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addHybridPortSamplingIntervalEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addHybridPortSamplingIntervalEditor(null, false);
+		}
 
 	}
 

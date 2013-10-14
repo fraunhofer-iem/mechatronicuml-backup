@@ -31,7 +31,9 @@ public abstract class EntryOrExitEventEditor
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		addEntryOrExitEventActionEditor(null, false);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addEntryOrExitEventActionEditor(null, false);
+		}
 
 	}
 
