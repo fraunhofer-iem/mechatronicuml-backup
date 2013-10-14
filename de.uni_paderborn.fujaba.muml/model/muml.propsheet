@@ -25,12 +25,12 @@
     <genPackage href="muml.genmodel#//muml/valuetype"/>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/Cardinality"/>
-      <properties reconcile="false">
+      <properties tooltip="" reconcile="false">
         <genFeature href="muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties reconcile="false">
+      <properties tooltip="" reconcile="false">
         <genFeature href="muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:TextPropertyEditor"/>
@@ -929,7 +929,7 @@
       </properties>
       <propertyCategories title="Booleans" open="true" properties="//@packages.8/@classes.13/@properties.1"/>
     </classes>
-    <classes superClasses="//@packages.4/@classes.2 //@packages.9/@classes.0">
+    <classes superClasses="//@packages.9/@classes.0">
       <genClass href="muml.genmodel#//muml/component/PortPart"/>
       <properties>
         <genFeature href="muml.genmodel#//muml/component/PortPart/portType"/>
@@ -959,7 +959,6 @@
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.0/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/connector/Connector"/>
@@ -1002,7 +1001,7 @@
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.3/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
-    <classes superClasses="//@packages.7/@classes.0 //@packages.6/@classes.4 //@packages.9/@classes.0">
+    <classes>
       <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint"/>
       <properties category="//@packages.9/@classes.4/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
@@ -1016,6 +1015,7 @@
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/adaptationBehavior"/>
+        <filters xsi:type="de.fujaba:OCLPropertyFilter" expression="cardinality.upperBound.value > 1"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
       </properties>
@@ -1035,6 +1035,10 @@
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.4/@properties.0 //@packages.9/@classes.4/@properties.1 //@packages.9/@classes.4/@properties.5"/>
+      <superClasses href="#//@packages.6/@classes.4"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="#//@packages.7/@classes.0"/>
+      <superClasses href="#//@packages.9/@classes.0"/>
     </classes>
     <classes superClasses="//@packages.9/@classes.2">
       <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpointInstance"/>
