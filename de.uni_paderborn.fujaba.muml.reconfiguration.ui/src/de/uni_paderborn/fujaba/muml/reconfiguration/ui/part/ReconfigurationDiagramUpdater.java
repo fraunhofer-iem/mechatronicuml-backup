@@ -249,7 +249,7 @@ public class ReconfigurationDiagramUpdater {
 				.iterator(); it.hasNext();) {
 			de.uni_paderborn.fujaba.muml.component.ComponentPart childElement = (de.uni_paderborn.fujaba.muml.component.ComponentPart) it
 					.next();
-			int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(

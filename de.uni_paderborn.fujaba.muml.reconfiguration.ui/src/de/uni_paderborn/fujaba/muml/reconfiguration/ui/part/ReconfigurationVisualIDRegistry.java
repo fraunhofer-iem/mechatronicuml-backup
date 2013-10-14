@@ -162,6 +162,11 @@ public class ReconfigurationVisualIDRegistry {
 			}
 
 			break;
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID:
+			if(de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+					.getComponentPart().isSuperTypeOf(domainElement.eClass()))
+				return de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID;
+			
 
 		}
 		return -1;

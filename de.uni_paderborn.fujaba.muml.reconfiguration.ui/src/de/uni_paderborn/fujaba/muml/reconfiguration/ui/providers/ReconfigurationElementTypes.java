@@ -19,12 +19,13 @@ import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 
 //TODO maybe extend MumlElementTypes and call super
-public class ReconfigurationElementTypes {
+public class ReconfigurationElementTypes{
 
 	/**
 	 * @generated
 	 */
 	private ReconfigurationElementTypes() {
+	
 	}
 
 	/**
