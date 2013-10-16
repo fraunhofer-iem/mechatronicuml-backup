@@ -30,7 +30,7 @@ public class ModelinstanceFactoryImpl extends EFactoryImpl implements Modelinsta
 	 */
 	public static ModelinstanceFactory init() {
 		try {
-			ModelinstanceFactory theModelinstanceFactory = (ModelinstanceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/modelinstance/0.4.0"); 
+			ModelinstanceFactory theModelinstanceFactory = (ModelinstanceFactory)EPackage.Registry.INSTANCE.getEFactory(ModelinstancePackage.eNS_URI);
 			if (theModelinstanceFactory != null) {
 				return theModelinstanceFactory;
 			}

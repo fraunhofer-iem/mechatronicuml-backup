@@ -30,7 +30,6 @@ import org.eclipse.emf.ecore.EReference;
  * @see de.uni_paderborn.fujaba.modelinstance.ModelinstanceFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
- *        annotation="http://www.eclipse.org/edapt historyURI='../../de.uni_paderborn.fujaba.muml/model/muml.history'"
  * @generated
  */
 public interface ModelinstancePackage extends EPackage {

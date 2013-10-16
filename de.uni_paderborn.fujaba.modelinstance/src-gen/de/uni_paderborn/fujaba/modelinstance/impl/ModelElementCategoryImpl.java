@@ -169,7 +169,7 @@ public class ModelElementCategoryImpl extends EObjectImpl implements ModelElemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isValidElement(EObject object) {
+	public boolean isValidElement(final EObject object) {
 		boolean valid = false;
 		
 		ModelInstancePlugin plugin = ModelInstancePlugin.getInstance();
