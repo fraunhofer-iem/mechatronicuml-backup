@@ -224,7 +224,7 @@
          </action>
       </objectContribution>
    </extension>
-   <extension
+   <!-- extension
          point="org.eclipse.ui.views">
       <view
             category="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.Fujaba"
@@ -237,6 +237,6 @@
             id="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui.Fujaba"
             name="Fujaba">
       </category>
-   </extension>
+   </extension -->
 
 </plugin>
