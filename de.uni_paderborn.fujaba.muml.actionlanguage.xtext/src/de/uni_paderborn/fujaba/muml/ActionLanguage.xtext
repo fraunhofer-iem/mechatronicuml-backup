@@ -42,7 +42,7 @@ ForLoop returns actionlanguage::ForLoop:
 ForLoopCountingExpression returns actionlanguage::Assignment:
 	lhs_typedNamedElementExpression=TypedNamedElementExpression
 	(
-		incrementDecrementOperator=IncrementDecrementOperator
+		incrementDecrementOperator=UnaryPostIncrementDecrementOperator
 		| (assignOperator=AssignOperator rhs_assignExpression=Expression)
 	)
 ;
@@ -83,7 +83,7 @@ ExpressionStartRule returns expressions::Expression:
 	OperationCallStatement
 ;
 
-enum IncrementDecrementOperator returns actionlanguage::IncrementDecrementOperator:
+enum UnaryPostIncrementDecrementOperator returns actionlanguage::IncrementDecrementOperator:
 	INCREMENT='++' | DECREMENT='--'
 ;
 
@@ -91,7 +91,19 @@ enum IncrementDecrementOperator returns actionlanguage::IncrementDecrementOperat
 	
 Assignment returns actionlanguage::Assignment:
 	lhs_typedNamedElementExpression=TypedNamedElementExpression
-	assignOperator=AssignOperator rhs_assignExpression=InitializeExpression ';'
+	(
+		(		
+			assignOperator=AssignOperator rhs_assignExpression=InitializeExpression	
+		) |
+		(
+			incrementDecrementOperator=UnaryPostIncrementDecrementOperator
+		)
+		
+	)';'
+;
+
+enum IncrementDecrementOperatorExpression returns actionlanguage::IncrementDecrementOperator:
+	INCREMENT='++' | DECREMENT='--'
 ;
 
 enum AssignOperator returns actionlanguage::AssignOperator:
@@ -232,9 +244,9 @@ enum AdditionOperator returns commonExpressions::ArithmeticOperator:
 ;
 
 MultiplicationExpression returns expressions::Expression:
-	UnaryPreExpression | UnaryPostExpression
+	UnaryPreExpression | Operand
 	(	{commonExpressions::ArithmeticExpression.leftExpression=current}
-		operator=MultiplicationOperator rightExpression=(UnaryPreExpression | UnaryPostExpression)
+		operator=MultiplicationOperator rightExpression=(UnaryPreExpression | Operand)
 	)*
 ;
 
@@ -257,22 +269,6 @@ enum UnaryPreOperator returns commonExpressions::UnaryOperator:
 
 // end of UnaryPreExpression
 
-// UnaryPostExpression
-
-UnaryPostExpression returns expressions::Expression:
-	Operand
-	(
-		{commonExpressions::UnaryExpression.enclosedExpression=current}
-		operator=UnaryPostOperator
-	)?
-;
-
-enum UnaryPostOperator returns commonExpressions::UnaryOperator:
-	INCREMENT='++' | DECREMENT='--'
-;
-
-// end of UnaryPostExpression
-
 // Operand
 
 Operand returns expressions::Expression:
@@ -293,8 +289,15 @@ Literal returns ecore::EString:
 ExtendedTypedNamedElementExpression returns expressions::Expression:
 	TypedNamedElementExpression
 	(
-		{actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression = current}
-		'.' position=PositionSelectorExpression
+		(
+			{actionlanguage::DiscreteInteractionEndpointReference.typedNamedElementExpression = current}
+			'.' position=PositionSelectorExpression			
+		) |
+		(
+			// unary post increment/decrement			
+			{actionlanguage::Assignment.lhs_typedNamedElementExpression=current}
+			incrementDecrementOperator=IncrementDecrementOperatorExpression
+		)
 	)?
 ;
 
