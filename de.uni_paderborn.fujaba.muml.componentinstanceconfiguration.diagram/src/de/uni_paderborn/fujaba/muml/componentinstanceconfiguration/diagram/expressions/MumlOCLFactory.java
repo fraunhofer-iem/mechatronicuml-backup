@@ -51,16 +51,16 @@ public class MumlOCLFactory {
 		if (cached.expressions[index] == null) {
 			final String[] exprBodies = new String[] {
 					"--\'portinstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \'.concat(if self.type.name.oclIsUndefined() then \'null\' else self.type.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.multiInteractionEndpointInstance.oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'portinstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \'.concat(if self.type.name.oclIsUndefined() then \'null\' else self.type.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'portinstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'portinstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--if self.multiInteractionEndpointInstance.oclIsUndefined() then\n--\tnull\n--else\n--\tif  self.multiInteractionEndpointInstance.oclIsKindOf(DiscreteMultiPortInstance) then\n--\t\tself.multiInteractionEndpointInstance.oclAsType(DiscreteMultiPortInstance).componentInstance\n--\telse\n--\t\tnull\n--\tendif\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \'.concat(if self.type.name.oclIsUndefined() then \'null\' else self.type.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'portinstance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--\': \'.concat(if self.type.name.oclIsUndefined() then \'null\' else self.type.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--\': \'.concat(if self.portType.name.oclIsUndefined() then \'null\' else self.portType.name endif)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'instance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let compName : String = if self.componentType.name.oclIsUndefined() then \'null\' else\tself.componentType.name endif in\r\n--let partName : String = if self.componentPart.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.componentPart.name) endif in\r\n--(if self.name.oclIsUndefined() then \'null\' else self.name endif).concat(partName.concat(\' : \'.concat(compName)))".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'instance\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

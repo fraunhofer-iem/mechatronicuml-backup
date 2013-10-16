@@ -29,7 +29,7 @@
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
         <viewExpression
-            body="': '.concat(if self.type.name.oclIsUndefined() then 'null' else self.type.name endif)"/>
+            body="': '.concat(if self.portType.name.oclIsUndefined() then 'null' else self.portType.name endif)"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -63,7 +63,7 @@
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
         <viewExpression
-            body="': '.concat(if self.type.name.oclIsUndefined() then 'null' else self.type.name endif)"/>
+            body="': '.concat(if self.portType.name.oclIsUndefined() then 'null' else self.portType.name endif)"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -95,7 +95,7 @@
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
         <viewExpression
-            body="': '.concat(if self.type.name.oclIsUndefined() then 'null' else self.type.name endif)"/>
+            body="': '.concat(if self.portType.name.oclIsUndefined() then 'null' else self.portType.name endif)"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
@@ -165,7 +165,7 @@
         <diagramLabel
             href="componentinstanceconfiguration.gmfgraph#PortInstanceLabel"/>
         <viewExpression
-            body="': '.concat(if self.type.name.oclIsUndefined() then 'null' else self.type.name endif)"/>
+            body="': '.concat(if self.portType.name.oclIsUndefined() then 'null' else self.portType.name endif)"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
