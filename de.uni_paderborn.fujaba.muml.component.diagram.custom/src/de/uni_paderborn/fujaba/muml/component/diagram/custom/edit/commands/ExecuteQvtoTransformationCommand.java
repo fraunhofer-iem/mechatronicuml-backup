@@ -60,5 +60,9 @@ public class ExecuteQvtoTransformationCommand extends ChangeCommand {
 			System.out.println(result.getMessage());
 		}
 	}
+	
+	public boolean hasChanged() {
+		return !getChangeDescription().getObjectChanges().isEmpty();
+	}
 
 }

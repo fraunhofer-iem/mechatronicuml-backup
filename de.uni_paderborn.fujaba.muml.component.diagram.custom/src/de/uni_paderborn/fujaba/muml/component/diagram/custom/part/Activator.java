@@ -103,6 +103,10 @@ public class Activator extends AbstractUIPlugin {
 				Activator.PART_TRANSFORMATION,
 				modelExtents);
 		editingDomain.getCommandStack().execute(command);
+		
+		if (!command.hasChanged()) {
+			editingDomain.getCommandStack().undo();
+		}
 	}
 	
 	public void stop(BundleContext context) throws Exception {
