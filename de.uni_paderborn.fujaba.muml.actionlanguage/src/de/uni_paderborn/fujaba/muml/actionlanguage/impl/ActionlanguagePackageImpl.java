@@ -947,28 +947,10 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		createResource(eNS_URI);
 
 		// Create annotations
-		// http://www.eclipse.org/edapt
-		createEdaptAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/edapt</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createEdaptAnnotations() {
-		String source = "http://www.eclipse.org/edapt";			
-		addAnnotation
-		  (this, 
-		   source, 
-		   new String[] {
-			 "historyURI", "../../de.uni_paderborn.fujaba.muml/model/muml.history"
-		   });																																																	
 	}
 
 	/**
