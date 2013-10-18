@@ -24,22 +24,22 @@ public class ReconfigurationVisualIDRegistry {
 	// /**
 	// * @generated
 	// */
-	// public static int getVisualID(View view) {
-	// if (view instanceof Diagram) {
-	// if
-	// (de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
-	// .equals(view.getType())) {
-	// return
-	// de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
-	// } else {
-	// return -1;
-	// }
-	// }
-	// return
-	// de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
-	// .getVisualID(view.getType());
-	// }
-	//
+	 public static int getVisualID(View view) {
+	 if (view instanceof Diagram) {
+	 if
+	 (de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.MODEL_ID
+	 .equals(view.getType())) {
+	 return
+	 de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID;
+	 } else {
+	 return -1;
+	 }
+	 }
+	 return
+	 de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+	 .getVisualID(view.getType());
+	 }
+	
 	
 	// copied from
 	// /de.uni_paderborn.fujaba.muml.component.diagram/src/de/uni_paderborn/fujaba/muml/component/diagram/part/MumlVisualIDRegistry.java
