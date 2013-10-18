@@ -17,7 +17,7 @@
    </license>
 
    <includes
-         id="de.uni_paderborn.fujaba.muml.feature"
+         id="de.uni_paderborn.fujaba.muml.reconfiguration.feature"
          version="0.0.0"/>
 
 </feature>
