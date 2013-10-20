@@ -99,15 +99,19 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		}
 
 		Label label = toolkit.createLabel(parent, getLabelText());
-		label.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		if (useContainer) {
+			label.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		}
 
 		// List container
 		Composite listContainer = new Composite(parent, SWT.NONE);
 		GridLayout listContainerLayout = new GridLayout(2, false);
 		listContainerLayout.marginWidth = listContainerLayout.marginHeight = 0;
 		listContainer.setLayout(listContainerLayout);
-		listContainer.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
-				true));
+		if (useContainer) {
+			listContainer.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
+					true));
+		}
 
 		org.eclipse.swt.widgets.Table table = toolkit.createTable(
 				listContainer, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);

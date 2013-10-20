@@ -17,6 +17,7 @@ import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
@@ -71,7 +72,7 @@ public class XtextPropertyEditor extends
 
 	@Override
 	public void createControls(Composite parent, FormToolkit toolkit) {
-		boolean useContainer = false;
+		boolean useContainer = parent.getLayout() instanceof RowLayout;
 		if (useContainer) {
 			// Outer container
 			container = toolkit.createComposite(parent);
@@ -87,14 +88,18 @@ public class XtextPropertyEditor extends
 
 		// Create label
 		Label label = toolkit.createLabel(parent, getLabelText());
-		label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
+		if (useContainer) {
+			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
+		}
 
 		// Create container with border
 		Composite innerContainer = toolkit.createComposite(parent, SWT.BORDER);
-		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
-		gridData.minimumWidth = 200;
-		gridData.minimumHeight = 100;
-		innerContainer.setLayoutData(gridData);
+		if (useContainer) {
+			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+			gridData.minimumWidth = 200;
+			gridData.minimumHeight = 100;
+			innerContainer.setLayoutData(gridData);
+		}
 		
 		GridLayout gridLayout = new GridLayout(1, false);
 		gridLayout.horizontalSpacing = gridLayout.verticalSpacing = 0;
