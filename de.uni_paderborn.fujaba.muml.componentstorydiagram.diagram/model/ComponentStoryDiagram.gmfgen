@@ -1543,11 +1543,51 @@
     <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
+    <requiredPlugins>de.fujaba.properties.runtime</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.reconfiguration.common</requiredPlugins>
   </plugin>
   <editor
       iconPath="icons/obj16/ComponentStoryDiagramFile.gif"/>
   <diagramUpdater/>
+  <propertySheet>
+    <tabs
+        xsi:type="gmfgen:GenStandardPropertyTab"
+        iD="appearance"/>
+    <tabs
+        xsi:type="gmfgen:GenStandardPropertyTab"
+        iD="diagram"/>
+    <tabs
+        xsi:type="gmfgen:GenCustomPropertyTab"
+        iD="domain"
+        label="Core">
+      <filter
+          xsi:type="gmfgen:TypeTabFilter">
+        <types>org.eclipse.gmf.runtime.notation.View</types>
+        <types>org.eclipse.gef.EditPart</types>
+        <generatedTypes>abstractNavigatorItem</generatedTypes>
+      </filter>
+    </tabs>
+    <tabs
+        xsi:type="gmfgen:GenCustomPropertyTab"
+        iD="general"
+        label="General"
+        className="de.fujaba.properties.runtime.sections.ObjectPropertySection"
+        generateBoilerplate="false">
+      <filter
+          xsi:type="gmfgen:CustomTabFilter"
+          className="de.fujaba.properties.runtime.filter.ElementFilter"/>
+    </tabs>
+    <tabs
+        xsi:type="gmfgen:GenCustomPropertyTab"
+        iD="comment"
+        label="Comment"
+        className="de.fujaba.properties.runtime.sections.ObjectPropertySection"
+        generateBoilerplate="false">
+      <filter
+          xsi:type="gmfgen:CustomTabFilter"
+          className="de.fujaba.properties.runtime.filter.ElementFilter"/>
+    </tabs>
+  </propertySheet>
   <domainGenModel
       href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#/"/>
   <expressionProviders>
@@ -1587,7 +1627,7 @@
       <expressions
           body="----self.fromPort.oclAsType(PortVariable).name.concat(' → ').concat(self.toPort.oclAsType(PortVariable).name).concat(' : ').concat(self.name)&#xD;&#xA;---- 'hallo'&#xD;&#xA;--&#xD;&#xA;--&#xD;&#xA;--(&#xD;&#xA;--&#x9;if self.fromPort.name.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;'null'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;self.fromPort.name&#xD;&#xA;--&#x9;endif&#xD;&#xA;--).concat(' → ').concat(&#xD;&#xA;--&#x9;if self.toPort.name.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;'null'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;self.toPort.name&#xD;&#xA;--&#x9;endif&#xD;&#xA;--).concat(' : ').concat(&#xD;&#xA;--&#x9;if self.name.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;'null'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;self.name&#xD;&#xA;--&#x9;endif&#xD;&#xA;--)"/>
       <expressions
-          body="--if self.controllerExchangeStrategy &lt;> ControllerExchangeStrategy::ATOMIC_SWITCHING then&#xD;&#xA;--&#x9;&#xD;&#xA;--&#x9;if self.deadline.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;''&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;'['.concat(&#xD;&#xA;--&#x9;&#x9;&#x9;if self.deadline.lowerBound.oclIsUndefined() then 'null' else self.deadline.lowerBound.toString() endif&#xD;&#xA;--&#x9;&#x9;).concat(';').concat(&#xD;&#xA;--&#x9;&#x9;&#x9;if self.deadline.upperBound.oclIsUndefined() then 'null' else self.deadline.upperBound.toString() endif&#xD;&#xA;--&#x9;&#x9;).concat(']')&#xD;&#xA;--&#x9;endif&#xD;&#xA;--&#xD;&#xA;--else&#xD;&#xA;--&#x9;''&#xD;&#xA;--endif"/>
+          body="--if self.controllerExchangeStrategy &lt;> ControllerExchangeStrategy::ATOMIC_SWITCHING then&#xD;&#xA;--&#x9;&#xD;&#xA;--&#x9;if self.deadline.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;''&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;'['.concat(&#xA;--&#x9;&#x9;&#x9;-- explicitely access NaturalNumber,value and NaturalNumber.infinity so that the OCL Impact Analyzer listens to model changes.&#xD;&#xA;--&#x9;&#x9;&#x9;if self.deadline.lowerBound.value.oclIsUndefined() or self.deadline.lowerBound.infinity.oclIsUndefined() then 'null' else self.deadline.lowerBound.toString() endif&#xD;&#xA;--&#x9;&#x9;).concat(';').concat(&#xA;--&#x9;&#x9;&#x9;-- explicitely access NaturalNumber,value and NaturalNumber.infinity so that the OCL Impact Analyzer listens to model changes.&#xD;&#xA;--&#x9;&#x9;&#x9;if self.deadline.upperBound.value.oclIsUndefined() or self.deadline.upperBound.infinity.oclIsundefined() then 'null' else self.deadline.upperBound.toString() endif&#xD;&#xA;--&#x9;&#x9;).concat(']')&#xD;&#xA;--&#x9;endif&#xD;&#xA;--&#xD;&#xA;--else&#xD;&#xA;--&#x9;''&#xD;&#xA;--endif"/>
       <expressions
           body="--if ControllerExchangeStrategy::FADING_FUNCTION = self.controllerExchangeStrategy then&#xD;&#xA;--&#x9;'Cross'&#xD;&#xA;--else&#xD;&#xA;--&#x9;if ControllerExchangeStrategy::FLAT_SWITCHING = self.controllerExchangeStrategy then&#xD;&#xA;--&#x9;&#x9;'Flat'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;'Atomic'&#xD;&#xA;--&#x9;endif&#xD;&#xA;--endif"/>
       <expressions

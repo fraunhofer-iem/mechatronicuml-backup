@@ -14,6 +14,5 @@ Bundle-Activator: de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Act
 Export-Package: de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands,
  de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts,
  de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.policies,
- de.uni_paderborn.fujaba.muml.component.diagram.custom.parsers,
  de.uni_paderborn.fujaba.muml.component.diagram.custom.part,
  de.uni_paderborn.fujaba.muml.component.diagram.custom.providers
