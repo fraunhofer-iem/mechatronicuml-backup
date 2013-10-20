@@ -88,18 +88,15 @@ public class XtextPropertyEditor extends
 
 		// Create label
 		Label label = toolkit.createLabel(parent, getLabelText());
-		if (useContainer) {
-			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
-		}
+		label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 
 		// Create container with border
 		Composite innerContainer = toolkit.createComposite(parent, SWT.BORDER);
-		if (useContainer) {
-			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
-			gridData.minimumWidth = 200;
-			gridData.minimumHeight = 100;
-			innerContainer.setLayoutData(gridData);
-		}
+		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+		gridData.minimumWidth = 200;
+		gridData.minimumHeight = 100;
+		innerContainer.setLayoutData(gridData);
+
 		
 		GridLayout gridLayout = new GridLayout(1, false);
 		gridLayout.horizontalSpacing = gridLayout.verticalSpacing = 0;

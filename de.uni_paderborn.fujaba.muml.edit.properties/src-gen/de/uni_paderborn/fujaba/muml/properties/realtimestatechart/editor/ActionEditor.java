@@ -23,12 +23,8 @@ public class ActionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addActionExpressionsEditor("de.fujaba.properties.category.Lists",
-					true);
+			addActionExpressionsEditor(null, true);
 		}
 
 	}
