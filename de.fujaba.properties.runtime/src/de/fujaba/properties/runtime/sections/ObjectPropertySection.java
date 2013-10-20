@@ -28,10 +28,10 @@ public class ObjectPropertySection extends AbstractPropertySection {
 
 	public void createControls(Composite parent,
 			TabbedPropertySheetPage aTabbedPropertySheetPage) {
+		super.createControls(parent, aTabbedPropertySheetPage);
+
 		FormToolkit toolkit = getWidgetFactory();
 		toolkit.setBorderStyle(SWT.NONE);
-		
-		super.createControls(parent, aTabbedPropertySheetPage);
 
 		String tabId = aTabbedPropertySheetPage.getSelectedTab().getId();
 		editor = createObjectPropertyEditor(tabId);
