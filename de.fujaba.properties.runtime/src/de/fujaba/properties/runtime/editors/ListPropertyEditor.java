@@ -99,7 +99,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		}
 
 		Label label = toolkit.createLabel(parent, getLabelText());
-		label.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		label.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
 
 		// List container
 		Composite listContainer = new Composite(parent, SWT.NONE);
