@@ -27,6 +27,7 @@ public class PropertyEditorWizardPage extends WizardPage {
 		Composite container = new Composite(parent, SWT.NULL);	
 		container.setLayout(new FillLayout(SWT.VERTICAL));
 		FormToolkit toolkit = new FormToolkit(container.getDisplay());
+		toolkit.setBorderStyle(SWT.BORDER);
 		
 		//ScrolledForm form = toolkit.createScrolledForm(container);
 		ScrolledForm form = new ScrolledForm(container, SWT.V_SCROLL

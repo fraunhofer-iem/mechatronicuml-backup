@@ -34,7 +34,7 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 		}
-		int style = SWT.NONE;
+		int style = toolkit.getBorderStyle();
 		if (multiLine) {
 			style |= SWT.MULTI | SWT.V_SCROLL;
 		}

@@ -1,6 +1,7 @@
 package de.fujaba.properties.runtime.sections;
 
 import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -27,12 +28,15 @@ public class ObjectPropertySection extends AbstractPropertySection {
 
 	public void createControls(Composite parent,
 			TabbedPropertySheetPage aTabbedPropertySheetPage) {
+		FormToolkit toolkit = getWidgetFactory();
+		toolkit.setBorderStyle(SWT.NONE);
+		
 		super.createControls(parent, aTabbedPropertySheetPage);
 
 		String tabId = aTabbedPropertySheetPage.getSelectedTab().getId();
 		editor = createObjectPropertyEditor(tabId);
 
-		FormToolkit toolkit = getWidgetFactory();
+		
 		editor.createControls(parent, toolkit);
 		editor.getSection().setSeparatorControl(toolkit.createCompositeSeparator(editor.getSection()));
 		

@@ -78,7 +78,9 @@ public class XtextPropertyEditor extends
 			container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 					true, 2, 1));
 		}
-		container.setLayout(new GridLayout(1, false));
+		GridLayout containerLayout = new GridLayout(1, false);
+		containerLayout.marginWidth = containerLayout.marginHeight = 0;
+		container.setLayout(containerLayout);
 		
 		// Create label
 		Label label = toolkit.createLabel(container, getLabelText());
