@@ -72,7 +72,9 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 				}
 			};
 			parent = composite; // use the composite as parent from now on
-			parent.setLayout(new GridLayout(2, false));
+			GridLayout compositeLayout = new GridLayout(2, false);
+			compositeLayout.marginWidth = compositeLayout.marginHeight = 0;
+			parent.setLayout(compositeLayout);
 			parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		}
 
