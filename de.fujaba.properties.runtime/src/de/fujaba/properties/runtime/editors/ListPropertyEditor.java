@@ -80,32 +80,38 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		super(adapterFactory, feature);
 		Assert.isLegal(feature instanceof EReference && feature.isMany());
 	}
-
+	
 	@Override
-	public void createControls(final Composite parent,
+	public void createControls(Composite parent,
 			FormToolkit toolkit) {
 		super.createControls(parent, toolkit);
 
 		// Outer container
-		container = toolkit.createComposite(parent);
-		if (parent.getLayout() instanceof GridLayout) {
-			container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
-					true, 2, 1));
+		boolean useContainer = parent.getLayout() instanceof RowLayout;
+		if (useContainer) {
+			container = toolkit.createComposite(parent);
+			if (parent.getLayout() instanceof GridLayout) {
+				container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
+						true, 2, 1));
+			}
+			container.setLayout(new GridLayout(1, false));
+			parent = container;
 		}
-		container.setLayout(new GridLayout(1, false));
 
-		Label label = toolkit.createLabel(container, getLabelText());
+		Label label = toolkit.createLabel(parent, getLabelText());
 		label.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 
 		// List container
-		Composite listContainer = toolkit.createComposite(container);
-		listContainer.setLayout(new GridLayout(2, false));
+		Composite listContainer = new Composite(parent, SWT.NONE);
+		GridLayout listContainerLayout = new GridLayout(2, false);
+		listContainerLayout.marginWidth = listContainerLayout.marginHeight = 0;
+		listContainer.setLayout(listContainerLayout);
 		listContainer.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 				true));
 
 		org.eclipse.swt.widgets.Table table = toolkit.createTable(
 				listContainer, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
-		GridData tableGridData = new GridData(SWT.FILL, SWT.FILL, false, true);
+		GridData tableGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		tableGridData.minimumWidth = 120;
 		table.setLayoutData(tableGridData);
 

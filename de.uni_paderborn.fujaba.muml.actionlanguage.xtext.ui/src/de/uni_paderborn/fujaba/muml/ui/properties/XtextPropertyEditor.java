@@ -71,23 +71,26 @@ public class XtextPropertyEditor extends
 
 	@Override
 	public void createControls(Composite parent, FormToolkit toolkit) {
-
-		// Outer container
-		container = toolkit.createComposite(parent);
-		if (parent.getLayout() instanceof GridLayout) {
-			container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
-					true, 2, 1));
+		boolean useContainer = false;
+		if (useContainer) {
+			// Outer container
+			container = toolkit.createComposite(parent);
+			if (parent.getLayout() instanceof GridLayout) {
+				container.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
+						true, 2, 1));
+			}
+			GridLayout containerLayout = new GridLayout(1, false);
+			containerLayout.marginWidth = containerLayout.marginHeight = 0;
+			container.setLayout(containerLayout);
+			parent = container;
 		}
-		GridLayout containerLayout = new GridLayout(1, false);
-		containerLayout.marginWidth = containerLayout.marginHeight = 0;
-		container.setLayout(containerLayout);
-		
+
 		// Create label
-		Label label = toolkit.createLabel(container, getLabelText());
+		Label label = toolkit.createLabel(parent, getLabelText());
 		label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 
 		// Create container with border
-		Composite innerContainer = toolkit.createComposite(container, SWT.BORDER);
+		Composite innerContainer = toolkit.createComposite(parent, SWT.BORDER);
 		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		gridData.minimumWidth = 200;
 		gridData.minimumHeight = 100;

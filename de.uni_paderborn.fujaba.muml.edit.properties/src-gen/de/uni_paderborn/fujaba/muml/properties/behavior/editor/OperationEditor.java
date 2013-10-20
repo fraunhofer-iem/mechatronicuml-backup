@@ -23,21 +23,16 @@ public class OperationEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addOperationReturnTypeEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addOperationImplementationsEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addOperationImplementationsEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addOperationParametersEditor("de.fujaba.properties.category.Lists",
-					true);
+			addOperationParametersEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
