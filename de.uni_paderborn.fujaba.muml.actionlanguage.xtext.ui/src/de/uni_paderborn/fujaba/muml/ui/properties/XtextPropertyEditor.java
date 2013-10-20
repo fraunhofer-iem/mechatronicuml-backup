@@ -13,8 +13,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.text.source.AnnotationModel;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
@@ -29,6 +32,7 @@ import org.storydriven.core.expressions.Expression;
 
 import com.google.inject.Injector;
 
+import de.fujaba.properties.runtime.RuntimePlugin;
 import de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
@@ -37,10 +41,15 @@ import de.uni_paderborn.fujaba.muml.ui.xtfo.EmbeddedXtextEditor;
 
 public class XtextPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
+	private final int MINIMUM_HEIGHT = 100; 
+	
+	
 	private Composite container;
 	private boolean active = false;
 	private int updating = 0;
 	private int saving = 0;
+	
+	private GridData gridData;
 
 	public XtextPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
@@ -91,10 +100,10 @@ public class XtextPropertyEditor extends
 		label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 
 		// Create container with border
-		Composite innerContainer = toolkit.createComposite(parent, SWT.BORDER);
-		GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+		final Composite innerContainer = toolkit.createComposite(parent, SWT.BORDER);
+		gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		gridData.minimumWidth = 200;
-		gridData.minimumHeight = 100;
+		gridData.minimumHeight = MINIMUM_HEIGHT;
 		innerContainer.setLayoutData(gridData);
 
 		
@@ -110,6 +119,17 @@ public class XtextPropertyEditor extends
 		embeddedXtextEditor = new EmbeddedXtextEditor(innerContainer, injector);
 		saveModelListener = new SaveModelListener();
 		embeddedXtextEditor.getDocument().addModelListener(saveModelListener);
+		final StyledText textWidget = embeddedXtextEditor.getViewer().getTextWidget();
+		textWidget.addModifyListener(new ModifyListener() {
+
+			@Override
+			public void modifyText(ModifyEvent e) {
+				int height = textWidget.computeSize(SWT.DEFAULT, SWT.DEFAULT).y + 20;
+				gridData.minimumHeight = Math.max(MINIMUM_HEIGHT, height);
+				RuntimePlugin.revalidateLayout(innerContainer);
+			}
+			
+		});
 
 		final XtextDocument document = (XtextDocument) embeddedXtextEditor.getDocument();
 		final Job validationJob = document.getValidationJob();

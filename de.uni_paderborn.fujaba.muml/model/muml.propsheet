@@ -195,7 +195,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.6/@properties.0 //@packages.1/@classes.6/@properties.1"/>
+      <propertyCategories title="Transitions" open="true" properties="//@packages.1/@classes.6/@properties.0 //@packages.1/@classes.6/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
