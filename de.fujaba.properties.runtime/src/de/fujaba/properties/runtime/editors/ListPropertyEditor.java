@@ -7,11 +7,14 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.DoubleClickEvent;
@@ -38,6 +41,15 @@ import de.fujaba.properties.runtime.RuntimePlugin;
 import de.fujaba.properties.runtime.wizard.ElementSelectionWizardPage.IElementValidator;
 
 public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
+	// The resource set that we add our refresh listener to
+	protected ResourceSet resourceSet;
+	protected Adapter refreshAdapter = new AdapterImpl() {
+		@Override
+		public void notifyChanged(Notification notification) {
+			refresh();
+		}
+	};
+
 	protected TableViewer tableViewer;
 	protected EObject selection;
 	private Button buttonCreate;
@@ -153,6 +165,17 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			}
 		});
 	}
+	
+	@Override
+	protected void inputChanged() {
+		super.inputChanged();
+		if (element != null && resourceSet == null) {
+			resourceSet = element.eResource().getResourceSet();
+			resourceSet.eAdapters().add(refreshAdapter);
+		}
+	}
+	
+	
 
 	protected void selectionChanged(EObject newSelection) {
 		Object first = null, last = null;
@@ -342,6 +365,15 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 					((GridData) control.getLayoutData()).exclude = !visible;
 				}
 			}
+		}
+	}
+	
+	
+	@Override
+	public void dispose() {
+		super.dispose();
+		if (resourceSet != null) {
+			resourceSet.eAdapters().remove(refreshAdapter);
 		}
 	}
 	
