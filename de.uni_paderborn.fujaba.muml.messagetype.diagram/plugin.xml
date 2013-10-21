@@ -548,22 +548,18 @@
              id="property.tab.DiagramPropertySection"
              label="%tab.diagram"/>
           <propertyTab
-             category="domain"
+                       category="extra"
              id="property.tab.domain"
-             label="Advanced"/>
-
+             label="%tab.domain"/>
           <propertyTab
-             category="extra"
+                       category="domain"
              id="property.tab.general"
              label="%tab.general"/>
-
-
           <propertyTab
-             category="extra"
-             id="property.tab.comment"
-             label="%tab.comment"/>
-
-
+          			 category="domain"
+             afterTab="property.tab.general"
+             id="property.tab.documentation"
+             label="%tab.documentation"/>
       </propertyTabs>
    </extension>
 
@@ -601,36 +597,18 @@
          <propertySection
             id="property.section.general" 
             tab="property.tab.general"
-            filter="de.fujaba.properties.runtime.filter.ElementFilter"
+            filter="org.storydriven.core.properties.tabs.GeneralTabElementFilter"
             class="de.fujaba.properties.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
-            id="property.section.comment" 
-            tab="property.tab.comment"
-            filter="de.fujaba.properties.runtime.filter.ElementFilter"
+            id="property.section.documentation" 
+            tab="property.tab.documentation"
+            filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
             class="de.fujaba.properties.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>
    </extension>
 
-<extension
-         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <?gmfgen generated="true"?>
-      <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.messagetype.diagram">
-         <propertyTab
-               label="Base"
-               category="domain"
-               id="Base">
-         </propertyTab>
-         <propertyTab
-               label="Documentation"
-               category="extra"
-               id="Documentation"
-               afterTab="Documentation">
-         </propertyTab>
-      </propertyTabs>
-   </extension>
 
 
    <!-- optionally, specify keybindings -->

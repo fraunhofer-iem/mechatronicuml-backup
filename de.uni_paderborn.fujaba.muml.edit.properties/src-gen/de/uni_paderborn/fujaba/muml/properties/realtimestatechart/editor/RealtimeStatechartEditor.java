@@ -49,7 +49,7 @@ public class RealtimeStatechartEditor
 			addNamedElementNameEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
 			addCommentableElementCommentEditor(null, true);
 		}
 
@@ -211,6 +211,17 @@ public class RealtimeStatechartEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new RealtimeStatechartEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.general",
+							"property.tab.documentation"}).contains(tab);
 		}
 	}
 

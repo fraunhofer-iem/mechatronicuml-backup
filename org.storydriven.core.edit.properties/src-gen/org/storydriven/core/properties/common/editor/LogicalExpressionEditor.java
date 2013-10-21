@@ -42,10 +42,12 @@ public class LogicalExpressionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createLogicalExpressionOperatorEditor() {
-		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getLogicalExpression_Operator());
+
+		return editor;
 
 	}
 
@@ -75,6 +77,13 @@ public class LogicalExpressionEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new LogicalExpressionEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.documentation"}).contains(tab);
 		}
 	}
 

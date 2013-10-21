@@ -78,6 +78,14 @@ public class PrimitiveDataTypeEditor
 				String tab) {
 			return new PrimitiveDataTypeEditor(tab);
 		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.documentation",
+							"property.tab.general"}).contains(tab);
+		}
 	}
 
 }

@@ -42,10 +42,12 @@ public class ComparisonExpressionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createComparisonExpressionOperatorEditor() {
-		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getComparisonExpression_Operator());
+
+		return editor;
 
 	}
 
@@ -75,6 +77,13 @@ public class ComparisonExpressionEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new ComparisonExpressionEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.documentation"}).contains(tab);
 		}
 	}
 

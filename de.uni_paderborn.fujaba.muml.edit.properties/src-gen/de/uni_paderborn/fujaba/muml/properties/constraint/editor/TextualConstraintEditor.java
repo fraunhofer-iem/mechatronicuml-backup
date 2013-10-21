@@ -78,6 +78,14 @@ public class TextualConstraintEditor
 				String tab) {
 			return new TextualConstraintEditor(tab);
 		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.general"}).contains(tab);
+		}
 	}
 
 }

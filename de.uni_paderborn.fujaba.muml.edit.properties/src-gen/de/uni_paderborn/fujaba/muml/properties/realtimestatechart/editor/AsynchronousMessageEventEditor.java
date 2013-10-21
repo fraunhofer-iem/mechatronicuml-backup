@@ -52,6 +52,13 @@ public class AsynchronousMessageEventEditor
 				String tab) {
 			return new AsynchronousMessageEventEditor(tab);
 		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general"}).contains(
+					tab);
+		}
 	}
 
 }

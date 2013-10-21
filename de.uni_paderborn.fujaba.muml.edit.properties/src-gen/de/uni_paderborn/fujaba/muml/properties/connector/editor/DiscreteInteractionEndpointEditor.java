@@ -67,7 +67,7 @@ public abstract class DiscreteInteractionEndpointEditor
 					"de.fujaba.properties.category.Lists", true);
 		}
 
-		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
 			addCommentableElementCommentEditor(null, true);
 		}
 

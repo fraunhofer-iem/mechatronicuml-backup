@@ -77,7 +77,7 @@ String genClassLiteral(GenClass this) :
 
 String genFeatureLiteral(GenFeature this) :
 	genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
-	
+
 Set[Property] genLocalProperties(Class this) :
 	{ this }.union(allSuperClasses).properties.without(genInheritedProperties()).without(genOverriddenProperties());
 

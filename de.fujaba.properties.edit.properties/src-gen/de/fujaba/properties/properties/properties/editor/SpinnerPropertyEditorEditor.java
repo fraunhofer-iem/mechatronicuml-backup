@@ -43,10 +43,12 @@ public class SpinnerPropertyEditorEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createSpinnerPropertyEditorDigitsEditor() {
-		return new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getSpinnerPropertyEditor_Digits(), 0);
+
+		return editor;
 
 	}
 
@@ -74,6 +76,13 @@ public class SpinnerPropertyEditorEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new SpinnerPropertyEditorEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"de.fujaba.properties.tab.general"})
+					.contains(tab);
 		}
 	}
 

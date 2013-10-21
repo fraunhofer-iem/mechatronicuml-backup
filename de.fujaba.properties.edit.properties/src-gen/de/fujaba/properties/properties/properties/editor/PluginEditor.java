@@ -61,12 +61,15 @@ public class PluginEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPluginIdEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE.getPlugin_Id(),
 				false);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -78,12 +81,15 @@ public class PluginEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPluginNameEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPlugin_Name(), false);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -95,12 +101,15 @@ public class PluginEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPluginVendorEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPlugin_Vendor(), false);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -112,12 +121,15 @@ public class PluginEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPluginVersionEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPlugin_Version(), false);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -130,10 +142,12 @@ public class PluginEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPluginRequiredBundlesEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPlugin_RequiredBundles(), false);
+
+		return editor;
 
 	}
 
@@ -160,6 +174,16 @@ public class PluginEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new PluginEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general"}).contains(tab);
 		}
 	}
 

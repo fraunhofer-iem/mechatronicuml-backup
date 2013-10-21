@@ -43,10 +43,12 @@ public class OCLPropertyFilterEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createOCLPropertyFilterExpressionEditor() {
-		return new de.fujaba.properties.runtime.editors.OCLPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.OCLPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getOCLPropertyFilter_Expression());
+
+		return editor;
 
 	}
 
@@ -74,6 +76,13 @@ public class OCLPropertyFilterEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new OCLPropertyFilterEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"de.fujaba.properties.tab.general"})
+					.contains(tab);
 		}
 	}
 

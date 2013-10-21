@@ -23,7 +23,7 @@ public abstract class CommentableElementEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.comment".equals(getTab())) {
+		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
 			addCommentableElementCommentEditor(null, true);
 		}
 
@@ -42,10 +42,12 @@ public abstract class CommentableElementEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment(), true);
+
+		return editor;
 
 	}
 

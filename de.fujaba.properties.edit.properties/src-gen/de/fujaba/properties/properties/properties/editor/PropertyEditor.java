@@ -65,12 +65,15 @@ public class PropertyEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyGenFeatureEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getProperty_GenFeature());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -82,12 +85,15 @@ public class PropertyEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyTabEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getProperty_Tab());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -99,12 +105,15 @@ public class PropertyEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyTooltipEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getProperty_Tooltip(), false);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -116,12 +125,15 @@ public class PropertyEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyCategoryEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getProperty_Category());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -133,10 +145,12 @@ public class PropertyEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyReconcileEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getProperty_Reconcile());
+
+		return editor;
 
 	}
 
@@ -163,6 +177,16 @@ public class PropertyEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new PropertyEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general"}).contains(tab);
 		}
 	}
 

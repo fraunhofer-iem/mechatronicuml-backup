@@ -52,6 +52,14 @@ public class AssemblyConnectorEditor
 				String tab) {
 			return new AssemblyConnectorEditor(tab);
 		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general",
+							"property.tab.documentation"}).contains(tab);
+		}
 	}
 
 }

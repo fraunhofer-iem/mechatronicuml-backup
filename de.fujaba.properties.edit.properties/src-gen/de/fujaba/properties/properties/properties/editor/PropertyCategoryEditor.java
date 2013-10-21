@@ -66,12 +66,15 @@ public class PropertyCategoryEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyCategoryTitleEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyCategory_Title(), false);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -85,12 +88,15 @@ public class PropertyCategoryEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyCategoryVerticalEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyCategory_Vertical());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -102,12 +108,15 @@ public class PropertyCategoryEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyCategoryOpenEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyCategory_Open());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -121,10 +130,12 @@ public class PropertyCategoryEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyCategoryPropertiesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyCategory_Properties());
+
+		return editor;
 
 	}
 
@@ -152,6 +163,15 @@ public class PropertyCategoryEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new PropertyCategoryEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general"}).contains(tab);
 		}
 	}
 

@@ -17,6 +17,13 @@ package «class.package.genPackageName()».editor;
 «ENDFILE»
 «ENDFOREACH»
 
+«FOREACH tabs AS tab»
+«FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/tabs/" + tab.name.toString().toFirstUpper() + "TabElementFilter.java"»
+package «genPluginId()».tabs;
+«EXPAND util::Utility::TabElementFilter FOR tab»
+«ENDFILE»
+«ENDFOREACH»
+
 «FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/util/PropertiesUtil.java"»
 package «genPluginId()».util;
 «EXPAND util::Utility::Utility»

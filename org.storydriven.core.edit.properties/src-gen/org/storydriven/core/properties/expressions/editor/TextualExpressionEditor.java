@@ -50,12 +50,15 @@ public class TextualExpressionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionExpressionTextEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_ExpressionText(), false);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -69,12 +72,15 @@ public class TextualExpressionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionLanguageEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_Language(), false);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -88,10 +94,12 @@ public class TextualExpressionEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionLanguageVersionEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_LanguageVersion(), false);
+
+		return editor;
 
 	}
 
@@ -119,6 +127,14 @@ public class TextualExpressionEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new TextualExpressionEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general",
+							"property.tab.documentation"}).contains(tab);
 		}
 	}
 

@@ -26,5 +26,6 @@ Export-Package:
  de.uni_paderborn.fujaba.muml.properties.constraint.editor,
  de.uni_paderborn.fujaba.muml.properties.behavior.editor,
  de.uni_paderborn.fujaba.muml.properties.component.editor,
- de.uni_paderborn.fujaba.muml.properties.connector.editor
+ de.uni_paderborn.fujaba.muml.properties.connector.editor,
+ de.uni_paderborn.fujaba.muml.properties.tabs
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

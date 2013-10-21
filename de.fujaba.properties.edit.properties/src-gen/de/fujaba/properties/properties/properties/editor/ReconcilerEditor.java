@@ -63,12 +63,15 @@ public class ReconcilerEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createReconcilerEnabledEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getReconciler_Enabled());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -82,12 +85,15 @@ public class ReconcilerEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createReconcilerReconcilePackagesEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getReconciler_ReconcilePackages());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -101,12 +107,15 @@ public class ReconcilerEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createReconcilerReconcileClassesEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getReconciler_ReconcileClasses());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -120,10 +129,12 @@ public class ReconcilerEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createReconcilerReconcilePropertiesEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getReconciler_ReconcileProperties());
+
+		return editor;
 
 	}
 
@@ -151,6 +162,15 @@ public class ReconcilerEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new ReconcilerEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general"}).contains(tab);
 		}
 	}
 

@@ -1,6 +1,14 @@
 «IMPORT properties»
 «EXTENSION Metamodel»
 
+«DEFINE TabElementFilter FOR properties::PropertyTab»
+public class «name.toString().toFirstUpper()»TabElementFilter extends de.fujaba.properties.runtime.filter.ElementFilter {
+	public «name.toString().toFirstUpper()»TabElementFilter() {
+		super("«id»");
+	}
+}
+«ENDDEFINE»
+
 
 «DEFINE Utility FOR PropertyGenerator»
 /**

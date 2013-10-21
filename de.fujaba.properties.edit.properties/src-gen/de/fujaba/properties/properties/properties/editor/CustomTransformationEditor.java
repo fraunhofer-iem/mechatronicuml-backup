@@ -57,12 +57,15 @@ public class CustomTransformationEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCustomTransformationUriEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getCustomTransformation_Uri(), false);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -76,12 +79,15 @@ public class CustomTransformationEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCustomTransformationEnabledEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getCustomTransformation_Enabled());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -95,10 +101,12 @@ public class CustomTransformationEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCustomTransformationPositionEditor() {
-		return new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getCustomTransformation_Position());
+
+		return editor;
 
 	}
 
@@ -126,6 +134,14 @@ public class CustomTransformationEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new CustomTransformationEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general"}).contains(tab);
 		}
 	}
 

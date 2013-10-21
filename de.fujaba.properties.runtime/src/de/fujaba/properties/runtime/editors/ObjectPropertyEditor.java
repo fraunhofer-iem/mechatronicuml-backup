@@ -46,8 +46,7 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 			EObject element = (EObject) input;
 			
 			// Display its name
-			String name = element.eClass().getName();
-			setTitle(RuntimePlugin.makeHumanReadable(name) + " Properties");
+			setTitle("Properties");
 			
 			// Add new property editors for the first working super class found
 			List<EClass> ecoreTypes = new ArrayList<EClass>();

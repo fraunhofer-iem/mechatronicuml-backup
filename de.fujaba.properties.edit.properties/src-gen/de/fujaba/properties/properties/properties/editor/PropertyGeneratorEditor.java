@@ -23,10 +23,10 @@ public class PropertyGeneratorEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
-		addPropertyGeneratorReconcilerEditor(null, false);
+		if (getTab() == null
+				|| "de.fujaba.properties.tab.general".equals(getTab())) {
+			addPropertyGeneratorReconcilerEditor(null, false);
+		}
 
 		if (getTab() == null
 				|| "de.fujaba.properties.tab.general".equals(getTab())) {
@@ -35,11 +35,13 @@ public class PropertyGeneratorEditor
 
 		if (getTab() == null
 				|| "de.fujaba.properties.tab.general".equals(getTab())) {
-			addPropertyGeneratorReferencedGeneratorsEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addPropertyGeneratorReferencedGeneratorsEditor(null, true);
 		}
 
-		addPropertyGeneratorPluginEditor(null, false);
+		if (getTab() == null
+				|| "de.fujaba.properties.tab.general".equals(getTab())) {
+			addPropertyGeneratorPluginEditor(null, false);
+		}
 
 		if (getTab() == null
 				|| "de.fujaba.properties.tab.general".equals(getTab())) {
@@ -71,12 +73,15 @@ public class PropertyGeneratorEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyGeneratorReconcilerEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyGenerator_Reconciler());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -90,12 +95,15 @@ public class PropertyGeneratorEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyGeneratorGenModelEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyGenerator_GenModel());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -109,12 +117,15 @@ public class PropertyGeneratorEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyGeneratorReferencedGeneratorsEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyGenerator_ReferencedGenerators());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -128,12 +139,15 @@ public class PropertyGeneratorEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyGeneratorPluginEditor() {
-		return new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyGenerator_Plugin());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -147,12 +161,15 @@ public class PropertyGeneratorEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyGeneratorDefaultTabEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyGenerator_DefaultTab());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -166,12 +183,15 @@ public class PropertyGeneratorEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyGeneratorContributorIdEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyGenerator_ContributorId(), false);
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -185,10 +205,12 @@ public class PropertyGeneratorEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyGeneratorSourceFolderEditor() {
-		return new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getPropertyGenerator_SourceFolder(), false);
+
+		return editor;
 
 	}
 
@@ -216,6 +238,18 @@ public class PropertyGeneratorEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new PropertyGeneratorEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general"}).contains(tab);
 		}
 	}
 

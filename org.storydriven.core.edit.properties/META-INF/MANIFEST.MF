@@ -15,5 +15,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: 
  org.storydriven.core.properties.core.editor,
  org.storydriven.core.properties.expressions.editor,
- org.storydriven.core.properties.common.editor
+ org.storydriven.core.properties.common.editor,
+ org.storydriven.core.properties.tabs
 Bundle-Vendor: SDM

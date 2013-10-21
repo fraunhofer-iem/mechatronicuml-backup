@@ -41,7 +41,7 @@
       <propertySections contributorId="de.fujaba.properties.contributor">
           <propertySection
             class="de.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.fujaba.properties.runtime.filter.ElementFilter"
+            filter="de.fujaba.properties.properties.tabs.GeneralTabElementFilter"
             id="de.fujaba.properties.tab.general"
             tab="de.fujaba.properties.tab.general">
              <input

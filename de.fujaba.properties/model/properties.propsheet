@@ -11,12 +11,12 @@
     <requiredBundles>de.fujaba.properties.runtime</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
   </plugin>
-  <tabs id="de.fujaba.properties.tab.general" name="General"/>
+  <tabs id="de.fujaba.properties.tab.general" name="General" afterTab=""/>
   <packages>
     <genPackage href="properties.genmodel#//properties"/>
     <classes>
       <genClass href="properties.genmodel#//properties/PropertyGenerator"/>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.0" tooltip="">
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/reconciler"/>
         <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
       </properties>
@@ -24,7 +24,7 @@
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/genModel"/>
         <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.0/@propertyCategories.0">
+      <properties tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/referencedGenerators"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
@@ -44,11 +44,10 @@
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/sourceFolder"/>
         <editor xsi:type="de.fujaba:TextPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" properties="//@packages.0/@classes.0/@properties.2"/>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/Reconciler"/>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.1/@propertyCategories.0">
+      <properties tab="//@tabs.0" tooltip="" category="//@packages.0/@classes.1/@propertyCategories.0">
         <genFeature href="properties.genmodel#//properties/Reconciler/enabled"/>
         <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
       </properties>
@@ -133,15 +132,13 @@
         <genFeature href="properties.genmodel#//properties/Class/genClass"/>
         <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.6/@propertyCategories.0">
+      <properties tab="//@tabs.0">
         <genFeature href="properties.genmodel#//properties/Class/superClasses"/>
         <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0" category="//@packages.0/@classes.6/@propertyCategories.0">
+      <properties tab="//@tabs.0" tooltip="" reconcile="false">
         <genFeature href="properties.genmodel#//properties/Class/allSuperClasses"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" properties="//@packages.0/@classes.6/@properties.1 //@packages.0/@classes.6/@properties.2"/>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/PropertyCategory"/>

@@ -1,71 +1,17 @@
 «IMPORT 'http://www.eclipse.org/gmf/2009/GenModel'»
 
-«REM» EEF: Add Property Tab and Property Section «ENDREM»
-«AROUND extensions FOR gmfgen::GenPropertySheet-»
-«targetDef.proceed()»
-
-   <extension
-         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-      <propertyTabs
-            contributorId="«editorGen.plugin.iD»">
-         <propertyTab
-               label="Base"
-               category="domain"
-               id="Base">
-         </propertyTab>
-         <propertyTab
-               label="Documentation"
-               category="extra"
-               id="Documentation"
-               afterTab="Documentation">
-         </propertyTab>
-      </propertyTabs>
-   </extension>
-«REM»
-   EEF-Deactivation #266
-
-   <extension
-         point="org.eclipse.ui.views.properties.tabbed.propertySections">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-      <propertySections
-            contributorId="«editorGen.plugin.iD»">
-         <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id="property.section.eef"
-               tab="Base">
-            <input type="org.eclipse.gmf.runtime.notation.View"></input>
-            <input type="org.eclipse.gef.EditPart"></input>
-         </propertySection>
-      </propertySections>
-   </extension>
-   <extension
-         point="org.eclipse.ui.views.properties.tabbed.propertySections">
-      «EXPAND xpt::Common::xmlGeneratedTag»
-      <propertySections
-            contributorId="«editorGen.plugin.iD»">
-         <propertySection
-               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
-               id="org.storydriven.core.section.CommentableElement"
-               tab="Documentation">
-            <input type="org.eclipse.gmf.runtime.notation.View"></input>
-            <input type="org.eclipse.gef.EditPart"></input>
-         </propertySection>
-      </propertySections>
-   </extension>
-«ENDREM»
-«ENDAROUND»
-
-
 «REM» Rename Tab Core -> Advanced «ENDREM»
 «AROUND tab FOR gmfgen::GenCustomPropertyTab-»
-«IF iD = 'domain'-»
           <propertyTab
+          «IF iD = 'general'-»
              category="domain"
-             id="property.tab.«iD»"
-             label="Advanced"/>
+«ELSEIF iD <> 'domain'-»
+			 category="domain"
+             afterTab="property.tab.general"
 «ELSE-»
-«targetDef.proceed()»
-«ENDIF»
+             category="extra"
+«ENDIF-»
+             id="property.tab.«iD»"
+             label="%tab.«iD»"/>
 «ENDAROUND»
 

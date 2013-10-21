@@ -47,10 +47,12 @@ public class TextPropertyEditorEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createTextPropertyEditorMultiLineEditor() {
-		return new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getTextPropertyEditor_MultiLine());
+
+		return editor;
 
 	}
 
@@ -78,6 +80,13 @@ public class TextPropertyEditorEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new TextPropertyEditorEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"de.fujaba.properties.tab.general"})
+					.contains(tab);
 		}
 	}
 

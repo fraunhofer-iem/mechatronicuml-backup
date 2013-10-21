@@ -50,6 +50,12 @@ public class OCLPropertyEditorEditor
 				String tab) {
 			return new OCLPropertyEditorEditor(tab);
 		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
+					tab);
+		}
 	}
 
 }

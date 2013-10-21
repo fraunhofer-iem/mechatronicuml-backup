@@ -11,7 +11,11 @@ Require-Bundle: «EXPAND requiredBundles FOR plugin»
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: 
-«FOREACH packages AS this SEPARATOR ',\n'» «genPackageName()».editor«ENDFOREACH»
+«IF !packages.isEmpty-»
+«FOREACH packages AS this SEPARATOR ',\n'» «genPackageName()».editor«ENDFOREACH-»
+«IF !tabs.isEmpty»,
+ «genPluginId()».tabs«ENDIF-»
+«ENDIF»
 Bundle-Vendor: «plugin.vendor»
 «ENDDEFINE»
 

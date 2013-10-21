@@ -71,12 +71,12 @@
 «IF !tabs.isEmpty»
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="«contributorId»">
-        «FOREACH tabs AS this-»
+        «FOREACH tabs AS tab-»
           <propertySection
             class="de.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.fujaba.properties.runtime.filter.ElementFilter"
-            id="«id»"
-            tab="«id»">
+            filter="«genPluginId()».tabs.«tab.name.toString().toFirstUpper()»TabElementFilter"
+            id="«tab.id»"
+            tab="«tab.id»">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>

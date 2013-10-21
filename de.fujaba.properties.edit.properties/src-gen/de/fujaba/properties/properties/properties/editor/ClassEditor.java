@@ -23,9 +23,6 @@ public class ClassEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
-
 		if (getTab() == null
 				|| "de.fujaba.properties.tab.general".equals(getTab())) {
 			addClassGenClassEditor(null, true);
@@ -33,14 +30,7 @@ public class ClassEditor
 
 		if (getTab() == null
 				|| "de.fujaba.properties.tab.general".equals(getTab())) {
-			addClassSuperClassesEditor("de.fujaba.properties.category.Lists",
-					true);
-		}
-
-		if (getTab() == null
-				|| "de.fujaba.properties.tab.general".equals(getTab())) {
-			addClassAllSuperClassesEditor(
-					"de.fujaba.properties.category.Lists", true);
+			addClassSuperClassesEditor(null, true);
 		}
 
 	}
@@ -56,12 +46,15 @@ public class ClassEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createClassGenClassEditor() {
-		return new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getClass_GenClass());
 
+		return editor;
+
 	}
+
 	/**
 	 * @generated
 	 */
@@ -73,27 +66,12 @@ public class ClassEditor
 	 * @generated
 	 */
 	protected de.fujaba.properties.runtime.editors.IPropertyEditor createClassSuperClassesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getClass_SuperClasses());
 
-	}
-	/**
-	 * @generated
-	 */
-	protected void addClassAllSuperClassesEditor(String category, boolean front) {
-		addEditorToCategory(category, createClassAllSuperClassesEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createClassAllSuperClassesEditor() {
-		return new de.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getClass_AllSuperClasses());
+		return editor;
 
 	}
 
@@ -120,6 +98,14 @@ public class ClassEditor
 		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new ClassEditor(tab);
+		}
+
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general",
+							"de.fujaba.properties.tab.general"}).contains(tab);
 		}
 	}
 
