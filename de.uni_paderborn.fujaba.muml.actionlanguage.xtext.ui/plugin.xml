@@ -146,6 +146,11 @@
             class="de.uni_paderborn.fujaba.muml.ui.ActionLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
    </extension>
+   
+<!--
+   REMOVED DEPENDENCY TO RTSC EDITOR
+
+
    <extension
          point="org.eclipse.ui.popupMenus">
       <objectContribution
@@ -224,6 +229,8 @@
          </action>
       </objectContribution>
    </extension>
+--> 
+  
    <!-- extension
          point="org.eclipse.ui.views">
       <view
@@ -238,5 +245,4 @@
             name="Fujaba">
       </category>
    </extension -->
-
 </plugin>

@@ -28,7 +28,6 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.model.IXtextModelListener;
 import org.eclipse.xtext.ui.editor.model.XtextDocument;
-import org.storydriven.core.expressions.Expression;
 
 import com.google.inject.Injector;
 
@@ -187,7 +186,7 @@ public class XtextPropertyEditor extends
 				setSingleValue(null);
 
 			} else {
-				Expression expression = parseExpression(text);
+				EObject expression = parseExpression(text);
 				setSingleValue(expression);
 			}
 		} catch (CoreException e) {
@@ -226,14 +225,14 @@ public class XtextPropertyEditor extends
 		return value;
 	}
 
-	private Expression parseExpression(String text) throws CoreException {
+	private EObject parseExpression(String text) throws CoreException {
 		ILoadResult loadResult = LanguageResource.loadFromString(text, element);
 		if (loadResult.hasError()) {
 			String pluginId = "FIXME"; //ActionLanguageActivator.getInstance().getBundle().getSymbolicName();
 			IStatus status = new Status(IStatus.ERROR, pluginId, IStatus.ERROR, loadResult.getError(), null);
 			throw new CoreException(status);
 		}
-		return (Expression) loadResult.getEObject();
+		return loadResult.getEObject();
 	}
 
 
