@@ -60,9 +60,9 @@
       <import plugin="org.eclipse.emf.ecore.editor" version="2.8.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.hardware.common" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.m2m.qvt.oml" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="de.fujaba.properties.runtime" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.hardware.platform.diagram" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.properties.runtime" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.actions" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.geoshapes" version="1.4.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.common" version="2.8.0" match="greaterOrEqual"/>
@@ -73,11 +73,24 @@
       <import plugin="org.junit"/>
       <import plugin="org.eclipse.emf.codegen.ecore"/>
       <import plugin="org.eclipse.ocl"/>
-      <import feature="de.uni_paderborn.fujaba.muml.pim.feature" version="0.4.0.qualifier"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.storydriven.core.edit.properties"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui"/>
       <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
+      <import feature="de.uni_paderborn.fujaba.muml.pim.feature" version="0.4.0.qualifier"/>
+      <import plugin="org.eclipse.emf.transaction"/>
+      <import plugin="org.storydriven.storydiagrams"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.tests"/>
+      <import plugin="org.eclipse.emf.ecore.editor" version="2.9.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.geoshapes" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.105.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.core" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.common" version="3.3.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties" version="1.7.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
