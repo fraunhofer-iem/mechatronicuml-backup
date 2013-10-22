@@ -72,8 +72,9 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	@Override
 	public void activate() {
 		super.activate();
-		updateCardinality();
+		
 		executeTransformation();
+		updateCardinality();
 	}
 
 	@Override

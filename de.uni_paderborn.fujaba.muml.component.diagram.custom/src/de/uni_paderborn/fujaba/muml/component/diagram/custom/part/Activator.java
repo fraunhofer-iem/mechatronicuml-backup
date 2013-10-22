@@ -102,7 +102,9 @@ public class Activator extends AbstractUIPlugin {
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
 				Activator.PART_TRANSFORMATION,
 				modelExtents);
+		if(command.canExecute()){
 		editingDomain.getCommandStack().execute(command);
+		}
 		
 		if (!command.hasChanged()) {
 			editingDomain.getCommandStack().undo();
