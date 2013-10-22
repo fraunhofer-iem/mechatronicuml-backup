@@ -106,7 +106,7 @@ public class Activator extends AbstractUIPlugin {
 		editingDomain.getCommandStack().execute(command);
 		}
 		
-		if (!command.hasChanged()) {
+		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
 			editingDomain.getCommandStack().undo();
 		}
 	}
