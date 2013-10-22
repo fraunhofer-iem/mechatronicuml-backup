@@ -28,5 +28,7 @@ public interface IPropertyEditor {
 	void setVisible(boolean visible, boolean relayout, boolean force);
 	
 	void updateVisibility(boolean relayout);
+	
+	void setFocus();
 
 }

@@ -354,5 +354,14 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		}
 	}
 	
+	public void setFocus() {
+		if (!propertyEditors.isEmpty()) {
+			IPropertyEditor first = propertyEditors.get(0);
+			if (first != null) {
+				first.setFocus();
+			}
+		}
+	}
+	
 }
 

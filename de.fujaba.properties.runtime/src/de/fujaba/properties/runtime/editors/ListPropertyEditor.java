@@ -384,4 +384,10 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		}
 	}
 	
+	@Override
+	public void setFocus() {
+		if (tableViewer != null && !tableViewer.getTable().isDisposed())
+		tableViewer.getTable().setFocus();
+	}
+	
 }

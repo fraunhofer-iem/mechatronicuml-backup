@@ -123,4 +123,11 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			}
 		}
 	}
+	
+	@Override
+	public void setFocus() {
+		if (text != null && !text.isDisposed()) {
+			text.setFocus();
+		}
+	}
 }

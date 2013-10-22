@@ -36,10 +36,9 @@ public class ObjectPropertySection extends AbstractPropertySection {
 		String tabId = aTabbedPropertySheetPage.getSelectedTab().getId();
 		editor = createObjectPropertyEditor(tabId);
 
-		
 		editor.createControls(parent, toolkit);
 		editor.getSection().setSeparatorControl(toolkit.createCompositeSeparator(editor.getSection()));
-		
+		editor.setFocus();
 	}
 	
 	@Override

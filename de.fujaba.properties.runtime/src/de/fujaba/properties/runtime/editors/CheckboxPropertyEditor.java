@@ -73,5 +73,11 @@ public class CheckboxPropertyEditor extends
 			}
 		}
 	}
+	
+	public void setFocus() {
+		if (checkbox != null && !checkbox.isDisposed()) {
+			checkbox.setFocus();
+		}
+	}
 
 }

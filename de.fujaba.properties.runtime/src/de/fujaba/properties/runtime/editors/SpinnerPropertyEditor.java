@@ -30,17 +30,16 @@ public class SpinnerPropertyEditor extends
 	}
 
 	@Override
-	public void createControls(Composite parent,
-			FormToolkit toolkit) {
+	public void createControls(Composite parent, FormToolkit toolkit) {
 		super.createControls(parent, toolkit);
 		label = toolkit.createLabel(parent, getLabelText());
-		
+
 		spinner = new Spinner(parent, SWT.BORDER | toolkit.getOrientation());
 		toolkit.paintBordersFor(spinner);
 		toolkit.adapt(spinner);
-//		if (parent.getLayout() instanceof GridLayout) {
-//			spinner.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
-//		}
+		// if (parent.getLayout() instanceof GridLayout) {
+		// spinner.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
+		// }
 		spinner.addKeyListener(new org.eclipse.swt.events.KeyAdapter() {
 			public void keyReleased(org.eclipse.swt.events.KeyEvent e) {
 				if (e.keyCode == 13) {
@@ -54,12 +53,13 @@ public class SpinnerPropertyEditor extends
 				modify();
 			}
 		});
-		
+
 		spinner.addModifyListener(new ModifyListener() {
 			@Override
 			public void modifyText(ModifyEvent e) {
 				selection = spinner.getSelection();
-				// If we do not have the focus, the focusLost event will not be fired.
+				// If we do not have the focus, the focusLost event will not be
+				// fired.
 				// Probably the spinbuttons were used, so we must call modify().
 				if (!spinner.isFocusControl()) {
 					modify();
@@ -79,10 +79,10 @@ public class SpinnerPropertyEditor extends
 	protected void modify() {
 		double doubleValue = selection / Math.pow(10, digits);
 		Object newValue = null;
-		EDataType dataType = ((EAttribute)feature).getEAttributeType();
+		EDataType dataType = ((EAttribute) feature).getEAttributeType();
 		if (dataType.getName() == "EInt") {
 			newValue = (int) doubleValue;
-		} else if (dataType.getName() == "EFloat"){
+		} else if (dataType.getName() == "EFloat") {
 			newValue = (float) doubleValue;
 		} else if (dataType.getName() == "EDouble") {
 			newValue = doubleValue;
@@ -97,7 +97,7 @@ public class SpinnerPropertyEditor extends
 		super.valueChanged();
 		applyValue();
 	}
-	
+
 	private void applyValue() {
 
 		if (spinner != null && !spinner.isDisposed() && value != null) {
@@ -109,13 +109,13 @@ public class SpinnerPropertyEditor extends
 			}
 		}
 	}
-	
+
 	@Override
 	public void refresh() {
 		super.refresh();
 		applyValue();
 	}
-	
+
 	@Override
 	public void dispose() {
 		super.dispose();
@@ -131,6 +131,13 @@ public class SpinnerPropertyEditor extends
 					((GridData) control.getLayoutData()).exclude = !visible;
 				}
 			}
+		}
+	}
+
+	@Override
+	public void setFocus() {
+		if (spinner != null && !spinner.isDisposed()) {
+			spinner.setFocus();
 		}
 	}
 }

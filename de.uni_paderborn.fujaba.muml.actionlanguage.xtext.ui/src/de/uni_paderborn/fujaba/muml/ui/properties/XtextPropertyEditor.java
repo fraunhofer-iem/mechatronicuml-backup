@@ -297,6 +297,11 @@ public class XtextPropertyEditor extends
 		};
 	}
 	
-	
+	@Override
+	public void setFocus() {
+		if (embeddedXtextEditor != null) {
+			embeddedXtextEditor.getViewer().getTextWidget().setFocus();
+		}
+	}
 
 }

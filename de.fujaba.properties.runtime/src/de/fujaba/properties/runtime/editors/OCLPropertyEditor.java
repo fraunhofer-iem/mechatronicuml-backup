@@ -176,6 +176,12 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 				}
 			}
 		}
-		
+	}
+	
+	@Override
+	public void setFocus() {
+		if (embeddedXtextEditor != null) {
+			embeddedXtextEditor.getViewer().getTextWidget().setFocus();
+		}
 	}
 }

@@ -213,4 +213,10 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 			}
 		}
 	}
+	
+	@Override
+	public void setFocus() {
+		if (comboViewer != null && !comboViewer.getCombo().isDisposed())
+		comboViewer.getCombo().setFocus();
+	}
 }

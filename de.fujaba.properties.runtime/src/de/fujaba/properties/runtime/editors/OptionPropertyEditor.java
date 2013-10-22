@@ -155,4 +155,15 @@ public class OptionPropertyEditor extends
 			}
 		}
 	}
+	
+	@Override
+	public void setFocus() {
+		if (composite != null && !composite.isDisposed()) {
+			if (buttons.isEmpty()) {
+				composite.setFocus();
+			} else {
+				buttons.get(0).setFocus();
+			}
+		}
+	}
 }

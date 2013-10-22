@@ -275,4 +275,9 @@ public class NavigationFeaturePropertyEditor extends
 	protected void doSetVisible(boolean visible) {
 		navigatedEditor.setVisible(visible);
 	}
+	
+	@Override
+	public void setFocus() {
+		navigatedEditor.setFocus();
+	}
 }
