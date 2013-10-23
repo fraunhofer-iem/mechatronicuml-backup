@@ -11,7 +11,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.commands.CreateInstancesCommand;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.StructuredComponentInstanceEditPart;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
@@ -28,6 +28,15 @@ public class CustomStructuredComponentInstanceEditPart extends
 
 	public CustomStructuredComponentInstanceEditPart(View view) {
 		super(view);
+	}
+	
+	/**
+	 * the execution of the update transformation keeps the type and instance in sync
+	 */
+	@Override
+	public void activate() {
+		super.activate();
+		executeUpdateTransformation();
 	}
 
 	@Override
@@ -53,19 +62,15 @@ public class CustomStructuredComponentInstanceEditPart extends
 				.equals(feature)) {
 			EditingDomain editingDomain = getEditingDomain();
 			if (editingDomain != null) {
-				ComponentInstance componentInstance = (ComponentInstance) getNotationView()
-						.getElement();
-				CreateInstancesCommand command = new CreateInstancesCommand(
-						componentInstance);
-				editingDomain.getCommandStack().execute(command);
-				
+				executeTransformation();
+
 				// refresh connections
 				View view = getNotationView();
 				while (view != null) {
 					List<CanonicalEditPolicy> editPolicies = CanonicalEditPolicy
 							.getRegisteredEditPolicies(view.getElement());
-					for (Iterator<CanonicalEditPolicy> it = editPolicies.iterator(); it
-							.hasNext();) {
+					for (Iterator<CanonicalEditPolicy> it = editPolicies
+							.iterator(); it.hasNext();) {
 						CanonicalEditPolicy nextEditPolicy = it.next();
 						nextEditPolicy.refresh();
 					}
@@ -75,6 +80,28 @@ public class CustomStructuredComponentInstanceEditPart extends
 		}
 
 		super.handleNotificationEvent(notification);
+	}
+
+	private void executeTransformation() {
+
+		EditingDomain editingDomain = getEditingDomain();
+		if (editingDomain != null) {
+			ComponentInstance componentInstance = (ComponentInstance) getNotationView()
+					.getElement();
+			Activator.createComponentInstance(editingDomain, componentInstance);
+		}
+
+	}
+
+	private void executeUpdateTransformation() {
+
+		EditingDomain editingDomain = getEditingDomain();
+		if (editingDomain != null) {
+			ComponentInstance componentInstance = (ComponentInstance) getNotationView()
+					.getElement();
+			Activator.updateComponentInstance(editingDomain, componentInstance);
+		}
+
 	}
 
 	@Override

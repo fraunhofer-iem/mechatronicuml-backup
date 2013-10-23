@@ -7,8 +7,9 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.commands.CreateInstancesCommand;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AtomicComponentInstance2EditPart;
+import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.part.MumlDiagramEditorUtil;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
@@ -43,17 +44,22 @@ public class CustomAtomicComponentInstance2EditPart extends
 		Object feature = notification.getFeature();
 		if (InstancePackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE
 				.equals(feature)) {
-			EditingDomain editingDomain = getEditingDomain();
-			if (editingDomain != null) {
-				ComponentInstance componentInstance = (ComponentInstance) getNotationView()
-						.getElement();
-				CreateInstancesCommand command = new CreateInstancesCommand(
-						componentInstance);
-				editingDomain.getCommandStack().execute(command);
-			}
+			executeTransformation();
+
 		}
 
 		super.handleNotificationEvent(notification);
+	}
+
+	private void executeTransformation() {
+
+		EditingDomain editingDomain = getEditingDomain();
+		if (editingDomain != null) {
+			ComponentInstance componentInstance = (ComponentInstance) getNotationView()
+					.getElement();
+			Activator.createComponentInstance(editingDomain, componentInstance);
+		}
+
 	}
 
 	public class CustomComponentFigure extends ComponentFigure {
