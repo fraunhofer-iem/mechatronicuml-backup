@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_8b55kKjCEeK8JeKOM7C6TA" type="EcoreTools" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_8cDqkKjCEeK8JeKOM7C6TA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_8cDqk6jCEeK8JeKOM7C6TA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_8cDqlKjCEeK8JeKOM7C6TA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8cDqlajCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8cDqlqjCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8cDql6jCEeK8JeKOM7C6TA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_8cDqmKjCEeK8JeKOM7C6TA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8cDqmajCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8cDqmqjCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8cDqm6jCEeK8JeKOM7C6TA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_8cDqkajCEeK8JeKOM7C6TA" fontName="Arial" fontHeight="12" bold="true" lineColor="0"/>
+    <element xmi:type="ecore:EClass" href="hardware.ecore#//platforminstance/HWPlatformInstance"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8cDqkqjCEeK8JeKOM7C6TA" x="50" y="115" width="213" height="45"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_8cM0gKjCEeK8JeKOM7C6TA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_8cM0g6jCEeK8JeKOM7C6TA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_8cM0hKjCEeK8JeKOM7C6TA" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8cM0hajCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8cM0hqjCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8cM0h6jCEeK8JeKOM7C6TA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_8cM0iKjCEeK8JeKOM7C6TA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8cM0iajCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8cM0iqjCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8cM0i6jCEeK8JeKOM7C6TA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_8cM0gajCEeK8JeKOM7C6TA" fontName="Arial" fontHeight="12" bold="true" lineColor="0"/>
+    <element xmi:type="ecore:EClass" href="hardware.ecore#//platforminstance/HWPlatformInstanceConfiguration"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8cM0gqjCEeK8JeKOM7C6TA" x="15" y="15" width="282" height="45"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_8cWlgKjCEeK8JeKOM7C6TA" type="1003">
+    <children xmi:type="notation:Node" xmi:id="_8cWlg6jCEeK8JeKOM7C6TA" type="4007"/>
+    <children xmi:type="notation:Node" xmi:id="_8cWlhKjCEeK8JeKOM7C6TA" type="5007">
+      <children xmi:type="notation:Node" xmi:id="_8cWliKjCEeK8JeKOM7C6TA" type="2007">
+        <element xmi:type="ecore:EStringToStringMapEntry" href="hardware.ecore#//platforminstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_8cWliajCEeK8JeKOM7C6TA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_8cWliqjCEeK8JeKOM7C6TA" type="2007">
+        <element xmi:type="ecore:EStringToStringMapEntry" href="hardware.ecore#//platforminstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.1"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_8cWli6jCEeK8JeKOM7C6TA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_8cWljKjCEeK8JeKOM7C6TA" type="2007">
+        <element xmi:type="ecore:EStringToStringMapEntry" href="hardware.ecore#//platforminstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.2"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_8cWljajCEeK8JeKOM7C6TA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8cWlhajCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8cWlhqjCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8cWlh6jCEeK8JeKOM7C6TA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_8cWlgajCEeK8JeKOM7C6TA" fontName="Arial" fontHeight="10" bold="true" lineColor="0"/>
+    <element xmi:type="ecore:EAnnotation" href="hardware.ecore#//platforminstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8cWlgqjCEeK8JeKOM7C6TA" x="25" y="290" width="278" height="69"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_8cWljqjCEeK8JeKOM7C6TA" type="1003">
+    <children xmi:type="notation:Node" xmi:id="_8cWlkajCEeK8JeKOM7C6TA" type="4007"/>
+    <children xmi:type="notation:Node" xmi:id="_8cWlkqjCEeK8JeKOM7C6TA" type="5007">
+      <children xmi:type="notation:Node" xmi:id="_8cWllqjCEeK8JeKOM7C6TA" type="2007">
+        <element xmi:type="ecore:EStringToStringMapEntry" href="hardware.ecore#//platforminstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%/@details.0"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_8cWll6jCEeK8JeKOM7C6TA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_8cWlk6jCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_8cWllKjCEeK8JeKOM7C6TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_8cWllajCEeK8JeKOM7C6TA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_8cWlj6jCEeK8JeKOM7C6TA" fontName="Arial" fontHeight="10" bold="true" lineColor="0"/>
+    <element xmi:type="ecore:EAnnotation" href="hardware.ecore#//platforminstance/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FGenModel%"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8cWlkKjCEeK8JeKOM7C6TA" x="16" y="372" width="307" height="40"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_8b55kajCEeK8JeKOM7C6TA"/>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_kEXRgKjDEeK8JeKOM7C6TA" name="layout:de.cau.cs.kieler.direction" stringValue="RIGHT"/>
+  <element xmi:type="ecore:EPackage" href="hardware.ecore#//platforminstance"/>
+  <edges xmi:type="notation:Edge" xmi:id="_8cWlmKjCEeK8JeKOM7C6TA" type="3002" source="_8cDqkKjCEeK8JeKOM7C6TA" target="_8cDqkKjCEeK8JeKOM7C6TA">
+    <children xmi:type="notation:Node" xmi:id="_8cWlnKjCEeK8JeKOM7C6TA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_8cWlnajCEeK8JeKOM7C6TA" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_8cWlnqjCEeK8JeKOM7C6TA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_8cWln6jCEeK8JeKOM7C6TA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_8cWlmajCEeK8JeKOM7C6TA" routing="Rectilinear" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_8cWlmqjCEeK8JeKOM7C6TA" fontName="Arial" fontHeight="10" bold="true"/>
+    <element xmi:type="ecore:EReference" href="hardware.ecore#//platforminstance/HWPlatformInstance/hwplatformInstances"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8cWlm6jCEeK8JeKOM7C6TA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_8cWloKjCEeK8JeKOM7C6TA" type="3002" source="_8cM0gKjCEeK8JeKOM7C6TA" target="_8cDqkKjCEeK8JeKOM7C6TA">
+    <children xmi:type="notation:Node" xmi:id="_8cWlpKjCEeK8JeKOM7C6TA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_8cWlpajCEeK8JeKOM7C6TA" x="-3" y="-74"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_8cWlpqjCEeK8JeKOM7C6TA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_8cWlp6jCEeK8JeKOM7C6TA" x="-5" y="29"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_8cWloajCEeK8JeKOM7C6TA" routing="Rectilinear" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_8cWloqjCEeK8JeKOM7C6TA" fontName="Arial" fontHeight="10" bold="true"/>
+    <element xmi:type="ecore:EReference" href="hardware.ecore#//platforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8cWlo6jCEeK8JeKOM7C6TA" points="[0, 0, 0, -39]$[0, 39, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8cpgcKjCEeK8JeKOM7C6TA" id="(0.5,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8cpgcajCEeK8JeKOM7C6TA" id="(0.5,0.0)"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/hardware/resourcetype/1.0/"
+            class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage"
+            genModel="model/hardware.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/hardware/platform/1.0/"
+            class="de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage"
+            genModel="model/hardware.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.fujaba.de/muml/hardware/hwvaluetype/1.0/"
+            class="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage"
+            genModel="model/hardware.genmodel"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="de.uni_paderborn.fujaba.muml.hardware.HardwarePackage"
+            genModel="model/hardware.genmodel"
+            uri="http://www.fujaba.de/muml/hardware/1.0/">
+      </package>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
+      <package
+            class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.PlatforminstancePackage"
+            genModel="model/hardware.genmodel"
+            uri="http://www.fujaba.de/muml/hardware/platforminstance/1.0/">
+      </package>
+   </extension>
+
+</plugin>

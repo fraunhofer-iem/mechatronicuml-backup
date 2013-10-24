@@ -1,0 +1,82 @@
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+
+transformation transform(inout gmfgen:GMFGEN);
+
+
+
+main() {
+	gmfgen.rootObjects()![GenEditorGenerator]->map settings();
+}
+
+mapping inout GenEditorGenerator::settings() {
+	self->map general();
+	self->map editorSpecific();
+}
+
+-- TODO: (bingo) Externalize this into a common settings.qvto, because it is the same among all editors. 
+mapping inout GenEditorGenerator::general() {
+	
+	self.dynamicTemplates :=true;
+	self.templateDirectory := "/de.uni_paderborn.fujaba.muml.common/gmf-templates";
+	self.sameFileForDiagramAndModel := false;
+	
+	self.domainFileExtension := "fujaba"; // kieler textual syntax for SyncCharts, in this case XMI
+	self.diagramFileExtension := "platform_diagram"; // kieler diagram syntax for SyncCharts
+	
+
+	self.plugin.version := "1.0.0.qualifier";
+	self.plugin.provider := "Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn";
+	self.plugin.name := "Platform Diagram Editor";
+	
+	self.diagram.validationDecorators := true;
+	self.diagram.validationEnabled := true;
+}
+
+mapping inout GenEditorGenerator::editorSpecific() {
+	-- put settings here, that are often lost to apply them permanently
+	
+	
+  
+    self.diagram.links.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map setTextWrap("fFigureLinkCommentFigure","LinkFigure");
+    self.diagram.links.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map setTextWrap("fFigureLinkCommentFigure","LinkFigure");
+    
+ 	 self.diagram.topLevelNodes.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map setTextWrap("this","HWPortLabelFigure");
+  	 self.diagram.childNodes.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map setTextWrap("this","HWPortLabelFigure");
+  	 
+  	 	 self.diagram.topLevelNodes.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map underLine("this","HWPortLabelFigure");
+  	 self.diagram.childNodes.allSubobjectsOfType(InnerClassViewmap)[InnerClassViewmap] -> map underLine("this","HWPortLabelFigure");
+	
+}
+
+
+mapping inout InnerClassViewmap::setTextWrap(in labelName:String, in figureName:String){	
+	// customize the Interface Declaration Label from a State
+    if (self.className = figureName) then {
+        var find := (labelName)+(".setText(\"<...>\");"); 
+        var pre := self.classBody.substringBefore(find);
+        var inject := find+(labelName)+(".setTextWrap(true);\n");
+        var matchresult:=self.classBody.find((labelName)+(".setTextWrap(true);\n"));
+       if(matchresult<=0) then{
+       // setting TextWrap to true 
+     	var after := self.classBody.substringAfter(find);
+      	self.classBody := pre+(inject)+(after);
+        } endif;
+    } endif;
+}
+
+mapping inout InnerClassViewmap::underLine(in labelName:String, in figureName:String){	
+	// customize the Interface Declaration Label from a State
+    if (self.className = figureName) then {
+        var find := (labelName)+(".setText(\"<...>\");"); 
+        var pre := self.classBody.substringBefore(find);
+        var inject := find+(labelName)+(".setTextUnderline(true);\n");
+          var matchresult:=self.classBody.find((labelName)+(".setTextUnderline(true);\n"));
+       if(matchresult<=0) then{       
+        	        // setting Underline to true
+        var after := self.classBody.substringAfter(find);
+        self.classBody := pre+(inject)+(after);
+        } endif;
+        }endif;
+}
+
+

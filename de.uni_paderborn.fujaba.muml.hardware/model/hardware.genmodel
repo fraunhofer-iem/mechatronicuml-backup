@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.hardware/src" modelPluginID="de.uni_paderborn.fujaba.muml.hardware"
+    templateDirectory="" redirection="" modelName="Hardware" modelPluginClass="" rootImplementsInterface=""
+    booleanFlagsField="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml">
+  <foreignModel>hardware.ecore</foreignModel>
+  <genPackages prefix="Hardware" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
+      fileExtensions="fujaba" ecorePackage="hardware.ecore#/">
+    <nestedGenPackages prefix="Resourcetype" basePackage="de.uni_paderborn.fujaba.muml.hardware"
+        disposableProviderFactory="true" generateModelWizard="false" fileExtensions="fujaba"
+        ecorePackage="hardware.ecore#//resourcetype">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//resourcetype/DeviceKind">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/DeviceKind/SENSOR"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/DeviceKind/ACTUATOR"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//resourcetype/ProcessorArchitecture">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/ProcessorArchitecture/RISC"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/ProcessorArchitecture/CISC"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/ProcessorArchitecture/VLIW"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/ProcessorArchitecture/SIMD"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/ProcessorArchitecture/OTHER"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//resourcetype/MemoryAccessKind">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/MemoryAccessKind/READ_WRITE"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/MemoryAccessKind/READ_ONLY"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//resourcetype/MemoryKind">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/MemoryKind/RAM"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/MemoryKind/ROM"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/MemoryKind/DISK"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/MemoryKind/FLASH"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/MemoryKind/OTHER"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//resourcetype/ReplacementPolicy">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/ReplacementPolicy/LRU"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/ReplacementPolicy/FIFO"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/ReplacementPolicy/NFU"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/ReplacementPolicy/NRU"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/ReplacementPolicy/OTHER"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//resourcetype/WritePolicy">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/WritePolicy/WRITE_BACK"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/WritePolicy/WRITE_THROUGH"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/WritePolicy/OTHER"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//resourcetype/HWPortKind">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/HWPortKind/BUS"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/HWPortKind/LINK"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//resourcetype/BusProtocolKind">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/BusProtocolKind/CAN"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/BusProtocolKind/FLEXRAY"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/BusProtocolKind/LIN"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/BusProtocolKind/BYTEFLIGHT"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/BusProtocolKind/TTP"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/BusProtocolKind/MOST"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/BusProtocolKind/I2C"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/BusProtocolKind/USB"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/BusProtocolKind/OTHER"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//resourcetype/LinkProtocolKind">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/LinkProtocolKind/ETHERNET"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/LinkProtocolKind/ETHERCAT"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/LinkProtocolKind/ANALOG"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/LinkProtocolKind/OTHER"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//resourcetype/LinkProtocolKind/BLUETOOTH"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="hardware.ecore#//resourcetype/ResourceType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/ResourceType/hwports"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/ComputingResource"/>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/MemoryResource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/MemoryResource/memoryAccess"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/MemoryResource/isVolatile"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/MemoryResource/memoryType"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/Device">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/Device/deviceType"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/Cache">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/Cache/writePolicy"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/Cache/replacementPolicy"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/Cache/nbSets"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/Cache/associativity"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/Cache/usedByProcessor"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/ProgrammableLogicDevice"/>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/Processor">
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/Processor/ownedCache"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/Processor/architecture"/>
+        <genFeatures children="true" createChild="true" propertyCategory="" propertyDescription=""
+            ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/Processor/nbCores"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/Processor/family"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/Processor/nbPipelineStages"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//resourcetype/AtomicResource">
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/AtomicResource/parentStructuredResource"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/StructuredResource">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/StructuredResource/embeddedAtomicResources"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/HWPort">
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/HWPort/parentResource"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/HWPort/portType"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/HWPort/protocol"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/ResourceTypeRepository">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/ResourceTypeRepository/resourceTypes"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/ResourceTypeRepository/protocols"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//resourcetype/CommunicationProtocol">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/CommunicationProtocol/isTimeTriggered"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/CommunicationProtocol/isEventTriggered"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/CommunicationProtocol/furtherInformation"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/BusProtocol">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/BusProtocol/busProtocol"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//resourcetype/LinkProtocol">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/LinkProtocol/linkProtocol"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Platform" basePackage="de.uni_paderborn.fujaba.muml.hardware"
+        disposableProviderFactory="true" generateModelWizard="false" fileExtensions="fujaba"
+        ecorePackage="hardware.ecore#//platform">
+      <genClasses ecoreClass="hardware.ecore#//platform/HWPlatformConfiguration">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPlatformConfiguration/hwplatforms"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPlatformConfiguration/repositories"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//platform/ResourceInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/ResourceInstance/resourceType"/>
+        <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/ResourceInstance/hwportInstances"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//platform/ComputingResourceInstance">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/ComputingResourceInstance/frequency"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//platform/MemoryResourceInstance">
+        <genFeatures children="true" createChild="true" propertyCategory="" propertyDescription=""
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/MemoryResourceInstance/memorySize"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/MemoryResourceInstance/throughput"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//platform/MemoryResourceInstance/memoryType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//platform/DeviceInstance"/>
+      <genClasses image="false" ecoreClass="hardware.ecore#//platform/StorageMemoryInstance"/>
+      <genClasses ecoreClass="hardware.ecore#//platform/ProcessingMemoryInstance"/>
+      <genClasses ecoreClass="hardware.ecore#//platform/CacheInstance"/>
+      <genClasses ecoreClass="hardware.ecore#//platform/ProgrammableLogicDeviceInstance"/>
+      <genClasses ecoreClass="hardware.ecore#//platform/ProcessorInstance">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//platform/ProcessorInstance/MIPS"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//platform/ProcessorInstance/CPI"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/ProcessorInstance/ownedCacheInstance"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//platform/AtomicResourceInstance">
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/AtomicResourceInstance/parentStructuredResourceInstance"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/StructuredResourceInstance">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/StructuredResourceInstance/embeddedAtomicResourceInstances"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//platform/CommunicationResource"/>
+      <genClasses ecoreClass="hardware.ecore#//platform/Bus">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/Bus/connectedBusPortInstances"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/Link">
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/Link/connectedLinkPortInstances"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//platform/CommunicationMedia">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/CommunicationMedia/dataFrameSize"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//platform/CommunicationMedia/isSerial"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/CommunicationMedia/bandwidth"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/CommunicationMedia/protocol"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/CommunicationMedia/connectedHWPortParts"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/CommunicationMedia/connectedBridges"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/HWPlatform">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPlatform/embeddedPlatformParts"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPlatform/embeddedCommunicationResources"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPlatform/delegationPorts"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPlatform/delegations"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//platform/PlatformPart">
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/PlatformPart/parentHWPlatform"/>
+        <genFeatures children="true" createChild="true" propertyCategory="Cardinality"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/PlatformPart/cardinality"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/HWPlatformPart">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPlatformPart/hwplatformType"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPlatformPart/derivedBridges"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPlatformPart/delegationPorts"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/SensorInstance"/>
+      <genClasses ecoreClass="hardware.ecore#//platform/ActuatorInstance"/>
+      <genClasses ecoreClass="hardware.ecore#//platform/Bridge">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/Bridge/connectedCommunicationMedia"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/Bridge/delay"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="hardware.ecore#//platform/HWPortInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/hwportType"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/parentResourceInstance"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/queuingTime"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/protocol"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/connectedMedia"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/payloadDataSize"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//platform/HWPortInstance/isDelegationPort"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/delegation"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/BusPortInstance">
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/BusPortInstance/connectedBus"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/LinkPortInstance">
+        <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/LinkPortInstance/connectedLink"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/ResourceInstanceRepository">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/ResourceInstanceRepository/resourceInstances"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/ResourceInstanceRepository/resourceTypeRepository"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/ResourceInstancePart">
+        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/ResourceInstancePart/resourceInstanceType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/ResourceInstancePart/hwportParts"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/Delegation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/Delegation/hwPortInstance"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/Delegation/hwPortPart"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platform/HWPortPart">
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortPart/hwPortInstanceType"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortPart/connectedMedia"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortPart/protocol"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Hwvaluetype" basePackage="de.uni_paderborn.fujaba.muml.hardware"
+        disposableProviderFactory="true" ecorePackage="hardware.ecore#//hwvaluetype">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//hwvaluetype/DataSizeUnit">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/DataSizeUnit/Byte"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/DataSizeUnit/KByte"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/DataSizeUnit/MByte"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/DataSizeUnit/GByte"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/DataSizeUnit/Bit"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//hwvaluetype/FrequencyUnit">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/FrequencyUnit/Hz"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/FrequencyUnit/kHz"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/FrequencyUnit/MHz"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/FrequencyUnit/GHz"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="hardware.ecore#//hwvaluetype/DataRateUnit">
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/DataRateUnit/bs"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/DataRateUnit/Kbs"/>
+        <genEnumLiterals ecoreEnumLiteral="hardware.ecore#//hwvaluetype/DataRateUnit/Mbs"/>
+      </genEnums>
+      <genClasses ecoreClass="hardware.ecore#//hwvaluetype/DataSize">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwvaluetype/DataSize/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwvaluetype/DataSize/unit"/>
+        <genOperations ecoreOperation="hardware.ecore#//hwvaluetype/DataSize/toString"/>
+        <genOperations ecoreOperation="hardware.ecore#//hwvaluetype/DataSize/getInByte"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//hwvaluetype/Frequency">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwvaluetype/Frequency/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwvaluetype/Frequency/unit"/>
+        <genOperations ecoreOperation="hardware.ecore#//hwvaluetype/Frequency/toString"/>
+        <genOperations ecoreOperation="hardware.ecore#//hwvaluetype/Frequency/getInHz"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//hwvaluetype/DataRate">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwvaluetype/DataRate/value"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwvaluetype/DataRate/unit"/>
+        <genOperations ecoreOperation="hardware.ecore#//hwvaluetype/DataRate/toString"/>
+        <genOperations ecoreOperation="hardware.ecore#//hwvaluetype/DataRate/getInBpS"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//hwvaluetype/TimeInterval">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//hwvaluetype/TimeInterval/unit"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Platforminstance" basePackage="de.uni_paderborn.fujaba.muml.hardware"
+        disposableProviderFactory="true" fileExtensions="fujaba" ecorePackage="hardware.ecore#//platforminstance">
+      <genClasses ecoreClass="hardware.ecore#//platforminstance/HWPlatformInstance">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platforminstance/HWPlatformInstance/hwplatformType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platforminstance/HWPlatformInstance/resourceInstances"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platforminstance/HWPlatformInstance/communicationResources"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platforminstance/HWPlatformInstance/hwplatformInstances"/>
+        <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platforminstance/HWPlatformInstance/derivedBridges"/>
+        <genFeatures children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platforminstance/HWPlatformInstance/delegationPorts"/>
+        <genFeatures children="true" createChild="true" propertyDescription="" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platforminstance/HWPlatformInstance/delegations"/>
+      </genClasses>
+      <genClasses ecoreClass="hardware.ecore#//platforminstance/HWPlatformInstanceConfiguration">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platforminstance/HWPlatformInstanceConfiguration/communicationMedia"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>
