@@ -19,15 +19,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport,
  org.storydriven.storydiagrams,
- de.uni_paderborn.fujaba.muml.tests
-Bundle-ActivationPolicy: lazy
-Import-Package: de.uni_paderborn.fujaba.muml,
- org.eclipse.emf.codegen.ecore.genmodel,
- org.eclipse.emf.codegen.ecore.genmodel.util,
+ de.uni_paderborn.fujaba.muml.tests,
  org.eclipse.ocl,
  org.eclipse.ocl.ecore,
- org.eclipse.ocl.ecore.delegate,
- org.eclipse.ocl.helper,
- org.eclipse.ocl.lpg,
- org.eclipse.ocl.options,
- org.eclipse.ocl.util
+ org.eclipse.emf.codegen,
+ org.eclipse.emf.codegen.ecore
+Bundle-ActivationPolicy: lazy
