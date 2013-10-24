@@ -20,4 +20,8 @@
          id="de.uni_paderborn.fujaba.muml.reconfiguration.feature"
          version="0.0.0"/>
 
+   <includes
+         id="de.uni_paderborn.fujaba.muml.psm.feature"
+         version="0.0.0"/>
+
 </feature>
