@@ -276,6 +276,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortMustRefineMultiRole(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(discretePort, diagnostics, context);
 		return result;
 	}
 
@@ -459,6 +460,37 @@ public class ComponentValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "MultiPortMustRefineMultiRole",
 				 DISCRETE_PORT__MULTI_PORT_MUST_REFINE_MULTI_ROLE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) \r\n" +
+		"implies \r\n" +
+		"((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))";
+
+	/**
+	 * Validates the MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePort_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DISCRETE_PORT,
+				 discretePort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior",
+				 DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

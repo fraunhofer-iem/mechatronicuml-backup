@@ -501,7 +501,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
+			 "constraints", "RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresRoleAndAdaptationBehavior"
 		   });									
 		addAnnotation
 		  (roleConnectorEClass, 
@@ -546,7 +546,8 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 			 "RoleRequiresBehavior", "not self.behavior.oclIsUndefined()",
 			 "RoleRequiresMessageTypes", "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
 			 "ReceiverRoleRequiresMessageBuffer", "self.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
-			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"
+			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))",
+			 "MultiRoleRequiresRoleAndAdaptationBehavior", "self.multiRole implies \r\n((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"
 		   });			
 		addAnnotation
 		  (getRole_RoleConnector(), 

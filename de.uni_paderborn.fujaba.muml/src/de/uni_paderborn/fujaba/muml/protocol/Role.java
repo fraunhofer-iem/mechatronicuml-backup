@@ -28,8 +28,8 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RoleRequiresBehavior='not self.behavior.oclIsUndefined()' RoleRequiresMessageTypes='self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()' ReceiverRoleRequiresMessageBuffer='self.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresRoleAndAdaptationBehavior'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RoleRequiresBehavior='not self.behavior.oclIsUndefined()' RoleRequiresMessageTypes='self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()' ReceiverRoleRequiresMessageBuffer='self.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))' MultiRoleRequiresRoleAndAdaptationBehavior='self.multiRole implies \r\n((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))'"
  * @generated
  */
 public interface Role extends DiscreteInteractionEndpoint, DataType {

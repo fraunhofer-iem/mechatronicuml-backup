@@ -63,7 +63,7 @@
         <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole"/>
+        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="DiscretePortRequiresMessageTypes" value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
@@ -72,6 +72,8 @@
         <details key="DiscretePortRequiresRole" value="self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()"/>
         <details key="DiscretePortAndRoleSameMessageTypes" value="not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes = self.refinedRole.senderMessageTypes&#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes = self.refinedRole.receiverMessageTypes&#xD;&#xA;&#x9;)"/>
         <details key="MultiPortMustRefineMultiRole" value="if not (self.refinedRole.oclIsUndefined() and self.refinedRole.cardinality.oclIsUndefined() and self.refinedRole.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.multiPort implies self.refinedRole.multiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+        <details key="MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"
+            value="(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) &#xD;&#xA;implies &#xD;&#xA;((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -861,13 +863,14 @@
         <details key="documentation" value="This class represents a role of a coordination protocol."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"/>
+        <details key="constraints" value="RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresRoleAndAdaptationBehavior"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="RoleRequiresBehavior" value="not self.behavior.oclIsUndefined()"/>
         <details key="RoleRequiresMessageTypes" value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>
         <details key="ReceiverRoleRequiresMessageBuffer" value="self.receiverMessageTypes->notEmpty() &#xD;&#xA;implies &#xD;&#xA;self.receiverMessageBuffer->notEmpty()"/>
         <details key="ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer" value="-- Each receiver message type should be assigned to exactly one buffer&#xD;&#xA;self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"/>
+        <details key="MultiRoleRequiresRoleAndAdaptationBehavior" value="self.multiRole implies &#xD;&#xA;((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/AbstractCoordinationSpecification" eOpposite="#//protocol/AbstractCoordinationSpecification/roles">

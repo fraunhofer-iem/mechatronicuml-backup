@@ -356,6 +356,7 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresMessageTypes(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_ReceiverRoleRequiresMessageBuffer(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateRole_MultiRoleRequiresRoleAndAdaptationBehavior(role, diagnostics, context);
 		return result;
 	}
 
@@ -484,6 +485,36 @@ public class ProtocolValidator extends MumlValidator {
 			return false;
 		}
 		return connectorValidator.validateDiscreteInteractionEndpoint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
+	}
+
+	/**
+	 * The cached validation expression for the MultiRoleRequiresRoleAndAdaptationBehavior constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ROLE__MULTI_ROLE_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "self.multiRole implies \r\n" +
+		"((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))";
+
+	/**
+	 * Validates the MultiRoleRequiresRoleAndAdaptationBehavior constraint of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateRole_MultiRoleRequiresRoleAndAdaptationBehavior(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ProtocolPackage.Literals.ROLE,
+				 role,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "MultiRoleRequiresRoleAndAdaptationBehavior",
+				 ROLE__MULTI_ROLE_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
