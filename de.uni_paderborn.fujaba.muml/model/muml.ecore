@@ -63,7 +63,7 @@
         <details key="documentation" value="This class represents a concrete port specification which provides the discrete functionality of a port."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"/>
+        <details key="constraints" value="DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="DiscretePortRequiresMessageTypes" value="self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()"/>

@@ -275,7 +275,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortRequiresRole(discretePort, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortMustRefineMultiRole(discretePort, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDiscretePort_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(discretePort, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDiscretePort_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(discretePort, diagnostics, context);
 		return result;
 	}
@@ -433,31 +433,32 @@ public class ComponentValidator extends MumlValidator {
 	}
 
 	/**
-	 * Validates the MultiPortMustRefineMultiRole constraint of '<em>Discrete Port</em>'.
+	 * The cached validation expression for the DiscretePortCardinalityMustComplyWithRefinedRoleCardinality constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDiscretePort_MultiPortMustRefineMultiRole(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "MultiPortMustRefineMultiRole", getObjectLabel(discretePort, context) },
-						 new Object[] { discretePort },
-						 context));
-			}
-			return false;
-		}
-		return true;
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_CARDINALITY_MUST_COMPLY_WITH_REFINED_ROLE_CARDINALITY__EEXPRESSION = "self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound)";
+
+	/**
+	 * Validates the DiscretePortCardinalityMustComplyWithRefinedRoleCardinality constraint of '<em>Discrete Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiscretePort_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DISCRETE_PORT,
+				 discretePort,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DiscretePortCardinalityMustComplyWithRefinedRoleCardinality",
+				 DISCRETE_PORT__DISCRETE_PORT_CARDINALITY_MUST_COMPLY_WITH_REFINED_ROLE_CARDINALITY__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

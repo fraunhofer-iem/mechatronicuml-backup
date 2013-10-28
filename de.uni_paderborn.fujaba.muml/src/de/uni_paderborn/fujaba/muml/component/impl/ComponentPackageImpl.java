@@ -1072,7 +1072,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (discretePortEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole MultiPortMustRefineMultiRole MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"
+			 "constraints", "DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"
 		   });														
 		addAnnotation
 		  (componentPartEClass, 
