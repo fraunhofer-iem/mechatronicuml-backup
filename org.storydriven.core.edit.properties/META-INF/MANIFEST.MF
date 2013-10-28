@@ -7,7 +7,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
  org.storydriven.core.edit,
  org.eclipse.emf.edit,
- de.fujaba.properties.runtime,
+ de.uni_paderborn.fujaba.properties.runtime,
  org.eclipse.ui,
  org.storydriven.core
 Bundle-ActivationPolicy: lazy

@@ -28,7 +28,7 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
     model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.muml.edit.properties";
     
     -- For Custom Property Tab (MUML #459)
-    model.plugin.requiredPlugins += "de.fujaba.properties.runtime";
+    model.plugin.requiredPlugins += "de.uni_paderborn.fujaba.properties.runtime";
 
     
     -- set default colors
@@ -63,7 +63,7 @@ parser.className.concat(parser._uses->first().container().oclAsType(GenCommonBas
 
 mapping inout GenPropertySheet::createTab(id : String, label : String, filter : String) {
 	if (tabs[GenCustomPropertyTab]->select(t | t.iD = id)->isEmpty()) then {
-		tabs += new GenCustomPropertyTab(id, label, "de.fujaba.properties.runtime.sections.ObjectPropertySection");
+		tabs += new GenCustomPropertyTab(id, label, "de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection");
 	} endif;
 	var tab := tabs[GenCustomPropertyTab]->any(iD = id);
 	if (tab.filter[CustomTabFilter]->select(f | f.className <> filter)->isEmpty()) then {

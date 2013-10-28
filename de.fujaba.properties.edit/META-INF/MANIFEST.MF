@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: de.fujaba.properties.edit;singleton:=true
+Bundle-SymbolicName: de.uni_paderborn.fujaba.properties.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.fujaba.properties.provider.PropertiesEditPlugin$Implementation
@@ -9,7 +9,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.fujaba.properties.provider
-Require-Bundle: de.fujaba.properties;visibility:=reexport,
+Require-Bundle: de.uni_paderborn.fujaba.properties;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,

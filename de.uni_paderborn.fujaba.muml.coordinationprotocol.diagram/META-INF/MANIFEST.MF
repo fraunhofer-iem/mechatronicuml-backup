@@ -52,7 +52,7 @@ Require-Bundle: org.eclipse.core.expressions,
  de.uni_paderborn.fujaba.modelinstance.edit;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
- de.fujaba.properties.runtime;visibility:=reexport,
+ de.uni_paderborn.fujaba.properties.runtime;visibility:=reexport,
  org.storydriven.core.edit.properties;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.edit.properties;visibility:=reexport
 Bundle-ActivationPolicy: lazy
