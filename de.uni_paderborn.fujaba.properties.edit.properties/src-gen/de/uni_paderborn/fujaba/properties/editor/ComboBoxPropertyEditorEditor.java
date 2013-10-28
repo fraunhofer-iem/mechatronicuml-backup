@@ -1,11 +1,11 @@
-package de.uni_paderborn.fujaba.properties.properties.properties.editor;
+package de.uni_paderborn.fujaba.properties.editor;
 
 /**
  * @generated
  */
 public class ComboBoxPropertyEditorEditor
 		extends
-			de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyEditorEditor {
+			de.uni_paderborn.fujaba.properties.editor.PropertyEditorEditor {
 
 	/**
 	 * @generated
@@ -33,7 +33,7 @@ public class ComboBoxPropertyEditorEditor
 	 * @generated
 	 */
 	public ComboBoxPropertyEditorEditor(String tab) {
-		this(tab, de.uni_paderborn.fujaba.properties.properties.util.PropertiesUtil.INSTANCE
+		this(tab, de.uni_paderborn.fujaba.properties.util.PropertiesUtil.INSTANCE
 				.getAdapterFactory(),
 				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getComboBoxPropertyEditor());

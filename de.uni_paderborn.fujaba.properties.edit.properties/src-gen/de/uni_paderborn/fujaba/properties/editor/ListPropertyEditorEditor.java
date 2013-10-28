@@ -1,16 +1,16 @@
-package de.uni_paderborn.fujaba.properties.properties.properties.editor;
+package de.uni_paderborn.fujaba.properties.editor;
 
 /**
  * @generated
  */
-public class RadioPropertyEditorEditor
+public class ListPropertyEditorEditor
 		extends
-			de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyEditorEditor {
+			de.uni_paderborn.fujaba.properties.editor.PropertyEditorEditor {
 
 	/**
 	 * @generated
 	 */
-	public RadioPropertyEditorEditor(String tab,
+	public ListPropertyEditorEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -32,11 +32,11 @@ public class RadioPropertyEditorEditor
 	/**
 	 * @generated
 	 */
-	public RadioPropertyEditorEditor(String tab) {
-		this(tab, de.uni_paderborn.fujaba.properties.properties.util.PropertiesUtil.INSTANCE
+	public ListPropertyEditorEditor(String tab) {
+		this(tab, de.uni_paderborn.fujaba.properties.util.PropertiesUtil.INSTANCE
 				.getAdapterFactory(),
 				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getRadioPropertyEditor());
+						.getListPropertyEditor());
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class RadioPropertyEditorEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new RadioPropertyEditorEditor(tab);
+			return new ListPropertyEditorEditor(tab);
 		}
 
 		@Override

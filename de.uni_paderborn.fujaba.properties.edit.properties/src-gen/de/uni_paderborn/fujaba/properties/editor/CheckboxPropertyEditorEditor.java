@@ -1,16 +1,16 @@
-package de.uni_paderborn.fujaba.properties.properties.properties.editor;
+package de.uni_paderborn.fujaba.properties.editor;
 
 /**
  * @generated
  */
-public class ObjectPropertyEditorEditor
+public class CheckboxPropertyEditorEditor
 		extends
-			de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyEditorEditor {
+			de.uni_paderborn.fujaba.properties.editor.PropertyEditorEditor {
 
 	/**
 	 * @generated
 	 */
-	public ObjectPropertyEditorEditor(String tab,
+	public CheckboxPropertyEditorEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -32,11 +32,11 @@ public class ObjectPropertyEditorEditor
 	/**
 	 * @generated
 	 */
-	public ObjectPropertyEditorEditor(String tab) {
-		this(tab, de.uni_paderborn.fujaba.properties.properties.util.PropertiesUtil.INSTANCE
+	public CheckboxPropertyEditorEditor(String tab) {
+		this(tab, de.uni_paderborn.fujaba.properties.util.PropertiesUtil.INSTANCE
 				.getAdapterFactory(),
 				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getObjectPropertyEditor());
+						.getCheckboxPropertyEditor());
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class ObjectPropertyEditorEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new ObjectPropertyEditorEditor(tab);
+			return new CheckboxPropertyEditorEditor(tab);
 		}
 
 		@Override

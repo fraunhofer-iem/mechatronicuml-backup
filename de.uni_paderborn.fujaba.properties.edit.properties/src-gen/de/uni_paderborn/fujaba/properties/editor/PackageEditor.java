@@ -1,16 +1,16 @@
-package de.uni_paderborn.fujaba.properties.properties.properties.editor;
+package de.uni_paderborn.fujaba.properties.editor;
 
 /**
  * @generated
  */
-public class OCLPropertyFilterEditor
+public class PackageEditor
 		extends
-			de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyFilterEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public OCLPropertyFilterEditor(String tab,
+	public PackageEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -25,7 +25,7 @@ public class OCLPropertyFilterEditor
 
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general".equals(getTab())) {
-			addOCLPropertyFilterExpressionEditor(null, true);
+			addPackageGenPackageEditor(null, true);
 		}
 
 	}
@@ -33,20 +33,18 @@ public class OCLPropertyFilterEditor
 	/**
 	 * @generated
 	 */
-	protected void addOCLPropertyFilterExpressionEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createOCLPropertyFilterExpressionEditor(), front);
+	protected void addPackageGenPackageEditor(String category, boolean front) {
+		addEditorToCategory(category, createPackageGenPackageEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOCLPropertyFilterExpressionEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OCLPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPackageGenPackageEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getOCLPropertyFilter_Expression());
+						.getPackage_GenPackage());
 
 		return editor;
 
@@ -59,11 +57,10 @@ public class OCLPropertyFilterEditor
 	/**
 	 * @generated
 	 */
-	public OCLPropertyFilterEditor(String tab) {
-		this(tab, de.uni_paderborn.fujaba.properties.properties.util.PropertiesUtil.INSTANCE
+	public PackageEditor(String tab) {
+		this(tab, de.uni_paderborn.fujaba.properties.util.PropertiesUtil.INSTANCE
 				.getAdapterFactory(),
-				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getOCLPropertyFilter());
+				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE.getPackage());
 	}
 
 	/**
@@ -75,7 +72,7 @@ public class OCLPropertyFilterEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new OCLPropertyFilterEditor(tab);
+			return new PackageEditor(tab);
 		}
 
 		@Override

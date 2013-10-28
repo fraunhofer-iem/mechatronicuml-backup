@@ -1,11 +1,11 @@
-package de.uni_paderborn.fujaba.properties.properties.properties.editor;
+package de.uni_paderborn.fujaba.properties.editor;
 
 /**
  * @generated
  */
 public class SpinnerPropertyEditorEditor
 		extends
-			de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyEditorEditor {
+			de.uni_paderborn.fujaba.properties.editor.PropertyEditorEditor {
 
 	/**
 	 * @generated
@@ -60,7 +60,7 @@ public class SpinnerPropertyEditorEditor
 	 * @generated
 	 */
 	public SpinnerPropertyEditorEditor(String tab) {
-		this(tab, de.uni_paderborn.fujaba.properties.properties.util.PropertiesUtil.INSTANCE
+		this(tab, de.uni_paderborn.fujaba.properties.util.PropertiesUtil.INSTANCE
 				.getAdapterFactory(),
 				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
 						.getSpinnerPropertyEditor());

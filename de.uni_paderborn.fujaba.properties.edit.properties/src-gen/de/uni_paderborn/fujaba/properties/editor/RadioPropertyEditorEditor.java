@@ -1,16 +1,16 @@
-package de.uni_paderborn.fujaba.properties.properties.properties.editor;
+package de.uni_paderborn.fujaba.properties.editor;
 
 /**
  * @generated
  */
-public class OCLPropertyEditorEditor
+public class RadioPropertyEditorEditor
 		extends
-			de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyEditorEditor {
+			de.uni_paderborn.fujaba.properties.editor.PropertyEditorEditor {
 
 	/**
 	 * @generated
 	 */
-	public OCLPropertyEditorEditor(String tab,
+	public RadioPropertyEditorEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -32,11 +32,11 @@ public class OCLPropertyEditorEditor
 	/**
 	 * @generated
 	 */
-	public OCLPropertyEditorEditor(String tab) {
-		this(tab, de.uni_paderborn.fujaba.properties.properties.util.PropertiesUtil.INSTANCE
+	public RadioPropertyEditorEditor(String tab) {
+		this(tab, de.uni_paderborn.fujaba.properties.util.PropertiesUtil.INSTANCE
 				.getAdapterFactory(),
 				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getOCLPropertyEditor());
+						.getRadioPropertyEditor());
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class OCLPropertyEditorEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new OCLPropertyEditorEditor(tab);
+			return new RadioPropertyEditorEditor(tab);
 		}
 
 		@Override

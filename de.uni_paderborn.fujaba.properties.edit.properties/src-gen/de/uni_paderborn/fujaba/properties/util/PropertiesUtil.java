@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.properties.properties.util;
+package de.uni_paderborn.fujaba.properties.util;
 
 /**
  * @generated

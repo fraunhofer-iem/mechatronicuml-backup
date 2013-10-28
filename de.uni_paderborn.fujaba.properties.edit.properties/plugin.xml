@@ -41,7 +41,7 @@
       <propertySections contributorId="de.uni_paderborn.fujaba.properties.contributor">
           <propertySection
             class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
-            filter="de.uni_paderborn.fujaba.properties.properties.tabs.GeneralTabElementFilter"
+            filter="de.uni_paderborn.fujaba.properties.tabs.GeneralTabElementFilter"
             id="de.uni_paderborn.fujaba.properties.tab.general"
             tab="de.uni_paderborn.fujaba.properties.tab.general">
              <input
@@ -58,97 +58,97 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyGeneratorEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.PropertyGeneratorEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.PropertyGenerator">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.ReconcilerEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.ReconcilerEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.Reconciler">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.CustomTransformationEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.CustomTransformationEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.CustomTransformation">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.PluginEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.PluginEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.Plugin">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyTabEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.PropertyTabEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.PropertyTab">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.PackageEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.PackageEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.Package">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.ClassEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.ClassEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.Class">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyCategoryEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.PropertyCategoryEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.PropertyCategory">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.PropertyEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.Property">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.TextPropertyEditorEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.TextPropertyEditorEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.TextPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.SpinnerPropertyEditorEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.SpinnerPropertyEditorEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.SpinnerPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.ComboBoxPropertyEditorEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.ComboBoxPropertyEditorEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.CheckboxPropertyEditorEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.CheckboxPropertyEditorEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.RadioPropertyEditorEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.RadioPropertyEditorEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.RadioPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.ListPropertyEditorEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.ListPropertyEditorEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.ListPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.ObjectPropertyEditorEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.ObjectPropertyEditorEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.ObjectPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.OCLPropertyEditorEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.OCLPropertyEditorEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.OCLPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.CustomPropertyEditorEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.CustomPropertyEditorEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.CustomPropertyEditor">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.properties.properties.properties.editor.OCLPropertyFilterEditor$Factory"
+             factory="de.uni_paderborn.fujaba.properties.editor.OCLPropertyFilterEditor$Factory"
              type="de.uni_paderborn.fujaba.properties.OCLPropertyFilter">
        </propertyEditor>
     

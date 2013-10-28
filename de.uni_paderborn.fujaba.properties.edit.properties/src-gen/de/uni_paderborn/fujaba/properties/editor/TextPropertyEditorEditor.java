@@ -1,16 +1,16 @@
-package de.uni_paderborn.fujaba.properties.properties.properties.editor;
+package de.uni_paderborn.fujaba.properties.editor;
 
 /**
  * @generated
  */
-public class CustomPropertyEditorEditor
+public class TextPropertyEditorEditor
 		extends
-			de.uni_paderborn.fujaba.properties.properties.properties.editor.PropertyEditorEditor {
+			de.uni_paderborn.fujaba.properties.editor.PropertyEditorEditor {
 
 	/**
 	 * @generated
 	 */
-	public CustomPropertyEditorEditor(String tab,
+	public TextPropertyEditorEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -23,9 +23,13 @@ public class CustomPropertyEditorEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
+				org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general".equals(getTab())) {
-			addCustomPropertyEditorFullyQualifiedClassNameEditor(null, true);
+			addTextPropertyEditorMultiLineEditor(
+					"de.uni_paderborn.fujaba.properties.category.Booleans", true);
 		}
 
 	}
@@ -33,22 +37,20 @@ public class CustomPropertyEditorEditor
 	/**
 	 * @generated
 	 */
-	protected void addCustomPropertyEditorFullyQualifiedClassNameEditor(
-			String category, boolean front) {
+	protected void addTextPropertyEditorMultiLineEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createCustomPropertyEditorFullyQualifiedClassNameEditor(),
-				front);
+				createTextPropertyEditorMultiLineEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCustomPropertyEditorFullyQualifiedClassNameEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextPropertyEditorMultiLineEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getCustomPropertyEditor_FullyQualifiedClassName(),
-				false);
+						.getTextPropertyEditor_MultiLine());
 
 		return editor;
 
@@ -61,11 +63,11 @@ public class CustomPropertyEditorEditor
 	/**
 	 * @generated
 	 */
-	public CustomPropertyEditorEditor(String tab) {
-		this(tab, de.uni_paderborn.fujaba.properties.properties.util.PropertiesUtil.INSTANCE
+	public TextPropertyEditorEditor(String tab) {
+		this(tab, de.uni_paderborn.fujaba.properties.util.PropertiesUtil.INSTANCE
 				.getAdapterFactory(),
 				de.uni_paderborn.fujaba.properties.PropertiesPackage.eINSTANCE
-						.getCustomPropertyEditor());
+						.getTextPropertyEditor());
 	}
 
 	/**
@@ -77,7 +79,7 @@ public class CustomPropertyEditorEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new CustomPropertyEditorEditor(tab);
+			return new TextPropertyEditorEditor(tab);
 		}
 
 		@Override

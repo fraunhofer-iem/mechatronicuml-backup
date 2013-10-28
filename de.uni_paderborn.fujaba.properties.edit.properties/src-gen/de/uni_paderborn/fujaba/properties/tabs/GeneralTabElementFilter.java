@@ -1,4 +1,4 @@
-package de.uni_paderborn.fujaba.properties.properties.tabs;
+package de.uni_paderborn.fujaba.properties.tabs;
 
 public class GeneralTabElementFilter
 		extends
