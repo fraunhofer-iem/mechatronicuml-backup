@@ -302,6 +302,11 @@
     </classes>
     <classes superClasses="//@packages.1/@classes.18">
       <genClass href="muml.genmodel#//muml/realtimestatechart/AsynchronousMessageEvent"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/realtimestatechart/AsynchronousMessageEvent/message"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.19">
       <genClass href="muml.genmodel#//muml/realtimestatechart/DoEvent"/>

@@ -23,6 +23,34 @@ public class AsynchronousMessageEventEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addAsynchronousMessageEventMessageEditor(null, false);
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addAsynchronousMessageEventMessageEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createAsynchronousMessageEventMessageEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.fujaba.properties.runtime.editors.IPropertyEditor createAsynchronousMessageEventMessageEditor() {
+		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
+						.getAsynchronousMessageEvent_Message());
+
+		editor.setTooltipMessage("The message associated with this event. The message is either requested to be\nreceived (trigger event) or it will be sent (raise event).");
+
+		return editor;
+
 	}
 
 	//
@@ -56,8 +84,8 @@ public class AsynchronousMessageEventEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general"}).contains(
-					tab);
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 
