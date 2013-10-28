@@ -47,6 +47,8 @@ public class HybridPortEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getHybridPort_SamplingInterval());
 
+		editor.setTooltipMessage("The sampling interval defines the time between two updates of the continuous signal which is received or send by this hybrid port. If the port is an IN-port, the sampling interval defines how often the continuous signal is read and stored internally. If the hybrid port in an OUT-port, the sampling interval defines how often a new value is send via this port. ");
+
 		return editor;
 
 	}

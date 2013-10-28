@@ -63,6 +63,8 @@ public class MessageBufferEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getMessageBuffer_BufferSize(), false);
 
+		editor.setTooltipMessage("The size of the message buffer. ");
+
 		return editor;
 
 	}
@@ -84,6 +86,8 @@ public class MessageBufferEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getMessageBuffer_MessageType());
+
+		editor.setTooltipMessage("The message types this message buffer can store.");
 
 		return editor;
 
@@ -107,6 +111,8 @@ public class MessageBufferEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getMessageBuffer_DiscreteInteractionEndpoint());
 
+		editor.setTooltipMessage("The role that contains this message buffer.");
+
 		return editor;
 
 	}
@@ -126,6 +132,8 @@ public class MessageBufferEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 

@@ -49,6 +49,8 @@ public class RegionEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRegion_ParentState());
 
+		editor.setTooltipMessage("The state this region is embedded.");
+
 		return editor;
 
 	}

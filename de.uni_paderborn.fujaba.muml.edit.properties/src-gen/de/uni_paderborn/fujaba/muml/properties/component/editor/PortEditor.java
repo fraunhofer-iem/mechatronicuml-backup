@@ -58,6 +58,8 @@ public abstract class PortEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getPort_Component());
 
+		editor.setTooltipMessage("The component, this port belongs to. Theoretically the bounds\nshould be 1..1, but that would prevent the possibility for\nComponentPart.portsDerived to be a containment reference\n(see ComponentPart.portsDerived)");
+
 		return editor;
 
 	}
@@ -80,6 +82,8 @@ public abstract class PortEditor
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment(), true);
 
+		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+
 		return editor;
 
 	}
@@ -99,6 +103,8 @@ public abstract class PortEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 

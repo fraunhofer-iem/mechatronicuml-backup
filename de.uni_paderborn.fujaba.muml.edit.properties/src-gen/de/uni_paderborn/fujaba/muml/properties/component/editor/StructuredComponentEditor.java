@@ -51,6 +51,8 @@ public abstract class StructuredComponentEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getStructuredComponent_Connectors());
 
+		editor.setTooltipMessage("The connectors this structured component contains. These can either be delegations or assemblies.");
+
 		return editor;
 
 	}

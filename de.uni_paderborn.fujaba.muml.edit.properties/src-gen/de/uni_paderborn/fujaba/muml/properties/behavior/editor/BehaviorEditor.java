@@ -60,6 +60,8 @@ public abstract class BehaviorEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavior_BehavioralElement());
 
+		editor.setTooltipMessage("The behavioral element this statechart belongs to.");
+
 		return editor;
 
 	}
@@ -80,6 +82,8 @@ public abstract class BehaviorEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavior_Operations());
 
+		editor.setTooltipMessage("A behavior may define a set of Operations as signatures of helper functions. These operations\nmay be called by the behavior specification and may access the attributes of\nthe behavior specification. The Operations are contained in the behavior.");
+
 		return editor;
 
 	}
@@ -99,6 +103,8 @@ public abstract class BehaviorEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavior_Variables());
+
+		editor.setTooltipMessage("A behavior may define a set of Attributes in order to store data. The attributes\nmay be used by the operations of the behavior and the behavior specification itself.\nThe attributes are contained in the behavior.");
 
 		return editor;
 

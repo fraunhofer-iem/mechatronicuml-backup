@@ -47,6 +47,8 @@ public class PrimitiveDataTypeEditor
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
 						.getPrimitiveDataType_PrimitiveType());
 
+		editor.setTooltipMessage("Refers to the primitive data type as defined by the PrimitiveDataType enumeration. It defines the actual type.");
+
 		return editor;
 
 	}

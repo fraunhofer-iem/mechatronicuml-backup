@@ -277,6 +277,11 @@ public class NavigationFeaturePropertyEditor extends
 	}
 	
 	@Override
+	public void setTooltipMessage(String message) {
+		super.setTooltipMessage(message);
+		navigatedEditor.setTooltipMessage(message);
+	}
+	@Override
 	public void setFocus() {
 		navigatedEditor.setFocus();
 	}

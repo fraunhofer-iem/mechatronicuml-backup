@@ -67,6 +67,9 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 																			 * |
 																			 */
 		SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
+		installTooltip(embeddedXtextEditor.getViewer().getTextWidget());
+		installTooltip(label);
+
 		embeddedXtextEditor.getDocument().addModelListener(
 				new IXtextModelListener() {
 					public void modelChanged(XtextResource resource) {

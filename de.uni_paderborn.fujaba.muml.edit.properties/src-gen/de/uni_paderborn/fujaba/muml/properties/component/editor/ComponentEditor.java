@@ -61,6 +61,8 @@ public abstract class ComponentEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponent_Ports());
 
+		editor.setTooltipMessage("The ports of a component represent the interaction points between the component and its environment.");
+
 		return editor;
 
 	}
@@ -83,6 +85,8 @@ public abstract class ComponentEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponent_ComponentType());
 
+		editor.setTooltipMessage("This attribute specifies the kind of the component. A component may be either\ndiscrete software component, a continuous component, a hybrid component \nor a hardware component.");
+
 		return editor;
 
 	}
@@ -102,6 +106,8 @@ public abstract class ComponentEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 
@@ -124,6 +130,8 @@ public abstract class ComponentEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstrainableElement_Constraint());
+
+		editor.setTooltipMessage("The constraint for this element.");
 
 		return editor;
 

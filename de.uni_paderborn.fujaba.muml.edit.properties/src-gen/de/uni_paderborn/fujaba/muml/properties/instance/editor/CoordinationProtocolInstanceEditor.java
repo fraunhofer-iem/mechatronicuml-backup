@@ -56,6 +56,8 @@ public class CoordinationProtocolInstanceEditor
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getCoordinationProtocolInstance_PortInstances());
 
+		editor.setTooltipMessage("The port instances that use this coordination protocol instance.\n\n\\todosd{I suggest to change this reference so that it references a DiscretePortInstance.}");
+
 		return editor;
 
 	}
@@ -79,6 +81,8 @@ public class CoordinationProtocolInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getCoordinationProtocolInstance_CoordinationProtocolOccurrence());
+
+		editor.setTooltipMessage("The CoordinationProtocolOccurence of that instance.");
 
 		return editor;
 

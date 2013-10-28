@@ -46,7 +46,7 @@ public class OptionPropertyEditor extends
 			container.setLayout(layout);
 			parent = container;
 		}
-		toolkit.createLabel(parent, getLabelText());
+		installTooltip(toolkit.createLabel(parent, getLabelText()));
 		RowLayout rowLayout = new RowLayout(SWT.HORIZONTAL);
 		rowLayout.marginTop = 0;
 		rowLayout.marginHeight = 0;
@@ -85,6 +85,7 @@ public class OptionPropertyEditor extends
 						label = "null";
 					}
 					Button button = toolkit.createButton(composite, label, SWT.RADIO);
+					installTooltip(button);
 					button.addSelectionListener(new SelectionAdapter() {
 						@Override
 						public void widgetSelected(SelectionEvent e) {

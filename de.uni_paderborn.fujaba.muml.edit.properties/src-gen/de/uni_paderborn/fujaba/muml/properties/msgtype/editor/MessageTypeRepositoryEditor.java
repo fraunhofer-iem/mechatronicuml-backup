@@ -75,6 +75,8 @@ public class MessageTypeRepositoryEditor
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
 
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
+
 		return editor;
 
 	}

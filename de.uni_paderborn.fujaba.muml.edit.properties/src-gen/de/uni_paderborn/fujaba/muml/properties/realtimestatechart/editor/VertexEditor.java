@@ -60,6 +60,8 @@ public abstract class VertexEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getVertex_OutgoingTransitions());
 
+		editor.setTooltipMessage("The outgoing transitions of this vertex");
+
 		return editor;
 
 	}
@@ -82,6 +84,8 @@ public abstract class VertexEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getVertex_IncomingTransitions());
 
+		editor.setTooltipMessage("The incoming transitions of this vertex");
+
 		return editor;
 
 	}
@@ -101,6 +105,8 @@ public abstract class VertexEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 

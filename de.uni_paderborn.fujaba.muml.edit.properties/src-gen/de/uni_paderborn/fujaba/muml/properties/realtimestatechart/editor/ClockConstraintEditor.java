@@ -53,6 +53,8 @@ public class ClockConstraintEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getClockConstraint_Bound());
 
+		editor.setTooltipMessage("The bound of a deadline (upper or lower) is a natural number.");
+
 		return editor;
 
 	}
@@ -72,6 +74,8 @@ public class ClockConstraintEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getClockConstraint_Clock());
+
+		editor.setTooltipMessage("The clock references in this clock constraint.");
 
 		return editor;
 
@@ -94,6 +98,8 @@ public class ClockConstraintEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getClockConstraint_Operator());
+
+		editor.setTooltipMessage("The operator that is used in this clock constraint.");
 
 		return editor;
 

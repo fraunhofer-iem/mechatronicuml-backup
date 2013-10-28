@@ -50,6 +50,8 @@ public class CardinalityEditor
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getCardinality_LowerBound(), false);
 
+		editor.setTooltipMessage("The lower bound of this cardinality.");
+
 		return editor;
 
 	}
@@ -70,6 +72,8 @@ public class CardinalityEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getCardinality_UpperBound(), false);
+
+		editor.setTooltipMessage("The upper bound of this cardinality.");
 
 		return editor;
 

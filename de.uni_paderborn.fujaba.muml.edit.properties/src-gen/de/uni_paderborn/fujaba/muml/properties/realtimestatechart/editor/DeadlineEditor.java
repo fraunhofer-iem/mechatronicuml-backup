@@ -49,6 +49,8 @@ public abstract class DeadlineEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDeadline_UpperBound());
 
+		editor.setTooltipMessage("The upper bound of a deadline is a natural number.");
+
 		return editor;
 
 	}
@@ -68,6 +70,8 @@ public abstract class DeadlineEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDeadline_LowerBound());
+
+		editor.setTooltipMessage("The lower bound of a deadline is a natural number.");
 
 		return editor;
 

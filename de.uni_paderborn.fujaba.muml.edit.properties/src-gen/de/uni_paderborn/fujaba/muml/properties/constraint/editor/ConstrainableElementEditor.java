@@ -51,6 +51,8 @@ public abstract class ConstrainableElementEditor
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstrainableElement_Constraint());
 
+		editor.setTooltipMessage("The constraint for this element.");
+
 		return editor;
 
 	}

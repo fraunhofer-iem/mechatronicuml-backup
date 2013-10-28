@@ -47,6 +47,8 @@ public class LogicalExpressionEditor
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getLogicalExpression_Operator());
 
+		editor.setTooltipMessage("Specifies the expression's logic operator, e.g. AND, OR, or XOR.");
+
 		return editor;
 
 	}

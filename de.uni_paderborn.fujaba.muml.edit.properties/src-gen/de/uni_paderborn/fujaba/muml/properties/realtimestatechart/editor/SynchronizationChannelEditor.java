@@ -55,6 +55,8 @@ public class SynchronizationChannelEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronizationChannel_State());
 
+		editor.setTooltipMessage("The state in which this synchronization channel is defined.");
+
 		return editor;
 
 	}
@@ -96,6 +98,8 @@ public class SynchronizationChannelEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 

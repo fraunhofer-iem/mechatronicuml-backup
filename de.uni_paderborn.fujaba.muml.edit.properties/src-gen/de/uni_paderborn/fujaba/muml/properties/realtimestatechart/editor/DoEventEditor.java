@@ -49,6 +49,8 @@ public class DoEventEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDoEvent_Action());
 
+		editor.setTooltipMessage("Each entry or exit action has one or more actions.");
+
 		return editor;
 
 	}
@@ -68,6 +70,8 @@ public class DoEventEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getDoEvent_Period());
+
+		editor.setTooltipMessage("the lower bound of the period");
 
 		return editor;
 

@@ -53,6 +53,8 @@ public class NaturalNumberEditor
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getNaturalNumber_Value(), 0);
 
+		editor.setTooltipMessage("The value of this natural number.");
+
 		return editor;
 
 	}
@@ -73,6 +75,8 @@ public class NaturalNumberEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getNaturalNumber_Infinity());
+
+		editor.setTooltipMessage("Determins whether this natural number represents infinity.");
 
 		return editor;
 

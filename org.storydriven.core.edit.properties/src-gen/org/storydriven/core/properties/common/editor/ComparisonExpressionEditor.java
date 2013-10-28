@@ -47,6 +47,8 @@ public class ComparisonExpressionEditor
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getComparisonExpression_Operator());
 
+		editor.setTooltipMessage("Specifies the expression's comparing operator, e.g. <, >=, !=.");
+
 		return editor;
 
 	}

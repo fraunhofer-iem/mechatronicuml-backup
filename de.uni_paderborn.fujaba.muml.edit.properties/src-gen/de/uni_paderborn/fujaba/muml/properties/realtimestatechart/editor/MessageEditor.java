@@ -53,6 +53,8 @@ public class MessageEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getMessage_InstanceOf());
 
+		editor.setTooltipMessage("Retrieves the message type this message is typed over.");
+
 		return editor;
 
 	}

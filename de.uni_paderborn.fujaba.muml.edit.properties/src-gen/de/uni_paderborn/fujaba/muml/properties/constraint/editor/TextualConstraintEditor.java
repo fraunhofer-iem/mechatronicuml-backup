@@ -47,6 +47,8 @@ public class TextualConstraintEditor
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getTextualConstraint_TextualExpression());
 
+		editor.setTooltipMessage("A textual expression which stores the constraint text and the language in which \nthe constraint is specified.");
+
 		return editor;
 
 	}

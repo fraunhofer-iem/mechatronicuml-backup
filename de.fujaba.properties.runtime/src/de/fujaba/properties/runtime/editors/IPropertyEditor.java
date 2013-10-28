@@ -31,4 +31,6 @@ public interface IPropertyEditor {
 	
 	void setFocus();
 
+	void setTooltipMessage(String message);
+
 }

@@ -72,6 +72,8 @@ public abstract class DirectedTypedPortEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_Kind());
 
+		editor.setTooltipMessage("Decides the direction of a continous port.");
+
 		return editor;
 
 	}
@@ -94,6 +96,8 @@ public abstract class DirectedTypedPortEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_Optional());
 
+		editor.setTooltipMessage("Decides if this port is optional.");
+
 		return editor;
 
 	}
@@ -113,6 +117,8 @@ public abstract class DirectedTypedPortEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getPort_Component());
+
+		editor.setTooltipMessage("The component, this port belongs to. Theoretically the bounds\nshould be 1..1, but that would prevent the possibility for\nComponentPart.portsDerived to be a containment reference\n(see ComponentPart.portsDerived)");
 
 		return editor;
 
@@ -136,6 +142,8 @@ public abstract class DirectedTypedPortEditor
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstrainableElement_Constraint());
 
+		editor.setTooltipMessage("The constraint for this element.");
+
 		return editor;
 
 	}
@@ -157,6 +165,8 @@ public abstract class DirectedTypedPortEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment(), true);
+
+		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 		return editor;
 

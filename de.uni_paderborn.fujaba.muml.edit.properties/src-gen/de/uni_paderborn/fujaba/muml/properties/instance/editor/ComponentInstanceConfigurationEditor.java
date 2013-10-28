@@ -61,6 +61,8 @@ public class ComponentInstanceConfigurationEditor
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstanceConfiguration_ComponentInstances());
 
+		editor.setTooltipMessage("The set of component instances of a component instance configuration.");
+
 		return editor;
 
 	}
@@ -85,6 +87,8 @@ public class ComponentInstanceConfigurationEditor
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstanceConfiguration_PortConnectorInstances());
 
+		editor.setTooltipMessage("The set of connector instances of a component instance configuration.");
+
 		return editor;
 
 	}
@@ -104,6 +108,8 @@ public class ComponentInstanceConfigurationEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 

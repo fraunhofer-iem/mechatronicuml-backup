@@ -49,6 +49,8 @@ public abstract class AbstractCoordinationSpecificationEditor
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
 
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
+
 		return editor;
 
 	}
@@ -70,6 +72,8 @@ public abstract class AbstractCoordinationSpecificationEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment(), true);
+
+		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 		return editor;
 

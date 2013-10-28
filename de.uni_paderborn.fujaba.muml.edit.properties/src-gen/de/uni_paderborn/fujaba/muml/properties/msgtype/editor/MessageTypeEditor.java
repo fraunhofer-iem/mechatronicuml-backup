@@ -58,6 +58,8 @@ public class MessageTypeEditor
 				de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 						.getMessageType_Parameters());
 
+		editor.setTooltipMessage("This reference defines the set of parameters of this message type. A parameter defines a unique name and a DataType.");
+
 		return editor;
 
 	}
@@ -98,6 +100,8 @@ public class MessageTypeEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 

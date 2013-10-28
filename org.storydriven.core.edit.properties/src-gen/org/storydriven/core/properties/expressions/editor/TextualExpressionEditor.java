@@ -55,6 +55,8 @@ public class TextualExpressionEditor
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_ExpressionText(), false);
 
+		editor.setTooltipMessage("Holds the expression, e.g. in OCL or Java.");
+
 		return editor;
 
 	}
@@ -77,6 +79,8 @@ public class TextualExpressionEditor
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_Language(), false);
 
+		editor.setTooltipMessage("String representation of the used language which has to be unique. Examples are OCL and Java.");
+
 		return editor;
 
 	}
@@ -98,6 +102,8 @@ public class TextualExpressionEditor
 				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
 						.getTextualExpression_LanguageVersion(), false);
+
+		editor.setTooltipMessage("String representation of the used language's version. The format is <Major>.<Minor>[.<Revision>[.<Build>]]\nExamples: 1.4 or 3.0.1 or 1.0.2.20101208.");
 
 		return editor;
 

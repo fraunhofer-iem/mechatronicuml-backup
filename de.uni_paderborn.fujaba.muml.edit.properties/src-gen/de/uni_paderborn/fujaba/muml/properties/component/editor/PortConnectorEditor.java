@@ -47,6 +47,8 @@ public abstract class PortConnectorEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getPortConnector_ParentComponent());
 
+		editor.setTooltipMessage("The structured component this connector belongs to.");
+
 		return editor;
 
 	}

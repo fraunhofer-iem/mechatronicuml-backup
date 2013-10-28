@@ -73,6 +73,8 @@ public class VariableEditor
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment(), true);
 
+		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+
 		return editor;
 
 	}

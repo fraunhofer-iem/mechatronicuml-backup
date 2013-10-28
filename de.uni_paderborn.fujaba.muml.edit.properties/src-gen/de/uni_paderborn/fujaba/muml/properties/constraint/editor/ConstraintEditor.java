@@ -58,6 +58,8 @@ public abstract class ConstraintEditor
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstraint_Correctness());
 
+		editor.setTooltipMessage("The correctness of this constraint encoded as a literal of the enum type \"Correctness\".");
+
 		return editor;
 
 	}
@@ -77,6 +79,8 @@ public abstract class ConstraintEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstraint_Background());
+
+		editor.setTooltipMessage("This attribute decides whether background checking is activated for this constraint. If it is activated the correctness of the constraint is checked whenever the model changes. These checks are performed in the background such that user interaction is not interrupted.");
 
 		return editor;
 
@@ -99,6 +103,8 @@ public abstract class ConstraintEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
 						.getConstraint_ConstrainableElement());
+
+		editor.setTooltipMessage("The element this constraint applies to.");
 
 		return editor;
 

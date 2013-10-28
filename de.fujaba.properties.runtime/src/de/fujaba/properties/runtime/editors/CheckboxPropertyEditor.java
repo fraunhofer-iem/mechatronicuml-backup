@@ -40,6 +40,8 @@ public class CheckboxPropertyEditor extends
 				setValue(checkbox.getSelection());
 			}
 		});
+		
+		installTooltip(checkbox);
 		// Create two option buttons for a boolean feature, or multiple for
 		// a enumeration
 

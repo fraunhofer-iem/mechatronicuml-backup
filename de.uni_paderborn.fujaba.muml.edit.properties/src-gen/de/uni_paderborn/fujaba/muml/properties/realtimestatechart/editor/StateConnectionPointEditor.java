@@ -47,6 +47,8 @@ public abstract class StateConnectionPointEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getStateConnectionPoint_State());
 
+		editor.setTooltipMessage("The StateEntryPoint is assigned to a state.");
+
 		return editor;
 
 	}

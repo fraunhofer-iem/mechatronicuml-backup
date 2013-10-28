@@ -6,15 +6,15 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.FormToolkit;
-import org.eclipse.ui.part.PageBook;
 
 import de.fujaba.properties.runtime.RuntimePlugin;
 
 public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	private boolean visible = true;
-	
+
 	protected Composite parentComposite = null;
 
 	protected Object input = null;
@@ -25,6 +25,7 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	protected List<IFilter> visibilityFilters = new ArrayList<IFilter>();
 
+	protected String tooltipMessage = "";
 
 	public AbstractPropertyEditor(AdapterFactory adapterFactory) {
 		if (adapterFactory == null) {
@@ -79,7 +80,6 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 		visibilityFilters.add(filter);
 	}
 
-
 	@Override
 	public void removeVisibilityFilter(IFilter filter) {
 		visibilityFilters.remove(filter);
@@ -112,7 +112,7 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 			layout();
 		}
 	}
-	
+
 	public boolean isVisible() {
 		return visible;
 	}
@@ -124,21 +124,22 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	public void hide() {
 		setVisible(false);
 	}
-	
+
 	public void layout() {
 		if (parentComposite != null) {
 			RuntimePlugin.revalidateLayout(parentComposite);
 		}
-		// XXX: The following only works in the Properties View, not in the dialog.
-		
-//		Composite composite = parentComposite;
-//		while (composite != null && false == composite instanceof PageBook) {
-//			composite = composite.getParent();
-//		}
-//		if (composite != null) {
-//			composite.layout(true, true);
-//		}
 	}
 
 	protected abstract void doSetVisible(boolean visible);
+
+	@Override
+	public void setTooltipMessage(String message) {
+		this.tooltipMessage = message;
+	}
+	
+	protected void installTooltip(Control control) {
+		control.setToolTipText(tooltipMessage);
+	}
+
 }

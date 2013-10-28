@@ -91,3 +91,11 @@ Set[Property] genOverriddenProperties(Class this) :
 	
 Boolean shouldGenerateEditor(Property this) :
 	editor != null;
+	
+String genDocumentation(Property this) :
+	genFeature.ecoreFeature.eAnnotations.genDocumentation().selectFirst(d | d != null && d != "");
+
+String genDocumentation(EAnnotation this) : 
+	if source.toString()=="http://www.eclipse.org/emf/2002/GenModel" then
+		details.select(d | d.key.toString() == "documentation").value;
+	

@@ -59,6 +59,8 @@ public abstract class ComponentInstanceEditor
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstance_ComponentType());
 
+		editor.setTooltipMessage("The component type of which this instance is derived.");
+
 		return editor;
 
 	}
@@ -80,6 +82,8 @@ public abstract class ComponentInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstance_PortInstances());
+
+		editor.setTooltipMessage("The port instances that belong to this component instance. \\todosd{Why are also DiscreteSinglePortInstances of DiscreteMultiPortInstances contained here and not in the DiscreteMultiPortInstance?}");
 
 		return editor;
 

@@ -55,6 +55,8 @@ public abstract class EntryOrExitEventEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getEntryOrExitEvent_ClockResets());
 
+		editor.setTooltipMessage("The clock resets of this action");
+
 		return editor;
 
 	}
@@ -76,6 +78,8 @@ public abstract class EntryOrExitEventEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getEntryOrExitEvent_Action());
+
+		editor.setTooltipMessage("Each entry or exit event can have one or more actions.");
 
 		return editor;
 

@@ -59,6 +59,8 @@ public class ComponentPartEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponentPart_ComponentType());
 
+		editor.setTooltipMessage("The component type typing this component part.");
+
 		return editor;
 
 	}
@@ -80,6 +82,8 @@ public class ComponentPartEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponentPart_ParentComponent());
+
+		editor.setTooltipMessage("The structured component type containing this component part.");
 
 		return editor;
 
@@ -103,6 +107,8 @@ public class ComponentPartEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponentPart_Cardinality());
 
+		editor.setTooltipMessage("The cardinality of a ComponentPart specifies how many instances of a ComponentPart are allowed to exist at runtime.");
+
 		return editor;
 
 	}
@@ -122,6 +128,8 @@ public class ComponentPartEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 

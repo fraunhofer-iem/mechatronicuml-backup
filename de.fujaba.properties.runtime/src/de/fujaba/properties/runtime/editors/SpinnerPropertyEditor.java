@@ -33,8 +33,10 @@ public class SpinnerPropertyEditor extends
 	public void createControls(Composite parent, FormToolkit toolkit) {
 		super.createControls(parent, toolkit);
 		label = toolkit.createLabel(parent, getLabelText());
+		installTooltip(label);
 
 		spinner = new Spinner(parent, SWT.BORDER | toolkit.getOrientation());
+		installTooltip(spinner);
 		toolkit.paintBordersFor(spinner);
 		toolkit.adapt(spinner);
 		// if (parent.getLayout() instanceof GridLayout) {

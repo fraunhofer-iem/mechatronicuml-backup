@@ -46,6 +46,8 @@ public class AbsoluteDeadlineEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getAbsoluteDeadline_Clock());
 
+		editor.setTooltipMessage("the references clock of the absolute deadline.");
+
 		return editor;
 
 	}

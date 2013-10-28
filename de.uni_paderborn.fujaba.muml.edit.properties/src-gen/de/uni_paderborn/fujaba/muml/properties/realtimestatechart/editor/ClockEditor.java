@@ -45,6 +45,8 @@ public class ClockEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getClock_Statechart());
 
+		editor.setTooltipMessage("The realtime statechart this clock belongs to.\n\\todoib{Should be 1..1, but GMF needs 0..1 here!}\n\\todosd{is this info necessary?}");
+
 		return editor;
 
 	}

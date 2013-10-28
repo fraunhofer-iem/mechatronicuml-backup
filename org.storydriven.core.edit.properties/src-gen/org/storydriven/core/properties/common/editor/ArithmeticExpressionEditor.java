@@ -47,6 +47,8 @@ public class ArithmeticExpressionEditor
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getArithmeticExpression_Operator());
 
+		editor.setTooltipMessage("Specifies the expression's arithmetic operator, e.g. +, -, *, /, or MODULO.");
+
 		return editor;
 
 	}

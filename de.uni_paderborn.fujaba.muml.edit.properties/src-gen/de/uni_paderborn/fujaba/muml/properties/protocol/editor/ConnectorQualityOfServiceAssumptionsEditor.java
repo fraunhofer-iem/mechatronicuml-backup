@@ -63,6 +63,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions_MinMessageDelay());
 
+		editor.setTooltipMessage("The minimal time a message needs from the sender to the receiver using this connector.");
+
 		return editor;
 
 	}
@@ -87,6 +89,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions_MaxMessageDelay());
 
+		editor.setTooltipMessage("The maximal time a message needs from the sender to the receiver using this connector.");
+
 		return editor;
 
 	}
@@ -110,6 +114,8 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getConnectorQualityOfServiceAssumptions_MessageLossPossible());
+
+		editor.setTooltipMessage("Defines if messages that are send using this connector may be lost during transport.");
 
 		return editor;
 

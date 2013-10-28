@@ -200,7 +200,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 		if (title != null) {
 			section = createSection(parent, toolkit);
-			
+		
 			colorActiveText = new Color(null, 0, 85, 239);
 			colorActiveBackground = section.getTitleBarGradientBackground();
 			childrenComposite = toolkit.createComposite(section);
@@ -224,9 +224,17 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			});
 			
 			
+			// Install tooltip into section's header and section
+			installTooltip(section);
+			for (Control control : section.getChildren()) {
+				installTooltip(control);
+			}
+			
 		} else {
 			childrenComposite = toolkit.createComposite(parent);
 			childrenComposite.setLayoutData(layoutData);
+			installTooltip(childrenComposite);
+
 		}
 		Layout layout = createLayout();
 		if (layout != null) {

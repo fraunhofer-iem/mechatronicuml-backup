@@ -96,6 +96,7 @@ public class XtextPropertyEditor extends
 
 		// Create label
 		Label label = toolkit.createLabel(parent, getLabelText());
+		installTooltip(label);
 		label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 
 		// Create container with border
@@ -116,6 +117,7 @@ public class XtextPropertyEditor extends
 				languageName);
 		LanguageResource.setInjector(injector);
 		embeddedXtextEditor = new EmbeddedXtextEditor(innerContainer, injector);
+		installTooltip(embeddedXtextEditor.getViewer().getTextWidget());
 		saveModelListener = new SaveModelListener();
 		embeddedXtextEditor.getDocument().addModelListener(saveModelListener);
 		final StyledText textWidget = embeddedXtextEditor.getViewer().getTextWidget();

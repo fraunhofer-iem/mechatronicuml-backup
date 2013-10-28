@@ -111,6 +111,8 @@ public class TransitionEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Synchronization());
 
+		editor.setTooltipMessage("The synchronisation which is sent upon activation of this transition.");
+
 		return editor;
 
 	}
@@ -130,6 +132,8 @@ public class TransitionEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Target());
+
+		editor.setTooltipMessage("The state which is the target of this transition.");
 
 		return editor;
 
@@ -151,6 +155,8 @@ public class TransitionEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Source());
 
+		editor.setTooltipMessage("The state which is the source of this transition.");
+
 		return editor;
 
 	}
@@ -170,6 +176,8 @@ public class TransitionEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Statechart());
+
+		editor.setTooltipMessage("The realtime statechart this transition belongs to.");
 
 		return editor;
 
@@ -191,6 +199,8 @@ public class TransitionEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_ClockResets());
+
+		editor.setTooltipMessage("The clock resets of this transition.");
 
 		return editor;
 
@@ -214,6 +224,8 @@ public class TransitionEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_ClockConstraints());
 
+		editor.setTooltipMessage("A clock constraint restricts when the transition can be activeted in dependency of the values of the clock.");
+
 		return editor;
 
 	}
@@ -235,6 +247,8 @@ public class TransitionEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_AbsoluteDeadlines());
+
+		editor.setTooltipMessage("a transition can has one or more absolute deadlines");
 
 		return editor;
 
@@ -258,6 +272,8 @@ public class TransitionEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_RelativeDeadline());
 
+		editor.setTooltipMessage("a transition can have one relative deadline");
+
 		return editor;
 
 	}
@@ -277,6 +293,8 @@ public class TransitionEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Blockable());
+
+		editor.setTooltipMessage("Needed for failure propagation.");
 
 		return editor;
 
@@ -298,6 +316,8 @@ public class TransitionEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Guard());
 
+		editor.setTooltipMessage("The guard of a transition is defined by an expression which should have return type boolean. Comparing clock values is not allowed (use clock constraints instead).");
+
 		return editor;
 
 	}
@@ -318,6 +338,8 @@ public class TransitionEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Events());
 
+		editor.setTooltipMessage("All events which belong to this transition.");
+
 		return editor;
 
 	}
@@ -337,6 +359,8 @@ public class TransitionEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Action());
+
+		editor.setTooltipMessage("The side effect of this transition. A side effect might be a variable assignment as well as a method invocation.");
 
 		return editor;
 

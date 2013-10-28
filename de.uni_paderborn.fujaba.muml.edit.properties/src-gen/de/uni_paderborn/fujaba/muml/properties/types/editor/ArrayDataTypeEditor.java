@@ -49,6 +49,8 @@ public class ArrayDataTypeEditor
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
 						.getArrayDataType_Type());
 
+		editor.setTooltipMessage("This reference points to the definition of the data type.");
+
 		return editor;
 
 	}

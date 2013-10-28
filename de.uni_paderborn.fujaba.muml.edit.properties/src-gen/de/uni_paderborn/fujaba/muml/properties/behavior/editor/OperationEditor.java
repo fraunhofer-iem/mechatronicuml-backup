@@ -57,6 +57,8 @@ public class OperationEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getOperation_ReturnType());
 
+		editor.setTooltipMessage("The type of the return value of this operation.");
+
 		return editor;
 
 	}
@@ -78,6 +80,8 @@ public class OperationEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getOperation_Implementations());
+
+		editor.setTooltipMessage("The implementation for this operation. MechatronicUML supports the annotation of multiple implementations for an operation to support different target languages.");
 
 		return editor;
 
@@ -118,6 +122,8 @@ public class OperationEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 

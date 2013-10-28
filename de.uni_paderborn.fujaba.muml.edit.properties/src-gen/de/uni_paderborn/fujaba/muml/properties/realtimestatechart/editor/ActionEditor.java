@@ -45,6 +45,8 @@ public class ActionEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getAction_Expressions());
 
+		editor.setTooltipMessage("An action has a defined expression, which can be expressed in different languages.");
+
 		return editor;
 
 	}

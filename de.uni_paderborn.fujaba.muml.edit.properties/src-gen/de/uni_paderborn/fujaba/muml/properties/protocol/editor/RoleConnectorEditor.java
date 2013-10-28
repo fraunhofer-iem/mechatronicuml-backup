@@ -52,6 +52,8 @@ public class RoleConnectorEditor
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getRoleConnector_CoordinationProtocol());
 
+		editor.setTooltipMessage("The coordination protocol this role connector is part of.");
+
 		return editor;
 
 	}
@@ -75,6 +77,8 @@ public class RoleConnectorEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
 						.getRoleConnector_ConnectorQualityOfServiceAssumptions());
+
+		editor.setTooltipMessage("A role connector has exactly one reference for defining its quality of service assumptions like message delay and message loss.");
 
 		return editor;
 

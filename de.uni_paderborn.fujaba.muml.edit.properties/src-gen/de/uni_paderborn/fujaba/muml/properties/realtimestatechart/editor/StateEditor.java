@@ -95,6 +95,8 @@ public class StateEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_EmbeddedRegions());
 
+		editor.setTooltipMessage("The regions of this state. Regions are used to model composite states.\nIn case of one region, we have an xor superstate, in case of multiple regions, \nwe have an AND-superstate.");
+
 		return editor;
 
 	}
@@ -114,6 +116,8 @@ public class StateEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_DoEvent());
+
+		editor.setTooltipMessage("The do event. It is executed periodically while the corresponding state is active.");
 
 		return editor;
 
@@ -135,6 +139,8 @@ public class StateEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_ExitEvent());
 
+		editor.setTooltipMessage("The exit action is exectuted once when the corresponding state is left.");
+
 		return editor;
 
 	}
@@ -154,6 +160,8 @@ public class StateEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_EntryEvent());
+
+		editor.setTooltipMessage("The entry action is exectuted once when the corresponding state is entered.");
 
 		return editor;
 
@@ -175,6 +183,8 @@ public class StateEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_Invariants());
 
+		editor.setTooltipMessage("The invariant belonging to this complex state. It describes how long it is allowed to reside in this complex state depending on the values of the clocks.");
+
 		return editor;
 
 	}
@@ -194,6 +204,8 @@ public class StateEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_Initial());
+
+		editor.setTooltipMessage("An initial state is the first one to active if the statechart is activated. There is only one initial state allowed at the top hierarchy of a statechart.");
 
 		return editor;
 
@@ -215,6 +227,8 @@ public class StateEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_Final());
 
+		editor.setTooltipMessage("a final state is not allowed to have outgoing transitions.");
+
 		return editor;
 
 	}
@@ -235,6 +249,8 @@ public class StateEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_Urgent());
 
+		editor.setTooltipMessage("If a state is active and urgent, no time is allowed to pass until the state is leaved.");
+
 		return editor;
 
 	}
@@ -254,6 +270,8 @@ public class StateEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_Channels());
+
+		editor.setTooltipMessage("The synchronization channels provided by this state.");
 
 		return editor;
 
@@ -276,6 +294,8 @@ public class StateEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_ConnectionPoints());
 
+		editor.setTooltipMessage("A state references its connection points. They can only exist, if a state embeds one or more statecharts.");
+
 		return editor;
 
 	}
@@ -296,6 +316,8 @@ public class StateEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getState_ParentStatechart());
+
+		editor.setTooltipMessage("The realtime statechart this state belongs to.\n\\todoib{Should be 1..1, but GMF needs 0..1 here!}");
 
 		return editor;
 

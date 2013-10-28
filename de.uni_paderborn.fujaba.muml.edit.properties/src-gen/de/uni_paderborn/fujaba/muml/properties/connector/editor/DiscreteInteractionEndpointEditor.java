@@ -92,6 +92,8 @@ public abstract class DiscreteInteractionEndpointEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_SenderMessageTypes());
 
+		editor.setTooltipMessage("The sender message interface defines which messages this discrete port specification sends.");
+
 		return editor;
 
 	}
@@ -114,6 +116,8 @@ public abstract class DiscreteInteractionEndpointEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_ReceiverMessageTypes());
+
+		editor.setTooltipMessage("The receiver message interface defines which messages this discrete port specification receives.");
 
 		return editor;
 
@@ -141,6 +145,8 @@ public abstract class DiscreteInteractionEndpointEditor
 		editor.addVisibilityFilter("cardinality.upperBound.value > 1",
 				getEClass());
 
+		editor.setTooltipMessage("If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior of the multi-port.  Then, this real-time statechart \nis contained in the only state of the real-time statechart we is obtained by the\nreference roleAndAdaptationBehavior.\nIf this port is a single-port, this reference will be undefined.");
+
 		return editor;
 
 	}
@@ -165,6 +171,8 @@ public abstract class DiscreteInteractionEndpointEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior());
 
+		editor.setTooltipMessage("If this port is a multi-port, this reference points to the real-time statechart that\ncontains the adaptation behavior and the sub-port behavior. Thus, this real-time\nstatechart only contains one state which embeds the real-time statecharts\nspecifying the adaptation behavior and the sub-port behavior.");
+
 		return editor;
 
 	}
@@ -186,6 +194,8 @@ public abstract class DiscreteInteractionEndpointEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_Cardinality());
+
+		editor.setTooltipMessage("The cardinality of a port specifies how many instances of a port are allowed to exist at runtime.");
 
 		return editor;
 
@@ -210,6 +220,8 @@ public abstract class DiscreteInteractionEndpointEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_ReceiverMessageBuffer());
 
+		editor.setTooltipMessage("A role contains message buffers to store received messages. If this role can only send messages then no message buffer is allowed; otherwise at least one message buffer must be defined. The maximal number of message buffers is limited to the number of message this role may receive.");
+
 		return editor;
 
 	}
@@ -229,6 +241,8 @@ public abstract class DiscreteInteractionEndpointEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 
@@ -251,6 +265,8 @@ public abstract class DiscreteInteractionEndpointEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavioralElement_Behavior());
+
+		editor.setTooltipMessage("The real-time statechart that defines the behavior of this behavioral element.");
 
 		return editor;
 
@@ -295,6 +311,8 @@ public abstract class DiscreteInteractionEndpointEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment(), true);
+
+		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 		return editor;
 

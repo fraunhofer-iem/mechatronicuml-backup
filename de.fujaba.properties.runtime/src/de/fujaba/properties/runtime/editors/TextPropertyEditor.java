@@ -31,6 +31,7 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			FormToolkit toolkit) {
 		super.createControls(parent, toolkit);
 		label = toolkit.createLabel(parent, getLabelText());
+		installTooltip(label);
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 		}
@@ -39,6 +40,7 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			style |= SWT.MULTI | SWT.V_SCROLL;
 		}
 		text = toolkit.createText(parent, "", style);
+		installTooltip(text);
 		if (parent.getLayout() instanceof GridLayout) {
 			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
 			if (multiLine) {

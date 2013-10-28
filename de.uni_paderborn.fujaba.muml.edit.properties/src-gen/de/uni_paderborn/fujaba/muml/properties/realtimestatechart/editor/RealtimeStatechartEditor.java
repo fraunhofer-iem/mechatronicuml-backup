@@ -73,6 +73,8 @@ public class RealtimeStatechartEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_ParentRegion());
 
+		editor.setTooltipMessage("If the real-time statechart is embedded into a region of a composite state,\nthan this reference returns the region of this state. If the real-time statechart\nis not embedded, this reference will be undefined.");
+
 		return editor;
 
 	}
@@ -94,6 +96,8 @@ public class RealtimeStatechartEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_Transitions());
+
+		editor.setTooltipMessage("The transitions of the realtime statechart.");
 
 		return editor;
 
@@ -117,6 +121,8 @@ public class RealtimeStatechartEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_States());
 
+		editor.setTooltipMessage("The states of this realtime statechart.");
+
 		return editor;
 
 	}
@@ -139,6 +145,8 @@ public class RealtimeStatechartEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getRealtimeStatechart_Clocks());
 
+		editor.setTooltipMessage("The clocks of this realtime statechart.");
+
 		return editor;
 
 	}
@@ -158,6 +166,8 @@ public class RealtimeStatechartEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 
@@ -180,6 +190,8 @@ public class RealtimeStatechartEditor
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getCommentableElement_Comment(), true);
+
+		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 		return editor;
 

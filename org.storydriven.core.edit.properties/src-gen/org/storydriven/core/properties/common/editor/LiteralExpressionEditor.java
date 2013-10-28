@@ -47,6 +47,8 @@ public class LiteralExpressionEditor
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getLiteralExpression_Value(), false);
 
+		editor.setTooltipMessage("String representation of the value, e.g. \"5\", \"3.14\", \"c\", \"text\", or \"true\".");
+
 		return editor;
 
 	}

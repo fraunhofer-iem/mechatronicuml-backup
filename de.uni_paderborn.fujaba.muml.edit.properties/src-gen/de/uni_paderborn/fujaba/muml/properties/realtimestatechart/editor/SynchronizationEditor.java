@@ -55,6 +55,8 @@ public class SynchronizationEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronization_SyncChannel());
 
+		editor.setTooltipMessage("the channel that is used by the synchronization");
+
 		return editor;
 
 	}
@@ -74,6 +76,8 @@ public class SynchronizationEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronization_Kind());
+
+		editor.setTooltipMessage("Decides the kind: Is this a send or a reveive synchronization?");
 
 		return editor;
 

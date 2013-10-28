@@ -79,6 +79,8 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		}
 
 		Combo combo = new Combo(parent, SWT.BORDER | SWT.DROP_DOWN | SWT.READ_ONLY);
+		installTooltip(combo);
+		installTooltip(label);
 		comboViewer = new ComboViewer(combo);
 		comboViewer.setContentProvider(ArrayContentProvider.getInstance());
 		comboViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));

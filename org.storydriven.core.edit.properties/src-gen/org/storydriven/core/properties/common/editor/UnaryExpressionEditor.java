@@ -47,6 +47,8 @@ public class UnaryExpressionEditor
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE
 						.getUnaryExpression_Operator());
 
+		editor.setTooltipMessage("Represents the operator of the expression.");
+
 		return editor;
 
 	}

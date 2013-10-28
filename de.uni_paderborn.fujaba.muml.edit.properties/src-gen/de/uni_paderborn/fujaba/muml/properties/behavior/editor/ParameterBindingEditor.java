@@ -51,6 +51,8 @@ public class ParameterBindingEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getParameterBinding_Parameter());
 
+		editor.setTooltipMessage("The parameter to which the value needs to be associated.");
+
 		return editor;
 
 	}
@@ -71,6 +73,8 @@ public class ParameterBindingEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getParameterBinding_Value());
+
+		editor.setTooltipMessage("The value which is associated with the parameter. The value is defined by an expression.");
 
 		return editor;
 

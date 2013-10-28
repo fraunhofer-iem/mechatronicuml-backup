@@ -47,6 +47,8 @@ public abstract class PortInstanceEditor
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getPortInstance_ComponentInstance());
 
+		editor.setTooltipMessage("The component instance this port instance belongs to.");
+
 		return editor;
 
 	}

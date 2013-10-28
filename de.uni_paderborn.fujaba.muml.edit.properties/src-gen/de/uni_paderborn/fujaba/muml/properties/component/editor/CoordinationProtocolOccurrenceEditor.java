@@ -58,6 +58,8 @@ public class CoordinationProtocolOccurrenceEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getCoordinationProtocolOccurrence_CoordinationProtocol());
 
+		editor.setTooltipMessage("The coordination protocol (pattern) of this CoordinationProtocolOccurence.");
+
 		return editor;
 
 	}
@@ -79,6 +81,8 @@ public class CoordinationProtocolOccurrenceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getCoordinationProtocolOccurrence_PortParts());
+
+		editor.setTooltipMessage("The discrete port parts that take part in this protocol occurence.");
 
 		return editor;
 
