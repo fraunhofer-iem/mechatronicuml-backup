@@ -310,6 +310,24 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getNaturalNumber__LessOrEqual__NaturalNumber() {
+		return naturalNumberEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getNaturalNumber__GreaterOrEqual__NaturalNumber() {
+		return naturalNumberEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRange() {
 		return rangeEClass;
 	}
@@ -384,6 +402,8 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		createEOperation(naturalNumberEClass, NATURAL_NUMBER___SET_VALUE__STRING);
 		createEOperation(naturalNumberEClass, NATURAL_NUMBER___TO_STRING);
 		createEOperation(naturalNumberEClass, NATURAL_NUMBER___EQUALS__EOBJECT);
+		createEOperation(naturalNumberEClass, NATURAL_NUMBER___LESS_OR_EQUAL__NATURALNUMBER);
+		createEOperation(naturalNumberEClass, NATURAL_NUMBER___GREATER_OR_EQUAL__NATURALNUMBER);
 
 		rangeEClass = createEClass(RANGE);
 		createEAttribute(rangeEClass, RANGE__LOWER_BOUND);
@@ -450,6 +470,12 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		op = initEOperation(getNaturalNumber__Equals__EObject(), ecorePackage.getEBoolean(), "equals", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEObject(), "o", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getNaturalNumber__LessOrEqual__NaturalNumber(), ecorePackage.getEBoolean(), "lessOrEqual", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getNaturalNumber(), "n", 1, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getNaturalNumber__GreaterOrEqual__NaturalNumber(), ecorePackage.getEBoolean(), "greaterOrEqual", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getNaturalNumber(), "n", 1, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(rangeEClass, Range.class, "Range", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRange_LowerBound(), ecorePackage.getELong(), "lowerBound", "0", 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRange_UpperBound(), ecorePackage.getELong(), "upperBound", "1", 1, 1, Range.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -494,7 +520,7 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		   source, 
 		   new String[] {
 			 "constraints", "ValueGreaterOrEqualZero"
-		   });									
+		   });											
 		addAnnotation
 		  (rangeEClass, 
 		   source, 
@@ -522,7 +548,19 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		   source, 
 		   new String[] {
 			 "ValueGreaterOrEqualZero", "self.value >= 0"
-		   });									
+		   });					
+		addAnnotation
+		  (getNaturalNumber__LessOrEqual__NaturalNumber(), 
+		   source, 
+		   new String[] {
+			 "body", "if self.infinity\r\nthen n.infinity\r\nelse self.value <= n.value\r\nendif"
+		   });		
+		addAnnotation
+		  (getNaturalNumber__GreaterOrEqual__NaturalNumber(), 
+		   source, 
+		   new String[] {
+			 "body", "n.lessOrEqual(self)"
+		   });						
 		addAnnotation
 		  (rangeEClass, 
 		   source, 

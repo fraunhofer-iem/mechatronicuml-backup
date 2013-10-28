@@ -113,4 +113,22 @@ public interface NaturalNumber extends EObject {
 	 */
 	boolean equals(EObject o);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" nRequired="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if self.infinity\r\nthen n.infinity\r\nelse self.value <= n.value\r\nendif'"
+	 * @generated
+	 */
+	boolean lessOrEqual(NaturalNumber n);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" nRequired="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='n.lessOrEqual(self)'"
+	 * @generated
+	 */
+	boolean greaterOrEqual(NaturalNumber n);
+
 } // NaturalNumber

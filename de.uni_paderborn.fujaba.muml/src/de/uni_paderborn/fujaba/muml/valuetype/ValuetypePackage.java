@@ -418,13 +418,31 @@ public interface ValuetypePackage extends EPackage {
 	int NATURAL_NUMBER___EQUALS__EOBJECT = 2;
 
 	/**
+	 * The operation id for the '<em>Less Or Equal</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NATURAL_NUMBER___LESS_OR_EQUAL__NATURALNUMBER = 3;
+
+	/**
+	 * The operation id for the '<em>Greater Or Equal</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NATURAL_NUMBER___GREATER_OR_EQUAL__NATURALNUMBER = 4;
+
+	/**
 	 * The number of operations of the '<em>Natural Number</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NATURAL_NUMBER_OPERATION_COUNT = 3;
+	int NATURAL_NUMBER_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl <em>Range</em>}' class.
@@ -620,6 +638,26 @@ public interface ValuetypePackage extends EPackage {
 	EOperation getNaturalNumber__Equals__EObject();
 
 	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#lessOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber) <em>Less Or Equal</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Less Or Equal</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#lessOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber)
+	 * @generated
+	 */
+	EOperation getNaturalNumber__LessOrEqual__NaturalNumber();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#greaterOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber) <em>Greater Or Equal</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Greater Or Equal</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#greaterOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber)
+	 * @generated
+	 */
+	EOperation getNaturalNumber__GreaterOrEqual__NaturalNumber();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.valuetype.Range <em>Range</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -793,6 +831,22 @@ public interface ValuetypePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation NATURAL_NUMBER___EQUALS__EOBJECT = eINSTANCE.getNaturalNumber__Equals__EObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Less Or Equal</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NATURAL_NUMBER___LESS_OR_EQUAL__NATURALNUMBER = eINSTANCE.getNaturalNumber__LessOrEqual__NaturalNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Greater Or Equal</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NATURAL_NUMBER___GREATER_OR_EQUAL__NATURALNUMBER = eINSTANCE.getNaturalNumber__GreaterOrEqual__NaturalNumber();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.valuetype.impl.RangeImpl <em>Range</em>}' class.

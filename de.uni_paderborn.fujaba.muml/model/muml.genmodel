@@ -486,6 +486,12 @@
         <genOperations ecoreOperation="muml.ecore#//valuetype/NaturalNumber/equals">
           <genParameters ecoreParameter="muml.ecore#//valuetype/NaturalNumber/equals/o"/>
         </genOperations>
+        <genOperations ecoreOperation="muml.ecore#//valuetype/NaturalNumber/lessOrEqual">
+          <genParameters ecoreParameter="muml.ecore#//valuetype/NaturalNumber/lessOrEqual/n"/>
+        </genOperations>
+        <genOperations ecoreOperation="muml.ecore#//valuetype/NaturalNumber/greaterOrEqual">
+          <genParameters ecoreParameter="muml.ecore#//valuetype/NaturalNumber/greaterOrEqual/n"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//valuetype/Range">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//valuetype/Range/lowerBound"/>

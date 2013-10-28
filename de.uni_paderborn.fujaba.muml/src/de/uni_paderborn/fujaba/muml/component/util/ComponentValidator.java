@@ -433,36 +433,31 @@ public class ComponentValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the MultiPortMustRefineMultiRole constraint of '<em>Discrete Port</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DISCRETE_PORT__MULTI_PORT_MUST_REFINE_MULTI_ROLE__EEXPRESSION = "if not (self.refinedRole.oclIsUndefined() and self.refinedRole.cardinality.oclIsUndefined() and self.refinedRole.cardinality.upperBound.oclIsUndefined()) then\r\n" +
-		"       self.multiPort implies self.refinedRole.multiRole\r\n" +
-		"else\r\n" +
-		"\ttrue\r\n" +
-		"endif";
-
-	/**
 	 * Validates the MultiPortMustRefineMultiRole constraint of '<em>Discrete Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateDiscretePort_MultiPortMustRefineMultiRole(DiscretePort discretePort, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.DISCRETE_PORT,
-				 discretePort,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "MultiPortMustRefineMultiRole",
-				 DISCRETE_PORT__MULTI_PORT_MUST_REFINE_MULTI_ROLE__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "MultiPortMustRefineMultiRole", getObjectLabel(discretePort, context) },
+						 new Object[] { discretePort },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

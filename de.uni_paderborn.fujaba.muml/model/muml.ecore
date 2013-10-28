@@ -71,7 +71,8 @@
         <details key="DiscretePortAtStructuredComponentHasNoBehavior" value="(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))&#xA;&#x9;implies self.behavior.oclIsUndefined()"/>
         <details key="DiscretePortRequiresRole" value="self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()"/>
         <details key="DiscretePortAndRoleSameMessageTypes" value="not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes = self.refinedRole.senderMessageTypes&#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes = self.refinedRole.receiverMessageTypes&#xD;&#xA;&#x9;)"/>
-        <details key="MultiPortMustRefineMultiRole" value="if not (self.refinedRole.oclIsUndefined() and self.refinedRole.cardinality.oclIsUndefined() and self.refinedRole.cardinality.upperBound.oclIsUndefined()) then&#xD;&#xA;       self.multiPort implies self.refinedRole.multiRole&#xD;&#xA;else&#xD;&#xA;&#x9;true&#xD;&#xA;endif"/>
+        <details key="DiscretePortCardinalityMustComplyWithRefinedRoleCardinality"
+            value="self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound)"/>
         <details key="MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"
             value="(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) &#xD;&#xA;implies &#xD;&#xA;((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"/>
       </eAnnotations>
@@ -1991,6 +1992,18 @@
           <details key="body" value="if (o instanceof NaturalNumber) {&#xD;&#xA;&#x9;NaturalNumber naturalNumber = (NaturalNumber) o;&#xD;&#xA;&#x9;// Value of infinity must be equal&#xD;&#xA;&#x9;if (isInfinity() != naturalNumber.isInfinity()) {&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;// If both are not infinite, make sure their value is identical.&#xD;&#xA;&#x9;if (!isInfinity() &amp;&amp; (naturalNumber.getValue() != getValue())) {&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;return false;"/>
         </eAnnotations>
         <eParameters name="o" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eOperations>
+      <eOperations name="lessOrEqual" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="body" value="if self.infinity&#xD;&#xA;then n.infinity&#xD;&#xA;else self.value &lt;= n.value&#xD;&#xA;endif"/>
+        </eAnnotations>
+        <eParameters name="n" lowerBound="1" eType="#//valuetype/NaturalNumber"/>
+      </eOperations>
+      <eOperations name="greaterOrEqual" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="body" value="n.lessOrEqual(self)"/>
+        </eAnnotations>
+        <eParameters name="n" lowerBound="1" eType="#//valuetype/NaturalNumber"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
           defaultValueLiteral="1">

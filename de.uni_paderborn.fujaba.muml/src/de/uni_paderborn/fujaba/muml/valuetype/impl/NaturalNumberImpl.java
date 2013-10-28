@@ -9,9 +9,12 @@ package de.uni_paderborn.fujaba.muml.valuetype.impl;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
@@ -205,6 +208,54 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #lessOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber) <em>Less Or Equal</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #lessOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate LESS_OR_EQUAL_NATURAL_NUMBER__EINVOCATION_DELEGATE = ((EOperation.Internal)ValuetypePackage.Literals.NATURAL_NUMBER___LESS_OR_EQUAL__NATURALNUMBER).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean lessOrEqual(NaturalNumber n) {
+		try {
+			return (Boolean)LESS_OR_EQUAL_NATURAL_NUMBER__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{n}));
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #greaterOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber) <em>Greater Or Equal</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #greaterOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate GREATER_OR_EQUAL_NATURAL_NUMBER__EINVOCATION_DELEGATE = ((EOperation.Internal)ValuetypePackage.Literals.NATURAL_NUMBER___GREATER_OR_EQUAL__NATURALNUMBER).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean greaterOrEqual(NaturalNumber n) {
+		try {
+			return (Boolean)GREATER_OR_EQUAL_NATURAL_NUMBER__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{n}));
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -287,6 +338,10 @@ public class NaturalNumberImpl extends EObjectImpl implements NaturalNumber {
 				return toString();
 			case ValuetypePackage.NATURAL_NUMBER___EQUALS__EOBJECT:
 				return equals((EObject)arguments.get(0));
+			case ValuetypePackage.NATURAL_NUMBER___LESS_OR_EQUAL__NATURALNUMBER:
+				return lessOrEqual((NaturalNumber)arguments.get(0));
+			case ValuetypePackage.NATURAL_NUMBER___GREATER_OR_EQUAL__NATURALNUMBER:
+				return greaterOrEqual((NaturalNumber)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
