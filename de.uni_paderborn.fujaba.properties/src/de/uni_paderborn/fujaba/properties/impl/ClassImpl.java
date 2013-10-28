@@ -155,7 +155,7 @@ public class ClassImpl extends EObjectImpl implements de.uni_paderborn.fujaba.pr
 	 */
 	public de.uni_paderborn.fujaba.properties.Package getPackage() {
 		if (eContainerFeatureID() != PropertiesPackage.CLASS__PACKAGE) return null;
-		return (de.uni_paderborn.fujaba.properties.Package)eInternalContainer();
+		return (de.uni_paderborn.fujaba.properties.Package)eContainer();
 	}
 
 	/**

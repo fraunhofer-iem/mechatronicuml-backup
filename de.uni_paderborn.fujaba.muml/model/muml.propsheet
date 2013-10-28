@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fujaba="http://de.uni_paderborn.fujaba.properties/0.1" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.1" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
   <reconciler>
     <customTransformations uri="/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
     <customTransformations uri="/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
@@ -28,12 +28,12 @@
       <properties tooltip="" reconcile="false">
         <genFeature href="muml.genmodel#//muml/valuetype/Cardinality/lowerBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
       <properties tooltip="" reconcile="false">
         <genFeature href="muml.genmodel#//muml/valuetype/Cardinality/upperBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -41,12 +41,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/valuetype/NaturalNumber/value"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:SpinnerPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
       <properties category="//@packages.0/@classes.1/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/valuetype/NaturalNumber/infinity"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <propertyCategories title="Booleans" open="true" properties="//@packages.0/@classes.1/@properties.1"/>
     </classes>
@@ -55,12 +55,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/valuetype/Range/lowerBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:SpinnerPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/valuetype/Range/upperBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:SpinnerPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -68,12 +68,12 @@
       <properties reconcile="false">
         <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/value"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/unit"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
@@ -85,12 +85,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Deadline/upperBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Deadline/lowerBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.0">
@@ -98,7 +98,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/AbsoluteDeadline/clock"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.0">
@@ -109,7 +109,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Clock/statechart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
@@ -118,7 +118,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Region/parentState"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="#//@packages.1/@classes.15"/>
@@ -128,57 +128,57 @@
       <properties category="//@packages.1/@classes.5/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/embeddedRegions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/doEvent"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/exitEvent"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/entryEvent"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.5/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/invariants"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.5/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/initial"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.5/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/final"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.5/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/urgent"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.5/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/channels"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.5/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/connectionPoints"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/State/parentStatechart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <propertyCategories title="Booleans" open="true" properties="//@packages.1/@classes.5/@properties.5 //@packages.1/@classes.5/@properties.6 //@packages.1/@classes.5/@properties.7"/>
       <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.5/@properties.0 //@packages.1/@classes.5/@properties.4 //@packages.1/@classes.5/@properties.8 //@packages.1/@classes.5/@properties.9"/>
@@ -188,12 +188,12 @@
       <properties category="//@packages.1/@classes.6/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Vertex/outgoingTransitions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.6/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Vertex/incomingTransitions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Transitions" open="true" properties="//@packages.1/@classes.6/@properties.0 //@packages.1/@classes.6/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -204,67 +204,67 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/synchronization"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/target"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/source"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/statechart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.7/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/clockResets"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.7/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/clockConstraints"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.7/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/absoluteDeadlines"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/relativeDeadline"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.7/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/blockable"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <properties reconcile="false">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/guard"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.7/@propertyCategories.1">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/events"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/action"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.7/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Transition/urgent"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <propertyCategories title="Booleans" open="true" properties="//@packages.1/@classes.7/@properties.8 //@packages.1/@classes.7/@properties.12"/>
       <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.7/@properties.4 //@packages.1/@classes.7/@properties.5 //@packages.1/@classes.7/@properties.6 //@packages.1/@classes.7/@properties.10"/>
@@ -277,17 +277,17 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/ClockConstraint/bound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/ClockConstraint/clock"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/ClockConstraint/operator"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
@@ -296,7 +296,7 @@
       <properties tooltip="" reconcile="false">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Action/expressions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
@@ -305,7 +305,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/AsynchronousMessageEvent/message"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.19">
@@ -313,12 +313,12 @@
       <properties tooltip="">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/DoEvent/action"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/DoEvent/period"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.19">
@@ -326,12 +326,12 @@
       <properties category="//@packages.1/@classes.12/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/EntryOrExitEvent/clockResets"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/EntryOrExitEvent/action"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.12/@properties.0"/>
     </classes>
@@ -340,12 +340,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/SynchronizationChannel/state"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/SynchronizationChannel/selectorType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
@@ -355,17 +355,17 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Synchronization/syncChannel"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Synchronization/kind"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
       <properties reconcile="false">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Synchronization/selectorExpression"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
@@ -374,7 +374,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/PrioritizedElement/priority"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:SpinnerPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -382,22 +382,22 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/parentRegion"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.16/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/transitions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.16/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/states"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.16/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/RealtimeStatechart/clocks"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.16/@properties.1 //@packages.1/@classes.16/@properties.2 //@packages.1/@classes.16/@properties.3"/>
       <superClasses href="#//@packages.7/@classes.1"/>
@@ -409,7 +409,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Event/kind"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.17">
@@ -423,12 +423,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Message/instanceOf"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties category="//@packages.1/@classes.20/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Message/parameterBinding"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.20/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
@@ -444,7 +444,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/realtimestatechart/StateConnectionPoint/state"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.23">
@@ -461,17 +461,17 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties category="//@packages.2/@classes.0/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/portInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/componentPart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.0/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
@@ -484,7 +484,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/instance/PortInstance/componentInstance"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.2/@classes.1">
@@ -498,12 +498,12 @@
       <properties category="//@packages.2/@classes.5/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/componentInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties category="//@packages.2/@classes.5/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/portConnectorInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.5/@properties.0 //@packages.2/@classes.5/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -529,12 +529,12 @@
       <properties category="//@packages.2/@classes.11/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/portInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocolOccurrence"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.11/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
@@ -544,7 +544,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/instance/StructuredComponentInstance/embeddedCIC"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.2/@classes.0">
@@ -558,12 +558,12 @@
       <properties category="//@packages.3/@classes.0/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/msgtype/MessageType/parameters"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/msgtype/MessageType/repository"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.3/@classes.0/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -574,7 +574,7 @@
       <properties category="//@packages.3/@classes.1/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/msgtype/MessageTypeRepository/messageTypes"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.3/@classes.1/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -588,12 +588,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/types/ArrayDataType/type"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties reconcile="false">
         <genFeature href="muml.genmodel#//muml/types/ArrayDataType/cardinality"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.4/@classes.2">
@@ -601,7 +601,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/types/PrimitiveDataType/primitiveType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -614,7 +614,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/types/RangedPrimitiveDataType/rangedType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
   </packages>
@@ -634,7 +634,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/protocol/Role/coordinationProtocol"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.9/@classes.1">
@@ -642,12 +642,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/protocol/RoleConnector/coordinationProtocol"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/protocol/RoleConnector/connectorQualityOfServiceAssumptions"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -655,17 +655,17 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/minMessageDelay"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/maxMessageDelay"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties category="//@packages.5/@classes.4/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/protocol/ConnectorQualityOfServiceAssumptions/messageLossPossible"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <propertyCategories title="Booleans" open="true" properties="//@packages.5/@classes.4/@properties.2"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -678,17 +678,17 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/constraint/Constraint/correctness"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
       <properties category="//@packages.6/@classes.0/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/constraint/Constraint/background"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/constraint/Constraint/constrainableElement"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <propertyCategories title="Booleans" open="true" properties="//@packages.6/@classes.0/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
@@ -704,7 +704,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/constraint/TextualConstraint/textualExpression"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <superClasses href="#//@packages.6/@classes.2"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
@@ -714,7 +714,7 @@
       <properties category="//@packages.6/@classes.4/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/constraint/ConstrainableElement/constraint"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.6/@classes.4/@properties.0"/>
     </classes>
@@ -726,7 +726,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/behavior/BehavioralElement/behavior"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -734,17 +734,17 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/behavior/Behavior/behavioralElement"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties category="//@packages.7/@classes.1/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/behavior/Behavior/operations"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties category="//@packages.7/@classes.1/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/behavior/Behavior/variables"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.7/@classes.1/@properties.1 //@packages.7/@classes.1/@properties.2"/>
     </classes>
@@ -753,7 +753,7 @@
       <properties reconcile="false">
         <genFeature href="muml.genmodel#//muml/behavior/Variable/initializeExpression"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <superClasses href="#//@packages.7/@classes.6"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -763,17 +763,17 @@
       <properties tooltip="">
         <genFeature href="muml.genmodel#//muml/behavior/Operation/returnType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties tooltip="" reconcile="false">
         <genFeature href="muml.genmodel#//muml/behavior/Operation/implementations"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <properties tooltip="">
         <genFeature href="muml.genmodel#//muml/behavior/Operation/parameters"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
@@ -788,12 +788,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/behavior/ParameterBinding/parameter"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties reconcile="false">
         <genFeature href="muml.genmodel#//muml/behavior/ParameterBinding/value"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
@@ -802,7 +802,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/behavior/TypedNamedElement/dataType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
@@ -814,12 +814,12 @@
       <properties category="//@packages.8/@classes.0/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/component/Component/ports"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/component/Component/componentType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.0/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -831,7 +831,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/component/Port/component"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.8/@classes.13">
@@ -842,7 +842,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/component/DiscretePort/refinedRole"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes>
@@ -850,17 +850,17 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/component/ComponentPart/componentType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/component/ComponentPart/parentComponent"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/component/ComponentPart/cardinality"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
@@ -883,7 +883,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/component/PortConnector/parentComponent"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.8/@classes.13">
@@ -891,7 +891,7 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/component/HybridPort/samplingInterval"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.8/@classes.0">
@@ -899,7 +899,7 @@
       <properties category="//@packages.8/@classes.11/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/component/StructuredComponent/connectors"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.11/@properties.0"/>
     </classes>
@@ -908,12 +908,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/coordinationProtocol"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties category="//@packages.8/@classes.12/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/portParts"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.12/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -923,12 +923,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/kind"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
       <properties category="//@packages.8/@classes.13/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/optional"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:CheckboxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
       <propertyCategories title="Booleans" open="true" properties="//@packages.8/@classes.13/@properties.1"/>
     </classes>
@@ -937,17 +937,17 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/component/PortPart/portType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/component/PortPart/componentPart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/component/PortPart/coordinationProtocolOccurence"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
   </packages>
@@ -958,7 +958,7 @@
       <properties category="//@packages.9/@classes.0/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpoint/connectors"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.0/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -968,7 +968,7 @@
       <properties category="//@packages.9/@classes.1/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/Connector/connectorEndpoints"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.1/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -978,12 +978,12 @@
       <properties category="//@packages.9/@classes.2/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpointInstance/connectorInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/ConnectorEndpointInstance/type"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.2/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -994,12 +994,12 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/ConnectorInstance/type"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties category="//@packages.9/@classes.3/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/ConnectorInstance/connectorEndpointInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.3/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -1009,33 +1009,33 @@
       <properties category="//@packages.9/@classes.4/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/senderMessageTypes"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties category="//@packages.9/@classes.4/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageTypes"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/adaptationBehavior"/>
-        <filters xsi:type="de.fujaba:OCLPropertyFilter" expression="cardinality.upperBound.value > 1"/>
+        <filters xsi:type="de.uni_paderborn.fujaba:OCLPropertyFilter" expression="cardinality.upperBound.value > 1"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/cardinality"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
       <properties category="//@packages.9/@classes.4/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.4/@properties.0 //@packages.9/@classes.4/@properties.1 //@packages.9/@classes.4/@properties.5"/>
       <superClasses href="#//@packages.6/@classes.4"/>
@@ -1051,17 +1051,17 @@
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/next"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/DiscreteSingleInteractionEndpointInstance/previous"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.9/@classes.5">
@@ -1069,17 +1069,17 @@
       <properties category="//@packages.9/@classes.7/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/first"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/DiscreteMultiInteractionEndpointInstance/last"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.7/@properties.0"/>
     </classes>
@@ -1088,21 +1088,21 @@
       <properties reconcile="false">
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/bufferSize"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
       <properties category="//@packages.9/@classes.8/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/messageType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/connector/MessageBuffer/discreteInteractionEndpoint"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.fujaba:ComboBoxPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.8/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
   </packages>
-</de.fujaba:PropertyGenerator>
+</de.uni_paderborn.fujaba:PropertyGenerator>

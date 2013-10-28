@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fujaba="http://de.uni_paderborn.fujaba.properties/0.1" defaultTab="//@tabs.0" contributorId="">
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.1" defaultTab="//@tabs.0" contributorId="">
   <reconciler/>
   <genModel href="../../org.storydriven.core/model/core.uml.genmodel#/"/>
   <plugin id="org.storydriven.core.edit.properties" name="Storydriven Properties" vendor="SDM" version="0.4.0.qualifier">
@@ -19,7 +19,7 @@
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement"/>
       <properties tab="//@tabs.1" reconcile="false">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/CommentableElement/comment"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor" multiLine="true"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
       </properties>
     </classes>
     <classes>
@@ -32,7 +32,7 @@
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.1">
@@ -48,15 +48,15 @@
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/TextualExpression"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/TextualExpression/expressionText"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/TextualExpression/language"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/TextualExpression/languageVersion"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
   </packages>
@@ -66,7 +66,7 @@
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/UnaryExpression"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/UnaryExpression/operator"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.0">
@@ -76,29 +76,29 @@
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ComparisonExpression"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ComparisonExpression/operator"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.2/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ArithmeticExpression"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/ArithmeticExpression/operator"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.2/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LogicalExpression"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LogicalExpression/operator"/>
-        <editor xsi:type="de.fujaba:RadioPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.0">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LiteralExpression"/>
       <properties tab="//@tabs.0">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/expressions/common/LiteralExpression/value"/>
-        <editor xsi:type="de.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
   </packages>
-</de.fujaba:PropertyGenerator>
+</de.uni_paderborn.fujaba:PropertyGenerator>

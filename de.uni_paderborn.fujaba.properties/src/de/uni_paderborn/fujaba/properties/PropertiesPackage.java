@@ -47,7 +47,7 @@ public interface PropertiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "de.fujaba";
+	String eNS_PREFIX = "de.uni_paderborn.fujaba";
 
 	/**
 	 * The singleton instance of the package.

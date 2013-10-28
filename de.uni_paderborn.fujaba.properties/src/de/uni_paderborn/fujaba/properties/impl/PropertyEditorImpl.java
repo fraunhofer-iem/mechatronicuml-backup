@@ -54,7 +54,7 @@ public abstract class PropertyEditorImpl extends EObjectImpl implements Property
 	 */
 	public Property getProperty() {
 		if (eContainerFeatureID() != PropertiesPackage.PROPERTY_EDITOR__PROPERTY) return null;
-		return (Property)eInternalContainer();
+		return (Property)eContainer();
 	}
 
 	/**
