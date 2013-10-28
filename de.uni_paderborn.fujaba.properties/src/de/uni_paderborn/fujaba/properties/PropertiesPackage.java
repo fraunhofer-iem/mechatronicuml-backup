@@ -39,7 +39,7 @@ public interface PropertiesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://de.uni_paderborn.fujaba.properties/0.1";
+	String eNS_URI = "http://de.uni_paderborn.fujaba.properties/0.4.0";
 
 	/**
 	 * The package namespace name.
