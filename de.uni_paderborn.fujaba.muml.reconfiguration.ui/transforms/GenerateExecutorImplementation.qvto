@@ -1,3 +1,8 @@
+import transforms.lib.RTSCBaseLibrary;
+import transforms.lib.ActionLanguageBaseLibrary;
+import transforms.lib.TypeAndBehaviorLibrary;
+import transforms.lib.MessageTypeLibrary;
+import transforms.lib.ProjectSpecificConstants;
 
 --core models
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
@@ -31,7 +36,124 @@ modeltype componentstory uses componentstorydiagram::controlflow("http://www.fuj
 transformation GenerateExecutorImplementation(inout inputComponent : component, inout category : modelinst);
 
 main() {
-
-
-	--var rtscCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.realtimestatechart.category') -> any(true);
+	var theComponent : ReconfigurableStructuredComponent := inputComponent.rootObjects()[ReconfigurableStructuredComponent] -> any(true);
+	var rootNode : RootNode := category.rootObjects()[RootNode] -> any(true);
+	
+	createExecutorImplementation(theComponent, rootNode);
 }
+
+-- creates an implementation for the executor
+helper createExecutorImplementation(inout theComponent : ReconfigurableStructuredComponent, inout rootNode : RootNode){
+	
+	-- create the statechart
+	var rtsc : RealtimeStatechart := new RealtimeStatechart(theComponent.name + '_Executor_RTSC');
+	rtsc.comment := 'Generated Real-Time Statechart -- DO NOT EDIT!';
+	
+	-- assign it to the executor
+	theComponent.executor.behavior := rtsc;
+	
+	-- add statechart to category
+	rootNode.getRTSCCategory().modelElements += rtsc;
+	
+	--generate static statechart frame (black parts in the generation template)
+	generateStaticStatechartFrame(rootNode, theComponent.executor);
+	
+	--generate variable parts of the statechart (colored parts in the generation template)
+	--TODO write this part
+	
+	return;
+}
+
+-- generates the static statechart frame (the 'black' parts in the manager generation template)
+helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor : Executor){
+	
+	-- retrieve statechart
+	var executorRTSC : RealtimeStatechart := executor.behavior.oclAsType(RealtimeStatechart);
+	
+	-- generate initial state
+	var initialState : State := new State(genStateExecutor_Main);
+	initialState.initial := true;
+	executorRTSC.states += initialState;
+	
+	-- add variables
+	executorRTSC.variables += new Variable(genVarExecutor_Reconfiguration, rootNode.getPrimitiveType(intType));
+	executorRTSC.variables += new Variable(genVarExecutor_TwoPCResult, rootNode.getPrimitiveType(boolType));
+	executorRTSC.variables += new Variable(genVarExecutor_TmpCommitTime, rootNode.getPrimitiveType(intType));
+	
+	-- add sync channels
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorExecute, rootNode.getPrimitiveType(boolType));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorStartExecution, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorVotingComplete, rootNode.getPrimitiveType(boolType));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorDoAbort, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinished, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorPerformReconf, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinish, rootNode.getPrimitiveType(boolType));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinished2PC, null);
+
+	
+	-- generate embedded statecharts
+	var parentSubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCExecutor_Parent, initialState, 2);
+	generateStaticParentStatechartFrame(rootNode, parentSubRTSC);
+	executor.ports -> any(name = 'parent').behavior := parentSubRTSC;
+	
+	var executorSubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCExecutor_Events, initialState, 1);
+	generateStaticEventsStatechartFrame(rootNode, executorSubRTSC);
+	executor.ports -> any(name = 'events').behavior := executorSubRTSC;
+	
+	var internalRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCExecutor_Internal, initialState, 3);
+	generateStaticInternalBehaviorStatechartFrame(rootNode, internalRTSC);
+	
+	var embeddedCISubRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCExecutor_EmbeddedCI, initialState, 4);
+	generateStaticEmbeddedCIStatechartFrame(rootNode, embeddedCISubRTSC);
+	executor.ports -> any(name = 'embeddedCI').roleAndAdaptationBehavior := embeddedCISubRTSC;
+	executor.ports -> any(name = 'embeddedCI').behavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_subrole);
+	executor.ports -> any(name = 'embeddedCI').adaptationBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_adapt);
+	
+	-- configure message types of ports
+	var currentPort : DiscretePort = null;
+	
+	-- parent port
+	currentPort := executor.ports -> any(name = 'parent');
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	
+	-- events port
+	currentPort := executor.ports -> any(name = 'events');
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	
+	-- embeddedCI port
+	currentPort := executor.ports -> any(name = 'embeddedCI');
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	
+	return;
+}
+
+-- generates the static statechart frame for the parent statechart (the 'black' parts in the executor generation template)
+helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+}
+
+-- generates the static statechart frame for the events statechart (the 'black' parts in the executor generation template)
+helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+}
+
+-- generates the static statechart frame for the internal behavior statechart (the 'black' parts in the executor generation template)
+helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+}
+
+-- generates the static statechart frame for the embeddedCI statechart (the 'black' parts in the executor generation template)
+helper generateStaticEmbeddedCIStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+}
+
