@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.platform.impl;
 
+import de.uni_paderborn.fujaba.muml.hardware.platform.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;

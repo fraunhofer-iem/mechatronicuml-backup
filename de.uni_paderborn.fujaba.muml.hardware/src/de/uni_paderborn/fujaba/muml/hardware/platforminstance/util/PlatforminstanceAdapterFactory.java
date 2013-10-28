@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.util;
 
+import de.uni_paderborn.fujaba.muml.hardware.platforminstance.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;

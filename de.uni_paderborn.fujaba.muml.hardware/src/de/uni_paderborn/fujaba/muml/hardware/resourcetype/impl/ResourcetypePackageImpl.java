@@ -1028,10 +1028,322 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/emf/2002/GenModel
+		createGenModelAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGenModelAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/GenModel";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "documentation", "The package resourcetype contains all classes for modeling atomic and structured resource types in the Resource Type Viewpoint.\n"
+		   });			
+		addAnnotation
+		  (resourceTypeEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This abstract class is the super class of all resource types."
+		   });		
+		addAnnotation
+		  (getResourceType_Hwports(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPort of this ResourceType.\n\n"
+		   });		
+		addAnnotation
+		  (computingResourceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This abstract class represent all resources which are able to execute code."
+		   });				
+		addAnnotation
+		  (memoryResourceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents an AtomicResource that is capable of storing data. \n"
+		   });		
+		addAnnotation
+		  (getMemoryResource_MemoryAccess(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Specifies what kind of access is allowed for this MemoryResource."
+		   });		
+		addAnnotation
+		  (getMemoryResource_IsVolatile(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Specifies if this MemoryResource is volatile or non-volatile. \nNon-volatile Memory (i.e. ROM) could be used to store the binary code.\nVolatile Memory (i.e SRAM) is used during execution of code."
+		   });		
+		addAnnotation
+		  (getMemoryResource_MemoryType(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The type of this MemoryResource."
+		   });		
+		addAnnotation
+		  (deviceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a device.\nDevices are resources that interact with the environment (i.e. sensors, actuators)."
+		   });		
+		addAnnotation
+		  (getDevice_DeviceType(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines the type of the Device: Sensor or Actuator."
+		   });		
+		addAnnotation
+		  (cacheEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "The class Cache represents a Cache used by a Processor."
+		   });		
+		addAnnotation
+		  (getCache_WritePolicy(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines the write policy of the Cache."
+		   });		
+		addAnnotation
+		  (getCache_ReplacementPolicy(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines the replacement policy for this Cache."
+		   });		
+		addAnnotation
+		  (getCache_NbSets(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Specifies the number of sets.\n If the nbSets are one, the cache is full-associative."
+		   });		
+		addAnnotation
+		  (getCache_Associativity(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The associativity of this cache. It represents the number of blocks in one set. An associativity of 1 represents a direct mapped cache."
+		   });		
+		addAnnotation
+		  (programmableLogicDeviceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class  represents a hardware component to build reconfigurable digital circuits (i.e. FPGA)."
+		   });		
+		addAnnotation
+		  (processorEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "The class Processor is a ComputingResource. It represents different kind of a processor specified by its family and architecture."
+		   });				
+		addAnnotation
+		  (getProcessor_OwnedCache(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The Cache which belongs to this Processor."
+		   });		
+		addAnnotation
+		  (getProcessor_Architecture(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The architecture of this Processor (i.e. RISC,CISC,..)."
+		   });		
+		addAnnotation
+		  (getProcessor_NbCores(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The number of cores of this Processor."
+		   });		
+		addAnnotation
+		  (getProcessor_Family(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The family of this Processor (i.e. x86, ARM, MIPS,..)."
+		   });		
+		addAnnotation
+		  (getProcessor_NbPipelineStages(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The number of pipelines for this processor."
+		   });		
+		addAnnotation
+		  (atomicResourceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This abstract class is the super class of all atomic resource types.\nAtomicResources  can not be further sub-divided."
+		   });		
+		addAnnotation
+		  (getAtomicResource_ParentStructuredResource(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The StructuredResource, this AtomicResource belongs to."
+		   });		
+		addAnnotation
+		  (structuredResourceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents all StructuredResource (i.e. ECUs, Server,etc.). A StructuredResource consists of several AtomicResources."
+		   });		
+		addAnnotation
+		  (getStructuredResource_EmbeddedAtomicResources(), 
+		   source, 
+		   new String[] {
+			 "documentation", "All AtomicResources which are contained in this StructuredResource."
+		   });		
+		addAnnotation
+		  (hwPortEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a hardware port of a resource.\nHardware ports are external interfaces which are used to connect resources via CommunicationMedia."
+		   });				
+		addAnnotation
+		  (getHWPort_ParentResource(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The Resource, this HWPort belongs to."
+		   });		
+		addAnnotation
+		  (getHWPort_PortType(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines if this HWPort is  a bus or a link port."
+		   });		
+		addAnnotation
+		  (getHWPort_Protocol(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The CommunicationProtocol this HWPort uses to transmit data."
+		   });		
+		addAnnotation
+		  (deviceKindEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "Specifies the kind of the device."
+		   });		
+		addAnnotation
+		  (processorArchitectureEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines the architecture of a Processor."
+		   });		
+		addAnnotation
+		  (memoryAccessKindEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "Decides what kind of access is allowed for a MemoryResource."
+		   });		
+		addAnnotation
+		  (memoryKindEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "Decides the type of a MemoryResource."
+		   });		
+		addAnnotation
+		  (replacementPolicyEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "The entries of the enumeration represent different kinds of replacement policies for a Cache."
+		   });		
+		addAnnotation
+		  (writePolicyEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines the write policy of a cache."
+		   });		
+		addAnnotation
+		  (hwPortKindEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines the kind of a HWPort."
+		   });		
+		addAnnotation
+		  (resourceTypeRepositoryEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a repository containing several resource types."
+		   });				
+		addAnnotation
+		  (getResourceTypeRepository_ResourceTypes(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The ResourceTypes that are contained in this ResourceTypeRepository."
+		   });		
+		addAnnotation
+		  (getResourceTypeRepository_Protocols(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The CommunicationProtocols that belong to this ResourceTypeRepository.\nCommunicationProtocols are used to specify the protocol used by HWPort and CommunicationMedia."
+		   });		
+		addAnnotation
+		  (communicationProtocolEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This abstract class represents the CommunicationProtocol used by the HWPorts and CommunicationMedia.\nIt is used to match Ports and CommunicationMedia."
+		   });		
+		addAnnotation
+		  (getCommunicationProtocol_IsTimeTriggered(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines if the protocol is time triggered. "
+		   });		
+		addAnnotation
+		  (getCommunicationProtocol_IsEventTriggered(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines if this protocol is event triggered."
+		   });		
+		addAnnotation
+		  (getCommunicationProtocol_FurtherInformation(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Further information for this protocol (i.e. Version, or another Protocol)."
+		   });		
+		addAnnotation
+		  (busProtocolKindEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "Decides the used protocol for a BusProtocol."
+		   });		
+		addAnnotation
+		  (busProtocolEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a bus protocol used by bus media and bus ports."
+		   });		
+		addAnnotation
+		  (getBusProtocol_BusProtocol(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The bus protocol type."
+		   });		
+		addAnnotation
+		  (linkProtocolEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a link protocol used by link media and link ports."
+		   });		
+		addAnnotation
+		  (getLinkProtocol_LinkProtocol(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The link protocol type."
+		   });		
+		addAnnotation
+		  (linkProtocolKindEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "Decides the used protocol for a LinkProtocol."
+		   });
 	}
 
 	/**

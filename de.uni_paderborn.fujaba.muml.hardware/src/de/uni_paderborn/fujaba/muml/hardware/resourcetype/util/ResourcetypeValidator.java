@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.resourcetype.util;
 
+import de.uni_paderborn.fujaba.muml.hardware.resourcetype.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;

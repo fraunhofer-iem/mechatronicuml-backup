@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.util;
 
+import de.uni_paderborn.fujaba.muml.hardware.platforminstance.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;

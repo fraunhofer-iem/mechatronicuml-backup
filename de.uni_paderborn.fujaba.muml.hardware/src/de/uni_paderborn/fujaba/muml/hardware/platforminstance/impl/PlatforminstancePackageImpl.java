@@ -331,6 +331,8 @@ public class PlatforminstancePackageImpl extends EPackageImpl implements Platfor
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/GenModel
+		createGenModelAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
 	}
@@ -351,6 +353,88 @@ public class PlatforminstancePackageImpl extends EPackageImpl implements Platfor
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });													
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGenModelAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/GenModel";			
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "documentation", "This package contains all classes of the Platform Instance Viewpoint.\n"
+		   });		
+		addAnnotation
+		  (hwPlatformInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a hardware platform at instance level. "
+		   });		
+		addAnnotation
+		  (getHWPlatformInstance_HwplatformType(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPlatform type of which this instance is derived."
+		   });		
+		addAnnotation
+		  (getHWPlatformInstance_ResourceInstances(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The ResourceInstances that belong to this HWPlatformInstance."
+		   });		
+		addAnnotation
+		  (getHWPlatformInstance_CommunicationResources(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The CommunicationResources that belong to this HWPlatformInstance."
+		   });		
+		addAnnotation
+		  (getHWPlatformInstance_HwplatformInstances(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPlatformInstances that are embedded in this HWPlatformInstance."
+		   });			
+		addAnnotation
+		  (getHWPlatformInstance_DerivedBridges(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The derived Bridges of this HWPlatformInstance. \nThe Bridges are used to connect different HWPlatformInstances via CommunicationMedia."
+		   });		
+		addAnnotation
+		  (getHWPlatformInstance_DelegationPorts(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The delegation ports of this HWPlatformInstance. They are derived from the HWPlatform type."
+		   });		
+		addAnnotation
+		  (getHWPlatformInstance_Delegations(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The delegations of this HWPlatformInstance. They are derived from is HWPlatform type."
+		   });		
+		addAnnotation
+		  (hwPlatformInstanceConfigurationEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a HWPlatformInstanceConfiguration.\nA HWPlatformInstanceConfiguration consists of several HWPlatformInstances.\nThe HWPlatformInstances might be connected via different CommunicationMedia."
+		   });		
+		addAnnotation
+		  (getHWPlatformInstanceConfiguration_HwplatformInstances(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The set of HWPlatformInstances of this HWPlatformInstanceConfiguration."
+		   });		
+		addAnnotation
+		  (getHWPlatformInstanceConfiguration_CommunicationMedia(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The CommunicationMedia of this HWPlatformInstanceConfiguration. \nThe CommunicationMedia are used to connect different HWPlatformInstances via their Bridges or HWPortInstances."
+		   });
 	}
 
 	/**

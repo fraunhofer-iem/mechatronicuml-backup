@@ -1399,10 +1399,478 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/emf/2002/GenModel
+		createGenModelAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGenModelAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/GenModel";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "documentation", "The package platform contains all classes of the Platform Type Viewpoint.\nHardware platforms are defined at the type level and may be instantiated in a HWPlatformInstanceConfiguration at the Platform Instance Viewpoint.\n"
+		   });			
+		addAnnotation
+		  (hwPlatformConfigurationEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a hardware platform configuration at type level.\n A hardware platform configuration consists of several HWPlatforms and ResourceInstanceRepositories that contain all ResourceInstances to build a HWPlatform."
+		   });		
+		addAnnotation
+		  (getHWPlatformConfiguration_Hwplatforms(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPlatforms that are contained in this HWPlatformConfiguration."
+		   });		
+		addAnnotation
+		  (getHWPlatformConfiguration_Repositories(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The ResourceInstanceRepositories that belong to this HWPlatformConfiguration."
+		   });		
+		addAnnotation
+		  (resourceInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This abstract class is the super class of all resource instances.\nThe associated HWPortInstances are determined by its resource type."
+		   });		
+		addAnnotation
+		  (getResourceInstance_ResourceType(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The resource type of which this ResourceInstance is derived."
+		   });		
+		addAnnotation
+		  (getResourceInstance_HwportInstances(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPortInstances which belong to this ResourceInstance. They are derived by the resourceType."
+		   });		
+		addAnnotation
+		  (computingResourceInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents an instance of a ComputingResource.\nComputingResources are resources that are able to execute code."
+		   });		
+		addAnnotation
+		  (getComputingResourceInstance_Frequency(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The frequency or clock rate of this ComputingResource."
+		   });				
+		addAnnotation
+		  (memoryResourceInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This abstract class is the super class for all memory instances."
+		   });		
+		addAnnotation
+		  (getMemoryResourceInstance_MemorySize(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The total size of  memory this instances provides."
+		   });		
+		addAnnotation
+		  (getMemoryResourceInstance_Throughput(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The maximum speed at which the memory can be read."
+		   });			
+		addAnnotation
+		  (getMemoryResourceInstance_MemoryType(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The type of this MemoryInstance. It is derived from its resourceType."
+		   });		
+		addAnnotation
+		  (deviceInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This abstract class is the super class of all sensors and actuators at instance level."
+		   });				
+		addAnnotation
+		  (storageMemoryInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents an instance of non-volatile memory which is capable of storing data."
+		   });				
+		addAnnotation
+		  (processingMemoryInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents fast and volatile processing memory (i.e. SRAM)."
+		   });		
+		addAnnotation
+		  (cacheInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a cache at instance level."
+		   });				
+		addAnnotation
+		  (programmableLogicDeviceInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a PLD at instance level."
+		   });				
+		addAnnotation
+		  (processorInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "A processor at instance level."
+		   });		
+		addAnnotation
+		  (getProcessorInstance_MIPS(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The MIPS-Rate (Million instructions per second) of this ProcessorInstance."
+		   });		
+		addAnnotation
+		  (getProcessorInstance_CPI(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The average count of cycles per instruction (CPI) of this ProcessorInstance."
+		   });		
+		addAnnotation
+		  (getProcessorInstance_OwnedCacheInstance(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The CacheInstance this ProcessorInstance uses."
+		   });		
+		addAnnotation
+		  (atomicResourceInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "The abstract class AtomicResourceInstance is the super class for all atomic resource instances."
+		   });		
+		addAnnotation
+		  (getAtomicResourceInstance_ParentStructuredResourceInstance(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The StructuredResourceInstance, this AtomicResourceInstance belongs to."
+		   });				
+		addAnnotation
+		  (structuredResourceInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a structured resource at instance level.\nA StructuredResourceInstance is  derived from its resourcetype.\nThe embedded AtomicResourceInstances of this StructuredResourceInstance are derived from its type."
+		   });		
+		addAnnotation
+		  (getStructuredResourceInstance_EmbeddedAtomicResourceInstances(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The AtomicResourceInstances which are contained in this StructuredResourceInstance.\nThe AtomicResourceInstances are determined by the AtomicResources which are embedded in the StructuredResource type."
+		   });		
+		addAnnotation
+		  (communicationResourceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents all resources which are able to transmit data."
+		   });		
+		addAnnotation
+		  (busEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a bus. A bus is used to connect several BusPortInstances."
+		   });					
+		addAnnotation
+		  (getBus_ConnectedBusPortInstances(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The connected BusPortInstances. \n They are derived from the reference connectedHWPortInstances of the super class CommunicationMedia."
+		   });				
+		addAnnotation
+		  (linkEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a link connection. A link can only be connected to two LinkPortInstances or to one LinkPortInstance and one Bridge."
+		   });			
+		addAnnotation
+		  (getLink_ConnectedLinkPortInstances(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The connected LinkPortInstances.\n They are derived from the reference connectedHWPortInstances of the super class CommunicationMedia."
+		   });		
+		addAnnotation
+		  (communicationMediaEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This abstract class represents CommuniationMedia.\nCommunicationMedia are used to connect HWPortInstances."
+		   });		
+		addAnnotation
+		  (getCommunicationMedia_DataFrameSize(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The size of a data frame."
+		   });		
+		addAnnotation
+		  (getCommunicationMedia_IsSerial(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines if this CommunicationMedia uses a serial communication."
+		   });		
+		addAnnotation
+		  (getCommunicationMedia_Bandwidth(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The bandwidth of this CommunicationMedia."
+		   });		
+		addAnnotation
+		  (getCommunicationMedia_Protocol(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The protocol this CommunicationMedia uses to transmit data. A CommunicationMedia can only be connected to HWPortInstances that use the same protocol."
+		   });		
+		addAnnotation
+		  (getCommunicationMedia_ConnectedHWPortParts(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The connected HWPortInstances."
+		   });		
+		addAnnotation
+		  (getCommunicationMedia_ConnectedBridges(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The Bridges this CommunicationMedia is connected to."
+		   });		
+		addAnnotation
+		  (hwPlatformEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a hardware platform at the type level. \nA HWPlatform consists of several embedded PlatformParts and several CommunicationResources to connect the embedded PlatformParts."
+		   });		
+		addAnnotation
+		  (getHWPlatform_EmbeddedPlatformParts(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The PlatformParts which are embedded in this HWPlatform. \nA PlatformPart is either a  HWPlatformPart or a ResourceInstancePart."
+		   });		
+		addAnnotation
+		  (getHWPlatform_EmbeddedCommunicationResources(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The CommunicationResources this HWPlatform contains."
+		   });		
+		addAnnotation
+		  (getHWPlatform_DelegationPorts(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPortInstances of this HWPlatform that are used as delegation ports."
+		   });		
+		addAnnotation
+		  (getHWPlatform_Delegations(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The port delegations which are used in the HWPlatform."
+		   });				
+		addAnnotation
+		  (platformPartEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This abstract class represents a PlatformPart. \nPlatformParts are used to specify the inner structure of a HWPlatform.\r\nA PlatformPart can be a HWPlatformPart or a ResourceInstancePart."
+		   });		
+		addAnnotation
+		  (getPlatformPart_ParentHWPlatform(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPlatform, this PlatformPart belongs to."
+		   });		
+		addAnnotation
+		  (getPlatformPart_Cardinality(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The cardinality of a PlatformPart determines how many instances are allowed to exist in the associated HWPlatformInstance at instance level."
+		   });				
+		addAnnotation
+		  (hwPlatformPartEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a HWPlatformPart. \nHWPlatformParts are used to specify the structure of a HWPlatform. \nA HWPlatformPart is embedded in a HWPlatform and it is typed over a HWPlatform."
+		   });		
+		addAnnotation
+		  (getHWPlatformPart_HwplatformType(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPlatform type of this HWPlatformPart."
+		   });			
+		addAnnotation
+		  (getHWPlatformPart_DerivedBridges(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The Bridges of this HWPlatform. \nThey are derived from the reference embeddedCommunicationResource of the hwplatformType."
+		   });		
+		addAnnotation
+		  (sensorInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a sensor device at instance level."
+		   });		
+		addAnnotation
+		  (actuatorInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents an actuator device at instance level."
+		   });		
+		addAnnotation
+		  (bridgeEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a bridge or a gateway. Bridges are used to connect two or more CommunicationMedia."
+		   });		
+		addAnnotation
+		  (getBridge_ConnectedCommunicationMedia(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The CommunicationMedia which are connected to this Bridge."
+		   });		
+		addAnnotation
+		  (getBridge_Delay(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The time variation this Bridge needs to transmit data between different CommunicationMedia."
+		   });				
+		addAnnotation
+		  (hwPortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "A HWPortInstance is a HWPort of a ResourceInstance at instance level.\nHardware ports are interaction points that can be used to connect ResourceInstances via CommunicationMedia.\n"
+		   });		
+		addAnnotation
+		  (getHWPortInstance_HwportType(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The port type of this HWPortInstance."
+		   });		
+		addAnnotation
+		  (getHWPortInstance_ParentResourceInstance(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The ResourceInstance, this HWPortInstance belongs to."
+		   });		
+		addAnnotation
+		  (getHWPortInstance_QueuingTime(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The queuing time of this HWPortInstance."
+		   });			
+		addAnnotation
+		  (getHWPortInstance_Protocol(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The used protocol of this HWPortInstance."
+		   });		
+		addAnnotation
+		  (getHWPortInstance_ConnectedMedia(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The CommunicationMedia that is connected to this HWPortInstance."
+		   });		
+		addAnnotation
+		  (getHWPortInstance_PayloadDataSize(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The average size of the payload data that is transmitted over this HWPortInstance."
+		   });			
+		addAnnotation
+		  (getHWPortInstance_IsDelegationPort(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines if this HWPortInstance is used as a delegation port."
+		   });		
+		addAnnotation
+		  (getHWPortInstance_Delegation(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The delegation this HWPortInstance is connected to."
+		   });		
+		addAnnotation
+		  (busPortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a hardware bus port at instance level."
+		   });			
+		addAnnotation
+		  (getBusPortInstance_ConnectedBus(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The Bus which is connected to this BusPortInstance.\nIt is derived from the reference connectedMedia of the super class HWPortInstance."
+		   });		
+		addAnnotation
+		  (linkPortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a link port at instance level."
+		   });			
+		addAnnotation
+		  (getLinkPortInstance_ConnectedLink(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The Link that is connected to this LinkPortInstance.\nIt is derived from the reference connectedMedia of the super class HWPortInstance."
+		   });		
+		addAnnotation
+		  (resourceInstanceRepositoryEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a ResourceInstanceRepository. \nA ResourceInstanceRepository contains all ResourceInstances to build a HWPlatform. The ResourceInstances are derived from a ResourceTypeRepository."
+		   });		
+		addAnnotation
+		  (getResourceInstanceRepository_ResourceInstances(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The ResourceInstances that are contained in this ResourceInstanceRepository. They are derived from a ResourceTypeRepository."
+		   });		
+		addAnnotation
+		  (getResourceInstanceRepository_ResourceTypeRepository(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The ResourceTypeRepository which contains the ResourceTypes that are instantiated in this ResourceInstanceRepository."
+		   });		
+		addAnnotation
+		  (resourceInstancePartEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a ResourceInstancePart. \nResourceInstanceParts are used to specify the structure of a HWPlatform. \nA ResourceInstancePart is embedded in a HWPlatform and it is typed over a ResourceInstance."
+		   });		
+		addAnnotation
+		  (getResourceInstancePart_ResourceInstanceType(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The ResourceInstance type of this ResourceInstancePart."
+		   });		
+		addAnnotation
+		  (getResourceInstancePart_HwportParts(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPortInstances of this ResourceInstance. \nThey are derived from the reference hwportInstances of the resourceInstanceType."
+		   });		
+		addAnnotation
+		  (delegationEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a delegation.\n A delegation connects a hwport of a StructuredResourceInstance and a port of \r\nHWPlatform that contains the StructuredResourceInstance.\r\nA delegation has no behavior.\nAt runtime level, the port of the HWPlatform and the port of the StructuredResourceInstance will be the same. \nIt is used as a technique for encapsulation of a HWPlatform."
+		   });				
+		addAnnotation
+		  (getDelegation_HwPortInstance(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPortInstances that are connected via this delegation."
+		   });					
+		addAnnotation
+		  (getHWPortPart_Protocol(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The used protocol of this HWPortInstance."
+		   });
 	}
 
 	/**

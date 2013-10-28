@@ -433,8 +433,146 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/emf/2002/GenModel
+		createGenModelAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGenModelAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/GenModel";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "documentation", "This package defines the basic data types needed to characterize resources\n(i.e. DataSize, Frequency)."
+		   });			
+		addAnnotation
+		  (dataSizeEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents the data size of an element or the size of a memory resource."
+		   });		
+		addAnnotation
+		  (dataSizeEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();"
+		   });		
+		addAnnotation
+		  (dataSizeEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+			 "body", "double inByte=0;\n\t\tif(unit!=null){\n\t\tinByte=value*Math.pow(2, unit.getValue());\t\n\t\t}\nreturn inByte;"
+		   });		
+		addAnnotation
+		  (getDataSize_Value(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The value of this DataSize."
+		   });		
+		addAnnotation
+		  (getDataSize_Unit(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The unit of the value."
+		   });		
+		addAnnotation
+		  (dataSizeUnitEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "The base unit is Byte. The value of the literal is the conversion factor.\nFor example 3 KByte (value=10) = 3*2^(value) Byte."
+		   });		
+		addAnnotation
+		  (frequencyEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents the frequency of a computing resource."
+		   });		
+		addAnnotation
+		  (frequencyEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();"
+		   });		
+		addAnnotation
+		  (frequencyEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+			 "body", "double inHz=0;\n\t\tif(unit!=null){\n\t\tinHz=value*Math.pow(10, unit.getValue());\t\n\t\t}\nreturn inHz;"
+		   });		
+		addAnnotation
+		  (getFrequency_Value(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The value of the frequency."
+		   });		
+		addAnnotation
+		  (getFrequency_Unit(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The unit of this value (i.e. Hz, MHz,etc)."
+		   });		
+		addAnnotation
+		  (frequencyUnitEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "The base unit is Hz. The value of the literal is the conversion factor.\nFor example 2.5 KHz (value=3) =2.5*10^(value) Hz."
+		   });		
+		addAnnotation
+		  (dataRateUnitEEnum, 
+		   source, 
+		   new String[] {
+			 "documentation", "The base unit is bit/s. The value of the literal is the conversion factor.\nFor example 2.5 Kbit/s (value=20) = 2.5*2^(value) bit/s."
+		   });		
+		addAnnotation
+		  (dataRateEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents the data rate of a resource (i.e. the bandwidth of a bus)."
+		   });		
+		addAnnotation
+		  (dataRateEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();"
+		   });		
+		addAnnotation
+		  (dataRateEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+			 "body", "double inBpS=0;\n\t\tif(unit!=null){\n\t\tinBpS=value*Math.pow(2, unit.getValue());\t\n\t\t}\nreturn inBpS;"
+		   });		
+		addAnnotation
+		  (getDataRate_Value(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The value of this DataRate."
+		   });		
+		addAnnotation
+		  (getDataRate_Unit(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The unit of the value (i.e. b/s, Kb/s)."
+		   });		
+		addAnnotation
+		  (timeIntervalEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents an interval to specify time bounds."
+		   });		
+		addAnnotation
+		  (getTimeInterval_Unit(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The unit for this TimeInterval."
+		   });
 	}
 
 	/**
