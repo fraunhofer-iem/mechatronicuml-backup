@@ -229,7 +229,8 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(reconfigurationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(reconfigurationPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(reconfigurationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(reconfigurationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(reconfigurationPort, diagnostics, context);
 		return result;
 	}
 
@@ -318,7 +319,8 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(internalReconfigurationCommunicationPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(internalReconfigurationCommunicationPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(internalReconfigurationCommunicationPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(internalReconfigurationCommunicationPort, diagnostics, context);
 		return result;
 	}
 
@@ -427,7 +429,8 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(reconfigurationMessagePort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(reconfigurationMessagePort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(reconfigurationMessagePort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(reconfigurationMessagePort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(reconfigurationMessagePort, diagnostics, context);
 		return result;
 	}
 
@@ -453,7 +456,8 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresBehavior(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortAtStructuredComponentHasNoBehavior(reconfigurationExecutionPort, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortRequiresRole(reconfigurationExecutionPort, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortMustRefineMultiRole(reconfigurationExecutionPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(reconfigurationExecutionPort, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateDiscretePort_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(reconfigurationExecutionPort, diagnostics, context);
 		return result;
 	}
 
