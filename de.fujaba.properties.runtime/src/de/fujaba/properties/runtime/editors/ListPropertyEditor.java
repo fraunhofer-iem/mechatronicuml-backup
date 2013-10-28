@@ -179,7 +179,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	@Override
 	protected void inputChanged() {
 		super.inputChanged();
-		if (element != null && resourceSet == null) {
+		if (element != null && element.eResource() != null && resourceSet == null) {
 			resourceSet = element.eResource().getResourceSet();
 			resourceSet.eAdapters().add(refreshAdapter);
 		}
