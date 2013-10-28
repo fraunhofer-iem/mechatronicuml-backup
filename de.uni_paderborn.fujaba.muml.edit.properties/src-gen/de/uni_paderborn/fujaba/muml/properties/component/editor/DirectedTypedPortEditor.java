@@ -23,7 +23,7 @@ public abstract class DirectedTypedPortEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -32,7 +32,7 @@ public abstract class DirectedTypedPortEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDirectedTypedPortOptionalEditor(
-					"de.fujaba.properties.category.Booleans", true);
+					"de.uni_paderborn.fujaba.properties.category.Booleans", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -41,7 +41,7 @@ public abstract class DirectedTypedPortEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConstrainableElementConstraintEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
@@ -50,7 +50,7 @@ public abstract class DirectedTypedPortEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConnectorEndpointConnectorsEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}

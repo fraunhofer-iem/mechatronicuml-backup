@@ -23,7 +23,7 @@ public abstract class BehaviorEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -31,12 +31,12 @@ public abstract class BehaviorEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBehaviorOperationsEditor("de.fujaba.properties.category.Lists",
+			addBehaviorOperationsEditor("de.uni_paderborn.fujaba.properties.category.Lists",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBehaviorVariablesEditor("de.fujaba.properties.category.Lists",
+			addBehaviorVariablesEditor("de.uni_paderborn.fujaba.properties.category.Lists",
 					true);
 		}
 

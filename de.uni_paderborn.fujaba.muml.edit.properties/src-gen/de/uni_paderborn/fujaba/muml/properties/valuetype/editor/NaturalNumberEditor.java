@@ -23,7 +23,7 @@ public class NaturalNumberEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -32,7 +32,7 @@ public class NaturalNumberEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addNaturalNumberInfinityEditor(
-					"de.fujaba.properties.category.Booleans", true);
+					"de.uni_paderborn.fujaba.properties.category.Booleans", true);
 		}
 
 	}

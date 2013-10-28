@@ -23,10 +23,10 @@ public class TransitionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -47,17 +47,17 @@ public class TransitionEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addTransitionClockResetsEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addTransitionClockConstraintsEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addTransitionAbsoluteDeadlinesEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -66,7 +66,7 @@ public class TransitionEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addTransitionBlockableEditor(
-					"de.fujaba.properties.category.Booleans", true);
+					"de.uni_paderborn.fujaba.properties.category.Booleans", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -74,7 +74,7 @@ public class TransitionEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTransitionEventsEditor("de.fujaba.properties.category.Lists",
+			addTransitionEventsEditor("de.uni_paderborn.fujaba.properties.category.Lists",
 					true);
 		}
 
@@ -83,7 +83,7 @@ public class TransitionEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTransitionUrgentEditor("de.fujaba.properties.category.Booleans",
+			addTransitionUrgentEditor("de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 

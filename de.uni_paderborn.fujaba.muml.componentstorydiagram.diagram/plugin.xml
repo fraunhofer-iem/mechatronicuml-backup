@@ -671,14 +671,14 @@
          <propertySection
             id="property.section.general" 
             tab="property.tab.general"
-            filter="de.fujaba.properties.runtime.filter.ElementFilter"
-            class="de.fujaba.properties.runtime.sections.ObjectPropertySection">
+            filter="de.uni_paderborn.fujaba.properties.runtime.filter.ElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
          </propertySection>
          <propertySection
             id="property.section.comment" 
             tab="property.tab.comment"
-            filter="de.fujaba.properties.runtime.filter.ElementFilter"
-            class="de.fujaba.properties.runtime.sections.ObjectPropertySection">
+            filter="de.uni_paderborn.fujaba.properties.runtime.filter.ElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
          </propertySection>
       </propertySections>
    </extension>

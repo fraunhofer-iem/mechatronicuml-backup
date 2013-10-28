@@ -23,7 +23,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -38,7 +38,7 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(
-					"de.fujaba.properties.category.Booleans", true);
+					"de.uni_paderborn.fujaba.properties.category.Booleans", true);
 		}
 
 	}

@@ -23,7 +23,7 @@ public class CoordinationProtocolOccurrenceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -33,7 +33,7 @@ public class CoordinationProtocolOccurrenceEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addCoordinationProtocolOccurrencePortPartsEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}

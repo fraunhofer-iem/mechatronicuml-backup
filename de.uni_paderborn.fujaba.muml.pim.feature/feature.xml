@@ -31,7 +31,7 @@
       <import plugin="org.eclipse.compare"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram" version="0.3.1" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.properties.runtime" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.properties.runtime" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="org.apache.log4j"/>
       <import plugin="org.eclipse.core.expressions"/>
@@ -92,7 +92,7 @@
       <import plugin="org.eclipse.gmf.runtime.emf.ui.properties" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.100" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.views.properties.tabbed" version="3.5.300" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.properties"/>
+      <import plugin="de.uni_paderborn.fujaba.properties"/>
    </requires>
 
    <plugin
@@ -278,7 +278,7 @@
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.properties.runtime"
+         id="de.uni_paderborn.fujaba.properties.runtime"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -313,7 +313,7 @@
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.properties"
+         id="de.uni_paderborn.fujaba.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"

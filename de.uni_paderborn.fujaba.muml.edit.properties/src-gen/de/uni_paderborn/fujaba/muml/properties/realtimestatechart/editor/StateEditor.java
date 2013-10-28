@@ -23,15 +23,15 @@ public class StateEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists",
 				org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addStateEmbeddedRegionsEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -47,30 +47,30 @@ public class StateEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateInvariantsEditor("de.fujaba.properties.category.Lists",
+			addStateInvariantsEditor("de.uni_paderborn.fujaba.properties.category.Lists",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateInitialEditor("de.fujaba.properties.category.Booleans",
+			addStateInitialEditor("de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateFinalEditor("de.fujaba.properties.category.Booleans", true);
+			addStateFinalEditor("de.uni_paderborn.fujaba.properties.category.Booleans", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateUrgentEditor("de.fujaba.properties.category.Booleans", true);
+			addStateUrgentEditor("de.uni_paderborn.fujaba.properties.category.Booleans", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateChannelsEditor("de.fujaba.properties.category.Lists", true);
+			addStateChannelsEditor("de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addStateConnectionPointsEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {

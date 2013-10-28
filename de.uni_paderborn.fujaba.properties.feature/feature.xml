@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="de.fujaba.properties.feature"
+      id="de.uni_paderborn.fujaba.properties.feature"
       label="Properties"
       version="1.0.0.qualifier">
 
@@ -31,11 +31,11 @@ license agreement under http://www.eclipse.org/legal/epl-v10.html
       <import plugin="org.eclipse.xpand" version="0.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtend" version="0.7.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.xtend.typesystem.emf" version="0.7.0" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.properties" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.properties" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.7.101" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.codegen.ecore.ui"/>
-      <import plugin="de.fujaba.properties.reconcile" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.fujaba.properties.codegen" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.properties.reconcile" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.properties.codegen" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.emf.edit" version="2.8.0" match="greaterOrEqual"/>
@@ -45,42 +45,42 @@ license agreement under http://www.eclipse.org/legal/epl-v10.html
    </requires>
 
    <plugin
-         id="de.fujaba.properties"
+         id="de.uni_paderborn.fujaba.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.properties.codegen"
+         id="de.uni_paderborn.fujaba.properties.codegen"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.properties.edit"
+         id="de.uni_paderborn.fujaba.properties.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.properties.editor"
+         id="de.uni_paderborn.fujaba.properties.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.properties.reconcile"
+         id="de.uni_paderborn.fujaba.properties.reconcile"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="de.fujaba.properties.runtime"
+         id="de.uni_paderborn.fujaba.properties.runtime"
          download-size="0"
          install-size="0"
          version="0.0.0"

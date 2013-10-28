@@ -208,7 +208,7 @@ public class PropertiesActionBarContributor extends
 		IMenuManager submenuManager = new MenuManager(
 				PropertiesEditorPlugin.INSTANCE
 						.getString("_UI_PropertiesEditor_menu"),
-				"de.fujaba.propertiesMenuID");
+				"de.uni_paderborn.fujaba.propertiesMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

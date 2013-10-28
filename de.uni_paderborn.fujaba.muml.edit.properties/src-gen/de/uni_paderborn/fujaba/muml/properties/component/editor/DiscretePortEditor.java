@@ -29,12 +29,12 @@ public class DiscretePortEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteInteractionEndpointSenderMessageTypesEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteInteractionEndpointReceiverMessageTypesEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -52,7 +52,7 @@ public class DiscretePortEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addDiscreteInteractionEndpointReceiverMessageBufferEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
