@@ -47,8 +47,8 @@ public class MessageEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageInstanceOfEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageInstanceOfEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getMessage_InstanceOf());
@@ -71,8 +71,8 @@ public class MessageEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMessageParameterBindingEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageParameterBindingEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getMessage_ParameterBinding());
@@ -102,9 +102,9 @@ public class MessageEditor
 	 */
 	public static class Factory
 			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new MessageEditor(tab);
 		}

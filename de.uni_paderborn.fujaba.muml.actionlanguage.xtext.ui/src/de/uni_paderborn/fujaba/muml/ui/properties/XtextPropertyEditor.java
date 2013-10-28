@@ -31,12 +31,12 @@ import org.eclipse.xtext.ui.editor.model.XtextDocument;
 
 import com.google.inject.Injector;
 
-import de.fujaba.properties.runtime.RuntimePlugin;
-import de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.ui.internal.ActionLanguageActivator;
 import de.uni_paderborn.fujaba.muml.ui.xtfo.EmbeddedXtextEditor;
+import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
+import de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor;
 
 public class XtextPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {

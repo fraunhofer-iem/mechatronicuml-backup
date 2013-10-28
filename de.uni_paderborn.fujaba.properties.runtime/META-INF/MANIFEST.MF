@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Fujaba Properties Runtime
 Bundle-SymbolicName: de.uni_paderborn.fujaba.properties.runtime;singleton:=true
 Bundle-Version: 0.4.0.qualifier
-Bundle-Activator: de.fujaba.properties.runtime.RuntimePlugin
+Bundle-Activator: de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.300";visibility:=reexport,
  org.eclipse.emf.edit.ui,
@@ -15,9 +15,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.examples.eventmanager;bundle-version="3.2.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.fujaba.properties.runtime,
- de.fujaba.properties.runtime.editors,
- de.fujaba.properties.runtime.factory,
- de.fujaba.properties.runtime.filter,
- de.fujaba.properties.runtime.sections
+Export-Package: de.uni_paderborn.fujaba.properties.runtime,
+ de.uni_paderborn.fujaba.properties.runtime.editors,
+ de.uni_paderborn.fujaba.properties.runtime.factory,
+ de.uni_paderborn.fujaba.properties.runtime.filter,
+ de.uni_paderborn.fujaba.properties.runtime.sections
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

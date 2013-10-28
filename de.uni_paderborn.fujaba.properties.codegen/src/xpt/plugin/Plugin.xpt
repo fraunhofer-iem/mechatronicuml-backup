@@ -9,7 +9,7 @@
 </plugin>
 «ENDDEFINE»
 <propertyContributor
-          contributorId="de.fujaba.properties.contributor">
+          contributorId="de.uni_paderborn.fujaba.properties.contributor">
        <propertyCategory
              category="domain">
        </propertyCategory>
@@ -73,7 +73,7 @@
       <propertySections contributorId="«contributorId»">
         «FOREACH tabs AS tab-»
           <propertySection
-            class="de.fujaba.properties.runtime.sections.ObjectPropertySection"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
             filter="«genPluginId()».tabs.«tab.name.toString().toFirstUpper()»TabElementFilter"
             id="«tab.id»"
             tab="«tab.id»">
@@ -89,7 +89,7 @@
 
 
 «DEFINE propertyEditor FOR PropertyGenerator»
- <extension point="de.fujaba.properties.runtime.propertyEditors">
+ <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
     <propertyEditors>
     «FOREACH packages.classes.reject(e | e.genClass.ecoreClass.abstract) AS this»
        <propertyEditor

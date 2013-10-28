@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.properties.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.fujaba.properties.presentation.PropertiesEditorPlugin$Implementation
+Bundle-Activator: de.uni_paderborn.fujaba.properties.presentation.PropertiesEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.fujaba.properties.presentation
+Export-Package: de.uni_paderborn.fujaba.properties.presentation
 Require-Bundle: de.uni_paderborn.fujaba.properties.edit;visibility:=reexport,
  de.uni_paderborn.fujaba.properties.reconcile;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.properties.codegen;bundle-version="1.0.0",

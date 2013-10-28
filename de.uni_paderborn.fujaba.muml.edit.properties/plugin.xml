@@ -40,7 +40,7 @@
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
           <propertySection
-            class="de.fujaba.properties.runtime.sections.ObjectPropertySection"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
             filter="de.uni_paderborn.fujaba.muml.properties.tabs.ConstraintTabElementFilter"
             id="property.tab.constraint"
             tab="property.tab.constraint">
@@ -54,7 +54,7 @@
 
 
 
- <extension point="de.fujaba.properties.runtime.propertyEditors">
+ <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
     <propertyEditors>
     
        <propertyEditor

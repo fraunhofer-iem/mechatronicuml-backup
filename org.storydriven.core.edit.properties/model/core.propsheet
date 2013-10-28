@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fujaba="http://de.fujaba.properties/0.1" defaultTab="//@tabs.0" contributorId="">
+<de.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fujaba="http://de.uni_paderborn.fujaba.properties/0.1" defaultTab="//@tabs.0" contributorId="">
   <reconciler/>
   <genModel href="../../org.storydriven.core/model/core.uml.genmodel#/"/>
   <plugin id="org.storydriven.core.edit.properties" name="Storydriven Properties" vendor="SDM" version="0.4.0.qualifier">
@@ -7,7 +7,7 @@
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.storydriven.core.edit</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
-    <requiredBundles>de.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>org.storydriven.core</requiredBundles>
   </plugin>

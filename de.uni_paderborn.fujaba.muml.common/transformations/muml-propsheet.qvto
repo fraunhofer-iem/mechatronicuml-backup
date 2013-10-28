@@ -2,7 +2,7 @@ transformation propsheet(inout properties : Properties);
 
 modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
 modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
-modeltype Properties uses properties('http://de.fujaba.properties/0.1');
+modeltype Properties uses properties('http://de.uni_paderborn.fujaba.properties/0.1');
 
 main() {
 	properties.rootObjects()[PropertyGenerator]->map generator();

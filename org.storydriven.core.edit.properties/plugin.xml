@@ -44,7 +44,7 @@
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
       <propertySections contributorId="">
           <propertySection
-            class="de.fujaba.properties.runtime.sections.ObjectPropertySection"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
             filter="org.storydriven.core.properties.tabs.GeneralTabElementFilter"
             id="property.tab.general"
             tab="property.tab.general">
@@ -53,7 +53,7 @@
              </input>
           </propertySection>
           <propertySection
-            class="de.fujaba.properties.runtime.sections.ObjectPropertySection"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
             filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
             id="property.tab.documentation"
             tab="property.tab.documentation">
@@ -67,7 +67,7 @@
 
 
 
- <extension point="de.fujaba.properties.runtime.propertyEditors">
+ <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
     <propertyEditors>
     
        <propertyEditor

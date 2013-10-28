@@ -12,7 +12,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 
 «DEFINE extends FOR Class-»
 «IF superClasses.isEmpty-»
-	de.fujaba.properties.runtime.editors.ClassPropertyEditor
+	de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor
 «ELSE-»
 	«superClasses.first().genQualifiedEditorName()»
 «ENDIF-»
@@ -87,9 +87,9 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	/**
 	 * @generated
 	 */
-	public static class Factory implements de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
 			return new «genEditorName()»(tab);
 		}
 		
@@ -110,8 +110,8 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 	«IF override-»
 	@Override
 	«ENDIF-»
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «EXPAND createEditor(this) FOR editor»
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «EXPAND createEditor(this) FOR editor»
 		«EXPAND addFilter("editor") FOREACH filters»
 		«IF genDocumentation() != null»
 		editor.setTooltipMessage("«genDocumentation().replaceAll("\\\\", "\\\\\\\\").replaceAll("\"", "\\\\\"").replaceAll("\r\n", "\\\\n").replaceAll("\r", "\\\\n").replaceAll("\n", "\\\\n")»");
@@ -143,36 +143,36 @@ UNKNOWN PROPERTY EDITOR
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR CheckboxPropertyEditor-»
-new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
 
 «DEFINE createEditor(Property property) FOR SpinnerPropertyEditor-»
-new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()», «digits»);
+new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()», «digits»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR RadioPropertyEditor-»
-new de.fujaba.properties.runtime.editors.OptionPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR ComboBoxPropertyEditor-»
-new de.fujaba.properties.runtime.editors.ComboPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR TextPropertyEditor-»
-new de.fujaba.properties.runtime.editors.TextPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()», «multiLine»);
+new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()», «multiLine»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR ListPropertyEditor-»
-new de.fujaba.properties.runtime.editors.ListPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR ObjectPropertyEditor-»
-new de.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR OCLPropertyEditor-»
-new de.fujaba.properties.runtime.editors.OCLPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+new de.uni_paderborn.fujaba.properties.runtime.editors.OCLPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
 «DEFINE createEditor(Property property) FOR CustomPropertyEditor-»

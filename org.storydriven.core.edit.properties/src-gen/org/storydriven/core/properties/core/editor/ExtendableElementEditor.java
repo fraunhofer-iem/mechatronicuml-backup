@@ -5,7 +5,7 @@ package org.storydriven.core.properties.core.editor;
  */
 public abstract class ExtendableElementEditor
 		extends
-			de.fujaba.properties.runtime.editors.ClassPropertyEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated

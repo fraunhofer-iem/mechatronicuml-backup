@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="ASCII"?>
-<de.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fujaba="http://de.fujaba.properties/0.1" defaultTab="//@tabs.0" contributorId="de.fujaba.properties.contributor">
+<de.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fujaba="http://de.uni_paderborn.fujaba.properties/0.1" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.properties.contributor">
   <reconciler/>
   <genModel href="properties.genmodel#/"/>
-  <plugin id="de.fujaba.properties.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
+  <plugin id="de.uni_paderborn.fujaba.properties.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
     <requiredBundles>org.eclipse.core.runtime</requiredBundles>
     <requiredBundles>org.eclipse.emf.edit</requiredBundles>
-    <requiredBundles>de.fujaba.properties.edit</requiredBundles>
-    <requiredBundles>de.fujaba.properties</requiredBundles>
-    <requiredBundles>de.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
     <requiredBundles>org.eclipse.ui</requiredBundles>
   </plugin>
-  <tabs id="de.fujaba.properties.tab.general" name="General" afterTab=""/>
+  <tabs id="de.uni_paderborn.fujaba.properties.tab.general" name="General" afterTab=""/>
   <packages>
     <genPackage href="properties.genmodel#//properties"/>
     <classes>

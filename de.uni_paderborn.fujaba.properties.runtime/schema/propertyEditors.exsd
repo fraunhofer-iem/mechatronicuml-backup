@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="de.fujaba.properties.runtime" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="de.uni_paderborn.fujaba.properties.runtime" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="de.fujaba.properties.runtime" id="propertyEditors" name="Property Editor"/>
+         <meta.schema plugin="de.uni_paderborn.fujaba.properties.runtime" id="propertyEditors" name="Property Editor"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -73,7 +73,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":de.fujaba.properties.runtime.factory.IPropertyEditorFactory"/>
+                  <meta.attribute kind="java" basedOn=":de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory"/>
                </appinfo>
             </annotation>
          </attribute>

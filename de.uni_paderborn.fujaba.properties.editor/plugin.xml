@@ -20,7 +20,7 @@
       <wizard
             id="properties.presentation.PropertiesModelWizardID"
             name="%_UI_PropertiesModelWizard_label"
-            class="de.fujaba.properties.presentation.PropertiesModelWizard"
+            class="de.uni_paderborn.fujaba.properties.presentation.PropertiesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/PropertiesModelFile.gif">
          <description>%_UI_PropertiesModelWizard_description</description>
@@ -35,15 +35,15 @@
             name="%_UI_PropertiesEditor_label"
             icon="icons/full/obj16/PropertiesModelFile.gif"
             extensions="propsheet"
-            class="de.fujaba.properties.presentation.PropertiesEditor"
-            contributorClass="de.fujaba.properties.presentation.PropertiesActionBarContributor">
+            class="de.uni_paderborn.fujaba.properties.presentation.PropertiesEditor"
+            contributorClass="de.uni_paderborn.fujaba.properties.presentation.PropertiesActionBarContributor">
       </editor>
    </extension>
    
     <extension
         point="org.eclipse.core.expressions.definitions">
      <definition
-           id="de.fujaba.properties.expression.genmodelfile">
+           id="de.uni_paderborn.fujaba.properties.expression.genmodelfile">
 	    <iterate
            ifEmpty="false"
            operator="and">
@@ -59,15 +59,15 @@
 	   <menuContribution
 	          locationURI="popup:org.eclipse.ui.popup.any?after=additions">
        <command
-             commandId="de.fujaba.properties.initializePropsheet"
+             commandId="de.uni_paderborn.fujaba.properties.initializePropsheet"
              icon="icons/full/obj16/PropertiesModelFile.gif"
-             id="de.fujaba.properties.initializePropsheet"
+             id="de.uni_paderborn.fujaba.properties.initializePropsheet"
              label="Initialize Propsheet Model"
              style="push">
           <visibleWhen
                 checkEnabled="false">
              <reference
-                   definitionId="de.fujaba.properties.expression.genmodelfile">
+                   definitionId="de.uni_paderborn.fujaba.properties.expression.genmodelfile">
              </reference>
           </visibleWhen>
        </command>
@@ -77,8 +77,8 @@
     <extension point="org.eclipse.ui.commands">
 		<command
 			description="Initialize realtimestatechart_diagram"
-			defaultHandler="de.fujaba.properties.presentation.InitializePropsheetHandler"
-			id="de.fujaba.properties.initializePropsheet"
+			defaultHandler="de.uni_paderborn.fujaba.properties.presentation.InitializePropsheetHandler"
+			id="de.uni_paderborn.fujaba.properties.initializePropsheet"
 			name="%initDiagramActionLabel">
 		</command>
 	</extension>
