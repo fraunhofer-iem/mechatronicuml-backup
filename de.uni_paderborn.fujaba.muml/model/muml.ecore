@@ -72,7 +72,7 @@
         <details key="DiscretePortRequiresRole" value="self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()"/>
         <details key="DiscretePortAndRoleSameMessageTypes" value="not self.refinedRole.oclIsUndefined() implies&#xD;&#xA;&#x9;(self.senderMessageTypes = self.refinedRole.senderMessageTypes&#xD;&#xA;&#x9; and&#xD;&#xA;&#x9; self.receiverMessageTypes = self.refinedRole.receiverMessageTypes&#xD;&#xA;&#x9;)"/>
         <details key="DiscretePortCardinalityMustComplyWithRefinedRoleCardinality"
-            value="self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound)"/>
+            value="(not self.cardinality.oclIsUndefined()) implies (self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))"/>
         <details key="MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"
             value="(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) &#xD;&#xA;implies &#xD;&#xA;((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"/>
       </eAnnotations>

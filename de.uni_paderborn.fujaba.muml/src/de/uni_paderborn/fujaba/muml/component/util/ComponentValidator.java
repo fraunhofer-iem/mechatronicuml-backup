@@ -438,7 +438,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_CARDINALITY_MUST_COMPLY_WITH_REFINED_ROLE_CARDINALITY__EEXPRESSION = "self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound)";
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_CARDINALITY_MUST_COMPLY_WITH_REFINED_ROLE_CARDINALITY__EEXPRESSION = "(not self.cardinality.oclIsUndefined()) implies (self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))";
 
 	/**
 	 * Validates the DiscretePortCardinalityMustComplyWithRefinedRoleCardinality constraint of '<em>Discrete Port</em>'.
