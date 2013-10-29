@@ -26,6 +26,8 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.FocusAdapter;
+import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
@@ -118,6 +120,15 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		GridData tableGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		tableGridData.minimumWidth = 120;
 		table.setLayoutData(tableGridData);
+		table.addFocusListener(new FocusAdapter() {
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				List<Object> selectionList = Collections.singletonList(input);
+				RuntimePlugin.setCurrentEditorSelection(selectionList);				
+			}
+
+		});
 
 		tableViewer = new TableViewer(table);
 		tableViewer.setContentProvider(ArrayContentProvider.getInstance());
