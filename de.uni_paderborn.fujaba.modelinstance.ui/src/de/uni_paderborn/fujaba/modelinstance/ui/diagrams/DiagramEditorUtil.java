@@ -30,6 +30,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
@@ -62,10 +63,16 @@ public class DiagramEditorUtil {
 		IResource workspaceResource = ResourcesPlugin.getWorkspace().getRoot()
 				.findMember(new Path(path));
 		if (workspaceResource instanceof IFile) {
-			IWorkbenchPage page = PlatformUI.getWorkbench()
-					.getActiveWorkbenchWindow().getActivePage();
-			return null != page.openEditor(new FileEditorInput(
-					(IFile) workspaceResource), editorId);
+			IWorkbenchWindow window = PlatformUI.getWorkbench()
+					.getActiveWorkbenchWindow();
+			IWorkbenchPage page = null;
+			if (window != null) {
+				page = window.getActivePage();	
+			}
+			if (page != null) {
+				return null != page.openEditor(new FileEditorInput(
+						(IFile) workspaceResource), editorId);
+			}
 		}
 		return false;
 	}

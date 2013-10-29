@@ -11,6 +11,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.dialogs.ErrorDialog;
@@ -40,6 +41,11 @@ public abstract class AbstractCreateFileCommand extends AbstractHandler {
 		// Get shell and uri of current selection
 		shell = HandlerUtil.getActiveWorkbenchWindow(event).getShell();
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
+		create(shell, selection);
+		return null;
+	}
+
+	public IFile create(Shell shell, ISelection selection) {
 		IResource workspaceResource = null;
 		if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
 			workspaceResource = (IResource) ((IStructuredSelection) selection)
@@ -55,11 +61,10 @@ public abstract class AbstractCreateFileCommand extends AbstractHandler {
 			if (workspaceResource instanceof IFile) {
 				trimmedURI = trimmedURI.trimSegments(1);
 			}
-			
+
 			// Get a unique filename for the new file
 			IPath filePath = getFullPath(trimmedURI);
-			
-			
+
 			String hint = URI.decode(selectedFileURI.trimFileExtension()
 					.lastSegment());
 			String fileName = getUniqueFilename(hint, getExtension(), filePath);
@@ -69,8 +74,12 @@ public abstract class AbstractCreateFileCommand extends AbstractHandler {
 
 			// Put the contents into the file
 			createContents(selectedFileURI, newFile);
+			
+			return newFile;
 		}
+
 		return null;
+
 	}
 
 	protected abstract void createContents(URI selectedURI, IFile newFile);
@@ -96,30 +105,38 @@ public abstract class AbstractCreateFileCommand extends AbstractHandler {
 					op.execute(monitor,
 							WorkspaceUndoUtil.getUIInfoAdapter(shell));
 				} catch (final ExecutionException e) {
-					shell.getDisplay().syncExec(new Runnable() {
-						public void run() {
-							if (e.getCause() instanceof CoreException) {
-								ErrorDialog.openError(shell,
-										"Creation problems", null,
-										((CoreException) e.getCause())
-												.getStatus());
-							} else {
-								MessageDialog.openError(shell,
-										"Creation problems", NLS.bind(
-												"Internal error: {0}", e
-														.getCause()
-														.getMessage()));
+					if (shell == null) {
+						e.printStackTrace();
+					} else {
+						shell.getDisplay().syncExec(new Runnable() {
+							public void run() {
+								if (e.getCause() instanceof CoreException) {
+									ErrorDialog.openError(shell,
+											"Creation problems", null,
+											((CoreException) e.getCause())
+													.getStatus());
+								} else {
+									MessageDialog.openError(shell,
+											"Creation problems", NLS.bind(
+													"Internal error: {0}", e
+															.getCause()
+															.getMessage()));
+								}
 							}
-						}
-					});
+						});
+					}
 				}
 			}
 		};
 
 		try {
 			if (newFileHandle != null) {
-				PlatformUI.getWorkbench().getProgressService()
-						.run(false, true, op);
+				if (shell != null) {
+					PlatformUI.getWorkbench().getProgressService()
+							.run(false, true, op);
+				} else {
+					op.run(new NullProgressMonitor());
+				}
 			}
 		} catch (InterruptedException e) {
 			return null;
@@ -142,8 +159,7 @@ public abstract class AbstractCreateFileCommand extends AbstractHandler {
 	protected IPath getFullPath(URI domainModelURI)
 			throws IllegalArgumentException {
 		if (domainModelURI.isPlatformResource()) {
-			return new Path(domainModelURI.toPlatformString(
-					true));
+			return new Path(domainModelURI.toPlatformString(true));
 		} else if (domainModelURI.isFile()) {
 			return new Path(domainModelURI.toFileString());
 		} else {
