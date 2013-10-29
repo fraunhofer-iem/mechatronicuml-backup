@@ -23,11 +23,11 @@ public class TransitionEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addTransitionSynchronizationEditor(null, false);
@@ -66,7 +66,8 @@ public class TransitionEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addTransitionBlockableEditor(
-					"de.uni_paderborn.fujaba.properties.category.Booleans", true);
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -74,8 +75,8 @@ public class TransitionEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTransitionEventsEditor("de.uni_paderborn.fujaba.properties.category.Lists",
-					true);
+			addTransitionEventsEditor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -83,7 +84,8 @@ public class TransitionEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTransitionUrgentEditor("de.uni_paderborn.fujaba.properties.category.Booleans",
+			addTransitionUrgentEditor(
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 

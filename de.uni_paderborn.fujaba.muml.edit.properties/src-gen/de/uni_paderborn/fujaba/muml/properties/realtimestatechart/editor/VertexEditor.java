@@ -23,17 +23,20 @@ public abstract class VertexEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Transitions",
+		addSubCategory(
+				"de.uni_paderborn.fujaba.properties.category.Transitions",
 				"Transitions", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addVertexOutgoingTransitionsEditor(
-					"de.uni_paderborn.fujaba.properties.category.Transitions", true);
+					"de.uni_paderborn.fujaba.properties.category.Transitions",
+					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addVertexIncomingTransitionsEditor(
-					"de.uni_paderborn.fujaba.properties.category.Transitions", true);
+					"de.uni_paderborn.fujaba.properties.category.Transitions",
+					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {

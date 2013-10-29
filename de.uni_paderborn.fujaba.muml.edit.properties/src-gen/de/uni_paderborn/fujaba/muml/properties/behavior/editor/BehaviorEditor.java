@@ -23,21 +23,21 @@ public abstract class BehaviorEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addBehaviorBehavioralElementEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBehaviorOperationsEditor("de.uni_paderborn.fujaba.properties.category.Lists",
-					true);
+			addBehaviorOperationsEditor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBehaviorVariablesEditor("de.uni_paderborn.fujaba.properties.category.Lists",
-					true);
+			addBehaviorVariablesEditor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}

@@ -23,8 +23,8 @@ public abstract class ConstraintEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans", "Booleans",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConstraintCorrectnessEditor(null, true);
@@ -32,7 +32,8 @@ public abstract class ConstraintEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConstraintBackgroundEditor(
-					"de.uni_paderborn.fujaba.properties.category.Booleans", true);
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
