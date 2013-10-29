@@ -19,4 +19,9 @@
    </extension>
    
    
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.custom.layout.MessageTypeLayoutProvider">
+            <Priority name="High"/>
+       </layoutProvider>
+   </extension>
 </plugin>

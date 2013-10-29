@@ -54,5 +54,11 @@
          <Priority name="Low"/>
       </ParserProvider>
    </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.layout.CICLayoutProvider">
+            <Priority name="High"/>
+       </layoutProvider>
+   </extension>
 
 </plugin>

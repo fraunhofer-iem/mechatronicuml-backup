@@ -55,5 +55,12 @@
           initializer="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.initializer.RealtimeStatechartModelInitializer">
       </initializer>
    </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.layout.RealtimeStatechartLayoutProvider">
+            <Priority name="High"/>
+       </layoutProvider>
+   </extension>
 
 </plugin>
