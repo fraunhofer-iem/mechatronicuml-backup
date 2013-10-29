@@ -1,5 +1,7 @@
 package de.uni_paderborn.fujaba.properties.runtime.editors;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -206,7 +208,12 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 
 	@Override
 	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { label, comboViewer.getCombo(), searchButton, composite }) {
+		List<Control> controls = new ArrayList<Control>();
+		controls.addAll(Arrays.asList(new Control[] { label, searchButton, composite }));
+		if ( comboViewer != null) {
+			 controls.add(comboViewer.getCombo());
+		}
+		for (Control control : controls) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
 				if (control.getLayoutData() instanceof GridData) {

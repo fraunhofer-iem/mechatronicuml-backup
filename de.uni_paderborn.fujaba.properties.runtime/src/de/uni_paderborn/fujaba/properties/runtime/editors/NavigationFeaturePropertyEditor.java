@@ -87,7 +87,8 @@ public class NavigationFeaturePropertyEditor extends
 		composite.setLayout(layout);
 
 		List<EClass> eClasses = RuntimePlugin.getEClasses((EReference) feature);
-		
+
+		selectedClass = eClasses.get(0);
 		if (eClasses.size() > 1) {
 			Combo combo = new Combo(section, SWT.BORDER);
 			classViewer = new ComboViewer(combo);
@@ -105,10 +106,13 @@ public class NavigationFeaturePropertyEditor extends
 				public void selectionChanged(SelectionChangedEvent event) {
 					IStructuredSelection selection = (IStructuredSelection) classViewer
 							.getSelection();
-					selectedClass = (EClass) selection.getFirstElement();
-					if (isSet()) {
-						remove();
-						create();
+					EClass newClass = (EClass) selection.getFirstElement();
+					if (newClass != selectedClass) {
+						selectedClass = newClass;
+						if (isSet()) {
+							remove();
+							create();
+						}
 					}
 				}
 			});
@@ -117,7 +121,7 @@ public class NavigationFeaturePropertyEditor extends
 				classViewer.setSelection(new StructuredSelection(eClasses.get(0)));
 			}
 		}
-		selectedClass = eClasses.get(0);
+		
 		if (!feature.isMany()) {
 			buttonCreate = toolkit.createButton(composite, "", SWT.TOGGLE);
 			buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD,
