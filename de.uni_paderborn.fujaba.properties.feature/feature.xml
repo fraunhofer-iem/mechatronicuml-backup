@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="de.uni_paderborn.fujaba.properties.feature"
-      label="Properties"
+      label="Fujaba Properties"
       version="0.4.0.qualifier">
-
 
    <copyright>
       Copyright (C) Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany
