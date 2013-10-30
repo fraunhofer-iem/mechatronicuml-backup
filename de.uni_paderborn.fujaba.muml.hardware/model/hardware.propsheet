@@ -27,34 +27,6 @@
   <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
   <tabs id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
   <packages>
-    <genPackage href="hardware.genmodel#//hardware/platforminstance"/>
-    <classes>
-      <genClass href="hardware.genmodel#//hardware/platforminstance/HWPlatformInstance"/>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/platforminstance/HWPlatformInstance/hwplatformType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.0/@classes.0/@propertyCategories.0">
-        <genFeature href="hardware.genmodel#//hardware/platforminstance/HWPlatformInstance/delegationPorts"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.0/@classes.0/@propertyCategories.0">
-        <genFeature href="hardware.genmodel#//hardware/platforminstance/HWPlatformInstance/delegations"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" open="true" properties="//@packages.0/@classes.0/@properties.1 //@packages.0/@classes.0/@properties.2"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-    </classes>
-    <classes>
-      <genClass href="hardware.genmodel#//hardware/platforminstance/HWPlatformInstanceConfiguration"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-  </packages>
-  <packages>
     <genPackage href="hardware.genmodel#//hardware/hwvaluetype"/>
     <classes>
       <genClass href="hardware.genmodel#//hardware/hwvaluetype/DataSize"/>
@@ -106,173 +78,31 @@
     </classes>
   </packages>
   <packages>
-    <genPackage href="hardware.genmodel#//hardware/resourcetype"/>
+    <genPackage href="hardware.genmodel#//hardware/platforminstance"/>
     <classes>
-      <genClass href="hardware.genmodel#//hardware/resourcetype/ResourceType"/>
+      <genClass href="hardware.genmodel#//hardware/platforminstance/HWPlatformInstance"/>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/platforminstance/HWPlatformInstance/hwplatformType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.1/@classes.0/@propertyCategories.0">
+        <genFeature href="hardware.genmodel#//hardware/platforminstance/HWPlatformInstance/delegationPorts"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.1/@classes.0/@propertyCategories.0">
+        <genFeature href="hardware.genmodel#//hardware/platforminstance/HWPlatformInstance/delegations"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" open="true" properties="//@packages.1/@classes.0/@properties.1 //@packages.1/@classes.0/@properties.2"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/platforminstance/HWPlatformInstanceConfiguration"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.7">
-      <genClass href="hardware.genmodel#//hardware/resourcetype/ComputingResource"/>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.7">
-      <genClass href="hardware.genmodel#//hardware/resourcetype/MemoryResource"/>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/MemoryResource/memoryAccess"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.2/@classes.2/@propertyCategories.0">
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/MemoryResource/isVolatile"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/MemoryResource/memoryType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" open="true" properties="//@packages.2/@classes.2/@properties.1"/>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.0">
-      <genClass href="hardware.genmodel#//hardware/resourcetype/Device"/>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/Device/deviceType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.2">
-      <genClass href="hardware.genmodel#//hardware/resourcetype/Cache"/>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/Cache/writePolicy"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/Cache/replacementPolicy"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/Cache/nbSets"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/Cache/associativity"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.2/@classes.4/@propertyCategories.0">
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/Cache/usedByProcessor"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.4/@properties.4"/>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.1">
-      <genClass href="hardware.genmodel#//hardware/resourcetype/ProgrammableLogicDevice"/>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.1">
-      <genClass href="hardware.genmodel#//hardware/resourcetype/Processor"/>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/Processor/ownedCache"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/Processor/architecture"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/Processor/nbCores"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/Processor/family"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.0">
-      <genClass href="hardware.genmodel#//hardware/resourcetype/AtomicResource"/>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/AtomicResource/parentStructuredResource"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.0">
-      <genClass href="hardware.genmodel#//hardware/resourcetype/StructuredResource"/>
-    </classes>
-    <classes>
-      <genClass href="hardware.genmodel#//hardware/resourcetype/HWPort"/>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/HWPort/parentResource"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/HWPort/portType"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/HWPort/protocol"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-    </classes>
-    <classes>
-      <genClass href="hardware.genmodel#//hardware/resourcetype/ResourceTypeRepository"/>
-      <properties category="//@packages.2/@classes.10/@propertyCategories.0">
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/ResourceTypeRepository/protocols"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.10/@properties.0"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-    </classes>
-    <classes>
-      <genClass href="hardware.genmodel#//hardware/resourcetype/CommunicationProtocol"/>
-      <properties category="//@packages.2/@classes.11/@propertyCategories.0">
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/CommunicationProtocol/isTimeTriggered"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.2/@classes.11/@propertyCategories.0">
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/CommunicationProtocol/isEventTriggered"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/CommunicationProtocol/furtherInformation"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" open="true" properties="//@packages.2/@classes.11/@properties.0 //@packages.2/@classes.11/@properties.1"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.11">
-      <genClass href="hardware.genmodel#//hardware/resourcetype/BusProtocol"/>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/BusProtocol/busProtocol"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-    </classes>
-    <classes superClasses="//@packages.2/@classes.11">
-      <genClass href="hardware.genmodel#//hardware/resourcetype/LinkProtocol"/>
-      <properties>
-        <genFeature href="hardware.genmodel#//hardware/resourcetype/LinkProtocol/linkProtocol"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
     </classes>
   </packages>
   <packages>
@@ -288,19 +118,19 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties category="//@packages.3/@classes.1/@propertyCategories.0">
+      <properties category="//@packages.2/@classes.1/@propertyCategories.0">
         <genFeature href="hardware.genmodel#//hardware/platform/ResourceInstance/hwportInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" properties="//@packages.3/@classes.1/@properties.1"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.1/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.10">
+    <classes superClasses="//@packages.2/@classes.10">
       <genClass href="hardware.genmodel#//hardware/platform/ComputingResourceInstance"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.10">
+    <classes superClasses="//@packages.2/@classes.10">
       <genClass href="hardware.genmodel#//hardware/platform/MemoryResourceInstance"/>
       <properties>
         <genFeature href="hardware.genmodel#//hardware/platform/MemoryResourceInstance/memorySize"/>
@@ -308,22 +138,22 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
-    <classes superClasses="//@packages.3/@classes.1">
+    <classes superClasses="//@packages.2/@classes.1">
       <genClass href="hardware.genmodel#//hardware/platform/DeviceInstance"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.3">
+    <classes superClasses="//@packages.2/@classes.3">
       <genClass href="hardware.genmodel#//hardware/platform/StorageMemoryInstance"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.3">
+    <classes superClasses="//@packages.2/@classes.3">
       <genClass href="hardware.genmodel#//hardware/platform/ProcessingMemoryInstance"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.3">
+    <classes superClasses="//@packages.2/@classes.3">
       <genClass href="hardware.genmodel#//hardware/platform/CacheInstance"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.2">
+    <classes superClasses="//@packages.2/@classes.2">
       <genClass href="hardware.genmodel#//hardware/platform/ProgrammableLogicDeviceInstance"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.2">
+    <classes superClasses="//@packages.2/@classes.2">
       <genClass href="hardware.genmodel#//hardware/platform/ProcessorInstance"/>
       <properties>
         <genFeature href="hardware.genmodel#//hardware/platform/ProcessorInstance/MIPS"/>
@@ -341,7 +171,7 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
-    <classes superClasses="//@packages.3/@classes.1">
+    <classes superClasses="//@packages.2/@classes.1">
       <genClass href="hardware.genmodel#//hardware/platform/AtomicResourceInstance"/>
       <properties>
         <genFeature href="hardware.genmodel#//hardware/platform/AtomicResourceInstance/parentStructuredResourceInstance"/>
@@ -349,22 +179,22 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
-    <classes superClasses="//@packages.3/@classes.1">
+    <classes superClasses="//@packages.2/@classes.1">
       <genClass href="hardware.genmodel#//hardware/platform/StructuredResourceInstance"/>
     </classes>
     <classes>
       <genClass href="hardware.genmodel#//hardware/platform/CommunicationResource"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.15">
+    <classes superClasses="//@packages.2/@classes.15">
       <genClass href="hardware.genmodel#//hardware/platform/Bus"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.15">
+    <classes superClasses="//@packages.2/@classes.15">
       <genClass href="hardware.genmodel#//hardware/platform/Link"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.12">
+    <classes superClasses="//@packages.2/@classes.12">
       <genClass href="hardware.genmodel#//hardware/platform/CommunicationMedia"/>
-      <properties category="//@packages.3/@classes.15/@propertyCategories.0">
+      <properties category="//@packages.2/@classes.15/@propertyCategories.0">
         <genFeature href="hardware.genmodel#//hardware/platform/CommunicationMedia/isSerial"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
@@ -374,18 +204,18 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties category="//@packages.3/@classes.15/@propertyCategories.1">
+      <properties category="//@packages.2/@classes.15/@propertyCategories.1">
         <genFeature href="hardware.genmodel#//hardware/platform/CommunicationMedia/connectedHWPortParts"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties category="//@packages.3/@classes.15/@propertyCategories.1">
+      <properties category="//@packages.2/@classes.15/@propertyCategories.1">
         <genFeature href="hardware.genmodel#//hardware/platform/CommunicationMedia/connectedBridges"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" properties="//@packages.3/@classes.15/@properties.0"/>
-      <propertyCategories title="Lists" open="true" properties="//@packages.3/@classes.15/@properties.2 //@packages.3/@classes.15/@properties.3"/>
+      <propertyCategories title="Booleans" open="true" properties="//@packages.2/@classes.15/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.15/@properties.2 //@packages.2/@classes.15/@properties.3"/>
     </classes>
     <classes>
       <genClass href="hardware.genmodel#//hardware/platform/HWPlatform"/>
@@ -405,7 +235,7 @@
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.17">
+    <classes superClasses="//@packages.2/@classes.17">
       <genClass href="hardware.genmodel#//hardware/platform/HWPlatformPart"/>
       <properties>
         <genFeature href="hardware.genmodel#//hardware/platform/HWPlatformPart/hwplatformType"/>
@@ -413,20 +243,20 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
-    <classes superClasses="//@packages.3/@classes.4">
+    <classes superClasses="//@packages.2/@classes.4">
       <genClass href="hardware.genmodel#//hardware/platform/SensorInstance"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.4">
+    <classes superClasses="//@packages.2/@classes.4">
       <genClass href="hardware.genmodel#//hardware/platform/ActuatorInstance"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.12">
+    <classes superClasses="//@packages.2/@classes.12">
       <genClass href="hardware.genmodel#//hardware/platform/Bridge"/>
-      <properties category="//@packages.3/@classes.21/@propertyCategories.0">
+      <properties category="//@packages.2/@classes.21/@propertyCategories.0">
         <genFeature href="hardware.genmodel#//hardware/platform/Bridge/connectedCommunicationMedia"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" properties="//@packages.3/@classes.21/@properties.0"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.21/@properties.0"/>
     </classes>
     <classes>
       <genClass href="hardware.genmodel#//hardware/platform/HWPortInstance"/>
@@ -440,23 +270,23 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties category="//@packages.3/@classes.22/@propertyCategories.0">
+      <properties category="//@packages.2/@classes.22/@propertyCategories.0">
         <genFeature href="hardware.genmodel#//hardware/platform/HWPortInstance/connectedMedia"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties category="//@packages.3/@classes.22/@propertyCategories.0">
+      <properties category="//@packages.2/@classes.22/@propertyCategories.0">
         <genFeature href="hardware.genmodel#//hardware/platform/HWPortInstance/delegation"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" open="true" properties="//@packages.3/@classes.22/@properties.2 //@packages.3/@classes.22/@properties.3"/>
+      <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.22/@properties.2 //@packages.2/@classes.22/@properties.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.22">
+    <classes superClasses="//@packages.2/@classes.22">
       <genClass href="hardware.genmodel#//hardware/platform/BusPortInstance"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.22">
+    <classes superClasses="//@packages.2/@classes.22">
       <genClass href="hardware.genmodel#//hardware/platform/LinkPortInstance"/>
     </classes>
     <classes>
@@ -468,7 +298,7 @@
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.17">
+    <classes superClasses="//@packages.2/@classes.17">
       <genClass href="hardware.genmodel#//hardware/platform/ResourceInstancePart"/>
       <properties>
         <genFeature href="hardware.genmodel#//hardware/platform/ResourceInstancePart/resourceInstanceType"/>
@@ -503,6 +333,176 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="hardware.genmodel#//hardware/resourcetype"/>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/resourcetype/ResourceType"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.7">
+      <genClass href="hardware.genmodel#//hardware/resourcetype/ComputingResource"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.7">
+      <genClass href="hardware.genmodel#//hardware/resourcetype/MemoryResource"/>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/MemoryResource/memoryAccess"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.2/@propertyCategories.0">
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/MemoryResource/isVolatile"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/MemoryResource/memoryType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Booleans" open="true" properties="//@packages.3/@classes.2/@properties.1"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.0">
+      <genClass href="hardware.genmodel#//hardware/resourcetype/Device"/>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/Device/deviceType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="hardware.genmodel#//hardware/resourcetype/Cache"/>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/Cache/writePolicy"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/Cache/replacementPolicy"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/Cache/nbSets"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/Cache/associativity"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:SpinnerPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.4/@propertyCategories.0">
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/Cache/usedByProcessor"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" open="true" properties="//@packages.3/@classes.4/@properties.4"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.1">
+      <genClass href="hardware.genmodel#//hardware/resourcetype/ProgrammableLogicDevice"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.1">
+      <genClass href="hardware.genmodel#//hardware/resourcetype/Processor"/>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/Processor/ownedCache"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/Processor/architecture"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/Processor/nbCores"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/Processor/family"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.0">
+      <genClass href="hardware.genmodel#//hardware/resourcetype/AtomicResource"/>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/AtomicResource/parentStructuredResource"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.0">
+      <genClass href="hardware.genmodel#//hardware/resourcetype/StructuredResource"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/resourcetype/HWPort"/>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/HWPort/parentResource"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/HWPort/portType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/HWPort/protocol"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/resourcetype/ResourceTypeRepository"/>
+      <properties category="//@packages.3/@classes.10/@propertyCategories.0">
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/ResourceTypeRepository/protocols"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" open="true" properties="//@packages.3/@classes.10/@properties.0"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+    </classes>
+    <classes>
+      <genClass href="hardware.genmodel#//hardware/resourcetype/CommunicationProtocol"/>
+      <properties category="//@packages.3/@classes.11/@propertyCategories.0">
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/CommunicationProtocol/isTimeTriggered"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.3/@classes.11/@propertyCategories.0">
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/CommunicationProtocol/isEventTriggered"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/CommunicationProtocol/furtherInformation"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Booleans" open="true" properties="//@packages.3/@classes.11/@properties.0 //@packages.3/@classes.11/@properties.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.11">
+      <genClass href="hardware.genmodel#//hardware/resourcetype/BusProtocol"/>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/BusProtocol/busProtocol"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.11">
+      <genClass href="hardware.genmodel#//hardware/resourcetype/LinkProtocol"/>
+      <properties>
+        <genFeature href="hardware.genmodel#//hardware/resourcetype/LinkProtocol/linkProtocol"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

@@ -685,11 +685,6 @@
              category="visual"
              id="property.tab.DiagramPropertySection"
              label="%tab.diagram"/>
-          <propertyTab
-             category="domain"
-             id="property.tab.domain"
-             label="Advanced"/>
-
       </propertyTabs>
    </extension>
 

@@ -43,7 +43,11 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.gef;visibility:=reexport,
  de.uni_paderborn.fujaba.muml.hardware.common,
  org.eclipse.emf.ecore.editor,
- org.eclipse.gmf.runtime.diagram.ui.geoshapes
+ org.eclipse.gmf.runtime.diagram.ui.geoshapes,
+ de.uni_paderborn.fujaba.muml.hardware.edit.properties;bundle-version="0.4.0",
+ org.storydriven.core.edit.properties;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.edit.properties;visibility:=reexport,
+ de.uni_paderborn.fujaba.properties.runtime;visibility:=reexport
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
 Bundle-Vendor: %providerName
