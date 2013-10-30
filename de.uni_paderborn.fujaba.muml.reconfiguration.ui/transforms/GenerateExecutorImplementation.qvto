@@ -140,6 +140,118 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 -- generates the static statechart frame for the parent statechart (the 'black' parts in the executor generation template)
 helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
+	-- create variables
+	var executionVar : Variable := new Variable(genVarExecutor_Parent_Execution, rootNode.getPrimitiveType(boolType));
+	rtsc.variables += executionVar;
+	
+	var tmpMsgVar : Variable := new Variable(genVarExecutor_Parent_TmpMsg, rootNode.getPrimitiveType(intType));
+	rtsc.variables += tmpMsgVar;
+	
+	-- create clocks
+	var c2Clock : Clock := new Clock(genClockExecutor_Parent_c2);
+	rtsc.clocks += c2Clock;
+	
+	-- create states
+	var idleState : State := new State(genStateExecutor_Parent_Idle);
+	idleState.initial := true;
+	rtsc.states += idleState;
+	
+	var checkSelfState : State := new State(genStateExecutor_Parent_CheckSelf);
+	rtsc.states += checkSelfState;
+	
+	var startExecutionState : State := new State(genStateExecutor_Parent_StartExecution);
+	startExecutionState.urgent := true;
+	rtsc.states += startExecutionState;
+	
+	var awaitVotingState : State := new State(genStateExecutor_Parent_AwaitVoting);
+	rtsc.states += awaitVotingState;
+	
+	var sendAbortState : State := new State(genStateExecutor_Parent_SendAbort);
+	sendAbortState.urgent := true;
+	rtsc.states += sendAbortState;
+	
+	var waitForParentState : State := new State(genStateExecutor_Parent_WaitForParent);
+	rtsc.states += waitForParentState;
+	
+	var abortedState : State := new State(genStateExecutor_Parent_Aborted);
+	rtsc.states += abortedState;
+	
+	var finalizeAbortState : State := new State(genStateExecutor_Parent_FinalizeAbort);
+	rtsc.states += finalizeAbortState;
+	
+	var executionState : State := new State(genStateExecutor_Parent_Execution);
+	rtsc.states += executionState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- CheckSelf -> StartExecution
+	currentTrans := new Transition(checkSelfState, startExecutionState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorExecute), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	rtsc.transitions += currentTrans;
+	
+	-- StartExecution -> AwaitVoting
+	currentTrans := new Transition(startExecutionState, awaitVotingState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorStartExecution), SynchronizationKind::SEND, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- CheckSelf -> SendAbort
+	currentTrans := new Transition(checkSelfState, sendAbortState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorExecute), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	rtsc.transitions += currentTrans;
+	
+	-- SendAbort -> Idle
+	currentTrans := new Transition(sendAbortState, idleState, 1);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitVoting -> WaitForParent
+	currentTrans := new Transition(awaitVotingState, waitForParentState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorVotingComplete), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	var msgType : MessageType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
+	var sendMsg : AsynchronousMessageEvent := new AsynchronousMessageEvent(msgType, EventKind::RAISE);
+	sendMsg.message.parameterBinding += createSimpleSendVariableParameterBinding(msgType.getParameterByName(genParamConfirm_T), rtsc.getVariableByName(genVarExecutor_TmpCommitTime));
+	currentTrans.events += sendMsg;
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitVoting -> Aborted
+	currentTrans := new Transition(awaitVotingState, abortedState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorVotingComplete), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	rtsc.transitions += currentTrans;
+	
+	-- Aborted -> FinalizeAbort
+	currentTrans := new Transition(abortedState, finalizeAbortState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorDoAbort), SynchronizationKind::SEND, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort), EventKind::RAISE);	
+	rtsc.transitions += currentTrans;
+	
+	-- WaitForParent -> FinalizeAbort
+	currentTrans := new Transition(waitForParentState, finalizeAbortState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorDoAbort), SynchronizationKind::SEND, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort), EventKind::TRIGGER);		
+	rtsc.transitions += currentTrans;
+	
+	-- FinalizeAbort -> Idle
+	currentTrans := new Transition(finalizeAbortState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinished), SynchronizationKind::RECEIVE, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- Execution -> Idle
+	currentTrans := new Transition(executionState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinished), SynchronizationKind::RECEIVE, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	return;
 }
 
 -- generates the static statechart frame for the events statechart (the 'black' parts in the executor generation template)
@@ -155,5 +267,65 @@ helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, 
 -- generates the static statechart frame for the embeddedCI statechart (the 'black' parts in the executor generation template)
 helper generateStaticEmbeddedCIStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
+	-- create variables
+	var subPortVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubPort, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	rtsc.variables += subPortVar;
+	
+	var tmpMsgVar : Variable := new Variable(genVarExecutor_EmbeddedCI_TmpMsg, rootNode.getPrimitiveType(intType));
+	rtsc.variables += tmpMsgVar;
+	
+	var tmpCommitVar : Variable := new Variable(genVarExecutor_EmbeddedCI_TmpCommit, rootNode.getPrimitiveType(boolType));
+	rtsc.variables += tmpCommitVar;
+	
+	-- generate initial state
+	var initialState : State := new State(genStateExecutor_embeddedCI_Main);
+	initialState.initial := true;
+	rtsc.states += initialState;
+	
+	-- create sync channels
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendReq, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCIReplyRecv, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendC, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCISendA, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorEmbeddedCIReconfFinished, null);
+	
+	-- generate adaptation RTSC
+	var adaptationRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCExecutor_EmbeddedCI_adapt, initialState, 2);
+	generateStaticEmbeddedCIAdaptationStatechartFrame(rootNode, adaptationRTSC);
+	
+	-- generate subrole RTSC
+	var subroleRTSC : RealtimeStatechart := createEmbeddedRTSC(genEmbeddedRTSCExecutor_EmbeddedCI_subrole, initialState, 1);
+	generateStaticEmbeddedCISubroleStatechartFrame(rootNode, subroleRTSC);
+	
+	return;
 }
 
+-- generates the static statechart frame for the embeddedCI.adaptation statechart (the 'black' parts in the executor generation template)
+helper generateStaticEmbeddedCIAdaptationStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+}
+
+-- generates the static statechart frame for the embeddedCI.subrole statechart (the 'black' parts in the executor generation template)
+helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+}
+
+-- traverses to the parents of rtsc until an RTSC is reached whole BehavioralElement is the Executor
+helper getExecutor(in rtsc : RealtimeStatechart) : Executor{
+
+	var curRTSC : RealtimeStatechart := rtsc;
+	
+	while(not (curRTSC.oclIsUndefined() or curRTSC.behavioralElement.oclIsTypeOf(Executor))){
+		if(not curRTSC.parentRegion.oclIsUndefined()) then {
+			curRTSC := curRTSC.parentRegion.parentState.parentStatechart;
+		} else {
+			curRTSC := null;
+		} endif;
+	};
+	
+	if(curRTSC.oclIsUndefined()) then{
+		return null;
+	} endif;
+
+	return curRTSC.behavioralElement.oclAsType(Executor);
+}
