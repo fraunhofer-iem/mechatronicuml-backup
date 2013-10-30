@@ -23,12 +23,12 @@ public class ResourceTypeRepositoryEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addResourceTypeRepositoryProtocolsEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}
@@ -45,11 +45,13 @@ public class ResourceTypeRepositoryEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createResourceTypeRepositoryProtocolsEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createResourceTypeRepositoryProtocolsEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 						.getResourceTypeRepository_Protocols());
+
+		editor.setTooltipMessage("The CommunicationProtocols that belong to this ResourceTypeRepository.\nCommunicationProtocols are used to specify the protocol used by HWPort and CommunicationMedia.");
 
 		return editor;
 
@@ -76,9 +78,9 @@ public class ResourceTypeRepositoryEditor
 	 */
 	public static class Factory
 			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new ResourceTypeRepositoryEditor(tab);
 		}

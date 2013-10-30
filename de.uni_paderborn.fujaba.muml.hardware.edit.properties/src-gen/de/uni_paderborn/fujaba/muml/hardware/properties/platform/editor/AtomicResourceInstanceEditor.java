@@ -44,11 +44,13 @@ public abstract class AtomicResourceInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createAtomicResourceInstanceParentStructuredResourceInstanceEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAtomicResourceInstanceParentStructuredResourceInstanceEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getAtomicResourceInstance_ParentStructuredResourceInstance());
+
+		editor.setTooltipMessage("The StructuredResourceInstance, this AtomicResourceInstance belongs to.");
 
 		return editor;
 

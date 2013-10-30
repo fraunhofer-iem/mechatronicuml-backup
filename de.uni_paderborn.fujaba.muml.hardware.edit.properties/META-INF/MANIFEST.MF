@@ -8,7 +8,7 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
  org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml,
  org.eclipse.emf.edit,
- de.fujaba.properties.runtime,
+ de.uni_paderborn.fujaba.properties.runtime,
  org.eclipse.ui,
  org.storydriven.core,
  org.storydriven.core.edit,
@@ -22,8 +22,8 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: 
- de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor,
  de.uni_paderborn.fujaba.muml.hardware.properties.platforminstance.editor,
+ de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor,
  de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor,
  de.uni_paderborn.fujaba.muml.hardware.properties.platform.editor,
  de.uni_paderborn.fujaba.muml.hardware.properties.tabs

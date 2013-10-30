@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.properties.platform.editor;
  */
 public abstract class ResourceInstanceEditor
 		extends
-			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -23,8 +23,8 @@ public abstract class ResourceInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addResourceInstanceResourceTypeEditor(null, true);
@@ -32,11 +32,7 @@ public abstract class ResourceInstanceEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addResourceInstanceHwportInstancesEditor(
-					"de.fujaba.properties.category.Lists", true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementNameEditor(null, true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}
@@ -53,11 +49,13 @@ public abstract class ResourceInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createResourceInstanceResourceTypeEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createResourceInstanceResourceTypeEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getResourceInstance_ResourceType());
+
+		editor.setTooltipMessage("The resource type of which this ResourceInstance is derived.");
 
 		return editor;
 
@@ -75,31 +73,13 @@ public abstract class ResourceInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createResourceInstanceHwportInstancesEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createResourceInstanceHwportInstancesEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getResourceInstance_HwportInstances());
 
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
+		editor.setTooltipMessage("The HWPortInstances which belong to this ResourceInstance. They are derived by the resourceType.");
 
 		return editor;
 

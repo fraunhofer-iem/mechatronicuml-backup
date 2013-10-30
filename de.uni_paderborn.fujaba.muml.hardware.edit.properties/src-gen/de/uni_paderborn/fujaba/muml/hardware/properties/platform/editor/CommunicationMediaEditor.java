@@ -23,15 +23,16 @@ public abstract class CommunicationMediaEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addCommunicationMediaIsSerialEditor(
-					"de.fujaba.properties.category.Booleans", true);
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -40,12 +41,12 @@ public abstract class CommunicationMediaEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addCommunicationMediaConnectedHWPortPartsEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addCommunicationMediaConnectedBridgesEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}
@@ -62,11 +63,13 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaIsSerialEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaIsSerialEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getCommunicationMedia_IsSerial());
+
+		editor.setTooltipMessage("Determines if this CommunicationMedia uses a serial communication.");
 
 		return editor;
 
@@ -84,11 +87,13 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaProtocolEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaProtocolEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getCommunicationMedia_Protocol());
+
+		editor.setTooltipMessage("The protocol this CommunicationMedia uses to transmit data. A CommunicationMedia can only be connected to HWPortInstances that use the same protocol.");
 
 		return editor;
 
@@ -106,11 +111,13 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedHWPortPartsEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedHWPortPartsEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getCommunicationMedia_ConnectedHWPortParts());
+
+		editor.setTooltipMessage("The connected HWPortInstances.");
 
 		return editor;
 
@@ -128,11 +135,13 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedBridgesEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedBridgesEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getCommunicationMedia_ConnectedBridges());
+
+		editor.setTooltipMessage("The Bridges this CommunicationMedia is connected to.");
 
 		return editor;
 

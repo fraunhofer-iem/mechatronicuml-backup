@@ -46,9 +46,9 @@ public class StructuredResourceEditor
 	 */
 	public static class Factory
 			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new StructuredResourceEditor(tab);
 		}
@@ -56,8 +56,8 @@ public class StructuredResourceEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.documentation",
-							"property.tab.general"}).contains(tab);
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.documentation"}).contains(tab);
 		}
 	}
 

@@ -51,6 +51,6 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.hardware.common,
  org.eclipse.emf.ecore.editor,
  org.eclipse.gmf.runtime.diagram.ui.properties,
- de.fujaba.properties.runtime;visibility:=reexport
+ de.uni_paderborn.fujaba.properties.runtime;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

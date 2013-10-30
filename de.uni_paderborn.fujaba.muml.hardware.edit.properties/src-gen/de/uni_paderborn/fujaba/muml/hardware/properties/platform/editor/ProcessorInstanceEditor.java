@@ -48,11 +48,13 @@ public class ProcessorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceMIPSEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceMIPSEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getProcessorInstance_MIPS(), 3);
+
+		editor.setTooltipMessage("The MIPS-Rate (Million instructions per second) of this ProcessorInstance.");
 
 		return editor;
 
@@ -68,11 +70,13 @@ public class ProcessorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceCPIEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceCPIEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getProcessorInstance_CPI(), 3);
+
+		editor.setTooltipMessage("The average count of cycles per instruction (CPI) of this ProcessorInstance.");
 
 		return editor;
 
@@ -90,11 +94,13 @@ public class ProcessorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceOwnedCacheInstanceEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceOwnedCacheInstanceEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getProcessorInstance_OwnedCacheInstance());
+
+		editor.setTooltipMessage("The CacheInstance this ProcessorInstance uses.");
 
 		return editor;
 
@@ -121,9 +127,9 @@ public class ProcessorInstanceEditor
 	 */
 	public static class Factory
 			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new ProcessorInstanceEditor(tab);
 		}

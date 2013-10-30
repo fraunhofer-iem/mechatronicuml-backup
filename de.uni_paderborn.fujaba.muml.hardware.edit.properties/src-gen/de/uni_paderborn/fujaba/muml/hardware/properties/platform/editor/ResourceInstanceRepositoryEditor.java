@@ -43,11 +43,13 @@ public class ResourceInstanceRepositoryEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createResourceInstanceRepositoryResourceTypeRepositoryEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createResourceInstanceRepositoryResourceTypeRepositoryEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getResourceInstanceRepository_ResourceTypeRepository());
+
+		editor.setTooltipMessage("The ResourceTypeRepository which contains the ResourceTypes that are instantiated in this ResourceInstanceRepository.");
 
 		return editor;
 
@@ -74,9 +76,9 @@ public class ResourceInstanceRepositoryEditor
 	 */
 	public static class Factory
 			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new ResourceInstanceRepositoryEditor(tab);
 		}

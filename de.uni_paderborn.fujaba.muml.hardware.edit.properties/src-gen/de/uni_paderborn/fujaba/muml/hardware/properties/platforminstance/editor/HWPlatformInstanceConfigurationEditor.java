@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.properties.platforminstance.editor
  */
 public class HWPlatformInstanceConfigurationEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -23,8 +23,8 @@ public class HWPlatformInstanceConfigurationEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementNameEditor(null, true);
+		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
 		}
 
 	}
@@ -32,18 +32,22 @@ public class HWPlatformInstanceConfigurationEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
+						.getCommentableElement_Comment(), true);
+
+		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 		return editor;
 
@@ -70,9 +74,9 @@ public class HWPlatformInstanceConfigurationEditor
 	 */
 	public static class Factory
 			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new HWPlatformInstanceConfigurationEditor(tab);
 		}
@@ -80,8 +84,8 @@ public class HWPlatformInstanceConfigurationEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.documentation",
-							"property.tab.general"}).contains(tab);
+					new java.lang.String[]{"property.tab.general",
+							"property.tab.documentation"}).contains(tab);
 		}
 	}
 

@@ -23,17 +23,19 @@ public abstract class CommunicationProtocolEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addCommunicationProtocolIsTimeTriggeredEditor(
-					"de.fujaba.properties.category.Booleans", true);
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addCommunicationProtocolIsEventTriggeredEditor(
-					"de.fujaba.properties.category.Booleans", true);
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -54,11 +56,13 @@ public abstract class CommunicationProtocolEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolIsTimeTriggeredEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolIsTimeTriggeredEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 						.getCommunicationProtocol_IsTimeTriggered());
+
+		editor.setTooltipMessage("Determines if the protocol is time triggered. ");
 
 		return editor;
 
@@ -76,11 +80,13 @@ public abstract class CommunicationProtocolEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolIsEventTriggeredEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolIsEventTriggeredEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 						.getCommunicationProtocol_IsEventTriggered());
+
+		editor.setTooltipMessage("Determines if this protocol is event triggered.");
 
 		return editor;
 
@@ -98,11 +104,13 @@ public abstract class CommunicationProtocolEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolFurtherInformationEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.TextPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolFurtherInformationEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 						.getCommunicationProtocol_FurtherInformation(), false);
+
+		editor.setTooltipMessage("Further information for this protocol (i.e. Version, or another Protocol).");
 
 		return editor;
 

@@ -23,8 +23,8 @@ public class MemoryResourceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Booleans", "Booleans",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Booleans",
+				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addMemoryResourceMemoryAccessEditor(null, true);
@@ -32,7 +32,8 @@ public class MemoryResourceEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addMemoryResourceIsVolatileEditor(
-					"de.fujaba.properties.category.Booleans", true);
+					"de.uni_paderborn.fujaba.properties.category.Booleans",
+					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -53,11 +54,13 @@ public class MemoryResourceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceMemoryAccessEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceMemoryAccessEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 						.getMemoryResource_MemoryAccess());
+
+		editor.setTooltipMessage("Specifies what kind of access is allowed for this MemoryResource.");
 
 		return editor;
 
@@ -75,11 +78,13 @@ public class MemoryResourceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceIsVolatileEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceIsVolatileEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 						.getMemoryResource_IsVolatile());
+
+		editor.setTooltipMessage("Specifies if this MemoryResource is volatile or non-volatile. \nNon-volatile Memory (i.e. ROM) could be used to store the binary code.\nVolatile Memory (i.e SRAM) is used during execution of code.");
 
 		return editor;
 
@@ -97,11 +102,13 @@ public class MemoryResourceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceMemoryTypeEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.OptionPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceMemoryTypeEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 						.getMemoryResource_MemoryType());
+
+		editor.setTooltipMessage("The type of this MemoryResource.");
 
 		return editor;
 
@@ -128,9 +135,9 @@ public class MemoryResourceEditor
 	 */
 	public static class Factory
 			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new MemoryResourceEditor(tab);
 		}
@@ -140,9 +147,8 @@ public class MemoryResourceEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general",
-							"property.tab.documentation",
-							"property.tab.general"}).contains(tab);
+							"property.tab.general", "property.tab.general",
+							"property.tab.documentation"}).contains(tab);
 		}
 	}
 

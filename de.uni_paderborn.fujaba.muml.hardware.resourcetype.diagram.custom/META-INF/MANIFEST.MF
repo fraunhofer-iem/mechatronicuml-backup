@@ -7,4 +7,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram,
  org.eclipse.gmf.runtime.diagram.ui.properties,
  de.uni_paderborn.fujaba.muml.hardware.common,
- de.fujaba.properties.runtime
+ de.uni_paderborn.fujaba.properties.runtime

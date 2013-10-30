@@ -23,8 +23,8 @@ public class HWPlatformInstanceEditor
 	protected void createProperties() {
 		super.createProperties();
 
-		addSubCategory("de.fujaba.properties.category.Lists", "Lists",
-				org.eclipse.swt.SWT.HORIZONTAL, true);
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addHWPlatformInstanceHwplatformTypeEditor(null, true);
@@ -32,12 +32,12 @@ public class HWPlatformInstanceEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addHWPlatformInstanceDelegationPortsEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addHWPlatformInstanceDelegationsEditor(
-					"de.fujaba.properties.category.Lists", true);
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}
@@ -54,11 +54,13 @@ public class HWPlatformInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceHwplatformTypeEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceHwplatformTypeEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platforminstance.PlatforminstancePackage.eINSTANCE
 						.getHWPlatformInstance_HwplatformType());
+
+		editor.setTooltipMessage("The HWPlatform type of which this instance is derived.");
 
 		return editor;
 
@@ -76,11 +78,13 @@ public class HWPlatformInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceDelegationPortsEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceDelegationPortsEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platforminstance.PlatforminstancePackage.eINSTANCE
 						.getHWPlatformInstance_DelegationPorts());
+
+		editor.setTooltipMessage("The delegation ports of this HWPlatformInstance. They are derived from the HWPlatform type.");
 
 		return editor;
 
@@ -98,11 +102,13 @@ public class HWPlatformInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected de.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceDelegationsEditor() {
-		de.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.fujaba.properties.runtime.editors.ListPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceDelegationsEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platforminstance.PlatforminstancePackage.eINSTANCE
 						.getHWPlatformInstance_Delegations());
+
+		editor.setTooltipMessage("The delegations of this HWPlatformInstance. They are derived from is HWPlatform type.");
 
 		return editor;
 
@@ -129,9 +135,9 @@ public class HWPlatformInstanceEditor
 	 */
 	public static class Factory
 			implements
-				de.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+				de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
 		@Override
-		public de.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
 			return new HWPlatformInstanceEditor(tab);
 		}
