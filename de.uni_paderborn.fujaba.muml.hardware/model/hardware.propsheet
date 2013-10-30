@@ -25,7 +25,7 @@
     <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
   </plugin>
   <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-  <tabs id="constraint" name="Constraint" afterTab="base"/>
+  <tabs id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
   <packages>
     <genPackage href="hardware.genmodel#//hardware/platforminstance"/>
     <classes>

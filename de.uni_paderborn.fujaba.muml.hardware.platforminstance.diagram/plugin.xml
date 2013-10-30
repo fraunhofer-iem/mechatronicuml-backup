@@ -300,24 +300,6 @@
    </extension>
 
 
-   <extension
-         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <?gmfgen generated="true"?>
-      <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram">
-         <propertyTab
-               label="Base"
-               category="domain"
-               id="Base">
-         </propertyTab>
-         <propertyTab
-               label="Documentation"
-               category="extra"
-               id="Documentation"
-               afterTab="Documentation">
-         </propertyTab>
-      </propertyTabs>
-   </extension>
 
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">

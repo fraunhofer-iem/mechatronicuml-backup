@@ -745,24 +745,6 @@
       </propertySections>
    </extension>
 
-<extension
-         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
-      <?gmfgen generated="true"?>
-      <propertyTabs
-            contributorId="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram">
-         <propertyTab
-               label="Base"
-               category="domain"
-               id="Base">
-         </propertyTab>
-         <propertyTab
-               label="Documentation"
-               category="extra"
-               id="Documentation"
-               afterTab="Documentation">
-         </propertyTab>
-      </propertyTabs>
-   </extension>
 
 
 
