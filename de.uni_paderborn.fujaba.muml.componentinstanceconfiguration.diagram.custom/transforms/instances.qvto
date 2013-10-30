@@ -8,8 +8,6 @@ modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0
 modeltype InstancePackage uses muml::instance('http://www.fujaba.de/muml/0.4.0');
 modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
 
-property NULL_COMPONENT_PART_HELPER : ComponentPart = object ComponentPart{};
-property NULL_PORT_PART_HELPER : PortPart = object PortPart{};
 
 main() {
 	log("QVT-O Script \"instances.qvto\" started.");
