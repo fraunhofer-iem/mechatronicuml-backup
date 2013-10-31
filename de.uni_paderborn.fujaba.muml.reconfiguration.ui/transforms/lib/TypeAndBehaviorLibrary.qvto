@@ -84,6 +84,11 @@ query RootNode::getPrimitiveType(in typeName : String) : DataType{
 	return theType;
 }
 
+-- return the parameter with the given name of an operation
+query Operation::getParameterByName(in theName : String) : Parameter{
+	return (self.parameters -> any(name = theName));
+}
+
 ------------- constructors -----------------
 
 constructor Parameter::Parameter(in newName : String, in type : DataType){

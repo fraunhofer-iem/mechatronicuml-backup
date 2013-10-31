@@ -44,7 +44,7 @@ helper createSimpleCompareGuardExpression(in variable : Variable, in value : Str
 }
 
 -- creates a block containing one assignment expression where a literal is assigned to a variable
-helper createSimpleAssignmentExpressioninBlock(in variable : Variable, in newValue : String) : Expression{
+helper createSimpleAssignmentExpressioninBlock(in variable : Variable, in newValue : String) : Block{
 	var block : Block := new Block();
 	
 	var rhs : Expression := new LiteralExpression(newValue);
@@ -55,8 +55,20 @@ helper createSimpleAssignmentExpressioninBlock(in variable : Variable, in newVal
 	return block;
 }
 
+-- creates a block containing one assignment expression where an arbitrary expression is assigned to a variable
+helper createAssignmentExpressioninBlock(in variable : Variable, in newValue : Expression) : Block{
+	var block : Block := new Block();
+	
+	var rhs : Expression := newValue;
+	
+	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, rhs);
+	block.expressions += assignment;
+	
+	return block;
+}
+
 -- creates a block containing one assignment expression where a literal is assigned to a variable
-helper createMsgParamAssignmentExpressioninBlock(in variable : Variable, in msg : MessageType, in param : Parameter) : Expression{
+helper createMsgParamAssignmentExpressioninBlock(in variable : Variable, in msg : MessageType, in param : Parameter) : Block{
 	var block : Block := new Block();
 	
 	var rhs : TriggerMessageExpression := new TriggerMessageExpression(msg, param);
@@ -68,10 +80,17 @@ helper createMsgParamAssignmentExpressioninBlock(in variable : Variable, in msg 
 }
 
 -- creates an assignment expression where a literal is assigned to a variable
-helper createSimpleAssignmentExpression(in variable : Variable, in newValue : String) : Expression{
+helper createSimpleAssignmentExpression(in variable : Variable, in newValue : String) : Assignment{
 	
 	var rhs : Expression := new LiteralExpression(newValue);
 	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, rhs);
+	
+	return assignment;
+}
+
+-- creates an assignment expression where a literal is assigned to a variable
+helper createAssignmentExpression(in variable : Variable, in newValue : Expression) : Assignment{
+	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, newValue);
 	
 	return assignment;
 }
@@ -150,7 +169,7 @@ constructor Clock::Clock(in newName : String){
 	name := newName;
 }
 
-constructor Transition::Transition(in srcState : State, in tgtState : State, in prio : Integer){
+constructor Transition::Transition(in srcState : Vertex, in tgtState : Vertex, in prio : Integer){
 	source := srcState;
 	target := tgtState;
 	priority := prio;
@@ -191,4 +210,12 @@ constructor AsynchronousMessageEvent::AsynchronousMessageEvent(in msgType : Mess
 
 constructor Message::Message(in msgType : MessageType){
 	instanceOf := msgType;
+}
+
+constructor EntryPoint::EntryPoint(in newName : String){
+	name := newName;
+}
+
+constructor ExitPoint::ExitPoint(in newName : String){
+	name := newName;
 }

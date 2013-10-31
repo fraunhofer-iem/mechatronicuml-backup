@@ -560,6 +560,165 @@ helper generateStaticEmbeddedCIStatechartFrame(inout rootNode : RootNode, inout 
 -- generates the static statechart frame for the embeddedCI.adaptation statechart (the 'black' parts in the executor generation template)
 helper generateStaticEmbeddedCIAdaptationStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
+	-- create variables
+	var acVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_Ac, rootNode.getOrCreateAffectedComponentsType());
+	rtsc.variables += acVar;
+	
+	var executionTimeVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_ExecTime, rootNode.getPrimitiveType(intType));
+	rtsc.variables += executionTimeVar;
+	
+	var minCommitTimeVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_MinCommitTime, rootNode.getPrimitiveType(intType));
+	rtsc.variables += minCommitTimeVar;
+	
+	var curPortVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_CurPort, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	rtsc.variables += curPortVar;
+	
+	-- create operations
+	var getNextPiActionOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_getNextPIAction, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	getNextPiActionOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC, rootNode.getOrCreateAffectedComponentsType());
+	rtsc.operations += getNextPiActionOp;
+	
+	var allActionsPerformedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_allActionsPerformed, rootNode.getPrimitiveType(boolType));
+	allActionsPerformedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC, rootNode.getOrCreateAffectedComponentsType());
+	rtsc.operations += allActionsPerformedOp;
+	
+	-- create states
+	var idleState : State := new State(genStateExecutor_embeddedCI_Adaptation_Idle);
+	idleState.initial := true;
+	rtsc.states += idleState;
+	
+	var voteState : State := new State(genStateExecutor_embeddedCI_Adaptation_Vote);
+	rtsc.states += voteState;
+	generateEmbeddedCIAdaptationVoteState(rootNode, voteState);
+	
+	var reportState : State := new State(genStateExecutor_embeddedCI_Adaptation_Report);
+	reportState.urgent := true;
+	rtsc.states += reportState;
+	
+	var waitForParentState : State := new State(genStateExecutor_embeddedCI_Adaptation_WaitForParent);
+	rtsc.states += waitForParentState;
+	
+	var executeState : State := new State(genStateExecutor_embeddedCI_Adaptation_Execute);
+	rtsc.states += executeState;
+	
+	var abortState : State := new State(genStateExecutor_embeddedCI_Adaptation_Abort);
+	rtsc.states += abortState;
+	
+	--TODO: generate transitions
+	
+	return;
+}
+
+--  generates the contents of the embeddedCI.Adaptation.Vote state
+helper generateEmbeddedCIAdaptationVoteState(inout rootNode : RootNode, inout voteState : State){
+	
+	-- create embedded statechart
+	var rtsc : RealtimeStatechart := createEmbeddedRTSC(voteState.name, voteState, 1);
+	
+	-- create variables
+	var finishedVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Adapt_Vote_Finished, rootNode.getPrimitiveType(boolType));
+	finishedVar.initializeExpression := new LiteralExpression('false');
+	rtsc.variables += finishedVar;
+	
+	-- create operations
+	var storeMinCommitTimeOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_storeMinCommitTime, rootNode.getPrimitiveType(voidType));
+	storeMinCommitTimeOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_commitTime, rootNode.getPrimitiveType(intType));
+	rtsc.operations += storeMinCommitTimeOp;
+	
+	var getNextPIForReqOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_getNextPIRequest, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	getNextPIForReqOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
+	rtsc.operations += getNextPIForReqOp;
+	
+	var getMessageNameOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_getMessageName, rootNode.getPrimitiveType(intType));
+	getMessageNameOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
+	getMessageNameOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	rtsc.operations += getMessageNameOp;
+	
+	var allRepliesReceivedOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_allRepliesReceived, rootNode.getPrimitiveType(boolType));
+	allRepliesReceivedOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
+	rtsc.operations += allRepliesReceivedOp;
+	
+	var setReplyOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_setReply, rootNode.getPrimitiveType(voidType));
+	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_AC,  rootNode.getOrCreateAffectedComponentsType());
+	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_port, getExecutor(rtsc).ports -> any(name = 'embeddedCI'));
+	setReplyOp.parameters += new Parameter(genParamExecutor_EmbeddedCI_Adaptation_Vote_commit, rootNode.getPrimitiveType(boolType));
+	rtsc.operations += setReplyOp;
+	
+	var canCommitOp : Operation := new Operation(genOpExecutor_EmbeddedCI_Adaptation_Vote_canCommit, rootNode.getPrimitiveType(boolType));
+	rtsc.operations += canCommitOp;
+	
+	-- create entry and exit points
+	var entryPoint : EntryPoint := new EntryPoint('entry'); 
+	voteState.connectionPoints += entryPoint;
+	
+	var exitPoint : ExitPoint := new ExitPoint('exit');
+	voteState.connectionPoints += exitPoint;
+	
+	-- create states
+	var triggerState : State := new State(genStateExecutor_embeddedCI_Adaptation_Vote_TriggerSubPort);
+	triggerState.initial := true;
+	triggerState.urgent := true;
+	var opCall : OperationCall := new OperationCall(getNextPIForReqOp); -- first call of entry event
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(getNextPIForReqOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_AC), rtsc.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	var block : Block := createAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_CurPort), opCall);
+	opCall := new OperationCall(getMessageNameOp); -- second call of entry event
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(getMessageNameOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_AC), rtsc.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(getMessageNameOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_Vote_port), rtsc.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_CurPort));
+	block.expressions += createAssignmentExpression(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_TmpMsg), opCall);
+	triggerState.entryEvent := new EntryEvent(block, null);
+	rtsc.states += triggerState;
+	
+	var getRepliesState : State := new State(genStateExecutor_embeddedCI_Adaptation_Vote_GetReplies);
+	opCall := new OperationCall(allRepliesReceivedOp);
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(allRepliesReceivedOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_AC), rtsc.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	getRepliesState.entryEvent := new EntryEvent(createAssignmentExpressioninBlock(finishedVar, opCall), null);
+	rtsc.states += getRepliesState;
+	
+	var checkResultState : State := new State(genStateExecutor_embeddedCI_Adaptation_Vote_CheckResult);
+	checkResultState.urgent := true;
+	opCall := new OperationCall(canCommitOp);
+	checkResultState.entryEvent := new EntryEvent(createAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_TwoPCResult), opCall), null);
+	rtsc.states += checkResultState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- EntryPoint -> TriggerSubPort
+	currentTrans := new Transition(entryPoint, triggerState, 1);
+	rtsc.transitions += currentTrans;
+	
+	-- TriggerSubPort -> TriggerSubPort
+	currentTrans := new Transition(triggerState, triggerState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCISendReq), SynchronizationKind::SEND, 
+			new TypedNamedElementExpression(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_CurPort)));
+	rtsc.transitions += currentTrans;
+	
+	-- TriggerSubPort -> GetReplies
+	currentTrans := new Transition(triggerState, getRepliesState, 2);
+	currentTrans.guard := createSimpleCompareGuardExpression(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_CurPort), 'null');
+	currentTrans.action := new Action('minCommitTime := 0', createSimpleAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_MinCommitTime), '0'));
+	rtsc.transitions += currentTrans;
+	
+	-- GetReplies -> GetReplies
+	currentTrans := new Transition(getRepliesState, getRepliesState, 1);
+	currentTrans.guard := createSimpleCompareGuardExpression(finishedVar, 'false');
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCIReplyRecv), SynchronizationKind::RECEIVE,
+			null);
+	opCall := new OperationCall(setReplyOp);
+	opCall.parameterBinding += createSimpleSendVariableParameterBinding(allRepliesReceivedOp.getParameterByName(genParamExecutor_EmbeddedCI_Adaptation_AC), rtsc.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac));
+	-- TODO: Finish side effect!!
+	rtsc.transitions += currentTrans;
+	
+	-- GetReplies -> CheckResult
+	currentTrans := new Transition(getRepliesState, checkResultState, 2);
+	currentTrans.guard := createSimpleCompareGuardExpression(finishedVar, 'true');
+	rtsc.transitions += currentTrans;
+	
+	-- CheckResult -> ExitPoint
+	currentTrans := new Transition(checkResultState, exitPoint, 1);
+	rtsc.transitions += currentTrans;
+	
+	return;
 }
 
 -- generates the static statechart frame for the embeddedCI.subrole statechart (the 'black' parts in the executor generation template)

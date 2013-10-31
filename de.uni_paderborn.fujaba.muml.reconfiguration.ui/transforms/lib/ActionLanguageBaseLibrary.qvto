@@ -56,6 +56,10 @@ constructor TriggerMessageExpression::TriggerMessageExpression(in msg : MessageT
 	parameter := param;
 }
 
+constructor OperationCall::OperationCall(in op : Operation){
+	operation := op;
+}
+
 constructor Block::Block(){
 	
 }
