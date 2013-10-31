@@ -55,6 +55,18 @@ helper createSimpleAssignmentExpressioninBlock(in variable : Variable, in newVal
 	return block;
 }
 
+-- creates a block containing one assignment expression where a literal is assigned to a variable
+helper createMsgParamAssignmentExpressioninBlock(in variable : Variable, in msg : MessageType, in param : Parameter) : Expression{
+	var block : Block := new Block();
+	
+	var rhs : TriggerMessageExpression := new TriggerMessageExpression(msg, param);
+	
+	var assignment : Assignment := new Assignment(variable, AssignOperator::ASSIGN, rhs);
+	block.expressions += assignment;
+	
+	return block;
+}
+
 -- creates an assignment expression where a literal is assigned to a variable
 helper createSimpleAssignmentExpression(in variable : Variable, in newValue : String) : Expression{
 	

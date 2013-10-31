@@ -9,6 +9,7 @@ modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0
 modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
 modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
 modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
 
 modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 
@@ -48,6 +49,11 @@ constructor Assignment::Assignment(in variable : Variable, in op : AssignOperato
 
 constructor TypedNamedElementExpression::TypedNamedElementExpression(in element : TypedNamedElement){
 	typedNamedElement := element;
+}
+
+constructor TriggerMessageExpression::TriggerMessageExpression(in msg : MessageType, in param : Parameter){
+	messageType := msg;
+	parameter := param;
 }
 
 constructor Block::Block(){

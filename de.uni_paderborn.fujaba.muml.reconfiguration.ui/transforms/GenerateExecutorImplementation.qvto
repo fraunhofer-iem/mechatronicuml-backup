@@ -257,6 +257,207 @@ helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc
 -- generates the static statechart frame for the events statechart (the 'black' parts in the executor generation template)
 helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
+	-- create variables
+	var deadlineVar : Variable := new Variable(genVarExecutor_Events_Deadline, rootNode.getPrimitiveType(intType));
+	rtsc.variables += deadlineVar;
+	
+	var fromParentVar : Variable := new Variable(genVarExecutor_Events_FromParent, rootNode.getPrimitiveType(boolType));
+	rtsc.variables += fromParentVar;
+	
+	var abortedReqWaitingVar : Variable := new Variable(genVarExecutor_Events_AbortReqWaiting, rootNode.getPrimitiveType(boolType));
+	rtsc.variables += abortedReqWaitingVar;
+	
+	-- create clocks
+	var c1Clock : Clock := new Clock(genClockExecutor_Events_c1);
+	rtsc.clocks += c1Clock;
+	
+	-- create states
+	var idleState : State := new State(genStateExecutor_Events_Idle);
+	idleState.initial := true;
+	idleState.entryEvent := new EntryEvent(createSimpleAssignmentExpressioninBlock(fromParentVar, 'false'), null);
+	rtsc.states += idleState;
+	
+	var timeOutState : State := new State(genStateExecutor_Events_TimeOut);
+	rtsc.states += timeOutState;
+	
+	var abortParentReqState : State := new State(genStateExecutor_Events_AbortParentReq);
+	abortParentReqState.urgent := true;
+	rtsc.states += abortParentReqState;
+	
+	var awaitVotingState : State := new State(genStateExecutor_Events_AwaitVoting);
+	rtsc.states += awaitVotingState;
+	
+	var doExecuteState : State := new State(genStateExecutor_Events_DoExecute);
+	rtsc.states += doExecuteState;
+	
+	var doAbortState : State := new State(genStateExecutor_Events_DoAbort);
+	rtsc.states += doAbortState;
+	
+	var checkState : State := new State(genStateExecutor_Events_Check);
+	rtsc.states += checkState;
+	
+	var busyState : State := new State(genStateExecutor_Events_Busy);
+	rtsc.states += busyState;
+	
+	var finishedState : State := new State(genStateExecutor_Events_Finished);
+	rtsc.states += finishedState;
+	
+	var waitForAnswerState : State := new State(genStateExecutor_Events_WaitForAnswer);
+	rtsc.states += waitForAnswerState;
+	
+	var answerReceivedState : State := new State(genStateExecutor_Events_AnswerReceived);
+	rtsc.states += answerReceivedState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- TimeOut -> Idle (declineRequest)
+	currentTrans := new Transition(timeOutState, idleState, 2);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- TimeOut -> Idle (confirmRequest)
+	currentTrans := new Transition(timeOutState, idleState, 1);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- Check -> TimeOut
+	currentTrans := new Transition(checkState, timeOutState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorExecute), SynchronizationKind::SEND, 
+			new LiteralExpression('false'));
+	rtsc.transitions += currentTrans;
+	
+	-- Check -> Idle
+	currentTrans := new Transition(checkState, idleState, 2);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::RAISE);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorExecute), SynchronizationKind::SEND, 
+			new LiteralExpression('false'));
+	rtsc.transitions += currentTrans;
+	
+	-- Check -> Busy (confirmRequest)
+	currentTrans := new Transition(checkState, busyState, 3);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest), EventKind::TRIGGER);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorExecute), SynchronizationKind::SEND, 
+			new LiteralExpression('true'));
+	var msgType : MessageType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
+	currentTrans.action := new Action('Assign Msg Param', createMsgParamAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_Reconfiguration), msgType, msgType.getParameterByName(genParamConfirmRequest_Reconf)));
+	rtsc.transitions += currentTrans;
+	
+	-- Check -> AbortParentReq (execute)
+	currentTrans := new Transition(checkState, abortParentReqState, 4);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::TRIGGER);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorExecute), SynchronizationKind::SEND, 
+			new LiteralExpression('false'));
+	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	currentTrans.action := new Action('Assign Msg Param', createMsgParamAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_Reconfiguration), msgType, msgType.getParameterByName(genParamExecute_Reconf)));
+	rtsc.transitions += currentTrans;
+	
+	-- TimeOut -> AbortParentReq (execute)
+	currentTrans := new Transition(timeOutState, abortParentReqState, 3);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::TRIGGER);
+	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	currentTrans.action := new Action('Assign Msg Param', createMsgParamAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_Reconfiguration), msgType, msgType.getParameterByName(genParamExecute_Reconf)));
+	rtsc.transitions += currentTrans;
+	
+	-- Idle -> AwaitVoting
+	currentTrans := new Transition(idleState, awaitVotingState, 1);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::TRIGGER);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorStartExecution), SynchronizationKind::SEND, 
+		null);
+	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	currentTrans.action := new Action('Assign Msg Param', createMsgParamAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_Reconfiguration), msgType, msgType.getParameterByName(genParamExecute_Reconf)));
+	rtsc.transitions += currentTrans;
+	
+	-- AbortParentReq -> AwaitVoting
+	currentTrans := new Transition(abortParentReqState, awaitVotingState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorStartExecution), SynchronizationKind::SEND, 
+			null);
+	currentTrans.action := new Action('abortedReqWaiting := true;', createSimpleAssignmentExpressioninBlock(abortedReqWaitingVar, 'true'));
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitVoting -> DoExecute
+	currentTrans := new Transition(awaitVotingState, doExecuteState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorVotingComplete), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitVoting -> DoAbort
+	currentTrans := new Transition(awaitVotingState, doAbortState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorVotingComplete), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	rtsc.transitions += currentTrans;
+	
+	-- DoExecute -> Busy
+	currentTrans := new Transition(doExecuteState, busyState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformReconf), SynchronizationKind::SEND, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- DoAbort -> Busy
+	currentTrans := new Transition(doAbortState, busyState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorDoAbort), SynchronizationKind::SEND, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- Busy -> Finished (success)
+	currentTrans := new Transition(busyState, finishedState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinish), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('true'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- Busy -> Finished (failed)
+	currentTrans := new Transition(busyState, finishedState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinish), SynchronizationKind::RECEIVE, 
+			new LiteralExpression('false'));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- Finished -> WaitForAnswer
+	currentTrans := new Transition(finishedState, waitForAnswerState, 1);
+	currentTrans.guard := createSimpleCompareGuardExpression(abortedReqWaitingVar, 'true');
+	rtsc.transitions += currentTrans;
+	
+	-- WaitForAnswer -> AbortParentReq (execute)
+	currentTrans := new Transition(waitForAnswerState, abortParentReqState, 1);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::TRIGGER);
+	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	currentTrans.action := new Action('Assign Msg Param', createMsgParamAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_Reconfiguration), msgType, msgType.getParameterByName(genParamExecute_Reconf)));
+	rtsc.transitions += currentTrans;
+	
+	-- WaitForAnswer -> AnswerReceived (decline)
+	currentTrans := new Transition(waitForAnswerState, answerReceivedState, 2);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- WaitForAnswer -> AnswerReceived (confirm)
+	currentTrans := new Transition(waitForAnswerState, answerReceivedState, 3);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- AnswerReceived -> Idle
+	currentTrans := new Transition(answerReceivedState, idleState, 1);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed), EventKind::RAISE);
+	currentTrans.action := new Action('abortedReqWaiting := false;', createSimpleAssignmentExpressioninBlock(abortedReqWaitingVar, 'false'));
+	rtsc.transitions += currentTrans;
+	
+	-- Finished -> Idle
+	currentTrans := new Transition(finishedState, idleState, 2);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinished), SynchronizationKind::SEND, 
+			null);
+	currentTrans.guard := createSimpleCompareGuardExpression(fromParentVar, 'true');
+	rtsc.transitions += currentTrans;
+	
+	-- Finished -> Idle
+	currentTrans := new Transition(finishedState, idleState, 3);
+	currentTrans.guard := new LogicalExpression(createSimpleCompareGuardExpression(fromParentVar, 'false'), 
+		LogicOperator::AND, createSimpleCompareGuardExpression(abortedReqWaitingVar, 'false'));
+	rtsc.transitions += currentTrans;
+	
+	return;
 }
 
 -- generates the static statechart frame for the internal behavior statechart (the 'black' parts in the executor generation template)
