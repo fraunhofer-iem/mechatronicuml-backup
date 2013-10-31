@@ -11,6 +11,13 @@
 
    <copyright>
       %copyright
+
+= Acknowledgments = 
+- The cpu svg icon is Designed by Estevam Gomes and licensed under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication  Public Domain
+url: http://thenounproject.com/noun/microchip/#icon-No6018
+
+- The svg icon to SWT transformation has been done with the Flamingo SVG transcoder licensed under BSD, Apache License 2.0
+url: http://ebourg.github.io/flamingo-svg-transcoder/
    </copyright>
 
    <license url="%licenseURL">
