@@ -95,9 +95,10 @@ property genEmbeddedRTSCExecutor_EmbeddedCI : String = 'embeddedCI';
 property genEmbeddedRTSCExecutor_EmbeddedCI_adapt : String = 'adaptation';
 property genEmbeddedRTSCExecutor_EmbeddedCI_subrole : String = 'subrole';
 
--- names of the manager synchronization channels that are not depending on user-defined messages
+-- names of the executor synchronization channels that are not depending on user-defined messages
 property genSyncChanExecutorExecute : String = 'execute';
 property genSyncChanExecutorStartExecution : String = 'startExecution';
+property genSyncChanExecutorInit2PC : String = 'init2PC';
 property genSyncChanExecutorVotingComplete : String = 'votingComplete';
 property genSyncChanExecutorDoAbort : String = 'doAbort';
 property genSyncChanExecutorFinished : String = 'finished';

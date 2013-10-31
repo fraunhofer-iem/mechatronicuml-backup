@@ -83,6 +83,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	-- add sync channels
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorExecute, rootNode.getPrimitiveType(boolType));
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorStartExecution, null);
+	initialState.channels += new SynchronizationChannel(genSyncChanExecutorInit2PC, rootNode.getPrimitiveType(intType));
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorVotingComplete, rootNode.getPrimitiveType(boolType));
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorDoAbort, null);
 	initialState.channels += new SynchronizationChannel(genSyncChanExecutorFinished, null);
@@ -463,6 +464,61 @@ helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc
 -- generates the static statechart frame for the internal behavior statechart (the 'black' parts in the executor generation template)
 helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
+	-- create states
+	var idleState : State := new State(genStateExecutor_InternalBehavior_Idle);
+	idleState.initial := true;
+	rtsc.states += idleState;
+	
+	var startState : State := new State(genStateExecutor_InternalBehavior_Start);
+	startState.urgent := true;
+	rtsc.states += startState;
+	
+	var waitState : State := new State(genStateExecutor_InternalBehavior_Wait);
+	rtsc.states += waitState;
+	
+	var executeState : State := new State(genStateExecutor_InternalBehavior_Execute);
+	executeState.urgent := true;
+	rtsc.states += executeState;
+	
+	var reportState : State := new State(genStateExecutor_InternalBehavior_Report);
+	reportState.urgent := true;
+	rtsc.states += reportState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- Idle -> Start
+	currentTrans := new Transition(idleState, startState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorStartExecution), SynchronizationKind::RECEIVE, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- Start -> Wait
+	currentTrans := new Transition(startState, waitState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorInit2PC), SynchronizationKind::SEND, 
+			new TypedNamedElementExpression(rtsc.getVariableByName(genVarExecutor_Reconfiguration)));
+	rtsc.transitions += currentTrans;
+	
+	-- Wait -> Execute
+	currentTrans := new Transition(waitState, executeState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinished2PC), SynchronizationKind::RECEIVE, 
+			null);
+	rtsc.transitions += currentTrans;
+	
+	-- Execute -> Idle
+	currentTrans := new Transition(executeState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinish), SynchronizationKind::SEND, 
+			new LiteralExpression('false'));
+	currentTrans.guard := createSimpleCompareGuardExpression(rtsc.getVariableByName(genVarExecutor_TwoPCResult), 'false');
+	rtsc.transitions += currentTrans;
+	
+	-- Report -> Idle
+	currentTrans := new Transition(reportState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorFinish), SynchronizationKind::SEND, 
+			new LiteralExpression('true'));
+	rtsc.transitions += currentTrans;
+	
+	return;
 }
 
 -- generates the static statechart frame for the embeddedCI statechart (the 'black' parts in the executor generation template)
