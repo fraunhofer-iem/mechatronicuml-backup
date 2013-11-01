@@ -55,10 +55,10 @@
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DiscretePort"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationMessagePorts"
-        upperBound="-1" eType="#//ReconfigurationMessagePort" changeable="false" volatile="true"
-        transient="true" derived="true">
+        unique="false" upperBound="-1" eType="#//ReconfigurationMessagePort" changeable="false"
+        volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.ports -> select(p | p.oclIsTypeOf(ReconfigurationMessagePort))"/>
+        <details key="derivation" value="self.ports -> select(p | p.oclIsTypeOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort)"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -74,10 +74,10 @@
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DiscretePort"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationExecutionPorts"
-        upperBound="-1" eType="#//ReconfigurationExecutionPort" changeable="false"
+        unique="false" upperBound="-1" eType="#//ReconfigurationExecutionPort" changeable="false"
         volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="derivation" value="self.ports -> select(p | p.oclIsTypeOf(ReconfigurationExecutionPort))"/>
+        <details key="derivation" value="(self.ports -> select(p | p.oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort)"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

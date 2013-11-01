@@ -112,7 +112,7 @@ public interface Executor extends CommentableElement, BehavioralElement {
 	 * @return the value of the '<em>Reconfiguration Execution Ports</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutor_ReconfigurationExecutionPorts()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.ports -> select(p | p.oclIsTypeOf(ReconfigurationExecutionPort))'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='(self.ports -> select(p | p.oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort)'"
 	 * @generated
 	 */
 	EList<ReconfigurationExecutionPort> getReconfigurationExecutionPorts();
