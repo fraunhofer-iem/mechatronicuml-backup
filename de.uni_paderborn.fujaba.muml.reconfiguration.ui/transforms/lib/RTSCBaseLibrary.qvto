@@ -135,6 +135,11 @@ query RealtimeStatechart::getVariableByName(in theName : String) : Variable{
 	return (self.allAvailableVariables -> any(name = theName));
 }
 
+-- returns the operation with the given name that is accessible from within the realtime statechart
+query RealtimeStatechart::getOperationByName(in theName : String) : Operation{
+	return (self.allAvailableOperations -> any(name = theName));
+}
+
 -- returns the embedded statechart with the specified name. Assumes that the RTSC follows the
 -- standard MUML RTSC structure having one initial state containing all embedded statecharts.
 query RealtimeStatechart::getEmbeddedRTSCByName(in theName : String) : RealtimeStatechart{

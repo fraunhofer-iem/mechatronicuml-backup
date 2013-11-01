@@ -125,11 +125,14 @@ property genVarExecutor_Events_AbortReqWaiting : String = 'abortedReqWaiting';
 property genVarExecutor_EmbeddedCI_SubPort : String = 'subPort';
 property genVarExecutor_EmbeddedCI_TmpMsg : String = 'tmpMsg';
 property genVarExecutor_EmbeddedCI_TmpCommit : String = 'tmpCommit';
+property genVarExecutor_EmbeddedCI_TmpCommitTime : String = 'tmpCommitTime';
 property genVarExecutor_EmbeddedCI_Adapt_Ac : String = 'ac';
 property genVarExecutor_EmbeddedCI_Adapt_ExecTime : String = 'executionTime';
 property genVarExecutor_EmbeddedCI_Adapt_MinCommitTime : String = 'minCommitTime';
 property genVarExecutor_EmbeddedCI_Adapt_CurPort : String = 'curPort';
 property genVarExecutor_EmbeddedCI_Adapt_Vote_Finished : String = 'finished';
+property genVarExecutor_EmbeddedCI_Adapt_Execute_Finished : String = 'finished';
+property genVarExecutor_EmbeddedCI_Adapt_Abort_Finished : String = 'finished';
 property genVarExecutor_EmbeddedCI_SubRole_CommitTime : String = 'commitTime';
 property genVarExecutor_EmbeddedCI_SubRole_TimeForDec : String = 'timeForDecision';
 property genVarExecutor_EmbeddedCI_Subrole_Msg : String = 'msg';
@@ -205,6 +208,7 @@ property genOpExecutor_EmbeddedCI_Adaptation_Vote_allRepliesReceived : String = 
 property genOpExecutor_EmbeddedCI_Adaptation_Vote_setReply : String = 'setReply';
 property genOpExecutor_EmbeddedCI_Adaptation_Vote_canCommit : String = 'canCommit';
 property genOpExecutor_EmbeddedCI_Adaptation_Execute_allEmbeddedFinished : String = 'allEmbeddedFinished';
+property genOpExecutor_EmbeddedCI_Adaptation_Execute_setFinished : String = 'setFinished';
 
 -- names of operation parameters
 property genParamExecutor_EmbeddedCI_Adaptation_AC : String = 'ac';
