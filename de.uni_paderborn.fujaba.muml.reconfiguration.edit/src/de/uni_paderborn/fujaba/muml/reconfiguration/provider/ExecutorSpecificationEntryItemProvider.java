@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import java.util.Collection;
 import java.util.List;
 
@@ -20,6 +21,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
@@ -63,6 +66,7 @@ public class ExecutorSpecificationEntryItemProvider
 			super.getPropertyDescriptors(object);
 
 			addReconfigurationRulePropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +94,28 @@ public class ExecutorSpecificationEntryItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ExecutorSpecificationEntry_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ExecutorSpecificationEntry_id_feature", "_UI_ExecutorSpecificationEntry_type"),
+				 ReconfigurationPackage.Literals.EXECUTOR_SPECIFICATION_ENTRY__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns ExecutorSpecificationEntry.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -108,7 +134,8 @@ public class ExecutorSpecificationEntryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ExecutorSpecificationEntry_type");
+		ExecutorSpecificationEntry executorSpecificationEntry = (ExecutorSpecificationEntry)object;
+		return getString("_UI_ExecutorSpecificationEntry_type") + " " + executorSpecificationEntry.getId();
 	}
 
 	/**
@@ -121,6 +148,12 @@ public class ExecutorSpecificationEntryItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ExecutorSpecificationEntry.class)) {
+			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY__ID:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

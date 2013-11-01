@@ -259,15 +259,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT__EXTENSION = ComponentPackage.DISCRETE_PORT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__NAME = ComponentPackage.DISCRETE_PORT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -293,6 +284,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_PORT__CONSTRAINT = ComponentPackage.DISCRETE_PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__NAME = ComponentPackage.DISCRETE_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -972,15 +972,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__EXTENSION = RECONFIGURATION_PORT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__NAME = RECONFIGURATION_PORT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1006,6 +997,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_MESSAGE_PORT__CONSTRAINT = RECONFIGURATION_PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__NAME = RECONFIGURATION_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -1189,15 +1189,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__EXTENSION = RECONFIGURATION_PORT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__NAME = RECONFIGURATION_PORT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1223,6 +1214,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_EXECUTION_PORT__CONSTRAINT = RECONFIGURATION_PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__NAME = RECONFIGURATION_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -1424,13 +1424,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTOR_SPECIFICATION_ENTRY__ID = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Executor Specification Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int EXECUTOR_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl <em>Manager Specification Entry</em>}' class.
@@ -2015,15 +2024,6 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__EXTENSION = RECONFIGURATION_PORT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__NAME = RECONFIGURATION_PORT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2049,6 +2049,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__CONSTRAINT = RECONFIGURATION_PORT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__NAME = RECONFIGURATION_PORT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -2928,6 +2937,17 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getExecutorSpecificationEntry_ReconfigurationRule();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getId()
+	 * @see #getExecutorSpecificationEntry()
+	 * @generated
+	 */
+	EAttribute getExecutorSpecificationEntry_Id();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry <em>Manager Specification Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3536,6 +3556,14 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE = eINSTANCE.getExecutorSpecificationEntry_ReconfigurationRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXECUTOR_SPECIFICATION_ENTRY__ID = eINSTANCE.getExecutorSpecificationEntry_Id();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl <em>Manager Specification Entry</em>}' class.

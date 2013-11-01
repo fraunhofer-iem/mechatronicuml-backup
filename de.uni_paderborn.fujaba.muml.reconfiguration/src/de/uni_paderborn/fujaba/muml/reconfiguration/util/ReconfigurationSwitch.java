@@ -23,7 +23,6 @@ import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
@@ -128,8 +127,8 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = caseConstrainableElement(reconfigurationPort);
 				if (result == null) result = caseDataType(reconfigurationPort);
 				if (result == null) result = caseBehavioralElement(reconfigurationPort);
-				if (result == null) result = caseNamedElement(reconfigurationPort);
 				if (result == null) result = caseCommentableElement(reconfigurationPort);
+				if (result == null) result = caseNamedElement(reconfigurationPort);
 				if (result == null) result = caseExtendableElement(reconfigurationPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -201,8 +200,8 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = caseConstrainableElement(reconfigurationMessagePort);
 				if (result == null) result = caseDataType(reconfigurationMessagePort);
 				if (result == null) result = caseBehavioralElement(reconfigurationMessagePort);
-				if (result == null) result = caseNamedElement(reconfigurationMessagePort);
 				if (result == null) result = caseCommentableElement(reconfigurationMessagePort);
+				if (result == null) result = caseNamedElement(reconfigurationMessagePort);
 				if (result == null) result = caseExtendableElement(reconfigurationMessagePort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -218,8 +217,8 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = caseConstrainableElement(reconfigurationExecutionPort);
 				if (result == null) result = caseDataType(reconfigurationExecutionPort);
 				if (result == null) result = caseBehavioralElement(reconfigurationExecutionPort);
-				if (result == null) result = caseNamedElement(reconfigurationExecutionPort);
 				if (result == null) result = caseCommentableElement(reconfigurationExecutionPort);
+				if (result == null) result = caseNamedElement(reconfigurationExecutionPort);
 				if (result == null) result = caseExtendableElement(reconfigurationExecutionPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -304,8 +303,8 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = caseConstrainableElement(internalReconfigurationCommunicationPort);
 				if (result == null) result = caseDataType(internalReconfigurationCommunicationPort);
 				if (result == null) result = caseBehavioralElement(internalReconfigurationCommunicationPort);
-				if (result == null) result = caseNamedElement(internalReconfigurationCommunicationPort);
 				if (result == null) result = caseCommentableElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseNamedElement(internalReconfigurationCommunicationPort);
 				if (result == null) result = caseExtendableElement(internalReconfigurationCommunicationPort);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

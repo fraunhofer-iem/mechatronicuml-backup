@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.0"?>
-
-<!--
--->
-<plugin>
-
+<?eclipse version="3.0"?><!--
+--><plugin>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MumlReconfiguration -->
       <package
@@ -12,7 +8,6 @@
             class="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage"
             genModel="model/MumlReconfiguration.genmodel"/>
    </extension>
-
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MumlReconfiguration -->
       <package
@@ -20,7 +15,6 @@
             class="de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage"
             genModel="model/MumlReconfiguration.genmodel"/>
    </extension>
-
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated MumlReconfiguration -->
       <package

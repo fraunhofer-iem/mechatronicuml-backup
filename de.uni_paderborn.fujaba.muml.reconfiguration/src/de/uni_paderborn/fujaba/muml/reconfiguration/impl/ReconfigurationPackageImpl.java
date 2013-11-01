@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
@@ -53,7 +52,6 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ExpressionPackageImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
-import de.uni_paderborn.fujaba.muml.reconfiguration.util.ReconfigurationValidator;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -290,15 +288,6 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		theReconfigurationPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
 		theStructdatatypePackage.initializePackageContents();
-
-		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theReconfigurationPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return ReconfigurationValidator.INSTANCE;
-				 }
-			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theReconfigurationPackage.freeze();
@@ -818,6 +807,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getExecutorSpecificationEntry_Id() {
+		return (EAttribute)executorSpecificationEntryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getManagerSpecificationEntry() {
 		return managerSpecificationEntryEClass;
 	}
@@ -965,6 +963,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		executorSpecificationEntryEClass = createEClass(EXECUTOR_SPECIFICATION_ENTRY);
 		createEReference(executorSpecificationEntryEClass, EXECUTOR_SPECIFICATION_ENTRY__EXECUTOR);
 		createEReference(executorSpecificationEntryEClass, EXECUTOR_SPECIFICATION_ENTRY__RECONFIGURATION_RULE);
+		createEAttribute(executorSpecificationEntryEClass, EXECUTOR_SPECIFICATION_ENTRY__ID);
 
 		managerSpecificationEntryEClass = createEClass(MANAGER_SPECIFICATION_ENTRY);
 		createEAttribute(managerSpecificationEntryEClass, MANAGER_SPECIFICATION_ENTRY__TREAT);
@@ -1126,6 +1125,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEClass(executorSpecificationEntryEClass, ExecutorSpecificationEntry.class, "ExecutorSpecificationEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExecutorSpecificationEntry_Executor(), this.getExecutor(), this.getExecutor_SpecificationEntries(), "executor", null, 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExecutorSpecificationEntry_ReconfigurationRule(), this.getReconfigurationRule(), null, "reconfigurationRule", null, 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getExecutorSpecificationEntry_Id(), ecorePackage.getEInt(), "id", "0", 1, 1, ExecutorSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(managerSpecificationEntryEClass, ManagerSpecificationEntry.class, "ManagerSpecificationEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getManagerSpecificationEntry_Treat(), ecorePackage.getEBoolean(), "treat", "true", 0, 1, ManagerSpecificationEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1198,13 +1198,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																		
-		addAnnotation
-		  (executorSpecificationEntryEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "TimeToFailureLessOrEqualToTimeToSuccess"
-		   });												
+		   });																												
 	}
 
 	/**
@@ -1244,7 +1238,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   source, 
 		   new String[] {
 			 "derivation", "if self.signature.oclIsUndefined() then null else self.signature.name endif"
-		   });																	
+		   });																
 	}
 
 } //ReconfigurationPackageImpl
