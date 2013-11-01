@@ -45,6 +45,9 @@ main() {
 -- creates an implementation for the executor
 helper createExecutorImplementation(inout theComponent : ReconfigurableStructuredComponent, inout rootNode : RootNode){
 	
+	-- configure internal ports (copy entries from RE-port of StructuredComponent and collect entries from children)
+	configurePorts(rootNode, theComponent);
+	
 	-- create the statechart
 	var rtsc : RealtimeStatechart := new RealtimeStatechart(theComponent.name + '_Executor_RTSC');
 	rtsc.comment := 'Generated Real-Time Statechart -- DO NOT EDIT!';
@@ -55,13 +58,53 @@ helper createExecutorImplementation(inout theComponent : ReconfigurableStructure
 	-- add statechart to category
 	rootNode.getRTSCCategory().modelElements += rtsc;
 	
-	--generate static statechart frame (black parts in the generation template)
+	-- generate static statechart frame (black parts in the generation template)
 	generateStaticStatechartFrame(rootNode, theComponent.executor);
 	
-	--generate variable parts of the statechart (colored parts in the generation template)
-	--TODO write this part
+	-- generate variable parts of the statechart (colored parts in the generation template)
+	generateVariableStatechartParts(rootNode, theComponent.executor, rtsc);
 	
 	return;
+}
+
+-- configure the ports of the Executor by copying the information of the surrounding StructuredComponent
+-- and the embedded components
+helper configurePorts(inout rootNode : RootNode, inout theComponent : ReconfigurableStructuredComponent){
+	
+	-- copy RE port interface entries of theComponent to the parent port of the Executor
+	var executor : Executor := theComponent.executor;
+	var structCompPort : ReconfigurationExecutionPort := theComponent.ports -> any(oclIsTypeOf(ReconfigurationExecutionPort)).oclAsType(ReconfigurationExecutionPort);
+	var executorParentPort : ReconfigurationExecutionPort := executor.reconfigurationExecutionPorts -> any(name = 'parent');
+	var executorEmbeddedCIPort : ReconfigurationExecutionPort := executor.reconfigurationExecutionPorts -> any(name = 'embeddedCI');
+	
+	-- copy entries of parent port
+	executorParentPort.interfaceEntries := structCompPort.interfaceEntries-> map mapREInterfaceEntries();
+	
+	-- collect all entries of embedded components
+	executorEmbeddedCIPort.interfaceEntries := (theComponent.embeddedComponentParts.componentType.ports -> 
+			select(oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort).interfaceEntries -> map mapREInterfaceEntries();
+	
+	return;
+}
+
+-- copy the ReconfigurationExecutionPortInterfaceEntries
+mapping ReconfigurationExecutionPortInterfaceEntry::mapREInterfaceEntries() : ReconfigurationExecutionPortInterfaceEntry{
+	messageType := self.messageType;
+	timeForDecision := self.timeForDecision.map mapTimeValue();
+	timeForExecution := self.timeForExecution.map mapTimeValue();
+	description := self.description;
+}
+
+-- copy TimeValue
+mapping TimeValue::mapTimeValue() : TimeValue{
+	value := self.value.map mapNaturalNumber();
+	unit := self.unit;
+}
+
+-- copy NaturalNumber
+mapping NaturalNumber::mapNaturalNumber() : NaturalNumber{
+	value := self.value;
+	infinity := self.infinity;
 }
 
 -- generates the static statechart frame (the 'black' parts in the manager generation template)
@@ -1047,4 +1090,32 @@ helper getExecutor(in rtsc : RealtimeStatechart) : Executor{
 	} endif;
 
 	return curRTSC.behavioralElement.oclAsType(Executor);
+}
+
+helper generateVariableStatechartParts(inout rootNode : RootNode, inout executor : Executor, inout rtsc : RealtimeStatechart){
+	
+	-- generate purple parts for each ExecutorSpecificationEntry
+	executor.specificationEntries -> map generateExecutorSpecificationEntry(rootNode, rtsc);
+	
+	-- generate blue parts for each interface entry in parent port
+	executor.reconfigurationExecutionPorts -> any(name = 'parent').interfaceEntries -> map generateParentPortInterfaceEntry(rootNode, rtsc);
+	
+	-- generate brown parts for each interface entry in embeddedCI port
+	executor.reconfigurationExecutionPorts -> any(name = 'embeddedCI').interfaceEntries -> map generateEmbeddedCIPortInterfaceEntry(rootNode, rtsc);
+	
+	return;
+}
+
+mapping ExecutorSpecificationEntry::generateExecutorSpecificationEntry(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	
+}
+
+-- generates the blue parts of the generation template for each interface entry of the parent port
+mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceEntry(inout rootNode : RootNode, inout rtsc: RealtimeStatechart){
+	
+}
+
+-- generates the brown parts of the generation template for each interface entry of the embeddedCI port
+mapping ReconfigurationExecutionPortInterfaceEntry::generateEmbeddedCIPortInterfaceEntry(inout rootNode : RootNode, inout rtsc: RealtimeStatechart){
+	
 }
