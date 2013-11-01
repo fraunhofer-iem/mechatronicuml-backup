@@ -63,3 +63,13 @@ constructor OperationCall::OperationCall(in op : Operation){
 constructor Block::Block(){
 	
 }
+
+constructor DiscreteInteractionEndpointReference::DiscreteInteractionEndpointReference(in pos : PositionSelectorKind, in variable : TypedNamedElementExpression){
+	position := new PositionSelector(pos, null);
+	typedNamedElementExpression := variable;
+}
+
+constructor PositionSelector::PositionSelector(in newKind : PositionSelectorKind, in succ : PositionSelector){
+	kind := newKind;
+	successor := succ;
+}

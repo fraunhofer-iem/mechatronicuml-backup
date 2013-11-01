@@ -923,6 +923,110 @@ helper generateEmbeddedCIAdaptationAbortState(inout rootNode : RootNode, inout a
 -- generates the static statechart frame for the embeddedCI.subrole statechart (the 'black' parts in the executor generation template)
 helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
+	-- create variables
+	var commitTimeVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_CommitTime, rootNode.getPrimitiveType(intType));
+	rtsc.variables += commitTimeVar;
+	
+	var timeForDecVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForDec, rootNode.getPrimitiveType(intType));
+	rtsc.variables += timeForDecVar;
+	
+	var msgVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Subrole_Msg, rootNode.getPrimitiveType(intType));
+	rtsc.variables += msgVar;
+	
+	-- create clocks
+	var c2Clock : Clock := new Clock(genClockExecutor_embeddedCI_c2);
+	rtsc.clocks += c2Clock;
+	
+	-- create states
+	var idleState : State := new State(genStateExecutor_embeddedCI_Subrole_Idle);
+	idleState.initial := true;
+	idleState.entryEvent := new EntryEvent(createSimpleAssignmentExpressioninBlock(commitTimeVar, '0'), null);
+	rtsc.states += idleState;
+	
+	var waitForResponseState : State := new State(genStateExecutor_embeddedCI_Subrole_WaitForResponse);
+	rtsc.states += waitForResponseState;
+	
+	var votedCommitState : State := new State(genStateExecutor_embeddedCI_Subrole_VotedCommit);
+	rtsc.states += votedCommitState;
+	
+	var votedAbortState : State := new State(genStateExecutor_embeddedCI_Subrole_VotedAbort);
+	rtsc.states += votedAbortState;
+	
+	var replyReceivedState : State := new State(genStateExecutor_embeddedCI_Subrole_ReplyReceived);
+	rtsc.states += replyReceivedState;
+	
+	var executeState : State := new State(genStateExecutor_embeddedCI_Subrole_Execute);
+	rtsc.states += executeState;
+	
+	var awaitFinishState : State := new State(genStateExecutor_embeddedCI_Subrole_AwaitFinish);
+	rtsc.states += awaitFinishState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- WaitForResponse -> VotedCommit
+	currentTrans := new Transition(waitForResponseState, votedCommitState, 1);
+	currentTrans.clockResets += c2Clock;
+	var msgType : MessageType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
+	currentTrans.events :=  new AsynchronousMessageEvent(msgType, EventKind::TRIGGER);
+	currentTrans.action := new Action('Assign Msg Param', createMsgParamAssignmentExpressioninBlock(commitTimeVar, msgType, msgType.getParameterByName(genParamConfirm_T)));
+	rtsc.transitions += currentTrans;
+	
+	-- WaitForResponse -> VotedAbort (abort)
+	currentTrans := new Transition(waitForResponseState, votedAbortState, 2);
+	currentTrans.events :=  new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort), EventKind::TRIGGER);
+	rtsc.transitions += currentTrans;
+	
+	-- WaitForResponse -> VotedAbort (time out)
+	currentTrans := new Transition(waitForResponseState, votedAbortState, 3);
+	rtsc.transitions += currentTrans;
+	
+	-- VotedCommit -> ReplyReceived
+	currentTrans := new Transition(votedCommitState, replyReceivedState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCIReplyRecv), SynchronizationKind::SEND, 
+			null);
+	var block : Block := createAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_SubPort), 
+								new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
+	block.expressions += createSimpleAssignmentExpression(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_TmpCommit), 'true');
+	block.expressions += createAssignmentExpression(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_TmpCommitTime), 
+								new TypedNamedElementExpression(commitTimeVar));
+	currentTrans.action := new Action('Assign Variables', block);
+	rtsc.transitions += currentTrans;
+	
+	-- VotedAbort -> AwaitFinish
+	currentTrans := new Transition(votedAbortState, awaitFinishState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCIReplyRecv), SynchronizationKind::SEND,
+			null);
+	block := createAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_SubPort), 
+								new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
+	block.expressions += createSimpleAssignmentExpression(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_TmpCommit), 'false');
+	block.expressions += createSimpleAssignmentExpression(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_TmpCommitTime), '0');
+	currentTrans.action := new Action('Assign Variables', block);
+	rtsc.transitions += currentTrans;
+	
+	-- AwaitFinish -> Idle
+	currentTrans := new Transition(awaitFinishState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCISendA), SynchronizationKind::RECEIVE, 
+			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
+	rtsc.transitions += currentTrans;
+	
+	-- ReplyReceived -> Idle
+	currentTrans := new Transition(replyReceivedState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCISendA), SynchronizationKind::RECEIVE, 
+			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- Execute -> Idle
+	currentTrans := new Transition(executeState, idleState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCIReconfFinished), SynchronizationKind::SEND, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished), EventKind::TRIGGER);
+	currentTrans.action := new Action('subPort := SELF', createAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_SubPort), 
+								new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null)));
+	rtsc.transitions += currentTrans;
+	
+	return;
 }
 
 -- traverses to the parents of rtsc until an RTSC is reached whole BehavioralElement is the Executor
