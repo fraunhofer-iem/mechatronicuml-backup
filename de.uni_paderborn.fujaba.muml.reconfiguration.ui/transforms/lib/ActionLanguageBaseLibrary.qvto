@@ -13,6 +13,9 @@ modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
 
 modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 
+modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+
 library ActionLanguageBaseLibrary;
 
 
@@ -72,4 +75,8 @@ constructor DiscreteInteractionEndpointReference::DiscreteInteractionEndpointRef
 constructor PositionSelector::PositionSelector(in newKind : PositionSelectorKind, in succ : PositionSelector){
 	kind := newKind;
 	successor := succ;
+}
+
+constructor ReconfigurationRuleCallExpression::ReconfigurationRuleCallExpression(in reconfRule : ReconfigurationRule){
+	reconfigurationRule := reconfRule;
 }

@@ -16,6 +16,9 @@ modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
 
 modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 
+modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+
 
 -- this library contains queries and constructors for generating RealtimeStatecharts
 library RTSCBaseLibrary;
@@ -105,6 +108,14 @@ helper createSimpleSendVariableParameterBinding(in param : Parameter, in variabl
 	return (new ParameterBinding(param, new TypedNamedElementExpression(variable)));
 }
 
+helper createReconfigurationRuleCallExpressionInBlock(in reconfRule : ReconfigurationRule) : Block{
+	var block : Block := new Block();
+	
+	block.expressions += new ReconfigurationRuleCallExpression(reconfRule);
+	
+	return block;
+}
+
 -- returns the synchronization channel with the specified name if it is accessible from within the given statechart or null otherwise
 helper getSynchronizationChannel(in rtsc : RealtimeStatechart, in channelName : String) : SynchronizationChannel{
 	
@@ -138,6 +149,11 @@ query RealtimeStatechart::getVariableByName(in theName : String) : Variable{
 -- returns the operation with the given name that is accessible from within the realtime statechart
 query RealtimeStatechart::getOperationByName(in theName : String) : Operation{
 	return (self.allAvailableOperations -> any(name = theName));
+}
+
+-- returns the state with the given name that is contained in the realtime statechart
+query RealtimeStatechart::getStateByName(in theName : String) : State{
+	return (self.states -> any(name = theName));
 }
 
 -- returns the embedded statechart with the specified name. Assumes that the RTSC follows the

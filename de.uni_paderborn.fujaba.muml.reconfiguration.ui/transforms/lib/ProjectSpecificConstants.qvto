@@ -189,6 +189,8 @@ property genStateExecutor_embeddedCI_Adaptation_Vote_CheckResult: String = 'Chec
 property genStateExecutor_embeddedCI_Adaptation_Execute_SendExecute : String = 'SendExecute';
 property genStateExecutor_embeddedCI_Adaptation_Execute_Wait : String = 'Wait';
 property genStateExecutor_embeddedCI_Adaptation_Abort_SendAbort : String = 'SendAbort';
+property genStateExecutor_embeddedCI_Adaptation_PrepareY_Start : String = 'Start';
+property genStateExecutor_embeddedCI_Adaptation_PrepareY_Finished : String = 'Finished';
 
 property genStateExecutor_embeddedCI_Subrole_Idle : String = 'Idle';
 property genStateExecutor_embeddedCI_Subrole_WaitForResponse : String = 'WaitForResponse';

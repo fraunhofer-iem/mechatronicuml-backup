@@ -1106,8 +1106,91 @@ helper generateVariableStatechartParts(inout rootNode : RootNode, inout executor
 	return;
 }
 
+-- generates the purple parts of the generation template for each ExecutorSpecificationEntry
 mapping ExecutorSpecificationEntry::generateExecutorSpecificationEntry(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	
+	-- retrieve internal behavior statechart and the necessary states
+	var internalRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_Internal);
+	var executeState : State := internalRTSC.getStateByName(genStateExecutor_InternalBehavior_Execute);
+	var reportState : State := internalRTSC.getStateByName(genStateExecutor_InternalBehavior_Report);
+	
+	-- create transition in the internal behavior RTSC
+	var currentTrans : Transition := null;
+	
+	currentTrans := new Transition(executeState, reportState, self.id + 1);
+	currentTrans.guard := new LogicalExpression(createSimpleCompareGuardExpression(internalRTSC.getVariableByName(genVarExecutor_TwoPCResult), 'true'), 
+							LogicOperator::AND,
+							createSimpleCompareGuardExpression(internalRTSC.getVariableByName(genVarExecutor_Reconfiguration), self.id.toString()));
+	currentTrans.action := new Action('Call Reconfiguration', createReconfigurationRuleCallExpressionInBlock(self.reconfigurationRule));
+	internalRTSC.transitions += currentTrans;
+	
+	-- retrieve embeddedCI.adaptation RTSC including the states
+	var adaptRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI).getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_adapt);
+	var idleState : State := adaptRTSC.getStateByName(genStateExecutor_embeddedCI_Adaptation_Idle);
+	var voteState : State := adaptRTSC.getStateByName(genStateExecutor_embeddedCI_Adaptation_Vote);
+	
+	-- create Prepare state in the embeddedCI.adaptation RTSC
+	var prepareState : State := new State(genStateExecutor_embeddedCI_Adaptation_PrepareY_Prefix + self.reconfigurationRule.name.firstToUpper());
+	adaptRTSC.states += prepareState;
+	generateEmbeddedCIAdaptationPrepareState(rootNode, prepareState, self);
+	
+	-- create transitions from/to Prepare state in the adaptation RTSC
+	currentTrans := new Transition(idleState, prepareState.connectionPoints -> any(oclIsTypeOf(EntryPoint)), self.id);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(adaptRTSC, genSyncChanExecutorInit2PC), SynchronizationKind::RECEIVE, 
+			new LiteralExpression(self.id.toString()));
+	adaptRTSC.transitions += currentTrans;
+	
+	currentTrans := new Transition(prepareState.connectionPoints -> any(oclIsTypeOf(ExitPoint)), voteState.connectionPoints -> any(oclIsTypeOf(EntryPoint)), 1);
+	adaptRTSC.transitions += currentTrans;
+}
+
+helper generateEmbeddedCIAdaptationPrepareState(inout rootNode : RootNode, inout prepareState : State, in entry : ExecutorSpecificationEntry){
+	
+	-- create embedded RTSC 
+	var prepareRTSC : RealtimeStatechart := createEmbeddedRTSC(prepareState.name, prepareState, 1);
+	
+	-- create operation
+	var computeChildrenOp : Operation := new Operation('computeAffectedChildrenFor' + entry.reconfigurationRule.name.firstToUpper(), rootNode.getOrCreateAffectedComponentsType()); 
+	prepareRTSC.operations += computeChildrenOp;
+	
+	-- create entry and exit points
+	var entryPoint : EntryPoint := new EntryPoint('entry'); 
+	prepareState.connectionPoints += entryPoint;
+	
+	var exitPoint : ExitPoint := new ExitPoint('exit');
+	prepareState.connectionPoints += exitPoint;
+	
+	-- create states
+	var startState : State := new State(genStateExecutor_embeddedCI_Adaptation_PrepareY_Start);
+	startState.initial := true;
+	startState.urgent := true;
+	prepareRTSC.states += startState;
+	
+	var finishedState : State := new State(genStateExecutor_embeddedCI_Adaptation_PrepareY_Finished);
+	finishedState.urgent := true;
+	prepareRTSC.states += finishedState;
+	
+	-- create transitions
+	var currentTrans : Transition = null;
+	
+	-- EntryPoint -> Start
+	currentTrans := new Transition(entryPoint, startState, 1);
+	prepareRTSC.transitions += currentTrans;
+	
+	-- Start -> Finished
+	currentTrans := new Transition(startState, finishedState, 1);
+	var block : Block := createAssignmentExpressioninBlock(prepareRTSC.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_Ac), 
+									new OperationCall(computeChildrenOp));
+	block.expressions += createAssignmentExpression(prepareRTSC.getVariableByName(genVarExecutor_EmbeddedCI_Adapt_ExecTime), 
+									new LiteralExpression(entry.reconfigurationRule.wcet.value.toString()));
+	currentTrans.action := new Action('Assign Variables', block);
+	prepareRTSC.transitions += currentTrans;
+	
+	-- Finished -> ExitPoint
+	currentTrans := new Transition(finishedState, exitPoint, 1);
+	prepareRTSC.transitions += currentTrans;
+	
+	return;
 }
 
 -- generates the blue parts of the generation template for each interface entry of the parent port

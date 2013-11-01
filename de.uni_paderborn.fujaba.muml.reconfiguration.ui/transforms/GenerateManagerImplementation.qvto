@@ -44,7 +44,7 @@ main() {
 	
 }
 
--- creates and implementation for the manager
+-- creates an implementation for the manager
 helper createManagerImplementation(inout theComponent : ReconfigurableStructuredComponent, inout rootNode : RootNode){
 	
 	-- create the statechart
