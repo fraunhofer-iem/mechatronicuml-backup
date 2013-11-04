@@ -39,13 +39,13 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class ReconfigurableStructuredComponentEditPart extends
+public class ManagerEditPart extends
 		AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2076;
+	public static final int VISUAL_ID = 2075;
 
 	/**
 	 * @generated
@@ -60,7 +60,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 	/**
 	 * @generated
 	 */
-	public ReconfigurableStructuredComponentEditPart(View view) {
+	public ManagerEditPart(View view) {
 		super(view);
 	}
 
@@ -71,16 +71,17 @@ public class ReconfigurableStructuredComponentEditPart extends
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry.TYPED_INSTANCE));
+						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStructuredComponentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
-		installEditPolicy(
-				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ReconfigurableStructuredComponentCanonicalEditPolicy());
+		//TODO
+//		installEditPolicy(
+//				EditPolicyRoles.CANONICAL_ROLE,
+//				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ReconfigurableStructuredComponentCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -392,9 +393,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 		}
 	}
 
-	/**
-	 * @generated
-	 */
+	//TODO
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID));

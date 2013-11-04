@@ -75,7 +75,7 @@
             name="component">
          <child
                class="ReconfigurableStructuredComponent"
-               packageNsUri="http://www.fujaba.de/muml/reconfiguration/0.4.0">
+               packageNsUri="http://www.fujaba.de/muml/reconfiguration/0.3.18">
          </child>
       </category>
    </extension>
@@ -89,14 +89,23 @@
          <editor
                id="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"></editor>
          <contribution
-               factoryClass="de.uni_paderborn.fujaba.muml.component.diagram.part.MumlPaletteFactory">
+               factoryClass="de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationPaletteFactory">
+            <entry
+                  id="reconfDrawer"
+                  kind="drawer"
+                  label="Reconfiguration"
+                  path="/">
+               <expand
+                     force="true">
+               </expand>
+            </entry>
             <entry
                   defineOnly="false"
                   description="Creates a reconfigurable structured component."
                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableStructuredComponentTool"
                   kind="tool"
                   label="Reconfigurable Structured Component"
-                  path="createComponents1Group/"
+                  path="/reconfDrawer/"
                   permission="Full">
             </entry>
          </contribution>
@@ -115,7 +124,7 @@
        <extension
              point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
           <metamodel
-                nsURI="http://www.fujaba.de/muml/reconfiguration/0.4.0">
+                nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.18">
              <metamodelType
                    eclass="Manager"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.Manager_2075"
@@ -246,5 +255,21 @@
              </Priority>
             
           </viewProvider>
+       </extension>
+       <extension
+             point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+          <editpolicyProvider
+                class="de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationEditPolicyProvider">
+             <Priority
+                   name="Highest">
+             </Priority>
+             <object
+                   id="generated-diagram">
+                <method
+                      name="getType()"
+                      value="Component">
+                </method>
+             </object>
+          </editpolicyProvider>
        </extension>
 </plugin>

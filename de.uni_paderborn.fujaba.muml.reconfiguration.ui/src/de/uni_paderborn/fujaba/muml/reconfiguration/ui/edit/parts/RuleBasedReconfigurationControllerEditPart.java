@@ -2,10 +2,13 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
+import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyRequest;
@@ -71,9 +74,9 @@ ShapeCompartmentEditPart {
 						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
-//		installEditPolicy(
-//				EditPolicyRoles.CANONICAL_ROLE,
-//				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStructuredComponentComponentCompartmentCanonicalEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CANONICAL_ROLE,
+				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.RuleBasedReconfigurationControllerCanonicalEditPolicy());
 	}
 
 	/**
@@ -84,5 +87,7 @@ ShapeCompartmentEditPart {
 			super.setRatio(ratio);
 		}
 	}
+	
+	
 
 }
