@@ -63,11 +63,16 @@ url: http://ebourg.github.io/flamingo-svg-transcoder/
       <import plugin="org.eclipse.gef"/>
       <import plugin="org.eclipse.emf.ecore.editor"/>
       <import plugin="org.eclipse.m2m.qvt.oml"/>
-      <import plugin="de.fujaba.properties.runtime"/>
+      <import plugin="de.uni_paderborn.fujaba.properties.runtime"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.hardware.edit.properties" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.core.edit.properties" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.properties.edit.properties" version="0.1.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
       <import plugin="org.eclipse.emf.transaction"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.actions"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.geoshapes"/>
       <import plugin="org.eclipse.emf.common"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.notation"/>
       <import plugin="org.junit"/>
       <import plugin="org.storydriven.storydiagrams"/>
@@ -76,9 +81,10 @@ url: http://ebourg.github.io/flamingo-svg-transcoder/
       <import plugin="org.eclipse.emf.codegen"/>
       <import plugin="org.eclipse.emf.codegen.ecore"/>
       <import plugin="org.eclipse.ui"/>
-      <import plugin="org.storydriven.core.edit.properties"/>
       <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
+      <import plugin="de.uni_paderborn.fujaba.properties" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.properties.edit" version="0.4.0" match="greaterOrEqual"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.core"/>
       <import plugin="org.eclipse.m2m.qvt.oml.common"/>
