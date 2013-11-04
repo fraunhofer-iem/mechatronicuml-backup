@@ -47,7 +47,9 @@ Require-Bundle: org.eclipse.core.expressions,
  org.eclipse.gef;visibility:=reexport,
  org.eclipse.gmf.runtime.diagram.ui.geoshapes,
  de.uni_paderborn.fujaba.properties.runtime;visibility:=reexport,
- de.uni_paderborn.fujaba.muml.hardware.edit.properties;bundle-version="0.4.0"
+ de.uni_paderborn.fujaba.muml.hardware.edit.properties;bundle-version="0.4.0",
+ org.storydriven.core.edit.properties;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.edit.properties;visibility:=reexport
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.ResourceInstanceDiagramEditorPlugin
 Bundle-Vendor: %providerName
