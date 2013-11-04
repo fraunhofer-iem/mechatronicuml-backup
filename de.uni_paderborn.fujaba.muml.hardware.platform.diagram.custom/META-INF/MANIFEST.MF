@@ -4,7 +4,7 @@ Bundle-Name: Custom
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: de.uni_paderborn.fujaba.muml.hardware.common,
+Require-Bundle: de.uni_paderborn.fujaba.muml.hardware.common;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.hardware.platform.diagram,
  org.eclipse.gmf.runtime.diagram.ui.properties,
  org.eclipse.m2m.qvt.oml,

@@ -6,19 +6,18 @@ Bundle-Version: 0.4.0.qualifier
 Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
  org.eclipse.emf.ecore,
  org.eclipse.core.runtime,
- de.uni_paderborn.fujaba.muml,
+ de.uni_paderborn.fujaba.muml;bundle-version="0.4.0",
  org.eclipse.emf.edit,
  de.uni_paderborn.fujaba.properties.runtime,
  org.eclipse.ui,
  org.storydriven.core.edit,
  org.storydriven.core.edit.properties,
  de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui,
- de.uni_paderborn.fujaba.muml.common,
- de.uni_paderborn.fujaba.muml.common,
+ de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.hardware.common,
  de.uni_paderborn.fujaba.muml.hardware,
  de.uni_paderborn.fujaba.muml.hardware.edit,
- de.uni_paderborn.fujaba.muml.edit.properties
+ de.uni_paderborn.fujaba.muml.edit.properties;bundle-version="0.4.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: 

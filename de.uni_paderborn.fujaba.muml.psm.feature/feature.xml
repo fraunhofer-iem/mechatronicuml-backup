@@ -25,17 +25,12 @@ url: http://ebourg.github.io/flamingo-svg-transcoder/
    </license>
 
    <requires>
+      <import feature="de.uni_paderborn.fujaba.muml.pim.feature" version="0.4.0.qualifier"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.storydriven.core"/>
-      <import plugin="de.uni_paderborn.fujaba.muml"/>
-      <import plugin="de.uni_paderborn.fujaba.common" version="0.3.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.storydriven.core.edit"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.common"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.core.expressions"/>
       <import plugin="org.eclipse.jface"/>
@@ -57,35 +52,24 @@ url: http://ebourg.github.io/flamingo-svg-transcoder/
       <import plugin="org.eclipse.gmf.tooling.runtime"/>
       <import plugin="org.eclipse.draw2d"/>
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui"/>
       <import plugin="org.eclipse.ocl.ecore"/>
       <import plugin="org.eclipse.emf.validation"/>
       <import plugin="org.eclipse.gef"/>
       <import plugin="org.eclipse.emf.ecore.editor"/>
       <import plugin="org.eclipse.m2m.qvt.oml"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.hardware.edit.properties" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core.edit.properties" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.edit.properties"/>
-      <import plugin="de.uni_paderborn.fujaba.properties.runtime"/>
       <import plugin="org.eclipse.emf.transaction"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.actions"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.geoshapes"/>
       <import plugin="org.eclipse.emf.common"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf.runtime.notation"/>
       <import plugin="org.junit"/>
-      <import plugin="org.storydriven.storydiagrams"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.tests"/>
       <import plugin="org.eclipse.ocl"/>
       <import plugin="org.eclipse.emf.codegen"/>
       <import plugin="org.eclipse.emf.codegen.ecore"/>
       <import plugin="org.eclipse.ui"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui"/>
-      <import plugin="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.gmf"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.core"/>
       <import plugin="org.eclipse.m2m.qvt.oml.common"/>
-      <import feature="de.uni_paderborn.fujaba.muml.pim.feature" version="0.4.0.qualifier"/>
    </requires>
 
    <plugin
