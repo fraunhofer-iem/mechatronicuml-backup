@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.component;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
-import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->

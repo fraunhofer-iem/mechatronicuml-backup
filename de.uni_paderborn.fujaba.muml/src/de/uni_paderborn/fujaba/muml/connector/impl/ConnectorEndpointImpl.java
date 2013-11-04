@@ -8,18 +8,13 @@ package de.uni_paderborn.fujaba.muml.connector.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.CommentableElementImpl;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
