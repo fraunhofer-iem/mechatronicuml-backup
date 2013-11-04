@@ -150,13 +150,6 @@ url: http://ebourg.github.io/flamingo-svg-transcoder/
          unpack="false"/>
 
    <plugin
-         id="de.uni_paderborn.fujaba.muml.hardware.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="de.uni_paderborn.fujaba.muml.hardware.edit.properties"
          download-size="0"
          install-size="0"
