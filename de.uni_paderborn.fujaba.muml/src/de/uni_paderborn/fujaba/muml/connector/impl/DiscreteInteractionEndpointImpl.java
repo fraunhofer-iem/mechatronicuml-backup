@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
@@ -48,6 +49,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl#isMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
  *
@@ -153,6 +155,16 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * @ordered
 	 */
 	protected EList<MessageBuffer> receiverMessageBuffer;
+
+	/**
+	 * The cached setting delegate for the '{@link #isMulti() <em>Multi</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMulti()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate MULTI__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__MULTI).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -426,6 +438,15 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isMulti() {
+		return (Boolean)MULTI__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -491,6 +512,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				return getCardinality();
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
 				return getReceiverMessageBuffer();
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI:
+				return isMulti();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -604,6 +627,8 @@ public abstract class DiscreteInteractionEndpointImpl extends ConnectorEndpointI
 				return cardinality != null;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
 				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI:
+				return MULTI__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -734,6 +734,15 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE__RECEIVER_MESSAGE_BUFFER = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER;
 
 	/**
+	 * The feature id for the '<em><b>Multi</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__MULTI = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI;
+
+	/**
 	 * The feature id for the '<em><b>Coordination Protocol</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

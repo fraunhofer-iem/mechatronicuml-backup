@@ -1380,13 +1380,22 @@ public interface ComponentPackage extends EPackage {
 	int DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER = PORT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Multi</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_PORT__MULTI = PORT_FEATURE_COUNT + 7;
+
+	/**
 	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__REFINED_ROLE = PORT_FEATURE_COUNT + 7;
+	int DISCRETE_PORT__REFINED_ROLE = PORT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
@@ -1395,7 +1404,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__IS_DISCRETE_IN_PORT = PORT_FEATURE_COUNT + 8;
+	int DISCRETE_PORT__IS_DISCRETE_IN_PORT = PORT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
@@ -1404,7 +1413,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__IS_DISCRETE_OUT_PORT = PORT_FEATURE_COUNT + 9;
+	int DISCRETE_PORT__IS_DISCRETE_OUT_PORT = PORT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
@@ -1413,7 +1422,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT = PORT_FEATURE_COUNT + 10;
+	int DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT = PORT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
@@ -1422,7 +1431,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__MULTI_PORT = PORT_FEATURE_COUNT + 11;
+	int DISCRETE_PORT__MULTI_PORT = PORT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
@@ -1431,7 +1440,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT__COORDINATION_PROTOCOL = PORT_FEATURE_COUNT + 12;
+	int DISCRETE_PORT__COORDINATION_PROTOCOL = PORT_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of structural features of the '<em>Discrete Port</em>' class.
@@ -1440,7 +1449,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 13;
+	int DISCRETE_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 14;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.

@@ -33,6 +33,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#isMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
  *
@@ -171,5 +172,21 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * @generated
 	 */
 	EList<MessageBuffer> getReceiverMessageBuffer();
+
+	/**
+	 * Returns the value of the '<em><b>Multi</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This derived attribute indicates if the discrete interaction endpoint has a maximum cardinality greater than one .
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Multi</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint_Multi()
+	 * @model default="" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif\r\n\r\n'"
+	 * @generated
+	 */
+	boolean isMulti();
 
 } // DiscreteInteractionEndpoint

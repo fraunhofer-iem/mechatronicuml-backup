@@ -559,7 +559,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (getRole_MultiRole(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif"
+			 "derivation", "self.multi"
 		   });				
 		addAnnotation
 		  (roleConnectorEClass, 

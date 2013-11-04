@@ -92,7 +92,7 @@ public interface Role extends DiscreteInteractionEndpoint, DataType {
 	 * @return the value of the '<em>Multi Role</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getRole_MultiRole()
 	 * @model default="" required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.multi'"
 	 * @generated
 	 */
 	boolean isMultiRole();

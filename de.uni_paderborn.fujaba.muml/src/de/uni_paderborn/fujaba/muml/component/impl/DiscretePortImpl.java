@@ -46,6 +46,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#isMulti <em>Multi</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#getRefinedRole <em>Refined Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#isIsDiscreteInPort <em>Is Discrete In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DiscretePortImpl#isIsDiscreteOutPort <em>Is Discrete Out Port</em>}</li>
@@ -127,6 +128,16 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * @ordered
 	 */
 	protected EList<MessageBuffer> receiverMessageBuffer;
+
+	/**
+	 * The cached setting delegate for the '{@link #isMulti() <em>Multi</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMulti()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate MULTI__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__MULTI).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getRefinedRole() <em>Refined Role</em>}' reference.
@@ -493,6 +504,15 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isMulti() {
+		return (Boolean)MULTI__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isMultiPort() {
 		return (Boolean)MULTI_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -577,6 +597,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return getCardinality();
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
 				return getReceiverMessageBuffer();
+			case ComponentPackage.DISCRETE_PORT__MULTI:
+				return isMulti();
 			case ComponentPackage.DISCRETE_PORT__REFINED_ROLE:
 				if (resolve) return getRefinedRole();
 				return basicGetRefinedRole();
@@ -693,6 +715,8 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				return cardinality != null;
 			case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER:
 				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
+			case ComponentPackage.DISCRETE_PORT__MULTI:
+				return MULTI__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.DISCRETE_PORT__REFINED_ROLE:
 				return refinedRole != null;
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_PORT:
@@ -730,6 +754,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				case ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR;
 				case ComponentPackage.DISCRETE_PORT__CARDINALITY: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY;
 				case ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER;
+				case ComponentPackage.DISCRETE_PORT__MULTI: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI;
 				default: return -1;
 			}
 		}
@@ -757,6 +782,7 @@ public class DiscretePortImpl extends PortImpl implements DiscretePort {
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR: return ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY: return ComponentPackage.DISCRETE_PORT__CARDINALITY;
 				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER: return ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI: return ComponentPackage.DISCRETE_PORT__MULTI;
 				default: return -1;
 			}
 		}

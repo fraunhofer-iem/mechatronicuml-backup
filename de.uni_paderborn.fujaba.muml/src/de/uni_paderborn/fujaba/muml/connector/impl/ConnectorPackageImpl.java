@@ -6,10 +6,12 @@
  */
 package de.uni_paderborn.fujaba.muml.connector.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
@@ -375,6 +377,15 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDiscreteInteractionEndpoint_Multi() {
+		return (EAttribute)discreteInteractionEndpointEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDiscreteInteractionEndpointInstance() {
 		return discreteInteractionEndpointInstanceEClass;
 	}
@@ -536,6 +547,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR);
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 		createEReference(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER);
+		createEAttribute(discreteInteractionEndpointEClass, DISCRETE_INTERACTION_ENDPOINT__MULTI);
 
 		discreteInteractionEndpointInstanceEClass = createEClass(DISCRETE_INTERACTION_ENDPOINT_INSTANCE);
 
@@ -584,6 +596,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
 		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -627,6 +640,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		initEReference(getDiscreteInteractionEndpoint_RoleAndAdaptationBehavior(), theBehaviorPackage.getBehavior(), null, "roleAndAdaptationBehavior", null, 0, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_Cardinality(), theValuetypePackage.getCardinality(), null, "cardinality", null, 1, 1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiscreteInteractionEndpoint_ReceiverMessageBuffer(), this.getMessageBuffer(), this.getMessageBuffer_DiscreteInteractionEndpoint(), "receiverMessageBuffer", null, 0, -1, DiscreteInteractionEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDiscreteInteractionEndpoint_Multi(), theEcorePackage.getEBoolean(), "multi", "", 1, 1, DiscreteInteractionEndpoint.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(discreteInteractionEndpointInstanceEClass, DiscreteInteractionEndpointInstance.class, "DiscreteInteractionEndpointInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -676,7 +690,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		   source, 
 		   new String[] {
 			 "constraints", "ReceivingInteractionEndpointRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer"
-		   });												
+		   });														
 	}
 
 	/**
@@ -693,7 +707,13 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		   new String[] {
 			 "ReceivingInteractionEndpointRequiresMessageBuffer", "self.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
 			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"
-		   });											
+		   });									
+		addAnnotation
+		  (getDiscreteInteractionEndpoint_Multi(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif\r\n\r\n"
+		   });					
 	}
 
 } //ConnectorPackageImpl

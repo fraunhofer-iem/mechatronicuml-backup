@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.connector;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -1155,13 +1156,22 @@ public interface ConnectorPackage extends EPackage {
 	int DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER = CONNECTOR_ENDPOINT_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Multi</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DISCRETE_INTERACTION_ENDPOINT__MULTI = CONNECTOR_ENDPOINT_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Interaction Endpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT = CONNECTOR_ENDPOINT_FEATURE_COUNT + 9;
+	int DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT = CONNECTOR_ENDPOINT_FEATURE_COUNT + 10;
 
 
 	/**
@@ -2605,6 +2615,17 @@ public interface ConnectorPackage extends EPackage {
 	EReference getDiscreteInteractionEndpoint_ReceiverMessageBuffer();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#isMulti <em>Multi</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multi</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#isMulti()
+	 * @see #getDiscreteInteractionEndpoint()
+	 * @generated
+	 */
+	EAttribute getDiscreteInteractionEndpoint_Multi();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance <em>Discrete Interaction Endpoint Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2910,6 +2931,14 @@ public interface ConnectorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER = eINSTANCE.getDiscreteInteractionEndpoint_ReceiverMessageBuffer();
+
+		/**
+		 * The meta object literal for the '<em><b>Multi</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DISCRETE_INTERACTION_ENDPOINT__MULTI = eINSTANCE.getDiscreteInteractionEndpoint_Multi();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointInstanceImpl <em>Discrete Interaction Endpoint Instance</em>}' class.
