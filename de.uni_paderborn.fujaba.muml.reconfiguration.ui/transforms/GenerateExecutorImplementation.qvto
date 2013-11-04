@@ -169,7 +169,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
 	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest);
 	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
-	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
 	
 	-- embeddedCI port
 	currentPort := executor.ports -> any(name = 'embeddedCI');
@@ -183,13 +183,6 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 
 -- generates the static statechart frame for the parent statechart (the 'black' parts in the executor generation template)
 helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
-	
-	-- create variables
-	var executionVar : Variable := new Variable(genVarExecutor_Parent_Execution, rootNode.getPrimitiveType(boolType));
-	rtsc.variables += executionVar;
-	
-	var tmpMsgVar : Variable := new Variable(genVarExecutor_Parent_TmpMsg, rootNode.getPrimitiveType(intType));
-	rtsc.variables += tmpMsgVar;
 	
 	-- create clocks
 	var c2Clock : Clock := new Clock(genClockExecutor_Parent_c2);
@@ -392,26 +385,26 @@ helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc
 	
 	-- Check -> AbortParentReq (execute)
 	currentTrans := new Transition(checkState, abortParentReqState, 4);
-	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf), EventKind::TRIGGER);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorExecute), SynchronizationKind::SEND, 
 			new LiteralExpression('false'));
-	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
 	currentTrans.action := new Action('Assign Msg Param', createMsgParamAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_Reconfiguration), msgType, msgType.getParameterByName(genParamExecute_Reconf)));
 	rtsc.transitions += currentTrans;
 	
 	-- TimeOut -> AbortParentReq (execute)
 	currentTrans := new Transition(timeOutState, abortParentReqState, 3);
-	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::TRIGGER);
-	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf), EventKind::TRIGGER);
+	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
 	currentTrans.action := new Action('Assign Msg Param', createMsgParamAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_Reconfiguration), msgType, msgType.getParameterByName(genParamExecute_Reconf)));
 	rtsc.transitions += currentTrans;
 	
 	-- Idle -> AwaitVoting
 	currentTrans := new Transition(idleState, awaitVotingState, 1);
-	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::TRIGGER);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf), EventKind::TRIGGER);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorStartExecution), SynchronizationKind::SEND, 
 		null);
-	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
 	currentTrans.action := new Action('Assign Msg Param', createMsgParamAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_Reconfiguration), msgType, msgType.getParameterByName(genParamExecute_Reconf)));
 	rtsc.transitions += currentTrans;
 	
@@ -467,8 +460,8 @@ helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc
 	
 	-- WaitForAnswer -> AbortParentReq (execute)
 	currentTrans := new Transition(waitForAnswerState, abortParentReqState, 1);
-	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::TRIGGER);
-	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf), EventKind::TRIGGER);
+	msgType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
 	currentTrans.action := new Action('Assign Msg Param', createMsgParamAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_Reconfiguration), msgType, msgType.getParameterByName(genParamExecute_Reconf)));
 	rtsc.transitions += currentTrans;
 	
@@ -972,9 +965,6 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	
 	var timeForDecVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForDec, rootNode.getPrimitiveType(intType));
 	rtsc.variables += timeForDecVar;
-	
-	var msgVar : Variable := new Variable(genVarExecutor_EmbeddedCI_Subrole_Msg, rootNode.getPrimitiveType(intType));
-	rtsc.variables += msgVar;
 	
 	-- create clocks
 	var c2Clock : Clock := new Clock(genClockExecutor_embeddedCI_c2);

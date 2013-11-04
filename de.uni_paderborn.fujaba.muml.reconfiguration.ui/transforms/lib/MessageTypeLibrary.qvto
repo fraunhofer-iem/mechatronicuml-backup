@@ -52,7 +52,7 @@ helper createReconfigurationMessageTypeRepository(inout rootNode : RootNode) : M
 	repo.messageTypes += new MessageType(genMsgTypeAbort);
 	repo.messageTypes += new MessageType(genMsgTypeFinished);
 	
-	msgType := new MessageType(genMsgTypeExecute);
+	msgType := new MessageType(genMsgTypeExecuteReconf);
 	msgType.parameters += new Parameter(genParamExecute_Reconf, rootNode.getPrimitiveType(intType));
 	repo.messageTypes += msgType;
 	

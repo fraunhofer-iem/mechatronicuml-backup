@@ -121,7 +121,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout manager : 
 	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
 	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest);
 	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
-	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
 	
 	-- embeddedCI port
 	currentPort := manager.ports -> any(name = 'embeddedCI');
@@ -223,7 +223,7 @@ helper generateStaticExecutorStatechartFrame(inout rootNode : RootNode, inout rt
 	currentTrans := new Transition(idleState, executeState, 2);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecuteReconf), SynchronizationKind::RECEIVE, 
 			null);
-	var msgType : MessageType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	var msgType : MessageType := rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
 	var sendMsg : AsynchronousMessageEvent := new AsynchronousMessageEvent(msgType, EventKind::RAISE);
 	sendMsg.message.parameterBinding += createSimpleSendVariableParameterBinding(msgType.getParameterByName(genParamExecute_Reconf), rtsc.getVariableByName(genVarManager_Reconfiguration));
 	currentTrans.events += sendMsg;

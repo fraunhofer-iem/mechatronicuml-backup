@@ -23,7 +23,7 @@ property genMsgTypeOccupied : String = 'occupied';
 property genMsgTypeDeclineRequest : String = 'declineRequest';
 property genMsgTypeAbort : String = 'abort';
 property genMsgTypeFinished : String = 'finished';
-property genMsgTypeExecute : String = 'execute';
+property genMsgTypeExecuteReconf : String = 'executeReconf';
 property genMsgTypeConfirmRequest : String = 'confirmRequest';
 property genMsgTypeConfirm : String = 'confirm';
 
@@ -117,8 +117,6 @@ property genSyncChanExecutorCheckPrefix : String = 'check';
 property genVarExecutor_Reconfiguration : String = 'reconfiguration';
 property genVarExecutor_TwoPCResult : String = 'twoPCResult';
 property genVarExecutor_TmpCommitTime : String = 'tmpCommitTime';
-property genVarExecutor_Parent_Execution : String = 'execution';
-property genVarExecutor_Parent_TmpMsg : String = 'tmpMsg';
 property genVarExecutor_Events_Deadline : String = 'deadline';
 property genVarExecutor_Events_FromParent : String = 'fromParent';
 property genVarExecutor_Events_AbortReqWaiting : String = 'abortedReqWaiting';
@@ -135,7 +133,6 @@ property genVarExecutor_EmbeddedCI_Adapt_Execute_Finished : String = 'finished';
 property genVarExecutor_EmbeddedCI_Adapt_Abort_Finished : String = 'finished';
 property genVarExecutor_EmbeddedCI_SubRole_CommitTime : String = 'commitTime';
 property genVarExecutor_EmbeddedCI_SubRole_TimeForDec : String = 'timeForDecision';
-property genVarExecutor_EmbeddedCI_Subrole_Msg : String = 'msg';
 
 -- names of executor internal clocks
 property genClockExecutor_Parent_c2 : String = 'c2';
