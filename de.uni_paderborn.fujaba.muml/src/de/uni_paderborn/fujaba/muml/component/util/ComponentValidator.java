@@ -13,7 +13,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -210,7 +212,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String COMPONENT__SOFTWARE_COMPONENTS_MUST_NOT_HAVE_CONTINUOUS_PORTS__EEXPRESSION = "-- Components with component type \"SOFTARE_COMPONENT\" must not have continuous ports.\r\n" +
-		"componentType = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort))->isEmpty()";
+		"componentKind = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort))->isEmpty()";
 
 	/**
 	 * Validates the SoftwareComponentsMustNotHaveContinuousPorts constraint of '<em>Component</em>'.
@@ -698,8 +700,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n" +
-		"or self.componentType = component::ComponentKind::HYBRID_COMPONENT";
+	protected static final String STRUCTURED_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION = "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\n" +
+		"or self.componentKind = component::ComponentKind::HYBRID_COMPONENT";
 
 	/**
 	 * Validates the ValidComponentType constraint of '<em>Structured Component</em>'.
@@ -762,7 +764,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION = "if (not self.allAtomicComponents->oclIsUndefined()) then\r\n" +
-		"self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\r\n" +
+		"self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\r\n" +
 		"implies\r\n" +
 		"\t-- collect all atomic components from parent parts and union them\r\n" +
 		"\t-- with own atomic components\r\n" +
@@ -770,7 +772,7 @@ public class ComponentValidator extends MumlValidator {
 		"\t\tself.embeddedComponentParts->select(\r\n" +
 		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\r\n" +
 		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\r\n" +
-		"\t)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)\r\n" +
+		"\t)->forAll(componentKind = component::ComponentKind::SOFTWARE_COMPONENT)\r\n" +
 		"else\r\n" +
 		"true\r\n" +
 		"endif";
@@ -803,7 +805,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PORTS__EEXPRESSION = "-- A structured software component may only have discrete ports\r\n" +
-		"self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\r\n" +
+		"self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\r\n" +
 		"\timplies (\r\n" +
 		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))\r\n" +
 		"\t)";
@@ -835,7 +837,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentType = component::ComponentKind::HYBRID_COMPONENT\r\n" +
+	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentKind = component::ComponentKind::HYBRID_COMPONENT\r\n" +
 		"\timplies (\r\n" +
 		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\r\n" +
 		"\t)";
@@ -939,7 +941,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ATOMIC_COMPONENT__SOFTWARE_COMPONENT_REQUIRES_BEHAVIOR__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())";
+	protected static final String ATOMIC_COMPONENT__SOFTWARE_COMPONENT_REQUIRES_BEHAVIOR__EEXPRESSION = "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())";
 
 	/**
 	 * Validates the SoftwareComponentRequiresBehavior constraint of '<em>Atomic Component</em>'.
@@ -968,8 +970,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ATOMIC_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n" +
-		"or self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT";
+	protected static final String ATOMIC_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION = "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\n" +
+		"or self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT";
 
 	/**
 	 * Validates the ValidComponentType constraint of '<em>Atomic Component</em>'.
@@ -998,7 +1000,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ATOMIC_COMPONENT__SOFTWARE_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentType = component::ComponentKind::SOFTWARE_COMPONENT\n" +
+	protected static final String ATOMIC_COMPONENT__SOFTWARE_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\n" +
 		"\timplies (\n" +
 		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::HybridPort))\n" +
 		"\t)";
@@ -1030,7 +1032,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ATOMIC_COMPONENT__CONTINUOUS_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT\n" +
+	protected static final String ATOMIC_COMPONENT__CONTINUOUS_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT\n" +
 		"\timplies (\n" +
 		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))\n" +
 		"\t)";

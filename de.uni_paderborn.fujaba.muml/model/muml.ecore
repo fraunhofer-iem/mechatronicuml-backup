@@ -21,7 +21,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="UniquePortNames" value="self.ports->isUnique(name)"/>
-        <details key="SoftwareComponentsMustNotHaveContinuousPorts" value="-- Components with component type &quot;SOFTARE_COMPONENT&quot; must not have continuous ports.&#xD;&#xA;componentType = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort))->isEmpty()"/>
+        <details key="SoftwareComponentsMustNotHaveContinuousPorts" value="-- Components with component type &quot;SOFTARE_COMPONENT&quot; must not have continuous ports.&#xD;&#xA;componentKind = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort))->isEmpty()"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
           eType="#//component/Port" containment="true" eOpposite="#//component/Port/component">
@@ -192,10 +192,10 @@
         <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into component parts. In contrast to structured components atomic components own a behavior in form of a realtime statechart.&#xD;&#xA;&#xD;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SoftwareComponentRequiresBehavior" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())"/>
-        <details key="ValidComponentType" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT"/>
-        <details key="SoftwareComponentValidPorts" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::HybridPort))&#xA;&#x9;)"/>
-        <details key="ContinuousComponentValidPorts" value="self.componentType = component::ComponentKind::CONTINUOUS_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
+        <details key="SoftwareComponentRequiresBehavior" value="self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())"/>
+        <details key="ValidComponentType" value="self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT"/>
+        <details key="SoftwareComponentValidPorts" value="self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::HybridPort))&#xA;&#x9;)"/>
+        <details key="ContinuousComponentValidPorts" value="self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
         <details key="AtomicComponentsNamesMustBeUnique" value="AtomicComponent.allInstances().name->count(self.name) = 1"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -315,11 +315,11 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="StructuredComponentAllowsNoHybridPorts" value="-- A structured component allows no hybrid ports.&#xD;&#xA;self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))"/>
-        <details key="ValidComponentType" value="self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentType = component::ComponentKind::HYBRID_COMPONENT"/>
+        <details key="ValidComponentType" value="self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentKind = component::ComponentKind::HYBRID_COMPONENT"/>
         <details key="NoCyclicComponentPartHierarchy" value="if self.allStructuredComponents->oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;not self.allStructuredComponents->includes(self)&#xD;&#xA;endif"/>
-        <details key="DiscreteStructuredComponentValidParts" value="if (not self.allAtomicComponents->oclIsUndefined()) then&#xD;&#xA;self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->forAll(componentType = component::ComponentKind::SOFTWARE_COMPONENT)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif"/>
-        <details key="DiscreteStructuredComponentValidPorts" value="-- A structured software component may only have discrete ports&#xD;&#xA;self.componentType = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xD;&#xA;&#x9;)"/>
-        <details key="HybridStructuredComponentValidPorts" value="self.componentType = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xD;&#xA;&#x9;)"/>
+        <details key="DiscreteStructuredComponentValidParts" value="if (not self.allAtomicComponents->oclIsUndefined()) then&#xD;&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsTypeOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->forAll(componentKind = component::ComponentKind::SOFTWARE_COMPONENT)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif"/>
+        <details key="DiscreteStructuredComponentValidPorts" value="-- A structured software component may only have discrete ports&#xD;&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort))&#xD;&#xA;&#x9;)"/>
+        <details key="HybridStructuredComponentValidPorts" value="self.componentKind = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xD;&#xA;&#x9;)"/>
         <details key="ComponentPartsHaveUniqueName" value="self.embeddedComponentParts -> isUnique(name)"/>
       </eAnnotations>
       <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
