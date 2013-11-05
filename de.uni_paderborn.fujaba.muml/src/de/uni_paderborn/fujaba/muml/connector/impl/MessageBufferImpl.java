@@ -12,9 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.CorePackage;
-import org.storydriven.core.impl.NamedElementImpl;
+import org.storydriven.core.impl.CommentableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
@@ -29,7 +27,6 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getBufferSize <em>Buffer Size</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getMessageType <em>Message Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.MessageBufferImpl#getDiscreteInteractionEndpoint <em>Discrete Interaction Endpoint</em>}</li>
@@ -38,27 +35,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  *
  * @generated
  */
-public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer {
-	/**
-	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COMMENT_EDEFAULT = "\"no comment provided\"";
-
-	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getComment()
-	 * @generated
-	 * @ordered
-	 */
-	protected String comment = COMMENT_EDEFAULT;
-
+public class MessageBufferImpl extends CommentableElementImpl implements MessageBuffer {
 	/**
 	 * The cached value of the '{@link #getBufferSize() <em>Buffer Size</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -96,27 +73,6 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	protected EClass eStaticClass() {
 		return ConnectorPackage.Literals.MESSAGE_BUFFER;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getComment() {
-		return comment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComment(String newComment) {
-		String oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConnectorPackage.MESSAGE_BUFFER__COMMENT, oldComment, comment));
 	}
 
 	/**
@@ -269,8 +225,6 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
-				return getComment();
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				return getBufferSize();
 			case ConnectorPackage.MESSAGE_BUFFER__MESSAGE_TYPE:
@@ -290,9 +244,6 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
-				setComment((String)newValue);
-				return;
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				setBufferSize((NaturalNumber)newValue);
 				return;
@@ -315,9 +266,6 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
-				setComment(COMMENT_EDEFAULT);
-				return;
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				setBufferSize((NaturalNumber)null);
 				return;
@@ -339,8 +287,6 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
-				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				return bufferSize != null;
 			case ConnectorPackage.MESSAGE_BUFFER__MESSAGE_TYPE:
@@ -349,54 +295,6 @@ public class MessageBufferImpl extends NamedElementImpl implements MessageBuffer
 				return getDiscreteInteractionEndpoint() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (derivedFeatureID) {
-				case ConnectorPackage.MESSAGE_BUFFER__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == CommentableElement.class) {
-			switch (baseFeatureID) {
-				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ConnectorPackage.MESSAGE_BUFFER__COMMENT;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (comment: ");
-		result.append(comment);
-		result.append(')');
-		return result.toString();
 	}
 
 } //MessageBufferImpl

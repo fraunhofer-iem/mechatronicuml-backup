@@ -4,7 +4,6 @@ package de.uni_paderborn.fujaba.muml.connector;
 
 import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
-import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
@@ -31,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
  * @model
  * @generated
  */
-public interface MessageBuffer extends NamedElement, CommentableElement {
+public interface MessageBuffer extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Buffer Size</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

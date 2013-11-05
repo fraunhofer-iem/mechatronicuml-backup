@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.CommentableElementItemProvider;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
@@ -37,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDe
  * @generated
  */
 public class MessageBufferItemProvider
-	extends NamedElementItemProvider
+	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -65,36 +66,12 @@ public class MessageBufferItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
 			addBufferSizePropertyDescriptor(object);
 			addMessageTypePropertyDescriptor(object);
 			addDiscreteInteractionEndpointPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
 
 	/**
 	 * This adds a property descriptor for the Buffer Size feature.
@@ -221,7 +198,7 @@ public class MessageBufferItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MessageBuffer)object).getName();
+		String label = ((MessageBuffer)object).getComment();
 		return label == null || label.length() == 0 ?
 			getString("_UI_MessageBuffer_type") :
 			getString("_UI_MessageBuffer_type") + " " + label;
@@ -239,9 +216,6 @@ public class MessageBufferItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(MessageBuffer.class)) {
-			case ConnectorPackage.MESSAGE_BUFFER__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case ConnectorPackage.MESSAGE_BUFFER__BUFFER_SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
