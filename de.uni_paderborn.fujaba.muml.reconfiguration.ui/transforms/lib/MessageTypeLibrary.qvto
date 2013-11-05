@@ -49,6 +49,7 @@ helper createReconfigurationMessageTypeRepository(inout rootNode : RootNode) : M
 	repo.messageTypes += new MessageType(genMsgTypeFailed);
 	repo.messageTypes += new MessageType(genMsgTypeOccupied);
 	repo.messageTypes += new MessageType(genMsgTypeDeclineRequest);
+	repo.messageTypes += new MessageType(genMsgTypeExecute);
 	repo.messageTypes += new MessageType(genMsgTypeAbort);
 	repo.messageTypes += new MessageType(genMsgTypeFinished);
 	

@@ -162,6 +162,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
 	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
 	
 	-- events port
 	currentPort := executor.ports -> any(name = 'events');
@@ -177,6 +178,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
 	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
 	
 	return;
 }
@@ -269,10 +271,17 @@ helper generateStaticParentStatechartFrame(inout rootNode : RootNode, inout rtsc
 	rtsc.transitions += currentTrans;
 	
 	-- WaitForParent -> FinalizeAbort
-	currentTrans := new Transition(waitForParentState, finalizeAbortState, 1);
+	currentTrans := new Transition(waitForParentState, finalizeAbortState, 2);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorDoAbort), SynchronizationKind::SEND, 
 			null);
 	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort), EventKind::TRIGGER);		
+	rtsc.transitions += currentTrans;
+	
+	-- WaitForParent -> Execution
+	currentTrans := new Transition(waitForParentState, executionState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorPerformReconf), SynchronizationKind::SEND, 
+			null);
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::TRIGGER);		
 	rtsc.transitions += currentTrans;
 	
 	-- FinalizeAbort -> Idle
@@ -1044,10 +1053,17 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	rtsc.transitions += currentTrans;
 	
 	-- ReplyReceived -> Idle
-	currentTrans := new Transition(replyReceivedState, idleState, 1);
+	currentTrans := new Transition(replyReceivedState, idleState, 2);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCISendA), SynchronizationKind::RECEIVE, 
 			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
 	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort), EventKind::RAISE);
+	rtsc.transitions += currentTrans;
+	
+	-- ReplyReceived -> Execute
+	currentTrans := new Transition(replyReceivedState, executeState, 1);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCISendC), SynchronizationKind::RECEIVE, 
+			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
+	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::RAISE);
 	rtsc.transitions += currentTrans;
 	
 	-- Execute -> Idle

@@ -21,6 +21,7 @@ property genMsgTypeSuccess : String = 'success';
 property genMsgTypeFailed : String = 'failed';
 property genMsgTypeOccupied : String = 'occupied';
 property genMsgTypeDeclineRequest : String = 'declineRequest';
+property genMsgTypeExecute : String = 'execute';
 property genMsgTypeAbort : String = 'abort';
 property genMsgTypeFinished : String = 'finished';
 property genMsgTypeExecuteReconf : String = 'executeReconf';
