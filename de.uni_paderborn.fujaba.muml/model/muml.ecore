@@ -2141,7 +2141,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TypedNamedElement" abstract="true"
         eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="#//types/DataType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1"
+          eType="#//types/DataType"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

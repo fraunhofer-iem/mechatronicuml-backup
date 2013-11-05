@@ -38,7 +38,7 @@ public interface TypedNamedElement extends NamedElement {
 	 * @return the value of the '<em>Data Type</em>' reference.
 	 * @see #setDataType(DataType)
 	 * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getTypedNamedElement_DataType()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	DataType getDataType();
