@@ -7,10 +7,12 @@
 package de.uni_paderborn.fujaba.muml.component.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
@@ -31,6 +33,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DirectedTypedPortImpl#isOptional <em>Optional</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DirectedTypedPortImpl#isOutPort <em>Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DirectedTypedPortImpl#isInPort <em>In Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.DirectedTypedPortImpl#getInitializeExpression <em>Initialize Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -106,6 +109,16 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate IN_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.DIRECTED_TYPED_PORT__IN_PORT).getSettingDelegate();
+
+	/**
+	 * The cached value of the '{@link #getInitializeExpression() <em>Initialize Expression</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitializeExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression initializeExpression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,6 +233,63 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Expression getInitializeExpression() {
+		return initializeExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetInitializeExpression(Expression newInitializeExpression, NotificationChain msgs) {
+		Expression oldInitializeExpression = initializeExpression;
+		initializeExpression = newInitializeExpression;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION, oldInitializeExpression, newInitializeExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitializeExpression(Expression newInitializeExpression) {
+		if (newInitializeExpression != initializeExpression) {
+			NotificationChain msgs = null;
+			if (initializeExpression != null)
+				msgs = ((InternalEObject)initializeExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION, null, msgs);
+			if (newInitializeExpression != null)
+				msgs = ((InternalEObject)newInitializeExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION, null, msgs);
+			msgs = basicSetInitializeExpression(newInitializeExpression, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION, newInitializeExpression, newInitializeExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComponentPackage.DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION:
+				return basicSetInitializeExpression(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isOutPort() {
 		return (Boolean)OUT_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
@@ -243,6 +313,8 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 				return isOutPort();
 			case ComponentPackage.DIRECTED_TYPED_PORT__IN_PORT:
 				return isInPort();
+			case ComponentPackage.DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION:
+				return getInitializeExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -264,6 +336,9 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
 				setOptional((Boolean)newValue);
 				return;
+			case ComponentPackage.DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION:
+				setInitializeExpression((Expression)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -284,6 +359,9 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 				return;
 			case ComponentPackage.DIRECTED_TYPED_PORT__OPTIONAL:
 				setOptional(OPTIONAL_EDEFAULT);
+				return;
+			case ComponentPackage.DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION:
+				setInitializeExpression((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,6 +385,8 @@ public abstract class DirectedTypedPortImpl extends PortImpl implements Directed
 				return OUT_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.DIRECTED_TYPED_PORT__IN_PORT:
 				return IN_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION:
+				return initializeExpression != null;
 		}
 		return super.eIsSet(featureID);
 	}

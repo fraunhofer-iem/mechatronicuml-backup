@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
@@ -578,6 +579,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDirectedTypedPort_InitializeExpression() {
+		return (EReference)directedTypedPortEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPortPart() {
 		return portPartEClass;
 	}
@@ -878,6 +888,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__OPTIONAL);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__OUT_PORT);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__IN_PORT);
+		createEReference(directedTypedPortEClass, DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION);
 
 		portPartEClass = createEClass(PORT_PART);
 		createEReference(portPartEClass, PORT_PART__PORT_TYPE);
@@ -923,6 +934,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1019,6 +1031,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEAttribute(getDirectedTypedPort_Optional(), theEcorePackage.getEBoolean(), "optional", "false", 0, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDirectedTypedPort_OutPort(), ecorePackage.getEBoolean(), "outPort", "false", 0, 1, DirectedTypedPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDirectedTypedPort_InPort(), ecorePackage.getEBoolean(), "inPort", "false", 0, 1, DirectedTypedPort.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDirectedTypedPort_InitializeExpression(), theExpressionsPackage.getExpression(), null, "initializeExpression", null, 0, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portPartEClass, PortPart.class, "PortPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortPart_PortType(), this.getPort(), null, "portType", null, 1, 1, PortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1098,7 +1111,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyDiscretePortParts"
-		   });													
+		   });					
+		addAnnotation
+		  (directedTypedPortEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "InitializeExpressionOnlyForOutPorts"
+		   });											
 	}
 
 	/**
@@ -1241,7 +1260,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "OnlyDiscretePortParts", "not self.portParts->oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))"
-		   });							
+		   });					
+		addAnnotation
+		  (directedTypedPortEClass, 
+		   source, 
+		   new String[] {
+			 "InitializeExpressionOnlyForOutPorts", "self.kind = component::PortDirectionKind::IN implies self.initializeExpression.oclIsUndefined()"
+		   });					
 		addAnnotation
 		  (getDirectedTypedPort_OutPort(), 
 		   source, 

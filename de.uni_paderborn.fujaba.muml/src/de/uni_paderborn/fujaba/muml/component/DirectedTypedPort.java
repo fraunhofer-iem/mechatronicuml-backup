@@ -6,6 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.component;
 
+import org.storydriven.core.expressions.Expression;
+
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 
 /**
@@ -20,11 +22,14 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#isOptional <em>Optional</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#isOutPort <em>Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#isInPort <em>In Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#getInitializeExpression <em>Initialize Expression</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDirectedTypedPort()
  * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='InitializeExpressionOnlyForOutPorts'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL InitializeExpressionOnlyForOutPorts='self.kind = component::PortDirectionKind::IN implies self.initializeExpression.oclIsUndefined()'"
  * @generated
  */
 public interface DirectedTypedPort extends Port, TypedNamedElement {
@@ -101,6 +106,32 @@ public interface DirectedTypedPort extends Port, TypedNamedElement {
 	 * @generated
 	 */
 	boolean isInPort();
+
+	/**
+	 * Returns the value of the '<em><b>Initialize Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Initialize Expression</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Initialize Expression</em>' containment reference.
+	 * @see #setInitializeExpression(Expression)
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDirectedTypedPort_InitializeExpression()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Expression getInitializeExpression();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#getInitializeExpression <em>Initialize Expression</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Initialize Expression</em>' containment reference.
+	 * @see #getInitializeExpression()
+	 * @generated
+	 */
+	void setInitializeExpression(Expression value);
 
 	/**
 	 * Returns the value of the '<em><b>Out Port</b></em>' attribute.

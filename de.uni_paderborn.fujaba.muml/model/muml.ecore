@@ -392,6 +392,12 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DirectedTypedPort" abstract="true"
         eSuperTypes="#//component/Port #//behavior/TypedNamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="InitializeExpressionOnlyForOutPorts"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="InitializeExpressionOnlyForOutPorts" value="self.kind = component::PortDirectionKind::IN implies self.initializeExpression.oclIsUndefined()"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
           eType="#//component/PortDirectionKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -424,6 +430,9 @@
           <details key="derivation" value="self.kind = component::PortDirectionKind::IN"/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression"
+          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PortPart" eSuperTypes="#//connector/ConnectorEndpoint">
       <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"

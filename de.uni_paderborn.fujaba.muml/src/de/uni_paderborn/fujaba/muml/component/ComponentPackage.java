@@ -730,13 +730,22 @@ public interface ComponentPackage extends EPackage {
 	int DIRECTED_TYPED_PORT__IN_PORT = PORT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Initialize Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION = PORT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Directed Typed Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_TYPED_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 5;
+	int DIRECTED_TYPED_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1044,6 +1053,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTINUOUS_PORT__IN_PORT = DIRECTED_TYPED_PORT__IN_PORT;
+
+	/**
+	 * The feature id for the '<em><b>Initialize Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTINUOUS_PORT__INITIALIZE_EXPRESSION = DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION;
 
 	/**
 	 * The number of structural features of the '<em>Continuous Port</em>' class.
@@ -3719,6 +3737,15 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__IN_PORT = DIRECTED_TYPED_PORT__IN_PORT;
 
 	/**
+	 * The feature id for the '<em><b>Initialize Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYBRID_PORT__INITIALIZE_EXPRESSION = DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION;
+
+	/**
 	 * The feature id for the '<em><b>Sampling Interval</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4804,6 +4831,17 @@ public interface ComponentPackage extends EPackage {
 	EAttribute getDirectedTypedPort_InPort();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#getInitializeExpression <em>Initialize Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Initialize Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#getInitializeExpression()
+	 * @see #getDirectedTypedPort()
+	 * @generated
+	 */
+	EReference getDirectedTypedPort_InitializeExpression();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.component.PortPart <em>Port Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5350,6 +5388,14 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DIRECTED_TYPED_PORT__IN_PORT = eINSTANCE.getDirectedTypedPort_InPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Initialize Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION = eINSTANCE.getDirectedTypedPort_InitializeExpression();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl <em>Port Part</em>}' class.
