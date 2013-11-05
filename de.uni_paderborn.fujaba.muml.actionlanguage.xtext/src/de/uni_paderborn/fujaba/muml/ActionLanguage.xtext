@@ -283,7 +283,7 @@ LiteralExpression returns commonExpressions::LiteralExpression:
 ;
 
 Literal returns ecore::EString:
-	NUMBER | BOOLEAN | INT | STRING
+	NUMBER | BOOLEAN | INT | STRING | 'null'
 ;
 
 ExtendedTypedNamedElementExpression returns expressions::Expression:

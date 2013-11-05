@@ -1639,6 +1639,14 @@ rule__Literal__Alternatives
 { after(grammarAccess.getLiteralAccess().getSTRINGTerminalRuleCall_3()); }
 )
 
+    |(
+{ before(grammarAccess.getLiteralAccess().getNullKeyword_4()); }
+
+	'null' 
+
+{ after(grammarAccess.getLiteralAccess().getNullKeyword_4()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);
