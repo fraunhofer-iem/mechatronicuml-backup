@@ -74,7 +74,7 @@ public class ComponentItemProvider
 			addCommentPropertyDescriptor(object);
 			addConstraintPropertyDescriptor(object);
 			addPortsPropertyDescriptor(object);
-			addComponentTypePropertyDescriptor(object);
+			addComponentKindPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -146,6 +146,28 @@ public class ComponentItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Component Kind feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponentKindPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Component_componentKind_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_componentKind_feature", "_UI_Component_type"),
+				 ComponentPackage.Literals.COMPONENT__COMPONENT_KIND,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Component Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,7 +180,7 @@ public class ComponentItemProvider
 				 getResourceLocator(),
 				 getString("_UI_Component_componentType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Component_componentType_feature", "_UI_Component_type"),
-				 ComponentPackage.Literals.COMPONENT__COMPONENT_TYPE,
+				 ComponentPackage.Literals.COMPONENT__COMPONENT_KIND,
 				 true,
 				 false,
 				 false,
@@ -250,7 +272,7 @@ public class ComponentItemProvider
 
 		switch (notification.getFeatureID(Component.class)) {
 			case ComponentPackage.COMPONENT__COMMENT:
-			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
+			case ComponentPackage.COMPONENT__COMPONENT_KIND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ComponentPackage.COMPONENT__CONSTRAINT:

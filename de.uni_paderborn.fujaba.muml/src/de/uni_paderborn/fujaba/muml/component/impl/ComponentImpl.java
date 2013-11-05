@@ -38,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComponentType <em>Component Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComponentKind <em>Component Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -86,24 +86,24 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	protected EList<Port> ports;
 
 	/**
-	 * The default value of the '{@link #getComponentType() <em>Component Type</em>}' attribute.
+	 * The default value of the '{@link #getComponentKind() <em>Component Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponentType()
+	 * @see #getComponentKind()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ComponentKind COMPONENT_TYPE_EDEFAULT = ComponentKind.SOFTWARE_COMPONENT;
+	protected static final ComponentKind COMPONENT_KIND_EDEFAULT = ComponentKind.SOFTWARE_COMPONENT;
 
 	/**
-	 * The cached value of the '{@link #getComponentType() <em>Component Type</em>}' attribute.
+	 * The cached value of the '{@link #getComponentKind() <em>Component Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComponentType()
+	 * @see #getComponentKind()
 	 * @generated
 	 * @ordered
 	 */
-	protected ComponentKind componentType = COMPONENT_TYPE_EDEFAULT;
+	protected ComponentKind componentKind = COMPONENT_KIND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -174,8 +174,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentKind getComponentType() {
-		return componentType;
+	public ComponentKind getComponentKind() {
+		return componentKind;
 	}
 
 	/**
@@ -183,11 +183,11 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComponentType(ComponentKind newComponentType) {
-		ComponentKind oldComponentType = componentType;
-		componentType = newComponentType == null ? COMPONENT_TYPE_EDEFAULT : newComponentType;
+	public void setComponentKind(ComponentKind newComponentKind) {
+		ComponentKind oldComponentKind = componentKind;
+		componentKind = newComponentKind == null ? COMPONENT_KIND_EDEFAULT : newComponentKind;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT__COMPONENT_TYPE, oldComponentType, componentType));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COMPONENT__COMPONENT_KIND, oldComponentKind, componentKind));
 	}
 
 	/**
@@ -237,8 +237,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return getConstraint();
 			case ComponentPackage.COMPONENT__PORTS:
 				return getPorts();
-			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
-				return getComponentType();
+			case ComponentPackage.COMPONENT__COMPONENT_KIND:
+				return getComponentKind();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -263,8 +263,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				getPorts().clear();
 				getPorts().addAll((Collection<? extends Port>)newValue);
 				return;
-			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
-				setComponentType((ComponentKind)newValue);
+			case ComponentPackage.COMPONENT__COMPONENT_KIND:
+				setComponentKind((ComponentKind)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -287,8 +287,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__PORTS:
 				getPorts().clear();
 				return;
-			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
-				setComponentType(COMPONENT_TYPE_EDEFAULT);
+			case ComponentPackage.COMPONENT__COMPONENT_KIND:
+				setComponentKind(COMPONENT_KIND_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -308,8 +308,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				return constraint != null && !constraint.isEmpty();
 			case ComponentPackage.COMPONENT__PORTS:
 				return ports != null && !ports.isEmpty();
-			case ComponentPackage.COMPONENT__COMPONENT_TYPE:
-				return componentType != COMPONENT_TYPE_EDEFAULT;
+			case ComponentPackage.COMPONENT__COMPONENT_KIND:
+				return componentKind != COMPONENT_KIND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -370,8 +370,8 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (comment: ");
 		result.append(comment);
-		result.append(", componentType: ");
-		result.append(componentType);
+		result.append(", componentKind: ");
+		result.append(componentKind);
 		result.append(')');
 		return result.toString();
 	}

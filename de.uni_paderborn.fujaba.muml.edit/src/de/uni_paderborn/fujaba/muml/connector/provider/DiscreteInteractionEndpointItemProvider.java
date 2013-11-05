@@ -80,6 +80,7 @@ public class DiscreteInteractionEndpointItemProvider
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addReceiverMessageBufferPropertyDescriptor(object);
+			addMultiPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -310,6 +311,28 @@ public class DiscreteInteractionEndpointItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Multi feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMultiPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscreteInteractionEndpoint_multi_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_multi_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__MULTI,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -368,6 +391,7 @@ public class DiscreteInteractionEndpointItemProvider
 
 		switch (notification.getFeatureID(DiscreteInteractionEndpoint.class)) {
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME:
+			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:

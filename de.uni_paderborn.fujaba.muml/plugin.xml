@@ -92,5 +92,4 @@
             class="de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage"
             genModel="model/muml.genmodel"/>
    </extension>
-
 </plugin>

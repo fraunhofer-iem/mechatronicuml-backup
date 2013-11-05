@@ -27,7 +27,7 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.Component#getPorts <em>Ports</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.Component#getComponentType <em>Component Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.Component#getComponentKind <em>Component Kind</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,7 +56,8 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	EList<Port> getPorts();
 
 	/**
-	 * Returns the value of the '<em><b>Component Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Component Kind</b></em>' attribute.
+	 * The default value is <code>"software component"</code>.
 	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.component.ComponentKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,24 +66,24 @@ public interface Component extends NamedElement, CommentableElement, Constrainab
 	 * discrete software component, a continuous component, a hybrid component 
 	 * or a hardware component.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Component Type</em>' attribute.
+	 * @return the value of the '<em>Component Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentKind
-	 * @see #setComponentType(ComponentKind)
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponent_ComponentType()
-	 * @model
+	 * @see #setComponentKind(ComponentKind)
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponent_ComponentKind()
+	 * @model default="software component" required="true"
 	 * @generated
 	 */
-	ComponentKind getComponentType();
+	ComponentKind getComponentKind();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.Component#getComponentType <em>Component Type</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.Component#getComponentKind <em>Component Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Component Type</em>' attribute.
+	 * @param value the new value of the '<em>Component Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentKind
-	 * @see #getComponentType()
+	 * @see #getComponentKind()
 	 * @generated
 	 */
-	void setComponentType(ComponentKind value);
+	void setComponentKind(ComponentKind value);
 
 } // Component

@@ -308,7 +308,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponent_ComponentType() {
+	public EAttribute getComponent_ComponentKind() {
 		return (EAttribute)componentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -819,7 +819,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		// Create classes and their features
 		componentEClass = createEClass(COMPONENT);
 		createEReference(componentEClass, COMPONENT__PORTS);
-		createEAttribute(componentEClass, COMPONENT__COMPONENT_TYPE);
+		createEAttribute(componentEClass, COMPONENT__COMPONENT_KIND);
 
 		portEClass = createEClass(PORT);
 		createEReference(portEClass, PORT__COMPONENT);
@@ -957,7 +957,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponent_Ports(), this.getPort(), this.getPort_Component(), "ports", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponent_ComponentType(), this.getComponentKind(), "componentType", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponent_ComponentKind(), this.getComponentKind(), "componentKind", "software component", 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPort_Component(), this.getComponent(), this.getComponent_Ports(), "component", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

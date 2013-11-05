@@ -134,13 +134,13 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT__PORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Component Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__COMPONENT_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT__COMPONENT_KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -1976,13 +1976,13 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__PORTS = COMPONENT__PORTS;
 
 	/**
-	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Component Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT__COMPONENT_TYPE = COMPONENT__COMPONENT_TYPE;
+	int STRUCTURED_COMPONENT__COMPONENT_KIND = COMPONENT__COMPONENT_KIND;
 
 	/**
 	 * The feature id for the '<em><b>Embedded Component Parts</b></em>' containment reference list.
@@ -2292,13 +2292,13 @@ public interface ComponentPackage extends EPackage {
 	int STATIC_STRUCTURED_COMPONENT__PORTS = STRUCTURED_COMPONENT__PORTS;
 
 	/**
-	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Component Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_STRUCTURED_COMPONENT__COMPONENT_TYPE = STRUCTURED_COMPONENT__COMPONENT_TYPE;
+	int STATIC_STRUCTURED_COMPONENT__COMPONENT_KIND = STRUCTURED_COMPONENT__COMPONENT_KIND;
 
 	/**
 	 * The feature id for the '<em><b>Embedded Component Parts</b></em>' containment reference list.
@@ -2608,13 +2608,13 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__PORTS = COMPONENT__PORTS;
 
 	/**
-	 * The feature id for the '<em><b>Component Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Component Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__COMPONENT_TYPE = COMPONENT__COMPONENT_TYPE;
+	int ATOMIC_COMPONENT__COMPONENT_KIND = COMPONENT__COMPONENT_KIND;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -4482,15 +4482,15 @@ public interface ComponentPackage extends EPackage {
 	EReference getComponent_Ports();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.component.Component#getComponentType <em>Component Type</em>}'.
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.component.Component#getComponentKind <em>Component Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Component Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.component.Component#getComponentType()
+	 * @return the meta object for the attribute '<em>Component Kind</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.component.Component#getComponentKind()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EAttribute getComponent_ComponentType();
+	EAttribute getComponent_ComponentKind();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.component.Port <em>Port</em>}'.
@@ -5098,12 +5098,12 @@ public interface ComponentPackage extends EPackage {
 		EReference COMPONENT__PORTS = eINSTANCE.getComponent_Ports();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Component Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPONENT__COMPONENT_TYPE = eINSTANCE.getComponent_ComponentType();
+		EAttribute COMPONENT__COMPONENT_KIND = eINSTANCE.getComponent_ComponentKind();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.component.impl.PortImpl <em>Port</em>}' class.

@@ -29,7 +29,8 @@
           <details key="documentation" value="The ports of a component represent the interaction points between the component and its environment."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentType" eType="#//component/ComponentKind">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="componentKind" lowerBound="1"
+          eType="#//component/ComponentKind" defaultValueLiteral="software component">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This attribute specifies the kind of the component. A component may be either&#xD;&#xA;discrete software component, a continuous component, a hybrid component &#xD;&#xA;or a hardware component."/>
         </eAnnotations>

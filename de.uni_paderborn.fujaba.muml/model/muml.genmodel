@@ -24,7 +24,7 @@
       <genClasses image="false" ecoreClass="muml.ecore#//component/Component">
         <genFeatures property="Readonly" children="true" createChild="true" propertyCategory="General"
             ecoreFeature="ecore:EReference muml.ecore#//component/Component/ports"/>
-        <genFeatures createChild="false" propertyCategory="General" ecoreFeature="ecore:EAttribute muml.ecore#//component/Component/componentType"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/Component/componentKind"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//component/Port">
         <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="General"
@@ -439,6 +439,7 @@
             ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/roleAndAdaptationBehavior"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/cardinality"/>
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteInteractionEndpoint/receiverMessageBuffer"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//connector/DiscreteInteractionEndpoint/multi"/>
       </genClasses>
       <genClasses image="false" ecoreClass="muml.ecore#//connector/DiscreteInteractionEndpointInstance"/>
       <genClasses ecoreClass="muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance">

@@ -76,6 +76,7 @@ public class DiscretePortItemProvider
 			addRoleAndAdaptationBehaviorPropertyDescriptor(object);
 			addCardinalityPropertyDescriptor(object);
 			addReceiverMessageBufferPropertyDescriptor(object);
+			addMultiPropertyDescriptor(object);
 			addRefinedRolePropertyDescriptor(object);
 			addIsDiscreteInPortPropertyDescriptor(object);
 			addIsDiscreteOutPortPropertyDescriptor(object);
@@ -358,6 +359,28 @@ public class DiscretePortItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Multi feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMultiPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DiscreteInteractionEndpoint_multi_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DiscreteInteractionEndpoint_multi_feature", "_UI_DiscreteInteractionEndpoint_type"),
+				 ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__MULTI,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Multi Port feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -469,6 +492,7 @@ public class DiscretePortItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(DiscretePort.class)) {
+			case ComponentPackage.DISCRETE_PORT__MULTI:
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_PORT:
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_OUT_PORT:
 			case ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT:
