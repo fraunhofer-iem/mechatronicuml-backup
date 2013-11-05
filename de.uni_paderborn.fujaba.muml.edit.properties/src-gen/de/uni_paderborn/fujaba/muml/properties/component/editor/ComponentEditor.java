@@ -84,7 +84,7 @@ public abstract class ComponentEditor
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getComponent_ComponentType());
+						.getComponent_ComponentKind());
 
 		editor.setTooltipMessage("This attribute specifies the kind of the component. A component may be either\ndiscrete software component, a continuous component, a hybrid component \nor a hardware component.");
 
