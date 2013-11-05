@@ -16,7 +16,6 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -172,12 +171,12 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 				return createConstrainableElementAdapter();
 			}
 			@Override
-			public Adapter caseConnectorEndpoint(ConnectorEndpoint object) {
-				return createConnectorEndpointAdapter();
-			}
-			@Override
 			public Adapter caseDataType(DataType object) {
 				return createDataTypeAdapter();
+			}
+			@Override
+			public Adapter caseConnectorEndpoint(ConnectorEndpoint object) {
+				return createConnectorEndpointAdapter();
 			}
 			@Override
 			public Adapter caseTypedNamedElement(TypedNamedElement object) {

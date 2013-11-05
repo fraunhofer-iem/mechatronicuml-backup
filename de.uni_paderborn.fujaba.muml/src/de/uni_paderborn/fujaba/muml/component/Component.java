@@ -11,6 +11,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='self.ports->isUnique(name)' SoftwareComponentsMustNotHaveContinuousPorts='-- Components with component type \"SOFTARE_COMPONENT\" must not have continuous ports.\r\ncomponentKind = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort))->isEmpty()'"
  * @generated
  */
-public interface Component extends NamedElement, CommentableElement, ConstrainableElement {
+public interface Component extends NamedElement, CommentableElement, ConstrainableElement, DataType {
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.Port}.

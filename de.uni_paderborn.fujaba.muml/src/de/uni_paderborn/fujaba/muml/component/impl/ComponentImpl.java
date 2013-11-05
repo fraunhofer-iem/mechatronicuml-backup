@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
  * <!-- begin-user-doc -->
@@ -333,6 +334,11 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				default: return -1;
 			}
 		}
+		if (baseClass == DataType.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -352,6 +358,11 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		if (baseClass == ConstrainableElement.class) {
 			switch (baseFeatureID) {
 				case ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ComponentPackage.COMPONENT__CONSTRAINT;
+				default: return -1;
+			}
+		}
+		if (baseClass == DataType.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}

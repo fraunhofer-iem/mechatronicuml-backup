@@ -917,8 +917,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		ConstraintPackage theConstraintPackage = (ConstraintPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintPackage.eNS_URI);
-		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		ProtocolPackage theProtocolPackage = (ProtocolPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
@@ -932,6 +932,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		componentEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		componentEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		componentEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
+		componentEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		portEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
 		portEClass.getESuperTypes().add(theConstraintPackage.getConstrainableElement());
 		portEClass.getESuperTypes().add(theTypesPackage.getDataType());

@@ -15,7 +15,6 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -98,10 +97,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 			case ComponentPackage.COMPONENT: {
 				Component component = (Component)theEObject;
 				T result = caseComponent(component);
-				if (result == null) result = caseNamedElement(component);
-				if (result == null) result = caseCommentableElement(component);
 				if (result == null) result = caseConstrainableElement(component);
+				if (result == null) result = caseDataType(component);
+				if (result == null) result = caseNamedElement(component);
 				if (result == null) result = caseExtendableElement(component);
+				if (result == null) result = caseCommentableElement(component);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -162,10 +162,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 				T result = caseStaticStructuredComponent(staticStructuredComponent);
 				if (result == null) result = caseStructuredComponent(staticStructuredComponent);
 				if (result == null) result = caseComponent(staticStructuredComponent);
-				if (result == null) result = caseNamedElement(staticStructuredComponent);
-				if (result == null) result = caseCommentableElement(staticStructuredComponent);
 				if (result == null) result = caseConstrainableElement(staticStructuredComponent);
+				if (result == null) result = caseDataType(staticStructuredComponent);
+				if (result == null) result = caseNamedElement(staticStructuredComponent);
 				if (result == null) result = caseExtendableElement(staticStructuredComponent);
+				if (result == null) result = caseCommentableElement(staticStructuredComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -174,10 +175,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 				T result = caseAtomicComponent(atomicComponent);
 				if (result == null) result = caseComponent(atomicComponent);
 				if (result == null) result = caseBehavioralElement(atomicComponent);
-				if (result == null) result = caseNamedElement(atomicComponent);
-				if (result == null) result = caseCommentableElement(atomicComponent);
 				if (result == null) result = caseConstrainableElement(atomicComponent);
+				if (result == null) result = caseDataType(atomicComponent);
+				if (result == null) result = caseNamedElement(atomicComponent);
 				if (result == null) result = caseExtendableElement(atomicComponent);
+				if (result == null) result = caseCommentableElement(atomicComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -229,10 +231,11 @@ public class ComponentSwitch<T> extends Switch<T> {
 				StructuredComponent structuredComponent = (StructuredComponent)theEObject;
 				T result = caseStructuredComponent(structuredComponent);
 				if (result == null) result = caseComponent(structuredComponent);
-				if (result == null) result = caseNamedElement(structuredComponent);
-				if (result == null) result = caseCommentableElement(structuredComponent);
 				if (result == null) result = caseConstrainableElement(structuredComponent);
+				if (result == null) result = caseDataType(structuredComponent);
+				if (result == null) result = caseNamedElement(structuredComponent);
 				if (result == null) result = caseExtendableElement(structuredComponent);
+				if (result == null) result = caseCommentableElement(structuredComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
