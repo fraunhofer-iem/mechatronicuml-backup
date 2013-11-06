@@ -286,8 +286,9 @@ public class RuntimePlugin extends AbstractUIPlugin {
 					}
 				}
 			}
+			foundEClasses.put(feature, eClasses);
 		}
-		return eClasses; 
+		return new ArrayList<EClass>(eClasses); 
 	}
 
 	public static Object resolveSemanticObject(Object object) {

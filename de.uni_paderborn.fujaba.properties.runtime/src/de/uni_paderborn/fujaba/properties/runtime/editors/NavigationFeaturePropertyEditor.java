@@ -194,7 +194,7 @@ public class NavigationFeaturePropertyEditor extends
 	@Override
 	protected void valueChanged() {
 		super.valueChanged();
-		refresh();
+		refreshButtons();
 		if (feature.isMany()) {
 			navigatedEditor.setInput(manyValue);
 		} else {
@@ -222,7 +222,6 @@ public class NavigationFeaturePropertyEditor extends
 	public void refresh() {
 		super.refresh();
 		navigatedEditor.refresh();
-		refreshButtons();
 	}
 
 	private void refreshButtons() {

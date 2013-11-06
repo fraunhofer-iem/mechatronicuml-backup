@@ -119,8 +119,6 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			childrenChanged();
 		}
 	}
-	
-	
 
 	private void childrenChanged() {
 		updateHeaderColors();
@@ -248,7 +246,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		}
 		
 		if (section != null) {
-			section.setExpanded(initiallyExpanded);
+			section.setExpanded(initiallyExpanded); // updates twistie
 		}
 
 		updateHeaderColors();
@@ -297,15 +295,19 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	}
 
 	public void setTitle(String title) {
-		this.title = title;
-		if (section != null && !section.isDisposed()) {
+		if (section != null && !section.isDisposed() && title != null && !title.equals(this.title)) {
 			section.setText(title);
+			this.title = title;
 		}
 	}
 
 	protected Section createSection(Composite parent, FormToolkit factory) {
-		Section section = toolkit.createSection(parent, Section.TITLE_BAR
-				| Section.TWISTIE | Section.EXPANDED | Section.CLIENT_INDENT);
+		int sectionStyle = Section.TITLE_BAR
+				| Section.TWISTIE | Section.CLIENT_INDENT;
+		if (initiallyExpanded) {
+			sectionStyle |= Section.EXPANDED;
+		}
+		Section section = toolkit.createSection(parent, sectionStyle);
 		section.setText(title);
 		return section;
 	}
