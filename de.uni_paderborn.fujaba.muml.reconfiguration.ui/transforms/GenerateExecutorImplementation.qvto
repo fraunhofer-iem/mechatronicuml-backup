@@ -975,6 +975,9 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	var timeForDecVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForDec, rootNode.getPrimitiveType(intType));
 	rtsc.variables += timeForDecVar;
 	
+	var timeForExecVar : Variable := new Variable(genVarExecutor_EmbeddedCI_SubRole_TimeForExec, rootNode.getPrimitiveType(intType));
+	rtsc.variables += timeForExecVar;
+	
 	-- create clocks
 	var c2Clock : Clock := new Clock(genClockExecutor_embeddedCI_c2);
 	rtsc.clocks += c2Clock;
@@ -1064,6 +1067,7 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCISendC), SynchronizationKind::RECEIVE, 
 			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
 	currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute), EventKind::RAISE);
+	currentTrans.clockResets += c2Clock;
 	rtsc.transitions += currentTrans;
 	
 	-- Execute -> Idle
@@ -1202,9 +1206,70 @@ helper generateEmbeddedCIAdaptationPrepareState(inout rootNode : RootNode, inout
 -- generates the blue parts of the generation template for each interface entry of the parent port
 mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceEntry(inout rootNode : RootNode, inout rtsc: RealtimeStatechart){
 	
+	-- TODO: replace with a computed value once we know how to compute this
+	var timeForGuardChecking : Integer := 1;
+	
+	-- TODO: replace with computed value after configuring the connector
+	var internalMsgDelay : Integer := 0; 
+	
+	-- TODO: query the manager spec
+	var timeForPlanning : Integer := 0;
+	
+	var alpha : Integer := timeForPlanning + timeForGuardChecking + 2*internalMsgDelay;
+	
+	var gamma : Integer := self.timeForDecision.value.value - alpha;
+	
+	-- obtain clock
+	var c2Clock : Clock := rtsc.clocks -> any(name = genClockExecutor_Parent_c2);
+	
+	-- obtain states
+	var idleState : State := rtsc.getStateByName(genStateExecutor_Parent_Idle);
+	var checkSelfState : State := rtsc.getStateByName(genStateExecutor_Parent_CheckSelf);
+	var sendAbortState : State := rtsc.getStateByName(genStateExecutor_Parent_SendAbort);
+	var parentState : State := rtsc.parentRegion.parentState;
+	
+	-- create sync channel in parent state
+	
+	
+	-- create transitions
 }
+
+-- priority used for the transition Idle -> WaitForResponse in the embeddedCI subrole template
+property embeddedCIInterfaceEntryNumber : Integer = 1;
 
 -- generates the brown parts of the generation template for each interface entry of the embeddedCI port
 mapping ReconfigurationExecutionPortInterfaceEntry::generateEmbeddedCIPortInterfaceEntry(inout rootNode : RootNode, inout rtsc: RealtimeStatechart){
 	
+	-- obtain parent and create variable for the message type
+	var parentRTSC : RealtimeStatechart := rtsc.parentRegion.parentState.parentStatechart;
+	var msgVar : Variable := new Variable(self.messageType.name + 'Msg', rootNode.getPrimitiveType(intType));
+	msgVar.initializeExpression := new LiteralExpression(embeddedCIInterfaceEntryNumber.toString());
+	parentRTSC.variables += msgVar;
+	
+	-- get port
+	var embeddedCIPort : ReconfigurationExecutionPort := self.reconfigurationExecutionPort;
+	
+	-- add message to sender interface of port
+	embeddedCIPort.senderMessageTypes += self.messageType;
+	
+	-- obtain states
+	var idleState : State := rtsc.getStateByName(genStateExecutor_embeddedCI_Subrole_Idle);
+	var waitForResponseState := rtsc.getStateByName(genStateExecutor_embeddedCI_Subrole_WaitForResponse);
+	
+	-- create transition
+	var currentTrans : Transition := new Transition(idleState, waitForResponseState, embeddedCIInterfaceEntryNumber);
+	currentTrans.guard := createCompareGuardExpression(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_TmpMsg), msgVar);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorEmbeddedCISendReq), SynchronizationKind::RECEIVE, 
+			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
+	var block : Block := createSimpleAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForDec), 
+									self.timeForDecision.value.value.toString());
+	block.expressions += createSimpleAssignmentExpressioninBlock(rtsc.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForExec), 
+									self.timeForExecution.value.value.toString());
+	currentTrans.events := new AsynchronousMessageEvent(self.messageType, EventKind::RAISE);
+	currentTrans.action := new Action('Assign Vars', block);
+	currentTrans.clockResets += rtsc.clocks -> any(name = genClockExecutor_embeddedCI_c2);
+	rtsc.transitions += currentTrans;
+	
+	-- increase interface entry number
+	embeddedCIInterfaceEntryNumber := embeddedCIInterfaceEntryNumber + 1;
 }

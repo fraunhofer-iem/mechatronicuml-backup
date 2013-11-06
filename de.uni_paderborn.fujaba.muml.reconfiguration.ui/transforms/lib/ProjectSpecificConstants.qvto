@@ -134,6 +134,7 @@ property genVarExecutor_EmbeddedCI_Adapt_Execute_Finished : String = 'finished';
 property genVarExecutor_EmbeddedCI_Adapt_Abort_Finished : String = 'finished';
 property genVarExecutor_EmbeddedCI_SubRole_CommitTime : String = 'commitTime';
 property genVarExecutor_EmbeddedCI_SubRole_TimeForDec : String = 'timeForDecision';
+property genVarExecutor_EmbeddedCI_SubRole_TimeForExec : String = 'timeForExecution';
 
 -- names of executor internal clocks
 property genClockExecutor_Parent_c2 : String = 'c2';
@@ -203,7 +204,7 @@ property genOpExecutor_EmbeddedCI_Adaptation_getNextPIAction : String = 'getNext
 property genOpExecutor_EmbeddedCI_Adaptation_allActionsPerformed : String = 'allActionsPerformed';
 property genOpExecutor_EmbeddedCI_Adaptation_Vote_storeMinCommitTime : String = 'storeMinCommitTime';
 property genOpExecutor_EmbeddedCI_Adaptation_Vote_getNextPIRequest : String = 'getNextPortInstanceForRequest';
-property genOpExecutor_EmbeddedCI_Adaptation_Vote_getMessageName : String = 'getMessageName';
+property genOpExecutor_EmbeddedCI_Adaptation_Vote_getMessageName : String = 'getMessage';
 property genOpExecutor_EmbeddedCI_Adaptation_Vote_allRepliesReceived : String = 'allRepliesReceived';
 property genOpExecutor_EmbeddedCI_Adaptation_Vote_setReply : String = 'setReply';
 property genOpExecutor_EmbeddedCI_Adaptation_Vote_canCommit : String = 'canCommit';

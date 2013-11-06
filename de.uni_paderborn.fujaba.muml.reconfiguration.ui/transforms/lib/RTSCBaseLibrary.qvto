@@ -46,6 +46,15 @@ helper createSimpleCompareGuardExpression(in variable : Variable, in value : Str
 	return new ComparisonExpression(lhs, ComparingOperator::EQUAL, literalExpr);
 }
 
+-- creates a comparison expression where two variables are compared
+helper createCompareGuardExpression(in variable : Variable, in variable2 : Variable) : ComparisonExpression{
+	
+	var lhs : Expression := new TypedNamedElementExpression(variable);
+	var rhs : Expression := new TypedNamedElementExpression(variable2);
+	
+	return new ComparisonExpression(lhs, ComparingOperator::EQUAL, rhs);
+}
+
 -- creates a block containing one assignment expression where a literal is assigned to a variable
 helper createSimpleAssignmentExpressioninBlock(in variable : Variable, in newValue : String) : Block{
 	var block : Block := new Block();
