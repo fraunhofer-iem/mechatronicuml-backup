@@ -54,7 +54,7 @@ mapping createReconfigurableComponent(in oldComp : StaticStructuredComponent) : 
 	-- copy attributes
 	name := oldComp.name;						-- from NamedElement
 	comment := oldComp.comment;					-- from CommentableElement
-	componentType := oldComp.componentType;		-- from Component
+	componentKind := oldComp.componentKind;		-- from Component
 	
 	-- move features contained in references
 	constraint := oldComp.constraint;			-- from ConstrainableElement
