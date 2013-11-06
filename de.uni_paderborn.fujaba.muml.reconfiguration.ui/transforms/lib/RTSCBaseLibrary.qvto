@@ -249,3 +249,20 @@ constructor EntryPoint::EntryPoint(in newName : String){
 constructor ExitPoint::ExitPoint(in newName : String){
 	name := newName;
 }
+
+constructor ClockConstraint::ClockConstraint(in newClock : Clock, in op : ComparingOperator, in newValue : Integer, in newUnit : TimeUnit){
+	-- create NaturalNumber for the value
+	var clockValue : NaturalNumber := object NaturalNumber{
+		value := newValue;
+		infinity := false;
+	};
+	
+	var timeValue : TimeValue := object TimeValue{
+		value := clockValue;
+		unit := newUnit;
+	};
+	
+	clock := newClock;
+	operator := op;
+	bound := timeValue;
+}

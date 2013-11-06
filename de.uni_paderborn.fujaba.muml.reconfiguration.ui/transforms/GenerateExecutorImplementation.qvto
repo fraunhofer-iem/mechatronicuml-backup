@@ -1203,6 +1203,9 @@ helper generateEmbeddedCIAdaptationPrepareState(inout rootNode : RootNode, inout
 	return;
 }
 
+-- priority used for the transition Idle -> Check in the events template
+property parentInterfaceEntryNumber : Integer = 1;
+
 -- generates the blue parts of the generation template for each interface entry of the parent port
 mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceEntry(inout rootNode : RootNode, inout rtsc: RealtimeStatechart){
 	
@@ -1215,28 +1218,86 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceE
 	-- TODO: query the manager spec
 	var timeForPlanning : Integer := 0;
 	
-	var alpha : Integer := timeForPlanning + timeForGuardChecking + 2*internalMsgDelay;
+	-- TODO: replace with a computed value once we know how to compute this
+	var rtscExecutionTime : Integer := 2;
+	
+	var alpha : Integer := timeForPlanning + timeForGuardChecking + 2*internalMsgDelay + rtscExecutionTime;
 	
 	var gamma : Integer := self.timeForDecision.value.value - alpha;
 	
+	-- obtain parent and events statecharts
+	var parentRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_Parent);
+	var eventsRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_Events);
+	
+	--  obtain executor main state including sync channel checkX
+	var executorMainState : State := rtsc.getStateByName(genStateExecutor_Main);
+	var checkXSyncChan : SynchronizationChannel :=  new SynchronizationChannel(genSyncChanExecutorCheckPrefix + self.messageType.name.firstToUpper(), null);
+	executorMainState.channels += checkXSyncChan;
+	
+	---------------------------------------------------------------------------------------
+	-- Perform modification of parent RTSC
+	---------------------------------------------------------------------------------------
+	
 	-- obtain clock
-	var c2Clock : Clock := rtsc.clocks -> any(name = genClockExecutor_Parent_c2);
+	var c2Clock : Clock := parentRTSC.clocks -> any(name = genClockExecutor_Parent_c2);
 	
 	-- obtain states
-	var idleState : State := rtsc.getStateByName(genStateExecutor_Parent_Idle);
-	var checkSelfState : State := rtsc.getStateByName(genStateExecutor_Parent_CheckSelf);
-	var sendAbortState : State := rtsc.getStateByName(genStateExecutor_Parent_SendAbort);
-	var parentState : State := rtsc.parentRegion.parentState;
-	
-	-- create sync channel in parent state
-	var checkXSyncChan : SynchronizationChannel :=  new SynchronizationChannel(genSyncChanExecutorCheckPrefix + self.messageType.name.firstToUpper(), null);
-	parentState.channels += checkXSyncChan;
+	var idleState : State := parentRTSC.getStateByName(genStateExecutor_Parent_Idle);
+	var checkSelfState : State := parentRTSC.getStateByName(genStateExecutor_Parent_CheckSelf);
+	var sendAbortState : State := parentRTSC.getStateByName(genStateExecutor_Parent_SendAbort);
 	
 	-- create CheckX state
 	var checkXState : State := new State(genStateExecutor_Parent_CheckX_Prefix + self.messageType.name.firstToUpper());
+	checkXState.invariants += new ClockConstraint(c2Clock, ComparingOperator::LESS_OR_EQUAL, gamma, self.timeForDecision.unit);
+	parentRTSC.states += checkXState;
 	
 	-- create transitions
 	var currentTrans : Transition = null;
+	
+	-- Idle -> CheckX
+	currentTrans := new Transition(idleState, checkXState, 1);
+	currentTrans.events += new AsynchronousMessageEvent(self.messageType, EventKind::TRIGGER);
+	currentTrans.clockResets += c2Clock;
+	parentRTSC.transitions += currentTrans;
+	
+	-- CheckX -> SendAbort
+	currentTrans := new Transition(checkXState, sendAbortState, 1);
+	currentTrans.clockConstraints += new ClockConstraint(c2Clock, ComparingOperator::GREATER_OR_EQUAL, gamma, self.timeForDecision.unit);
+	parentRTSC.transitions += currentTrans;
+	
+	-- CheckX -> CheckSelf
+	currentTrans := new Transition(checkXState, checkSelfState, 2);
+	currentTrans.synchronization := new Synchronization(checkXSyncChan, SynchronizationKind::SEND, null);
+	parentRTSC.transitions += currentTrans;
+	
+	---------------------------------------------------------------------------------------
+	-- Perform modification of parent RTSC
+	---------------------------------------------------------------------------------------
+	
+	-- obtain clock
+	var c1Clock : Clock := eventsRTSC.clocks -> any(name = genClockExecutor_Events_c1);
+	
+	-- obtain states
+	idleState := eventsRTSC.getStateByName(genStateExecutor_Events_Idle);
+	var checkState := eventsRTSC.getStateByName(genStateExecutor_Events_Check);
+	
+	--create transition Idle -> Check
+	currentTrans := new Transition(idleState, checkState, parentInterfaceEntryNumber);
+	currentTrans.synchronization := new Synchronization(checkXSyncChan, SynchronizationKind::RECEIVE, null);
+	currentTrans.clockResets += c1Clock;
+	currentTrans.events += new AsynchronousMessageEvent(self.messageType, EventKind::RAISE);
+	var block : Block := createSimpleAssignmentExpressioninBlock(eventsRTSC.getVariableByName(genVarExecutor_Events_FromParent), 'true');
+	block.expressions += createSimpleAssignmentExpression(eventsRTSC.getVariableByName(genVarExecutor_Events_Deadline), alpha.toString());
+	currentTrans.action := new Action('Assign Vars', block);
+	eventsRTSC.transitions += currentTrans;
+	
+	---------------------------------------------------------------------------------------
+	-- Configure Ports
+	---------------------------------------------------------------------------------------
+	
+	-- TODO: configure ports and message buffer
+	
+	parentInterfaceEntryNumber := parentInterfaceEntryNumber + 1;
 }
 
 -- priority used for the transition Idle -> WaitForResponse in the embeddedCI subrole template
