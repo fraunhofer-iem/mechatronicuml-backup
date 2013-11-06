@@ -42,8 +42,8 @@ public class InternalActionLanguageParser extends AbstractInternalContentAssistP
     public static final int T__19=19;
     public static final int T__16=16;
     public static final int T__51=51;
-    public static final int T__52=52;
     public static final int T__15=15;
+    public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__54=54;

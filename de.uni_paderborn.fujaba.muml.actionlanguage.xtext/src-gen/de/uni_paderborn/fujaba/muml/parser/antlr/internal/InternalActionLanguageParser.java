@@ -42,8 +42,8 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
     public static final int T__19=19;
     public static final int T__16=16;
     public static final int T__51=51;
-    public static final int T__52=52;
     public static final int T__15=15;
+    public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__18=18;
     public static final int T__54=54;
@@ -7630,11 +7630,11 @@ public class InternalActionLanguageParser extends AbstractInternalAntlrParser {
     static final String DFA8_specialS =
         "\12\uffff}>";
     static final String[] DFA8_transitionS = {
-            "\1\2\4\3\4\uffff\1\1\2\uffff\1\3\15\uffff\1\3\20\uffff\1\3"+
-            "\2\uffff\6\3",
+            "\1\2\4\3\4\uffff\1\1\2\uffff\1\3\15\uffff\1\3\20\uffff\1\3\2"+
+            "\uffff\6\3",
             "",
-            "\1\3\1\uffff\2\3\10\uffff\1\3\1\uffff\1\4\1\3\1\uffff\2\3"+
-            "\1\uffff\2\3\4\uffff\12\3",
+            "\1\3\1\uffff\2\3\10\uffff\1\3\1\uffff\1\4\1\3\1\uffff\2\3\1"+
+            "\uffff\2\3\4\uffff\12\3",
             "",
             "\1\3\1\5\3\3\7\uffff\1\3\15\uffff\1\3\20\uffff\1\3\2\uffff"+
             "\6\3",
