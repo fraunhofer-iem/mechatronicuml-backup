@@ -118,12 +118,12 @@ constructor Cardinality::Cardinality(in lBound : Integer, in uBound : Integer){
 	if(uBound = -1) then{
 		upperBound := object NaturalNumber{
 			value := lBound + 1;
-			infinity = true;
+			infinity := true;
 		}
 	} else {
 		upperBound := object NaturalNumber{
 			value := uBound;
-			infinity = false;
+			infinity := false;
 		}
 	} endif;
 }

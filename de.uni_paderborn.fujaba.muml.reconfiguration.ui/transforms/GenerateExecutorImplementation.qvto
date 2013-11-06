@@ -85,13 +85,18 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	executorEmbeddedCIPort.interfaceEntries := (theComponent.embeddedComponentParts.componentType.ports -> 
 			select(oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort).interfaceEntries -> map mapREInterfaceEntries();
 	
-	-- setup message types of structured component port 
+	var buffer : MessageBuffer := null;
+	
+	-- setup message types and message buffer of structured component port 
 	structCompPort.receiverMessageTypes := structCompPort.interfaceEntries.messageType;
 	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
 	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
 	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := structCompPort.receiverMessageTypes;
+	structCompPort.receiverMessageBuffer := buffer;
 	
 	-- setup parent port of Executor
 	executorParentPort.receiverMessageTypes := executorParentPort.interfaceEntries.messageType;
@@ -100,6 +105,9 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
 	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := executorParentPort.receiverMessageTypes;
+	executorParentPort.receiverMessageBuffer := buffer;
 	
 	-- setup events port of Executor
 	eventsPort.senderMessageTypes := executorParentPort.interfaceEntries.messageType;
@@ -108,6 +116,9 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	eventsPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest);
 	eventsPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
 	eventsPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
+	buffer := new MessageBuffer(2);
+	buffer.messageType := eventsPort.receiverMessageTypes;
+	eventsPort.receiverMessageBuffer := buffer;
 	
 	-- setup embeddedCI port of Executor
 	executorEmbeddedCIPort.senderMessageTypes := executorEmbeddedCIPort.interfaceEntries.messageType;
@@ -116,6 +127,9 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
 	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
 	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := executorEmbeddedCIPort.receiverMessageTypes;
+	executorEmbeddedCIPort.receiverMessageBuffer := buffer;
 	
 	return;
 }
