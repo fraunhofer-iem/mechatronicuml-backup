@@ -260,11 +260,6 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			oldValue = new ArrayList<Object>((Collection<?>)oldValue);
 		}
 
-		if (itemPropertyDescriptor != null) {
-			itemPropertyDescriptor.setPropertyValue(element, newValue);
-		} else {
-			element.eSet(feature, newValue);
-		}
 		if (feature instanceof EReference && ((EReference)feature).isContainment()) {
 			if (!feature.isMany() && oldValue != null && newValue == null ) {
 				DeleteCommand.create(getEditingDomain(element), oldValue).execute();
@@ -273,6 +268,12 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 				oldValues.removeAll((Collection<?>) newValue);
 				DeleteCommand.create(getEditingDomain(element), oldValues).execute();
 			}
+		}
+
+		if (itemPropertyDescriptor != null) {
+			itemPropertyDescriptor.setPropertyValue(element, newValue);
+		} else {
+			element.eSet(feature, newValue);
 		}
 	}
 
