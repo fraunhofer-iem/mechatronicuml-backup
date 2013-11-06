@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.properties.runtime.sections;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.views.properties.tabbed.AbstractPropertySection;
@@ -20,6 +21,8 @@ import de.uni_paderborn.fujaba.properties.runtime.editors.ObjectPropertyEditor;
 public class ObjectPropertySection extends AbstractPropertySection {
 
 	protected ObjectPropertyEditor editor = null;
+	
+	private Composite parent;
 
 
 	protected ObjectPropertyEditor createObjectPropertyEditor(String tabId) {
@@ -29,6 +32,7 @@ public class ObjectPropertySection extends AbstractPropertySection {
 	public void createControls(Composite parent,
 			TabbedPropertySheetPage aTabbedPropertySheetPage) {
 		super.createControls(parent, aTabbedPropertySheetPage);
+		this.parent = parent;
 
 		FormToolkit toolkit = getWidgetFactory();
 		toolkit.setBorderStyle(SWT.NONE);
@@ -48,16 +52,20 @@ public class ObjectPropertySection extends AbstractPropertySection {
 
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
-		Object input = RuntimePlugin.resolveSemanticObject(selection);
+		final Object input = RuntimePlugin.resolveSemanticObject(selection);
 		if (editor != null && !editor.isDisposed()) {
 			editor.setInput(input);
 		}
+
 	}
 
 	public void refresh() {
 		super.refresh();
 		if (editor != null && !editor.isDisposed()) {
 			editor.refresh();
+		}
+		if (parent != null && !parent.isDisposed()) {
+			RuntimePlugin.revalidateLayout(parent);
 		}
 	}
 	

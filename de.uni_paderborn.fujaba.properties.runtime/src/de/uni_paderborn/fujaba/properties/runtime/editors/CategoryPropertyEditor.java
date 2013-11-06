@@ -125,7 +125,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	private void childrenChanged() {
 		updateHeaderColors();
 		updateVisibility(true);
-		layout();
+		//layout();
 	}
 	
 	private void updateHeaderColors() {
@@ -183,12 +183,14 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	}
 	
 	@Override
-	protected void inputChanged() {
-		super.inputChanged();
+	protected void inputChanged(Object oldObject) {
+		super.inputChanged(oldObject);
 		if (section != null && section.isExpanded()) {
-			createChildren();
+			//createChildren();
 		}
-		updateHeaderColors();
+		
+		// XXX: Not necessary, as it seems; removed it:
+		//updateHeaderColors();
 	}
 
 	@Override
@@ -310,10 +312,12 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	@Override
 	public void setInput(Object object) {
-		super.setInput(object);
-		for (IPropertyEditor editor : propertyEditors) {
-			if (!editor.isDisposed()) {
-				editor.setInput(object);
+		if (input != object) {
+			super.setInput(object);
+			for (IPropertyEditor editor : propertyEditors) {
+				if (!editor.isDisposed()) {
+					editor.setInput(object);
+				}
 			}
 		}
 	}

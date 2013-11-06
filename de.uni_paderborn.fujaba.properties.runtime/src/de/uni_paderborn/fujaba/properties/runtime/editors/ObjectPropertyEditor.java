@@ -30,39 +30,52 @@ public class ObjectPropertyEditor extends CategoryPropertyEditor {
 	}
 
 	@Override
-	protected void inputChanged() {
-		super.inputChanged();
+	protected void inputChanged(Object oldObject) {
+		super.inputChanged(oldObject);
 		
-		// Remove all property editors
-		clearPropertyEditors();
+		// Find out if EClasses match to reuse editors
+		boolean compatible = false;
+		if (oldObject instanceof EObject && input instanceof EObject) {
+			 EClass oldEClass = ((EObject) oldObject).eClass();
+			 EClass newEClass = ((EObject) input).eClass();
+			 if (oldEClass != null && newEClass != null && oldEClass.equals(newEClass)) {
+				 compatible = true;
+			 }
+		}
 		
-		if (input == null) {
-
-			setTitle("null");
+		if (!compatible) {
+					
+			// Remove all property editors
+			clearPropertyEditors();
 			
-		} else {
-			// Make sure the input is an EMF Object
-			Assert.isLegal(input instanceof EObject, "Can only handle EMF objects.");
-			EObject element = (EObject) input;
-			
-			// Display its name
-			setTitle("Properties");
-			
-			// Add new property editors for the first working super class found
-			List<EClass> ecoreTypes = new ArrayList<EClass>();
-			ecoreTypes.add(element.eClass());
-			ecoreTypes.addAll(element.eClass().getEAllSuperTypes());
-			List<IPropertyEditorFactory> foundFactories = null;
-			for (EClass ecoreType : ecoreTypes) {
-				foundFactories = RuntimePlugin.getPropertyEditorFactories(ecoreType);
-				if (foundFactories != null && !foundFactories.isEmpty()) {
-					break;
+			if (input == null) {
+	
+				setTitle("null");
+				
+			} else {
+				// Make sure the input is an EMF Object
+				Assert.isLegal(input instanceof EObject, "Can only handle EMF objects.");
+				EObject element = (EObject) input;
+				
+				// Display its name
+				setTitle("Properties");
+				
+				// Add new property editors for the first working super class found
+				List<EClass> ecoreTypes = new ArrayList<EClass>();
+				ecoreTypes.add(element.eClass());
+				ecoreTypes.addAll(element.eClass().getEAllSuperTypes());
+				List<IPropertyEditorFactory> foundFactories = null;
+				for (EClass ecoreType : ecoreTypes) {
+					foundFactories = RuntimePlugin.getPropertyEditorFactories(ecoreType);
+					if (foundFactories != null && !foundFactories.isEmpty()) {
+						break;
+					}
 				}
-			}
-			if (foundFactories != null) {
-				for (IPropertyEditorFactory factory : foundFactories) {
-					IPropertyEditor editor = factory.createPropertyEditor(tab);
-					addPropertyEditor(editor);
+				if (foundFactories != null) {
+					for (IPropertyEditorFactory factory : foundFactories) {
+						IPropertyEditor editor = factory.createPropertyEditor(tab);
+						addPropertyEditor(editor);
+					}
 				}
 			}
 		}

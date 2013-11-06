@@ -181,8 +181,8 @@ public class NavigationFeaturePropertyEditor extends
 	}
 
 	@Override
-	protected void inputChanged() {
-		super.inputChanged();
+	protected void inputChanged(Object oldObject) {
+		super.inputChanged(oldObject);
 		if (feature.isMany()) {
 			navigatedEditor.setInput(manyValue);
 		} else {

@@ -109,8 +109,8 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	}
 
 	@Override
-	protected void inputChanged() {
-		super.inputChanged();
+	protected void inputChanged(Object oldObject) {
+		super.inputChanged(oldObject);
 		updateContext();
 	}
 

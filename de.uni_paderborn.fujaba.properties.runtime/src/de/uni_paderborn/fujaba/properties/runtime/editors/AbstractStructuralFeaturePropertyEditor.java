@@ -109,7 +109,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 
 	@Override
-	protected void inputChanged() {
+	protected void inputChanged(Object oldObject) {
 		element = (EObject) input;
 		
 		// Reset itemPropertyDescriptor
@@ -126,7 +126,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		}
 		
 		// calls refresh because of input change
-		super.inputChanged();
+		super.inputChanged(oldObject);
 
 		// Update Value
 		updateValue();

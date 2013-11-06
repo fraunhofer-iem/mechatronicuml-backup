@@ -36,13 +36,14 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	@Override
 	public void setInput(Object object) {
-		if (input != object) {
+		Object oldObject = input;
+		if (oldObject != object) {
 			input = object;
-			inputChanged();
+			inputChanged(oldObject);
 		}
 	}
 
-	protected void inputChanged() {
+	protected void inputChanged(Object oldObject) {
 		updateVisibility(true);
 		refresh();
 	}

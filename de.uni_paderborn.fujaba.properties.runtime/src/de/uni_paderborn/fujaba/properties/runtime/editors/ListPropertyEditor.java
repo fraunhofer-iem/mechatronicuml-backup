@@ -188,8 +188,8 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	}
 	
 	@Override
-	protected void inputChanged() {
-		super.inputChanged();
+	protected void inputChanged(Object oldObject) {
+		super.inputChanged(oldObject);
 		if (element != null && element.eResource() != null && resourceSet == null) {
 			resourceSet = element.eResource().getResourceSet();
 			resourceSet.eAdapters().add(refreshAdapter);
@@ -362,17 +362,17 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		
 		if (tableViewer != null && !tableViewer.getTable().isDisposed()) {
 			// Refresh table viewer without loosing selection (XXX still a hack)
-			EObject selection = this.selection;
-			tableViewer.setInput(null);
-			tableViewer.setInput(value);
-			this.selection = selection;
-			if (value != null) {
-				applySelection();
-			}
-
-			// Relayout because item size could have been changed
+//			EObject selection = this.selection;
+//			tableViewer.setInput(null);
+//			tableViewer.setInput(value);
+//			this.selection = selection;
+//			if (value != null) {
+//				applySelection();
+//			}
 			tableViewer.refresh(true);
-			layout();
+		
+			// Relayout because item size could have been changed
+//			layout();
 		}
 
 	}
