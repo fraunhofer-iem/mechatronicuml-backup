@@ -16,6 +16,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
+
 /**
  * Test the OCL Invariants in the hardware metamodel It is based on the
  * MetamodelOCLTest {@link de.uni_paderborn.fujaba.muml.tests.MetamodelOCLTest

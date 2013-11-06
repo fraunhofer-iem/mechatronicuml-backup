@@ -19,6 +19,8 @@ import org.eclipse.ocl.util.OCLUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
+
 /**
  * Test the OCL Invariants in the hardware metamodel
  * It is based on the MetamodelOCLTest  {@link de.uni_paderborn.fujaba.muml.tests.MetamodelOCLTest MetamodelOCLTest} of the de.uni_paderborn.fujaba.muml.tests package
