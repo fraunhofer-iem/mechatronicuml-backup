@@ -1,59 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
-    name="resourcetype">
-  <figures
-      name="Default">
-    <descriptors
-        name="ProcessorOwnedCacheFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="ProcessorOwnedCacheFigure"
-          targetDecoration="//@figures.0/@descriptors.0/@actualFigure/@children.0">
-        <children
-            xsi:type="gmfgraph:PolylineDecoration"
-            name="ProcessorOwnedCacheTargetDecoration"/>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="resourcetype">
+  <figures name="Default">
+    <descriptors name="ProcessorOwnedCacheFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ProcessorOwnedCacheFigure" targetDecoration="//@figures.0/@descriptors.0/@actualFigure/@children.0">
+        <children xsi:type="gmfgraph:PolylineDecoration" name="ProcessorOwnedCacheTargetDecoration"/>
       </actualFigure>
     </descriptors>
-    <descriptors
-        name="ProtocolFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="BusProtocolFigure">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ProtocolNameFigure"
-            text="&lt;...>"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="UsedProtocolFigure"
-            text="&lt;...>"/>
+    <descriptors name="ProtocolFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="BusProtocolFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="ProtocolNameFigure" text="&lt;...>"/>
+        <children xsi:type="gmfgraph:Label" name="UsedProtocolFigure" text="&lt;...>"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
     </descriptors>
   </figures>
-  <nodes
-      name="Protocol"
-      figure="ProtocolFigure"/>
-  <connections
-      name="ProcessorOwnedCache"
-      figure="ProcessorOwnedCacheFigure"/>
-  <labels
-      name="ProtocolNameLabel"
-      figure="ProtocolFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels
-      name="UsedProtocolLabel"
-      figure="ProtocolFigure"
-      elementIcon="false"
-      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <nodes name="Protocol" figure="ProtocolFigure"/>
+  <connections name="ProcessorOwnedCache" figure="ProcessorOwnedCacheFigure"/>
+  <labels name="ProtocolNameLabel" figure="ProtocolFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="UsedProtocolLabel" figure="ProtocolFigure" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
 </gmfgraph:Canvas>

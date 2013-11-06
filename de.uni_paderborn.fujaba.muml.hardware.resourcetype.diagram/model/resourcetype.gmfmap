@@ -274,7 +274,7 @@
             <diagramLabel
                 href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#ResourceInfo2"/>
             <viewExpression
-                body="let arch: String = if self.architecture.oclIsUndefined() then 'null' else self.architecture.toString() endif in&#xA;let fam: String =  if self.family.oclIsUndefined() then 'null' else self.family endif in&#xA;'Architecture: ' + arch + ' Family: ' + fam"/>
+                body="let arch: String = if self.architecture.oclIsUndefined() then 'null' else self.architecture.toString() endif in&#xA;let fam: String =  if self.family.oclIsUndefined() then 'null' else self.family.toString() endif in&#xA;'Architecture: ' + arch + ' Family: ' + fam"/>
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
