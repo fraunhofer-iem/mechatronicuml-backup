@@ -74,15 +74,19 @@ public class ExpressionLabelGMFMapTest {
 	}
 	
 	protected void initGMFMapsToTest(){
-		gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram","/model/resourcetype.gmfmap" });
-		gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram","/model/resourceinstance.gmfmap" });
-		gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.hardware.platform.diagram","/model/platform.gmfmap" });
-		gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram","/model/platforminstance.gmfmap" });
+	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram","/model/resourcetype.gmfmap" });
+	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram","/model/resourceinstance.gmfmap" });
+	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.hardware.platform.diagram","/model/platform.gmfmap" });
+	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram","/model/platforminstance.gmfmap" });
+	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.component.diagram","/model/component.gmfmap" });
+	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram","/model/componentinstanceconfiguration.gmfmap" });
+	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram","/model/realtimestatechart.gmfmap" });
+	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram","/model/ComponentStoryDiagram.gmfmap" });
+
 	}
 	
 	protected void intEcoreModels(){
 		projects.add(new String[] { "de.uni_paderborn.fujaba.muml.tests", "/model/Ecore.ecore" });
-		projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
 		projects.add(new String[] { "org.storydriven.core", "/model/core.ecore" });
 		projects.add(new String[] { "org.storydriven.storydiagrams",
 				"/model/storydiagrams.ecore" });
