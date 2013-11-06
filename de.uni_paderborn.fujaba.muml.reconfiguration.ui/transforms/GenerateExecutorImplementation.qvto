@@ -68,7 +68,7 @@ helper createExecutorImplementation(inout theComponent : ReconfigurableStructure
 }
 
 -- configure the ports of the Executor by copying the information of the surrounding StructuredComponent
--- and the embedded components
+-- and the embedded components and sets up message type references
 helper configurePorts(inout rootNode : RootNode, inout theComponent : ReconfigurableStructuredComponent){
 	
 	-- copy RE port interface entries of theComponent to the parent port of the Executor
@@ -76,6 +76,7 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	var structCompPort : ReconfigurationExecutionPort := theComponent.ports -> any(oclIsTypeOf(ReconfigurationExecutionPort)).oclAsType(ReconfigurationExecutionPort);
 	var executorParentPort : ReconfigurationExecutionPort := executor.reconfigurationExecutionPorts -> any(name = 'parent');
 	var executorEmbeddedCIPort : ReconfigurationExecutionPort := executor.reconfigurationExecutionPorts -> any(name = 'embeddedCI');
+	var eventsPort : InternalReconfigurationCommunicationPort := executor.ports -> any(name = 'events').oclAsType(InternalReconfigurationCommunicationPort);
 	
 	-- copy entries of parent port
 	executorParentPort.interfaceEntries := structCompPort.interfaceEntries-> map mapREInterfaceEntries();
@@ -83,6 +84,38 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 	-- collect all entries of embedded components
 	executorEmbeddedCIPort.interfaceEntries := (theComponent.embeddedComponentParts.componentType.ports -> 
 			select(oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort).interfaceEntries -> map mapREInterfaceEntries();
+	
+	-- setup message types of structured component port 
+	structCompPort.receiverMessageTypes := structCompPort.interfaceEntries.messageType;
+	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
+	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	structCompPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	structCompPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	
+	-- setup parent port of Executor
+	executorParentPort.receiverMessageTypes := executorParentPort.interfaceEntries.messageType;
+	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
+	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	executorParentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	executorParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
+	
+	-- setup events port of Executor
+	eventsPort.senderMessageTypes := executorParentPort.interfaceEntries.messageType;
+	eventsPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	eventsPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	eventsPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest);
+	eventsPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
+	eventsPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
+	
+	-- setup embeddedCI port of Executor
+	executorEmbeddedCIPort.senderMessageTypes := executorEmbeddedCIPort.interfaceEntries.messageType;
+	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
+	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	executorEmbeddedCIPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
+	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
+	executorEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
 	
 	return;
 }
@@ -152,33 +185,6 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor :
 	executor.ports -> any(name = 'embeddedCI').roleAndAdaptationBehavior := embeddedCISubRTSC;
 	executor.ports -> any(name = 'embeddedCI').behavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_subrole);
 	executor.ports -> any(name = 'embeddedCI').adaptationBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI_adapt);
-	
-	-- configure message types of ports
-	var currentPort : DiscretePort = null;
-	
-	-- parent port
-	currentPort := executor.ports -> any(name = 'parent');
-	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
-	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
-	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
-	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
-	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
-	
-	-- events port
-	currentPort := executor.ports -> any(name = 'events');
-	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
-	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
-	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest);
-	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
-	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
-	
-	-- embeddedCI port
-	currentPort := executor.ports -> any(name = 'embeddedCI');
-	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirm);
-	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
-	currentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFinished);
-	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort);
-	currentPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecute);
 	
 	return;
 }
@@ -1204,7 +1210,7 @@ helper generateEmbeddedCIAdaptationPrepareState(inout rootNode : RootNode, inout
 }
 
 -- priority used for the transition Idle -> Check in the events template
-property parentInterfaceEntryNumber : Integer = 1;
+property parentInterfaceEntryNumber : Integer = 2;
 
 -- generates the blue parts of the generation template for each interface entry of the parent port
 mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceEntry(inout rootNode : RootNode, inout rtsc: RealtimeStatechart){
@@ -1291,12 +1297,6 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceE
 	currentTrans.action := new Action('Assign Vars', block);
 	eventsRTSC.transitions += currentTrans;
 	
-	---------------------------------------------------------------------------------------
-	-- Configure Ports
-	---------------------------------------------------------------------------------------
-	
-	-- TODO: configure ports and message buffer
-	
 	parentInterfaceEntryNumber := parentInterfaceEntryNumber + 1;
 }
 
@@ -1314,12 +1314,6 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateEmbeddedCIPortInterf
 	var msgVar : Variable := new Variable(self.messageType.name + 'Msg', rootNode.getPrimitiveType(intType));
 	msgVar.initializeExpression := new LiteralExpression(embeddedCIInterfaceEntryNumber.toString());
 	embeddedCIRTSC.variables += msgVar;
-	
-	-- get port
-	var embeddedCIPort : ReconfigurationExecutionPort := self.reconfigurationExecutionPort;
-	
-	-- add message to sender interface of port
-	embeddedCIPort.senderMessageTypes += self.messageType;
 	
 	-- obtain states
 	var idleState : State := subroleRTSC.getStateByName(genStateExecutor_embeddedCI_Subrole_Idle);
