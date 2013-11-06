@@ -89,8 +89,16 @@ public class NavigationFeaturePropertyEditor extends
 		List<EClass> eClasses = RuntimePlugin.getEClasses((EReference) feature);
 
 		selectedClass = eClasses.get(0);
+		if (manyValue != null) {
+			EClass eClass = manyValue.eClass();
+			if (eClasses.contains(eClass)) {
+				selectedClass = eClass;
+			} else {
+				selectedClass = null;
+			}
+		}
 		if (eClasses.size() > 1) {
-			Combo combo = new Combo(section, SWT.BORDER);
+			Combo combo = new Combo(section, SWT.BORDER | SWT.READ_ONLY);
 			classViewer = new ComboViewer(combo);
 			classViewer.setContentProvider(ArrayContentProvider.getInstance());
 			classViewer.setLabelProvider(new LabelProvider() {
