@@ -295,8 +295,14 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	}
 
 	public void setTitle(String title) {
-		if (section != null && !section.isDisposed() && title != null && !title.equals(this.title)) {
-			section.setText(title);
+		// If we already have a section, make sure we only call section.setText(title), if the title changed
+		if (section != null && !section.isDisposed()) {
+			if (title != null && !title.equals(this.title)) {
+				section.setText(title);
+				this.title = title;
+			}
+		} else {
+			// If we have no section created yet, save the title so that it is accessible upon section creation.
 			this.title = title;
 		}
 	}
