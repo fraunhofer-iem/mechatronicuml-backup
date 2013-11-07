@@ -76,6 +76,14 @@ public class CheckboxPropertyEditor extends
 		}
 	}
 	
+	@Override
+	public void refresh() {
+		super.refresh();
+		if (checkbox != null && !checkbox.isDisposed()) {
+			checkbox.setSelection(Boolean.TRUE.equals(value));
+		}
+	}
+	
 	public void setFocus() {
 		if (checkbox != null && !checkbox.isDisposed()) {
 			checkbox.setFocus();
