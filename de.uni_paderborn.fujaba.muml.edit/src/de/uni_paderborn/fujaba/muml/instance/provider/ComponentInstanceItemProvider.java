@@ -74,6 +74,7 @@ public class ComponentInstanceItemProvider
 			addComponentTypePropertyDescriptor(object);
 			addPortInstancesPropertyDescriptor(object);
 			addComponentPartPropertyDescriptor(object);
+			addParentCICPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -168,6 +169,28 @@ public class ComponentInstanceItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent CIC feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentCICPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInstance_parentCIC_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_parentCIC_feature", "_UI_ComponentInstance_type"),
+				 InstancePackage.Literals.COMPONENT_INSTANCE__PARENT_CIC,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
