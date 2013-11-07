@@ -190,7 +190,7 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 	 */
 	public ComponentInstanceConfiguration getParentCIC() {
 		if (eContainerFeatureID() != InstancePackage.COMPONENT_INSTANCE__PARENT_CIC) return null;
-		return (ComponentInstanceConfiguration)eContainer();
+		return (ComponentInstanceConfiguration)eInternalContainer();
 	}
 
 	/**

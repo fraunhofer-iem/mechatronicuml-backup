@@ -804,7 +804,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -812,25 +812,25 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });											
+		   });	
 		addAnnotation
 		  (portInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceMustDelegateToEmbeddedCIC PortInstanceNeedsDelegationToParentOrAssembly"
-		   });												
+		   });	
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "DelegateToEmbeddedCIC"
-		   });							
+		   });	
 		addAnnotation
 		  (componentInstanceConfigurationEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueComponentInstanceNames"
-		   });																									
+		   });
 	}
 
 	/**
@@ -840,19 +840,19 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";									
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (getPortConnectorInstance_PortConnectorType(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.type.oclAsType(component::PortConnector)"
-		   });		
+		   });	
 		addAnnotation
 		  (getPortConnectorInstance_PortInstances(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpointInstances->select(c | c.oclIsKindOf(PortInstance)).oclAsType(PortInstance)->asOrderedSet()"
-		   });				
+		   });	
 		addAnnotation
 		  (portInstanceEClass, 
 		   source, 
@@ -862,85 +862,85 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "PortInstanceNotMultipleDelegationConnectorInstances", "-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.\nportConnectorInstances->select(\n\tci | ci.oclIsKindOf(DelegationConnectorInstance) and\n\t(\n\t\t(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance))\n\t\timplies\n\t\tcomponentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance)\n\t)\n)->size() <= 1",
 			 "PortInstanceMustDelegateToEmbeddedCIC", "-- PortInstance at Structured Component must delegate to embedded CIC\ncomponentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance))->isEmpty()",
 			 "PortInstanceNeedsDelegationToParentOrAssembly", "-- PortInstance needs a Delegation Connector Instance to the parent component\'s port or an Assembly Connector Instance to a port within this CIC.\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(DelegationConnectorInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)\n)->isEmpty() or\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n)->isEmpty()"
-		   });			
+		   });	
 		addAnnotation
 		  (getPortInstance_PortType(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.type.oclIsKindOf(component::Port))\r\nthen\r\nself.type.oclAsType(component::Port)\r\nelse\r\nnull\r\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (getPortInstance_PortConnectorInstances(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorInstances->select(i | i.oclIsKindOf(PortConnectorInstance)).oclAsType(PortConnectorInstance)->asOrderedSet()"
-		   });		
+		   });	
 		addAnnotation
 		  (getPortInstance_PortPart(), 
 		   source, 
 		   new String[] {
 			 "derivation", "componentInstance.componentPart.portParts->any(portPart | portPart.portType = self.type)"
-		   });				
+		   });	
 		addAnnotation
 		  (getAssemblyConnectorInstance_AssemblyConnectorType(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.type.oclAsType(component::AssemblyConnector)"
-		   });				
+		   });	
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
 			 "DelegateToEmbeddedCIC", "-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\nnot self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 <> ci)))->isEmpty()"
-		   });			
+		   });	
 		addAnnotation
 		  (getDelegationConnectorInstance_DelegationConnectorType(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.type.oclAsType(component::DelegationConnector)"
-		   });			
+		   });	
 		addAnnotation
 		  (componentInstanceConfigurationEClass, 
 		   source, 
 		   new String[] {
 			 "UniqueComponentInstanceNames", "--  Component instances of a component instance configuration must have unique names on top level.\r\nself.componentInstances->isUnique(name)"
-		   });					
+		   });	
 		addAnnotation
 		  (getComponentInstanceConfiguration_ParentPortInstances(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.parentStructuredComponentInstance.oclIsUndefined()\r\nthen OrderedSet {}\r\nelse self.parentStructuredComponentInstance.portInstances\r\nendif"
-		   });						
+		   });	
 		addAnnotation
 		  (getDiscretePortInstance_ReceiverMessageTypes(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tOrderedSet { }\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).receiverMessageTypes\r\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (getDiscretePortInstance_SenderMessageTypes(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then\r\n\tOrderedSet { }\r\nelse\r\n\tportType.oclAsType(component::DiscretePort).senderMessageTypes\r\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (getDiscretePortInstance_ReceiverMessageBuffer(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (not self.portType.oclIsUndefined()) and self.portType.oclIsKindOf(component::DiscretePort) then\n\tself.portType.oclAsType(component::DiscretePort).receiverMessageBuffer\nelse\n\tOrderedSet { }\nendif"
-		   });			
+		   });	
 		addAnnotation
 		  (getDiscretePortInstance_RefinedRole(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then\r\n\tself.portType.oclAsType(component::DiscretePort).refinedRole\r\nelse\r\n\tnull\r\nendif"
-		   });						
+		   });	
 		addAnnotation
 		  (getDiscreteMultiPortInstance_GmfSubPortInstances(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.subInteractionEndpointInstances"
-		   });						
+		   });
 	}
 
 } //InstancePackageImpl

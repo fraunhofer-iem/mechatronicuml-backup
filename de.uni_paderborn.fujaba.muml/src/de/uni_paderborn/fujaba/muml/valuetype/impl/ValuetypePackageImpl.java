@@ -500,7 +500,7 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -508,25 +508,25 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });			
+		   });	
 		addAnnotation
 		  (cardinalityEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });							
+		   });	
 		addAnnotation
 		  (naturalNumberEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ValueGreaterOrEqualZero"
-		   });											
+		   });	
 		addAnnotation
 		  (rangeEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "LowerBoundMustBeLessOrEqualThanUpperBound"
-		   });	
+		   });
 	}
 
 	/**
@@ -536,31 +536,31 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (cardinalityEClass, 
 		   source, 
 		   new String[] {
 			 "LowerBoundMustBeLessOrEqualThanUpperBound", "-- lower bound of cardinality must be less or equal than upper bound\r\n(not self.lowerBound.oclIsUndefined() and not self.upperBound.oclIsUndefined()) implies\n(\n\t((not self.lowerBound.infinity and not self.upperBound.infinity) implies (self.lowerBound.value <= self.upperBound.value))\r\n\tand (self.lowerBound.infinity implies self.upperBound.infinity)\n)"
-		   });							
+		   });	
 		addAnnotation
 		  (naturalNumberEClass, 
 		   source, 
 		   new String[] {
 			 "ValueGreaterOrEqualZero", "self.value >= 0"
-		   });					
+		   });	
 		addAnnotation
 		  (getNaturalNumber__LessOrEqual__NaturalNumber(), 
 		   source, 
 		   new String[] {
 			 "body", "if self.infinity\r\nthen n.infinity\r\nelse self.value <= n.value\r\nendif"
-		   });		
+		   });	
 		addAnnotation
 		  (getNaturalNumber__GreaterOrEqual__NaturalNumber(), 
 		   source, 
 		   new String[] {
 			 "body", "n.lessOrEqual(self)"
-		   });						
+		   });	
 		addAnnotation
 		  (rangeEClass, 
 		   source, 
