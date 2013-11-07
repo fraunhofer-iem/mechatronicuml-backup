@@ -1257,7 +1257,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement #//realtimestatechart/PrioritizedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent "/>
+        <details key="constraints" value="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A transition connects different vertices. If the vertex is a state a self-transition is also possible."/>
@@ -1271,6 +1271,7 @@
             value="(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.clockResets->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.action.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.raiseMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.absoluteDeadlines->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.relativeDeadline.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
         <details key="StateConnectionPointOutgoingTransitionsNoConditions" value="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.triggerMessageEvent.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.clockConstraints->isEmpty()&#xD;&#xA;&#x9;&#x9;and self.guard.oclIsUndefined()&#xD;&#xA;&#x9;&#x9;and self.synchronization.oclIsUndefined()&#xD;&#xA;&#x9;)"/>
         <details key="StateConnectionPointOutgoingTransitionsMustBeUrgent" value="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.urgent&#xD;&#xA;&#x9;)"/>
+        <details key="NoCombinationOfRelativeAndAbsoluteDeadlines" value="(not self.relativeDeadline.oclIsUndefined()) implies (self.absoluteDeadlines->isEmpty())"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="synchronization" eType="#//realtimestatechart/Synchronization"
           containment="true">

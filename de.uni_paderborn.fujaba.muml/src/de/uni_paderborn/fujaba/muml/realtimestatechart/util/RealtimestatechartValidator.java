@@ -588,6 +588,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointOutgoingTransitionsNoConditions(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointOutgoingTransitionsMustBeUrgent(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_NoCombinationOfRelativeAndAbsoluteDeadlines(transition, diagnostics, context);
 		return result;
 	}
 
@@ -835,6 +836,35 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "StateConnectionPointOutgoingTransitionsMustBeUrgent",
 				 TRANSITION__STATE_CONNECTION_POINT_OUTGOING_TRANSITIONS_MUST_BE_URGENT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the NoCombinationOfRelativeAndAbsoluteDeadlines constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__NO_COMBINATION_OF_RELATIVE_AND_ABSOLUTE_DEADLINES__EEXPRESSION = "(not self.relativeDeadline.oclIsUndefined()) implies (self.absoluteDeadlines->isEmpty())";
+
+	/**
+	 * Validates the NoCombinationOfRelativeAndAbsoluteDeadlines constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_NoCombinationOfRelativeAndAbsoluteDeadlines(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NoCombinationOfRelativeAndAbsoluteDeadlines",
+				 TRANSITION__NO_COMBINATION_OF_RELATIVE_AND_ABSOLUTE_DEADLINES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
