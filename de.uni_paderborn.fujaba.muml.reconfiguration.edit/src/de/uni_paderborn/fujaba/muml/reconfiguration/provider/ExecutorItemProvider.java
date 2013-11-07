@@ -223,7 +223,17 @@ public class ExecutorItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ReconfigurationPackage.Literals.EXECUTOR__PORTS,
-				 ComponentFactory.eINSTANCE.createDiscretePort()));
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.EXECUTOR__PORTS,
+				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.EXECUTOR__PORTS,
+				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationCommunicationPort()));
 	}
 
 	/**

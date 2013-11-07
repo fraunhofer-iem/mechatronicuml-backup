@@ -29,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController;
 
 /**
@@ -76,7 +77,7 @@ public class ExecutorImpl extends CommentableElementImpl implements Executor {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DiscretePort> ports;
+	protected EList<ReconfigurationPort> ports;
 
 	/**
 	 * The cached setting delegate for the '{@link #getReconfigurationExecutionPorts() <em>Reconfiguration Execution Ports</em>}' reference list.
@@ -225,9 +226,9 @@ public class ExecutorImpl extends CommentableElementImpl implements Executor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DiscretePort> getPorts() {
+	public EList<ReconfigurationPort> getPorts() {
 		if (ports == null) {
-			ports = new EObjectContainmentEList<DiscretePort>(DiscretePort.class, this, ReconfigurationPackage.EXECUTOR__PORTS);
+			ports = new EObjectContainmentEList<ReconfigurationPort>(ReconfigurationPort.class, this, ReconfigurationPackage.EXECUTOR__PORTS);
 		}
 		return ports;
 	}
@@ -343,7 +344,7 @@ public class ExecutorImpl extends CommentableElementImpl implements Executor {
 				return;
 			case ReconfigurationPackage.EXECUTOR__PORTS:
 				getPorts().clear();
-				getPorts().addAll((Collection<? extends DiscretePort>)newValue);
+				getPorts().addAll((Collection<? extends ReconfigurationPort>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

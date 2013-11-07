@@ -29,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController;
 
 /**
@@ -76,7 +77,7 @@ public class ManagerImpl extends CommentableElementImpl implements Manager {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DiscretePort> ports;
+	protected EList<ReconfigurationPort> ports;
 
 	/**
 	 * The cached setting delegate for the '{@link #getReconfigurationMessagePorts() <em>Reconfiguration Message Ports</em>}' reference list.
@@ -225,9 +226,9 @@ public class ManagerImpl extends CommentableElementImpl implements Manager {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DiscretePort> getPorts() {
+	public EList<ReconfigurationPort> getPorts() {
 		if (ports == null) {
-			ports = new EObjectContainmentEList<DiscretePort>(DiscretePort.class, this, ReconfigurationPackage.MANAGER__PORTS);
+			ports = new EObjectContainmentEList<ReconfigurationPort>(ReconfigurationPort.class, this, ReconfigurationPackage.MANAGER__PORTS);
 		}
 		return ports;
 	}
@@ -343,7 +344,7 @@ public class ManagerImpl extends CommentableElementImpl implements Manager {
 				return;
 			case ReconfigurationPackage.MANAGER__PORTS:
 				getPorts().clear();
-				getPorts().addAll((Collection<? extends DiscretePort>)newValue);
+				getPorts().addAll((Collection<? extends ReconfigurationPort>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

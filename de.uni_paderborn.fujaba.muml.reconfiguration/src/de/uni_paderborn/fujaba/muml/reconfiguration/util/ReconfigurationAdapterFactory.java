@@ -221,16 +221,16 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createConnectorEndpointAdapter();
 			}
 			@Override
+			public Adapter casePort(Port object) {
+				return createPortAdapter();
+			}
+			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
 				return createBehavioralElementAdapter();
 			}
 			@Override
 			public Adapter caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
 				return createDiscreteInteractionEndpointAdapter();
-			}
-			@Override
-			public Adapter casePort(Port object) {
-				return createPortAdapter();
 			}
 			@Override
 			public Adapter caseConnector(Connector object) {

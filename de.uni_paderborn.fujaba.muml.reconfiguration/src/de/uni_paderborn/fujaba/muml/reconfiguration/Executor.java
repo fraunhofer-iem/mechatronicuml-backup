@@ -86,7 +86,7 @@ public interface Executor extends CommentableElement, BehavioralElement {
 
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.DiscretePort}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
@@ -98,7 +98,7 @@ public interface Executor extends CommentableElement, BehavioralElement {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<DiscretePort> getPorts();
+	EList<ReconfigurationPort> getPorts();
 
 	/**
 	 * Returns the value of the '<em><b>Reconfiguration Execution Ports</b></em>' reference list.

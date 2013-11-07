@@ -23,5 +23,5 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
  * @model abstract="true"
  * @generated
  */
-public interface ReconfigurationPort extends DiscreteInteractionEndpoint, Port {
+public interface ReconfigurationPort extends Port, DiscreteInteractionEndpoint {
 } // ReconfigurationPort

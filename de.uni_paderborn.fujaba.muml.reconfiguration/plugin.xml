@@ -22,8 +22,4 @@
             class="de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage"
             genModel="model/MumlReconfiguration.genmodel"/>
    </extension>
-
-null
-null
-null
 </plugin>

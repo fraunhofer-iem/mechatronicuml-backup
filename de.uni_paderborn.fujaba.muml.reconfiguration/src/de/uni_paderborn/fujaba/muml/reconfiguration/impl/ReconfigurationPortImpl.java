@@ -6,6 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.impl;
 
+import de.uni_paderborn.fujaba.muml.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -13,16 +16,26 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
+import de.uni_paderborn.fujaba.muml.component.impl.PortImpl;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.connector.impl.DiscreteInteractionEndpointImpl;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
 import de.uni_paderborn.fujaba.muml.types.DataType;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,24 +44,92 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getComponent <em>Component</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getPortConnectors <em>Port Connectors</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getBehavior <em>Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getSenderMessageTypes <em>Sender Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getReceiverMessageTypes <em>Receiver Message Types</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getAdaptationBehavior <em>Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getRoleAndAdaptationBehavior <em>Role And Adaptation Behavior</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#getReceiverMessageBuffer <em>Receiver Message Buffer</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortImpl#isMulti <em>Multi</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpointImpl implements ReconfigurationPort {
+public abstract class ReconfigurationPortImpl extends PortImpl implements ReconfigurationPort {
 	/**
-	 * The cached setting delegate for the '{@link #getPortConnectors() <em>Port Connectors</em>}' reference list.
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPortConnectors()
+	 * @see #getBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate PORT_CONNECTORS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.PORT__PORT_CONNECTORS).getSettingDelegate();
-
+	protected Behavior behavior;
+	/**
+	 * The cached value of the '{@link #getSenderMessageTypes() <em>Sender Message Types</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSenderMessageTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MessageType> senderMessageTypes;
+	/**
+	 * The cached value of the '{@link #getReceiverMessageTypes() <em>Receiver Message Types</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceiverMessageTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MessageType> receiverMessageTypes;
+	/**
+	 * The cached value of the '{@link #getAdaptationBehavior() <em>Adaptation Behavior</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdaptationBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected Behavior adaptationBehavior;
+	/**
+	 * The cached value of the '{@link #getRoleAndAdaptationBehavior() <em>Role And Adaptation Behavior</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoleAndAdaptationBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected Behavior roleAndAdaptationBehavior;
+	/**
+	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCardinality()
+	 * @generated
+	 * @ordered
+	 */
+	protected Cardinality cardinality;
+	/**
+	 * The cached value of the '{@link #getReceiverMessageBuffer() <em>Receiver Message Buffer</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReceiverMessageBuffer()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MessageBuffer> receiverMessageBuffer;
+	/**
+	 * The cached setting delegate for the '{@link #isMulti() <em>Multi</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMulti()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate MULTI__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__MULTI).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,9 +154,16 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component getComponent() {
-		if (eContainerFeatureID() != ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT) return null;
-		return (Component)eInternalContainer();
+	public Behavior getBehavior() {
+		if (behavior != null && behavior.eIsProxy()) {
+			InternalEObject oldBehavior = (InternalEObject)behavior;
+			behavior = (Behavior)eResolveProxy(oldBehavior);
+			if (behavior != oldBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR, oldBehavior, behavior));
+			}
+		}
+		return behavior;
 	}
 
 	/**
@@ -83,8 +171,22 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetComponent(Component newComponent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newComponent, ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT, msgs);
+	public Behavior basicGetBehavior() {
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBehavior(Behavior newBehavior, NotificationChain msgs) {
+		Behavior oldBehavior = behavior;
+		behavior = newBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR, oldBehavior, newBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
 		return msgs;
 	}
 
@@ -93,20 +195,182 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setComponent(Component newComponent) {
-		if (newComponent != eInternalContainer() || (eContainerFeatureID() != ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT && newComponent != null)) {
-			if (EcoreUtil.isAncestor(this, newComponent))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+	public void setBehavior(Behavior newBehavior) {
+		if (newBehavior != behavior) {
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newComponent != null)
-				msgs = ((InternalEObject)newComponent).eInverseAdd(this, ComponentPackage.COMPONENT__PORTS, Component.class, msgs);
-			msgs = basicSetComponent(newComponent, msgs);
+			if (behavior != null)
+				msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+			if (newBehavior != null)
+				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+			msgs = basicSetBehavior(newBehavior, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT, newComponent, newComponent));
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR, newBehavior, newBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<MessageType> getSenderMessageTypes() {
+		if (senderMessageTypes == null) {
+			senderMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, ReconfigurationPackage.RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES);
+		}
+		return senderMessageTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<MessageType> getReceiverMessageTypes() {
+		if (receiverMessageTypes == null) {
+			receiverMessageTypes = new EObjectResolvingEList<MessageType>(MessageType.class, this, ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES);
+		}
+		return receiverMessageTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior getAdaptationBehavior() {
+		if (adaptationBehavior != null && adaptationBehavior.eIsProxy()) {
+			InternalEObject oldAdaptationBehavior = (InternalEObject)adaptationBehavior;
+			adaptationBehavior = (Behavior)eResolveProxy(oldAdaptationBehavior);
+			if (adaptationBehavior != oldAdaptationBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+			}
+		}
+		return adaptationBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior basicGetAdaptationBehavior() {
+		return adaptationBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAdaptationBehavior(Behavior newAdaptationBehavior) {
+		Behavior oldAdaptationBehavior = adaptationBehavior;
+		adaptationBehavior = newAdaptationBehavior;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR, oldAdaptationBehavior, adaptationBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior getRoleAndAdaptationBehavior() {
+		if (roleAndAdaptationBehavior != null && roleAndAdaptationBehavior.eIsProxy()) {
+			InternalEObject oldRoleAndAdaptationBehavior = (InternalEObject)roleAndAdaptationBehavior;
+			roleAndAdaptationBehavior = (Behavior)eResolveProxy(oldRoleAndAdaptationBehavior);
+			if (roleAndAdaptationBehavior != oldRoleAndAdaptationBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+			}
+		}
+		return roleAndAdaptationBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Behavior basicGetRoleAndAdaptationBehavior() {
+		return roleAndAdaptationBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoleAndAdaptationBehavior(Behavior newRoleAndAdaptationBehavior) {
+		Behavior oldRoleAndAdaptationBehavior = roleAndAdaptationBehavior;
+		roleAndAdaptationBehavior = newRoleAndAdaptationBehavior;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR, oldRoleAndAdaptationBehavior, roleAndAdaptationBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cardinality getCardinality() {
+		return cardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
+		Cardinality oldCardinality = cardinality;
+		cardinality = newCardinality;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY, oldCardinality, newCardinality);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCardinality(Cardinality newCardinality) {
+		if (newCardinality != cardinality) {
+			NotificationChain msgs = null;
+			if (cardinality != null)
+				msgs = ((InternalEObject)cardinality).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY, null, msgs);
+			if (newCardinality != null)
+				msgs = ((InternalEObject)newCardinality).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY, null, msgs);
+			msgs = basicSetCardinality(newCardinality, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY, newCardinality, newCardinality));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<MessageBuffer> getReceiverMessageBuffer() {
+		if (receiverMessageBuffer == null) {
+			receiverMessageBuffer = new EObjectContainmentWithInverseEList<MessageBuffer>(MessageBuffer.class, this, ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER, ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT);
+		}
+		return receiverMessageBuffer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isMulti() {
+		return (Boolean)MULTI__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -115,22 +379,15 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<PortConnector> getPortConnectors() {
-		return (EList<PortConnector>)PORT_CONNECTORS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetComponent((Component)otherEnd, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR:
+				if (behavior != null)
+					msgs = ((InternalEObject)behavior).eInverseRemove(this, BehaviorPackage.BEHAVIOR__BEHAVIORAL_ELEMENT, Behavior.class, msgs);
+				return basicSetBehavior((Behavior)otherEnd, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getReceiverMessageBuffer()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -143,8 +400,12 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT:
-				return basicSetComponent(null, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR:
+				return basicSetBehavior(null, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY:
+				return basicSetCardinality(null, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER:
+				return ((InternalEList<?>)getReceiverMessageBuffer()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -155,26 +416,27 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT:
-				return eInternalContainer().eInverseRemove(this, ComponentPackage.COMPONENT__PORTS, Component.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT:
-				return getComponent();
-			case ReconfigurationPackage.RECONFIGURATION_PORT__PORT_CONNECTORS:
-				return getPortConnectors();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR:
+				if (resolve) return getBehavior();
+				return basicGetBehavior();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES:
+				return getSenderMessageTypes();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES:
+				return getReceiverMessageTypes();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR:
+				if (resolve) return getAdaptationBehavior();
+				return basicGetAdaptationBehavior();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
+				if (resolve) return getRoleAndAdaptationBehavior();
+				return basicGetRoleAndAdaptationBehavior();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY:
+				return getCardinality();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER:
+				return getReceiverMessageBuffer();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__MULTI:
+				return isMulti();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,11 +446,33 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT:
-				setComponent((Component)newValue);
+			case ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR:
+				setBehavior((Behavior)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES:
+				getSenderMessageTypes().clear();
+				getSenderMessageTypes().addAll((Collection<? extends MessageType>)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES:
+				getReceiverMessageTypes().clear();
+				getReceiverMessageTypes().addAll((Collection<? extends MessageType>)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR:
+				setAdaptationBehavior((Behavior)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
+				setRoleAndAdaptationBehavior((Behavior)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY:
+				setCardinality((Cardinality)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER:
+				getReceiverMessageBuffer().clear();
+				getReceiverMessageBuffer().addAll((Collection<? extends MessageBuffer>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -202,8 +486,26 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT:
-				setComponent((Component)null);
+			case ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR:
+				setBehavior((Behavior)null);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES:
+				getSenderMessageTypes().clear();
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES:
+				getReceiverMessageTypes().clear();
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR:
+				setAdaptationBehavior((Behavior)null);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
+				setRoleAndAdaptationBehavior((Behavior)null);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY:
+				setCardinality((Cardinality)null);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER:
+				getReceiverMessageBuffer().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -217,10 +519,22 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT:
-				return getComponent() != null;
-			case ReconfigurationPackage.RECONFIGURATION_PORT__PORT_CONNECTORS:
-				return PORT_CONNECTORS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR:
+				return behavior != null;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES:
+				return senderMessageTypes != null && !senderMessageTypes.isEmpty();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES:
+				return receiverMessageTypes != null && !receiverMessageTypes.isEmpty();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR:
+				return adaptationBehavior != null;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR:
+				return roleAndAdaptationBehavior != null;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY:
+				return cardinality != null;
+			case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER:
+				return receiverMessageBuffer != null && !receiverMessageBuffer.isEmpty();
+			case ReconfigurationPackage.RECONFIGURATION_PORT__MULTI:
+				return MULTI__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -232,15 +546,21 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == DataType.class) {
+		if (baseClass == BehavioralElement.class) {
 			switch (derivedFeatureID) {
+				case ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR: return BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR;
 				default: return -1;
 			}
 		}
-		if (baseClass == Port.class) {
+		if (baseClass == DiscreteInteractionEndpoint.class) {
 			switch (derivedFeatureID) {
-				case ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT: return ComponentPackage.PORT__COMPONENT;
-				case ReconfigurationPackage.RECONFIGURATION_PORT__PORT_CONNECTORS: return ComponentPackage.PORT__PORT_CONNECTORS;
+				case ReconfigurationPackage.RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES;
+				case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES;
+				case ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR;
+				case ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR;
+				case ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY;
+				case ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER;
+				case ReconfigurationPackage.RECONFIGURATION_PORT__MULTI: return ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI;
 				default: return -1;
 			}
 		}
@@ -254,15 +574,21 @@ public abstract class ReconfigurationPortImpl extends DiscreteInteractionEndpoin
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == DataType.class) {
+		if (baseClass == BehavioralElement.class) {
 			switch (baseFeatureID) {
+				case BehaviorPackage.BEHAVIORAL_ELEMENT__BEHAVIOR: return ReconfigurationPackage.RECONFIGURATION_PORT__BEHAVIOR;
 				default: return -1;
 			}
 		}
-		if (baseClass == Port.class) {
+		if (baseClass == DiscreteInteractionEndpoint.class) {
 			switch (baseFeatureID) {
-				case ComponentPackage.PORT__COMPONENT: return ReconfigurationPackage.RECONFIGURATION_PORT__COMPONENT;
-				case ComponentPackage.PORT__PORT_CONNECTORS: return ReconfigurationPackage.RECONFIGURATION_PORT__PORT_CONNECTORS;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES: return ReconfigurationPackage.RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES: return ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR: return ReconfigurationPackage.RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR: return ReconfigurationPackage.RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY: return ReconfigurationPackage.RECONFIGURATION_PORT__CARDINALITY;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER: return ReconfigurationPackage.RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER;
+				case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI: return ReconfigurationPackage.RECONFIGURATION_PORT__MULTI;
 				default: return -1;
 			}
 		}
