@@ -152,7 +152,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/ResourcetypeDiagramFile.gif"
-  	     category="org.eclipse.ui.Examples"
+  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
   	     class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
