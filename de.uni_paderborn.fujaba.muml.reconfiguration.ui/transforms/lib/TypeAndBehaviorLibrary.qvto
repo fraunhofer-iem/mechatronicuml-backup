@@ -146,22 +146,23 @@ constructor Reference::Reference(in newName : String, in dataType : DataType, in
 	cardinality := card;
 }
 
+constructor NaturalNumber::NaturalNumber(in newValue : Integer, in inf : Boolean){
+	value := newValue;
+	infinity := inf;
+}
+
+constructor TimeValue::TimeValue(in newValue : Integer, in timeUnit : TimeUnit){
+	value := new NaturalNumber(newValue, false);
+	unit := timeUnit;
+}
+
 -- create a cardinality object with the given bounds, an uBound of -1 encodes infinity
 constructor Cardinality::Cardinality(in lBound : Integer, in uBound : Integer){
-	lowerBound := object NaturalNumber{
-		value := lBound;
-		infinity := false;
-	};
+	lowerBound := new NaturalNumber(lBound, false);
 	
 	if(uBound = -1) then{
-		upperBound := object NaturalNumber{
-			value := lBound + 1;
-			infinity := true;
-		}
+		upperBound := new NaturalNumber(lBound + 1, true);
 	} else {
-		upperBound := object NaturalNumber{
-			value := uBound;
-			infinity := false;
-		}
+		upperBound := new NaturalNumber(uBound, false);
 	} endif;
 }
