@@ -142,18 +142,6 @@ mapping ReconfigurationExecutionPortInterfaceEntry::mapREInterfaceEntries() : Re
 	description := self.description;
 }
 
--- copy TimeValue
-mapping TimeValue::mapTimeValue() : TimeValue{
-	value := self.value.map mapNaturalNumber();
-	unit := self.unit;
-}
-
--- copy NaturalNumber
-mapping NaturalNumber::mapNaturalNumber() : NaturalNumber{
-	value := self.value;
-	infinity := self.infinity;
-}
-
 -- generates the static statechart frame (the 'black' parts in the manager generation template)
 helper generateStaticStatechartFrame(inout rootNode : RootNode, inout executor : Executor){
 	

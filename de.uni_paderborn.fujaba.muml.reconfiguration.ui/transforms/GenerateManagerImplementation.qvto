@@ -47,6 +47,9 @@ main() {
 -- creates an implementation for the manager
 helper createManagerImplementation(inout theComponent : ReconfigurableStructuredComponent, inout rootNode : RootNode){
 	
+	-- configure internal ports (copy entries from RE-port of StructuredComponent and collect entries from children)
+	configurePorts(rootNode, theComponent);
+	
 	-- create the statechart
 	var rtsc : RealtimeStatechart := new RealtimeStatechart(theComponent.name + '_Manager_RTSC');
 	rtsc.comment := 'Generated Real-Time Statechart -- DO NOT EDIT!';
@@ -66,6 +69,77 @@ helper createManagerImplementation(inout theComponent : ReconfigurableStructured
 	};
 	
 	return;
+}
+
+-- configure the ports of the Executor by copying the information of the surrounding StructuredComponent
+-- and the embedded components and sets up message type references
+helper configurePorts(inout rootNode : RootNode, inout theComponent : ReconfigurableStructuredComponent){
+	-- copy RM port interface entries of theComponent to the parent port of the Manager
+	var executor : Executor := theComponent.executor;
+	var manager : Manager := theComponent.manager;
+	var structCompRMPort : ReconfigurationMessagePort := theComponent.ports -> any(oclIsTypeOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort);
+	var structCompREPort : ReconfigurationExecutionPort := theComponent.ports -> any(oclIsTypeOf(ReconfigurationExecutionPort)).oclAsType(ReconfigurationExecutionPort);
+	var managerParentPort : ReconfigurationMessagePort := manager.reconfigurationMessagePorts -> any(name = 'parent');
+	var managerEmbeddedCIPort : ReconfigurationMessagePort := manager.reconfigurationMessagePorts -> any(name = 'embeddedCI');
+	var managerExecutorPort : InternalReconfigurationCommunicationPort := manager.ports -> any(name = 'executor').oclAsType(InternalReconfigurationCommunicationPort);
+	var executorParentPort : ReconfigurationExecutionPort := executor.reconfigurationExecutionPorts -> any(name = 'parent');
+	
+	-- copy entries of parent port
+	managerParentPort.interfaceEntries := structCompRMPort.interfaceEntries-> map mapRMInterfaceEntries();
+	
+	-- collect all entries of embedded components
+	managerEmbeddedCIPort.interfaceEntries := (theComponent.embeddedComponentParts.componentType.ports -> 
+			select(oclIsTypeOf(ReconfigurationMessagePort))).oclAsType(ReconfigurationMessagePort).interfaceEntries -> map mapRMInterfaceEntries();
+	
+	var buffer : MessageBuffer := null;
+	
+	-- setup message types and message buffer of structured component port 
+	structCompRMPort.senderMessageTypes := structCompRMPort.interfaceEntries.messageType;
+	structCompRMPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	structCompRMPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	structCompRMPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := structCompRMPort.receiverMessageTypes;
+	structCompRMPort.receiverMessageBuffer := buffer;
+	
+	-- parent port
+	managerParentPort.senderMessageTypes := managerParentPort.interfaceEntries.messageType;
+	managerParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	managerParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	managerParentPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := managerParentPort.receiverMessageTypes;
+	managerParentPort.receiverMessageBuffer := buffer;
+	
+	-- executor port
+	managerExecutorPort.receiverMessageTypes := executorParentPort.interfaceEntries.messageType;
+	managerExecutorPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	managerExecutorPort.receiverMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	managerExecutorPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeDeclineRequest);
+	managerExecutorPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeConfirmRequest);
+	managerExecutorPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeExecuteReconf);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := managerExecutorPort.receiverMessageTypes;
+	managerExecutorPort.receiverMessageBuffer := buffer;
+	
+	-- embeddedCI port
+	managerEmbeddedCIPort.receiverMessageTypes := managerEmbeddedCIPort.interfaceEntries.messageType;
+	managerEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeSuccess);
+	managerEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeFailed);
+	managerEmbeddedCIPort.senderMessageTypes += rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied);
+	buffer := new MessageBuffer(1);
+	buffer.messageType := managerEmbeddedCIPort.receiverMessageTypes;
+	managerEmbeddedCIPort.receiverMessageBuffer := buffer;
+	
+	return;
+}
+
+-- copy the ReconfigurationMessagePortInterfaceEntries
+mapping ReconfigurationMessagePortInterfaceEntry::mapRMInterfaceEntries() : ReconfigurationMessagePortInterfaceEntry{
+	messageType := self.messageType;
+	reconfigurationMessageType := self.reconfigurationMessageType;
+	expectedResponseTime := self.expectedResponseTime . map mapTimeValue();
+	description := self.description;
 }
 
 -- generates the static statechart frame (the 'black' parts in the manager generation template)
@@ -107,7 +181,7 @@ helper generateStaticStatechartFrame(inout rootNode : RootNode, inout manager : 
 	manager.ports -> any(name = 'embeddedCI').adaptationBehavior := embeddedCISubRTSC.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_adapt);
 	
 	-- configure message types of ports
-	var currentPort : DiscretePort = null;
+	var currentPort : ReconfigurationPort = null;
 	
 	-- parent port
 	currentPort := manager.ports -> any(name = 'parent');

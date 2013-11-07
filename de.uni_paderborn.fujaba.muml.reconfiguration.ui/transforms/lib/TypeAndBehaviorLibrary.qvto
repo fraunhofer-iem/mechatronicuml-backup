@@ -89,6 +89,20 @@ query Operation::getParameterByName(in theName : String) : Parameter{
 	return (self.parameters -> any(name = theName));
 }
 
+------------------ mappings ----------------
+
+-- copy TimeValue
+mapping TimeValue::mapTimeValue() : TimeValue{
+	value := self.value.map mapNaturalNumber();
+	unit := self.unit;
+}
+
+-- copy NaturalNumber
+mapping NaturalNumber::mapNaturalNumber() : NaturalNumber{
+	value := self.value;
+	infinity := self.infinity;
+}
+
 ------------- constructors -----------------
 
 constructor Parameter::Parameter(in newName : String, in type : DataType){
