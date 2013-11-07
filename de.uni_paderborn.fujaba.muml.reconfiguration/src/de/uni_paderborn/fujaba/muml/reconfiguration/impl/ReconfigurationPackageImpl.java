@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
@@ -52,6 +53,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ExpressionPackageImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
+import de.uni_paderborn.fujaba.muml.reconfiguration.util.ReconfigurationValidator;
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -288,6 +290,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		theReconfigurationPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
 		theStructdatatypePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theReconfigurationPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return ReconfigurationValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theReconfigurationPackage.freeze();
@@ -1200,6 +1211,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });	
+		addAnnotation
+		  (reconfigurationPortEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ReconfigurationPortRequiresMessageTypes ReconfigurationPortAtStructuredComponentHasNoBehavior"
 		   });
 	}
 
@@ -1222,6 +1239,13 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   source, 
 		   new String[] {
 			 "derivation", "if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).executor else null endif"
+		   });	
+		addAnnotation
+		  (reconfigurationPortEClass, 
+		   source, 
+		   new String[] {
+			 "ReconfigurationPortRequiresMessageTypes", "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
+			 "ReconfigurationPortAtStructuredComponentHasNoBehavior", "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\r\n\timplies self.behavior.oclIsUndefined()"
 		   });	
 		addAnnotation
 		  (getManager_ReconfigurationMessagePorts(), 
