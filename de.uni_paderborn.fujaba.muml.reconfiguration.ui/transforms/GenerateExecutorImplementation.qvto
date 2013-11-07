@@ -1110,6 +1110,17 @@ helper getExecutor(in rtsc : RealtimeStatechart) : Executor{
 	return curRTSC.behavioralElement.oclAsType(Executor);
 }
 
+-- returns the manager of the reconfiguration controller containing the executor that is generated here
+helper getManager(in rtsc : RealtimeStatechart) : Manager{
+	var executor : Executor := getExecutor(rtsc);
+	
+	if(executor.oclIsUndefined()) then {
+		return null;
+	} endif;
+	
+	return executor.reconfigurationController.manager;
+}
+
 helper generateVariableStatechartParts(inout rootNode : RootNode, inout executor : Executor, inout rtsc : RealtimeStatechart){
 	
 	-- generate purple parts for each ExecutorSpecificationEntry
@@ -1223,8 +1234,15 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceE
 	-- TODO: replace with computed value after configuring the connector
 	var internalMsgDelay : Integer := 0; 
 	
-	-- TODO: query the manager spec
+	-- query the manager spec to obtain the time for planning
 	var timeForPlanning : Integer := 0;
+	var manager : Manager := getManager(rtsc);
+	if(not manager.oclIsUndefined()) then{
+		var entry : ManagerSpecificationEntry := manager.specificationEntries -> any(messageType.name = self.messageType.name);
+		if(not entry.oclIsUndefined() and entry.invokePlanner) then{
+			timeForPlanning := entry.timeForPlanning.value.value;
+		} endif;
+	} endif;
 	
 	-- TODO: replace with a computed value once we know how to compute this
 	var rtscExecutionTime : Integer := 2;
