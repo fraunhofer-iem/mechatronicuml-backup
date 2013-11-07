@@ -596,7 +596,6 @@ mapping ManagerSpecificationEntry::generateManagerSpecificationEntry(inout rootN
 	var managerMainState : State := rtsc.getStateByName(genStateManager_Main);
 	var parentRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_Parent);
 	var internalRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_Internal);
-	var subroleRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI).getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_subrole);
 	
 	-- generate synchronization channel
 	var syncXSyncChan : SynchronizationChannel := null;
@@ -683,12 +682,27 @@ query Manager::isChildRequest(in msgType : MessageType) : Boolean{
 	return false;
 }
 
--- generates the purple parts of the manager generation template
+-- generates the green and purple parts of the manager generation template for the subrole RTSC
 mapping ReconfigurationMessagePortInterfaceEntry::generateChildMessage(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+	var subroleRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI).getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_subrole);
+	
 	--currentTrans.action := new Action('request := true', createSimpleAssignmentExpressioninBlock(parentRTSC.getVariableByName(genVarManager_Parent_Request), 'true'));
 }
+
+-- priority used for the transition Idle -> Request in the executor region template
+property executorTransitionNumber : Integer = 1;
 
 -- generates the green parts of the generation template for each request send by the executor
 mapping ReconfigurationExecutionPortInterfaceEntry::generateExecutorRequestEntry(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
 	var executorRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_Executor);
+	
+	-- generate green transition Idle -> Request
+	var currentTrans : Transition := new Transition(executorRTSC.getStateByName(genStateManager_Executor_Idle), executorRTSC.getStateByName(genStateManager_Executor_Request), executorTransitionNumber);
+	currentTrans.events += new AsynchronousMessageEvent(self.messageType, EventKind::TRIGGER);
+	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(executorRTSC, genSyncChanPrefix + self.messageType.name.firstToUpper()),
+					SynchronizationKind::SEND, null);
+	currentTrans.action := new Action('executor_request := true', createSimpleAssignmentExpressioninBlock(executorRTSC.getVariableByName(genVarManager_Executor_Reuqest), 'true'));
+	executorRTSC.transitions += currentTrans;
+	
+	executorTransitionNumber := executorTransitionNumber + 1;
 }
