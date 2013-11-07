@@ -162,14 +162,14 @@ public class NavigationFeaturePropertyEditor extends
 
 			@Override
 			public void expansionStateChanging(ExpansionEvent e) {
-
+				if (e.getState() == true) {
+					create();
+				}
 			}
 
 			@Override
 			public void expansionStateChanged(ExpansionEvent e) {
-				if (e.getState() == true) {
-					create();
-				}
+
 			}
 		});
 
