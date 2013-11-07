@@ -81,7 +81,9 @@ protected java.util.List getSemanticChildrenViewDescriptors() {
 			org.eclipse.emf.ecore.EObject childElement = childView.getElement();
 			int visualID = «EXPAND xpt::editor::VisualIDRegistry::getVisualIDMethodCall FOR getDiagram()»(childView);
 			java.util.List<Integer> visualIDs = java.util.Arrays.asList(new Integer[] { «EXPAND xpt::editor::VisualIDRegistry::visualID FOREACH getSemanticChildren(self) SEPARATOR ', '» });
-			if (childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
+
+			// Note: childElement can be null, for diagram annotations!
+			if (childElement == null || childElement.eContainer() == containerView.getElement() && visualIDs.contains(visualID)) {
 				result.add(new «getDiagram().editorGen.diagramUpdater.getNodeDescriptorQualifiedClassName()»(childElement, visualID));
 				continue;
 			}
@@ -144,7 +146,9 @@ protected java.util.List getSemanticChildrenViewDescriptors() {
 			«ENDIF-»
 			«EXPAND CodeStyle::iterate('childView', 'org.eclipse.gmf.runtime.notation.View', 'getViewChildren()')-»
 				org.eclipse.emf.ecore.EObject semanticElement = childView.getElement();
-				if (next.getModelElement().equals(semanticElement)) {
+
+				// Note: semanticElement can be null, for diagram annotations!
+				if (semanticElement != null && semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
