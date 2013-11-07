@@ -82,7 +82,7 @@ public class RoleImpl extends DiscreteInteractionEndpointImpl implements Role {
 	 */
 	public AbstractCoordinationSpecification getCoordinationProtocol() {
 		if (eContainerFeatureID() != ProtocolPackage.ROLE__COORDINATION_PROTOCOL) return null;
-		return (AbstractCoordinationSpecification)eInternalContainer();
+		return (AbstractCoordinationSpecification)eContainer();
 	}
 
 	/**

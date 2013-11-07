@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
@@ -26,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
+import de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,6 +41,7 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getParentPortInstances <em>Parent Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceConfigurationImpl#getParentStructuredComponentInstance <em>Parent Structured Component Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -141,7 +145,7 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 	 */
 	public EList<ComponentInstance> getComponentInstances() {
 		if (componentInstances == null) {
-			componentInstances = new EObjectContainmentEList<ComponentInstance>(ComponentInstance.class, this, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES);
+			componentInstances = new EObjectContainmentWithInverseEList<ComponentInstance>(ComponentInstance.class, this, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES, InstancePackage.COMPONENT_INSTANCE__PARENT_CIC);
 		}
 		return componentInstances;
 	}
@@ -182,6 +186,66 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public StructuredComponentInstance getParentStructuredComponentInstance() {
+		if (eContainerFeatureID() != InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE) return null;
+		return (StructuredComponentInstance)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParentStructuredComponentInstance(StructuredComponentInstance newParentStructuredComponentInstance, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentStructuredComponentInstance, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParentStructuredComponentInstance(StructuredComponentInstance newParentStructuredComponentInstance) {
+		if (newParentStructuredComponentInstance != eInternalContainer() || (eContainerFeatureID() != InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE && newParentStructuredComponentInstance != null)) {
+			if (EcoreUtil.isAncestor(this, newParentStructuredComponentInstance))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParentStructuredComponentInstance != null)
+				msgs = ((InternalEObject)newParentStructuredComponentInstance).eInverseAdd(this, InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC, StructuredComponentInstance.class, msgs);
+			msgs = basicSetParentStructuredComponentInstance(newParentStructuredComponentInstance, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE, newParentStructuredComponentInstance, newParentStructuredComponentInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getComponentInstances()).basicAdd(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParentStructuredComponentInstance((StructuredComponentInstance)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -191,8 +255,24 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 				return ((InternalEList<?>)getPortConnectorInstances()).basicRemove(otherEnd, msgs);
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
 				return ((InternalEList<?>)getParentPortInstances()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
+				return basicSetParentStructuredComponentInstance(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
+				return eInternalContainer().eInverseRemove(this, InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC, StructuredComponentInstance.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -211,6 +291,8 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 				return getPortConnectorInstances();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
 				return getParentPortInstances();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
+				return getParentStructuredComponentInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -235,6 +317,9 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 				getPortConnectorInstances().clear();
 				getPortConnectorInstances().addAll((Collection<? extends PortConnectorInstance>)newValue);
 				return;
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
+				setParentStructuredComponentInstance((StructuredComponentInstance)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -256,6 +341,9 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES:
 				getPortConnectorInstances().clear();
 				return;
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
+				setParentStructuredComponentInstance((StructuredComponentInstance)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -276,6 +364,8 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 				return portConnectorInstances != null && !portConnectorInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES:
 				return isSetParentPortInstances();
+			case InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE:
+				return getParentStructuredComponentInstance() != null;
 		}
 		return super.eIsSet(featureID);
 	}

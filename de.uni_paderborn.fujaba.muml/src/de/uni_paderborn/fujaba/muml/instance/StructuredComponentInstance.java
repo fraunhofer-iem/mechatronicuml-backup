@@ -30,6 +30,7 @@ package de.uni_paderborn.fujaba.muml.instance;
 public interface StructuredComponentInstance extends ComponentInstance {
 	/**
 	 * Returns the value of the '<em><b>Embedded CIC</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentStructuredComponentInstance <em>Parent Structured Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -39,7 +40,8 @@ public interface StructuredComponentInstance extends ComponentInstance {
 	 * @return the value of the '<em>Embedded CIC</em>' containment reference.
 	 * @see #setEmbeddedCIC(ComponentInstanceConfiguration)
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getStructuredComponentInstance_EmbeddedCIC()
-	 * @model containment="true" required="true"
+	 * @see de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentStructuredComponentInstance
+	 * @model opposite="parentStructuredComponentInstance" containment="true" required="true"
 	 * @generated
 	 */
 	ComponentInstanceConfiguration getEmbeddedCIC();

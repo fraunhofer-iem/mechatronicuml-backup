@@ -132,13 +132,22 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE__COMPONENT_PART = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Parent CIC</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE__PARENT_CIC = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT_INSTANCE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1487,13 +1496,22 @@ public interface InstancePackage extends EPackage {
 	int COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Parent Structured Component Instance</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Component Instance Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_INSTANCE_CONFIGURATION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 
 	/**
@@ -3601,6 +3619,15 @@ public interface InstancePackage extends EPackage {
 	int STRUCTURED_COMPONENT_INSTANCE__COMPONENT_PART = COMPONENT_INSTANCE__COMPONENT_PART;
 
 	/**
+	 * The feature id for the '<em><b>Parent CIC</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURED_COMPONENT_INSTANCE__PARENT_CIC = COMPONENT_INSTANCE__PARENT_CIC;
+
+	/**
 	 * The feature id for the '<em><b>Embedded CIC</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3863,6 +3890,15 @@ public interface InstancePackage extends EPackage {
 	int ATOMIC_COMPONENT_INSTANCE__COMPONENT_PART = COMPONENT_INSTANCE__COMPONENT_PART;
 
 	/**
+	 * The feature id for the '<em><b>Parent CIC</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_COMPONENT_INSTANCE__PARENT_CIC = COMPONENT_INSTANCE__PARENT_CIC;
+
+	/**
 	 * The number of structural features of the '<em>Atomic Component Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4095,6 +4131,17 @@ public interface InstancePackage extends EPackage {
 	EReference getComponentInstance_ComponentPart();
 
 	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getParentCIC <em>Parent CIC</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent CIC</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getParentCIC()
+	 * @see #getComponentInstance()
+	 * @generated
+	 */
+	EReference getComponentInstance_ParentCIC();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance <em>Port Connector Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4264,6 +4311,17 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentInstanceConfiguration_ParentPortInstances();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentStructuredComponentInstance <em>Parent Structured Component Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent Structured Component Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentStructuredComponentInstance()
+	 * @see #getComponentInstanceConfiguration()
+	 * @generated
+	 */
+	EReference getComponentInstanceConfiguration_ParentStructuredComponentInstance();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.instance.ContinuousPortInstance <em>Continuous Port Instance</em>}'.
@@ -4490,6 +4548,14 @@ public interface InstancePackage extends EPackage {
 		EReference COMPONENT_INSTANCE__COMPONENT_PART = eINSTANCE.getComponentInstance_ComponentPart();
 
 		/**
+		 * The meta object literal for the '<em><b>Parent CIC</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE__PARENT_CIC = eINSTANCE.getComponentInstance_ParentCIC();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.PortConnectorInstanceImpl <em>Port Connector Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4626,6 +4692,14 @@ public interface InstancePackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_INSTANCE_CONFIGURATION__PARENT_PORT_INSTANCES = eINSTANCE.getComponentInstanceConfiguration_ParentPortInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent Structured Component Instance</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE = eINSTANCE.getComponentInstanceConfiguration_ParentStructuredComponentInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.ContinuousPortInstanceImpl <em>Continuous Port Instance</em>}' class.

@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getComponentPart <em>Component Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getParentCIC <em>Parent CIC</em>}</li>
  * </ul>
  * </p>
  *
@@ -102,5 +103,33 @@ public interface ComponentInstance extends NamedElement {
 	 * @generated
 	 */
 	void setComponentPart(ComponentPart value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent CIC</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getComponentInstances <em>Component Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent CIC</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent CIC</em>' container reference.
+	 * @see #setParentCIC(ComponentInstanceConfiguration)
+	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstance_ParentCIC()
+	 * @see de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getComponentInstances
+	 * @model opposite="componentInstances" required="true" transient="false"
+	 * @generated
+	 */
+	ComponentInstanceConfiguration getParentCIC();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getParentCIC <em>Parent CIC</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent CIC</em>' container reference.
+	 * @see #getParentCIC()
+	 * @generated
+	 */
+	void setParentCIC(ComponentInstanceConfiguration value);
 
 } // ComponentInstance

@@ -92,14 +92,30 @@ public class StructuredComponentInstanceImpl extends ComponentInstanceImpl imple
 		if (newEmbeddedCIC != embeddedCIC) {
 			NotificationChain msgs = null;
 			if (embeddedCIC != null)
-				msgs = ((InternalEObject)embeddedCIC).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC, null, msgs);
+				msgs = ((InternalEObject)embeddedCIC).eInverseRemove(this, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE, ComponentInstanceConfiguration.class, msgs);
 			if (newEmbeddedCIC != null)
-				msgs = ((InternalEObject)newEmbeddedCIC).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC, null, msgs);
+				msgs = ((InternalEObject)newEmbeddedCIC).eInverseAdd(this, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE, ComponentInstanceConfiguration.class, msgs);
 			msgs = basicSetEmbeddedCIC(newEmbeddedCIC, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC, newEmbeddedCIC, newEmbeddedCIC));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC:
+				if (embeddedCIC != null)
+					msgs = ((InternalEObject)embeddedCIC).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - InstancePackage.STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC, null, msgs);
+				return basicSetEmbeddedCIC((ComponentInstanceConfiguration)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

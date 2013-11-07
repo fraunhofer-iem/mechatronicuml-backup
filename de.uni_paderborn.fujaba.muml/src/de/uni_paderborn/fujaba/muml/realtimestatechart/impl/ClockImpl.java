@@ -58,7 +58,7 @@ public class ClockImpl extends NamedElementImpl implements Clock {
 	 */
 	public RealtimeStatechart getStatechart() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.CLOCK__STATECHART) return null;
-		return (RealtimeStatechart)eInternalContainer();
+		return (RealtimeStatechart)eContainer();
 	}
 
 	/**

@@ -15,12 +15,14 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
+import de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 
@@ -34,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#getComponentType <em>Component Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#getComponentPart <em>Component Part</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.ComponentInstanceImpl#getParentCIC <em>Parent CIC</em>}</li>
  * </ul>
  * </p>
  *
@@ -185,12 +188,57 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComponentInstanceConfiguration getParentCIC() {
+		if (eContainerFeatureID() != InstancePackage.COMPONENT_INSTANCE__PARENT_CIC) return null;
+		return (ComponentInstanceConfiguration)eContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParentCIC(ComponentInstanceConfiguration newParentCIC, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentCIC, InstancePackage.COMPONENT_INSTANCE__PARENT_CIC, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParentCIC(ComponentInstanceConfiguration newParentCIC) {
+		if (newParentCIC != eInternalContainer() || (eContainerFeatureID() != InstancePackage.COMPONENT_INSTANCE__PARENT_CIC && newParentCIC != null)) {
+			if (EcoreUtil.isAncestor(this, newParentCIC))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParentCIC != null)
+				msgs = ((InternalEObject)newParentCIC).eInverseAdd(this, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES, ComponentInstanceConfiguration.class, msgs);
+			msgs = basicSetParentCIC(newParentCIC, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COMPONENT_INSTANCE__PARENT_CIC, newParentCIC, newParentCIC));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortInstances()).basicAdd(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParentCIC((ComponentInstanceConfiguration)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -205,8 +253,24 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 		switch (featureID) {
 			case InstancePackage.COMPONENT_INSTANCE__PORT_INSTANCES:
 				return ((InternalEList<?>)getPortInstances()).basicRemove(otherEnd, msgs);
+			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
+				return basicSetParentCIC(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
+				return eInternalContainer().eInverseRemove(this, InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__COMPONENT_INSTANCES, ComponentInstanceConfiguration.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -225,6 +289,8 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				if (resolve) return getComponentPart();
 				return basicGetComponentPart();
+			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
+				return getParentCIC();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -248,6 +314,9 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				setComponentPart((ComponentPart)newValue);
 				return;
+			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
+				setParentCIC((ComponentInstanceConfiguration)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -269,6 +338,9 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				setComponentPart((ComponentPart)null);
 				return;
+			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
+				setParentCIC((ComponentInstanceConfiguration)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -287,6 +359,8 @@ public abstract class ComponentInstanceImpl extends NamedElementImpl implements 
 				return portInstances != null && !portInstances.isEmpty();
 			case InstancePackage.COMPONENT_INSTANCE__COMPONENT_PART:
 				return componentPart != null;
+			case InstancePackage.COMPONENT_INSTANCE__PARENT_CIC:
+				return getParentCIC() != null;
 		}
 		return super.eIsSet(featureID);
 	}
