@@ -405,7 +405,7 @@ helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, 
 	rtsc.transitions += currentTrans;
 	
 	-- Plan -> Fail
-	currentTrans := new Transition(planState, executeState, 1);
+	currentTrans := new Transition(planState, failState, 1);
 	currentTrans.guard := createSimpleCompareGuardExpression(resultVar, 'false');
 	rtsc.transitions += currentTrans;
 	
@@ -570,7 +570,7 @@ helper generateVariableStatechartParts(inout rootNode : RootNode, inout manager 
 	manager.specificationEntries -> map generateManagerSpecificationEntry(rootNode, manager, rtsc);
 	
 	-- generates the green and purple parts for each child request except for the executor region
-	manager.reconfigurationMessagePorts -> any(name = 'embeddedCI').interfaceEntries -> map generateChildMessage(rootNode, rtsc);
+	manager.reconfigurationMessagePorts -> any(name = 'embeddedCI').interfaceEntries -> map generateChildMessage(rootNode, manager, rtsc);
 	
 	-- generate green parts in the executor region for each request from the Executor
 	manager.reconfigurationController.executor.reconfigurationExecutionPorts -> any(name = 'parent').interfaceEntries 
@@ -682,11 +682,89 @@ query Manager::isChildRequest(in msgType : MessageType) : Boolean{
 	return false;
 }
 
+-- returns whether the msgType is propagated to the parent
+query Manager::isPropagatedMessage(in msgType : MessageType) : Boolean{
+	var entry : ManagerSpecificationEntry := self.specificationEntries -> any(messageType.name = msgType.name);
+	
+	if(entry.oclIsUndefined()) then{
+		return false;
+	} else {
+		return entry.propagate;
+	} endif;
+	
+	return false;
+}
+
+-- priority used for the transition Idle -> ReceivedMsgX in the subrole template
+property subroleTransitionNumber : Integer = 1;
+
 -- generates the green and purple parts of the manager generation template for the subrole RTSC
-mapping ReconfigurationMessagePortInterfaceEntry::generateChildMessage(inout rootNode : RootNode, inout rtsc : RealtimeStatechart){
+mapping ReconfigurationMessagePortInterfaceEntry::generateChildMessage(inout rootNode : RootNode, inout manager : Manager, inout rtsc : RealtimeStatechart){
 	var subroleRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI).getEmbeddedRTSCByName(genEmbeddedRTSCManager_EmbeddedCI_subrole);
 	
-	--currentTrans.action := new Action('request := true', createSimpleAssignmentExpressioninBlock(parentRTSC.getVariableByName(genVarManager_Parent_Request), 'true'));
+	-- time to execute the reconfiguration rule associated to this message
+	var reconfRule : ReconfigurationRule := manager.getReconfigurationRuleAssociatedToMsgType(self.messageType);
+	var executionTime : Integer := 0;
+	
+	if(not reconfRule.oclIsUndefined() and not reconfRule.wcet.oclIsUndefined()) then{
+		executionTime := reconfRule.wcet.value.value;
+	} endif;
+	
+	var beta : Integer := self.expectedResponseTime.value.value - executionTime;
+	
+	-- obtain idle state and clock
+	var idleState : State := subroleRTSC.getStateByName(genStateManager_EmbeddedCI_Idle);
+	var subroleClock : Clock := subroleRTSC.getClockByName(genClockManager_embeddedCI_cReq);
+	
+	-- create ReceivedMsgX state
+	var receivedState : State := new State(genStateManager_EmbeddedCI_Received_Prefix + self.messageType.name.firstToUpper());
+	if(self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST) then{
+		receivedState.invariants += new ClockConstraint(subroleClock, ComparingOperator::LESS_OR_EQUAL, beta, self.expectedResponseTime.unit);
+	} endif;
+	subroleRTSC.states += receivedState;
+	
+	-- generate transitions
+	var currentTrans : Transition := null;
+	
+	-- Idle -> ReceivedMsgX
+	currentTrans := new Transition(idleState, receivedState, subroleTransitionNumber);
+	currentTrans.events += new AsynchronousMessageEvent(self.messageType, EventKind::TRIGGER);
+	var block : Block := new Block();
+	if(self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST) then{
+		block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarManager_EmbeddedCI_Request), 'true');
+		currentTrans.clockResets += subroleClock;
+	} endif;
+	if(manager.isPropagatedMessage(self.messageType)) then{
+		block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarManager_EmbeddedCI_Propagate), 'true');
+	} endif;
+	if(block.expressions -> size() > 0) then{
+		currentTrans.action := new Action('Assign Vars', block);
+	} endif;
+	subroleRTSC.transitions += currentTrans;
+	
+	subroleTransitionNumber := subroleTransitionNumber + 1;
+	
+	-- ReceivedMsgX -> Idle (if message is a request)
+	if(self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST) then{
+		currentTrans := new Transition(receivedState, idleState, 2);
+		currentTrans.clockConstraints += new ClockConstraint(subroleClock, ComparingOperator::GREATER_OR_EQUAL, beta, self.expectedResponseTime.unit);
+		currentTrans.events += new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeOccupied), EventKind::RAISE);
+		subroleRTSC.transitions += currentTrans;
+	} endif;
+	
+	-- ReceivedMsgX -> DeliverMsg
+	currentTrans := new Transition(receivedState, subroleRTSC.getStateByName(genStateManager_EmbeddedCI_Deliver), 1);
+	var syncXChannel : SynchronizationChannel := getSynchronizationChannel(subroleRTSC, genSyncChanPrefix + self.messageType.name.firstToUpper());
+	if(not syncXChannel.oclIsUndefined()) then{ -- channel exists, message is either propagated or treated
+		currentTrans.synchronization := new Synchronization(syncXChannel, SynchronizationKind::SEND, null);
+	} endif;
+	subroleRTSC.transitions += currentTrans;
+	
+}
+
+-- returns the reconfiguration rule that is associated to the msgType in the manager specification
+query Manager::getReconfigurationRuleAssociatedToMsgType(in msgType : MessageType) : ReconfigurationRule {
+	return self.specificationEntries -> any(messageType.name = msgType.name).reconfigurationRule;
 }
 
 -- priority used for the transition Idle -> Request in the executor region template

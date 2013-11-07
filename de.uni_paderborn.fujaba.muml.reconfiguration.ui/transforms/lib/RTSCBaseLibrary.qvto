@@ -165,6 +165,10 @@ query RealtimeStatechart::getStateByName(in theName : String) : State{
 	return (self.states -> any(name = theName));
 }
 
+-- returns the clock with the given name that is contained in the realtime statechart
+query RealtimeStatechart::getClockByName(in theName : String) : Clock{
+	return (self.availableClocks -> any(name = theName));
+}
 -- returns the embedded statechart with the specified name. Assumes that the RTSC follows the
 -- standard MUML RTSC structure having one initial state containing all embedded statecharts.
 query RealtimeStatechart::getEmbeddedRTSCByName(in theName : String) : RealtimeStatechart{
