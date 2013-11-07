@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -247,7 +248,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__ANNOTATION = ComponentPackage.DISCRETE_PORT__ANNOTATION;
+	int RECONFIGURATION_PORT__ANNOTATION = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -256,7 +257,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__EXTENSION = ComponentPackage.DISCRETE_PORT__EXTENSION;
+	int RECONFIGURATION_PORT__EXTENSION = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -265,7 +266,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__COMMENT = ComponentPackage.DISCRETE_PORT__COMMENT;
+	int RECONFIGURATION_PORT__COMMENT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' reference list.
@@ -274,43 +275,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__CONNECTORS = ComponentPackage.DISCRETE_PORT__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__CONSTRAINT = ComponentPackage.DISCRETE_PORT__CONSTRAINT;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__NAME = ComponentPackage.DISCRETE_PORT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__COMPONENT = ComponentPackage.DISCRETE_PORT__COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__PORT_CONNECTORS = ComponentPackage.DISCRETE_PORT__PORT_CONNECTORS;
+	int RECONFIGURATION_PORT__CONNECTORS = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' reference.
@@ -319,7 +284,25 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__BEHAVIOR = ComponentPackage.DISCRETE_PORT__BEHAVIOR;
+	int RECONFIGURATION_PORT__BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__CONSTRAINT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT__NAME = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -328,7 +311,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES = ComponentPackage.DISCRETE_PORT__SENDER_MESSAGE_TYPES;
+	int RECONFIGURATION_PORT__SENDER_MESSAGE_TYPES = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -337,7 +320,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES = ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_TYPES;
+	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_TYPES = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES;
 
 	/**
 	 * The feature id for the '<em><b>Adaptation Behavior</b></em>' reference.
@@ -346,7 +329,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR = ComponentPackage.DISCRETE_PORT__ADAPTATION_BEHAVIOR;
+	int RECONFIGURATION_PORT__ADAPTATION_BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ADAPTATION_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Role And Adaptation Behavior</b></em>' reference.
@@ -355,7 +338,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = ComponentPackage.DISCRETE_PORT__ROLE_AND_ADAPTATION_BEHAVIOR;
+	int RECONFIGURATION_PORT__ROLE_AND_ADAPTATION_BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__ROLE_AND_ADAPTATION_BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -364,7 +347,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__CARDINALITY = ComponentPackage.DISCRETE_PORT__CARDINALITY;
+	int RECONFIGURATION_PORT__CARDINALITY = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Buffer</b></em>' containment reference list.
@@ -373,7 +356,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER = ComponentPackage.DISCRETE_PORT__RECEIVER_MESSAGE_BUFFER;
+	int RECONFIGURATION_PORT__RECEIVER_MESSAGE_BUFFER = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER;
 
 	/**
 	 * The feature id for the '<em><b>Multi</b></em>' attribute.
@@ -382,61 +365,25 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__MULTI = ComponentPackage.DISCRETE_PORT__MULTI;
+	int RECONFIGURATION_PORT__MULTI = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI;
 
 	/**
-	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__REFINED_ROLE = ComponentPackage.DISCRETE_PORT__REFINED_ROLE;
+	int RECONFIGURATION_PORT__COMPONENT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT__IS_DISCRETE_IN_PORT = ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__IS_DISCRETE_OUT_PORT = ComponentPackage.DISCRETE_PORT__IS_DISCRETE_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT = ComponentPackage.DISCRETE_PORT__IS_DISCRETE_IN_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__MULTI_PORT = ComponentPackage.DISCRETE_PORT__MULTI_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_PORT__COORDINATION_PROTOCOL = ComponentPackage.DISCRETE_PORT__COORDINATION_PROTOCOL;
+	int RECONFIGURATION_PORT__PORT_CONNECTORS = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -445,7 +392,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_PORT_FEATURE_COUNT = ComponentPackage.DISCRETE_PORT_FEATURE_COUNT + 0;
+	int RECONFIGURATION_PORT_FEATURE_COUNT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ControllerImpl <em>Controller</em>}' class.
@@ -999,6 +946,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__CONNECTORS = RECONFIGURATION_PORT__CONNECTORS;
 
 	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_MESSAGE_PORT__BEHAVIOR = RECONFIGURATION_PORT__BEHAVIOR;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1015,33 +971,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_MESSAGE_PORT__NAME = RECONFIGURATION_PORT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__COMPONENT = RECONFIGURATION_PORT__COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__PORT_CONNECTORS = RECONFIGURATION_PORT__PORT_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__BEHAVIOR = RECONFIGURATION_PORT__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -1107,58 +1036,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_MESSAGE_PORT__MULTI = RECONFIGURATION_PORT__MULTI;
 
 	/**
-	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__REFINED_ROLE = RECONFIGURATION_PORT__REFINED_ROLE;
+	int RECONFIGURATION_MESSAGE_PORT__COMPONENT = RECONFIGURATION_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_MESSAGE_PORT__IS_DISCRETE_IN_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__IS_DISCRETE_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__MULTI_PORT = RECONFIGURATION_PORT__MULTI_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_MESSAGE_PORT__COORDINATION_PROTOCOL = RECONFIGURATION_PORT__COORDINATION_PROTOCOL;
+	int RECONFIGURATION_MESSAGE_PORT__PORT_CONNECTORS = RECONFIGURATION_PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Interface Entries</b></em>' containment reference list.
@@ -1225,6 +1118,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__CONNECTORS = RECONFIGURATION_PORT__CONNECTORS;
 
 	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT__BEHAVIOR = RECONFIGURATION_PORT__BEHAVIOR;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1241,33 +1143,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_EXECUTION_PORT__NAME = RECONFIGURATION_PORT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__COMPONENT = RECONFIGURATION_PORT__COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS = RECONFIGURATION_PORT__PORT_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__BEHAVIOR = RECONFIGURATION_PORT__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -1333,58 +1208,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT__MULTI = RECONFIGURATION_PORT__MULTI;
 
 	/**
-	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__REFINED_ROLE = RECONFIGURATION_PORT__REFINED_ROLE;
+	int RECONFIGURATION_EXECUTION_PORT__COMPONENT = RECONFIGURATION_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__MULTI_PORT = RECONFIGURATION_PORT__MULTI_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RECONFIGURATION_EXECUTION_PORT__COORDINATION_PROTOCOL = RECONFIGURATION_PORT__COORDINATION_PROTOCOL;
+	int RECONFIGURATION_EXECUTION_PORT__PORT_CONNECTORS = RECONFIGURATION_PORT__PORT_CONNECTORS;
 
 	/**
 	 * The feature id for the '<em><b>Interface Entries</b></em>' containment reference list.
@@ -2069,6 +1908,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__CONNECTORS = RECONFIGURATION_PORT__CONNECTORS;
 
 	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__BEHAVIOR = RECONFIGURATION_PORT__BEHAVIOR;
+
+	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2085,33 +1933,6 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__NAME = RECONFIGURATION_PORT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Component</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__COMPONENT = RECONFIGURATION_PORT__COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__PORT_CONNECTORS = RECONFIGURATION_PORT__PORT_CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__BEHAVIOR = RECONFIGURATION_PORT__BEHAVIOR;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -2177,58 +1998,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__MULTI = RECONFIGURATION_PORT__MULTI;
 
 	/**
-	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__REFINED_ROLE = RECONFIGURATION_PORT__REFINED_ROLE;
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__COMPONENT = RECONFIGURATION_PORT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Is Discrete In Port</b></em>' attribute.
+	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__IS_DISCRETE_IN_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__IS_DISCRETE_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Is Discrete In Out Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__IS_DISCRETE_IN_OUT_PORT = RECONFIGURATION_PORT__IS_DISCRETE_IN_OUT_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Multi Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__MULTI_PORT = RECONFIGURATION_PORT__MULTI_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__COORDINATION_PROTOCOL = RECONFIGURATION_PORT__COORDINATION_PROTOCOL;
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT__PORT_CONNECTORS = RECONFIGURATION_PORT__PORT_CONNECTORS;
 
 	/**
 	 * The number of structural features of the '<em>Internal Reconfiguration Communication Port</em>' class.

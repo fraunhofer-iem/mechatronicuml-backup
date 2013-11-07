@@ -1038,6 +1038,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		StructdatatypePackage theStructdatatypePackage = (StructdatatypePackage)EPackage.Registry.INSTANCE.getEPackage(StructdatatypePackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
+		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
@@ -1055,7 +1056,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		// Add supertypes to classes
 		reconfigurableStructuredComponentEClass.getESuperTypes().add(theComponentPackage.getStructuredComponent());
 		reconfigurableStructuredComponentEClass.getESuperTypes().add(this.getReconfigurableComponent());
-		reconfigurationPortEClass.getESuperTypes().add(theComponentPackage.getDiscretePort());
+		reconfigurationPortEClass.getESuperTypes().add(theConnectorPackage.getDiscreteInteractionEndpoint());
+		reconfigurationPortEClass.getESuperTypes().add(theComponentPackage.getPort());
 		controllerEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		controllerEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
 		controllerEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
@@ -1190,7 +1192,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -1198,7 +1200,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																												
+		   });
 	}
 
 	/**
@@ -1208,37 +1210,37 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (getReconfigurableStructuredComponent_Manager(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).manager else null endif"
-		   });		
+		   });	
 		addAnnotation
 		  (getReconfigurableStructuredComponent_Executor(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).executor else null endif"
-		   });					
+		   });	
 		addAnnotation
 		  (getManager_ReconfigurationMessagePorts(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.ports -> select(p | p.oclIsTypeOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort)"
-		   });			
+		   });	
 		addAnnotation
 		  (getExecutor_ReconfigurationExecutionPorts(), 
 		   source, 
 		   new String[] {
 			 "derivation", "(self.ports -> select(p | p.oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort)"
-		   });			
+		   });	
 		addAnnotation
 		  (getReconfigurationRule_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.signature.oclIsUndefined() then null else self.signature.name endif"
-		   });																
+		   });
 	}
 
 } //ReconfigurationPackageImpl

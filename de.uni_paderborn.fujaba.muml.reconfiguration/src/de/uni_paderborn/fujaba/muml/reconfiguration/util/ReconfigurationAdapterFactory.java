@@ -16,7 +16,6 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.component.Component;
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
@@ -206,6 +205,10 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createConstrainableElementAdapter();
 			}
 			@Override
+			public Adapter caseDataType(DataType object) {
+				return createDataTypeAdapter();
+			}
+			@Override
 			public Adapter caseComponent(Component object) {
 				return createComponentAdapter();
 			}
@@ -218,14 +221,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createConnectorEndpointAdapter();
 			}
 			@Override
-			public Adapter caseDataType(DataType object) {
-				return createDataTypeAdapter();
-			}
-			@Override
-			public Adapter casePort(Port object) {
-				return createPortAdapter();
-			}
-			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
 				return createBehavioralElementAdapter();
 			}
@@ -234,8 +229,8 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createDiscreteInteractionEndpointAdapter();
 			}
 			@Override
-			public Adapter caseDiscretePort(DiscretePort object) {
-				return createDiscretePortAdapter();
+			public Adapter casePort(Port object) {
+				return createPortAdapter();
 			}
 			@Override
 			public Adapter caseConnector(Connector object) {
@@ -710,20 +705,6 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscreteInteractionEndpointAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.DiscretePort <em>Discrete Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.component.DiscretePort
-	 * @generated
-	 */
-	public Adapter createDiscretePortAdapter() {
 		return null;
 	}
 

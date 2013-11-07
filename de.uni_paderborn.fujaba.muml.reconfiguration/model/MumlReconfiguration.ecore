@@ -31,7 +31,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialConfiguration" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationPort" abstract="true"
-      eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/DiscretePort">
+      eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reconfiguration port defines the external interface for accessing the reconfiguration capabilities of a reconfigurable structured component. In case of a reconfigurable structured component, they are delegated to one of the controllers of the component. In case of a reconfigurable atomic component, the reconfiguration port is directly implemented."/>
     </eAnnotations>

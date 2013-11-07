@@ -6,7 +6,8 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration;
 
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,5 +23,5 @@ import de.uni_paderborn.fujaba.muml.component.DiscretePort;
  * @model abstract="true"
  * @generated
  */
-public interface ReconfigurationPort extends DiscretePort {
+public interface ReconfigurationPort extends DiscreteInteractionEndpoint, Port {
 } // ReconfigurationPort

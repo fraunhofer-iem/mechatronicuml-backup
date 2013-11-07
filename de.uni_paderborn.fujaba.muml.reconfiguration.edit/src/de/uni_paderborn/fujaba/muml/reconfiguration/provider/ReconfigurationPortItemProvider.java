@@ -7,23 +7,28 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
 
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
 import de.uni_paderborn.fujaba.muml.component.provider.DiscretePortItemProvider;
+import de.uni_paderborn.fujaba.muml.connector.provider.DiscreteInteractionEndpointItemProvider;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
 
 /**
@@ -33,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
  * @generated
  */
 public class ReconfigurationPortItemProvider
-	extends DiscretePortItemProvider
+	extends DiscreteInteractionEndpointItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -61,8 +66,54 @@ public class ReconfigurationPortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addComponentPropertyDescriptor(object);
+			addPortConnectorsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Component feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_component_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_component_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__COMPONENT,
+				 false,
+				 false,
+				 false,
+				 null,
+				 getString("_UI_GeneralPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Port Connectors feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortConnectorsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_portConnectors_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_portConnectors_feature", "_UI_Port_type"),
+				 ComponentPackage.Literals.PORT__PORT_CONNECTORS,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -100,6 +151,12 @@ public class ReconfigurationPortItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ReconfigurationPort.class)) {
+			case ReconfigurationPackage.RECONFIGURATION_PORT__PORT_CONNECTORS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
