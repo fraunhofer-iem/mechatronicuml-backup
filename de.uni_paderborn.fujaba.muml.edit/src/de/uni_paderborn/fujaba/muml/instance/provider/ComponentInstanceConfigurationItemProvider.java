@@ -69,6 +69,7 @@ public class ComponentInstanceConfigurationItemProvider
 			addCommentPropertyDescriptor(object);
 			addComponentInstancesPropertyDescriptor(object);
 			addPortConnectorInstancesPropertyDescriptor(object);
+			addParentStructuredComponentInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -132,6 +133,28 @@ public class ComponentInstanceConfigurationItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstanceConfiguration_portConnectorInstances_feature", "_UI_ComponentInstanceConfiguration_type"),
 				 InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PORT_CONNECTOR_INSTANCES,
 				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parent Structured Component Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParentStructuredComponentInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentInstanceConfiguration_parentStructuredComponentInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstanceConfiguration_parentStructuredComponentInstance_feature", "_UI_ComponentInstanceConfiguration_type"),
+				 InstancePackage.Literals.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE,
+				 true,
 				 false,
 				 false,
 				 null,
