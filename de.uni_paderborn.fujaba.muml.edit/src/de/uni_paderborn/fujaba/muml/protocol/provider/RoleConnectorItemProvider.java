@@ -135,7 +135,7 @@ public class RoleConnectorItemProvider
 			 rootDescriptor));
 		
 		itemPropertyDescriptors.add
-			(new NaturalNumberPropertyDescriptor
+			(new DefaultChainedPropertyDescriptor
 			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			 getResourceLocator(),
 			 getString("_UI_TimeValue_value_feature"),
@@ -181,7 +181,7 @@ public class RoleConnectorItemProvider
 			 rootDescriptor);
 		
 		itemPropertyDescriptors.add
-		(new NaturalNumberPropertyDescriptor
+		(new DefaultChainedPropertyDescriptor
 		(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 		 getResourceLocator(),
 		 getString("_UI_TimeValue_value_feature"),

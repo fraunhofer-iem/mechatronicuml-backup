@@ -33,6 +33,7 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.Controller
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
@@ -110,13 +111,12 @@ public class ControllerExchangeNodeItemProvider
 				getString("_UI_RelativeDeadlinePropertyCategory"),
 				null, rootPropertyDescriptor);
 		
-		itemPropertyDescriptors.add
-			(new NaturalNumberPropertyDescriptor
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 ValuetypePackage.Literals.TIME_VALUE__VALUE,
 				 true,
 				 false,
 				 false,
@@ -153,13 +153,12 @@ public class ControllerExchangeNodeItemProvider
 						getString("_UI_RelativeDeadlinePropertyCategory"),
 						null, rootPropertyDescriptor);
 		
-		itemPropertyDescriptors.add
-			(new NaturalNumberPropertyDescriptor
+		itemPropertyDescriptors.add(new DefaultChainedPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_TimeValue_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_TimeValue_value_feature", "_UI_TimeValue_type"),
-				 de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 ValuetypePackage.Literals.TIME_VALUE__VALUE,
 				 true,
 				 false,
 				 false,

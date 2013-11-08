@@ -128,7 +128,7 @@ public class DoEventItemProvider
 				 null);
 
 		itemPropertyDescriptors.add
-		(new NaturalNumberPropertyDescriptor
+		(new DefaultChainedPropertyDescriptor
 			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 			 getResourceLocator(),
 			 getString("_UI_TimeValue_value_feature"),
