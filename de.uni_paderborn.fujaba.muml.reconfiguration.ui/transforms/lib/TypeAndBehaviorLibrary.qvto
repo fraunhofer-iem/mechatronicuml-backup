@@ -159,6 +159,11 @@ constructor TimeValue::TimeValue(in newValue : Integer, in timeUnit : TimeUnit){
 	unit := timeUnit;
 }
 
+constructor TimeValue::TimeValue(in newValue : Expression, in timeUnit : TimeUnit){
+	value := newValue;
+	unit := timeUnit;
+}
+
 -- create a cardinality object with the given bounds, an uBound of -1 encodes infinity
 constructor Cardinality::Cardinality(in lBound : Integer, in uBound : Integer){
 	lowerBound := new NaturalNumber(lBound, false);

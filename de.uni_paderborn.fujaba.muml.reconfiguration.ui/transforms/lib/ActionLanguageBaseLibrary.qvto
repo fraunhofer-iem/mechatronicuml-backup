@@ -24,7 +24,7 @@ library ActionLanguageBaseLibrary;
 query Expression::parseInteger() : Integer{
 	
 	if(self.oclIsTypeOf(LiteralExpression)) then{
-		self.oclAsType(LiteralExpression).value.toInteger();
+		return self.oclAsType(LiteralExpression).value.toInteger();
 	} endif;
 	
 	return null;

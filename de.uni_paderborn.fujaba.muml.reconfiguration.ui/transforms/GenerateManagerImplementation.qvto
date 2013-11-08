@@ -653,7 +653,7 @@ mapping ManagerSpecificationEntry::generateManagerSpecificationEntry(inout rootN
 		currentTrans.guard := createSimpleCompareGuardExpression(resultVar, 'true');
 		if(self.invokePlanner) then{
 			currentTrans.action := new Action('Call Planner', createAssignmentExpressioninBlock(resultVar, new OperationCall(internalRTSC.getOperationByName(genOpManager_Internal_invokePlanner))));
-			currentTrans.relativeDeadline := new RelativeDeadline(self.timeForPlanning.value.parseInteger(), self.timeForPlanning.value.parseInteger(), self.timeForPlanning.unit);
+			currentTrans.relativeDeadline := new RelativeDeadline(self.timeForPlanning.value.oclAsType(LiteralExpression).value, self.timeForPlanning.value.oclAsType(LiteralExpression).value, self.timeForPlanning.unit);
 		} endif;
 		internalRTSC.transitions += currentTrans;
 		

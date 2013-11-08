@@ -254,9 +254,9 @@ constructor ExitPoint::ExitPoint(in newName : String){
 	name := newName;
 }
 
-constructor RelativeDeadline::RelativeDeadline(in lBound : Integer, in uBound : Integer, in unit : TimeUnit){
-	lowerBound := new TimeValue(lBound, unit);
-	upperBound := new TimeValue(uBound, unit);
+constructor RelativeDeadline::RelativeDeadline(in lBound : String, in uBound : String, in unit : TimeUnit){
+	lowerBound := new TimeValue(new LiteralExpression(lBound), unit);
+	upperBound := new TimeValue(new LiteralExpression(uBound), unit);
 }
 
 constructor ClockConstraint::ClockConstraint(in newClock : Clock, in op : ComparingOperator, in newValue : Integer, in newUnit : TimeUnit){
