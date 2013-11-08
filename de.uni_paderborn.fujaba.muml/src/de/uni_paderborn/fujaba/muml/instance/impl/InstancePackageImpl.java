@@ -817,7 +817,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (portInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "PortInstanceMustReferencePortType PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceMustDelegateToEmbeddedCIC PortInstanceNeedsDelegationToParentOrAssembly"
+			 "constraints", "PortInstanceMustReferencePortType PortInstanceMustDelegateToEmbeddedCIC"
 		   });	
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
@@ -830,6 +830,12 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueComponentInstanceNames"
+		   });	
+		addAnnotation
+		  (discreteSinglePortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "PortInstanceNotMultipleAssemblyConnectorInstances PortInstanceNotMultipleDelegationConnectorInstances PortInstanceNeedsDelegationToParentOrAssembly"
 		   });
 	}
 
@@ -858,10 +864,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "PortInstanceMustReferencePortType", "-- The type of a port instance must be a port type\r\nif (not self.type->oclIsUndefined()) then\r\nself.type.oclIsKindOf(component::Port)\r\nelse\r\nfalse\r\nendif",
-			 "PortInstanceNotMultipleAssemblyConnectorInstances", "-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.\nportConnectorInstances->select(\n\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n)->size() <= 1",
-			 "PortInstanceNotMultipleDelegationConnectorInstances", "-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.\r\nportConnectorInstances->select(\r\n\tci | ci.oclIsKindOf(DelegationConnectorInstance)) -> size() <= 1",
-			 "PortInstanceMustDelegateToEmbeddedCIC", "-- PortInstance at Structured Component must delegate to embedded CIC\ncomponentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance))->isEmpty()",
-			 "PortInstanceNeedsDelegationToParentOrAssembly", "-- PortInstance needs a Delegation Connector Instance to the parent component\'s port or an Assembly Connector Instance to a port within this CIC.\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(DelegationConnectorInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)\n)->isEmpty() or\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n)->isEmpty()"
+			 "PortInstanceMustDelegateToEmbeddedCIC", "-- PortInstance at Structured Component must delegate to embedded CIC\ncomponentInstance.oclIsKindOf(StructuredComponentInstance) implies not portConnectorInstances->select(ci | ci.oclIsKindOf(DelegationConnectorInstance) and componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance))->isEmpty()"
 		   });	
 		addAnnotation
 		  (getPortInstance_PortType(), 
@@ -934,6 +937,14 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "if not self.portType.oclIsUndefined() and self.portType.oclIsKindOf(component::DiscretePort) then\r\n\tself.portType.oclAsType(component::DiscretePort).refinedRole\r\nelse\r\n\tnull\r\nendif"
+		   });	
+		addAnnotation
+		  (discreteSinglePortInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "PortInstanceNotMultipleAssemblyConnectorInstances", "-- PortInstance must have not have mulltiple Assembly Connector Instances assigned.\nportConnectorInstances->select(\n\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n)->size() <= 1",
+			 "PortInstanceNotMultipleDelegationConnectorInstances", "-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.\r\nportConnectorInstances->select(\r\n\tci | ci.oclIsKindOf(DelegationConnectorInstance)) -> size() <= 1",
+			 "PortInstanceNeedsDelegationToParentOrAssembly", "-- PortInstance needs a Delegation Connector Instance to the parent component\'s port or an Assembly Connector Instance to a port within this CIC.\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(DelegationConnectorInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclIsKindOf(StructuredComponentInstance)\n\tand ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(componentInstance)\n)->isEmpty() or\nnot portConnectorInstances->select(\n\tci | ci.oclIsKindOf(AssemblyConnectorInstance)\n)->isEmpty()"
 		   });	
 		addAnnotation
 		  (getDiscreteMultiPortInstance_GmfSubPortInstances(), 
