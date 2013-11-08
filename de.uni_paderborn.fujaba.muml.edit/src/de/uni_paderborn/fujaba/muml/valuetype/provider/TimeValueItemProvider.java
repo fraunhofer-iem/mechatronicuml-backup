@@ -23,12 +23,13 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.expressions.ExpressionsFactory;
+import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
-import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
@@ -205,7 +206,32 @@ public class TimeValueItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ValuetypePackage.Literals.TIME_VALUE__VALUE,
-				 ValuetypeFactory.eINSTANCE.createNaturalNumber()));
+				 ExpressionsFactory.eINSTANCE.createTextualExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 CommonExpressionsFactory.eINSTANCE.createUnaryExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 CommonExpressionsFactory.eINSTANCE.createComparisonExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 CommonExpressionsFactory.eINSTANCE.createArithmeticExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 CommonExpressionsFactory.eINSTANCE.createLogicalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ValuetypePackage.Literals.TIME_VALUE__VALUE,
+				 CommonExpressionsFactory.eINSTANCE.createLiteralExpression()));
 	}
 
 	/**

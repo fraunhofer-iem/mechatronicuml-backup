@@ -1992,7 +1992,8 @@
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
-          eType="#//valuetype/NaturalNumber" containment="true"/>
+          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//valuetype/TimeUnit"
           unsettable="true"/>
     </eClassifiers>

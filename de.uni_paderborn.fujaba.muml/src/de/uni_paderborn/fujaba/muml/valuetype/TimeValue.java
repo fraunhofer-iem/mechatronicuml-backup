@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.valuetype;
 import java.util.concurrent.TimeUnit;
 
 import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.expressions.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,12 +38,12 @@ public interface TimeValue extends ExtendableElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference.
-	 * @see #setValue(NaturalNumber)
+	 * @see #setValue(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage#getTimeValue_Value()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	NaturalNumber getValue();
+	Expression getValue();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.valuetype.TimeValue#getValue <em>Value</em>}' containment reference.
@@ -52,7 +53,7 @@ public interface TimeValue extends ExtendableElement {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(NaturalNumber value);
+	void setValue(Expression value);
 
 	/**
 	 * Returns the value of the '<em><b>Unit</b></em>' attribute.

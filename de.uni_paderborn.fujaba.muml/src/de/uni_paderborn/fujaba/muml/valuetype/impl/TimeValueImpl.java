@@ -15,9 +15,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
-import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -44,7 +44,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	 * @generated
 	 * @ordered
 	 */
-	protected NaturalNumber value;
+	protected Expression value;
 
 	/**
 	 * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
@@ -99,7 +99,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NaturalNumber getValue() {
+	public Expression getValue() {
 		return value;
 	}
 
@@ -108,8 +108,8 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetValue(NaturalNumber newValue, NotificationChain msgs) {
-		NaturalNumber oldValue = value;
+	public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs) {
+		Expression oldValue = value;
 		value = newValue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ValuetypePackage.TIME_VALUE__VALUE, oldValue, newValue);
@@ -123,7 +123,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setValue(NaturalNumber newValue) {
+	public void setValue(Expression newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;
 			if (value != null)
@@ -264,7 +264,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ValuetypePackage.TIME_VALUE__VALUE:
-				setValue((NaturalNumber)newValue);
+				setValue((Expression)newValue);
 				return;
 			case ValuetypePackage.TIME_VALUE__UNIT:
 				setUnit((TimeUnit)newValue);
@@ -282,7 +282,7 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ValuetypePackage.TIME_VALUE__VALUE:
-				setValue((NaturalNumber)null);
+				setValue((Expression)null);
 				return;
 			case ValuetypePackage.TIME_VALUE__UNIT:
 				unsetUnit();
