@@ -1150,7 +1150,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "DiscretePortAtStructuredComponentHasNoBehavior", "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n\timplies self.behavior.oclIsUndefined()",
 			 "DiscretePortRequiresRole", "self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()",
 			 "DiscretePortAndRoleSameMessageTypes", "not self.refinedRole.oclIsUndefined() implies\r\n\t(self.senderMessageTypes = self.refinedRole.senderMessageTypes\r\n\t and\r\n\t self.receiverMessageTypes = self.refinedRole.receiverMessageTypes\r\n\t)",
-			 "DiscretePortCardinalityMustComplyWithRefinedRoleCardinality", "((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) \r\nimplies \r\n(self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))",
+			 "DiscretePortCardinalityMustComplyWithRefinedRoleCardinality", "((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) \r\nimplies \r\n((not self.multi) or self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))",
 			 "MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior", "(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) \r\nimplies \r\n((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"
 		   });	
 		addAnnotation
