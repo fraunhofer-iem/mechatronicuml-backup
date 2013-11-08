@@ -348,6 +348,7 @@ helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc
 	rtsc.states += doAbortState;
 	
 	var checkState : State := new State(genStateExecutor_Events_Check);
+	checkState.invariants += new ClockConstraint(c1Clock, ComparingOperator::LESS_OR_EQUAL, new TypedNamedElementExpression(deadlineVar), null);
 	rtsc.states += checkState;
 	
 	var busyState : State := new State(genStateExecutor_Events_Busy);
@@ -379,6 +380,7 @@ helper generateStaticEventsStatechartFrame(inout rootNode : RootNode, inout rtsc
 	
 	-- Check -> TimeOut
 	currentTrans := new Transition(checkState, timeOutState, 1);
+	currentTrans.clockConstraints += new ClockConstraint(c1Clock, ComparingOperator::GREATER_OR_EQUAL, new TypedNamedElementExpression(deadlineVar), null);
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(rtsc, genSyncChanExecutorExecute), SynchronizationKind::SEND, 
 			new LiteralExpression('false'));
 	rtsc.transitions += currentTrans;
@@ -997,6 +999,7 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	rtsc.states += idleState;
 	
 	var waitForResponseState : State := new State(genStateExecutor_embeddedCI_Subrole_WaitForResponse);
+	waitForResponseState.invariants += new ClockConstraint(c2Clock, ComparingOperator::LESS_OR_EQUAL, new TypedNamedElementExpression(timeForDecVar), null);
 	rtsc.states += waitForResponseState;
 	
 	var votedCommitState : State := new State(genStateExecutor_embeddedCI_Subrole_VotedCommit);
@@ -1006,9 +1009,11 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	rtsc.states += votedAbortState;
 	
 	var replyReceivedState : State := new State(genStateExecutor_embeddedCI_Subrole_ReplyReceived);
+	replyReceivedState.invariants += new ClockConstraint(c2Clock, ComparingOperator::LESS_OR_EQUAL, new TypedNamedElementExpression(commitTimeVar), null);
 	rtsc.states += replyReceivedState;
 	
 	var executeState : State := new State(genStateExecutor_embeddedCI_Subrole_Execute);
+	executeState.invariants += new ClockConstraint(c2Clock, ComparingOperator::LESS_OR_EQUAL, new TypedNamedElementExpression(timeForExecVar), null);
 	rtsc.states += executeState;
 	
 	var awaitFinishState : State := new State(genStateExecutor_embeddedCI_Subrole_AwaitFinish);
@@ -1026,12 +1031,13 @@ helper generateStaticEmbeddedCISubroleStatechartFrame(inout rootNode : RootNode,
 	rtsc.transitions += currentTrans;
 	
 	-- WaitForResponse -> VotedAbort (abort)
-	currentTrans := new Transition(waitForResponseState, votedAbortState, 2);
+	currentTrans := new Transition(waitForResponseState, votedAbortState, 3);
 	currentTrans.events :=  new AsynchronousMessageEvent(rootNode.getGeneratedReconfigurationMessageType(genMsgTypeAbort), EventKind::TRIGGER);
 	rtsc.transitions += currentTrans;
 	
 	-- WaitForResponse -> VotedAbort (time out)
-	currentTrans := new Transition(waitForResponseState, votedAbortState, 3);
+	currentTrans := new Transition(waitForResponseState, votedAbortState, 2);
+	currentTrans.clockConstraints += new ClockConstraint(c2Clock, ComparingOperator::GREATER_OR_EQUAL, new TypedNamedElementExpression(timeForDecVar), null);
 	rtsc.transitions += currentTrans;
 	
 	-- VotedCommit -> ReplyReceived

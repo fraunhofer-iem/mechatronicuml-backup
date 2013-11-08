@@ -264,3 +264,9 @@ constructor ClockConstraint::ClockConstraint(in newClock : Clock, in op : Compar
 	operator := op;
 	bound := new TimeValue(newValue, newUnit);
 }
+
+constructor ClockConstraint::ClockConstraint(in newClock : Clock, in op : ComparingOperator, in newValue : Expression, in newUnit : TimeUnit){
+	clock := newClock;
+	operator := op;
+	bound := new TimeValue(newValue, newUnit);
+}
