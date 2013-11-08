@@ -248,15 +248,9 @@ public class InstanceValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_DELEGATION_CONNECTOR_INSTANCES__EEXPRESSION = "-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.\n" +
-		"portConnectorInstances->select(\n" +
-		"\tci | ci.oclIsKindOf(DelegationConnectorInstance) and\n" +
-		"\t(\n" +
-		"\t\t(self.oclIsKindOf(ContinuousPortInstance) or self.oclIsKindOf(HybridPortInstance))\n" +
-		"\t\timplies\n" +
-		"\t\tcomponentInstance.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(ci.oclAsType(DelegationConnectorInstance).portInstances->any(pi | pi <> self).componentInstance)\n" +
-		"\t)\n" +
-		")->size() <= 1";
+	protected static final String PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_DELEGATION_CONNECTOR_INSTANCES__EEXPRESSION = "-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.\r\n" +
+		"portConnectorInstances->select(\r\n" +
+		"\tci | ci.oclIsKindOf(DelegationConnectorInstance)) -> size() <= 1";
 
 	/**
 	 * Validates the PortInstanceNotMultipleDelegationConnectorInstances constraint of '<em>Port Instance</em>'.
