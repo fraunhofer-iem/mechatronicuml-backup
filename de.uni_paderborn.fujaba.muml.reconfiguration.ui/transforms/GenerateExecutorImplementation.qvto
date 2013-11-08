@@ -1240,7 +1240,7 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceE
 	if(not manager.oclIsUndefined()) then{
 		var entry : ManagerSpecificationEntry := manager.specificationEntries -> any(messageType.name = self.messageType.name);
 		if(not entry.oclIsUndefined() and entry.invokePlanner) then{
-			timeForPlanning := entry.timeForPlanning.value.value;
+			timeForPlanning := entry.timeForPlanning.value.parseInteger();
 		} endif;
 	} endif;
 	
@@ -1249,7 +1249,7 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceE
 	
 	var alpha : Integer := timeForPlanning + timeForGuardChecking + 2*internalMsgDelay + rtscExecutionTime;
 	
-	var gamma : Integer := self.timeForDecision.value.value - alpha;
+	var gamma : Integer := self.timeForDecision.value.parseInteger() - alpha;
 	
 	-- obtain parent and events statecharts
 	var parentRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_Parent);
@@ -1345,9 +1345,9 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateEmbeddedCIPortInterf
 	currentTrans.synchronization := new Synchronization(getSynchronizationChannel(subroleRTSC, genSyncChanExecutorEmbeddedCISendReq), SynchronizationKind::RECEIVE, 
 			new DiscreteInteractionEndpointReference(PositionSelectorKind::SELF, null));
 	var block : Block := createSimpleAssignmentExpressioninBlock(subroleRTSC.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForDec), 
-									self.timeForDecision.value.value.toString());
+									self.timeForDecision.value.oclAsType(LiteralExpression).value);
 	block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForExec), 
-									self.timeForExecution.value.value.toString());
+									self.timeForExecution.value.oclAsType(LiteralExpression).value);
 	currentTrans.events := new AsynchronousMessageEvent(self.messageType, EventKind::RAISE);
 	currentTrans.action := new Action('Assign Vars', block);
 	currentTrans.clockResets += subroleRTSC.clocks -> any(name = genClockExecutor_embeddedCI_c2);

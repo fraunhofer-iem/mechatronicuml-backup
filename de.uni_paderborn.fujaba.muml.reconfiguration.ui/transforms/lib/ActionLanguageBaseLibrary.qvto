@@ -18,7 +18,17 @@ modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba
 
 library ActionLanguageBaseLibrary;
 
+-- queries
 
+-- if the Expression is a literal expression containing an Integer, this query returns the value of the Integer
+query Expression::parseInteger() : Integer{
+	
+	if(self.oclIsTypeOf(LiteralExpression)) then{
+		self.oclAsType(LiteralExpression).value.toInteger();
+	} endif;
+	
+	return null;
+}
 
 -- constructors
 

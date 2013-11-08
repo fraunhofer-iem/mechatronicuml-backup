@@ -1,8 +1,10 @@
 import ProjectSpecificConstants;
+import ActionLanguageBaseLibrary;
 
 --core models
 modeltype core uses core('http://www.storydriven.org/core/0.3.1');
 modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
 modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
 
 -- muml models 
@@ -10,6 +12,7 @@ modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
 modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
 modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
 
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
 modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
 modeltype reconf_datatype uses reconfiguration::structdatatype("http://www.fujaba.de/muml/reconfiguration/0.3.18");
 
@@ -93,7 +96,7 @@ query Operation::getParameterByName(in theName : String) : Parameter{
 
 -- copy TimeValue
 mapping TimeValue::mapTimeValue() : TimeValue{
-	value := self.value.map mapNaturalNumber();
+	value := self.value.deepclone().oclAsType(Expression);
 	unit := self.unit;
 }
 
@@ -152,7 +155,7 @@ constructor NaturalNumber::NaturalNumber(in newValue : Integer, in inf : Boolean
 }
 
 constructor TimeValue::TimeValue(in newValue : Integer, in timeUnit : TimeUnit){
-	value := new NaturalNumber(newValue, false);
+	value := new LiteralExpression(newValue.toString());
 	unit := timeUnit;
 }
 

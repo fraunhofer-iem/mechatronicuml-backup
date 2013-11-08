@@ -653,7 +653,7 @@ mapping ManagerSpecificationEntry::generateManagerSpecificationEntry(inout rootN
 		currentTrans.guard := createSimpleCompareGuardExpression(resultVar, 'true');
 		if(self.invokePlanner) then{
 			currentTrans.action := new Action('Call Planner', createAssignmentExpressioninBlock(resultVar, new OperationCall(internalRTSC.getOperationByName(genOpManager_Internal_invokePlanner))));
-			currentTrans.relativeDeadline := new RelativeDeadline(self.timeForPlanning.value.value, self.timeForPlanning.value.value, self.timeForPlanning.unit);
+			currentTrans.relativeDeadline := new RelativeDeadline(self.timeForPlanning.value.parseInteger(), self.timeForPlanning.value.parseInteger(), self.timeForPlanning.unit);
 		} endif;
 		internalRTSC.transitions += currentTrans;
 		
@@ -707,10 +707,10 @@ mapping ReconfigurationMessagePortInterfaceEntry::generateChildMessage(inout roo
 	var executionTime : Integer := 0;
 	
 	if(not reconfRule.oclIsUndefined() and not reconfRule.wcet.oclIsUndefined()) then{
-		executionTime := reconfRule.wcet.value.value;
+		executionTime := reconfRule.wcet.value.parseInteger();
 	} endif;
 	
-	var beta : Integer := self.expectedResponseTime.value.value - executionTime;
+	var beta : Integer := self.expectedResponseTime.value.parseInteger() - executionTime;
 	
 	-- obtain idle state and clock
 	var idleState : State := subroleRTSC.getStateByName(genStateManager_EmbeddedCI_Idle);
