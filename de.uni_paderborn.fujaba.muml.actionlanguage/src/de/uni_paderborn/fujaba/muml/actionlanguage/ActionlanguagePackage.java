@@ -30,7 +30,6 @@ import org.storydriven.core.expressions.ExpressionsPackage;
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguageFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/edapt historyURI='../../de.uni_paderborn.fujaba.muml/model/muml.history'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
