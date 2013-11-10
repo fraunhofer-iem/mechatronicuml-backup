@@ -80,7 +80,7 @@ public class ExpressionLabelGMFMapTest {
 	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram","/model/platforminstance.gmfmap" });
 	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.component.diagram","/model/component.gmfmap" });
 	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram","/model/componentinstanceconfiguration.gmfmap" });
-	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram","/model/realtimestatechart.gmfmap" });
+		gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram","/model/realtimestatechart.gmfmap" });
 	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram","/model/ComponentStoryDiagram.gmfmap" });
 
 	}

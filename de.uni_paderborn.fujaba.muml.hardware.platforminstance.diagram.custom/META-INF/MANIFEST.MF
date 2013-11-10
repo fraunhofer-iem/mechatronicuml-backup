@@ -13,9 +13,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gmf,
  org.eclipse.gmf.runtime.diagram.core,
  org.eclipse.gmf.runtime.diagram.ui,
- org.eclipse.m2m.qvt.oml,
+ org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
  de.uni_paderborn.fujaba.muml.hardware,
- org.eclipse.m2m.qvt.oml.common,
  de.uni_paderborn.fujaba.muml.hardware.common,
  org.eclipse.gmf.runtime.diagram.ui.properties
 Bundle-ActivationPolicy: lazy

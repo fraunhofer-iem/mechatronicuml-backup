@@ -7,7 +7,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: de.uni_paderborn.fujaba.muml.hardware.common;bundle-version="1.0.0",
  de.uni_paderborn.fujaba.muml.hardware.platform.diagram,
  org.eclipse.gmf.runtime.diagram.ui.properties,
- org.eclipse.m2m.qvt.oml,
+ org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
  org.eclipse.emf.transaction
 Export-Package: de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.commands,
  de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.dialog,
