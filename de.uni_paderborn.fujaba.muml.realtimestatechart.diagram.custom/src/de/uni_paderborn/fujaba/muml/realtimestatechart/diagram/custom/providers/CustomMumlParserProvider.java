@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers
 
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
 
+import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.parsers.CustomClockConstraintLabelExpressionLabelParser5053;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.parsers.CustomRegionLabelExpressionLabelParser5063;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.parsers.CustomTransitionLabelExpressionLabelParser6005;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.parsers.CustomTransitionLabelExpressionLabelParser6006;
@@ -18,6 +19,10 @@ public class CustomMumlParserProvider extends MumlParserProvider {
 			return getTransitionLabel_6005Parser();
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:
 			return getTransitionLabel_6006Parser();
+			
+		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
+			return getClockConstraintLabel_5053Parser();
+			
 		}
 		return super.getParser(visualID);
 	}
@@ -34,6 +39,11 @@ public class CustomMumlParserProvider extends MumlParserProvider {
 	protected IParser getTransitionLabel_6006Parser() {
 		return new CustomTransitionLabelExpressionLabelParser6006();
 	}
+
+	protected IParser getClockConstraintLabel_5053Parser() {
+		return new CustomClockConstraintLabelExpressionLabelParser5053();
+	}
+
 	
 
 }

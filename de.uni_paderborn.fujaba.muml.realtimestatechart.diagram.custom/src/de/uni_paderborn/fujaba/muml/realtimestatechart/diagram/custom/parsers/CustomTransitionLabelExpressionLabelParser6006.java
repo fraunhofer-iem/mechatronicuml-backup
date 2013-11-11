@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.impl.TimeValueImpl;
 
 public class CustomTransitionLabelExpressionLabelParser6006 extends
 		TransitionLabelExpressionLabelParser6006 implements ISemanticParser {
+	
 	public String getPrintString(IAdaptable element, int flags) {
 		String printString = super.getPrintString(element, flags);
 		Transition transition = (Transition) element.getAdapter(EObject.class);
@@ -39,14 +40,14 @@ public class CustomTransitionLabelExpressionLabelParser6006 extends
 					&& lowerBound.getUnit() != null) {
 				printString = printString.replaceAll(
 						"\\{relativeLowerBoundExpression\\}",
-						serializeTimeValue(transition.getRelativeDeadline()
+						ParserUtilities.serializeTimeValue(transition.getRelativeDeadline()
 								.getLowerBound(), transition));
 			}
 			TimeValue upperBound = relativeDeadline.getUpperBound();
 			if (upperBound != null && upperBound.getValue() != null) {
 				printString = printString.replaceAll(
 						"\\{relativeUpperBoundExpression\\}",
-						serializeTimeValue(transition.getRelativeDeadline()
+						ParserUtilities.serializeTimeValue(transition.getRelativeDeadline()
 								.getUpperBound(), transition));
 			}
 		}
@@ -73,7 +74,7 @@ public class CustomTransitionLabelExpressionLabelParser6006 extends
 			TimeValue lowerBound = absoluteDeadline.getLowerBound();
 			if (lowerBound != null && lowerBound.getValue() != null
 					&& lowerBound.getUnit() != null) {
-				absoluteDeadlinesExpression.append(serializeTimeValue(
+				absoluteDeadlinesExpression.append(ParserUtilities.serializeTimeValue(
 						lowerBound, transition));
 			} else {
 				absoluteDeadlinesExpression.append("null");
@@ -84,7 +85,7 @@ public class CustomTransitionLabelExpressionLabelParser6006 extends
 			TimeValue upperBound = absoluteDeadline.getUpperBound();
 			if (upperBound != null && upperBound.getValue() != null
 					&& upperBound.getUnit() != null) {
-				absoluteDeadlinesExpression.append(serializeTimeValue(
+				absoluteDeadlinesExpression.append(ParserUtilities.serializeTimeValue(
 						upperBound, transition));
 			} else {
 				absoluteDeadlinesExpression.append("null");
@@ -97,27 +98,6 @@ public class CustomTransitionLabelExpressionLabelParser6006 extends
 				absoluteDeadlinesExpression.toString());
 
 		return printString;
-	}
-
-	private String serializeTimeValue(TimeValue timeValue, EObject container) {
-		return serializeExpression(timeValue.getValue(), container) + " "
-				+ TimeValueImpl.getUnitRepresentation(timeValue.getUnit());
-	}
-
-	private String serializeExpression(Expression expression, EObject container) {
-		String text = LanguageResource.serializeEObjectSafe(expression,
-				container);
-
-		if (text != null && text.length() > 0) {
-			// remove some from the beginning...
-			char c = text.charAt(0);
-			while (c == '{' || c == '\t' || c == ' ' || c == '\n') {
-				text = text.substring(1);
-				c = text.charAt(0);
-			}
-			return text;
-		}
-		return "";
 	}
 
 	// TODO: Replace this implementation by the OCL impact analyzer!
