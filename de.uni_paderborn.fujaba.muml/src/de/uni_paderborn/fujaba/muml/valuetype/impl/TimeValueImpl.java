@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.core.expressions.Expression;
+import org.storydriven.core.expressions.common.LiteralExpression;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
@@ -194,7 +195,11 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 		if (value == null) {
 			sb.append("null");
 		} else {
-			sb.append(value.toString());
+			if (value instanceof LiteralExpression) {
+				sb.append(((LiteralExpression) value).getValue());
+			} else {
+				sb.append(value.eClass().getName());
+			}
 		}
 		if (unit != null) {
 			sb.append(' ');
