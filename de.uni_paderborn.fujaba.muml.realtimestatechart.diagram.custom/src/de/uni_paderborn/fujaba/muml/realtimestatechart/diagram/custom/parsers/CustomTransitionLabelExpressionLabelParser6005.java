@@ -162,40 +162,7 @@ public class CustomTransitionLabelExpressionLabelParser6005 extends
 
 	@Override
 	public List<EObject> getSemanticElementsBeingParsed(EObject semanticElement) {
-		// deduce semantic elements
-		List<EObject> elements = new ArrayList<EObject>();
-		elements.add(semanticElement); // start with the parser element
-
-		// deduce other elements
-		List<EObject> foundElements;
-		List<EObject> lastElements = new ArrayList<EObject>(elements);
-		do {
-			foundElements = new ArrayList<EObject>();
-			for (EObject element : lastElements) {
-				for (EReference reference : REFERENCES) {
-					if (reference.getEContainingClass()
-							.equals(element.eClass())) {
-						Object value = element.eGet(reference);
-						if (value instanceof Collection) {
-							foundElements.addAll((Collection<EObject>) value);
-						} else if (value instanceof EObject) {
-							foundElements.add((EObject) value);
-						} else if (value != null) {
-							throw new UnsupportedOperationException(
-									"Invalid reference value");
-						}
-					}
-				}
-				// Watch complete expression hierarchy
-				if (element instanceof Expression) {
-					foundElements.addAll(element.eContents());
-				}
-			}
-			elements.addAll(foundElements);
-			lastElements = foundElements;
-		} while (!foundElements.isEmpty());
-
-		return elements;
+		return ParserUtilities.deduceAllElements(semanticElement, REFERENCES);
 	}
 
 	@Override

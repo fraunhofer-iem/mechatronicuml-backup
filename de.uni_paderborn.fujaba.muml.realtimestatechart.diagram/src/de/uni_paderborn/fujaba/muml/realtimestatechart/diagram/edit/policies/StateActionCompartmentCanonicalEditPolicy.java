@@ -108,8 +108,11 @@ public class StateActionCompartmentCanonicalEditPolicy extends
 								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryEventEditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.DoEventEditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitEventEditPart.VISUAL_ID });
-				if (childElement.eContainer() == containerView.getElement()
-						&& visualIDs.contains(visualID)) {
+
+				// Note: childElement can be null, for diagram annotations!
+				if (childElement == null
+						|| childElement.eContainer() == containerView
+								.getElement() && visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.part.MumlNodeDescriptor(
 							childElement, visualID));
 					continue;
@@ -176,7 +179,10 @@ public class StateActionCompartmentCanonicalEditPolicy extends
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
-				if (next.getModelElement().equals(semanticElement)) {
+
+				// Note: semanticElement can be null, for diagram annotations!
+				if (semanticElement != null
+						&& semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but
