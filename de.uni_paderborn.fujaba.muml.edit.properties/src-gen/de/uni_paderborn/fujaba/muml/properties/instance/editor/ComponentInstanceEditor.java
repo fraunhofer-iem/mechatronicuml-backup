@@ -39,6 +39,10 @@ public abstract class ComponentInstanceEditor
 			addComponentInstanceComponentPartEditor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addComponentInstanceParentCICEditor(null, true);
+		}
+
 	}
 
 	/**
@@ -106,6 +110,28 @@ public abstract class ComponentInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstance_ComponentPart());
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addComponentInstanceParentCICEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComponentInstanceParentCICEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceParentCICEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+						.getComponentInstance_ParentCIC());
 
 		return editor;
 

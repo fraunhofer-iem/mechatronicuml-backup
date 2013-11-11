@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public abstract class ComponentEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -32,11 +32,11 @@ public abstract class ComponentEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentComponentTypeEditor(null, true);
+			addComponentComponentKindEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementNameEditor(null, true);
+		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -71,16 +71,16 @@ public abstract class ComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentComponentTypeEditor(String category,
+	protected void addComponentComponentKindEditor(String category,
 			boolean front) {
-		addEditorToCategory(category, createComponentComponentTypeEditor(),
+		addEditorToCategory(category, createComponentComponentKindEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentTypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentKindEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -95,20 +95,22 @@ public abstract class ComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
+						.getCommentableElement_Comment(), true);
 
-		editor.setTooltipMessage("The name attribute of a meta-model element.");
+		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 		return editor;
 

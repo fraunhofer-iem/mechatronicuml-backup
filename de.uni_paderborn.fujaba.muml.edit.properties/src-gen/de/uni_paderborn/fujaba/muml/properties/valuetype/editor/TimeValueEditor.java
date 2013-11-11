@@ -44,10 +44,10 @@ public class TimeValueEditor
 	 * @generated
 	 */
 	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueValueEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
-						.getTimeValue_Value(), false);
+						.getTimeValue_Value());
 
 		return editor;
 

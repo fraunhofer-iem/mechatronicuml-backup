@@ -37,6 +37,11 @@ public class ComponentInstanceConfigurationEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addComponentInstanceConfigurationParentStructuredComponentInstanceEditor(
+					null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addNamedElementNameEditor(null, true);
 		}
 
@@ -96,6 +101,30 @@ public class ComponentInstanceConfigurationEditor
 	/**
 	 * @generated
 	 */
+	protected void addComponentInstanceConfigurationParentStructuredComponentInstanceEditor(
+			String category, boolean front) {
+		addEditorToCategory(
+				category,
+				createComponentInstanceConfigurationParentStructuredComponentInstanceEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceConfigurationParentStructuredComponentInstanceEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+						.getComponentInstanceConfiguration_ParentStructuredComponentInstance());
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void addNamedElementNameEditor(String category, boolean front) {
 		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
@@ -147,7 +176,7 @@ public class ComponentInstanceConfigurationEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general",
+							"property.tab.general", "property.tab.general",
 							"property.tab.documentation",
 							"property.tab.general"}).contains(tab);
 		}
