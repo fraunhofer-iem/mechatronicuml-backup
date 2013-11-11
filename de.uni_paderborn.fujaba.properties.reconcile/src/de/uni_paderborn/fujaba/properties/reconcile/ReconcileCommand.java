@@ -75,7 +75,7 @@ public class ReconcileCommand extends ChangeCommand {
 					&& transformation.isEnabled()
 					&& transformation.getUri() != null) {
 
-				URI uri = URI.createPlatformResourceURI(
+				URI uri = URI.createURI(
 						transformation.getUri(), true);
 				transform(PropertiesReconcilePlugin.getDefault()
 						.createTransformationExecutor(uri));
