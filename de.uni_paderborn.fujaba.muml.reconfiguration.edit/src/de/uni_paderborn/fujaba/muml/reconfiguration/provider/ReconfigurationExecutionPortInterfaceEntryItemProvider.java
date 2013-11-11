@@ -78,6 +78,7 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION);
 			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION);
+			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME);
 		}
 		return childrenFeatures;
 	}
@@ -134,6 +135,7 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 		switch (notification.getFeatureID(ReconfigurationExecutionPortInterfaceEntry.class)) {
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION:
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -160,6 +162,11 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 			(createChildParameter
 				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION,
 				 ValuetypeFactory.eINSTANCE.createTimeValue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
 	/**
@@ -175,7 +182,8 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 
 		boolean qualify =
 			childFeature == ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION ||
-			childFeature == ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION;
+			childFeature == ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION ||
+			childFeature == ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME;
 
 		if (qualify) {
 			return getString

@@ -24,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForDecision <em>Time For Decision</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecution <em>Time For Execution</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReconfigurationExecutionPort <em>Reconfiguration Execution Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumCommitTime <em>Minimum Commit Time</em>}</li>
  * </ul>
  * </p>
  *
@@ -111,5 +112,31 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 	 * @generated
 	 */
 	void setReconfigurationExecutionPort(ReconfigurationExecutionPort value);
+
+	/**
+	 * Returns the value of the '<em><b>Minimum Commit Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Minimum Commit Time</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Minimum Commit Time</em>' containment reference.
+	 * @see #setMinimumCommitTime(TimeValue)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	TimeValue getMinimumCommitTime();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumCommitTime <em>Minimum Commit Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Minimum Commit Time</em>' containment reference.
+	 * @see #getMinimumCommitTime()
+	 * @generated
+	 */
+	void setMinimumCommitTime(TimeValue value);
 
 } // ReconfigurationExecutionPortInterfaceEntry

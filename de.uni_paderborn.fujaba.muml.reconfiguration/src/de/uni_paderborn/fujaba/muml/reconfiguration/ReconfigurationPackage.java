@@ -1788,13 +1788,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Minimum Commit Time</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Execution Port Interface Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY_FEATURE_COUNT = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 3;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY_FEATURE_COUNT = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.SignatureImpl <em>Signature</em>}' class.
@@ -2414,6 +2423,17 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getReconfigurationExecutionPortInterfaceEntry_ReconfigurationExecutionPort();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumCommitTime <em>Minimum Commit Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Minimum Commit Time</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumCommitTime()
+	 * @see #getReconfigurationExecutionPortInterfaceEntry()
+	 * @generated
+	 */
+	EReference getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Signature <em>Signature</em>}'.
@@ -3106,6 +3126,14 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_ReconfigurationExecutionPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Minimum Commit Time</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.SignatureImpl <em>Signature</em>}' class.

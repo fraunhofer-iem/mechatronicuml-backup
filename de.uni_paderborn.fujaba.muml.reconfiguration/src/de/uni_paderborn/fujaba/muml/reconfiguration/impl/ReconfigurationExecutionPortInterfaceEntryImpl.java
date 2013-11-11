@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getTimeForDecision <em>Time For Decision</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getTimeForExecution <em>Time For Execution</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getReconfigurationExecutionPort <em>Reconfiguration Execution Port</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getMinimumCommitTime <em>Minimum Commit Time</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +54,16 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 	 * @ordered
 	 */
 	protected TimeValue timeForExecution;
+
+	/**
+	 * The cached value of the '{@link #getMinimumCommitTime() <em>Minimum Commit Time</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinimumCommitTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected TimeValue minimumCommitTime;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,6 +216,49 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TimeValue getMinimumCommitTime() {
+		return minimumCommitTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMinimumCommitTime(TimeValue newMinimumCommitTime, NotificationChain msgs) {
+		TimeValue oldMinimumCommitTime = minimumCommitTime;
+		minimumCommitTime = newMinimumCommitTime;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME, oldMinimumCommitTime, newMinimumCommitTime);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinimumCommitTime(TimeValue newMinimumCommitTime) {
+		if (newMinimumCommitTime != minimumCommitTime) {
+			NotificationChain msgs = null;
+			if (minimumCommitTime != null)
+				msgs = ((InternalEObject)minimumCommitTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME, null, msgs);
+			if (newMinimumCommitTime != null)
+				msgs = ((InternalEObject)newMinimumCommitTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME, null, msgs);
+			msgs = basicSetMinimumCommitTime(newMinimumCommitTime, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME, newMinimumCommitTime, newMinimumCommitTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -230,6 +284,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 				return basicSetTimeForExecution(null, msgs);
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
 				return basicSetReconfigurationExecutionPort(null, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:
+				return basicSetMinimumCommitTime(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -262,6 +318,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 				return getTimeForExecution();
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
 				return getReconfigurationExecutionPort();
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:
+				return getMinimumCommitTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -282,6 +340,9 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 				return;
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
 				setReconfigurationExecutionPort((ReconfigurationExecutionPort)newValue);
+				return;
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:
+				setMinimumCommitTime((TimeValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -304,6 +365,9 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
 				setReconfigurationExecutionPort((ReconfigurationExecutionPort)null);
 				return;
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:
+				setMinimumCommitTime((TimeValue)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -322,6 +386,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 				return timeForExecution != null;
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
 				return getReconfigurationExecutionPort() != null;
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:
+				return minimumCommitTime != null;
 		}
 		return super.eIsSet(featureID);
 	}
