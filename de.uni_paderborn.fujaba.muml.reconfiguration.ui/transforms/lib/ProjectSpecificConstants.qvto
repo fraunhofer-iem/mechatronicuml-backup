@@ -60,9 +60,11 @@ property genVarManager_EmbeddedCI_Propagate : String = 'propagate';
 
 -- names of manager internal operations
 property genOpManager_Internal_invokePlanner : String = 'invokePlanner';
+property genOpManager_Internal_isBlocked : String = 'isBlocked';
 property genOpManager_Internal_checkStructCond_Prefix : String = 'checkStructuralCondition';
 
 property genParamManager_Internal_invokePlanner_reconf : String = 'reconfiguration';
+property genParamManager_Internal_isBlocked_reconf : String = 'reconfiguration';
 
 -- names of manager internal clocks
 property genClockManager_embeddedCI_cReq : String = 'c_req';

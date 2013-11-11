@@ -18,6 +18,15 @@ modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba
 
 library ActionLanguageBaseLibrary;
 
+
+-- helpers
+
+--returns an expressions negating the input expression
+helper createNotExpression(in exp : Expression) : UnaryExpression{
+	return new UnaryExpression(exp, UnaryOperator::NOT);
+}
+
+
 -- queries
 
 -- if the Expression is a literal expression containing an Integer, this query returns the value of the Integer
@@ -51,6 +60,11 @@ constructor LogicalExpression::LogicalExpression(in leftExpr : Expression, in op
 constructor ArithmeticExpression::ArithmeticExpression(in leftExpr : Expression, in op : ArithmeticOperator, in rightExpr : Expression){
 	leftExpression := leftExpr;
 	rightExpression := rightExpr;
+	operator := op;
+}
+
+constructor UnaryExpression::UnaryExpression(in exp : Expression, in op : UnaryOperator){
+	enclosedExpression := exp;
 	operator := op;
 }
 

@@ -370,8 +370,12 @@ helper generateStaticInternalBehaviorStatechartFrame(inout rootNode : RootNode, 
 	rtsc.variables += resultVar;
 	
 	var invokePlannerOp : Operation := new Operation(genOpManager_Internal_invokePlanner, rootNode.getPrimitiveType(boolType));
-	invokePlannerOp.parameters += new Parameter(genParamManager_Internal_invokePlanner_reconf, rootNode.getPrimitiveType(boolType));
+	invokePlannerOp.parameters += new Parameter(genParamManager_Internal_invokePlanner_reconf, rootNode.getPrimitiveType(intType));
 	rtsc.operations += invokePlannerOp;
+	
+	var isBlockedOp : Operation := new Operation(genOpManager_Internal_isBlocked, rootNode.getPrimitiveType(boolType));
+	isBlockedOp.parameters += new Parameter(genParamManager_Internal_isBlocked_reconf, rootNode.getPrimitiveType(intType));
+	rtsc.operations += isBlockedOp;
 	
 	-- create states
 	var idleState : State := new State(genStateManager_Internal_Idle);
@@ -629,12 +633,20 @@ mapping ManagerSpecificationEntry::generateManagerSpecificationEntry(inout rootN
 		internalRTSC.states += checkXState;
 		
 		var resultVar : Variable := internalRTSC.getVariableByName(genVarManager_Internal_Result);
+		var reconfID : Integer := executor.getReconfigurationID(self.reconfigurationRule);
 		
 		-- Idle -> CheckX
 		currentTrans := new Transition(internalRTSC.getStateByName(genStateManager_Internal_Idle), checkXState, internalRTSCTransitionNumber);
 		currentTrans.synchronization := new Synchronization(syncXSyncChan, SynchronizationKind::RECEIVE, null);
-		var block : Block := createSimpleAssignmentExpressioninBlock(internalRTSC.getVariableByName(genVarManager_Reconfiguration), executor.getReconfigurationID(self.reconfigurationRule).toString());
-		block.expressions += createAssignmentExpression(resultVar, new OperationCall(checkStructCondOp));
+		var block : Block := createSimpleAssignmentExpressioninBlock(internalRTSC.getVariableByName(genVarManager_Reconfiguration), reconfID.toString());
+		var assignExpRHS : Expression :=  new OperationCall(checkStructCondOp); 
+		if(self.blockable) then{ 	-- generate AND expression for blockable reconfigurations
+			var isBlockedOp : Operation := internalRTSC.getOperationByName(genOpManager_Internal_isBlocked);
+			var opCall : OperationCall := new OperationCall(isBlockedOp);
+			opCall.parameterBinding += new ParameterBinding(isBlockedOp.getParameterByName(genParamManager_Internal_isBlocked_reconf), new LiteralExpression(reconfID.toString()));
+			assignExpRHS := createNotExpression(new LogicalExpression(opCall, LogicOperator::AND, assignExpRHS));
+		} endif;
+		block.expressions += createAssignmentExpression(resultVar, assignExpRHS);
 		if(isChildReq) then {
 			block.expressions += createSimpleAssignmentExpression(internalRTSC.getVariableByName(genVarManager_Internal_Request), 'true');
 		} endif;
@@ -652,7 +664,10 @@ mapping ManagerSpecificationEntry::generateManagerSpecificationEntry(inout rootN
 		currentTrans := new Transition(checkXState, internalRTSC.getStateByName(genStateManager_Internal_Plan), 1);
 		currentTrans.guard := createSimpleCompareGuardExpression(resultVar, 'true');
 		if(self.invokePlanner) then{
-			currentTrans.action := new Action('Call Planner', createAssignmentExpressioninBlock(resultVar, new OperationCall(internalRTSC.getOperationByName(genOpManager_Internal_invokePlanner))));
+			var invokeOp : Operation := internalRTSC.getOperationByName(genOpManager_Internal_invokePlanner);
+			var opCall : OperationCall := new OperationCall(invokeOp);
+			opCall.parameterBinding += new ParameterBinding(invokeOp.getParameterByName(genParamManager_Internal_invokePlanner_reconf), new LiteralExpression(reconfID.toString()));
+			currentTrans.action := new Action('Call Planner', createAssignmentExpressioninBlock(resultVar, opCall));
 			currentTrans.relativeDeadline := new RelativeDeadline(self.timeForPlanning.value.oclAsType(LiteralExpression).value, self.timeForPlanning.value.oclAsType(LiteralExpression).value, self.timeForPlanning.unit);
 		} endif;
 		internalRTSC.transitions += currentTrans;
