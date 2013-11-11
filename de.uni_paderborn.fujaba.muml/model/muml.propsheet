@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
   <reconciler>
-    <customTransformations uri="/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
-    <customTransformations uri="/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
   </reconciler>
   <genModel href="muml.genmodel#/"/>
   <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
@@ -65,10 +65,10 @@
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/valuetype/TimeValue"/>
-      <properties reconcile="false">
+      <properties tooltip="" reconcile="false">
         <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/value"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
       <properties>
         <genFeature href="muml.genmodel#//muml/valuetype/TimeValue/unit"/>
@@ -87,7 +87,7 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
-      <properties>
+      <properties tooltip="">
         <genFeature href="muml.genmodel#//muml/realtimestatechart/Deadline/lowerBound"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
@@ -473,6 +473,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstance/parentCIC"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.0/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
@@ -504,6 +509,11 @@
         <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/portConnectorInstances"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/instance/ComponentInstanceConfiguration/parentStructuredComponentInstance"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.2/@classes.5/@properties.0 //@packages.2/@classes.5/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
@@ -817,14 +827,15 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/Component/componentType"/>
+        <genFeature href="muml.genmodel#//muml/component/Component/componentKind"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.0/@properties.0"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="#//@packages.6/@classes.4"/>
+      <superClasses href="#//@packages.4/@classes.2"/>
     </classes>
     <classes superClasses="//@packages.6/@classes.4 //@packages.4/@classes.2 //@packages.9/@classes.0">
       <genClass href="muml.genmodel#//muml/component/Port"/>
@@ -1102,7 +1113,6 @@
       </properties>
       <propertyCategories title="Lists" open="true" properties="//@packages.9/@classes.8/@properties.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>
