@@ -63,6 +63,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ManagerSpecificationEntry/reconfigurationRule"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MumlReconfiguration.ecore#//ManagerSpecificationEntry/invokePlanner"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//ManagerSpecificationEntry/timeForPlanning"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MumlReconfiguration.ecore#//ManagerSpecificationEntry/blockable"/>
     </genClasses>
     <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//ReconfigurationController"/>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//RuleBasedReconfigurationController">

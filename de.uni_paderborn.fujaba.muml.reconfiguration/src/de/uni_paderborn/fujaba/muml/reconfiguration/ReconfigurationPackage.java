@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -1417,13 +1416,22 @@ public interface ReconfigurationPackage extends EPackage {
 	int MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Blockable</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANAGER_SPECIFICATION_ENTRY__BLOCKABLE = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Manager Specification Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MANAGER_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 8;
+	int MANAGER_SPECIFICATION_ENTRY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2867,6 +2875,17 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getManagerSpecificationEntry_TimeForPlanning();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isBlockable <em>Blockable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Blockable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isBlockable()
+	 * @see #getManagerSpecificationEntry()
+	 * @generated
+	 */
+	EAttribute getManagerSpecificationEntry_Blockable();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3459,6 +3478,14 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING = eINSTANCE.getManagerSpecificationEntry_TimeForPlanning();
+
+		/**
+		 * The meta object literal for the '<em><b>Blockable</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MANAGER_SPECIFICATION_ENTRY__BLOCKABLE = eINSTANCE.getManagerSpecificationEntry_Blockable();
 
 	}
 

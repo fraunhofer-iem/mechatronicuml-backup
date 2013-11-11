@@ -37,6 +37,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#isInvokePlanner <em>Invoke Planner</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#getTimeForPlanning <em>Time For Planning</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl#isBlockable <em>Blockable</em>}</li>
  * </ul>
  * </p>
  *
@@ -142,6 +143,26 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 * @ordered
 	 */
 	protected TimeValue timeForPlanning;
+
+	/**
+	 * The default value of the '{@link #isBlockable() <em>Blockable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isBlockable()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean BLOCKABLE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isBlockable() <em>Blockable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isBlockable()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean blockable = BLOCKABLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -428,6 +449,27 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isBlockable() {
+		return blockable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBlockable(boolean newBlockable) {
+		boolean oldBlockable = blockable;
+		blockable = newBlockable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__BLOCKABLE, oldBlockable, blockable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -496,6 +538,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 				return isInvokePlanner();
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING:
 				return getTimeForPlanning();
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__BLOCKABLE:
+				return isBlockable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -531,6 +575,9 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 				return;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING:
 				setTimeForPlanning((TimeValue)newValue);
+				return;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__BLOCKABLE:
+				setBlockable((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -568,6 +615,9 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING:
 				setTimeForPlanning((TimeValue)null);
 				return;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__BLOCKABLE:
+				setBlockable(BLOCKABLE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -596,6 +646,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 				return invokePlanner != INVOKE_PLANNER_EDEFAULT;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING:
 				return timeForPlanning != null;
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__BLOCKABLE:
+				return blockable != BLOCKABLE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -616,6 +668,8 @@ public class ManagerSpecificationEntryImpl extends CommentableElementImpl implem
 		result.append(propagate);
 		result.append(", invokePlanner: ");
 		result.append(invokePlanner);
+		result.append(", blockable: ");
+		result.append(blockable);
 		result.append(')');
 		return result.toString();
 	}

@@ -161,6 +161,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="invokePlanner" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timeForPlanning" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockable" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationController" abstract="true"
       eSuperTypes="#//Controller">

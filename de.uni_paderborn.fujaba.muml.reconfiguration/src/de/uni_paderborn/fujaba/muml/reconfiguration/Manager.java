@@ -10,7 +10,6 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 
 
 /**

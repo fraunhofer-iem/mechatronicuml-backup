@@ -2,21 +2,39 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.util;
 
-import de.uni_paderborn.fujaba.muml.component.util.ComponentValidator;
-
-import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
-
-import de.uni_paderborn.fujaba.muml.reconfiguration.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.component.util.ComponentValidator;
+import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationController;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPort;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortInterfaceEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
+import de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController;
+import de.uni_paderborn.fujaba.muml.reconfiguration.Signature;
+import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
 
 /**
  * <!-- begin-user-doc -->

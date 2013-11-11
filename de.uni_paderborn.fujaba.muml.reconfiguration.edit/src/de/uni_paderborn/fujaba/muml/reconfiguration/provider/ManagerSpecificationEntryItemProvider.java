@@ -73,6 +73,7 @@ public class ManagerSpecificationEntryItemProvider
 			addStructuralConditionPropertyDescriptor(object);
 			addReconfigurationRulePropertyDescriptor(object);
 			addInvokePlannerPropertyDescriptor(object);
+			addBlockablePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -210,6 +211,28 @@ public class ManagerSpecificationEntryItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Blockable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBlockablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ManagerSpecificationEntry_blockable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ManagerSpecificationEntry_blockable_feature", "_UI_ManagerSpecificationEntry_type"),
+				 ReconfigurationPackage.Literals.MANAGER_SPECIFICATION_ENTRY__BLOCKABLE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -279,6 +302,7 @@ public class ManagerSpecificationEntryItemProvider
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TREAT:
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__PROPAGATE:
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER:
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__BLOCKABLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING:

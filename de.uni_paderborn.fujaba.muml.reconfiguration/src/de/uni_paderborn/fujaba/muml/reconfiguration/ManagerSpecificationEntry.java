@@ -31,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getReconfigurationRule <em>Reconfiguration Rule</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isInvokePlanner <em>Invoke Planner</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#getTimeForPlanning <em>Time For Planning</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isBlockable <em>Blockable</em>}</li>
  * </ul>
  * </p>
  *
@@ -250,5 +251,32 @@ public interface ManagerSpecificationEntry extends CommentableElement {
 	 * @generated
 	 */
 	void setTimeForPlanning(TimeValue value);
+
+	/**
+	 * Returns the value of the '<em><b>Blockable</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Blockable</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Blockable</em>' attribute.
+	 * @see #setBlockable(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManagerSpecificationEntry_Blockable()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
+	boolean isBlockable();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry#isBlockable <em>Blockable</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Blockable</em>' attribute.
+	 * @see #isBlockable()
+	 * @generated
+	 */
+	void setBlockable(boolean value);
 
 } // ManagerSpecificationEntry
