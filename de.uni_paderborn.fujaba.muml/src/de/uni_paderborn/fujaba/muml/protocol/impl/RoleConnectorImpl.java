@@ -84,7 +84,7 @@ public class RoleConnectorImpl extends ConnectorImpl implements RoleConnector {
 	 */
 	public AbstractCoordinationSpecification getCoordinationProtocol() {
 		if (eContainerFeatureID() != ProtocolPackage.ROLE_CONNECTOR__COORDINATION_PROTOCOL) return null;
-		return (AbstractCoordinationSpecification)eInternalContainer();
+		return (AbstractCoordinationSpecification)eContainer();
 	}
 
 	/**

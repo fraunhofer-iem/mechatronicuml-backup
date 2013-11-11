@@ -203,31 +203,31 @@ public class TimeValueImpl extends ExtendableElementImpl implements TimeValue {
 		}
 		if (unit != null) {
 			sb.append(' ');
-			switch (unit) {
-			case DAYS:
-				sb.append('d');
-				break;
-			case HOURS:
-				sb.append('h');
-				break;
-			case MINUTES:
-				sb.append("min");
-				break;
-			case SECONDS:
-				sb.append('s');
-				break;
-			case MILLISECONDS:
-				sb.append("ms");
-				break;
-			case MICROSECONDS:
-				sb.append('\u03BC' + "s"); // \u03BC = ?
-				break;
-			case NANOSECONDS:
-				sb.append("ns");
-				break;
-			}
+			sb.append(TimeValueImpl.getUnitRepresentation(unit));
 		}
 		return sb.toString();
+	}
+
+	// This is externalized from toString() so that it can be used from other places
+	// (TimeUnit.toString() would be a better place for this, but TimeUnit cannot be changed, since it is not part of MUML).
+	public static String getUnitRepresentation(TimeUnit unit) {
+		switch (unit) {
+		case DAYS:
+			return "d";
+		case HOURS:
+			return "h";
+		case MINUTES:
+			return "min";
+		case SECONDS:
+			return "s";
+		case MILLISECONDS:
+			return "ms";
+		case MICROSECONDS:
+			return '\u03BC' + "s";
+		case NANOSECONDS:
+			return "ns";
+		}
+		return "";
 	}
 
 	/**

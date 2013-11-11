@@ -111,7 +111,7 @@ public interface TimeValue extends ExtendableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='// Return value concatenated with abbreviated unit.\r\nStringBuffer sb = new StringBuffer();\r\nif (value == null) {\r\n\tsb.append(\"null\");\r\n} else {\r\n\tsb.append(value.toString());\r\n}\r\nif (unit != null) {\r\n\tsb.append(\' \');\r\n\tswitch (unit) {\r\n\tcase DAYS:\r\n\t\tsb.append(\'d\');\r\n\t\tbreak;\r\n\tcase HOURS:\r\n\t\tsb.append(\'h\');\r\n\t\tbreak;\r\n\tcase MINUTES:\r\n\t\tsb.append(\"min\");\r\n\t\tbreak;\r\n\tcase SECONDS:\r\n\t\tsb.append(\'s\');\r\n\t\tbreak;\r\n\tcase MILLISECONDS:\r\n\t\tsb.append(\"ms\");\r\n\t\tbreak;\r\n\tcase MICROSECONDS:\r\n\t\tsb.append(\'\\u03BC\' + \"s\"); // \\u03BC = \u03bc\r\n\t\tbreak;\r\n\tcase NANOSECONDS:\r\n\t\tsb.append(\"ns\");\r\n\t\tbreak;\r\n\t}\r\n}\r\nreturn sb.toString();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='// Return value concatenated with abbreviated unit.\nStringBuffer sb = new StringBuffer();\nif (value == null) {\n\tsb.append(\"null\");\n} else {\n\tif (value instanceof LiteralExpression) {\n\t\tsb.append(((LiteralExpression) value).getValue());\n\t} else {\n\t\tsb.append(value.eClass().getName());\n\t}\n}\nif (unit != null) {\n\tsb.append(\' \');\n\tsb.append(TimeValueImpl.getUnitRepresentation(unit));\n}\nreturn sb.toString();'"
 	 * @generated
 	 */
 	String toString();

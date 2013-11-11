@@ -58,7 +58,7 @@ public abstract class PortConnectorImpl extends ConnectorImpl implements PortCon
 	 */
 	public StructuredComponent getParentComponent() {
 		if (eContainerFeatureID() != ComponentPackage.PORT_CONNECTOR__PARENT_COMPONENT) return null;
-		return (StructuredComponent)eInternalContainer();
+		return (StructuredComponent)eContainer();
 	}
 
 	/**
