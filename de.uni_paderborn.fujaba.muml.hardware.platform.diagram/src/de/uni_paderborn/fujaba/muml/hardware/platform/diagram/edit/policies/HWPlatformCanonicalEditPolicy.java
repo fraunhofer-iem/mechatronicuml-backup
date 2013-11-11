@@ -86,8 +86,11 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 						.getVisualID(childView);
 				List<Integer> visualIDs = Arrays
 						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPlatform2EditPart.VISUAL_ID });
-				if (childElement.eContainer() == containerView.getElement()
-						&& visualIDs.contains(visualID)) {
+
+				// Note: childElement can be null, for diagram annotations!
+				if (childElement == null
+						|| childElement.eContainer() == containerView
+								.getElement() && visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareNodeDescriptor(
 							childElement, visualID));
 					continue;
@@ -151,7 +154,10 @@ public class HWPlatformCanonicalEditPolicy extends CanonicalEditPolicy {
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
-				if (next.getModelElement().equals(semanticElement)) {
+
+				// Note: semanticElement can be null, for diagram annotations!
+				if (semanticElement != null
+						&& semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but

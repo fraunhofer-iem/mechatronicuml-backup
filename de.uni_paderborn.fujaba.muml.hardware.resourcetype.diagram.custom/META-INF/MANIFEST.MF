@@ -6,5 +6,4 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram,
  org.eclipse.gmf.runtime.diagram.ui.properties,
- de.uni_paderborn.fujaba.muml.hardware.common,
- de.uni_paderborn.fujaba.properties.runtime
+ de.uni_paderborn.fujaba.muml.hardware.common

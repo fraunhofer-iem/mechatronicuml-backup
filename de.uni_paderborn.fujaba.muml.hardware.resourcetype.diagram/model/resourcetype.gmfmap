@@ -104,7 +104,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="resourcetype.gmftool#//@palette/@tools.0/@tools.1"/>
+          href="resourcetype.gmftool#//@palette/@tools.1/@tools.0"/>
       <diagramNode
           href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#StructuredResource"/>
       <children
@@ -134,7 +134,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="resourcetype.gmftool#//@palette/@tools.0/@tools.2"/>
+              href="resourcetype.gmftool#//@palette/@tools.0/@tools.1"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPort"/>
         </ownedChild>
@@ -198,7 +198,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="resourcetype.gmftool#//@palette/@tools.1/@tools.1"/>
+              href="resourcetype.gmftool#//@palette/@tools.1/@tools.2"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
         </ownedChild>
@@ -278,7 +278,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="resourcetype.gmftool#//@palette/@tools.1/@tools.3"/>
+              href="resourcetype.gmftool#//@palette/@tools.1/@tools.4"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
         </ownedChild>
@@ -329,7 +329,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="resourcetype.gmftool#//@palette/@tools.1/@tools.2"/>
+              href="resourcetype.gmftool#//@palette/@tools.1/@tools.3"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
         </ownedChild>
@@ -393,7 +393,7 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="resourcetype.gmftool#//@palette/@tools.1/@tools.0"/>
+              href="resourcetype.gmftool#//@palette/@tools.1/@tools.1"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#Resource"/>
         </ownedChild>
@@ -408,7 +408,7 @@
   <links>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="resourcetype.gmftool#//@palette/@tools.1/@tools.4"/>
+        href="resourcetype.gmftool#//@palette/@tools.1/@tools.5"/>
     <diagramLink
         href="resourcetype.gmfgraph#ProcessorOwnedCache"/>
     <linkMetaFeature

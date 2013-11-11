@@ -66,7 +66,7 @@ public class HardwareOCLFactory {
 					"--\' : Processor\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'#Cores: \' + self. nbCores.toString()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--let arch: String = if self.architecture.oclIsUndefined() then \'null\' else self.architecture.toString() endif in\n--let fam: String =  if self.family.oclIsUndefined() then \'null\' else self.family endif in\n--\'Architecture: \' + arch + \' Family: \' + fam".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--let arch: String = if self.architecture.oclIsUndefined() then \'null\' else self.architecture.toString() endif in\n--let fam: String =  if self.family.oclIsUndefined() then \'null\' else self.family.toString() endif in\n--\'Architecture: \' + arch + \' Family: \' + fam".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'PLD\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' : PLD\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

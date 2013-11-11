@@ -22,18 +22,21 @@
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.storydriven.core"/>
-      <import plugin="de.uni_paderborn.fujaba.common" version="0.4.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.storydriven.core.edit"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
-      <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.core.expressions"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.ui.navigator.resources"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
+      <import plugin="org.eclipse.gmf.tooling.runtime"/>
+      <import plugin="org.eclipse.emf.ecore.editor"/>
+      <import plugin="org.eclipse.m2m.qvt.oml" version="3.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.ui.views"/>
-      <import plugin="org.eclipse.ui.navigator"/>
-      <import plugin="org.eclipse.ui.navigator.resources"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.gmf.runtime.emf.core"/>
@@ -44,27 +47,13 @@
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
-      <import plugin="org.eclipse.gmf.tooling.runtime"/>
       <import plugin="org.eclipse.draw2d"/>
       <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
-      <import plugin="de.uni_paderborn.fujaba.modelinstance.ui" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core" version="1.0.1" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core.edit" version="1.0.1" match="greaterOrEqual"/>
+      <import plugin="org.storydriven.core.edit.properties"/>
       <import plugin="org.eclipse.ocl.ecore"/>
       <import plugin="org.eclipse.emf.validation"/>
       <import plugin="org.eclipse.gef"/>
-      <import plugin="org.eclipse.emf.ecore.editor"/>
-      <import plugin="org.eclipse.m2m.qvt.oml" version="3.1.0" match="greaterOrEqual"/>
-      <import plugin="org.storydriven.core.edit.properties" version="0.4.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.transaction"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.actions"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.geoshapes"/>
-      <import plugin="org.eclipse.emf.common"/>
-      <import plugin="org.eclipse.gmf.runtime.notation"/>
       <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.gmf"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.core"/>
    </requires>
 
    <plugin

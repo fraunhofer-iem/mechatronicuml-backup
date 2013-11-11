@@ -98,8 +98,11 @@ public class ResourceTypeRepositoryCanonicalEditPolicy extends
 						.asList(new Integer[] {
 								de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.edit.parts.DeviceEditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.edit.parts.StructuredResourceEditPart.VISUAL_ID });
-				if (childElement.eContainer() == containerView.getElement()
-						&& visualIDs.contains(visualID)) {
+
+				// Note: childElement can be null, for diagram annotations!
+				if (childElement == null
+						|| childElement.eContainer() == containerView
+								.getElement() && visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareNodeDescriptor(
 							childElement, visualID));
 					continue;
@@ -165,7 +168,10 @@ public class ResourceTypeRepositoryCanonicalEditPolicy extends
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
-				if (next.getModelElement().equals(semanticElement)) {
+
+				// Note: semanticElement can be null, for diagram annotations!
+				if (semanticElement != null
+						&& semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but

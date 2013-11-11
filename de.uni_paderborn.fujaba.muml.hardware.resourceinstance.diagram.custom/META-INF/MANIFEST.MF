@@ -4,13 +4,8 @@ Bundle-Name: Custom Plug-in
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Vendor: 
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.common,
- org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
- org.eclipse.emf.edit,
- de.uni_paderborn.fujaba.muml.hardware,
+Require-Bundle: org.eclipse.m2m.qvt.oml;bundle-version="3.1.0",
  de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram;bundle-version="1.0.0",
- org.eclipse.gmf.runtime.notation,
  org.eclipse.gmf.runtime.diagram.ui,
  de.uni_paderborn.fujaba.muml.hardware.common
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -248,7 +248,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String AtomicResources2Group_title;
+	public static String StructuredResourceandemebeddedResources2Group_title;
 
 	/**
 	 * @generated
@@ -263,72 +263,72 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String StructuredResource2CreationTool_title;
+	public static String HWPort2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StructuredResource2CreationTool_desc;
+	public static String HWPort2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String HWPort3CreationTool_title;
+	public static String StructuredResource1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HWPort3CreationTool_desc;
+	public static String StructuredResource1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String MemoryResource1CreationTool_title;
+	public static String MemoryResource2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String MemoryResource1CreationTool_desc;
+	public static String MemoryResource2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Cache2CreationTool_title;
+	public static String Cache3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Cache2CreationTool_desc;
+	public static String Cache3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ProgrammableLogicDevice3CreationTool_title;
+	public static String ProgrammableLogicDevice4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ProgrammableLogicDevice3CreationTool_desc;
+	public static String ProgrammableLogicDevice4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Processor4CreationTool_title;
+	public static String Processor5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Processor4CreationTool_desc;
+	public static String Processor5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ProcessorOwnedCache5CreationTool_title;
+	public static String ProcessorOwnedCache6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ProcessorOwnedCache5CreationTool_desc;
+	public static String ProcessorOwnedCache6CreationTool_desc;
 
 	/**
 	 * @generated

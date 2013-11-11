@@ -23,7 +23,7 @@ public class HardwarePaletteFactory {
 	 */
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createResourceType1Group());
-		paletteRoot.add(createAtomicResources2Group());
+		paletteRoot.add(createStructuredResourceandemebeddedResources2Group());
 	}
 
 	/**
@@ -35,24 +35,25 @@ public class HardwarePaletteFactory {
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.ResourceType1Group_title);
 		paletteContainer.setId("createResourceType1Group"); //$NON-NLS-1$
 		paletteContainer.add(createDevice1CreationTool());
-		paletteContainer.add(createStructuredResource2CreationTool());
-		paletteContainer.add(createHWPort3CreationTool());
+		paletteContainer.add(createHWPort2CreationTool());
 		return paletteContainer;
 	}
 
 	/**
-	 * Creates "AtomicResources" palette tool group
+	 * Creates "StructuredResource and emebedded Resources" palette tool group
 	 * @generated
 	 */
-	private PaletteContainer createAtomicResources2Group() {
+	private PaletteContainer createStructuredResourceandemebeddedResources2Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.AtomicResources2Group_title);
-		paletteContainer.setId("createAtomicResources2Group"); //$NON-NLS-1$
-		paletteContainer.add(createMemoryResource1CreationTool());
-		paletteContainer.add(createCache2CreationTool());
-		paletteContainer.add(createProgrammableLogicDevice3CreationTool());
-		paletteContainer.add(createProcessor4CreationTool());
-		paletteContainer.add(createProcessorOwnedCache5CreationTool());
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.StructuredResourceandemebeddedResources2Group_title);
+		paletteContainer
+				.setId("createStructuredResourceandemebeddedResources2Group"); //$NON-NLS-1$
+		paletteContainer.add(createStructuredResource1CreationTool());
+		paletteContainer.add(createMemoryResource2CreationTool());
+		paletteContainer.add(createCache3CreationTool());
+		paletteContainer.add(createProgrammableLogicDevice4CreationTool());
+		paletteContainer.add(createProcessor5CreationTool());
+		paletteContainer.add(createProcessorOwnedCache6CreationTool());
 		return paletteContainer;
 	}
 
@@ -76,30 +77,13 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStructuredResource2CreationTool() {
+	private ToolEntry createHWPort2CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.StructuredResource2CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.StructuredResource2CreationTool_desc,
-				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.providers.HardwareElementTypes.StructuredResource_2007));
-		entry.setId("createStructuredResource2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
-		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
-				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createHWPort3CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.HWPort3CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.HWPort3CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.HWPort2CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.HWPort2CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.providers.HardwareElementTypes.HWPort_3001));
-		entry.setId("createHWPort3CreationTool"); //$NON-NLS-1$
+		entry.setId("createHWPort2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/port_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
@@ -110,13 +94,30 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createMemoryResource1CreationTool() {
+	private ToolEntry createStructuredResource1CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.MemoryResource1CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.MemoryResource1CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.StructuredResource1CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.StructuredResource1CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.providers.HardwareElementTypes.StructuredResource_2007));
+		entry.setId("createStructuredResource1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_large.gif")); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createMemoryResource2CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.MemoryResource2CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.MemoryResource2CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.providers.HardwareElementTypes.MemoryResource_3005));
-		entry.setId("createMemoryResource1CreationTool"); //$NON-NLS-1$
+		entry.setId("createMemoryResource2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/memory_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
@@ -127,13 +128,13 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createCache2CreationTool() {
+	private ToolEntry createCache3CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.Cache2CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.Cache2CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.Cache3CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.Cache3CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.providers.HardwareElementTypes.Cache_3002));
-		entry.setId("createCache2CreationTool"); //$NON-NLS-1$
+		entry.setId("createCache3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/memory_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
@@ -144,13 +145,13 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createProgrammableLogicDevice3CreationTool() {
+	private ToolEntry createProgrammableLogicDevice4CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.ProgrammableLogicDevice3CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.ProgrammableLogicDevice3CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.ProgrammableLogicDevice4CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.ProgrammableLogicDevice4CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.providers.HardwareElementTypes.ProgrammableLogicDevice_3004));
-		entry.setId("createProgrammableLogicDevice3CreationTool"); //$NON-NLS-1$
+		entry.setId("createProgrammableLogicDevice4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/pld_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
@@ -161,13 +162,13 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createProcessor4CreationTool() {
+	private ToolEntry createProcessor5CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.Processor4CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.Processor4CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.Processor5CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.Processor5CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.providers.HardwareElementTypes.Processor_3003));
-		entry.setId("createProcessor4CreationTool"); //$NON-NLS-1$
+		entry.setId("createProcessor5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/cpu_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
@@ -178,13 +179,13 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createProcessorOwnedCache5CreationTool() {
+	private ToolEntry createProcessorOwnedCache6CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.ProcessorOwnedCache5CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.ProcessorOwnedCache5CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.ProcessorOwnedCache6CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.Messages.ProcessorOwnedCache6CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4001));
-		entry.setId("createProcessorOwnedCache5CreationTool"); //$NON-NLS-1$
+		entry.setId("createProcessorOwnedCache6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/processorcache.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());

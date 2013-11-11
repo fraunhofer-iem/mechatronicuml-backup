@@ -1048,7 +1048,8 @@
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
-        name="Hardware Diagram">
+        name="Hardware Diagram"
+        parentCategory="de.uni_paderborn.fujaba.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.hardware.diagram.appearance"

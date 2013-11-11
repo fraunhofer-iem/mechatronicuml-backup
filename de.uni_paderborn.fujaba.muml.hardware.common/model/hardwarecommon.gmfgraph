@@ -1,249 +1,683 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="hardwarecommon">
-  <figures name="hardware">
-    <descriptors name="HWPortLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="HWPortLabelFigure" text="&lt;...>"/>
+<gmfgraph:Canvas
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
+    name="hardwarecommon">
+  <figures
+      name="hardware">
+    <descriptors
+        name="HWPortLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="HWPortLabelFigure"
+          text="&lt;...>"/>
     </descriptors>
-    <descriptors name="ResourceFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="ResourceFigure">
-        <layout xsi:type="gmfgraph:GridLayout"/>
-        <children xsi:type="gmfgraph:Rectangle" name="ResourceContainerFigure" outline="false">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="BEGINNING"/>
-          <layout xsi:type="gmfgraph:StackLayout"/>
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="ResourceFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="ResourceFigure">
+        <layout
+            xsi:type="gmfgraph:GridLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ResourceContainerFigure"
+            outline="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="BEGINNING"/>
+          <layout
+              xsi:type="gmfgraph:StackLayout"/>
+          <border
+              xsi:type="gmfgraph:MarginBorder">
+            <insets
+                top="5"
+                left="5"
+                bottom="5"
+                right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Rectangle" name="ResourceNameRectangle" outline="false" fill="false">
-            <layout xsi:type="gmfgraph:GridLayout" numColumns="3" equalWidth="false"/>
-            <children xsi:type="gmfgraph:Label" name="ResourceNameFigure" text="&lt;...>">
-              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="END"/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="ResourceNameRectangle"
+              outline="false"
+              fill="false">
+            <layout
+                xsi:type="gmfgraph:GridLayout"
+                numColumns="3"
+                equalWidth="false"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="ResourceNameFigure"
+                text="&lt;...>">
+              <layoutData
+                  xsi:type="gmfgraph:GridLayoutData"
+                  grabExcessHorizontalSpace="true"
+                  grabExcessVerticalSpace="true"
+                  horizontalAlignment="END"/>
             </children>
-            <children xsi:type="gmfgraph:Label" name="ResourceKindFigure" text="&lt;...>">
-              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="BEGINNING"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="ResourceKindFigure"
+                text="&lt;...>">
+              <layoutData
+                  xsi:type="gmfgraph:GridLayoutData"
+                  grabExcessHorizontalSpace="true"
+                  grabExcessVerticalSpace="true"
+                  horizontalAlignment="BEGINNING"/>
             </children>
-            <children xsi:type="gmfgraph:Label" name="ResourceCardinalityFigure" text="&lt;...>">
-              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="BEGINNING"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="ResourceCardinalityFigure"
+                text="&lt;...>">
+              <layoutData
+                  xsi:type="gmfgraph:GridLayoutData"
+                  grabExcessHorizontalSpace="true"
+                  grabExcessVerticalSpace="true"
+                  horizontalAlignment="BEGINNING"/>
             </children>
           </children>
-          <children xsi:type="gmfgraph:Rectangle" name="ResourceIconRectangle" outline="false" fill="false">
-            <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
-            <children xsi:type="gmfgraph:CustomFigure" name="CustomIconFigure" qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure"/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="ResourceIconRectangle"
+              outline="false"
+              fill="false">
+            <layout
+                xsi:type="gmfgraph:GridLayout"
+                equalWidth="false"/>
+            <children
+                xsi:type="gmfgraph:CustomFigure"
+                name="CustomIconFigure"
+                qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure"/>
           </children>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="ResourceInfo">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="BEGINNING"/>
-          <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
-          <children xsi:type="gmfgraph:Label" name="ResourceInfo1">
-            <layoutData xsi:type="gmfgraph:GridLayoutData"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="ResourceInfo">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="BEGINNING"/>
+          <layout
+              xsi:type="gmfgraph:GridLayout"
+              equalWidth="false"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ResourceInfo1">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"/>
           </children>
-          <children xsi:type="gmfgraph:Label" name="ResourceInfo2" text="">
-            <layoutData xsi:type="gmfgraph:GridLayoutData"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="ResourceInfo2"
+              text="">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"/>
           </children>
         </children>
       </actualFigure>
-      <accessors accessor="getFigureResourceNameFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.0"/>
-      <accessors accessor="getFigureResourceKindFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.1"/>
-      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.2"/>
-      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1/@children.0"/>
-      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
-      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.1"/>
+      <accessors
+          accessor="getFigureResourceNameFigure"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors
+          accessor="getFigureResourceKindFigure"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.1"/>
     </descriptors>
-    <descriptors name="HWPortFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="HWPortRectangle" fill="false">
-        <layout xsi:type="gmfgraph:StackLayout"/>
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="1" left="1" bottom="1" right="1"/>
+    <descriptors
+        name="HWPortFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="HWPortRectangle"
+          fill="false">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="1"
+              left="1"
+              bottom="1"
+              right="1"/>
         </border>
-        <children xsi:type="gmfgraph:ScalablePolygon" name="BusArrow" outline="false">
-          <backgroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
-          <template y="2"/>
-          <template x="1" y="4"/>
-          <template x="1" y="3"/>
-          <template x="5" y="3"/>
-          <template x="5" y="4"/>
-          <template x="6" y="2"/>
-          <template x="5"/>
-          <template x="5" y="1"/>
-          <template x="1" y="1"/>
-          <template x="1"/>
-          <template y="2"/>
+        <children
+            xsi:type="gmfgraph:ScalablePolygon"
+            name="BusArrow"
+            outline="false">
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <template
+              y="2"/>
+          <template
+              x="1"
+              y="4"/>
+          <template
+              x="1"
+              y="3"/>
+          <template
+              x="5"
+              y="3"/>
+          <template
+              x="5"
+              y="4"/>
+          <template
+              x="6"
+              y="2"/>
+          <template
+              x="5"/>
+          <template
+              x="5"
+              y="1"/>
+          <template
+              x="1"
+              y="1"/>
+          <template
+              x="1"/>
+          <template
+              y="2"/>
         </children>
-        <children xsi:type="gmfgraph:Polyline" name="P2PLine">
-          <backgroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
-          <children xsi:type="gmfgraph:Ellipse" name="circle1" outline="false">
-            <backgroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
-            <location x="2" y="1"/>
-            <size x="6" y="6"/>
+        <children
+            xsi:type="gmfgraph:Polyline"
+            name="P2PLine">
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="black"/>
+          <children
+              xsi:type="gmfgraph:Ellipse"
+              name="circle1"
+              outline="false">
+            <backgroundColor
+                xsi:type="gmfgraph:ConstantColor"
+                value="black"/>
+            <location
+                x="2"
+                y="1"/>
+            <size
+                x="6"
+                y="6"/>
           </children>
-          <children xsi:type="gmfgraph:Ellipse" name="circle2" outline="false">
-            <backgroundColor xsi:type="gmfgraph:ConstantColor" value="black"/>
-            <location x="14" y="16"/>
-            <size x="6" y="6"/>
+          <children
+              xsi:type="gmfgraph:Ellipse"
+              name="circle2"
+              outline="false">
+            <backgroundColor
+                xsi:type="gmfgraph:ConstantColor"
+                value="black"/>
+            <location
+                x="14"
+                y="16"/>
+            <size
+                x="6"
+                y="6"/>
           </children>
-          <template x="3" y="3"/>
-          <template x="11" y="3"/>
-          <template x="11" y="18"/>
-          <template x="18" y="18"/>
+          <template
+              x="3"
+              y="3"/>
+          <template
+              x="11"
+              y="3"/>
+          <template
+              x="11"
+              y="18"/>
+          <template
+              x="18"
+              y="18"/>
         </children>
       </actualFigure>
-      <accessors accessor="getFigureBusArrow" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
-      <accessors accessor="getFigureP2PLine" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
-      <accessors accessor="getFigureCircle1" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0"/>
-      <accessors accessor="getFigureCircle2" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.1"/>
+      <accessors
+          accessor="getFigureBusArrow"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureP2PLine"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureCircle1"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0"/>
+      <accessors
+          accessor="getFigureCircle2"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.1"/>
     </descriptors>
-    <descriptors name="HWPortFigureRef">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="HWPortFigure" qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure"/>
+    <descriptors
+        name="HWPortFigureRef">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="HWPortFigure"
+          qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure"/>
     </descriptors>
-    <descriptors name="ResourceFigureRef">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="ResourceFigure" qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure"/>
-      <accessors accessor="getFigureResourceNameFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.0"/>
-      <accessors accessor="getFigureResourceKindFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.1"/>
-      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0/@children.2"/>
-      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1/@children.0"/>
-      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
-      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.1"/>
+    <descriptors
+        name="ResourceFigureRef">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="ResourceFigure"
+          qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure"/>
+      <accessors
+          accessor="getFigureResourceNameFigure"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors
+          accessor="getFigureResourceKindFigure"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0/@children.2"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0/@children.1/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.1/@children.1"/>
     </descriptors>
-    <descriptors name="StructuredResourceFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="StructuredResourceFigure">
-        <layout xsi:type="gmfgraph:GridLayout"/>
-        <children xsi:type="gmfgraph:Rectangle" name="StructuredContainer" outline="false">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" verticalAlignment="BEGINNING" horizontalAlignment="FILL"/>
-          <layout xsi:type="gmfgraph:GridLayout" numColumns="2" equalWidth="false"/>
-          <border xsi:type="gmfgraph:MarginBorder">
-            <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="StructuredResourceFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="StructuredResourceFigure">
+        <layout
+            xsi:type="gmfgraph:GridLayout"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="StructuredContainer"
+            outline="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              verticalAlignment="BEGINNING"
+              horizontalAlignment="FILL"/>
+          <layout
+              xsi:type="gmfgraph:GridLayout"
+              numColumns="2"
+              equalWidth="false"/>
+          <border
+              xsi:type="gmfgraph:MarginBorder">
+            <insets
+                top="5"
+                left="5"
+                bottom="5"
+                right="5"/>
           </border>
-          <children xsi:type="gmfgraph:Rectangle" name="StructuredName" outline="false">
-            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
-            <layout xsi:type="gmfgraph:GridLayout" numColumns="3" equalWidth="false"/>
-            <children xsi:type="gmfgraph:Label" name="StructuredResourceNameFigure" text="&lt;...>">
-              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="END"/>
-              <font xsi:type="gmfgraph:BasicFont" style="BOLD"/>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="StructuredName"
+              outline="false">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                grabExcessVerticalSpace="true"
+                verticalAlignment="FILL"
+                horizontalAlignment="FILL"/>
+            <layout
+                xsi:type="gmfgraph:GridLayout"
+                numColumns="3"
+                equalWidth="false"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="StructuredResourceNameFigure"
+                text="&lt;...>">
+              <layoutData
+                  xsi:type="gmfgraph:GridLayoutData"
+                  grabExcessHorizontalSpace="true"
+                  grabExcessVerticalSpace="true"
+                  horizontalAlignment="END"/>
+              <font
+                  xsi:type="gmfgraph:BasicFont"
+                  style="BOLD"/>
             </children>
-            <children xsi:type="gmfgraph:Label" name="StructuredResourceKindFigure" text="&lt;...>">
-              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="BEGINNING"/>
-              <font xsi:type="gmfgraph:BasicFont" style="BOLD"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="StructuredResourceKindFigure"
+                text="&lt;...>">
+              <layoutData
+                  xsi:type="gmfgraph:GridLayoutData"
+                  grabExcessHorizontalSpace="true"
+                  grabExcessVerticalSpace="true"
+                  horizontalAlignment="BEGINNING"/>
+              <font
+                  xsi:type="gmfgraph:BasicFont"
+                  style="BOLD"/>
             </children>
-            <children xsi:type="gmfgraph:Label" name="StructuredResourceCardinalityFigure" text="&lt;...>">
-              <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" horizontalAlignment="BEGINNING"/>
-              <font xsi:type="gmfgraph:BasicFont" style="BOLD"/>
+            <children
+                xsi:type="gmfgraph:Label"
+                name="StructuredResourceCardinalityFigure"
+                text="&lt;...>">
+              <layoutData
+                  xsi:type="gmfgraph:GridLayoutData"
+                  grabExcessHorizontalSpace="true"
+                  grabExcessVerticalSpace="true"
+                  horizontalAlignment="BEGINNING"/>
+              <font
+                  xsi:type="gmfgraph:BasicFont"
+                  style="BOLD"/>
             </children>
           </children>
-          <children xsi:type="gmfgraph:CustomFigure" name="CustomStructuredIconFigure" qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure">
-            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
+          <children
+              xsi:type="gmfgraph:CustomFigure"
+              name="CustomStructuredIconFigure"
+              qualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                grabExcessHorizontalSpace="true"
+                grabExcessVerticalSpace="true"
+                verticalAlignment="FILL"
+                horizontalAlignment="FILL"/>
           </children>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="embeddedAtomicResources">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="embeddedAtomicResources">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"
+              verticalAlignment="FILL"
+              horizontalAlignment="FILL"/>
         </children>
       </actualFigure>
-      <accessors accessor="getFigureEmbeddedAtomicResources" figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
-      <accessors accessor="getFigureStructuredResourceCardinalityFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0/@children.2"/>
-      <accessors accessor="getFigureStructuredResourceNameFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0/@children.0"/>
-      <accessors accessor="getFigureStructuredResourceKindFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0/@children.1"/>
-      <accessors figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.1"/>
+      <accessors
+          accessor="getFigureEmbeddedAtomicResources"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureStructuredResourceCardinalityFigure"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0/@children.2"/>
+      <accessors
+          accessor="getFigureStructuredResourceNameFigure"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0/@children.0"/>
+      <accessors
+          accessor="getFigureStructuredResourceKindFigure"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.0/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0/@children.1"/>
     </descriptors>
-    <descriptors name="DelegationBusPort">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="HWPortRectangle" fill="false">
-        <layout xsi:type="gmfgraph:StackLayout"/>
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="1" left="1" bottom="1" right="1"/>
+    <descriptors
+        name="DelegationBusPort">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="HWPortRectangle"
+          fill="false">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="1"
+              left="1"
+              bottom="1"
+              right="1"/>
         </border>
-        <children xsi:type="gmfgraph:ScalablePolygon" name="BusArrow" outline="false">
-          <backgroundColor xsi:type="gmfgraph:ConstantColor" value="gray"/>
-          <template y="2"/>
-          <template x="1" y="4"/>
-          <template x="1" y="3"/>
-          <template x="5" y="3"/>
-          <template x="5" y="4"/>
-          <template x="6" y="2"/>
-          <template x="5"/>
-          <template x="5" y="1"/>
-          <template x="1" y="1"/>
-          <template x="1"/>
-          <template y="2"/>
+        <children
+            xsi:type="gmfgraph:ScalablePolygon"
+            name="BusArrow"
+            outline="false">
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="gray"/>
+          <template
+              y="2"/>
+          <template
+              x="1"
+              y="4"/>
+          <template
+              x="1"
+              y="3"/>
+          <template
+              x="5"
+              y="3"/>
+          <template
+              x="5"
+              y="4"/>
+          <template
+              x="6"
+              y="2"/>
+          <template
+              x="5"/>
+          <template
+              x="5"
+              y="1"/>
+          <template
+              x="1"
+              y="1"/>
+          <template
+              x="1"/>
+          <template
+              y="2"/>
         </children>
       </actualFigure>
     </descriptors>
-    <descriptors name="DelegationLinkPort">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="HWPortRectangle" fill="false">
-        <layout xsi:type="gmfgraph:StackLayout"/>
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="1" left="1" bottom="1" right="1"/>
+    <descriptors
+        name="DelegationLinkPort">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="HWPortRectangle"
+          fill="false">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="1"
+              left="1"
+              bottom="1"
+              right="1"/>
         </border>
-        <children xsi:type="gmfgraph:Polyline" name="P2PLine" lineWidth="4">
-          <foregroundColor xsi:type="gmfgraph:ConstantColor" value="gray"/>
-          <backgroundColor xsi:type="gmfgraph:ConstantColor" value="gray"/>
-          <children xsi:type="gmfgraph:Ellipse" name="circle1" outline="false">
-            <backgroundColor xsi:type="gmfgraph:ConstantColor" value="gray"/>
-            <location x="2" y="2"/>
-            <size x="16" y="16"/>
+        <children
+            xsi:type="gmfgraph:Polyline"
+            name="P2PLine"
+            lineWidth="4">
+          <foregroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="gray"/>
+          <backgroundColor
+              xsi:type="gmfgraph:ConstantColor"
+              value="gray"/>
+          <children
+              xsi:type="gmfgraph:Ellipse"
+              name="circle1"
+              outline="false">
+            <backgroundColor
+                xsi:type="gmfgraph:ConstantColor"
+                value="gray"/>
+            <location
+                x="2"
+                y="2"/>
+            <size
+                x="16"
+                y="16"/>
           </children>
-          <children xsi:type="gmfgraph:Ellipse" name="circle2" outline="false">
-            <backgroundColor xsi:type="gmfgraph:ConstantColor" value="gray"/>
-            <location x="28" y="28"/>
-            <size x="16" y="16"/>
+          <children
+              xsi:type="gmfgraph:Ellipse"
+              name="circle2"
+              outline="false">
+            <backgroundColor
+                xsi:type="gmfgraph:ConstantColor"
+                value="gray"/>
+            <location
+                x="28"
+                y="28"/>
+            <size
+                x="16"
+                y="16"/>
           </children>
-          <template x="3" y="6"/>
-          <template x="24" y="6"/>
-          <template x="24" y="30"/>
-          <template x="34" y="33"/>
+          <template
+              x="3"
+              y="6"/>
+          <template
+              x="24"
+              y="6"/>
+          <template
+              x="24"
+              y="30"/>
+          <template
+              x="34"
+              y="33"/>
         </children>
       </actualFigure>
     </descriptors>
-    <descriptors name="HWPlatform">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="HWPlatformFigure">
-        <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
-        <children xsi:type="gmfgraph:Rectangle" name="HWPlatformTitleAreaFigure" outline="false" fill="false">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
-          <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
-          <children xsi:type="gmfgraph:Label" name="HWPlatformNameLabel"/>
+    <descriptors
+        name="HWPlatform">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="HWPlatformFigure">
+        <layout
+            xsi:type="gmfgraph:GridLayout"
+            equalWidth="false"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="HWPlatformTitleAreaFigure"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              horizontalAlignment="FILL"/>
+          <layout
+              xsi:type="gmfgraph:GridLayout"
+              equalWidth="false"/>
+          <children
+              xsi:type="gmfgraph:Label"
+              name="HWPlatformNameLabel"/>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="HWPlatformCompartment" outline="false" fill="false">
-          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="HWPlatformCompartment"
+            outline="false"
+            fill="false">
+          <layoutData
+              xsi:type="gmfgraph:GridLayoutData"
+              grabExcessHorizontalSpace="true"
+              grabExcessVerticalSpace="true"
+              verticalAlignment="FILL"
+              horizontalAlignment="FILL"/>
         </children>
       </actualFigure>
-      <accessors figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0"/>
-      <accessors figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+      <accessors
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0"/>
+      <accessors
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
     </descriptors>
   </figures>
-  <nodes name="HWPort" figure="HWPortFigureRef" affixedParentSide="EAST">
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="24" dy="24"/>
+  <nodes
+      name="HWPort"
+      figure="HWPortFigureRef"
+      affixedParentSide="EAST">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="24"
+          dy="24"/>
     </facets>
   </nodes>
-  <nodes name="Resource" figure="ResourceFigureRef">
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="130" dy="47"/>
+  <nodes
+      name="Resource"
+      figure="ResourceFigureRef">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="130"
+          dy="47"/>
     </facets>
   </nodes>
-  <nodes name="StructuredResource" figure="StructuredResourceFigure">
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="130" dy="47"/>
+  <nodes
+      name="StructuredResource"
+      figure="StructuredResourceFigure">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="130"
+          dy="47"/>
     </facets>
   </nodes>
-  <nodes name="BusDelegationPort" figure="DelegationBusPort">
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="48" dy="48"/>
+  <nodes
+      name="BusDelegationPort"
+      figure="DelegationBusPort">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="48"
+          dy="48"/>
     </facets>
   </nodes>
-  <nodes name="LinkDelegationPort" figure="DelegationLinkPort">
-    <facets xsi:type="gmfgraph:DefaultSizeFacet">
-      <defaultSize dx="48" dy="48"/>
+  <nodes
+      name="LinkDelegationPort"
+      figure="DelegationLinkPort">
+    <facets
+        xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize
+          dx="48"
+          dy="48"/>
     </facets>
   </nodes>
-  <nodes name="HWPlatformNode" figure="HWPlatform"/>
-  <compartments name="StructuredResourceCompartment" figure="StructuredResourceFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
-  <compartments name="HWPlatformCompartment" figure="HWPlatform" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
-  <labels name="HWPortLabel" figure="HWPortLabelFigure" elementIcon="false">
-    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="5" y="5"/>
+  <nodes
+      name="HWPlatformNode"
+      figure="HWPlatform"/>
+  <compartments
+      name="StructuredResourceCompartment"
+      figure="StructuredResourceFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <compartments
+      name="HWPlatformCompartment"
+      figure="HWPlatform"
+      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+  <labels
+      name="HWPortLabel"
+      figure="HWPortLabelFigure"
+      elementIcon="false">
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="5"
+        y="5"/>
   </labels>
-  <labels name="ResourceNameLabel" figure="ResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels name="ResourceKindLabel" figure="ResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
-  <labels name="ResourceCardinalityLabel" figure="ResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
-  <labels name="StructuredResourceNameLabel" figure="StructuredResourceFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.2"/>
-  <labels name="StructuredResourceKindLabel" figure="StructuredResourceFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.3"/>
-  <labels name="StructuredResourceCardinalityLabel" figure="StructuredResourceFigure" elementIcon="false" accessor="//@figures.0/@descriptors.5/@accessors.1"/>
-  <labels name="ResourceInfo1" figure="ResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.4"/>
-  <labels name="ResourceInfo2" figure="ResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.5"/>
-  <labels name="HWPlatformName" figure="HWPlatform" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels
+      name="ResourceNameLabel"
+      figure="ResourceFigureRef"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels
+      name="ResourceKindLabel"
+      figure="ResourceFigureRef"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels
+      name="ResourceCardinalityLabel"
+      figure="ResourceFigureRef"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.2"/>
+  <labels
+      name="StructuredResourceNameLabel"
+      figure="StructuredResourceFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.5/@accessors.2"/>
+  <labels
+      name="StructuredResourceKindLabel"
+      figure="StructuredResourceFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.5/@accessors.3"/>
+  <labels
+      name="StructuredResourceCardinalityLabel"
+      figure="StructuredResourceFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.5/@accessors.1"/>
+  <labels
+      name="ResourceInfo1"
+      figure="ResourceFigureRef"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.4"/>
+  <labels
+      name="ResourceInfo2"
+      figure="ResourceFigureRef"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.1/@accessors.5"/>
+  <labels
+      name="HWPlatformName"
+      figure="HWPlatform"
+      resizeConstraint="NONE"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
 </gmfgraph:Canvas>

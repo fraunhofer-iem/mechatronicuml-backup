@@ -836,13 +836,6 @@
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="StructuredResource"
-            description="Create new StructuredResource"
-            largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_large.gif"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_small.gif"
-            genNodes="//@diagram/@topLevelNodes.1"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
             title="HWPort"
             description="Create new HWPort"
             largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/port_large.gif"
@@ -850,8 +843,15 @@
             genNodes="//@diagram/@childNodes.0"/>
       </groups>
       <groups
-          title="AtomicResources"
+          title="StructuredResource and emebedded Resources"
           collapse="true">
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="StructuredResource"
+            description="Create new StructuredResource"
+            largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_large.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/box_small.gif"
+            genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="MemoryResource"

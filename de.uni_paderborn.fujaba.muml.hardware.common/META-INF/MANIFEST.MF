@@ -11,5 +11,5 @@ Export-Package: de.uni_paderborn.fujaba.muml.hardware.common.edit.policies,
  de.uni_paderborn.fujaba.muml.hardware.common.figures,
  de.uni_paderborn.fujaba.muml.hardware.common.parsers
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
- de.uni_paderborn.fujaba.muml.common,
+ de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.hardware

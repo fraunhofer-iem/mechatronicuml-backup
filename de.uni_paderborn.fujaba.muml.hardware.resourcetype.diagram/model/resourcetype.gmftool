@@ -24,19 +24,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="StructuredResource"
-          description="Create new StructuredResource">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/box_small.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-        <largeIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/box_large.gif"
-            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="HWPort"
           description="Create new HWPort">
         <smallIcon
@@ -51,8 +38,21 @@
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="AtomicResources"
+        title="StructuredResource and emebedded Resources"
         collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="StructuredResource"
+          description="Create new StructuredResource">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/box_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/box_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="MemoryResource"

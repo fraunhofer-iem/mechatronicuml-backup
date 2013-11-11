@@ -152,7 +152,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/ResourcetypeDiagramFile.gif"
-  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	     category="org.eclipse.ui.Examples"
   	     class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
@@ -264,9 +264,10 @@
 <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
+            category="de.uni_paderborn.fujaba.preferences"
+            class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.preferences.DiagramGeneralPreferencePage"
             id="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.general"
-            class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.preferences.DiagramGeneralPreferencePage">
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.general">
       </page>
       <page
             id="de.uni_paderborn.fujaba.muml.hardware.diagram.appearance"
