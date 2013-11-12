@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="file:./muml.rmap">
+<?xml version="1.0" encoding="UTF-8"?><cq:componentQuery xmlns:cq="http://www.eclipse.org/buckminster/CQuery-1.0" resourceMap="file:./muml.rmap">
     <cq:rootRequest name="de.uni_paderborn.fujaba.muml.releng.site.experimental.feature" componentType="eclipse.feature"/>
     <cq:property key="target.arch" value="*"/>
     <cq:property key="target.os" value="*"/>
     <cq:property key="target.ws" value="*"/>
     <cq:advisorNode namePattern="^org\.apache.*\.source$" skipComponent="true"/>
+    <cq:advisorNode namePattern="org.eclipse.m2m.qvt.oml" componentType="osgi.bundle" versionOverride="[3.2.0,3.2.0]"/>
 </cq:componentQuery>
