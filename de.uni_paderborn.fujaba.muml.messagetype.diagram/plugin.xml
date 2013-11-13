@@ -207,32 +207,33 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="messagetype.diagram.general"
-            name="%prefpage.messagetype.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+            category="de.uni_paderborn.fujaba.preferences"
             class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="design.diagram.appearance"
-            name="%prefpage.design.diagram.appearance"
-            category="messagetype.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.appearance"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.messagetype.diagram.appearance"
+            category="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="design.diagram.connections"
-            name="%prefpage.design.diagram.connections"
-            category="messagetype.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.connections"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.messagetype.diagram.connections"
+            category="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="design.diagram.printing"
-            name="%prefpage.design.diagram.printing"
-            category="messagetype.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.printing"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.messagetype.diagram.printing"
+            category="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="design.diagram.rulersAndGrid"
-            name="%prefpage.design.diagram.rulersAndGrid"
-            category="messagetype.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.rulersAndGrid"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.messagetype.diagram.rulersAndGrid"
+            category="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>

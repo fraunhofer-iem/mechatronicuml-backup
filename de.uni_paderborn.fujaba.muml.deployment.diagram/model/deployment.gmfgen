@@ -230,27 +230,32 @@
     </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="de.uni_paderborn.fujaba.muml.diagram.general"
-        name="HardwareConfiguration Diagram">
+        iD="de.uni_paderborn.fujaba.muml.deployment.diagram.general"
+        name="Deployment Diagram-Editor"
+        parentCategory="de.uni_paderborn.fujaba.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.diagram.appearance"
+          iD="de.uni_paderborn.fujaba.muml.deployment.diagram.appearance"
           name="Appearance"
+          parentCategory="de.uni_paderborn.fujaba.muml.deployment.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.diagram.connections"
+          iD="de.uni_paderborn.fujaba.muml.deployment.diagram.connections"
           name="Connections"
+          parentCategory="de.uni_paderborn.fujaba.muml.deployment.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.diagram.printing"
+          iD="de.uni_paderborn.fujaba.muml.deployment.diagram.printing"
           name="Printing"
+          parentCategory="de.uni_paderborn.fujaba.muml.deployment.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid"
+          iD="de.uni_paderborn.fujaba.muml.deployment.diagram.rulersAndGrid"
           name="Rulers And Grid"
+          parentCategory="de.uni_paderborn.fujaba.muml.deployment.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
@@ -265,6 +270,9 @@
     <requiredPlugins>de.uni_paderborn.fujaba.common</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.muml.common</requiredPlugins>
     <requiredPlugins>de.uni_paderborn.fujaba.modelinstance.ui</requiredPlugins>
+    <requiredPlugins>org.storydriven.core.edit.properties</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.muml.edit.properties</requiredPlugins>
+    <requiredPlugins>de.uni_paderborn.fujaba.properties.runtime</requiredPlugins>
   </plugin>
   <editor/>
   <navigator>
@@ -307,6 +315,25 @@
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
+  <propertySheet>
+    <tabs
+        xsi:type="gmfgen:GenStandardPropertyTab"
+        iD="appearance"/>
+    <tabs
+        xsi:type="gmfgen:GenStandardPropertyTab"
+        iD="diagram"/>
+    <tabs
+        xsi:type="gmfgen:GenCustomPropertyTab"
+        iD="domain"
+        label="Core">
+      <filter
+          xsi:type="gmfgen:TypeTabFilter">
+        <types>org.eclipse.gmf.runtime.notation.View</types>
+        <types>org.eclipse.gef.EditPart</types>
+        <generatedTypes>abstractNavigatorItem</generatedTypes>
+      </filter>
+    </tabs>
+  </propertySheet>
   <domainGenModel
       href="../../de.uni_paderborn.fujaba.muml.psm.allocation/model/allocation.genmodel#/"/>
   <expressionProviders>

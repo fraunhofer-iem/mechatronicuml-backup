@@ -192,7 +192,7 @@ public class AllocationNewDiagramFileWizard extends Wizard {
 		 * @generated
 		 */
 		protected boolean validatePage() {
-			if (selectedModelElement == null) {
+			if (getModelElement() == null) {
 				setErrorMessage(de.uni_paderborn.fujaba.muml.deployment.diagram.part.Messages.AllocationNewDiagramFileWizard_RootSelectionPageNoSelectionMessage);
 				return false;
 			}
@@ -200,7 +200,7 @@ public class AllocationNewDiagramFileWizard extends Wizard {
 					.getInstance()
 					.provides(
 							new CreateDiagramViewOperation(
-									new EObjectAdapter(selectedModelElement),
+									new EObjectAdapter(getModelElement()),
 									de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.DeploymentEditPart.MODEL_ID,
 									de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null

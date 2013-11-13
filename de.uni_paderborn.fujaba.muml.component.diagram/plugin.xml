@@ -150,32 +150,33 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.general"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.component.diagram.general"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.component.diagram.general"
+            category="de.uni_paderborn.fujaba.preferences"
             class="de.uni_paderborn.fujaba.muml.component.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.appearance"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.appearance"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.component.diagram.appearance"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.component.diagram.appearance"
+            category="de.uni_paderborn.fujaba.muml.component.diagram.general"
             class="de.uni_paderborn.fujaba.muml.component.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.connections"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.connections"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.component.diagram.connections"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.component.diagram.connections"
+            category="de.uni_paderborn.fujaba.muml.component.diagram.general"
             class="de.uni_paderborn.fujaba.muml.component.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.printing"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.printing"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.component.diagram.printing"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.component.diagram.printing"
+            category="de.uni_paderborn.fujaba.muml.component.diagram.general"
             class="de.uni_paderborn.fujaba.muml.component.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.component.diagram.rulersAndGrid"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.component.diagram.rulersAndGrid"
+            category="de.uni_paderborn.fujaba.muml.component.diagram.general"
             class="de.uni_paderborn.fujaba.muml.component.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>

@@ -1104,26 +1104,31 @@
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
-        name="Componentinstanceconfiguration Diagram">
+        name="Componentinstanceconfiguration Diagram"
+        parentCategory="de.uni_paderborn.fujaba.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.appearance"
           name="Appearance"
+          parentCategory="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.connections"
           name="Connections"
+          parentCategory="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.printing"
           name="Printing"
+          parentCategory="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
           iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.rulersAndGrid"
           name="Rulers And Grid"
+          parentCategory="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>

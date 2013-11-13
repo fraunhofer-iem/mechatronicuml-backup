@@ -207,32 +207,33 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.general"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
+            category="de.uni_paderborn.fujaba.preferences"
             class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.appearance"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.appearance"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.appearance"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.appearance"
+            category="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
             class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.connections"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.connections"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.connections"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.connections"
+            category="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
             class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.printing"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.printing"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.printing"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.printing"
+            category="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
             class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.diagram.rulersAndGrid"
-            category="de.uni_paderborn.fujaba.muml.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.rulersAndGrid"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.rulersAndGrid"
+            category="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.general"
             class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>

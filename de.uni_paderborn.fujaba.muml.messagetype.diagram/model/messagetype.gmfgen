@@ -294,27 +294,32 @@
     </preferences>
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
-        iD="messagetype.diagram.general"
-        name="MessageType Diagram">
+        iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+        name="Message Type Diagram-Editor"
+        parentCategory="de.uni_paderborn.fujaba.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="design.diagram.appearance"
+          iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.appearance"
           name="Appearance"
+          parentCategory="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
           kind="Appearance"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="design.diagram.connections"
+          iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.connections"
           name="Connections"
+          parentCategory="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
           kind="Connections"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="design.diagram.printing"
+          iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.printing"
           name="Printing"
+          parentCategory="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
           kind="Printing"/>
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
-          iD="design.diagram.rulersAndGrid"
+          iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.rulersAndGrid"
           name="Rulers And Grid"
+          parentCategory="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
           kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>

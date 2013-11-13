@@ -217,68 +217,6 @@ public class AllocationNavigatorContentProvider implements
 		switch (de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
 				.getVisualID(view)) {
 
-		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationAbstractNavigatorItem>();
-			Edge sv = (Edge) view;
-			de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup target = new de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.deployment.diagram.part.Messages.NavigatorGroupName_CommunicationLink_4003_target,
-					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup source = new de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.deployment.diagram.part.Messages.NavigatorGroupName_CommunicationLink_4003_source,
-					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getLinksTargetByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			if (!target.isEmpty()) {
-				result.add(target);
-			}
-			if (!source.isEmpty()) {
-				result.add(source);
-			}
-			return result.toArray();
-		}
-
-		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID: {
-			LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.deployment.diagram.part.Messages.NavigatorGroupName_HardwarePort_3003_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup(
-					de.uni_paderborn.fujaba.muml.deployment.diagram.part.Messages.NavigatorGroupName_HardwarePort_3003_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
 		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.DeploymentEditPart.VISUAL_ID: {
 			LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationAbstractNavigatorItem>();
 			Diagram sv = (Diagram) view;
@@ -313,6 +251,68 @@ public class AllocationNavigatorContentProvider implements
 							.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup incominglinks = new de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.deployment.diagram.part.Messages.NavigatorGroupName_HardwarePort_3003_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup outgoinglinks = new de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.deployment.diagram.part.Messages.NavigatorGroupName_HardwarePort_3003_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getIncomingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews,
+					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
+			}
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
+			return result.toArray();
+		}
+
+		case de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.CommunicationLinkEditPart.VISUAL_ID: {
+			LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationAbstractNavigatorItem> result = new LinkedList<de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationAbstractNavigatorItem>();
+			Edge sv = (Edge) view;
+			de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup target = new de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.deployment.diagram.part.Messages.NavigatorGroupName_CommunicationLink_4003_target,
+					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup source = new de.uni_paderborn.fujaba.muml.deployment.diagram.navigator.AllocationNavigatorGroup(
+					de.uni_paderborn.fujaba.muml.deployment.diagram.part.Messages.NavigatorGroupName_CommunicationLink_4003_source,
+					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			Collection<View> connectedViews;
+			connectedViews = getLinksTargetByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target,
+					true));
+			connectedViews = getLinksSourceByType(
+					Collections.singleton(sv),
+					de.uni_paderborn.fujaba.muml.deployment.diagram.part.AllocationVisualIDRegistry
+							.getType(de.uni_paderborn.fujaba.muml.deployment.diagram.edit.parts.HardwarePortEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			if (!target.isEmpty()) {
+				result.add(target);
+			}
+			if (!source.isEmpty()) {
+				result.add(source);
+			}
 			return result.toArray();
 		}
 		}
