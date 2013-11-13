@@ -112,8 +112,11 @@ public class HWPlatformInstanceHWPlatformCompartment2CanonicalEditPolicy extends
 								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID });
-				if (childElement.eContainer() == containerView.getElement()
-						&& visualIDs.contains(visualID)) {
+
+				// Note: childElement can be null, for diagram annotations!
+				if (childElement == null
+						|| childElement.eContainer() == containerView
+								.getElement() && visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareNodeDescriptor(
 							childElement, visualID));
 					continue;
@@ -187,7 +190,10 @@ public class HWPlatformInstanceHWPlatformCompartment2CanonicalEditPolicy extends
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
-				if (next.getModelElement().equals(semanticElement)) {
+
+				// Note: semanticElement can be null, for diagram annotations!
+				if (semanticElement != null
+						&& semanticElement.equals(next.getModelElement())) {
 					if (hint.equals(childView.getType())) {
 						perfectMatch.add(childView);
 						// actually, can stop iteration over view children here, but

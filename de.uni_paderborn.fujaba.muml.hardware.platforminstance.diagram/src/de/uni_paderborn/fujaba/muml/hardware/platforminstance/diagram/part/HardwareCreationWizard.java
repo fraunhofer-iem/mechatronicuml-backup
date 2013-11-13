@@ -17,7 +17,7 @@ public class HardwareCreationWizard
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		super.init(workbench, selection);
 
-		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.getBundledImageDescriptor("icons/wizban/NewPlatforminstanceWizard.gif")); //$NON-NLS-1$
 
 	}
@@ -36,7 +36,7 @@ public class HardwareCreationWizard
 	 */
 	@Override
 	public AdapterFactory getItemProvidersAdapterFactory() {
-		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.getInstance().getItemProvidersAdapterFactory();
 	}
 

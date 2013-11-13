@@ -58,7 +58,7 @@ public class HWPortPartItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addHwPortInstanceTypePropertyDescriptor(object);
+			addHwPortInstancePropertyDescriptor(object);
 			addConnectedMediaPropertyDescriptor(object);
 			addProtocolPropertyDescriptor(object);
 		}
@@ -66,22 +66,22 @@ public class HWPortPartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Hw Port Instance Type feature.
+	 * This adds a property descriptor for the Hw Port Instance feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addHwPortInstanceTypePropertyDescriptor(Object object) {
+	protected void addHwPortInstancePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_HWPortPart_hwPortInstanceType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_hwPortInstanceType_feature", "_UI_HWPortPart_type"),
-				 PlatformPackage.Literals.HW_PORT_PART__HW_PORT_INSTANCE_TYPE,
+				 getString("_UI_HWPortPart_hwPortInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortPart_hwPortInstance_feature", "_UI_HWPortPart_type"),
+				 PlatformPackage.Literals.HW_PORT_PART__HW_PORT_INSTANCE,
 				 true,
 				 false,
-				 false,
+				 true,
 				 null,
 				 null,
 				 null));
@@ -168,7 +168,7 @@ public class HWPortPartItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(HWPortPart.class)) {
-			case PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE_TYPE:
+			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
 			case PlatformPackage.HW_PORT_PART__PROTOCOL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

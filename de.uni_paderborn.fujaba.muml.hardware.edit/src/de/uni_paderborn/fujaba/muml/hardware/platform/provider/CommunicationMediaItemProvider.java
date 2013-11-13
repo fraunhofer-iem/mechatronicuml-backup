@@ -62,6 +62,7 @@ public class CommunicationMediaItemProvider
 			addProtocolPropertyDescriptor(object);
 			addConnectedHWPortPartsPropertyDescriptor(object);
 			addConnectedBridgesPropertyDescriptor(object);
+			addConnectedHWPortInstancesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -146,6 +147,28 @@ public class CommunicationMediaItemProvider
 				 getString("_UI_CommunicationMedia_connectedBridges_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationMedia_connectedBridges_feature", "_UI_CommunicationMedia_type"),
 				 PlatformPackage.Literals.COMMUNICATION_MEDIA__CONNECTED_BRIDGES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connected HW Port Instances feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectedHWPortInstancesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_CommunicationMedia_connectedHWPortInstances_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommunicationMedia_connectedHWPortInstances_feature", "_UI_CommunicationMedia_type"),
+				 PlatformPackage.Literals.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES,
 				 true,
 				 false,
 				 true,

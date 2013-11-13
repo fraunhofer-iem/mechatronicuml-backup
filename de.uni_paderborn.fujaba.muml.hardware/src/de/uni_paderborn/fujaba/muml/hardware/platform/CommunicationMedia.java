@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortParts <em>Connected HW Port Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedBridges <em>Connected Bridges</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortInstances <em>Connected HW Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -168,5 +169,22 @@ public interface CommunicationMedia extends CommunicationResource {
 	 * @generated
 	 */
 	EList<Bridge> getConnectedBridges();
+
+	/**
+	 * Returns the value of the '<em><b>Connected HW Port Instances</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance#getConnectedMedia <em>Connected Media</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The connected HWPortInstances.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Connected HW Port Instances</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getCommunicationMedia_ConnectedHWPortInstances()
+	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance#getConnectedMedia
+	 * @model opposite="connectedMedia"
+	 * @generated
+	 */
+	EList<HWPortInstance> getConnectedHWPortInstances();
 
 } // CommunicationMedia

@@ -37,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
  * It is based on the MetamodelOCLTest  {@link de.uni_paderborn.fujaba.muml.tests.MetamodelOCLTest MetamodelOCLTest} of the de.uni_paderborn.fujaba.muml.tests package
  * @author Andreas Dann
  */
-public class ExpressionLabelGMFMapTest {
+public class GMFMapExpressionLabelTest {
 
 	/**
 	 * @param args
@@ -80,7 +80,7 @@ public class ExpressionLabelGMFMapTest {
 	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram","/model/platforminstance.gmfmap" });
 	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.component.diagram","/model/component.gmfmap" });
 	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram","/model/componentinstanceconfiguration.gmfmap" });
-		gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram","/model/realtimestatechart.gmfmap" });
+       gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.realtimestatechart.diagram","/model/realtimestatechart.gmfmap" });
 	//	gmfmap_projects.add(new String[] { "de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram","/model/ComponentStoryDiagram.gmfmap" });
 
 	}
@@ -113,7 +113,7 @@ public class ExpressionLabelGMFMapTest {
 				try {
 					this.validateLabelExpression(domainClass,expression);
 				} catch (ParserException e) {
-					ExpressionLabelGMFMapTest.this.oclErrors.add("ERROR: "
+					GMFMapExpressionLabelTest.this.oclErrors.add("ERROR: "
 							+ domainClass.getEPackage().getName() + "."
 							+ domainClass.getName() + "."
 							+ expression + ": "

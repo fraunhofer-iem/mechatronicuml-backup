@@ -299,10 +299,10 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+		LinkConstraints cached = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.getInstance().getLinkConstraints();
 		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().setLinkConstraints(
 							cached = new LinkConstraints());
 		}
@@ -338,8 +338,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateLink_4002(
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart target,
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target,
 				View sourceView, View targetView) {
 			return canExistLink_4002(container, null, source, target,
 					sourceView, targetView);
@@ -348,21 +348,21 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateHWPortPartConnectedMedia_4003(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
+		public boolean canCreateHWPortInstanceConnectedMedia_4006(
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia target,
 				View sourceView, View targetView) {
 			if (source != null) {
-				if (source.getConnectedMedia() != null) {
+				if (source.getConnectedMedia().contains(target)) {
 					return false;
 				}
 			}
 			if (target != null
-					&& (target.getConnectedHWPortParts().contains(target))) {
+					&& (target.getConnectedHWPortInstances().contains(target))) {
 				return false;
 			}
 
-			return canExistHWPortPartConnectedMedia_4003(source, target,
+			return canExistHWPortInstanceConnectedMedia_4006(source, target,
 					sourceView, targetView);
 		}
 
@@ -393,7 +393,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreateLink_4005(
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Bridge target,
 				View sourceView, View targetView) {
 			return canExistLink_4005(container, null, source, target,
@@ -462,7 +462,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
@@ -554,7 +554,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
@@ -567,8 +567,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canExistLink_4002(
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Link linkInstance,
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart target,
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target,
 				View sourceView, View targetView) {
 			try {
 				if (source == null) {
@@ -577,7 +577,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortPart()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortInstance()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -588,7 +588,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 							.getExpression(
 									47,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-											.getHWPortPart(), envType);
+											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean
@@ -602,7 +602,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortPart()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortInstance()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -613,7 +613,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 							.getExpression(
 									48,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-											.getHWPortPart(), envType);
+											.getHWPortInstance(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
 					if (false == targetVal instanceof Boolean
@@ -623,7 +623,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
@@ -635,8 +635,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public java.lang.String getErrorLink_4002(
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart target,
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target,
 				View sourceView, View targetView) {
 			try {
 				if (source == null) {
@@ -645,7 +645,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortPart()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortInstance()); //$NON-NLS-1$
 					env.put("oppositeEnd", target);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", sourceView);
@@ -656,7 +656,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 							.getExpression(
 									47,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-											.getHWPortPart(), envType);
+											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean
@@ -682,7 +682,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortPart()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortInstance()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -693,7 +693,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 							.getExpression(
 									48,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-											.getHWPortPart(), envType);
+											.getHWPortInstance(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
 
 					if (false == targetVal instanceof Boolean
@@ -715,7 +715,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
@@ -725,8 +725,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canExistHWPortPartConnectedMedia_4003(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
+		public boolean canExistHWPortInstanceConnectedMedia_4006(
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia target,
 				View sourceView, View targetView) {
 			try {
@@ -747,7 +747,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 							.getExpression(
 									49,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-											.getHWPortPart(), envType);
+											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean
@@ -761,7 +761,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortPart()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortInstance()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -782,7 +782,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
@@ -792,8 +792,8 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public java.lang.String getErrorHWPortPartConnectedMedia_4003(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
+		public java.lang.String getErrorHWPortInstanceConnectedMedia_4006(
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia target,
 				View sourceView, View targetView) {
 			try {
@@ -814,7 +814,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 							.getExpression(
 									49,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-											.getHWPortPart(), envType);
+											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean
@@ -840,7 +840,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortPart()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortInstance()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -873,7 +873,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
@@ -940,7 +940,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
@@ -1031,7 +1031,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";
@@ -1044,7 +1044,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		public boolean canExistLink_4005(
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Link linkInstance,
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Bridge target,
 				View sourceView, View targetView) {
 			try {
@@ -1065,7 +1065,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 							.getExpression(
 									58,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-											.getHWPortPart(), envType);
+											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean
@@ -1079,7 +1079,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortPart()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortInstance()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -1100,7 +1100,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return true;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return false;
@@ -1112,7 +1112,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public java.lang.String getErrorLink_4005(
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
+				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Bridge target,
 				View sourceView, View targetView) {
 			try {
@@ -1133,7 +1133,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 							.getExpression(
 									58,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-											.getHWPortPart(), envType);
+											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
 
 					if (false == sourceVal instanceof Boolean
@@ -1159,7 +1159,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 					Map<String, EClassifier> envType = new HashMap<String, EClassifier>();
 					Map<String, Object> env = new HashMap<String, Object>();
 					envType.put(
-							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortPart()); //$NON-NLS-1$
+							"oppositeEnd", de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE.getHWPortInstance()); //$NON-NLS-1$
 					env.put("oppositeEnd", source);
 					envType.put("view", NotationPackage.Literals.VIEW);
 					env.put("view", targetView);
@@ -1192,7 +1192,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				}
 				return null;
 			} catch (Exception e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Link constraint evaluation error", e); //$NON-NLS-1$
 				return "Link constraint evaluation error";

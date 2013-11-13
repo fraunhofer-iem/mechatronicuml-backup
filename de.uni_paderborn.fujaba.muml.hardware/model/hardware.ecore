@@ -630,6 +630,12 @@
           <details key="documentation" value="The Bridges this CommunicationMedia is connected to."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedHWPortInstances"
+          upperBound="-1" eType="#//platform/HWPortInstance" eOpposite="#//platform/HWPortInstance/connectedMedia">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The connected HWPortInstances."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HWPlatform" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -782,7 +788,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedMedia" upperBound="-1"
-          eType="#//platform/CommunicationMedia">
+          eType="#//platform/CommunicationMedia" eOpposite="#//platform/CommunicationMedia/connectedHWPortInstances">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The CommunicationMedia that is connected to this HWPortInstance."/>
         </eAnnotations>
@@ -903,7 +909,7 @@
         <details key="BusPort2Bus" value="if (self.hwPortInstanceType.oclIsTypeOf(platform::BusPortInstance) and not self.connectedMedia.oclIsUndefined()) then&#xA;&#x9;self.connectedMedia.oclIsTypeOf(platform::Bus)&#xA;else true&#xA;endif"/>
         <details key="LinkPort2Link" value="if (self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance) and not self.connectedMedia.oclIsUndefined()) then&#xA;&#x9;self.connectedMedia.oclIsTypeOf(platform::Link)&#xA;else true&#xA;endif"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortInstanceType" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortInstance" lowerBound="1"
           eType="#//platform/HWPortInstance"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedMedia" eType="#//platform/CommunicationMedia"
           eOpposite="#//platform/CommunicationMedia/connectedHWPortParts"/>

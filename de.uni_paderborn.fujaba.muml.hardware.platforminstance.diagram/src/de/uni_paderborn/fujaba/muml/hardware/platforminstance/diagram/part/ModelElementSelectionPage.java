@@ -13,7 +13,7 @@ public class ModelElementSelectionPage extends DefaultModelElementSelectionPage 
 	 */
 	public ModelElementSelectionPage(String pageName) {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().getItemProvidersAdapterFactory(),
 				pageName);
 	}

@@ -49,6 +49,11 @@ public abstract class CommunicationMediaEditor
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addCommunicationMediaConnectedHWPortInstancesEditor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+		}
+
 	}
 
 	/**
@@ -142,6 +147,30 @@ public abstract class CommunicationMediaEditor
 						.getCommunicationMedia_ConnectedBridges());
 
 		editor.setTooltipMessage("The Bridges this CommunicationMedia is connected to.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addCommunicationMediaConnectedHWPortInstancesEditor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createCommunicationMediaConnectedHWPortInstancesEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedHWPortInstancesEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
+						.getCommunicationMedia_ConnectedHWPortInstances());
+
+		editor.setTooltipMessage("The connected HWPortInstances.");
 
 		return editor;
 

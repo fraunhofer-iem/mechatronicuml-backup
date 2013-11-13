@@ -64,12 +64,12 @@ public class HardwarePropertySection extends DefaultPropertySection implements
 			List<AdapterFactory> positivePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
 					.getInstance()
 					.getCustomItemProviderAdapterFactories(
-							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin.ID,
+							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.ID,
 							true);
 			List<AdapterFactory> negativePriorityFactories = de.uni_paderborn.fujaba.common.FujabaCommonPlugin
 					.getInstance()
 					.getCustomItemProviderAdapterFactories(
-							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin.ID,
+							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.ID,
 							false);
 
 			// Put all factories into one composed adapter factory.

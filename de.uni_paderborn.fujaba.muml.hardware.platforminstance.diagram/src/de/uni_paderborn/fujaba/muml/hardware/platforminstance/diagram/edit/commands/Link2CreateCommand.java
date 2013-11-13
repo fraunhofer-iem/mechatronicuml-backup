@@ -62,7 +62,7 @@ public class Link2CreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) {
 			return false;
 		}
 		if (target != null
@@ -107,7 +107,7 @@ public class Link2CreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.hardware.platform.Link newElement = de.uni_paderborn.fujaba.muml.hardware.platform.PlatformFactory.eINSTANCE
 				.createLink();
 		getContainer().getEmbeddedCommunicationResources().add(newElement);
-		newElement.getConnectedHWPortParts().add(getSource());
+		newElement.getConnectedHWPortInstances().add(getSource());
 		newElement.getConnectedBridges().add(getTarget());
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.ElementInitializers
 				.getInstance().init_Link_4005(newElement);
@@ -152,8 +152,8 @@ public class Link2CreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart getSource() {
-		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) source;
+	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance getSource() {
+		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) source;
 	}
 
 	/**

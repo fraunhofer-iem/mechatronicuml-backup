@@ -59,7 +59,7 @@ public class Link2ReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart && newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance && newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance)) {
 			return false;
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
@@ -101,12 +101,12 @@ public class Link2ReorientCommand extends EditElementCommand {
 		}
 		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
 		/*
-		if (getLink().getConnectedHWPortParts().size() != 1) {
+		if (getLink().getConnectedHWPortInstances().size() != 1) {
 		  return false;
 		}
 		 */
-		de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) getLink()
-				.getConnectedHWPortParts().get(0);
+		de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) getLink()
+				.getConnectedHWPortInstances().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform)) {
 			return false;
 		}
@@ -153,10 +153,10 @@ public class Link2ReorientCommand extends EditElementCommand {
 	protected CommandResult reorientSource() throws ExecutionException {
 
 		// Enhancement for MUML-BUG #446
-		if (getLink().getConnectedHWPortParts().size() > 1) {
-			getLink().getConnectedHWPortParts().remove(getOldSource());
+		if (getLink().getConnectedHWPortInstances().size() > 1) {
+			getLink().getConnectedHWPortInstances().remove(getOldSource());
 		}
-		getLink().getConnectedHWPortParts().add(getNewSource());
+		getLink().getConnectedHWPortInstances().add(getNewSource());
 
 		return CommandResult.newOKCommandResult(getLink());
 	}
@@ -185,15 +185,15 @@ public class Link2ReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) newEnd;
+	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) newEnd;
 	}
 
 	/**

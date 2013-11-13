@@ -14,7 +14,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getHwPortInstanceType <em>Hw Port Instance Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getHwPortInstance <em>Hw Port Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getConnectedMedia <em>Connected Media</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getProtocol <em>Protocol</em>}</li>
  * </ul>
@@ -27,30 +27,30 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
  */
 public interface HWPortPart extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Hw Port Instance Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Hw Port Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Hw Port Instance Type</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Hw Port Instance</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Hw Port Instance Type</em>' reference.
-	 * @see #setHwPortInstanceType(HWPortInstance)
-	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPortPart_HwPortInstanceType()
+	 * @return the value of the '<em>Hw Port Instance</em>' reference.
+	 * @see #setHwPortInstance(HWPortInstance)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPortPart_HwPortInstance()
 	 * @model required="true"
 	 * @generated
 	 */
-	HWPortInstance getHwPortInstanceType();
+	HWPortInstance getHwPortInstance();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getHwPortInstanceType <em>Hw Port Instance Type</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getHwPortInstance <em>Hw Port Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hw Port Instance Type</em>' reference.
-	 * @see #getHwPortInstanceType()
+	 * @param value the new value of the '<em>Hw Port Instance</em>' reference.
+	 * @see #getHwPortInstance()
 	 * @generated
 	 */
-	void setHwPortInstanceType(HWPortInstance value);
+	void setHwPortInstance(HWPortInstance value);
 
 	/**
 	 * Returns the value of the '<em><b>Connected Media</b></em>' reference.

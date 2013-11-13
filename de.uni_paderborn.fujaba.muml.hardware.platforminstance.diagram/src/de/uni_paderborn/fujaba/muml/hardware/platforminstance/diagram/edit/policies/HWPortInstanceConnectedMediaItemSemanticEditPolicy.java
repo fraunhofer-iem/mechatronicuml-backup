@@ -7,16 +7,16 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 /**
  * @generated
  */
-public class HWPortPartConnectedMediaItemSemanticEditPolicy
+public class HWPortInstanceConnectedMediaItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public HWPortPartConnectedMediaItemSemanticEditPolicy() {
+	public HWPortInstanceConnectedMediaItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortPartConnectedMedia_4003);
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstanceConnectedMedia_4006);
 	}
 
 	/**

@@ -700,6 +700,15 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCommunicationMedia_ConnectedHWPortInstances() {
+		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHWPlatform() {
 		return hwPlatformEClass;
 	}
@@ -1060,7 +1069,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHWPortPart_HwPortInstanceType() {
+	public EReference getHWPortPart_HwPortInstance() {
 		return (EReference)hwPortPartEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1162,6 +1171,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		createEReference(communicationMediaEClass, COMMUNICATION_MEDIA__PROTOCOL);
 		createEReference(communicationMediaEClass, COMMUNICATION_MEDIA__CONNECTED_HW_PORT_PARTS);
 		createEReference(communicationMediaEClass, COMMUNICATION_MEDIA__CONNECTED_BRIDGES);
+		createEReference(communicationMediaEClass, COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES);
 
 		hwPlatformEClass = createEClass(HW_PLATFORM);
 		createEReference(hwPlatformEClass, HW_PLATFORM__EMBEDDED_PLATFORM_PARTS);
@@ -1215,7 +1225,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		createEReference(delegationEClass, DELEGATION__HW_PORT_PART);
 
 		hwPortPartEClass = createEClass(HW_PORT_PART);
-		createEReference(hwPortPartEClass, HW_PORT_PART__HW_PORT_INSTANCE_TYPE);
+		createEReference(hwPortPartEClass, HW_PORT_PART__HW_PORT_INSTANCE);
 		createEReference(hwPortPartEClass, HW_PORT_PART__CONNECTED_MEDIA);
 		createEReference(hwPortPartEClass, HW_PORT_PART__PROTOCOL);
 	}
@@ -1338,6 +1348,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		initEReference(getCommunicationMedia_Protocol(), theResourcetypePackage.getCommunicationProtocol(), null, "protocol", null, 1, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationMedia_ConnectedHWPortParts(), this.getHWPortPart(), this.getHWPortPart_ConnectedMedia(), "connectedHWPortParts", null, 0, -1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationMedia_ConnectedBridges(), this.getBridge(), this.getBridge_ConnectedCommunicationMedia(), "connectedBridges", null, 0, -1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCommunicationMedia_ConnectedHWPortInstances(), this.getHWPortInstance(), this.getHWPortInstance_ConnectedMedia(), "connectedHWPortInstances", null, 0, -1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPlatformEClass, HWPlatform.class, "HWPlatform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPlatform_EmbeddedPlatformParts(), this.getPlatformPart(), this.getPlatformPart_ParentHWPlatform(), "embeddedPlatformParts", null, 1, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1367,7 +1378,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		initEReference(getHWPortInstance_ParentResourceInstance(), this.getResourceInstance(), this.getResourceInstance_HwportInstances(), "parentResourceInstance", null, 0, 1, HWPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortInstance_QueuingTime(), theHwvaluetypePackage.getTimeInterval(), null, "queuingTime", null, 0, 1, HWPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortInstance_Protocol(), theResourcetypePackage.getCommunicationProtocol(), null, "protocol", null, 1, 1, HWPortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getHWPortInstance_ConnectedMedia(), this.getCommunicationMedia(), null, "connectedMedia", null, 0, -1, HWPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPortInstance_ConnectedMedia(), this.getCommunicationMedia(), this.getCommunicationMedia_ConnectedHWPortInstances(), "connectedMedia", null, 0, -1, HWPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortInstance_PayloadDataSize(), theHwvaluetypePackage.getDataSize(), null, "payloadDataSize", null, 0, 1, HWPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHWPortInstance_IsDelegationPort(), ecorePackage.getEBoolean(), "isDelegationPort", "false", 1, 1, HWPortInstance.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortInstance_Delegation(), this.getDelegation(), this.getDelegation_HwPortInstance(), "delegation", null, 0, -1, HWPortInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1391,7 +1402,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		initEReference(getDelegation_HwPortPart(), this.getHWPortPart(), null, "hwPortPart", null, 1, 1, Delegation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPortPartEClass, HWPortPart.class, "HWPortPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getHWPortPart_HwPortInstanceType(), this.getHWPortInstance(), null, "hwPortInstanceType", null, 1, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPortPart_HwPortInstance(), this.getHWPortInstance(), null, "hwPortInstance", null, 1, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortPart_ConnectedMedia(), this.getCommunicationMedia(), this.getCommunicationMedia_ConnectedHWPortParts(), "connectedMedia", null, 0, 1, HWPortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPortPart_Protocol(), theResourcetypePackage.getCommunicationProtocol(), null, "protocol", null, 1, 1, HWPortPart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
@@ -1642,6 +1653,12 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "documentation", "The Bridges this CommunicationMedia is connected to."
+		   });		
+		addAnnotation
+		  (getCommunicationMedia_ConnectedHWPortInstances(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The connected HWPortInstances."
 		   });		
 		addAnnotation
 		  (hwPlatformEClass, 
@@ -1936,7 +1953,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "constraints", "Only2Connections LinkProtocol"
-		   });																		
+		   });																			
 		addAnnotation
 		  (platformPartEClass, 
 		   source, 
@@ -2045,7 +2062,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance))->asOrderedSet()"
-		   });																
+		   });																	
 		addAnnotation
 		  (platformPartEClass, 
 		   source, 

@@ -34,7 +34,7 @@ public class HardwareElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().getItemProvidersAdapterFactory());
 
 	/**
@@ -120,7 +120,7 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType HWPortPartConnectedMedia_4003 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortPartConnectedMedia_4003"); //$NON-NLS-1$
+	public static final IElementType HWPortInstanceConnectedMedia_4006 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstanceConnectedMedia_4006"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -261,9 +261,9 @@ public class HardwareElementTypes {
 							.getLink());
 
 			elements.put(
-					HWPortPartConnectedMedia_4003,
+					HWPortInstanceConnectedMedia_4006,
 					de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-							.getHWPortPart_ConnectedMedia());
+							.getHWPortInstance_ConnectedMedia());
 
 			elements.put(
 					CommunicationMediaConnectedBridges_4004,
@@ -309,7 +309,7 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES.add(SensorInstance_3014);
 			KNOWN_ELEMENT_TYPES.add(Delegation_4001);
 			KNOWN_ELEMENT_TYPES.add(Link_4002);
-			KNOWN_ELEMENT_TYPES.add(HWPortPartConnectedMedia_4003);
+			KNOWN_ELEMENT_TYPES.add(HWPortInstanceConnectedMedia_4006);
 			KNOWN_ELEMENT_TYPES.add(CommunicationMediaConnectedBridges_4004);
 			KNOWN_ELEMENT_TYPES.add(Link_4005);
 		}
@@ -357,8 +357,8 @@ public class HardwareElementTypes {
 			return Delegation_4001;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.LinkEditPart.VISUAL_ID:
 			return Link_4002;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID:
-			return HWPortPartConnectedMedia_4003;
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceConnectedMediaEditPart.VISUAL_ID:
+			return HWPortInstanceConnectedMedia_4006;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.CommunicationMediaConnectedBridgesEditPart.VISUAL_ID:
 			return CommunicationMediaConnectedBridges_4004;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.Link2EditPart.VISUAL_ID:

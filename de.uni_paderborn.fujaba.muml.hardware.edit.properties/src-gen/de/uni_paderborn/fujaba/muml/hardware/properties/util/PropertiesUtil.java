@@ -51,13 +51,13 @@ public class PropertiesUtil {
 				.add(new de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.provider.HwvaluetypeItemProviderAdapterFactory());
 
 		factories
+				.add(new de.uni_paderborn.fujaba.muml.hardware.resourcetype.provider.ResourcetypeItemProviderAdapterFactory());
+
+		factories
 				.add(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.provider.PlatforminstanceItemProviderAdapterFactory());
 
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.hardware.platform.provider.PlatformItemProviderAdapterFactory());
-
-		factories
-				.add(new de.uni_paderborn.fujaba.muml.hardware.resourcetype.provider.ResourcetypeItemProviderAdapterFactory());
 
 		factories
 				.add(new org.storydriven.core.provider.CoreItemProviderAdapterFactory());

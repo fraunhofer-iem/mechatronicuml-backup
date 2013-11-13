@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
 import org.eclipse.gmf.gmfgraph.Canvas;
 import org.eclipse.gmf.gmfgraph.GMFGraphPackage;
 import org.eclipse.gmf.mappings.GMFMapPackage;
@@ -21,7 +22,10 @@ import org.eclipse.gmf.mappings.Mapping;
 import org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory;
 import org.eclipse.gmf.tooldef.GMFToolPackage;
 import org.eclipse.gmf.tooldef.ToolRegistry;
+import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.muml.MumlPackage;
+import de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;
 import de.uni_paderborn.fujaba.muml.tests.TestUtilities;
 
 /**
@@ -75,6 +79,9 @@ public abstract class GMFEditorUtil {
 				GMFToolPackage.eINSTANCE);
 		resourceSet.getPackageRegistry().put(GMFMapPackage.eNS_URI,
 				GMFMapPackage.eINSTANCE);
+		resourceSet.getPackageRegistry().put(GMFToolPackage.eNS_URI,
+				GMFToolPackage.eINSTANCE);
+	
 
 		Resource resource = null;
 		try {
@@ -88,7 +95,7 @@ public abstract class GMFEditorUtil {
 				.getURIMap()
 				.put(URI.createPlatformResourceURI(plugin + path, true),
 						URI.createURI(getURIMapping(plugin + path)));
-		resource.load(null);
+		//resource.load(null);
 		EcoreUtil.resolveAll(resource);
 
 		return (EObject) EcoreUtil.getObjectByType(resource.getContents(),
@@ -124,11 +131,21 @@ public abstract class GMFEditorUtil {
 		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
 		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
 				new XMIResourceFactoryImpl());
+		//extensionToFactoryMap.put("gmf",new GMFResourceFactory());
 
 		// Register Packages
 		EcorePackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
+		MumlPackage.eINSTANCE.eClass();
+
 		GenModelPackage.eINSTANCE.eClass();
 
+		GMFToolPackage.eINSTANCE.eClass();
+		GMFMapPackage.eINSTANCE.eClass();
+
+		GMFGenPackage.eINSTANCE.eClass();
+		GMFGraphPackage.eINSTANCE.eClass();
+				
 		// Load resource (CAUTION: Order is important; dependant metamodels must
 		// be loaded first, else proxies are not resolved correctly...)
 

@@ -378,7 +378,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_BusPortInstance_3007_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_LinkPortInstance_3008_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LinkPortInstance_3008_outgoinglinks;
 
 	/**
 	 * @generated
@@ -403,7 +413,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_BusPortInstance_3012_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Delegation_4001_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Link_4002_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Link_4002_source;
 
 	/**
 	 * @generated
@@ -414,11 +439,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Link_4002_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_HWPortPartConnectedMedia_4003_target;
 
 	/**
 	 * @generated
@@ -434,6 +454,21 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Link_4005_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Link_4005_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HWPortInstanceConnectedMedia_4006_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HWPortInstanceConnectedMedia_4006_source;
 
 	/**
 	 * @generated

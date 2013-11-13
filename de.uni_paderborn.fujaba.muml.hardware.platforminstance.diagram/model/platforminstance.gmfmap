@@ -151,15 +151,15 @@
         href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#Link"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/CommunicationMedia/connectedHWPortParts"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/CommunicationMedia/connectedHWPortInstances"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/CommunicationMedia/connectedHWPortParts"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/CommunicationMedia/connectedHWPortInstances"/>
     <creationConstraints>
       <sourceEnd
-          body="self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance)"/>
+          body="self.oclIsTypeOf(platform::LinkPortInstance)"/>
       <targetEnd
-          body="self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance)"/>
+          body="self.oclIsTypeOf(platform::LinkPortInstance)"/>
     </creationConstraints>
   </links>
   <links>
@@ -170,10 +170,10 @@
         href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#toBus"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/HWPortPart/connectedMedia"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/HWPortInstance/connectedMedia"/>
     <creationConstraints>
       <sourceEnd
-          body="self.hwPortInstanceType.oclIsTypeOf(platform::BusPortInstance)"/>
+          body="self.oclIsTypeOf(platform::BusPortInstance)"/>
       <targetEnd
           body="self.oclIsTypeOf(platform::Bus)"/>
     </creationConstraints>
@@ -244,13 +244,13 @@
         href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#Link"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/CommunicationMedia/connectedHWPortParts"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/CommunicationMedia/connectedHWPortInstances"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/CommunicationMedia/connectedBridges"/>
     <creationConstraints>
       <sourceEnd
-          body="self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance)"/>
+          body="self.oclIsTypeOf(platform::LinkPortInstance)"/>
       <targetEnd
           body="self.oclIsTypeOf(platform::Bridge)"/>
     </creationConstraints>

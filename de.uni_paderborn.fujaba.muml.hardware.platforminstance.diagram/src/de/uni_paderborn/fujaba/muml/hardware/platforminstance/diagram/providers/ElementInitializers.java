@@ -33,7 +33,7 @@ public class ElementInitializers {
 			newInstance_0_0.setValue(((Double) value_0_0_0).doubleValue());
 
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -60,7 +60,7 @@ public class ElementInitializers {
 			newInstance_0_0.setValue(((Double) value_0_0_0).doubleValue());
 
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -101,7 +101,7 @@ public class ElementInitializers {
 					.setUnit((de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRateUnit) value_0_0_1);
 
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -142,7 +142,7 @@ public class ElementInitializers {
 					.setUnit((de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRateUnit) value_0_0_1);
 
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -183,7 +183,7 @@ public class ElementInitializers {
 					.setUnit((de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRateUnit) value_0_0_1);
 
 		} catch (RuntimeException e) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
 		}
 	}
@@ -192,10 +192,10 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+		ElementInitializers cached = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.getInstance().getElementInitializers();
 		if (cached == null) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().setElementInitializers(
 							cached = new ElementInitializers());
 		}

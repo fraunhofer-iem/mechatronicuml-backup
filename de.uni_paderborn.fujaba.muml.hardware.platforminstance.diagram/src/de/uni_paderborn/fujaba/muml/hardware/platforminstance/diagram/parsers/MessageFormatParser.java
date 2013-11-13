@@ -173,7 +173,7 @@ public class MessageFormatParser extends AbstractAttributeParser {
 		Object[] values = getEditProcessor().parse(editString, pos);
 		if (values == null) {
 			return new ParserEditStatus(
-					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin.ID,
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.ID,
 					IParserEditStatus.UNEDITABLE,
 					NLS.bind(
 							de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.MessageFormatParser_InvalidInputError,

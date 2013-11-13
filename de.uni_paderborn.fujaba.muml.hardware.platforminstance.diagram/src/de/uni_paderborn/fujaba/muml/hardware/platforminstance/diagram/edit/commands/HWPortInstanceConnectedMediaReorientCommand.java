@@ -13,7 +13,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand {
+public class HWPortInstanceConnectedMediaReorientCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
@@ -38,7 +39,7 @@ public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	public HWPortPartConnectedMediaReorientCommand(
+	public HWPortInstanceConnectedMediaReorientCommand(
 			ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
@@ -51,7 +52,7 @@ public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	public boolean canExecute() {
-		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) {
+		if (false == referenceOwner instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) {
 			return false;
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
@@ -67,7 +68,7 @@ public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia && newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia && newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -75,11 +76,12 @@ public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand 
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistHWPortPartConnectedMedia_4003(
-						getNewSource(), getOldTarget(), sourceView, targetView)) {
+				.getLinkConstraints()
+				.canExistHWPortInstanceConnectedMedia_4006(getNewSource(),
+						getOldTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorHWPortPartConnectedMedia_4003(getNewSource(),
+					.getErrorHWPortInstanceConnectedMedia_4006(getNewSource(),
 							getOldTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(sourceView, errorMessage);
@@ -100,11 +102,12 @@ public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand 
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canExistHWPortPartConnectedMedia_4003(
-						getOldSource(), getNewTarget(), sourceView, targetView)) {
+				.getLinkConstraints()
+				.canExistHWPortInstanceConnectedMedia_4006(getOldSource(),
+						getNewTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorHWPortPartConnectedMedia_4003(getOldSource(),
+					.getErrorHWPortInstanceConnectedMedia_4006(getOldSource(),
 							getNewTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView, errorMessage);
@@ -136,8 +139,11 @@ public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand 
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
 
-		getOldSource().setConnectedMedia(null);
-		getNewSource().setConnectedMedia(getOldTarget());
+		// Enhancement for MUML-BUG #446
+		if (getOldSource().getConnectedMedia().size() > 1) {
+			getOldSource().getConnectedMedia().remove(getOldTarget());
+		}
+		getNewSource().getConnectedMedia().add(getOldTarget());
 
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
@@ -147,7 +153,11 @@ public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand 
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 
-		getOldSource().setConnectedMedia(getNewTarget());
+		// Enhancement for MUML-BUG #446
+		if (getOldSource().getConnectedMedia().size() > 1) {
+			getOldSource().getConnectedMedia().remove(getOldTarget());
+		}
+		getOldSource().getConnectedMedia().add(getNewTarget());
 
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
@@ -155,15 +165,15 @@ public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart getOldSource() {
-		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) referenceOwner;
+	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance getOldSource() {
+		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart getNewSource() {
-		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) newEnd;
+	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance getNewSource() {
+		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) newEnd;
 	}
 
 	/**

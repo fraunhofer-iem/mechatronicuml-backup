@@ -1202,13 +1202,22 @@ public interface PlatformPackage extends EPackage {
 	int COMMUNICATION_MEDIA__CONNECTED_BRIDGES = COMMUNICATION_RESOURCE_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Connected HW Port Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES = COMMUNICATION_RESOURCE_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Communication Media</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_MEDIA_FEATURE_COUNT = COMMUNICATION_RESOURCE_FEATURE_COUNT + 6;
+	int COMMUNICATION_MEDIA_FEATURE_COUNT = COMMUNICATION_RESOURCE_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.BusImpl <em>Bus</em>}' class.
@@ -1300,6 +1309,15 @@ public interface PlatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int BUS__CONNECTED_BRIDGES = COMMUNICATION_MEDIA__CONNECTED_BRIDGES;
+
+	/**
+	 * The feature id for the '<em><b>Connected HW Port Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUS__CONNECTED_HW_PORT_INSTANCES = COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Connected Bus Port Instances</b></em>' reference list.
@@ -1409,6 +1427,15 @@ public interface PlatformPackage extends EPackage {
 	 * @ordered
 	 */
 	int LINK__CONNECTED_BRIDGES = COMMUNICATION_MEDIA__CONNECTED_BRIDGES;
+
+	/**
+	 * The feature id for the '<em><b>Connected HW Port Instances</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__CONNECTED_HW_PORT_INSTANCES = COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES;
 
 	/**
 	 * The feature id for the '<em><b>Connected Link Port Instances</b></em>' reference list.
@@ -2479,13 +2506,13 @@ public interface PlatformPackage extends EPackage {
 	int HW_PORT_PART__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Hw Port Instance Type</b></em>' reference.
+	 * The feature id for the '<em><b>Hw Port Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_PART__HW_PORT_INSTANCE_TYPE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int HW_PORT_PART__HW_PORT_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Connected Media</b></em>' reference.
@@ -2905,6 +2932,17 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCommunicationMedia_ConnectedBridges();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortInstances <em>Connected HW Port Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Connected HW Port Instances</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortInstances()
+	 * @see #getCommunicationMedia()
+	 * @generated
+	 */
+	EReference getCommunicationMedia_ConnectedHWPortInstances();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform <em>HW Platform</em>}'.
@@ -3334,15 +3372,15 @@ public interface PlatformPackage extends EPackage {
 	EClass getHWPortPart();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getHwPortInstanceType <em>Hw Port Instance Type</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getHwPortInstance <em>Hw Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Hw Port Instance Type</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getHwPortInstanceType()
+	 * @return the meta object for the reference '<em>Hw Port Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getHwPortInstance()
 	 * @see #getHWPortPart()
 	 * @generated
 	 */
-	EReference getHWPortPart_HwPortInstanceType();
+	EReference getHWPortPart_HwPortInstance();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getConnectedMedia <em>Connected Media</em>}'.
@@ -3717,6 +3755,14 @@ public interface PlatformPackage extends EPackage {
 		EReference COMMUNICATION_MEDIA__CONNECTED_BRIDGES = eINSTANCE.getCommunicationMedia_ConnectedBridges();
 
 		/**
+		 * The meta object literal for the '<em><b>Connected HW Port Instances</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES = eINSTANCE.getCommunicationMedia_ConnectedHWPortInstances();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.HWPlatformImpl <em>HW Platform</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4063,12 +4109,12 @@ public interface PlatformPackage extends EPackage {
 		EClass HW_PORT_PART = eINSTANCE.getHWPortPart();
 
 		/**
-		 * The meta object literal for the '<em><b>Hw Port Instance Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Hw Port Instance</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HW_PORT_PART__HW_PORT_INSTANCE_TYPE = eINSTANCE.getHWPortPart_HwPortInstanceType();
+		EReference HW_PORT_PART__HW_PORT_INSTANCE = eINSTANCE.getHWPortPart_HwPortInstance();
 
 		/**
 		 * The meta object literal for the '<em><b>Connected Media</b></em>' reference feature.

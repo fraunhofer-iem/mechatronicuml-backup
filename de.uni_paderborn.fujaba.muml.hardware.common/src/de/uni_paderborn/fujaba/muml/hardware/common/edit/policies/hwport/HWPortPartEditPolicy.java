@@ -27,7 +27,7 @@ public class HWPortPartEditPolicy extends HWPortTypeEditPolicy {
 		EObject element = getSemanticElement();
 		if (element != null) {
 			HWPortInstance hwportInstance = (HWPortInstance) element
-					.eGet(PlatformPackage.Literals.HW_PORT_PART__HW_PORT_INSTANCE_TYPE);
+					.eGet(PlatformPackage.Literals.HW_PORT_PART__HW_PORT_INSTANCE);
 			if (hwportInstance != null) {
 				return (HWPort) hwportInstance
 						.eGet(PlatformPackage.Literals.HW_PORT_INSTANCE__HWPORT_TYPE);
@@ -45,7 +45,7 @@ public class HWPortPartEditPolicy extends HWPortTypeEditPolicy {
 		EObject element = getSemanticElement();
 		if (element != null) {
 			HWPortInstance hwportInstance = (HWPortInstance) element
-					.eGet(PlatformPackage.Literals.HW_PORT_PART__HW_PORT_INSTANCE_TYPE);
+					.eGet(PlatformPackage.Literals.HW_PORT_PART__HW_PORT_INSTANCE);
 			if (hwportInstance != null) {
 				return hwportInstance.isIsDelegationPort();
 			}

@@ -12,7 +12,8 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class HWPortPartConnectedMediaCreateCommand extends EditElementCommand {
+public class HWPortInstanceConnectedMediaCreateCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
@@ -27,7 +28,7 @@ public class HWPortPartConnectedMediaCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public HWPortPartConnectedMediaCreateCommand(
+	public HWPortInstanceConnectedMediaCreateCommand(
 			CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
@@ -42,7 +43,7 @@ public class HWPortPartConnectedMediaCreateCommand extends EditElementCommand {
 			return false;
 		}
 		if (source != null
-				&& false == source instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) {
+				&& false == source instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) {
 			return false;
 		}
 		if (target != null
@@ -58,11 +59,12 @@ public class HWPortPartConnectedMediaCreateCommand extends EditElementCommand {
 		View targetView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
-				.getLinkConstraints().canCreateHWPortPartConnectedMedia_4003(
-						getSource(), getTarget(), sourceView, targetView)) {
+				.getLinkConstraints()
+				.canCreateHWPortInstanceConnectedMedia_4006(getSource(),
+						getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HardwareBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorHWPortPartConnectedMedia_4003(getSource(),
+					.getErrorHWPortInstanceConnectedMedia_4006(getSource(),
 							getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView != null ? targetView : sourceView,
@@ -83,7 +85,7 @@ public class HWPortPartConnectedMediaCreateCommand extends EditElementCommand {
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().setConnectedMedia(getTarget());
+			getSource().getConnectedMedia().add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 
@@ -99,8 +101,8 @@ public class HWPortPartConnectedMediaCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart getSource() {
-		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) source;
+	protected de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance getSource() {
+		return (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) source;
 	}
 
 	/**

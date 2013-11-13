@@ -138,7 +138,7 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 								diagramRootElementSelectionPage
 										.getModelElement(),
 								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID,
-								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+								de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
@@ -152,16 +152,16 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorUtil
 					.openDiagram(diagramResource);
 		} catch (ExecutionException e) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().logError(
 							"Unable to create model and diagram", e); //$NON-NLS-1$
 		} catch (IOException ex) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance()
 					.logError(
 							"Save operation failed for: " + diagramModelURI, ex); //$NON-NLS-1$
 		} catch (PartInitException ex) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().logError("Unable to open editor", ex); //$NON-NLS-1$
 		}
 		return true;
@@ -202,7 +202,7 @@ public class HardwareNewDiagramFileWizard extends Wizard {
 							new CreateDiagramViewOperation(
 									new EObjectAdapter(getModelElement()),
 									de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceConfigurationEditPart.MODEL_ID,
-									de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+									de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(result ? null
 					: de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.HardwareNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;

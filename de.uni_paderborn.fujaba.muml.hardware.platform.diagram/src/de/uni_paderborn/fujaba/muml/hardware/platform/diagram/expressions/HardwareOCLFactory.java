@@ -81,9 +81,9 @@ public class HardwareOCLFactory {
 					"--DataRateUnit::bs".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--proto + \'\\n\' + bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'Enter bandwidth in form of: Value bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.hwPortInstanceType.oclIsTypeOf(platform::BusPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bus)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bus)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bridge)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
@@ -92,7 +92,7 @@ public class HardwareOCLFactory {
 					"--DataRateUnit::bs".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--let bdwidth : String = if self.bandwidth.oclIsUndefined() then \'null\' else  self.bandwidth.toString() endif in\n--proto + \'\\n\' + bdwidth".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'Enter bandwidth in form of: Value bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bridge)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.properties.platform.editor;
  */
 public abstract class ResourceInstanceEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.storydriven.core.properties.core.editor.ExtendableElementEditor {
 
 	/**
 	 * @generated
@@ -33,6 +33,10 @@ public abstract class ResourceInstanceEditor
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addResourceInstanceHwportInstancesEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -80,6 +84,28 @@ public abstract class ResourceInstanceEditor
 						.getResourceInstance_HwportInstances());
 
 		editor.setTooltipMessage("The HWPortInstances which belong to this ResourceInstance. They are derived by the resourceType.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getNamedElement_Name(), false);
+
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 

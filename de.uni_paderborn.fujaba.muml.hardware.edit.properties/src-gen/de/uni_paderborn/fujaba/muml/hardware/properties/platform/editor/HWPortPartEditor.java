@@ -24,7 +24,7 @@ public class HWPortPartEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortPartHwPortInstanceTypeEditor(null, true);
+			addHWPortPartHwPortInstanceEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -36,20 +36,20 @@ public class HWPortPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPortPartHwPortInstanceTypeEditor(String category,
+	protected void addHWPortPartHwPortInstanceEditor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createHWPortPartHwPortInstanceTypeEditor(), front);
+		addEditorToCategory(category, createHWPortPartHwPortInstanceEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortPartHwPortInstanceTypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortPartHwPortInstanceEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-						.getHWPortPart_HwPortInstanceType());
+						.getHWPortPart_HwPortInstance());
 
 		return editor;
 

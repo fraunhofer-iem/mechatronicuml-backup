@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.HWPortPartImpl#getHwPortInstanceType <em>Hw Port Instance Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.HWPortPartImpl#getHwPortInstance <em>Hw Port Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.HWPortPartImpl#getConnectedMedia <em>Connected Media</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.HWPortPartImpl#getProtocol <em>Protocol</em>}</li>
  * </ul>
@@ -33,14 +33,14 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
  */
 public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	/**
-	 * The cached value of the '{@link #getHwPortInstanceType() <em>Hw Port Instance Type</em>}' reference.
+	 * The cached value of the '{@link #getHwPortInstance() <em>Hw Port Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getHwPortInstanceType()
+	 * @see #getHwPortInstance()
 	 * @generated
 	 * @ordered
 	 */
-	protected HWPortInstance hwPortInstanceType;
+	protected HWPortInstance hwPortInstance;
 
 	/**
 	 * The cached value of the '{@link #getConnectedMedia() <em>Connected Media</em>}' reference.
@@ -86,16 +86,16 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HWPortInstance getHwPortInstanceType() {
-		if (hwPortInstanceType != null && hwPortInstanceType.eIsProxy()) {
-			InternalEObject oldHwPortInstanceType = (InternalEObject)hwPortInstanceType;
-			hwPortInstanceType = (HWPortInstance)eResolveProxy(oldHwPortInstanceType);
-			if (hwPortInstanceType != oldHwPortInstanceType) {
+	public HWPortInstance getHwPortInstance() {
+		if (hwPortInstance != null && hwPortInstance.eIsProxy()) {
+			InternalEObject oldHwPortInstance = (InternalEObject)hwPortInstance;
+			hwPortInstance = (HWPortInstance)eResolveProxy(oldHwPortInstance);
+			if (hwPortInstance != oldHwPortInstance) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE_TYPE, oldHwPortInstanceType, hwPortInstanceType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE, oldHwPortInstance, hwPortInstance));
 			}
 		}
-		return hwPortInstanceType;
+		return hwPortInstance;
 	}
 
 	/**
@@ -103,8 +103,8 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HWPortInstance basicGetHwPortInstanceType() {
-		return hwPortInstanceType;
+	public HWPortInstance basicGetHwPortInstance() {
+		return hwPortInstance;
 	}
 
 	/**
@@ -112,11 +112,11 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHwPortInstanceType(HWPortInstance newHwPortInstanceType) {
-		HWPortInstance oldHwPortInstanceType = hwPortInstanceType;
-		hwPortInstanceType = newHwPortInstanceType;
+	public void setHwPortInstance(HWPortInstance newHwPortInstance) {
+		HWPortInstance oldHwPortInstance = hwPortInstance;
+		hwPortInstance = newHwPortInstance;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE_TYPE, oldHwPortInstanceType, hwPortInstanceType));
+			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE, oldHwPortInstance, hwPortInstance));
 	}
 
 	/**
@@ -235,9 +235,9 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE_TYPE:
-				if (resolve) return getHwPortInstanceType();
-				return basicGetHwPortInstanceType();
+			case PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE:
+				if (resolve) return getHwPortInstance();
+				return basicGetHwPortInstance();
 			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
 				if (resolve) return getConnectedMedia();
 				return basicGetConnectedMedia();
@@ -256,8 +256,8 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE_TYPE:
-				setHwPortInstanceType((HWPortInstance)newValue);
+			case PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE:
+				setHwPortInstance((HWPortInstance)newValue);
 				return;
 			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
 				setConnectedMedia((CommunicationMedia)newValue);
@@ -274,8 +274,8 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE_TYPE:
-				setHwPortInstanceType((HWPortInstance)null);
+			case PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE:
+				setHwPortInstance((HWPortInstance)null);
 				return;
 			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
 				setConnectedMedia((CommunicationMedia)null);
@@ -292,8 +292,8 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE_TYPE:
-				return hwPortInstanceType != null;
+			case PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE:
+				return hwPortInstance != null;
 			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
 				return connectedMedia != null;
 			case PlatformPackage.HW_PORT_PART__PROTOCOL:

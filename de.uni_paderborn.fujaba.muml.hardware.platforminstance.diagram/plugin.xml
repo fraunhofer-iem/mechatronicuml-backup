@@ -48,7 +48,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/PlatforminstanceDiagramFile.gif"
-  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	     category="org.eclipse.ui.Examples"
   	     class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareCreationWizard"
   	     id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
@@ -205,32 +205,33 @@
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
-            id="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
+            category="de.uni_paderborn.fujaba.preferences"
             class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.hardware.diagram.appearance"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.appearance"
-            category="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.appearance"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.appearance"
+            category="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
             class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.hardware.diagram.connections"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.connections"
-            category="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.connections"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.connections"
+            category="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
             class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.hardware.diagram.printing"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.printing"
-            category="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.printing"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.printing"
+            category="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
             class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.hardware.diagram.rulersAndGrid"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.rulersAndGrid"
-            category="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.rulersAndGrid"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.rulersAndGrid"
+            category="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general"
             class="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
@@ -328,7 +329,7 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="PlatformInstance"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4006,4004,4005"/>
       </viewProvider>
    </extension>
 
@@ -343,7 +344,7 @@
             <method name="getType()" value="2001,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3012,3013,3014"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4002,4003,4004,4005"/>
+            <method name="getType()" value="4001,4002,4006,4004,4005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5034,5026,5027,5028,5001,5002,5003,5004,5005,5006,5007,5008,5009,5010,5011,5012,5013,5014,5015,5016,5017,5018,5019,5020,5021,5022,5023,5024,5025,5029,5030,5031,5033,5032,5035,5036,5037,5038,5039,5040"/>
@@ -575,11 +576,11 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/platform/1.0/">
          <specializationType
-               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortPartConnectedMedia_4003"
-               name="%metatype.name.HWPortPartConnectedMedia_4003"
+               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstanceConnectedMedia_4006"
+               name="%metatype.name.HWPortInstanceConnectedMedia_4006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4003"/>
+            <param name="semanticHint" value="4006"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/platform/1.0/">
@@ -630,7 +631,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.SensorInstance_3014"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.Delegation_4001"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.Link_4002"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortPartConnectedMedia_4003"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstanceConnectedMedia_4006"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.CommunicationMediaConnectedBridges_4004"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.Link_4005"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>

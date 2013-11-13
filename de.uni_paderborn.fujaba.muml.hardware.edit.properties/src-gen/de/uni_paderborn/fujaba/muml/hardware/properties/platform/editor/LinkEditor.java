@@ -58,7 +58,7 @@ public class LinkEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general",
+							"property.tab.general", "property.tab.general",
 							"property.tab.documentation"}).contains(tab);
 		}
 	}

@@ -484,8 +484,8 @@
             </newElementInitializers>
           </initializers>
         </modelElementInitializer>
-        <sourceMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/platform/CommunicationMedia/connectedHWPortParts"/>
-        <targetMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/platform/CommunicationMedia/connectedHWPortParts"/>
+        <sourceMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/platform/CommunicationMedia/connectedHWPortInstances"/>
+        <targetMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/platform/CommunicationMedia/connectedHWPortInstances"/>
       </modelFacet>
       <labels visualID="6001" editPartClassName="WrappingLabel28EditPart" itemSemanticEditPolicyClassName="WrappingLabel28ItemSemanticEditPolicy" notationViewFactoryClassName="LinkLabelViewFactory">
         <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -496,12 +496,12 @@
       </labels>
       <creationConstraints sourceEnd="//@expressionProviders/@providers.0/@expressions.47" targetEnd="//@expressionProviders/@providers.0/@expressions.48"/>
     </links>
-    <links visualID="4003" editPartClassName="HWPortPartConnectedMediaEditPart" itemSemanticEditPolicyClassName="HWPortPartConnectedMediaItemSemanticEditPolicy" notationViewFactoryClassName="HWPortPartConnectedMediaViewFactory" createCommandClassName="HWPortPartConnectedMediaCreateCommand" reorientCommandClassName="HWPortPartConnectedMediaReorientCommand">
+    <links visualID="4006" editPartClassName="HWPortInstanceConnectedMediaEditPart" itemSemanticEditPolicyClassName="HWPortInstanceConnectedMediaItemSemanticEditPolicy" notationViewFactoryClassName="HWPortInstanceConnectedMediaViewFactory" createCommandClassName="HWPortInstanceConnectedMediaCreateCommand" reorientCommandClassName="HWPortInstanceConnectedMediaReorientCommand">
       <diagramRunTimeClass href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType xsi:type="gmfgen:SpecializationType"/>
       <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ToBusFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ToBusFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ToBusFigure() {&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASHDOT);&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet xsi:type="gmfgen:FeatureLinkModelFacet">
-        <metaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/platform/HWPortPart/connectedMedia"/>
+        <metaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/platform/HWPortInstance/connectedMedia"/>
       </modelFacet>
       <creationConstraints sourceEnd="//@expressionProviders/@providers.0/@expressions.49" targetEnd="//@expressionProviders/@providers.0/@expressions.50"/>
     </links>
@@ -535,7 +535,7 @@
             </newElementInitializers>
           </initializers>
         </modelElementInitializer>
-        <sourceMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/platform/CommunicationMedia/connectedHWPortParts"/>
+        <sourceMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/platform/CommunicationMedia/connectedHWPortInstances"/>
         <targetMetaFeature href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/platform/CommunicationMedia/connectedBridges"/>
       </modelFacet>
       <labels visualID="6002" editPartClassName="WrappingLabel29EditPart" itemSemanticEditPolicyClassName="WrappingLabel29ItemSemanticEditPolicy" notationViewFactoryClassName="LinkLabelViewFactory">
@@ -581,11 +581,11 @@
       <noteFillColor xsi:type="gmfgen:GenConstantColor" name="yellow"/>
       <noteLineColor xsi:type="gmfgen:GenConstantColor" name="orange"/>
     </preferences>
-    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.hardware.diagram.general" name="Hardware Diagram">
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.hardware.diagram.appearance" name="Appearance" kind="Appearance"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.hardware.diagram.connections" name="Connections" kind="Connections"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.hardware.diagram.printing" name="Printing" kind="Printing"/>
-      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.hardware.diagram.rulersAndGrid" name="Rulers And Grid" kind="RulersAndGrid"/>
+    <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general" name="Platform Instance Diagram Editor" parentCategory="de.uni_paderborn.fujaba.preferences">
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.appearance" name="Appearance" parentCategory="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general" kind="Appearance"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.connections" name="Connections" parentCategory="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general" kind="Connections"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.printing" name="Printing" parentCategory="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general" kind="Printing"/>
+      <children xsi:type="gmfgen:GenStandardPreferencePage" iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.rulersAndGrid" name="Rulers And Grid" parentCategory="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.general" kind="RulersAndGrid"/>
     </preferencePages>
   </diagram>
   <plugin iD="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram" name="Platform Instance Diagram Editor" provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" activatorClassName="PlatformInstanceDiagramEditorPlugin">
@@ -636,11 +636,29 @@
     <childReferences parent="//@diagram/@links.0" child="//@diagram/@childNodes.11" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.11" child="//@diagram/@links.0" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.1" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.6" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.6" child="//@diagram/@links.1" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.7" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.7" child="//@diagram/@links.1" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.11" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.11" child="//@diagram/@links.1" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.6" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.6" child="//@diagram/@links.1" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.7" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.7" child="//@diagram/@links.1" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.1" child="//@diagram/@childNodes.11" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.11" child="//@diagram/@links.1" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.2" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.2" child="//@diagram/@childNodes.8" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.8" child="//@diagram/@links.2" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.2" child="//@diagram/@links.1" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.1" child="//@diagram/@links.2" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.2" child="//@diagram/@childNodes.6" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.6" child="//@diagram/@links.2" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.2" child="//@diagram/@childNodes.7" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.7" child="//@diagram/@links.2" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.2" child="//@diagram/@childNodes.11" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.11" child="//@diagram/@links.2" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram" child="//@diagram/@links.3" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.3" child="//@diagram/@childNodes.9" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.9" child="//@diagram/@links.3" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
@@ -651,6 +669,12 @@
     <childReferences parent="//@diagram" child="//@diagram/@links.4" groupName="links" groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@links.4" child="//@diagram/@childNodes.9" referenceType="out_target" groupName="target" groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences parent="//@diagram/@childNodes.9" child="//@diagram/@links.4" referenceType="in_source" groupName="incoming links" groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.4" child="//@diagram/@childNodes.6" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.6" child="//@diagram/@links.4" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.4" child="//@diagram/@childNodes.7" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.7" child="//@diagram/@links.4" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@links.4" child="//@diagram/@childNodes.11" referenceType="in_source" groupName="source" groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences parent="//@diagram/@childNodes.11" child="//@diagram/@links.4" referenceType="out_target" groupName="outgoing links" groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
@@ -720,9 +744,9 @@
       <expressions body="--DataRateUnit::bs"/>
       <expressions body="--let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;--let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;--proto + '\n' + bdwidth"/>
       <expressions body="--'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
-      <expressions xsi:type="gmfgen:GenConstraint" body="--self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance)"/>
-      <expressions xsi:type="gmfgen:GenConstraint" body="--self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance)"/>
-      <expressions xsi:type="gmfgen:GenConstraint" body="--self.hwPortInstanceType.oclIsTypeOf(platform::BusPortInstance)"/>
+      <expressions xsi:type="gmfgen:GenConstraint" body="--self.oclIsTypeOf(platform::LinkPortInstance)"/>
+      <expressions xsi:type="gmfgen:GenConstraint" body="--self.oclIsTypeOf(platform::LinkPortInstance)"/>
+      <expressions xsi:type="gmfgen:GenConstraint" body="--self.oclIsTypeOf(platform::BusPortInstance)"/>
       <expressions xsi:type="gmfgen:GenConstraint" body="--self.oclIsTypeOf(platform::Bus)"/>
       <expressions xsi:type="gmfgen:GenConstraint" body="--self.oclIsTypeOf(platform::Bus)"/>
       <expressions xsi:type="gmfgen:GenConstraint" body="--self.oclIsTypeOf(platform::Bridge)"/>
@@ -731,7 +755,7 @@
       <expressions body="--DataRateUnit::bs"/>
       <expressions body="--let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;--let bdwidth : String = if self.bandwidth.oclIsUndefined() then 'null' else  self.bandwidth.toString() endif in&#xA;--proto + '\n' + bdwidth"/>
       <expressions body="--'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
-      <expressions xsi:type="gmfgen:GenConstraint" body="--self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance)"/>
+      <expressions xsi:type="gmfgen:GenConstraint" body="--self.oclIsTypeOf(platform::LinkPortInstance)"/>
       <expressions xsi:type="gmfgen:GenConstraint" body="--self.oclIsTypeOf(platform::Bridge)"/>
     </providers>
   </expressionProviders>

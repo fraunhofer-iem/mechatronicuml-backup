@@ -144,7 +144,7 @@ public class HardwareNavigatorActionProvider extends CommonActionProvider {
 						editorInput,
 						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditor.ID);
 			} catch (PartInitException e) {
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 						.getInstance().logError(
 								"Exception while openning diagram", e); //$NON-NLS-1$
 			}

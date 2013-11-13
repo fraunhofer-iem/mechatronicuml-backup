@@ -22,7 +22,7 @@ public class HardwareMarkerNavigationProvider extends
 	/**
 	 * @generated
 	 */
-	public static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin.ID
+	public static final String MARKER_TYPE = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin.ID
 			+ ".diagnostic"; //$NON-NLS-1$
 
 	/**
@@ -59,7 +59,7 @@ public class HardwareMarkerNavigationProvider extends
 		try {
 			resource.deleteMarkers(MARKER_TYPE, true, IResource.DEPTH_ZERO);
 		} catch (CoreException e) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().logError(
 							"Failed to delete validation markers", e); //$NON-NLS-1$
 		}
@@ -87,7 +87,7 @@ public class HardwareMarkerNavigationProvider extends
 			}
 			marker.setAttribute(IMarker.SEVERITY, markerSeverity);
 		} catch (CoreException e) {
-			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareDiagramEditorPlugin
+			de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 					.getInstance().logError(
 							"Failed to create validation marker", e); //$NON-NLS-1$
 		}

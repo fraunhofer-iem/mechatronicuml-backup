@@ -17,6 +17,7 @@ import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 import de.uni_paderborn.fujaba.muml.hardware.platform.Bridge;
 import de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia;
+import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
@@ -34,6 +35,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#getConnectedHWPortParts <em>Connected HW Port Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#getConnectedBridges <em>Connected Bridges</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#getConnectedHWPortInstances <em>Connected HW Port Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,6 +111,16 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 	 * @ordered
 	 */
 	protected EList<Bridge> connectedBridges;
+
+	/**
+	 * The cached value of the '{@link #getConnectedHWPortInstances() <em>Connected HW Port Instances</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectedHWPortInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<HWPortInstance> connectedHWPortInstances;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,6 +315,18 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<HWPortInstance> getConnectedHWPortInstances() {
+		if (connectedHWPortInstances == null) {
+			connectedHWPortInstances = new EObjectWithInverseResolvingEList.ManyInverse<HWPortInstance>(HWPortInstance.class, this, PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES, PlatformPackage.HW_PORT_INSTANCE__CONNECTED_MEDIA);
+		}
+		return connectedHWPortInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -311,6 +335,8 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectedHWPortParts()).basicAdd(otherEnd, msgs);
 			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_BRIDGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectedBridges()).basicAdd(otherEnd, msgs);
+			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectedHWPortInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -331,6 +357,8 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 				return ((InternalEList<?>)getConnectedHWPortParts()).basicRemove(otherEnd, msgs);
 			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_BRIDGES:
 				return ((InternalEList<?>)getConnectedBridges()).basicRemove(otherEnd, msgs);
+			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES:
+				return ((InternalEList<?>)getConnectedHWPortInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -356,6 +384,8 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 				return getConnectedHWPortParts();
 			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_BRIDGES:
 				return getConnectedBridges();
+			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES:
+				return getConnectedHWPortInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -389,6 +419,10 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 				getConnectedBridges().clear();
 				getConnectedBridges().addAll((Collection<? extends Bridge>)newValue);
 				return;
+			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES:
+				getConnectedHWPortInstances().clear();
+				getConnectedHWPortInstances().addAll((Collection<? extends HWPortInstance>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -419,6 +453,9 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_BRIDGES:
 				getConnectedBridges().clear();
 				return;
+			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES:
+				getConnectedHWPortInstances().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -443,6 +480,8 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 				return connectedHWPortParts != null && !connectedHWPortParts.isEmpty();
 			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_BRIDGES:
 				return connectedBridges != null && !connectedBridges.isEmpty();
+			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES:
+				return connectedHWPortInstances != null && !connectedHWPortInstances.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

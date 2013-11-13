@@ -11,22 +11,30 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class HWPortPartConnectedMediaEditPart extends ConnectionNodeEditPart
-		implements ITreeBranchEditPart {
+public class HWPortInstanceConnectedMediaEditPart extends
+		ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4003;
+	public static final int VISUAL_ID = 4006;
 
 	/**
 	 * @generated
 	 */
-	public HWPortPartConnectedMediaEditPart(View view) {
+	public HWPortInstanceConnectedMediaEditPart(View view) {
 		super(view);
 	}
 
-	
+	/**
+	 * @generated
+	 */
+	protected void createDefaultEditPolicies() {
+		super.createDefaultEditPolicies();
+		installEditPolicy(
+				EditPolicyRoles.SEMANTIC_ROLE,
+				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPortInstanceConnectedMediaItemSemanticEditPolicy());
+	}
 
 	/**
 	 * Creates figure for this edit part.

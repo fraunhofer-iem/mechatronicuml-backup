@@ -178,6 +178,8 @@
             ecoreFeature="ecore:EReference hardware.ecore#//platform/CommunicationMedia/connectedHWPortParts"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//platform/CommunicationMedia/connectedBridges"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/CommunicationMedia/connectedHWPortInstances"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//platform/HWPlatform">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPlatform/embeddedPlatformParts"/>
@@ -240,9 +242,9 @@
             ecoreFeature="ecore:EReference hardware.ecore#//platform/Delegation/hwPortPart"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//platform/HWPortPart">
-        <genFeatures createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortPart/hwPortInstanceType"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortPart/connectedMedia"/>
+            ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortPart/hwPortInstance"/>
+        <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortPart/connectedMedia"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortPart/protocol"/>
       </genClasses>
     </nestedGenPackages>

@@ -137,6 +137,7 @@ public interface HWPortInstance extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Connected Media</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortInstances <em>Connected HW Port Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -144,7 +145,8 @@ public interface HWPortInstance extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connected Media</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPortInstance_ConnectedMedia()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortInstances
+	 * @model opposite="connectedHWPortInstances"
 	 * @generated
 	 */
 	EList<CommunicationMedia> getConnectedMedia();

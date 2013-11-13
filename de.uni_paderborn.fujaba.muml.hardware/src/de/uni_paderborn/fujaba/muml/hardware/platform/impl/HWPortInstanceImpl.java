@@ -284,7 +284,7 @@ public abstract class HWPortInstanceImpl extends NamedElementImpl implements HWP
 	 */
 	public EList<CommunicationMedia> getConnectedMedia() {
 		if (connectedMedia == null) {
-			connectedMedia = new EObjectResolvingEList<CommunicationMedia>(CommunicationMedia.class, this, PlatformPackage.HW_PORT_INSTANCE__CONNECTED_MEDIA);
+			connectedMedia = new EObjectWithInverseResolvingEList.ManyInverse<CommunicationMedia>(CommunicationMedia.class, this, PlatformPackage.HW_PORT_INSTANCE__CONNECTED_MEDIA, PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES);
 		}
 		return connectedMedia;
 	}
@@ -366,6 +366,8 @@ public abstract class HWPortInstanceImpl extends NamedElementImpl implements HWP
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParentResourceInstance((ResourceInstance)otherEnd, msgs);
+			case PlatformPackage.HW_PORT_INSTANCE__CONNECTED_MEDIA:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectedMedia()).basicAdd(otherEnd, msgs);
 			case PlatformPackage.HW_PORT_INSTANCE__DELEGATION:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDelegation()).basicAdd(otherEnd, msgs);
 		}
@@ -384,6 +386,8 @@ public abstract class HWPortInstanceImpl extends NamedElementImpl implements HWP
 				return basicSetParentResourceInstance(null, msgs);
 			case PlatformPackage.HW_PORT_INSTANCE__QUEUING_TIME:
 				return basicSetQueuingTime(null, msgs);
+			case PlatformPackage.HW_PORT_INSTANCE__CONNECTED_MEDIA:
+				return ((InternalEList<?>)getConnectedMedia()).basicRemove(otherEnd, msgs);
 			case PlatformPackage.HW_PORT_INSTANCE__PAYLOAD_DATA_SIZE:
 				return basicSetPayloadDataSize(null, msgs);
 			case PlatformPackage.HW_PORT_INSTANCE__DELEGATION:

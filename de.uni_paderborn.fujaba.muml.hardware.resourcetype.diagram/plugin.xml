@@ -264,33 +264,33 @@
 <extension point="org.eclipse.ui.preferencePages" id="prefpages">
       <?gmfgen generated="true"?>
       <page
+            id="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.general"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.general"
             category="de.uni_paderborn.fujaba.preferences"
-            class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.preferences.DiagramGeneralPreferencePage"
-            id="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.general">
+            class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.hardware.diagram.appearance"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.appearance"
-            category="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.appearance"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.appearance"
+            category="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.hardware.diagram.connections"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.connections"
-            category="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.connections"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.connections"
+            category="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.hardware.diagram.printing"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.printing"
-            category="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.printing"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.printing"
+            category="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
-            id="de.uni_paderborn.fujaba.muml.hardware.diagram.rulersAndGrid"
-            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.diagram.rulersAndGrid"
-            category="de.uni_paderborn.fujaba.muml.hardware.diagram.general"
+            id="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.rulersAndGrid"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.rulersAndGrid"
+            category="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.general"
             class="de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
