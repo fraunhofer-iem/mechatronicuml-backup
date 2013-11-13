@@ -8,11 +8,14 @@ package de.uni_paderborn.fujaba.muml.behavior.util;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.behavior.*;
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
@@ -93,12 +96,10 @@ public class BehaviorValidator extends MumlValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case BehaviorPackage.BEHAVIORAL_ELEMENT:
-				return validateBehavioralElement((BehavioralElement)value, diagnostics, context);
 			case BehaviorPackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
-			case BehaviorPackage.VARIABLE:
-				return validateVariable((Variable)value, diagnostics, context);
+			case BehaviorPackage.BEHAVIORAL_ELEMENT:
+				return validateBehavioralElement((BehavioralElement)value, diagnostics, context);
 			case BehaviorPackage.OPERATION:
 				return validateOperation((Operation)value, diagnostics, context);
 			case BehaviorPackage.PARAMETER:
@@ -107,6 +108,8 @@ public class BehaviorValidator extends MumlValidator {
 				return validateParameterBinding((ParameterBinding)value, diagnostics, context);
 			case BehaviorPackage.TYPED_NAMED_ELEMENT:
 				return validateTypedNamedElement((TypedNamedElement)value, diagnostics, context);
+			case BehaviorPackage.VARIABLE:
+				return validateVariable((Variable)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -118,16 +121,7 @@ public class BehaviorValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateBehavioralElement(BehavioralElement behavioralElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(behavioralElement, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(behavioralElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(behavioralElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(behavioralElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(behavioralElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(behavioralElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(behavioralElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(behavioralElement, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(behavioralElement, diagnostics, context);
-		return result;
+		return validate_EveryDefaultConstraint(behavioralElement, diagnostics, context);
 	}
 
 	/**
@@ -145,7 +139,47 @@ public class BehaviorValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateVariable(Variable variable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(variable, diagnostics, context);
+		if (!validate_NoCircularContainment(variable, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(variable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(variable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(variable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(variable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(variable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(variable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(variable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(variable, diagnostics, context);
+		if (result || diagnostics != null) result &= validateVariable_ConstantMustBeInitialized(variable, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ConstantMustBeInitialized constraint of '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String VARIABLE__CONSTANT_MUST_BE_INITIALIZED__EEXPRESSION = "-- if a variable is a constant, then it must be initalized\r\n" +
+		"(self.constant=true) implies (not self.initializeExpression.oclIsUndefined())";
+
+	/**
+	 * Validates the ConstantMustBeInitialized constraint of '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateVariable_ConstantMustBeInitialized(Variable variable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(BehaviorPackage.Literals.VARIABLE,
+				 variable,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ConstantMustBeInitialized",
+				 VARIABLE__CONSTANT_MUST_BE_INITIALIZED__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

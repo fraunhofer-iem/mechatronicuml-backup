@@ -22,11 +22,13 @@ import org.storydriven.core.expressions.Expression;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Variable#getInitializeExpression <em>Initialize Expression</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Variable#isConstant <em>Constant</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getVariable()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ConstantMustBeInitialized'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ConstantMustBeInitialized='-- if a variable is a constant, then it must be initalized\r\n(self.constant=true) implies (not self.initializeExpression.oclIsUndefined())'"
  * @generated
  */
 public interface Variable extends TypedNamedElement, CommentableElement {
@@ -56,5 +58,32 @@ public interface Variable extends TypedNamedElement, CommentableElement {
 	 * @generated
 	 */
 	void setInitializeExpression(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Constant</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Constant</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Constant</em>' attribute.
+	 * @see #setConstant(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getVariable_Constant()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
+	boolean isConstant();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.behavior.Variable#isConstant <em>Constant</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Constant</em>' attribute.
+	 * @see #isConstant()
+	 * @generated
+	 */
+	void setConstant(boolean value);
 
 } // Variable

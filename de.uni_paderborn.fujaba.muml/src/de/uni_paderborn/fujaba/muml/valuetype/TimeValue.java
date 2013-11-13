@@ -16,6 +16,10 @@ import org.storydriven.core.expressions.Expression;
  * A representation of the model object '<em><b>Time Value</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents a composite state of a realtime statechart. Composite states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more composite states have do, entry and exit actions. Also composite states define which synchronization channels are allowed to be used by embedded statecharts.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -25,7 +29,8 @@ import org.storydriven.core.expressions.Expression;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage#getTimeValue()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='LiteralExpressionMustBeANaturalNumber'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LiteralExpressionMustBeANaturalNumber='-- If a TimeValue has as value a LiteralExpression, it must be a natural number.\r\n-- 1. Check if the LiteralExpression can be cast to an Integer\r\n-- 2. Check if this Integer is greater or equal to zero.\r\n\r\n(\r\nnot self.value.oclIsUndefined()\r\nand \r\nself.value.oclIsTypeOf(core::expressions::common::LiteralExpression)\r\n)\r\nimplies\r\n(\r\nnot self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger().oclIsUndefined()\r\nand \r\nself.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger()>=0\r\n)\r\n-- author: xell\r\n-- ticket: 770'"
  * @generated
  */
 public interface TimeValue extends ExtendableElement {
@@ -111,7 +116,7 @@ public interface TimeValue extends ExtendableElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='// Return value concatenated with abbreviated unit.\nStringBuffer sb = new StringBuffer();\nif (value == null) {\n\tsb.append(\"null\");\n} else {\n\tif (value instanceof LiteralExpression) {\n\t\tsb.append(((LiteralExpression) value).getValue());\n\t} else {\n\t\tsb.append(value.eClass().getName());\n\t}\n}\nif (unit != null) {\n\tsb.append(\' \');\n\tsb.append(TimeValueImpl.getUnitRepresentation(unit));\n}\nreturn sb.toString();'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='// Return value concatenated with abbreviated unit.\r\nStringBuffer sb = new StringBuffer();\r\nif (value == null) {\r\n\tsb.append(\"null\");\r\n} else {\r\n\tif (value instanceof LiteralExpression) {\r\n\t\tsb.append(((LiteralExpression) value).getValue());\r\n\t} else {\r\n\t\tsb.append(value.eClass().getName());\r\n\t}\r\n}\r\nif (unit != null) {\r\n\tsb.append(\' \');\r\n\tsb.append(TimeValueImpl.getUnitRepresentation(unit));\r\n}\r\nreturn sb.toString();'"
 	 * @generated
 	 */
 	String toString();

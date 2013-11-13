@@ -130,7 +130,7 @@ public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		ModelinstancePackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);

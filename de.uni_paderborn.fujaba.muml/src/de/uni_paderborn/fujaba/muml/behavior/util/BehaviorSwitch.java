@@ -81,25 +81,15 @@ public class BehaviorSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case BehaviorPackage.BEHAVIORAL_ELEMENT: {
-				BehavioralElement behavioralElement = (BehavioralElement)theEObject;
-				T result = caseBehavioralElement(behavioralElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case BehaviorPackage.BEHAVIOR: {
 				Behavior behavior = (Behavior)theEObject;
 				T result = caseBehavior(behavior);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case BehaviorPackage.VARIABLE: {
-				Variable variable = (Variable)theEObject;
-				T result = caseVariable(variable);
-				if (result == null) result = caseTypedNamedElement(variable);
-				if (result == null) result = caseCommentableElement(variable);
-				if (result == null) result = caseNamedElement(variable);
-				if (result == null) result = caseExtendableElement(variable);
+			case BehaviorPackage.BEHAVIORAL_ELEMENT: {
+				BehavioralElement behavioralElement = (BehavioralElement)theEObject;
+				T result = caseBehavioralElement(behavioralElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -134,6 +124,16 @@ public class BehaviorSwitch<T> extends Switch<T> {
 				T result = caseTypedNamedElement(typedNamedElement);
 				if (result == null) result = caseNamedElement(typedNamedElement);
 				if (result == null) result = caseExtendableElement(typedNamedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BehaviorPackage.VARIABLE: {
+				Variable variable = (Variable)theEObject;
+				T result = caseVariable(variable);
+				if (result == null) result = caseTypedNamedElement(variable);
+				if (result == null) result = caseCommentableElement(variable);
+				if (result == null) result = caseNamedElement(variable);
+				if (result == null) result = caseExtendableElement(variable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

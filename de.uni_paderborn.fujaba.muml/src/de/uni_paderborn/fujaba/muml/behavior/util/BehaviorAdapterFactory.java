@@ -82,16 +82,12 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	protected BehaviorSwitch<Adapter> modelSwitch =
 		new BehaviorSwitch<Adapter>() {
 			@Override
-			public Adapter caseBehavioralElement(BehavioralElement object) {
-				return createBehavioralElementAdapter();
-			}
-			@Override
 			public Adapter caseBehavior(Behavior object) {
 				return createBehaviorAdapter();
 			}
 			@Override
-			public Adapter caseVariable(Variable object) {
-				return createVariableAdapter();
+			public Adapter caseBehavioralElement(BehavioralElement object) {
+				return createBehavioralElementAdapter();
 			}
 			@Override
 			public Adapter caseOperation(Operation object) {
@@ -108,6 +104,10 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTypedNamedElement(TypedNamedElement object) {
 				return createTypedNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {

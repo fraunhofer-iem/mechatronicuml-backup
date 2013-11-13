@@ -66,6 +66,7 @@ public class VariableItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addInitializeExpressionPropertyDescriptor(object);
+			addConstantPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -110,6 +111,28 @@ public class VariableItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Constant feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConstantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Variable_constant_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Variable_constant_feature", "_UI_Variable_type"),
+				 BehaviorPackage.Literals.VARIABLE__CONSTANT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -182,6 +205,7 @@ public class VariableItemProvider
 
 		switch (notification.getFeatureID(Variable.class)) {
 			case BehaviorPackage.VARIABLE__COMMENT:
+			case BehaviorPackage.VARIABLE__CONSTANT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

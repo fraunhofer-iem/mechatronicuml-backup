@@ -36,7 +36,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	 */
 	public static BehaviorFactory init() {
 		try {
-			BehaviorFactory theBehaviorFactory = (BehaviorFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/behavior/0.4.0"); 
+			BehaviorFactory theBehaviorFactory = (BehaviorFactory)EPackage.Registry.INSTANCE.getEFactory(BehaviorPackage.eNS_URI);
 			if (theBehaviorFactory != null) {
 				return theBehaviorFactory;
 			}
@@ -65,10 +65,10 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case BehaviorPackage.VARIABLE: return createVariable();
 			case BehaviorPackage.OPERATION: return createOperation();
 			case BehaviorPackage.PARAMETER: return createParameter();
 			case BehaviorPackage.PARAMETER_BINDING: return createParameterBinding();
+			case BehaviorPackage.VARIABLE: return createVariable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.behavior.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsPackage;
@@ -23,6 +24,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.behavior.util.BehaviorValidator;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
@@ -41,6 +43,7 @@ import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl;
+import org.eclipse.emf.ecore.EAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,7 +148,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		isInited = true;
 
 		// Initialize simple dependencies
-		ModelinstancePackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
@@ -181,6 +184,15 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		theTypesPackage.initializePackageContents();
 		theConnectorPackage.initializePackageContents();
 		theValuetypePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theBehaviorPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return BehaviorValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theBehaviorPackage.freeze();
@@ -261,6 +273,15 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 */
 	public EReference getVariable_InitializeExpression() {
 		return (EReference)variableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVariable_Constant() {
+		return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -381,16 +402,13 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		isCreated = true;
 
 		// Create classes and their features
-		behavioralElementEClass = createEClass(BEHAVIORAL_ELEMENT);
-		createEReference(behavioralElementEClass, BEHAVIORAL_ELEMENT__BEHAVIOR);
-
 		behaviorEClass = createEClass(BEHAVIOR);
 		createEReference(behaviorEClass, BEHAVIOR__BEHAVIORAL_ELEMENT);
 		createEReference(behaviorEClass, BEHAVIOR__OPERATIONS);
 		createEReference(behaviorEClass, BEHAVIOR__VARIABLES);
 
-		variableEClass = createEClass(VARIABLE);
-		createEReference(variableEClass, VARIABLE__INITIALIZE_EXPRESSION);
+		behavioralElementEClass = createEClass(BEHAVIORAL_ELEMENT);
+		createEReference(behavioralElementEClass, BEHAVIORAL_ELEMENT__BEHAVIOR);
 
 		operationEClass = createEClass(OPERATION);
 		createEReference(operationEClass, OPERATION__RETURN_TYPE);
@@ -405,6 +423,10 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		typedNamedElementEClass = createEClass(TYPED_NAMED_ELEMENT);
 		createEReference(typedNamedElementEClass, TYPED_NAMED_ELEMENT__DATA_TYPE);
+
+		variableEClass = createEClass(VARIABLE);
+		createEReference(variableEClass, VARIABLE__INITIALIZE_EXPRESSION);
+		createEAttribute(variableEClass, VARIABLE__CONSTANT);
 	}
 
 	/**
@@ -432,34 +454,31 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		variableEClass.getESuperTypes().add(this.getTypedNamedElement());
-		variableEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		operationEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		operationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		parameterEClass.getESuperTypes().add(this.getTypedNamedElement());
 		parameterEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		parameterBindingEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		typedNamedElementEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		variableEClass.getESuperTypes().add(this.getTypedNamedElement());
+		variableEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehavioralElement_Behavior(), this.getBehavior(), this.getBehavior_BehavioralElement(), "behavior", null, 0, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(behaviorEClass, Behavior.class, "Behavior", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehavior_BehavioralElement(), this.getBehavioralElement(), this.getBehavioralElement_Behavior(), "behavioralElement", null, 0, 1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehavior_Operations(), this.getOperation(), null, "operations", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehavior_Variables(), this.getVariable(), null, "variables", null, 0, -1, Behavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariable_InitializeExpression(), theExpressionsPackage.getExpression(), null, "initializeExpression", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(behavioralElementEClass, BehavioralElement.class, "BehavioralElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBehavioralElement_Behavior(), this.getBehavior(), this.getBehavior_BehavioralElement(), "behavior", null, 0, 1, BehavioralElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperation_ReturnType(), theTypesPackage.getDataType(), null, "returnType", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -475,12 +494,18 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEClass(typedNamedElementEClass, TypedNamedElement.class, "TypedNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTypedNamedElement_DataType(), theTypesPackage.getDataType(), null, "dataType", null, 1, 1, TypedNamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVariable_InitializeExpression(), theExpressionsPackage.getExpression(), null, "initializeExpression", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariable_Constant(), ecorePackage.getEBoolean(), "constant", "false", 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
 	/**
@@ -490,7 +515,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -498,7 +523,29 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });														
+		   });	
+		addAnnotation
+		  (variableEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ConstantMustBeInitialized"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		addAnnotation
+		  (variableEClass, 
+		   source, 
+		   new String[] {
+			 "ConstantMustBeInitialized", "-- if a variable is a constant, then it must be initalized\r\n(self.constant=true) implies (not self.initializeExpression.oclIsUndefined())"
+		   });
 	}
 
 } //BehaviorPackageImpl

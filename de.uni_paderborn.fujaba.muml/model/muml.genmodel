@@ -4,10 +4,9 @@
     modelDirectory="/de.uni_paderborn.fujaba.muml/src" modelPluginID="de.uni_paderborn.fujaba.muml"
     modelName="Muml" testsDirectory="/de.uni_paderborn.fujaba.muml.modeltests/src"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    testsPluginID="de.uni_paderborn.fujaba.muml.modeltests" language="" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance"
+    testsPluginID="de.uni_paderborn.fujaba.muml.modeltests" language="" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true">
   <foreignModel>muml.ecore</foreignModel>
-  <foreignModel>../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore</foreignModel>
   <genPackages prefix="Muml" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"
       ecorePackage="muml.ecore#/">
     <nestedGenPackages prefix="Component" basePackage="de.uni_paderborn.fujaba.muml"
@@ -504,19 +503,15 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Behavior" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//behavior">
-      <genClasses image="false" ecoreClass="muml.ecore#//behavior/BehavioralElement">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//behavior/BehavioralElement/behavior"/>
-      </genClasses>
       <genClasses image="false" ecoreClass="muml.ecore#//behavior/Behavior">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//behavior/Behavior/behavioralElement"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//behavior/Behavior/operations"/>
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//behavior/Behavior/variables"/>
       </genClasses>
-      <genClasses ecoreClass="muml.ecore#//behavior/Variable">
-        <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//behavior/Variable/initializeExpression"/>
+      <genClasses image="false" ecoreClass="muml.ecore#//behavior/BehavioralElement">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//behavior/BehavioralElement/behavior"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//behavior/Operation">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -533,6 +528,11 @@
       <genClasses image="false" ecoreClass="muml.ecore#//behavior/TypedNamedElement">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//behavior/TypedNamedElement/dataType"/>
+      </genClasses>
+      <genClasses ecoreClass="muml.ecore#//behavior/Variable">
+        <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//behavior/Variable/initializeExpression"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//behavior/Variable/constant"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

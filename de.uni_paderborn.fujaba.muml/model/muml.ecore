@@ -1090,11 +1090,11 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//realtimestatechart/Vertex">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="OneInvariantPerClock NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames BoundOfInvariantGreaterOrEqualZero InvalidClockConstraintOperator UniqueStateConnectionPointNames"/>
-      </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a composite state of a realtime statechart. Composite states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more composite states have do, entry and exit actions. Also composite states define which synchronization channels are allowed to be used by embedded statecharts."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="OneInvariantPerClock NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames InvalidClockConstraintOperator UniqueStateConnectionPointNames"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="OneInvariantPerClock" value="self.invariants->isUnique(clock)"/>
@@ -1104,7 +1104,6 @@
         <details key="UniquePrioritiesOfRegions" value="self.embeddedRegions->isUnique(priority)"/>
         <details key="UniqueChannelNames" value="self.channels->isUnique(name)"/>
         <details key="UniqueRegionNames" value="self.embeddedRegions->isUnique(name)"/>
-        <details key="BoundOfInvariantGreaterOrEqualZero" value="self.invariants->forAll(i|&#xD;&#xA;&#x9;not i.bound.value.oclIsUndefined() implies&#xD;&#xA;&#x9;&#x9;i.bound.value.value >= 0&#xD;&#xA;&#xD;&#xA;)"/>
         <details key="InvalidClockConstraintOperator" value="self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))"/>
         <details key="UniqueStateConnectionPointNames" value="-- State Connection Points of a composite state must have unique names.&#xD;&#xA;self.connectionPoints->isUnique(name)"/>
       </eAnnotations>
@@ -1986,9 +1985,18 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TimeValue" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a composite state of a realtime statechart. Composite states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more composite states have do, entry and exit actions. Also composite states define which synchronization channels are allowed to be used by embedded statecharts."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="LiteralExpressionMustBeANaturalNumber"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="LiteralExpressionMustBeANaturalNumber" value="-- If a TimeValue has as value a LiteralExpression, it must be a natural number.&#xD;&#xA;-- 1. Check if the LiteralExpression can be cast to an Integer&#xD;&#xA;-- 2. Check if this Integer is greater or equal to zero.&#xD;&#xA;&#xD;&#xA;(&#xD;&#xA;not self.value.oclIsUndefined()&#xD;&#xA;and &#xD;&#xA;self.value.oclIsTypeOf(core::expressions::common::LiteralExpression)&#xD;&#xA;)&#xD;&#xA;implies&#xD;&#xA;(&#xD;&#xA;not self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger().oclIsUndefined()&#xD;&#xA;and &#xD;&#xA;self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger()>=0&#xD;&#xA;)&#xD;&#xA;-- author: xell&#xD;&#xA;-- ticket: 770"/>
+      </eAnnotations>
       <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="body" value="// Return value concatenated with abbreviated unit.&#xA;StringBuffer sb = new StringBuffer();&#xA;if (value == null) {&#xA;&#x9;sb.append(&quot;null&quot;);&#xA;} else {&#xA;&#x9;if (value instanceof LiteralExpression) {&#xA;&#x9;&#x9;sb.append(((LiteralExpression) value).getValue());&#xA;&#x9;} else {&#xA;&#x9;&#x9;sb.append(value.eClass().getName());&#xA;&#x9;}&#xA;}&#xA;if (unit != null) {&#xA;&#x9;sb.append(' ');&#xA;&#x9;sb.append(TimeValueImpl.getUnitRepresentation(unit));&#xA;}&#xA;return sb.toString();"/>
+          <details key="body" value="// Return value concatenated with abbreviated unit.&#xD;&#xA;StringBuffer sb = new StringBuffer();&#xD;&#xA;if (value == null) {&#xD;&#xA;&#x9;sb.append(&quot;null&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if (value instanceof LiteralExpression) {&#xD;&#xA;&#x9;&#x9;sb.append(((LiteralExpression) value).getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;sb.append(value.eClass().getName());&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;if (unit != null) {&#xD;&#xA;&#x9;sb.append(' ');&#xD;&#xA;&#x9;sb.append(TimeValueImpl.getUnitRepresentation(unit));&#xD;&#xA;}&#xD;&#xA;return sb.toString();"/>
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
@@ -2074,17 +2082,6 @@
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="BehavioralElement" abstract="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Abstract super class for all elements that have a behavior."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" eType="#//behavior/Behavior"
-          eOpposite="#//behavior/Behavior/behavioralElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The real-time statechart that defines the behavior of this behavioral element."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Abstract super class for all elements that represent a behavior. &#xD;&#xA;Known sub-classes: AbstractRealtimeStatechart"/>
@@ -2108,13 +2105,16 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//behavior/TypedNamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="BehavioralElement" abstract="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Implementation of an Attribute of a behavior which has a certain type."/>
+        <details key="documentation" value="Abstract super class for all elements that have a behavior."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression"
-          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" eType="#//behavior/Behavior"
+          eOpposite="#//behavior/Behavior/behavioralElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The real-time statechart that defines the behavior of this behavioral element."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2163,6 +2163,23 @@
         eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1"
           eType="#//types/DataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//behavior/TypedNamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Implementation of an Attribute of a behavior which has a certain type."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ConstantMustBeInitialized"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="ConstantMustBeInitialized" value="-- if a variable is a constant, then it must be initalized&#xD;&#xA;(self.constant=true) implies (not self.initializeExpression.oclIsUndefined())"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression"
+          eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="constant" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

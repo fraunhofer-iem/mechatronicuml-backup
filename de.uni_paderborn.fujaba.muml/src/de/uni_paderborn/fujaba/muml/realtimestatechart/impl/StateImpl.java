@@ -440,7 +440,7 @@ public class StateImpl extends VertexImpl implements State {
 	 */
 	public RealtimeStatechart getParentStatechart() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.STATE__PARENT_STATECHART) return null;
-		return (RealtimeStatechart)eContainer();
+		return (RealtimeStatechart)eInternalContainer();
 	}
 
 	/**
@@ -479,7 +479,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getUniqueRegionPriority(int hint) {
+	public int getUniqueRegionPriority(final int hint) {
 		int nextHighestPriority=hint;
 		for (; hasRegionOfPriority(nextHighestPriority); nextHighestPriority++);
 		return nextHighestPriority;
@@ -490,7 +490,7 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean hasRegionOfPriority(int priority) {
+	public boolean hasRegionOfPriority(final int priority) {
 		for (Region region : getEmbeddedRegions()) {
 			if (region.getPriority() == priority) {
 				return true;

@@ -168,7 +168,62 @@ public class ValuetypeValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateTimeValue(TimeValue timeValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(timeValue, diagnostics, context);
+		if (!validate_NoCircularContainment(timeValue, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(timeValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(timeValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(timeValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(timeValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(timeValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(timeValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(timeValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(timeValue, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTimeValue_LiteralExpressionMustBeANaturalNumber(timeValue, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the LiteralExpressionMustBeANaturalNumber constraint of '<em>Time Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TIME_VALUE__LITERAL_EXPRESSION_MUST_BE_ANATURAL_NUMBER__EEXPRESSION = "-- If a TimeValue has as value a LiteralExpression, it must be a natural number.\r\n" +
+		"-- 1. Check if the LiteralExpression can be cast to an Integer\r\n" +
+		"-- 2. Check if this Integer is greater or equal to zero.\r\n" +
+		"\r\n" +
+		"(\r\n" +
+		"not self.value.oclIsUndefined()\r\n" +
+		"and \r\n" +
+		"self.value.oclIsTypeOf(core::expressions::common::LiteralExpression)\r\n" +
+		")\r\n" +
+		"implies\r\n" +
+		"(\r\n" +
+		"not self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger().oclIsUndefined()\r\n" +
+		"and \r\n" +
+		"self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger()>=0\r\n" +
+		")\r\n" +
+		"-- author: xell\r\n" +
+		"-- ticket: 770";
+
+	/**
+	 * Validates the LiteralExpressionMustBeANaturalNumber constraint of '<em>Time Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTimeValue_LiteralExpressionMustBeANaturalNumber(TimeValue timeValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ValuetypePackage.Literals.TIME_VALUE,
+				 timeValue,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "LiteralExpressionMustBeANaturalNumber",
+				 TIME_VALUE__LITERAL_EXPRESSION_MUST_BE_ANATURAL_NUMBER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

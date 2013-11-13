@@ -24,6 +24,8 @@ public class MumlValidator extends EObjectValidator {
 			ocl = ocl.trim();
 
 			StringBuilder builder = new StringBuilder();
+			
+			
 			for (String line : ocl.split("\n")) {
 				line = line.trim();
 				if (line.startsWith("--")) {
@@ -33,6 +35,7 @@ public class MumlValidator extends EObjectValidator {
 						builder.append('\n');
 					}
 				}
+				break;
 			}
 			message = builder.toString();
 		}

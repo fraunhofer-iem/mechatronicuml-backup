@@ -265,10 +265,10 @@ public class BehaviorItemProviderAdapterFactory extends BehaviorAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
-		if (variableItemProvider != null) variableItemProvider.dispose();
 		if (operationItemProvider != null) operationItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (parameterBindingItemProvider != null) parameterBindingItemProvider.dispose();
+		if (variableItemProvider != null) variableItemProvider.dispose();
 	}
 
 }
