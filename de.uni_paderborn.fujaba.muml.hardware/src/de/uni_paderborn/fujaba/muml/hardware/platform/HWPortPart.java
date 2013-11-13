@@ -90,7 +90,7 @@ public interface HWPortPart extends NamedElement {
 	 * @return the value of the '<em>Protocol</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPortPart_Protocol()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.hwPortInstanceType.protocol'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.hwPortInstance.protocol'"
 	 * @generated
 	 */
 	CommunicationProtocol getProtocol();

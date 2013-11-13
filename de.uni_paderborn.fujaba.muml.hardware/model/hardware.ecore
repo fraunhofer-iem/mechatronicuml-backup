@@ -561,7 +561,7 @@
           upperBound="-1" eType="#//platform/HWPortPart" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstanceType.oclIsTypeOf(platform::BusPortInstance))->asOrderedSet()&#xA;"/>
+          <details key="derivation" value="self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::BusPortInstance))->asOrderedSet()&#xA;"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The connected BusPortInstances. &#xA; They are derived from the reference connectedHWPortInstances of the super class CommunicationMedia."/>
@@ -583,7 +583,7 @@
           upperBound="-1" eType="#//platform/HWPortPart" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance))->asOrderedSet()"/>
+          <details key="derivation" value="self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::LinkPortInstance))->asOrderedSet()"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The connected LinkPortInstances.&#xA; They are derived from the reference connectedHWPortInstances of the super class CommunicationMedia."/>
@@ -917,7 +917,7 @@
           eType="#//resourcetype/CommunicationProtocol" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.hwPortInstanceType.protocol"/>
+          <details key="derivation" value="self.hwPortInstance.protocol"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The used protocol of this HWPortInstance."/>

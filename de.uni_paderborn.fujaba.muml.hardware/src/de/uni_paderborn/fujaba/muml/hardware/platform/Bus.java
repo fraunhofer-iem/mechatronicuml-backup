@@ -38,7 +38,7 @@ public interface Bus extends CommunicationMedia {
 	 * @return the value of the '<em>Connected Bus Port Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getBus_ConnectedBusPortInstances()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstanceType.oclIsTypeOf(platform::BusPortInstance))->asOrderedSet()\n'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::BusPortInstance))->asOrderedSet()\n'"
 	 * @generated
 	 */
 	EList<HWPortPart> getConnectedBusPortInstances();

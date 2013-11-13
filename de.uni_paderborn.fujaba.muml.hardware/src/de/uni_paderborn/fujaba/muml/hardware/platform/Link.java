@@ -38,7 +38,7 @@ public interface Link extends CommunicationMedia {
 	 * @return the value of the '<em>Connected Link Port Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getLink_ConnectedLinkPortInstances()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance))->asOrderedSet()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::LinkPortInstance))->asOrderedSet()'"
 	 * @generated
 	 */
 	EList<HWPortPart> getConnectedLinkPortInstances();

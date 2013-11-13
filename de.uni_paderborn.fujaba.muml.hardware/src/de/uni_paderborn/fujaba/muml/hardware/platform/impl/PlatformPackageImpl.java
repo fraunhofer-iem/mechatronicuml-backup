@@ -2048,7 +2048,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		  (getBus_ConnectedBusPortInstances(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstanceType.oclIsTypeOf(platform::BusPortInstance))->asOrderedSet()\n"
+			 "derivation", "self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::BusPortInstance))->asOrderedSet()\n"
 		   });				
 		addAnnotation
 		  (linkEClass, 
@@ -2061,7 +2061,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		  (getLink_ConnectedLinkPortInstances(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance))->asOrderedSet()"
+			 "derivation", "self.connectedHWPortParts->select(p|p.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::LinkPortInstance))->asOrderedSet()"
 		   });																	
 		addAnnotation
 		  (platformPartEClass, 
@@ -2130,7 +2130,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		  (getHWPortPart_Protocol(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.hwPortInstanceType.protocol"
+			 "derivation", "self.hwPortInstance.protocol"
 		   });	
 	}
 
