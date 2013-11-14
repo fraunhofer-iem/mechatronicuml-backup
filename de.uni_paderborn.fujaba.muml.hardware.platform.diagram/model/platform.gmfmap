@@ -331,7 +331,7 @@
                 <diagramLabel
                     href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPortLabel"/>
                 <viewExpression
-                    body="let portName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xA;let portType : String = if self.hwPortInstanceType.oclIsUndefined() then 'null' else self.hwPortInstanceType.name endif in&#xD;&#xA;let protocolName : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xD;&#xA;portName +': ' + portType + '\n' + protocolName"/>
+                    body="let portName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xA;let portType : String = if self.hwPortInstance.oclIsUndefined() then 'null' else self.hwPortInstance.name endif in&#xD;&#xA;let protocolName : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xD;&#xA;portName +': ' + portType + '\n' + protocolName"/>
               </labelMappings>
               <diagramNode
                   href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPort"/>
