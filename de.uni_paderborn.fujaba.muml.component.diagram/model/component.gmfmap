@@ -11,7 +11,7 @@
         href="../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore#//ModelElementCategory/modelElements"/>
     <ownedChild>
       <domainMetaElement
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/AtomicComponent"/>
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StaticAtomicComponent"/>
       <domainInitializer
           xsi:type="gmfmap:FeatureSeqInitializer">
         <initializers

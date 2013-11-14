@@ -62,7 +62,7 @@ public class AtomicComponentTest extends ComponentTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ComponentFactory.eINSTANCE.createAtomicComponent());
+		setFixture(ComponentFactory.eINSTANCE.createStaticAtomicComponent());
 	}
 
 	/**

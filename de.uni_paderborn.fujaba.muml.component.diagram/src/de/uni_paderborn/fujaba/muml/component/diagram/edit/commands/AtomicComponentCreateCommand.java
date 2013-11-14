@@ -51,7 +51,7 @@ public class AtomicComponentCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 		de.uni_paderborn.fujaba.muml.component.AtomicComponent newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
-				.createAtomicComponent();
+				.createStaticAtomicComponent();
 
 		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory owner = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) getElementToEdit();
 		owner.getModelElements().add(newElement);

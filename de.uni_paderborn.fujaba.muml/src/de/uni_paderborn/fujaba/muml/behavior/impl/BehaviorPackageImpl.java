@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.behavior.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -43,7 +44,6 @@ import de.uni_paderborn.fujaba.muml.types.TypesPackage;
 import de.uni_paderborn.fujaba.muml.types.impl.TypesPackageImpl;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 import de.uni_paderborn.fujaba.muml.valuetype.impl.ValuetypePackageImpl;
-import org.eclipse.emf.ecore.EAttribute;
 
 /**
  * <!-- begin-user-doc -->
@@ -148,7 +148,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		isInited = true;
 
 		// Initialize simple dependencies
-		CorePackage.eINSTANCE.eClass();
+		ModelinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
@@ -515,7 +515,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
 		addAnnotation
 		  (this, 
 		   source, 
@@ -523,13 +523,13 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });	
+		   });																
 		addAnnotation
 		  (variableEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ConstantMustBeInitialized"
-		   });
+		   });	
 	}
 
 	/**
@@ -539,7 +539,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																		
 		addAnnotation
 		  (variableEClass, 
 		   source, 

@@ -62,15 +62,6 @@ public interface ComponentFactory extends EFactory {
 	StaticStructuredComponent createStaticStructuredComponent();
 
 	/**
-	 * Returns a new object of class '<em>Atomic Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Atomic Component</em>'.
-	 * @generated
-	 */
-	AtomicComponent createAtomicComponent();
-
-	/**
 	 * Returns a new object of class '<em>Assembly Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,6 +105,15 @@ public interface ComponentFactory extends EFactory {
 	 * @generated
 	 */
 	PortPart createPortPart();
+
+	/**
+	 * Returns a new object of class '<em>Static Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Static Atomic Component</em>'.
+	 * @generated
+	 */
+	StaticAtomicComponent createStaticAtomicComponent();
 
 	/**
 	 * Returns the package supported by this factory.

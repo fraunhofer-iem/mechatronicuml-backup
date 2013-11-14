@@ -4,7 +4,7 @@
     modelDirectory="/de.uni_paderborn.fujaba.muml/src" modelPluginID="de.uni_paderborn.fujaba.muml"
     modelName="Muml" testsDirectory="/de.uni_paderborn.fujaba.muml.modeltests/src"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    testsPluginID="de.uni_paderborn.fujaba.muml.modeltests" language="" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    testsPluginID="de.uni_paderborn.fujaba.muml.modeltests" language="" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uni_paderborn.fujaba.modelinstance/model/modelinstance.genmodel#//modelinstance"
     operationReflection="true">
   <foreignModel>muml.ecore</foreignModel>
   <genPackages prefix="Muml" basePackage="de.uni_paderborn.fujaba" disposableProviderFactory="true"
@@ -101,6 +101,7 @@
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/refinedRole"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/PortPart/name"/>
       </genClasses>
+      <genClasses ecoreClass="muml.ecore#//component/StaticAtomicComponent"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//constraint">

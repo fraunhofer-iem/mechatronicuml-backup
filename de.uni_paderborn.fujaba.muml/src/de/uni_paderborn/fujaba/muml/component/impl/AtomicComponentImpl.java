@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
  *
  * @generated
  */
-public class AtomicComponentImpl extends ComponentImpl implements AtomicComponent {
+public abstract class AtomicComponentImpl extends ComponentImpl implements AtomicComponent {
 	/**
 	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->

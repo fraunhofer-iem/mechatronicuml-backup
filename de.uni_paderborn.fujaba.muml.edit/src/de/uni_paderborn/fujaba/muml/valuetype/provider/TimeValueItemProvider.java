@@ -10,7 +10,6 @@ package de.uni_paderborn.fujaba.muml.valuetype.provider;
 import java.util.Collection;
 import java.util.List;
 
-import java.util.concurrent.TimeUnit;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -32,7 +31,6 @@ import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.valuetype.TimeValue} object.

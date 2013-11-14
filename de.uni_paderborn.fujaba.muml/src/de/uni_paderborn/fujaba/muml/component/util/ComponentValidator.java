@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.component.util;
 
-import de.uni_paderborn.fujaba.muml.component.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -14,7 +13,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
@@ -32,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.component.PortDirectionKind;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
+import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
@@ -147,6 +146,8 @@ public class ComponentValidator extends MumlValidator {
 				return validateDirectedTypedPort((DirectedTypedPort)value, diagnostics, context);
 			case ComponentPackage.PORT_PART:
 				return validatePortPart((PortPart)value, diagnostics, context);
+			case ComponentPackage.STATIC_ATOMIC_COMPONENT:
+				return validateStaticAtomicComponent((StaticAtomicComponent)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_KIND:
 				return validateComponentKind((ComponentKind)value, diagnostics, context);
 			case ComponentPackage.PORT_DIRECTION_KIND:
@@ -957,6 +958,31 @@ public class ComponentValidator extends MumlValidator {
 	 */
 	public boolean validatePortPart(PortPart portPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(portPart, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStaticAtomicComponent(StaticAtomicComponent staticAtomicComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(staticAtomicComponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentRequiresBehavior(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAtomicComponent_ValidComponentType(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentValidPorts(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAtomicComponent_ContinuousComponentValidPorts(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAtomicComponent_AtomicComponentsNamesMustBeUnique(staticAtomicComponent, diagnostics, context);
+		return result;
 	}
 
 	/**

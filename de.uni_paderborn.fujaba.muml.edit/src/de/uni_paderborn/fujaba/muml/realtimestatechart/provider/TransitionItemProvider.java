@@ -48,7 +48,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.ClockPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.TransitionMessageEventPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Transition} object.

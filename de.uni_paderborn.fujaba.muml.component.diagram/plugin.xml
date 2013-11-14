@@ -224,7 +224,7 @@
       <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlModelingAssistantProvider">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart" id="ModelElementCategory_1000"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart" id="AtomicComponent_2006"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart" id="StaticAtomicComponent_2006"/>
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart" id="StaticStructuredComponent_2005"/>
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart" id="DiscretePort_3010"/>
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart" id="ContinuousPort_3011"/>
@@ -232,7 +232,7 @@
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart" id="ComponentPart_3012"/>
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart" id="PortPart_3022"/>
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart" id="CoordinationProtocolOccurrence_3016"/>
-         <context elements="ModelElementCategory_1000,AtomicComponent_2006,StaticStructuredComponent_2005,DiscretePort_3010,ContinuousPort_3011,HybridPort_3013,ComponentPart_3012,PortPart_3022,CoordinationProtocolOccurrence_3016"/>
+         <context elements="ModelElementCategory_1000,StaticAtomicComponent_2006,StaticStructuredComponent_2005,DiscretePort_3010,ContinuousPort_3011,HybridPort_3013,ComponentPart_3012,PortPart_3022,CoordinationProtocolOccurrence_3016"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -264,10 +264,10 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/component/0.4.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.AtomicComponent_2006"
-               name="%metatype.name.AtomicComponent_2006"
+               id="de.uni_paderborn.fujaba.muml.component.diagram.StaticAtomicComponent_2006"
+               name="%metatype.name.StaticAtomicComponent_2006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="AtomicComponent"
+               eclass="StaticAtomicComponent"
                edithelper="de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.AtomicComponentEditHelper">
             <param name="semanticHint" value="2006"/>
          </metamodelType>
@@ -384,7 +384,7 @@
       </clientContext> 
       <binding context="de.uni_paderborn.fujaba.muml.component.diagram.TypeContext">
          <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.ModelElementCategory_1000"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.AtomicComponent_2006"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.StaticAtomicComponent_2006"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.StaticStructuredComponent_2005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.DiscretePort_3010"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.ContinuousPort_3011"/>
@@ -486,7 +486,7 @@
          
          
          <child
-               class="AtomicComponent"
+               class="StaticAtomicComponent"
                packageNsUri="http://www.fujaba.de/muml/component/0.4.0">
          </child>
          
@@ -515,7 +515,7 @@
          </diagramElement>
          
          <topLevelNode
-               domainElement="AtomicComponent"
+               domainElement="StaticAtomicComponent"
                semanticHint="2006">
          </topLevelNode>
          

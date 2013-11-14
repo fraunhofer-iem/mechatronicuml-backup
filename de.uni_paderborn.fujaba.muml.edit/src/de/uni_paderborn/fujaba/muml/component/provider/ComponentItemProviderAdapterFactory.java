@@ -167,29 +167,6 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.component.AtomicComponent} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AtomicComponentItemProvider atomicComponentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.component.AtomicComponent}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAtomicComponentAdapter() {
-		if (atomicComponentItemProvider == null) {
-			atomicComponentItemProvider = new AtomicComponentItemProvider(this);
-		}
-
-		return atomicComponentItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.component.AssemblyConnector} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -305,6 +282,29 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StaticAtomicComponentItemProvider staticAtomicComponentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStaticAtomicComponentAdapter() {
+		if (staticAtomicComponentItemProvider == null) {
+			staticAtomicComponentItemProvider = new StaticAtomicComponentItemProvider(this);
+		}
+
+		return staticAtomicComponentItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -407,12 +407,12 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		if (discretePortItemProvider != null) discretePortItemProvider.dispose();
 		if (componentPartItemProvider != null) componentPartItemProvider.dispose();
 		if (staticStructuredComponentItemProvider != null) staticStructuredComponentItemProvider.dispose();
-		if (atomicComponentItemProvider != null) atomicComponentItemProvider.dispose();
 		if (assemblyConnectorItemProvider != null) assemblyConnectorItemProvider.dispose();
 		if (delegationConnectorItemProvider != null) delegationConnectorItemProvider.dispose();
 		if (hybridPortItemProvider != null) hybridPortItemProvider.dispose();
 		if (coordinationProtocolOccurrenceItemProvider != null) coordinationProtocolOccurrenceItemProvider.dispose();
 		if (portPartItemProvider != null) portPartItemProvider.dispose();
+		if (staticAtomicComponentItemProvider != null) staticAtomicComponentItemProvider.dispose();
 	}
 
 }

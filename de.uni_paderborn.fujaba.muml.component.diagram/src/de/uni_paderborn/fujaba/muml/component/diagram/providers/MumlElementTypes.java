@@ -141,7 +141,7 @@ public class MumlElementTypes {
 			elements.put(
 					AtomicComponent_2006,
 					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-							.getAtomicComponent());
+							.getStaticAtomicComponent());
 
 			elements.put(
 					StaticStructuredComponent_2005,

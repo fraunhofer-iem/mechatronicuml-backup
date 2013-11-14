@@ -15,7 +15,6 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -30,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
+import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
@@ -271,6 +271,20 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ComponentPackage.STATIC_ATOMIC_COMPONENT: {
+				StaticAtomicComponent staticAtomicComponent = (StaticAtomicComponent)theEObject;
+				T result = caseStaticAtomicComponent(staticAtomicComponent);
+				if (result == null) result = caseAtomicComponent(staticAtomicComponent);
+				if (result == null) result = caseComponent(staticAtomicComponent);
+				if (result == null) result = caseBehavioralElement(staticAtomicComponent);
+				if (result == null) result = caseConstrainableElement(staticAtomicComponent);
+				if (result == null) result = caseDataType(staticAtomicComponent);
+				if (result == null) result = caseNamedElement(staticAtomicComponent);
+				if (result == null) result = caseExtendableElement(staticAtomicComponent);
+				if (result == null) result = caseCommentableElement(staticAtomicComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -407,6 +421,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePortPart(PortPart object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Static Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Static Atomic Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStaticAtomicComponent(StaticAtomicComponent object) {
 		return null;
 	}
 

@@ -187,7 +187,7 @@
         <details key="documentation" value="A static structured component is a structured component whose internal structure consisting of component part, ports, delegation, and assemblies cannot be changed during run-time."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" eSuperTypes="#//component/Component #//behavior/BehavioralElement">
+    <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" abstract="true" eSuperTypes="#//component/Component #//behavior/BehavioralElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into component parts. In contrast to structured components atomic components own a behavior in form of a realtime statechart.&#xD;&#xA;&#xD;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
       </eAnnotations>
@@ -460,6 +460,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticAtomicComponent" eSuperTypes="#//component/AtomicComponent"/>
   </eSubpackages>
   <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/constraint/0.4.0"
       nsPrefix="constraint">

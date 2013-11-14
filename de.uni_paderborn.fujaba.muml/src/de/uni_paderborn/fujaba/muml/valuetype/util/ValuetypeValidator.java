@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.valuetype.util;
 
-import de.uni_paderborn.fujaba.muml.valuetype.*;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +14,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;

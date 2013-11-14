@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.component.impl;
 
-import de.uni_paderborn.fujaba.muml.component.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -15,7 +14,6 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
-import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
 import de.uni_paderborn.fujaba.muml.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
@@ -27,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.component.PortDirectionKind;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
+import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 
 
@@ -78,12 +77,12 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.DISCRETE_PORT: return createDiscretePort();
 			case ComponentPackage.COMPONENT_PART: return createComponentPart();
 			case ComponentPackage.STATIC_STRUCTURED_COMPONENT: return createStaticStructuredComponent();
-			case ComponentPackage.ATOMIC_COMPONENT: return createAtomicComponent();
 			case ComponentPackage.ASSEMBLY_CONNECTOR: return createAssemblyConnector();
 			case ComponentPackage.DELEGATION_CONNECTOR: return createDelegationConnector();
 			case ComponentPackage.HYBRID_PORT: return createHybridPort();
 			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: return createCoordinationProtocolOccurrence();
 			case ComponentPackage.PORT_PART: return createPortPart();
+			case ComponentPackage.STATIC_ATOMIC_COMPONENT: return createStaticAtomicComponent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -168,16 +167,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AtomicComponent createAtomicComponent() {
-		AtomicComponentImpl atomicComponent = new AtomicComponentImpl();
-		return atomicComponent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AssemblyConnector createAssemblyConnector() {
 		AssemblyConnectorImpl assemblyConnector = new AssemblyConnectorImpl();
 		return assemblyConnector;
@@ -221,6 +210,16 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	public PortPart createPortPart() {
 		PortPartImpl portPart = new PortPartImpl();
 		return portPart;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StaticAtomicComponent createStaticAtomicComponent() {
+		StaticAtomicComponentImpl staticAtomicComponent = new StaticAtomicComponentImpl();
+		return staticAtomicComponent;
 	}
 
 	/**
