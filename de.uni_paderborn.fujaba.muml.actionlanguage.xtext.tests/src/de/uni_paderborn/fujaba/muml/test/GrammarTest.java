@@ -399,6 +399,7 @@ public class GrammarTest {
 		LocalVariableDeclarationStatement localVariableDeclarationStatement = (LocalVariableDeclarationStatement) block.getExpressions().get(1);
 		assertNotNull(localVariableDeclarationStatement.getVariable());
 		assertEquals("xyz", localVariableDeclarationStatement.getVariable().getName());
+		assertFalse(localVariableDeclarationStatement.getVariable().isConstant());
 		assertNotNull(localVariableDeclarationStatement.getVariable().getInitializeExpression());
 	}
 	
@@ -428,6 +429,32 @@ public class GrammarTest {
 		assertNotNull(loadResult.getEObject());
 		// validation is supposed to fail
 		assertInvalidEObject(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testLocalConstantDecl() {
+		EObject expression = getModel("{ const INT myConst := 3; }");
+		assertTrue(expression instanceof LocalVariableDeclarationStatement);
+		LocalVariableDeclarationStatement decl = (LocalVariableDeclarationStatement) expression;
+		assertTrue(decl.getVariable().isConstant());
+	}
+	
+	@Test
+	public void testLocalConstantDeclNoInit() {
+		loadFromString("{ const INT myConst; }");
+		assertTrue(loadResult.hasError());
+	}
+	
+	@Test
+	public void testLocalConstantNoAssignmentAfterDecl() {
+		loadFromString("{ const INT myConst := 3; myConst := 7; }");
+		assertTrue(loadResult.hasError());
+	}
+	
+	@Test
+	public void testNoAssignmentToRTSCConstant() {
+		loadFromString("{ constant := 7; }");
+		assertTrue(loadResult.hasError());
 	}
 	
 	@Test
