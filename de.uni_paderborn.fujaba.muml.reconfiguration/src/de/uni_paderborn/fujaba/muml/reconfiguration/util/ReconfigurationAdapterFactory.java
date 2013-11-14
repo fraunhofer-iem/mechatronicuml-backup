@@ -15,6 +15,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
@@ -29,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationController;
@@ -106,6 +108,10 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseReconfigurableStructuredComponent(ReconfigurableStructuredComponent object) {
 				return createReconfigurableStructuredComponentAdapter();
+			}
+			@Override
+			public Adapter caseReconfigurableAtomicComponent(ReconfigurableAtomicComponent object) {
+				return createReconfigurableAtomicComponentAdapter();
 			}
 			@Override
 			public Adapter caseReconfigurationPort(ReconfigurationPort object) {
@@ -216,16 +222,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createStructuredComponentAdapter();
 			}
 			@Override
+			public Adapter caseBehavioralElement(BehavioralElement object) {
+				return createBehavioralElementAdapter();
+			}
+			@Override
+			public Adapter caseAtomicComponent(AtomicComponent object) {
+				return createAtomicComponentAdapter();
+			}
+			@Override
 			public Adapter caseConnectorEndpoint(ConnectorEndpoint object) {
 				return createConnectorEndpointAdapter();
 			}
 			@Override
 			public Adapter casePort(Port object) {
 				return createPortAdapter();
-			}
-			@Override
-			public Adapter caseBehavioralElement(BehavioralElement object) {
-				return createBehavioralElementAdapter();
 			}
 			@Override
 			public Adapter caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
@@ -270,6 +280,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReconfigurableStructuredComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent <em>Reconfigurable Atomic Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent
+	 * @generated
+	 */
+	public Adapter createReconfigurableAtomicComponentAdapter() {
 		return null;
 	}
 
@@ -690,6 +714,20 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBehavioralElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.AtomicComponent <em>Atomic Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.component.AtomicComponent
+	 * @generated
+	 */
+	public Adapter createAtomicComponentAdapter() {
 		return null;
 	}
 

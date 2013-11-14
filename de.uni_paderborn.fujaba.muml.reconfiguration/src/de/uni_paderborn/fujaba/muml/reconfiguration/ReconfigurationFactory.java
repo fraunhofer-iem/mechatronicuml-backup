@@ -35,6 +35,15 @@ public interface ReconfigurationFactory extends EFactory {
 	ReconfigurableStructuredComponent createReconfigurableStructuredComponent();
 
 	/**
+	 * Returns a new object of class '<em>Reconfigurable Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Reconfigurable Atomic Component</em>'.
+	 * @generated
+	 */
+	ReconfigurableAtomicComponent createReconfigurableAtomicComponent();
+
+	/**
 	 * Returns a new object of class '<em>Manager</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

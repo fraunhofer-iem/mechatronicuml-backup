@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationController;
@@ -128,6 +129,8 @@ public class ReconfigurationValidator extends EObjectValidator {
 		switch (classifierID) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT:
 				return validateReconfigurableStructuredComponent((ReconfigurableStructuredComponent)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURABLE_ATOMIC_COMPONENT:
+				return validateReconfigurableAtomicComponent((ReconfigurableAtomicComponent)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_PORT:
 				return validateReconfigurationPort((ReconfigurationPort)value, diagnostics, context);
 			case ReconfigurationPackage.CONTROLLER:
@@ -199,6 +202,31 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_DiscreteStructuredComponentValidPorts(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_HybridStructuredComponentValidPorts(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_ComponentPartsHaveUniqueName(reconfigurableStructuredComponent, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurableAtomicComponent(ReconfigurableAtomicComponent reconfigurableAtomicComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(reconfigurableAtomicComponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_SoftwareComponentRequiresBehavior(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_ValidComponentType(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_SoftwareComponentValidPorts(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_ContinuousComponentValidPorts(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_AtomicComponentsNamesMustBeUnique(reconfigurableAtomicComponent, diagnostics, context);
 		return result;
 	}
 

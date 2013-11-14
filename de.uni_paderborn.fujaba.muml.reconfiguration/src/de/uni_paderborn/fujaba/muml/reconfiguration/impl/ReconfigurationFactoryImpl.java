@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
@@ -77,6 +78,7 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT: return createReconfigurableStructuredComponent();
+			case ReconfigurationPackage.RECONFIGURABLE_ATOMIC_COMPONENT: return createReconfigurableAtomicComponent();
 			case ReconfigurationPackage.MANAGER: return createManager();
 			case ReconfigurationPackage.EXECUTOR: return createExecutor();
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT: return createReconfigurationMessagePort();
@@ -134,6 +136,16 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public ReconfigurableStructuredComponent createReconfigurableStructuredComponent() {
 		ReconfigurableStructuredComponentImpl reconfigurableStructuredComponent = new ReconfigurableStructuredComponentImpl();
 		return reconfigurableStructuredComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ReconfigurableAtomicComponent createReconfigurableAtomicComponent() {
+		ReconfigurableAtomicComponentImpl reconfigurableAtomicComponent = new ReconfigurableAtomicComponentImpl();
+		return reconfigurableAtomicComponent;
 	}
 
 	/**

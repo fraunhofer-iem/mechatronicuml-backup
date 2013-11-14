@@ -14,6 +14,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
@@ -28,6 +29,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationController;
@@ -114,6 +116,21 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedElement(reconfigurableStructuredComponent);
 				if (result == null) result = caseExtendableElement(reconfigurableStructuredComponent);
 				if (result == null) result = caseCommentableElement(reconfigurableStructuredComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.RECONFIGURABLE_ATOMIC_COMPONENT: {
+				ReconfigurableAtomicComponent reconfigurableAtomicComponent = (ReconfigurableAtomicComponent)theEObject;
+				T result = caseReconfigurableAtomicComponent(reconfigurableAtomicComponent);
+				if (result == null) result = caseAtomicComponent(reconfigurableAtomicComponent);
+				if (result == null) result = caseReconfigurableComponent(reconfigurableAtomicComponent);
+				if (result == null) result = caseComponent(reconfigurableAtomicComponent);
+				if (result == null) result = caseBehavioralElement(reconfigurableAtomicComponent);
+				if (result == null) result = caseConstrainableElement(reconfigurableAtomicComponent);
+				if (result == null) result = caseDataType(reconfigurableAtomicComponent);
+				if (result == null) result = caseNamedElement(reconfigurableAtomicComponent);
+				if (result == null) result = caseExtendableElement(reconfigurableAtomicComponent);
+				if (result == null) result = caseCommentableElement(reconfigurableAtomicComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -342,6 +359,21 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseReconfigurableStructuredComponent(ReconfigurableStructuredComponent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Reconfigurable Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Reconfigurable Atomic Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReconfigurableAtomicComponent(ReconfigurableAtomicComponent object) {
 		return null;
 	}
 
@@ -792,6 +824,21 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBehavioralElement(BehavioralElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Atomic Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Atomic Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAtomicComponent(AtomicComponent object) {
 		return null;
 	}
 

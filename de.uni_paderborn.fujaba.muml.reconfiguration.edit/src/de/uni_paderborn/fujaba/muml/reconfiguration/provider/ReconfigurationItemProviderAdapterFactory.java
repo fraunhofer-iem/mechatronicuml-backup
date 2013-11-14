@@ -98,6 +98,29 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReconfigurableAtomicComponentItemProvider reconfigurableAtomicComponentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReconfigurableAtomicComponentAdapter() {
+		if (reconfigurableAtomicComponentItemProvider == null) {
+			reconfigurableAtomicComponentItemProvider = new ReconfigurableAtomicComponentItemProvider(this);
+		}
+
+		return reconfigurableAtomicComponentItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.Manager} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -519,6 +542,7 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	 */
 	public void dispose() {
 		if (reconfigurableStructuredComponentItemProvider != null) reconfigurableStructuredComponentItemProvider.dispose();
+		if (reconfigurableAtomicComponentItemProvider != null) reconfigurableAtomicComponentItemProvider.dispose();
 		if (managerItemProvider != null) managerItemProvider.dispose();
 		if (executorItemProvider != null) executorItemProvider.dispose();
 		if (reconfigurationMessagePortItemProvider != null) reconfigurationMessagePortItemProvider.dispose();

@@ -31,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationController;
@@ -70,6 +71,13 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	private EClass reconfigurableStructuredComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass reconfigurableAtomicComponentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -352,6 +360,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 */
 	public EReference getReconfigurableStructuredComponent_InitialConfiguration() {
 		return (EReference)reconfigurableStructuredComponentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReconfigurableAtomicComponent() {
+		return reconfigurableAtomicComponentEClass;
 	}
 
 	/**
@@ -955,6 +972,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		createEReference(reconfigurableStructuredComponentEClass, RECONFIGURABLE_STRUCTURED_COMPONENT__EXECUTOR);
 		createEReference(reconfigurableStructuredComponentEClass, RECONFIGURABLE_STRUCTURED_COMPONENT__INITIAL_CONFIGURATION);
 
+		reconfigurableAtomicComponentEClass = createEClass(RECONFIGURABLE_ATOMIC_COMPONENT);
+
 		reconfigurationPortEClass = createEClass(RECONFIGURATION_PORT);
 
 		controllerEClass = createEClass(CONTROLLER);
@@ -1087,6 +1106,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		// Add supertypes to classes
 		reconfigurableStructuredComponentEClass.getESuperTypes().add(theComponentPackage.getStructuredComponent());
 		reconfigurableStructuredComponentEClass.getESuperTypes().add(this.getReconfigurableComponent());
+		reconfigurableAtomicComponentEClass.getESuperTypes().add(theComponentPackage.getAtomicComponent());
+		reconfigurableAtomicComponentEClass.getESuperTypes().add(this.getReconfigurableComponent());
 		reconfigurationPortEClass.getESuperTypes().add(theComponentPackage.getPort());
 		reconfigurationPortEClass.getESuperTypes().add(theConnectorPackage.getDiscreteInteractionEndpoint());
 		controllerEClass.getESuperTypes().add(theCorePackage.getNamedElement());
@@ -1120,6 +1141,8 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEReference(getReconfigurableStructuredComponent_Manager(), this.getManager(), null, "manager", null, 0, 1, ReconfigurableStructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurableStructuredComponent_Executor(), this.getExecutor(), null, "executor", null, 0, 1, ReconfigurableStructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurableStructuredComponent_InitialConfiguration(), theInstancePackage.getComponentInstanceConfiguration(), null, "initialConfiguration", null, 0, 1, ReconfigurableStructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(reconfigurableAtomicComponentEClass, ReconfigurableAtomicComponent.class, "ReconfigurableAtomicComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(reconfigurationPortEClass, ReconfigurationPort.class, "ReconfigurationPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
