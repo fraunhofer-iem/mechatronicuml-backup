@@ -2123,8 +2123,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "SameProtocol", "if (self.connectedMedia->size()>0) then\n\tself.connectedMedia.protocol=self.protocol\nelse true\nendif",
-			 "BusPort2Bus", "if (self.hwPortInstanceType.oclIsTypeOf(platform::BusPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n\tself.connectedMedia.oclIsTypeOf(platform::Bus)\nelse true\nendif",
-			 "LinkPort2Link", "if (self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n\tself.connectedMedia.oclIsTypeOf(platform::Link)\nelse true\nendif"
+			 "BusPort2Bus", "if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n\tself.connectedMedia.oclIsTypeOf(platform::Bus)\nelse true\nendif",
+			 "LinkPort2Link", "if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n\tself.connectedMedia.oclIsTypeOf(platform::Link)\nelse true\nendif"
 		   });		
 		addAnnotation
 		  (getHWPortPart_Protocol(), 

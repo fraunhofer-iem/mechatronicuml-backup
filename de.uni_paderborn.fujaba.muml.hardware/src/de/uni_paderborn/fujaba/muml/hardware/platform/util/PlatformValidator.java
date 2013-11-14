@@ -1127,7 +1127,7 @@ public class PlatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String HW_PORT_PART__BUS_PORT2_BUS__EEXPRESSION = "if (self.hwPortInstanceType.oclIsTypeOf(platform::BusPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n" +
+	protected static final String HW_PORT_PART__BUS_PORT2_BUS__EEXPRESSION = "if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n" +
 		"\tself.connectedMedia.oclIsTypeOf(platform::Bus)\n" +
 		"else true\n" +
 		"endif";
@@ -1159,7 +1159,7 @@ public class PlatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String HW_PORT_PART__LINK_PORT2_LINK__EEXPRESSION = "if (self.hwPortInstanceType.oclIsTypeOf(platform::LinkPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n" +
+	protected static final String HW_PORT_PART__LINK_PORT2_LINK__EEXPRESSION = "if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n" +
 		"\tself.connectedMedia.oclIsTypeOf(platform::Link)\n" +
 		"else true\n" +
 		"endif";
