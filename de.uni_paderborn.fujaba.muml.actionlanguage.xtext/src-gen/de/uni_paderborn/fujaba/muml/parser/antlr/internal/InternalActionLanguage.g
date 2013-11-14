@@ -814,11 +814,11 @@ ruleExpressionStartRule returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getLocalVariableDeclarationStatementParserRuleCall_6()); 
+        newCompositeNode(grammarAccess.getExpressionStartRuleAccess().getLocalVariableOrConstantDeclarationStatementParserRuleCall_6()); 
     }
-    this_LocalVariableDeclarationStatement_6=ruleLocalVariableDeclarationStatement
+    this_LocalVariableOrConstantDeclarationStatement_6=ruleLocalVariableOrConstantDeclarationStatement
     { 
-        $current = $this_LocalVariableDeclarationStatement_6.current; 
+        $current = $this_LocalVariableOrConstantDeclarationStatement_6.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -1055,36 +1055,54 @@ ruleArrayInitializeExpression returns [EObject current=null]
 
 
 
-// Entry rule entryRuleLocalVariableDeclarationStatement
-entryRuleLocalVariableDeclarationStatement returns [EObject current=null] 
+// Entry rule entryRuleLocalVariableOrConstantDeclarationStatement
+entryRuleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getLocalVariableDeclarationStatementRule()); }
-	 iv_ruleLocalVariableDeclarationStatement=ruleLocalVariableDeclarationStatement 
-	 { $current=$iv_ruleLocalVariableDeclarationStatement.current; } 
+	{ newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementRule()); }
+	 iv_ruleLocalVariableOrConstantDeclarationStatement=ruleLocalVariableOrConstantDeclarationStatement 
+	 { $current=$iv_ruleLocalVariableOrConstantDeclarationStatement.current; } 
 	 EOF 
 ;
 
-// Rule LocalVariableDeclarationStatement
-ruleLocalVariableDeclarationStatement returns [EObject current=null] 
+// Rule LocalVariableOrConstantDeclarationStatement
+ruleLocalVariableOrConstantDeclarationStatement returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
 (
 (
+(
 		{ 
-	        newCompositeNode(grammarAccess.getLocalVariableDeclarationStatementAccess().getVariableLocalVariableDeclarationParserRuleCall_0()); 
+	        newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementAccess().getVariableLocalVariableDeclarationParserRuleCall_0_0()); 
 	    }
-		lv_variable_0_0=ruleLocalVariableDeclaration		{
+		lv_variable_0_1=ruleLocalVariableDeclaration		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getLocalVariableDeclarationStatementRule());
+	            $current = createModelElementForParent(grammarAccess.getLocalVariableOrConstantDeclarationStatementRule());
 	        }
        		set(
        			$current, 
        			"variable",
-        		lv_variable_0_0, 
+        		lv_variable_0_1, 
         		"LocalVariableDeclaration");
 	        afterParserOrEnumRuleCall();
 	    }
+
+    |		{ 
+	        newCompositeNode(grammarAccess.getLocalVariableOrConstantDeclarationStatementAccess().getVariableLocalConstantDeclarationParserRuleCall_0_1()); 
+	    }
+		lv_variable_0_2=ruleLocalConstantDeclaration		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLocalVariableOrConstantDeclarationStatementRule());
+	        }
+       		set(
+       			$current, 
+       			"variable",
+        		lv_variable_0_2, 
+        		"LocalConstantDeclaration");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 
 )
 )
@@ -1166,6 +1184,101 @@ ruleLocalVariableDeclaration returns [EObject current=null]
 ))?	otherlv_4=';' 
     {
     	newLeafNode(otherlv_4, grammarAccess.getLocalVariableDeclarationAccess().getSemicolonKeyword_3());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleLocalConstantDeclaration
+entryRuleLocalConstantDeclaration returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getLocalConstantDeclarationRule()); }
+	 iv_ruleLocalConstantDeclaration=ruleLocalConstantDeclaration 
+	 { $current=$iv_ruleLocalConstantDeclaration.current; } 
+	 EOF 
+;
+
+// Rule LocalConstantDeclaration
+ruleLocalConstantDeclaration returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_constant_0_0=	'const' 
+    {
+        newLeafNode(lv_constant_0_0, grammarAccess.getLocalConstantDeclarationAccess().getConstantConstKeyword_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLocalConstantDeclarationRule());
+	        }
+       		setWithLastConsumed($current, "constant", true, "const");
+	    }
+
+)
+)(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLocalConstantDeclarationRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getLocalConstantDeclarationAccess().getDataTypeDataTypeCrossReference_1_0()); 
+	    }
+		ruleDATATYPE		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_name_2_0=RULE_ID
+		{
+			newLeafNode(lv_name_2_0, grammarAccess.getLocalConstantDeclarationAccess().getNameIDTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLocalConstantDeclarationRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_3=':=' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getLocalConstantDeclarationAccess().getColonEqualsSignKeyword_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getLocalConstantDeclarationAccess().getInitializeExpressionInitializeExpressionParserRuleCall_4_0()); 
+	    }
+		lv_initializeExpression_4_0=ruleInitializeExpression		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLocalConstantDeclarationRule());
+	        }
+       		set(
+       			$current, 
+       			"initializeExpression",
+        		lv_initializeExpression_4_0, 
+        		"InitializeExpression");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_5=';' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getLocalConstantDeclarationAccess().getSemicolonKeyword_5());
     }
 )
 ;

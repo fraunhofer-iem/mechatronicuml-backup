@@ -79,7 +79,7 @@ OperationCallStatement returns actionlanguage::OperationCall:
 ExpressionStartRule returns expressions::Expression:
 	Assignment |  ForLoop | 
 	WhileLoop | DoWhileLoop | 
-	IfStatement | ReturnStatement | LocalVariableDeclarationStatement |
+	IfStatement | ReturnStatement | LocalVariableOrConstantDeclarationStatement |
 	OperationCallStatement
 ;
 
@@ -132,12 +132,16 @@ ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
 
 // local variable declaration
 
-LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
-	variable=LocalVariableDeclaration
+LocalVariableOrConstantDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
+	variable=(LocalVariableDeclaration | LocalConstantDeclaration)
 ;
 
 LocalVariableDeclaration returns behavior::Variable:
 	dataType=[types::DataType|DATATYPE] name=ID (':=' initializeExpression=InitializeExpression)? ';'
+;
+
+LocalConstantDeclaration returns behavior::Variable:
+	constant?='const' dataType=[types::DataType|DATATYPE] name=ID ':=' initializeExpression=InitializeExpression ';'
 ;
 
 // end of local variable declaration

@@ -68,7 +68,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		if (container instanceof Assignment
 				&& ((Assignment) container).getLhs_typedNamedElementExpression() == context) {
 			// do not return hybrid in ports
-			return createScope(filterHybridPorts(getAvailableTypedNamedElementList(context), true));
+			return createScope(filterConstants(filterHybridPorts(getAvailableTypedNamedElementList(context), true)));
 		}
 		// do not return hybrid out ports
 		return createScope(filterHybridPorts(getAvailableTypedNamedElementList(context), false));
@@ -280,6 +280,20 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 						|| !filterIn && hybridPort.isOutPort()) {
 					continue;
 				}
+			}
+			filteredList.add(typedNamedElement);
+		}
+		return filteredList;
+	}
+	
+	// XXX: more or less a duplicate of filterHybridPorts (consider the usage
+	// of some predicate filtering framework/simply refactor code a bit)
+	private List<TypedNamedElement> filterConstants(List<TypedNamedElement> list) {
+		List<TypedNamedElement> filteredList = new ArrayList<TypedNamedElement>();
+		for (TypedNamedElement typedNamedElement : list) {
+			if (typedNamedElement instanceof Variable
+					&& ((Variable) typedNamedElement).isConstant()) {
+				continue;
 			}
 			filteredList.add(typedNamedElement);
 		}

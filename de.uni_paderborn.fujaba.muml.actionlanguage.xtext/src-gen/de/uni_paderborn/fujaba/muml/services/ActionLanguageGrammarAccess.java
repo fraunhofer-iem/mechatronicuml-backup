@@ -426,16 +426,16 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDoWhileLoopParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cIfStatementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cReturnStatementParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cLocalVariableDeclarationStatementParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cLocalVariableOrConstantDeclarationStatementParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cOperationCallStatementParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//ExpressionStartRule returns expressions::Expression:
-		//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement | LocalVariableDeclarationStatement |
-		//	OperationCallStatement;
+		//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
+		//	LocalVariableOrConstantDeclarationStatement | OperationCallStatement;
 		public ParserRule getRule() { return rule; }
 
-		//Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement | LocalVariableDeclarationStatement |
-		//OperationCallStatement
+		//Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
+		//LocalVariableOrConstantDeclarationStatement | OperationCallStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Assignment
@@ -456,8 +456,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//ReturnStatement
 		public RuleCall getReturnStatementParserRuleCall_5() { return cReturnStatementParserRuleCall_5; }
 
-		//LocalVariableDeclarationStatement
-		public RuleCall getLocalVariableDeclarationStatementParserRuleCall_6() { return cLocalVariableDeclarationStatementParserRuleCall_6; }
+		//LocalVariableOrConstantDeclarationStatement
+		public RuleCall getLocalVariableOrConstantDeclarationStatementParserRuleCall_6() { return cLocalVariableOrConstantDeclarationStatementParserRuleCall_6; }
 
 		//OperationCallStatement
 		public RuleCall getOperationCallStatementParserRuleCall_7() { return cOperationCallStatementParserRuleCall_7; }
@@ -595,22 +595,30 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
-	public class LocalVariableDeclarationStatementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalVariableDeclarationStatement");
+	public class LocalVariableOrConstantDeclarationStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalVariableOrConstantDeclarationStatement");
 		private final Assignment cVariableAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cVariableLocalVariableDeclarationParserRuleCall_0 = (RuleCall)cVariableAssignment.eContents().get(0);
+		private final Alternatives cVariableAlternatives_0 = (Alternatives)cVariableAssignment.eContents().get(0);
+		private final RuleCall cVariableLocalVariableDeclarationParserRuleCall_0_0 = (RuleCall)cVariableAlternatives_0.eContents().get(0);
+		private final RuleCall cVariableLocalConstantDeclarationParserRuleCall_0_1 = (RuleCall)cVariableAlternatives_0.eContents().get(1);
 		
 		//// end of array initialization
 		//// local variable declaration
-		//LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
-		//	variable=LocalVariableDeclaration;
+		//LocalVariableOrConstantDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
+		//	variable=(LocalVariableDeclaration | LocalConstantDeclaration);
 		public ParserRule getRule() { return rule; }
 
-		//variable=LocalVariableDeclaration
+		//variable=(LocalVariableDeclaration | LocalConstantDeclaration)
 		public Assignment getVariableAssignment() { return cVariableAssignment; }
 
+		//LocalVariableDeclaration | LocalConstantDeclaration
+		public Alternatives getVariableAlternatives_0() { return cVariableAlternatives_0; }
+
 		//LocalVariableDeclaration
-		public RuleCall getVariableLocalVariableDeclarationParserRuleCall_0() { return cVariableLocalVariableDeclarationParserRuleCall_0; }
+		public RuleCall getVariableLocalVariableDeclarationParserRuleCall_0_0() { return cVariableLocalVariableDeclarationParserRuleCall_0_0; }
+
+		//LocalConstantDeclaration
+		public RuleCall getVariableLocalConstantDeclarationParserRuleCall_0_1() { return cVariableLocalConstantDeclarationParserRuleCall_0_1; }
 	}
 
 	public class LocalVariableDeclarationElements extends AbstractParserRuleElementFinder {
@@ -663,6 +671,62 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//";"
 		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
+	}
+
+	public class LocalConstantDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalConstantDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cConstantAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cConstantConstKeyword_0_0 = (Keyword)cConstantAssignment_0.eContents().get(0);
+		private final Assignment cDataTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cDataTypeDataTypeCrossReference_1_0 = (CrossReference)cDataTypeAssignment_1.eContents().get(0);
+		private final RuleCall cDataTypeDataTypeDATATYPEParserRuleCall_1_0_1 = (RuleCall)cDataTypeDataTypeCrossReference_1_0.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cInitializeExpressionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cInitializeExpressionInitializeExpressionParserRuleCall_4_0 = (RuleCall)cInitializeExpressionAssignment_4.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//LocalConstantDeclaration returns behavior::Variable:
+		//	constant?="const" dataType=[types::DataType|DATATYPE] name=ID ":=" initializeExpression=InitializeExpression ";";
+		public ParserRule getRule() { return rule; }
+
+		//constant?="const" dataType=[types::DataType|DATATYPE] name=ID ":=" initializeExpression=InitializeExpression ";"
+		public Group getGroup() { return cGroup; }
+
+		//constant?="const"
+		public Assignment getConstantAssignment_0() { return cConstantAssignment_0; }
+
+		//"const"
+		public Keyword getConstantConstKeyword_0_0() { return cConstantConstKeyword_0_0; }
+
+		//dataType=[types::DataType|DATATYPE]
+		public Assignment getDataTypeAssignment_1() { return cDataTypeAssignment_1; }
+
+		//[types::DataType|DATATYPE]
+		public CrossReference getDataTypeDataTypeCrossReference_1_0() { return cDataTypeDataTypeCrossReference_1_0; }
+
+		//DATATYPE
+		public RuleCall getDataTypeDataTypeDATATYPEParserRuleCall_1_0_1() { return cDataTypeDataTypeDATATYPEParserRuleCall_1_0_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+
+		//":="
+		public Keyword getColonEqualsSignKeyword_3() { return cColonEqualsSignKeyword_3; }
+
+		//initializeExpression=InitializeExpression
+		public Assignment getInitializeExpressionAssignment_4() { return cInitializeExpressionAssignment_4; }
+
+		//InitializeExpression
+		public RuleCall getInitializeExpressionInitializeExpressionParserRuleCall_4_0() { return cInitializeExpressionInitializeExpressionParserRuleCall_4_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 
 	public class NondeterministicChoiceExpressionElements extends AbstractParserRuleElementFinder {
@@ -1916,8 +1980,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	private AssignOperatorElements unknownRuleAssignOperator;
 	private InitializeExpressionElements pInitializeExpression;
 	private ArrayInitializeExpressionElements pArrayInitializeExpression;
-	private LocalVariableDeclarationStatementElements pLocalVariableDeclarationStatement;
+	private LocalVariableOrConstantDeclarationStatementElements pLocalVariableOrConstantDeclarationStatement;
 	private LocalVariableDeclarationElements pLocalVariableDeclaration;
+	private LocalConstantDeclarationElements pLocalConstantDeclaration;
 	private NondeterministicChoiceExpressionElements pNondeterministicChoiceExpression;
 	private RangeElements pRange;
 	private LONGElements pLONG;
@@ -2089,8 +2154,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ExpressionStartRule returns expressions::Expression:
-	//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement | LocalVariableDeclarationStatement |
-	//	OperationCallStatement;
+	//	Assignment | ForLoop | WhileLoop | DoWhileLoop | IfStatement | ReturnStatement |
+	//	LocalVariableOrConstantDeclarationStatement | OperationCallStatement;
 	public ExpressionStartRuleElements getExpressionStartRuleAccess() {
 		return (pExpressionStartRule != null) ? pExpressionStartRule : (pExpressionStartRule = new ExpressionStartRuleElements());
 	}
@@ -2167,14 +2232,14 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// end of array initialization
 	//// local variable declaration
-	//LocalVariableDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
-	//	variable=LocalVariableDeclaration;
-	public LocalVariableDeclarationStatementElements getLocalVariableDeclarationStatementAccess() {
-		return (pLocalVariableDeclarationStatement != null) ? pLocalVariableDeclarationStatement : (pLocalVariableDeclarationStatement = new LocalVariableDeclarationStatementElements());
+	//LocalVariableOrConstantDeclarationStatement returns actionlanguage::LocalVariableDeclarationStatement:
+	//	variable=(LocalVariableDeclaration | LocalConstantDeclaration);
+	public LocalVariableOrConstantDeclarationStatementElements getLocalVariableOrConstantDeclarationStatementAccess() {
+		return (pLocalVariableOrConstantDeclarationStatement != null) ? pLocalVariableOrConstantDeclarationStatement : (pLocalVariableOrConstantDeclarationStatement = new LocalVariableOrConstantDeclarationStatementElements());
 	}
 	
-	public ParserRule getLocalVariableDeclarationStatementRule() {
-		return getLocalVariableDeclarationStatementAccess().getRule();
+	public ParserRule getLocalVariableOrConstantDeclarationStatementRule() {
+		return getLocalVariableOrConstantDeclarationStatementAccess().getRule();
 	}
 
 	//LocalVariableDeclaration returns behavior::Variable:
@@ -2185,6 +2250,16 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getLocalVariableDeclarationRule() {
 		return getLocalVariableDeclarationAccess().getRule();
+	}
+
+	//LocalConstantDeclaration returns behavior::Variable:
+	//	constant?="const" dataType=[types::DataType|DATATYPE] name=ID ":=" initializeExpression=InitializeExpression ";";
+	public LocalConstantDeclarationElements getLocalConstantDeclarationAccess() {
+		return (pLocalConstantDeclaration != null) ? pLocalConstantDeclaration : (pLocalConstantDeclaration = new LocalConstantDeclarationElements());
+	}
+	
+	public ParserRule getLocalConstantDeclarationRule() {
+		return getLocalConstantDeclarationAccess().getRule();
 	}
 
 	//// end of local variable declaration
