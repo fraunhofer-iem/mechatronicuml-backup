@@ -219,7 +219,7 @@ query ComponentInstanceConfiguration::updateComponentInstanceConfiguration(struc
 		numberOfcomponentsToInit:=part.cardinality.lowerBound.toInteger()-(componentInstancesOfSamePart->size());
 		while(numberOfcomponentsToInit>0){
 					numberOfcomponentsToInit:=numberOfcomponentsToInit-1;
-			if(part.componentType.oclIsTypeOf(AtomicComponent)) then{
+			if(part.componentType.oclIsKindOf(AtomicComponent)) then{
 				newComponentInstances+=new AtomicComponentInstance(part.componentType.oclAsType(AtomicComponent),part);
 			}
 			else{
