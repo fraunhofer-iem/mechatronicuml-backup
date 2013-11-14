@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
@@ -106,7 +105,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		ModelinstancePackage.eINSTANCE.eClass();
+		CorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		ComponentPackageImpl theComponentPackage = (ComponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) instanceof ComponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI) : ComponentPackage.eINSTANCE);
@@ -304,7 +303,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -312,13 +311,13 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });					
+		   });	
 		addAnnotation
 		  (messageTypeEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueParameterNames"
-		   });		
+		   });
 	}
 
 	/**
@@ -328,13 +327,13 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (messageTypeEClass, 
 		   source, 
 		   new String[] {
 			 "UniqueParameterNames", "self.parameters->isUnique(name)"
-		   });			
+		   });
 	}
 
 } //MsgtypePackageImpl

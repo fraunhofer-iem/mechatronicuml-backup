@@ -360,7 +360,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_BEHAVIOR__EEXPRESSION = "-- A discrete port of an atomic component must have a Behavior Specification\r\n" +
-		"(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::AtomicComponent))\r\n" +
+		"(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::AtomicComponent))\r\n" +
 		"\timplies not self.behavior.oclIsUndefined()";
 
 	/**
@@ -781,7 +781,7 @@ public class ComponentValidator extends MumlValidator {
 		"\t-- with own atomic components\r\n" +
 		"\tself.allAtomicComponents->union(\r\n" +
 		"\t\tself.embeddedComponentParts->select(\r\n" +
-		"\t\t\tcomponentType.oclIsTypeOf(component::AtomicComponent)\r\n" +
+		"\t\t\tcomponentType.oclIsKindOf(component::AtomicComponent)\r\n" +
 		"\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\r\n" +
 		"\t)->forAll(componentKind = component::ComponentKind::SOFTWARE_COMPONENT)\r\n" +
 		"else\r\n" +
@@ -1139,7 +1139,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ATOMIC_COMPONENT__ATOMIC_COMPONENTS_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "AtomicComponent.allInstances().name->count(self.name) = 1";
+	protected static final String ATOMIC_COMPONENT__ATOMIC_COMPONENTS_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "StaticAtomicComponent.allInstances().name->count(self.name) = 1";
 
 	/**
 	 * Validates the AtomicComponentsNamesMustBeUnique constraint of '<em>Atomic Component</em>'.
