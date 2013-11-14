@@ -42,6 +42,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExpressionStartRuleAccess().getAlternatives(), "rule__ExpressionStartRule__Alternatives");
 					put(grammarAccess.getAssignmentAccess().getAlternatives_1(), "rule__Assignment__Alternatives_1");
 					put(grammarAccess.getInitializeExpressionAccess().getAlternatives(), "rule__InitializeExpression__Alternatives");
+					put(grammarAccess.getLocalVariableOrConstantDeclarationStatementAccess().getVariableAlternatives_0(), "rule__LocalVariableOrConstantDeclarationStatement__VariableAlternatives_0");
 					put(grammarAccess.getMultiplicationExpressionAccess().getAlternatives(), "rule__MultiplicationExpression__Alternatives");
 					put(grammarAccess.getMultiplicationExpressionAccess().getRightExpressionAlternatives_1_1_2_0(), "rule__MultiplicationExpression__RightExpressionAlternatives_1_1_2_0");
 					put(grammarAccess.getOperandAccess().getAlternatives(), "rule__Operand__Alternatives");
@@ -73,6 +74,7 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArrayInitializeExpressionAccess().getGroup_2(), "rule__ArrayInitializeExpression__Group_2__0");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getGroup(), "rule__LocalVariableDeclaration__Group__0");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getGroup_2(), "rule__LocalVariableDeclaration__Group_2__0");
+					put(grammarAccess.getLocalConstantDeclarationAccess().getGroup(), "rule__LocalConstantDeclaration__Group__0");
 					put(grammarAccess.getNondeterministicChoiceExpressionAccess().getGroup(), "rule__NondeterministicChoiceExpression__Group__0");
 					put(grammarAccess.getRangeAccess().getGroup(), "rule__Range__Group__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup(), "rule__LogicalOrExpression__Group__0");
@@ -129,10 +131,14 @@ public class ActionLanguageParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAssignmentAccess().getIncrementDecrementOperatorAssignment_1_1(), "rule__Assignment__IncrementDecrementOperatorAssignment_1_1");
 					put(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsAssignment_1(), "rule__ArrayInitializeExpression__ExpressionsAssignment_1");
 					put(grammarAccess.getArrayInitializeExpressionAccess().getExpressionsAssignment_2_1(), "rule__ArrayInitializeExpression__ExpressionsAssignment_2_1");
-					put(grammarAccess.getLocalVariableDeclarationStatementAccess().getVariableAssignment(), "rule__LocalVariableDeclarationStatement__VariableAssignment");
+					put(grammarAccess.getLocalVariableOrConstantDeclarationStatementAccess().getVariableAssignment(), "rule__LocalVariableOrConstantDeclarationStatement__VariableAssignment");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getDataTypeAssignment_0(), "rule__LocalVariableDeclaration__DataTypeAssignment_0");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getNameAssignment_1(), "rule__LocalVariableDeclaration__NameAssignment_1");
 					put(grammarAccess.getLocalVariableDeclarationAccess().getInitializeExpressionAssignment_2_1(), "rule__LocalVariableDeclaration__InitializeExpressionAssignment_2_1");
+					put(grammarAccess.getLocalConstantDeclarationAccess().getConstantAssignment_0(), "rule__LocalConstantDeclaration__ConstantAssignment_0");
+					put(grammarAccess.getLocalConstantDeclarationAccess().getDataTypeAssignment_1(), "rule__LocalConstantDeclaration__DataTypeAssignment_1");
+					put(grammarAccess.getLocalConstantDeclarationAccess().getNameAssignment_2(), "rule__LocalConstantDeclaration__NameAssignment_2");
+					put(grammarAccess.getLocalConstantDeclarationAccess().getInitializeExpressionAssignment_4(), "rule__LocalConstantDeclaration__InitializeExpressionAssignment_4");
 					put(grammarAccess.getNondeterministicChoiceExpressionAccess().getDataTypeAssignment_0(), "rule__NondeterministicChoiceExpression__DataTypeAssignment_0");
 					put(grammarAccess.getNondeterministicChoiceExpressionAccess().getRangeAssignment_1(), "rule__NondeterministicChoiceExpression__RangeAssignment_1");
 					put(grammarAccess.getRangeAccess().getLowerBoundAssignment_1(), "rule__Range__LowerBoundAssignment_1");
