@@ -225,8 +225,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		}
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return createAtomicComponent_2006(domainElement, containerView,
-					index, persisted, preferencesHint);
+			return createStaticAtomicComponent_2006(domainElement,
+					containerView, index, persisted, preferencesHint);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
 			return createStaticStructuredComponent_2005(domainElement,
 					containerView, index, persisted, preferencesHint);
@@ -282,7 +282,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createAtomicComponent_2006(EObject domainElement,
+	public Node createStaticAtomicComponent_2006(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();

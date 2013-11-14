@@ -14,15 +14,15 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
-	public void init_AtomicComponent_2006(
-			de.uni_paderborn.fujaba.muml.component.AtomicComponent instance) {
+	public void init_StaticAtomicComponent_2006(
+			de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent instance) {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.component.diagram.expressions.MumlOCLFactory
 					.getExpression(
 							0,
 							de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-									.getAtomicComponent(), null).evaluate(
-							instance);
+									.getStaticAtomicComponent(), null)
+					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin

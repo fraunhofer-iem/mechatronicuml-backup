@@ -105,7 +105,7 @@ public class AtomicComponentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
-				.getAtomicComponent_2006SemanticChildren(viewObject);
+				.getStaticAtomicComponent_2006SemanticChildren(viewObject);
 
 	}
 

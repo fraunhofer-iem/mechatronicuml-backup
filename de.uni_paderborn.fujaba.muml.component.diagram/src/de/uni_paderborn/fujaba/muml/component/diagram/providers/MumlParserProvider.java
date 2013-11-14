@@ -23,20 +23,20 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser atomicComponentName_5028Parser;
+	private IParser staticAtomicComponentName_5028Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getAtomicComponentName_5028Parser() {
-		if (atomicComponentName_5028Parser == null) {
+	private IParser getStaticAtomicComponentName_5028Parser() {
+		if (staticAtomicComponentName_5028Parser == null) {
 			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
 					.getNamedElement_Name() };
 			de.uni_paderborn.fujaba.muml.component.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.component.diagram.parsers.MessageFormatParser(
 					features);
-			atomicComponentName_5028Parser = parser;
+			staticAtomicComponentName_5028Parser = parser;
 		}
-		return atomicComponentName_5028Parser;
+		return staticAtomicComponentName_5028Parser;
 	}
 
 	/**
@@ -161,7 +161,7 @@ public class MumlParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID:
-			return getAtomicComponentName_5028Parser();
+			return getStaticAtomicComponentName_5028Parser();
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart.VISUAL_ID:
 			return getStaticStructuredComponentName_5021Parser();
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID:

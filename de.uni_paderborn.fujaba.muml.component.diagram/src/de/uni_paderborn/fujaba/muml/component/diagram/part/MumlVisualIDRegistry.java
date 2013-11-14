@@ -121,7 +121,8 @@ public class MumlVisualIDRegistry {
 		switch (containerVisualID) {
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-					.getAtomicComponent().isSuperTypeOf(domainElement.eClass())) {
+					.getStaticAtomicComponent().isSuperTypeOf(
+							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID;
 			}
 			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE

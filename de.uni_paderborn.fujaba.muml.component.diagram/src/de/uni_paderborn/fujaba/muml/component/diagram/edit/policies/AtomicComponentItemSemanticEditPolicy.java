@@ -26,7 +26,7 @@ public class AtomicComponentItemSemanticEditPolicy
 	 */
 	public AtomicComponentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.AtomicComponent_2006);
+				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.StaticAtomicComponent_2006);
 	}
 
 	/**

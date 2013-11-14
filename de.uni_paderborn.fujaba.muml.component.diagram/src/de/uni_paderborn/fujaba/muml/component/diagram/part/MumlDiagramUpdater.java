@@ -29,7 +29,7 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getModelElementCategory_1000SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2006SemanticChildren(view);
+			return getStaticAtomicComponent_2006SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
 			return getStaticStructuredComponent_2005SemanticChildren(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
@@ -74,12 +74,12 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getAtomicComponent_2006SemanticChildren(
+	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getStaticAtomicComponent_2006SemanticChildren(
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		de.uni_paderborn.fujaba.muml.component.AtomicComponent modelElement = (de.uni_paderborn.fujaba.muml.component.AtomicComponent) view
+		de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent modelElement = (de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
 		for (Iterator<?> it = modelElement.getPorts().iterator(); it.hasNext();) {
@@ -218,7 +218,7 @@ public class MumlDiagramUpdater {
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID:
 			return getModelElementCategory_1000ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2006ContainedLinks(view);
+			return getStaticAtomicComponent_2006ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
 			return getStaticStructuredComponent_2005ContainedLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
@@ -249,7 +249,7 @@ public class MumlDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2006IncomingLinks(view);
+			return getStaticAtomicComponent_2006IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
 			return getStaticStructuredComponent_2005IncomingLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
@@ -280,7 +280,7 @@ public class MumlDiagramUpdater {
 		switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID:
-			return getAtomicComponent_2006OutgoingLinks(view);
+			return getStaticAtomicComponent_2006OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID:
 			return getStaticStructuredComponent_2005OutgoingLinks(view);
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
@@ -314,7 +314,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getAtomicComponent_2006ContainedLinks(
+	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getStaticAtomicComponent_2006ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -403,7 +403,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getAtomicComponent_2006IncomingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getStaticAtomicComponent_2006IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -526,7 +526,7 @@ public class MumlDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getAtomicComponent_2006OutgoingLinks(
+	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getStaticAtomicComponent_2006OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
