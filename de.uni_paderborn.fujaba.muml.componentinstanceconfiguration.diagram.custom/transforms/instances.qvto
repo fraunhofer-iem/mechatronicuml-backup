@@ -31,13 +31,15 @@ main() {
 		instance.removeElement(ci.embeddedCIC);
 		ci.embeddedCIC := new ComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent));
 		
-		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration) and not ci.container().container().oclIsKindOf(ModelElementCategory)) then {
+		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration)) then {
+			//do not remove connector from the overal root node
+			if(not ci.container().container().oclIsKindOf(ModelElementCategory)) then{
 			// Remove old connector instances from resource
 			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->forEach(pci) {
 				instance.removeElement(pci);
 			}; 
 			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances := Set { };
-			
+				}endif;
 			// Add new connector instances
 			ci.componentType[StructuredComponent].connectors->forEach(portConnector) {
 				var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
