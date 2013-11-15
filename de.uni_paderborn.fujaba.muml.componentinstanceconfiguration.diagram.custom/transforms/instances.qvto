@@ -2,6 +2,8 @@ import InstanceLibrary;
 transformation InstantiationTransformation(inout instance : InstancePackage);
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ModelInstancePackage uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
+
 modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
 modeltype ValuetypePackage uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
 modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
@@ -29,7 +31,7 @@ main() {
 		instance.removeElement(ci.embeddedCIC);
 		ci.embeddedCIC := new ComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent));
 		
-		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration) and not ci.container().container().oclIsUndefined()) then {
+		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration) and not ci.container().container().oclIsKindOf(ModelElementCategory)) then {
 			// Remove old connector instances from resource
 			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->forEach(pci) {
 				instance.removeElement(pci);
