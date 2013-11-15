@@ -765,6 +765,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
       </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/behavior/Variable/constant"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
       <superClasses href="#//@packages.7/@classes.6"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
@@ -960,6 +965,9 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
+    </classes>
+    <classes superClasses="//@packages.8/@classes.6">
+      <genClass href="muml.genmodel#//muml/component/StaticAtomicComponent"/>
     </classes>
   </packages>
   <packages>

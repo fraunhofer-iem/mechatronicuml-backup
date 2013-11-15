@@ -27,6 +27,10 @@ public class VariableEditor
 			addVariableInitializeExpressionEditor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addVariableConstantEditor(null, true);
+		}
+
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
 			addCommentableElementCommentEditor(null, true);
 		}
@@ -50,6 +54,26 @@ public class VariableEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getVariable_InitializeExpression());
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addVariableConstantEditor(String category, boolean front) {
+		addEditorToCategory(category, createVariableConstantEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVariableConstantEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getVariable_Constant());
 
 		return editor;
 
@@ -112,6 +136,7 @@ public class VariableEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
+							"property.tab.general",
 							"property.tab.documentation"}).contains(tab);
 		}
 	}
