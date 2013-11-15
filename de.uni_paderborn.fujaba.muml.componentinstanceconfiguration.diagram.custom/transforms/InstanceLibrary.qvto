@@ -125,16 +125,16 @@ constructor ComponentInstanceConfiguration::ComponentInstanceConfiguration(compo
 // TODO: Same code as below
 constructor AtomicComponentInstance::AtomicComponentInstance(type : AtomicComponent, part : ComponentPart) {
 	componentType := type;
-	name := type.name;
 	
 	if (part != NULL_COMPONENT_PART_HELPER) then {
 		// Creating Port Instances also sets the opposite feature PortInstance.component
 		portInstances := part.createPortInstances();	
-	
+		name:=part.name;
 		// Set ComponentPart
 		componentPart := part;
 	} else {
-	
+			name := type.name;
+		
 		// Creating Port Instances also sets the opposite feature PortInstance.component
 		portInstances := componentType.createPortInstances(part);
 	} endif;
@@ -144,16 +144,20 @@ constructor AtomicComponentInstance::AtomicComponentInstance(type : AtomicCompon
 // TODO: Same code as above
 constructor StructuredComponentInstance::StructuredComponentInstance(type : StructuredComponent, part : ComponentPart) {
 	componentType := type;
-	name := type.name;
 	
 	if (part != NULL_COMPONENT_PART_HELPER) then {
+		
+		name:=part.name;
+		
 		// Creating Port Instances also sets the opposite feature PortInstance.component
 		portInstances := part.createPortInstances();	
 	
 		// Set ComponentPart
 		componentPart := part;
 	} else {
-	
+		
+		name := type.name;
+		
 		// Creating Port Instances also sets the opposite feature PortInstance.component
 		portInstances := componentType.createPortInstances(part);
 	} endif;
