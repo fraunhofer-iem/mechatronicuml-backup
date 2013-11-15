@@ -147,8 +147,9 @@ public class MemoryResourceEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.documentation"}).contains(tab);
+							"property.tab.general",
+							"property.tab.documentation",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

@@ -58,26 +58,6 @@
     <propertyEditors>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.DataSizeEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.FrequencyEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.DataRateEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate">
-       </propertyEditor>
-    
-       <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.TimeIntervalEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor.MemoryResourceEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.hardware.resourcetype.MemoryResource">
        </propertyEditor>
@@ -128,13 +108,23 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.hardware.properties.platforminstance.editor.HWPlatformInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance">
+             factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.DataSizeEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize">
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.hardware.properties.platforminstance.editor.HWPlatformInstanceConfigurationEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstanceConfiguration">
+             factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.FrequencyEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.DataRateEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.hardware.properties.hwvaluetype.editor.TimeIntervalEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval">
        </propertyEditor>
     
        <propertyEditor
@@ -235,6 +225,16 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.platform.editor.HWPortPartEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.hardware.properties.platforminstance.editor.HWPlatformInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.hardware.properties.platforminstance.editor.HWPlatformInstanceConfigurationEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstanceConfiguration">
        </propertyEditor>
     
     </propertyEditors>
