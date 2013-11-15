@@ -29,11 +29,11 @@ main() {
 		instance.removeElement(ci.embeddedCIC);
 		ci.embeddedCIC := new ComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent));
 		
-		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration)) then {
+		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration) and not ci.container().container().oclIsUndefined()) then {
 			// Remove old connector instances from resource
 			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->forEach(pci) {
 				instance.removeElement(pci);
-			};
+			}; 
 			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances := Set { };
 			
 			// Add new connector instances
