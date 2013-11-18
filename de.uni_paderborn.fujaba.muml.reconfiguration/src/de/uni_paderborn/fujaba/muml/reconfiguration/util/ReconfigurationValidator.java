@@ -338,6 +338,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateManager_ImplementMessagesOfChildren(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_ImplementMessagesOfferedToParent(manager, diagnostics, context);
 		if (result || diagnostics != null) result &= validateManager_TreatAndNotPropagateMessagesOfferedToParent(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManager_PropagatedMessageMustAppearInRMPort(manager, diagnostics, context);
 		return result;
 	}
 
@@ -432,6 +433,37 @@ public class ReconfigurationValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "TreatAndNotPropagateMessagesOfferedToParent",
 				 MANAGER__TREAT_AND_NOT_PROPAGATE_MESSAGES_OFFERED_TO_PARENT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the PropagatedMessageMustAppearInRMPort constraint of '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MANAGER__PROPAGATED_MESSAGE_MUST_APPEAR_IN_RM_PORT__EEXPRESSION = "self.reconfigurationController.structuredComponent.ports -> any(oclIsKindOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort).interfaceEntries.messageType -- messages in RM Port\r\n" +
+		"= \r\n" +
+		"self.specificationEntries -> select(propagate = true).messageType -- message propagated in manager specification";
+
+	/**
+	 * Validates the PropagatedMessageMustAppearInRMPort constraint of '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateManager_PropagatedMessageMustAppearInRMPort(Manager manager, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.MANAGER,
+				 manager,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "PropagatedMessageMustAppearInRMPort",
+				 MANAGER__PROPAGATED_MESSAGE_MUST_APPEAR_IN_RM_PORT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
