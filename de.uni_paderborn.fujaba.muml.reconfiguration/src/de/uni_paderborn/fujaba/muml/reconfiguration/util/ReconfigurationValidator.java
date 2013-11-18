@@ -435,7 +435,136 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateManagerSpecificationEntry(ManagerSpecificationEntry managerSpecificationEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(managerSpecificationEntry, diagnostics, context);
+		if (!validate_NoCircularContainment(managerSpecificationEntry, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManagerSpecificationEntry_NotTreatAndPropagate(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManagerSpecificationEntry_InvokePlannerOnlyForTreatedMessage(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManagerSpecificationEntry_TimeForPlanningRequiresToInvokePlanner(managerSpecificationEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManagerSpecificationEntry_OnlyBlockTreatedMessage(managerSpecificationEntry, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the NotTreatAndPropagate constraint of '<em>Manager Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MANAGER_SPECIFICATION_ENTRY__NOT_TREAT_AND_PROPAGATE__EEXPRESSION = "not(self.treat and self.propagate)";
+
+	/**
+	 * Validates the NotTreatAndPropagate constraint of '<em>Manager Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateManagerSpecificationEntry_NotTreatAndPropagate(ManagerSpecificationEntry managerSpecificationEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.MANAGER_SPECIFICATION_ENTRY,
+				 managerSpecificationEntry,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NotTreatAndPropagate",
+				 MANAGER_SPECIFICATION_ENTRY__NOT_TREAT_AND_PROPAGATE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the InvokePlannerOnlyForTreatedMessage constraint of '<em>Manager Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER_ONLY_FOR_TREATED_MESSAGE__EEXPRESSION = "self.invokePlanner implies self.treat";
+
+	/**
+	 * Validates the InvokePlannerOnlyForTreatedMessage constraint of '<em>Manager Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateManagerSpecificationEntry_InvokePlannerOnlyForTreatedMessage(ManagerSpecificationEntry managerSpecificationEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.MANAGER_SPECIFICATION_ENTRY,
+				 managerSpecificationEntry,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "InvokePlannerOnlyForTreatedMessage",
+				 MANAGER_SPECIFICATION_ENTRY__INVOKE_PLANNER_ONLY_FOR_TREATED_MESSAGE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the TimeForPlanningRequiresToInvokePlanner constraint of '<em>Manager Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING_REQUIRES_TO_INVOKE_PLANNER__EEXPRESSION = "(not self.timeForPlanning.oclIsUndefined()) implies self.invokePlanner";
+
+	/**
+	 * Validates the TimeForPlanningRequiresToInvokePlanner constraint of '<em>Manager Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateManagerSpecificationEntry_TimeForPlanningRequiresToInvokePlanner(ManagerSpecificationEntry managerSpecificationEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.MANAGER_SPECIFICATION_ENTRY,
+				 managerSpecificationEntry,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "TimeForPlanningRequiresToInvokePlanner",
+				 MANAGER_SPECIFICATION_ENTRY__TIME_FOR_PLANNING_REQUIRES_TO_INVOKE_PLANNER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the OnlyBlockTreatedMessage constraint of '<em>Manager Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MANAGER_SPECIFICATION_ENTRY__ONLY_BLOCK_TREATED_MESSAGE__EEXPRESSION = "self.blockable implies self.treat";
+
+	/**
+	 * Validates the OnlyBlockTreatedMessage constraint of '<em>Manager Specification Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateManagerSpecificationEntry_OnlyBlockTreatedMessage(ManagerSpecificationEntry managerSpecificationEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.MANAGER_SPECIFICATION_ENTRY,
+				 managerSpecificationEntry,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "OnlyBlockTreatedMessage",
+				 MANAGER_SPECIFICATION_ENTRY__ONLY_BLOCK_TREATED_MESSAGE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

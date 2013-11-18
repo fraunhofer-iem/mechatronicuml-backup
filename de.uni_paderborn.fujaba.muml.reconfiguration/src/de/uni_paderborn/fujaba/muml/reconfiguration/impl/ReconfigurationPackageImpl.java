@@ -1264,6 +1264,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "constraints", "ReconfigurationPortRequiresMessageTypes ReconfigurationPortAtStructuredComponentHasNoBehavior"
 		   });	
 		addAnnotation
+		  (managerSpecificationEntryEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "NotTreatAndPropagate InvokePlannerOnlyForTreatedMessage TimeForPlanningRequiresToInvokePlanner OnlyBlockTreatedMessage"
+		   });	
+		addAnnotation
 		  (reconfigurationPortAssemblyConnectorEClass, 
 		   source, 
 		   new String[] {
@@ -1309,6 +1315,15 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   source, 
 		   new String[] {
 			 "derivation", "self.ports -> select(p | p.oclIsTypeOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort)"
+		   });	
+		addAnnotation
+		  (managerSpecificationEntryEClass, 
+		   source, 
+		   new String[] {
+			 "NotTreatAndPropagate", "not(self.treat and self.propagate)",
+			 "InvokePlannerOnlyForTreatedMessage", "self.invokePlanner implies self.treat",
+			 "TimeForPlanningRequiresToInvokePlanner", "(not self.timeForPlanning.oclIsUndefined()) implies self.invokePlanner",
+			 "OnlyBlockTreatedMessage", "self.blockable implies self.treat"
 		   });	
 		addAnnotation
 		  (getExecutor_ReconfigurationExecutionPorts(), 

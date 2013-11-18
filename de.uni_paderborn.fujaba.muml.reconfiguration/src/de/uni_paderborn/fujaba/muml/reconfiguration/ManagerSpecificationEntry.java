@@ -36,7 +36,8 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getManagerSpecificationEntry()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NotTreatAndPropagate InvokePlannerOnlyForTreatedMessage TimeForPlanningRequiresToInvokePlanner OnlyBlockTreatedMessage'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL NotTreatAndPropagate='not(self.treat and self.propagate)' InvokePlannerOnlyForTreatedMessage='self.invokePlanner implies self.treat' TimeForPlanningRequiresToInvokePlanner='(not self.timeForPlanning.oclIsUndefined()) implies self.invokePlanner' OnlyBlockTreatedMessage='self.blockable implies self.treat'"
  * @generated
  */
 public interface ManagerSpecificationEntry extends CommentableElement {

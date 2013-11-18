@@ -159,6 +159,15 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Each ManagerSpecificationEntry defines the reaction of the manager to a reconfiguration message which has either been sent by an embedded child or which is received from the executor as part of a hierarchical reconfiguration."/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="NotTreatAndPropagate InvokePlannerOnlyForTreatedMessage TimeForPlanningRequiresToInvokePlanner OnlyBlockTreatedMessage"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="NotTreatAndPropagate" value="not(self.treat and self.propagate)"/>
+      <details key="InvokePlannerOnlyForTreatedMessage" value="self.invokePlanner implies self.treat"/>
+      <details key="TimeForPlanningRequiresToInvokePlanner" value="(not self.timeForPlanning.oclIsUndefined()) implies self.invokePlanner"/>
+      <details key="OnlyBlockTreatedMessage" value="self.blockable implies self.treat"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="treat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="propagate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
