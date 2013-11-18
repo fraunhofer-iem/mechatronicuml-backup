@@ -18,7 +18,8 @@ import de.uni_paderborn.fujaba.muml.component.PortConnector;
  *
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationPortDelegationConnector()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyConnectReconfigurationPorts'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyConnectReconfigurationPorts='-- A reconfiguration Port Delegation may only connect reconfiguration ports of structured component to reconfiguration ports of reconfiguration controller.\r\n(self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 2)'"
  * @generated
  */
 public interface ReconfigurationPortDelegationConnector extends PortConnector {

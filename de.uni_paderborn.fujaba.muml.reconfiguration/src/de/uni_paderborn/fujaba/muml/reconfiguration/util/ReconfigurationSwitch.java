@@ -105,17 +105,15 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT: {
-				ReconfigurableStructuredComponent reconfigurableStructuredComponent = (ReconfigurableStructuredComponent)theEObject;
-				T result = caseReconfigurableStructuredComponent(reconfigurableStructuredComponent);
-				if (result == null) result = caseStructuredComponent(reconfigurableStructuredComponent);
-				if (result == null) result = caseReconfigurableComponent(reconfigurableStructuredComponent);
-				if (result == null) result = caseComponent(reconfigurableStructuredComponent);
-				if (result == null) result = caseConstrainableElement(reconfigurableStructuredComponent);
-				if (result == null) result = caseDataType(reconfigurableStructuredComponent);
-				if (result == null) result = caseNamedElement(reconfigurableStructuredComponent);
-				if (result == null) result = caseExtendableElement(reconfigurableStructuredComponent);
-				if (result == null) result = caseCommentableElement(reconfigurableStructuredComponent);
+			case ReconfigurationPackage.RECONFIGURABLE_COMPONENT: {
+				ReconfigurableComponent reconfigurableComponent = (ReconfigurableComponent)theEObject;
+				T result = caseReconfigurableComponent(reconfigurableComponent);
+				if (result == null) result = caseComponent(reconfigurableComponent);
+				if (result == null) result = caseConstrainableElement(reconfigurableComponent);
+				if (result == null) result = caseDataType(reconfigurableComponent);
+				if (result == null) result = caseNamedElement(reconfigurableComponent);
+				if (result == null) result = caseExtendableElement(reconfigurableComponent);
+				if (result == null) result = caseCommentableElement(reconfigurableComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -134,6 +132,20 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT: {
+				ReconfigurableStructuredComponent reconfigurableStructuredComponent = (ReconfigurableStructuredComponent)theEObject;
+				T result = caseReconfigurableStructuredComponent(reconfigurableStructuredComponent);
+				if (result == null) result = caseStructuredComponent(reconfigurableStructuredComponent);
+				if (result == null) result = caseReconfigurableComponent(reconfigurableStructuredComponent);
+				if (result == null) result = caseComponent(reconfigurableStructuredComponent);
+				if (result == null) result = caseConstrainableElement(reconfigurableStructuredComponent);
+				if (result == null) result = caseDataType(reconfigurableStructuredComponent);
+				if (result == null) result = caseNamedElement(reconfigurableStructuredComponent);
+				if (result == null) result = caseExtendableElement(reconfigurableStructuredComponent);
+				if (result == null) result = caseCommentableElement(reconfigurableStructuredComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ReconfigurationPackage.RECONFIGURATION_PORT: {
 				ReconfigurationPort reconfigurationPort = (ReconfigurationPort)theEObject;
 				T result = caseReconfigurationPort(reconfigurationPort);
@@ -149,60 +161,10 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.CONTROLLER: {
-				Controller controller = (Controller)theEObject;
-				T result = caseController(controller);
-				if (result == null) result = caseNamedElement(controller);
-				if (result == null) result = caseBehavioralElement(controller);
-				if (result == null) result = caseCommentableElement(controller);
-				if (result == null) result = caseExtendableElement(controller);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ReconfigurationPackage.MANAGER: {
-				Manager manager = (Manager)theEObject;
-				T result = caseManager(manager);
-				if (result == null) result = caseCommentableElement(manager);
-				if (result == null) result = caseBehavioralElement(manager);
-				if (result == null) result = caseExtendableElement(manager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ReconfigurationPackage.EXECUTOR: {
-				Executor executor = (Executor)theEObject;
-				T result = caseExecutor(executor);
-				if (result == null) result = caseCommentableElement(executor);
-				if (result == null) result = caseBehavioralElement(executor);
-				if (result == null) result = caseExtendableElement(executor);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ReconfigurationPackage.RECONFIGURATION_RULE: {
-				ReconfigurationRule reconfigurationRule = (ReconfigurationRule)theEObject;
-				T result = caseReconfigurationRule(reconfigurationRule);
-				if (result == null) result = caseCommentableElement(reconfigurationRule);
-				if (result == null) result = caseExtendableElement(reconfigurationRule);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ReconfigurationPackage.STRUCTURAL_CONDITION: {
-				StructuralCondition structuralCondition = (StructuralCondition)theEObject;
-				T result = caseStructuralCondition(structuralCondition);
-				if (result == null) result = caseNamedElement(structuralCondition);
-				if (result == null) result = caseCommentableElement(structuralCondition);
-				if (result == null) result = caseExtendableElement(structuralCondition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ReconfigurationPackage.RECONFIGURABLE_COMPONENT: {
-				ReconfigurableComponent reconfigurableComponent = (ReconfigurableComponent)theEObject;
-				T result = caseReconfigurableComponent(reconfigurableComponent);
-				if (result == null) result = caseComponent(reconfigurableComponent);
-				if (result == null) result = caseConstrainableElement(reconfigurableComponent);
-				if (result == null) result = caseDataType(reconfigurableComponent);
-				if (result == null) result = caseNamedElement(reconfigurableComponent);
-				if (result == null) result = caseExtendableElement(reconfigurableComponent);
-				if (result == null) result = caseCommentableElement(reconfigurableComponent);
+			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY: {
+				ReconfigurationPortInterfaceEntry reconfigurationPortInterfaceEntry = (ReconfigurationPortInterfaceEntry)theEObject;
+				T result = caseReconfigurationPortInterfaceEntry(reconfigurationPortInterfaceEntry);
+				if (result == null) result = caseExtendableElement(reconfigurationPortInterfaceEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -222,6 +184,14 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY: {
+				ReconfigurationMessagePortInterfaceEntry reconfigurationMessagePortInterfaceEntry = (ReconfigurationMessagePortInterfaceEntry)theEObject;
+				T result = caseReconfigurationMessagePortInterfaceEntry(reconfigurationMessagePortInterfaceEntry);
+				if (result == null) result = caseReconfigurationPortInterfaceEntry(reconfigurationMessagePortInterfaceEntry);
+				if (result == null) result = caseExtendableElement(reconfigurationMessagePortInterfaceEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT: {
 				ReconfigurationExecutionPort reconfigurationExecutionPort = (ReconfigurationExecutionPort)theEObject;
 				T result = caseReconfigurationExecutionPort(reconfigurationExecutionPort);
@@ -238,18 +208,37 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY: {
-				ExecutorSpecificationEntry executorSpecificationEntry = (ExecutorSpecificationEntry)theEObject;
-				T result = caseExecutorSpecificationEntry(executorSpecificationEntry);
-				if (result == null) result = caseExtendableElement(executorSpecificationEntry);
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY: {
+				ReconfigurationExecutionPortInterfaceEntry reconfigurationExecutionPortInterfaceEntry = (ReconfigurationExecutionPortInterfaceEntry)theEObject;
+				T result = caseReconfigurationExecutionPortInterfaceEntry(reconfigurationExecutionPortInterfaceEntry);
+				if (result == null) result = caseReconfigurationPortInterfaceEntry(reconfigurationExecutionPortInterfaceEntry);
+				if (result == null) result = caseExtendableElement(reconfigurationExecutionPortInterfaceEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY: {
-				ManagerSpecificationEntry managerSpecificationEntry = (ManagerSpecificationEntry)theEObject;
-				T result = caseManagerSpecificationEntry(managerSpecificationEntry);
-				if (result == null) result = caseCommentableElement(managerSpecificationEntry);
-				if (result == null) result = caseExtendableElement(managerSpecificationEntry);
+			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_COMMUNICATION_PORT: {
+				InternalReconfigurationCommunicationPort internalReconfigurationCommunicationPort = (InternalReconfigurationCommunicationPort)theEObject;
+				T result = caseInternalReconfigurationCommunicationPort(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseReconfigurationPort(internalReconfigurationCommunicationPort);
+				if (result == null) result = casePort(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseDiscreteInteractionEndpoint(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseConnectorEndpoint(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseConstrainableElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseDataType(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseBehavioralElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseCommentableElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseNamedElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = caseExtendableElement(internalReconfigurationCommunicationPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.CONTROLLER: {
+				Controller controller = (Controller)theEObject;
+				T result = caseController(controller);
+				if (result == null) result = caseNamedElement(controller);
+				if (result == null) result = caseBehavioralElement(controller);
+				if (result == null) result = caseCommentableElement(controller);
+				if (result == null) result = caseExtendableElement(controller);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -276,26 +265,44 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY: {
-				ReconfigurationPortInterfaceEntry reconfigurationPortInterfaceEntry = (ReconfigurationPortInterfaceEntry)theEObject;
-				T result = caseReconfigurationPortInterfaceEntry(reconfigurationPortInterfaceEntry);
-				if (result == null) result = caseExtendableElement(reconfigurationPortInterfaceEntry);
+			case ReconfigurationPackage.MANAGER: {
+				Manager manager = (Manager)theEObject;
+				T result = caseManager(manager);
+				if (result == null) result = caseCommentableElement(manager);
+				if (result == null) result = caseBehavioralElement(manager);
+				if (result == null) result = caseExtendableElement(manager);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY: {
-				ReconfigurationMessagePortInterfaceEntry reconfigurationMessagePortInterfaceEntry = (ReconfigurationMessagePortInterfaceEntry)theEObject;
-				T result = caseReconfigurationMessagePortInterfaceEntry(reconfigurationMessagePortInterfaceEntry);
-				if (result == null) result = caseReconfigurationPortInterfaceEntry(reconfigurationMessagePortInterfaceEntry);
-				if (result == null) result = caseExtendableElement(reconfigurationMessagePortInterfaceEntry);
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY: {
+				ManagerSpecificationEntry managerSpecificationEntry = (ManagerSpecificationEntry)theEObject;
+				T result = caseManagerSpecificationEntry(managerSpecificationEntry);
+				if (result == null) result = caseCommentableElement(managerSpecificationEntry);
+				if (result == null) result = caseExtendableElement(managerSpecificationEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY: {
-				ReconfigurationExecutionPortInterfaceEntry reconfigurationExecutionPortInterfaceEntry = (ReconfigurationExecutionPortInterfaceEntry)theEObject;
-				T result = caseReconfigurationExecutionPortInterfaceEntry(reconfigurationExecutionPortInterfaceEntry);
-				if (result == null) result = caseReconfigurationPortInterfaceEntry(reconfigurationExecutionPortInterfaceEntry);
-				if (result == null) result = caseExtendableElement(reconfigurationExecutionPortInterfaceEntry);
+			case ReconfigurationPackage.EXECUTOR: {
+				Executor executor = (Executor)theEObject;
+				T result = caseExecutor(executor);
+				if (result == null) result = caseCommentableElement(executor);
+				if (result == null) result = caseBehavioralElement(executor);
+				if (result == null) result = caseExtendableElement(executor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY: {
+				ExecutorSpecificationEntry executorSpecificationEntry = (ExecutorSpecificationEntry)theEObject;
+				T result = caseExecutorSpecificationEntry(executorSpecificationEntry);
+				if (result == null) result = caseExtendableElement(executorSpecificationEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.RECONFIGURATION_RULE: {
+				ReconfigurationRule reconfigurationRule = (ReconfigurationRule)theEObject;
+				T result = caseReconfigurationRule(reconfigurationRule);
+				if (result == null) result = caseCommentableElement(reconfigurationRule);
+				if (result == null) result = caseExtendableElement(reconfigurationRule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -307,19 +314,12 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_COMMUNICATION_PORT: {
-				InternalReconfigurationCommunicationPort internalReconfigurationCommunicationPort = (InternalReconfigurationCommunicationPort)theEObject;
-				T result = caseInternalReconfigurationCommunicationPort(internalReconfigurationCommunicationPort);
-				if (result == null) result = caseReconfigurationPort(internalReconfigurationCommunicationPort);
-				if (result == null) result = casePort(internalReconfigurationCommunicationPort);
-				if (result == null) result = caseDiscreteInteractionEndpoint(internalReconfigurationCommunicationPort);
-				if (result == null) result = caseConnectorEndpoint(internalReconfigurationCommunicationPort);
-				if (result == null) result = caseConstrainableElement(internalReconfigurationCommunicationPort);
-				if (result == null) result = caseDataType(internalReconfigurationCommunicationPort);
-				if (result == null) result = caseBehavioralElement(internalReconfigurationCommunicationPort);
-				if (result == null) result = caseCommentableElement(internalReconfigurationCommunicationPort);
-				if (result == null) result = caseNamedElement(internalReconfigurationCommunicationPort);
-				if (result == null) result = caseExtendableElement(internalReconfigurationCommunicationPort);
+			case ReconfigurationPackage.STRUCTURAL_CONDITION: {
+				StructuralCondition structuralCondition = (StructuralCondition)theEObject;
+				T result = caseStructuralCondition(structuralCondition);
+				if (result == null) result = caseNamedElement(structuralCondition);
+				if (result == null) result = caseCommentableElement(structuralCondition);
+				if (result == null) result = caseExtendableElement(structuralCondition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

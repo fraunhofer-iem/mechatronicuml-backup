@@ -106,56 +106,48 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	protected ReconfigurationSwitch<Adapter> modelSwitch =
 		new ReconfigurationSwitch<Adapter>() {
 			@Override
-			public Adapter caseReconfigurableStructuredComponent(ReconfigurableStructuredComponent object) {
-				return createReconfigurableStructuredComponentAdapter();
+			public Adapter caseReconfigurableComponent(ReconfigurableComponent object) {
+				return createReconfigurableComponentAdapter();
 			}
 			@Override
 			public Adapter caseReconfigurableAtomicComponent(ReconfigurableAtomicComponent object) {
 				return createReconfigurableAtomicComponentAdapter();
 			}
 			@Override
+			public Adapter caseReconfigurableStructuredComponent(ReconfigurableStructuredComponent object) {
+				return createReconfigurableStructuredComponentAdapter();
+			}
+			@Override
 			public Adapter caseReconfigurationPort(ReconfigurationPort object) {
 				return createReconfigurationPortAdapter();
 			}
 			@Override
-			public Adapter caseController(Controller object) {
-				return createControllerAdapter();
-			}
-			@Override
-			public Adapter caseManager(Manager object) {
-				return createManagerAdapter();
-			}
-			@Override
-			public Adapter caseExecutor(Executor object) {
-				return createExecutorAdapter();
-			}
-			@Override
-			public Adapter caseReconfigurationRule(ReconfigurationRule object) {
-				return createReconfigurationRuleAdapter();
-			}
-			@Override
-			public Adapter caseStructuralCondition(StructuralCondition object) {
-				return createStructuralConditionAdapter();
-			}
-			@Override
-			public Adapter caseReconfigurableComponent(ReconfigurableComponent object) {
-				return createReconfigurableComponentAdapter();
+			public Adapter caseReconfigurationPortInterfaceEntry(ReconfigurationPortInterfaceEntry object) {
+				return createReconfigurationPortInterfaceEntryAdapter();
 			}
 			@Override
 			public Adapter caseReconfigurationMessagePort(ReconfigurationMessagePort object) {
 				return createReconfigurationMessagePortAdapter();
 			}
 			@Override
+			public Adapter caseReconfigurationMessagePortInterfaceEntry(ReconfigurationMessagePortInterfaceEntry object) {
+				return createReconfigurationMessagePortInterfaceEntryAdapter();
+			}
+			@Override
 			public Adapter caseReconfigurationExecutionPort(ReconfigurationExecutionPort object) {
 				return createReconfigurationExecutionPortAdapter();
 			}
 			@Override
-			public Adapter caseExecutorSpecificationEntry(ExecutorSpecificationEntry object) {
-				return createExecutorSpecificationEntryAdapter();
+			public Adapter caseReconfigurationExecutionPortInterfaceEntry(ReconfigurationExecutionPortInterfaceEntry object) {
+				return createReconfigurationExecutionPortInterfaceEntryAdapter();
 			}
 			@Override
-			public Adapter caseManagerSpecificationEntry(ManagerSpecificationEntry object) {
-				return createManagerSpecificationEntryAdapter();
+			public Adapter caseInternalReconfigurationCommunicationPort(InternalReconfigurationCommunicationPort object) {
+				return createInternalReconfigurationCommunicationPortAdapter();
+			}
+			@Override
+			public Adapter caseController(Controller object) {
+				return createControllerAdapter();
 			}
 			@Override
 			public Adapter caseReconfigurationController(ReconfigurationController object) {
@@ -166,24 +158,32 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createRuleBasedReconfigurationControllerAdapter();
 			}
 			@Override
-			public Adapter caseReconfigurationPortInterfaceEntry(ReconfigurationPortInterfaceEntry object) {
-				return createReconfigurationPortInterfaceEntryAdapter();
+			public Adapter caseManager(Manager object) {
+				return createManagerAdapter();
 			}
 			@Override
-			public Adapter caseReconfigurationMessagePortInterfaceEntry(ReconfigurationMessagePortInterfaceEntry object) {
-				return createReconfigurationMessagePortInterfaceEntryAdapter();
+			public Adapter caseManagerSpecificationEntry(ManagerSpecificationEntry object) {
+				return createManagerSpecificationEntryAdapter();
 			}
 			@Override
-			public Adapter caseReconfigurationExecutionPortInterfaceEntry(ReconfigurationExecutionPortInterfaceEntry object) {
-				return createReconfigurationExecutionPortInterfaceEntryAdapter();
+			public Adapter caseExecutor(Executor object) {
+				return createExecutorAdapter();
+			}
+			@Override
+			public Adapter caseExecutorSpecificationEntry(ExecutorSpecificationEntry object) {
+				return createExecutorSpecificationEntryAdapter();
+			}
+			@Override
+			public Adapter caseReconfigurationRule(ReconfigurationRule object) {
+				return createReconfigurationRuleAdapter();
 			}
 			@Override
 			public Adapter caseSignature(Signature object) {
 				return createSignatureAdapter();
 			}
 			@Override
-			public Adapter caseInternalReconfigurationCommunicationPort(InternalReconfigurationCommunicationPort object) {
-				return createInternalReconfigurationCommunicationPortAdapter();
+			public Adapter caseStructuralCondition(StructuralCondition object) {
+				return createStructuralConditionAdapter();
 			}
 			@Override
 			public Adapter caseReconfigurationPortAssemblyConnector(ReconfigurationPortAssemblyConnector object) {
@@ -218,16 +218,16 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createComponentAdapter();
 			}
 			@Override
-			public Adapter caseStructuredComponent(StructuredComponent object) {
-				return createStructuredComponentAdapter();
-			}
-			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
 				return createBehavioralElementAdapter();
 			}
 			@Override
 			public Adapter caseAtomicComponent(AtomicComponent object) {
 				return createAtomicComponentAdapter();
+			}
+			@Override
+			public Adapter caseStructuredComponent(StructuredComponent object) {
+				return createStructuredComponentAdapter();
 			}
 			@Override
 			public Adapter caseConnectorEndpoint(ConnectorEndpoint object) {

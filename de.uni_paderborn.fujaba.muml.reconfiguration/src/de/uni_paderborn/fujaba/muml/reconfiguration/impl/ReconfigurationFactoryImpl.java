@@ -77,20 +77,20 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT: return createReconfigurableStructuredComponent();
 			case ReconfigurationPackage.RECONFIGURABLE_ATOMIC_COMPONENT: return createReconfigurableAtomicComponent();
-			case ReconfigurationPackage.MANAGER: return createManager();
-			case ReconfigurationPackage.EXECUTOR: return createExecutor();
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT: return createReconfigurationMessagePort();
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT: return createReconfigurationExecutionPort();
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY: return createExecutorSpecificationEntry();
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY: return createManagerSpecificationEntry();
-			case ReconfigurationPackage.RULE_BASED_RECONFIGURATION_CONTROLLER: return createRuleBasedReconfigurationController();
+			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT: return createReconfigurableStructuredComponent();
 			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY: return createReconfigurationPortInterfaceEntry();
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT: return createReconfigurationMessagePort();
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY: return createReconfigurationMessagePortInterfaceEntry();
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT: return createReconfigurationExecutionPort();
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY: return createReconfigurationExecutionPortInterfaceEntry();
-			case ReconfigurationPackage.SIGNATURE: return createSignature();
 			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_COMMUNICATION_PORT: return createInternalReconfigurationCommunicationPort();
+			case ReconfigurationPackage.RULE_BASED_RECONFIGURATION_CONTROLLER: return createRuleBasedReconfigurationController();
+			case ReconfigurationPackage.MANAGER: return createManager();
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY: return createManagerSpecificationEntry();
+			case ReconfigurationPackage.EXECUTOR: return createExecutor();
+			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY: return createExecutorSpecificationEntry();
+			case ReconfigurationPackage.SIGNATURE: return createSignature();
 			case ReconfigurationPackage.RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR: return createReconfigurationPortAssemblyConnector();
 			case ReconfigurationPackage.RECONFIGURATION_PORT_DELEGATION_CONNECTOR: return createReconfigurationPortDelegationConnector();
 			default:

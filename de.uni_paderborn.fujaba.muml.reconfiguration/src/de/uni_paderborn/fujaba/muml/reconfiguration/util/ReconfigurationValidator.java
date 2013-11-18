@@ -127,46 +127,46 @@ public class ReconfigurationValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT:
-				return validateReconfigurableStructuredComponent((ReconfigurableStructuredComponent)value, diagnostics, context);
-			case ReconfigurationPackage.RECONFIGURABLE_ATOMIC_COMPONENT:
-				return validateReconfigurableAtomicComponent((ReconfigurableAtomicComponent)value, diagnostics, context);
-			case ReconfigurationPackage.RECONFIGURATION_PORT:
-				return validateReconfigurationPort((ReconfigurationPort)value, diagnostics, context);
-			case ReconfigurationPackage.CONTROLLER:
-				return validateController((Controller)value, diagnostics, context);
-			case ReconfigurationPackage.MANAGER:
-				return validateManager((Manager)value, diagnostics, context);
-			case ReconfigurationPackage.EXECUTOR:
-				return validateExecutor((Executor)value, diagnostics, context);
-			case ReconfigurationPackage.RECONFIGURATION_RULE:
-				return validateReconfigurationRule((ReconfigurationRule)value, diagnostics, context);
-			case ReconfigurationPackage.STRUCTURAL_CONDITION:
-				return validateStructuralCondition((StructuralCondition)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURABLE_COMPONENT:
 				return validateReconfigurableComponent((ReconfigurableComponent)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURABLE_ATOMIC_COMPONENT:
+				return validateReconfigurableAtomicComponent((ReconfigurableAtomicComponent)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURABLE_STRUCTURED_COMPONENT:
+				return validateReconfigurableStructuredComponent((ReconfigurableStructuredComponent)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_PORT:
+				return validateReconfigurationPort((ReconfigurationPort)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY:
+				return validateReconfigurationPortInterfaceEntry((ReconfigurationPortInterfaceEntry)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT:
 				return validateReconfigurationMessagePort((ReconfigurationMessagePort)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY:
+				return validateReconfigurationMessagePortInterfaceEntry((ReconfigurationMessagePortInterfaceEntry)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT:
 				return validateReconfigurationExecutionPort((ReconfigurationExecutionPort)value, diagnostics, context);
-			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY:
-				return validateExecutorSpecificationEntry((ExecutorSpecificationEntry)value, diagnostics, context);
-			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY:
-				return validateManagerSpecificationEntry((ManagerSpecificationEntry)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY:
+				return validateReconfigurationExecutionPortInterfaceEntry((ReconfigurationExecutionPortInterfaceEntry)value, diagnostics, context);
+			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_COMMUNICATION_PORT:
+				return validateInternalReconfigurationCommunicationPort((InternalReconfigurationCommunicationPort)value, diagnostics, context);
+			case ReconfigurationPackage.CONTROLLER:
+				return validateController((Controller)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_CONTROLLER:
 				return validateReconfigurationController((ReconfigurationController)value, diagnostics, context);
 			case ReconfigurationPackage.RULE_BASED_RECONFIGURATION_CONTROLLER:
 				return validateRuleBasedReconfigurationController((RuleBasedReconfigurationController)value, diagnostics, context);
-			case ReconfigurationPackage.RECONFIGURATION_PORT_INTERFACE_ENTRY:
-				return validateReconfigurationPortInterfaceEntry((ReconfigurationPortInterfaceEntry)value, diagnostics, context);
-			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY:
-				return validateReconfigurationMessagePortInterfaceEntry((ReconfigurationMessagePortInterfaceEntry)value, diagnostics, context);
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY:
-				return validateReconfigurationExecutionPortInterfaceEntry((ReconfigurationExecutionPortInterfaceEntry)value, diagnostics, context);
+			case ReconfigurationPackage.MANAGER:
+				return validateManager((Manager)value, diagnostics, context);
+			case ReconfigurationPackage.MANAGER_SPECIFICATION_ENTRY:
+				return validateManagerSpecificationEntry((ManagerSpecificationEntry)value, diagnostics, context);
+			case ReconfigurationPackage.EXECUTOR:
+				return validateExecutor((Executor)value, diagnostics, context);
+			case ReconfigurationPackage.EXECUTOR_SPECIFICATION_ENTRY:
+				return validateExecutorSpecificationEntry((ExecutorSpecificationEntry)value, diagnostics, context);
+			case ReconfigurationPackage.RECONFIGURATION_RULE:
+				return validateReconfigurationRule((ReconfigurationRule)value, diagnostics, context);
 			case ReconfigurationPackage.SIGNATURE:
 				return validateSignature((Signature)value, diagnostics, context);
-			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_COMMUNICATION_PORT:
-				return validateInternalReconfigurationCommunicationPort((InternalReconfigurationCommunicationPort)value, diagnostics, context);
+			case ReconfigurationPackage.STRUCTURAL_CONDITION:
+				return validateStructuralCondition((StructuralCondition)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR:
 				return validateReconfigurationPortAssemblyConnector((ReconfigurationPortAssemblyConnector)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_PORT_DELEGATION_CONNECTOR:
@@ -520,7 +520,51 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReconfigurationPortAssemblyConnector(ReconfigurationPortAssemblyConnector reconfigurationPortAssemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(reconfigurationPortAssemblyConnector, diagnostics, context);
+		if (!validate_NoCircularContainment(reconfigurationPortAssemblyConnector, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(reconfigurationPortAssemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reconfigurationPortAssemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reconfigurationPortAssemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(reconfigurationPortAssemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(reconfigurationPortAssemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurationPortAssemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurationPortAssemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationPortAssemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReconfigurationPortAssemblyConnector_OnlyConnectReconfigurationPorts(reconfigurationPortAssemblyConnector, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the OnlyConnectReconfigurationPorts constraint of '<em>Port Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR__ONLY_CONNECT_RECONFIGURATION_PORTS__EEXPRESSION = "-- A reconfiguration Port Assembly may only connect reconfiguration ports or a port part typed by a reconfiguration port.\r\n" +
+		"(self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 2) -- two reconfiguration ports\r\n" +
+		"or \r\n" +
+		"((self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 1) and -- or one reconfiguration port and one port part\r\n" +
+		"(self.connectorEndpoints -> select(oclIsKindOf(component::PortPart)) -> size() = 1) and \r\n" +
+		"(self.connectorEndpoints -> any(oclIsKindOf(component::PortPart)).oclAsType(component::PortPart).portType.oclIsKindOf(ReconfigurationPort))) -- that is typed over a reconfiguration port";
+
+	/**
+	 * Validates the OnlyConnectReconfigurationPorts constraint of '<em>Port Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationPortAssemblyConnector_OnlyConnectReconfigurationPorts(ReconfigurationPortAssemblyConnector reconfigurationPortAssemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR,
+				 reconfigurationPortAssemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "OnlyConnectReconfigurationPorts",
+				 RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR__ONLY_CONNECT_RECONFIGURATION_PORTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -529,7 +573,47 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReconfigurationPortDelegationConnector(ReconfigurationPortDelegationConnector reconfigurationPortDelegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(reconfigurationPortDelegationConnector, diagnostics, context);
+		if (!validate_NoCircularContainment(reconfigurationPortDelegationConnector, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(reconfigurationPortDelegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reconfigurationPortDelegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reconfigurationPortDelegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(reconfigurationPortDelegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(reconfigurationPortDelegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurationPortDelegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurationPortDelegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationPortDelegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReconfigurationPortDelegationConnector_OnlyConnectReconfigurationPorts(reconfigurationPortDelegationConnector, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the OnlyConnectReconfigurationPorts constraint of '<em>Port Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String RECONFIGURATION_PORT_DELEGATION_CONNECTOR__ONLY_CONNECT_RECONFIGURATION_PORTS__EEXPRESSION = "-- A reconfiguration Port Delegation may only connect reconfiguration ports of structured component to reconfiguration ports of reconfiguration controller.\r\n" +
+		"(self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 2)";
+
+	/**
+	 * Validates the OnlyConnectReconfigurationPorts constraint of '<em>Port Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationPortDelegationConnector_OnlyConnectReconfigurationPorts(ReconfigurationPortDelegationConnector reconfigurationPortDelegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.RECONFIGURATION_PORT_DELEGATION_CONNECTOR,
+				 reconfigurationPortDelegationConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "OnlyConnectReconfigurationPorts",
+				 RECONFIGURATION_PORT_DELEGATION_CONNECTOR__ONLY_CONNECT_RECONFIGURATION_PORTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
