@@ -946,6 +946,11 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
+      <properties reconcile="false">
+        <genFeature href="muml.genmodel#//muml/component/DirectedTypedPort/initializeExpression"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor"/>
+      </properties>
       <propertyCategories title="Booleans" open="true" properties="//@packages.8/@classes.13/@properties.1"/>
     </classes>
     <classes superClasses="//@packages.9/@classes.0">

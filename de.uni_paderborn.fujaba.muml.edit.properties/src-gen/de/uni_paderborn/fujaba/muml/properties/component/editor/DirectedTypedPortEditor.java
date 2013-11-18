@@ -37,6 +37,10 @@ public abstract class DirectedTypedPortEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addDirectedTypedPortInitializeExpressionEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addPortComponentEditor(null, true);
 		}
 
@@ -98,6 +102,28 @@ public abstract class DirectedTypedPortEditor
 						.getDirectedTypedPort_Optional());
 
 		editor.setTooltipMessage("Decides if this port is optional.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addDirectedTypedPortInitializeExpressionEditor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createDirectedTypedPortInitializeExpressionEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortInitializeExpressionEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+						.getDirectedTypedPort_InitializeExpression());
 
 		return editor;
 

@@ -73,6 +73,7 @@ public class DirectedTypedPortItemProvider
 			addOptionalPropertyDescriptor(object);
 			addOutPortPropertyDescriptor(object);
 			addInPortPropertyDescriptor(object);
+			addInitializeExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -174,6 +175,28 @@ public class DirectedTypedPortItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Initialize Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInitializeExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DirectedTypedPort_initializeExpression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DirectedTypedPort_initializeExpression_feature", "_UI_DirectedTypedPort_type"),
+				 ComponentPackage.Literals.DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

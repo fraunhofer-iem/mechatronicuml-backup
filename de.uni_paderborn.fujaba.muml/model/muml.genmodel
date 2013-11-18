@@ -91,7 +91,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/optional"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/outPort"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/inPort"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/DirectedTypedPort/initializeExpression"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/DirectedTypedPort/initializeExpression"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//component/PortPart">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
