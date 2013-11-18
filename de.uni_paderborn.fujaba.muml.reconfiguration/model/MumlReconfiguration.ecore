@@ -141,6 +141,14 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The Manager is responsible for defining when to execute which reconfiguration rule. &#xD;&#xA;It reacts to reconfiguration messages that are provided by embedded components and indicate that a certain situation which may require reconfiguration has been monitored. &#xD;&#xA;The Manager is part of a RuleBasedReconfigurationController. Therefore, it provides a rule-based specification of its behavior using a set of ManagerSpecificationEntries."/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ImplementMessagesOfChildren ImplementMessagesOfferedToParent TreatAndNotPropagateMessagesOfferedToParent"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ImplementMessagesOfChildren" value="-- The manager specification needs to have entries for all reconfiguration messages that are sent by embedded components.&#xD;&#xA;(self.reconfigurationController.structuredComponent.embeddedComponentParts.componentType.ports -> &#xD;&#xA;&#x9;&#x9;&#x9;select(oclIsTypeOf(ReconfigurationMessagePort))).oclAsType(ReconfigurationMessagePort).interfaceEntries.messageType&#xD;&#xA;&#x9;&#x9;&#x9;->forAll(mt : msgtype::MessageType | self.specificationEntries -> select(messageType = mt) -> size() > 0)"/>
+      <details key="ImplementMessagesOfferedToParent" value="-- The manager needs to contain ManagerSpecificationEntries for each reconfiguration message that is provided by the reconfiguration execution port.&#xD;&#xA;(self.reconfigurationController.structuredComponent.ports -> &#xD;&#xA;&#x9;&#x9;&#x9;select(oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort).interfaceEntries.messageType&#xD;&#xA;&#x9;&#x9;&#x9;->forAll(mt : msgtype::MessageType | self.specificationEntries -> select(messageType = mt) -> size() > 0)"/>
+      <details key="TreatAndNotPropagateMessagesOfferedToParent" value="-- All reconfiguration messages offered to the parent in the reconfiguration execution port need to be treated and not propagated in the manager specification.&#xD;&#xA;self.specificationEntries -> select(entry : ManagerSpecificationEntry | self.reconfigurationController.structuredComponent.ports&#xD;&#xA;&#x9;-> select(oclIsTypeOf(ReconfigurationExecutionPort)).oclAsType(ReconfigurationExecutionPort).interfaceEntries &#xD;&#xA;&#x9;-> select(messageType = entry.messageType) -> size() > 0) -> forAll(treat = true and propagate = false)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specificationEntries" upperBound="-1"
         eType="#//ManagerSpecificationEntry" containment="true" eOpposite="#//ManagerSpecificationEntry/manager"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reconfigurationController"

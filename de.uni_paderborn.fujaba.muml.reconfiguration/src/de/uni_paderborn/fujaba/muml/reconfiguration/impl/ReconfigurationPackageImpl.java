@@ -1264,6 +1264,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "constraints", "ReconfigurationPortRequiresMessageTypes ReconfigurationPortAtStructuredComponentHasNoBehavior"
 		   });	
 		addAnnotation
+		  (managerEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ImplementMessagesOfChildren ImplementMessagesOfferedToParent TreatAndNotPropagateMessagesOfferedToParent"
+		   });	
+		addAnnotation
 		  (managerSpecificationEntryEClass, 
 		   source, 
 		   new String[] {
@@ -1309,6 +1315,14 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   new String[] {
 			 "ReconfigurationPortRequiresMessageTypes", "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
 			 "ReconfigurationPortAtStructuredComponentHasNoBehavior", "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\r\n\timplies self.behavior.oclIsUndefined()"
+		   });	
+		addAnnotation
+		  (managerEClass, 
+		   source, 
+		   new String[] {
+			 "ImplementMessagesOfChildren", "-- The manager specification needs to have entries for all reconfiguration messages that are sent by embedded components.\r\n(self.reconfigurationController.structuredComponent.embeddedComponentParts.componentType.ports -> \r\n\t\t\tselect(oclIsTypeOf(ReconfigurationMessagePort))).oclAsType(ReconfigurationMessagePort).interfaceEntries.messageType\r\n\t\t\t->forAll(mt : msgtype::MessageType | self.specificationEntries -> select(messageType = mt) -> size() > 0)",
+			 "ImplementMessagesOfferedToParent", "-- The manager needs to contain ManagerSpecificationEntries for each reconfiguration message that is provided by the reconfiguration execution port.\r\n(self.reconfigurationController.structuredComponent.ports -> \r\n\t\t\tselect(oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort).interfaceEntries.messageType\r\n\t\t\t->forAll(mt : msgtype::MessageType | self.specificationEntries -> select(messageType = mt) -> size() > 0)",
+			 "TreatAndNotPropagateMessagesOfferedToParent", "-- All reconfiguration messages offered to the parent in the reconfiguration execution port need to be treated and not propagated in the manager specification.\r\nself.specificationEntries -> select(entry : ManagerSpecificationEntry | self.reconfigurationController.structuredComponent.ports\r\n\t-> select(oclIsTypeOf(ReconfigurationExecutionPort)).oclAsType(ReconfigurationExecutionPort).interfaceEntries \r\n\t-> select(messageType = entry.messageType) -> size() > 0) -> forAll(treat = true and propagate = false)"
 		   });	
 		addAnnotation
 		  (getManager_ReconfigurationMessagePorts(), 

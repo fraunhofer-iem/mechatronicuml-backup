@@ -326,7 +326,115 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateManager(Manager manager, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(manager, diagnostics, context);
+		if (!validate_NoCircularContainment(manager, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManager_ImplementMessagesOfChildren(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManager_ImplementMessagesOfferedToParent(manager, diagnostics, context);
+		if (result || diagnostics != null) result &= validateManager_TreatAndNotPropagateMessagesOfferedToParent(manager, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ImplementMessagesOfChildren constraint of '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MANAGER__IMPLEMENT_MESSAGES_OF_CHILDREN__EEXPRESSION = "-- The manager specification needs to have entries for all reconfiguration messages that are sent by embedded components.\r\n" +
+		"(self.reconfigurationController.structuredComponent.embeddedComponentParts.componentType.ports -> \r\n" +
+		"\t\t\tselect(oclIsTypeOf(ReconfigurationMessagePort))).oclAsType(ReconfigurationMessagePort).interfaceEntries.messageType\r\n" +
+		"\t\t\t->forAll(mt : msgtype::MessageType | self.specificationEntries -> select(messageType = mt) -> size() > 0)";
+
+	/**
+	 * Validates the ImplementMessagesOfChildren constraint of '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateManager_ImplementMessagesOfChildren(Manager manager, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.MANAGER,
+				 manager,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ImplementMessagesOfChildren",
+				 MANAGER__IMPLEMENT_MESSAGES_OF_CHILDREN__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ImplementMessagesOfferedToParent constraint of '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MANAGER__IMPLEMENT_MESSAGES_OFFERED_TO_PARENT__EEXPRESSION = "-- The manager needs to contain ManagerSpecificationEntries for each reconfiguration message that is provided by the reconfiguration execution port.\r\n" +
+		"(self.reconfigurationController.structuredComponent.ports -> \r\n" +
+		"\t\t\tselect(oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort).interfaceEntries.messageType\r\n" +
+		"\t\t\t->forAll(mt : msgtype::MessageType | self.specificationEntries -> select(messageType = mt) -> size() > 0)";
+
+	/**
+	 * Validates the ImplementMessagesOfferedToParent constraint of '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateManager_ImplementMessagesOfferedToParent(Manager manager, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.MANAGER,
+				 manager,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ImplementMessagesOfferedToParent",
+				 MANAGER__IMPLEMENT_MESSAGES_OFFERED_TO_PARENT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the TreatAndNotPropagateMessagesOfferedToParent constraint of '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String MANAGER__TREAT_AND_NOT_PROPAGATE_MESSAGES_OFFERED_TO_PARENT__EEXPRESSION = "-- All reconfiguration messages offered to the parent in the reconfiguration execution port need to be treated and not propagated in the manager specification.\r\n" +
+		"self.specificationEntries -> select(entry : ManagerSpecificationEntry | self.reconfigurationController.structuredComponent.ports\r\n" +
+		"\t-> select(oclIsTypeOf(ReconfigurationExecutionPort)).oclAsType(ReconfigurationExecutionPort).interfaceEntries \r\n" +
+		"\t-> select(messageType = entry.messageType) -> size() > 0) -> forAll(treat = true and propagate = false)";
+
+	/**
+	 * Validates the TreatAndNotPropagateMessagesOfferedToParent constraint of '<em>Manager</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateManager_TreatAndNotPropagateMessagesOfferedToParent(Manager manager, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.MANAGER,
+				 manager,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "TreatAndNotPropagateMessagesOfferedToParent",
+				 MANAGER__TREAT_AND_NOT_PROPAGATE_MESSAGES_OFFERED_TO_PARENT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
