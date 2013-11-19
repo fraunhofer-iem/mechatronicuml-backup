@@ -53,6 +53,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getConnectionPoints <em>Connection Points</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#isSimple <em>Simple</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getParentStatechart <em>Parent Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.StateImpl#getAllAvailableChannels <em>All Available Channels</em>}</li>
  * </ul>
  * </p>
  *
@@ -208,6 +209,16 @@ public class StateImpl extends VertexImpl implements State {
 	 * @ordered
 	 */
 	protected EStructuralFeature.Internal.SettingDelegate SIMPLE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.STATE__SIMPLE).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getAllAvailableChannels() <em>All Available Channels</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllAvailableChannels()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ALL_AVAILABLE_CHANNELS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.STATE__ALL_AVAILABLE_CHANNELS).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -479,6 +490,16 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	public EList<SynchronizationChannel> getAllAvailableChannels() {
+		return (EList<SynchronizationChannel>)ALL_AVAILABLE_CHANNELS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public int getUniqueRegionPriority(final int hint) {
 		int nextHighestPriority=hint;
 		for (; hasRegionOfPriority(nextHighestPriority); nextHighestPriority++);
@@ -661,6 +682,8 @@ public class StateImpl extends VertexImpl implements State {
 				return isSimple();
 			case RealtimestatechartPackage.STATE__PARENT_STATECHART:
 				return getParentStatechart();
+			case RealtimestatechartPackage.STATE__ALL_AVAILABLE_CHANNELS:
+				return getAllAvailableChannels();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -794,6 +817,8 @@ public class StateImpl extends VertexImpl implements State {
 				return isSetSimple();
 			case RealtimestatechartPackage.STATE__PARENT_STATECHART:
 				return getParentStatechart() != null;
+			case RealtimestatechartPackage.STATE__ALL_AVAILABLE_CHANNELS:
+				return ALL_AVAILABLE_CHANNELS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

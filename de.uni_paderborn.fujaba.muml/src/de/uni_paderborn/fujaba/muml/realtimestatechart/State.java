@@ -33,6 +33,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getConnectionPoints <em>Connection Points</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#isSimple <em>Simple</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getParentStatechart <em>Parent Statechart</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getAllAvailableChannels <em>All Available Channels</em>}</li>
  * </ul>
  * </p>
  *
@@ -260,6 +261,23 @@ public interface State extends Vertex {
 	 * @generated
 	 */
 	void setParentStatechart(RealtimeStatechart value);
+
+	/**
+	 * Returns the value of the '<em><b>All Available Channels</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>All Available Channels</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>All Available Channels</em>' reference list.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_AllAvailableChannels()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif).channels ->asOrderedSet()'"
+	 * @generated
+	 */
+	EList<SynchronizationChannel> getAllAvailableChannels();
 
 	/**
 	 * <!-- begin-user-doc -->

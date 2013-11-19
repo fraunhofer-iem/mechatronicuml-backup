@@ -20,6 +20,7 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.common.CommonExpressionsPackage;
 
+import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.impl.BehaviorPackageImpl;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
@@ -607,6 +608,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 */
 	public EReference getState_ParentStatechart() {
 		return (EReference)stateEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getState_AllAvailableChannels() {
+		return (EReference)stateEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -1370,6 +1380,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		createEReference(stateEClass, STATE__CONNECTION_POINTS);
 		createEAttribute(stateEClass, STATE__SIMPLE);
 		createEReference(stateEClass, STATE__PARENT_STATECHART);
+		createEReference(stateEClass, STATE__ALL_AVAILABLE_CHANNELS);
 		createEOperation(stateEClass, STATE___GET_UNIQUE_REGION_PRIORITY__INT);
 		createEOperation(stateEClass, STATE___HAS_REGION_OF_PRIORITY__INT);
 
@@ -1573,6 +1584,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		initEReference(getState_ConnectionPoints(), this.getStateConnectionPoint(), this.getStateConnectionPoint_State(), "connectionPoints", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getState_Simple(), theEcorePackage.getEBoolean(), "simple", "true", 0, 1, State.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getState_ParentStatechart(), this.getRealtimeStatechart(), this.getRealtimeStatechart_States(), "parentStatechart", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getState_AllAvailableChannels(), this.getSynchronizationChannel(), null, "allAvailableChannels", null, 0, -1, State.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getState__GetUniqueRegionPriority__int(), ecorePackage.getEInt(), "getUniqueRegionPriority", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "hint", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1809,6 +1821,12 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   new String[] {
 			 "derivation", "-- a state is simple if it contains no regions\r\nembeddedRegions->isEmpty()\r\n"
 		   });						
+		addAnnotation
+		  (getState_AllAvailableChannels(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif).channels ->asOrderedSet()"
+		   });	
 		addAnnotation
 		  (getVertex__IsSuperVertexOf__Vertex(), 
 		   source, 

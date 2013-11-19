@@ -1307,13 +1307,22 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE__PARENT_STATECHART = VERTEX_FEATURE_COUNT + 12;
 
 	/**
+	 * The feature id for the '<em><b>All Available Channels</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__ALL_AVAILABLE_CHANNELS = VERTEX_FEATURE_COUNT + 13;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 13;
+	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 14;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4965,6 +4974,17 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getState_ParentStatechart();
 
 	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getAllAvailableChannels <em>All Available Channels</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>All Available Channels</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.State#getAllAvailableChannels()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_AllAvailableChannels();
+
+	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getUniqueRegionPriority(int) <em>Get Unique Region Priority</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6042,6 +6062,14 @@ public interface RealtimestatechartPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE__PARENT_STATECHART = eINSTANCE.getState_ParentStatechart();
+
+		/**
+		 * The meta object literal for the '<em><b>All Available Channels</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__ALL_AVAILABLE_CHANNELS = eINSTANCE.getState_AllAvailableChannels();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Unique Region Priority</b></em>' operation.
