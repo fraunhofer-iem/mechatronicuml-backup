@@ -461,7 +461,7 @@
         href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/HWPortPart/connectedMedia"/>
     <creationConstraints>
       <sourceEnd
-          body="self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance)"/>
+          body="self.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::BusPortInstance)"/>
       <targetEnd
           body="self.oclIsTypeOf(platform::Bus)"/>
     </creationConstraints>

@@ -416,7 +416,7 @@
         href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//resourcetype/Processor/ownedCache"/>
     <creationConstraints>
       <sourceEnd
-          body="self.oclIsTypeOf(resourcetype::Processor) and self.ownedCache.oclIsUndefined()"/>
+          body="self.oclIsTypeOf(resourcetype::Processor) implies self.oclAsType(resourcetype::Processor).ownedCache.oclIsUndefined()"/>
       <targetEnd
           body="self.oclAsType(ecore::EObject).eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer()&#xA;and self.oclIsTypeOf(resourcetype::Cache)&#xA;"/>
     </creationConstraints>
