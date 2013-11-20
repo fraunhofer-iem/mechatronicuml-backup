@@ -584,7 +584,7 @@
       </MarkerNavigationProvider>
    </extension>
 
-<extension id="diagnostic" name="ComponentStoryDiagram Plugin problems" point="org.eclipse.core.resources.markers">
+<extension id="diagnostic" name="Component Story Diagram Editor problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>

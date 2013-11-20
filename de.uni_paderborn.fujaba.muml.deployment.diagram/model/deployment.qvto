@@ -11,7 +11,7 @@ main() {
 }
 
 mapping inout GenEditorGenerator::settings() {
-	self->map general("deployment_diagram","Deployment Diagram-Editor");
+	self->map general("deployment_diagram","Deployment Diagram Editor");
 	self->map editorSpecific();
 }
 

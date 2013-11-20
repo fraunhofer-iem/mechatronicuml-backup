@@ -12,7 +12,7 @@ main() {
 }
 
 mapping inout GenEditorGenerator::settings() {
-	self->map general("realtimestatechart_diagram","Realtime Statechart Diagram-Editor");
+	self->map general("realtimestatechart_diagram","Realtime Statechart Diagram Editor");
 	self->map editorSpecific();
 }
 

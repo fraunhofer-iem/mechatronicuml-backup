@@ -1514,7 +1514,7 @@
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.general"
-        name="ComponentStoryDiagram Diagram"
+        name="Component Story Diagram Editor"
         parentCategory="de.uni_paderborn.fujaba.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
@@ -1543,7 +1543,7 @@
     </preferencePages>
   </diagram>
   <plugin
-      name="ComponentStoryDiagram Plugin"
+      name="Component Story Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.4.0.qualifier">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>

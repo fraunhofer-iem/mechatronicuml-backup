@@ -1104,7 +1104,7 @@
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.general"
-        name="Componentinstanceconfiguration Diagram"
+        name="Component Instance Configuration Diagram Editor"
         parentCategory="de.uni_paderborn.fujaba.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
@@ -1134,7 +1134,7 @@
   </diagram>
   <plugin
       iD="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram"
-      name="Componentinstanceconfiguration Diagram-Editor"
+      name="Component Instance Configuration Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.4.0.qualifier"
       activatorClassName="ComponentinstanceconfigurationDiagramEditorPlugin">

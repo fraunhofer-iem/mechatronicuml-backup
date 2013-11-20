@@ -11,7 +11,7 @@ main() {
 }
 
 mapping inout GenEditorGenerator::settings() {
-	self->map general("component_diagram","Structured Component Diagram-Editor");
+	self->map general("component_diagram","Component Diagram Editor");
 	self->map editorSpecific();
 }
 

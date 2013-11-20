@@ -12,7 +12,7 @@ main() {
 }
 
 mapping inout GenEditorGenerator::settings() {
-	self->map general("componentstorydiagram_diagram","ComponentStoryDiagram Plugin");
+	self->map general("componentstorydiagram_diagram","Component Story Diagram Editor");
 	self->map editorSpecific();
 }
 

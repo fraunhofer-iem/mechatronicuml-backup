@@ -295,7 +295,7 @@
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
-        name="Message Type Diagram-Editor"
+        name="Message Type Diagram Editor"
         parentCategory="de.uni_paderborn.fujaba.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
@@ -325,7 +325,7 @@
   </diagram>
   <plugin
       iD="de.uni_paderborn.fujaba.muml.messagetype.diagram"
-      name="Message Type Diagram-Editor"
+      name="Message Type Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.4.0.qualifier"
       activatorClassName="MessageTypeDiagramEditorPlugin">

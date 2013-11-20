@@ -1037,7 +1037,7 @@
     <preferencePages
         xsi:type="gmfgen:GenStandardPreferencePage"
         iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.general"
-        name="Realtime Statechart Diagram-Editor"
+        name="Realtime Statechart Diagram Editor"
         parentCategory="de.uni_paderborn.fujaba.preferences">
       <children
           xsi:type="gmfgen:GenStandardPreferencePage"
@@ -1067,7 +1067,7 @@
   </diagram>
   <plugin
       iD="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"
-      name="Realtime Statechart Diagram-Editor"
+      name="Realtime Statechart Diagram Editor"
       provider="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn"
       version="0.4.0.qualifier"
       activatorClassName="RealtimestatechartDiagramEditorPlugin">
