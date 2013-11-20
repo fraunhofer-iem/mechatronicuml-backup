@@ -55,6 +55,26 @@
                </and>
             </visibleWhen>
          </command>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAllPortBehavior"
+               id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAllPortBehavior"
+               label="Embed All Ports&apos; Behavior in the behavior Real-Time Statechart of the Atomic Component"
+               style="push">
+             <visibleWhen>
+               <and>
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false"
+                           operator="or">
+                           <instanceof
+                                 value="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart">
+                           </instanceof>
+                     </iterate>
+                  </with>
+               </and>
+            </visibleWhen>
+         </command>
       </menuContribution>
    </extension>
    <extension
@@ -72,6 +92,13 @@
             description="Embeds Atomic Components as Component Parts in a new Structured Component."
             id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAsParts"
             name="Embed As Parts">
+      </command>
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.handlers.EmbedAllPortBehaviorsToACHandler"
+            description="Embeds the behavior of all DiscretePorts into the Behavior of this Atomic Component"
+            id="de.uni_paderborn.fujaba.muml.component.diagram.custom.embedAllPortBehavior"
+            name="Embed All Port Behaviors">
       </command>
    </extension>
    
