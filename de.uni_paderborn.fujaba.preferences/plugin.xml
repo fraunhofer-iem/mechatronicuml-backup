@@ -6,7 +6,7 @@
       <page
             class="de.uni_paderborn.fujaba.preferences.FujabaPreferencePage"
             id="de.uni_paderborn.fujaba.preferences"
-            name="Fujaba">
+            name="Fujaba-Real-Time Tool Suite">
       </page>
    </extension>
 
