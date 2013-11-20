@@ -31,6 +31,7 @@ mapping inout GenPreferencePage::GenCustomPreferencePage(in editor:GenEditorGene
 		
 	if(self.parent.oclIsUndefined())then{
 		self.parentCategory:="de.uni_paderborn.fujaba.preferences";
+		self.name:=editor.plugin.name;
 	}
 	else{
 		parentCategory:=parent.iD;
