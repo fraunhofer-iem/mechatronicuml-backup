@@ -148,7 +148,7 @@ public class ErrorFeedbackEditPolicy extends GraphicalEditPolicy {
 	protected IFigure createFigure() {
 		IFigure figure = new Label();
 		Font font = new Font(Display.getCurrent(), Display.getDefault()
-				.getSystemFont().getFontData()[0].getName(), 6, SWT.NORMAL);
+				.getSystemFont().getFontData()[0].getName(), 8, SWT.NORMAL);
 		figure.setFont(font);
 		figure.setForegroundColor(ColorConstants.white);
 		figure.setBackgroundColor(new Color(Display.getDefault(), 220, 40, 40));
