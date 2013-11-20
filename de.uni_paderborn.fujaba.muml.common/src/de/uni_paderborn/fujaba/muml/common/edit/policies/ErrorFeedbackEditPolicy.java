@@ -39,7 +39,7 @@ public class ErrorFeedbackEditPolicy extends GraphicalEditPolicy {
 	/**
 	 * The default time that a message should be visible, if not set otherwise.
 	 */
-	private static final long DEFAULT_HIDE_MILLIS = 2000;
+	private static final long DEFAULT_HIDE_MILLIS = 5000;
 
 	/**
 	 * The figure that is used to show the error message.
