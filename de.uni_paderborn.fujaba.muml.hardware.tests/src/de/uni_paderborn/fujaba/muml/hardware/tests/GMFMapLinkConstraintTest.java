@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.gmf.mappings.GMFMapPackage;
 import org.eclipse.gmf.mappings.LinkConstraints;
 import org.eclipse.gmf.mappings.LinkMapping;
 import org.eclipse.gmf.mappings.Mapping;
@@ -177,8 +178,9 @@ public class GMFMapLinkConstraintTest {
 		visitedLinkMapping = new HashMap<LinkMapping, Boolean>();
 		for (String[] path : gmfmap_projects) {
 			try {
-				mapping = GMFUtils.getGmfMapModel(path[0], path[1],
-						projects);
+				mapping = GMFUtils.loadGmfModel(GMFMapPackage.eINSTANCE.getMapping(), path[0], path[1], projects);
+				//mapping = GMFUtils.getGmfMap(path[0], path[1],
+					//	projects);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

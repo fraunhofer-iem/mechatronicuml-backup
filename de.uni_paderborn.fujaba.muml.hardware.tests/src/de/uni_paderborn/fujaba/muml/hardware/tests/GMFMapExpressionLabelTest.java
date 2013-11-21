@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.gmf.mappings.ChildReference;
 import org.eclipse.gmf.mappings.ExpressionLabelMapping;
+import org.eclipse.gmf.mappings.GMFMapPackage;
 import org.eclipse.gmf.mappings.LabelMapping;
 import org.eclipse.gmf.mappings.Mapping;
 import org.eclipse.gmf.mappings.NodeMapping;
@@ -136,7 +137,7 @@ public class GMFMapExpressionLabelTest {
 		visitedNodeMapping=new HashMap<NodeMapping, Boolean>();
 		for (String[] path : gmfmap_projects) {
 		try {
-			mapping=GMFUtils.getGmfMapModel(path[0], path[1],projects);
+			mapping=GMFUtils.loadGmfModel(GMFMapPackage.eINSTANCE.getMapping(),path[0], path[1],projects);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

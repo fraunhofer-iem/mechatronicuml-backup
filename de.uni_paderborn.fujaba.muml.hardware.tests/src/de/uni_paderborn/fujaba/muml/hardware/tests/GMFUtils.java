@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -34,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.tests.TestUtilities;
 
 public abstract class GMFUtils {
 
-	public static EObject loadGmfModel(String plugin, String path,
+	public static EObject  loadGmfModel(String plugin, String path,
 			List<String[]> ecoreProjects) throws IOException {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		GMFUtils.initEcoreMetaModel(resourceSet, ecoreProjects);
@@ -45,34 +47,30 @@ public abstract class GMFUtils {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return (EObject) EcoreUtil.getObjectByType(resource.getContents(),
 				EcorePackage.eINSTANCE.getEObject());
 	}
 
-	// Graph model
-
-	public static Canvas getGmfGraphModel(String plugin, String path,
+	@SuppressWarnings("unchecked")
+	public static <T extends EObject> T  loadGmfModel(EClass gmfModel,String plugin, String path,
 			List<String[]> ecoreProjects) throws IOException {
-		return (Canvas) loadGmfModel(plugin, path, ecoreProjects);
+		ResourceSet resourceSet = new ResourceSetImpl();
+		GMFUtils.initEcoreMetaModel(resourceSet, ecoreProjects);
+		GMFUtils.initGMFModels(resourceSet);
+		Resource resource = null;
+		try {
+			resource = TestUtilities.loadResource(resourceSet, plugin, path);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return (T) EcoreUtil.getObjectByType(resource.getContents(),
+				gmfModel);
 	}
+	
 
-	// Tool model
-
-	public static ToolRegistry getGmfToolModel(String plugin, String path,
-			List<String[]> ecoreProjects) throws IOException {
-		return (ToolRegistry) loadGmfModel(plugin, path, ecoreProjects);
-	}
-
-	// Map model
-	public static Mapping getGmfMapModel(String plugin, String path,
-			List<String[]> ecoreProjects) throws IOException {
-		return (Mapping) loadGmfModel(plugin, path, ecoreProjects);
-	}
-
+	
 	private static void initEcoreMetaModel(ResourceSet resourceSet,
 			List<String[]> projects) {
-		// resourceSet = new ResourceSetImpl();
 
 		Map<String, Object> extensionToFactoryMap = resourceSet
 				.getResourceFactoryRegistry().getExtensionToFactoryMap();
