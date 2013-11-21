@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -25,78 +24,27 @@ import org.eclipse.gmf.tooldef.ToolRegistry;
 import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.MumlPackage;
-import de.uni_paderborn.fujaba.muml.hardware.HardwarePackage;
 import de.uni_paderborn.fujaba.muml.tests.TestUtilities;
 
 /**
- * This class walks through an ecore file and sets up the resourceSet
- * it is based on the MUML Test classes of the package {@link de.uni_paderborn.fujaba.muml.tests}
- * @author Andreas Dann
- *
- */
-
-/**
- * Code modified from
- * http://code.google.com/p/easymodelers/source/browse/trunk/modules
- * /org.easymodelers
- * .gmf/src/main/java/org/easymodelers/gmf/utils/GmfModelsUtils.
- * java?spec=svn35&r=35
+ * This class returns a GMFModel and initializes the dependent Ecore-MetaModels
  * 
  * @author adann
- * 
  */
 
-public abstract class GMFEditorUtil {
-
-	// General methods
-
-	private static String getURIMapping(String uri) {
-		// uri = uri.replace("platform:/", "");
-		// uri = uri.substring(uri.indexOf("/")+1);
-		return uri;
-	}
-
-	public static EObject loadResource(Resource resource) throws IOException {
-		resource.load(null);
-		EcoreUtil.resolveAll(resource);
-		return (EObject) EcoreUtil.getObjectByType(resource.getContents(),
-				EcorePackage.eINSTANCE.getEObject());
-	}
+public abstract class GMFUtils {
 
 	public static EObject loadGmfModel(String plugin, String path,
 			List<String[]> ecoreProjects) throws IOException {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		GMFEditorUtil.init(resourceSet, ecoreProjects);
-		GMFResourceFactory resourceFactory = new GMFResourceFactory();
-		resourceSet
-				.getResourceFactoryRegistry()
-				.getExtensionToFactoryMap()
-				.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
-						resourceFactory);
-		resourceSet.getPackageRegistry().put(GMFGraphPackage.eNS_URI,
-				GMFGraphPackage.eINSTANCE);
-		resourceSet.getPackageRegistry().put(GMFToolPackage.eNS_URI,
-				GMFToolPackage.eINSTANCE);
-		resourceSet.getPackageRegistry().put(GMFMapPackage.eNS_URI,
-				GMFMapPackage.eINSTANCE);
-		resourceSet.getPackageRegistry().put(GMFToolPackage.eNS_URI,
-				GMFToolPackage.eINSTANCE);
-	
-
+		GMFUtils.initEcoreMetaModel(resourceSet, ecoreProjects);
+		GMFUtils.initGMFModels(resourceSet);
 		Resource resource = null;
 		try {
 			resource = TestUtilities.loadResource(resourceSet, plugin, path);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		resourceSet
-				.getURIConverter()
-				.getURIMap()
-				.put(URI.createPlatformResourceURI(plugin + path, true),
-						URI.createURI(getURIMapping(plugin + path)));
-		//resource.load(null);
-		EcoreUtil.resolveAll(resource);
 
 		return (EObject) EcoreUtil.getObjectByType(resource.getContents(),
 				EcorePackage.eINSTANCE.getEObject());
@@ -122,7 +70,8 @@ public abstract class GMFEditorUtil {
 		return (Mapping) loadGmfModel(plugin, path, ecoreProjects);
 	}
 
-	private static void init(ResourceSet resourceSet, List<String[]> projects) {
+	private static void initEcoreMetaModel(ResourceSet resourceSet,
+			List<String[]> projects) {
 		// resourceSet = new ResourceSetImpl();
 
 		Map<String, Object> extensionToFactoryMap = resourceSet
@@ -131,7 +80,6 @@ public abstract class GMFEditorUtil {
 		extensionToFactoryMap.put("genmodel", new EcoreResourceFactoryImpl());
 		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
 				new XMIResourceFactoryImpl());
-		//extensionToFactoryMap.put("gmf",new GMFResourceFactory());
 
 		// Register Packages
 		EcorePackage.eINSTANCE.eClass();
@@ -145,7 +93,7 @@ public abstract class GMFEditorUtil {
 
 		GMFGenPackage.eINSTANCE.eClass();
 		GMFGraphPackage.eINSTANCE.eClass();
-				
+
 		// Load resource (CAUTION: Order is important; dependant metamodels must
 		// be loaded first, else proxies are not resolved correctly...)
 
@@ -165,6 +113,21 @@ public abstract class GMFEditorUtil {
 			}
 		}
 		EcoreUtil.resolveAll(resourceSet);
+	}
+
+	public static void initGMFModels(ResourceSet resourceSet) {
+		Map<String, Object> extensionToFactoryMap = resourceSet
+				.getResourceFactoryRegistry().getExtensionToFactoryMap();
+	extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
+						new GMFResourceFactory());
+		extensionToFactoryMap.put(GMFGraphPackage.eNS_URI,
+				GMFGraphPackage.eINSTANCE);
+		extensionToFactoryMap.put(GMFToolPackage.eNS_URI,
+				GMFToolPackage.eINSTANCE);
+		extensionToFactoryMap.put(GMFMapPackage.eNS_URI,
+				GMFMapPackage.eINSTANCE);
+		extensionToFactoryMap.put(GMFToolPackage.eNS_URI,
+				GMFToolPackage.eINSTANCE);
 	}
 
 }
