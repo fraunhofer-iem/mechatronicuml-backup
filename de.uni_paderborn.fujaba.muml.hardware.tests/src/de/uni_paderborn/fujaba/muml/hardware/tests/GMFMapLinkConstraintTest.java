@@ -178,7 +178,7 @@ public class GMFMapLinkConstraintTest {
 		visitedLinkMapping = new HashMap<LinkMapping, Boolean>();
 		for (String[] path : gmfmap_projects) {
 			try {
-				mapping = GMFUtils.loadGmfModel(GMFMapPackage.eINSTANCE.getMapping(), path[0], path[1], projects);
+				mapping = (Mapping)GMFUtils.loadGmfModel(GMFMapPackage.eINSTANCE.getMapping(), path[0], path[1], projects);
 				//mapping = GMFUtils.getGmfMap(path[0], path[1],
 					//	projects);
 			} catch (IOException e) {

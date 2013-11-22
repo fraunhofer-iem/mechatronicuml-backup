@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -16,13 +15,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.gmf.codegen.gmfgen.GMFGenPackage;
-import org.eclipse.gmf.gmfgraph.Canvas;
 import org.eclipse.gmf.gmfgraph.GMFGraphPackage;
 import org.eclipse.gmf.mappings.GMFMapPackage;
-import org.eclipse.gmf.mappings.Mapping;
 import org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory;
 import org.eclipse.gmf.tooldef.GMFToolPackage;
-import org.eclipse.gmf.tooldef.ToolRegistry;
 import org.storydriven.core.CorePackage;
 
 import de.uni_paderborn.fujaba.muml.MumlPackage;
@@ -36,8 +32,9 @@ import de.uni_paderborn.fujaba.muml.tests.TestUtilities;
 
 public abstract class GMFUtils {
 
-	public static EObject  loadGmfModel(String plugin, String path,
-			List<String[]> ecoreProjects) throws IOException {
+	public static Object loadGmfModel(EClass gmfModelElementToLoad,
+			String plugin, String path, List<String[]> ecoreProjects)
+			throws IOException {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		GMFUtils.initEcoreMetaModel(resourceSet, ecoreProjects);
 		GMFUtils.initGMFModels(resourceSet);
@@ -47,28 +44,10 @@ public abstract class GMFUtils {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return (EObject) EcoreUtil.getObjectByType(resource.getContents(),
-				EcorePackage.eINSTANCE.getEObject());
+		return EcoreUtil.getObjectByType(resource.getContents(),
+				gmfModelElementToLoad);
 	}
 
-	@SuppressWarnings("unchecked")
-	public static <T extends EObject> T  loadGmfModel(EClass gmfModel,String plugin, String path,
-			List<String[]> ecoreProjects) throws IOException {
-		ResourceSet resourceSet = new ResourceSetImpl();
-		GMFUtils.initEcoreMetaModel(resourceSet, ecoreProjects);
-		GMFUtils.initGMFModels(resourceSet);
-		Resource resource = null;
-		try {
-			resource = TestUtilities.loadResource(resourceSet, plugin, path);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return (T) EcoreUtil.getObjectByType(resource.getContents(),
-				gmfModel);
-	}
-	
-
-	
 	private static void initEcoreMetaModel(ResourceSet resourceSet,
 			List<String[]> projects) {
 
@@ -116,8 +95,8 @@ public abstract class GMFUtils {
 	public static void initGMFModels(ResourceSet resourceSet) {
 		Map<String, Object> extensionToFactoryMap = resourceSet
 				.getResourceFactoryRegistry().getExtensionToFactoryMap();
-	extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
-						new GMFResourceFactory());
+		extensionToFactoryMap.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
+				new GMFResourceFactory());
 		extensionToFactoryMap.put(GMFGraphPackage.eNS_URI,
 				GMFGraphPackage.eINSTANCE);
 		extensionToFactoryMap.put(GMFToolPackage.eNS_URI,
