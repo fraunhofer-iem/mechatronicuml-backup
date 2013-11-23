@@ -364,6 +364,16 @@ public class ReconfigurationVisualIDRegistry {
 	}
 
 	
+	
+	
+	 
+	
+	
+	
+
+	
+
+	
 	 /**
 	 * @generated
 	 */
@@ -463,5 +473,6 @@ public class ReconfigurationVisualIDRegistry {
 		}
 
 	};
+
 
 }

@@ -66,9 +66,10 @@ public class RuleBasedReconfigurationControllerCanonicalEditPolicy
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 							.getRuleBasedReconfigurationController_Manager());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-							.getRuleBasedReconfigurationController_Executor());
+			//TODO
+//			myFeaturesToSynchronize
+//					.add(de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+//							.getRuleBasedReconfigurationController_Executor());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -137,7 +138,7 @@ public class RuleBasedReconfigurationControllerCanonicalEditPolicy
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+		int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 				.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID;
 		//TODO add executor

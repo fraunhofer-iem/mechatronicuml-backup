@@ -8,9 +8,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
-import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -19,18 +17,14 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
@@ -68,31 +62,31 @@ public class ManagerEditPart extends
 	 * @generated
 	 */
 	protected void createDefaultEditPolicies() {
-		installEditPolicy(
-				EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
-		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStructuredComponentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
-				new DragDropEditPolicy());
-		//TODO
+//		installEditPolicy(
+//				EditPolicyRoles.CREATION_ROLE,
+//				new CreationEditPolicyWithCustomReparent(
+//						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+//		super.createDefaultEditPolicies();
+//		installEditPolicy(
+//				EditPolicyRoles.SEMANTIC_ROLE,
+//				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStructuredComponentItemSemanticEditPolicy());
+//		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
+//				new DragDropEditPolicy());
+//		//TODO
 //		installEditPolicy(
 //				EditPolicyRoles.CANONICAL_ROLE,
 //				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ReconfigurableStructuredComponentCanonicalEditPolicy());
-		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
-		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
-		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
-
-		installEditPolicy(
-				EditPolicy.GRAPHICAL_NODE_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
-
-		installEditPolicy(
-				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy());
+//		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
+//		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+//		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
+//
+//		installEditPolicy(
+//				EditPolicy.GRAPHICAL_NODE_ROLE,
+//				new de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy());
+//
+//		installEditPolicy(
+//				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.ERROR_FEEDBACK_ROLE,
+//				new de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy());
 
 	}
 
@@ -104,10 +98,10 @@ public class ManagerEditPart extends
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+				switch (de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
+//				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+//				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
@@ -131,23 +125,17 @@ public class ManagerEditPart extends
 		return lep;
 	}
 
-	/**
-	 * @generated
-	 */
+
 	protected IFigure createNodeShape() {
-		return primaryShape = new StructuredComponentFigure();
+		return primaryShape = new ManagerFigure();
 	}
 
-	/**
-	 * @generated
-	 */
-	public StructuredComponentFigure getPrimaryShape() {
-		return (StructuredComponentFigure) primaryShape;
+	
+	public ManagerFigure getPrimaryShape() {
+		return (ManagerFigure) primaryShape;
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) childEditPart)
@@ -271,9 +259,9 @@ public class ManagerEditPart extends
 	 * @generated
 	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
-			return;
-		}
+//		if (addFixedChild(childEditPart)) {
+//			return;
+//		}
 		super.addChildVisual(childEditPart, -1);
 	}
 
@@ -291,15 +279,15 @@ public class ManagerEditPart extends
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) {
-			return getPrimaryShape().getFigureChildren();
-		}
-		if (editPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart) {
-			return getPrimaryShape().getFigureChildren();
-		}
-		if (editPart instanceof IBorderItemEditPart) {
-			return getBorderedFigure().getBorderItemContainer();
-		}
+//		if (editPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) {
+//			return getPrimaryShape().getFigureChildren();
+//		}
+//		if (editPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart) {
+//			return getPrimaryShape().getFigureChildren();
+//		}
+//		if (editPart instanceof IBorderItemEditPart) {
+//			return getBorderedFigure().getBorderItemContainer();
+//		}
 		return getContentPane();
 	}
 
@@ -402,7 +390,7 @@ public class ManagerEditPart extends
 	/**
 	 * @generated
 	 */
-	public class StructuredComponentFigure extends RectangleFigure {
+	public class ManagerFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -416,7 +404,7 @@ public class ManagerEditPart extends
 		/**
 		 * @generated
 		 */
-		public StructuredComponentFigure() {
+		public ManagerFigure() {
 
 			GridLayout layoutThis = new GridLayout();
 			layoutThis.numColumns = 1;
@@ -491,47 +479,47 @@ public class ManagerEditPart extends
 
 			componentIconFigure1.setLayoutManager(new StackLayout());
 
-			RectangleFigure componentIconOuter2 = new RectangleFigure();
-
-			componentIconOuter2.setFill(false);
-			componentIconOuter2.setOutline(false);
-
-			componentIconFigure1.add(componentIconOuter2);
-			componentIconOuter2.setLayoutManager(new XYLayout());
-
-			RectangleFigure b13 = new RectangleFigure();
-
-			componentIconOuter2.add(b13, new Rectangle(getMapMode().DPtoLP(4),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(16),
-					getMapMode().DPtoLP(20)));
-
-			RectangleFigure componentIconInner12 = new RectangleFigure();
-
-			componentIconInner12.setFill(false);
-			componentIconInner12.setOutline(false);
-
-			componentIconFigure1.add(componentIconInner12);
-			componentIconInner12.setLayoutManager(new XYLayout());
-
-			RectangleFigure c13 = new RectangleFigure();
-
-			componentIconInner12.add(c13, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(2), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
-
-			RectangleFigure componentIconInner22 = new RectangleFigure();
-
-			componentIconInner22.setFill(false);
-			componentIconInner22.setOutline(false);
-
-			componentIconFigure1.add(componentIconInner22);
-			componentIconInner22.setLayoutManager(new XYLayout());
-
-			RectangleFigure d13 = new RectangleFigure();
-
-			componentIconInner22.add(d13, new Rectangle(getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
-					getMapMode().DPtoLP(6)));
+//			RectangleFigure componentIconOuter2 = new RectangleFigure();
+//
+//			componentIconOuter2.setFill(false);
+//			componentIconOuter2.setOutline(false);
+//
+//			componentIconFigure1.add(componentIconOuter2);
+//			componentIconOuter2.setLayoutManager(new XYLayout());
+//
+//			RectangleFigure b13 = new RectangleFigure();
+//
+//			componentIconOuter2.add(b13, new Rectangle(getMapMode().DPtoLP(4),
+//					getMapMode().DPtoLP(0), getMapMode().DPtoLP(16),
+//					getMapMode().DPtoLP(20)));
+//
+//			RectangleFigure componentIconInner12 = new RectangleFigure();
+//
+//			componentIconInner12.setFill(false);
+//			componentIconInner12.setOutline(false);
+//
+//			componentIconFigure1.add(componentIconInner12);
+//			componentIconInner12.setLayoutManager(new XYLayout());
+//
+//			RectangleFigure c13 = new RectangleFigure();
+//
+//			componentIconInner12.add(c13, new Rectangle(getMapMode().DPtoLP(0),
+//					getMapMode().DPtoLP(2), getMapMode().DPtoLP(12),
+//					getMapMode().DPtoLP(6)));
+//
+//			RectangleFigure componentIconInner22 = new RectangleFigure();
+//
+//			componentIconInner22.setFill(false);
+//			componentIconInner22.setOutline(false);
+//
+//			componentIconFigure1.add(componentIconInner22);
+//			componentIconInner22.setLayoutManager(new XYLayout());
+//
+//			RectangleFigure d13 = new RectangleFigure();
+//
+//			componentIconInner22.add(d13, new Rectangle(getMapMode().DPtoLP(0),
+//					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
+//					getMapMode().DPtoLP(6)));
 
 			// Process FigureRef details
 

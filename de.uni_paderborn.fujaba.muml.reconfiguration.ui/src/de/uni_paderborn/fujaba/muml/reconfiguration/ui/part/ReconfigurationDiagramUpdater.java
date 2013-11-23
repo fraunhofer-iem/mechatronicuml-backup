@@ -1,21 +1,12 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.ui.part;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
-import org.eclipse.uml2.common.edit.command.SupersetCommand;
 import org.storydriven.core.ExtendableElement;
-
-import de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater;
 
 /**
  * @generated
