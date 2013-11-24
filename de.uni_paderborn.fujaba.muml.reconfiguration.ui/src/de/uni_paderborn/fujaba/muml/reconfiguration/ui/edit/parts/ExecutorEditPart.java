@@ -19,6 +19,7 @@ import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
@@ -73,9 +74,9 @@ public class ExecutorEditPart extends
 //		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 //				new DragDropEditPolicy());
 //		//TODO
-//		installEditPolicy(
-//				EditPolicyRoles.CANONICAL_ROLE,
-//				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ReconfigurableStructuredComponentCanonicalEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.CANONICAL_ROLE,
+				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ExecutorCanonicalEditPolicy());
 //		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 //		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 //		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -100,9 +101,9 @@ public class ExecutorEditPart extends
 				View childView = (View) child.getModel();
 				switch (de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 						.getVisualID(childView)) {
-//				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 //				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
+//				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
@@ -137,26 +138,7 @@ public class ExecutorEditPart extends
 
 	
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) {
-			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) {
-			IFigure pane = getPrimaryShape().getFigureChildren();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart) childEditPart)
-					.getFigure());
-			return true;
-		}
-		
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart) {
-			IFigure pane = getPrimaryShape().getFigureChildren();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart) childEditPart)
-					.getFigure());
-			return true;
-		}
+		//TODO discrete port here?
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
@@ -166,25 +148,7 @@ public class ExecutorEditPart extends
 							.getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
 		
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.WEST);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
 		
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
@@ -259,9 +223,9 @@ public class ExecutorEditPart extends
 	 * @generated
 	 */
 	protected void addChildVisual(EditPart childEditPart, int index) {
-//		if (addFixedChild(childEditPart)) {
-//			return;
-//		}
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
 		super.addChildVisual(childEditPart, -1);
 	}
 

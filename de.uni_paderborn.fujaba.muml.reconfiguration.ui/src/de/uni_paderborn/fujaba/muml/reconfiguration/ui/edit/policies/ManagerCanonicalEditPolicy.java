@@ -27,15 +27,15 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class ReconfigurableStructuredComponentCanonicalEditPolicy extends
+public class ManagerCanonicalEditPolicy extends
 		CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
-	public ReconfigurableStructuredComponentCanonicalEditPolicy() {
+	public ManagerCanonicalEditPolicy() {
 	}
 
-	public ReconfigurableStructuredComponentCanonicalEditPolicy(
+	public ManagerCanonicalEditPolicy(
 			boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
@@ -59,11 +59,8 @@ public class ReconfigurableStructuredComponentCanonicalEditPolicy extends
 		if (myFeaturesToSynchronize == null) {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-							.getComponent_Ports());
-			myFeaturesToSynchronize
-					.add(de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
-							.getReconfigurableStructuredComponent_Controller());
+					.add(de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE.getManager_Ports());
+			//TODO add Specification Entries
 		}
 
 		return myFeaturesToSynchronize;
@@ -102,9 +99,7 @@ public class ReconfigurableStructuredComponentCanonicalEditPolicy extends
 						.asList(new Integer[] {
 								de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID,
 								de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID });
+								de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID});
 				if (childElement.eContainer() == containerView.getElement()
 						&& visualIDs.contains(visualID)) {
 					result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
@@ -118,7 +113,7 @@ public class ReconfigurableStructuredComponentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationDiagramUpdater
-				.getReconfigurableStructuredComponent_2076SemanticChildren(viewObject);
+				.getManager_2075SemanticChildren(viewObject);
 
 	}
 
@@ -138,10 +133,8 @@ public class ReconfigurableStructuredComponentCanonicalEditPolicy extends
 		int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID
 				|| visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID;
+				|| visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -174,7 +167,7 @@ public class ReconfigurableStructuredComponentCanonicalEditPolicy extends
 				.iterator(); descriptorsIterator.hasNext();) {
 			de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor next = descriptorsIterator
 					.next();
-			String hint = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+			String hint = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both
 																	// semanticElement

@@ -157,6 +157,7 @@ public class ReconfigurationVisualIDRegistry {
 			}
 
 			break;
+			
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 					.getComponentPart().isSuperTypeOf(domainElement.eClass()))
@@ -170,6 +171,14 @@ public class ReconfigurationVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 					.getExecutor().isSuperTypeOf(domainElement.eClass()))
 				return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ExecutorEditPart.VISUAL_ID;
+			
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID:
+			if(de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE.getReconfigurationMessagePort().isSuperTypeOf(domainElement.eClass()))
+				return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID;
+			
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ExecutorEditPart.VISUAL_ID:
+			if(de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE.getReconfigurationExecutionPort().isSuperTypeOf(domainElement.eClass()))
+				return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID;
 
 		}
 		return -1;
