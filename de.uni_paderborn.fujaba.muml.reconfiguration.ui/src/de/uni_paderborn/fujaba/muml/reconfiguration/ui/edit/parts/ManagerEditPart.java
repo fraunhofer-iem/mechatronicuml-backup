@@ -141,18 +141,16 @@ public class ManagerEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	protected boolean addFixedChild(EditPart childEditPart) {
-
-		// TODO discrete here?
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
+		
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.InternalReconfigurationCommunicationPortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
+					PositionConstants.EAST);
 			getBorderedFigure()
 					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) childEditPart)
+					.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.InternalReconfigurationCommunicationPortEditPart) childEditPart)
 							.getFigure(), locator);
 			return true;
 		}
-		
 
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
