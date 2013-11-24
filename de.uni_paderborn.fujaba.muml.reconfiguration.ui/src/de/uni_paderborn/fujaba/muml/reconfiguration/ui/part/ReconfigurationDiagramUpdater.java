@@ -11,9 +11,7 @@ import org.storydriven.core.ExtendableElement;
 /**
  * @generated
  */
-public class ReconfigurationDiagramUpdater{
-
-	
+public class ReconfigurationDiagramUpdater {
 
 	/**
 	 * @generated
@@ -41,7 +39,7 @@ public class ReconfigurationDiagramUpdater{
 			View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
-			
+
 		}
 		de.uni_paderborn.fujaba.modelinstance.ModelElementCategory modelElement = (de.uni_paderborn.fujaba.modelinstance.ModelElementCategory) view
 				.getElement();
@@ -65,7 +63,6 @@ public class ReconfigurationDiagramUpdater{
 
 		return result;
 	}
-
 
 	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getReconfigurableStructuredComponent_2076SemanticChildren(
 			View view) {
@@ -100,10 +97,11 @@ public class ReconfigurationDiagramUpdater{
 						childElement, visualID));
 				continue;
 			}
-			
+
 		}
-		if(modelElement.getController()!=null){
-			de.uni_paderborn.fujaba.muml.reconfiguration.Controller childElement = (de.uni_paderborn.fujaba.muml.reconfiguration.Controller) modelElement.getController();
+		if (modelElement.getController() != null) {
+			de.uni_paderborn.fujaba.muml.reconfiguration.Controller childElement = (de.uni_paderborn.fujaba.muml.reconfiguration.Controller) modelElement
+					.getController();
 			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID) {
@@ -115,8 +113,6 @@ public class ReconfigurationDiagramUpdater{
 		return result;
 	}
 
-
-	
 	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getReconfigurableStructuredComponentCompartment_7077SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
@@ -153,23 +149,22 @@ public class ReconfigurationDiagramUpdater{
 				continue;
 			}
 		}
-		
-
 
 		return result;
 	}
-	
-	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>  getRuleBasedReconfigurationController_7076SemanticChildren(View view){
+
+	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getRuleBasedReconfigurationController_7076SemanticChildren(
+			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
 		}
-	
+
 		de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController) view
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>();
-		if(modelElement.getManager()!=null)
-				{
-			de.uni_paderborn.fujaba.muml.reconfiguration.Manager childElement = (de.uni_paderborn.fujaba.muml.reconfiguration.Manager ) modelElement.getManager();
+		if (modelElement.getManager() != null) {
+			de.uni_paderborn.fujaba.muml.reconfiguration.Manager childElement = (de.uni_paderborn.fujaba.muml.reconfiguration.Manager) modelElement
+					.getManager();
 			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 					.getNodeVisualID(view, childElement);
 			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID) {
@@ -177,7 +172,18 @@ public class ReconfigurationDiagramUpdater{
 						childElement, visualID));
 			}
 		}
-		//TODO add executor
+
+		if (modelElement.getExecutor() != null) {
+			de.uni_paderborn.fujaba.muml.reconfiguration.Executor childElement = (de.uni_paderborn.fujaba.muml.reconfiguration.Executor) modelElement
+					.getExecutor();
+			int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+					.getNodeVisualID(view, childElement);
+			if (visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ExecutorEditPart.VISUAL_ID) {
+				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
+						childElement, visualID));
+			}
+		}
+
 		return result;
 	}
 
@@ -186,45 +192,51 @@ public class ReconfigurationDiagramUpdater{
 		return Collections.emptyList();
 	}
 
-	
-	
-
-//	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
-//		/**
-//		 * @generated
-//		 */
-//		@Override
-//		public List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor> getSemanticChildren(
-//				View view) {
-//			return ReconfigurationDiagramUpdater.getSemanticChildren(view);
-//		}
-//
-//		/**
-//		 * @generated
-//		 */
-//		@Override
-//		public List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getContainedLinks(
-//				View view) {
-//			return ReconfigurationDiagramUpdater.getContainedLinks(view);
-//		}
-//
-//		/**
-//		 * @generated
-//		 */
-//		@Override
-//		public List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getIncomingLinks(
-//				View view) {
-//			return ReconfigurationDiagramUpdater.getIncomingLinks(view);
-//		}
-//
-//		/**
-//		 * @generated
-//		 */
-//		@Override
-//		public List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getOutgoingLinks(
-//				View view) {
-//			return ReconfigurationDiagramUpdater.getOutgoingLinks(view);
-//		}
-//	};
+	// public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater()
+	// {
+	// /**
+	// * @generated
+	// */
+	// @Override
+	// public
+	// List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor>
+	// getSemanticChildren(
+	// View view) {
+	// return ReconfigurationDiagramUpdater.getSemanticChildren(view);
+	// }
+	//
+	// /**
+	// * @generated
+	// */
+	// @Override
+	// public
+	// List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>
+	// getContainedLinks(
+	// View view) {
+	// return ReconfigurationDiagramUpdater.getContainedLinks(view);
+	// }
+	//
+	// /**
+	// * @generated
+	// */
+	// @Override
+	// public
+	// List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>
+	// getIncomingLinks(
+	// View view) {
+	// return ReconfigurationDiagramUpdater.getIncomingLinks(view);
+	// }
+	//
+	// /**
+	// * @generated
+	// */
+	// @Override
+	// public
+	// List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>
+	// getOutgoingLinks(
+	// View view) {
+	// return ReconfigurationDiagramUpdater.getOutgoingLinks(view);
+	// }
+	// };
 
 }
