@@ -22,7 +22,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForDecision <em>Time For Decision</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecution <em>Time For Execution</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecutionPhase <em>Time For Execution Phase</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReconfigurationExecutionPort <em>Reconfiguration Execution Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getMinimumCommitTime <em>Minimum Commit Time</em>}</li>
  * </ul>
@@ -60,30 +60,30 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 	void setTimeForDecision(TimeValue value);
 
 	/**
-	 * Returns the value of the '<em><b>Time For Execution</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Time For Execution Phase</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Time For Execution</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Time For Execution Phase</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time For Execution</em>' containment reference.
-	 * @see #setTimeForExecution(TimeValue)
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_TimeForExecution()
+	 * @return the value of the '<em>Time For Execution Phase</em>' containment reference.
+	 * @see #setTimeForExecutionPhase(ExecutionTimingSpecification)
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_TimeForExecutionPhase()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	TimeValue getTimeForExecution();
+	ExecutionTimingSpecification getTimeForExecutionPhase();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecution <em>Time For Execution</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecutionPhase <em>Time For Execution Phase</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time For Execution</em>' containment reference.
-	 * @see #getTimeForExecution()
+	 * @param value the new value of the '<em>Time For Execution Phase</em>' containment reference.
+	 * @see #getTimeForExecutionPhase()
 	 * @generated
 	 */
-	void setTimeForExecution(TimeValue value);
+	void setTimeForExecutionPhase(ExecutionTimingSpecification value);
 
 	/**
 	 * Returns the value of the '<em><b>Reconfiguration Execution Port</b></em>' container reference.

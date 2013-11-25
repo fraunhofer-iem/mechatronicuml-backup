@@ -13,6 +13,9 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.muml.component.util.ComponentValidator;
 import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
@@ -145,6 +148,12 @@ public class ReconfigurationValidator extends EObjectValidator {
 				return validateReconfigurationExecutionPort((ReconfigurationExecutionPort)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY:
 				return validateReconfigurationExecutionPortInterfaceEntry((ReconfigurationExecutionPortInterfaceEntry)value, diagnostics, context);
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION:
+				return validateExecutionTimingSpecification((ExecutionTimingSpecification)value, diagnostics, context);
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE:
+				return validateExecutionTimingSpecificationSinglePhase((ExecutionTimingSpecificationSinglePhase)value, diagnostics, context);
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE:
+				return validateExecutionTimingSpecificationThreePhase((ExecutionTimingSpecificationThreePhase)value, diagnostics, context);
 			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_COMMUNICATION_PORT:
 				return validateInternalReconfigurationCommunicationPort((InternalReconfigurationCommunicationPort)value, diagnostics, context);
 			case ReconfigurationPackage.CONTROLLER:
@@ -750,6 +759,33 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 */
 	public boolean validateReconfigurationExecutionPortInterfaceEntry(ReconfigurationExecutionPortInterfaceEntry reconfigurationExecutionPortInterfaceEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(reconfigurationExecutionPortInterfaceEntry, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExecutionTimingSpecification(ExecutionTimingSpecification executionTimingSpecification, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(executionTimingSpecification, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExecutionTimingSpecificationSinglePhase(ExecutionTimingSpecificationSinglePhase executionTimingSpecificationSinglePhase, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(executionTimingSpecificationSinglePhase, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExecutionTimingSpecificationThreePhase(ExecutionTimingSpecificationThreePhase executionTimingSpecificationThreePhase, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(executionTimingSpecificationThreePhase, diagnostics, context);
 	}
 
 	/**

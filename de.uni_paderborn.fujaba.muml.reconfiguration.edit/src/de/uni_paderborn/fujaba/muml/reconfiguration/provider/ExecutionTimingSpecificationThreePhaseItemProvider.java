@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
 
@@ -21,19 +17,18 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurationExecutionPortInterfaceEntryItemProvider
-	extends ReconfigurationPortInterfaceEntryItemProvider
+public class ExecutionTimingSpecificationThreePhaseItemProvider
+	extends ExecutionTimingSpecificationItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -46,7 +41,7 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurationExecutionPortInterfaceEntryItemProvider(AdapterFactory adapterFactory) {
+	public ExecutionTimingSpecificationThreePhaseItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,9 +72,9 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE);
-			childrenFeatures.add(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME);
+			childrenFeatures.add(ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_SETUP);
+			childrenFeatures.add(ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_FADING);
+			childrenFeatures.add(ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_TEARDOWN);
 		}
 		return childrenFeatures;
 	}
@@ -98,14 +93,14 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 	}
 
 	/**
-	 * This returns ReconfigurationExecutionPortInterfaceEntry.gif.
+	 * This returns ExecutionTimingSpecificationThreePhase.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurationExecutionPortInterfaceEntry"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExecutionTimingSpecificationThreePhase"));
 	}
 
 	/**
@@ -116,11 +111,9 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurationExecutionPortInterfaceEntry)object).getDescription();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurationExecutionPortInterfaceEntry_type") :
-			getString("_UI_ReconfigurationExecutionPortInterfaceEntry_type") + " " + label;
+		return getString("_UI_ExecutionTimingSpecificationThreePhase_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -133,10 +126,10 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReconfigurationExecutionPortInterfaceEntry.class)) {
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION:
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE:
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:
+		switch (notification.getFeatureID(ExecutionTimingSpecificationThreePhase.class)) {
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_SETUP:
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_FADING:
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_TEARDOWN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -156,22 +149,17 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION,
+				(ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_SETUP,
 				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE,
-				 ReconfigurationFactory.eINSTANCE.createExecutionTimingSpecificationSinglePhase()));
+				(ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_FADING,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE,
-				 ReconfigurationFactory.eINSTANCE.createExecutionTimingSpecificationThreePhase()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME,
+				(ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_TEARDOWN,
 				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
@@ -187,8 +175,9 @@ public class ReconfigurationExecutionPortInterfaceEntryItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION ||
-			childFeature == ReconfigurationPackage.Literals.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME;
+			childFeature == ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_SETUP ||
+			childFeature == ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_FADING ||
+			childFeature == ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_TEARDOWN;
 
 		if (qualify) {
 			return getString

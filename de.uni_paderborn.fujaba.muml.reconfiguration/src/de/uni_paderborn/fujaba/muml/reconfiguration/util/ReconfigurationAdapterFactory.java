@@ -25,6 +25,9 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
@@ -140,6 +143,18 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseReconfigurationExecutionPortInterfaceEntry(ReconfigurationExecutionPortInterfaceEntry object) {
 				return createReconfigurationExecutionPortInterfaceEntryAdapter();
+			}
+			@Override
+			public Adapter caseExecutionTimingSpecification(ExecutionTimingSpecification object) {
+				return createExecutionTimingSpecificationAdapter();
+			}
+			@Override
+			public Adapter caseExecutionTimingSpecificationSinglePhase(ExecutionTimingSpecificationSinglePhase object) {
+				return createExecutionTimingSpecificationSinglePhaseAdapter();
+			}
+			@Override
+			public Adapter caseExecutionTimingSpecificationThreePhase(ExecutionTimingSpecificationThreePhase object) {
+				return createExecutionTimingSpecificationThreePhaseAdapter();
 			}
 			@Override
 			public Adapter caseInternalReconfigurationCommunicationPort(InternalReconfigurationCommunicationPort object) {
@@ -392,6 +407,48 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReconfigurationExecutionPortInterfaceEntryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification <em>Execution Timing Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification
+	 * @generated
+	 */
+	public Adapter createExecutionTimingSpecificationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase <em>Execution Timing Specification Single Phase</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase
+	 * @generated
+	 */
+	public Adapter createExecutionTimingSpecificationSinglePhaseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase <em>Execution Timing Specification Three Phase</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase
+	 * @generated
+	 */
+	public Adapter createExecutionTimingSpecificationThreePhaseAdapter() {
 		return null;
 	}
 

@@ -134,6 +134,24 @@ public interface ReconfigurationFactory extends EFactory {
 	ReconfigurationExecutionPortInterfaceEntry createReconfigurationExecutionPortInterfaceEntry();
 
 	/**
+	 * Returns a new object of class '<em>Execution Timing Specification Single Phase</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Execution Timing Specification Single Phase</em>'.
+	 * @generated
+	 */
+	ExecutionTimingSpecificationSinglePhase createExecutionTimingSpecificationSinglePhase();
+
+	/**
+	 * Returns a new object of class '<em>Execution Timing Specification Three Phase</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Execution Timing Specification Three Phase</em>'.
+	 * @generated
+	 */
+	ExecutionTimingSpecificationThreePhase createExecutionTimingSpecificationThreePhase();
+
+	/**
 	 * Returns a new object of class '<em>Signature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -8,30 +8,27 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.storydriven.core.CorePackage;
-import org.storydriven.storydiagrams.activities.ActivitiesFactory;
-import org.storydriven.storydiagrams.calls.CallsFactory;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.provider.AtomicComponentItemProvider;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurableAtomicComponentItemProvider
-	extends AtomicComponentItemProvider
+public class ExecutionTimingSpecificationSinglePhaseItemProvider
+	extends ExecutionTimingSpecificationItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -44,7 +41,7 @@ public class ReconfigurableAtomicComponentItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurableAtomicComponentItemProvider(AdapterFactory adapterFactory) {
+	public ExecutionTimingSpecificationSinglePhaseItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,14 +61,44 @@ public class ReconfigurableAtomicComponentItemProvider
 	}
 
 	/**
-	 * This returns ReconfigurableAtomicComponent.gif.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__TIME_FOR_EXECUTION);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns ExecutionTimingSpecificationSinglePhase.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurableAtomicComponent"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ExecutionTimingSpecificationSinglePhase"));
 	}
 
 	/**
@@ -82,10 +109,7 @@ public class ReconfigurableAtomicComponentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurableAtomicComponent)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurableAtomicComponent_type") :
-			getString("_UI_ReconfigurableAtomicComponent_type") + " " + label;
+		return getString("_UI_ExecutionTimingSpecificationSinglePhase_type");
 	}
 	
 
@@ -99,6 +123,12 @@ public class ReconfigurableAtomicComponentItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ExecutionTimingSpecificationSinglePhase.class)) {
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__TIME_FOR_EXECUTION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -115,39 +145,8 @@ public class ReconfigurableAtomicComponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 ActivitiesFactory.eINSTANCE.createOperationExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
-				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationCommunicationPort()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlReconfigurationEditPlugin.INSTANCE;
+				(ReconfigurationPackage.Literals.EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__TIME_FOR_EXECUTION,
+				 ValuetypeFactory.eINSTANCE.createTimeValue()));
 	}
 
 }

@@ -24,6 +24,9 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
@@ -213,6 +216,29 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				T result = caseReconfigurationExecutionPortInterfaceEntry(reconfigurationExecutionPortInterfaceEntry);
 				if (result == null) result = caseReconfigurationPortInterfaceEntry(reconfigurationExecutionPortInterfaceEntry);
 				if (result == null) result = caseExtendableElement(reconfigurationExecutionPortInterfaceEntry);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION: {
+				ExecutionTimingSpecification executionTimingSpecification = (ExecutionTimingSpecification)theEObject;
+				T result = caseExecutionTimingSpecification(executionTimingSpecification);
+				if (result == null) result = caseExtendableElement(executionTimingSpecification);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE: {
+				ExecutionTimingSpecificationSinglePhase executionTimingSpecificationSinglePhase = (ExecutionTimingSpecificationSinglePhase)theEObject;
+				T result = caseExecutionTimingSpecificationSinglePhase(executionTimingSpecificationSinglePhase);
+				if (result == null) result = caseExecutionTimingSpecification(executionTimingSpecificationSinglePhase);
+				if (result == null) result = caseExtendableElement(executionTimingSpecificationSinglePhase);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE: {
+				ExecutionTimingSpecificationThreePhase executionTimingSpecificationThreePhase = (ExecutionTimingSpecificationThreePhase)theEObject;
+				T result = caseExecutionTimingSpecificationThreePhase(executionTimingSpecificationThreePhase);
+				if (result == null) result = caseExecutionTimingSpecification(executionTimingSpecificationThreePhase);
+				if (result == null) result = caseExtendableElement(executionTimingSpecificationThreePhase);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -479,6 +505,51 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseReconfigurationExecutionPortInterfaceEntry(ReconfigurationExecutionPortInterfaceEntry object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Execution Timing Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Execution Timing Specification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExecutionTimingSpecification(ExecutionTimingSpecification object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Execution Timing Specification Single Phase</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Execution Timing Specification Single Phase</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExecutionTimingSpecificationSinglePhase(ExecutionTimingSpecificationSinglePhase object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Execution Timing Specification Three Phase</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Execution Timing Specification Three Phase</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExecutionTimingSpecificationThreePhase(ExecutionTimingSpecificationThreePhase object) {
 		return null;
 	}
 

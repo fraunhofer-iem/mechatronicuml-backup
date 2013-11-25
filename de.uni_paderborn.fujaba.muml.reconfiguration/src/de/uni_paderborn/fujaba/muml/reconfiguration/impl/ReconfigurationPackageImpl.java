@@ -26,6 +26,9 @@ import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
@@ -127,6 +130,27 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	private EClass reconfigurationExecutionPortInterfaceEntryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass executionTimingSpecificationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass executionTimingSpecificationSinglePhaseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass executionTimingSpecificationThreePhaseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -520,7 +544,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getReconfigurationExecutionPortInterfaceEntry_TimeForExecution() {
+	public EReference getReconfigurationExecutionPortInterfaceEntry_TimeForExecutionPhase() {
 		return (EReference)reconfigurationExecutionPortInterfaceEntryEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -540,6 +564,69 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 */
 	public EReference getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime() {
 		return (EReference)reconfigurationExecutionPortInterfaceEntryEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExecutionTimingSpecification() {
+		return executionTimingSpecificationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExecutionTimingSpecificationSinglePhase() {
+		return executionTimingSpecificationSinglePhaseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExecutionTimingSpecificationSinglePhase_TimeForExecution() {
+		return (EReference)executionTimingSpecificationSinglePhaseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExecutionTimingSpecificationThreePhase() {
+		return executionTimingSpecificationThreePhaseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExecutionTimingSpecificationThreePhase_TimeForSetup() {
+		return (EReference)executionTimingSpecificationThreePhaseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExecutionTimingSpecificationThreePhase_TimeForFading() {
+		return (EReference)executionTimingSpecificationThreePhaseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExecutionTimingSpecificationThreePhase_TimeForTeardown() {
+		return (EReference)executionTimingSpecificationThreePhaseEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -995,9 +1082,19 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		reconfigurationExecutionPortInterfaceEntryEClass = createEClass(RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY);
 		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION);
-		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION);
+		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE);
 		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT);
 		createEReference(reconfigurationExecutionPortInterfaceEntryEClass, RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME);
+
+		executionTimingSpecificationEClass = createEClass(EXECUTION_TIMING_SPECIFICATION);
+
+		executionTimingSpecificationSinglePhaseEClass = createEClass(EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE);
+		createEReference(executionTimingSpecificationSinglePhaseEClass, EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__TIME_FOR_EXECUTION);
+
+		executionTimingSpecificationThreePhaseEClass = createEClass(EXECUTION_TIMING_SPECIFICATION_THREE_PHASE);
+		createEReference(executionTimingSpecificationThreePhaseEClass, EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_SETUP);
+		createEReference(executionTimingSpecificationThreePhaseEClass, EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_FADING);
+		createEReference(executionTimingSpecificationThreePhaseEClass, EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_TEARDOWN);
 
 		internalReconfigurationCommunicationPortEClass = createEClass(INTERNAL_RECONFIGURATION_COMMUNICATION_PORT);
 
@@ -1116,6 +1213,9 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		reconfigurationMessagePortInterfaceEntryEClass.getESuperTypes().add(this.getReconfigurationPortInterfaceEntry());
 		reconfigurationExecutionPortEClass.getESuperTypes().add(this.getReconfigurationPort());
 		reconfigurationExecutionPortInterfaceEntryEClass.getESuperTypes().add(this.getReconfigurationPortInterfaceEntry());
+		executionTimingSpecificationEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		executionTimingSpecificationSinglePhaseEClass.getESuperTypes().add(this.getExecutionTimingSpecification());
+		executionTimingSpecificationThreePhaseEClass.getESuperTypes().add(this.getExecutionTimingSpecification());
 		internalReconfigurationCommunicationPortEClass.getESuperTypes().add(this.getReconfigurationPort());
 		controllerEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		controllerEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
@@ -1165,9 +1265,19 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		initEClass(reconfigurationExecutionPortInterfaceEntryEClass, ReconfigurationExecutionPortInterfaceEntry.class, "ReconfigurationExecutionPortInterfaceEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReconfigurationExecutionPortInterfaceEntry_TimeForDecision(), theValuetypePackage.getTimeValue(), null, "timeForDecision", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getReconfigurationExecutionPortInterfaceEntry_TimeForExecution(), theValuetypePackage.getTimeValue(), null, "timeForExecution", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReconfigurationExecutionPortInterfaceEntry_TimeForExecutionPhase(), this.getExecutionTimingSpecification(), null, "timeForExecutionPhase", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationExecutionPortInterfaceEntry_ReconfigurationExecutionPort(), this.getReconfigurationExecutionPort(), this.getReconfigurationExecutionPort_InterfaceEntries(), "reconfigurationExecutionPort", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime(), theValuetypePackage.getTimeValue(), null, "minimumCommitTime", null, 1, 1, ReconfigurationExecutionPortInterfaceEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(executionTimingSpecificationEClass, ExecutionTimingSpecification.class, "ExecutionTimingSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(executionTimingSpecificationSinglePhaseEClass, ExecutionTimingSpecificationSinglePhase.class, "ExecutionTimingSpecificationSinglePhase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExecutionTimingSpecificationSinglePhase_TimeForExecution(), theValuetypePackage.getTimeValue(), null, "timeForExecution", null, 1, 1, ExecutionTimingSpecificationSinglePhase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(executionTimingSpecificationThreePhaseEClass, ExecutionTimingSpecificationThreePhase.class, "ExecutionTimingSpecificationThreePhase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExecutionTimingSpecificationThreePhase_TimeForSetup(), theValuetypePackage.getTimeValue(), null, "timeForSetup", null, 1, 1, ExecutionTimingSpecificationThreePhase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExecutionTimingSpecificationThreePhase_TimeForFading(), theValuetypePackage.getTimeValue(), null, "timeForFading", null, 1, 1, ExecutionTimingSpecificationThreePhase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExecutionTimingSpecificationThreePhase_TimeForTeardown(), theValuetypePackage.getTimeValue(), null, "timeForTeardown", null, 1, 1, ExecutionTimingSpecificationThreePhase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(internalReconfigurationCommunicationPortEClass, InternalReconfigurationCommunicationPort.class, "InternalReconfigurationCommunicationPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

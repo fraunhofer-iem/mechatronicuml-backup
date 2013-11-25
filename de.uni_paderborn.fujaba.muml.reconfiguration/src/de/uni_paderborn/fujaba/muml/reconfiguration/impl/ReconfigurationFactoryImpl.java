@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
@@ -84,6 +86,8 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY: return createReconfigurationMessagePortInterfaceEntry();
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT: return createReconfigurationExecutionPort();
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY: return createReconfigurationExecutionPortInterfaceEntry();
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE: return createExecutionTimingSpecificationSinglePhase();
+			case ReconfigurationPackage.EXECUTION_TIMING_SPECIFICATION_THREE_PHASE: return createExecutionTimingSpecificationThreePhase();
 			case ReconfigurationPackage.INTERNAL_RECONFIGURATION_COMMUNICATION_PORT: return createInternalReconfigurationCommunicationPort();
 			case ReconfigurationPackage.RULE_BASED_RECONFIGURATION_CONTROLLER: return createRuleBasedReconfigurationController();
 			case ReconfigurationPackage.MANAGER: return createManager();
@@ -246,6 +250,26 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public ReconfigurationExecutionPortInterfaceEntry createReconfigurationExecutionPortInterfaceEntry() {
 		ReconfigurationExecutionPortInterfaceEntryImpl reconfigurationExecutionPortInterfaceEntry = new ReconfigurationExecutionPortInterfaceEntryImpl();
 		return reconfigurationExecutionPortInterfaceEntry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExecutionTimingSpecificationSinglePhase createExecutionTimingSpecificationSinglePhase() {
+		ExecutionTimingSpecificationSinglePhaseImpl executionTimingSpecificationSinglePhase = new ExecutionTimingSpecificationSinglePhaseImpl();
+		return executionTimingSpecificationSinglePhase;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExecutionTimingSpecificationThreePhase createExecutionTimingSpecificationThreePhase() {
+		ExecutionTimingSpecificationThreePhaseImpl executionTimingSpecificationThreePhase = new ExecutionTimingSpecificationThreePhaseImpl();
+		return executionTimingSpecificationThreePhase;
 	}
 
 	/**

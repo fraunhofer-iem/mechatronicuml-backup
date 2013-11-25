@@ -16,22 +16,18 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.ExtendableElementItemProvider;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.provider.AtomicComponentItemProvider;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurableAtomicComponentItemProvider
-	extends AtomicComponentItemProvider
+public class ExecutionTimingSpecificationItemProvider
+	extends ExtendableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -44,7 +40,7 @@ public class ReconfigurableAtomicComponentItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurableAtomicComponentItemProvider(AdapterFactory adapterFactory) {
+	public ExecutionTimingSpecificationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,17 +60,6 @@ public class ReconfigurableAtomicComponentItemProvider
 	}
 
 	/**
-	 * This returns ReconfigurableAtomicComponent.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurableAtomicComponent"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,10 +67,7 @@ public class ReconfigurableAtomicComponentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurableAtomicComponent)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurableAtomicComponent_type") :
-			getString("_UI_ReconfigurableAtomicComponent_type") + " " + label;
+		return getString("_UI_ExecutionTimingSpecification_type");
 	}
 	
 
@@ -122,21 +104,6 @@ public class ReconfigurableAtomicComponentItemProvider
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationCommunicationPort()));
 	}
 
 	/**

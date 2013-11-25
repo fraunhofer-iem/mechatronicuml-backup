@@ -351,6 +351,52 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExecutionTimingSpecificationSinglePhaseItemProvider executionTimingSpecificationSinglePhaseItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExecutionTimingSpecificationSinglePhaseAdapter() {
+		if (executionTimingSpecificationSinglePhaseItemProvider == null) {
+			executionTimingSpecificationSinglePhaseItemProvider = new ExecutionTimingSpecificationSinglePhaseItemProvider(this);
+		}
+
+		return executionTimingSpecificationSinglePhaseItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExecutionTimingSpecificationThreePhaseItemProvider executionTimingSpecificationThreePhaseItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExecutionTimingSpecificationThreePhaseAdapter() {
+		if (executionTimingSpecificationThreePhaseItemProvider == null) {
+			executionTimingSpecificationThreePhaseItemProvider = new ExecutionTimingSpecificationThreePhaseItemProvider(this);
+		}
+
+		return executionTimingSpecificationThreePhaseItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.Signature} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -541,20 +587,22 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	 * @generated
 	 */
 	public void dispose() {
-		if (reconfigurableStructuredComponentItemProvider != null) reconfigurableStructuredComponentItemProvider.dispose();
 		if (reconfigurableAtomicComponentItemProvider != null) reconfigurableAtomicComponentItemProvider.dispose();
-		if (managerItemProvider != null) managerItemProvider.dispose();
-		if (executorItemProvider != null) executorItemProvider.dispose();
-		if (reconfigurationMessagePortItemProvider != null) reconfigurationMessagePortItemProvider.dispose();
-		if (reconfigurationExecutionPortItemProvider != null) reconfigurationExecutionPortItemProvider.dispose();
-		if (executorSpecificationEntryItemProvider != null) executorSpecificationEntryItemProvider.dispose();
-		if (managerSpecificationEntryItemProvider != null) managerSpecificationEntryItemProvider.dispose();
-		if (ruleBasedReconfigurationControllerItemProvider != null) ruleBasedReconfigurationControllerItemProvider.dispose();
+		if (reconfigurableStructuredComponentItemProvider != null) reconfigurableStructuredComponentItemProvider.dispose();
 		if (reconfigurationPortInterfaceEntryItemProvider != null) reconfigurationPortInterfaceEntryItemProvider.dispose();
+		if (reconfigurationMessagePortItemProvider != null) reconfigurationMessagePortItemProvider.dispose();
 		if (reconfigurationMessagePortInterfaceEntryItemProvider != null) reconfigurationMessagePortInterfaceEntryItemProvider.dispose();
+		if (reconfigurationExecutionPortItemProvider != null) reconfigurationExecutionPortItemProvider.dispose();
 		if (reconfigurationExecutionPortInterfaceEntryItemProvider != null) reconfigurationExecutionPortInterfaceEntryItemProvider.dispose();
-		if (signatureItemProvider != null) signatureItemProvider.dispose();
+		if (executionTimingSpecificationSinglePhaseItemProvider != null) executionTimingSpecificationSinglePhaseItemProvider.dispose();
+		if (executionTimingSpecificationThreePhaseItemProvider != null) executionTimingSpecificationThreePhaseItemProvider.dispose();
 		if (internalReconfigurationCommunicationPortItemProvider != null) internalReconfigurationCommunicationPortItemProvider.dispose();
+		if (ruleBasedReconfigurationControllerItemProvider != null) ruleBasedReconfigurationControllerItemProvider.dispose();
+		if (managerItemProvider != null) managerItemProvider.dispose();
+		if (managerSpecificationEntryItemProvider != null) managerSpecificationEntryItemProvider.dispose();
+		if (executorItemProvider != null) executorItemProvider.dispose();
+		if (executorSpecificationEntryItemProvider != null) executorSpecificationEntryItemProvider.dispose();
+		if (signatureItemProvider != null) signatureItemProvider.dispose();
 		if (reconfigurationPortAssemblyConnectorItemProvider != null) reconfigurationPortAssemblyConnectorItemProvider.dispose();
 		if (reconfigurationPortDelegationConnectorItemProvider != null) reconfigurationPortDelegationConnectorItemProvider.dispose();
 	}

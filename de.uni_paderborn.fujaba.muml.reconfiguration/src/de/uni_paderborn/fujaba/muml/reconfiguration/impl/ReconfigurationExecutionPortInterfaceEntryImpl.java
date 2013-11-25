@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
@@ -26,7 +27,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getTimeForDecision <em>Time For Decision</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getTimeForExecution <em>Time For Execution</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getTimeForExecutionPhase <em>Time For Execution Phase</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getReconfigurationExecutionPort <em>Reconfiguration Execution Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationExecutionPortInterfaceEntryImpl#getMinimumCommitTime <em>Minimum Commit Time</em>}</li>
  * </ul>
@@ -46,14 +47,14 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 	protected TimeValue timeForDecision;
 
 	/**
-	 * The cached value of the '{@link #getTimeForExecution() <em>Time For Execution</em>}' containment reference.
+	 * The cached value of the '{@link #getTimeForExecutionPhase() <em>Time For Execution Phase</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimeForExecution()
+	 * @see #getTimeForExecutionPhase()
 	 * @generated
 	 * @ordered
 	 */
-	protected TimeValue timeForExecution;
+	protected ExecutionTimingSpecification timeForExecutionPhase;
 
 	/**
 	 * The cached value of the '{@link #getMinimumCommitTime() <em>Minimum Commit Time</em>}' containment reference.
@@ -132,8 +133,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimeValue getTimeForExecution() {
-		return timeForExecution;
+	public ExecutionTimingSpecification getTimeForExecutionPhase() {
+		return timeForExecutionPhase;
 	}
 
 	/**
@@ -141,11 +142,11 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTimeForExecution(TimeValue newTimeForExecution, NotificationChain msgs) {
-		TimeValue oldTimeForExecution = timeForExecution;
-		timeForExecution = newTimeForExecution;
+	public NotificationChain basicSetTimeForExecutionPhase(ExecutionTimingSpecification newTimeForExecutionPhase, NotificationChain msgs) {
+		ExecutionTimingSpecification oldTimeForExecutionPhase = timeForExecutionPhase;
+		timeForExecutionPhase = newTimeForExecutionPhase;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION, oldTimeForExecution, newTimeForExecution);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE, oldTimeForExecutionPhase, newTimeForExecutionPhase);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -156,18 +157,18 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTimeForExecution(TimeValue newTimeForExecution) {
-		if (newTimeForExecution != timeForExecution) {
+	public void setTimeForExecutionPhase(ExecutionTimingSpecification newTimeForExecutionPhase) {
+		if (newTimeForExecutionPhase != timeForExecutionPhase) {
 			NotificationChain msgs = null;
-			if (timeForExecution != null)
-				msgs = ((InternalEObject)timeForExecution).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION, null, msgs);
-			if (newTimeForExecution != null)
-				msgs = ((InternalEObject)newTimeForExecution).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION, null, msgs);
-			msgs = basicSetTimeForExecution(newTimeForExecution, msgs);
+			if (timeForExecutionPhase != null)
+				msgs = ((InternalEObject)timeForExecutionPhase).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE, null, msgs);
+			if (newTimeForExecutionPhase != null)
+				msgs = ((InternalEObject)newTimeForExecutionPhase).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE, null, msgs);
+			msgs = basicSetTimeForExecutionPhase(newTimeForExecutionPhase, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION, newTimeForExecution, newTimeForExecution));
+			eNotify(new ENotificationImpl(this, Notification.SET, ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE, newTimeForExecutionPhase, newTimeForExecutionPhase));
 	}
 
 	/**
@@ -280,8 +281,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION:
 				return basicSetTimeForDecision(null, msgs);
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
-				return basicSetTimeForExecution(null, msgs);
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE:
+				return basicSetTimeForExecutionPhase(null, msgs);
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
 				return basicSetReconfigurationExecutionPort(null, msgs);
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:
@@ -314,8 +315,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION:
 				return getTimeForDecision();
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
-				return getTimeForExecution();
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE:
+				return getTimeForExecutionPhase();
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
 				return getReconfigurationExecutionPort();
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:
@@ -335,8 +336,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION:
 				setTimeForDecision((TimeValue)newValue);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
-				setTimeForExecution((TimeValue)newValue);
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE:
+				setTimeForExecutionPhase((ExecutionTimingSpecification)newValue);
 				return;
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
 				setReconfigurationExecutionPort((ReconfigurationExecutionPort)newValue);
@@ -359,8 +360,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION:
 				setTimeForDecision((TimeValue)null);
 				return;
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
-				setTimeForExecution((TimeValue)null);
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE:
+				setTimeForExecutionPhase((ExecutionTimingSpecification)null);
 				return;
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
 				setReconfigurationExecutionPort((ReconfigurationExecutionPort)null);
@@ -382,8 +383,8 @@ public class ReconfigurationExecutionPortInterfaceEntryImpl extends Reconfigurat
 		switch (featureID) {
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION:
 				return timeForDecision != null;
-			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION:
-				return timeForExecution != null;
+			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE:
+				return timeForExecutionPhase != null;
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__RECONFIGURATION_EXECUTION_PORT:
 				return getReconfigurationExecutionPort() != null;
 			case ReconfigurationPackage.RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME:

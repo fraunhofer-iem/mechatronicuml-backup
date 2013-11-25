@@ -105,7 +105,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getController()
 	 * @generated
 	 */
-	int CONTROLLER = 10;
+	int CONTROLLER = 13;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationControllerImpl <em>Controller</em>}' class.
@@ -115,7 +115,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationController()
 	 * @generated
 	 */
-	int RECONFIGURATION_CONTROLLER = 11;
+	int RECONFIGURATION_CONTROLLER = 14;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.RuleBasedReconfigurationControllerImpl <em>Rule Based Reconfiguration Controller</em>}' class.
@@ -125,7 +125,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getRuleBasedReconfigurationController()
 	 * @generated
 	 */
-	int RULE_BASED_RECONFIGURATION_CONTROLLER = 12;
+	int RULE_BASED_RECONFIGURATION_CONTROLLER = 15;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerImpl <em>Manager</em>}' class.
@@ -135,7 +135,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getManager()
 	 * @generated
 	 */
-	int MANAGER = 13;
+	int MANAGER = 16;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutorImpl <em>Executor</em>}' class.
@@ -145,7 +145,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getExecutor()
 	 * @generated
 	 */
-	int EXECUTOR = 15;
+	int EXECUTOR = 18;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl <em>Rule</em>}' class.
@@ -155,7 +155,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationRule()
 	 * @generated
 	 */
-	int RECONFIGURATION_RULE = 17;
+	int RECONFIGURATION_RULE = 20;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.StructuralConditionImpl <em>Structural Condition</em>}' class.
@@ -165,7 +165,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getStructuralCondition()
 	 * @generated
 	 */
-	int STRUCTURAL_CONDITION = 19;
+	int STRUCTURAL_CONDITION = 22;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurableComponentImpl <em>Reconfigurable Component</em>}' class.
@@ -664,7 +664,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getExecutorSpecificationEntry()
 	 * @generated
 	 */
-	int EXECUTOR_SPECIFICATION_ENTRY = 16;
+	int EXECUTOR_SPECIFICATION_ENTRY = 19;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ManagerSpecificationEntryImpl <em>Manager Specification Entry</em>}' class.
@@ -674,7 +674,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getManagerSpecificationEntry()
 	 * @generated
 	 */
-	int MANAGER_SPECIFICATION_ENTRY = 14;
+	int MANAGER_SPECIFICATION_ENTRY = 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPortInterfaceEntryImpl <em>Port Interface Entry</em>}' class.
@@ -1193,13 +1193,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Time For Execution</b></em>' containment reference.
+	 * The feature id for the '<em><b>Time For Execution Phase</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 1;
+	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Reconfiguration Execution Port</b></em>' container reference.
@@ -1229,6 +1229,153 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY_FEATURE_COUNT = RECONFIGURATION_PORT_INTERFACE_ENTRY_FEATURE_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationImpl <em>Execution Timing Specification</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getExecutionTimingSpecification()
+	 * @generated
+	 */
+	int EXECUTION_TIMING_SPECIFICATION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+
+	/**
+	 * The number of structural features of the '<em>Execution Timing Specification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationSinglePhaseImpl <em>Execution Timing Specification Single Phase</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationSinglePhaseImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getExecutionTimingSpecificationSinglePhase()
+	 * @generated
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__ANNOTATION = EXECUTION_TIMING_SPECIFICATION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__EXTENSION = EXECUTION_TIMING_SPECIFICATION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Time For Execution</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__TIME_FOR_EXECUTION = EXECUTION_TIMING_SPECIFICATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Execution Timing Specification Single Phase</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE_FEATURE_COUNT = EXECUTION_TIMING_SPECIFICATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationThreePhaseImpl <em>Execution Timing Specification Three Phase</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationThreePhaseImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getExecutionTimingSpecificationThreePhase()
+	 * @generated
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__ANNOTATION = EXECUTION_TIMING_SPECIFICATION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__EXTENSION = EXECUTION_TIMING_SPECIFICATION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Time For Setup</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_SETUP = EXECUTION_TIMING_SPECIFICATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Time For Fading</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_FADING = EXECUTION_TIMING_SPECIFICATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Time For Teardown</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_TEARDOWN = EXECUTION_TIMING_SPECIFICATION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Execution Timing Specification Three Phase</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXECUTION_TIMING_SPECIFICATION_THREE_PHASE_FEATURE_COUNT = EXECUTION_TIMING_SPECIFICATION_FEATURE_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.SignatureImpl <em>Signature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1236,7 +1383,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getSignature()
 	 * @generated
 	 */
-	int SIGNATURE = 18;
+	int SIGNATURE = 21;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.InternalReconfigurationCommunicationPortImpl <em>Internal Reconfiguration Communication Port</em>}' class.
@@ -1246,7 +1393,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getInternalReconfigurationCommunicationPort()
 	 * @generated
 	 */
-	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT = 9;
+	int INTERNAL_RECONFIGURATION_COMMUNICATION_PORT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2138,7 +2285,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationPortAssemblyConnector()
 	 * @generated
 	 */
-	int RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR = 20;
+	int RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR = 23;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2202,7 +2349,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationPortDelegationConnector()
 	 * @generated
 	 */
-	int RECONFIGURATION_PORT_DELEGATION_CONNECTOR = 21;
+	int RECONFIGURATION_PORT_DELEGATION_CONNECTOR = 24;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -2266,7 +2413,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessageTypeEnum()
 	 * @generated
 	 */
-	int RECONFIGURATION_MESSAGE_TYPE_ENUM = 22;
+	int RECONFIGURATION_MESSAGE_TYPE_ENUM = 25;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent <em>Reconfigurable Structured Component</em>}'.
@@ -2502,15 +2649,15 @@ public interface ReconfigurationPackage extends EPackage {
 	EReference getReconfigurationExecutionPortInterfaceEntry_TimeForDecision();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecution <em>Time For Execution</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecutionPhase <em>Time For Execution Phase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Time For Execution</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecution()
+	 * @return the meta object for the containment reference '<em>Time For Execution Phase</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getTimeForExecutionPhase()
 	 * @see #getReconfigurationExecutionPortInterfaceEntry()
 	 * @generated
 	 */
-	EReference getReconfigurationExecutionPortInterfaceEntry_TimeForExecution();
+	EReference getReconfigurationExecutionPortInterfaceEntry_TimeForExecutionPhase();
 
 	/**
 	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReconfigurationExecutionPort <em>Reconfiguration Execution Port</em>}'.
@@ -2533,6 +2680,80 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification <em>Execution Timing Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Execution Timing Specification</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification
+	 * @generated
+	 */
+	EClass getExecutionTimingSpecification();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase <em>Execution Timing Specification Single Phase</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Execution Timing Specification Single Phase</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase
+	 * @generated
+	 */
+	EClass getExecutionTimingSpecificationSinglePhase();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase#getTimeForExecution <em>Time For Execution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Time For Execution</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase#getTimeForExecution()
+	 * @see #getExecutionTimingSpecificationSinglePhase()
+	 * @generated
+	 */
+	EReference getExecutionTimingSpecificationSinglePhase_TimeForExecution();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase <em>Execution Timing Specification Three Phase</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Execution Timing Specification Three Phase</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase
+	 * @generated
+	 */
+	EClass getExecutionTimingSpecificationThreePhase();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase#getTimeForSetup <em>Time For Setup</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Time For Setup</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase#getTimeForSetup()
+	 * @see #getExecutionTimingSpecificationThreePhase()
+	 * @generated
+	 */
+	EReference getExecutionTimingSpecificationThreePhase_TimeForSetup();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase#getTimeForFading <em>Time For Fading</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Time For Fading</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase#getTimeForFading()
+	 * @see #getExecutionTimingSpecificationThreePhase()
+	 * @generated
+	 */
+	EReference getExecutionTimingSpecificationThreePhase_TimeForFading();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase#getTimeForTeardown <em>Time For Teardown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Time For Teardown</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase#getTimeForTeardown()
+	 * @see #getExecutionTimingSpecificationThreePhase()
+	 * @generated
+	 */
+	EReference getExecutionTimingSpecificationThreePhase_TimeForTeardown();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.Signature <em>Signature</em>}'.
@@ -3221,12 +3442,12 @@ public interface ReconfigurationPackage extends EPackage {
 		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_DECISION = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_TimeForDecision();
 
 		/**
-		 * The meta object literal for the '<em><b>Time For Execution</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Time For Execution Phase</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_TimeForExecution();
+		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__TIME_FOR_EXECUTION_PHASE = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_TimeForExecutionPhase();
 
 		/**
 		 * The meta object literal for the '<em><b>Reconfiguration Execution Port</b></em>' container reference feature.
@@ -3243,6 +3464,68 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RECONFIGURATION_EXECUTION_PORT_INTERFACE_ENTRY__MINIMUM_COMMIT_TIME = eINSTANCE.getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationImpl <em>Execution Timing Specification</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getExecutionTimingSpecification()
+		 * @generated
+		 */
+		EClass EXECUTION_TIMING_SPECIFICATION = eINSTANCE.getExecutionTimingSpecification();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationSinglePhaseImpl <em>Execution Timing Specification Single Phase</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationSinglePhaseImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getExecutionTimingSpecificationSinglePhase()
+		 * @generated
+		 */
+		EClass EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE = eINSTANCE.getExecutionTimingSpecificationSinglePhase();
+
+		/**
+		 * The meta object literal for the '<em><b>Time For Execution</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXECUTION_TIMING_SPECIFICATION_SINGLE_PHASE__TIME_FOR_EXECUTION = eINSTANCE.getExecutionTimingSpecificationSinglePhase_TimeForExecution();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationThreePhaseImpl <em>Execution Timing Specification Three Phase</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ExecutionTimingSpecificationThreePhaseImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getExecutionTimingSpecificationThreePhase()
+		 * @generated
+		 */
+		EClass EXECUTION_TIMING_SPECIFICATION_THREE_PHASE = eINSTANCE.getExecutionTimingSpecificationThreePhase();
+
+		/**
+		 * The meta object literal for the '<em><b>Time For Setup</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_SETUP = eINSTANCE.getExecutionTimingSpecificationThreePhase_TimeForSetup();
+
+		/**
+		 * The meta object literal for the '<em><b>Time For Fading</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_FADING = eINSTANCE.getExecutionTimingSpecificationThreePhase_TimeForFading();
+
+		/**
+		 * The meta object literal for the '<em><b>Time For Teardown</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXECUTION_TIMING_SPECIFICATION_THREE_PHASE__TIME_FOR_TEARDOWN = eINSTANCE.getExecutionTimingSpecificationThreePhase_TimeForTeardown();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.SignatureImpl <em>Signature</em>}' class.
