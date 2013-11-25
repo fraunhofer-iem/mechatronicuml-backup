@@ -29,7 +29,7 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getAsynchronousMessageEvent()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RaiseMessageEventImpliesParameterBinding='let messageType : MessageType = self.message.instanceOf in\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->forAll(p | self.message.parameterBinding.parameter->includes(p)))'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RaiseMessageEventImpliesParameterBinding='-- for a raise message, all parameter needs a binding\nlet messageType : msgtype::MessageType = self.message.instanceOf in\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->forAll(p | self.message.parameterBinding.parameter->includes(p))))\n-- author: adann'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RaiseMessageEventImpliesParameterBinding'"
  * @generated
  */

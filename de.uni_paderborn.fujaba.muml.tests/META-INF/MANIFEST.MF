@@ -10,10 +10,18 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
  de.uni_paderborn.fujaba.muml;bundle-version="0.3.1",
  org.eclipse.ocl;bundle-version="3.1.0",
  org.eclipse.ocl.ecore;bundle-version="3.1.2",
- org.storydriven.storydiagrams;bundle-version="1.0.0"
+ org.storydriven.storydiagrams;bundle-version="1.0.0",
+ org.eclipse.gmf,
+ org.eclipse.gmf.runtime.emf.core,
+ org.eclipse.gmf.graphdef,
+ org.eclipse.gmf.tooldef,
+ org.eclipse.gmf.map,
+ org.eclipse.gmf.codegen,
+ org.eclipse.gmf.validate
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
-Export-Package: de.uni_paderborn.fujaba.muml.tests,
+Export-Package: de.uni_paderborn.fujaba.muml.gmf.tests,
+ de.uni_paderborn.fujaba.muml.tests,
  de.uni_paderborn.fujaba.muml.tests.emfcompare,
  de.uni_paderborn.fujaba.muml.tests.packages,
  de.uni_paderborn.fujaba.muml.tests.resource

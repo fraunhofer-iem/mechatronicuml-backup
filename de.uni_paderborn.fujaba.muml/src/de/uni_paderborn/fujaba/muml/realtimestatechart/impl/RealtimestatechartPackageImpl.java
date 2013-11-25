@@ -1886,7 +1886,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (asynchronousMessageEventEClass, 
 		   source, 
 		   new String[] {
-			 "RaiseMessageEventImpliesParameterBinding", "let messageType : MessageType = self.message.instanceOf in\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->forAll(p | self.message.parameterBinding.parameter->includes(p)))"
+			 "RaiseMessageEventImpliesParameterBinding", "-- for a raise message, all parameter needs a binding\nlet messageType : msgtype::MessageType = self.message.instanceOf in\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->forAll(p | self.message.parameterBinding.parameter->includes(p))))\n-- author: adann"
 		   });														
 		addAnnotation
 		  (synchronizationEClass, 
