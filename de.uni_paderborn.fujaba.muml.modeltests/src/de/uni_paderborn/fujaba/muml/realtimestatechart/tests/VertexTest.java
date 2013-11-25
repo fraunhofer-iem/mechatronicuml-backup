@@ -14,6 +14,12 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
  * A test case for the model object '<em><b>Vertex</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * The following features are tested:
+ * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getAllSuperVertices() <em>All Super Vertices</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
  * The following operations are tested:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#isSuperVertexOf(de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex) <em>Is Super Vertex Of</em>}</li>
@@ -61,6 +67,19 @@ public abstract class VertexTest extends TestCase {
 	 */
 	protected Vertex getFixture() {
 		return fixture;
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getAllSuperVertices() <em>All Super Vertices</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex#getAllSuperVertices()
+	 * @generated
+	 */
+	public void testGetAllSuperVertices() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.connector.tests.ConnectorEndpointTest;
  * The following features are tested:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getRefinedRole() <em>Refined Role</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getName() <em>Name</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -86,6 +87,32 @@ public class PortPartTest extends ConnectorEndpointTest {
 	 */
 	public void testGetRefinedRole() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getName() <em>Name</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.component.PortPart#getName()
+	 * @generated
+	 */
+	public void testGetName() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.component.PortPart#setName(java.lang.String) <em>Name</em>}' feature setter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.component.PortPart#setName(java.lang.String)
+	 * @generated
+	 */
+	public void testSetName() {
+		// TODO: implement this feature setter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

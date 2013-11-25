@@ -21,6 +21,8 @@ import de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory;
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#setValue(java.lang.String) <em>Set Value</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#toString() <em>To String</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#equals(org.eclipse.emf.ecore.EObject) <em>Equals</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#lessOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber) <em>Less Or Equal</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#greaterOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber) <em>Greater Or Equal</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -130,6 +132,32 @@ public class NaturalNumberTest extends TestCase {
 	 * @generated
 	 */
 	public void testEquals__EObject() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#lessOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber) <em>Less Or Equal</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#lessOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber)
+	 * @generated
+	 */
+	public void testLessOrEqual__NaturalNumber() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#greaterOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber) <em>Greater Or Equal</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber#greaterOrEqual(de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber)
+	 * @generated
+	 */
+	public void testGreaterOrEqual__NaturalNumber() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

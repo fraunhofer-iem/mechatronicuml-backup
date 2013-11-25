@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+import de.uni_paderborn.fujaba.muml.behavior.Operation;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 
 /**
@@ -59,7 +60,7 @@ public class BehaviorExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.behavior"));
-				Variable root = BehaviorFactory.eINSTANCE.createVariable();
+				Operation root = BehaviorFactory.eINSTANCE.createOperation();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

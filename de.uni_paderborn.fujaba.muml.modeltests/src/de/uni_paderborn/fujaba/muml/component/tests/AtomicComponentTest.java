@@ -22,16 +22,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
  * </p>
  * @generated
  */
-public class AtomicComponentTest extends ComponentTest {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(AtomicComponentTest.class);
-	}
+public abstract class AtomicComponentTest extends ComponentTest {
 
 	/**
 	 * Constructs a new Atomic Component test case with the given name.
@@ -52,28 +43,6 @@ public class AtomicComponentTest extends ComponentTest {
 	@Override
 	protected AtomicComponent getFixture() {
 		return (AtomicComponent)fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(ComponentFactory.eINSTANCE.createStaticAtomicComponent());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 	/**

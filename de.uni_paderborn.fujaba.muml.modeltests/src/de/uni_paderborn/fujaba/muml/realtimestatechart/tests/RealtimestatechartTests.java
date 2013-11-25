@@ -38,6 +38,7 @@ public class RealtimestatechartTests extends TestSuite {
 		suite.addTestSuite(RegionTest.class);
 		suite.addTestSuite(StateTest.class);
 		suite.addTestSuite(TransitionTest.class);
+		suite.addTestSuite(ClockConstraintTest.class);
 		suite.addTestSuite(ActionTest.class);
 		suite.addTestSuite(SynchronizationChannelTest.class);
 		suite.addTestSuite(SynchronizationTest.class);

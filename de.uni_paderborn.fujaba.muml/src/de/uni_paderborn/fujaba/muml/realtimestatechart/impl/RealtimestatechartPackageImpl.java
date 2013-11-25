@@ -1736,13 +1736,19 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "constraints", "OneInvariantPerClock NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames InvalidClockConstraintOperator UniqueStateConnectionPointNames"
-		   });																													
+		   });																														
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines"
-		   });																																							
+		   });																														
+		addAnnotation
+		  (asynchronousMessageEventEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "RaiseMessageEventImpliesParameterBinding"
+		   });												
 		addAnnotation
 		  (synchronizationEClass, 
 		   source, 
@@ -1820,13 +1826,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "-- a state is simple if it contains no regions\r\nembeddedRegions->isEmpty()\r\n"
-		   });						
+		   });				
 		addAnnotation
 		  (getState_AllAvailableChannels(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif).channels ->asOrderedSet()"
-		   });	
+		   });				
 		addAnnotation
 		  (getVertex__IsSuperVertexOf__Vertex(), 
 		   source, 
@@ -1875,7 +1881,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\nif b.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).senderMessageTypes\r\n\telse\r\n\t\tOrderedSet { }\r\n\tendif\r\nendif"
-		   });																				
+		   });									
+		addAnnotation
+		  (asynchronousMessageEventEClass, 
+		   source, 
+		   new String[] {
+			 "RaiseMessageEventImpliesParameterBinding", "let messageType : MessageType = self.message.instanceOf in\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->forAll(p | self.message.parameterBinding.parameter->includes(p)))"
+		   });														
 		addAnnotation
 		  (synchronizationEClass, 
 		   source, 

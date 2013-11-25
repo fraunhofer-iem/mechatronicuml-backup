@@ -34,10 +34,10 @@ public class BehaviorTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new BehaviorTests("behavior Tests");
-		suite.addTestSuite(VariableTest.class);
 		suite.addTestSuite(OperationTest.class);
 		suite.addTestSuite(ParameterTest.class);
 		suite.addTestSuite(ParameterBindingTest.class);
+		suite.addTestSuite(VariableTest.class);
 		return suite;
 	}
 

@@ -860,7 +860,47 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateAsynchronousMessageEvent(AsynchronousMessageEvent asynchronousMessageEvent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(asynchronousMessageEvent, diagnostics, context);
+		if (!validate_NoCircularContainment(asynchronousMessageEvent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(asynchronousMessageEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(asynchronousMessageEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(asynchronousMessageEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(asynchronousMessageEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(asynchronousMessageEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(asynchronousMessageEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(asynchronousMessageEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(asynchronousMessageEvent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAsynchronousMessageEvent_RaiseMessageEventImpliesParameterBinding(asynchronousMessageEvent, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the RaiseMessageEventImpliesParameterBinding constraint of '<em>Asynchronous Message Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_PARAMETER_BINDING__EEXPRESSION = "let messageType : MessageType = self.message.instanceOf in\n" +
+		"(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->forAll(p | self.message.parameterBinding.parameter->includes(p)))";
+
+	/**
+	 * Validates the RaiseMessageEventImpliesParameterBinding constraint of '<em>Asynchronous Message Event</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAsynchronousMessageEvent_RaiseMessageEventImpliesParameterBinding(AsynchronousMessageEvent asynchronousMessageEvent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.ASYNCHRONOUS_MESSAGE_EVENT,
+				 asynchronousMessageEvent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "RaiseMessageEventImpliesParameterBinding",
+				 ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_PARAMETER_BINDING__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

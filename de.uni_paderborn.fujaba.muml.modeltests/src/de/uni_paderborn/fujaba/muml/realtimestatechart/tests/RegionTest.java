@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart.tests;
 import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
+import junit.framework.TestCase;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,22 +18,20 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart() <em>Embeds History Statechart</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName() <em>Name</em>}</li>
- * </ul>
- * </p>
- * <p>
- * The following operations are tested:
- * <ul>
- *   <li>{@link org.storydriven.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}</li>
- *   <li>{@link org.storydriven.core.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass) <em>Provide Extension</em>}</li>
- *   <li>{@link org.storydriven.core.ExtendableElement#getAnnotation(java.lang.String) <em>Get Annotation</em>}</li>
- *   <li>{@link org.storydriven.core.ExtendableElement#provideAnnotation(java.lang.String) <em>Provide Annotation</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class RegionTest extends PrioritizedElementTest {
+public class RegionTest extends TestCase {
+
+	/**
+	 * The fixture for this Region test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Region fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -54,14 +53,25 @@ public class RegionTest extends PrioritizedElementTest {
 	}
 
 	/**
+	 * Sets the fixture for this Region test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(Region fixture) {
+		this.fixture = fixture;
+	}
+
+	
+
+	/**
 	 * Returns the fixture for this Region test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected Region getFixture() {
-		return (Region)fixture;
+		return fixture;
 	}
 
 	/**
@@ -87,19 +97,6 @@ public class RegionTest extends PrioritizedElementTest {
 	}
 
 	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart() <em>Embeds History Statechart</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isEmbedsHistoryStatechart()
-	 * @generated
-	 */
-	public void testIsEmbedsHistoryStatechart() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#getName() <em>Name</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -108,71 +105,6 @@ public class RegionTest extends PrioritizedElementTest {
 	 */
 	public void testGetName() {
 		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isSetName() <em>isSetName()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Region#isSetName()
-	 * @generated
-	 */
-	public void testIsSetName() {
-		// TODO: implement this test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link org.storydriven.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass) <em>Get Extension</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.storydriven.core.ExtendableElement#getExtension(org.eclipse.emf.ecore.EClass)
-	 * @generated
-	 */
-	public void testGetExtension__EClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link org.storydriven.core.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass) <em>Provide Extension</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.storydriven.core.ExtendableElement#provideExtension(org.eclipse.emf.ecore.EClass)
-	 * @generated
-	 */
-	public void testProvideExtension__EClass() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link org.storydriven.core.ExtendableElement#getAnnotation(java.lang.String) <em>Get Annotation</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.storydriven.core.ExtendableElement#getAnnotation(java.lang.String)
-	 * @generated
-	 */
-	public void testGetAnnotation__String() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link org.storydriven.core.ExtendableElement#provideAnnotation(java.lang.String) <em>Provide Annotation</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.storydriven.core.ExtendableElement#provideAnnotation(java.lang.String)
-	 * @generated
-	 */
-	public void testProvideAnnotation__String() {
-		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

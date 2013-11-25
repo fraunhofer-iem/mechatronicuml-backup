@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getEvents() <em>Events</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#isSimple() <em>Simple</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getAllAvailableChannels() <em>All Available Channels</em>}</li>
  * </ul>
  * </p>
  * <p>
@@ -119,6 +120,19 @@ public class StateTest extends VertexTest {
 	 */
 	public void testIsSetSimple() {
 		// TODO: implement this test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.State#getAllAvailableChannels() <em>All Available Channels</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.State#getAllAvailableChannels()
+	 * @generated
+	 */
+	public void testGetAllAvailableChannels() {
+		// TODO: implement this feature getter test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

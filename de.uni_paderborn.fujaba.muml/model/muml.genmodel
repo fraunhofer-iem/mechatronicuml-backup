@@ -251,6 +251,7 @@
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/State/connectionPoints"/>
         <genFeatures property="Readonly" createChild="false" propertyCategory="" ecoreFeature="ecore:EAttribute muml.ecore#//realtimestatechart/State/simple"/>
         <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/State/parentStatechart"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//realtimestatechart/State/allAvailableChannels"/>
         <genOperations ecoreOperation="muml.ecore#//realtimestatechart/State/getUniqueRegionPriority">
           <genParameters ecoreParameter="muml.ecore#//realtimestatechart/State/getUniqueRegionPriority/hint"/>
         </genOperations>

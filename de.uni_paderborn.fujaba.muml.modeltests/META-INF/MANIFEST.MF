@@ -17,6 +17,11 @@ Export-Package: de.uni_paderborn.fujaba.muml.behavior.tests,
  de.uni_paderborn.fujaba.muml.realtimestatechart.tests,
  de.uni_paderborn.fujaba.muml.types.tests,
  de.uni_paderborn.fujaba.muml.valuetype.tests
-Require-Bundle: de.uni_paderborn.fujaba.muml;visibility:=reexport,
+Require-Bundle: org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml;visibility:=reexport,
+ org.storydriven.core;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ de.uni_paderborn.fujaba.modelinstance;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

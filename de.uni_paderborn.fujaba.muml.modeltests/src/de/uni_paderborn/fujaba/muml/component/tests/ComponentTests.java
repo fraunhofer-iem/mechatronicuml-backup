@@ -38,12 +38,12 @@ public class ComponentTests extends TestSuite {
 		suite.addTestSuite(DiscretePortTest.class);
 		suite.addTestSuite(ComponentPartTest.class);
 		suite.addTestSuite(StaticStructuredComponentTest.class);
-		suite.addTestSuite(AtomicComponentTest.class);
 		suite.addTestSuite(AssemblyConnectorTest.class);
 		suite.addTestSuite(DelegationConnectorTest.class);
 		suite.addTestSuite(HybridPortTest.class);
 		suite.addTestSuite(CoordinationProtocolOccurrenceTest.class);
 		suite.addTestSuite(PortPartTest.class);
+		suite.addTestSuite(StaticAtomicComponentTest.class);
 		return suite;
 	}
 

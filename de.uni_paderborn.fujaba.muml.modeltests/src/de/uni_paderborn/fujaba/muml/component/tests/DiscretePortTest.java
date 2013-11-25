@@ -17,6 +17,7 @@ import de.uni_paderborn.fujaba.muml.component.DiscretePort;
  * <p>
  * The following features are tested:
  * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#isMulti() <em>Multi</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteInPort() <em>Is Discrete In Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteOutPort() <em>Is Discrete Out Port</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.DiscretePort#isIsDiscreteInOutPort() <em>Is Discrete In Out Port</em>}</li>
@@ -78,6 +79,19 @@ public class DiscretePortTest extends PortTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#isMulti() <em>Multi</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint#isMulti()
+	 * @generated
+	 */
+	public void testIsMulti() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 	/**

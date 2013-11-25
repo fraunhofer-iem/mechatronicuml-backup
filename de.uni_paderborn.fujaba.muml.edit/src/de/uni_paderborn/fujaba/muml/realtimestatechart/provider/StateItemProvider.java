@@ -77,6 +77,7 @@ public class StateItemProvider
 			addConnectionPointsPropertyDescriptor(object);
 			addSimplePropertyDescriptor(object);
 			addParentStatechartPropertyDescriptor(object);
+			addAllAvailableChannelsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -338,6 +339,28 @@ public class StateItemProvider
 				 getString("_UI_PropertyDescriptor_description", "_UI_State_parentStatechart_feature", "_UI_State_type"),
 				 RealtimestatechartPackage.Literals.STATE__PARENT_STATECHART,
 				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the All Available Channels feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAllAvailableChannelsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_State_allAvailableChannels_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_State_allAvailableChannels_feature", "_UI_State_type"),
+				 RealtimestatechartPackage.Literals.STATE__ALL_AVAILABLE_CHANNELS,
+				 false,
 				 false,
 				 false,
 				 null,
