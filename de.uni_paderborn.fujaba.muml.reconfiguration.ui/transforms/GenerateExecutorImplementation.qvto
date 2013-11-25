@@ -138,8 +138,26 @@ helper configurePorts(inout rootNode : RootNode, inout theComponent : Reconfigur
 mapping ReconfigurationExecutionPortInterfaceEntry::mapREInterfaceEntries() : ReconfigurationExecutionPortInterfaceEntry{
 	messageType := self.messageType;
 	timeForDecision := self.timeForDecision.map mapTimeValue();
-	timeForExecution := self.timeForExecution.map mapTimeValue();
+	timeForExecutionPhase := self.timeForExecutionPhase.map mapExecutionTimingEntry();
 	description := self.description;
+}
+
+-- copy execution timing specifications 
+mapping ExecutionTimingSpecification::mapExecutionTimingEntry() : ExecutionTimingSpecification
+disjuncts
+	ExecutionTimingSpecificationSinglePhase::mapSinglePhaseExecutionEntry, ExecutionTimingSpecificationThreePhase::mapThreePhaseExecutionEntry
+{}
+
+-- copy execution timing specifications for single phase execution
+mapping ExecutionTimingSpecificationSinglePhase::mapSinglePhaseExecutionEntry() : ExecutionTimingSpecificationSinglePhase{
+	timeForExecution := self.timeForExecution.map mapTimeValue();
+}
+
+-- copy execution timing specifications for single phase execution
+mapping ExecutionTimingSpecificationThreePhase::mapThreePhaseExecutionEntry() : ExecutionTimingSpecificationThreePhase{
+	timeForSetup := self.timeForSetup.map mapTimeValue();
+	timeForFading := self.timeForFading.map mapTimeValue();
+	timeForTeardown := self.timeForTeardown.map mapTimeValue();
 }
 
 -- generates the static statechart frame (the 'black' parts in the manager generation template)
@@ -1330,7 +1348,8 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateParentPortInterfaceE
 property embeddedCIInterfaceEntryNumber : Integer = 1;
 
 -- generates the brown parts of the generation template for each interface entry of the embeddedCI port
-mapping ReconfigurationExecutionPortInterfaceEntry::generateEmbeddedCIPortInterfaceEntry(inout rootNode : RootNode, inout rtsc: RealtimeStatechart){
+mapping ReconfigurationExecutionPortInterfaceEntry::generateEmbeddedCIPortInterfaceEntry(inout rootNode : RootNode, inout rtsc: RealtimeStatechart)
+when {self.timeForExecutionPhase.oclIsTypeOf(ExecutionTimingSpecificationSinglePhase)}{
 	
 	-- obtain embeddedCI and subrole RTSCs
 	var embeddedCIRTSC : RealtimeStatechart := rtsc.getEmbeddedRTSCByName(genEmbeddedRTSCExecutor_EmbeddedCI);
@@ -1353,7 +1372,7 @@ mapping ReconfigurationExecutionPortInterfaceEntry::generateEmbeddedCIPortInterf
 	var block : Block := createSimpleAssignmentExpressioninBlock(subroleRTSC.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForDec), 
 									self.timeForDecision.value.oclAsType(LiteralExpression).value);
 	block.expressions += createSimpleAssignmentExpression(subroleRTSC.getVariableByName(genVarExecutor_EmbeddedCI_SubRole_TimeForExec), 
-									self.timeForExecution.value.oclAsType(LiteralExpression).value);
+									self.timeForExecutionPhase.oclAsType(ExecutionTimingSpecificationSinglePhase).timeForExecution.value.oclAsType(LiteralExpression).value);
 	currentTrans.events := new AsynchronousMessageEvent(self.messageType, EventKind::RAISE);
 	currentTrans.action := new Action('Assign Vars', block);
 	currentTrans.clockResets += subroleRTSC.clocks -> any(name = genClockExecutor_embeddedCI_c2);
