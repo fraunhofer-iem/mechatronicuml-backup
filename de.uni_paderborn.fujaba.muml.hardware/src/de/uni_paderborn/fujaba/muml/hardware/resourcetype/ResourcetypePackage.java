@@ -919,13 +919,31 @@ public interface ResourcetypePackage extends EPackage {
 	int HW_PORT__PROTOCOL = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PORT__CARDINALITY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Multi HW Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HW_PORT__MULTI_HW_PORT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>HW Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HW_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int HW_PORT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.impl.ResourceTypeRepositoryImpl <em>Resource Type Repository</em>}' class.
@@ -1639,6 +1657,28 @@ public interface ResourcetypePackage extends EPackage {
 	EReference getHWPort_Protocol();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#getCardinality <em>Cardinality</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Cardinality</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#getCardinality()
+	 * @see #getHWPort()
+	 * @generated
+	 */
+	EReference getHWPort_Cardinality();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#isMultiHWPort <em>Multi HW Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Multi HW Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#isMultiHWPort()
+	 * @see #getHWPort()
+	 * @generated
+	 */
+	EAttribute getHWPort_MultiHWPort();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository <em>Resource Type Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2126,6 +2166,22 @@ public interface ResourcetypePackage extends EPackage {
 		 * @generated
 		 */
 		EReference HW_PORT__PROTOCOL = eINSTANCE.getHWPort_Protocol();
+
+		/**
+		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HW_PORT__CARDINALITY = eINSTANCE.getHWPort_Cardinality();
+
+		/**
+		 * The meta object literal for the '<em><b>Multi HW Port</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HW_PORT__MULTI_HW_PORT = eINSTANCE.getHWPort_MultiHWPort();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.impl.ResourceTypeRepositoryImpl <em>Resource Type Repository</em>}' class.

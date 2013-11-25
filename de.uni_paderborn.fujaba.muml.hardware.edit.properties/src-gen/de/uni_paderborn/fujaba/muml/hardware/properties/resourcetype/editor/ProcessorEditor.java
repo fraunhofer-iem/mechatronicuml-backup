@@ -32,6 +32,10 @@ public class ProcessorEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addProcessorNbCoresEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addProcessorFamilyEditor(null, true);
 		}
 
@@ -77,6 +81,28 @@ public class ProcessorEditor
 						.getProcessor_Architecture());
 
 		editor.setTooltipMessage("The architecture of this Processor (i.e. RISC,CISC,..).");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addProcessorNbCoresEditor(String category, boolean front) {
+		addEditorToCategory(category, createProcessorNbCoresEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorNbCoresEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
+						.getProcessor_NbCores(), false);
+
+		editor.setTooltipMessage("The number of cores of this Processor.");
 
 		return editor;
 

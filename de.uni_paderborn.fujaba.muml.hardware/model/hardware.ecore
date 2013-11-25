@@ -195,6 +195,16 @@
           <details key="documentation" value="The CommunicationProtocol this HWPort uses to transmit data."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiHWPort" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if (self.cardinality.oclIsUndefined()) then false else self.cardinality.upperBound.value>1 endif&#xA;"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="DeviceKind">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

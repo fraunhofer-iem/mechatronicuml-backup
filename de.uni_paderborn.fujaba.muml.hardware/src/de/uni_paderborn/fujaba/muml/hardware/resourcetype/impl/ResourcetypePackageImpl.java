@@ -591,6 +591,24 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getHWPort_Cardinality() {
+		return (EReference)hwPortEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getHWPort_MultiHWPort() {
+		return (EAttribute)hwPortEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getResourceTypeRepository() {
 		return resourceTypeRepositoryEClass;
 	}
@@ -833,6 +851,8 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		createEReference(hwPortEClass, HW_PORT__PARENT_RESOURCE);
 		createEAttribute(hwPortEClass, HW_PORT__PORT_TYPE);
 		createEReference(hwPortEClass, HW_PORT__PROTOCOL);
+		createEReference(hwPortEClass, HW_PORT__CARDINALITY);
+		createEAttribute(hwPortEClass, HW_PORT__MULTI_HW_PORT);
 
 		resourceTypeRepositoryEClass = createEClass(RESOURCE_TYPE_REPOSITORY);
 		createEReference(resourceTypeRepositoryEClass, RESOURCE_TYPE_REPOSITORY__RESOURCE_TYPES);
@@ -951,6 +971,8 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		initEReference(getHWPort_ParentResource(), this.getResourceType(), this.getResourceType_Hwports(), "parentResource", null, 1, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHWPort_PortType(), this.getHWPortKind(), "portType", null, 1, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPort_Protocol(), this.getCommunicationProtocol(), null, "protocol", null, 1, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPort_Cardinality(), theValuetypePackage.getCardinality(), null, "cardinality", null, 1, 1, HWPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHWPort_MultiHWPort(), ecorePackage.getEBoolean(), "multiHWPort", null, 1, 1, HWPort.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceTypeRepositoryEClass, ResourceTypeRepository.class, "ResourceTypeRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResourceTypeRepository_ResourceTypes(), this.getResourceType(), null, "resourceTypes", null, 1, -1, ResourceTypeRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1223,7 +1245,7 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		   source, 
 		   new String[] {
 			 "documentation", "The CommunicationProtocol this HWPort uses to transmit data."
-		   });		
+		   });			
 		addAnnotation
 		  (deviceKindEEnum, 
 		   source, 
@@ -1379,7 +1401,7 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		   source, 
 		   new String[] {
 			 "constraints", "BusProtocolImpliesBusType LinkProtocolImpliesLinkType"
-		   });															
+		   });																
 		addAnnotation
 		  (resourceTypeRepositoryEClass, 
 		   source, 
@@ -1415,7 +1437,13 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		   new String[] {
 			 "BusProtocolImpliesBusType", "self.protocol.oclIsTypeOf(resourcetype::BusProtocol) implies self.portType=resourcetype::HWPortKind::BUS",
 			 "LinkProtocolImpliesLinkType", "self.protocol.oclIsTypeOf(resourcetype::LinkProtocol) implies self.portType=resourcetype::HWPortKind::LINK\n"
-		   });													
+		   });					
+		addAnnotation
+		  (getHWPort_MultiHWPort(), 
+		   source, 
+		   new String[] {
+			 "derivation", "if (self.cardinality.oclIsUndefined()) then false else self.cardinality.upperBound.value>1 endif\n"
+		   });										
 		addAnnotation
 		  (resourceTypeRepositoryEClass, 
 		   source, 

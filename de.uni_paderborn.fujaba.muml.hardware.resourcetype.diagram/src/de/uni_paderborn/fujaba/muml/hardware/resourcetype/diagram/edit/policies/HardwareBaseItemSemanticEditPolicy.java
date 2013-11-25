@@ -365,7 +365,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									27,
+									29,
 									de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 											.getProcessor(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -390,7 +390,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									28,
+									30,
 									de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 											.getCache(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -432,7 +432,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									27,
+									29,
 									de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 											.getProcessor(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -469,7 +469,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									28,
+									30,
 									de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 											.getCache(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$

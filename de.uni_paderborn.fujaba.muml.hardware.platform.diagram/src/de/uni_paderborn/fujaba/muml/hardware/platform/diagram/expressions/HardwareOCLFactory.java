@@ -83,7 +83,7 @@ public class HardwareOCLFactory {
 					"--\'Enter bandwidth in form of: Value bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::BusPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bus)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bus)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bridge)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

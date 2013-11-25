@@ -37,7 +37,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							5,
+							7,
 							de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 									.getStructuredResource(), null).evaluate(
 							instance);
@@ -60,6 +60,39 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 									.getHWPort(), null).evaluate(instance);
 			instance.setName((String) value_0);
+			de.uni_paderborn.fujaba.muml.valuetype.Cardinality newInstance_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createCardinality();
+			instance.setCardinality(newInstance_1_0);
+			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_1_0_0_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_1_0.setLowerBound(newInstance_1_0_0_0);
+			Object value_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
+					.getExpression(
+							2,
+							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_1_0_0_0);
+
+			value_1_0_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareAbstractExpression
+					.performCast(value_1_0_0_0_0,
+							EcorePackage.eINSTANCE.getELong());
+			newInstance_1_0_0_0.setValue(((Long) value_1_0_0_0_0).longValue());
+
+			de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber newInstance_1_0_1_0 = de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory.eINSTANCE
+					.createNaturalNumber();
+			newInstance_1_0.setUpperBound(newInstance_1_0_1_0);
+			Object value_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
+					.getExpression(
+							3,
+							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
+									.getNaturalNumber(), null).evaluate(
+							newInstance_1_0_1_0);
+
+			value_1_0_1_0_0 = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareAbstractExpression
+					.performCast(value_1_0_1_0_0,
+							EcorePackage.eINSTANCE.getELong());
+			newInstance_1_0_1_0.setValue(((Long) value_1_0_1_0_0).longValue());
+
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
 					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
@@ -74,7 +107,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							6,
+							8,
 							de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 									.getCache(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -92,7 +125,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							11,
+							13,
 							de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 									.getProcessor(), null).evaluate(instance);
 			instance.setName((String) value_0);
@@ -101,7 +134,7 @@ public class ElementInitializers {
 			instance.setNbCores(newInstance_1_0);
 			Object value_1_0_0 = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							12,
+							14,
 							de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 									.getNaturalNumber(), null).evaluate(
 							newInstance_1_0);
@@ -124,7 +157,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							17,
+							19,
 							de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 									.getProgrammableLogicDevice(), null)
 					.evaluate(instance);
@@ -143,7 +176,7 @@ public class ElementInitializers {
 		try {
 			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							20,
+							22,
 							de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 									.getMemoryResource(), null).evaluate(
 							instance);

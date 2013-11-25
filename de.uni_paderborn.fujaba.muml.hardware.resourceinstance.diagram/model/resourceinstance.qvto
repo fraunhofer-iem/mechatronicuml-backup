@@ -11,7 +11,7 @@ main() {
 }
 
 mapping inout GenEditorGenerator::settings() {
-	self->map general("resourceinstance_diagram","ResourceInstance Diagram Editor");
+	self->map general("resourceinstance_diagram","Resource Instance Diagram Editor");
 	self->map editorSpecific();
 }
 

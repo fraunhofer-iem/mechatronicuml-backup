@@ -1482,7 +1482,7 @@
           body="--self.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::LinkPortInstance)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="--self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance)"/>
+          body="--self.oclAsType(platform::HWPortPart).hwPortInstance.oclIsTypeOf(platform::BusPortInstance)"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--self.oclIsTypeOf(platform::Bus)"/>

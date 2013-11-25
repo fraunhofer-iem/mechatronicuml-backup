@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.resourcetype.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -15,6 +16,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPortKind;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceType;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +28,8 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.impl.HWPortImpl#getParentResource <em>Parent Resource</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.impl.HWPortImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.impl.HWPortImpl#getProtocol <em>Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.impl.HWPortImpl#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.impl.HWPortImpl#isMultiHWPort <em>Multi HW Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,6 +65,26 @@ public class HWPortImpl extends NamedElementImpl implements HWPort {
 	 * @ordered
 	 */
 	protected CommunicationProtocol protocol;
+
+	/**
+	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCardinality()
+	 * @generated
+	 * @ordered
+	 */
+	protected Cardinality cardinality;
+
+	/**
+	 * The cached setting delegate for the '{@link #isMultiHWPort() <em>Multi HW Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMultiHWPort()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate MULTI_HW_PORT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ResourcetypePackage.Literals.HW_PORT__MULTI_HW_PORT).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,6 +210,67 @@ public class HWPortImpl extends NamedElementImpl implements HWPort {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Cardinality getCardinality() {
+		return cardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCardinality(Cardinality newCardinality, NotificationChain msgs) {
+		Cardinality oldCardinality = cardinality;
+		cardinality = newCardinality;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ResourcetypePackage.HW_PORT__CARDINALITY, oldCardinality, newCardinality);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCardinality(Cardinality newCardinality) {
+		if (newCardinality != cardinality) {
+			NotificationChain msgs = null;
+			if (cardinality != null)
+				msgs = ((InternalEObject)cardinality).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ResourcetypePackage.HW_PORT__CARDINALITY, null, msgs);
+			if (newCardinality != null)
+				msgs = ((InternalEObject)newCardinality).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ResourcetypePackage.HW_PORT__CARDINALITY, null, msgs);
+			msgs = basicSetCardinality(newCardinality, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ResourcetypePackage.HW_PORT__CARDINALITY, newCardinality, newCardinality));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isMultiHWPort() {
+		return (Boolean)MULTI_HW_PORT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMultiHWPort(boolean newMultiHWPort) {
+		MULTI_HW_PORT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newMultiHWPort);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -207,6 +292,8 @@ public class HWPortImpl extends NamedElementImpl implements HWPort {
 		switch (featureID) {
 			case ResourcetypePackage.HW_PORT__PARENT_RESOURCE:
 				return basicSetParentResource(null, msgs);
+			case ResourcetypePackage.HW_PORT__CARDINALITY:
+				return basicSetCardinality(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -240,6 +327,10 @@ public class HWPortImpl extends NamedElementImpl implements HWPort {
 			case ResourcetypePackage.HW_PORT__PROTOCOL:
 				if (resolve) return getProtocol();
 				return basicGetProtocol();
+			case ResourcetypePackage.HW_PORT__CARDINALITY:
+				return getCardinality();
+			case ResourcetypePackage.HW_PORT__MULTI_HW_PORT:
+				return isMultiHWPort();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,6 +351,12 @@ public class HWPortImpl extends NamedElementImpl implements HWPort {
 				return;
 			case ResourcetypePackage.HW_PORT__PROTOCOL:
 				setProtocol((CommunicationProtocol)newValue);
+				return;
+			case ResourcetypePackage.HW_PORT__CARDINALITY:
+				setCardinality((Cardinality)newValue);
+				return;
+			case ResourcetypePackage.HW_PORT__MULTI_HW_PORT:
+				setMultiHWPort((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -282,6 +379,12 @@ public class HWPortImpl extends NamedElementImpl implements HWPort {
 			case ResourcetypePackage.HW_PORT__PROTOCOL:
 				setProtocol((CommunicationProtocol)null);
 				return;
+			case ResourcetypePackage.HW_PORT__CARDINALITY:
+				setCardinality((Cardinality)null);
+				return;
+			case ResourcetypePackage.HW_PORT__MULTI_HW_PORT:
+				MULTI_HW_PORT__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -300,6 +403,10 @@ public class HWPortImpl extends NamedElementImpl implements HWPort {
 				return portType != PORT_TYPE_EDEFAULT;
 			case ResourcetypePackage.HW_PORT__PROTOCOL:
 				return protocol != null;
+			case ResourcetypePackage.HW_PORT__CARDINALITY:
+				return cardinality != null;
+			case ResourcetypePackage.HW_PORT__MULTI_HW_PORT:
+				return MULTI_HW_PORT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

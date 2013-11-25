@@ -106,6 +106,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/HWPort/portType"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/HWPort/protocol"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/HWPort/cardinality"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/HWPort/multiHWPort"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//resourcetype/ResourceTypeRepository">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/ResourceTypeRepository/resourceTypes"/>

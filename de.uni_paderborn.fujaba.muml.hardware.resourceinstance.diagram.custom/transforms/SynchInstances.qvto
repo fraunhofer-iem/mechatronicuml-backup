@@ -80,20 +80,25 @@ helper ResourceInstance::isResourceTypeSet(){
 helper ResourceInstance::synchHWPortInstances():OrderedSet(HWPortInstance){
 var resourceType : ResourceType := self.resourceType;
 var hwPortInstances : Set(HWPortInstance);
-	self.hwportInstances->forEach(port) {
+var lowerBound : Integer;
+	self.hwportInstances->forEach(portInstance) {
 			-- only delete those HWPortParts whose hwPortInstanceType is not contained in the current resourceInstance
-		if (resourceType.hwports ->excludes(port.hwportType)) then {
+		if (resourceType.hwports ->excludes(portInstance.hwportType)) then {
 		
-				input.removeElement(port);
-				port.dump();
+				input.removeElement(portInstance);
+				portInstance.dump();
 			}endif;
 			
 		}; 
-			
-
+	
+	//create new ports
 	resourceType.hwports -> forEach(hwport){
 	if((self.hwportInstances -> select(p | p.hwportType = hwport)) -> isEmpty()) then {
-			hwPortInstances += hwport ->map mapHWPort2HWPortInstance();
+		lowerBound:=hwport.cardinality.lowerBound.toInteger();
+		while(lowerBound>0){
+			hwPortInstances += hwport ->map mapHWPort2HWPortInstance(lowerBound);
+			lowerBound:=lowerBound-1;
+			};
 		} endif;
 	};
 	
@@ -135,7 +140,7 @@ mapping  StructuredResource::mapStructuredResource2StructuredResourceInstance():
 	resourceType:=self;
 	//create the AtomicResourceInstances of this StructuredResourceInstance derived from the embedded AtomicResources of the StructuredResource
 	embeddedAtomicResourceInstances:=self.embeddedAtomicResources->map mapAtomicResource2AtomicResourceInstance();
-	hwportInstances:=self.hwports->map mapHWPort2HWPortInstance();
+	hwportInstances+=result.synchHWPortInstances();
 }
 
 
@@ -180,7 +185,7 @@ mapping AtomicResource::mapAtomicResource2AtomicResourceInstance():AtomicResourc
 
 //create a HWPortInstance derived from a HWPort
 // The type of the returned HWPortInstance is derminted by the portType of the HWPort.
-mapping HWPort::mapHWPort2HWPortInstance():HWPortInstance{
+mapping HWPort::mapHWPort2HWPortInstance(number:Integer):HWPortInstance{
 	init{
 		switch{ 
 			case (self.portType=(HWPortKind::BUS)){
@@ -193,8 +198,10 @@ mapping HWPort::mapHWPort2HWPortInstance():HWPortInstance{
 	}
 	log("create HWPortInstance for:"+self.eClass().name+", Name:" +self.name+", Parent is:"+self.parentResource.name);
 	hwportType:=self;
-	name:=self.name;
+	name:=self.name+" "+number.toString();
 }
+
+
 
 
 //create a DeviceInstance derived from a Device
@@ -214,7 +221,7 @@ init{
 	log("create DeviceInstance for:"+self.eClass().name+", Name:" +self.name);
 	name:=self.name;
 	resourceType:=self;
-	hwportInstances:=self.hwports->map mapHWPort2HWPortInstance();
+	hwportInstances+=result.synchHWPortInstances();
 }
 
 
@@ -252,5 +259,11 @@ constructor Frequency::Frequency(value:EDouble){
 	result.unit:=FrequencyUnit::Hz;
 } 
 
-
+// Convenience query to cast a natural number to an integer, using -1 as value for infinity.
+query NaturalNumber::toInteger() : Integer {
+	if (self.infinity) then {
+		return -1;
+	} endif;
+	return self.value;
+}
 

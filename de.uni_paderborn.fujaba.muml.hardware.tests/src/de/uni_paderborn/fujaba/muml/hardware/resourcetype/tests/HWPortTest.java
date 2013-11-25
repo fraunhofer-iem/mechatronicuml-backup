@@ -11,6 +11,12 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypeFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>HW Port</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are tested:
+ * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#isMultiHWPort() <em>Multi HW Port</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class HWPortTest extends TestCase {
@@ -82,6 +88,32 @@ public class HWPortTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#isMultiHWPort() <em>Multi HW Port</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#isMultiHWPort()
+	 * @generated
+	 */
+	public void testIsMultiHWPort() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#setMultiHWPort(boolean) <em>Multi HW Port</em>}' feature setter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#setMultiHWPort(boolean)
+	 * @generated
+	 */
+	public void testSetMultiHWPort() {
+		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //HWPortTest

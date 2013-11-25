@@ -52,6 +52,11 @@ public class HWPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 	protected boolean isPortInstance() {
 		return true;
 	}
+	
+	
+	protected boolean isMultiHWPort(){
+		return false;
+	}
 
 	/**
 	 * Returns whether it is a Bus- or Link-Port based on the Port-Type of this

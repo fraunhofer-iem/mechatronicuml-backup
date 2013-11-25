@@ -6,20 +6,20 @@ import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.AbstractRotatingB
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.HWPortKind;
 
-
 /**
- * Base edit policy for all border items that use the CustomHWPortFigure. Provides
- * handling model notifications and updating the hwport figure accordingly. This
- * base implementation does not depend on any semantic classes, but subclasses
- * should override handleNotificationEvent() and call refreshHWPortFigure() method.
+ * Base edit policy for all border items that use the CustomHWPortFigure.
+ * Provides handling model notifications and updating the hwport figure
+ * accordingly. This base implementation does not depend on any semantic
+ * classes, but subclasses should override handleNotificationEvent() and call
+ * refreshHWPortFigure() method.
  * 
  * @author adann
  * 
  */
 
-public abstract class HWPortBaseEditPolicy extends AbstractRotatingBorderItemEditPolicy{
-	
-	
+public abstract class HWPortBaseEditPolicy extends
+		AbstractRotatingBorderItemEditPolicy {
+
 	public void activate() {
 		super.activate();
 		if (deduceBorderItemEditPart() == null) {
@@ -27,7 +27,7 @@ public abstract class HWPortBaseEditPolicy extends AbstractRotatingBorderItemEdi
 		}
 		refreshHWPortFigure();
 	}
-	
+
 	@Override
 	protected void sideChanged(int side) {
 		getHWPortFigure().setPortSide(side);
@@ -37,22 +37,26 @@ public abstract class HWPortBaseEditPolicy extends AbstractRotatingBorderItemEdi
 	public CustomHWPortFigure getHWPortFigure() {
 		return (CustomHWPortFigure) getContentPane();
 	}
-	
+
 	/**
-	 * Refreshes the CustomHWPortFigure.
-	 * This methods sets the visualization whether it is a Bus/Link-Port and
-	 * whether it is a delegation port or not.
+	 * Refreshes the CustomHWPortFigure. This methods sets the visualization
+	 * whether it is a Bus/Link-Port and whether it is a delegation port or not.
 	 */
 	public void refreshHWPortFigure() {
 		HWPortKind kind = getHWPortKind();
 		boolean delegation = isDelegationPort();
-		
+		boolean isMultiPort = isMultiHWPort();
 		getHWPortFigure().setHWPortKind(kind);
 		getHWPortFigure().setDelegationPort(delegation);
+		getHWPortFigure().setMulti(isMultiPort);
 	}
+
 	
+	
+	protected abstract boolean isMultiHWPort();
+
 	protected abstract HWPortKind getHWPortKind();
-	
+
 	protected abstract boolean isDelegationPort();
-	
+
 }

@@ -30,7 +30,7 @@ public class HardwareOCLFactory {
 	 * @generated
 	 */
 	protected HardwareOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareAbstractExpression[29];
+		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareAbstractExpression[31];
 	}
 
 	/**
@@ -52,6 +52,8 @@ public class HardwareOCLFactory {
 			final String[] exprBodies = new String[] {
 					"--\'device\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'hw-port\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--1".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\n--let protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\n--portName.concat(\' : \').concat(protocolName)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\': \' + self.deviceType.toString()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
@@ -77,7 +79,7 @@ public class HardwareOCLFactory {
 					"--let volatile: String = if self.isVolatile.oclIsUndefined() then \'null\' else self.isVolatile.toString() endif in\n--\'Volatile: \' + volatile".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(resourcetype::Processor) and self.ownedCache.oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsTypeOf(resourcetype::Processor) implies self.oclAsType(resourcetype::Processor).ownedCache.oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclAsType(ecore::EObject).eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer()\n--and self.oclIsTypeOf(resourcetype::Cache)\n--".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(

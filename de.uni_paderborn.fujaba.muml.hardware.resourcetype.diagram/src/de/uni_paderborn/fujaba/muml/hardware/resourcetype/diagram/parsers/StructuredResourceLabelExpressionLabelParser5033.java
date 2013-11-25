@@ -38,7 +38,7 @@ public class StructuredResourceLabelExpressionLabelParser5033 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						26,
+						28,
 						de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 								.getStructuredResource(), null).body();
 	}

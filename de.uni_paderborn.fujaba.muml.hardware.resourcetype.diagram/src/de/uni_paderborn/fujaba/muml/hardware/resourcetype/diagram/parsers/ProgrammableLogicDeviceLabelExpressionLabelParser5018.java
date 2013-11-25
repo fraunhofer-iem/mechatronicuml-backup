@@ -38,7 +38,7 @@ public class ProgrammableLogicDeviceLabelExpressionLabelParser5018 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						18,
+						20,
 						de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 								.getProgrammableLogicDevice(), null).body();
 	}

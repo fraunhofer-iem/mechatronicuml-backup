@@ -88,11 +88,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor.HWPortEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor.ResourceTypeRepositoryEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository">
        </propertyEditor>
@@ -105,6 +100,11 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor.LinkProtocolEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.hardware.resourcetype.LinkProtocol">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor.HWPortEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort">
        </propertyEditor>
     
        <propertyEditor

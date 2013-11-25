@@ -35,6 +35,10 @@ public class HWPortEditor
 			addHWPortProtocolEditor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addHWPortCardinalityEditor(null, false);
+		}
+
 	}
 
 	/**
@@ -103,6 +107,26 @@ public class HWPortEditor
 
 	}
 
+	/**
+	 * @generated
+	 */
+	protected void addHWPortCardinalityEditor(String category, boolean front) {
+		addEditorToCategory(category, createHWPortCardinalityEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortCardinalityEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
+						.getHWPort_Cardinality());
+
+		return editor;
+
+	}
+
 	//
 	// instantiation
 	//
@@ -136,7 +160,8 @@ public class HWPortEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+							"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.resourcetype;
 
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import org.storydriven.core.NamedElement;
 
 /**
@@ -20,6 +21,8 @@ import org.storydriven.core.NamedElement;
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#getParentResource <em>Parent Resource</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#getProtocol <em>Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#getCardinality <em>Cardinality</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#isMultiHWPort <em>Multi HW Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -112,5 +115,58 @@ public interface HWPort extends NamedElement {
 	 * @generated
 	 */
 	void setProtocol(CommunicationProtocol value);
+
+	/**
+	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cardinality</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cardinality</em>' containment reference.
+	 * @see #setCardinality(Cardinality)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage#getHWPort_Cardinality()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Cardinality getCardinality();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#getCardinality <em>Cardinality</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
+	 * @see #getCardinality()
+	 * @generated
+	 */
+	void setCardinality(Cardinality value);
+
+	/**
+	 * Returns the value of the '<em><b>Multi HW Port</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Multi HW Port</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Multi HW Port</em>' attribute.
+	 * @see #setMultiHWPort(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage#getHWPort_MultiHWPort()
+	 * @model required="true" transient="true" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if (self.cardinality.oclIsUndefined()) then false else self.cardinality.upperBound.value>1 endif\n'"
+	 * @generated
+	 */
+	boolean isMultiHWPort();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort#isMultiHWPort <em>Multi HW Port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Multi HW Port</em>' attribute.
+	 * @see #isMultiHWPort()
+	 * @generated
+	 */
+	void setMultiHWPort(boolean value);
 
 } // HWPort
