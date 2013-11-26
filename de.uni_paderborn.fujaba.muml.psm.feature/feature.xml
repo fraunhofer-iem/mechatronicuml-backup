@@ -54,6 +54,7 @@
       <import plugin="org.eclipse.emf.validation"/>
       <import plugin="org.eclipse.gef"/>
       <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.m2m.qvt.oml.project"/>
    </requires>
 
    <plugin
