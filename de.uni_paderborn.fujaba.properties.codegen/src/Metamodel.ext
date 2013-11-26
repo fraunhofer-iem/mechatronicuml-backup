@@ -99,3 +99,6 @@ String genDocumentation(EAnnotation this) :
 	if source.toString()=="http://www.eclipse.org/emf/2002/GenModel" then
 		details.select(d | d.key.toString() == "documentation").value;
 	
+
+Set[PropertyTab] genAllTabs(Class this) :
+	{ this }.union(allSuperClasses).properties.tab;

@@ -96,7 +96,7 @@ public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorNam
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-				new java.lang.String[] { «FOREACH { this }.union(allSuperClasses).properties.tab AS tab SEPARATOR ',\n'»"«tab.id»"«ENDFOREACH» }
+				new java.lang.String[] { «FOREACH genAllTabs() AS tab SEPARATOR ',\n'»"«tab.id»"«ENDFOREACH» }
 			).contains(tab);
 		}
 	}
