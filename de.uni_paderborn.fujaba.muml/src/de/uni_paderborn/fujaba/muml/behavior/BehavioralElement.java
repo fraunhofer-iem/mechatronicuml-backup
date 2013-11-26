@@ -35,7 +35,7 @@ public interface BehavioralElement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The real-time statechart that defines the behavior of this behavioral element.
+	 * The behavior of this behavioral element.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Behavior</em>' reference.
 	 * @see #setBehavior(Behavior)

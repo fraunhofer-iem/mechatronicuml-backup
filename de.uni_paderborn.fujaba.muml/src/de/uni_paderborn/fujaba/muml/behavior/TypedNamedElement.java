@@ -15,6 +15,10 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * A representation of the model object '<em><b>Typed Named Element</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Abstract super class for all elements that have a name and a type.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -35,6 +39,9 @@ public interface TypedNamedElement extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The data type of this element.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Data Type</em>' reference.
 	 * @see #setDataType(DataType)
 	 * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getTypedNamedElement_DataType()

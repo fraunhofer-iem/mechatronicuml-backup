@@ -194,7 +194,7 @@ public class ValuetypeValidator extends MumlValidator {
 		"(\r\n" +
 		"not self.value.oclIsUndefined()\r\n" +
 		"and \r\n" +
-		"self.value.oclIsTypeOf(core::expressions::common::LiteralExpression)\r\n" +
+		"self.value.oclIsKindOf(core::expressions::common::LiteralExpression)\r\n" +
 		")\r\n" +
 		"implies\r\n" +
 		"(\r\n" +

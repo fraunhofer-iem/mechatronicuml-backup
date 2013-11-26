@@ -34,9 +34,9 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationImpl#getReturnType <em>Return Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationImpl#getImplementations <em>Implementations</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.OperationImpl#getReturnType <em>Return Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,16 +64,6 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnType()
-	 * @generated
-	 * @ordered
-	 */
-	protected DataType returnType;
-
-	/**
 	 * The cached value of the '{@link #getImplementations() <em>Implementations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +82,16 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 	 * @ordered
 	 */
 	protected EList<Parameter> parameters;
+
+	/**
+	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnType()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataType returnType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,13 +221,13 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 		switch (featureID) {
 			case BehaviorPackage.OPERATION__COMMENT:
 				return getComment();
-			case BehaviorPackage.OPERATION__RETURN_TYPE:
-				if (resolve) return getReturnType();
-				return basicGetReturnType();
 			case BehaviorPackage.OPERATION__IMPLEMENTATIONS:
 				return getImplementations();
 			case BehaviorPackage.OPERATION__PARAMETERS:
 				return getParameters();
+			case BehaviorPackage.OPERATION__RETURN_TYPE:
+				if (resolve) return getReturnType();
+				return basicGetReturnType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,9 +244,6 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 			case BehaviorPackage.OPERATION__COMMENT:
 				setComment((String)newValue);
 				return;
-			case BehaviorPackage.OPERATION__RETURN_TYPE:
-				setReturnType((DataType)newValue);
-				return;
 			case BehaviorPackage.OPERATION__IMPLEMENTATIONS:
 				getImplementations().clear();
 				getImplementations().addAll((Collection<? extends Expression>)newValue);
@@ -254,6 +251,9 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 			case BehaviorPackage.OPERATION__PARAMETERS:
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends Parameter>)newValue);
+				return;
+			case BehaviorPackage.OPERATION__RETURN_TYPE:
+				setReturnType((DataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -270,14 +270,14 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 			case BehaviorPackage.OPERATION__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case BehaviorPackage.OPERATION__RETURN_TYPE:
-				setReturnType((DataType)null);
-				return;
 			case BehaviorPackage.OPERATION__IMPLEMENTATIONS:
 				getImplementations().clear();
 				return;
 			case BehaviorPackage.OPERATION__PARAMETERS:
 				getParameters().clear();
+				return;
+			case BehaviorPackage.OPERATION__RETURN_TYPE:
+				setReturnType((DataType)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -293,12 +293,12 @@ public class OperationImpl extends NamedElementImpl implements Operation {
 		switch (featureID) {
 			case BehaviorPackage.OPERATION__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case BehaviorPackage.OPERATION__RETURN_TYPE:
-				return returnType != null;
 			case BehaviorPackage.OPERATION__IMPLEMENTATIONS:
 				return implementations != null && !implementations.isEmpty();
 			case BehaviorPackage.OPERATION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case BehaviorPackage.OPERATION__RETURN_TYPE:
+				return returnType != null;
 		}
 		return super.eIsSet(featureID);
 	}

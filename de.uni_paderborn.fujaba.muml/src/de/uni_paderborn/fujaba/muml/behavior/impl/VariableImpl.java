@@ -26,8 +26,8 @@ import de.uni_paderborn.fujaba.muml.behavior.Variable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.VariableImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.VariableImpl#getInitializeExpression <em>Initialize Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.VariableImpl#isConstant <em>Constant</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.impl.VariableImpl#getInitializeExpression <em>Initialize Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,16 +55,6 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInitializeExpression() <em>Initialize Expression</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInitializeExpression()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression initializeExpression;
-
-	/**
 	 * The default value of the '{@link #isConstant() <em>Constant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +73,16 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 	 * @ordered
 	 */
 	protected boolean constant = CONSTANT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getInitializeExpression() <em>Initialize Expression</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitializeExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression initializeExpression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,10 +212,10 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 		switch (featureID) {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				return getComment();
-			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
-				return getInitializeExpression();
 			case BehaviorPackage.VARIABLE__CONSTANT:
 				return isConstant();
+			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
+				return getInitializeExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -231,11 +231,11 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				setComment((String)newValue);
 				return;
-			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
-				setInitializeExpression((Expression)newValue);
-				return;
 			case BehaviorPackage.VARIABLE__CONSTANT:
 				setConstant((Boolean)newValue);
+				return;
+			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
+				setInitializeExpression((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -252,11 +252,11 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
-				setInitializeExpression((Expression)null);
-				return;
 			case BehaviorPackage.VARIABLE__CONSTANT:
 				setConstant(CONSTANT_EDEFAULT);
+				return;
+			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
+				setInitializeExpression((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -272,10 +272,10 @@ public class VariableImpl extends TypedNamedElementImpl implements Variable {
 		switch (featureID) {
 			case BehaviorPackage.VARIABLE__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
-				return initializeExpression != null;
 			case BehaviorPackage.VARIABLE__CONSTANT:
 				return constant != CONSTANT_EDEFAULT;
+			case BehaviorPackage.VARIABLE__INITIALIZE_EXPRESSION:
+				return initializeExpression != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -17,7 +17,7 @@ import org.storydriven.core.expressions.Expression;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a composite state of a realtime statechart. Composite states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more composite states have do, entry and exit actions. Also composite states define which synchronization channels are allowed to be used by embedded statecharts.
+ * A time value defines a value concerning time and an optional time unit. The value is an expression and can therefore consist of various elements like variables, operators and literals.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -30,7 +30,7 @@ import org.storydriven.core.expressions.Expression;
  *
  * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage#getTimeValue()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='LiteralExpressionMustBeANaturalNumber'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LiteralExpressionMustBeANaturalNumber='-- If a TimeValue has as value a LiteralExpression, it must be a natural number.\r\n-- 1. Check if the LiteralExpression can be cast to an Integer\r\n-- 2. Check if this Integer is greater or equal to zero.\r\n\r\n(\r\nnot self.value.oclIsUndefined()\r\nand \r\nself.value.oclIsTypeOf(core::expressions::common::LiteralExpression)\r\n)\r\nimplies\r\n(\r\nnot self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger().oclIsUndefined()\r\nand \r\nself.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger()>=0\r\n)\r\n-- author: xell\r\n-- ticket: 770'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL LiteralExpressionMustBeANaturalNumber='-- If a TimeValue has as value a LiteralExpression, it must be a natural number.\r\n-- 1. Check if the LiteralExpression can be cast to an Integer\r\n-- 2. Check if this Integer is greater or equal to zero.\r\n\r\n(\r\nnot self.value.oclIsUndefined()\r\nand \r\nself.value.oclIsKindOf(core::expressions::common::LiteralExpression)\r\n)\r\nimplies\r\n(\r\nnot self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger().oclIsUndefined()\r\nand \r\nself.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger()>=0\r\n)\r\n-- author: xell\r\n-- ticket: 770'"
  * @generated
  */
 public interface TimeValue extends ExtendableElement {
@@ -42,6 +42,9 @@ public interface TimeValue extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The value concerning time must be an expression. Defining the value is mandatory.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage#getTimeValue_Value()
@@ -68,6 +71,9 @@ public interface TimeValue extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The time unit of a time value. Defining the value is optional.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Unit</em>' attribute.
 	 * @see #isSetUnit()
 	 * @see #unsetUnit()

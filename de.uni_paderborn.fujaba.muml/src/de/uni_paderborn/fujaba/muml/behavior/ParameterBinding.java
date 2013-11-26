@@ -36,7 +36,7 @@ public interface ParameterBinding extends ExtendableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The parameter to which the value needs to be associated.
+	 * The mandatory parameter to which the value needs to be associated.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter</em>' reference.
 	 * @see #setParameter(Parameter)
@@ -61,7 +61,7 @@ public interface ParameterBinding extends ExtendableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The value which is associated with the parameter. The value is defined by an expression.
+	 * The mandatory value which is associated with the parameter. The value is defined by an expression.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Value</em>' containment reference.
 	 * @see #setValue(Expression)

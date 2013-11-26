@@ -65,8 +65,8 @@ public class VariableItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addInitializeExpressionPropertyDescriptor(object);
 			addConstantPropertyDescriptor(object);
+			addInitializeExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}

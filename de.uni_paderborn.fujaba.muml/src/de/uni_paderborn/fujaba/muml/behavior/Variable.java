@@ -15,14 +15,14 @@ import org.storydriven.core.expressions.Expression;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Implementation of an Attribute of a behavior which has a certain type.
+ * Implementation of a variable of a behavior which has a certain type. A variable has a type, a name, and is commentable.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Variable#getInitializeExpression <em>Initialize Expression</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Variable#isConstant <em>Constant</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.behavior.Variable#getInitializeExpression <em>Initialize Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,9 @@ public interface Variable extends TypedNamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A variable may have a value when it is initialized. The value is defined by an expression.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Initialize Expression</em>' containment reference.
 	 * @see #setInitializeExpression(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getVariable_InitializeExpression()
@@ -68,6 +71,9 @@ public interface Variable extends TypedNamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * It must be defined if a the variable is constant or not.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Constant</em>' attribute.
 	 * @see #setConstant(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getVariable_Constant()

@@ -517,10 +517,10 @@
             ecoreFeature="ecore:EReference muml.ecore#//behavior/BehavioralElement/behavior"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//behavior/Operation">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//behavior/Operation/returnType"/>
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//behavior/Operation/implementations"/>
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//behavior/Operation/parameters"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference muml.ecore#//behavior/Operation/returnType"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//behavior/Parameter"/>
       <genClasses ecoreClass="muml.ecore#//behavior/ParameterBinding">
@@ -533,9 +533,9 @@
             ecoreFeature="ecore:EReference muml.ecore#//behavior/TypedNamedElement/dataType"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//behavior/Variable">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//behavior/Variable/constant"/>
         <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//behavior/Variable/initializeExpression"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//behavior/Variable/constant"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

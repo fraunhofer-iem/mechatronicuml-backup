@@ -69,9 +69,9 @@ public class OperationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addReturnTypePropertyDescriptor(object);
 			addImplementationsPropertyDescriptor(object);
 			addParametersPropertyDescriptor(object);
+			addReturnTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
