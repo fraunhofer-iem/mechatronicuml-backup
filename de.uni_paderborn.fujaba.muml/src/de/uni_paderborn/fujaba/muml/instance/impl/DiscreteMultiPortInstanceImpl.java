@@ -17,7 +17,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
@@ -84,10 +87,12 @@ public class DiscreteMultiPortInstanceImpl extends DiscretePortInstanceImpl impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected DiscreteMultiPortInstanceImpl() {
 		super();
+		DerivedAttributeAdapter adapter = new DerivedAttributeAdapter(this, InstancePackage.Literals.DISCRETE_MULTI_PORT_INSTANCE__GMF_SUB_PORT_INSTANCES);
+		adapter.addLocalDependency(ConnectorPackage.Literals.DISCRETE_MULTI_INTERACTION_ENDPOINT_INSTANCE__SUB_INTERACTION_ENDPOINT_INSTANCES);
 	}
 
 	/**
