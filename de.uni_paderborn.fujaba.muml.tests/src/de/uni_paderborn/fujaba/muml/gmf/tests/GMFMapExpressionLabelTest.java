@@ -28,8 +28,7 @@ import org.junit.Test;
  * 
  * @author Andreas Dann
  */
-public class GMFMapExpressionLabelTest extends GMFMapTest{
-	
+public class GMFMapExpressionLabelTest extends GMFMapTest {
 
 	/**
 	 * Validates a the ExpressionLabel for a NodeMapping
@@ -49,14 +48,10 @@ public class GMFMapExpressionLabelTest extends GMFMapTest{
 			if (labelMapping instanceof ExpressionLabelMapping) {
 				String expression = ((ExpressionLabelMapping) labelMapping)
 						.getViewExpression().getBody();
-				try {
-					this.validateLabelExpression(domainClass, expression);
-				} catch (ParserException e) {
-					GMFMapExpressionLabelTest.this.oclErrors.add("ERROR: "
-							+ domainClass.getEPackage().getName() + "."
-							+ domainClass.getName() + "." + expression + ": "
-							+ e.getLocalizedMessage());
-				}
+
+				this.validateLabelExpression(labelMapping, domainClass,
+						expression);
+
 			}
 		}
 		EList<ChildReference> childs = nodeMapping.getChildren();
@@ -93,13 +88,20 @@ public class GMFMapExpressionLabelTest extends GMFMapTest{
 		oclErrors.fail();
 	}
 
-	private void validateLabelExpression(EClass eClass, String expression)
-			throws ParserException {
+	private void validateLabelExpression(LabelMapping labelMapping,
+			EClass eClass, String expression) {
 		OCLHelper<EClassifier, EOperation, EStructuralFeature, Constraint> helper = OCL_ENV
 				.createOCLHelper();
 		helper.setValidating(true);
 		helper.setContext(eClass);
-		helper.createQuery(expression);
+		try {
+			helper.createQuery(expression);
+		} catch (ParserException e) {
+			GMFMapExpressionLabelTest.this.oclErrors.add("ERROR: "
+					+ "in gmfmap: " + labelMapping.eResource().getURI() + ": "
+					+ eClass.getEPackage().getName() + "." + eClass.getName()
+					+ "." + expression + ": " + e.getLocalizedMessage());
+		}
 	}
 
 }

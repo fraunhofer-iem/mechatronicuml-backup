@@ -19,21 +19,18 @@ import org.eclipse.ocl.helper.OCLHelper;
 import org.junit.Test;
 
 /**
- * Test the OCL Invariants in the gmfmap models.
- *  Subclass needs to override the methods {@link #initGMFMapsToTest()} and
- * {@link #intEcoreModels()}
+ * Test the OCL Invariants in the gmfmap models. Subclass needs to override the
+ * methods {@link #initGMFMapsToTest()} and {@link #intEcoreModels()}
  * 
  * @author Andreas Dann
  */
-public class GMFMapLinkConstraintTest extends GMFMapTest{
-
-	
-	
-	
+public class GMFMapLinkConstraintTest extends GMFMapTest {
 
 	/**
 	 * Validates a linkMapping
-	 * @param linkMapping the linkMapping that is tested
+	 * 
+	 * @param linkMapping
+	 *            the linkMapping that is tested
 	 */
 	private void validateLink(LinkMapping linkMapping) {
 		if (visitedMapping.containsKey(linkMapping)) {
@@ -76,9 +73,11 @@ public class GMFMapLinkConstraintTest extends GMFMapTest{
 		visitedMapping = new HashMap<EObject, Boolean>();
 		for (String[] path : gmfmap_projects) {
 			try {
-				mapping = (Mapping)GMFUtils.loadGmfModel(GMFMapPackage.eINSTANCE.getMapping(), path[0], path[1], ecore_projects);
-				//mapping = GMFUtils.getGmfMap(path[0], path[1],
-					//	projects);
+				mapping = (Mapping) GMFUtils.loadGmfModel(
+						GMFMapPackage.eINSTANCE.getMapping(), path[0], path[1],
+						ecore_projects);
+				// mapping = GMFUtils.getGmfMap(path[0], path[1],
+				// projects);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -94,6 +93,7 @@ public class GMFMapLinkConstraintTest extends GMFMapTest{
 
 	/**
 	 * validates a LinkConstraint
+	 * 
 	 * @param eClass
 	 * @param feature
 	 * @param isSource
@@ -109,21 +109,21 @@ public class GMFMapLinkConstraintTest extends GMFMapTest{
 		helper.setContext(linkMapping.getCreationConstraints().eClass());
 		expression = expression.replaceAll("oppositeEnd",
 				"linkMapping.linkMetaFeature.eType");
-		
-		 /* if(!isSource){ expression=expression.replaceAll("self",
-		  "self.linkMapping.linkMetaFeature.eGenericType"); }
-		  else{
-		  expression=expression.replaceAll("self",
-		  "linkMapping.sourceMetaFeature.eGenericType"); } */
-		 
+
+		/*
+		 * if(!isSource){ expression=expression.replaceAll("self",
+		 * "self.linkMapping.linkMetaFeature.eGenericType"); } else{
+		 * expression=expression.replaceAll("self",
+		 * "linkMapping.sourceMetaFeature.eGenericType"); }
+		 */
 
 		try {
 			helper.createInvariant(expression);
 		} catch (ParserException e) {
 			GMFMapLinkConstraintTest.this.oclErrors.add("ERROR: "
-					+ linkMapping.getDiagramLink().toString()+ ":"+
-				//	+ linkMapping.getDomainMetaElement().toString()+
-					 expression + ": " + e.getLocalizedMessage());
+					+ "in gmfmap: " + linkMapping.eResource().getURI() + ": "
+					+ linkMapping.getDiagramLink().toString() + ":"
+					+ expression + ": " + e.getLocalizedMessage());
 		}
 
 	}

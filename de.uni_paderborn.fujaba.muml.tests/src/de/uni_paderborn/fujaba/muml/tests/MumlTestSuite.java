@@ -4,6 +4,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
+import de.uni_paderborn.fujaba.muml.gmf.tests.GMFMapExpressionLabelTest;
+import de.uni_paderborn.fujaba.muml.gmf.tests.GMFMapLinkConstraintTest;
 import de.uni_paderborn.fujaba.muml.tests.packages.EditPluginXmlPackageTest;
 import de.uni_paderborn.fujaba.muml.tests.packages.ModelPluginXmlPackageTest;
 
@@ -12,7 +14,7 @@ import de.uni_paderborn.fujaba.muml.tests.packages.ModelPluginXmlPackageTest;
 		ModelPluginXmlPackageTest.class, EditPluginXmlPackageTest.class,
 		//GeneratedTest.class, 
 		ValidateMetamodelsTest.class,
-		DiagramPluginXmlTest.class })
+		DiagramPluginXmlTest.class, GMFMapLinkConstraintTest.class, GMFMapExpressionLabelTest.class })
 public class MumlTestSuite {
 	// empty
 }
