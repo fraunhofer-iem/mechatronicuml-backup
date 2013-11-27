@@ -23,9 +23,10 @@ import org.storydriven.core.CorePackage;
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * This package defines the message interfaces. A MessageInterface defines a set
- * of event signatures using the class MessageType. These message types are used
- * to type the events within a realtime statechart. 
+ * This package defines the message types that can be send and received via discrete interaction
+ * endpoints. Then, the real-time statecharts of the discrete interaction endpoints use the message
+ * types to type their asynchronous messages at their transitions. Message types may be grouped 
+ * in message type repositories.
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.msgtype.MsgtypeFactory
  * @model kind="package"

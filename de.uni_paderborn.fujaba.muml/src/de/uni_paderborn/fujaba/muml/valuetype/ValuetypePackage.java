@@ -25,6 +25,10 @@ import org.storydriven.core.CorePackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The classes in this package define different types of values that are used in the
+ * MechatronicUML meta-model. 
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypeFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"

@@ -52,6 +52,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectors->select(c | c.oclIsKindOf(PortConnector)).oclAsType(PortConnector)->asOrderedSet()"/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Derived reference that returns all connectors that are attached to the Port that&#xD;&#xA;are of type PortConnector."/>
+        </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContinuousPort" eSuperTypes="#//component/DirectedTypedPort">
@@ -398,16 +401,19 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="InitializeExpressionOnlyForOutPorts" value="self.kind = component::PortDirectionKind::IN implies self.initializeExpression.oclIsUndefined()"/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Directed typed port is the common super class of continuous and hybrid ports. &#xD;&#xA;A directed typed port has a direction (either IN or OUT) and specifies a data type.&#xD;&#xA;At present, we only support primitive and array data types, where the array elements&#xD;&#xA;need to have a primitive type."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
           eType="#//component/PortDirectionKind">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Decides the direction of a continous port."/>
+          <details key="documentation" value="Defines the direction of this directed typed port."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
           defaultValueLiteral="false">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Decides if this port is optional."/>
+          <details key="documentation" value="Decides if this port is optional. An optional port does not need to be instantiated&#xD;&#xA;in all instances of the containing component."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="outPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -432,13 +438,28 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="initializeExpression"
           eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-          containment="true"/>
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A initialize expression specifies the initial value that is emitted by the port after&#xD;&#xA;it has been instantiated. Thus, we only provide initialize expressions for out-port."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PortPart" eSuperTypes="#//connector/ConnectorEndpoint">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="PortParts are contained in ComponentParts. They represent a &#xD;&#xA;port of a component in the part structure inside a structured component. &#xD;&#xA;PortParts are the endpoints for AssemblyConnectors and DelegationConnectors."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portType" lowerBound="1"
-          eType="#//component/Port"/>
+          eType="#//component/Port">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The port of the component that is represented by this PortPart."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" lowerBound="1"
-          eType="#//component/ComponentPart" eOpposite="#//component/ComponentPart/portParts"/>
+          eType="#//component/ComponentPart" eOpposite="#//component/ComponentPart/portParts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The component part that contains this PortPart. The port reference by the &#xD;&#xA;portType reference needs to be contained in the component that is referenced&#xD;&#xA;by this reference."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolOccurence"
           eType="#//component/CoordinationProtocolOccurrence" eOpposite="#//component/CoordinationProtocolOccurrence/portParts"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role"
@@ -460,7 +481,11 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StaticAtomicComponent" eSuperTypes="#//component/AtomicComponent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticAtomicComponent" eSuperTypes="#//component/AtomicComponent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A static atomic component is an atomic component whose internal structure&#xD;&#xA;consisting of its set of ports cannot be changed during run-time."/>
+      </eAnnotations>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/constraint/0.4.0"
       nsPrefix="constraint">
@@ -572,9 +597,17 @@
           <details key="documentation" value="The port instances that belong to this component instance. \todosd{Why are also DiscreteSinglePortInstances of DiscreteMultiPortInstances contained here and not in the DiscreteMultiPortInstance?}"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" eType="#//component/ComponentPart"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentPart" eType="#//component/ComponentPart">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If the component instance is contained in a structured component instance,&#xD;&#xA;then the corresponding structure component has has component part that &#xD;&#xA;was used to include the component type of this instance. Then, this reference &#xD;&#xA;points to this component part. We can use this reference for deciding how &#xD;&#xA;many instances of a particular part exist in a structured component instance&#xD;&#xA;such that we can enforce the cardinalities of the component part during run-time."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentCIC" lowerBound="1"
-          eType="#//instance/ComponentInstanceConfiguration" eOpposite="#//instance/ComponentInstanceConfiguration/componentInstances"/>
+          eType="#//instance/ComponentInstanceConfiguration" eOpposite="#//instance/ComponentInstanceConfiguration/componentInstances">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The component instance configuration that contains this component instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PortConnectorInstance" abstract="true"
         eSuperTypes="#//connector/ConnectorInstance">
@@ -641,7 +674,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnectorInstance" eSuperTypes="#//instance/PortConnectorInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents an assembly connector at instance level.&#xD;&#xA;&#xD;&#xA;\todosd{Why does the AssemblyInstance has a lower and upper bound for the propagation delay and the Assembly not?}"/>
+        <details key="documentation" value="This class represents an assembly connector at instance level."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyConnectorType"
           eType="#//component/AssemblyConnector" changeable="false" volatile="true"
@@ -708,7 +741,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentStructuredComponentInstance"
-          eType="#//instance/StructuredComponentInstance" eOpposite="#//instance/StructuredComponentInstance/embeddedCIC"/>
+          eType="#//instance/StructuredComponentInstance" eOpposite="#//instance/StructuredComponentInstance/embeddedCIC">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A structured component instance embeds a component instance configuration&#xD;&#xA;that defines its inner structure. For such component instance configuration,&#xD;&#xA;this reference points to the containing structured component instance. If this&#xD;&#xA;component instance configuration is not contained in a structured component&#xD;&#xA;instance, this reference is null."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ContinuousPortInstance" eSuperTypes="#//instance/PortInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -732,7 +769,7 @@
           <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).receiverMessageTypes&#xD;&#xA;endif"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The receiver message interface defines which messages this port instance receives&#xD;&#xA;It is derived from the receiver message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+          <details key="documentation" value="The receiver message interface defines which messages this port instance receives&#xD;&#xA;It is derived from the receiver message interface of its port."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes" upperBound="-1"
@@ -742,7 +779,7 @@
           <details key="derivation" value="if portType.oclIsUndefined() or not portType.oclIsKindOf(component::DiscretePort) then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;portType.oclAsType(component::DiscretePort).senderMessageTypes&#xD;&#xA;endif"/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The sender message interface defines which messages this port instance sends.&#xD;&#xA;It is derived from the sender message interface of its port.&#xD;&#xA;\todosd{ocl: implement derived}"/>
+          <details key="documentation" value="The sender message interface defines which messages this port instance sends.&#xD;&#xA;It is derived from the sender message interface of its port."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageBuffer"
@@ -1753,11 +1790,11 @@
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This package defines the message interfaces. A MessageInterface defines a set&#xD;&#xA;of event signatures using the class MessageType. These message types are used&#xD;&#xA;to type the events within a realtime statechart. "/>
+      <details key="documentation" value="This package defines the message types that can be send and received via discrete interaction&#xD;&#xA;endpoints. Then, the real-time statecharts of the discrete interaction endpoints use the message&#xD;&#xA;types to type their asynchronous messages at their transitions. Message types may be grouped &#xD;&#xA;in message type repositories."/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="MessageType" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A message type defines the signature of one event. That includes the name&#xD;&#xA;of the event as well as the list of parameters. The message type inherits from&#xD;&#xA;callable because concrete events in a real-time statechart must provide a &#xD;&#xA;parameter mapping for the parameters of the message type as it is defined for&#xD;&#xA;method invocations."/>
+        <details key="documentation" value="A message type defines the signature of one event. That includes the name&#xD;&#xA;of the event as well as the ordered list of parameters. In addition, a message&#xD;&#xA;type is contained in a message type repository."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="UniqueParameterNames" value="self.parameters->isUnique(name)"/>
@@ -1772,15 +1809,23 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
-          eType="#//msgtype/MessageTypeRepository" eOpposite="#//msgtype/MessageTypeRepository/messageTypes"/>
+          eType="#//msgtype/MessageTypeRepository" eOpposite="#//msgtype/MessageTypeRepository/messageTypes">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The message type repository that contains this message type."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A MessageTypeRepository is used to declare message types which are then used&#xD;&#xA;in MessageInterfaces."/>
+        <details key="documentation" value="A MessageTypeRepository contains a set of message types which are then used&#xD;&#xA;by discrete interaction endpoints and their behavior specifications. Message type&#xD;&#xA;repositories enable to group message types logically, but have no semantics for&#xD;&#xA;the MechatronicUML model."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="messageTypes" ordered="false"
           lowerBound="1" upperBound="-1" eType="#//msgtype/MessageType" containment="true"
-          eOpposite="#//msgtype/MessageType/repository"/>
+          eOpposite="#//msgtype/MessageType/repository">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The message types that are contained in this message type repository."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="types" nsURI="http://www.fujaba.de/muml/types/0.4.0" nsPrefix="types">
@@ -1838,6 +1883,9 @@
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package defines a set a abstract classes that form the basis for all connectors&#xD;&#xA;that we use in our meta-model. They define the connectors, different types of &#xD;&#xA;endpoint that are connected by connectors, and their instances."/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpoint" abstract="true"
         eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
@@ -1975,9 +2023,12 @@
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The classes in this package define different types of values that are used in the&#xD;&#xA;MechatronicUML meta-model. "/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="Cardinality">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a two-dimensional range specification of an arbitrary model object. It consists of a lower and an upper bound."/>
+        <details key="documentation" value="This class represents a two-dimensional range specification of an arbitrary &#xD;&#xA;model object. It consists of a lower and an upper bound where both need to&#xD;&#xA;be greater or equal to zero. Intuitively, the upper bound must be greater or&#xD;&#xA;equal to the lower bound."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="LowerBoundMustBeLessOrEqualThanUpperBound"/>
@@ -2084,7 +2135,7 @@
     <eClassifiers xsi:type="ecore:EDataType" name="TimeUnit" instanceClassName="java.util.concurrent.TimeUnit"/>
     <eClassifiers xsi:type="ecore:EClass" name="Range">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a two-dimensional range specification of an arbitrary model object. It consists of a lower and an upper bound."/>
+        <details key="documentation" value="This class represents a two-dimensional range specification of an arbitrary &#xD;&#xA;model object. It consists of a lower and an upper bound. Intuitively, the upper&#xD;&#xA;bound must be greater or equal to the lower bound."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="LowerBoundMustBeLessOrEqualThanUpperBound"/>
@@ -2093,9 +2144,17 @@
         <details key="LowerBoundMustBeLessOrEqualThanUpperBound" value="-- lower bound of range must be less or equal than upper bound&#xD;&#xA;self.lowerBound &lt;= self.upperBound"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="0"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="0">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Defines the lower bound of the range."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="1"/>
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" defaultValueLiteral="1">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Defines the upper bound of the range."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="behavior" nsURI="http://www.fujaba.de/muml/behavior/0.4.0" nsPrefix="behavior">
@@ -2153,7 +2212,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-          eType="#//behavior/Parameter" containment="true"/>
+          eType="#//behavior/Parameter" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The ordered parameters of the operation. They define the values that need to be&#xD;&#xA;passed upon calling the operation."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" lowerBound="1"
           eType="#//types/DataType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

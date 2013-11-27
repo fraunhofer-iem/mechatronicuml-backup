@@ -86,6 +86,14 @@ public interface ComponentInstance extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If the component instance is contained in a structured component instance,
+	 * then the corresponding structure component has has component part that 
+	 * was used to include the component type of this instance. Then, this reference 
+	 * points to this component part. We can use this reference for deciding how 
+	 * many instances of a particular part exist in a structured component instance
+	 * such that we can enforce the cardinalities of the component part during run-time.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Component Part</em>' reference.
 	 * @see #setComponentPart(ComponentPart)
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstance_ComponentPart()
@@ -113,6 +121,9 @@ public interface ComponentInstance extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The component instance configuration that contains this component instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parent CIC</em>' container reference.
 	 * @see #setParentCIC(ComponentInstanceConfiguration)
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstance_ParentCIC()

@@ -19,10 +19,8 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
  *
  * <!-- begin-model-doc -->
  * A message type defines the signature of one event. That includes the name
- * of the event as well as the list of parameters. The message type inherits from
- * callable because concrete events in a real-time statechart must provide a 
- * parameter mapping for the parameters of the message type as it is defined for
- * method invocations.
+ * of the event as well as the ordered list of parameters. In addition, a message
+ * type is contained in a message type repository.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -63,6 +61,9 @@ public interface MessageType extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The message type repository that contains this message type.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Repository</em>' container reference.
 	 * @see #setRepository(MessageTypeRepository)
 	 * @see de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage#getMessageType_Repository()

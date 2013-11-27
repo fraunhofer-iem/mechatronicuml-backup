@@ -73,6 +73,10 @@ public interface Port extends ConnectorEndpoint, ConstrainableElement, DataType 
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Derived reference that returns all connectors that are attached to the Port that
+	 * are of type PortConnector.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Connectors</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPort_PortConnectors()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"

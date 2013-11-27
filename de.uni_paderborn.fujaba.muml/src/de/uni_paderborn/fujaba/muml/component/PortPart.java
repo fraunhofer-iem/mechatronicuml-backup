@@ -14,6 +14,12 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  * A representation of the model object '<em><b>Port Part</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * PortParts are contained in ComponentParts. They represent a 
+ * port of a component in the part structure inside a structured component. 
+ * PortParts are the endpoints for AssemblyConnectors and DelegationConnectors.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -38,6 +44,9 @@ public interface PortPart extends ConnectorEndpoint {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The port of the component that is represented by this PortPart.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Type</em>' reference.
 	 * @see #setPortType(Port)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortPart_PortType()
@@ -65,6 +74,11 @@ public interface PortPart extends ConnectorEndpoint {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The component part that contains this PortPart. The port reference by the 
+	 * portType reference needs to be contained in the component that is referenced
+	 * by this reference.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Component Part</em>' container reference.
 	 * @see #setComponentPart(ComponentPart)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortPart_ComponentPart()

@@ -15,8 +15,6 @@ import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
  *
  * <!-- begin-model-doc -->
  * This class represents an assembly connector at instance level.
- * 
- * \todosd{Why does the AssemblyInstance has a lower and upper bound for the propagation delay and the Assembly not?}
  * <!-- end-model-doc -->
  *
  * <p>

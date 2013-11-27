@@ -14,7 +14,9 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a two-dimensional range specification of an arbitrary model object. It consists of a lower and an upper bound.
+ * This class represents a two-dimensional range specification of an arbitrary 
+ * model object. It consists of a lower and an upper bound. Intuitively, the upper
+ * bound must be greater or equal to the lower bound.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -40,6 +42,9 @@ public interface Range extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the lower bound of the range.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Lower Bound</em>' attribute.
 	 * @see #setLowerBound(long)
 	 * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage#getRange_LowerBound()
@@ -67,6 +72,9 @@ public interface Range extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the upper bound of the range.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Upper Bound</em>' attribute.
 	 * @see #setUpperBound(long)
 	 * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage#getRange_UpperBound()

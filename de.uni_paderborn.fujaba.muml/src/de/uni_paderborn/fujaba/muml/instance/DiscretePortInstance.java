@@ -49,7 +49,6 @@ public interface DiscretePortInstance extends PortInstance, DiscreteInteractionE
 	 * <!-- begin-model-doc -->
 	 * The receiver message interface defines which messages this port instance receives
 	 * It is derived from the receiver message interface of its port.
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Receiver Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDiscretePortInstance_ReceiverMessageTypes()
@@ -67,7 +66,6 @@ public interface DiscretePortInstance extends PortInstance, DiscreteInteractionE
 	 * <!-- begin-model-doc -->
 	 * The sender message interface defines which messages this port instance sends.
 	 * It is derived from the sender message interface of its port.
-	 * \todosd{ocl: implement derived}
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sender Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getDiscretePortInstance_SenderMessageTypes()

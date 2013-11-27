@@ -16,8 +16,10 @@ import org.storydriven.core.NamedElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A MessageTypeRepository is used to declare message types which are then used
- * in MessageInterfaces.
+ * A MessageTypeRepository contains a set of message types which are then used
+ * by discrete interaction endpoints and their behavior specifications. Message type
+ * repositories enable to group message types logically, but have no semantics for
+ * the MechatronicUML model.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -42,6 +44,9 @@ public interface MessageTypeRepository extends NamedElement, CommentableElement 
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The message types that are contained in this message type repository.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Types</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage#getMessageTypeRepository_MessageTypes()
 	 * @see de.uni_paderborn.fujaba.muml.msgtype.MessageType#getRepository

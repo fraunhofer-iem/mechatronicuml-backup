@@ -18,6 +18,11 @@ package de.uni_paderborn.fujaba.muml.component;
  * A representation of the model object '<em><b>Static Atomic Component</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A static atomic component is an atomic component whose internal structure
+ * consisting of its set of ports cannot be changed during run-time.
+ * <!-- end-model-doc -->
+ *
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getStaticAtomicComponent()
  * @model

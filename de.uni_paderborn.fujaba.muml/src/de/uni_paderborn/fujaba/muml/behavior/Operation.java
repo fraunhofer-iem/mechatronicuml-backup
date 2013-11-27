@@ -85,6 +85,10 @@ public interface Operation extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ordered parameters of the operation. They define the values that need to be
+	 * passed upon calling the operation.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage#getOperation_Parameters()
 	 * @model containment="true"

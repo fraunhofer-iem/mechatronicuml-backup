@@ -14,7 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a two-dimensional range specification of an arbitrary model object. It consists of a lower and an upper bound.
+ * This class represents a two-dimensional range specification of an arbitrary 
+ * model object. It consists of a lower and an upper bound where both need to
+ * be greater or equal to zero. Intuitively, the upper bound must be greater or
+ * equal to the lower bound.
  * <!-- end-model-doc -->
  *
  * <p>

@@ -15,6 +15,13 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
  * A representation of the model object '<em><b>Directed Typed Port</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Directed typed port is the common super class of continuous and hybrid ports. 
+ * A directed typed port has a direction (either IN or OUT) and specifies a data type.
+ * At present, we only support primitive and array data types, where the array elements
+ * need to have a primitive type.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -39,7 +46,7 @@ public interface DirectedTypedPort extends Port, TypedNamedElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Decides the direction of a continous port.
+	 * Defines the direction of this directed typed port.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.component.PortDirectionKind
@@ -71,7 +78,8 @@ public interface DirectedTypedPort extends Port, TypedNamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Decides if this port is optional.
+	 * Decides if this port is optional. An optional port does not need to be instantiated
+	 * in all instances of the containing component.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Optional</em>' attribute.
 	 * @see #setOptional(boolean)
@@ -115,6 +123,10 @@ public interface DirectedTypedPort extends Port, TypedNamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A initialize expression specifies the initial value that is emitted by the port after
+	 * it has been instantiated. Thus, we only provide initialize expressions for out-port.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Initialize Expression</em>' containment reference.
 	 * @see #setInitializeExpression(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDirectedTypedPort_InitializeExpression()

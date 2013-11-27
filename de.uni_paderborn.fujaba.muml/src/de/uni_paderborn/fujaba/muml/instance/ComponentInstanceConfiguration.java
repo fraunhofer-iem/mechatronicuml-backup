@@ -103,6 +103,13 @@ public interface ComponentInstanceConfiguration extends NamedElement, Commentabl
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A structured component instance embeds a component instance configuration
+	 * that defines its inner structure. For such component instance configuration,
+	 * this reference points to the containing structured component instance. If this
+	 * component instance configuration is not contained in a structured component
+	 * instance, this reference is null.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parent Structured Component Instance</em>' container reference.
 	 * @see #setParentStructuredComponentInstance(StructuredComponentInstance)
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration_ParentStructuredComponentInstance()

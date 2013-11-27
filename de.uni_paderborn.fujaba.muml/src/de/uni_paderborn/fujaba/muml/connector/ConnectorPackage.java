@@ -23,6 +23,11 @@ import org.storydriven.core.CorePackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package defines a set a abstract classes that form the basis for all connectors
+ * that we use in our meta-model. They define the connectors, different types of 
+ * endpoint that are connected by connectors, and their instances.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.connector.ConnectorFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
