@@ -100,7 +100,10 @@ helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort, inout th
 helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout theRootNode : RootNode, inout component : AtomicComponent){
 	-- create component RTSC if it does not exists yet
 	if (component.behavior.oclIsUndefined()) then{
-		component.behavior := new RealtimeStatechart(component.name);
+		var behavior := new RealtimeStatechart(component.name);
+		var category : ModelElementCategory := getRTSCCategory(theRootNode);
+		category.modelElements += behavior;
+		component.behavior := behavior;
 	} endif;
 
 	-- hook into component RTSC
