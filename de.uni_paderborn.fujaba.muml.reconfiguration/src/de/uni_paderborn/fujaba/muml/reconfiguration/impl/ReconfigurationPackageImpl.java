@@ -55,6 +55,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.Signature;
 import de.uni_paderborn.fujaba.muml.reconfiguration.StructuralCondition;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ExpressionPackageImpl;
+import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.ProtocolinstantiationPackageImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.impl.StructdatatypePackageImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.util.ReconfigurationValidator;
@@ -312,16 +314,19 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		// Obtain or create and register interdependencies
 		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
 		StructdatatypePackageImpl theStructdatatypePackage = (StructdatatypePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(StructdatatypePackage.eNS_URI) instanceof StructdatatypePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(StructdatatypePackage.eNS_URI) : StructdatatypePackage.eINSTANCE);
+		ProtocolinstantiationPackageImpl theProtocolinstantiationPackage = (ProtocolinstantiationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolinstantiationPackage.eNS_URI) instanceof ProtocolinstantiationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolinstantiationPackage.eNS_URI) : ProtocolinstantiationPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theReconfigurationPackage.createPackageContents();
 		theExpressionPackage.createPackageContents();
 		theStructdatatypePackage.createPackageContents();
+		theProtocolinstantiationPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theReconfigurationPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
 		theStructdatatypePackage.initializePackageContents();
+		theProtocolinstantiationPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -1183,6 +1188,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		// Obtain other dependent packages
 		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 		StructdatatypePackage theStructdatatypePackage = (StructdatatypePackage)EPackage.Registry.INSTANCE.getEPackage(StructdatatypePackage.eNS_URI);
+		ProtocolinstantiationPackage theProtocolinstantiationPackage = (ProtocolinstantiationPackage)EPackage.Registry.INSTANCE.getEPackage(ProtocolinstantiationPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
@@ -1195,6 +1201,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		// Add subpackages
 		getESubpackages().add(theExpressionPackage);
 		getESubpackages().add(theStructdatatypePackage);
+		getESubpackages().add(theProtocolinstantiationPackage);
 
 		// Create type parameters
 

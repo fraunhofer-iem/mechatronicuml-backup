@@ -133,5 +133,19 @@
             ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//structdatatype/Reference/type"/>
       </genClasses>
     </nestedGenPackages>
+    <nestedGenPackages prefix="Protocolinstantiation" basePackage="de.uni_paderborn.fujaba.muml.reconfiguration"
+        disposableProviderFactory="true" ecorePackage="MumlReconfiguration.ecore#//protocolinstantiation">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPortKind">
+        <genEnumLiterals ecoreEnumLiteral="MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPortKind/DISCOVERY"/>
+        <genEnumLiterals ecoreEnumLiteral="MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPortKind/PROTOCOL_INSTANTIATION"/>
+      </genEnums>
+      <genClasses ecoreClass="MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPort">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPort/specification"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPort/kind"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="MumlReconfiguration.ecore#//protocolinstantiation/BroadcastPortSpecification"/>
+      <genClasses ecoreClass="MumlReconfiguration.ecore#//protocolinstantiation/ProtocolInstantiationPortSpecification"/>
+      <genClasses ecoreClass="MumlReconfiguration.ecore#//protocolinstantiation/DiscoveryPortSpecification"/>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

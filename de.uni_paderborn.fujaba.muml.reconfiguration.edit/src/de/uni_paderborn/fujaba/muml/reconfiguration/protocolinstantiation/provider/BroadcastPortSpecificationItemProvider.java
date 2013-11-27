@@ -1,38 +1,41 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.reconfiguration.provider;
+package de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.provider;
 
+
+import de.uni_paderborn.fujaba.muml.reconfiguration.provider.MumlReconfigurationEditPlugin;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
 import org.storydriven.core.CorePackage;
+
+import org.storydriven.core.provider.ExtendableElementItemProvider;
+
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
+
 import org.storydriven.storydiagrams.calls.CallsFactory;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.provider.AtomicComponentItemProvider;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent;
-import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
-import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationFactory;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPortSpecification} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ReconfigurableAtomicComponentItemProvider
-	extends AtomicComponentItemProvider
+public class BroadcastPortSpecificationItemProvider
+	extends ExtendableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -45,7 +48,7 @@ public class ReconfigurableAtomicComponentItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReconfigurableAtomicComponentItemProvider(AdapterFactory adapterFactory) {
+	public BroadcastPortSpecificationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -65,17 +68,6 @@ public class ReconfigurableAtomicComponentItemProvider
 	}
 
 	/**
-	 * This returns ReconfigurableAtomicComponent.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ReconfigurableAtomicComponent"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,10 +75,7 @@ public class ReconfigurableAtomicComponentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReconfigurableAtomicComponent)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ReconfigurableAtomicComponent_type") :
-			getString("_UI_ReconfigurableAtomicComponent_type") + " " + label;
+		return getString("_UI_BroadcastPortSpecification_type");
 	}
 	
 
@@ -123,26 +112,6 @@ public class ReconfigurableAtomicComponentItemProvider
 			(createChildParameter
 				(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION,
 				 CallsFactory.eINSTANCE.createParameterExtension()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationMessagePort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createReconfigurationExecutionPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationCommunicationPort()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentPackage.Literals.COMPONENT__PORTS,
-				 ProtocolinstantiationFactory.eINSTANCE.createBroadcastPort()));
 	}
 
 	/**

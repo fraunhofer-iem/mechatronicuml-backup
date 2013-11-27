@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProvider;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationFactory;
+import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableComponent} object.
@@ -129,6 +130,11 @@ public class ReconfigurableComponentItemProvider
 			(createChildParameter
 				(ComponentPackage.Literals.COMPONENT__PORTS,
 				 ReconfigurationFactory.eINSTANCE.createInternalReconfigurationCommunicationPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentPackage.Literals.COMPONENT__PORTS,
+				 ProtocolinstantiationFactory.eINSTANCE.createBroadcastPort()));
 	}
 
 	/**

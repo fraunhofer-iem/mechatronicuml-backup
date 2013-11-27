@@ -380,4 +380,23 @@
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType"/>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="protocolinstantiation" nsURI="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0"
+      nsPrefix="protocolinstantiation">
+    <eClassifiers xsi:type="ecore:EClass" name="BroadcastPort" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/Port ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="specification" lowerBound="1"
+          eType="#//protocolinstantiation/BroadcastPortSpecification" unsettable="true"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1"
+          eType="#//protocolinstantiation/BroadcastPortKind" defaultValueLiteral="DISCOVERY"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BroadcastPortSpecification" abstract="true"
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="BroadcastPortKind">
+      <eLiterals name="DISCOVERY"/>
+      <eLiterals name="PROTOCOL_INSTANTIATION" value="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProtocolInstantiationPortSpecification"
+        eSuperTypes="#//protocolinstantiation/BroadcastPortSpecification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DiscoveryPortSpecification" eSuperTypes="#//protocolinstantiation/BroadcastPortSpecification"/>
+  </eSubpackages>
 </ecore:EPackage>

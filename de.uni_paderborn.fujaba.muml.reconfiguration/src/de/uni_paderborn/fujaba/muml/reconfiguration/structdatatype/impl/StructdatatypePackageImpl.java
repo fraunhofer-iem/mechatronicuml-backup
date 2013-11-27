@@ -25,6 +25,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl.ExpressionPackageImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl;
+import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage;
+import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl.ProtocolinstantiationPackageImpl;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference;
 import de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructType;
@@ -123,16 +125,19 @@ public class StructdatatypePackageImpl extends EPackageImpl implements Structdat
 		// Obtain or create and register interdependencies
 		ReconfigurationPackageImpl theReconfigurationPackage = (ReconfigurationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI) instanceof ReconfigurationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI) : ReconfigurationPackage.eINSTANCE);
 		ExpressionPackageImpl theExpressionPackage = (ExpressionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) instanceof ExpressionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI) : ExpressionPackage.eINSTANCE);
+		ProtocolinstantiationPackageImpl theProtocolinstantiationPackage = (ProtocolinstantiationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ProtocolinstantiationPackage.eNS_URI) instanceof ProtocolinstantiationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ProtocolinstantiationPackage.eNS_URI) : ProtocolinstantiationPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theStructdatatypePackage.createPackageContents();
 		theReconfigurationPackage.createPackageContents();
 		theExpressionPackage.createPackageContents();
+		theProtocolinstantiationPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theStructdatatypePackage.initializePackageContents();
 		theReconfigurationPackage.initializePackageContents();
 		theExpressionPackage.initializePackageContents();
+		theProtocolinstantiationPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theStructdatatypePackage.freeze();
