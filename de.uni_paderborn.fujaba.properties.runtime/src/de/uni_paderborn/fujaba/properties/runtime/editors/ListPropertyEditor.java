@@ -185,6 +185,9 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 				move(1);
 			}
 		});
+		
+		tableViewer.setInput(value);
+		tableViewer.setSelection(new StructuredSelection());
 	}
 	
 	@Override
