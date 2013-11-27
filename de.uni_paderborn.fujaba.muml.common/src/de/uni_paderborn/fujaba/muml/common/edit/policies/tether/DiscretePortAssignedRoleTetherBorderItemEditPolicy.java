@@ -28,15 +28,18 @@ public class DiscretePortAssignedRoleTetherBorderItemEditPolicy
 		getHost().getViewer().getVisualPartMap().put(getConnection(), getHost());
 
 		// Set initial tether visibility
-		boolean tetherVisible = getSemanticElement().eGet(
-				ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE) != null;
-		getConnection().setVisible(tetherVisible);
-		
-		// Add notification listener
-		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
-		if (diagramEventBroker != null) {
-			diagramEventBroker.addNotificationListener(getSemanticElement(),
-					ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE, this);
+		EObject semanticElement = getSemanticElement();
+		if (semanticElement != null) {
+			boolean tetherVisible = semanticElement.eGet(
+					ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE) != null;
+			getConnection().setVisible(tetherVisible);
+			
+			// Add notification listener
+			DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
+			if (diagramEventBroker != null) {
+				diagramEventBroker.addNotificationListener(semanticElement,
+						ComponentPackage.Literals.DISCRETE_PORT__REFINED_ROLE, this);
+			}
 		}
 	}
 
