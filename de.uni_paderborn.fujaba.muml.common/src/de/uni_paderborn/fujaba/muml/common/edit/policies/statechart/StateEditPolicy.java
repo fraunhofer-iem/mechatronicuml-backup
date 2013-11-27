@@ -126,7 +126,7 @@ public class StateEditPolicy extends NotifyingGraphicalEditPolicy {
 	}
 	
 	public int getBorderItemUpperOffset() {
-		if (getState().isInitial()) {
+		if (getState() != null && getState().isInitial()) {
 			return INITIAL_STATE_MARGIN_TOP;
 		}
 		return 0;
@@ -156,7 +156,7 @@ public class StateEditPolicy extends NotifyingGraphicalEditPolicy {
 	 */
 	public PointList getPolygonPoints(NodeFigure nodeFigure) {
 		int verticalOffset = 0;
-		if (getState().isInitial()) {
+		if (getState() != null && getState().isInitial()) {
 			verticalOffset = INITIAL_STATE_MARGIN_TOP;
 		}
 

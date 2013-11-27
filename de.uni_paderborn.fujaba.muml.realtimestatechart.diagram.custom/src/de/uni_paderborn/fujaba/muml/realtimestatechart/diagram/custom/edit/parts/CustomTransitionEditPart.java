@@ -57,6 +57,10 @@ public class CustomTransitionEditPart extends TransitionEditPart {
 		// Update visualiation
 		Transition transition = (Transition) resolveSemanticElement();
 		CustomTransitionFigure figure = ((CustomTransitionFigure) getFigure());
+		if (transition == null || figure == null) {
+			return;
+		}
+
 		figure.setPriority(transition.getPriority());
 		figure.showPriority(transition.getSource() instanceof State);
 		
@@ -85,6 +89,10 @@ public class CustomTransitionEditPart extends TransitionEditPart {
 	private void updateUrgent() {
 		Transition transition = (Transition) getNotationView().getElement();
 		CustomTransitionFigure figure = ((CustomTransitionFigure) getFigure());
+		if (transition == null || figure == null) {
+			return;
+		}
+		
 		if (transition.isUrgent()) {
 			figure.setLineStyle(org.eclipse.swt.SWT.LINE_SOLID);
 		} else {

@@ -224,10 +224,7 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 	}
 	
 	private void initDataTypes(EObject object) {
-		while (!(object instanceof RootNode)) {
-			object = object.eContainer();
-		}
-		RootNode rootNode = (RootNode) object;
+		RootNode rootNode = (RootNode) object.eResource().getContents().get(0);
 		typeList = new ArrayList<DataType>();
 		ModelElementCategory modelElementCategory = ModelInstancePlugin.getInstance()
 				.getModelElementCategoryRegistry()
