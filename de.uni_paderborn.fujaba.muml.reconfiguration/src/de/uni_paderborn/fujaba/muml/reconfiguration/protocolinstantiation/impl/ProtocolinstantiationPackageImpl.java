@@ -321,6 +321,28 @@ public class ProtocolinstantiationPackageImpl extends EPackageImpl implements Pr
 		initEEnum(broadcastPortKindEEnum, BroadcastPortKind.class, "BroadcastPortKind");
 		addEEnumLiteral(broadcastPortKindEEnum, BroadcastPortKind.DISCOVERY);
 		addEEnumLiteral(broadcastPortKindEEnum, BroadcastPortKind.PROTOCOL_INSTANTIATION);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });
 	}
 
 } //ProtocolinstantiationPackageImpl

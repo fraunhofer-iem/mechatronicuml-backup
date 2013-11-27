@@ -9,6 +9,11 @@ import org.storydriven.core.ExtendableElement;
  * A representation of the model object '<em><b>Broadcast Port Specification</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class defines additional attributes for a broadcast port that depend on the
+ * kind of the broadcast port.
+ * <!-- end-model-doc -->
+ *
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage#getBroadcastPortSpecification()
  * @model abstract="true"

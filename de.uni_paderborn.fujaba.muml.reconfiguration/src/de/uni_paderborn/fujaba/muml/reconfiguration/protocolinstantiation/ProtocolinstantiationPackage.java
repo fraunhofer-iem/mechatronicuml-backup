@@ -22,8 +22,14 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package contains classes for specifying the broadcast message exchange that 
+ * is required for setting up a connection between two autonomous mechatronic
+ * systems.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface ProtocolinstantiationPackage extends EPackage {

@@ -13,6 +13,12 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Broadcast Port Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This enumeration defines all possible kinds of broadcast ports that we allow for
+ * MechatronicUML. Currently, we only allow for two kinds of broadcast ports.
+ * These are (1) broadcast ports that run a discovery protocol and (2) broadcast 
+ * ports that are used to instantiate a real-time coordination protocol.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage#getBroadcastPortKind()
  * @model
  * @generated

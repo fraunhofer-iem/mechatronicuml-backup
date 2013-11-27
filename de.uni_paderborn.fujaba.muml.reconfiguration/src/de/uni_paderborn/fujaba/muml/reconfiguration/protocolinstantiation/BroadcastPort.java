@@ -10,6 +10,17 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
  * A representation of the model object '<em><b>Broadcast Port</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A broadcast port is a discrete interaction endpoint that enables for the message
+ * based communication with an unknown number of other systems. A message
+ * send via a broadcast port is received by any other broadcast port that is "in reach".
+ * Whether a broadcast port is "in reach" depends on the spatial distribution of
+ * the systems and the communication medium. MechatronicUML allows 
+ * broadcast communication only for two purposes: (1) executing a discovery protocol
+ * that enables to identify systems that are in reach and (2) instantiating a 
+ * real-time coordination protocol with another system.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -31,6 +42,10 @@ public interface BroadcastPort extends Port, DiscreteInteractionEndpoint {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The specification of this broadcast port defines attributes that differ between 
+	 * the different kinds of ports.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Specification</em>' containment reference.
 	 * @see #isSetSpecification()
 	 * @see #unsetSpecification()
@@ -86,6 +101,11 @@ public interface BroadcastPort extends Port, DiscreteInteractionEndpoint {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines the kind of broadcast port. The kind either denotes that this port executes
+	 * a discovery protocol or that it is used for instantiating real-time coordination 
+	 * protocols.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Kind</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.BroadcastPortKind
 	 * @see #setKind(BroadcastPortKind)
