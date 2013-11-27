@@ -65,6 +65,7 @@ public class PositionSelectorItemProvider
 			super.getPropertyDescriptors(object);
 
 			addKindPropertyDescriptor(object);
+			addSuccessorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,28 @@ public class PositionSelectorItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Successor feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSuccessorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PositionSelector_successor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PositionSelector_successor_feature", "_UI_PositionSelector_type"),
+				 ActionlanguagePackage.Literals.POSITION_SELECTOR__SUCCESSOR,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

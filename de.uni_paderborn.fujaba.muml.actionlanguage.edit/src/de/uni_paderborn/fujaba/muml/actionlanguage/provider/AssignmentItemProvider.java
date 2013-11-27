@@ -68,7 +68,9 @@ public class AssignmentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAssignOperatorPropertyDescriptor(object);
+			addRhs_assignExpressionPropertyDescriptor(object);
 			addIncrementDecrementOperatorPropertyDescriptor(object);
+			addLhs_typedNamedElementExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -96,6 +98,28 @@ public class AssignmentItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Rhs assign Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRhs_assignExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Assignment_rhs_assignExpression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Assignment_rhs_assignExpression_feature", "_UI_Assignment_type"),
+				 ActionlanguagePackage.Literals.ASSIGNMENT__RHS_ASSIGN_EXPRESSION,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Increment Decrement Operator feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,6 +137,28 @@ public class AssignmentItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Lhs typed Named Element Expression feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLhs_typedNamedElementExpressionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Assignment_lhs_typedNamedElementExpression_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Assignment_lhs_typedNamedElementExpression_feature", "_UI_Assignment_type"),
+				 ActionlanguagePackage.Literals.ASSIGNMENT__LHS_TYPED_NAMED_ELEMENT_EXPRESSION,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

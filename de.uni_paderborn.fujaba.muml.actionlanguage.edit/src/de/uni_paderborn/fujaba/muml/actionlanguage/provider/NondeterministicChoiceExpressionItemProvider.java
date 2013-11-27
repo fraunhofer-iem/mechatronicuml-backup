@@ -59,9 +59,32 @@ public class NondeterministicChoiceExpressionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRangePropertyDescriptor(object);
 			addDataTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Range feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRangePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NondeterministicChoiceExpression_range_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NondeterministicChoiceExpression_range_feature", "_UI_NondeterministicChoiceExpression_type"),
+				 ActionlanguagePackage.Literals.NONDETERMINISTIC_CHOICE_EXPRESSION__RANGE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

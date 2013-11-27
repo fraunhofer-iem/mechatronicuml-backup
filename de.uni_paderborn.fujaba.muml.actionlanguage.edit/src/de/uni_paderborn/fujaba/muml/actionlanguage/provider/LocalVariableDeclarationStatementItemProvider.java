@@ -63,9 +63,32 @@ public class LocalVariableDeclarationStatementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addVariablePropertyDescriptor(object);
 			addAllSurroundingBlocksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Variable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVariablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalVariableDeclarationStatement_variable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalVariableDeclarationStatement_variable_feature", "_UI_LocalVariableDeclarationStatement_type"),
+				 ActionlanguagePackage.Literals.LOCAL_VARIABLE_DECLARATION_STATEMENT__VARIABLE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -65,8 +66,123 @@ public class IfStatementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIfConditionPropertyDescriptor(object);
+			addIfBlockPropertyDescriptor(object);
+			addElseIfConditionsPropertyDescriptor(object);
+			addElseIfBlocksPropertyDescriptor(object);
+			addElseBlockPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the If Condition feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIfConditionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IfStatement_ifCondition_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_ifCondition_feature", "_UI_IfStatement_type"),
+				 ActionlanguagePackage.Literals.IF_STATEMENT__IF_CONDITION,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the If Block feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIfBlockPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IfStatement_ifBlock_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_ifBlock_feature", "_UI_IfStatement_type"),
+				 ActionlanguagePackage.Literals.IF_STATEMENT__IF_BLOCK,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Else If Conditions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addElseIfConditionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IfStatement_elseIfConditions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_elseIfConditions_feature", "_UI_IfStatement_type"),
+				 ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_CONDITIONS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Else If Blocks feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addElseIfBlocksPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IfStatement_elseIfBlocks_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_elseIfBlocks_feature", "_UI_IfStatement_type"),
+				 ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_IF_BLOCKS,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Else Block feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addElseBlockPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IfStatement_elseBlock_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_elseBlock_feature", "_UI_IfStatement_type"),
+				 ActionlanguagePackage.Literals.IF_STATEMENT__ELSE_BLOCK,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

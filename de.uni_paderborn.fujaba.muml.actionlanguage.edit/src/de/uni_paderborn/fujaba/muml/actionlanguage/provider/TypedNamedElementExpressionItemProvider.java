@@ -66,6 +66,7 @@ public class TypedNamedElementExpressionItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTypedNamedElementPropertyDescriptor(object);
+			addIndicesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,28 @@ public class TypedNamedElementExpressionItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Indices feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIndicesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_TypedNamedElementExpression_indices_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TypedNamedElementExpression_indices_feature", "_UI_TypedNamedElementExpression_type"),
+				 ActionlanguagePackage.Literals.TYPED_NAMED_ELEMENT_EXPRESSION__INDICES,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));

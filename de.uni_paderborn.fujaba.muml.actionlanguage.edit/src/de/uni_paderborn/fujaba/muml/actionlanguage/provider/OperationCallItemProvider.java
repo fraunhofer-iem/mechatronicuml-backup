@@ -64,6 +64,7 @@ public class OperationCallItemProvider
 			super.getPropertyDescriptors(object);
 
 			addOperationPropertyDescriptor(object);
+			addParameterBindingPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +86,28 @@ public class OperationCallItemProvider
 				 true,
 				 false,
 				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Parameter Binding feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addParameterBindingPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OperationCall_parameterBinding_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OperationCall_parameterBinding_feature", "_UI_OperationCall_type"),
+				 ActionlanguagePackage.Literals.OPERATION_CALL__PARAMETER_BINDING,
+				 true,
+				 false,
+				 false,
 				 null,
 				 null,
 				 null));
