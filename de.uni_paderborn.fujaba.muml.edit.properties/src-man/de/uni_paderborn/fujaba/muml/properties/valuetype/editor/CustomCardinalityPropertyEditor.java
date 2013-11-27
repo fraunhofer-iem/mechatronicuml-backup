@@ -41,12 +41,14 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 		label = toolkit.createLabel(parent, getLabelText());
 		installTooltip(label);
 		if (parent.getLayout() instanceof GridLayout) {
-			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
+			label.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 		}
 		int style = toolkit.getBorderStyle() | SWT.BORDER;
 		
 		Composite container = new Composite(parent, SWT.NONE);
-		container.setLayout(new GridLayout(3, false));		
+		GridLayout containerLayout = new GridLayout(3, false);
+		containerLayout.marginWidth = containerLayout.marginHeight = 0;
+		container.setLayout(containerLayout);		
 		if (parent.getLayout() instanceof GridLayout) {
 			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
 			container.setLayoutData(gridData);
