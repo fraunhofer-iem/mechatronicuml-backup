@@ -43,6 +43,10 @@ public interface ReconfigurationMessagePort extends ReconfigurationPort {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The interface entries of this reconfiguration message port. The interface entries
+	 * define which messages the port may send and what kind of message is sent.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Interface Entries</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationMessagePort_InterfaceEntries()
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePortInterfaceEntry#getReconfigurationMessagePort

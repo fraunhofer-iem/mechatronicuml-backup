@@ -14,7 +14,10 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Each ReconfigurationMessagePortInterfaceEntry defines one reconfiguration message that is sent by a component to its parent. In addition to the message, it defines the ReconfigurationmessageType and, in case that it is a request, the expected response time for the parent.
+ * Each ReconfigurationMessagePortInterfaceEntry defines one reconfiguration 
+ * message that is sent by a component to its parent. In addition to the message, 
+ * it defines the ReconfigurationMessageType and, in case that it is a request, 
+ * the expected response time for the parent.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -40,6 +43,10 @@ public interface ReconfigurationMessagePortInterfaceEntry extends Reconfiguratio
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Defines whether the message is an info message or a request. A request needs
+	 * to be answered by the parent within the expected response time.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Reconfiguration Message Type</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum
 	 * @see #setReconfigurationMessageType(ReconfigurationMessageTypeEnum)
@@ -68,6 +75,11 @@ public interface ReconfigurationMessagePortInterfaceEntry extends Reconfiguratio
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If the message is a request, then the expected response time denotes how long 
+	 * the parent has time to answer the request. For an info message, no answer of
+	 * the parent is sent and, consequently, no expected response time is specified.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Expected Response Time</em>' containment reference.
 	 * @see #setExpectedResponseTime(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationMessagePortInterfaceEntry_ExpectedResponseTime()
@@ -95,6 +107,9 @@ public interface ReconfigurationMessagePortInterfaceEntry extends Reconfiguratio
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The reconfiguration message port that contains this interface entry.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Reconfiguration Message Port</em>' container reference.
 	 * @see #setReconfigurationMessagePort(ReconfigurationMessagePort)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationMessagePortInterfaceEntry_ReconfigurationMessagePort()

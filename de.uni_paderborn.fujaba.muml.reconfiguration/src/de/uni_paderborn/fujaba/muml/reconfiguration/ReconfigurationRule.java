@@ -16,7 +16,9 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A reconfiguration rule describes a modification of the internal structure of a reconfigurable structured component or of a reconfigurable atomic component. It has a Signature that defines the name of the reconfiguration rule as well as its input and output parameters.
+ * A reconfiguration rule describes a modification of the internal structure of a 
+ * reconfigurable component. It has a Signature that defines the name of the 
+ * reconfiguration rule as well as its input and output parameters.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -42,6 +44,9 @@ public interface ReconfigurationRule extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The component on which the reconfiguration rule is to be applied.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Reconfigured Component</em>' reference.
 	 * @see #setReconfiguredComponent(ReconfigurableComponent)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationRule_ReconfiguredComponent()
@@ -68,6 +73,11 @@ public interface ReconfigurationRule extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The worst-case execution time of this reconfiguration rule. The worst-case 
+	 * execution time defines an upper bound on how long the execution of this
+	 * reconfiguration rule may take.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Wcet</em>' containment reference.
 	 * @see #setWcet(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationRule_Wcet()
@@ -95,6 +105,10 @@ public interface ReconfigurationRule extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The signature of the reconfiguration rule that defines the name as well as the
+	 * input and output parameters of this reconfiguration rule.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Signature</em>' containment reference.
 	 * @see #setSignature(Signature)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationRule_Signature()
@@ -122,6 +136,9 @@ public interface ReconfigurationRule extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Derives the name of the reconfiguration rule from the signature.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationRule_Name()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"

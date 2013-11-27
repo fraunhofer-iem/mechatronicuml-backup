@@ -17,7 +17,11 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The class Signature defines the signature of a ReconfigurationRule. It defines the name of the ReconfigurationRule and its input and output parameters.
+ * The class Signature defines the signature of a ReconfigurationRule. 
+ * It defines the name of the ReconfigurationRule and its input and 
+ * output parameters. When calling the reconfiguration rule, concrete values 
+ * need to be provided for all input parameters. After the rule has been executed,
+ * values are bound to the output parameters.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -43,6 +47,9 @@ public interface Signature extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of input parameters of the reconfiguration rule.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getSignature_Parameters()
 	 * @model containment="true"
@@ -59,6 +66,9 @@ public interface Signature extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of output parameters of the reconfiguration rule.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Return Parameters</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getSignature_ReturnParameters()
 	 * @model containment="true"
@@ -75,6 +85,9 @@ public interface Signature extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The reconfiguration rule that the signature belongs to.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Reconfiguration Rule</em>' container reference.
 	 * @see #setReconfigurationRule(ReconfigurationRule)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getSignature_ReconfigurationRule()

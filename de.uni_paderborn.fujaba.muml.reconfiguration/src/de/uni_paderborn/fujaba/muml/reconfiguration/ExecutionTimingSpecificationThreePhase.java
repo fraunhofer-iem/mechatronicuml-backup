@@ -9,6 +9,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * A representation of the model object '<em><b>Execution Timing Specification Three Phase</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Defines the time for executing a reconfiguration according to three-phase
+ * execution. Consequently, it specifies three time values: one for each phase.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -31,6 +36,9 @@ public interface ExecutionTimingSpecificationThreePhase extends ExecutionTimingS
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The time needed for executing the setup phase.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Time For Setup</em>' containment reference.
 	 * @see #setTimeForSetup(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutionTimingSpecificationThreePhase_TimeForSetup()
@@ -57,6 +65,9 @@ public interface ExecutionTimingSpecificationThreePhase extends ExecutionTimingS
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The time needed for executing the fading function.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Time For Fading</em>' containment reference.
 	 * @see #setTimeForFading(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutionTimingSpecificationThreePhase_TimeForFading()
@@ -83,6 +94,9 @@ public interface ExecutionTimingSpecificationThreePhase extends ExecutionTimingS
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The time needed for executing the teardown phase.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Time For Teardown</em>' containment reference.
 	 * @see #setTimeForTeardown(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutionTimingSpecificationThreePhase_TimeForTeardown()

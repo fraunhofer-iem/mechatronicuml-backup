@@ -18,7 +18,9 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The Executor is responsible for executing reconfigurations in a reconfigurable component. It is part of a RuleBasedReconfigurationController and defines a set of ReconfigurationRules that it can execute.
+ * The Executor is responsible for executing reconfigurations in a reconfigurable 
+ * component. It is part of a RuleBasedReconfigurationController and defines a 
+ * set of ReconfigurationRules that it can execute.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -47,6 +49,11 @@ public interface Executor extends CommentableElement, BehavioralElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * These are the specification entries that form the declarative specification of
+	 * the executor. Each of the entries defines a reconfiguration rule that the executor
+	 * can execute on the component.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Specification Entries</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutor_SpecificationEntries()
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry#getExecutor
@@ -64,6 +71,9 @@ public interface Executor extends CommentableElement, BehavioralElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The reconfiguration controller that contains this executor.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Reconfiguration Controller</em>' container reference.
 	 * @see #setReconfigurationController(RuleBasedReconfigurationController)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutor_ReconfigurationController()
@@ -92,6 +102,11 @@ public interface Executor extends CommentableElement, BehavioralElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ports of the executor. At present, the executor has one port implementing
+	 * the reconfiguration execution port of the parent, one multi-port for sending 
+	 * messages to the children, and one port for interacting with the manager.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ports</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutor_Ports()
 	 * @model containment="true"
@@ -108,6 +123,11 @@ public interface Executor extends CommentableElement, BehavioralElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Derives the set of reconfiguration execution ports from the ports reference. 
+	 * This reference will return the port connected to the parent and the multi-port
+	 * that sends reconfiguration messages to the embedded components.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Reconfiguration Execution Ports</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutor_ReconfigurationExecutionPorts()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"

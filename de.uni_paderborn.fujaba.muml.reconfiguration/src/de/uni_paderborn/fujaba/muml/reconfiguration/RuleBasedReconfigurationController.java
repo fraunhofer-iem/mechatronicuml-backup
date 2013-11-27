@@ -13,7 +13,10 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A RuleBasedReconfigurationController uses a declarative approach for defining the reconfiguration behavior. 
+ * A RuleBasedReconfigurationController uses a declarative approach for 
+ * defining the reconfiguration behavior. It consists of a manager and an executor.
+ * The manager decides when to execute which reconfiguration while the executor
+ * executes reconfiguration with respect to hierarchy.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -38,6 +41,10 @@ public interface RuleBasedReconfigurationController extends ReconfigurationContr
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The executor of this RuleBasedReconfigurationController that is responsible
+	 * for executing reconfigurations with respect to hierarchy.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Executor</em>' containment reference.
 	 * @see #setExecutor(Executor)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getRuleBasedReconfigurationController_Executor()
@@ -66,6 +73,10 @@ public interface RuleBasedReconfigurationController extends ReconfigurationContr
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The manager of this RuleBasedReconfigurationController that is used for 
+	 * deciding when to execute which reconfiguration.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Manager</em>' containment reference.
 	 * @see #setManager(Manager)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getRuleBasedReconfigurationController_Manager()

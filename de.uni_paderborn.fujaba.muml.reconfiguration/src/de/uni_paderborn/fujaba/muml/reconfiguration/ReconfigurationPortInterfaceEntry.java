@@ -40,6 +40,10 @@ public interface ReconfigurationPortInterfaceEntry extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A human readable description of this reconfiguration port interface entry. 
+	 * This description is to be used by a developer.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationPortInterfaceEntry_Description()
@@ -66,6 +70,10 @@ public interface ReconfigurationPortInterfaceEntry extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The reconfiguration message type that is specified by the reconfiguration 
+	 * port interface entry.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Type</em>' reference.
 	 * @see #setMessageType(MessageType)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationPortInterfaceEntry_MessageType()

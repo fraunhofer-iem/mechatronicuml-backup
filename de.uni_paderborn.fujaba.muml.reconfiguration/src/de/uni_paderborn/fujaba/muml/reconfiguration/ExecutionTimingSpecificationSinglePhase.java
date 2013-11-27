@@ -9,6 +9,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * A representation of the model object '<em><b>Execution Timing Specification Single Phase</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Defines the time for executing a reconfiguration according to single-phase
+ * execution. Consequently, it only provides one time value.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -29,6 +34,9 @@ public interface ExecutionTimingSpecificationSinglePhase extends ExecutionTiming
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The time necessary for executing a reconfiguration.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Time For Execution</em>' containment reference.
 	 * @see #setTimeForExecution(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutionTimingSpecificationSinglePhase_TimeForExecution()

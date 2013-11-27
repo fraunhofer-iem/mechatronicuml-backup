@@ -18,7 +18,11 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A StructuralCondition is a condition on the embedded component instances of a reconfigurable structured component instance that is used by a ManagerSpecificationEntry for deciding whether a reconfiguration may be executed.
+ * A StructuralCondition is a condition on the embedded component instances 
+ * of a reconfigurable structured component instance that is used by a 
+ * ManagerSpecificationEntry for deciding whether a reconfiguration may be 
+ * executed. For an atomic component, the structural condition only considers
+ * the ports of the component.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -42,6 +46,9 @@ public interface StructuralCondition extends NamedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Input parameters provided to the structural condition.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getStructuralCondition_Parameters()
 	 * @model containment="true"

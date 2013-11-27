@@ -15,7 +15,13 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A component uses its ReconfigurationExecutionPorts for offering reconfiguration operations to its parent. The parent may trigger a reconfiguration operation on a child by sending a reconfiguration message to the ReconfigurationExecutionPort of that child. Thus, ReconfigurationExecutionPorts  are primarily used for top-down reconfiguration initiation. They are implemented by the Executor if a RuleBasedReconfigurationController is used.
+ * A component uses its ReconfigurationExecutionPorts for offering 
+ * reconfiguration operations to its parent. The parent may trigger a 
+ * reconfiguration operation on a child by sending a reconfiguration 
+ * message to the ReconfigurationExecutionPort of that child. Thus, 
+ * ReconfigurationExecutionPorts  are primarily used for top-down 
+ * reconfiguration initiation. They are implemented by the Executor 
+ * if a RuleBasedReconfigurationController is used.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -41,6 +47,10 @@ public interface ReconfigurationExecutionPort extends ReconfigurationPort {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The interface entries of this reconfiguration execution port. Each interface entry
+	 * specifies one reconfiguration message that is offered to the parent.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Interface Entries</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPort_InterfaceEntries()
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPortInterfaceEntry#getReconfigurationExecutionPort

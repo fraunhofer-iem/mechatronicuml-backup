@@ -10,7 +10,9 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
  *
  * <!-- begin-model-doc -->
  * An InternalReconfigurationCommunicationPort is used for the interaction
- * of manager and executor within a structured component. 
+ * of manager and executor within a structured component. We do not use
+ * DiscretePorts for this interaction, because the behavior is generated and does
+ * not utilize a real-time coordination protocol.
  * <!-- end-model-doc -->
  *
  *

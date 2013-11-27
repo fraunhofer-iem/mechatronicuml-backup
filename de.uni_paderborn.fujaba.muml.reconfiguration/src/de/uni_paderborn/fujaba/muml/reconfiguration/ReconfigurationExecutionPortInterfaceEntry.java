@@ -14,8 +14,11 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Each ReconfigurationExecutionPortInterfaceEntry defines one reconfiguration message that may be sent by the parent component to initiate a reconfiguration on the component. 
- * In addition to the message, it defines the duration for deciding whether the requested reconfiguration can be executed and the duration for executing the reconfiguration.
+ * Each ReconfigurationExecutionPortInterfaceEntry defines one reconfiguration 
+ * message that may be sent by the parent component to initiate a reconfiguration
+ *  on the component. In addition to the message, it defines the duration for 
+ * deciding whether the requested reconfiguration can be executed and the 
+ * duration for executing the reconfiguration.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -41,6 +44,10 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The time that is needed by the component for deciding whether the reconfiguration
+	 * that is offered by this interface entry can be executed.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Time For Decision</em>' containment reference.
 	 * @see #setTimeForDecision(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_TimeForDecision()
@@ -67,6 +74,12 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The time that is needed by the component for executing the reconfiguration
+	 * that is offered by this interface entry. The time for execution is specified an
+	 * ExecutionTimeSpecification because it depends on the particular execution
+	 * procedure. Currently, we support single-phase and three-phase execution.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Time For Execution Phase</em>' containment reference.
 	 * @see #setTimeForExecutionPhase(ExecutionTimingSpecification)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_TimeForExecutionPhase()
@@ -94,6 +107,9 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The reconfiguration execution port that contains this interface entry.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Reconfiguration Execution Port</em>' container reference.
 	 * @see #setReconfigurationExecutionPort(ReconfigurationExecutionPort)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_ReconfigurationExecutionPort()
@@ -121,6 +137,12 @@ public interface ReconfigurationExecutionPortInterfaceEntry extends Reconfigurat
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If the component confirmed to the parent that it can execute the requested
+	 * reconfiguration, the commit time denotes how long the component may stick
+	 * to that confirmation. The minimum commit time sets a lower bound to this value.
+	 * It is required for analyzing the reconfiguration behavior.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Minimum Commit Time</em>' containment reference.
 	 * @see #setMinimumCommitTime(TimeValue)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationExecutionPortInterfaceEntry_MinimumCommitTime()

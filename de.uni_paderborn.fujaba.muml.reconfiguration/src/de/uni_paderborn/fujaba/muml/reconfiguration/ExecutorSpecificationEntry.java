@@ -14,7 +14,8 @@ import org.storydriven.core.ExtendableElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An ExecutorSpecificationEntry defines a ReconfigurationRule.
+ * An ExecutorSpecificationEntry defines a ReconfigurationRule and an ID for the
+ * reconfiguration rule.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -40,6 +41,9 @@ public interface ExecutorSpecificationEntry extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The executor that contains this specification entry.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Executor</em>' container reference.
 	 * @see #setExecutor(Executor)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry_Executor()
@@ -67,6 +71,9 @@ public interface ExecutorSpecificationEntry extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The reconfiguration rule specified by this entry.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Reconfiguration Rule</em>' reference.
 	 * @see #setReconfigurationRule(ReconfigurationRule)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry_ReconfigurationRule()
@@ -94,6 +101,11 @@ public interface ExecutorSpecificationEntry extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The ID of this entry. In one executor specification, the IDs of the entries must
+	 * be uniquely identifying. Specification entries of different executors, however, 
+	 * may use the same IDs.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(int)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getExecutorSpecificationEntry_Id()

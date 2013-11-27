@@ -13,7 +13,8 @@ package de.uni_paderborn.fujaba.muml.reconfiguration;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Reconfiguration controllers encapsulate the reconfiguration behavior of a reconfigurable structured component.
+ * Reconfiguration controllers encapsulate the reconfiguration behavior of 
+ * a reconfigurable component.
  * 
  * <!-- end-model-doc -->
  *

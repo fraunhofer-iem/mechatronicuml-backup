@@ -42,6 +42,12 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent, 
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Controllers extend the functionality of a structured component with additional behavior.
+	 * In contrast to embedded components, controllers may access and modify the internal 
+	 * structure of a component. Currently, we only use reconfiguration controllers that enable
+	 * to reconfigure a component.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Controller</em>' containment reference.
 	 * @see #setController(Controller)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Controller()
@@ -69,6 +75,10 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent, 
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Convenience reference that derives the manager of a RuleBasedReconfigurationController
+	 * that belongs to this component.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Manager</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Manager()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -85,6 +95,10 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent, 
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Convenience reference that derives the executor of a RuleBasedReconfigurationController
+	 * that belongs to this component.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Executor</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_Executor()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -101,6 +115,10 @@ public interface ReconfigurableStructuredComponent extends StructuredComponent, 
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The initial configurations that are supported by this component. If a component
+	 * is instantiated, it takes of its initial configurations.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Initial Configuration</em>' reference.
 	 * @see #setInitialConfiguration(ComponentInstanceConfiguration)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurableStructuredComponent_InitialConfiguration()
