@@ -22,7 +22,9 @@ import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.Execu
 public class Activator extends AbstractUIPlugin {
 
 	public static final String ID = "de.uni_paderborn.fujaba.muml.component.diagram.custom"; //$NON-NLS-1$
-	
+
+	public static final String COPYTOPORT_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/CopyRolePropertiesToPort.qvto";
+
 	public static final String PART_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/part.qvto";
 	
 	public static final String EMBED_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/EmbedAsParts.qvto";

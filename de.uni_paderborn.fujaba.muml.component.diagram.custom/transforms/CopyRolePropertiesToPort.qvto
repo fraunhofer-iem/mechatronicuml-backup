@@ -57,6 +57,7 @@ helper copyRolePropertiesToPort(inout thePort : DiscretePort, inout theRootNode 
 	thePort.senderMessageTypes := senderMsgTypes;
 	
 	-- MessageBuffer Properties (just copy all MessageBuffer objects, deleting the old ones)
+	assert warning (not thePort.receiverMessageBuffer->isEmpty()) with log ("Existing MessageBuffer specification was overwritten.");
 	thePort.receiverMessageBuffer := theRole.receiverMessageBuffer;
 	
 	-- copy behavior specification
