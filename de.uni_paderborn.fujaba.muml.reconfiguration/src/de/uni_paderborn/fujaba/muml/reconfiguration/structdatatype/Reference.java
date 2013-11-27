@@ -44,6 +44,9 @@ public interface Reference extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This is the containing struct type.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Struct Type</em>' container reference.
 	 * @see #setStructType(StructType)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage#getReference_StructType()
@@ -71,6 +74,10 @@ public interface Reference extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The cardinality defines the minimum and maximum number of objects that
+	 * need to be referenced by this reference at run-time.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
 	 * @see #setCardinality(Cardinality)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage#getReference_Cardinality()
@@ -97,6 +104,10 @@ public interface Reference extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The data type of this reference. The data type needs to be another struct type
+	 * or an element of the MechatronicUML model such as a component or port.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(DataType)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage#getReference_Type()

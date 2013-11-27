@@ -41,6 +41,9 @@ public interface Attribute extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This is the containing struct type.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Struct Type</em>' container reference.
 	 * @see #setStructType(StructType)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage#getAttribute_StructType()
@@ -68,6 +71,10 @@ public interface Attribute extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The data type of this attribute. The data type needs to be a primitive data type
+	 * or an array data type, where the array only contains primitives.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(DataType)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage#getAttribute_Type()

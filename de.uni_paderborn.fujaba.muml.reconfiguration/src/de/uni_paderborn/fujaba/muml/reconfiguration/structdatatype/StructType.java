@@ -42,6 +42,11 @@ public interface StructType extends DataType {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of attributes of this struct type. An attribute either needs to have a
+	 * primitive data type or it needs to have an array datatype where the array elements
+	 * have a primitive data type.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage#getStructType_Attributes()
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Attribute#getStructType
@@ -60,6 +65,11 @@ public interface StructType extends DataType {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of references of this struct type. The type of the reference is either another
+	 * struct type or an element of the MechatronicUML model such as a component 
+	 * or a port.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>References</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage#getStructType_References()
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.Reference#getStructType

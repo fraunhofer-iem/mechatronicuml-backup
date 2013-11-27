@@ -43,6 +43,9 @@ public interface ReconfigurationRuleCallExpression extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The reconfiguration rule that is called by this expression.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Reconfiguration Rule</em>' reference.
 	 * @see #setReconfigurationRule(ReconfigurationRule)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage#getReconfigurationRuleCallExpression_ReconfigurationRule()
@@ -70,6 +73,10 @@ public interface ReconfigurationRuleCallExpression extends Expression {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The parameter bindings assign a value to each of the parameters of the 
+	 * reconfiguration rule that is called by this expression.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter Bindings</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage#getReconfigurationRuleCallExpression_ParameterBindings()
 	 * @model containment="true"

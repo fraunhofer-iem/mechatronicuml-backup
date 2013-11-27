@@ -40,6 +40,9 @@ public interface ActivityCallExpression extends Expression, Invocation {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The story diagram that is called by this expression.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Activity</em>' reference.
 	 * @see #setActivity(Activity)
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage#getActivityCallExpression_Activity()
