@@ -1,0 +1,75 @@
+
+List[String] getDiagrams(ecore::EPackage p) : 
+	JAVA JavaRSAHelper.getDiagrams(org.eclipse.emf.ecore.EPackage);
+
+List[Integer] enumLiteralValues(ecore::EEnum e) :
+	JAVA EnumLiterals.getEnumLiteralValues(org.eclipse.emf.ecore.EEnum);
+	
+String enumLiteralName(ecore::EEnum e, Integer value) :
+	JAVA EnumLiterals.getEnumLiteralName(org.eclipse.emf.ecore.EEnum, java.lang.Integer);
+	
+List[ecore::EAnnotation] enumAnnotations(ecore::EEnum e, Integer value) :
+	JAVA EnumLiterals.getEnumAnnotations(org.eclipse.emf.ecore.EEnum, java.lang.Integer);
+
+String qualifiedName(emf::EObject o) :
+	"";
+
+String qualifiedName(Object o, String delimiter) :
+	"";
+
+String qualifiedName(ecore::ENamedElement e) :
+	qualifiedName(e, "::");
+
+String qualifiedName(ecore::ENamedElement e, String delimiter) :
+	if e.eContainer != null then
+		e.eContainer.qualifiedName(delimiter) + delimiter + e.name.toString()
+	else
+		e.name;
+
+String fullIndex(ecore::ENamedElement e) :
+	if e.eContainer != null then
+		e.eContainer.qualifiedName() + "!" + e.name.toString()
+	else
+		e.name.toString();
+
+List[ecore::EString] getDocumentation(ecore::EModelElement m) :
+	m.eAnnotations.getDocumentation();
+
+List[ecore::EString] getDocumentation(ecore::EAnnotation a) :
+	if a.source.toString()=="http://www.eclipse.org/emf/2002/GenModel" then
+		a.details.select(d | d.key.toString() == "documentation").value;
+
+List[ecore::EAnnotation] getOCLAnnotations(ecore::EModelElement m) :
+	m.eAnnotations.select(a | a.source.toString()=="http://www.eclipse.org/emf/2002/Ecore/OCL");
+
+String escapeLatexString(String s) :
+    s.replaceAll("\\_","\\\\_").replaceAll("\\&","\\\\&").replaceAll("[^\\\\](_)", "\\\\_").replaceAll("\\^", "\\\\^{}");
+
+String typeName(ecore::EClassifier c) :
+	"\\todoib{ERROR: typeName(" + c.metaType + ")}";
+
+String typeName(ecore::EClass c) :
+	c.name.toString().escapeLatexString();
+
+String typeName(ecore::EEnum e) :
+	e.name.toString().escapeLatexString();
+
+String typeName(ecore::EDataType d) :
+	d.name.toString().escapeLatexString();
+
+String see(ecore::EClassifier e) :
+	if e.ePackage.nsURI == "http://www.eclipse.org/emf/2002/Ecore" then
+		""
+	else
+		"see Section~\\ref{cls:" + e.qualifiedName() + "} on Page~\\pageref{cls:"+ e.qualifiedName() + "}";
+
+	
+String toString(ecore::EString s) :
+	s;
+
+Integer toInt(ecore::EInt i) :
+	i;
+	
+Boolean toBoolean(ecore::EBoolean b) :
+	b;
+
