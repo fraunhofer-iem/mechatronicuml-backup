@@ -152,7 +152,7 @@
       <details key="documentation" value="Operation calls are used to call an operation with concrete parameter bindings. "/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="AllParametersMustBeBound" value="-- An OperationCall must bind a value to every parameter&#xA;not operation.oclIsUndefined() implies &#xA;operation.parameters = parameterBinding.parameter"/>
+      <details key="AllParametersMustBeBound" value="-- An OperationCall must bind a value to every parameter&#xA;not operation.oclIsUndefined() implies &#xA;operation.parameters->asSet() = parameterBinding.parameter->asSet()&#xA;-- author: bingo"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="AllParametersMustBeBound"/>

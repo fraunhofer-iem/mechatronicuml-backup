@@ -266,7 +266,49 @@ public class ActionlanguageValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateOperationCall(OperationCall operationCall, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(operationCall, diagnostics, context);
+		if (!validate_NoCircularContainment(operationCall, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(operationCall, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(operationCall, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(operationCall, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(operationCall, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(operationCall, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(operationCall, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(operationCall, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(operationCall, diagnostics, context);
+		if (result || diagnostics != null) result &= validateOperationCall_AllParametersMustBeBound(operationCall, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the AllParametersMustBeBound constraint of '<em>Operation Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String OPERATION_CALL__ALL_PARAMETERS_MUST_BE_BOUND__EEXPRESSION = "-- An OperationCall must bind a value to every parameter\n" +
+		"not operation.oclIsUndefined() implies \n" +
+		"operation.parameters->asSet() = parameterBinding.parameter->asSet()\n" +
+		"-- author: bingo";
+
+	/**
+	 * Validates the AllParametersMustBeBound constraint of '<em>Operation Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOperationCall_AllParametersMustBeBound(OperationCall operationCall, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ActionlanguagePackage.Literals.OPERATION_CALL,
+				 operationCall,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AllParametersMustBeBound",
+				 OPERATION_CALL__ALL_PARAMETERS_MUST_BE_BOUND__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

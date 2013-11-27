@@ -960,7 +960,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";				
+		String source = "http://www.eclipse.org/emf/2002/Ecore";			
 		addAnnotation
 		  (this, 
 		   source, 
@@ -972,7 +972,13 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		   source, 
 		   new String[] {
 			 "constraints", "ValidLHS"
-		   });																													
+		   });																		
+		addAnnotation
+		  (operationCallEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "AllParametersMustBeBound"
+		   });														
 		addAnnotation
 		  (localVariableDeclarationStatementEClass, 
 		   source, 
@@ -988,13 +994,19 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";														
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";													
 		addAnnotation
 		  (assignmentEClass, 
 		   source, 
 		   new String[] {
 			 "ValidLHS", "-- a hybrid in port is not allowed as a lhs of an assignment\nlet lhs : TypedNamedElementExpression = lhs_typedNamedElementExpression\nin\nif not lhs.oclIsUndefined() and lhs.typedNamedElement.oclIsKindOf(component::HybridPort) then\n\tlhs.typedNamedElement.oclAsType(component::HybridPort).outPort\nelse\n\ttrue\nendif"
-		   });																													
+		   });																
+		addAnnotation
+		  (operationCallEClass, 
+		   source, 
+		   new String[] {
+			 "AllParametersMustBeBound", "-- An OperationCall must bind a value to every parameter\nnot operation.oclIsUndefined() implies \noperation.parameters->asSet() = parameterBinding.parameter->asSet()\n-- author: bingo"
+		   });																
 		addAnnotation
 		  (localVariableDeclarationStatementEClass, 
 		   source, 
