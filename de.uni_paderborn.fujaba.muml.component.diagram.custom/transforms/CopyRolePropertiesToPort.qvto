@@ -96,25 +96,24 @@ helper copyBehavior(inout theRole : Role, inout thePort : DiscretePort, inout th
 	} endif;
 }
 
--- this mapping ensures that the port RTSC will be contained in the resource at the right place
+-- this mapping stores the rtsc in the component rtsc (creates the component rtsc if not yet existing)
 helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout theRootNode : RootNode, inout component : AtomicComponent){
-	-- contain in resource: either hook into component RTSC or put into the RTSC category
-	if(component.behavior.oclIsUndefined()) then{
-		var category : ModelElementCategory := getRTSCCategory(theRootNode);
-		category.modelElements += rtsc;
-	} else {
-		-- obtain component RTSC
-		var componentRTSC: RealtimeStatechart := component.behavior.oclAsType(RealtimeStatechart);
-		componentRTSC.states -> forEach(state){
-			-- search initial state and add new region containing the statechart to it
-			if(state.initial = true) then{
-				var newRegion : Region := new Region();
-				state.embeddedRegions += newRegion;
-				newRegion.embeddedStatechart := rtsc;
-			} endif;
-		}
-		
-	}endif;
+	-- create component RTSC if it does not exists yet
+	if (component.behavior.oclIsUndefined()) then{
+		component.behavior := new RealtimeStatechart(component.name);
+	} endif;
+
+	-- hook into component RTSC
+	var componentRTSC: RealtimeStatechart := component.behavior.oclAsType(RealtimeStatechart);
+	componentRTSC.states -> forEach(state){
+		-- search initial state and add new region containing the statechart to it
+		if(state.initial = true) then{
+			var newRegion : Region := new Region();
+			state.embeddedRegions += newRegion;
+			newRegion.embeddedStatechart := rtsc;
+		} endif;
+	}
+
 }
 
 -- returns the RTSC of a multi-port corresponding to the behavior RTSC of a multirole 
@@ -159,6 +158,16 @@ query getRTSCCategory(in theRootNode : RootNode) : ModelElementCategory {
 -- constructor for creating new regions
 constructor Region::Region() {
 	
+}
+
+constructor RealtimeStatechart::RealtimeStatechart(_name : String) {
+	name := _name;
+	states += new State(true, false);
+}
+
+constructor State::State(_initial : Boolean, _final : Boolean) {
+	initial := _initial;
+	final := _final;
 }
 
 -- mapping that creates an exact copy of a cardinality
