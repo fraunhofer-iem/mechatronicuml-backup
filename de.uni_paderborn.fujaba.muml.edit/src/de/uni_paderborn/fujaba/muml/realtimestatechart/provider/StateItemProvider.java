@@ -446,6 +446,7 @@ public class StateItemProvider
 			case RealtimestatechartPackage.STATE__URGENT:
 			case RealtimestatechartPackage.STATE__EVENTS:
 			case RealtimestatechartPackage.STATE__SIMPLE:
+			case RealtimestatechartPackage.STATE__ALL_AVAILABLE_CHANNELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RealtimestatechartPackage.STATE__EMBEDDED_REGIONS:

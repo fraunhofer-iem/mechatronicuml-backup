@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint.impl;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -422,7 +421,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";			
 		addAnnotation
 		  (this, 
 		   source, 
@@ -430,7 +429,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });
+		   });													
 	}
 
 	/**
@@ -440,13 +439,13 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";									
 		addAnnotation
 		  (getConstraint_Correct(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.correctness = constraint::Correctness::CORRECT"
-		   });
+		   });							
 	}
 
 } //ConstraintPackageImpl

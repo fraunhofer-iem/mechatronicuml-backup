@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.types.impl;
 
-import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
