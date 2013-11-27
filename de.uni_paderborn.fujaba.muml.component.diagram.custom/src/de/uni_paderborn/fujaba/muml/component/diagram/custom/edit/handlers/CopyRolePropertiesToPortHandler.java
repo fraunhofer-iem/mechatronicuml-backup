@@ -1,6 +1,8 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.handlers;
 
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -8,6 +10,8 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
@@ -20,12 +24,16 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
+import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.component.Port;
+import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.ExecuteQvtoTransformationCommand;
+import de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 
@@ -53,6 +61,7 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 						.getElement();
 
 				Role role = port.getRefinedRole();
+				boolean hadReceiverMessageBuffer = !port.getReceiverMessageBuffer().isEmpty();
 				if (role == null) {
 					MessageDialog
 							.openInformation(window.getShell(),
@@ -67,9 +76,13 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 									"The multi Role needs to specify a \"RoleAndAdaptationBehavior\".");
 
 				} else {
-					ICommandProxy cmd = new ICommandProxy(new PortChangeCommand(
-							editPart.getEditingDomain(), port));
-					cmd.execute();
+					updatePort(editPart.getEditingDomain(), port);
+					if (hadReceiverMessageBuffer) {
+						MessageDialog
+							.openInformation(window.getShell(),
+									"Transformation Report",
+									"Role properties have been successfully copied to the Port. Existing MessageBuffer specification was overwritten.");
+					}
 				}
 			}
 
@@ -77,62 +90,26 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 
 		return null;
 	}
-
-	/**
-	 * Helper class to edit the resource/model.
-	 * 
-	 * Direct manipulation would lead to a "java.lang.IllegalStateException:
-	 * Cannot modify resource set without a write transaction"
-	 * 
-	 */
-	class PortChangeCommand extends AbstractTransactionalCommand {
-		DiscretePort thePort = null;
-
-		public PortChangeCommand(TransactionalEditingDomain editingDomain,
-				DiscretePort source) {
-			super(editingDomain, "Copy role properties to port", null);
-			this.thePort = source;
+	
+	public static void updatePort(EditingDomain editingDomain, DiscretePort port) {
+		ModelExtent inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { port, getRootNode(port) }));
+		
+		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { inputExtent });
+		
+		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
+				Activator.COPYTOPORT_TRANSFORMATION,
+				modelExtents);
+		if(command.canExecute()){
+		editingDomain.getCommandStack().execute(command);
 		}
-
-		@Override
-		protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-				IAdaptable info) throws ExecutionException {
-
-			URI transformationURI = URI
-					.createPlatformPluginURI(
-							"/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/CopyRolePropertiesToPort.qvto",
-							true);
-			// create executor and execution context
-			TransformationExecutor executor = new TransformationExecutor(
-					transformationURI);
-			ExecutionContextImpl context = new ExecutionContextImpl();
-
-			// create model extent
-			BasicModelExtent portInput = new BasicModelExtent();
-			portInput.add(thePort);
-			portInput.add(getRootNode(thePort));
-
-			// execute transformation
-			ExecutionDiagnostic result = executor.execute(context, portInput);
-			if (result.getSeverity() != ExecutionDiagnostic.OK) {
-				String message = "QVT-O ERROR on rule transformation. Message was:"
-						+ result.getMessage();
-				return CommandResult.newErrorCommandResult(message);
-			}
-
-			return CommandResult.newOKCommandResult();
+		
+		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
+			editingDomain.getCommandStack().undo();
 		}
+	}
 
-		/**
-		 * Returns the root node of the resource the contains the port given as
-		 * a parameter.
-		 * 
-		 * @param thePort
-		 * @return
-		 */
-		private RootNode getRootNode(DiscretePort thePort) {
-			return (RootNode) thePort.getComponent().eContainer().eContainer();
-		}
+	private static RootNode getRootNode(DiscretePort thePort) {
+		return (RootNode) thePort.getComponent().eContainer().eContainer();
 	}
 
 }
