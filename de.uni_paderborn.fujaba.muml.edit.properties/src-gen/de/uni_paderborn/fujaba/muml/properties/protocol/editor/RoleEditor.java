@@ -47,7 +47,7 @@ public class RoleEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteInteractionEndpointCardinalityEditor(null, false);
+			addDiscreteInteractionEndpointCardinalityEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -212,7 +212,7 @@ public class RoleEditor
 	 * @generated
 	 */
 	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointCardinalityEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteInteractionEndpoint_Cardinality());
@@ -290,7 +290,7 @@ public class RoleEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavioralElement_Behavior());
 
-		editor.setTooltipMessage("The real-time statechart that defines the behavior of this behavioral element.");
+		editor.setTooltipMessage("The behavior of this behavioral element.");
 
 		return editor;
 

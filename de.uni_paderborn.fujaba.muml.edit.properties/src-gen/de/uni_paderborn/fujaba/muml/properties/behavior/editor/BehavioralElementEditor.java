@@ -47,7 +47,7 @@ public abstract class BehavioralElementEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavioralElement_Behavior());
 
-		editor.setTooltipMessage("The real-time statechart that defines the behavior of this behavioral element.");
+		editor.setTooltipMessage("The behavior of this behavioral element.");
 
 		return editor;
 

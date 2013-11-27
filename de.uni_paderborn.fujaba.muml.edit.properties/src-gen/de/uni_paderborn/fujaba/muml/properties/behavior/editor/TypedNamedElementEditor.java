@@ -47,6 +47,8 @@ public abstract class TypedNamedElementEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getTypedNamedElement_DataType());
 
+		editor.setTooltipMessage("The data type of this element.");
+
 		return editor;
 
 	}

@@ -49,6 +49,8 @@ public class TimeValueEditor
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getTimeValue_Value());
 
+		editor.setTooltipMessage("The value concerning time must be an expression. Defining the value is mandatory.");
+
 		return editor;
 
 	}
@@ -68,6 +70,8 @@ public class TimeValueEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getTimeValue_Unit());
+
+		editor.setTooltipMessage("The time unit of a time value. Defining the value is optional.");
 
 		return editor;
 

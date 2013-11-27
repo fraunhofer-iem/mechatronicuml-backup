@@ -19,7 +19,30 @@ mapping inout PropertyGenerator::generator() {
 			-- without an understandable reason for the user
 			prop.reconcile := false;
 		} endif;
+	};
+	
+	self.packages.classes.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'Cardinality')->forEach(prop) {
+		if (prop.reconcile != false) then {
+			-- make sure the default reconciler does not change this back to ObjectPropertyEditor
+			-- normally no problem (because we would change it back), but the editor would become dirty
+			-- without an understandable reason for the user
+			prop.reconcile := false;
+		} endif;
+		
+		--prop.category := null;
+
+		if (prop.editor[CustomPropertyEditor]->select(editor | editor.fullyQualifiedClassName = 'de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor')->isEmpty()) then {
+			prop->map createCardinalityEditor();
+		} endif;
 	}
+}
+
+mapping inout Property::createCardinalityEditor() {
+	self.editor := new CustomPropertyEditor("de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor");
+}
+
+constructor CustomPropertyEditor::CustomPropertyEditor(className : String) {
+	fullyQualifiedClassName := className;
 }
 
 mapping inout Property::createNaturalNumberEditor() {

@@ -32,7 +32,7 @@ public class ComponentPartEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentPartCardinalityEditor(null, false);
+			addComponentPartCardinalityEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -102,7 +102,7 @@ public class ComponentPartEditor
 	 * @generated
 	 */
 	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartCardinalityEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getComponentPart_Cardinality());

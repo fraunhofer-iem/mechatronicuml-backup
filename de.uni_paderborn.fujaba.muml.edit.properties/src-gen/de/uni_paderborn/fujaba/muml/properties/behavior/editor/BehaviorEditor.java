@@ -82,7 +82,7 @@ public abstract class BehaviorEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavior_Operations());
 
-		editor.setTooltipMessage("A behavior may define a set of Operations as signatures of helper functions. These operations\nmay be called by the behavior specification and may access the attributes of\nthe behavior specification. The Operations are contained in the behavior.");
+		editor.setTooltipMessage("A behavior may define a set of operations as signatures of helper functions. These operations\nmay be called by the behavior specification and may access the variables of\nthe behavior specification. The operations are contained in the behavior.");
 
 		return editor;
 
@@ -104,7 +104,7 @@ public abstract class BehaviorEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getBehavior_Variables());
 
-		editor.setTooltipMessage("A behavior may define a set of Attributes in order to store data. The attributes\nmay be used by the operations of the behavior and the behavior specification itself.\nThe attributes are contained in the behavior.");
+		editor.setTooltipMessage("A behavior may define a set of variables in order to store data. The variables\nmay be accessed by various elements, e.g., operations and the behavior specification itself.\nThe variables are contained in the behavior.");
 
 		return editor;
 

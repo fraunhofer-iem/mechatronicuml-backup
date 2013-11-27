@@ -107,13 +107,12 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		removeListeners();
 		removeEventAdapters();
 	}
+	
 
-	@Override
-	protected void inputChanged(Object oldObject) {
-		element = (EObject) input;
-		
-		// Reset itemPropertyDescriptor
-		itemPropertyDescriptor = null;
+	public static IItemPropertyDescriptor getItemPropertyDescriptor(AdapterFactory adapterFactory, 
+			EStructuralFeature feature, Object input) {
+		IItemPropertyDescriptor itemPropertyDescriptor = null;
+
 		if (adapterFactory != null && input != null) {
 			IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(input,
 					IItemPropertySource.class);
@@ -124,6 +123,16 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 				}
 			}
 		}
+		return itemPropertyDescriptor;
+	}
+
+
+	@Override
+	protected void inputChanged(Object oldObject) {
+		element = (EObject) input;
+		
+		// Reset itemPropertyDescriptor
+		itemPropertyDescriptor = getItemPropertyDescriptor(adapterFactory, feature, input);
 		
 		// calls refresh because of input change
 		super.inputChanged(oldObject);

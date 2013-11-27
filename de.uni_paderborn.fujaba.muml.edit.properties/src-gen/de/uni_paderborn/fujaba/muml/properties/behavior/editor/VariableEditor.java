@@ -55,6 +55,8 @@ public class VariableEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getVariable_InitializeExpression());
 
+		editor.setTooltipMessage("A variable may have a value when it is initialized. The value is defined by an expression.");
+
 		return editor;
 
 	}
@@ -74,6 +76,8 @@ public class VariableEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getVariable_Constant());
+
+		editor.setTooltipMessage("It must be defined if a the variable is constant or not.");
 
 		return editor;
 
