@@ -76,11 +76,11 @@ protected class ThisRootNode extends RootToken {
 /************ begin Rule Entry ****************
  *
  * Entry returns expressions::Expression:
- * 	Block | Expression;
+ * 	Block | Expression | ArrayInitializeExpression;
  *
  **/
 
-// Block | Expression
+// Block | Expression | ArrayInitializeExpression
 protected class Entry_Alternatives extends AlternativesToken {
 
 	public Entry_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -97,6 +97,7 @@ protected class Entry_Alternatives extends AlternativesToken {
 		switch(index) {
 			case 0: return new Entry_BlockParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new Entry_ExpressionParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new Entry_ArrayInitializeExpressionParserRuleCall_2(lastRuleCallOrigin, this, 2, inst);
 			default: return null;
 		}	
 	}
@@ -104,6 +105,7 @@ protected class Entry_Alternatives extends AlternativesToken {
     @Override
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getMultiplicationExpressionAccess().getArithmeticExpressionLeftExpressionAction_1_1_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getArrayInitializeExpressionRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getExtendedTypedNamedElementExpressionAccess().getAssignmentLhs_typedNamedElementExpressionAction_1_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getBlockAccess().getBlockAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getComparisonHigherOpExpressionAccess().getComparisonExpressionLeftExpressionAction_1_0().getType().getClassifier() && 
@@ -190,6 +192,42 @@ protected class Entry_ExpressionParserRuleCall_1 extends RuleCallToken {
 		   getEObject().eClass() != grammarAccess.getUnaryPreExpressionAccess().getUnaryExpressionAction_0().getType().getClassifier())
 			return null;
 		if(checkForRecursion(Expression_LogicalExpressionParserRuleCall.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// ArrayInitializeExpression
+protected class Entry_ArrayInitializeExpressionParserRuleCall_2 extends RuleCallToken {
+	
+	public Entry_ArrayInitializeExpressionParserRuleCall_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getEntryAccess().getArrayInitializeExpressionParserRuleCall_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ArrayInitializeExpression_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getArrayInitializeExpressionRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(ArrayInitializeExpression_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -2865,11 +2903,11 @@ protected class InitializeExpression_ExpressionParserRuleCall_2 extends RuleCall
  * // end of initialize expression
  * // array initialization
  * ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
- * 	"{" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "}";
+ * 	"[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]";
  *
  **/
 
-// "{" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "}"
+// "[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]"
 protected class ArrayInitializeExpression_Group extends GroupToken {
 	
 	public ArrayInitializeExpression_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2884,7 +2922,7 @@ protected class ArrayInitializeExpression_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ArrayInitializeExpression_RightCurlyBracketKeyword_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ArrayInitializeExpression_RightSquareBracketKeyword_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2898,16 +2936,16 @@ protected class ArrayInitializeExpression_Group extends GroupToken {
 
 }
 
-// "{"
-protected class ArrayInitializeExpression_LeftCurlyBracketKeyword_0 extends KeywordToken  {
+// "["
+protected class ArrayInitializeExpression_LeftSquareBracketKeyword_0 extends KeywordToken  {
 	
-	public ArrayInitializeExpression_LeftCurlyBracketKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ArrayInitializeExpression_LeftSquareBracketKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getArrayInitializeExpressionAccess().getLeftCurlyBracketKeyword_0();
+		return grammarAccess.getArrayInitializeExpressionAccess().getLeftSquareBracketKeyword_0();
 	}
 
     @Override
@@ -2959,7 +2997,7 @@ protected class ArrayInitializeExpression_ExpressionsAssignment_1 extends Assign
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new ArrayInitializeExpression_LeftCurlyBracketKeyword_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new ArrayInitializeExpression_LeftSquareBracketKeyword_0(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -3057,16 +3095,16 @@ protected class ArrayInitializeExpression_ExpressionsAssignment_2_1 extends Assi
 }
 
 
-// "}"
-protected class ArrayInitializeExpression_RightCurlyBracketKeyword_3 extends KeywordToken  {
+// "]"
+protected class ArrayInitializeExpression_RightSquareBracketKeyword_3 extends KeywordToken  {
 	
-	public ArrayInitializeExpression_RightCurlyBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ArrayInitializeExpression_RightSquareBracketKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getArrayInitializeExpressionAccess().getRightCurlyBracketKeyword_3();
+		return grammarAccess.getArrayInitializeExpressionAccess().getRightSquareBracketKeyword_3();
 	}
 
     @Override

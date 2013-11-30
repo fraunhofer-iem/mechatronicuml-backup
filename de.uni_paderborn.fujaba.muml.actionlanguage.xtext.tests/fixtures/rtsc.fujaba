@@ -102,7 +102,7 @@
       key="de.uni_paderborn.fujaba.muml.components.category"
       name="component">
     <modelElements
-        xsi:type="component:AtomicComponent"
+        xsi:type="component:StaticAtomicComponent"
         xmi:id="_VT18j7e2EeKdhdSR8ySkxQ"
         name="comp">
       <ports

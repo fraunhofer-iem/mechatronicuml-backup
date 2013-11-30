@@ -893,10 +893,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:50:7: ( ',' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:50:9: ','
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:50:7: ( '[' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:50:9: '['
             {
-            match(','); 
+            match('['); 
 
             }
 
@@ -913,10 +913,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:51:7: ( '.' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:51:9: '.'
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:51:7: ( ']' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:51:9: ']'
             {
-            match('.'); 
+            match(']'); 
 
             }
 
@@ -933,10 +933,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:52:7: ( '[' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:52:9: '['
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:52:7: ( ',' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:52:9: ','
             {
-            match('['); 
+            match(','); 
 
             }
 
@@ -953,10 +953,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:53:7: ( ']' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:53:9: ']'
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:53:7: ( '.' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:53:9: '.'
             {
-            match(']'); 
+            match('.'); 
 
             }
 
@@ -994,8 +994,8 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7787:13: ( RULE_INT '.' RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7787:15: RULE_INT '.' RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7793:13: ( RULE_INT '.' RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7793:15: RULE_INT '.' RULE_INT
             {
             mRULE_INT(); 
             match('.'); 
@@ -1016,10 +1016,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7789:14: ( ( 'true' | 'false' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7789:16: ( 'true' | 'false' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:14: ( ( 'true' | 'false' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:16: ( 'true' | 'false' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7789:16: ( 'true' | 'false' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:16: ( 'true' | 'false' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1037,7 +1037,7 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7789:17: 'true'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:17: 'true'
                     {
                     match("true"); 
 
@@ -1045,7 +1045,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7789:24: 'false'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:24: 'false'
                     {
                     match("false"); 
 
@@ -1071,10 +1071,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7791:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7791:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7797:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7797:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7791:11: ( '^' )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7797:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1083,7 +1083,7 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7791:11: '^'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7797:11: '^'
                     {
                     match('^'); 
 
@@ -1101,7 +1101,7 @@ public class InternalActionLanguageLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7791:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7797:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -1150,10 +1150,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7793:10: ( ( '0' .. '9' )+ )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7793:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:10: ( ( '0' .. '9' )+ )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:12: ( '0' .. '9' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7793:12: ( '0' .. '9' )+
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -1167,7 +1167,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7793:13: '0' .. '9'
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1199,10 +1199,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1220,10 +1220,10 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1239,7 +1239,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1255,7 +1255,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1280,10 +1280,10 @@ public class InternalActionLanguageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1299,7 +1299,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1315,7 +1315,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7795:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1358,12 +1358,12 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7797:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7797:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7803:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7803:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7797:24: ( options {greedy=false; } : . )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7803:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -1388,7 +1388,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7797:52: .
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7803:52: .
             	    {
             	    matchAny(); 
 
@@ -1418,12 +1418,12 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7805:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7805:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7805:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1436,7 +1436,7 @@ public class InternalActionLanguageLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7805:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1456,7 +1456,7 @@ public class InternalActionLanguageLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:40: ( ( '\\r' )? '\\n' )?
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7805:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1465,9 +1465,9 @@ public class InternalActionLanguageLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:41: ( '\\r' )? '\\n'
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7805:41: ( '\\r' )? '\\n'
                     {
-                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:41: ( '\\r' )?
+                    // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7805:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -1476,7 +1476,7 @@ public class InternalActionLanguageLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7799:41: '\\r'
+                            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7805:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1508,10 +1508,10 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7807:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7807:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7801:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7807:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1565,8 +1565,8 @@ public class InternalActionLanguageLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7803:16: ( . )
-            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7803:18: .
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7809:16: ( . )
+            // ../de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/ui/contentassist/antlr/internal/InternalActionLanguage.g:7809:18: .
             {
             matchAny(); 
 
@@ -2006,8 +2006,8 @@ public class InternalActionLanguageLexer extends Lexer {
         "\1\2\42\uffff\1\0\1\1\151\uffff}>";
     static final String[] DFA13_transitionS = {
             "\11\46\2\45\2\46\1\45\22\46\1\45\1\46\1\43\3\46\1\2\1\44\1\22"+
-            "\1\24\1\12\1\4\1\32\1\5\1\33\1\13\12\37\1\6\1\23\1\10\1\7\1"+
-            "\11\2\46\32\42\1\34\1\46\1\35\1\41\1\42\1\46\2\42\1\36\1\26"+
+            "\1\24\1\12\1\4\1\34\1\5\1\35\1\13\12\37\1\6\1\23\1\10\1\7\1"+
+            "\11\2\46\32\42\1\32\1\46\1\33\1\41\1\42\1\46\2\42\1\36\1\26"+
             "\1\30\1\15\2\42\1\27\2\42\1\16\1\42\1\3\1\42\1\17\1\42\1\31"+
             "\1\14\1\40\2\42\1\25\3\42\1\20\1\1\1\21\uff82\46",
             "\1\47",
@@ -2264,13 +2264,13 @@ public class InternalActionLanguageLexer extends Lexer {
 
                         else if ( (LA13_0=='r') ) {s = 25;}
 
-                        else if ( (LA13_0==',') ) {s = 26;}
+                        else if ( (LA13_0=='[') ) {s = 26;}
 
-                        else if ( (LA13_0=='.') ) {s = 27;}
+                        else if ( (LA13_0==']') ) {s = 27;}
 
-                        else if ( (LA13_0=='[') ) {s = 28;}
+                        else if ( (LA13_0==',') ) {s = 28;}
 
-                        else if ( (LA13_0==']') ) {s = 29;}
+                        else if ( (LA13_0=='.') ) {s = 29;}
 
                         else if ( (LA13_0=='c') ) {s = 30;}
 

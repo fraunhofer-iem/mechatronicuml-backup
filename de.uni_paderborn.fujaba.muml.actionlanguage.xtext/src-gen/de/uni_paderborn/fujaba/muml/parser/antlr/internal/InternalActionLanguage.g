@@ -97,6 +97,16 @@ ruleEntry returns [EObject current=null]
         $current = $this_Expression_1.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getEntryAccess().getArrayInitializeExpressionParserRuleCall_2()); 
+    }
+    this_ArrayInitializeExpression_2=ruleArrayInitializeExpression
+    { 
+        $current = $this_ArrayInitializeExpression_2.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -1000,9 +1010,9 @@ ruleArrayInitializeExpression returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='{' 
+(	otherlv_0='[' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getArrayInitializeExpressionAccess().getLeftCurlyBracketKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getArrayInitializeExpressionAccess().getLeftSquareBracketKeyword_0());
     }
 (
 (
@@ -1044,9 +1054,9 @@ ruleArrayInitializeExpression returns [EObject current=null]
 	    }
 
 )
-))*	otherlv_4='}' 
+))*	otherlv_4=']' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getArrayInitializeExpressionAccess().getRightCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_4, grammarAccess.getArrayInitializeExpressionAccess().getRightSquareBracketKeyword_3());
     }
 )
 ;

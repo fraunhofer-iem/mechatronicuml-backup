@@ -23,12 +23,13 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cBlockParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cArrayInitializeExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Entry returns expressions::Expression:
-		//	Block | Expression;
+		//	Block | Expression | ArrayInitializeExpression;
 		public ParserRule getRule() { return rule; }
 
-		//Block | Expression
+		//Block | Expression | ArrayInitializeExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Block
@@ -36,6 +37,9 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Expression
 		public RuleCall getExpressionParserRuleCall_1() { return cExpressionParserRuleCall_1; }
+
+		//ArrayInitializeExpression
+		public RuleCall getArrayInitializeExpressionParserRuleCall_2() { return cArrayInitializeExpressionParserRuleCall_2; }
 	}
 
 	public class BlockElements extends AbstractParserRuleElementFinder {
@@ -552,26 +556,26 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	public class ArrayInitializeExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArrayInitializeExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cExpressionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cExpressionsInitializeExpressionParserRuleCall_1_0 = (RuleCall)cExpressionsAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cExpressionsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cExpressionsInitializeExpressionParserRuleCall_2_1_0 = (RuleCall)cExpressionsAssignment_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//// end of initialize expression
 		//// array initialization
 		//ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
-		//	"{" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "}";
+		//	"[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]";
 		public ParserRule getRule() { return rule; }
 
-		//"{" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "}"
+		//"[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]"
 		public Group getGroup() { return cGroup; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		//"["
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
 
 		//expressions+=InitializeExpression
 		public Assignment getExpressionsAssignment_1() { return cExpressionsAssignment_1; }
@@ -591,8 +595,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//InitializeExpression
 		public RuleCall getExpressionsInitializeExpressionParserRuleCall_2_1_0() { return cExpressionsInitializeExpressionParserRuleCall_2_1_0; }
 
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		//"]"
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
 	}
 
 	public class LocalVariableOrConstantDeclarationStatementElements extends AbstractParserRuleElementFinder {
@@ -2058,7 +2062,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Entry returns expressions::Expression:
-	//	Block | Expression;
+	//	Block | Expression | ArrayInitializeExpression;
 	public EntryElements getEntryAccess() {
 		return (pEntry != null) ? pEntry : (pEntry = new EntryElements());
 	}
@@ -2221,7 +2225,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	//// end of initialize expression
 	//// array initialization
 	//ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
-	//	"{" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "}";
+	//	"[" expressions+=InitializeExpression ("," expressions+=InitializeExpression)* "]";
 	public ArrayInitializeExpressionElements getArrayInitializeExpressionAccess() {
 		return (pArrayInitializeExpression != null) ? pArrayInitializeExpression : (pArrayInitializeExpression = new ArrayInitializeExpressionElements());
 	}

@@ -22,7 +22,7 @@ import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" 
 import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions/common" as commonExpressions
 
 Entry returns expressions::Expression:
-	Block | Expression
+	Block | Expression | ArrayInitializeExpression
 ;
 
 Block returns actionlanguage::Block hidden(WS, ML_COMMENT, SL_COMMENT):
@@ -123,9 +123,9 @@ InitializeExpression returns expressions::Expression:
 // array initialization
 
 ArrayInitializeExpression returns actionlanguage::ArrayInitializeExpression:
-	'{' expressions+=InitializeExpression
+	'[' expressions+=InitializeExpression
 		(',' expressions+=InitializeExpression)*
-	'}'
+	']'
 ;
 
 // end of array initialization

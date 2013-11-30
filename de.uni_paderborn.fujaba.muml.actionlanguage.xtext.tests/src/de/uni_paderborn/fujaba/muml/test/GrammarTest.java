@@ -486,7 +486,7 @@ public class GrammarTest {
 	@Test
 	public void testArrayInitializeExpression() {
 		// intArray is an array
-		EObject expression = getAssignmentRHS("{ intArray := { 1 + 1, 2, call(), 4 } ; }");
+		EObject expression = getAssignmentRHS("{ intArray := [ 1 + 1, 2, call(), 4 ] ; }");
 		assertTrue(expression instanceof ArrayInitializeExpression);
 		ArrayInitializeExpression arrayInitializeExpression = (ArrayInitializeExpression) expression; 
 		assertEquals(4, arrayInitializeExpression.getExpressions().size());
@@ -497,7 +497,7 @@ public class GrammarTest {
 	@Test
 	public void testMultiDimensionalArrayInitializeExpression() {
 		// multArray is a 2x3x2 array
-		String initializer = "{ { {1, 2}, {3, 4}, {5, 6} }, { {7, 8}, {9, 10}, {11, 12} } }";
+		String initializer = "[ [ [1, 2], [3, 4], [5, 6] ], [ [7, 8], [9, 10], [11, 12] ] ]";
 		EObject expression = getAssignmentRHS("{ multArray := " + initializer + " ; }");
 		assertTrue(expression instanceof ArrayInitializeExpression);
 		ArrayInitializeExpression arrayInitializeExpression = (ArrayInitializeExpression) expression; 
@@ -530,15 +530,22 @@ public class GrammarTest {
 	public void testInvalidArrayInitializeExpression() {
 		// an empty array initializer is not supported because it (probably) makes no
 		// sense in our actionlanguage
-		loadFromString("{ intArray := {}; }");
+		loadFromString("{ intArray := []; }");
 		assertTrue(loadResult.hasError());
 		assertNull(loadResult.getEObject());
 	}
 	
 	@Test
+	public void testTopLevelArrayInitializeExpression() {
+		loadFromString("[1, 4, 5]");
+		assertFalse(loadResult.hasError());
+		assertTrue(loadResult.getEObject() instanceof ArrayInitializeExpression);
+	}
+	
+	@Test
 	public void testLocalArrayDeclarationAndInitialization1() {
 		// in fact this is simply a local variable declaration + array initialization
-		loadFromString("{ INTARRAY localArray := {1, 2, 3, 4, 5}; }");
+		loadFromString("{ INTARRAY localArray := [1, 2, 3, 4, 5]; }");
 		assertFalse(loadResult.hasError());
 		assertNotNull(loadResult.getEObject());
 	}
@@ -546,7 +553,7 @@ public class GrammarTest {
 	@Test
 	public void testLocalArrayDeclarationAndInitialization2() {
 		// check if brackets in the datatype's name are supported
-		loadFromString("{ INT[2][5] lArray := { {1, 2, 3, 4, 5}, {6, 7, 8, 9, 10} }; }");
+		loadFromString("{ INT[2][5] lArray := [ [1, 2, 3, 4, 5], [6, 7, 8, 9, 10] ]; }");
 		assertFalse(loadResult.hasError());
 		assertNotNull(loadResult.getEObject());
 	}
