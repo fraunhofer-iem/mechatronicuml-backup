@@ -20,21 +20,21 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 	// process ResourceInstanceRepository
 	
 	
-	input.rootObjects()[ResourceInstanceRepository]->forEach(rip){
-		rip.resourceTypeRepository:=rip.resourceTypeRepository;
-		rip.name:=rip.resourceTypeRepository.name;
-		log("Start to create the ResourceInstances for" +rip.eClass().name +", Name:" +rip.name);
-		var instances : Set(ResourceInstance);
+//	input.rootObjects()[ResourceInstanceRepository]->forEach(rip){
+//		rip.resourceTypeRepository:=rip.resourceTypeRepository;
+//		rip.name:=rip.resourceTypeRepository.name;
+//		log("Start to create the ResourceInstances for" +rip.eClass().name +", Name:" +rip.name);
+//		var instances : Set(ResourceInstance);
 		//create the StructuredResourceInstances of the ResourceInstanceRepository derived from the StructuredResources
-		instances +=rip.resourceTypeRepository.resourceTypes[StructuredResource]->map mapStructuredResource2StructuredResourceInstance();
+//		instances +=rip.resourceTypeRepository.resourceTypes[StructuredResource]->map mapStructuredResource2StructuredResourceInstance();
 		
 		/* A lonely AtomicResource does not make sense in a ResourceInstanceRepository or in a HWPlatform, so we do not initialize them */
 		//instances +=rip.resourceTypeRepository.resourceTypes[AtomicResource]-> map mapAtomicResource2AtomicResourceInstance(); 
 		
 		//create the DeviceInstances of the ResourceInstanceRepository derived from the Devices
-		instances +=rip.resourceTypeRepository.resourceTypes[Device]->map mapDevice2DeviceInstance();
-		rip.resourceInstances:=instances;
-	};
+//		instances +=rip.resourceTypeRepository.resourceTypes[Device]->map mapDevice2DeviceInstance();
+//		rip.resourceInstances:=instances; 
+//	}; 
 	
 	// process StructuredResourceInstance
 	input.rootObjects()[StructuredResourceInstance]->forEach(sri){
