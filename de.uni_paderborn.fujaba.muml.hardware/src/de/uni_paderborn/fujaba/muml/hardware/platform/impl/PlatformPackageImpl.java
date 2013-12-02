@@ -997,15 +997,6 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getResourceInstanceRepository_ResourceTypeRepository() {
-		return (EReference)resourceInstanceRepositoryEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getResourceInstancePart() {
 		return resourceInstancePartEClass;
 	}
@@ -1214,7 +1205,6 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		resourceInstanceRepositoryEClass = createEClass(RESOURCE_INSTANCE_REPOSITORY);
 		createEReference(resourceInstanceRepositoryEClass, RESOURCE_INSTANCE_REPOSITORY__RESOURCE_INSTANCES);
-		createEReference(resourceInstanceRepositoryEClass, RESOURCE_INSTANCE_REPOSITORY__RESOURCE_TYPE_REPOSITORY);
 
 		resourceInstancePartEClass = createEClass(RESOURCE_INSTANCE_PART);
 		createEReference(resourceInstancePartEClass, RESOURCE_INSTANCE_PART__RESOURCE_INSTANCE_TYPE);
@@ -1290,7 +1280,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		hwPortInstanceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		busPortInstanceEClass.getESuperTypes().add(this.getHWPortInstance());
 		linkPortInstanceEClass.getESuperTypes().add(this.getHWPortInstance());
-		resourceInstanceRepositoryEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		resourceInstanceRepositoryEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		resourceInstancePartEClass.getESuperTypes().add(this.getPlatformPart());
 		delegationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		hwPortPartEClass.getESuperTypes().add(theCorePackage.getNamedElement());
@@ -1391,7 +1381,6 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		initEClass(resourceInstanceRepositoryEClass, ResourceInstanceRepository.class, "ResourceInstanceRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResourceInstanceRepository_ResourceInstances(), this.getResourceInstance(), null, "resourceInstances", null, 1, -1, ResourceInstanceRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getResourceInstanceRepository_ResourceTypeRepository(), theResourcetypePackage.getResourceTypeRepository(), null, "resourceTypeRepository", null, 1, 1, ResourceInstanceRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceInstancePartEClass, ResourceInstancePart.class, "ResourceInstancePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResourceInstancePart_ResourceInstanceType(), this.getResourceInstance(), null, "resourceInstanceType", null, 1, 1, ResourceInstancePart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1847,12 +1836,6 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 			 "documentation", "The ResourceInstances that are contained in this ResourceInstanceRepository. They are derived from a ResourceTypeRepository."
 		   });		
 		addAnnotation
-		  (getResourceInstanceRepository_ResourceTypeRepository(), 
-		   source, 
-		   new String[] {
-			 "documentation", "The ResourceTypeRepository which contains the ResourceTypes that are instantiated in this ResourceInstanceRepository."
-		   });		
-		addAnnotation
 		  (resourceInstancePartEClass, 
 		   source, 
 		   new String[] {
@@ -1971,7 +1954,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "constraints", "SameProtocol"
-		   });																											
+		   });																										
 		addAnnotation
 		  (delegationEClass, 
 		   source, 
@@ -2111,7 +2094,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectedMedia->select(m|m.oclIsTypeOf(platform::Link)).oclAsType(platform::Link)->asOrderedSet()"
-		   });											
+		   });										
 		addAnnotation
 		  (delegationEClass, 
 		   source, 

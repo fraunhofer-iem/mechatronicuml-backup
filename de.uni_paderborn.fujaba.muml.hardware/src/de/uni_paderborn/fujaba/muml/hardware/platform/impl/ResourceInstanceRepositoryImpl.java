@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.impl.CommentableElementImpl;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
@@ -27,13 +28,12 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.ResourceInstanceRepositoryImpl#getResourceInstances <em>Resource Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.ResourceInstanceRepositoryImpl#getResourceTypeRepository <em>Resource Type Repository</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ResourceInstanceRepositoryImpl extends NamedElementImpl implements ResourceInstanceRepository {
+public class ResourceInstanceRepositoryImpl extends CommentableElementImpl implements ResourceInstanceRepository {
 	/**
 	 * The cached value of the '{@link #getResourceInstances() <em>Resource Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -43,16 +43,6 @@ public class ResourceInstanceRepositoryImpl extends NamedElementImpl implements 
 	 * @ordered
 	 */
 	protected EList<ResourceInstance> resourceInstances;
-
-	/**
-	 * The cached value of the '{@link #getResourceTypeRepository() <em>Resource Type Repository</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResourceTypeRepository()
-	 * @generated
-	 * @ordered
-	 */
-	protected ResourceTypeRepository resourceTypeRepository;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,44 +80,6 @@ public class ResourceInstanceRepositoryImpl extends NamedElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceTypeRepository getResourceTypeRepository() {
-		if (resourceTypeRepository != null && resourceTypeRepository.eIsProxy()) {
-			InternalEObject oldResourceTypeRepository = (InternalEObject)resourceTypeRepository;
-			resourceTypeRepository = (ResourceTypeRepository)eResolveProxy(oldResourceTypeRepository);
-			if (resourceTypeRepository != oldResourceTypeRepository) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlatformPackage.RESOURCE_INSTANCE_REPOSITORY__RESOURCE_TYPE_REPOSITORY, oldResourceTypeRepository, resourceTypeRepository));
-			}
-		}
-		return resourceTypeRepository;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ResourceTypeRepository basicGetResourceTypeRepository() {
-		return resourceTypeRepository;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setResourceTypeRepository(ResourceTypeRepository newResourceTypeRepository) {
-		ResourceTypeRepository oldResourceTypeRepository = resourceTypeRepository;
-		resourceTypeRepository = newResourceTypeRepository;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.RESOURCE_INSTANCE_REPOSITORY__RESOURCE_TYPE_REPOSITORY, oldResourceTypeRepository, resourceTypeRepository));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -147,9 +99,6 @@ public class ResourceInstanceRepositoryImpl extends NamedElementImpl implements 
 		switch (featureID) {
 			case PlatformPackage.RESOURCE_INSTANCE_REPOSITORY__RESOURCE_INSTANCES:
 				return getResourceInstances();
-			case PlatformPackage.RESOURCE_INSTANCE_REPOSITORY__RESOURCE_TYPE_REPOSITORY:
-				if (resolve) return getResourceTypeRepository();
-				return basicGetResourceTypeRepository();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,9 +116,6 @@ public class ResourceInstanceRepositoryImpl extends NamedElementImpl implements 
 				getResourceInstances().clear();
 				getResourceInstances().addAll((Collection<? extends ResourceInstance>)newValue);
 				return;
-			case PlatformPackage.RESOURCE_INSTANCE_REPOSITORY__RESOURCE_TYPE_REPOSITORY:
-				setResourceTypeRepository((ResourceTypeRepository)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -185,9 +131,6 @@ public class ResourceInstanceRepositoryImpl extends NamedElementImpl implements 
 			case PlatformPackage.RESOURCE_INSTANCE_REPOSITORY__RESOURCE_INSTANCES:
 				getResourceInstances().clear();
 				return;
-			case PlatformPackage.RESOURCE_INSTANCE_REPOSITORY__RESOURCE_TYPE_REPOSITORY:
-				setResourceTypeRepository((ResourceTypeRepository)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,8 +145,6 @@ public class ResourceInstanceRepositoryImpl extends NamedElementImpl implements 
 		switch (featureID) {
 			case PlatformPackage.RESOURCE_INSTANCE_REPOSITORY__RESOURCE_INSTANCES:
 				return resourceInstances != null && !resourceInstances.isEmpty();
-			case PlatformPackage.RESOURCE_INSTANCE_REPOSITORY__RESOURCE_TYPE_REPOSITORY:
-				return resourceTypeRepository != null;
 		}
 		return super.eIsSet(featureID);
 	}

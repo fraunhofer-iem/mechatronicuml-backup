@@ -2273,7 +2273,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_INSTANCE_REPOSITORY__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RESOURCE_INSTANCE_REPOSITORY__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -2282,16 +2282,16 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_INSTANCE_REPOSITORY__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RESOURCE_INSTANCE_REPOSITORY__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_INSTANCE_REPOSITORY__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int RESOURCE_INSTANCE_REPOSITORY__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Resource Instances</b></em>' containment reference list.
@@ -2300,16 +2300,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_INSTANCE_REPOSITORY__RESOURCE_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Resource Type Repository</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_INSTANCE_REPOSITORY__RESOURCE_TYPE_REPOSITORY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE_INSTANCE_REPOSITORY__RESOURCE_INSTANCES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Resource Instance Repository</em>' class.
@@ -2318,7 +2309,7 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_INSTANCE_REPOSITORY_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int RESOURCE_INSTANCE_REPOSITORY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.ResourceInstancePartImpl <em>Resource Instance Part</em>}' class.
@@ -3287,17 +3278,6 @@ public interface PlatformPackage extends EPackage {
 	EReference getResourceInstanceRepository_ResourceInstances();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstanceRepository#getResourceTypeRepository <em>Resource Type Repository</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Resource Type Repository</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstanceRepository#getResourceTypeRepository()
-	 * @see #getResourceInstanceRepository()
-	 * @generated
-	 */
-	EReference getResourceInstanceRepository_ResourceTypeRepository();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstancePart <em>Resource Instance Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4037,14 +4017,6 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESOURCE_INSTANCE_REPOSITORY__RESOURCE_INSTANCES = eINSTANCE.getResourceInstanceRepository_ResourceInstances();
-
-		/**
-		 * The meta object literal for the '<em><b>Resource Type Repository</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESOURCE_INSTANCE_REPOSITORY__RESOURCE_TYPE_REPOSITORY = eINSTANCE.getResourceInstanceRepository_ResourceTypeRepository();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.ResourceInstancePartImpl <em>Resource Instance Part</em>}' class.

@@ -27,7 +27,7 @@ import org.storydriven.core.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface ResourceType extends ExtendableElement, NamedElement, CommentableElement {
+public interface ResourceType extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Hwports</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort}.

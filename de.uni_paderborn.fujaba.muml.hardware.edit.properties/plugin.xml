@@ -88,11 +88,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor.ResourceTypeRepositoryEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor.BusProtocolEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.hardware.resourcetype.BusProtocol">
        </propertyEditor>
@@ -105,6 +100,11 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor.HWPortEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor.ResourceTypeRepositoryEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository">
        </propertyEditor>
     
        <propertyEditor
@@ -208,11 +208,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.hardware.properties.platform.editor.ResourceInstanceRepositoryEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstanceRepository">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.platform.editor.ResourceInstancePartEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstancePart">
        </propertyEditor>
@@ -225,6 +220,11 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.hardware.properties.platform.editor.HWPortPartEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.hardware.properties.platform.editor.ResourceInstanceRepositoryEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstanceRepository">
        </propertyEditor>
     
        <propertyEditor

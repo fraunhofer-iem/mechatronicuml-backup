@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.provider.CommentableElementItemProvider;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository;
@@ -31,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage;
  * @generated
  */
 public class ResourceTypeRepositoryItemProvider
-	extends NamedElementItemProvider
+	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -136,7 +137,7 @@ public class ResourceTypeRepositoryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ResourceTypeRepository)object).getName();
+		String label = ((ResourceTypeRepository)object).getComment();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ResourceTypeRepository_type") :
 			getString("_UI_ResourceTypeRepository_type") + " " + label;

@@ -335,7 +335,7 @@ public class PlatformSwitch<T> extends Switch<T> {
 			case PlatformPackage.RESOURCE_INSTANCE_REPOSITORY: {
 				ResourceInstanceRepository resourceInstanceRepository = (ResourceInstanceRepository)theEObject;
 				T result = caseResourceInstanceRepository(resourceInstanceRepository);
-				if (result == null) result = caseNamedElement(resourceInstanceRepository);
+				if (result == null) result = caseCommentableElement(resourceInstanceRepository);
 				if (result == null) result = caseExtendableElement(resourceInstanceRepository);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

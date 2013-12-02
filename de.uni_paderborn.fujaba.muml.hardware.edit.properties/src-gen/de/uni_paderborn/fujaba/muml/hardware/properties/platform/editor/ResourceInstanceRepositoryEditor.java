@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.properties.platform.editor;
  */
 public class ResourceInstanceRepositoryEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -22,36 +22,6 @@ public class ResourceInstanceRepositoryEditor
 	@Override
 	protected void createProperties() {
 		super.createProperties();
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addResourceInstanceRepositoryResourceTypeRepositoryEditor(null,
-					true);
-		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addResourceInstanceRepositoryResourceTypeRepositoryEditor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createResourceInstanceRepositoryResourceTypeRepositoryEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createResourceInstanceRepositoryResourceTypeRepositoryEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-						.getResourceInstanceRepository_ResourceTypeRepository());
-
-		editor.setTooltipMessage("The ResourceTypeRepository which contains the ResourceTypes that are instantiated in this ResourceInstanceRepository.");
-
-		return editor;
 
 	}
 
@@ -86,8 +56,8 @@ public class ResourceInstanceRepositoryEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+					new java.lang.String[]{"property.tab.documentation"})
+					.contains(tab);
 		}
 	}
 

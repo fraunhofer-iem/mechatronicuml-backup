@@ -36,7 +36,7 @@ public class HWPortEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortCardinalityEditor(null, false);
+			addHWPortCardinalityEditor(null, true);
 		}
 
 	}
@@ -118,7 +118,7 @@ public class HWPortEditor
 	 * @generated
 	 */
 	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortCardinalityEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 						.getHWPort_Cardinality());

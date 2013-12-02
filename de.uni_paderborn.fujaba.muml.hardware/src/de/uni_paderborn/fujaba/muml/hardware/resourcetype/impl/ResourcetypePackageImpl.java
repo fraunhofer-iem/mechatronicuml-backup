@@ -914,9 +914,7 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		resourceTypeEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		resourceTypeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		resourceTypeEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		computingResourceEClass.getESuperTypes().add(this.getAtomicResource());
 		memoryResourceEClass.getESuperTypes().add(this.getAtomicResource());
 		deviceEClass.getESuperTypes().add(this.getResourceType());
@@ -926,7 +924,7 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		atomicResourceEClass.getESuperTypes().add(this.getResourceType());
 		structuredResourceEClass.getESuperTypes().add(this.getResourceType());
 		hwPortEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		resourceTypeRepositoryEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		resourceTypeRepositoryEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		communicationProtocolEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		busProtocolEClass.getESuperTypes().add(this.getCommunicationProtocol());
 		linkProtocolEClass.getESuperTypes().add(this.getCommunicationProtocol());
@@ -1388,7 +1386,7 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		  (memoryResourceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "RAMimpliesRW ROMimpliesReadOnly"
+			 "constraints", "RAMimpliesRW"
 		   });																	
 		addAnnotation
 		  (processorEClass, 

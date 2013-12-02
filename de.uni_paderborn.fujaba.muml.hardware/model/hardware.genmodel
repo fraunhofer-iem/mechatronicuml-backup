@@ -230,8 +230,6 @@
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//platform/ResourceInstanceRepository">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/ResourceInstanceRepository/resourceInstances"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference hardware.ecore#//platform/ResourceInstanceRepository/resourceTypeRepository"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//platform/ResourceInstancePart">
         <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/ResourceInstancePart/resourceInstanceType"/>

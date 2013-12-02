@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.properties.resourcetype.editor;
  */
 public class ResourceTypeRepositoryEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -89,7 +89,7 @@ public class ResourceTypeRepositoryEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+							"property.tab.documentation"}).contains(tab);
 		}
 	}
 

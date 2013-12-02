@@ -193,7 +193,6 @@ public class ResourcetypeValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(memoryResource, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(memoryResource, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMemoryResource_RAMimpliesRW(memoryResource, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryResource_ROMimpliesReadOnly(memoryResource, diagnostics, context);
 		return result;
 	}
 
@@ -227,35 +226,6 @@ public class ResourcetypeValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the ROMimpliesReadOnly constraint of '<em>Memory Resource</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String MEMORY_RESOURCE__RO_MIMPLIES_READ_ONLY__EEXPRESSION = "self.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY";
-
-	/**
-	 * Validates the ROMimpliesReadOnly constraint of '<em>Memory Resource</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMemoryResource_ROMimpliesReadOnly(MemoryResource memoryResource, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ResourcetypePackage.Literals.MEMORY_RESOURCE,
-				 memoryResource,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ROMimpliesReadOnly",
-				 MEMORY_RESOURCE__RO_MIMPLIES_READ_ONLY__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -280,7 +250,6 @@ public class ResourcetypeValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cache, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cache, diagnostics, context);
 		if (result || diagnostics != null) result &= validateMemoryResource_RAMimpliesRW(cache, diagnostics, context);
-		if (result || diagnostics != null) result &= validateMemoryResource_ROMimpliesReadOnly(cache, diagnostics, context);
 		return result;
 	}
 

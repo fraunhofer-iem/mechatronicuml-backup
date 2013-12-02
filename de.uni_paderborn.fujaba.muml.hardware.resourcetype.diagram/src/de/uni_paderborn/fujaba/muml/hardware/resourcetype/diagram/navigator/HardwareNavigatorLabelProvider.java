@@ -189,7 +189,7 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 		de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository domainModelElement = (de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository) view
 				.getElement();
 		if (domainModelElement != null) {
-			return domainModelElement.getName();
+			return domainModelElement.getComment();
 		} else {
 			de.uni_paderborn.fujaba.muml.hardware.resourcetype.diagram.part.HardwareDiagramEditorPlugin
 					.getInstance()

@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.platform;
 
 import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository;
@@ -21,7 +22,6 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstanceRepository#getResourceInstances <em>Resource Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstanceRepository#getResourceTypeRepository <em>Resource Type Repository</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceTypeRepository
  * @model
  * @generated
  */
-public interface ResourceInstanceRepository extends NamedElement {
+public interface ResourceInstanceRepository extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Resource Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance}.
@@ -44,34 +44,5 @@ public interface ResourceInstanceRepository extends NamedElement {
 	 * @generated
 	 */
 	EList<ResourceInstance> getResourceInstances();
-
-	/**
-	 * Returns the value of the '<em><b>Resource Type Repository</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Resource Type Repository</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The ResourceTypeRepository which contains the ResourceTypes that are instantiated in this ResourceInstanceRepository.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Resource Type Repository</em>' reference.
-	 * @see #setResourceTypeRepository(ResourceTypeRepository)
-	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getResourceInstanceRepository_ResourceTypeRepository()
-	 * @model required="true"
-	 * @generated
-	 */
-	ResourceTypeRepository getResourceTypeRepository();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstanceRepository#getResourceTypeRepository <em>Resource Type Repository</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Resource Type Repository</em>' reference.
-	 * @see #getResourceTypeRepository()
-	 * @generated
-	 */
-	void setResourceTypeRepository(ResourceTypeRepository value);
 
 } // ResourceInstanceRepository

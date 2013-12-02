@@ -87,7 +87,6 @@ public class ResourcetypeSwitch<T> extends Switch<T> {
 				ResourceType resourceType = (ResourceType)theEObject;
 				T result = caseResourceType(resourceType);
 				if (result == null) result = caseNamedElement(resourceType);
-				if (result == null) result = caseCommentableElement(resourceType);
 				if (result == null) result = caseExtendableElement(resourceType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -98,7 +97,6 @@ public class ResourcetypeSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAtomicResource(computingResource);
 				if (result == null) result = caseResourceType(computingResource);
 				if (result == null) result = caseNamedElement(computingResource);
-				if (result == null) result = caseCommentableElement(computingResource);
 				if (result == null) result = caseExtendableElement(computingResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -109,7 +107,6 @@ public class ResourcetypeSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAtomicResource(memoryResource);
 				if (result == null) result = caseResourceType(memoryResource);
 				if (result == null) result = caseNamedElement(memoryResource);
-				if (result == null) result = caseCommentableElement(memoryResource);
 				if (result == null) result = caseExtendableElement(memoryResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -119,7 +116,6 @@ public class ResourcetypeSwitch<T> extends Switch<T> {
 				T result = caseDevice(device);
 				if (result == null) result = caseResourceType(device);
 				if (result == null) result = caseNamedElement(device);
-				if (result == null) result = caseCommentableElement(device);
 				if (result == null) result = caseExtendableElement(device);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -131,7 +127,6 @@ public class ResourcetypeSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAtomicResource(cache);
 				if (result == null) result = caseResourceType(cache);
 				if (result == null) result = caseNamedElement(cache);
-				if (result == null) result = caseCommentableElement(cache);
 				if (result == null) result = caseExtendableElement(cache);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -143,7 +138,6 @@ public class ResourcetypeSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAtomicResource(programmableLogicDevice);
 				if (result == null) result = caseResourceType(programmableLogicDevice);
 				if (result == null) result = caseNamedElement(programmableLogicDevice);
-				if (result == null) result = caseCommentableElement(programmableLogicDevice);
 				if (result == null) result = caseExtendableElement(programmableLogicDevice);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -155,7 +149,6 @@ public class ResourcetypeSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAtomicResource(processor);
 				if (result == null) result = caseResourceType(processor);
 				if (result == null) result = caseNamedElement(processor);
-				if (result == null) result = caseCommentableElement(processor);
 				if (result == null) result = caseExtendableElement(processor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -165,7 +158,6 @@ public class ResourcetypeSwitch<T> extends Switch<T> {
 				T result = caseAtomicResource(atomicResource);
 				if (result == null) result = caseResourceType(atomicResource);
 				if (result == null) result = caseNamedElement(atomicResource);
-				if (result == null) result = caseCommentableElement(atomicResource);
 				if (result == null) result = caseExtendableElement(atomicResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -175,7 +167,6 @@ public class ResourcetypeSwitch<T> extends Switch<T> {
 				T result = caseStructuredResource(structuredResource);
 				if (result == null) result = caseResourceType(structuredResource);
 				if (result == null) result = caseNamedElement(structuredResource);
-				if (result == null) result = caseCommentableElement(structuredResource);
 				if (result == null) result = caseExtendableElement(structuredResource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -191,7 +182,7 @@ public class ResourcetypeSwitch<T> extends Switch<T> {
 			case ResourcetypePackage.RESOURCE_TYPE_REPOSITORY: {
 				ResourceTypeRepository resourceTypeRepository = (ResourceTypeRepository)theEObject;
 				T result = caseResourceTypeRepository(resourceTypeRepository);
-				if (result == null) result = caseNamedElement(resourceTypeRepository);
+				if (result == null) result = caseCommentableElement(resourceTypeRepository);
 				if (result == null) result = caseExtendableElement(resourceTypeRepository);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

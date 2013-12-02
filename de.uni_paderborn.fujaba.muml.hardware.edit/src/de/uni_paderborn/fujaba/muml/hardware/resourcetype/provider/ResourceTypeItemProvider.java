@@ -20,8 +20,10 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.provider.CommentableElementItemProvider;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 
+import org.storydriven.core.provider.NamedElementItemProvider;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceType;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypeFactory;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage;
@@ -33,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage;
  * @generated
  */
 public class ResourceTypeItemProvider
-	extends ExtendableElementItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -61,54 +63,8 @@ public class ResourceTypeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addCommentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_NamedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
-				 CorePackage.Literals.NAMED_ELEMENT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CommentableElement_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
-				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -167,10 +123,6 @@ public class ResourceTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ResourceType.class)) {
-			case ResourcetypePackage.RESOURCE_TYPE__NAME:
-			case ResourcetypePackage.RESOURCE_TYPE__COMMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case ResourcetypePackage.RESOURCE_TYPE__HWPORTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

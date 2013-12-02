@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.provider.CommentableElementItemProvider;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformFactory;
@@ -32,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.provider.HardwareEditP
  * @generated
  */
 public class ResourceInstanceRepositoryItemProvider
-	extends NamedElementItemProvider
+	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -60,31 +61,8 @@ public class ResourceInstanceRepositoryItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addResourceTypeRepositoryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Resource Type Repository feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResourceTypeRepositoryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ResourceInstanceRepository_resourceTypeRepository_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ResourceInstanceRepository_resourceTypeRepository_feature", "_UI_ResourceInstanceRepository_type"),
-				 PlatformPackage.Literals.RESOURCE_INSTANCE_REPOSITORY__RESOURCE_TYPE_REPOSITORY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -136,7 +114,7 @@ public class ResourceInstanceRepositoryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ResourceInstanceRepository)object).getName();
+		String label = ((ResourceInstanceRepository)object).getComment();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ResourceInstanceRepository_type") :
 			getString("_UI_ResourceInstanceRepository_type") + " " + label;

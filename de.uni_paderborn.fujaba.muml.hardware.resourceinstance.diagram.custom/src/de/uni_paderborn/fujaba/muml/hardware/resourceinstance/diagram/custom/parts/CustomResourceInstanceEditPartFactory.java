@@ -27,8 +27,7 @@ public class CustomResourceInstanceEditPartFactory extends HardwareEditPartFacto
 			case StructuredResourceInstanceEditPart.VISUAL_ID:
 				return new CustomStructuredResourceInstanceEditPart(view);
 			
-			case ResourceInstanceRepositoryEditPart.VISUAL_ID:
-				return new CustomResourceInstanceRepositoryEditPart(view);
+		
 				
 			case SensorInstanceEditPart.VISUAL_ID:
 				return new CustomSensorInstanceEditPart(view);

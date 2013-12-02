@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.resourcetype;
 
 import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
 /**
@@ -27,7 +28,7 @@ import org.storydriven.core.NamedElement;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueProtocolName'"
  * @generated
  */
-public interface ResourceTypeRepository extends NamedElement {
+public interface ResourceTypeRepository extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Resource Types</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceType}.

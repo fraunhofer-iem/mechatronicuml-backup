@@ -23,7 +23,7 @@ package de.uni_paderborn.fujaba.muml.hardware.resourcetype;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage#getMemoryResource()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RAMimpliesRW ROMimpliesReadOnly'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RAMimpliesRW'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RAMimpliesRW='self.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE' ROMimpliesReadOnly='self.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY'"
  * @generated
  */

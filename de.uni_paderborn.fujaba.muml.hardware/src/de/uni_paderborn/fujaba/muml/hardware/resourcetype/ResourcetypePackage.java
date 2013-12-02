@@ -79,7 +79,7 @@ public interface ResourcetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int RESOURCE_TYPE__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -88,7 +88,7 @@ public interface ResourcetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int RESOURCE_TYPE__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -97,16 +97,7 @@ public interface ResourcetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE__NAME = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_TYPE__COMMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE_TYPE__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
@@ -115,7 +106,7 @@ public interface ResourcetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE__HWPORTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int RESOURCE_TYPE__HWPORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Resource Type</em>' class.
@@ -124,7 +115,7 @@ public interface ResourcetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int RESOURCE_TYPE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.impl.AtomicResourceImpl <em>Atomic Resource</em>}' class.
@@ -162,15 +153,6 @@ public interface ResourcetypePackage extends EPackage {
 	 * @ordered
 	 */
 	int ATOMIC_RESOURCE__NAME = RESOURCE_TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_RESOURCE__COMMENT = RESOURCE_TYPE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
@@ -237,15 +219,6 @@ public interface ResourcetypePackage extends EPackage {
 	int COMPUTING_RESOURCE__NAME = ATOMIC_RESOURCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPUTING_RESOURCE__COMMENT = ATOMIC_RESOURCE__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -308,15 +281,6 @@ public interface ResourcetypePackage extends EPackage {
 	 * @ordered
 	 */
 	int MEMORY_RESOURCE__NAME = ATOMIC_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEMORY_RESOURCE__COMMENT = ATOMIC_RESOURCE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
@@ -410,15 +374,6 @@ public interface ResourcetypePackage extends EPackage {
 	int DEVICE__NAME = RESOURCE_TYPE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEVICE__COMMENT = RESOURCE_TYPE__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -481,15 +436,6 @@ public interface ResourcetypePackage extends EPackage {
 	 * @ordered
 	 */
 	int CACHE__NAME = MEMORY_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CACHE__COMMENT = MEMORY_RESOURCE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
@@ -628,15 +574,6 @@ public interface ResourcetypePackage extends EPackage {
 	int PROGRAMMABLE_LOGIC_DEVICE__NAME = COMPUTING_RESOURCE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMMABLE_LOGIC_DEVICE__COMMENT = COMPUTING_RESOURCE__COMMENT;
-
-	/**
 	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -699,15 +636,6 @@ public interface ResourcetypePackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESSOR__NAME = COMPUTING_RESOURCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESSOR__COMMENT = COMPUTING_RESOURCE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
@@ -817,15 +745,6 @@ public interface ResourcetypePackage extends EPackage {
 	 * @ordered
 	 */
 	int STRUCTURED_RESOURCE__NAME = RESOURCE_TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_RESOURCE__COMMENT = RESOURCE_TYPE__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Hwports</b></em>' containment reference list.
@@ -962,7 +881,7 @@ public interface ResourcetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE_REPOSITORY__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+	int RESOURCE_TYPE_REPOSITORY__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -971,16 +890,16 @@ public interface ResourcetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE_REPOSITORY__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+	int RESOURCE_TYPE_REPOSITORY__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE_REPOSITORY__NAME = CorePackage.NAMED_ELEMENT__NAME;
+	int RESOURCE_TYPE_REPOSITORY__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Resource Types</b></em>' containment reference list.
@@ -989,7 +908,7 @@ public interface ResourcetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE_REPOSITORY__RESOURCE_TYPES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE_TYPE_REPOSITORY__RESOURCE_TYPES = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Protocols</b></em>' containment reference list.
@@ -998,7 +917,7 @@ public interface ResourcetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE_REPOSITORY__PROTOCOLS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE_TYPE_REPOSITORY__PROTOCOLS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Resource Type Repository</em>' class.
@@ -1007,7 +926,7 @@ public interface ResourcetypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_TYPE_REPOSITORY_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int RESOURCE_TYPE_REPOSITORY_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.resourcetype.impl.CommunicationProtocolImpl <em>Communication Protocol</em>}' class.

@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.impl.CommentableElementImpl;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
@@ -31,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage;
  *
  * @generated
  */
-public class ResourceTypeRepositoryImpl extends NamedElementImpl implements ResourceTypeRepository {
+public class ResourceTypeRepositoryImpl extends CommentableElementImpl implements ResourceTypeRepository {
 	/**
 	 * The cached value of the '{@link #getResourceTypes() <em>Resource Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
