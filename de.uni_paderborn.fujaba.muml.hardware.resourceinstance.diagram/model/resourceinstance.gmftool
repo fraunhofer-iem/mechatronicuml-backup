@@ -48,6 +48,35 @@
             path="icons/actuator_large.gif"
             bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
       </tools>
+      <tools
+          xsi:type="gmftool:PaletteSeparator"
+          title="HW-PortInstance"/>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="BusPort-Instance"
+          description="Creates a new Bus-Port Instance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/busportInst_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/busportInst_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="LinkPort-Instance"
+          description="Creates a new Link-Port Instance">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/linkportInst_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/linkportInst_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

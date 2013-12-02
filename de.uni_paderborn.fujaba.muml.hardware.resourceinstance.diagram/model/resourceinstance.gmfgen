@@ -1041,6 +1041,22 @@
             largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/actuator_large.gif"
             smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/actuator_small.gif"
             genNodes="//@diagram/@topLevelNodes.1"/>
+        <entries
+            xsi:type="gmfgen:Separator"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="BusPort-Instance"
+            description="Creates a new Bus-Port Instance"
+            largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/busportInst_large.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/busportInst_small.gif"
+            genNodes="//@diagram/@childNodes.0"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="LinkPort-Instance"
+            description="Creates a new Link-Port Instance"
+            largeIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkportInst_large.gif"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkportInst_small.gif"
+            genNodes="//@diagram/@childNodes.1"/>
       </groups>
     </palette>
     <preferences>

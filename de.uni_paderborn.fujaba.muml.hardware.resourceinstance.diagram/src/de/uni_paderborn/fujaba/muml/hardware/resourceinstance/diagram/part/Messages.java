@@ -278,6 +278,26 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String BusPortInstance5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String BusPortInstance5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String LinkPortInstance6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String LinkPortInstance6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String StructuredResourceInstanceStructuredResourceCompartmentEditPart_title;
 
 	/**

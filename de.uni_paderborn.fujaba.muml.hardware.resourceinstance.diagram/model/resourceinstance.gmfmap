@@ -416,6 +416,9 @@
             <viewExpression
                 body="let portName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xA;let portType : String = if self.hwportType.oclIsUndefined() then 'null' else  self.hwportType.name endif in&#xD;&#xA;let protocolName : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xD;&#xA;portName +': ' + portType + '\n' + protocolName"/>
           </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="resourceinstance.gmftool#//@palette/@tools.0/@tools.4"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPort"/>
         </ownedChild>
@@ -433,6 +436,9 @@
             <viewExpression
                 body="let portName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xA;let portType : String = if self.hwportType.oclIsUndefined() then 'null' else  self.hwportType.name endif in&#xD;&#xA;let protocolName : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xD;&#xA;portName +': ' + portType + '\n' + protocolName"/>
           </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="resourceinstance.gmftool#//@palette/@tools.0/@tools.5"/>
           <diagramNode
               href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPort"/>
         </ownedChild>
