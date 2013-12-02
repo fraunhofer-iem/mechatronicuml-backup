@@ -196,7 +196,7 @@
         <children xsi:type="gmfgraph:Rectangle" name="HWPlatformTitleAreaFigure" outline="false" fill="false">
           <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
           <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
-          <children xsi:type="gmfgraph:Label" name="HWPlatformNameLabel"/>
+          <children xsi:type="gmfgraph:Label" name="HWPlatformNameLabel" text="Platform"/>
         </children>
         <children xsi:type="gmfgraph:Rectangle" name="HWPlatformCompartment" outline="false" fill="false">
           <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="FILL" horizontalAlignment="FILL"/>
@@ -231,7 +231,11 @@
       <defaultSize dx="48" dy="48"/>
     </facets>
   </nodes>
-  <nodes name="HWPlatformNode" figure="HWPlatform"/>
+  <nodes name="HWPlatformNode" figure="HWPlatform">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="400" dy="400"/>
+    </facets>
+  </nodes>
   <compartments name="StructuredResourceCompartment" figure="StructuredResourceFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <compartments name="HWPlatformCompartment" figure="HWPlatform" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
   <labels name="HWPortLabel" figure="HWPortLabelFigure" elementIcon="false">

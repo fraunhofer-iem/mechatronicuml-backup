@@ -5,7 +5,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
-import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage;
 
 /**
  * Base edit policy for all ResourceInstances that uses the CustomResourceFigure.

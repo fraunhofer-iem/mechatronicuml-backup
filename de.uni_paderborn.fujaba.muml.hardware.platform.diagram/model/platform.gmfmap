@@ -15,7 +15,7 @@
         <diagramLabel
             href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPlatformName"/>
         <viewExpression
-            body="let nameToShow : String = if (self.oclIsTypeOf(platforminstance::HWPlatformInstance)) then &#xA;&#x9;self.name.toString() +' :'+ self.oclAsType(platforminstance::HWPlatformInstance).hwplatformType.name.toString()&#xA;else &#xA;&#x9;self.name.toString()&#xA;endif &#xA; in&#xA;nameToShow"/>
+            body="let nameToShow : String = if (self.oclIsTypeOf(platforminstance::HWPlatformInstance)) then &#xA;&#x9;self.name +' :'+ self.oclAsType(platforminstance::HWPlatformInstance).hwplatformType.name&#xA;else &#xA;&#x9;self.name&#xA;endif &#xA; in&#xA;nameToShow"/>
       </labelMappings>
       <diagramNode
           href="../../de.uni_paderborn.fujaba.muml.hardware.common/model/hardwarecommon.gmfgraph#HWPlatformNode"/>

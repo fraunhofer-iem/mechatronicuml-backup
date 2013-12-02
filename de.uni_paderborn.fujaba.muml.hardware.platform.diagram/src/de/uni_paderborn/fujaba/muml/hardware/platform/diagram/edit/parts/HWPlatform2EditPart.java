@@ -239,7 +239,7 @@ public class HWPlatform2EditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(400, 400);
 
 		// Ensures that the element can be shrinked (Muml Bug #62).
 		result.setMinimumSize(new Dimension(0, 0));
@@ -389,7 +389,7 @@ public class HWPlatform2EditPart extends AbstractBorderedShapeEditPart {
 
 			fFigureHWPlatformNameLabel = new WrappingLabel();
 
-			fFigureHWPlatformNameLabel.setText("");
+			fFigureHWPlatformNameLabel.setText("Platform");
 
 			hWPlatformTitleAreaFigure0.add(fFigureHWPlatformNameLabel);
 
