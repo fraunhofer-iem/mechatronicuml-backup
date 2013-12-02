@@ -31,7 +31,7 @@
    <includes
          id="de.uni_paderborn.fujaba.muml.example.sectionEntry.feature"
          version="0.0.0"/>
-         
+
    <includes
          id="de.uni_paderborn.fujaba.muml.example.blindOvertaking.feature"
          version="0.0.0"/>
@@ -44,5 +44,9 @@
          id="de.uni_paderborn.fujaba.properties.feature"
          version="0.0.0"
          name=""/>
+
+   <includes
+         id="de.uni_paderborn.uppaal.feature"
+         version="0.0.0"/>
 
 </feature>
