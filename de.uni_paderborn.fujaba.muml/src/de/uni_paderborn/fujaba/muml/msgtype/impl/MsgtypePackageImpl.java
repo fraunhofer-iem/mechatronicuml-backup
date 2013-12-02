@@ -318,7 +318,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueParameterNames"
-		   });		
+		   });				
 	}
 
 	/**
@@ -334,7 +334,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		   source, 
 		   new String[] {
 			 "UniqueParameterNames", "self.parameters->isUnique(name)"
-		   });			
+		   });					
 	}
 
 } //MsgtypePackageImpl

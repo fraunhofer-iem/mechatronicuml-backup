@@ -112,7 +112,7 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 
 	/**
 	 * Returns the value of the '<em><b>Multi Port</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -120,7 +120,7 @@ public interface DiscretePort extends Port, DiscreteInteractionEndpoint {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Multi Port</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDiscretePort_MultiPort()
-	 * @model default="" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model default="false" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.multi'"
 	 * @generated
 	 */

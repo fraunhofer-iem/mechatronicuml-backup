@@ -523,7 +523,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																			
+		   });																				
 		addAnnotation
 		  (variableEClass, 
 		   source, 
@@ -539,7 +539,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																					
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";																						
 		addAnnotation
 		  (variableEClass, 
 		   source, 

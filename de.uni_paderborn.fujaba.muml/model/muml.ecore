@@ -117,8 +117,8 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiPort" lowerBound="1"
-          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
           derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This derived attribute indicates if the port is a multi port."/>
@@ -174,8 +174,8 @@
           <details key="documentation" value="The ports of this part."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiPart" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiPart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
           unsettable="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This derived attribute indicates if the part is a multi part.&#xD;&#xA;It is only used to simplify OCL constraints."/>
@@ -204,7 +204,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts AtomicComponentsNamesMustBeUnique"/>
       </eAnnotations>
-      <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return &quot;Atomic_Component_&quot; + getName();"/>
         </eAnnotations>
@@ -325,7 +325,7 @@
         <details key="HybridStructuredComponentValidPorts" value="self.componentKind = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xD;&#xA;&#x9;)"/>
         <details key="ComponentPartsHaveUniqueName" value="self.embeddedComponentParts -> isUnique(name)"/>
       </eAnnotations>
-      <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return &quot;Structured_Component_&quot; + getName();"/>
         </eAnnotations>
@@ -410,7 +410,7 @@
           <details key="documentation" value="Defines the direction of this directed typed port."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           defaultValueLiteral="false">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Decides if this port is optional. An optional port does not need to be instantiated&#xD;&#xA;in all instances of the containing component."/>
@@ -471,7 +471,7 @@
           <details key="derivation" value="if (self.portType.oclIsKindOf(DiscretePort)) then&#xD;&#xA;self.portType.oclAsType(DiscretePort).refinedRole&#xD;&#xA;else&#xD;&#xA;null&#xD;&#xA;endif"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if portType.name.oclIsUndefined() then&#xA;&#x9;null&#xA;else&#xA;&#x9;portType.name&#xA;endif"/>
@@ -518,7 +518,7 @@
           <details key="documentation" value="The element this constraint applies to."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="correct" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="correct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This derived attribute is &quot;true&quot; if and only if this.correctness == Correctness.CORRECT holds."/>
@@ -948,8 +948,8 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiRole" lowerBound="1"
-          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
           derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This derived attribute indicates if the role is a multi role."/>
@@ -1042,7 +1042,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageLossPossible"
-          lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           defaultValueLiteral="false">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Defines if messages that are send using this connector may be lost during transport."/>
@@ -1230,7 +1230,7 @@
           <details key="documentation" value="A state references its connection points. They can only exist, if a state embeds one or more statecharts."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="simple" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="simple" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           changeable="false" volatile="true" transient="true" defaultValueLiteral="true"
           unsettable="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1267,14 +1267,14 @@
         </eAnnotations>
         <eParameters name="vertex" eType="#//realtimestatechart/Vertex"/>
       </eOperations>
-      <eOperations name="getUniqueTransitionPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt">
+      <eOperations name="getUniqueTransitionPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Returns the next free higher transition priority that is closest to the value provided as hint.&#xD;&#xA;\todosd{Rename hint to an understandable name.}"/>
           <details key="body" value="int nextHighestTransitionPriority = hint;&#xD;&#xA;for (; hasOutgoingTransitionOfPriority(nextHighestTransitionPriority); nextHighestTransitionPriority++);&#xD;&#xA;return nextHighestTransitionPriority;"/>
         </eAnnotations>
-        <eParameters name="hint" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+        <eParameters name="hint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       </eOperations>
-      <eOperations name="hasOutgoingTransitionOfPriority" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+      <eOperations name="hasOutgoingTransitionOfPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Returns &lt;code>true&lt;/code>, if this Vertex contains an outgoing transition of the given priority."/>
           <details key="body" value="for (Transition transition : getOutgoingTransitions()) {&#xD;&#xA;&#x9;if (transition.getPriority() == priority) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"/>
@@ -1622,7 +1622,7 @@
           <details key="documentation" value="The clocks of this realtime statechart."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="flat" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="flat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
           derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
@@ -1958,8 +1958,8 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="multi" lowerBound="1"
-          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" defaultValueLiteral=""
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          changeable="false" volatile="true" transient="true" defaultValueLiteral="false"
           derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This derived attribute indicates if the discrete interaction endpoint has a maximum cardinality greater than one ."/>
@@ -2059,7 +2059,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="LiteralExpressionMustBeANaturalNumber" value="-- If a TimeValue has as value a LiteralExpression, it must be a natural number.&#xD;&#xA;-- 1. Check if the LiteralExpression can be cast to an Integer&#xD;&#xA;-- 2. Check if this Integer is greater or equal to zero.&#xD;&#xA;&#xD;&#xA;(&#xD;&#xA;not self.value.oclIsUndefined()&#xD;&#xA;and &#xD;&#xA;self.value.oclIsKindOf(core::expressions::common::LiteralExpression)&#xD;&#xA;)&#xD;&#xA;implies&#xD;&#xA;(&#xD;&#xA;not self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger().oclIsUndefined()&#xD;&#xA;and &#xD;&#xA;self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger()>=0&#xD;&#xA;)&#xD;&#xA;-- author: xell&#xD;&#xA;-- ticket: 770"/>
       </eAnnotations>
-      <eOperations name="toString" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString">
+      <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="// Return value concatenated with abbreviated unit.&#xD;&#xA;StringBuffer sb = new StringBuffer();&#xD;&#xA;if (value == null) {&#xD;&#xA;&#x9;sb.append(&quot;null&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if (value instanceof LiteralExpression) {&#xD;&#xA;&#x9;&#x9;sb.append(((LiteralExpression) value).getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;sb.append(value.eClass().getName());&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;if (unit != null) {&#xD;&#xA;&#x9;sb.append(' ');&#xD;&#xA;&#x9;sb.append(TimeValueImpl.getUnitRepresentation(unit));&#xD;&#xA;}&#xD;&#xA;return sb.toString();"/>
         </eAnnotations>

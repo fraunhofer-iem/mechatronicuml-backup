@@ -175,7 +175,7 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 
 	/**
 	 * Returns the value of the '<em><b>Multi</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -183,7 +183,7 @@ public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, Behavior
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Multi</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteInteractionEndpoint_Multi()
-	 * @model default="" required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model default="false" required="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if not (self.cardinality.oclIsUndefined()) then\r\n\t(self.cardinality.upperBound.value > 1) or self.cardinality.upperBound.infinity\r\nelse\r\n\tfalse\r\nendif\r\n\r\n'"
 	 * @generated
 	 */

@@ -97,7 +97,7 @@ public interface ComponentPart extends NamedElement, CommentableElement, DataTyp
 
 	/**
 	 * Returns the value of the '<em><b>Multi Part</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -107,7 +107,7 @@ public interface ComponentPart extends NamedElement, CommentableElement, DataTyp
 	 * @return the value of the '<em>Multi Part</em>' attribute.
 	 * @see #isSetMultiPart()
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponentPart_MultiPart()
-	 * @model default="" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 * @model default="false" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity'"
 	 * @generated
 	 */

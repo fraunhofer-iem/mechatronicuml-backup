@@ -812,7 +812,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });											
+		   });													
 		addAnnotation
 		  (portInstanceEClass, 
 		   source, 
@@ -830,7 +830,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueComponentInstanceNames"
-		   });																			
+		   });																				
 		addAnnotation
 		  (discreteSinglePortInstanceEClass, 
 		   source, 
@@ -846,7 +846,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";									
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";											
 		addAnnotation
 		  (getPortConnectorInstance_PortConnectorType(), 
 		   source, 
@@ -913,7 +913,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "derivation", "if self.parentStructuredComponentInstance.oclIsUndefined()\r\nthen OrderedSet {}\r\nelse self.parentStructuredComponentInstance.portInstances\r\nendif"
-		   });						
+		   });							
 		addAnnotation
 		  (getDiscretePortInstance_ReceiverMessageTypes(), 
 		   source, 
