@@ -100,10 +100,10 @@
    	</extension>
 
 <extension point="org.eclipse.ui.menus">
-	   <?gmfgen generated="true"?>   
+	   <?gmfgen generated="false"?>   
 	   <menuContribution
 	         allPopups="false"
-	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	         locationURI="popup:de.uni_paderborn.fujaba?after=psmdiagrams">
 	      <command
 	            commandId="de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.createDiagram"
 	            icon="icons/obj16/PlatformDiagramFile.gif"
