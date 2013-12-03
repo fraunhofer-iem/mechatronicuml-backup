@@ -185,7 +185,8 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 				move(1);
 			}
 		});
-		
+
+		// Set initial selection
 		tableViewer.setInput(value);
 		tableViewer.setSelection(new StructuredSelection());
 	}
@@ -203,7 +204,12 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 
 	protected void selectionChanged(EObject newSelection) {
 		Object first = null, last = null;
-		Object[] values = ((Collection<?>) value).toArray();
+		Object[] values;
+		if (value == null) {
+			values = new Object[0];
+		} else {
+			values = ((Collection<?>) value).toArray();
+		}
 		if (values.length > 0) {
 			first = values[0];
 			last = values[values.length - 1];

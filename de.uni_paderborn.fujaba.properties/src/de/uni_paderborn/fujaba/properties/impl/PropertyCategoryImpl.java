@@ -85,7 +85,7 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean OPEN_EDEFAULT = false;
+	protected static final boolean OPEN_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isOpen() <em>Open</em>}' attribute.
@@ -196,7 +196,7 @@ public class PropertyCategoryImpl extends EObjectImpl implements PropertyCategor
 	 */
 	public de.uni_paderborn.fujaba.properties.Class getClazz() {
 		if (eContainerFeatureID() != PropertiesPackage.PROPERTY_CATEGORY__CLAZZ) return null;
-		return (de.uni_paderborn.fujaba.properties.Class)eContainer();
+		return (de.uni_paderborn.fujaba.properties.Class)eInternalContainer();
 	}
 
 	/**

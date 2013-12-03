@@ -82,7 +82,7 @@ public interface PropertyCategory extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Open</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Open</em>' attribute isn't clear,
@@ -92,7 +92,7 @@ public interface PropertyCategory extends EObject {
 	 * @return the value of the '<em>Open</em>' attribute.
 	 * @see #setOpen(boolean)
 	 * @see de.uni_paderborn.fujaba.properties.PropertiesPackage#getPropertyCategory_Open()
-	 * @model default="false" required="true"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isOpen();
