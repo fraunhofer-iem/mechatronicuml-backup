@@ -103,6 +103,8 @@ public class OperationEditor
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
 						.getOperation_Parameters());
 
+		editor.setTooltipMessage("The ordered parameters of the operation. They define the values that need to be\npassed upon calling the operation.");
+
 		return editor;
 
 	}

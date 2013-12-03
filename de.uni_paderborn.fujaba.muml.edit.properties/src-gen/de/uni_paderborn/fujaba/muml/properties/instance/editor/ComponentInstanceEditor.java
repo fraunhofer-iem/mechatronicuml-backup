@@ -111,6 +111,8 @@ public abstract class ComponentInstanceEditor
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstance_ComponentPart());
 
+		editor.setTooltipMessage("If the component instance is contained in a structured component instance,\nthen the corresponding structure component has has component part that \nwas used to include the component type of this instance. Then, this reference \npoints to this component part. We can use this reference for deciding how \nmany instances of a particular part exist in a structured component instance\nsuch that we can enforce the cardinalities of the component part during run-time.");
+
 		return editor;
 
 	}
@@ -132,6 +134,8 @@ public abstract class ComponentInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstance_ParentCIC());
+
+		editor.setTooltipMessage("The component instance configuration that contains this component instance.");
 
 		return editor;
 

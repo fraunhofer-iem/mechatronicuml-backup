@@ -118,6 +118,8 @@ public class ComponentInstanceConfigurationEditor
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getComponentInstanceConfiguration_ParentStructuredComponentInstance());
 
+		editor.setTooltipMessage("A structured component instance embeds a component instance configuration\nthat defines its inner structure. For such component instance configuration,\nthis reference points to the containing structured component instance. If this\ncomponent instance configuration is not contained in a structured component\ninstance, this reference is null.");
+
 		return editor;
 
 	}

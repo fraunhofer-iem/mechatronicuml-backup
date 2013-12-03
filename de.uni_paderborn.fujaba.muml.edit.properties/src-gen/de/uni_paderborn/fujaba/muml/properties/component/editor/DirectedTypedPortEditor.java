@@ -77,7 +77,7 @@ public abstract class DirectedTypedPortEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_Kind());
 
-		editor.setTooltipMessage("Decides the direction of a continous port.");
+		editor.setTooltipMessage("Defines the direction of this directed typed port.");
 
 		return editor;
 
@@ -101,7 +101,7 @@ public abstract class DirectedTypedPortEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_Optional());
 
-		editor.setTooltipMessage("Decides if this port is optional.");
+		editor.setTooltipMessage("Decides if this port is optional. An optional port does not need to be instantiated\nin all instances of the containing component.");
 
 		return editor;
 
@@ -124,6 +124,8 @@ public abstract class DirectedTypedPortEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getDirectedTypedPort_InitializeExpression());
+
+		editor.setTooltipMessage("A initialize expression specifies the initial value that is emitted by the port after\nit has been instantiated. Thus, we only provide initialize expressions for out-port.");
 
 		return editor;
 

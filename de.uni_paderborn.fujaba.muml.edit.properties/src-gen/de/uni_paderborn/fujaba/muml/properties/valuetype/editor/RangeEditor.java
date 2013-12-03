@@ -49,6 +49,8 @@ public class RangeEditor
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getRange_LowerBound(), 0);
 
+		editor.setTooltipMessage("Defines the lower bound of the range.");
+
 		return editor;
 
 	}
@@ -68,6 +70,8 @@ public class RangeEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
 						.getRange_UpperBound(), 0);
+
+		editor.setTooltipMessage("Defines the upper bound of the range.");
 
 		return editor;
 

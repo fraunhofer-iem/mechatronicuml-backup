@@ -53,6 +53,8 @@ public class PortPartEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getPortPart_PortType());
 
+		editor.setTooltipMessage("The port of the component that is represented by this PortPart.");
+
 		return editor;
 
 	}
@@ -73,6 +75,8 @@ public class PortPartEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getPortPart_ComponentPart());
+
+		editor.setTooltipMessage("The component part that contains this PortPart. The port reference by the \nportType reference needs to be contained in the component that is referenced\nby this reference.");
 
 		return editor;
 

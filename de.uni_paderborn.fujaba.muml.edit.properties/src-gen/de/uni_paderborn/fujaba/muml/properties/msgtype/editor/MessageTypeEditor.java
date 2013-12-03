@@ -81,6 +81,8 @@ public class MessageTypeEditor
 				de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
 						.getMessageType_Repository());
 
+		editor.setTooltipMessage("The message type repository that contains this message type.");
+
 		return editor;
 
 	}
