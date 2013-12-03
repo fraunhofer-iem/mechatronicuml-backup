@@ -908,7 +908,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -916,7 +916,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });				
+		   });
 	}
 
 	/**
@@ -926,30 +926,30 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (getRoleInstance_Role(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.type.oclAsType(muml::protocol::Role)"
-		   });		
+		   });	
 		addAnnotation
 		  (getRoleInstance_Assembly(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if not self.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->isEmpty() then\r\n\tself.oclAsType(muml::connector::ConnectorEndpointInstance).connectorInstances->first().oclAsType(RuntimeRoleConnectorInstance)\r\nelse\r\n\tnull\r\nendif"
-		   });		
+		   });	
 		addAnnotation
 		  (getRealtimeStatechartInstance_AllAvailableVariableBindings(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self -> closure(if parentRealtimeStatechartInstance.oclIsUndefined() then self else parentRealtimeStatechartInstance endif).variableBindings->asOrderedSet()"
-		   });		
+		   });	
 		addAnnotation
 		  (getRealtimeStatechartInstance_NearestRuntimeBehavioralElement(), 
 		   source, 
 		   new String[] {
-			 "derivation", "if self.runtimeBehavioralElement.oclIsUndefined() then\r\n\tself.parentRealtimeStatechartInstance.nearestRuntimeBehavioralElement\r\nelse\r\n\tself.runtimeBehavioralElement\r\nendif"
+			 "derivation", "-- traverse to parent if no runtime behavioral element itself\r\nif self.runtimeBehavioralElement.oclIsUndefined() then\r\n\t-- guard against NPE\r\n\tif (self.parentRealtimeStatechartInstance.oclIsUndefined()) then\t\r\n\t\tnull\r\n\telse\r\n\t\tself.parentRealtimeStatechartInstance.nearestRuntimeBehavioralElement\r\n\tendif\r\nelse\r\n\tself.runtimeBehavioralElement\r\nendif"
 		   });
 	}
 

@@ -207,7 +207,7 @@ public interface RealtimeStatechartInstance extends ExtendableElement {
 	 * @see #setNearestRuntimeBehavioralElement(RuntimeBehavioralElement)
 	 * @see de.uni_paderborn.fujaba.muml.runtime.RuntimePackage#getRealtimeStatechartInstance_NearestRuntimeBehavioralElement()
 	 * @model transient="true" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.runtimeBehavioralElement.oclIsUndefined() then\r\n\tself.parentRealtimeStatechartInstance.nearestRuntimeBehavioralElement\r\nelse\r\n\tself.runtimeBehavioralElement\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='-- traverse to parent if no runtime behavioral element itself\r\nif self.runtimeBehavioralElement.oclIsUndefined() then\r\n\t-- guard against NPE\r\n\tif (self.parentRealtimeStatechartInstance.oclIsUndefined()) then\t\r\n\t\tnull\r\n\telse\r\n\t\tself.parentRealtimeStatechartInstance.nearestRuntimeBehavioralElement\r\n\tendif\r\nelse\r\n\tself.runtimeBehavioralElement\r\nendif'"
 	 * @generated
 	 */
 	RuntimeBehavioralElement getNearestRuntimeBehavioralElement();
