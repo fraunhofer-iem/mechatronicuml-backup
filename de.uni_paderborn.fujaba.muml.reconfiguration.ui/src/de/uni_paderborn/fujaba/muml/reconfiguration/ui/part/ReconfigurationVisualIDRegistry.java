@@ -325,13 +325,13 @@ public class ReconfigurationVisualIDRegistry {
 		return false;
 	}
 
-	/**
-	 * @generated
-	 */
+
 	public static int getLinkWithClassVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
 		}
+		
+		//TODO check normal association and delegation here?
 		if (de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 				.getAssemblyConnector().isSuperTypeOf(domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID;
@@ -340,6 +340,19 @@ public class ReconfigurationVisualIDRegistry {
 				.getDelegationConnector().isSuperTypeOf(domainElement.eClass())) {
 			return de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID;
 		}
+		
+		if (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationPortDelegationConnector().isSuperTypeOf(domainElement.eClass())) {
+			return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortDelegationConnectorEditPart.VISUAL_ID;
+		}
+		
+	
+		if (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+				.getReconfigurationPortAssemblyConnector().isSuperTypeOf(domainElement.eClass())) {
+			return de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortAssemblyConnectorEditPart.VISUAL_ID;
+		}
+		
+		
 		return -1;
 	}
 

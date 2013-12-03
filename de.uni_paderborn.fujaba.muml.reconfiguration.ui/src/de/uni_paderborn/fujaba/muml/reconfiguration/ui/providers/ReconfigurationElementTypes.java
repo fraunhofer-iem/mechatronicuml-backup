@@ -44,8 +44,12 @@ public class ReconfigurationElementTypes{
 	public static final IElementType ReconfigurableStructuredComponent_2076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent_2076"); //$NON-NLS-1$
 	public static final IElementType ReconfigurationMessagePort_3076= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort_3076"); //$NON-NLS-1$
 	public static final IElementType ReconfigurationExecutionPort_3077= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort_3077");
-	public static final IElementType RuleBasedReconfigurationController_7076= getElementType("de.uni_paderborn.fujaba.muml.reconfigurationRuleBasedReconfigurationControllerEditPart_7076");
-	public static final IElementType Manager_2075= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationControllerEditPart_2075");
+	public static final IElementType RuleBasedReconfigurationController_7076= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController_7076");
+	public static final IElementType Manager_2075= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.Manager_2075");
+	public static final IElementType Executor_2077= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.Executor_2077");
+	public static final IElementType ReconfigurationPortDelegationConnector_4076=getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector_4076");
+	public static final IElementType ReconfigurationPortAssemblyConnector_4075=getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector_4075");
+	
 	
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
@@ -126,6 +130,8 @@ public class ReconfigurationElementTypes{
 			KNOWN_ELEMENT_TYPES.add(ReconfigurationExecutionPort_3077);
 			KNOWN_ELEMENT_TYPES.add(RuleBasedReconfigurationController_7076);
 			KNOWN_ELEMENT_TYPES.add(Manager_2075);
+			KNOWN_ELEMENT_TYPES.add(ReconfigurationPortDelegationConnector_4076);
+			KNOWN_ELEMENT_TYPES.add(ReconfigurationPortAssemblyConnector_4075);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -146,6 +152,10 @@ public class ReconfigurationElementTypes{
 			return RuleBasedReconfigurationController_7076;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID:
 			return Manager_2075;
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortDelegationConnectorEditPart.VISUAL_ID:
+			return ReconfigurationPortDelegationConnector_4076;
+			//TODO add assembly
+		
 		}
 		
 		return null;

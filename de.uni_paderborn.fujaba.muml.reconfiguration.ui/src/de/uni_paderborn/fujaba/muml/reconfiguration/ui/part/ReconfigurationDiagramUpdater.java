@@ -1,10 +1,18 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.ui.part;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.gmf.runtime.diagram.core.services.view.CreateEdgeViewOperation;
+import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.storydriven.core.ExtendableElement;
 
@@ -275,6 +283,96 @@ public class ReconfigurationDiagramUpdater {
 			View view) {
 		return Collections.emptyList();
 	}
+	
+	public static List<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getReconfigurableStructuredComponent_2076ContainedLinks(
+			View view) {
+		de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent modelElement = (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent) view
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+		result.addAll(getContainedTypeModelFacetLinks_ReconfigurationPortAssemblyConnector_4075(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_ReconfigurationPortDelegationConnector_4076(modelElement));
+		return result;
+	}
+	
+
+	private static Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_ReconfigurationPortAssemblyConnector_4075(
+			de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent container) {
+		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+		for (Iterator<?> links = container.getConnectors().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector) {
+				continue;
+			}
+			de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector link = (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector) linkObject;
+			if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortAssemblyConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			List targets = link.getConnectorEndpoints();
+			Object theTarget = !targets.isEmpty() ? targets
+					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+				continue;
+			}
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
+			List sources = link.getConnectorEndpoints();
+			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+				continue;
+			}
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
+			result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor(
+					src,
+					dst,
+					link,
+					de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.ReconfigurationPortAssemblyConnector_4075,
+					de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortAssemblyConnectorEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	
+	private static Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> getContainedTypeModelFacetLinks_ReconfigurationPortDelegationConnector_4076(
+			de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent container) {
+		LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor>();
+		for (Iterator<?> links = container.getConnectors().iterator(); links
+				.hasNext();) {
+			EObject linkObject = (EObject) links.next();
+			if (false == linkObject instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector) {
+				continue;
+			}
+			de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector link = (de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector) linkObject;
+			if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortDelegationConnectorEditPart.VISUAL_ID != de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+					.getLinkWithClassVisualID(link)) {
+				continue;
+			}
+			List targets = link.getConnectorEndpoints();
+			Object theTarget = !targets.isEmpty() ? targets
+					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+				continue;
+			}
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint dst = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theTarget;
+			List sources = link.getConnectorEndpoints();
+			Object theSource = !sources.isEmpty() ? sources.get(0) : null; // Adapted for MUML-BUG #446
+			if (false == theSource instanceof de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) {
+				continue;
+			}
+			de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint src = (de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint) theSource;
+			result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor(
+					src,
+					dst,
+					link,
+					de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.ReconfigurationPortDelegationConnector_4076,
+					de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortDelegationConnectorEditPart.VISUAL_ID));
+		}
+		return result;
+	}
+	
+	
+
+	
 
 	// public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater()
 	// {

@@ -12,6 +12,7 @@ import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvide
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomModelElementCategoryCanonicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomModelElementCategoryItemSemanticEditPolicy;
 
 
@@ -23,6 +24,7 @@ public class ReconfigurationEditPolicyProvider extends AbstractProvider implemen
             EObject element = ((IGraphicalEditPart)ep).resolveSemanticElement();
             if (element instanceof ModelElementCategory) {
                 ep.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomModelElementCategoryItemSemanticEditPolicy());
+                ep.installEditPolicy("CustomCanonical", new CustomModelElementCategoryCanonicalEditPolicy());
             }
         }
     }
