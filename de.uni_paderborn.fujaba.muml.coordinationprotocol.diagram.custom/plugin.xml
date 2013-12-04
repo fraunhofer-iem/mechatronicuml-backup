@@ -49,7 +49,7 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
        <layoutProvider class="de.uni_paderborn.fujaba.muml.coordinationprotocol.diagram.custom.layout.CoordinationProtocolLayoutProvider">
-            <Priority name="High"/>
+            <Priority name="Highest"/>
        </layoutProvider>
    </extension>
 </plugin>
