@@ -39,7 +39,8 @@ main() {
 		
 				
 		// Remove stale coordinationProtocolOccurrences
-		part.parentComponent.coordinationProtocolOccurences := part.parentComponent.coordinationProtocolOccurences->reject(portParts->isEmpty());
+		// TODO Removed, please reactivate
+		// part.parentComponent.coordinationProtocolOccurences := part.parentComponent.coordinationProtocolOccurences->reject(portParts->isEmpty());
 		
 		// Replace existing portParts with newly created portParts
 		createPortParts(part);
@@ -53,8 +54,9 @@ main() {
 					p.coordinationProtocolOccurence := part.parentComponent.coordinationProtocolOccurences->any(c | c.coordinationProtocol = coordinationProtocol);
 					if (p.coordinationProtocolOccurence.oclIsUndefined()) then {
 						// If none found, create one
-						p.coordinationProtocolOccurence := new CoordinationProtocolOccurrence(coordinationProtocol);
-						part.parentComponent.coordinationProtocolOccurences += p.coordinationProtocolOccurence;
+						// TODO Removed please reactivate
+						//p.coordinationProtocolOccurence := new CoordinationProtocolOccurrence(coordinationProtocol);
+						//part.parentComponent.coordinationProtocolOccurences += p.coordinationProtocolOccurence;
 					} endif;
 				} endif
 			} endif;
