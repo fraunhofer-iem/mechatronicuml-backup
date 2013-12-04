@@ -290,24 +290,25 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		return AdapterFactoryEditingDomain.getEditingDomainFor(object);
 	}
 	
-	protected Collection<?> getChoices() {
-		Collection<?> choices = null;
+	protected Collection<Object> getChoices() {
+		List<Object> choices = null;
 		if (feature.getEType() == EcorePackage.Literals.EBOOLEAN) {
-			choices = Arrays.asList(new Boolean[] { true, false });
+			choices = Arrays.asList(new Object[] { true, false });
 		}
 		if (choices == null && itemPropertyDescriptor != null) {
-			choices = itemPropertyDescriptor.getChoiceOfValues(input);
+			choices = new ArrayList<Object>(itemPropertyDescriptor.getChoiceOfValues(input));
 		}
 		if (choices == null) {
 			choices = Collections.emptyList();
 		}
 		
 		// Make sure optional <=> choices.contains(null) is equivalent
+		choices.remove(null); // This makes sure the null is added to the front
 		boolean optional = feature.getLowerBound() <= 0 && false == feature.getEType() instanceof EEnum; // enums should not be optional, as they do not seem to support setting null as value.
 		if (optional != choices.contains(null)) {
 			choices = new ArrayList<Object>(choices); // make choices modifiable
 			if (optional) {
-				choices.add(null);
+				choices.add(0, null);
 			} else {
 				choices.remove(null);
 			}

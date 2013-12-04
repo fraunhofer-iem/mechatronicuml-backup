@@ -36,6 +36,14 @@ import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
 
 public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	
+	private static class NullHelper {
+		public String toString() {
+			return "";
+		}
+	}
+
+	private static final NullHelper NULL_HELPER = new NullHelper();
+	
 	protected boolean hasSearchButton;
 	
 	protected Label label;
@@ -137,6 +145,9 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	}
 
 	protected void selectionChanged(Object newSelection) {
+		if (newSelection == NULL_HELPER) {
+			newSelection = null;
+		}
 		setValue(newSelection);
 	}
 
@@ -149,11 +160,18 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	private void setInput() {
 		Object value = this.value;
 
-		Collection<?> choices = getChoices();
-
-		// Problem: AbstractListViewer does not allow null!
-		choices.remove(null);
+		Collection<Object> choices = getChoices();
 		
+		// Problem: AbstractListViewer does not allow null, use NULL_HELPER
+		List<Object> safeChoices = new ArrayList<Object>();
+		for (Object choice : choices) {
+			if (choice == null) {
+				choice = NULL_HELPER;
+			}
+			safeChoices.add(choice);
+		}
+		choices = safeChoices;
+
 		if (comboViewer != null) {
 			comboViewer.setInput(choices);
 		}
@@ -171,6 +189,10 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 	private void applySelection(Object selection) {
 		if (comboViewer == null) {
 			return;
+		}
+		
+		if (selection == null) {
+			selection = NULL_HELPER;
 		}
 
 		// Set selection
