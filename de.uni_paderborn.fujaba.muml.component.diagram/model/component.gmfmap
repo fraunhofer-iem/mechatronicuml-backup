@@ -367,6 +367,9 @@
     </creationConstraints>
   </links>
   <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="component.gmftool#//@palette/@tools.3/@tools.1"/>
     <diagramLink
         href="component.gmfgraph#RolePatternConnection"/>
     <linkMetaFeature

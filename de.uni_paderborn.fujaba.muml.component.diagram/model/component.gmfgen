@@ -770,6 +770,12 @@
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/CoordinationProtocol.gif"
             default="true"
             genNodes="//@diagram/@childNodes.5"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Refinement"
+            description="Create new Refinement"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Refinement.gif"
+            genLinks="//@diagram/@links.2"/>
       </groups>
     </palette>
     <preferences>
