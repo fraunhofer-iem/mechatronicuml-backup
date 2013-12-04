@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.parts;
 
 import org.eclipse.draw2d.Connection;
@@ -12,18 +24,18 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PortPartCoordinationProtocolOccurenceEditPart extends
+public class PortPartCoordinationProtocolPartEditPart extends
 		ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4003;
+	public static final int VISUAL_ID = 4004;
 
 	/**
 	 * @generated
 	 */
-	public PortPartCoordinationProtocolOccurenceEditPart(View view) {
+	public PortPartCoordinationProtocolPartEditPart(View view) {
 		super(view);
 	}
 
@@ -34,7 +46,7 @@ public class PortPartCoordinationProtocolOccurenceEditPart extends
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.PortPartCoordinationProtocolOccurenceItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.PortPartCoordinationProtocolPartItemSemanticEditPolicy());
 	}
 
 	/**

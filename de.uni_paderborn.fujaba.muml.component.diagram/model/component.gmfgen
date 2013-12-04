@@ -655,12 +655,11 @@
           targetEnd="//@expressionProviders/@providers.0/@expressions.14"/>
     </links>
     <links
-        visualID="4003"
-        editPartClassName="PortPartCoordinationProtocolOccurenceEditPart"
-        itemSemanticEditPolicyClassName="PortPartCoordinationProtocolOccurenceItemSemanticEditPolicy"
-        notationViewFactoryClassName="PortPartCoordinationProtocolOccurenceViewFactory"
-        createCommandClassName="PortPartCoordinationProtocolOccurenceCreateCommand"
-        reorientCommandClassName="PortPartCoordinationProtocolOccurenceReorientCommand">
+        visualID="4004"
+        editPartClassName="PortPartCoordinationProtocolPartEditPart"
+        itemSemanticEditPolicyClassName="PortPartCoordinationProtocolPartItemSemanticEditPolicy"
+        createCommandClassName="PortPartCoordinationProtocolPartCreateCommand"
+        reorientCommandClassName="PortPartCoordinationProtocolPartReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -672,7 +671,7 @@
       <modelFacet
           xsi:type="gmfgen:FeatureLinkModelFacet">
         <metaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/PortPart/coordinationProtocolOccurence"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/PortPart/coordinationProtocolPart"/>
       </modelFacet>
     </links>
     <compartments

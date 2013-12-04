@@ -271,9 +271,9 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 			return createDelegationConnector_4002(
 					getSemanticElement(semanticAdapter), containerView, index,
 					persisted, preferencesHint);
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart.VISUAL_ID:
-			return createPortPartCoordinationProtocolOccurence_4003(
-					containerView, index, persisted, preferencesHint);
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
+			return createPortPartCoordinationProtocolPart_4004(containerView,
+					index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
 		return null;
@@ -646,9 +646,9 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Node createCoordinationProtocolPart_3016(
-			EObject domainElement, View containerView, int index,
-			boolean persisted, PreferencesHint preferencesHint) {
+	public Node createCoordinationProtocolPart_3016(EObject domainElement,
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
@@ -799,9 +799,8 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 	/**
 	 * @generated
 	 */
-	public Edge createPortPartCoordinationProtocolOccurence_4003(
-			View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
+	public Edge createPortPartCoordinationProtocolPart_4004(View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
@@ -814,7 +813,7 @@ public class MumlViewProvider extends AbstractProvider implements IViewProvider 
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart.VISUAL_ID));
+				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint

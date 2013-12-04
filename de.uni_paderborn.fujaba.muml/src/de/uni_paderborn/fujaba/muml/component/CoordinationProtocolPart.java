@@ -62,7 +62,7 @@ public interface CoordinationProtocolPart extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Port Parts</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.PortPart}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -70,8 +70,8 @@ public interface CoordinationProtocolPart extends CommentableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Parts</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolPart_PortParts()
-	 * @see de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence
-	 * @model opposite="coordinationProtocolOccurence" lower="2"
+	 * @see de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolPart
+	 * @model opposite="coordinationProtocolPart" lower="2"
 	 * @generated
 	 */
 	EList<PortPart> getPortParts();

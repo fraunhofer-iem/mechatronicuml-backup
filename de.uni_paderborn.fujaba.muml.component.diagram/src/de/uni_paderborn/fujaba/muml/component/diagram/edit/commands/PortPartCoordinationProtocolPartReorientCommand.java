@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.commands;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -13,7 +25,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PortPartCoordinationProtocolOccurenceReorientCommand extends
+public class PortPartCoordinationProtocolPartReorientCommand extends
 		EditElementCommand {
 
 	/**
@@ -39,7 +51,7 @@ public class PortPartCoordinationProtocolOccurenceReorientCommand extends
 	/**
 	 * @generated
 	 */
-	public PortPartCoordinationProtocolOccurenceReorientCommand(
+	public PortPartCoordinationProtocolPartReorientCommand(
 			ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
@@ -77,11 +89,11 @@ public class PortPartCoordinationProtocolOccurenceReorientCommand extends
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
-				.canExistPortPartCoordinationProtocolOccurence_4003(
-						getNewSource(), getOldTarget(), sourceView, targetView)) {
+				.canExistPortPartCoordinationProtocolPart_4004(getNewSource(),
+						getOldTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorPortPartCoordinationProtocolOccurence_4003(
+					.getErrorPortPartCoordinationProtocolPart_4004(
 							getNewSource(), getOldTarget(), sourceView,
 							targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
@@ -104,11 +116,11 @@ public class PortPartCoordinationProtocolOccurenceReorientCommand extends
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
-				.canExistPortPartCoordinationProtocolOccurence_4003(
-						getOldSource(), getNewTarget(), sourceView, targetView)) {
+				.canExistPortPartCoordinationProtocolPart_4004(getOldSource(),
+						getNewTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorPortPartCoordinationProtocolOccurence_4003(
+					.getErrorPortPartCoordinationProtocolPart_4004(
 							getOldSource(), getNewTarget(), sourceView,
 							targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
@@ -141,8 +153,8 @@ public class PortPartCoordinationProtocolOccurenceReorientCommand extends
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
 
-		getOldSource().setCoordinationProtocolOccurence(null);
-		getNewSource().setCoordinationProtocolOccurence(getOldTarget());
+		getOldSource().setCoordinationProtocolPart(null);
+		getNewSource().setCoordinationProtocolPart(getOldTarget());
 
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
@@ -152,7 +164,7 @@ public class PortPartCoordinationProtocolOccurenceReorientCommand extends
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 
-		getOldSource().setCoordinationProtocolOccurence(getNewTarget());
+		getOldSource().setCoordinationProtocolPart(getNewTarget());
 
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}

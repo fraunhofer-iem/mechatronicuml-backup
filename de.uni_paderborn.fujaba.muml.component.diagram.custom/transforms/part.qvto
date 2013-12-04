@@ -45,14 +45,14 @@ main() {
 		// Replace existing portParts with newly created portParts
 		createPortParts(part);
 		
-		// Create CoordinationProtocolParts a.k.a CoordinationProtocolParts and associate PortParts
+		// Create CoordinationProtocolParts and associate PortParts
 		part.portParts->forEach(p) {
-			if (p.portType.oclIsKindOf(DiscretePort) and p.coordinationProtocolOccurence.oclIsUndefined()) then {
+			if (p.portType.oclIsKindOf(DiscretePort) and p.coordinationProtocolPart.oclIsUndefined()) then {
 				var coordinationProtocol : CoordinationProtocol := p.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol);
 				if (not coordinationProtocol.oclIsUndefined()) then {
 					// Try to find an existing protocol part (was part) for this protocol
-					p.coordinationProtocolOccurence := part.parentComponent.coordinationProtocolOccurences->any(c | c.coordinationProtocol = coordinationProtocol);
-					if (p.coordinationProtocolOccurence.oclIsUndefined()) then {
+					p.coordinationProtocolPart := part.parentComponent.coordinationProtocolOccurences->any(c | c.coordinationProtocol = coordinationProtocol);
+					if (p.coordinationProtocolPart.oclIsUndefined()) then {
 						// If none found, create one
 						// TODO Removed please reactivate
 						//p.coordinationProtocolOccurence := new CoordinationProtocolPart(coordinationProtocol);

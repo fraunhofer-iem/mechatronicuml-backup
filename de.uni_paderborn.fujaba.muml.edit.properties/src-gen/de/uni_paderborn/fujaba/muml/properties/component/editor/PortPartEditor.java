@@ -32,7 +32,7 @@ public class PortPartEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPortPartCoordinationProtocolOccurenceEditor(null, true);
+			addPortPartCoordinationProtocolPartEditor(null, true);
 		}
 
 	}
@@ -85,20 +85,20 @@ public class PortPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addPortPartCoordinationProtocolOccurenceEditor(
-			String category, boolean front) {
+	protected void addPortPartCoordinationProtocolPartEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createPortPartCoordinationProtocolOccurenceEditor(), front);
+				createPortPartCoordinationProtocolPartEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortPartCoordinationProtocolOccurenceEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortPartCoordinationProtocolPartEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getPortPart_CoordinationProtocolOccurence());
+						.getPortPart_CoordinationProtocolPart());
 
 		return editor;
 

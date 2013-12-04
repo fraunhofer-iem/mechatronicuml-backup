@@ -33,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getComponentPart <em>Component Part</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getRefinedRole <em>Refined Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl#getName <em>Name</em>}</li>
  * </ul>
@@ -53,14 +53,14 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 	protected Port portType;
 
 	/**
-	 * The cached value of the '{@link #getCoordinationProtocolOccurence() <em>Coordination Protocol Occurence</em>}' reference.
+	 * The cached value of the '{@link #getCoordinationProtocolPart() <em>Coordination Protocol Part</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCoordinationProtocolOccurence()
+	 * @see #getCoordinationProtocolPart()
 	 * @generated
 	 * @ordered
 	 */
-	protected CoordinationProtocolPart coordinationProtocolOccurence;
+	protected CoordinationProtocolPart coordinationProtocolPart;
 
 	/**
 	 * The cached setting delegate for the '{@link #getRefinedRole() <em>Refined Role</em>}' reference.
@@ -190,16 +190,16 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolPart getCoordinationProtocolOccurence() {
-		if (coordinationProtocolOccurence != null && coordinationProtocolOccurence.eIsProxy()) {
-			InternalEObject oldCoordinationProtocolOccurence = (InternalEObject)coordinationProtocolOccurence;
-			coordinationProtocolOccurence = (CoordinationProtocolPart)eResolveProxy(oldCoordinationProtocolOccurence);
-			if (coordinationProtocolOccurence != oldCoordinationProtocolOccurence) {
+	public CoordinationProtocolPart getCoordinationProtocolPart() {
+		if (coordinationProtocolPart != null && coordinationProtocolPart.eIsProxy()) {
+			InternalEObject oldCoordinationProtocolPart = (InternalEObject)coordinationProtocolPart;
+			coordinationProtocolPart = (CoordinationProtocolPart)eResolveProxy(oldCoordinationProtocolPart);
+			if (coordinationProtocolPart != oldCoordinationProtocolPart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE, oldCoordinationProtocolOccurence, coordinationProtocolOccurence));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_PART, oldCoordinationProtocolPart, coordinationProtocolPart));
 			}
 		}
-		return coordinationProtocolOccurence;
+		return coordinationProtocolPart;
 	}
 
 	/**
@@ -207,8 +207,8 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolPart basicGetCoordinationProtocolOccurence() {
-		return coordinationProtocolOccurence;
+	public CoordinationProtocolPart basicGetCoordinationProtocolPart() {
+		return coordinationProtocolPart;
 	}
 
 	/**
@@ -216,11 +216,11 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCoordinationProtocolOccurence(CoordinationProtocolPart newCoordinationProtocolOccurence, NotificationChain msgs) {
-		CoordinationProtocolPart oldCoordinationProtocolOccurence = coordinationProtocolOccurence;
-		coordinationProtocolOccurence = newCoordinationProtocolOccurence;
+	public NotificationChain basicSetCoordinationProtocolPart(CoordinationProtocolPart newCoordinationProtocolPart, NotificationChain msgs) {
+		CoordinationProtocolPart oldCoordinationProtocolPart = coordinationProtocolPart;
+		coordinationProtocolPart = newCoordinationProtocolPart;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE, oldCoordinationProtocolOccurence, newCoordinationProtocolOccurence);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_PART, oldCoordinationProtocolPart, newCoordinationProtocolPart);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -231,18 +231,18 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordinationProtocolOccurence(CoordinationProtocolPart newCoordinationProtocolOccurence) {
-		if (newCoordinationProtocolOccurence != coordinationProtocolOccurence) {
+	public void setCoordinationProtocolPart(CoordinationProtocolPart newCoordinationProtocolPart) {
+		if (newCoordinationProtocolPart != coordinationProtocolPart) {
 			NotificationChain msgs = null;
-			if (coordinationProtocolOccurence != null)
-				msgs = ((InternalEObject)coordinationProtocolOccurence).eInverseRemove(this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, CoordinationProtocolPart.class, msgs);
-			if (newCoordinationProtocolOccurence != null)
-				msgs = ((InternalEObject)newCoordinationProtocolOccurence).eInverseAdd(this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, CoordinationProtocolPart.class, msgs);
-			msgs = basicSetCoordinationProtocolOccurence(newCoordinationProtocolOccurence, msgs);
+			if (coordinationProtocolPart != null)
+				msgs = ((InternalEObject)coordinationProtocolPart).eInverseRemove(this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, CoordinationProtocolPart.class, msgs);
+			if (newCoordinationProtocolPart != null)
+				msgs = ((InternalEObject)newCoordinationProtocolPart).eInverseAdd(this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, CoordinationProtocolPart.class, msgs);
+			msgs = basicSetCoordinationProtocolPart(newCoordinationProtocolPart, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE, newCoordinationProtocolOccurence, newCoordinationProtocolOccurence));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_PART, newCoordinationProtocolPart, newCoordinationProtocolPart));
 	}
 
 	/**
@@ -293,10 +293,10 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetComponentPart((ComponentPart)otherEnd, msgs);
-			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE:
-				if (coordinationProtocolOccurence != null)
-					msgs = ((InternalEObject)coordinationProtocolOccurence).eInverseRemove(this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, CoordinationProtocolPart.class, msgs);
-				return basicSetCoordinationProtocolOccurence((CoordinationProtocolPart)otherEnd, msgs);
+			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_PART:
+				if (coordinationProtocolPart != null)
+					msgs = ((InternalEObject)coordinationProtocolPart).eInverseRemove(this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, CoordinationProtocolPart.class, msgs);
+				return basicSetCoordinationProtocolPart((CoordinationProtocolPart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -311,8 +311,8 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 		switch (featureID) {
 			case ComponentPackage.PORT_PART__COMPONENT_PART:
 				return basicSetComponentPart(null, msgs);
-			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE:
-				return basicSetCoordinationProtocolOccurence(null, msgs);
+			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_PART:
+				return basicSetCoordinationProtocolPart(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -344,9 +344,9 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 				return basicGetPortType();
 			case ComponentPackage.PORT_PART__COMPONENT_PART:
 				return getComponentPart();
-			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE:
-				if (resolve) return getCoordinationProtocolOccurence();
-				return basicGetCoordinationProtocolOccurence();
+			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_PART:
+				if (resolve) return getCoordinationProtocolPart();
+				return basicGetCoordinationProtocolPart();
 			case ComponentPackage.PORT_PART__REFINED_ROLE:
 				if (resolve) return getRefinedRole();
 				return basicGetRefinedRole();
@@ -370,8 +370,8 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 			case ComponentPackage.PORT_PART__COMPONENT_PART:
 				setComponentPart((ComponentPart)newValue);
 				return;
-			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE:
-				setCoordinationProtocolOccurence((CoordinationProtocolPart)newValue);
+			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_PART:
+				setCoordinationProtocolPart((CoordinationProtocolPart)newValue);
 				return;
 			case ComponentPackage.PORT_PART__NAME:
 				setName((String)newValue);
@@ -394,8 +394,8 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 			case ComponentPackage.PORT_PART__COMPONENT_PART:
 				setComponentPart((ComponentPart)null);
 				return;
-			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE:
-				setCoordinationProtocolOccurence((CoordinationProtocolPart)null);
+			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_PART:
+				setCoordinationProtocolPart((CoordinationProtocolPart)null);
 				return;
 			case ComponentPackage.PORT_PART__NAME:
 				NAME__ESETTING_DELEGATE.dynamicUnset(this, null, 0);
@@ -416,8 +416,8 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 				return portType != null;
 			case ComponentPackage.PORT_PART__COMPONENT_PART:
 				return getComponentPart() != null;
-			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE:
-				return coordinationProtocolOccurence != null;
+			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_PART:
+				return coordinationProtocolPart != null;
 			case ComponentPackage.PORT_PART__REFINED_ROLE:
 				return REFINED_ROLE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.PORT_PART__NAME:

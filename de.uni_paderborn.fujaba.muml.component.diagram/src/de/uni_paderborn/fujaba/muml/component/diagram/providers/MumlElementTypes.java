@@ -94,7 +94,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType PortPartCoordinationProtocolOccurence_4003 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.PortPartCoordinationProtocolOccurence_4003"); //$NON-NLS-1$
+	public static final IElementType PortPartCoordinationProtocolPart_4004 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.PortPartCoordinationProtocolPart_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -190,9 +190,9 @@ public class MumlElementTypes {
 							.getDelegationConnector());
 
 			elements.put(
-					PortPartCoordinationProtocolOccurence_4003,
+					PortPartCoordinationProtocolPart_4004,
 					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-							.getPortPart_CoordinationProtocolOccurence());
+							.getPortPart_CoordinationProtocolPart());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -221,7 +221,7 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(CoordinationProtocolPart_3016);
 			KNOWN_ELEMENT_TYPES.add(AssemblyConnector_4001);
 			KNOWN_ELEMENT_TYPES.add(DelegationConnector_4002);
-			KNOWN_ELEMENT_TYPES.add(PortPartCoordinationProtocolOccurence_4003);
+			KNOWN_ELEMENT_TYPES.add(PortPartCoordinationProtocolPart_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -253,8 +253,8 @@ public class MumlElementTypes {
 			return AssemblyConnector_4001;
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID:
 			return DelegationConnector_4002;
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart.VISUAL_ID:
-			return PortPartCoordinationProtocolOccurence_4003;
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
+			return PortPartCoordinationProtocolPart_4004;
 		}
 		return null;
 	}

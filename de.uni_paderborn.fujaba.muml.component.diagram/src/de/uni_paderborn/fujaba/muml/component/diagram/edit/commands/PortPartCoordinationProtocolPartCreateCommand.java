@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.component.diagram.edit.commands;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -12,7 +24,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PortPartCoordinationProtocolOccurenceCreateCommand extends
+public class PortPartCoordinationProtocolPartCreateCommand extends
 		EditElementCommand {
 
 	/**
@@ -28,7 +40,7 @@ public class PortPartCoordinationProtocolOccurenceCreateCommand extends
 	/**
 	 * @generated
 	 */
-	public PortPartCoordinationProtocolOccurenceCreateCommand(
+	public PortPartCoordinationProtocolPartCreateCommand(
 			CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
@@ -60,12 +72,12 @@ public class PortPartCoordinationProtocolOccurenceCreateCommand extends
 				.getTargetView(getRequest());
 		if (!de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 				.getLinkConstraints()
-				.canCreatePortPartCoordinationProtocolOccurence_4003(
-						getSource(), getTarget(), sourceView, targetView)) {
+				.canCreatePortPartCoordinationProtocolPart_4004(getSource(),
+						getTarget(), sourceView, targetView)) {
 			String errorMessage = de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy
 					.getLinkConstraints()
-					.getErrorPortPartCoordinationProtocolOccurence_4003(
-							getSource(), getTarget(), sourceView, targetView);
+					.getErrorPortPartCoordinationProtocolPart_4004(getSource(),
+							getTarget(), sourceView, targetView);
 			de.uni_paderborn.fujaba.muml.common.edit.policies.ErrorFeedbackEditPolicy
 					.showMessage(targetView != null ? targetView : sourceView,
 							errorMessage);
@@ -85,7 +97,7 @@ public class PortPartCoordinationProtocolOccurenceCreateCommand extends
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().setCoordinationProtocolOccurence(getTarget());
+			getSource().setCoordinationProtocolPart(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 

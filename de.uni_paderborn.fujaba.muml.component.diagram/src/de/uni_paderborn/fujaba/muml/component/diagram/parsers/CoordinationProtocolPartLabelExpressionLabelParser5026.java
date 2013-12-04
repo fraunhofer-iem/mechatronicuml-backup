@@ -23,8 +23,8 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class CoordinationProtocolPartLabelExpressionLabelParser5026
-		extends ExpressionLabelParserBase {
+public class CoordinationProtocolPartLabelExpressionLabelParser5026 extends
+		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
@@ -40,8 +40,7 @@ public class CoordinationProtocolPartLabelExpressionLabelParser5026
 				.getExpression(
 						10,
 						de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-								.getCoordinationProtocolPart(), null)
-				.body();
+								.getCoordinationProtocolPart(), null).body();
 	}
 
 	/**

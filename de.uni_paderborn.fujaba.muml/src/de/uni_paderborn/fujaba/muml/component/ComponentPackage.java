@@ -4252,13 +4252,13 @@ public interface ComponentPackage extends EPackage {
 	int PORT_PART__COMPONENT_PART = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Protocol Occurence</b></em>' reference.
+	 * The feature id for the '<em><b>Coordination Protocol Part</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_PART__COORDINATION_PROTOCOL_OCCURENCE = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
+	int PORT_PART__COORDINATION_PROTOCOL_PART = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Refined Role</b></em>' reference.
@@ -5416,15 +5416,15 @@ public interface ComponentPackage extends EPackage {
 	EReference getPortPart_ComponentPart();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Coordination Protocol Occurence</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence()
+	 * @return the meta object for the reference '<em>Coordination Protocol Part</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolPart()
 	 * @see #getPortPart()
 	 * @generated
 	 */
-	EReference getPortPart_CoordinationProtocolOccurence();
+	EReference getPortPart_CoordinationProtocolPart();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getRefinedRole <em>Refined Role</em>}'.
@@ -6012,12 +6012,12 @@ public interface ComponentPackage extends EPackage {
 		EReference PORT_PART__COMPONENT_PART = eINSTANCE.getPortPart_ComponentPart();
 
 		/**
-		 * The meta object literal for the '<em><b>Coordination Protocol Occurence</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Coordination Protocol Part</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PORT_PART__COORDINATION_PROTOCOL_OCCURENCE = eINSTANCE.getPortPart_CoordinationProtocolOccurence();
+		EReference PORT_PART__COORDINATION_PROTOCOL_PART = eINSTANCE.getPortPart_CoordinationProtocolPart();
 
 		/**
 		 * The meta object literal for the '<em><b>Refined Role</b></em>' reference feature.

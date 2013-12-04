@@ -122,7 +122,7 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 	 */
 	public EList<PortPart> getPortParts() {
 		if (portParts == null) {
-			portParts = new EObjectWithInverseResolvingEList<PortPart>(PortPart.class, this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE);
+			portParts = new EObjectWithInverseResolvingEList<PortPart>(PortPart.class, this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_PART);
 		}
 		return portParts;
 	}

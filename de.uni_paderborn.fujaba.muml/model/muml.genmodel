@@ -98,7 +98,7 @@
             ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/portType"/>
         <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/componentPart"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/coordinationProtocolOccurence"/>
+            ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/coordinationProtocolPart"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/PortPart/refinedRole"/>
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/PortPart/name"/>
       </genClasses>

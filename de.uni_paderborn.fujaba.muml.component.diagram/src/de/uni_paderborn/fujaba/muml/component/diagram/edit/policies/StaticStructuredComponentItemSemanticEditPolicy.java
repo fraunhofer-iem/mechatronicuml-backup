@@ -202,7 +202,7 @@ public class StaticStructuredComponentItemSemanticEditPolicy
 								.hasNext();) {
 							Edge incomingLink = (Edge) it.next();
 							if (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart.VISUAL_ID) {
+									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										incomingLink.getSource().getElement(),
 										null, incomingLink.getTarget()

@@ -15,8 +15,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocolPartCreateCommand extends
-		EditElementCommand {
+public class CoordinationProtocolPartCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated

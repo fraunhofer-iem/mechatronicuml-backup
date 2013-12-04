@@ -63,7 +63,7 @@ public class PortPartItemProvider
 
 			addPortTypePropertyDescriptor(object);
 			addComponentPartPropertyDescriptor(object);
-			addCoordinationProtocolOccurencePropertyDescriptor(object);
+			addCoordinationProtocolPartPropertyDescriptor(object);
 			addRefinedRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -114,19 +114,19 @@ public class PortPartItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Coordination Protocol Occurence feature.
+	 * This adds a property descriptor for the Coordination Protocol Part feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCoordinationProtocolOccurencePropertyDescriptor(Object object) {
+	protected void addCoordinationProtocolPartPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PortPart_coordinationProtocolOccurence_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortPart_coordinationProtocolOccurence_feature", "_UI_PortPart_type"),
-				 ComponentPackage.Literals.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE,
+				 getString("_UI_PortPart_coordinationProtocolPart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortPart_coordinationProtocolPart_feature", "_UI_PortPart_type"),
+				 ComponentPackage.Literals.PORT_PART__COORDINATION_PROTOCOL_PART,
 				 true,
 				 false,
 				 true,

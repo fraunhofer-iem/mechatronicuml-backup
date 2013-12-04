@@ -374,7 +374,7 @@
         href="component.gmfgraph#RolePatternConnection"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortPart/coordinationProtocolOccurence"/>
+        href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/PortPart/coordinationProtocolPart"/>
   </links>
   <diagram>
     <diagramCanvas

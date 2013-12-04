@@ -25,7 +25,7 @@ import de.uni_paderborn.fujaba.muml.protocol.Role;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getPortType <em>Port Type</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getComponentPart <em>Component Part</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getRefinedRole <em>Refined Role</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.PortPart#getName <em>Name</em>}</li>
  * </ul>
@@ -99,32 +99,32 @@ public interface PortPart extends ConnectorEndpoint {
 	void setComponentPart(ComponentPart value);
 
 	/**
-	 * Returns the value of the '<em><b>Coordination Protocol Occurence</b></em>' reference.
+	 * Returns the value of the '<em><b>Coordination Protocol Part</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart#getPortParts <em>Port Parts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Coordination Protocol Occurence</em>' reference isn't clear,
+	 * If the meaning of the '<em>Coordination Protocol Part</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Coordination Protocol Occurence</em>' reference.
-	 * @see #setCoordinationProtocolOccurence(CoordinationProtocolPart)
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortPart_CoordinationProtocolOccurence()
+	 * @return the value of the '<em>Coordination Protocol Part</em>' reference.
+	 * @see #setCoordinationProtocolPart(CoordinationProtocolPart)
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortPart_CoordinationProtocolPart()
 	 * @see de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart#getPortParts
 	 * @model opposite="portParts"
 	 * @generated
 	 */
-	CoordinationProtocolPart getCoordinationProtocolOccurence();
+	CoordinationProtocolPart getCoordinationProtocolPart();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Coordination Protocol Occurence</em>' reference.
-	 * @see #getCoordinationProtocolOccurence()
+	 * @param value the new value of the '<em>Coordination Protocol Part</em>' reference.
+	 * @see #getCoordinationProtocolPart()
 	 * @generated
 	 */
-	void setCoordinationProtocolOccurence(CoordinationProtocolPart value);
+	void setCoordinationProtocolPart(CoordinationProtocolPart value);
 
 	/**
 	 * Returns the value of the '<em><b>Refined Role</b></em>' reference.

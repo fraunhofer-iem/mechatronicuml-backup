@@ -237,7 +237,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Refinement2CreationTool_title,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Refinement2CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003));
+						.singletonList(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolPart_4004));
 		entry.setId("createRefinement2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Refinement.gif")); //$NON-NLS-1$

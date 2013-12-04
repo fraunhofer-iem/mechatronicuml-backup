@@ -323,11 +323,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortPartEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.PortPart">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.StaticAtomicComponentEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent">
        </propertyEditor>
@@ -340,6 +335,11 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.CoordinationProtocolPartEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortPartEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.PortPart">
        </propertyEditor>
     
        <propertyEditor

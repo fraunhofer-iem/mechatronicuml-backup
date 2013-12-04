@@ -386,7 +386,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="2"
-          upperBound="-1" eType="#//component/PortPart" eOpposite="#//component/PortPart/coordinationProtocolOccurence">
+          upperBound="-1" eType="#//component/PortPart" eOpposite="#//component/PortPart/coordinationProtocolPart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The discrete port parts that take part in this protocol occurence."/>
         </eAnnotations>
@@ -459,7 +459,7 @@
           <details key="documentation" value="The component part that contains this PortPart. The port reference by the &#xD;&#xA;portType reference needs to be contained in the component that is referenced&#xD;&#xA;by this reference."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolOccurence"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
           eType="#//component/CoordinationProtocolPart" eOpposite="#//component/CoordinationProtocolPart/portParts"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role"
           changeable="false" volatile="true" transient="true" derived="true">

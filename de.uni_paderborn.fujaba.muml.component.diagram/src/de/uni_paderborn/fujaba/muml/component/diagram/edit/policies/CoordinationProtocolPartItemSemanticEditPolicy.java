@@ -41,7 +41,7 @@ public class CoordinationProtocolPartItemSemanticEditPolicy
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-					.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart.VISUAL_ID) {
+					.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -77,7 +77,7 @@ public class CoordinationProtocolPartItemSemanticEditPolicy
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003 == req
+		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolPart_4004 == req
 				.getElementType()) {
 			return null;
 		}
@@ -89,9 +89,9 @@ public class CoordinationProtocolPartItemSemanticEditPolicy
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003 == req
+		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolPart_4004 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.PortPartCoordinationProtocolOccurenceCreateCommand(
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.PortPartCoordinationProtocolPartCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -106,8 +106,8 @@ public class CoordinationProtocolPartItemSemanticEditPolicy
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart.VISUAL_ID:
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.PortPartCoordinationProtocolOccurenceReorientCommand(
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID:
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.PortPartCoordinationProtocolPartReorientCommand(
 					req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);

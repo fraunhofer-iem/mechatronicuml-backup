@@ -118,7 +118,7 @@ public class ComponentPartItemSemanticEditPolicy
 						continue;
 					}
 					if (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolOccurenceEditPart.VISUAL_ID) {
+							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartCoordinationProtocolPartEditPart.VISUAL_ID) {
 						DestroyReferenceRequest r = new DestroyReferenceRequest(
 								outgoingLink.getSource().getElement(), null,
 								outgoingLink.getTarget().getElement(), false);
