@@ -21,5 +21,5 @@ package de.uni_paderborn.fujaba.muml.component;
  * @model
  * @generated
  */
-public interface StaticStructuredComponent extends StructuredComponent {
+public interface StaticStructuredComponent extends StructuredComponent, StaticComponent {
 } // StaticStructuredComponent

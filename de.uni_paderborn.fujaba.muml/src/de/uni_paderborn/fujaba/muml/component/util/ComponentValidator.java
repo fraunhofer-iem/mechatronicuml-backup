@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.component.util;
 
+import de.uni_paderborn.fujaba.muml.component.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -13,6 +14,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
@@ -148,6 +150,8 @@ public class ComponentValidator extends MumlValidator {
 				return validatePortPart((PortPart)value, diagnostics, context);
 			case ComponentPackage.STATIC_ATOMIC_COMPONENT:
 				return validateStaticAtomicComponent((StaticAtomicComponent)value, diagnostics, context);
+			case ComponentPackage.STATIC_COMPONENT:
+				return validateStaticComponent((StaticComponent)value, diagnostics, context);
 			case ComponentPackage.COMPONENT_KIND:
 				return validateComponentKind((ComponentKind)value, diagnostics, context);
 			case ComponentPackage.PORT_DIRECTION_KIND:
@@ -207,33 +211,31 @@ public class ComponentValidator extends MumlValidator {
 	}
 
 	/**
-	 * The cached validation expression for the SoftwareComponentsMustNotHaveContinuousPorts constraint of '<em>Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COMPONENT__SOFTWARE_COMPONENTS_MUST_NOT_HAVE_CONTINUOUS_PORTS__EEXPRESSION = "-- Components with component type \"SOFTARE_COMPONENT\" must not have continuous ports.\r\n" +
-		"componentKind = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort))->isEmpty()";
-
-	/**
 	 * Validates the SoftwareComponentsMustNotHaveContinuousPorts constraint of '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.COMPONENT,
-				 component,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "SoftwareComponentsMustNotHaveContinuousPorts",
-				 COMPONENT__SOFTWARE_COMPONENTS_MUST_NOT_HAVE_CONTINUOUS_PORTS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "SoftwareComponentsMustNotHaveContinuousPorts", getObjectLabel(component, context) },
+						 new Object[] { component },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -645,6 +647,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_HybridStructuredComponentValidPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ComponentPartsHaveUniqueName(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStaticComponent_SoftwareComponentOnlyDiscreteOrHybridPorts(staticStructuredComponent, diagnostics, context);
 		return result;
 	}
 
@@ -982,7 +985,59 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentValidPorts(staticAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_ContinuousComponentValidPorts(staticAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_AtomicComponentsNamesMustBeUnique(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStaticComponent_SoftwareComponentOnlyDiscreteOrHybridPorts(staticAtomicComponent, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStaticComponent(StaticComponent staticComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(staticComponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStaticComponent_SoftwareComponentOnlyDiscreteOrHybridPorts(staticComponent, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the SoftwareComponentOnlyDiscreteOrHybridPorts constraint of '<em>Static Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STATIC_COMPONENT__SOFTWARE_COMPONENT_ONLY_DISCRETE_OR_HYBRID_PORTS__EEXPRESSION = "-- Static Components with component type \"SOFTARE_COMPONENT\" must only have discrete ports and hybrid ports.\r\n" +
+		"self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()";
+
+	/**
+	 * Validates the SoftwareComponentOnlyDiscreteOrHybridPorts constraint of '<em>Static Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStaticComponent_SoftwareComponentOnlyDiscreteOrHybridPorts(StaticComponent staticComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.STATIC_COMPONENT,
+				 staticComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SoftwareComponentOnlyDiscreteOrHybridPorts",
+				 STATIC_COMPONENT__SOFTWARE_COMPONENT_ONLY_DISCRETE_OR_HYBRID_PORTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

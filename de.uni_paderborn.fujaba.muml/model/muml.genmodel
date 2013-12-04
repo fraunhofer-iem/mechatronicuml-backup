@@ -103,6 +103,7 @@
         <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/PortPart/name"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//component/StaticAtomicComponent"/>
+      <genClasses ecoreClass="muml.ecore#//component/StaticComponent"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//constraint">

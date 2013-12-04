@@ -15,6 +15,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
+import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -162,6 +163,7 @@ public class ComponentSwitch<T> extends Switch<T> {
 				StaticStructuredComponent staticStructuredComponent = (StaticStructuredComponent)theEObject;
 				T result = caseStaticStructuredComponent(staticStructuredComponent);
 				if (result == null) result = caseStructuredComponent(staticStructuredComponent);
+				if (result == null) result = caseStaticComponent(staticStructuredComponent);
 				if (result == null) result = caseComponent(staticStructuredComponent);
 				if (result == null) result = caseConstrainableElement(staticStructuredComponent);
 				if (result == null) result = caseDataType(staticStructuredComponent);
@@ -275,6 +277,7 @@ public class ComponentSwitch<T> extends Switch<T> {
 				StaticAtomicComponent staticAtomicComponent = (StaticAtomicComponent)theEObject;
 				T result = caseStaticAtomicComponent(staticAtomicComponent);
 				if (result == null) result = caseAtomicComponent(staticAtomicComponent);
+				if (result == null) result = caseStaticComponent(staticAtomicComponent);
 				if (result == null) result = caseComponent(staticAtomicComponent);
 				if (result == null) result = caseBehavioralElement(staticAtomicComponent);
 				if (result == null) result = caseConstrainableElement(staticAtomicComponent);
@@ -282,6 +285,18 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedElement(staticAtomicComponent);
 				if (result == null) result = caseExtendableElement(staticAtomicComponent);
 				if (result == null) result = caseCommentableElement(staticAtomicComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentPackage.STATIC_COMPONENT: {
+				StaticComponent staticComponent = (StaticComponent)theEObject;
+				T result = caseStaticComponent(staticComponent);
+				if (result == null) result = caseComponent(staticComponent);
+				if (result == null) result = caseConstrainableElement(staticComponent);
+				if (result == null) result = caseDataType(staticComponent);
+				if (result == null) result = caseNamedElement(staticComponent);
+				if (result == null) result = caseExtendableElement(staticComponent);
+				if (result == null) result = caseCommentableElement(staticComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -436,6 +451,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStaticAtomicComponent(StaticAtomicComponent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Static Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Static Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStaticComponent(StaticComponent object) {
 		return null;
 	}
 

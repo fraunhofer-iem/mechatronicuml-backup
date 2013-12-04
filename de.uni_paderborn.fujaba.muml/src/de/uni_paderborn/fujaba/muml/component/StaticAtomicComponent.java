@@ -28,5 +28,5 @@ package de.uni_paderborn.fujaba.muml.component;
  * @model
  * @generated
  */
-public interface StaticAtomicComponent extends AtomicComponent {
+public interface StaticAtomicComponent extends AtomicComponent, StaticComponent {
 } // StaticAtomicComponent

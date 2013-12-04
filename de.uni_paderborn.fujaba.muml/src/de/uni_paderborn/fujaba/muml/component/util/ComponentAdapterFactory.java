@@ -16,6 +16,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
+import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -158,6 +159,10 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseStaticAtomicComponent(StaticAtomicComponent object) {
 				return createStaticAtomicComponentAdapter();
+			}
+			@Override
+			public Adapter caseStaticComponent(StaticComponent object) {
+				return createStaticComponentAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -356,6 +361,20 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStaticAtomicComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.StaticComponent <em>Static Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.component.StaticComponent
+	 * @generated
+	 */
+	public Adapter createStaticComponentAdapter() {
 		return null;
 	}
 

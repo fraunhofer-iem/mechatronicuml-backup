@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.component.impl;
 
+import de.uni_paderborn.fujaba.muml.component.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -83,6 +84,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: return createCoordinationProtocolOccurrence();
 			case ComponentPackage.PORT_PART: return createPortPart();
 			case ComponentPackage.STATIC_ATOMIC_COMPONENT: return createStaticAtomicComponent();
+			case ComponentPackage.STATIC_COMPONENT: return createStaticComponent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -220,6 +222,16 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	public StaticAtomicComponent createStaticAtomicComponent() {
 		StaticAtomicComponentImpl staticAtomicComponent = new StaticAtomicComponentImpl();
 		return staticAtomicComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StaticComponent createStaticComponent() {
+		StaticComponentImpl staticComponent = new StaticComponentImpl();
+		return staticComponent;
 	}
 
 	/**

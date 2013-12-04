@@ -4748,6 +4748,268 @@ public interface ComponentPackage extends EPackage {
 	int STATIC_ATOMIC_COMPONENT_OPERATION_COUNT = ATOMIC_COMPONENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.component.impl.StaticComponentImpl <em>Static Component</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.component.impl.StaticComponentImpl
+	 * @see de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl#getStaticComponent()
+	 * @generated
+	 */
+	int STATIC_COMPONENT = 16;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT__ANNOTATION = COMPONENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT__EXTENSION = COMPONENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT__NAME = COMPONENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT__COMMENT = COMPONENT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT__CONSTRAINT = COMPONENT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT__PORTS = COMPONENT__PORTS;
+
+	/**
+	 * The feature id for the '<em><b>Component Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT__COMPONENT_KIND = COMPONENT__COMPONENT_KIND;
+
+	/**
+	 * The number of structural features of the '<em>Static Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___ECLASS = COMPONENT___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___EIS_PROXY = COMPONENT___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___ERESOURCE = COMPONENT___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___ECONTAINER = COMPONENT___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___ECONTAINING_FEATURE = COMPONENT___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___ECONTAINMENT_FEATURE = COMPONENT___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___ECONTENTS = COMPONENT___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___EALL_CONTENTS = COMPONENT___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___ECROSS_REFERENCES = COMPONENT___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___EGET__ESTRUCTURALFEATURE = COMPONENT___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___EGET__ESTRUCTURALFEATURE_BOOLEAN = COMPONENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___ESET__ESTRUCTURALFEATURE_OBJECT = COMPONENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___EIS_SET__ESTRUCTURALFEATURE = COMPONENT___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___EUNSET__ESTRUCTURALFEATURE = COMPONENT___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___EINVOKE__EOPERATION_ELIST = COMPONENT___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___GET_EXTENSION__ECLASS = COMPONENT___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___PROVIDE_EXTENSION__ECLASS = COMPONENT___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___GET_ANNOTATION__STRING = COMPONENT___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT___PROVIDE_ANNOTATION__STRING = COMPONENT___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Static Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_COMPONENT_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.component.ComponentKind <em>Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4755,7 +5017,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl#getComponentKind()
 	 * @generated
 	 */
-	int COMPONENT_KIND = 16;
+	int COMPONENT_KIND = 17;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.component.PortDirectionKind <em>Port Direction Kind</em>}' enum.
@@ -4765,7 +5027,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl#getPortDirectionKind()
 	 * @generated
 	 */
-	int PORT_DIRECTION_KIND = 17;
+	int PORT_DIRECTION_KIND = 18;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.component.Component <em>Component</em>}'.
@@ -5195,6 +5457,16 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getStaticAtomicComponent();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.component.StaticComponent <em>Static Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Static Component</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.component.StaticComponent
+	 * @generated
+	 */
+	EClass getStaticComponent();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.component.DirectedTypedPort#isOutPort <em>Out Port</em>}'.
@@ -5746,6 +6018,16 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STATIC_ATOMIC_COMPONENT = eINSTANCE.getStaticAtomicComponent();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.component.impl.StaticComponentImpl <em>Static Component</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.component.impl.StaticComponentImpl
+		 * @see de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl#getStaticComponent()
+		 * @generated
+		 */
+		EClass STATIC_COMPONENT = eINSTANCE.getStaticComponent();
 
 		/**
 		 * The meta object literal for the '<em><b>Out Port</b></em>' attribute feature.

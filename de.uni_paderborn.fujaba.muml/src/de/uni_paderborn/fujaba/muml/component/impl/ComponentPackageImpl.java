@@ -38,6 +38,7 @@ import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.component.PortDirectionKind;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
+import de.uni_paderborn.fujaba.muml.component.StaticComponent;
 import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.util.ComponentValidator;
@@ -134,6 +135,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * @generated
 	 */
 	private EClass staticAtomicComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass staticComponentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -658,6 +666,15 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStaticComponent() {
+		return staticComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getDirectedTypedPort_OutPort() {
 		return (EAttribute)directedTypedPortEClass.getEStructuralFeatures().get(2);
 	}
@@ -915,6 +932,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 
 		staticAtomicComponentEClass = createEClass(STATIC_ATOMIC_COMPONENT);
 
+		staticComponentEClass = createEClass(STATIC_COMPONENT);
+
 		// Create enums
 		componentKindEEnum = createEEnum(COMPONENT_KIND);
 		portDirectionKindEEnum = createEEnum(PORT_DIRECTION_KIND);
@@ -972,6 +991,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		componentPartEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		componentPartEClass.getESuperTypes().add(theTypesPackage.getDataType());
 		staticStructuredComponentEClass.getESuperTypes().add(this.getStructuredComponent());
+		staticStructuredComponentEClass.getESuperTypes().add(this.getStaticComponent());
 		atomicComponentEClass.getESuperTypes().add(this.getComponent());
 		atomicComponentEClass.getESuperTypes().add(theBehaviorPackage.getBehavioralElement());
 		assemblyConnectorEClass.getESuperTypes().add(this.getPortConnector());
@@ -984,6 +1004,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		directedTypedPortEClass.getESuperTypes().add(theBehaviorPackage.getTypedNamedElement());
 		portPartEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
 		staticAtomicComponentEClass.getESuperTypes().add(this.getAtomicComponent());
+		staticAtomicComponentEClass.getESuperTypes().add(this.getStaticComponent());
+		staticComponentEClass.getESuperTypes().add(this.getComponent());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1059,6 +1081,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEAttribute(getPortPart_Name(), ecorePackage.getEString(), "name", null, 0, 1, PortPart.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(staticAtomicComponentEClass, StaticAtomicComponent.class, "StaticAtomicComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(staticComponentEClass, StaticComponent.class, "StaticComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(componentKindEEnum, ComponentKind.class, "ComponentKind");
@@ -1137,7 +1161,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "InitializeExpressionOnlyForOutPorts"
-		   });																	
+		   });																			
+		addAnnotation
+		  (staticComponentEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "SoftwareComponentOnlyDiscreteOrHybridPorts"
+		   });	
 	}
 
 	/**
@@ -1152,8 +1182,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (componentEClass, 
 		   source, 
 		   new String[] {
-			 "UniquePortNames", "self.ports->isUnique(name)",
-			 "SoftwareComponentsMustNotHaveContinuousPorts", "-- Components with component type \"SOFTARE_COMPONENT\" must not have continuous ports.\r\ncomponentKind = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort))->isEmpty()"
+			 "UniquePortNames", "self.ports->isUnique(name)"
 		   });						
 		addAnnotation
 		  (getPort_PortConnectors(), 
@@ -1310,7 +1339,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "if portType.name.oclIsUndefined() then\n\tnull\nelse\n\tportType.name\nendif"
-		   });		
+		   });					
+		addAnnotation
+		  (staticComponentEClass, 
+		   source, 
+		   new String[] {
+			 "SoftwareComponentOnlyDiscreteOrHybridPorts", "-- Static Components with component type \"SOFTARE_COMPONENT\" must only have discrete ports and hybrid ports.\r\nself.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()"
+		   });
 	}
 
 } //ComponentPackageImpl

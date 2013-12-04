@@ -35,7 +35,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponent()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePortNames SoftwareComponentsMustNotHaveContinuousPorts'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='self.ports->isUnique(name)' SoftwareComponentsMustNotHaveContinuousPorts='-- Components with component type \"SOFTARE_COMPONENT\" must not have continuous ports.\r\ncomponentKind = ComponentKind::SOFTWARE_COMPONENT implies ports->select(p | p.oclIsKindOf(ContinuousPort))->isEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='self.ports->isUnique(name)'"
  * @generated
  */
 public interface Component extends NamedElement, CommentableElement, ConstrainableElement, DataType {
