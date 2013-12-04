@@ -1,5 +1,0 @@
-«IMPORT ecore»
-
-«DEFINE Root FOR List[EPackage]»
-	«EXPAND Generate::Generate»
-«ENDDEFINE»
