@@ -47,7 +47,7 @@ public class PortPartCoordinationProtocolOccurenceCreateCommand extends
 			return false;
 		}
 		if (target != null
-				&& false == target instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence) {
+				&& false == target instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart) {
 			return false;
 		}
 		if (getSource() == null) {
@@ -108,7 +108,7 @@ public class PortPartCoordinationProtocolOccurenceCreateCommand extends
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence getTarget() {
-		return (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence) target;
+	protected de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart getTarget() {
+		return (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart) target;
 	}
 }

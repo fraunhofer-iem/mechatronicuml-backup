@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
@@ -145,8 +145,8 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 				return createStructuredComponentAdapter();
 			}
 			@Override
-			public Adapter caseCoordinationProtocolOccurrence(CoordinationProtocolOccurrence object) {
-				return createCoordinationProtocolOccurrenceAdapter();
+			public Adapter caseCoordinationProtocolPart(CoordinationProtocolPart object) {
+				return createCoordinationProtocolPartAdapter();
 			}
 			@Override
 			public Adapter caseDirectedTypedPort(DirectedTypedPort object) {
@@ -449,16 +449,16 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence <em>Coordination Protocol Occurrence</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart <em>Coordination Protocol Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence
+	 * @see de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart
 	 * @generated
 	 */
-	public Adapter createCoordinationProtocolOccurrenceAdapter() {
+	public Adapter createCoordinationProtocolPartAdapter() {
 		return null;
 	}
 

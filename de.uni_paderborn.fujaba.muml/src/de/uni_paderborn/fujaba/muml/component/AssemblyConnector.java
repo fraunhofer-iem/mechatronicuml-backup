@@ -43,7 +43,7 @@ public interface AssemblyConnector extends PortConnector {
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portParts->first().coordinationProtocolOccurence'"
 	 * @generated
 	 */
-	CoordinationProtocolOccurrence getCoordinationProtocolOccurence();
+	CoordinationProtocolPart getCoordinationProtocolOccurence();
 
 	/**
 	 * Returns the value of the '<em><b>Port Parts</b></em>' reference list.

@@ -221,7 +221,7 @@ public class MumlPaletteFactory {
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.CoordinationProtocolPart1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.CoordinationProtocolPart1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolOccurrence_3016));
+						.singletonList(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolPart_3016));
 		entry.setId("createCoordinationProtocolPart1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/CoordinationProtocol.gif")); //$NON-NLS-1$

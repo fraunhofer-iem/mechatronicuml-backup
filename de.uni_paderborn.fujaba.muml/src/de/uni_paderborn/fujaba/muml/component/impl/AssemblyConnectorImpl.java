@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
 
 /**
@@ -74,8 +74,8 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrence getCoordinationProtocolOccurence() {
-		return (CoordinationProtocolOccurrence)COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public CoordinationProtocolPart getCoordinationProtocolOccurence() {
+		return (CoordinationProtocolPart)COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -83,8 +83,8 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrence basicGetCoordinationProtocolOccurence() {
-		return (CoordinationProtocolOccurrence)COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	public CoordinationProtocolPart basicGetCoordinationProtocolOccurence() {
+		return (CoordinationProtocolPart)COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**

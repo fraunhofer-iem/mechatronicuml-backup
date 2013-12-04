@@ -13,7 +13,7 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Coordination Protocol Occurrence</b></em>'.
+ * A representation of the model object '<em><b>Coordination Protocol Part</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -23,17 +23,17 @@ import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence#getPortParts <em>Port Parts</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart#getPortParts <em>Port Parts</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolOccurrence()
+ * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OnlyDiscretePortParts'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL OnlyDiscretePortParts='not self.portParts->oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))'"
  * @generated
  */
-public interface CoordinationProtocolOccurrence extends CommentableElement {
+public interface CoordinationProtocolPart extends CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Coordination Protocol</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -43,14 +43,14 @@ public interface CoordinationProtocolOccurrence extends CommentableElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol</em>' reference.
 	 * @see #setCoordinationProtocol(CoordinationProtocol)
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolOccurrence_CoordinationProtocol()
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolPart_CoordinationProtocol()
 	 * @model required="true"
 	 * @generated
 	 */
 	CoordinationProtocol getCoordinationProtocol();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence#getCoordinationProtocol <em>Coordination Protocol</em>}' reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart#getCoordinationProtocol <em>Coordination Protocol</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Coordination Protocol</em>' reference.
@@ -69,11 +69,11 @@ public interface CoordinationProtocolOccurrence extends CommentableElement {
 	 * The discrete port parts that take part in this protocol occurence.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Parts</em>' reference list.
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolOccurrence_PortParts()
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolPart_PortParts()
 	 * @see de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence
 	 * @model opposite="coordinationProtocolOccurence" lower="2"
 	 * @generated
 	 */
 	EList<PortPart> getPortParts();
 
-} // CoordinationProtocolOccurrence
+} // CoordinationProtocolPart

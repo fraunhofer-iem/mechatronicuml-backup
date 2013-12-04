@@ -23,12 +23,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class CoordinationProtocolOccurrenceLabelExpressionLabelParser5026
+public class CoordinationProtocolPartLabelExpressionLabelParser5026
 		extends ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrenceLabelExpressionLabelParser5026() {
+	public CoordinationProtocolPartLabelExpressionLabelParser5026() {
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class CoordinationProtocolOccurrenceLabelExpressionLabelParser5026
 				.getExpression(
 						10,
 						de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-								.getCoordinationProtocolOccurrence(), null)
+								.getCoordinationProtocolPart(), null)
 				.body();
 	}
 

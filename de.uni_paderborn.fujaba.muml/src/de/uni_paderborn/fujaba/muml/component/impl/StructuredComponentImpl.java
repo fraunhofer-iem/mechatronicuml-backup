@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 
@@ -91,7 +91,7 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CoordinationProtocolOccurrence> coordinationProtocolOccurences;
+	protected EList<CoordinationProtocolPart> coordinationProtocolOccurences;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -180,9 +180,9 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<CoordinationProtocolOccurrence> getCoordinationProtocolOccurences() {
+	public EList<CoordinationProtocolPart> getCoordinationProtocolOccurences() {
 		if (coordinationProtocolOccurences == null) {
-			coordinationProtocolOccurences = new EObjectContainmentEList<CoordinationProtocolOccurrence>(CoordinationProtocolOccurrence.class, this, ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES);
+			coordinationProtocolOccurences = new EObjectContainmentEList<CoordinationProtocolPart>(CoordinationProtocolPart.class, this, ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES);
 		}
 		return coordinationProtocolOccurences;
 	}
@@ -267,7 +267,7 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				return;
 			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES:
 				getCoordinationProtocolOccurences().clear();
-				getCoordinationProtocolOccurences().addAll((Collection<? extends CoordinationProtocolOccurrence>)newValue);
+				getCoordinationProtocolOccurences().addAll((Collection<? extends CoordinationProtocolPart>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

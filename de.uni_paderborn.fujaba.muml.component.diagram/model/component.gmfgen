@@ -427,25 +427,25 @@
     </childNodes>
     <childNodes
         visualID="3016"
-        editPartClassName="CoordinationProtocolOccurrenceEditPart"
-        itemSemanticEditPolicyClassName="CoordinationProtocolOccurrenceItemSemanticEditPolicy"
-        notationViewFactoryClassName="CoordinationProtocolOccurrenceViewFactory"
-        canonicalEditPolicyClassName="CoordinationProtocolOccurrenceCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="CoordinationProtocolOccurrenceGraphicalNodeEditPolicy"
-        createCommandClassName="CoordinationProtocolOccurrenceCreateCommand"
+        editPartClassName="CoordinationProtocolPartEditPart"
+        itemSemanticEditPolicyClassName="CoordinationProtocolPartItemSemanticEditPolicy"
+        notationViewFactoryClassName="CoordinationProtocolPartViewFactory"
+        canonicalEditPolicyClassName="CoordinationProtocolPartCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="CoordinationProtocolPartGraphicalNodeEditPolicy"
+        createCommandClassName="CoordinationProtocolPartCreateCommand"
         containers="//@diagram/@compartments.0">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="CoordinationProtocolOccurrenceEditHelper"/>
+          editHelperClassName="CoordinationProtocolPartEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="CoordinationProtocolFigure"
           classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CoordinationProtocolFigure extends org.eclipse.draw2d.Ellipse {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureCoordinationProtocolNameFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CoordinationProtocolFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureCoordinationProtocolNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureCoordinationProtocolNameFigure.setText(&quot;&quot;);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureCoordinationProtocolNameFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalIndent = 0;&#xA;constraintFFigureCoordinationProtocolNameFigure.horizontalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.verticalSpan = 1;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureCoordinationProtocolNameFigure.grabExcessVerticalSpace = true;&#xA;this.add(fFigureCoordinationProtocolNameFigure, constraintFFigureCoordinationProtocolNameFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureCoordinationProtocolNameFigure() {&#xA;&#x9;&#x9;return fFigureCoordinationProtocolNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/CoordinationProtocolOccurrence"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/CoordinationProtocolPart"/>
         <containmentMetaFeature
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/coordinationProtocolOccurences"/>
         <childMetaFeature
@@ -455,7 +455,7 @@
           visualID="5026"
           editPartClassName="WrappingLabel3EditPart"
           itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="CoordinationProtocolOccurrenceLabelViewFactory"
+          notationViewFactoryClassName="CoordinationProtocolPartLabelViewFactory"
           readOnly="true">
         <diagramRunTimeClass
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
@@ -949,10 +949,10 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.5/@labels.0/@modelFacet"
-        className="CoordinationProtocolOccurrenceLabelExpressionLabelParser5026"
+        className="CoordinationProtocolPartLabelExpressionLabelParser5026"
         viewExpression="//@expressionProviders/@providers.0/@expressions.10">
       <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/CoordinationProtocolOccurrence"/>
+          href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/CoordinationProtocolPart"/>
     </implementations>
   </labelParsers>
   <contextMenus

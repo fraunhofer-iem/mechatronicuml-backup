@@ -3,14 +3,14 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
 /**
  * @generated
  */
-public class CoordinationProtocolOccurrenceEditor
+public class CoordinationProtocolPartEditor
 		extends
 			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrenceEditor(String tab,
+	public CoordinationProtocolPartEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -27,12 +27,12 @@ public class CoordinationProtocolOccurrenceEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCoordinationProtocolOccurrenceCoordinationProtocolEditor(null,
+			addCoordinationProtocolPartCoordinationProtocolEditor(null,
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCoordinationProtocolOccurrencePortPartsEditor(
+			addCoordinationProtocolPartPortPartsEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -41,22 +41,22 @@ public class CoordinationProtocolOccurrenceEditor
 	/**
 	 * @generated
 	 */
-	protected void addCoordinationProtocolOccurrenceCoordinationProtocolEditor(
+	protected void addCoordinationProtocolPartCoordinationProtocolEditor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createCoordinationProtocolOccurrenceCoordinationProtocolEditor(),
+				createCoordinationProtocolPartCoordinationProtocolEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolOccurrenceCoordinationProtocolEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolPartCoordinationProtocolEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getCoordinationProtocolOccurrence_CoordinationProtocol());
+						.getCoordinationProtocolPart_CoordinationProtocol());
 
 		editor.setTooltipMessage("The coordination protocol (pattern) of this CoordinationProtocolOccurence.");
 
@@ -67,20 +67,20 @@ public class CoordinationProtocolOccurrenceEditor
 	/**
 	 * @generated
 	 */
-	protected void addCoordinationProtocolOccurrencePortPartsEditor(
+	protected void addCoordinationProtocolPartPortPartsEditor(
 			String category, boolean front) {
 		addEditorToCategory(category,
-				createCoordinationProtocolOccurrencePortPartsEditor(), front);
+				createCoordinationProtocolPartPortPartsEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolOccurrencePortPartsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolPartPortPartsEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getCoordinationProtocolOccurrence_PortParts());
+						.getCoordinationProtocolPart_PortParts());
 
 		editor.setTooltipMessage("The discrete port parts that take part in this protocol occurence.");
 
@@ -95,13 +95,13 @@ public class CoordinationProtocolOccurrenceEditor
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrenceEditor(String tab) {
+	public CoordinationProtocolPartEditor(String tab) {
 		this(
 				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getCoordinationProtocolOccurrence());
+						.getCoordinationProtocolPart());
 	}
 
 	/**
@@ -113,7 +113,7 @@ public class CoordinationProtocolOccurrenceEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new CoordinationProtocolOccurrenceEditor(tab);
+			return new CoordinationProtocolPartEditor(tab);
 		}
 
 		@Override

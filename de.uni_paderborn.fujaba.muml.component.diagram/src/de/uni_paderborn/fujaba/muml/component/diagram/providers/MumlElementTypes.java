@@ -82,7 +82,7 @@ public class MumlElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CoordinationProtocolOccurrence_3016 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolOccurrence_3016"); //$NON-NLS-1$
+	public static final IElementType CoordinationProtocolPart_3016 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolPart_3016"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -175,9 +175,9 @@ public class MumlElementTypes {
 							.getPortPart());
 
 			elements.put(
-					CoordinationProtocolOccurrence_3016,
+					CoordinationProtocolPart_3016,
 					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-							.getCoordinationProtocolOccurrence());
+							.getCoordinationProtocolPart());
 
 			elements.put(
 					AssemblyConnector_4001,
@@ -218,7 +218,7 @@ public class MumlElementTypes {
 			KNOWN_ELEMENT_TYPES.add(HybridPort_3013);
 			KNOWN_ELEMENT_TYPES.add(ComponentPart_3012);
 			KNOWN_ELEMENT_TYPES.add(PortPart_3022);
-			KNOWN_ELEMENT_TYPES.add(CoordinationProtocolOccurrence_3016);
+			KNOWN_ELEMENT_TYPES.add(CoordinationProtocolPart_3016);
 			KNOWN_ELEMENT_TYPES.add(AssemblyConnector_4001);
 			KNOWN_ELEMENT_TYPES.add(DelegationConnector_4002);
 			KNOWN_ELEMENT_TYPES.add(PortPartCoordinationProtocolOccurence_4003);
@@ -247,8 +247,8 @@ public class MumlElementTypes {
 			return ComponentPart_3012;
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID:
 			return PortPart_3022;
-		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID:
-			return CoordinationProtocolOccurrence_3016;
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID:
+			return CoordinationProtocolPart_3016;
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID:
 			return AssemblyConnector_4001;
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID:

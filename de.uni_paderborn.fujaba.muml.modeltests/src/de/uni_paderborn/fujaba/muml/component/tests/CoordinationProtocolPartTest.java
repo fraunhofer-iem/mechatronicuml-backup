@@ -9,23 +9,23 @@ package de.uni_paderborn.fujaba.muml.component.tests;
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 import de.uni_paderborn.fujaba.muml.component.ComponentFactory;
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Coordination Protocol Occurrence</b></em>'.
+ * A test case for the model object '<em><b>Coordination Protocol Part</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class CoordinationProtocolOccurrenceTest extends TestCase {
+public class CoordinationProtocolPartTest extends TestCase {
 
 	/**
-	 * The fixture for this Coordination Protocol Occurrence test case.
+	 * The fixture for this Coordination Protocol Part test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CoordinationProtocolOccurrence fixture = null;
+	protected CoordinationProtocolPart fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -33,36 +33,36 @@ public class CoordinationProtocolOccurrenceTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(CoordinationProtocolOccurrenceTest.class);
+		TestRunner.run(CoordinationProtocolPartTest.class);
 	}
 
 	/**
-	 * Constructs a new Coordination Protocol Occurrence test case with the given name.
+	 * Constructs a new Coordination Protocol Part test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrenceTest(String name) {
+	public CoordinationProtocolPartTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this Coordination Protocol Occurrence test case.
+	 * Sets the fixture for this Coordination Protocol Part test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(CoordinationProtocolOccurrence fixture) {
+	protected void setFixture(CoordinationProtocolPart fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this Coordination Protocol Occurrence test case.
+	 * Returns the fixture for this Coordination Protocol Part test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CoordinationProtocolOccurrence getFixture() {
+	protected CoordinationProtocolPart getFixture() {
 		return fixture;
 	}
 
@@ -74,7 +74,7 @@ public class CoordinationProtocolOccurrenceTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ComponentFactory.eINSTANCE.createCoordinationProtocolOccurrence());
+		setFixture(ComponentFactory.eINSTANCE.createCoordinationProtocolPart());
 	}
 
 	/**
@@ -88,4 +88,4 @@ public class CoordinationProtocolOccurrenceTest extends TestCase {
 		setFixture(null);
 	}
 
-} //CoordinationProtocolOccurrenceTest
+} //CoordinationProtocolPartTest

@@ -100,7 +100,7 @@ public interface PortPart extends ConnectorEndpoint {
 
 	/**
 	 * Returns the value of the '<em><b>Coordination Protocol Occurence</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence#getPortParts <em>Port Parts</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart#getPortParts <em>Port Parts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Coordination Protocol Occurence</em>' reference isn't clear,
@@ -108,13 +108,13 @@ public interface PortPart extends ConnectorEndpoint {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Coordination Protocol Occurence</em>' reference.
-	 * @see #setCoordinationProtocolOccurence(CoordinationProtocolOccurrence)
+	 * @see #setCoordinationProtocolOccurence(CoordinationProtocolPart)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortPart_CoordinationProtocolOccurence()
-	 * @see de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence#getPortParts
+	 * @see de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart#getPortParts
 	 * @model opposite="portParts"
 	 * @generated
 	 */
-	CoordinationProtocolOccurrence getCoordinationProtocolOccurence();
+	CoordinationProtocolPart getCoordinationProtocolOccurence();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.component.PortPart#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}' reference.
@@ -124,7 +124,7 @@ public interface PortPart extends ConnectorEndpoint {
 	 * @see #getCoordinationProtocolOccurence()
 	 * @generated
 	 */
-	void setCoordinationProtocolOccurence(CoordinationProtocolOccurrence value);
+	void setCoordinationProtocolOccurence(CoordinationProtocolPart value);
 
 	/**
 	 * Returns the value of the '<em><b>Refined Role</b></em>' reference.

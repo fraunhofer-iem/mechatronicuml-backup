@@ -22,7 +22,7 @@ import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
@@ -243,10 +243,10 @@ public class ComponentSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: {
-				CoordinationProtocolOccurrence coordinationProtocolOccurrence = (CoordinationProtocolOccurrence)theEObject;
-				T result = caseCoordinationProtocolOccurrence(coordinationProtocolOccurrence);
-				if (result == null) result = caseCommentableElement(coordinationProtocolOccurrence);
-				if (result == null) result = caseExtendableElement(coordinationProtocolOccurrence);
+				CoordinationProtocolPart coordinationProtocolPart = (CoordinationProtocolPart)theEObject;
+				T result = caseCoordinationProtocolPart(coordinationProtocolPart);
+				if (result == null) result = caseCommentableElement(coordinationProtocolPart);
+				if (result == null) result = caseExtendableElement(coordinationProtocolPart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -545,17 +545,17 @@ public class ComponentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Coordination Protocol Occurrence</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Coordination Protocol Part</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Coordination Protocol Occurrence</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Coordination Protocol Part</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCoordinationProtocolOccurrence(CoordinationProtocolOccurrence object) {
+	public T caseCoordinationProtocolPart(CoordinationProtocolPart object) {
 		return null;
 	}
 

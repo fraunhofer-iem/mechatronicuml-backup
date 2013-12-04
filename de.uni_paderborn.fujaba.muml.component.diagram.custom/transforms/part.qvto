@@ -16,7 +16,7 @@ main() {
 		part.portParts->forEach(p) {
 			-- only delete those port parts whose port type is not contained in the current component type (see #591)
 			if (part.componentType.ports ->excludes(p.portType)) then {
-				// also remove from coordination protocol occurrence
+				// also remove from coordination protocol part
 				part.parentComponent.coordinationProtocolOccurences->forEach(c) {
 					c.portParts := c.portParts->excluding(p); 
 				};
@@ -38,24 +38,24 @@ main() {
 		// and from connectors
 		
 				
-		// Remove stale coordinationProtocolOccurrences
+		// Remove stale coordinationProtocolParts
 		// TODO Removed, please reactivate
 		// part.parentComponent.coordinationProtocolOccurences := part.parentComponent.coordinationProtocolOccurences->reject(portParts->isEmpty());
 		
 		// Replace existing portParts with newly created portParts
 		createPortParts(part);
 		
-		// Create CoordinationProtocolOccurrences a.k.a CoordinationProtocolParts and associate PortParts
+		// Create CoordinationProtocolParts a.k.a CoordinationProtocolParts and associate PortParts
 		part.portParts->forEach(p) {
 			if (p.portType.oclIsKindOf(DiscretePort) and p.coordinationProtocolOccurence.oclIsUndefined()) then {
 				var coordinationProtocol : CoordinationProtocol := p.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol);
 				if (not coordinationProtocol.oclIsUndefined()) then {
-					// Try to find an existing protocol part (was occurrence) for this protocol
+					// Try to find an existing protocol part (was part) for this protocol
 					p.coordinationProtocolOccurence := part.parentComponent.coordinationProtocolOccurences->any(c | c.coordinationProtocol = coordinationProtocol);
 					if (p.coordinationProtocolOccurence.oclIsUndefined()) then {
 						// If none found, create one
 						// TODO Removed please reactivate
-						//p.coordinationProtocolOccurence := new CoordinationProtocolOccurrence(coordinationProtocol);
+						//p.coordinationProtocolOccurence := new CoordinationProtocolPart(coordinationProtocol);
 						//part.parentComponent.coordinationProtocolOccurences += p.coordinationProtocolOccurence;
 					} endif;
 				} endif
@@ -88,6 +88,6 @@ constructor PortPart::PortPart(type : Port) {
 	portType := type;
 }
 
-constructor CoordinationProtocolOccurrence::CoordinationProtocolOccurrence(p : CoordinationProtocol) {
+constructor CoordinationProtocolPart::CoordinationProtocolPart(p : CoordinationProtocol) {
 	coordinationProtocol := p;
 }

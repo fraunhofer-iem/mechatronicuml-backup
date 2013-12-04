@@ -3357,7 +3357,7 @@ public interface InstancePackage extends EPackage {
 	int COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Protocol Occurrence</b></em>' reference.
+	 * The feature id for the '<em><b>Coordination Protocol Part</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4450,15 +4450,15 @@ public interface InstancePackage extends EPackage {
 	EReference getCoordinationProtocolInstance_PortInstances();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance#getCoordinationProtocolOccurrence <em>Coordination Protocol Occurrence</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Coordination Protocol Occurrence</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance#getCoordinationProtocolOccurrence()
+	 * @return the meta object for the reference '<em>Coordination Protocol Part</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance#getCoordinationProtocolPart()
 	 * @see #getCoordinationProtocolInstance()
 	 * @generated
 	 */
-	EReference getCoordinationProtocolInstance_CoordinationProtocolOccurrence();
+	EReference getCoordinationProtocolInstance_CoordinationProtocolPart();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance <em>Structured Component Instance</em>}'.
@@ -4810,12 +4810,12 @@ public interface InstancePackage extends EPackage {
 		EReference COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES = eINSTANCE.getCoordinationProtocolInstance_PortInstances();
 
 		/**
-		 * The meta object literal for the '<em><b>Coordination Protocol Occurrence</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Coordination Protocol Part</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE = eINSTANCE.getCoordinationProtocolInstance_CoordinationProtocolOccurrence();
+		EReference COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE = eINSTANCE.getCoordinationProtocolInstance_CoordinationProtocolPart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.StructuredComponentInstanceImpl <em>Structured Component Instance</em>}' class.

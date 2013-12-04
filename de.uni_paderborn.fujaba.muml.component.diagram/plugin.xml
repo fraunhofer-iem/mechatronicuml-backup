@@ -231,8 +231,8 @@
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart" id="HybridPort_3013"/>
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart" id="ComponentPart_3012"/>
          <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart" id="PortPart_3022"/>
-         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart" id="CoordinationProtocolOccurrence_3016"/>
-         <context elements="ModelElementCategory_1000,StaticAtomicComponent_2006,StaticStructuredComponent_2005,DiscretePort_3010,ContinuousPort_3011,HybridPort_3013,ComponentPart_3012,PortPart_3022,CoordinationProtocolOccurrence_3016"/>
+         <object class="de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart" id="CoordinationProtocolPart_3016"/>
+         <context elements="ModelElementCategory_1000,StaticAtomicComponent_2006,StaticStructuredComponent_2005,DiscretePort_3010,ContinuousPort_3011,HybridPort_3013,ComponentPart_3012,PortPart_3022,CoordinationProtocolPart_3016"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -334,11 +334,11 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/component/0.4.0">
          <metamodelType
-               id="de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolOccurrence_3016"
-               name="%metatype.name.CoordinationProtocolOccurrence_3016"
+               id="de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolPart_3016"
+               name="%metatype.name.CoordinationProtocolPart_3016"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CoordinationProtocolOccurrence"
-               edithelper="de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.CoordinationProtocolOccurrenceEditHelper">
+               eclass="CoordinationProtocolPart"
+               edithelper="de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.CoordinationProtocolPartEditHelper">
             <param name="semanticHint" value="3016"/>
          </metamodelType>
       </metamodel>
@@ -391,7 +391,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.HybridPort_3013"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.ComponentPart_3012"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.PortPart_3022"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolOccurrence_3016"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.CoordinationProtocolPart_3016"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.AssemblyConnector_4001"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.DelegationConnector_4002"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.component.diagram.PortPartCoordinationProtocolOccurence_4003"/>

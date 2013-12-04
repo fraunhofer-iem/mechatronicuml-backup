@@ -236,26 +236,26 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CoordinationProtocolOccurrenceItemProvider coordinationProtocolOccurrenceItemProvider;
+	protected CoordinationProtocolPartItemProvider coordinationProtocolPartItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCoordinationProtocolOccurrenceAdapter() {
-		if (coordinationProtocolOccurrenceItemProvider == null) {
-			coordinationProtocolOccurrenceItemProvider = new CoordinationProtocolOccurrenceItemProvider(this);
+	public Adapter createCoordinationProtocolPartAdapter() {
+		if (coordinationProtocolPartItemProvider == null) {
+			coordinationProtocolPartItemProvider = new CoordinationProtocolPartItemProvider(this);
 		}
 
-		return coordinationProtocolOccurrenceItemProvider;
+		return coordinationProtocolPartItemProvider;
 	}
 
 	/**
@@ -302,6 +302,29 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		}
 
 		return staticAtomicComponentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.component.StaticComponent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StaticComponentItemProvider staticComponentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.component.StaticComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStaticComponentAdapter() {
+		if (staticComponentItemProvider == null) {
+			staticComponentItemProvider = new StaticComponentItemProvider(this);
+		}
+
+		return staticComponentItemProvider;
 	}
 
 	/**
@@ -410,9 +433,10 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		if (assemblyConnectorItemProvider != null) assemblyConnectorItemProvider.dispose();
 		if (delegationConnectorItemProvider != null) delegationConnectorItemProvider.dispose();
 		if (hybridPortItemProvider != null) hybridPortItemProvider.dispose();
-		if (coordinationProtocolOccurrenceItemProvider != null) coordinationProtocolOccurrenceItemProvider.dispose();
+		if (coordinationProtocolPartItemProvider != null) coordinationProtocolPartItemProvider.dispose();
 		if (portPartItemProvider != null) portPartItemProvider.dispose();
 		if (staticAtomicComponentItemProvider != null) staticAtomicComponentItemProvider.dispose();
+		if (staticComponentItemProvider != null) staticComponentItemProvider.dispose();
 	}
 
 }

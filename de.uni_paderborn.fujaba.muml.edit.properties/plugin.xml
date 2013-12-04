@@ -323,8 +323,8 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.CoordinationProtocolOccurrenceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence">
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.CoordinationProtocolPartEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart">
        </propertyEditor>
     
        <propertyEditor

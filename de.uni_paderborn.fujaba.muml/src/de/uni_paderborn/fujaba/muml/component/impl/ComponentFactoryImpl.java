@@ -20,7 +20,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
 import de.uni_paderborn.fujaba.muml.component.HybridPort;
@@ -81,7 +81,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.ASSEMBLY_CONNECTOR: return createAssemblyConnector();
 			case ComponentPackage.DELEGATION_CONNECTOR: return createDelegationConnector();
 			case ComponentPackage.HYBRID_PORT: return createHybridPort();
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: return createCoordinationProtocolOccurrence();
+			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: return createCoordinationProtocolPart();
 			case ComponentPackage.PORT_PART: return createPortPart();
 			case ComponentPackage.STATIC_ATOMIC_COMPONENT: return createStaticAtomicComponent();
 			case ComponentPackage.STATIC_COMPONENT: return createStaticComponent();
@@ -199,9 +199,9 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrence createCoordinationProtocolOccurrence() {
-		CoordinationProtocolOccurrenceImpl coordinationProtocolOccurrence = new CoordinationProtocolOccurrenceImpl();
-		return coordinationProtocolOccurrence;
+	public CoordinationProtocolPart createCoordinationProtocolPart() {
+		CoordinationProtocolPartImpl coordinationProtocolPart = new CoordinationProtocolPartImpl();
+		return coordinationProtocolPart;
 	}
 
 	/**

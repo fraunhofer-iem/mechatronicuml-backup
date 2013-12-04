@@ -68,7 +68,7 @@ public class PortPartCoordinationProtocolOccurenceReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence && newEnd instanceof de.uni_paderborn.fujaba.muml.component.PortPart)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart && newEnd instanceof de.uni_paderborn.fujaba.muml.component.PortPart)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -95,7 +95,7 @@ public class PortPartCoordinationProtocolOccurenceReorientCommand extends
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence && newEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence)) {
+		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart && newEnd instanceof de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart)) {
 			return false;
 		}
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
@@ -174,15 +174,15 @@ public class PortPartCoordinationProtocolOccurenceReorientCommand extends
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence getOldTarget() {
-		return (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence) oldEnd;
+	protected de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart getOldTarget() {
+		return (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence getNewTarget() {
-		return (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence) newEnd;
+	protected de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart getNewTarget() {
+		return (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart) newEnd;
 	}
 
 	/**

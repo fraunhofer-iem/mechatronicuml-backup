@@ -568,7 +568,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCoordinationProtocolInstance_CoordinationProtocolOccurrence() {
+	public EReference getCoordinationProtocolInstance_CoordinationProtocolPart() {
 		return (EReference)coordinationProtocolInstanceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -780,7 +780,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		initEClass(coordinationProtocolInstanceEClass, CoordinationProtocolInstance.class, "CoordinationProtocolInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCoordinationProtocolInstance_PortInstances(), this.getPortInstance(), null, "portInstances", null, 1, -1, CoordinationProtocolInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCoordinationProtocolInstance_CoordinationProtocolOccurrence(), theComponentPackage.getCoordinationProtocolOccurrence(), null, "coordinationProtocolOccurrence", null, 1, 1, CoordinationProtocolInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationProtocolInstance_CoordinationProtocolPart(), theComponentPackage.getCoordinationProtocolPart(), null, "coordinationProtocolPart", null, 1, 1, CoordinationProtocolInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(structuredComponentInstanceEClass, StructuredComponentInstance.class, "StructuredComponentInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStructuredComponentInstance_EmbeddedCIC(), this.getComponentInstanceConfiguration(), this.getComponentInstanceConfiguration_ParentStructuredComponentInstance(), "embeddedCIC", null, 1, 1, StructuredComponentInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

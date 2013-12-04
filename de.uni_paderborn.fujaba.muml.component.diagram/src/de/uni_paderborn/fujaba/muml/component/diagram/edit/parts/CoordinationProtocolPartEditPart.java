@@ -33,7 +33,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class CoordinationProtocolOccurrenceEditPart extends ShapeNodeEditPart {
+public class CoordinationProtocolPartEditPart extends ShapeNodeEditPart {
 
 	/**
 	 * @generated
@@ -53,7 +53,7 @@ public class CoordinationProtocolOccurrenceEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrenceEditPart(View view) {
+	public CoordinationProtocolPartEditPart(View view) {
 		super(view);
 	}
 
@@ -64,7 +64,7 @@ public class CoordinationProtocolOccurrenceEditPart extends ShapeNodeEditPart {
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.CoordinationProtocolOccurrenceItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.CoordinationProtocolPartItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);

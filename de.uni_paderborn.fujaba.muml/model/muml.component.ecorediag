@@ -291,7 +291,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_UMIKGOYOEeGGO7qZWzrUbg"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_UMHjCeYOEeGGO7qZWzrUbg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="muml.ecore#//component/PatternOccurrence"/>
+    <element xmi:type="ecore:EClass" href="muml.ecore#//component/PatternPart"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UMHjCuYOEeGGO7qZWzrUbg" x="435" y="215" width="128" height="43"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_UMIKGeYOEeGGO7qZWzrUbg" type="1001">
@@ -733,7 +733,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_UMc6MeYOEeGGO7qZWzrUbg" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_UMc6MuYOEeGGO7qZWzrUbg" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="muml.ecore#//component/PatternOccurrence/ports"/>
+    <element xmi:type="ecore:EReference" href="muml.ecore#//component/PatternPart/ports"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UMc6M-YOEeGGO7qZWzrUbg" points="[0, -1, -79, 38]$[0, -39, -79, 0]$[75, -39, -4, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UPtCgeYOEeGGO7qZWzrUbg" id="(0.875,0.046511627906976744)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UPtCguYOEeGGO7qZWzrUbg" id="(0.025157232704402517,0.9607843137254902)"/>

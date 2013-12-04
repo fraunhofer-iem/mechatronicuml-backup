@@ -19,25 +19,25 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.CommentableElementImpl;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Coordination Protocol Occurrence</b></em>'.
+ * An implementation of the model object '<em><b>Coordination Protocol Part</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolOccurrenceImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolOccurrenceImpl#getPortParts <em>Port Parts</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolPartImpl#getCoordinationProtocol <em>Coordination Protocol</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolPartImpl#getPortParts <em>Port Parts</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CoordinationProtocolOccurrenceImpl extends CommentableElementImpl implements CoordinationProtocolOccurrence {
+public class CoordinationProtocolPartImpl extends CommentableElementImpl implements CoordinationProtocolPart {
 	/**
 	 * The cached value of the '{@link #getCoordinationProtocol() <em>Coordination Protocol</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class CoordinationProtocolOccurrenceImpl extends CommentableElementImpl i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CoordinationProtocolOccurrenceImpl() {
+	protected CoordinationProtocolPartImpl() {
 		super();
 	}
 
@@ -227,4 +227,4 @@ public class CoordinationProtocolOccurrenceImpl extends CommentableElementImpl i
 		return super.eIsSet(featureID);
 	}
 
-} //CoordinationProtocolOccurrenceImpl
+} //CoordinationProtocolPartImpl

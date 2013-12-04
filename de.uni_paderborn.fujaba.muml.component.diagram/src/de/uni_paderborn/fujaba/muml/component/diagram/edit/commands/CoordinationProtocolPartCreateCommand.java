@@ -15,13 +15,13 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocolOccurrenceCreateCommand extends
+public class CoordinationProtocolPartCreateCommand extends
 		EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrenceCreateCommand(CreateElementRequest req) {
+	public CoordinationProtocolPartCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -51,8 +51,8 @@ public class CoordinationProtocolOccurrenceCreateCommand extends
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
-				.createCoordinationProtocolOccurrence();
+		de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart newElement = de.uni_paderborn.fujaba.muml.component.ComponentFactory.eINSTANCE
+				.createCoordinationProtocolPart();
 
 		de.uni_paderborn.fujaba.muml.component.StructuredComponent owner = (de.uni_paderborn.fujaba.muml.component.StructuredComponent) getElementToEdit();
 		owner.getCoordinationProtocolOccurences().add(newElement);
@@ -67,7 +67,7 @@ public class CoordinationProtocolOccurrenceCreateCommand extends
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence newElement,
+			de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

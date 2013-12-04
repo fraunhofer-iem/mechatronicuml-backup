@@ -278,7 +278,7 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart) {
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.DelegationConnector_4002);
 		}
-		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart) {
+		if (targetEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart) {
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003);
 		}
 		return types;
@@ -300,7 +300,7 @@ public class PortPartEditPart extends BorderedBorderItemEditPart {
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.HybridPort_3013);
 			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPart_3022);
 		} else if (relationshipType == de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003) {
-			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolOccurrence_3016);
+			types.add(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolPart_3016);
 		}
 		return types;
 	}

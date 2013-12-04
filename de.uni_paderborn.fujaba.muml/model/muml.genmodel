@@ -80,11 +80,11 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences"/>
         <genOperations ecoreOperation="muml.ecore#//component/StructuredComponent/toString"/>
       </genClasses>
-      <genClasses ecoreClass="muml.ecore#//component/CoordinationProtocolOccurrence">
+      <genClasses ecoreClass="muml.ecore#//component/CoordinationProtocolPart">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/CoordinationProtocolOccurrence/coordinationProtocol"/>
+            ecoreFeature="ecore:EReference muml.ecore#//component/CoordinationProtocolPart/coordinationProtocol"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//component/CoordinationProtocolOccurrence/portParts"/>
+            ecoreFeature="ecore:EReference muml.ecore#//component/CoordinationProtocolPart/portParts"/>
       </genClasses>
       <genClasses image="false" ecoreClass="muml.ecore#//component/DirectedTypedPort">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//component/DirectedTypedPort/kind"/>
@@ -179,7 +179,7 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//instance/CoordinationProtocolInstance/portInstances"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//instance/CoordinationProtocolInstance/coordinationProtocolOccurrence"/>
+            ecoreFeature="ecore:EReference muml.ecore#//instance/CoordinationProtocolInstance/coordinationProtocolPart"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//instance/StructuredComponentInstance">
         <genFeatures property="Readonly" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//instance/StructuredComponentInstance/embeddedCIC"/>

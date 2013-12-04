@@ -23,7 +23,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
@@ -143,7 +143,7 @@ public class ComponentValidator extends MumlValidator {
 			case ComponentPackage.STRUCTURED_COMPONENT:
 				return validateStructuredComponent((StructuredComponent)value, diagnostics, context);
 			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE:
-				return validateCoordinationProtocolOccurrence((CoordinationProtocolOccurrence)value, diagnostics, context);
+				return validateCoordinationProtocolPart((CoordinationProtocolPart)value, diagnostics, context);
 			case ComponentPackage.DIRECTED_TYPED_PORT:
 				return validateDirectedTypedPort((DirectedTypedPort)value, diagnostics, context);
 			case ComponentPackage.PORT_PART:
@@ -1268,22 +1268,22 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCoordinationProtocolOccurrence(CoordinationProtocolOccurrence coordinationProtocolOccurrence, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(coordinationProtocolOccurrence, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(coordinationProtocolOccurrence, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(coordinationProtocolOccurrence, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(coordinationProtocolOccurrence, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(coordinationProtocolOccurrence, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(coordinationProtocolOccurrence, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(coordinationProtocolOccurrence, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coordinationProtocolOccurrence, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationProtocolOccurrence, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCoordinationProtocolOccurrence_OnlyDiscretePortParts(coordinationProtocolOccurrence, diagnostics, context);
+	public boolean validateCoordinationProtocolPart(CoordinationProtocolPart coordinationProtocolPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(coordinationProtocolPart, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(coordinationProtocolPart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(coordinationProtocolPart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(coordinationProtocolPart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(coordinationProtocolPart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(coordinationProtocolPart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(coordinationProtocolPart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(coordinationProtocolPart, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(coordinationProtocolPart, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCoordinationProtocolPart_OnlyDiscretePortParts(coordinationProtocolPart, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the OnlyDiscretePortParts constraint of '<em>Coordination Protocol Occurrence</em>'.
+	 * The cached validation expression for the OnlyDiscretePortParts constraint of '<em>Coordination Protocol Part</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1293,16 +1293,16 @@ public class ComponentValidator extends MumlValidator {
 		"self.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))";
 
 	/**
-	 * Validates the OnlyDiscretePortParts constraint of '<em>Coordination Protocol Occurrence</em>'.
+	 * Validates the OnlyDiscretePortParts constraint of '<em>Coordination Protocol Part</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCoordinationProtocolOccurrence_OnlyDiscretePortParts(CoordinationProtocolOccurrence coordinationProtocolOccurrence, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCoordinationProtocolPart_OnlyDiscretePortParts(CoordinationProtocolPart coordinationProtocolPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.COORDINATION_PROTOCOL_OCCURRENCE,
-				 coordinationProtocolOccurrence,
+				 coordinationProtocolPart,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",

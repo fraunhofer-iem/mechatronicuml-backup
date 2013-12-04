@@ -7,12 +7,12 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart;
+import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart;
 
-public class CustomCoordinationProtocolOccurrenceEditPart extends
-		CoordinationProtocolOccurrenceEditPart {
+public class CustomCoordinationProtocolPartEditPart extends
+		CoordinationProtocolPartEditPart {
 
-	public CustomCoordinationProtocolOccurrenceEditPart(View view) {
+	public CustomCoordinationProtocolPartEditPart(View view) {
 		super(view);
 	}
 

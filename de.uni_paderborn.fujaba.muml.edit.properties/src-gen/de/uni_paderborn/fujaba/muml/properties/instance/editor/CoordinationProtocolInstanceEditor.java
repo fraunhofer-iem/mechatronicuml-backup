@@ -32,7 +32,7 @@ public class CoordinationProtocolInstanceEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCoordinationProtocolInstanceCoordinationProtocolOccurrenceEditor(
+			addCoordinationProtocolInstanceCoordinationProtocolPartEditor(
 					null, true);
 		}
 
@@ -65,22 +65,22 @@ public class CoordinationProtocolInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addCoordinationProtocolInstanceCoordinationProtocolOccurrenceEditor(
+	protected void addCoordinationProtocolInstanceCoordinationProtocolPartEditor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createCoordinationProtocolInstanceCoordinationProtocolOccurrenceEditor(),
+				createCoordinationProtocolInstanceCoordinationProtocolPartEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolInstanceCoordinationProtocolOccurrenceEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolInstanceCoordinationProtocolPartEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
-						.getCoordinationProtocolInstance_CoordinationProtocolOccurrence());
+						.getCoordinationProtocolInstance_CoordinationProtocolPart());
 
 		editor.setTooltipMessage("The CoordinationProtocolOccurence of that instance.");
 

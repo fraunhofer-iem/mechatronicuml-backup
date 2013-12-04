@@ -89,13 +89,13 @@ public interface ComponentFactory extends EFactory {
 	HybridPort createHybridPort();
 
 	/**
-	 * Returns a new object of class '<em>Coordination Protocol Occurrence</em>'.
+	 * Returns a new object of class '<em>Coordination Protocol Part</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Coordination Protocol Occurrence</em>'.
+	 * @return a new object of class '<em>Coordination Protocol Part</em>'.
 	 * @generated
 	 */
-	CoordinationProtocolOccurrence createCoordinationProtocolOccurrence();
+	CoordinationProtocolPart createCoordinationProtocolPart();
 
 	/**
 	 * Returns a new object of class '<em>Port Part</em>'.

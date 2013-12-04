@@ -23,15 +23,15 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.storydriven.core.provider.CommentableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CoordinationProtocolOccurrenceItemProvider
+public class CoordinationProtocolPartItemProvider
 	extends CommentableElementItemProvider
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class CoordinationProtocolOccurrenceItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrenceItemProvider(AdapterFactory adapterFactory) {
+	public CoordinationProtocolPartItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,8 +77,8 @@ public class CoordinationProtocolOccurrenceItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CoordinationProtocolOccurrence_coordinationProtocol_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolOccurrence_coordinationProtocol_feature", "_UI_CoordinationProtocolOccurrence_type"),
+				 getString("_UI_CoordinationProtocolPart_coordinationProtocol_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolPart_coordinationProtocol_feature", "_UI_CoordinationProtocolPart_type"),
 				 ComponentPackage.Literals.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL,
 				 true,
 				 false,
@@ -99,8 +99,8 @@ public class CoordinationProtocolOccurrenceItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CoordinationProtocolOccurrence_portParts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolOccurrence_portParts_feature", "_UI_CoordinationProtocolOccurrence_type"),
+				 getString("_UI_CoordinationProtocolPart_portParts_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolPart_portParts_feature", "_UI_CoordinationProtocolPart_type"),
 				 ComponentPackage.Literals.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS,
 				 true,
 				 false,
@@ -111,14 +111,14 @@ public class CoordinationProtocolOccurrenceItemProvider
 	}
 
 	/**
-	 * This returns CoordinationProtocolOccurrence.gif.
+	 * This returns CoordinationProtocolPart.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CoordinationProtocolOccurrence"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/CoordinationProtocolPart"));
 	}
 
 	/**
@@ -129,10 +129,10 @@ public class CoordinationProtocolOccurrenceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CoordinationProtocolOccurrence)object).getComment();
+		String label = ((CoordinationProtocolPart)object).getComment();
 		return label == null || label.length() == 0 ?
-			getString("_UI_CoordinationProtocolOccurrence_type") :
-			getString("_UI_CoordinationProtocolOccurrence_type") + " " + label;
+			getString("_UI_CoordinationProtocolPart_type") :
+			getString("_UI_CoordinationProtocolPart_type") + " " + label;
 	}
 
 	/**

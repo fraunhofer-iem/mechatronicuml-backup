@@ -28,7 +28,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.ContinuousPort;
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.component.DelegationConnector;
 import de.uni_paderborn.fujaba.muml.component.DirectedTypedPort;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
@@ -183,7 +183,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass coordinationProtocolOccurrenceEClass = null;
+	private EClass coordinationProtocolPartEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -792,8 +792,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getCoordinationProtocolOccurrence() {
-		return coordinationProtocolOccurrenceEClass;
+	public EClass getCoordinationProtocolPart() {
+		return coordinationProtocolPartEClass;
 	}
 
 	/**
@@ -801,8 +801,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCoordinationProtocolOccurrence_CoordinationProtocol() {
-		return (EReference)coordinationProtocolOccurrenceEClass.getEStructuralFeatures().get(0);
+	public EReference getCoordinationProtocolPart_CoordinationProtocol() {
+		return (EReference)coordinationProtocolPartEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -810,8 +810,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCoordinationProtocolOccurrence_PortParts() {
-		return (EReference)coordinationProtocolOccurrenceEClass.getEStructuralFeatures().get(1);
+	public EReference getCoordinationProtocolPart_PortParts() {
+		return (EReference)coordinationProtocolPartEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -912,9 +912,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES);
 		createEOperation(structuredComponentEClass, STRUCTURED_COMPONENT___TO_STRING);
 
-		coordinationProtocolOccurrenceEClass = createEClass(COORDINATION_PROTOCOL_OCCURRENCE);
-		createEReference(coordinationProtocolOccurrenceEClass, COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL);
-		createEReference(coordinationProtocolOccurrenceEClass, COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS);
+		coordinationProtocolPartEClass = createEClass(COORDINATION_PROTOCOL_OCCURRENCE);
+		createEReference(coordinationProtocolPartEClass, COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL);
+		createEReference(coordinationProtocolPartEClass, COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS);
 
 		directedTypedPortEClass = createEClass(DIRECTED_TYPED_PORT);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__KIND);
@@ -999,7 +999,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		portConnectorEClass.getESuperTypes().add(theConnectorPackage.getConnector());
 		hybridPortEClass.getESuperTypes().add(this.getDirectedTypedPort());
 		structuredComponentEClass.getESuperTypes().add(this.getComponent());
-		coordinationProtocolOccurrenceEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		coordinationProtocolPartEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		directedTypedPortEClass.getESuperTypes().add(this.getPort());
 		directedTypedPortEClass.getESuperTypes().add(theBehaviorPackage.getTypedNamedElement());
 		portPartEClass.getESuperTypes().add(theConnectorPackage.getConnectorEndpoint());
@@ -1040,7 +1040,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEOperation(getAtomicComponent__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(assemblyConnectorEClass, AssemblyConnector.class, "AssemblyConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAssemblyConnector_CoordinationProtocolOccurence(), this.getCoordinationProtocolOccurrence(), null, "coordinationProtocolOccurence", null, 0, 1, AssemblyConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getAssemblyConnector_CoordinationProtocolOccurence(), this.getCoordinationProtocolPart(), null, "coordinationProtocolOccurence", null, 0, 1, AssemblyConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getAssemblyConnector_PortParts(), this.getPortPart(), null, "portParts", null, 2, 2, AssemblyConnector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(delegationConnectorEClass, DelegationConnector.class, "DelegationConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1058,13 +1058,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEReference(getStructuredComponent_Connectors(), this.getPortConnector(), this.getPortConnector_ParentComponent(), "connectors", null, 0, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredComponent_AllStructuredComponents(), this.getStructuredComponent(), null, "allStructuredComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getStructuredComponent_AllAtomicComponents(), this.getAtomicComponent(), null, "allAtomicComponents", null, 0, -1, StructuredComponent.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getStructuredComponent_CoordinationProtocolOccurences(), this.getCoordinationProtocolOccurrence(), null, "coordinationProtocolOccurences", null, 0, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStructuredComponent_CoordinationProtocolOccurences(), this.getCoordinationProtocolPart(), null, "coordinationProtocolOccurences", null, 0, -1, StructuredComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getStructuredComponent__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(coordinationProtocolOccurrenceEClass, CoordinationProtocolOccurrence.class, "CoordinationProtocolOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCoordinationProtocolOccurrence_CoordinationProtocol(), theProtocolPackage.getCoordinationProtocol(), null, "coordinationProtocol", null, 1, 1, CoordinationProtocolOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCoordinationProtocolOccurrence_PortParts(), this.getPortPart(), this.getPortPart_CoordinationProtocolOccurence(), "portParts", null, 2, -1, CoordinationProtocolOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(coordinationProtocolPartEClass, CoordinationProtocolPart.class, "CoordinationProtocolPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCoordinationProtocolPart_CoordinationProtocol(), theProtocolPackage.getCoordinationProtocol(), null, "coordinationProtocol", null, 1, 1, CoordinationProtocolPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoordinationProtocolPart_PortParts(), this.getPortPart(), this.getPortPart_CoordinationProtocolOccurence(), "portParts", null, 2, -1, CoordinationProtocolPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(directedTypedPortEClass, DirectedTypedPort.class, "DirectedTypedPort", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDirectedTypedPort_Kind(), this.getPortDirectionKind(), "kind", null, 1, 1, DirectedTypedPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1076,7 +1076,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		initEClass(portPartEClass, PortPart.class, "PortPart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortPart_PortType(), this.getPort(), null, "portType", null, 1, 1, PortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortPart_ComponentPart(), this.getComponentPart(), this.getComponentPart_PortParts(), "componentPart", null, 1, 1, PortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPortPart_CoordinationProtocolOccurence(), this.getCoordinationProtocolOccurrence(), this.getCoordinationProtocolOccurrence_PortParts(), "coordinationProtocolOccurence", null, 0, 1, PortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortPart_CoordinationProtocolOccurence(), this.getCoordinationProtocolPart(), this.getCoordinationProtocolPart_PortParts(), "coordinationProtocolOccurence", null, 0, 1, PortPart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortPart_RefinedRole(), theProtocolPackage.getRole(), null, "refinedRole", null, 0, 1, PortPart.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPortPart_Name(), ecorePackage.getEString(), "name", null, 0, 1, PortPart.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
@@ -1151,7 +1151,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "constraints", "StructuredComponentAllowsNoHybridPorts ValidComponentType NoCyclicComponentPartHierarchy DiscreteStructuredComponentValidParts DiscreteStructuredComponentValidPorts HybridStructuredComponentValidPorts ComponentPartsHaveUniqueName"
 		   });												
 		addAnnotation
-		  (coordinationProtocolOccurrenceEClass, 
+		  (coordinationProtocolPartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyDiscretePortParts"
@@ -1305,7 +1305,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "derivation", "self.allStructuredComponents->collect(\r\n\tembeddedComponentParts->select(\r\n\t\tcomponentType.oclIsKindOf(component::AtomicComponent)\r\n\t)->collect(componentType.oclAsType(component::AtomicComponent))\r\n)->asOrderedSet()"
 		   });						
 		addAnnotation
-		  (coordinationProtocolOccurrenceEClass, 
+		  (coordinationProtocolPartEClass, 
 		   source, 
 		   new String[] {
 			 "OnlyDiscretePortParts", "not self.portParts->oclIsUndefined()\r\nimplies\r\nself.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))"

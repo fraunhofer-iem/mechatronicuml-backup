@@ -350,7 +350,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canCreatePortPartCoordinationProtocolOccurence_4003(
 				de.uni_paderborn.fujaba.muml.component.PortPart source,
-				de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence target,
+				de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart target,
 				View sourceView, View targetView) {
 			if (source != null) {
 				if (source.getCoordinationProtocolOccurence() != null) {
@@ -692,7 +692,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public boolean canExistPortPartCoordinationProtocolOccurence_4003(
 				de.uni_paderborn.fujaba.muml.component.PortPart source,
-				de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence target,
+				de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart target,
 				View sourceView, View targetView) {
 			return true;
 		}
@@ -702,7 +702,7 @@ public class MumlBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 */
 		public java.lang.String getErrorPortPartCoordinationProtocolOccurence_4003(
 				de.uni_paderborn.fujaba.muml.component.PortPart source,
-				de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence target,
+				de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart target,
 				View sourceView, View targetView) {
 			return null;
 		}

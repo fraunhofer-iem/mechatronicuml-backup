@@ -18,16 +18,16 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CoordinationProtocolOccurrenceItemSemanticEditPolicy
+public class CoordinationProtocolPartItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrenceItemSemanticEditPolicy() {
+	public CoordinationProtocolPartItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolOccurrence_3016);
+				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.CoordinationProtocolPart_3016);
 	}
 
 	/**

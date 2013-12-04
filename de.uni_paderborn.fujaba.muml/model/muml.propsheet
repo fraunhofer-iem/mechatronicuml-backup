@@ -542,7 +542,7 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <properties>
-        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocolOccurrence"/>
+        <genFeature href="muml.genmodel#//muml/instance/CoordinationProtocolInstance/coordinationProtocolPart"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
@@ -920,14 +920,14 @@
       <propertyCategories title="Lists" open="true" properties="//@packages.8/@classes.11/@properties.0"/>
     </classes>
     <classes>
-      <genClass href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence"/>
+      <genClass href="muml.genmodel#//muml/component/CoordinationProtocolPart"/>
       <properties>
-        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/coordinationProtocol"/>
+        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolPart/coordinationProtocol"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
       <properties category="//@packages.8/@classes.12/@propertyCategories.0">
-        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolOccurrence/portParts"/>
+        <genFeature href="muml.genmodel#//muml/component/CoordinationProtocolPart/portParts"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>

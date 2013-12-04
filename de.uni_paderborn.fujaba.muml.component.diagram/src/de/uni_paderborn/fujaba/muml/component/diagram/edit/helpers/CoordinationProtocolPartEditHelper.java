@@ -3,7 +3,7 @@ package de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers;
 /**
  * @generated
  */
-public class CoordinationProtocolOccurrenceEditHelper
+public class CoordinationProtocolPartEditHelper
 		extends
 		de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.MumlBaseEditHelper {
 }

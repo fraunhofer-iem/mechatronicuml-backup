@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.storydriven.core.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence;
+import de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart;
 import de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.instance.PortInstance;
@@ -29,7 +29,7 @@ import de.uni_paderborn.fujaba.muml.instance.PortInstance;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.CoordinationProtocolInstanceImpl#getPortInstances <em>Port Instances</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.CoordinationProtocolInstanceImpl#getCoordinationProtocolOccurrence <em>Coordination Protocol Occurrence</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.CoordinationProtocolInstanceImpl#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,14 +47,14 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 	protected EList<PortInstance> portInstances;
 
 	/**
-	 * The cached value of the '{@link #getCoordinationProtocolOccurrence() <em>Coordination Protocol Occurrence</em>}' reference.
+	 * The cached value of the '{@link #getCoordinationProtocolPart() <em>Coordination Protocol Part</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCoordinationProtocolOccurrence()
+	 * @see #getCoordinationProtocolPart()
 	 * @generated
 	 * @ordered
 	 */
-	protected CoordinationProtocolOccurrence coordinationProtocolOccurrence;
+	protected CoordinationProtocolPart coordinationProtocolPart;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,16 +92,16 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrence getCoordinationProtocolOccurrence() {
-		if (coordinationProtocolOccurrence != null && coordinationProtocolOccurrence.eIsProxy()) {
-			InternalEObject oldCoordinationProtocolOccurrence = (InternalEObject)coordinationProtocolOccurrence;
-			coordinationProtocolOccurrence = (CoordinationProtocolOccurrence)eResolveProxy(oldCoordinationProtocolOccurrence);
-			if (coordinationProtocolOccurrence != oldCoordinationProtocolOccurrence) {
+	public CoordinationProtocolPart getCoordinationProtocolPart() {
+		if (coordinationProtocolPart != null && coordinationProtocolPart.eIsProxy()) {
+			InternalEObject oldCoordinationProtocolPart = (InternalEObject)coordinationProtocolPart;
+			coordinationProtocolPart = (CoordinationProtocolPart)eResolveProxy(oldCoordinationProtocolPart);
+			if (coordinationProtocolPart != oldCoordinationProtocolPart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE, oldCoordinationProtocolOccurrence, coordinationProtocolOccurrence));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE, oldCoordinationProtocolPart, coordinationProtocolPart));
 			}
 		}
-		return coordinationProtocolOccurrence;
+		return coordinationProtocolPart;
 	}
 
 	/**
@@ -109,8 +109,8 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolOccurrence basicGetCoordinationProtocolOccurrence() {
-		return coordinationProtocolOccurrence;
+	public CoordinationProtocolPart basicGetCoordinationProtocolPart() {
+		return coordinationProtocolPart;
 	}
 
 	/**
@@ -118,11 +118,11 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCoordinationProtocolOccurrence(CoordinationProtocolOccurrence newCoordinationProtocolOccurrence) {
-		CoordinationProtocolOccurrence oldCoordinationProtocolOccurrence = coordinationProtocolOccurrence;
-		coordinationProtocolOccurrence = newCoordinationProtocolOccurrence;
+	public void setCoordinationProtocolPart(CoordinationProtocolPart newCoordinationProtocolPart) {
+		CoordinationProtocolPart oldCoordinationProtocolPart = coordinationProtocolPart;
+		coordinationProtocolPart = newCoordinationProtocolPart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE, oldCoordinationProtocolOccurrence, coordinationProtocolOccurrence));
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE, oldCoordinationProtocolPart, coordinationProtocolPart));
 	}
 
 	/**
@@ -136,8 +136,8 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES:
 				return getPortInstances();
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE:
-				if (resolve) return getCoordinationProtocolOccurrence();
-				return basicGetCoordinationProtocolOccurrence();
+				if (resolve) return getCoordinationProtocolPart();
+				return basicGetCoordinationProtocolPart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,7 +156,7 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 				getPortInstances().addAll((Collection<? extends PortInstance>)newValue);
 				return;
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE:
-				setCoordinationProtocolOccurrence((CoordinationProtocolOccurrence)newValue);
+				setCoordinationProtocolPart((CoordinationProtocolPart)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -174,7 +174,7 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 				getPortInstances().clear();
 				return;
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE:
-				setCoordinationProtocolOccurrence((CoordinationProtocolOccurrence)null);
+				setCoordinationProtocolPart((CoordinationProtocolPart)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -191,7 +191,7 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES:
 				return portInstances != null && !portInstances.isEmpty();
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE:
-				return coordinationProtocolOccurrence != null;
+				return coordinationProtocolPart != null;
 		}
 		return super.eIsSet(featureID);
 	}

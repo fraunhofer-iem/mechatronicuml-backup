@@ -62,7 +62,7 @@ public class CoordinationProtocolInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPortInstancesPropertyDescriptor(object);
-			addCoordinationProtocolOccurrencePropertyDescriptor(object);
+			addCoordinationProtocolPartPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,18 +90,18 @@ public class CoordinationProtocolInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Coordination Protocol Occurrence feature.
+	 * This adds a property descriptor for the Coordination Protocol Part feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCoordinationProtocolOccurrencePropertyDescriptor(Object object) {
+	protected void addCoordinationProtocolPartPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CoordinationProtocolInstance_coordinationProtocolOccurrence_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolInstance_coordinationProtocolOccurrence_feature", "_UI_CoordinationProtocolInstance_type"),
+				 getString("_UI_CoordinationProtocolInstance_coordinationProtocolPart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolInstance_coordinationProtocolPart_feature", "_UI_CoordinationProtocolInstance_type"),
 				 InstancePackage.Literals.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE,
 				 true,
 				 false,

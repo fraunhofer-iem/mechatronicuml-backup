@@ -104,7 +104,7 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 				List<Integer> visualIDs = Arrays
 						.asList(new Integer[] {
 								de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID });
+								de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
@@ -141,7 +141,7 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 		int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID;
+				|| visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID;
 	}
 
 	/**

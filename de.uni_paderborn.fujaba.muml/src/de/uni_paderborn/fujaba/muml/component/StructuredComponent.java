@@ -128,7 +128,7 @@ public interface StructuredComponent extends Component {
 
 	/**
 	 * Returns the value of the '<em><b>Coordination Protocol Occurences</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -139,7 +139,7 @@ public interface StructuredComponent extends Component {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<CoordinationProtocolOccurrence> getCoordinationProtocolOccurences();
+	EList<CoordinationProtocolPart> getCoordinationProtocolOccurences();
 
 	/**
 	 * <!-- begin-user-doc -->

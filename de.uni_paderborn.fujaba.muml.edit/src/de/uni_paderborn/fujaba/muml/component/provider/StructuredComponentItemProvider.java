@@ -199,7 +199,7 @@ public class StructuredComponentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentPackage.Literals.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES,
-				 ComponentFactory.eINSTANCE.createCoordinationProtocolOccurrence()));
+				 ComponentFactory.eINSTANCE.createCoordinationProtocolPart()));
 	}
 
 }

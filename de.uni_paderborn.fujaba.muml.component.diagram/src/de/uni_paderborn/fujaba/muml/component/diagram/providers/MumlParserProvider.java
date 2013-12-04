@@ -151,8 +151,8 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser getCoordinationProtocolOccurrenceLabel_5026Parser() {
-		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.CoordinationProtocolOccurrenceLabelExpressionLabelParser5026();
+	private IParser getCoordinationProtocolPartLabel_5026Parser() {
+		return new de.uni_paderborn.fujaba.muml.component.diagram.parsers.CoordinationProtocolPartLabelExpressionLabelParser5026();
 	}
 
 	/**
@@ -177,7 +177,7 @@ public class MumlParserProvider extends AbstractProvider implements
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartNameEditPart.VISUAL_ID:
 			return getPortPartName_5034Parser();
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-			return getCoordinationProtocolOccurrenceLabel_5026Parser();
+			return getCoordinationProtocolPartLabel_5026Parser();
 		}
 		return null;
 	}
