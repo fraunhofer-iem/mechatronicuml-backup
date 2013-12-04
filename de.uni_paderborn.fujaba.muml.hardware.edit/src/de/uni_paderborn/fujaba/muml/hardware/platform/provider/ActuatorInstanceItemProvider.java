@@ -3,19 +3,25 @@
 package de.uni_paderborn.fujaba.muml.hardware.platform.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import de.uni_paderborn.fujaba.muml.hardware.platform.ActuatorInstance;
+import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.resourcetype.Device;
+import de.uni_paderborn.fujaba.muml.hardware.resourcetype.DeviceKind;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.platform.ActuatorInstance} object.
@@ -104,6 +110,38 @@ public class ActuatorInstanceItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+	
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	protected void addResourceTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+		(new ItemPropertyDescriptor
+			(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			 getResourceLocator(),
+			 getString("_UI_ResourceInstance_resourceType_feature"),
+			 getString("_UI_PropertyDescriptor_description", "_UI_ResourceInstance_resourceType_feature", "_UI_ResourceInstance_type"),
+			 PlatformPackage.Literals.RESOURCE_INSTANCE__RESOURCE_TYPE,
+			 true,
+			 false,
+			 true,
+			 null,
+			 null,
+			 null){
+
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				Collection<Object> choices = new ArrayList<Object>();
+				for (Object value : super.getChoiceOfValues(object)) {
+					if (value instanceof Device && ((Device) value).getDeviceType()==DeviceKind.ACTUATOR) {
+						choices.add(value);
+					}
+				}
+				return choices;
+			}
+		});
 	}
 
 }

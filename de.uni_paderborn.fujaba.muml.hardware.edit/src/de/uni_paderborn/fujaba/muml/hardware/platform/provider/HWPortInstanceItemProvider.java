@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.platform.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,7 +25,12 @@ import org.storydriven.core.provider.NamedElementItemProvider;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory;
 import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.resourcetype.Device;
+import de.uni_paderborn.fujaba.muml.hardware.resourcetype.DeviceKind;
+import de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort;
+import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceType;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.provider.HardwareEditPlugin;
+import de.uni_paderborn.fujaba.muml.instance.PortInstance;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance} object.
@@ -75,11 +81,11 @@ public class HWPortInstanceItemProvider
 	 * This adds a property descriptor for the Hwport Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addHwportTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_HWPortInstance_hwportType_feature"),
@@ -90,7 +96,21 @@ public class HWPortInstanceItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 
+				 null){
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				Collection<Object> choices = new ArrayList<Object>();
+				ResourceType resourceType = ((HWPortInstance) object).getParentResourceInstance().getResourceType();
+				for (Object value : super.getChoiceOfValues(object)) {
+					if (value instanceof HWPort) {
+						if(resourceType!= null && ((HWPort) value).getParentResource()==resourceType)
+						choices.add(value);
+					}
+				}
+				return choices;
+			}
+		});
 	}
 
 	/**
