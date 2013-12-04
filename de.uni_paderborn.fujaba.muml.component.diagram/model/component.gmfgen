@@ -700,21 +700,21 @@
           collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="AtomicComponent"
-            description="Create new AtomicComponent"
+            title="Atomic Component"
+            description="Create new Atomic Component"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/AtomicComponent.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="StructuredComponent"
-            description="Create new StructuredComponent"
+            title="Structured Component"
+            description="Create new Structured Component"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/StructuredComponent.gif"
             default="true"
             genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="ComponentPart"
-            description="Create new ComponentPart"
+            title="Component Part"
+            description="Create new Component Part"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/ComponentPart.gif"
             genNodes="//@diagram/@childNodes.3"/>
       </groups>
@@ -758,6 +758,18 @@
             description="Create new Delegation"
             smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif"
             genLinks="//@diagram/@links.1"/>
+      </groups>
+      <groups
+          title="Coordination Protocol"
+          description=""
+          collapse="true">
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Coordination Protocol Part"
+            description="Create new Coordination Protocol Part"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/CoordinationProtocol.gif"
+            default="true"
+            genNodes="//@diagram/@childNodes.5"/>
       </groups>
     </palette>
     <preferences>

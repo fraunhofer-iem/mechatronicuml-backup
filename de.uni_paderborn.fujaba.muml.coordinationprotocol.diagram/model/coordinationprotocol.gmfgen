@@ -433,6 +433,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="CoordinationProtocol"
             description="Create new CoordinationProtocol"
+            smallIconPath="/de.uni_paderborn.fujaba.muml.common/icons/CoordinationProtocol.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"

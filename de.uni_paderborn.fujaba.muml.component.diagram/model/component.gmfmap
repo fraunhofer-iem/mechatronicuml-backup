@@ -306,6 +306,9 @@
             <viewExpression
                 body="coordinationProtocol.name"/>
           </labelMappings>
+          <tool
+              xsi:type="gmftool:CreationTool"
+              href="component.gmftool#//@palette/@tools.3/@tools.0"/>
           <diagramNode
               href="component.gmfgraph#CoordinationProtocol"/>
         </ownedChild>

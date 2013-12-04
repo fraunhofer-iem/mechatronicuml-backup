@@ -13,8 +13,8 @@
         active="//@palette/@tools.0/@tools.1">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="AtomicComponent"
-          description="Create new AtomicComponent">
+          title="Atomic Component"
+          description="Create new Atomic Component">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/AtomicComponent.gif"
@@ -22,8 +22,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="StructuredComponent"
-          description="Create new StructuredComponent">
+          title="Structured Component"
+          description="Create new Structured Component">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/StructuredComponent.gif"
@@ -31,8 +31,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="ComponentPart"
-          description="Create new ComponentPart">
+          title="Component Part"
+          description="Create new Component Part">
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/ComponentPart.gif"
@@ -94,6 +94,22 @@
         <smallIcon
             xsi:type="gmftool:BundleImage"
             path="icons/Delegation.gif"
+            bundle="/de.uni_paderborn.fujaba.muml.common"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Coordination Protocol"
+        description=""
+        collapsible="true"
+        active="//@palette/@tools.3/@tools.0">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Coordination Protocol Part"
+          description="Create new Coordination Protocol Part">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/CoordinationProtocol.gif"
             bundle="/de.uni_paderborn.fujaba.muml.common"/>
       </tools>
     </tools>

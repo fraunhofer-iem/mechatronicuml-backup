@@ -14,9 +14,9 @@
           title="CoordinationProtocol"
           description="Create new CoordinationProtocol">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/CoordinationProtocol.gif"
+            bundle="/de.uni_paderborn.fujaba.muml.common"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"

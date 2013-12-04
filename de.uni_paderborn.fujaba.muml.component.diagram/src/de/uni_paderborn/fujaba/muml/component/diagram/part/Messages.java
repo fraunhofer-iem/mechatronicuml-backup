@@ -263,6 +263,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String CoordinationProtocol4Group_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CoordinationProtocol4Group_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String AtomicComponent1CreationTool_title;
 
 	/**
@@ -339,6 +349,16 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String Delegation2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String CoordinationProtocolPart1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CoordinationProtocolPart1CreationTool_desc;
 
 	/**
 	 * @generated
