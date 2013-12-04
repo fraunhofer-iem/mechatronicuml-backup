@@ -672,7 +672,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 
 		coordinationProtocolInstanceEClass = createEClass(COORDINATION_PROTOCOL_INSTANCE);
 		createEReference(coordinationProtocolInstanceEClass, COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES);
-		createEReference(coordinationProtocolInstanceEClass, COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE);
+		createEReference(coordinationProtocolInstanceEClass, COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART);
 
 		structuredComponentInstanceEClass = createEClass(STRUCTURED_COMPONENT_INSTANCE);
 		createEReference(structuredComponentInstanceEClass, STRUCTURED_COMPONENT_INSTANCE__EMBEDDED_CIC);

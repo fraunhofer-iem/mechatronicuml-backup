@@ -74,7 +74,7 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComponentPackage.Literals.COORDINATION_PROTOCOL_OCCURRENCE;
+		return ComponentPackage.Literals.COORDINATION_PROTOCOL_PART;
 	}
 
 	/**
@@ -88,7 +88,7 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 			coordinationProtocol = (CoordinationProtocol)eResolveProxy(oldCoordinationProtocol);
 			if (coordinationProtocol != oldCoordinationProtocol) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL, oldCoordinationProtocol, coordinationProtocol));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentPackage.COORDINATION_PROTOCOL_PART__COORDINATION_PROTOCOL, oldCoordinationProtocol, coordinationProtocol));
 			}
 		}
 		return coordinationProtocol;
@@ -112,7 +112,7 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 		CoordinationProtocol oldCoordinationProtocol = coordinationProtocol;
 		coordinationProtocol = newCoordinationProtocol;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL, oldCoordinationProtocol, coordinationProtocol));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.COORDINATION_PROTOCOL_PART__COORDINATION_PROTOCOL, oldCoordinationProtocol, coordinationProtocol));
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 	 */
 	public EList<PortPart> getPortParts() {
 		if (portParts == null) {
-			portParts = new EObjectWithInverseResolvingEList<PortPart>(PortPart.class, this, ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE);
+			portParts = new EObjectWithInverseResolvingEList<PortPart>(PortPart.class, this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE);
 		}
 		return portParts;
 	}
@@ -136,7 +136,7 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortParts()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -150,7 +150,7 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS:
 				return ((InternalEList<?>)getPortParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -164,10 +164,10 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART__COORDINATION_PROTOCOL:
 				if (resolve) return getCoordinationProtocol();
 				return basicGetCoordinationProtocol();
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS:
 				return getPortParts();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -182,10 +182,10 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)newValue);
 				return;
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS:
 				getPortParts().clear();
 				getPortParts().addAll((Collection<? extends PortPart>)newValue);
 				return;
@@ -201,10 +201,10 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART__COORDINATION_PROTOCOL:
 				setCoordinationProtocol((CoordinationProtocol)null);
 				return;
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS:
 				getPortParts().clear();
 				return;
 		}
@@ -219,9 +219,9 @@ public class CoordinationProtocolPartImpl extends CommentableElementImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART__COORDINATION_PROTOCOL:
 				return coordinationProtocol != null;
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS:
 				return portParts != null && !portParts.isEmpty();
 		}
 		return super.eIsSet(featureID);

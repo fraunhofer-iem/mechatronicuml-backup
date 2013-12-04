@@ -102,7 +102,7 @@ public class CoordinationProtocolInstanceItemProvider
 				 getResourceLocator(),
 				 getString("_UI_CoordinationProtocolInstance_coordinationProtocolPart_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_CoordinationProtocolInstance_coordinationProtocolPart_feature", "_UI_CoordinationProtocolInstance_type"),
-				 InstancePackage.Literals.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE,
+				 InstancePackage.Literals.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART,
 				 true,
 				 false,
 				 true,

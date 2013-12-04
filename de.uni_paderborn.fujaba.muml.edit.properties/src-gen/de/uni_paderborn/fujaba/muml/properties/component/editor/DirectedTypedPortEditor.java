@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public abstract class DirectedTypedPortEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.behavior.editor.TypedNamedElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.component.editor.PortEditor {
 
 	/**
 	 * @generated
@@ -41,21 +41,7 @@ public abstract class DirectedTypedPortEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPortComponentEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConstrainableElementConstraintEditor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
-		}
-
-		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addCommentableElementCommentEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorEndpointConnectorsEditor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+			addTypedNamedElementDataTypeEditor(null, true);
 		}
 
 	}
@@ -134,90 +120,22 @@ public abstract class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addPortComponentEditor(String category, boolean front) {
-		addEditorToCategory(category, createPortComponentEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortComponentEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getPort_Component());
-
-		editor.setTooltipMessage("The component, this port belongs to. Theoretically the bounds\nshould be 1..1, but that would prevent the possibility for\nComponentPart.portsDerived to be a containment reference\n(see ComponentPart.portsDerived)");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addConstrainableElementConstraintEditor(String category,
+	protected void addTypedNamedElementDataTypeEditor(String category,
 			boolean front) {
-		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
-
-		editor.setTooltipMessage("The constraint for this element.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
+		addEditorToCategory(category, createTypedNamedElementDataTypeEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTypedNamedElementDataTypeEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getTypedNamedElement_DataType());
 
-		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addConnectorEndpointConnectorsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConnectorEndpointConnectorsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpoint_Connectors());
+		editor.setTooltipMessage("The data type of this element.");
 
 		return editor;
 

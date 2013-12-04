@@ -242,7 +242,7 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: {
+			case ComponentPackage.COORDINATION_PROTOCOL_PART: {
 				CoordinationProtocolPart coordinationProtocolPart = (CoordinationProtocolPart)theEObject;
 				T result = caseCoordinationProtocolPart(coordinationProtocolPart);
 				if (result == null) result = caseCommentableElement(coordinationProtocolPart);

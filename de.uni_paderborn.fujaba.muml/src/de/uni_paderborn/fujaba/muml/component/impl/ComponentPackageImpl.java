@@ -912,9 +912,9 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		createEReference(structuredComponentEClass, STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES);
 		createEOperation(structuredComponentEClass, STRUCTURED_COMPONENT___TO_STRING);
 
-		coordinationProtocolPartEClass = createEClass(COORDINATION_PROTOCOL_OCCURRENCE);
-		createEReference(coordinationProtocolPartEClass, COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL);
-		createEReference(coordinationProtocolPartEClass, COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS);
+		coordinationProtocolPartEClass = createEClass(COORDINATION_PROTOCOL_PART);
+		createEReference(coordinationProtocolPartEClass, COORDINATION_PROTOCOL_PART__COORDINATION_PROTOCOL);
+		createEReference(coordinationProtocolPartEClass, COORDINATION_PROTOCOL_PART__PORT_PARTS);
 
 		directedTypedPortEClass = createEClass(DIRECTED_TYPED_PORT);
 		createEAttribute(directedTypedPortEClass, DIRECTED_TYPED_PORT__KIND);

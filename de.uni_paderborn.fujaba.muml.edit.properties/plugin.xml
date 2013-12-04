@@ -203,11 +203,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.instance.editor.CoordinationProtocolInstanceEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.instance.editor.StructuredComponentInstanceEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance">
        </propertyEditor>
@@ -215,6 +210,11 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.instance.editor.AtomicComponentInstanceEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.instance.editor.CoordinationProtocolInstanceEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.instance.CoordinationProtocolInstance">
        </propertyEditor>
     
        <propertyEditor
@@ -323,11 +323,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.CoordinationProtocolPartEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.PortPartEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.component.PortPart">
        </propertyEditor>
@@ -335,6 +330,16 @@
        <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.StaticAtomicComponentEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.StaticComponentEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.StaticComponent">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.CoordinationProtocolPartEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart">
        </propertyEditor>
     
        <propertyEditor

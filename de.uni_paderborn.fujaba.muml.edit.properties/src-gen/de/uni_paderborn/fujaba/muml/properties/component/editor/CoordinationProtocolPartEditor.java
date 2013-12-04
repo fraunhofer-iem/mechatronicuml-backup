@@ -27,8 +27,7 @@ public class CoordinationProtocolPartEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCoordinationProtocolPartCoordinationProtocolEditor(null,
-					true);
+			addCoordinationProtocolPartCoordinationProtocolEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
@@ -43,8 +42,7 @@ public class CoordinationProtocolPartEditor
 	 */
 	protected void addCoordinationProtocolPartCoordinationProtocolEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
+		addEditorToCategory(category,
 				createCoordinationProtocolPartCoordinationProtocolEditor(),
 				front);
 	}
@@ -67,8 +65,8 @@ public class CoordinationProtocolPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addCoordinationProtocolPartPortPartsEditor(
-			String category, boolean front) {
+	protected void addCoordinationProtocolPartPortPartsEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
 				createCoordinationProtocolPartPortPartsEditor(), front);
 	}

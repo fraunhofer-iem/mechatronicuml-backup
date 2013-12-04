@@ -98,7 +98,7 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 			coordinationProtocolPart = (CoordinationProtocolPart)eResolveProxy(oldCoordinationProtocolPart);
 			if (coordinationProtocolPart != oldCoordinationProtocolPart) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE, oldCoordinationProtocolPart, coordinationProtocolPart));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART, oldCoordinationProtocolPart, coordinationProtocolPart));
 			}
 		}
 		return coordinationProtocolPart;
@@ -122,7 +122,7 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 		CoordinationProtocolPart oldCoordinationProtocolPart = coordinationProtocolPart;
 		coordinationProtocolPart = newCoordinationProtocolPart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE, oldCoordinationProtocolPart, coordinationProtocolPart));
+			eNotify(new ENotificationImpl(this, Notification.SET, InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART, oldCoordinationProtocolPart, coordinationProtocolPart));
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 		switch (featureID) {
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES:
 				return getPortInstances();
-			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE:
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART:
 				if (resolve) return getCoordinationProtocolPart();
 				return basicGetCoordinationProtocolPart();
 		}
@@ -155,7 +155,7 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 				getPortInstances().clear();
 				getPortInstances().addAll((Collection<? extends PortInstance>)newValue);
 				return;
-			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE:
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART:
 				setCoordinationProtocolPart((CoordinationProtocolPart)newValue);
 				return;
 		}
@@ -173,7 +173,7 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES:
 				getPortInstances().clear();
 				return;
-			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE:
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART:
 				setCoordinationProtocolPart((CoordinationProtocolPart)null);
 				return;
 		}
@@ -190,7 +190,7 @@ public class CoordinationProtocolInstanceImpl extends NamedElementImpl implement
 		switch (featureID) {
 			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__PORT_INSTANCES:
 				return portInstances != null && !portInstances.isEmpty();
-			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE:
+			case InstancePackage.COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART:
 				return coordinationProtocolPart != null;
 		}
 		return super.eIsSet(featureID);

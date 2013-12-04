@@ -3951,7 +3951,7 @@ public interface ComponentPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl#getCoordinationProtocolPart()
 	 * @generated
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE = 12;
+	int COORDINATION_PROTOCOL_PART = 12;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3960,7 +3960,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
+	int COORDINATION_PROTOCOL_PART__ANNOTATION = CorePackage.COMMENTABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -3969,7 +3969,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
+	int COORDINATION_PROTOCOL_PART__EXTENSION = CorePackage.COMMENTABLE_ELEMENT__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -3978,7 +3978,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+	int COORDINATION_PROTOCOL_PART__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Coordination Protocol</b></em>' reference.
@@ -3987,7 +3987,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
+	int COORDINATION_PROTOCOL_PART__COORDINATION_PROTOCOL = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Port Parts</b></em>' reference list.
@@ -3996,7 +3996,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int COORDINATION_PROTOCOL_PART__PORT_PARTS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Coordination Protocol Part</em>' class.
@@ -4005,7 +4005,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
+	int COORDINATION_PROTOCOL_PART_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -4014,7 +4014,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
+	int COORDINATION_PROTOCOL_PART___ECLASS = CorePackage.COMMENTABLE_ELEMENT___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -4023,7 +4023,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
+	int COORDINATION_PROTOCOL_PART___EIS_PROXY = CorePackage.COMMENTABLE_ELEMENT___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -4032,7 +4032,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
+	int COORDINATION_PROTOCOL_PART___ERESOURCE = CorePackage.COMMENTABLE_ELEMENT___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -4041,7 +4041,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
+	int COORDINATION_PROTOCOL_PART___ECONTAINER = CorePackage.COMMENTABLE_ELEMENT___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -4050,7 +4050,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
+	int COORDINATION_PROTOCOL_PART___ECONTAINING_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -4059,7 +4059,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
+	int COORDINATION_PROTOCOL_PART___ECONTAINMENT_FEATURE = CorePackage.COMMENTABLE_ELEMENT___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -4068,7 +4068,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
+	int COORDINATION_PROTOCOL_PART___ECONTENTS = CorePackage.COMMENTABLE_ELEMENT___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -4077,7 +4077,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
+	int COORDINATION_PROTOCOL_PART___EALL_CONTENTS = CorePackage.COMMENTABLE_ELEMENT___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -4086,7 +4086,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
+	int COORDINATION_PROTOCOL_PART___ECROSS_REFERENCES = CorePackage.COMMENTABLE_ELEMENT___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -4095,7 +4095,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int COORDINATION_PROTOCOL_PART___EGET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -4104,7 +4104,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int COORDINATION_PROTOCOL_PART___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.COMMENTABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -4113,7 +4113,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int COORDINATION_PROTOCOL_PART___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.COMMENTABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -4122,7 +4122,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int COORDINATION_PROTOCOL_PART___EIS_SET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -4131,7 +4131,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int COORDINATION_PROTOCOL_PART___EUNSET__ESTRUCTURALFEATURE = CorePackage.COMMENTABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -4140,7 +4140,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int COORDINATION_PROTOCOL_PART___EINVOKE__EOPERATION_ELIST = CorePackage.COMMENTABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -4149,7 +4149,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int COORDINATION_PROTOCOL_PART___GET_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -4158,7 +4158,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int COORDINATION_PROTOCOL_PART___PROVIDE_EXTENSION__ECLASS = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -4167,7 +4167,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int COORDINATION_PROTOCOL_PART___GET_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -4176,7 +4176,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int COORDINATION_PROTOCOL_PART___PROVIDE_ANNOTATION__STRING = CorePackage.COMMENTABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Coordination Protocol Part</em>' class.
@@ -4185,7 +4185,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_OCCURRENCE_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
+	int COORDINATION_PROTOCOL_PART_OPERATION_COUNT = CorePackage.COMMENTABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.component.impl.PortPartImpl <em>Port Part</em>}' class.
@@ -5918,6 +5918,32 @@ public interface ComponentPackage extends EPackage {
 		EOperation STRUCTURED_COMPONENT___TO_STRING = eINSTANCE.getStructuredComponent__ToString();
 
 		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolPartImpl <em>Coordination Protocol Part</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolPartImpl
+		 * @see de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl#getCoordinationProtocolPart()
+		 * @generated
+		 */
+		EClass COORDINATION_PROTOCOL_PART = eINSTANCE.getCoordinationProtocolPart();
+
+		/**
+		 * The meta object literal for the '<em><b>Coordination Protocol</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COORDINATION_PROTOCOL_PART__COORDINATION_PROTOCOL = eINSTANCE.getCoordinationProtocolPart_CoordinationProtocol();
+
+		/**
+		 * The meta object literal for the '<em><b>Port Parts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COORDINATION_PROTOCOL_PART__PORT_PARTS = eINSTANCE.getCoordinationProtocolPart_PortParts();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.component.impl.DirectedTypedPortImpl <em>Directed Typed Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6142,32 +6168,6 @@ public interface ComponentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HYBRID_PORT__SAMPLING_INTERVAL = eINSTANCE.getHybridPort_SamplingInterval();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolPartImpl <em>Coordination Protocol Part</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.component.impl.CoordinationProtocolPartImpl
-		 * @see de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl#getCoordinationProtocolPart()
-		 * @generated
-		 */
-		EClass COORDINATION_PROTOCOL_OCCURRENCE = eINSTANCE.getCoordinationProtocolPart();
-
-		/**
-		 * The meta object literal for the '<em><b>Coordination Protocol</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COORDINATION_PROTOCOL_OCCURRENCE__COORDINATION_PROTOCOL = eINSTANCE.getCoordinationProtocolPart_CoordinationProtocol();
-
-		/**
-		 * The meta object literal for the '<em><b>Port Parts</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS = eINSTANCE.getCoordinationProtocolPart_PortParts();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.component.ComponentKind <em>Kind</em>}' enum.

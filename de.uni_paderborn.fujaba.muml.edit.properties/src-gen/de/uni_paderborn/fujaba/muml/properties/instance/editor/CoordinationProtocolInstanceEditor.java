@@ -32,8 +32,8 @@ public class CoordinationProtocolInstanceEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCoordinationProtocolInstanceCoordinationProtocolPartEditor(
-					null, true);
+			addCoordinationProtocolInstanceCoordinationProtocolPartEditor(null,
+					true);
 		}
 
 	}

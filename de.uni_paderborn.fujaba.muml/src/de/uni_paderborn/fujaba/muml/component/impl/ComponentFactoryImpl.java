@@ -81,7 +81,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.ASSEMBLY_CONNECTOR: return createAssemblyConnector();
 			case ComponentPackage.DELEGATION_CONNECTOR: return createDelegationConnector();
 			case ComponentPackage.HYBRID_PORT: return createHybridPort();
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE: return createCoordinationProtocolPart();
+			case ComponentPackage.COORDINATION_PROTOCOL_PART: return createCoordinationProtocolPart();
 			case ComponentPackage.PORT_PART: return createPortPart();
 			case ComponentPackage.STATIC_ATOMIC_COMPONENT: return createStaticAtomicComponent();
 			case ComponentPackage.STATIC_COMPONENT: return createStaticComponent();

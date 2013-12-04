@@ -142,7 +142,7 @@ public class ComponentValidator extends MumlValidator {
 				return validateHybridPort((HybridPort)value, diagnostics, context);
 			case ComponentPackage.STRUCTURED_COMPONENT:
 				return validateStructuredComponent((StructuredComponent)value, diagnostics, context);
-			case ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE:
+			case ComponentPackage.COORDINATION_PROTOCOL_PART:
 				return validateCoordinationProtocolPart((CoordinationProtocolPart)value, diagnostics, context);
 			case ComponentPackage.DIRECTED_TYPED_PORT:
 				return validateDirectedTypedPort((DirectedTypedPort)value, diagnostics, context);
@@ -1288,7 +1288,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COORDINATION_PROTOCOL_OCCURRENCE__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION = "not self.portParts->oclIsUndefined()\r\n" +
+	protected static final String COORDINATION_PROTOCOL_PART__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION = "not self.portParts->oclIsUndefined()\r\n" +
 		"implies\r\n" +
 		"self.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))";
 
@@ -1301,13 +1301,13 @@ public class ComponentValidator extends MumlValidator {
 	public boolean validateCoordinationProtocolPart_OnlyDiscretePortParts(CoordinationProtocolPart coordinationProtocolPart, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(ComponentPackage.Literals.COORDINATION_PROTOCOL_OCCURRENCE,
+				(ComponentPackage.Literals.COORDINATION_PROTOCOL_PART,
 				 coordinationProtocolPart,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "OnlyDiscretePortParts",
-				 COORDINATION_PROTOCOL_OCCURRENCE__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION,
+				 COORDINATION_PROTOCOL_PART__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

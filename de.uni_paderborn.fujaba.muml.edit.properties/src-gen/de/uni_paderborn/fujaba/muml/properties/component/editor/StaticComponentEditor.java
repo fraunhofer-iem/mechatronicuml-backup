@@ -3,14 +3,14 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
 /**
  * @generated
  */
-public class ContinuousPortEditor
+public class StaticComponentEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.component.editor.DirectedTypedPortEditor {
+			de.uni_paderborn.fujaba.muml.properties.component.editor.ComponentEditor {
 
 	/**
 	 * @generated
 	 */
-	public ContinuousPortEditor(String tab,
+	public StaticComponentEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -32,13 +32,13 @@ public class ContinuousPortEditor
 	/**
 	 * @generated
 	 */
-	public ContinuousPortEditor(String tab) {
+	public StaticComponentEditor(String tab) {
 		this(
 				tab,
 				de.uni_paderborn.fujaba.muml.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getContinuousPort());
+						.getStaticComponent());
 	}
 
 	/**
@@ -50,7 +50,7 @@ public class ContinuousPortEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new ContinuousPortEditor(tab);
+			return new StaticComponentEditor(tab);
 		}
 
 		@Override
@@ -58,9 +58,7 @@ public class ContinuousPortEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
 							"property.tab.documentation",
-							"property.tab.general", "property.tab.general",
 							"property.tab.general"}).contains(tab);
 		}
 	}

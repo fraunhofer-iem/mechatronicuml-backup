@@ -3363,7 +3363,7 @@ public interface InstancePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Coordination Protocol Instance</em>' class.
@@ -4815,7 +4815,7 @@ public interface InstancePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_OCCURRENCE = eINSTANCE.getCoordinationProtocolInstance_CoordinationProtocolPart();
+		EReference COORDINATION_PROTOCOL_INSTANCE__COORDINATION_PROTOCOL_PART = eINSTANCE.getCoordinationProtocolInstance_CoordinationProtocolPart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.instance.impl.StructuredComponentInstanceImpl <em>Structured Component Instance</em>}' class.

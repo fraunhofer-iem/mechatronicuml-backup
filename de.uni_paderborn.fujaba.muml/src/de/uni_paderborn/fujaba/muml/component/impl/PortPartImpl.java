@@ -235,9 +235,9 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 		if (newCoordinationProtocolOccurence != coordinationProtocolOccurence) {
 			NotificationChain msgs = null;
 			if (coordinationProtocolOccurence != null)
-				msgs = ((InternalEObject)coordinationProtocolOccurence).eInverseRemove(this, ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS, CoordinationProtocolPart.class, msgs);
+				msgs = ((InternalEObject)coordinationProtocolOccurence).eInverseRemove(this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, CoordinationProtocolPart.class, msgs);
 			if (newCoordinationProtocolOccurence != null)
-				msgs = ((InternalEObject)newCoordinationProtocolOccurence).eInverseAdd(this, ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS, CoordinationProtocolPart.class, msgs);
+				msgs = ((InternalEObject)newCoordinationProtocolOccurence).eInverseAdd(this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, CoordinationProtocolPart.class, msgs);
 			msgs = basicSetCoordinationProtocolOccurence(newCoordinationProtocolOccurence, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -295,7 +295,7 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 				return basicSetComponentPart((ComponentPart)otherEnd, msgs);
 			case ComponentPackage.PORT_PART__COORDINATION_PROTOCOL_OCCURENCE:
 				if (coordinationProtocolOccurence != null)
-					msgs = ((InternalEObject)coordinationProtocolOccurence).eInverseRemove(this, ComponentPackage.COORDINATION_PROTOCOL_OCCURRENCE__PORT_PARTS, CoordinationProtocolPart.class, msgs);
+					msgs = ((InternalEObject)coordinationProtocolOccurence).eInverseRemove(this, ComponentPackage.COORDINATION_PROTOCOL_PART__PORT_PARTS, CoordinationProtocolPart.class, msgs);
 				return basicSetCoordinationProtocolOccurence((CoordinationProtocolPart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);

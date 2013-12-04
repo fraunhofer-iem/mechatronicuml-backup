@@ -847,7 +847,7 @@
           <details key="documentation" value="The port instances that use this coordination protocol instance.&#xD;&#xA;&#xD;&#xA;\todosd{I suggest to change this reference so that it references a DiscretePortInstance.}"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolOccurrence"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
           lowerBound="1" eType="#//component/CoordinationProtocolPart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The CoordinationProtocolOccurence of that instance."/>
