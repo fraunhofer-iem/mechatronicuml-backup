@@ -363,6 +363,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String Refinement2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Refinement2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String StaticStructuredComponentComponentCompartmentEditPart_title;
 
 	/**

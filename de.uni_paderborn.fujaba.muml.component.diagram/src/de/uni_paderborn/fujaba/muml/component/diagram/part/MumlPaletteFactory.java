@@ -81,6 +81,7 @@ public class MumlPaletteFactory {
 		paletteContainer
 				.setDescription(de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.CoordinationProtocol4Group_desc);
 		paletteContainer.add(createCoordinationProtocolPart1CreationTool());
+		paletteContainer.add(createRefinement2CreationTool());
 		return paletteContainer;
 	}
 
@@ -224,6 +225,22 @@ public class MumlPaletteFactory {
 		entry.setId("createCoordinationProtocolPart1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/CoordinationProtocol.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createRefinement2CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Refinement2CreationTool_title,
+				de.uni_paderborn.fujaba.muml.component.diagram.part.Messages.Refinement2CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.PortPartCoordinationProtocolOccurence_4003));
+		entry.setId("createRefinement2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Refinement.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
