@@ -3,9 +3,11 @@
 «IMPORT ecore»
 
 «DEFINE Generate FOR List[EPackage]-»
-	«FOREACH this.typeSelect(EPackage) AS pack»
-		«EXPAND PackageNavigation FOR pack-»
-	«ENDFOREACH-»
+	«FILE (GLOBALVAR filename).toString()»
+		«FOREACH this.typeSelect(EPackage) AS pack»
+			«EXPAND PackageNavigation FOR pack-»
+		«ENDFOREACH-»
+	«ENDFILE»
 «ENDDEFINE»
 
 «DEFINE PackageNavigation FOR EPackage-»

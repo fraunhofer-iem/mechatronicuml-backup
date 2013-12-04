@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <workflow>
+	
+
 	<!-- Paths to metamodels -->
 	<property name="muml" value="de.uni_paderborn.fujaba.muml/model/muml.ecore" />
 	<property name="modelinstance" value="de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore" />
@@ -60,6 +62,7 @@
 	<!--  generate code -->
 	<component class="org.eclipse.xpand2.Generator">
 		<metaModel idRef="mm_emf"/>
+		<globalVarDef name="filename" value="'A_TechDoc_Contents.tex'"/>
 		<expand value="template::Generate::Generate FOR {modelinstance,muml,actionlanguage,sdmcore,storydiagrams}"/> 
 		<outlet path="../MUML Syntax and Semantics/" overwrite="true" />
 		<outlet name='PACKAGEFIGURES' path='../MUML Syntax and Semantics/figures/A_technical-reference/packages/' overwrite='false'/>
