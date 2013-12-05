@@ -57,7 +57,7 @@ public class PropertiesUtil {
 	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
 
 		«FOREACH { this }.union(referencedGenerators).packages AS this»
-		factories.add(new «genPackage.fullyQualifiedName()».provider.«genPackage.prefix»ItemProviderAdapterFactory());
+		factories.add(new «genPackage.fullyQualifiedName().toString()».provider.«genPackage.prefix»ItemProviderAdapterFactory());
 		«ENDFOREACH»
 
 		factories.add(new org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory());

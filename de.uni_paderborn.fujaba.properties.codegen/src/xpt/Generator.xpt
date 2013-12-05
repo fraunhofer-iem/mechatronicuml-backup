@@ -11,7 +11,7 @@
 «ENDFILE-»
 
 «FOREACH packages.classes AS class»
-«FILE sourceFolder + "/" + class.genQualifiedEditorName().replaceAll('\\.', '/') + '.java'»
+«FILE sourceFolder + "/" + class.genQualifiedEditorName().replaceAll('\\.', '/').toString() + '.java'»
 package «class.package.genPackageName()».editor;
 «EXPAND editor::Editor::ClassEditor FOR class»
 «ENDFILE»

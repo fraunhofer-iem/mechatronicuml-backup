@@ -12,7 +12,7 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: 
 «IF !packages.isEmpty-»
-«FOREACH packages AS this SEPARATOR ',\n'» «genPackageName()».editor«ENDFOREACH-»
+«FOREACH packages AS this SEPARATOR ',\n'» «genPackageName().toString()».editor«ENDFOREACH-»
 «IF !tabs.isEmpty»,
  «genPluginId()».tabs«ENDIF-»
 «ENDIF»
