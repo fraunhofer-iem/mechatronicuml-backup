@@ -36,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl#getAllStructuredComponents <em>All Structured Components</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl#getAllAtomicComponents <em>All Atomic Components</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl#getCoordinationProtocolOccurences <em>Coordination Protocol Occurences</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.StructuredComponentImpl#getCoordinationProtocolParts <em>Coordination Protocol Parts</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,14 +84,14 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	protected EStructuralFeature.Internal.SettingDelegate ALL_ATOMIC_COMPONENTS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS).getSettingDelegate();
 
 	/**
-	 * The cached value of the '{@link #getCoordinationProtocolOccurences() <em>Coordination Protocol Occurences</em>}' containment reference list.
+	 * The cached value of the '{@link #getCoordinationProtocolParts() <em>Coordination Protocol Parts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCoordinationProtocolOccurences()
+	 * @see #getCoordinationProtocolParts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CoordinationProtocolPart> coordinationProtocolOccurences;
+	protected EList<CoordinationProtocolPart> coordinationProtocolParts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -179,12 +179,11 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	public EList<CoordinationProtocolPart> getCoordinationProtocolOccurences() {
-		if (coordinationProtocolOccurences == null) {
-			coordinationProtocolOccurences = new EObjectContainmentEList<CoordinationProtocolPart>(CoordinationProtocolPart.class, this, ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES);
+	public EList<CoordinationProtocolPart> getCoordinationProtocolParts() {
+		if (coordinationProtocolParts == null) {
+			coordinationProtocolParts = new EObjectContainmentEList<CoordinationProtocolPart>(CoordinationProtocolPart.class, this, ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS);
 		}
-		return coordinationProtocolOccurences;
+		return coordinationProtocolParts;
 	}
 
 	/**
@@ -220,8 +219,8 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				return ((InternalEList<?>)getAllStructuredComponents()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS:
 				return ((InternalEList<?>)getAllAtomicComponents()).basicRemove(otherEnd, msgs);
-			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES:
-				return ((InternalEList<?>)getCoordinationProtocolOccurences()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS:
+				return ((InternalEList<?>)getCoordinationProtocolParts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -242,8 +241,8 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				return getAllStructuredComponents();
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS:
 				return getAllAtomicComponents();
-			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES:
-				return getCoordinationProtocolOccurences();
+			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS:
+				return getCoordinationProtocolParts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -265,9 +264,9 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				getConnectors().clear();
 				getConnectors().addAll((Collection<? extends PortConnector>)newValue);
 				return;
-			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES:
-				getCoordinationProtocolOccurences().clear();
-				getCoordinationProtocolOccurences().addAll((Collection<? extends CoordinationProtocolPart>)newValue);
+			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS:
+				getCoordinationProtocolParts().clear();
+				getCoordinationProtocolParts().addAll((Collection<? extends CoordinationProtocolPart>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -287,8 +286,8 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 			case ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS:
 				getConnectors().clear();
 				return;
-			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES:
-				getCoordinationProtocolOccurences().clear();
+			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS:
+				getCoordinationProtocolParts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -310,8 +309,8 @@ public abstract class StructuredComponentImpl extends ComponentImpl implements S
 				return isSetAllStructuredComponents();
 			case ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS:
 				return isSetAllAtomicComponents();
-			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES:
-				return coordinationProtocolOccurences != null && !coordinationProtocolOccurences.isEmpty();
+			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS:
+				return coordinationProtocolParts != null && !coordinationProtocolParts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

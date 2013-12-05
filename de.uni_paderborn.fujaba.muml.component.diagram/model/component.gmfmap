@@ -294,7 +294,7 @@
       <children
           compartment="//@nodes.1/@ownedChild/@compartments.0">
         <containmentFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StructuredComponent/coordinationProtocolOccurences"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/StructuredComponent/coordinationProtocolParts"/>
         <ownedChild>
           <domainMetaElement
               href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//component/CoordinationProtocolPart"/>

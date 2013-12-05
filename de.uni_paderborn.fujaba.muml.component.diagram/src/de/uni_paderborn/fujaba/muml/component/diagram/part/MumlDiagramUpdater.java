@@ -192,7 +192,7 @@ public class MumlDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getCoordinationProtocolOccurences()
+		for (Iterator<?> it = modelElement.getCoordinationProtocolParts()
 				.iterator(); it.hasNext();) {
 			de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart childElement = (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart) it
 					.next();

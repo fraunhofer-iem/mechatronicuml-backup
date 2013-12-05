@@ -447,9 +447,9 @@
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/CoordinationProtocolPart"/>
         <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/coordinationProtocolOccurences"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/coordinationProtocolParts"/>
         <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/coordinationProtocolOccurences"/>
+            href="../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml/component/StructuredComponent/coordinationProtocolParts"/>
       </modelFacet>
       <labels
           visualID="5026"
@@ -658,6 +658,7 @@
         visualID="4004"
         editPartClassName="PortPartCoordinationProtocolPartEditPart"
         itemSemanticEditPolicyClassName="PortPartCoordinationProtocolPartItemSemanticEditPolicy"
+        notationViewFactoryClassName="PortPartCoordinationProtocolPartViewFactory"
         createCommandClassName="PortPartCoordinationProtocolPartCreateCommand"
         reorientCommandClassName="PortPartCoordinationProtocolPartReorientCommand">
       <diagramRunTimeClass

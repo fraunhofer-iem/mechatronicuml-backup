@@ -2039,13 +2039,13 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = COMPONENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Protocol Occurences</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Coordination Protocol Parts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES = COMPONENT_FEATURE_COUNT + 4;
+	int STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS = COMPONENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Structured Component</em>' class.
@@ -2355,13 +2355,13 @@ public interface ComponentPackage extends EPackage {
 	int STATIC_STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Protocol Occurences</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Coordination Protocol Parts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES = STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES;
+	int STATIC_STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS = STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS;
 
 	/**
 	 * The number of structural features of the '<em>Static Structured Component</em>' class.
@@ -3141,13 +3141,13 @@ public interface ComponentPackage extends EPackage {
 	int ASSEMBLY_CONNECTOR__PARENT_COMPONENT = PORT_CONNECTOR__PARENT_COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Protocol Occurence</b></em>' reference.
+	 * The feature id for the '<em><b>Coordination Protocol Part</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE = PORT_CONNECTOR_FEATURE_COUNT + 0;
+	int ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_PART = PORT_CONNECTOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Port Parts</b></em>' reference list.
@@ -5309,15 +5309,15 @@ public interface ComponentPackage extends EPackage {
 	EReference getStructuredComponent_AllAtomicComponents();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getCoordinationProtocolOccurences <em>Coordination Protocol Occurences</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getCoordinationProtocolParts <em>Coordination Protocol Parts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Coordination Protocol Occurences</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.component.StructuredComponent#getCoordinationProtocolOccurences()
+	 * @return the meta object for the containment reference list '<em>Coordination Protocol Parts</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.component.StructuredComponent#getCoordinationProtocolParts()
 	 * @see #getStructuredComponent()
 	 * @generated
 	 */
-	EReference getStructuredComponent_CoordinationProtocolOccurences();
+	EReference getStructuredComponent_CoordinationProtocolParts();
 
 	/**
 	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#toString() <em>To String</em>}' operation.
@@ -5531,15 +5531,15 @@ public interface ComponentPackage extends EPackage {
 	EClass getAssemblyConnector();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.component.AssemblyConnector#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.component.AssemblyConnector#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Coordination Protocol Occurence</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.component.AssemblyConnector#getCoordinationProtocolOccurence()
+	 * @return the meta object for the reference '<em>Coordination Protocol Part</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.component.AssemblyConnector#getCoordinationProtocolPart()
 	 * @see #getAssemblyConnector()
 	 * @generated
 	 */
-	EReference getAssemblyConnector_CoordinationProtocolOccurence();
+	EReference getAssemblyConnector_CoordinationProtocolPart();
 
 	/**
 	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.component.AssemblyConnector#getPortParts <em>Port Parts</em>}'.
@@ -5902,12 +5902,12 @@ public interface ComponentPackage extends EPackage {
 		EReference STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = eINSTANCE.getStructuredComponent_AllAtomicComponents();
 
 		/**
-		 * The meta object literal for the '<em><b>Coordination Protocol Occurences</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Coordination Protocol Parts</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES = eINSTANCE.getStructuredComponent_CoordinationProtocolOccurences();
+		EReference STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS = eINSTANCE.getStructuredComponent_CoordinationProtocolParts();
 
 		/**
 		 * The meta object literal for the '<em><b>To String</b></em>' operation.
@@ -6110,12 +6110,12 @@ public interface ComponentPackage extends EPackage {
 		EClass ASSEMBLY_CONNECTOR = eINSTANCE.getAssemblyConnector();
 
 		/**
-		 * The meta object literal for the '<em><b>Coordination Protocol Occurence</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Coordination Protocol Part</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE = eINSTANCE.getAssemblyConnector_CoordinationProtocolOccurence();
+		EReference ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_PART = eINSTANCE.getAssemblyConnector_CoordinationProtocolPart();
 
 		/**
 		 * The meta object literal for the '<em><b>Port Parts</b></em>' reference list feature.

@@ -67,7 +67,7 @@ public class StaticStructuredComponentComponentCompartmentCanonicalEditPolicy
 							.getStructuredComponent_EmbeddedComponentParts());
 			myFeaturesToSynchronize
 					.add(de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-							.getStructuredComponent_CoordinationProtocolOccurences());
+							.getStructuredComponent_CoordinationProtocolParts());
 		}
 		return myFeaturesToSynchronize;
 	}

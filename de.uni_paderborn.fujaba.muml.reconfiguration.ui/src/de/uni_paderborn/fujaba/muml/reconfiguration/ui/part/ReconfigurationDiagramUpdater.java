@@ -149,13 +149,13 @@ public class ReconfigurationDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getCoordinationProtocolOccurences()
+		for (Iterator<?> it = modelElement.getCoordinationProtocolParts()
 				.iterator(); it.hasNext();) {
-			de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence childElement = (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolOccurrence) it
+			de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart childElement = (de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart) it
 					.next();
 			int visualID = de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID) {
+			if (visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID) {
 				result.add(new de.uni_paderborn.fujaba.muml.component.diagram.part.MumlNodeDescriptor(
 						childElement, visualID));
 				continue;

@@ -102,7 +102,7 @@ public class StructuredComponentItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__EMBEDDED_COMPONENT_PARTS);
 			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__CONNECTORS);
-			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES);
+			childrenFeatures.add(ComponentPackage.Literals.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS);
 		}
 		return childrenFeatures;
 	}
@@ -163,7 +163,7 @@ public class StructuredComponentItemProvider
 				return;
 			case ComponentPackage.STRUCTURED_COMPONENT__EMBEDDED_COMPONENT_PARTS:
 			case ComponentPackage.STRUCTURED_COMPONENT__CONNECTORS:
-			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES:
+			case ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -198,7 +198,7 @@ public class StructuredComponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ComponentPackage.Literals.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES,
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS,
 				 ComponentFactory.eINSTANCE.createCoordinationProtocolPart()));
 	}
 

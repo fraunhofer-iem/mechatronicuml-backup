@@ -59,26 +59,26 @@ public class AssemblyConnectorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCoordinationProtocolOccurencePropertyDescriptor(object);
+			addCoordinationProtocolPartPropertyDescriptor(object);
 			addPortPartsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Coordination Protocol Occurence feature.
+	 * This adds a property descriptor for the Coordination Protocol Part feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCoordinationProtocolOccurencePropertyDescriptor(Object object) {
+	protected void addCoordinationProtocolPartPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AssemblyConnector_coordinationProtocolOccurence_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_coordinationProtocolOccurence_feature", "_UI_AssemblyConnector_type"),
-				 ComponentPackage.Literals.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE,
+				 getString("_UI_AssemblyConnector_coordinationProtocolPart_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_coordinationProtocolPart_feature", "_UI_AssemblyConnector_type"),
+				 ComponentPackage.Literals.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_PART,
 				 false,
 				 false,
 				 false,
@@ -146,7 +146,6 @@ public class AssemblyConnectorItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AssemblyConnector.class)) {
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE:
 			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

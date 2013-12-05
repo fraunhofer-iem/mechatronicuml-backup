@@ -22,7 +22,7 @@ import de.uni_paderborn.fujaba.muml.component.PortPart;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AssemblyConnectorImpl#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AssemblyConnectorImpl#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AssemblyConnectorImpl#getPortParts <em>Port Parts</em>}</li>
  * </ul>
  * </p>
@@ -31,14 +31,14 @@ import de.uni_paderborn.fujaba.muml.component.PortPart;
  */
 public class AssemblyConnectorImpl extends PortConnectorImpl implements AssemblyConnector {
 	/**
-	 * The cached setting delegate for the '{@link #getCoordinationProtocolOccurence() <em>Coordination Protocol Occurence</em>}' reference.
+	 * The cached setting delegate for the '{@link #getCoordinationProtocolPart() <em>Coordination Protocol Part</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCoordinationProtocolOccurence()
+	 * @see #getCoordinationProtocolPart()
 	 * @generated
 	 * @ordered
 	 */
-	protected EStructuralFeature.Internal.SettingDelegate COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE).getSettingDelegate();
+	protected EStructuralFeature.Internal.SettingDelegate COORDINATION_PROTOCOL_PART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ComponentPackage.Literals.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_PART).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getPortParts() <em>Port Parts</em>}' reference list.
@@ -74,8 +74,8 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolPart getCoordinationProtocolOccurence() {
-		return (CoordinationProtocolPart)COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	public CoordinationProtocolPart getCoordinationProtocolPart() {
+		return (CoordinationProtocolPart)COORDINATION_PROTOCOL_PART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -83,8 +83,8 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CoordinationProtocolPart basicGetCoordinationProtocolOccurence() {
-		return (CoordinationProtocolPart)COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	public CoordinationProtocolPart basicGetCoordinationProtocolPart() {
+		return (CoordinationProtocolPart)COORDINATION_PROTOCOL_PART__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -105,9 +105,9 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE:
-				if (resolve) return getCoordinationProtocolOccurence();
-				return basicGetCoordinationProtocolOccurence();
+			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_PART:
+				if (resolve) return getCoordinationProtocolPart();
+				return basicGetCoordinationProtocolPart();
 			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
 				return getPortParts();
 		}
@@ -122,8 +122,8 @@ public class AssemblyConnectorImpl extends PortConnectorImpl implements Assembly
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_OCCURENCE:
-				return COORDINATION_PROTOCOL_OCCURENCE__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_PART:
+				return COORDINATION_PROTOCOL_PART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
 				return PORT_PARTS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}

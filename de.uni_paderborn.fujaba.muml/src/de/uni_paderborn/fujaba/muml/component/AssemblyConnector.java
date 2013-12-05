@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.AssemblyConnector#getCoordinationProtocolOccurence <em>Coordination Protocol Occurence</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.AssemblyConnector#getCoordinationProtocolPart <em>Coordination Protocol Part</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.AssemblyConnector#getPortParts <em>Port Parts</em>}</li>
  * </ul>
  * </p>
@@ -31,19 +31,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface AssemblyConnector extends PortConnector {
 	/**
-	 * Returns the value of the '<em><b>Coordination Protocol Occurence</b></em>' reference.
+	 * Returns the value of the '<em><b>Coordination Protocol Part</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The coordination protocol occurence that this assembly uses.
+	 * The coordination protocol part that this assembly uses.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Coordination Protocol Occurence</em>' reference.
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getAssemblyConnector_CoordinationProtocolOccurence()
+	 * @return the value of the '<em>Coordination Protocol Part</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getAssemblyConnector_CoordinationProtocolPart()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portParts->first().coordinationProtocolOccurence'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.portParts->first().coordinationProtocolPart'"
 	 * @generated
 	 */
-	CoordinationProtocolPart getCoordinationProtocolOccurence();
+	CoordinationProtocolPart getCoordinationProtocolPart();
 
 	/**
 	 * Returns the value of the '<em><b>Port Parts</b></em>' reference list.

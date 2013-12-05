@@ -54,7 +54,7 @@ public class CoordinationProtocolPartCreateCommand extends EditElementCommand {
 				.createCoordinationProtocolPart();
 
 		de.uni_paderborn.fujaba.muml.component.StructuredComponent owner = (de.uni_paderborn.fujaba.muml.component.StructuredComponent) getElementToEdit();
-		owner.getCoordinationProtocolOccurences().add(newElement);
+		owner.getCoordinationProtocolParts().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

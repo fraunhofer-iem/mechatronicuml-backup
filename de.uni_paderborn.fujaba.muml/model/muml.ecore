@@ -213,14 +213,14 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolOccurence"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
           eType="#//component/CoordinationProtocolPart" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The coordination protocol occurence that this assembly uses."/>
+          <details key="documentation" value="The coordination protocol part that this assembly uses."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.portParts->first().coordinationProtocolOccurence"/>
+          <details key="derivation" value="self.portParts->first().coordinationProtocolPart"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="2"
@@ -362,7 +362,7 @@
           <details key="documentation" value="Transitive closure of all AtomicComponents which are used (specified&#xA;as a componentType for a ComponentPart) in the component hierarchy.&#xA;Note: AtomicComponents from directly embeddedParts are NOT included"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolOccurences"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolParts"
           upperBound="-1" eType="#//component/CoordinationProtocolPart" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="This reference is needed by GMF to visualize the CoordinationProtocols within the StructuredComponent."/>
@@ -382,13 +382,13 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocol"
           lowerBound="1" eType="#//protocol/CoordinationProtocol">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The coordination protocol (pattern) of this CoordinationProtocolOccurence."/>
+          <details key="documentation" value="The coordination protocol (pattern) of this CoordinationProtocolPart."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="2"
           upperBound="-1" eType="#//component/PortPart" eOpposite="#//component/PortPart/coordinationProtocolPart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The discrete port parts that take part in this protocol occurence."/>
+          <details key="documentation" value="The discrete port parts that take part in this protocol part."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -839,7 +839,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CoordinationProtocolInstance" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An instance of a coordination protocol occurence. It specifies the behavior of discrete (single/multi) port instances that are connected with each other."/>
+        <details key="documentation" value="An instance of a coordination protocol part. It specifies the behavior of discrete (single/multi) port instances that are connected with each other."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" lowerBound="1"
           upperBound="-1" eType="#//instance/PortInstance">
@@ -850,7 +850,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
           lowerBound="1" eType="#//component/CoordinationProtocolPart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The CoordinationProtocolOccurence of that instance."/>
+          <details key="documentation" value="The CoordinationProtocolPart of that instance."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>

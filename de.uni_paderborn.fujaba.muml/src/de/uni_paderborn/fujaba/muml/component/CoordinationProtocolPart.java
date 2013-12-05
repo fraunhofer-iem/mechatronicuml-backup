@@ -39,7 +39,7 @@ public interface CoordinationProtocolPart extends CommentableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The coordination protocol (pattern) of this CoordinationProtocolOccurence.
+	 * The coordination protocol (pattern) of this CoordinationProtocolPart.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol</em>' reference.
 	 * @see #setCoordinationProtocol(CoordinationProtocol)
@@ -66,7 +66,7 @@ public interface CoordinationProtocolPart extends CommentableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The discrete port parts that take part in this protocol occurence.
+	 * The discrete port parts that take part in this protocol part.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Parts</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getCoordinationProtocolPart_PortParts()

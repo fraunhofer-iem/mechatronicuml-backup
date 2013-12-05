@@ -141,7 +141,7 @@ public class RuleBasedReconfigurationControllerCanonicalEditPolicy extends
 		int visualID = de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 				.getVisualID(view);
 		return visualID == de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolOccurrenceEditPart.VISUAL_ID;
+				|| visualID == de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID;
 	}
 
 	/**

@@ -17,7 +17,7 @@ main() {
 			-- only delete those port parts whose port type is not contained in the current component type (see #591)
 			if (part.componentType.ports ->excludes(p.portType)) then {
 				// also remove from coordination protocol part
-				part.parentComponent.coordinationProtocolOccurences->forEach(c) {
+				part.parentComponent.coordinationProtocolParts->forEach(c) {
 					c.portParts := c.portParts->excluding(p); 
 				};
 				
@@ -51,7 +51,7 @@ main() {
 				var coordinationProtocol : CoordinationProtocol := p.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol);
 				if (not coordinationProtocol.oclIsUndefined()) then {
 					// Try to find an existing protocol part (was part) for this protocol
-					p.coordinationProtocolPart := part.parentComponent.coordinationProtocolOccurences->any(c | c.coordinationProtocol = coordinationProtocol);
+					p.coordinationProtocolPart := part.parentComponent.coordinationProtocolParts->any(c | c.coordinationProtocol = coordinationProtocol);
 					if (p.coordinationProtocolPart.oclIsUndefined()) then {
 						// If none found, create one
 						// TODO Removed please reactivate

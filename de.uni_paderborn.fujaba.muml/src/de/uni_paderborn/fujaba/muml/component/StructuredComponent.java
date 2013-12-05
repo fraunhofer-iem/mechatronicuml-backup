@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getAllStructuredComponents <em>All Structured Components</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getAllAtomicComponents <em>All Atomic Components</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getCoordinationProtocolOccurences <em>Coordination Protocol Occurences</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.StructuredComponent#getCoordinationProtocolParts <em>Coordination Protocol Parts</em>}</li>
  * </ul>
  * </p>
  *
@@ -127,19 +127,19 @@ public interface StructuredComponent extends Component {
 	boolean isSetAllAtomicComponents();
 
 	/**
-	 * Returns the value of the '<em><b>Coordination Protocol Occurences</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Coordination Protocol Parts</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * This reference is needed by GMF to visualize the CoordinationProtocols within the StructuredComponent.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Coordination Protocol Occurences</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getStructuredComponent_CoordinationProtocolOccurences()
+	 * @return the value of the '<em>Coordination Protocol Parts</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getStructuredComponent_CoordinationProtocolParts()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<CoordinationProtocolPart> getCoordinationProtocolOccurences();
+	EList<CoordinationProtocolPart> getCoordinationProtocolParts();
 
 	/**
 	 * <!-- begin-user-doc -->
