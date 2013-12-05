@@ -284,7 +284,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";			
 		addAnnotation
 		  (this, 
 		   source, 
@@ -292,7 +292,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });
+		   });						
 	}
 
 	/**
@@ -302,13 +302,13 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";					
 		addAnnotation
 		  (getActivityCallExpression_Activity(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.callee.oclAsType(storydiagrams::activities::Activity)"
-		   });
+		   });				
 	}
 
 } //ExpressionPackageImpl

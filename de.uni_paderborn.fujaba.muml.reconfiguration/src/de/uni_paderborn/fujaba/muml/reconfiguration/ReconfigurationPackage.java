@@ -430,13 +430,13 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURABLE_STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS = ComponentPackage.STRUCTURED_COMPONENT__ALL_ATOMIC_COMPONENTS;
 
 	/**
-	 * The feature id for the '<em><b>Coordination Protocol Occurences</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Coordination Protocol Parts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECONFIGURABLE_STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES = ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_OCCURENCES;
+	int RECONFIGURABLE_STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS = ComponentPackage.STRUCTURED_COMPONENT__COORDINATION_PROTOCOL_PARTS;
 
 	/**
 	 * The feature id for the '<em><b>Controller</b></em>' containment reference.
