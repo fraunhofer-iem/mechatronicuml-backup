@@ -17,7 +17,7 @@
         <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="UniquePortNames SoftwareComponentsMustNotHaveContinuousPorts"/>
+        <details key="constraints" value="UniquePortNames"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="UniquePortNames" value="self.ports->isUnique(name)"/>

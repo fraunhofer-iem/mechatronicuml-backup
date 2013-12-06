@@ -155,7 +155,7 @@ public abstract class ConstraintImpl extends ExtendableElementImpl implements Co
 	 */
 	public ConstrainableElement getConstrainableElement() {
 		if (eContainerFeatureID() != ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT) return null;
-		return (ConstrainableElement)eInternalContainer();
+		return (ConstrainableElement)eContainer();
 	}
 
 	/**

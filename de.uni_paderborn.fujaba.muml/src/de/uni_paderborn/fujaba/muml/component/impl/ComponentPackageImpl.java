@@ -1124,7 +1124,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (componentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniquePortNames SoftwareComponentsMustNotHaveContinuousPorts"
+			 "constraints", "UniquePortNames"
 		   });											
 		addAnnotation
 		  (discretePortEClass, 

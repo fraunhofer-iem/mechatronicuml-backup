@@ -56,7 +56,7 @@
         <genOperations ecoreOperation="muml.ecore#//component/AtomicComponent/toString"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//component/AssemblyConnector">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/coordinationProtocolPart"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/coordinationProtocolPart"/>
         <genFeatures property="Readonly" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//component/AssemblyConnector/portParts"/>
       </genClasses>

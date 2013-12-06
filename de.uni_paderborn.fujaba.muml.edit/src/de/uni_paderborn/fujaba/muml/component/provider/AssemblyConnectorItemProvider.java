@@ -146,6 +146,7 @@ public class AssemblyConnectorItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AssemblyConnector.class)) {
+			case ComponentPackage.ASSEMBLY_CONNECTOR__COORDINATION_PROTOCOL_PART:
 			case ComponentPackage.ASSEMBLY_CONNECTOR__PORT_PARTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

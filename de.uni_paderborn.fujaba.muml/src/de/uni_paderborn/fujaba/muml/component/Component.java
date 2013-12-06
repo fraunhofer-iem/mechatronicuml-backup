@@ -34,7 +34,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponent()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePortNames SoftwareComponentsMustNotHaveContinuousPorts'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniquePortNames'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='self.ports->isUnique(name)'"
  * @generated
  */
