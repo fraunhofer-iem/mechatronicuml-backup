@@ -13,55 +13,55 @@ main() {
 		// that will be removed after the replacement are also removed from the resource.
 		// See MUML #564
 		if(not part.componentType.oclIsUndefined()) then{
-		part.portParts->forEach(p) {
-			-- only delete those port parts whose port type is not contained in the current component type (see #591)
-			if (part.componentType.ports ->excludes(p.portType)) then {
-				// also remove from coordination protocol part
-				part.parentComponent.coordinationProtocolParts->forEach(c) {
-					c.portParts := c.portParts->excluding(p); 
-				};
+			part.portParts->forEach(p) {
+				-- only delete those port parts whose port type is not contained in the current component type (see #591)
+				if (part.componentType.ports ->excludes(p.portType)) then {
+					// also remove from coordination protocol part
+					part.parentComponent.coordinationProtocolParts->forEach(c) {
+						c.portParts := c.portParts->excluding(p); 
+					};
+					
+					// Remove all its connectors
+					var connectors : Set(Connector) := p.connectors;
+					connectors->forEach(c) {
+						c.connectorEndpoints := Set { };
+						if (c.oclIsKindOf(PortConnector)) then {
+							part.parentComponent.connectors := part.parentComponent.connectors->excluding(c.oclAsType(PortConnector));
+						} endif;
+					};
+					
+					// remove from resource
+					input.removeElement(p);
+				}endif;
+			};
+
+			// Create missing port parts
+			createPortParts(part);
+
+			// Create CoordinationProtocolParts and associate PortParts
+			part.portParts->select(p | not p.portType[DiscretePort].refinedRole.coordinationProtocol[CoordinationProtocol]->reject(oclIsUndefined())->isEmpty())->forEach(p) {
+				var refinedRole := p.portType[DiscretePort].refinedRole->any(true); --cannot be null, because of previous select statement
 				
-				// Remove all its connectors
-				var connectors : Set(Connector) := p.connectors;
-				connectors->forEach(c) {
-					c.connectorEndpoints := Set { };
-					if (c.oclIsKindOf(PortConnector)) then {
-						part.parentComponent.connectors := part.parentComponent.connectors->excluding(c.oclAsType(PortConnector));
-					} endif;
-				};
+				-- Find all PortParts that are reachable via AssemblyConnectors
+				var reachablePortParts := p->closure(p.connectors[AssemblyConnector].portParts->reject(p)->any(true));
 				
-				// remove from resource
-				input.removeElement(p);
-			}endif;
-		};
-		
-		// and from connectors
-		
+				-- Find CoordinationProtocolPart that already contains any PortPart that is reachable via AssemblyConnectors.
+				var coordinationProtocolPart := part.parentComponent.coordinationProtocolParts->any(c | not c.portParts->intersection(reachablePortParts)->isEmpty());
+			
+				-- Make sure we have one CoordinationProtocolPart to add to; if none was found, create a new one
+				if (coordinationProtocolPart = null) then {
+					coordinationProtocolPart := new CoordinationProtocolPart(refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol));
+					p.componentPart.parentComponent.coordinationProtocolParts += coordinationProtocolPart;
+				} endif;
 				
-		// Remove stale coordinationProtocolParts
-		// TODO Removed, please reactivate
-		// part.parentComponent.coordinationProtocolOccurences := part.parentComponent.coordinationProtocolOccurences->reject(portParts->isEmpty());
-		
-		// Replace existing portParts with newly created portParts
-		createPortParts(part);
-		
-		// Create CoordinationProtocolParts and associate PortParts
-		part.portParts->forEach(p) {
-			if (p.portType.oclIsKindOf(DiscretePort) and p.coordinationProtocolPart.oclIsUndefined()) then {
-				var coordinationProtocol : CoordinationProtocol := p.portType.oclAsType(DiscretePort).refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol);
-				if (not coordinationProtocol.oclIsUndefined()) then {
-					// Try to find an existing protocol part (was part) for this protocol
-					p.coordinationProtocolPart := part.parentComponent.coordinationProtocolParts->any(c | c.coordinationProtocol = coordinationProtocol);
-					if (p.coordinationProtocolPart.oclIsUndefined()) then {
-						// If none found, create one
-						// TODO Removed please reactivate
-						//p.coordinationProtocolOccurence := new CoordinationProtocolPart(coordinationProtocol);
-						//part.parentComponent.coordinationProtocolOccurences += p.coordinationProtocolOccurence;
-					} endif;
-				} endif
-			} endif;
-		}
-		}endif;
+				-- Associate this PortPart with the Coordination Protocol Part
+				p.coordinationProtocolPart := coordinationProtocolPart;
+			};
+
+			// Remove stale coordinationProtocolParts
+			part.parentComponent.coordinationProtocolParts := part.parentComponent.coordinationProtocolParts->reject(portParts->isEmpty());
+			
+		} endif;
 	};
 }
 
