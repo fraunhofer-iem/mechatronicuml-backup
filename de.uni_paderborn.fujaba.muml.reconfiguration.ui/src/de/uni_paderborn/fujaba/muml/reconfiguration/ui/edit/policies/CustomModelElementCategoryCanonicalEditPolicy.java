@@ -148,6 +148,15 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
+		
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getStaticStructuredComponent_2005ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
@@ -195,40 +204,87 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends
 			break;
 		}
 
-//		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID: {
-//			if (!domain2NotationMap.containsKey(view.getElement())) {
-//				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
-//						.getDiscretePort_3010ContainedLinks(view));
-//			}
-//			domain2NotationMap.putView(view.getElement(), view);
-//			break;
-//		}
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getModelElementCategory_1000ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getStaticAtomicComponent_2006ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 
-//		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID: {
-//			if (!domain2NotationMap.containsKey(view.getElement())) {
-//				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
-//						.getComponentPart_3012ContainedLinks(view));
-//			}
-//			domain2NotationMap.putView(view.getElement(), view);
-//			break;
-//		}
-//		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID: {
-//			if (!domain2NotationMap.containsKey(view.getElement())) {
-//				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
-//						.getPortPart_3022ContainedLinks(view));
-//			}
-//			domain2NotationMap.putView(view.getElement(), view);
-//			break;
-//		}
-
-//		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID: {
-//			if (!domain2NotationMap.containsKey(view.getElement())) {
-//				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
-//						.getAssemblyConnector_4001ContainedLinks(view));
-//			}
-//			domain2NotationMap.putView(view.getElement(), view);
-//			break;
-//		}
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getDiscretePort_3010ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getContinuousPort_3011ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getHybridPort_3013ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getComponentPart_3012ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.PortPartEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getPortPart_3022ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.CoordinationProtocolPartEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getCoordinationProtocolPart_3016ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AssemblyConnectorEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getAssemblyConnector_4001ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DelegationConnectorEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
+						.getDelegationConnector_4002ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 
 		}
 		for (Iterator children = view.getChildren().iterator(); children

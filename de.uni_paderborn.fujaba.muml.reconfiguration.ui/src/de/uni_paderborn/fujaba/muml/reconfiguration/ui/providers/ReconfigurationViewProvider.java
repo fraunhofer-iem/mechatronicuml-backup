@@ -72,7 +72,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				if (!de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes
 						.isKnownElementType(elementType)
 						|| (!(elementType instanceof IHintedType))) {
-					return false; // foreign element type
+					return super.provides(op); // foreign element type -> try muml view provider
 				}
 				String elementTypeHint = ((IHintedType) elementType)
 						.getSemanticHint();
@@ -172,7 +172,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		if (!de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes
 				.isKnownElementType(elementType)
 				|| (!(elementType instanceof IHintedType))) {
-			return false; // foreign element type
+			return super.provides(op); // foreign element type
 		}
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		if (elementTypeHint == null
@@ -325,7 +325,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				.getController() == null)
 			createCompartment(
 					node,
-					de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+					de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 							.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID),
 					false, false, false, false);
 		return node;
