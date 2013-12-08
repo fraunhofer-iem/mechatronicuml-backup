@@ -60,7 +60,7 @@ mapping createReconfigurableComponent(in oldComp : StaticStructuredComponent) : 
 	constraint := oldComp.constraint;			-- from ConstrainableElement
 	ports := oldComp.ports; 					-- from Component
 	connectors := oldComp.connectors;			-- from StructuredComponent
-	coordinationProtocolOccurences := oldComp.coordinationProtocolOccurences; -- from StructuredComponent
+	coordinationProtocolParts := oldComp.coordinationProtocolParts; -- from StructuredComponent
 	embeddedComponentParts := oldComp.embeddedComponentParts;	-- from StructuredComponent	
 	
 	
