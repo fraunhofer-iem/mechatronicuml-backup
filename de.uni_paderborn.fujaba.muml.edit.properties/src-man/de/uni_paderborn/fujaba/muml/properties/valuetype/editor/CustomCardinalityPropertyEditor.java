@@ -73,7 +73,7 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 		});
 		lowerBound.addKeyListener(new org.eclipse.swt.events.KeyAdapter() {
 			public void keyReleased(org.eclipse.swt.events.KeyEvent e) {
-				if (e.keyCode == 13) {
+				if (e.keyCode == 13 || e.character == '\r') {
 					modify();
 				}
 			}
@@ -105,7 +105,7 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 		});
 		upperBound.addKeyListener(new org.eclipse.swt.events.KeyAdapter() {
 			public void keyReleased(org.eclipse.swt.events.KeyEvent e) {
-				if (e.keyCode == 13) {
+				if (e.keyCode == 13 || e.character == '\r') {
 					modify();
 				}
 			}
