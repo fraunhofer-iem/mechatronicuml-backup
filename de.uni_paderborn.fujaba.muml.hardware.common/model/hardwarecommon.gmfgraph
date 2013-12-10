@@ -239,7 +239,7 @@
   <compartments name="StructuredResourceCompartment" figure="StructuredResourceFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <compartments name="HWPlatformCompartment" figure="HWPlatform" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
   <labels name="HWPortLabel" figure="HWPortLabelFigure" elementIcon="false">
-    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="5" y="5"/>
+    <facets xsi:type="gmfgraph:LabelOffsetFacet" x="-5" y="-5"/>
   </labels>
   <labels name="ResourceNameLabel" figure="ResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels name="ResourceKindLabel" figure="ResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.1"/>

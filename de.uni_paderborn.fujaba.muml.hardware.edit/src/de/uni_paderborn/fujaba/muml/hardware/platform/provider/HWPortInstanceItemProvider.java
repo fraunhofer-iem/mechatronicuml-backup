@@ -10,6 +10,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -25,6 +26,7 @@ import org.storydriven.core.provider.NamedElementItemProvider;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypeFactory;
 import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.Device;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.DeviceKind;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.HWPort;
@@ -101,11 +103,22 @@ public class HWPortInstanceItemProvider
 			@Override
 			public Collection<?> getChoiceOfValues(Object object) {
 				Collection<Object> choices = new ArrayList<Object>();
-				ResourceType resourceType = ((HWPortInstance) object).getParentResourceInstance().getResourceType();
+				ResourceInstance parentResourceInstance = null;
+				ResourceType resourceType = null;
+				if(object instanceof HWPortInstance){
+					parentResourceInstance= ((HWPortInstance) object).getParentResourceInstance();
+				}
+				if(parentResourceInstance!=null){
+				 resourceType =parentResourceInstance.getResourceType();
+				}
+				
 				for (Object value : super.getChoiceOfValues(object)) {
 					if (value instanceof HWPort) {
 						if(resourceType!= null && ((HWPort) value).getParentResource()==resourceType)
 						choices.add(value);
+						else if (PlatformPackage.Literals.HW_PLATFORM.isSuperTypeOf(((EObject) object).eContainer().eClass())  ) {
+							choices.add(value);
+						}
 					}
 				}
 				return choices;
