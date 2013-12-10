@@ -204,7 +204,6 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(reconfigurableStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_StructuredComponentAllowsNoHybridPorts(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_ValidComponentType(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_NoCyclicComponentPartHierarchy(reconfigurableStructuredComponent, diagnostics, context);
@@ -231,7 +230,6 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(reconfigurableAtomicComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_SoftwareComponentRequiresBehavior(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_ValidComponentType(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_SoftwareComponentValidPorts(reconfigurableAtomicComponent, diagnostics, context);
@@ -522,7 +520,6 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurableComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurableComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(reconfigurableComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateComponent_SoftwareComponentsMustNotHaveContinuousPorts(reconfigurableComponent, diagnostics, context);
 		return result;
 	}
 
