@@ -126,7 +126,7 @@ public class NavigationFeaturePropertyEditor extends
 			});
 			classViewer.setInput(eClasses);
 			if (!eClasses.isEmpty()) {
-				classViewer.setSelection(new StructuredSelection(eClasses.get(0)));
+				classViewer.setSelection(new StructuredSelection(selectedClass));
 			}
 		}
 		
