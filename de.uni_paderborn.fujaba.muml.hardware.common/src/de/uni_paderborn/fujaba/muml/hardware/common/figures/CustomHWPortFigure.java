@@ -54,7 +54,7 @@ public class CustomHWPortFigure extends RectangleFigure {
 	 */
 	public CustomHWPortFigure() {
 		this.setLayoutManager(new StackLayout());
-		this.setFill(false);
+		this.setFill(true);
 		this.setOutline(false);
 		// this.setBorder(new MarginBorder(0));
 		createContents();
