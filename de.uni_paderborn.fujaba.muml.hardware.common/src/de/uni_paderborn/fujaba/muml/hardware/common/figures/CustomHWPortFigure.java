@@ -76,7 +76,7 @@ public class CustomHWPortFigure extends RectangleFigure {
 			newColor = ColorConstants.gray;
 		}
 		this.getFigureBusArrow().setBackgroundColor(newColor);
-		this.getFigureP2PLine().setBackgroundColor(newColor);
+		this.getFigureP2PLine().setForegroundColor(newColor);
 		this.getFigureCircle1().setBackgroundColor(newColor);
 		this.getFigureCircle2().setBackgroundColor(newColor);
 	}
