@@ -977,7 +977,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		  (operationCallEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AllParametersMustBeBound"
+			 "constraints", "AllParametersMustBeBound UniqueParameterBindings"
 		   });														
 		addAnnotation
 		  (localVariableDeclarationStatementEClass, 
@@ -1005,7 +1005,8 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		  (operationCallEClass, 
 		   source, 
 		   new String[] {
-			 "AllParametersMustBeBound", "-- An OperationCall must bind a value to every parameter\nnot operation.oclIsUndefined() implies \noperation.parameters->asSet() = parameterBinding.parameter->asSet()\n-- author: bingo"
+			 "AllParametersMustBeBound", "-- An OperationCall must bind a value to every parameter\nnot operation.oclIsUndefined() implies \noperation.parameters->asSet() = parameterBinding.parameter->asSet()\n-- author: bingo",
+			 "UniqueParameterBindings", "-- An OperationCall must not bind multiple values to any parameter\nparameterBinding->isUnique(parameter)\n-- author: bingo"
 		   });																
 		addAnnotation
 		  (localVariableDeclarationStatementEClass, 

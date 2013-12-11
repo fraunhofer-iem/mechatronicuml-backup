@@ -276,6 +276,7 @@ public class ActionlanguageValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(operationCall, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(operationCall, diagnostics, context);
 		if (result || diagnostics != null) result &= validateOperationCall_AllParametersMustBeBound(operationCall, diagnostics, context);
+		if (result || diagnostics != null) result &= validateOperationCall_UniqueParameterBindings(operationCall, diagnostics, context);
 		return result;
 	}
 
@@ -306,6 +307,37 @@ public class ActionlanguageValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "AllParametersMustBeBound",
 				 OPERATION_CALL__ALL_PARAMETERS_MUST_BE_BOUND__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the UniqueParameterBindings constraint of '<em>Operation Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String OPERATION_CALL__UNIQUE_PARAMETER_BINDINGS__EEXPRESSION = "-- An OperationCall must not bind multiple values to any parameter\n" +
+		"parameterBinding->isUnique(parameter)\n" +
+		"-- author: bingo";
+
+	/**
+	 * Validates the UniqueParameterBindings constraint of '<em>Operation Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOperationCall_UniqueParameterBindings(OperationCall operationCall, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ActionlanguagePackage.Literals.OPERATION_CALL,
+				 operationCall,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueParameterBindings",
+				 OPERATION_CALL__UNIQUE_PARAMETER_BINDINGS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

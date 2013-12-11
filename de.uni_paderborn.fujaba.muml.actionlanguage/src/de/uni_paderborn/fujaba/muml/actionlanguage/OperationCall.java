@@ -30,8 +30,8 @@ import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.actionlanguage.ActionlanguagePackage#getOperationCall()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AllParametersMustBeBound='-- An OperationCall must bind a value to every parameter\nnot operation.oclIsUndefined() implies \noperation.parameters->asSet() = parameterBinding.parameter->asSet()\n-- author: bingo'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AllParametersMustBeBound'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AllParametersMustBeBound='-- An OperationCall must bind a value to every parameter\nnot operation.oclIsUndefined() implies \noperation.parameters->asSet() = parameterBinding.parameter->asSet()\n-- author: bingo' UniqueParameterBindings='-- An OperationCall must not bind multiple values to any parameter\nparameterBinding->isUnique(parameter)\n-- author: bingo'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AllParametersMustBeBound UniqueParameterBindings'"
  * @generated
  */
 public interface OperationCall extends Expression {
