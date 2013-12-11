@@ -45,7 +45,7 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	 */
 	public static ComponentFactory init() {
 		try {
-			ComponentFactory theComponentFactory = (ComponentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/component/0.4.0"); 
+			ComponentFactory theComponentFactory = (ComponentFactory)EPackage.Registry.INSTANCE.getEFactory(ComponentPackage.eNS_URI);
 			if (theComponentFactory != null) {
 				return theComponentFactory;
 			}
@@ -84,7 +84,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 			case ComponentPackage.COORDINATION_PROTOCOL_PART: return createCoordinationProtocolPart();
 			case ComponentPackage.PORT_PART: return createPortPart();
 			case ComponentPackage.STATIC_ATOMIC_COMPONENT: return createStaticAtomicComponent();
-			case ComponentPackage.STATIC_COMPONENT: return createStaticComponent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -222,16 +221,6 @@ public class ComponentFactoryImpl extends EFactoryImpl implements ComponentFacto
 	public StaticAtomicComponent createStaticAtomicComponent() {
 		StaticAtomicComponentImpl staticAtomicComponent = new StaticAtomicComponentImpl();
 		return staticAtomicComponent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StaticComponent createStaticComponent() {
-		StaticComponentImpl staticComponent = new StaticComponentImpl();
-		return staticComponent;
 	}
 
 	/**
