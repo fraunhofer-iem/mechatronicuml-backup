@@ -305,29 +305,6 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.component.StaticComponent} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StaticComponentItemProvider staticComponentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.component.StaticComponent}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStaticComponentAdapter() {
-		if (staticComponentItemProvider == null) {
-			staticComponentItemProvider = new StaticComponentItemProvider(this);
-		}
-
-		return staticComponentItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -436,7 +413,6 @@ public class ComponentItemProviderAdapterFactory extends ComponentAdapterFactory
 		if (coordinationProtocolPartItemProvider != null) coordinationProtocolPartItemProvider.dispose();
 		if (portPartItemProvider != null) portPartItemProvider.dispose();
 		if (staticAtomicComponentItemProvider != null) staticAtomicComponentItemProvider.dispose();
-		if (staticComponentItemProvider != null) staticComponentItemProvider.dispose();
 	}
 
 }

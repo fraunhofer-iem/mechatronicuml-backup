@@ -116,15 +116,6 @@ public interface ComponentFactory extends EFactory {
 	StaticAtomicComponent createStaticAtomicComponent();
 
 	/**
-	 * Returns a new object of class '<em>Static Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Static Component</em>'.
-	 * @generated
-	 */
-	StaticComponent createStaticComponent();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

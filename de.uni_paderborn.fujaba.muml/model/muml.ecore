@@ -485,7 +485,7 @@
         <details key="documentation" value="A static atomic component is an atomic component whose internal structure&#xD;&#xA;consisting of its set of ports cannot be changed during run-time."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StaticComponent" eSuperTypes="#//component/Component">
+    <eClassifiers xsi:type="ecore:EClass" name="StaticComponent" abstract="true" eSuperTypes="#//component/Component">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="SoftwareComponentOnlyDiscreteOrHybridPorts"/>
       </eAnnotations>

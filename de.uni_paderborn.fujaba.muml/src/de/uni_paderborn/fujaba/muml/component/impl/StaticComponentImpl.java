@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class StaticComponentImpl extends ComponentImpl implements StaticComponent {
+public abstract class StaticComponentImpl extends ComponentImpl implements StaticComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

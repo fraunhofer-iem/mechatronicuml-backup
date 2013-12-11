@@ -82,7 +82,7 @@ public class CoordinationProtocolInstanceEditor
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 						.getCoordinationProtocolInstance_CoordinationProtocolPart());
 
-		editor.setTooltipMessage("The CoordinationProtocolOccurence of that instance.");
+		editor.setTooltipMessage("The CoordinationProtocolPart of that instance.");
 
 		return editor;
 

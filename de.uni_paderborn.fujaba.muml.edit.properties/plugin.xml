@@ -328,11 +328,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.component.editor.StaticComponentEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.component.StaticComponent">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.component.editor.CoordinationProtocolPartEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.component.CoordinationProtocolPart">
        </propertyEditor>

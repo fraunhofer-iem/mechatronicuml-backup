@@ -56,7 +56,7 @@ public class CoordinationProtocolPartEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getCoordinationProtocolPart_CoordinationProtocol());
 
-		editor.setTooltipMessage("The coordination protocol (pattern) of this CoordinationProtocolOccurence.");
+		editor.setTooltipMessage("The coordination protocol (pattern) of this CoordinationProtocolPart.");
 
 		return editor;
 
@@ -80,7 +80,7 @@ public class CoordinationProtocolPartEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getCoordinationProtocolPart_PortParts());
 
-		editor.setTooltipMessage("The discrete port parts that take part in this protocol occurence.");
+		editor.setTooltipMessage("The discrete port parts that take part in this protocol part.");
 
 		return editor;
 
