@@ -8,6 +8,7 @@ Bundle-Activator: de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentD
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: de.uni_paderborn.fujaba.muml.component.diagram.edit.commands,
+ de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers,
  de.uni_paderborn.fujaba.muml.component.diagram.edit.parts,
  de.uni_paderborn.fujaba.muml.component.diagram.edit.policies,
  de.uni_paderborn.fujaba.muml.component.diagram.parsers,
