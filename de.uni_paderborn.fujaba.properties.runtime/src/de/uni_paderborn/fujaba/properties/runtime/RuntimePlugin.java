@@ -313,7 +313,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 	
 	public static void revalidateLayout (Control control) {
-
+		//System.out.println("Relayouting...");
 		Control c = control;
 		do {
 			if (c instanceof ExpandBar) {

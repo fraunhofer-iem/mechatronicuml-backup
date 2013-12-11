@@ -3,7 +3,6 @@ package de.uni_paderborn.fujaba.properties.runtime.sections;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.views.properties.tabbed.AbstractPropertySection;
@@ -65,7 +64,7 @@ public class ObjectPropertySection extends AbstractPropertySection {
 			editor.refresh();
 		}
 		if (parent != null && !parent.isDisposed()) {
-			RuntimePlugin.revalidateLayout(parent);
+			//RuntimePlugin.revalidateLayout(parent);
 		}
 	}
 	
