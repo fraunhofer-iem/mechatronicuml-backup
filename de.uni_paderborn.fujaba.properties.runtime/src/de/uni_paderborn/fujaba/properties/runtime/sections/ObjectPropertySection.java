@@ -64,7 +64,7 @@ public class ObjectPropertySection extends AbstractPropertySection {
 			editor.refresh();
 		}
 		if (parent != null && !parent.isDisposed()) {
-			//RuntimePlugin.revalidateLayout(parent);
+			RuntimePlugin.revalidateLayout(parent);
 		}
 	}
 	

@@ -169,10 +169,12 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		return null;
 	}
 
-	public void clearPropertyEditors() {
-		for (IPropertyEditor editor : propertyEditors) {
-			if (!editor.isDisposed()) {
-				editor.dispose();
+	public void clearPropertyEditors(boolean dispose) {
+		if (dispose) {
+			for (IPropertyEditor editor : propertyEditors) {
+				if (!editor.isDisposed()) {
+					editor.dispose();
+				}
 			}
 		}
 		keys.clear();
@@ -364,7 +366,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	@Override
 	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { section }) {
+		for (Control control : new Control[] { section, childrenComposite }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
 				if (control.getLayoutData() instanceof GridData) {
