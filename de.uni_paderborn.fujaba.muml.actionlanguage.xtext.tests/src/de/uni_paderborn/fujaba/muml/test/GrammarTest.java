@@ -381,11 +381,12 @@ public class GrammarTest {
 	}
 	
 	@Test
-	public void testInvalidHybridOutPortRead() {
-		// do not read an out port
+	public void testValidHybridOutPortRead() {
+		// a hybrid out port is also readable #375
 		loadFromString("{ bar := hybridOut ; }");
-		assertTrue(loadResult.hasError());
-		assertNull(loadResult.getEObject());
+		assertFalse(loadResult.hasError());
+		assertNotNull(loadResult.getEObject());
+		assertValidEObject(loadResult.getEObject());
 	}
 	
 	@Test
