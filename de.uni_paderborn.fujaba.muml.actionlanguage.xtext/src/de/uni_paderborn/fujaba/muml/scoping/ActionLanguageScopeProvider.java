@@ -68,10 +68,12 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		if (container instanceof Assignment
 				&& ((Assignment) container).getLhs_typedNamedElementExpression() == context) {
 			// do not return hybrid in ports
-			return createScope(filterConstants(filterHybridPorts(getAvailableTypedNamedElementList(context), true)));
+			return createScope(filterConstants(
+					filterHybridInPorts(getAvailableTypedNamedElementList(context)
+							)));
 		}
-		// do not return hybrid out ports
-		return createScope(filterHybridPorts(getAvailableTypedNamedElementList(context), false));
+		// do not filter hybrid out ports (see #375)
+		return createScope(getAvailableTypedNamedElementList(context));
 	}
 	
 	IScope scope_DataType(Variable variable, EReference ref) {
@@ -268,13 +270,12 @@ public class ActionLanguageScopeProvider extends AbstractDeclarativeScopeProvide
 		return availableTypedNamedElementList;
 	}
 	
-	private List<TypedNamedElement> filterHybridPorts(List<TypedNamedElement> list, boolean filterIn) {
+	private List<TypedNamedElement> filterHybridInPorts(List<TypedNamedElement> list) {
 		List<TypedNamedElement> filteredList = new ArrayList<TypedNamedElement>();
 		for (TypedNamedElement typedNamedElement : list) {
 			if (typedNamedElement instanceof HybridPort) {
 				HybridPort hybridPort = (HybridPort) typedNamedElement;
-				if (filterIn && hybridPort.isInPort()
-						|| !filterIn && hybridPort.isOutPort()) {
+				if (hybridPort.isInPort()) {
 					continue;
 				}
 			}
