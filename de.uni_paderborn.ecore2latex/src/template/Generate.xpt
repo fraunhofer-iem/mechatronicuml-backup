@@ -21,13 +21,14 @@ String implClassSuffix() : GLOBALVAR ImplClassSuffix;
 	«IF !this.eClassifiers.select(c | c.metaType==ecore::EClass).isEmpty ||
 	    !this.eClassifiers.select(c | c.metaType==ecore::EEnum).isEmpty || 
 	    !this.getDocumentation().isEmpty-»
-		\section{Package \bfseries \texttt{«this.qualifiedName().toString().escapeLatexString()»}\normalfont}
+		\section{EPackage \bfseries \texttt{«this.qualifiedName().toString().escapeLatexString()»}\normalfont}
 		
 		% Here comes the package documentation
 		\begin{longdescription}
 		\item[Overview]	«EXPAND WriteDoc FOR this-»
 		\end{longdescription}
 		«IF !this.eClassifiers.select(c | c.metaType==ecore::EClass).isEmpty ||
+			!this.eClassifiers.select(c | c.metaType==ecore::EDataType).isEmpty ||
     		!this.eClassifiers.select(c | c.metaType==ecore::EEnum).isEmpty-» 
 			«LET getDiagrams(this) AS diagramList-»
 				«IF diagramList.size > 0-»
@@ -47,7 +48,6 @@ String implClassSuffix() : GLOBALVAR ImplClassSuffix;
 				«ENDIF-»
 			«ENDLET-»
 			«EXPAND IncludePackageFigures FOR this.qualifiedName("_").toString()+"/graphics.tex"-»
-			%\subsection{Package Documentation}
 			«EXPAND ClassifierDoc FOREACH this.eClassifiers.sortBy(e|e.name)-»
 			\newpage
 		«ELSE»
@@ -64,15 +64,15 @@ String implClassSuffix() : GLOBALVAR ImplClassSuffix;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{«IF this.abstract»Abstract «ENDIF»«IF this.interface»Interface «ENDIF»Class \bfseries \texttt{«this.name.toString().escapeLatexString()»}\normalfont}
+\subsection{«IF this.abstract»Abstract «ENDIF»«IF this.interface»Interface «ENDIF»EClass \bfseries \texttt{«this.name.toString().escapeLatexString()»}\normalfont}
 \label{cls:«this.qualifiedName()»} \index{«this.getClassifierID()»}
 	
 	\begin{longdescription}
 		\item[Overview] «EXPAND WriteDoc FOR this-»
 		«IF this.eSuperTypes.size > 0-»
-		\item[Super Types of \texttt{«this.name.toString().escapeLatexString()»}] ~
+		\item[ESuper Types of \texttt{«this.name.toString().escapeLatexString()»}] ~
 			\begin{longdescription}
-			«FOREACH this.eSuperTypes AS parentClass SEPARATOR ", "-»
+			«FOREACH this.eSuperTypes AS parentClass -»
 				\item[\texttt{«parentClass.name.toString().escapeLatexString()-»}] «parentClass.see()-»
 			«ENDFOREACH-»
 			\end{longdescription}
@@ -84,12 +84,30 @@ String implClassSuffix() : GLOBALVAR ImplClassSuffix;
 	
 «ENDDEFINE»
 
+«DEFINE ClassifierDoc FOR ecore::EDataType-»
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EDataType \bfseries \texttt{«this.name.escapeLatexString()»}\normalfont}
+\label{cls:«this.qualifiedName()»} \index{«this.getClassifierID()»}
+
+	\begin{longdescription}
+		\item[Overview] «EXPAND WriteDoc FOR this-»
+		\item[Instance Type Name] «this.instanceTypeName.escapeLatexString()-» 
+		«IF this.defaultValue!=null-»
+		\item[Default Value] «this.defaultValue.toString().escapeLatexString()-»
+		«ENDIF-»
+	\end{longdescription}
+	
+«ENDDEFINE»
+
 «DEFINE ClassifierDoc FOR ecore::EEnum-»
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Enumeration \bfseries \texttt{«this.name.toString().escapeLatexString()»}\normalfont}
+\subsection{EEnumeration \bfseries \texttt{«this.name.toString().escapeLatexString()»}\normalfont}
 \label{cls:«this.qualifiedName()»} \index{«this.fullIndex()»}
 
 	\begin{longdescription}
@@ -116,19 +134,19 @@ String implClassSuffix() : GLOBALVAR ImplClassSuffix;
 
 «DEFINE ClassifierInnerDoc FOR EClass»
 		«IF !this.eAttributes.isEmpty-»
-			\item[\textbf{Attributes of} \texttt{«this.name.toString().escapeLatexString()»}] ~
+			\item[\textbf{EAttributes of} \texttt{«this.name.toString().escapeLatexString()»}] ~
 			\begin{longdescription}
 			«EXPAND FeatureDoc FOREACH this.eAttributes.sortBy(e|e.name)-»
 			\end{longdescription}
 		«ENDIF-»
 		«IF !this.eReferences.isEmpty-»
-			\item[\textbf{References of} \texttt{«this.name.toString().escapeLatexString()»}] ~
+			\item[\textbf{EReferences of} \texttt{«this.name.toString().escapeLatexString()»}] ~
 			\begin{longdescription}
 			«EXPAND FeatureDoc FOREACH this.eReferences.sortBy(e|e.name)-»
 			\end{longdescription}
 		«ENDIF-»
 		«IF !this.eOperations.isEmpty-»
-			\item[\textbf{Operations of} \texttt{«this.name.toString().escapeLatexString()»}] ~
+			\item[\textbf{EOperations of} \texttt{«this.name.toString().escapeLatexString()»}] ~
 			\begin{longdescription}
 			«EXPAND OperationDoc FOREACH this.eOperations.sortBy(e|e.name)-»
 			\end{longdescription}
@@ -143,7 +161,7 @@ String implClassSuffix() : GLOBALVAR ImplClassSuffix;
 
 «DEFINE ClassifierInnerDoc FOR EEnum»
 	«IF !this.eLiterals.isEmpty-»
-		\item[\textbf{Literals of} \texttt{«this.name.toString().escapeLatexString()»}] ~
+		\item[\textbf{ELiterals of} \texttt{«this.name.toString().escapeLatexString()»}] ~
 		\begin{longdescription}
 			«EXPAND FeatureDoc(this) FOREACH this.enumLiteralValues()-»
 		\end{longdescription}
@@ -177,7 +195,7 @@ String implClassSuffix() : GLOBALVAR ImplClassSuffix;
 	
 	«IF !this.eParameters.isEmpty-»
 		\begin{longdescription}
-		\item[\textit{Parameters}]~
+		\item[\textit{EParameters}]~
 			\begin{longdescription}
 			«FOREACH this.eParameters AS p-»
 				\item[\texttt{«p.name.toString().escapeLatexString()-» : «p.eType.typeName().toString()» «EXPAND Cardinality FOR p-»}] ~
