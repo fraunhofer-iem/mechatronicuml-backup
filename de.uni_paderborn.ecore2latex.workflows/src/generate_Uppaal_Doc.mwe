@@ -40,6 +40,7 @@
 	<component class="org.eclipse.xpand2.Generator">
 		<metaModel idRef="mm_emf"/>
 		<globalVarDef name="filename" value="'contents.tex'"/>
+		<globalVarDef name="figurepath" value="'img'"/>
 
 		<expand value="template::Generate::Generate FOR {uppaal}"/> 
 		<outlet path="../de.uni_paderborn.uppaal.doc/" overwrite="true" />

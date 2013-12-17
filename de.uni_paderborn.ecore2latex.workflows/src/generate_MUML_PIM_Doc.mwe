@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <workflow>
 	
-
 	<!-- Paths to metamodels -->
 	<property name="muml" value="de.uni_paderborn.fujaba.muml/model/muml.ecore" />
 	<property name="modelinstance" value="de.uni_paderborn.fujaba.modelinstance/model/modelinstance.ecore" />
@@ -9,14 +8,18 @@
 	<property name="storydiagrams" value="org.storydriven.storydiagrams/model/storydiagrams.ecore" />
 	<property name="actionlanguage" value="de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore" />
 
-
-
 	<!-- set up EMF for standalone execution -->
 	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" >
 		<platformUri value=".."/>
 		
-		<uriMap from="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore" to="platform:/resource/de.uni_paderborn.ecore2latex/model/Ecore.ecore"/>
-		<uriMap from="http://www.eclipse.org/emf/2002/Ecore" to="platform:/resource/GeneratorTechreport/model/Ecore.ecore"/>
+		<uriMap 
+			from="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"  
+			to="platform:/resource/de.uni_paderborn.ecore2latex/model/Ecore.ecore"
+		/>
+		<uriMap 
+			from="http://www.eclipse.org/emf/2002/Ecore" 
+			to="platform:/resource/GeneratorTechreport/model/Ecore.ecore"
+		/>
 
 	</bean>
 
@@ -63,9 +66,25 @@
 	<component class="org.eclipse.xpand2.Generator">
 		<metaModel idRef="mm_emf"/>
 		<globalVarDef name="filename" value="'A_TechDoc_Contents.tex'"/>
+		<globalVarDef name="figurepath" value="'figures/A_technical-reference/packages'"/>
 		<expand value="template::Generate::Generate FOR {modelinstance,muml,actionlanguage,sdmcore,storydiagrams}"/> 
+		<!--
 		<outlet path="../MUML Syntax and Semantics/" overwrite="true" />
 		<outlet name='PACKAGEFIGURES' path='../MUML Syntax and Semantics/figures/A_technical-reference/packages/' overwrite='false'/>
-		
+		-->
+		<outlet 
+			path="D:/muml/muml_paper/trunk/MUML_Design/MUML Syntax and Semantics"  
+			overwrite="true"
+		/>
+		<outlet 
+			name='PACKAGEFIGURES' 
+			path="D:/muml/muml_paper/trunk/MUML_Design/MUML Syntax and Semantics/figures/A_technical-reference/packages" 
+			overwrite='false'
+		/>
 	</component>
 </workflow>
+
+
+
+
+
