@@ -256,7 +256,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	}
 	
 	protected void createChildren() {
-		if (!childrenCreated) {
+		if (!childrenCreated && childrenComposite != null) {
 			// Create initial editor controls that could not yet be created
 			for (IPropertyEditor editor : propertyEditors) {
 				editor.createControls(childrenComposite, toolkit);
