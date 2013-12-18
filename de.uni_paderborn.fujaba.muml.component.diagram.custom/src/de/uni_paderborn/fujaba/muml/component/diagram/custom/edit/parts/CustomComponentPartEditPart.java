@@ -17,6 +17,7 @@ import org.eclipse.m2m.qvt.oml.ModelExtent;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
+import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart;
@@ -121,6 +122,9 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 			ComponentPart componentPart = (ComponentPart) getNotationView()
 					.getElement();
 			Activator.updateComponentPart(editingDomain, componentPart);
+			
+			StructuredComponent component = componentPart.getParentComponent();
+			Activator.updateCoordinationProtocolParts(editingDomain, component);	
 		}
 	}
 

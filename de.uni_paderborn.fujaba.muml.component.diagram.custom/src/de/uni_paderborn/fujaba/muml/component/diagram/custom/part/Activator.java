@@ -27,6 +27,8 @@ public class Activator extends AbstractUIPlugin {
 
 	public static final String PART_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/part.qvto";
 	
+	public static final String PROTOCOL_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/protocol.qvto";
+	
 	public static final String EMBED_TRANSFORMATION = "/de.uni_paderborn.fujaba.muml.component.diagram.custom/transforms/EmbedAsParts.qvto";
 	
 	private static Activator instance;
@@ -42,6 +44,7 @@ public class Activator extends AbstractUIPlugin {
 
 		// Create transformation executor
 		getTransformationExecutor(PART_TRANSFORMATION);
+		getTransformationExecutor(PROTOCOL_TRANSFORMATION);
 		getTransformationExecutor(EMBED_TRANSFORMATION);
 	}
 
@@ -112,6 +115,24 @@ public class Activator extends AbstractUIPlugin {
 			editingDomain.getCommandStack().undo();
 		}
 	}
+	
+	public static void updateCoordinationProtocolParts(EditingDomain editingDomain, StructuredComponent component) {
+		ModelExtent inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { component }));
+		
+		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { inputExtent });
+		
+		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
+				Activator.PROTOCOL_TRANSFORMATION,
+				modelExtents);
+		if(command.canExecute()){
+			editingDomain.getCommandStack().execute(command);
+		}
+		
+		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
+			editingDomain.getCommandStack().undo();
+		}
+	}
+	
 	
 	public void stop(BundleContext context) throws Exception {
 		instance = null;

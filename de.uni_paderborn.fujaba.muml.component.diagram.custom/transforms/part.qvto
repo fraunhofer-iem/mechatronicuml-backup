@@ -39,27 +39,27 @@ main() {
 			createPortParts(part);
 
 			// Create CoordinationProtocolParts and associate PortParts
-			part.portParts->select(p | not p.portType[DiscretePort].refinedRole.coordinationProtocol[CoordinationProtocol]->reject(oclIsUndefined())->isEmpty())->forEach(p) {
-				var refinedRole := p.portType[DiscretePort].refinedRole->any(true); --cannot be null, because of previous select statement
-				
-				-- Find all PortParts that are reachable via AssemblyConnectors
-				var reachablePortParts := p->closure(p.connectors[AssemblyConnector].portParts->reject(p)->any(true));
-				
-				-- Find CoordinationProtocolPart that already contains any PortPart that is reachable via AssemblyConnectors.
-				var coordinationProtocolPart := part.parentComponent.coordinationProtocolParts->any(c | not c.portParts->intersection(reachablePortParts)->isEmpty());
-			
-				-- Make sure we have one CoordinationProtocolPart to add to; if none was found, create a new one
-				if (coordinationProtocolPart = null) then {
-					coordinationProtocolPart := new CoordinationProtocolPart(refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol));
-					p.componentPart.parentComponent.coordinationProtocolParts += coordinationProtocolPart;
-				} endif;
-				
-				-- Associate this PortPart with the Coordination Protocol Part
-				p.coordinationProtocolPart := coordinationProtocolPart;
-			};
+			--part.portParts->select(p | not p.portType[DiscretePort].refinedRole.coordinationProtocol[CoordinationProtocol]->reject(oclIsUndefined())->isEmpty())->forEach(p) {
+			--	var refinedRole := p.portType[DiscretePort].refinedRole->any(true); --cannot be null, because of previous select statement
+			--	
+			--	-- Find all PortParts that are reachable via AssemblyConnectors
+			--	var reachablePortParts := p->closure(p.connectors[AssemblyConnector].portParts->reject(p)->any(true));
+			--	
+			--	-- Find CoordinationProtocolPart that already contains any PortPart that is reachable via AssemblyConnectors.
+			--	var coordinationProtocolPart := part.parentComponent.coordinationProtocolParts->any(c | not c.portParts->intersection(reachablePortParts)->isEmpty());
+			--
+			--	-- Make sure we have one CoordinationProtocolPart to add to; if none was found, create a new one
+			--	if (coordinationProtocolPart = null) then {
+			--		coordinationProtocolPart := new CoordinationProtocolPart(refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol));
+			--		p.componentPart.parentComponent.coordinationProtocolParts += coordinationProtocolPart;
+			--	} endif;
+			--	
+			--	-- Associate this PortPart with the Coordination Protocol Part
+			--	p.coordinationProtocolPart := coordinationProtocolPart;
+			--};
 
 			// Remove stale coordinationProtocolParts
-			part.parentComponent.coordinationProtocolParts := part.parentComponent.coordinationProtocolParts->reject(portParts->isEmpty());
+			-- part.parentComponent.coordinationProtocolParts := part.parentComponent.coordinationProtocolParts->reject(portParts->isEmpty());
 			
 		} endif;
 	};

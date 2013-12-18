@@ -1,0 +1,81 @@
+transformation InstantiationTransformation(inout input : ComponentPackage);
+
+modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
+modeltype ConnectorPackage uses muml::connector('http://www.fujaba.de/muml/0.4.0');
+modeltype ComponentPackage uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype ProtocolPackage uses muml::protocol('http://www.fujaba.de/muml/0.4.0');
+
+modeltype Ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+main() {
+	input.rootObjects()[StructuredComponent]->forEach(component) {
+	
+		-- Disconnect invalid PortParts
+		component.embeddedComponentParts.portParts->select(p | not p.isValid())->forEach(pp) {
+			pp.coordinationProtocolPart := null;
+		};
+		
+		-- Remove empty CoordinationProtocolParts
+		component.coordinationProtocolParts->select(portParts->isEmpty())->forEach(p) {
+			input.removeElement(p);
+		};
+		
+
+		-- Merge CoordinationProtocolParts that can reach each other
+		--component.coordinationProtocolParts->forEach(p, q) {
+		--	if (p != q and p.coordinationProtocol = q.coordinationProtocol and p.isReachable(q)) then {
+		--		p.portParts += q.portParts;
+		--		input.removeElement(q);
+		--	} endif;
+		--};
+		
+		
+		
+		--component.connectors[AssemblyConnector]->forEach(a) {
+		--	component.coordinationProtocolParts->forEach(p) {
+		--		if (p.portParts->intersection(a.connectorEndpoints[PortPart])->isEmpty()) then {
+		--			
+		--		} endif;
+		--	};
+		--};
+		
+		// Create or reuse CoordinationProtocolParts for all valid PortParts
+		component.embeddedComponentParts.portParts->select(p | p.isValid())->forEach(p) {
+			var refinedRole := p.refinedRole;
+			
+			-- Find all PortParts that are reachable via AssemblyConnectors
+			var reachablePortParts := p.allReachablePortParts();
+
+			-- Find CoordinationProtocolPart that already contains any PortPart that is reachable via AssemblyConnectors.
+			var coordinationProtocolPart := component.coordinationProtocolParts->any(c | not c.portParts->intersection(reachablePortParts)->isEmpty());
+		
+			-- Make sure we have one CoordinationProtocolPart to add to; if none was found, create a new one
+			if (coordinationProtocolPart = null) then {
+				coordinationProtocolPart := new CoordinationProtocolPart(refinedRole.coordinationProtocol.oclAsType(CoordinationProtocol));
+				p.componentPart.parentComponent.coordinationProtocolParts += coordinationProtocolPart;
+			} endif;
+			
+			-- Associate this PortPart with the Coordination Protocol Part
+			p.coordinationProtocolPart := coordinationProtocolPart;
+		};
+	};
+}
+
+query PortPart::isValid() : Boolean {
+	return not self.connectors[AssemblyConnector]->isEmpty() and self.refinedRole != null and self.allReachablePortParts().coordinationProtocolPart->asSet()->excluding(self.coordinationProtocolPart)->isEmpty();
+}
+
+query CoordinationProtocolPart::isReachable(p : CoordinationProtocolPart) : Boolean {
+	return not self.portParts->select(pp | p.isReachable(pp))->isEmpty();
+}
+
+query CoordinationProtocolPart::isReachable(portPart : PortPart) : Boolean {
+	return not self.portParts.allReachablePortParts()->includes(portPart);
+}
+
+query PortPart::allReachablePortParts() : OrderedSet(PortPart) {
+	return OrderedSet{ self }->closure(connectors[AssemblyConnector].portParts);
+}
+constructor CoordinationProtocolPart::CoordinationProtocolPart(p : CoordinationProtocol) {
+	coordinationProtocol := p;
+}
