@@ -13,6 +13,7 @@
   </plugin>
   <tabs id="property.tab.general" name="General" afterTab=""/>
   <tabs id="property.tab.documentation" name="Documentation" afterTab="property.tab.general"/>
+  <tabs id="property.tab.extensions" name="Extensions" afterTab=""/>
   <packages>
     <genPackage href="../../org.storydriven.core/model/core.uml.genmodel#//core"/>
     <classes superClasses="//@packages.0/@classes.1">
@@ -24,6 +25,10 @@
     </classes>
     <classes>
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement"/>
+      <properties tab="//@tabs.2">
+        <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement/extension"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.1">
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/Extension"/>

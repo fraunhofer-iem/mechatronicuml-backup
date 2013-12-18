@@ -88,7 +88,10 @@ public class NavigationFeaturePropertyEditor extends
 
 		List<EClass> eClasses = RuntimePlugin.getEClasses((EReference) feature);
 
-		selectedClass = eClasses.get(0);
+		selectedClass = null;
+		if (!eClasses.isEmpty()) {
+			selectedClass = eClasses.get(0);
+		}
 		if (manyValue != null) {
 			EClass eClass = manyValue.eClass();
 			if (eClasses.contains(eClass)) {
@@ -241,7 +244,7 @@ public class NavigationFeaturePropertyEditor extends
 	}
 
 	protected void create() {
-		if (!isSet()) {
+		if (!isSet() && selectedClass != null) {
 			Object newValue = EcoreUtil.create(selectedClass);
 			if (feature.isMany()) {
 				manyValue = (EObject) newValue;

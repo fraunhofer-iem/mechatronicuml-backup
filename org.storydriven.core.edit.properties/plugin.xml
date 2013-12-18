@@ -34,6 +34,10 @@
              category="domain"
              id="property.tab.documentation"
              label="Documentation"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.extensions"
+             label="Extensions"/>
           
       </propertyTabs>
   </extension>
@@ -57,6 +61,15 @@
             filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
             id="property.tab.documentation"
             tab="property.tab.documentation">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="org.storydriven.core.properties.tabs.ExtensionsTabElementFilter"
+            id="property.tab.extensions"
+            tab="property.tab.extensions">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>
