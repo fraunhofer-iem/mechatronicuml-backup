@@ -5,11 +5,14 @@ Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.common;singleton:=tru
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.hardware.common.edit.policies,
+ de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.container,
  de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport,
  de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.opendiagram,
  de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource,
  de.uni_paderborn.fujaba.muml.hardware.common.figures,
+ de.uni_paderborn.fujaba.muml.hardware.common.icons,
  de.uni_paderborn.fujaba.muml.hardware.common.parsers
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
  de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0",
- de.uni_paderborn.fujaba.muml.hardware
+ de.uni_paderborn.fujaba.muml.hardware,
+ org.eclipse.gmf.runtime.diagram.ui
