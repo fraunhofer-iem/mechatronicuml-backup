@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
+import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
@@ -72,7 +73,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				if (!de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes
 						.isKnownElementType(elementType)
 						|| (!(elementType instanceof IHintedType))) {
-					return super.provides(op); // foreign element type -> try muml view provider
+					return false; // foreign element type -> try muml view provider
 				}
 				String elementTypeHint = ((IHintedType) elementType)
 						.getSemanticHint();
@@ -265,6 +266,9 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ExecutorEditPart.VISUAL_ID:
 			return createExecutor_2077(domainElement, containerView, index,
 					persisted, preferencesHint);
+			
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+			return createDiscretePort_3010(domainElement, containerView, index, persisted, preferencesHint);
 
 		default:
 			return super.createNode(semanticAdapter, containerView,
@@ -711,6 +715,64 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 					routing);
 		}
 		return edge;
+	}
+	
+	public Node createDiscretePort_3010(EObject domainElement,
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5012 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortNameEditPart.VISUAL_ID));
+		label5012.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5012 = (Location) label5012.getLayoutConstraint();
+		location5012.setX(0);
+		location5012.setY(5);
+		Node label5025 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+		label5025.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5025 = (Location) label5025.getLayoutConstraint();
+		location5025.setX(0);
+		location5025.setY(5);
+		return node;
 	}
 
 	// copied from

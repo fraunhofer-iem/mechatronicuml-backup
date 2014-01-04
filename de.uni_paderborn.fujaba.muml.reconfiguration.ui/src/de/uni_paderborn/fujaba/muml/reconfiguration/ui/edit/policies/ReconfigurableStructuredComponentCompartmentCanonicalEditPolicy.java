@@ -9,9 +9,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStructuredComponentComponentCompartmentCanonicalEditPolicy;
 
-/**
- * @generated
- */
+
 public class ReconfigurableStructuredComponentCompartmentCanonicalEditPolicy
 		extends StaticStructuredComponentComponentCompartmentCanonicalEditPolicy {
 	private boolean canonicalNodes = true;

@@ -127,6 +127,7 @@
                 nsURI="http://www.fujaba.de/muml/reconfiguration/0.3.18">
              <metamodelType
                    eclass="Manager"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ManagerEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.Manager_2075"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="Manager">
@@ -137,6 +138,7 @@
              </metamodelType>
              <metamodelType
                    eclass="InternalReconfigurationCommunicationPort"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.InternalReconfigurationCommunicationPortEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort_3075"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="InternalReconfigurationCommunicationPort">
@@ -147,6 +149,7 @@
              </metamodelType>
              <metamodelType
                    eclass="Executor"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ExecutorEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.Executor_2077"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="Executor">
@@ -157,6 +160,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurationMessagePort"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurationMessagePortEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort_3076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationMessagePort">
@@ -167,6 +171,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurationPortAssemblyConnector"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurationPortAssemblyEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector_4075"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationPortAssemblyConnector">
@@ -177,6 +182,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurationExecutionPort"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurationExecutionPortEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort_3077"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationExecutionPort">
@@ -187,6 +193,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurationPortDelegationConnector"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurationPortDelegationConnectorEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector_4076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurationPortDelegationConnector">
@@ -207,6 +214,7 @@
              </metamodelType>
              <metamodelType
                    eclass="ReconfigurableStructuredComponent"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurableStructuredComponentEditHelper"
                    id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent_2076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="ReconfigurableStructuredComponent">
@@ -215,17 +223,17 @@
                       value="2076">
                 </param>
              </metamodelType>
-             <metamodelType
-                   eclass="RuleBasedReconfigurationController"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController_7076"
-                   kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-                   name="RuleBasedReconfigurationController">
-                <param
-                      name="semanticHint"
-                      value="7076">
-                </param>
-             </metamodelType>
           </metamodel>
+       </extension>
+       <extension
+             id="element-types-bindings"
+             point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+          <binding
+                context="de.uni_paderborn.fujaba.muml.component.diagram.TypeContext">
+             <elementType
+                   ref="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent_2076">
+             </elementType>
+          </binding>
        </extension>
        <extension
              point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">

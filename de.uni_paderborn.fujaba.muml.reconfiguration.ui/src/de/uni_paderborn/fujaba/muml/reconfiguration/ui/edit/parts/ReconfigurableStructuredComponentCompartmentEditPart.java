@@ -64,7 +64,7 @@ public class ReconfigurableStructuredComponentCompartmentEditPart extends
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStructuredComponentComponentCompartmentItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ReconfigurableComponentCompartmentItemSemanticEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(

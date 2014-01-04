@@ -49,6 +49,9 @@ public class ReconfigurationElementTypes{
 	public static final IElementType Executor_2077= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.Executor_2077");
 	public static final IElementType ReconfigurationPortDelegationConnector_4076=getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortDelegationConnector_4076");
 	public static final IElementType ReconfigurationPortAssemblyConnector_4075=getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector_4075");
+	public static final IElementType ComponentPart_3012 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.ComponentPart_3012");
+	public static final IElementType DiscretePort_3010 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.DiscretePort_3010");
+	
 	
 	
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
@@ -107,6 +110,16 @@ public class ReconfigurationElementTypes{
 					Manager_2075,
 					de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
 							.getManager());
+			
+			elements.put(
+					ComponentPart_3012,
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+							.getComponentPart());
+			
+			elements.put(
+					DiscretePort_3010,
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+							.getDiscretePort());
 
 		}
 		return (ENamedElement) elements.get(type);
@@ -132,6 +145,9 @@ public class ReconfigurationElementTypes{
 			KNOWN_ELEMENT_TYPES.add(Manager_2075);
 			KNOWN_ELEMENT_TYPES.add(ReconfigurationPortDelegationConnector_4076);
 			KNOWN_ELEMENT_TYPES.add(ReconfigurationPortAssemblyConnector_4075);
+			KNOWN_ELEMENT_TYPES.add(ComponentPart_3012);
+			KNOWN_ELEMENT_TYPES.add(DiscretePort_3010);
+			//TODO add Coordination Protocol Occurence
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -154,6 +170,10 @@ public class ReconfigurationElementTypes{
 			return Manager_2075;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortDelegationConnectorEditPart.VISUAL_ID:
 			return ReconfigurationPortDelegationConnector_4076;
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
+			return ComponentPart_3012;
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+			return DiscretePort_3010;
 			//TODO add assembly
 		
 		}

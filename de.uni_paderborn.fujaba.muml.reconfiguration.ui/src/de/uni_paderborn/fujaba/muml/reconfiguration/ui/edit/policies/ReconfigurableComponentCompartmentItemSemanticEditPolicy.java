@@ -15,7 +15,7 @@ public class ReconfigurableComponentCompartmentItemSemanticEditPolicy
 	 */
 	public ReconfigurableComponentCompartmentItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.StaticStructuredComponent_2005);
+				de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.ReconfigurableStructuredComponent_2076);
 	}
 
 	/**
