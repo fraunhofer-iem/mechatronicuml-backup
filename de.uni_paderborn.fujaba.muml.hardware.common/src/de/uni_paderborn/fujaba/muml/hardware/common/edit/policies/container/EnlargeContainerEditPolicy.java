@@ -1,7 +1,12 @@
 package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.container;
 
+/** 
+ * modified by adann
+ * 
+ */
+
 /**
- * Copyright (c) 2013 committers of YAKINDU and others.
+* * Copyright (c) 2013 committers of YAKINDU and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,19 +57,18 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 
 	private List<IGraphicalEditPart> containerHierachy;
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public Command getCommand(Request request) {
 		if (!RequestConstants.REQ_RESIZE.equals(request.getType())
 				&& !RequestConstants.REQ_MOVE.equals(request.getType())) {
 			return null;
-		}
+		} else {
+			return resizeContainerCommand(request);
 
-		// this seems to be useless
-		if (request instanceof SetPreferredSizeRequest) {
-			showSourceFeedback(request);
 		}
+	}
 
+	public Command resizeContainerCommand(Request request) {
 		ChangeBoundsRequest cbr = (ChangeBoundsRequest) request;
 		CompoundCommand result = new CompoundCommand();
 
@@ -109,9 +113,13 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 			containerHierachy = collectContainerHierachy();
 		}
 		if (!RequestConstants.REQ_RESIZE.equals(request.getType())
-				&& !RequestConstants.REQ_MOVE.equals(request.getType()))
+				&& !RequestConstants.REQ_MOVE.equals(request.getType())){
 			return;
-		showContainerFeedback((ChangeBoundsRequest) request);
+
+		}
+		else{
+			showContainerFeedback((ChangeBoundsRequest) request);
+		}
 	}
 
 	@Override
@@ -287,24 +295,29 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 
 				ShapeCompartmentEditPart compartmentEditPart = null;
 				if (editPart.getParent() instanceof ShapeCompartmentEditPart) {
-					PrecisionRectangle transformedChildRect=null;
-					compartmentEditPart = (ShapeCompartmentEditPart) editPart.getParent();
-					List<IGraphicalEditPart> childEditParts = compartmentEditPart.getChildren();
-					for(IGraphicalEditPart chidEditPart:childEditParts){
-						if(chidEditPart!=editPart){
+					PrecisionRectangle transformedChildRect = null;
+					compartmentEditPart = (ShapeCompartmentEditPart) editPart
+							.getParent();
+					List<IGraphicalEditPart> childEditParts = compartmentEditPart
+							.getChildren();
+					for (IGraphicalEditPart chidEditPart : childEditParts) {
+						if (chidEditPart != editPart) {
 							transformedChildRect = new PrecisionRectangle(
 									chidEditPart.getFigure().getBounds());
-							transformedChildRect.expand(SPACEING * level, SPACEING * level);
-							chidEditPart.getFigure().translateToAbsolute(transformedChildRect);
+							transformedChildRect.expand(SPACEING * level,
+									SPACEING * level);
+							chidEditPart.getFigure().translateToAbsolute(
+									transformedChildRect);
 							result.union(transformedChildRect);
 						}
 					}
 				}
-				
-			//	Dimension max = Dimension.max(result.getSize(), preferredSize);
 
-		//		result.setSize(max);
-		
+				// Dimension max = Dimension.max(result.getSize(),
+				// preferredSize);
+
+				// result.setSize(max);
+
 			} else {
 				result.union(transformedRect);
 				System.out.println("else teil");
