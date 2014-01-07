@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -133,7 +134,8 @@ public class ManagerEditPart extends AbstractBorderedShapeEditPart {
 	}
 
 	protected IFigure createNodeShape() {
-		return primaryShape = new ManagerFigure();
+		primaryShape = new ManagerFigure();
+		return primaryShape;
 	}
 
 	public ManagerFigure getPrimaryShape() {
@@ -385,7 +387,7 @@ public class ManagerEditPart extends AbstractBorderedShapeEditPart {
 
 			fFigureComponentNameFigure = new WrappingLabel();
 
-			fFigureComponentNameFigure.setText("");
+			fFigureComponentNameFigure.setText("Manager");
 
 			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
 

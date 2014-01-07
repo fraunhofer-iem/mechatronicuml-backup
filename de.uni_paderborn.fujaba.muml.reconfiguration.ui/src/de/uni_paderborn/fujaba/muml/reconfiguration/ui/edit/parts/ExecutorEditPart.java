@@ -383,7 +383,7 @@ public class ExecutorEditPart extends AbstractBorderedShapeEditPart {
 
 			fFigureComponentNameFigure = new WrappingLabel();
 
-			fFigureComponentNameFigure.setText("");
+			fFigureComponentNameFigure.setText("Executor");
 
 			fFigureComponentNameFigure.setFont(FFIGURECOMPONENTNAMEFIGURE_FONT);
 
