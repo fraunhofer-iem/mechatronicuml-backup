@@ -29,6 +29,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure;
+import de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure.PortType;
 
 /**
  * @generated
@@ -69,9 +70,12 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.DiscretePortItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		//TODO do not set this policy?
+//		installEditPolicy(
+//				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+//				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy());
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy());
+				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.InternalReconfigurationCommunicationPortTypeEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.OPEN_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy());
