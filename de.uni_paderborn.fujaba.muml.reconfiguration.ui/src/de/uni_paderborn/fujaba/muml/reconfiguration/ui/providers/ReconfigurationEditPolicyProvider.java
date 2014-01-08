@@ -24,7 +24,7 @@ public class ReconfigurationEditPolicyProvider extends AbstractProvider implemen
             EObject element = ((IGraphicalEditPart)ep).resolveSemanticElement();
             if (element instanceof ModelElementCategory) {
                 ep.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomModelElementCategoryItemSemanticEditPolicy());
-                ep.installEditPolicy("CustomCanonical", new CustomModelElementCategoryCanonicalEditPolicy());
+                ep.installEditPolicy("CustomCanonical", new CustomModelElementCategoryCanonicalEditPolicy(false));
             }
         }
     }
