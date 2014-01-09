@@ -68,6 +68,9 @@
                         <instanceof
                               value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
                         </instanceof>
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
+                        </instanceof>
                      </or>
                   </iterate>
                </with>

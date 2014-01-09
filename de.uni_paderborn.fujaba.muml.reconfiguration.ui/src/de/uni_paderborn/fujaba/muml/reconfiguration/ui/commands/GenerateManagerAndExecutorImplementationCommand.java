@@ -26,8 +26,8 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
-import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart;
 
 public class GenerateManagerAndExecutorImplementationCommand extends AbstractHandler {
 
@@ -37,7 +37,7 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 		//get and process current selection
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 		
-		//collect all StaticStructureComponents from the selection
+		//collect all ReconfigurableStructureComponents from the selection
 		Iterator<?> iter = ((IStructuredSelection) selection).iterator();
 		while(iter.hasNext()){
 			Object currentObject = iter.next();
@@ -47,15 +47,14 @@ public class GenerateManagerAndExecutorImplementationCommand extends AbstractHan
 			EditingDomain editingDomain = null;
 			
 			//if command is triggered via the graphical editor, the selection contains an EditPart
-			if(currentObject instanceof StaticStructuredComponentEditPart){
+			if(currentObject instanceof ReconfigurableStructuredComponentEditPart){
 			
-				//FIXME: replace with edit part of ReconfigurableStructuredComponent once we have one
-				StaticStructuredComponentEditPart editPart = (StaticStructuredComponentEditPart) currentObject;
+				ReconfigurableStructuredComponentEditPart editPart = (ReconfigurableStructuredComponentEditPart) currentObject;
 			
 				sc = (ReconfigurableStructuredComponent) ((View) editPart.getModel()).getElement();
 				editingDomain = editPart.getEditingDomain();		
 			} else if (currentObject instanceof ReconfigurableStructuredComponent){
-				//if the command is triggered via the tree editor, the selection contains a StaticStructuredComponent
+				//if the command is triggered via the tree editor, the selection contains a ReconfigurableStructuredComponent
 				sc = (ReconfigurableStructuredComponent) currentObject;
 				
 				//obtain the editing domain for the resource set
