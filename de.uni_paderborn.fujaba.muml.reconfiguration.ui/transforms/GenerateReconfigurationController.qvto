@@ -26,7 +26,12 @@ modeltype componentpattern uses componentstorydiagram::componentstorypattern("ht
 modeltype componentstory uses componentstorydiagram::controlflow("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
 
 --this transformation creates a rule based reconfiguration controller for a reconfigurable structured component
-library GenerateReconfigurationController;
+transformation GenerateReconfigurationController(inout inputComponent : component);
+
+main() {
+	var oldComponent : ReconfigurableStructuredComponent := inputComponent.rootObjects()[ReconfigurableStructuredComponent] -> any(true);
+	map addRuleBasedReconfigurationController(oldComponent);
+}
 
 mapping addRuleBasedReconfigurationController(inout comp : ReconfigurableStructuredComponent){
 	

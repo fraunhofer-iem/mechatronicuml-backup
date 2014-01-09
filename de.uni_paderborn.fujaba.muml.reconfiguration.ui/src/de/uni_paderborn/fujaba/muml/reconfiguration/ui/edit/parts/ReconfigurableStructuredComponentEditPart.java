@@ -165,7 +165,7 @@ public class ReconfigurableStructuredComponentEditPart extends
 			IFigure pane = getPrimaryShape().getFigureChildren();
 			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
 			pane.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart) childEditPart)
-					.getFigure());
+					.getFigure(), 0);
 			return true;
 		}
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {

@@ -17,6 +17,13 @@
             id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateManagerAndExecutorImplementationCommand"
             name="Generate Manager and Executor Implementation">
       </command>
+      <command
+            categoryId="de.uni_paderborn.fujaba"
+            defaultHandler="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationController"
+            description="Generates RuleBasedReconfigurationController"
+            id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
+            name="Generate RuleBasedReconfigurationController">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -60,6 +67,29 @@
                      <or>
                         <instanceof
                               value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
+                        </instanceof>
+                     </or>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
+               icon="icons/MakeReconfigurable.gif"
+               id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.commands.GenerateRuleBasedReconfigurationControllerCommand"
+               label="Generate RuleBasedReconfigurationController"
+               style="push">
+            <visibleWhen>
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="false">
+                     <or>
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent">
+                        </instanceof>
+                        <instanceof
+                              value="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart">
                         </instanceof>
                      </or>
                   </iterate>

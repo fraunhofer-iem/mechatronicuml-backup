@@ -39,6 +39,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
 import de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlViewProvider;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart;
 
 public class ReconfigurationViewProvider extends MumlViewProvider implements
 		IViewProvider {
@@ -73,7 +74,8 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				if (!de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes
 						.isKnownElementType(elementType)
 						|| (!(elementType instanceof IHintedType))) {
-					return false; // foreign element type -> try muml view provider
+					return false; // foreign element type -> try muml view
+									// provider
 				}
 				String elementTypeHint = ((IHintedType) elementType)
 						.getSemanticHint();
@@ -266,9 +268,10 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ExecutorEditPart.VISUAL_ID:
 			return createExecutor_2077(domainElement, containerView, index,
 					persisted, preferencesHint);
-			
+
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
-			return createDiscretePort_3010(domainElement, containerView, index, persisted, preferencesHint);
+			return createDiscretePort_3010(domainElement, containerView, index,
+					persisted, preferencesHint);
 
 		default:
 			return super.createNode(semanticAdapter, containerView,
@@ -325,13 +328,16 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		// .getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ControllerEditPart.VISUAL_ID),
 		// false, false, false, false);
 
-		if (((de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent) domainElement)
-				.getController() == null)
-			createCompartment(
-					node,
-					de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
-							.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID),
-					false, false, false, false);
+		// if
+		// (((de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent)
+		// domainElement)
+		// .getController() == null)
+		createCompartment(
+				node,
+				de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID),
+				false, false, false, false);
+
 		return node;
 	}
 
@@ -525,13 +531,25 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		rv.setElement(domainElement);
 		rv.setType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
 				.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, rv, 1, true);
+		ViewUtil.insertChildView(containerView, rv, ViewUtil.APPEND, true);
+		//
+		// createCompartment(
+		// containerView,
+		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
+		// .getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID),
+		// false, false, false, false);
 
-		createCompartment(
-				containerView,
-				de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID),
-				false, false, false, false);
+//		Node compartment = null;
+//		for (Object curView : containerView.getChildren()) {
+//			String type = ((Node) curView).getType();
+//			if (type == "7077")
+//					//==""+ReconfigurableStructuredComponentCompartmentEditPart.VISUAL_ID)
+//				compartment = ((Node) curView);
+//		}
+//
+//		if (compartment != null)
+//			ViewUtil.repositionChildAt(containerView, compartment,
+//					ViewUtil.APPEND);
 		return rv;
 	}
 
@@ -716,7 +734,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 		}
 		return edge;
 	}
-	
+
 	public Node createDiscretePort_3010(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -726,7 +744,7 @@ public class ReconfigurationViewProvider extends MumlViewProvider implements
 				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
-		// initializeFromPreferences 
+		// initializeFromPreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
 				.getPreferenceStore();
 
