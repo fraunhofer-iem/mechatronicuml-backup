@@ -132,8 +132,8 @@ public class GenerateRuleBasedReconfigurationController extends AbstractHandler 
 		// ModelElementCategoryCanonicalEditPolicy displays all edges contained
 		// in diagram. Since newly created edges are not contained in
 		// ModelElementCategory (They are contained in
-		// ReconfigurableStructuredComponent) the editPart does not refresh
-		// (fire CanonicalEditPolicy). Therefore we force a change in
+		// ReconfigurableStructuredComponent), the editPart does not refresh
+		// (fire CanonicalEditPolicy). Therefore, we force a change in
 		// ModelElementCategory by adding and directly removing a dummy
 		// StaticAtomicComponent.
 		

@@ -237,12 +237,13 @@
              </metamodelType>
              <metamodelType
                    eclass="RuleBasedReconfigurationController"
-                   id="de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController_2078"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.RuleBasedReconfigurationControllerEditHelper"
+                   id="de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController_7076"
                    kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                    name="RuleBasedReconfigurationController">
                 <param
                       name="semanticHint"
-                      value="2078">
+                      value="7076">
                 </param>
              </metamodelType>
              <metamodelType

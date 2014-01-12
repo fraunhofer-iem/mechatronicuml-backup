@@ -67,10 +67,10 @@ public class ExecutorEditPart extends AbstractBorderedShapeEditPart {
 		// new CreationEditPolicyWithCustomReparent(
 		// de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
 		// super.createDefaultEditPolicies();
-		// installEditPolicy(
-		// EditPolicyRoles.SEMANTIC_ROLE,
-		// new
-		// de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.StaticStructuredComponentItemSemanticEditPolicy());
+		 installEditPolicy(
+		 EditPolicyRoles.SEMANTIC_ROLE,
+		 new
+		 de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ExecutorItemSemanticEditPolicy());
 		// installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 		// new DragDropEditPolicy());
 		// //TODO

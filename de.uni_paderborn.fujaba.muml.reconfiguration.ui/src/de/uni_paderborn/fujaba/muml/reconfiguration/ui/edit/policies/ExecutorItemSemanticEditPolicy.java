@@ -17,16 +17,16 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class RuleBasedReconfigurationControllerItemSemanticEditPolicy
+public class ExecutorItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
-	public RuleBasedReconfigurationControllerItemSemanticEditPolicy() {
+	public ExecutorItemSemanticEditPolicy() {
 		super(
-				de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.RuleBasedReconfigurationController_7076);
+				de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.Executor_2077);
 	}
 
 	/**
@@ -79,45 +79,6 @@ public class RuleBasedReconfigurationControllerItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 
 		// TODO implement
-		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
-
-			Node node = (Node) nit.next();
-			switch (de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
-					.getVisualID(node)) {
-
-			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID:
-
-				addDestroyReferencedLinks(cmd, node);
-				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
-						getEditingDomain(), node.getElement(), false)));
-				// don't need explicit deletion of node as parent's view
-				// deletion would clean child views as well
-				// cmd.add(new
-				// org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(),
-				// node));
-
-				break;
-
-			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ExecutorEditPart.VISUAL_ID:
-
-				addDestroyReferencedLinks(cmd, node);
-				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
-						getEditingDomain(), node.getElement(), false)));
-				// don't need explicit deletion of node as parent's view
-				// deletion would clean child views as well
-				// cmd.add(new
-				// org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand(getEditingDomain(),
-				// node));
-
-				break;
-
-			}
-		}
-	}
-	
-	private void addDestroyReferencedLinks(ICompositeCommand cmd, Node view){
-		
-	
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
 
 			Node node = (Node) nit.next();
