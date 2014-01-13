@@ -16,7 +16,6 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -32,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
+import de.uni_paderborn.fujaba.muml.component.StaticComponent;
 import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.connector.Connector;

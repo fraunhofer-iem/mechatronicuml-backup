@@ -1139,10 +1139,9 @@
         <details key="documentation" value="This class represents a composite state of a realtime statechart. Composite states may again contain realtime statecharts hence enabling the creation of hierarchical statecharts. Further more composite states have do, entry and exit actions. Also composite states define which synchronization channels are allowed to be used by embedded statecharts."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="OneInvariantPerClock NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames InvalidClockConstraintOperator UniqueStateConnectionPointNames"/>
+        <details key="constraints" value="NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames InvalidClockConstraintOperator UniqueStateConnectionPointNames"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="OneInvariantPerClock" value="self.invariants->isUnique(clock)"/>
         <details key="NoOutgoingTransitionOfFinalState" value="self.final implies self.outgoingTransitions->isEmpty()"/>
         <details key="NoRegionsOfFinalState" value="self.final implies self.embeddedRegions->isEmpty()"/>
         <details key="UniquePrioritiesOfOutgoingTransitions" value="self.outgoingTransitions->isUnique(priority) "/>

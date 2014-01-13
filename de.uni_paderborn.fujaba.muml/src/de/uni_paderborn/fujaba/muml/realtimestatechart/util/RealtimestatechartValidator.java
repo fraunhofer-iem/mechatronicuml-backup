@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.util;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -14,7 +13,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
@@ -248,7 +246,6 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(state, diagnostics, context);
-		if (result || diagnostics != null) result &= validateState_OneInvariantPerClock(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_NoOutgoingTransitionOfFinalState(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_NoRegionsOfFinalState(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_UniquePrioritiesOfOutgoingTransitions(state, diagnostics, context);
@@ -258,35 +255,6 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateState_InvalidClockConstraintOperator(state, diagnostics, context);
 		if (result || diagnostics != null) result &= validateState_UniqueStateConnectionPointNames(state, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * The cached validation expression for the OneInvariantPerClock constraint of '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STATE__ONE_INVARIANT_PER_CLOCK__EEXPRESSION = "self.invariants->isUnique(clock)";
-
-	/**
-	 * Validates the OneInvariantPerClock constraint of '<em>State</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateState_OneInvariantPerClock(State state, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(RealtimestatechartPackage.Literals.STATE,
-				 state,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "OneInvariantPerClock",
-				 STATE__ONE_INVARIANT_PER_CLOCK__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
 	}
 
 	/**

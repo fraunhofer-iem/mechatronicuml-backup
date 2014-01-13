@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.component.util;
 
-import de.uni_paderborn.fujaba.muml.component.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -14,7 +13,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
@@ -33,6 +31,7 @@ import de.uni_paderborn.fujaba.muml.component.PortConnector;
 import de.uni_paderborn.fujaba.muml.component.PortDirectionKind;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
+import de.uni_paderborn.fujaba.muml.component.StaticComponent;
 import de.uni_paderborn.fujaba.muml.component.StaticStructuredComponent;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;

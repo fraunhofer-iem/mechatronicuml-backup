@@ -12,12 +12,10 @@
  */
 package de.uni_paderborn.fujaba.muml.component.impl;
 
-import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
-import de.uni_paderborn.fujaba.muml.component.StaticComponent;
-
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+import de.uni_paderborn.fujaba.muml.component.StaticComponent;
 
 /**
  * <!-- begin-user-doc -->
