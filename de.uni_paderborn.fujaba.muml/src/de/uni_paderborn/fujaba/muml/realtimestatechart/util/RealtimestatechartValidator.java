@@ -1348,6 +1348,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateStateConnectionPoint_ConnectionPointsOnlyAtCompositeStates(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExitPoint_AtLeastOneIncomingTransitionPerRegion(exitPoint, diagnostics, context);
 		if (result || diagnostics != null) result &= validateExitPoint_OneOutgoingTransition(exitPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExitPoint_AtMostOneConnectingRegionWithSynchronizations(exitPoint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateExitPoint_AtMostOneConnectingRegionWithTriggerMessageEvents(exitPoint, diagnostics, context);
 		return result;
 	}
 
@@ -1411,6 +1413,90 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "OneOutgoingTransition",
 				 EXIT_POINT__ONE_OUTGOING_TRANSITION__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AtMostOneConnectingRegionWithSynchronizations constraint of '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String EXIT_POINT__AT_MOST_ONE_CONNECTING_REGION_WITH_SYNCHRONIZATIONS__EEXPRESSION = "-- There must be at most one region with synchronizing transitions that connect (directly or indirectly) to the exit point\r\n" +
+		"\r\n" +
+		"let exitTransitions : Collection(Transition) = \r\n" +
+		"\r\n" +
+		"self.incomingTransitions->union(\r\n" +
+		"   self.incomingTransitions->closure(t | \r\n" +
+		"\tif t.source.oclIsKindOf(ExitPoint)\r\n" +
+		"\tthen t.source.incomingTransitions\r\n" +
+		"\telse Sequence{}\r\n" +
+		"\tendif\r\n" +
+		"   )\r\n" +
+		")\r\n" +
+		"\r\n" +
+		"in exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 <> t2 and (not t1.synchronization.oclIsUndefined()) and (not t2.synchronization.oclIsUndefined())) implies (t1.statechart = t2.statechart))";
+
+	/**
+	 * Validates the AtMostOneConnectingRegionWithSynchronizations constraint of '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExitPoint_AtMostOneConnectingRegionWithSynchronizations(ExitPoint exitPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.EXIT_POINT,
+				 exitPoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AtMostOneConnectingRegionWithSynchronizations",
+				 EXIT_POINT__AT_MOST_ONE_CONNECTING_REGION_WITH_SYNCHRONIZATIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AtMostOneConnectingRegionWithTriggerMessageEvents constraint of '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String EXIT_POINT__AT_MOST_ONE_CONNECTING_REGION_WITH_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "-- There must be at most one region with transitions that have a trigger message event and connect (directly or indirectly) to the exit point\r\n" +
+		"\r\n" +
+		"let exitTransitions : Collection(Transition) = \r\n" +
+		"\r\n" +
+		"self.incomingTransitions->union(\r\n" +
+		"   self.incomingTransitions->closure(t | \r\n" +
+		"\tif t.source.oclIsKindOf(ExitPoint)\r\n" +
+		"\tthen t.source.incomingTransitions\r\n" +
+		"\telse Sequence{}\r\n" +
+		"\tendif\r\n" +
+		"   )\r\n" +
+		")\r\n" +
+		"\r\n" +
+		"in exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 <> t2 and (not t1.triggerMessageEvent.oclIsUndefined()) and (not t2.triggerMessageEvent.oclIsUndefined())) implies (t1.statechart = t2.statechart))";
+
+	/**
+	 * Validates the AtMostOneConnectingRegionWithTriggerMessageEvents constraint of '<em>Exit Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateExitPoint_AtMostOneConnectingRegionWithTriggerMessageEvents(ExitPoint exitPoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.EXIT_POINT,
+				 exitPoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AtMostOneConnectingRegionWithTriggerMessageEvents",
+				 EXIT_POINT__AT_MOST_ONE_CONNECTING_REGION_WITH_TRIGGER_MESSAGE_EVENTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

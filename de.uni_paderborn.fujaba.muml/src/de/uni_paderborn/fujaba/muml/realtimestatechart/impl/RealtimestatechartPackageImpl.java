@@ -1780,7 +1780,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (exitPointEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition"
+			 "constraints", "AtLeastOneIncomingTransitionPerRegion OneOutgoingTransition AtMostOneConnectingRegionWithSynchronizations AtMostOneConnectingRegionWithTriggerMessageEvents"
 		   });		
 	}
 
@@ -1953,7 +1953,9 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "AtLeastOneIncomingTransitionPerRegion", "-- all regions of the parent state must have at least one vertex that connects to the ExitPoint\r\n(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |\r\n\tself.incomingTransitions->exists(t |\r\n\t\t(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)\r\n\t\tor\r\n\t\t(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion = r)\r\n\t)\r\n)",
-			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1"
+			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1",
+			 "AtMostOneConnectingRegionWithSynchronizations", "-- There must be at most one region with synchronizing transitions that connect (directly or indirectly) to the exit point\r\n\r\nlet exitTransitions : Collection(Transition) = \r\n\r\nself.incomingTransitions->union(\r\n   self.incomingTransitions->closure(t | \r\n\tif t.source.oclIsKindOf(ExitPoint)\r\n\tthen t.source.incomingTransitions\r\n\telse Sequence{}\r\n\tendif\r\n   )\r\n)\r\n\r\nin exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 <> t2 and (not t1.synchronization.oclIsUndefined()) and (not t2.synchronization.oclIsUndefined())) implies (t1.statechart = t2.statechart))",
+			 "AtMostOneConnectingRegionWithTriggerMessageEvents", "-- There must be at most one region with transitions that have a trigger message event and connect (directly or indirectly) to the exit point\r\n\r\nlet exitTransitions : Collection(Transition) = \r\n\r\nself.incomingTransitions->union(\r\n   self.incomingTransitions->closure(t | \r\n\tif t.source.oclIsKindOf(ExitPoint)\r\n\tthen t.source.incomingTransitions\r\n\telse Sequence{}\r\n\tendif\r\n   )\r\n)\r\n\r\nin exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 <> t2 and (not t1.triggerMessageEvent.oclIsUndefined()) and (not t2.triggerMessageEvent.oclIsUndefined())) implies (t1.statechart = t2.statechart))"
 		   });
 	}
 
