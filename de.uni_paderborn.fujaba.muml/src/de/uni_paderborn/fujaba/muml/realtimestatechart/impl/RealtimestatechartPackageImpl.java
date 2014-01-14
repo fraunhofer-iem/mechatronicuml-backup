@@ -1853,7 +1853,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "StateConnectionPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t\tand self.synchronization.oclIsUndefined()\r\n\t)",
 			 "StateConnectionPointOutgoingTransitionsMustBeUrgent", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.urgent\r\n\t)",
 			 "NoCombinationOfRelativeAndAbsoluteDeadlines", "(not self.relativeDeadline.oclIsUndefined()) implies (self.absoluteDeadlines->isEmpty())",
-			 "NoCombinationOfReceivedSynchronizationAndTriggerMessage", "-- A transition must not specify a received synchronization and a trigger message at the same time\r\n((not self.synchronization.oclIsUndefined()) and (self.synchronization.kind = SynchronizationKind.RECEIVE))\r\nimplies\r\nself.triggerMessageEvent.oclIsUndefined()"
+			 "NoCombinationOfReceivedSynchronizationAndTriggerMessage", "-- A transition must not specify a received synchronization and a trigger message at the same time\r\n((not self.synchronization.oclIsUndefined()) and (self.synchronization.kind = SynchronizationKind::RECEIVE))\r\nimplies\r\nself.triggerMessageEvent.oclIsUndefined()"
 		   });								
 		addAnnotation
 		  (getTransition_TriggerMessageEvent(), 

@@ -812,7 +812,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String TRANSITION__NO_COMBINATION_OF_RECEIVED_SYNCHRONIZATION_AND_TRIGGER_MESSAGE__EEXPRESSION = "-- A transition must not specify a received synchronization and a trigger message at the same time\r\n" +
-		"((not self.synchronization.oclIsUndefined()) and (self.synchronization.kind = SynchronizationKind.RECEIVE))\r\n" +
+		"((not self.synchronization.oclIsUndefined()) and (self.synchronization.kind = SynchronizationKind::RECEIVE))\r\n" +
 		"implies\r\n" +
 		"self.triggerMessageEvent.oclIsUndefined()";
 
