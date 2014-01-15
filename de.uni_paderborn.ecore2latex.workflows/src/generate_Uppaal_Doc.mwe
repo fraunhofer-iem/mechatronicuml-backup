@@ -8,9 +8,14 @@
 	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" >
 		<platformUri value=".."/>
 		
-		<uriMap from="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore" to="platform:/resource/de.uni_paderborn.uppaal.doc.generator/model/Ecore.ecore"/>
-		<uriMap from="http://www.eclipse.org/emf/2002/Ecore" to="platform:/resource/de.uni_paderborn.uppaal.doc.generator/model/Ecore.ecore"/>
-
+		<uriMap 
+			from="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"  
+			to="platform:/resource/de.uni_paderborn.ecore2latex/model/Ecore.ecore"
+		/>
+		<uriMap 
+			from="http://www.eclipse.org/emf/2002/Ecore"  
+			to="platform:/resource/de.uni_paderborn.ecore2latex/model/Ecore.ecore"
+		/>
 	</bean>
 
 	<!-- instantiate metamodel -->
