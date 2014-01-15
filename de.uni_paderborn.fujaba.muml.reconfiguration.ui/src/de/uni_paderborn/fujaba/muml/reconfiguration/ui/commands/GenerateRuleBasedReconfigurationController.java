@@ -13,6 +13,9 @@ import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gef.EditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.CanonicalEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramGraphicalViewer;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpart.EditPartService;
 import org.eclipse.gmf.runtime.notation.View;
@@ -38,6 +41,8 @@ public class GenerateRuleBasedReconfigurationController extends AbstractHandler 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
+		ReconfigurableStructuredComponentEditPart editPart = null;
+
 		// get and process current selection
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 
@@ -54,7 +59,7 @@ public class GenerateRuleBasedReconfigurationController extends AbstractHandler 
 			// contains an EditPart
 			if (currentObject instanceof ReconfigurableStructuredComponentEditPart) {
 
-				ReconfigurableStructuredComponentEditPart editPart = (ReconfigurableStructuredComponentEditPart) currentObject;
+				editPart = (ReconfigurableStructuredComponentEditPart) currentObject;
 
 				sc = (ReconfigurableStructuredComponent) ((View) editPart
 						.getModel()).getElement();
@@ -85,6 +90,17 @@ public class GenerateRuleBasedReconfigurationController extends AbstractHandler 
 					.execute(
 							new GenerateRuleBasedReconfigurationControllerTransformationCommand(
 									sc));
+
+			// canonical edit policy has to be triggered "manually" because
+			// nothing is changed in modelelementcategory. However, canonical
+			// edit policy of modelelementcategory handels the view creation of
+			// all edges of the diagram and we added such links to the model.
+			if (editPart != null) {
+				EditPart parent = editPart.getParent();
+				CanonicalEditPolicy can = (CanonicalEditPolicy) parent
+						.getEditPolicy("CustomCanonical");
+				can.refresh();
+			}
 
 		}
 
@@ -128,21 +144,7 @@ public class GenerateRuleBasedReconfigurationController extends AbstractHandler 
 			System.out.println(result.getMessage());
 		}
 
-		// XXX workaround to force ModelElementCategory to refresh().
-		// ModelElementCategoryCanonicalEditPolicy displays all edges contained
-		// in diagram. Since newly created edges are not contained in
-		// ModelElementCategory (They are contained in
-		// ReconfigurableStructuredComponent), the editPart does not refresh
-		// (fire CanonicalEditPolicy). Therefore, we force a change in
-		// ModelElementCategory by adding and directly removing a dummy
-		// StaticAtomicComponent.
-		
-		StaticAtomicComponent dummy =ComponentFactory.eINSTANCE.createStaticAtomicComponent();
-		category.getModelElements().add(dummy);
-		category.getModelElements().remove(dummy);
-		
 	}
-
 
 	/**
 	 * Helper class to edit the resource/model.
