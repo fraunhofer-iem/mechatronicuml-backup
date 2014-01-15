@@ -1312,7 +1312,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement #//realtimestatechart/PrioritizedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines NoCombinationOfReceivedSynchronizationAndTriggerMessage"/>
+        <details key="constraints" value="LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines NoCombinationOfReceivedSynchronizationAndTriggerMessage TransitionMustBeContainedByCorrectStatechart"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A transition connects different vertices. If the vertex is a state a self-transition is also possible."/>
@@ -1328,6 +1328,7 @@
         <details key="StateConnectionPointOutgoingTransitionsMustBeUrgent" value="(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.urgent&#xD;&#xA;&#x9;)"/>
         <details key="NoCombinationOfRelativeAndAbsoluteDeadlines" value="(not self.relativeDeadline.oclIsUndefined()) implies (self.absoluteDeadlines->isEmpty())"/>
         <details key="NoCombinationOfReceivedSynchronizationAndTriggerMessage" value="-- A transition must not specify a received synchronization and a trigger message at the same time&#xD;&#xA;((not self.synchronization.oclIsUndefined()) and (self.synchronization.kind = SynchronizationKind::RECEIVE))&#xD;&#xA;implies&#xD;&#xA;self.triggerMessageEvent.oclIsUndefined()"/>
+        <details key="TransitionMustBeContainedByCorrectStatechart" value="-- A transition must be contained by its associated statechart&#xD;&#xA;self.statechart.transitions->includes(self)"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="synchronization" eType="#//realtimestatechart/Synchronization"
           containment="true">
@@ -1348,9 +1349,12 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//realtimestatechart/RealtimeStatechart"
-          eOpposite="#//realtimestatechart/RealtimeStatechart/transitions">
+          changeable="false" volatile="true" transient="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The realtime statechart this transition belongs to."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if(self.source.oclIsKindOf(State))&#xD;&#xA;then self.source.oclAsType(State).parentStatechart&#xD;&#xA;else&#xD;&#xA;   if(self.target.oclIsKindOf(State))&#xD;&#xA;   then self.target.oclAsType(State).parentStatechart&#xD;&#xA;   else&#xD;&#xA;      if(self.source.oclIsKindOf(ExitPoint))&#xD;&#xA;      then self.source.oclAsType(ExitPoint).state.parentStatechart&#xD;&#xA;      else&#xD;&#xA;         if(self.target.oclIsKindOf(EntryPoint))&#xD;&#xA;&#x9;  then self.target.oclAsType(EntryPoint).state.parentStatechart&#xD;&#xA;&#x9;  else null -- this transition is illegal according to our syntactic constraints, no enclosing statechart can be assigned&#xD;&#xA;&#x9;  endif&#xD;&#xA;      endif&#xD;&#xA;   endif&#xD;&#xA;endif&#xD;&#xA;"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="clockResets" upperBound="-1"
@@ -1612,7 +1616,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
-          eType="#//realtimestatechart/Transition" containment="true" eOpposite="#//realtimestatechart/Transition/statechart">
+          eType="#//realtimestatechart/Transition" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The transitions of the realtime statechart."/>
         </eAnnotations>

@@ -371,7 +371,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 */
 	public EList<Transition> getTransitions() {
 		if (transitions == null) {
-			transitions = new EObjectContainmentWithInverseEList<Transition>(Transition.class, this, RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS, RealtimestatechartPackage.TRANSITION__STATECHART);
+			transitions = new EObjectContainmentEList<Transition>(Transition.class, this, RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS);
 		}
 		return transitions;
 	}
@@ -539,8 +539,6 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParentRegion((Region)otherEnd, msgs);
-			case RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTransitions()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__STATES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStates()).basicAdd(otherEnd, msgs);
 			case RealtimestatechartPackage.REALTIME_STATECHART__CLOCKS:

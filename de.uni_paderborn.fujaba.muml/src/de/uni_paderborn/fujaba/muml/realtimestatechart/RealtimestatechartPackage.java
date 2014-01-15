@@ -1613,7 +1613,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	int TRANSITION__SOURCE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Statechart</b></em>' container reference.
+	 * The feature id for the '<em><b>Statechart</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5154,10 +5154,10 @@ public interface RealtimestatechartPackage extends EPackage {
 	EReference getTransition_Source();
 
 	/**
-	 * Returns the meta object for the container reference '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Transition#getStatechart <em>Statechart</em>}'.
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Transition#getStatechart <em>Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Statechart</em>'.
+	 * @return the meta object for the reference '<em>Statechart</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Transition#getStatechart()
 	 * @see #getTransition()
 	 * @generated
@@ -6204,7 +6204,7 @@ public interface RealtimestatechartPackage extends EPackage {
 		EReference TRANSITION__SOURCE = eINSTANCE.getTransition_Source();
 
 		/**
-		 * The meta object literal for the '<em><b>Statechart</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Statechart</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

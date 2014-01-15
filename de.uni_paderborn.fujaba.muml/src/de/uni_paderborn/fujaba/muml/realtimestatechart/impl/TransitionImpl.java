@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
@@ -147,6 +146,16 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 * @ordered
 	 */
 	protected Vertex source;
+
+	/**
+	 * The cached setting delegate for the '{@link #getStatechart() <em>Statechart</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStatechart()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate STATECHART__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RealtimestatechartPackage.Literals.TRANSITION__STATECHART).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getClockResets() <em>Clock Resets</em>}' reference list.
@@ -528,8 +537,7 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 * @generated
 	 */
 	public RealtimeStatechart getStatechart() {
-		if (eContainerFeatureID() != RealtimestatechartPackage.TRANSITION__STATECHART) return null;
-		return (RealtimeStatechart)eContainer();
+		return (RealtimeStatechart)STATECHART__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -537,30 +545,8 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatechart(RealtimeStatechart newStatechart, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newStatechart, RealtimestatechartPackage.TRANSITION__STATECHART, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStatechart(RealtimeStatechart newStatechart) {
-		if (newStatechart != eInternalContainer() || (eContainerFeatureID() != RealtimestatechartPackage.TRANSITION__STATECHART && newStatechart != null)) {
-			if (EcoreUtil.isAncestor(this, newStatechart))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newStatechart != null)
-				msgs = ((InternalEObject)newStatechart).eInverseAdd(this, RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS, RealtimeStatechart.class, msgs);
-			msgs = basicSetStatechart(newStatechart, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RealtimestatechartPackage.TRANSITION__STATECHART, newStatechart, newStatechart));
+	public RealtimeStatechart basicGetStatechart() {
+		return (RealtimeStatechart)STATECHART__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
 	}
 
 	/**
@@ -908,10 +894,6 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				if (source != null)
 					msgs = ((InternalEObject)source).eInverseRemove(this, RealtimestatechartPackage.VERTEX__OUTGOING_TRANSITIONS, Vertex.class, msgs);
 				return basicSetSource((Vertex)otherEnd, msgs);
-			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetStatechart((RealtimeStatechart)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -930,8 +912,6 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				return basicSetTarget(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__SOURCE:
 				return basicSetSource(null, msgs);
-			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				return basicSetStatechart(null, msgs);
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 				return ((InternalEList<?>)getClockConstraints()).basicRemove(otherEnd, msgs);
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
@@ -946,20 +926,6 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				return basicSetAction(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				return eInternalContainer().eInverseRemove(this, RealtimestatechartPackage.REALTIME_STATECHART__TRANSITIONS, RealtimeStatechart.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -983,7 +949,8 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				if (resolve) return getSource();
 				return basicGetSource();
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				return getStatechart();
+				if (resolve) return getStatechart();
+				return basicGetStatechart();
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				return getClockResets();
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:
@@ -1039,9 +1006,6 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 				return;
 			case RealtimestatechartPackage.TRANSITION__SOURCE:
 				setSource((Vertex)newValue);
-				return;
-			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				setStatechart((RealtimeStatechart)newValue);
 				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				getClockResets().clear();
@@ -1101,9 +1065,6 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 			case RealtimestatechartPackage.TRANSITION__SOURCE:
 				setSource((Vertex)null);
 				return;
-			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				setStatechart((RealtimeStatechart)null);
-				return;
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				getClockResets().clear();
 				return;
@@ -1154,7 +1115,7 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 			case RealtimestatechartPackage.TRANSITION__SOURCE:
 				return source != null;
 			case RealtimestatechartPackage.TRANSITION__STATECHART:
-				return getStatechart() != null;
+				return STATECHART__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case RealtimestatechartPackage.TRANSITION__CLOCK_RESETS:
 				return clockResets != null && !clockResets.isEmpty();
 			case RealtimestatechartPackage.TRANSITION__TRIGGER_MESSAGE_EVENT:

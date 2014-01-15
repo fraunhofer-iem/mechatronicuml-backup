@@ -524,6 +524,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateTransition_StateConnectionPointOutgoingTransitionsMustBeUrgent(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_NoCombinationOfRelativeAndAbsoluteDeadlines(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_NoCombinationOfReceivedSynchronizationAndTriggerMessage(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_TransitionMustBeContainedByCorrectStatechart(transition, diagnostics, context);
 		return result;
 	}
 
@@ -832,6 +833,36 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "NoCombinationOfReceivedSynchronizationAndTriggerMessage",
 				 TRANSITION__NO_COMBINATION_OF_RECEIVED_SYNCHRONIZATION_AND_TRIGGER_MESSAGE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the TransitionMustBeContainedByCorrectStatechart constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__TRANSITION_MUST_BE_CONTAINED_BY_CORRECT_STATECHART__EEXPRESSION = "-- A transition must be contained by its associated statechart\r\n" +
+		"self.statechart.transitions->includes(self)";
+
+	/**
+	 * Validates the TransitionMustBeContainedByCorrectStatechart constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_TransitionMustBeContainedByCorrectStatechart(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "TransitionMustBeContainedByCorrectStatechart",
+				 TRANSITION__TRANSITION_MUST_BE_CONTAINED_BY_CORRECT_STATECHART__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

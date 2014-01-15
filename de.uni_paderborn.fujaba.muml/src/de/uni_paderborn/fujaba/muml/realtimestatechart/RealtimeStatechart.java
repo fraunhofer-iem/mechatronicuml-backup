@@ -76,7 +76,6 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	/**
 	 * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Transition}.
-	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.Transition#getStatechart <em>Statechart</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -84,8 +83,7 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Transitions</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_Transitions()
-	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.Transition#getStatechart
-	 * @model opposite="statechart" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Transition> getTransitions();
