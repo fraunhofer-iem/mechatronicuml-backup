@@ -36,9 +36,9 @@ public class ReconfigurationPortAssemblyConnectorEditPart extends ConnectionNode
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-//		installEditPolicy(
-//				EditPolicyRoles.SEMANTIC_ROLE,
-//				new de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.DelegationConnectorItemSemanticEditPolicy());
+		installEditPolicy(
+				EditPolicyRoles.SEMANTIC_ROLE,
+				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ReconfigurationPortAssemblyConnectorItemSemanticEditPolicy());
 	}
 
 	/**
