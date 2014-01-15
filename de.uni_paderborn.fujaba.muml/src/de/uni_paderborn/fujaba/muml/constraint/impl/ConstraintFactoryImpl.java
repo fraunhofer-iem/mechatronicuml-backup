@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint.impl;
 
+import de.uni_paderborn.fujaba.muml.constraint.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -34,7 +35,7 @@ public class ConstraintFactoryImpl extends EFactoryImpl implements ConstraintFac
 	 */
 	public static ConstraintFactory init() {
 		try {
-			ConstraintFactory theConstraintFactory = (ConstraintFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/constraint/0.4.0"); 
+			ConstraintFactory theConstraintFactory = (ConstraintFactory)EPackage.Registry.INSTANCE.getEFactory(ConstraintPackage.eNS_URI);
 			if (theConstraintFactory != null) {
 				return theConstraintFactory;
 			}
