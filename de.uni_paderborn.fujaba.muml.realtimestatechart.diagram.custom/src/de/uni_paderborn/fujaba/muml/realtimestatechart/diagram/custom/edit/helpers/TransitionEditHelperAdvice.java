@@ -62,7 +62,7 @@ public class TransitionEditHelperAdvice extends AbstractEditHelperAdvice {
 
 				RealtimeStatechart statechart = getStatechart(transition.getSource(), transition.getTarget());
 				if (statechart != null && statechart != transition.getStatechart()) {
-					transition.setStatechart(statechart);
+					statechart.getTransitions().add(transition);
 				}
 				
 				return CommandResult.newOKCommandResult(transition);
@@ -84,7 +84,7 @@ public class TransitionEditHelperAdvice extends AbstractEditHelperAdvice {
 
 				RealtimeStatechart statechart = getStatechart(transition.getSource(), transition.getTarget());
 				if (statechart != null && statechart != transition.getStatechart()) {
-					transition.setStatechart(statechart);
+					statechart.getTransitions().add(transition);
 				}
 				
 				return CommandResult.newOKCommandResult(transition);
