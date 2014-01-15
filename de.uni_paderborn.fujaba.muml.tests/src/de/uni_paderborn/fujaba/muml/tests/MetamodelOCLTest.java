@@ -400,8 +400,7 @@ public class MetamodelOCLTest extends TraverseTest {
 					resultText = result.toString();
 				}
 				throw new SemanticException(
-						"Result type does not evaluate to boolean:"
-								+ resultText);
+						"Result type evaluates to " + resultText + " instead of boolean");
 			}
 		}
 
