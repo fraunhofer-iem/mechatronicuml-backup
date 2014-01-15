@@ -17,6 +17,7 @@ import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
@@ -212,19 +213,10 @@ public class ExecutorEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		// if (editPart instanceof
-		// de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentCompartmentEditPart)
-		// {
-		// return getPrimaryShape().getFigureChildren();
-		// }
-		// if (editPart instanceof
-		// de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.RuleBasedReconfigurationControllerEditPart)
-		// {
-		// return getPrimaryShape().getFigureChildren();
-		// }
-		// if (editPart instanceof IBorderItemEditPart) {
-		// return getBorderedFigure().getBorderItemContainer();
-		// }
+		
+		 if (editPart instanceof IBorderItemEditPart) {
+		 return getBorderedFigure().getBorderItemContainer();
+		 }
 		return getContentPane();
 	}
 
