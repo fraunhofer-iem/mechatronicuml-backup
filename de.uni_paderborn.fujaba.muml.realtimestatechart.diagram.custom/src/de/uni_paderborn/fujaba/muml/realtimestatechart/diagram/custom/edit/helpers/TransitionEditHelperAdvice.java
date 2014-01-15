@@ -19,34 +19,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Vertex;
 
 public class TransitionEditHelperAdvice extends AbstractEditHelperAdvice {
-	
-	public static RealtimeStatechart getStatechart(Vertex source, Vertex target) {
-		// Source
-		if (source instanceof ExitPoint) {
-			source = ((ExitPoint) source).getState(); // getState() could return null, but the next instanceof will take care of that.
-		}
-		if (source instanceof State) { // Checking for instanceof also does the null check
-			return ((State)source).getParentStatechart();
-		}
-		
-		// Target
-		if (target instanceof EntryPoint) {
-			target = ((EntryPoint) target).getState(); // getState() could return null, but the next instanceof will take care of that.
-		}
-		if (target instanceof State) { // Checking for instanceof also does the null check
-			return ((State)target).getParentStatechart();
-		}
-		
-		return null;
-	}
-	
-	
-	//
-	// @Override
-	// protected ICommand getBeforeReorientRelationshipCommand(
-	// ReorientRelationshipRequest request) {
-	// return super.getBeforeReorientRelationshipCommand(request);
-	// }
 
 	@Override
 	protected ICommand getAfterReorientRelationshipCommand(
@@ -59,14 +31,11 @@ public class TransitionEditHelperAdvice extends AbstractEditHelperAdvice {
 					throws ExecutionException {
 
 				Transition transition = (Transition) request.getRelationship();
-
-				RealtimeStatechart statechart = getStatechart(transition.getSource(), transition.getTarget());
-				if (statechart != null && statechart != transition.getStatechart()) {
-					statechart.getTransitions().add(transition);
-				}
+				configure(transition);
 				
 				return CommandResult.newOKCommandResult(transition);
 			}
+
 
 		};
 	}
@@ -81,16 +50,21 @@ public class TransitionEditHelperAdvice extends AbstractEditHelperAdvice {
 					throws ExecutionException {
 
 				Transition transition = (Transition) request.getElementToConfigure();
+				configure(transition);
 
-				RealtimeStatechart statechart = getStatechart(transition.getSource(), transition.getTarget());
-				if (statechart != null && statechart != transition.getStatechart()) {
-					statechart.getTransitions().add(transition);
-				}
-				
 				return CommandResult.newOKCommandResult(transition);
 			}
 
 		};
 	}
 	
+	private void configure(Transition transition) {
+
+		RealtimeStatechart statechart = transition.getStatechart();
+		if (statechart != null && transition.eContainer() != statechart) {
+			transition.eContainer().eUnset(transition.eContainmentFeature());
+			statechart.getTransitions().add(transition);
+		}
+				
+	}
 }
