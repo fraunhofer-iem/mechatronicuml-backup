@@ -62,7 +62,6 @@ public class TransitionEditHelperAdvice extends AbstractEditHelperAdvice {
 
 		RealtimeStatechart statechart = transition.getStatechart();
 		if (statechart != null && transition.eContainer() != statechart) {
-			transition.eContainer().eUnset(transition.eContainmentFeature());
 			statechart.getTransitions().add(transition);
 		}
 				
