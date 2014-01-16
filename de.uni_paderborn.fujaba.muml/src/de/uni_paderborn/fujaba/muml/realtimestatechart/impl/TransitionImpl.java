@@ -25,6 +25,8 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.Expression;
 import org.storydriven.core.impl.ExtendableElementImpl;
 
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
+import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
@@ -310,10 +312,13 @@ public class TransitionImpl extends ExtendableElementImpl implements Transition 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected TransitionImpl() {
 		super();
+		DerivedAttributeAdapter derivedAdapter = new DerivedAttributeAdapter(this, RealtimestatechartPackage.Literals.TRANSITION__STATECHART);
+		derivedAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__SOURCE);
+		derivedAdapter.addLocalDependency(RealtimestatechartPackage.Literals.TRANSITION__TARGET);
 	}
 
 	/**
