@@ -137,7 +137,7 @@ public class MessageBufferImpl extends CommentableElementImpl implements Message
 	 */
 	public DiscreteInteractionEndpoint getDiscreteInteractionEndpoint() {
 		if (eContainerFeatureID() != ConnectorPackage.MESSAGE_BUFFER__DISCRETE_INTERACTION_ENDPOINT) return null;
-		return (DiscreteInteractionEndpoint)eInternalContainer();
+		return (DiscreteInteractionEndpoint)eContainer();
 	}
 
 	/**

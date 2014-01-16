@@ -1854,7 +1854,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "StateConnectionPointOutgoingTransitionsMustBeUrgent", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.urgent\r\n\t)",
 			 "NoCombinationOfRelativeAndAbsoluteDeadlines", "(not self.relativeDeadline.oclIsUndefined()) implies (self.absoluteDeadlines->isEmpty())",
 			 "NoCombinationOfReceivedSynchronizationAndTriggerMessage", "-- A transition must not specify a received synchronization and a trigger message at the same time\r\n((not self.synchronization.oclIsUndefined()) and (self.synchronization.kind = SynchronizationKind::RECEIVE))\r\nimplies\r\nself.triggerMessageEvent.oclIsUndefined()",
-			 "TransitionMustBeContainedByCorrectStatechart", "-- A transition must be contained by its associated statechart\r\nself.statechart.transitions->includes(self)"
+			 "TransitionMustBeContainedByCorrectStatechart", "-- A transition must be contained by its associated statechart\r\n(not self.statechart.oclIsUndefined()) implies (self.statechart.transitions->includes(self))"
 		   });						
 		addAnnotation
 		  (getTransition_Statechart(), 

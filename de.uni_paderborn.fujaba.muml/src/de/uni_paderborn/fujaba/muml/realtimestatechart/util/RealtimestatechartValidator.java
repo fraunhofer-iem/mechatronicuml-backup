@@ -13,9 +13,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
@@ -847,7 +845,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String TRANSITION__TRANSITION_MUST_BE_CONTAINED_BY_CORRECT_STATECHART__EEXPRESSION = "-- A transition must be contained by its associated statechart\r\n" +
-		"self.statechart.transitions->includes(self)";
+		"(not self.statechart.oclIsUndefined()) implies (self.statechart.transitions->includes(self))";
 
 	/**
 	 * Validates the TransitionMustBeContainedByCorrectStatechart constraint of '<em>Transition</em>'.

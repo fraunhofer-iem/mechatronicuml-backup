@@ -57,7 +57,7 @@ public abstract class StateConnectionPointImpl extends VertexImpl implements Sta
 	 */
 	public State getState() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.STATE_CONNECTION_POINT__STATE) return null;
-		return (State)eInternalContainer();
+		return (State)eContainer();
 	}
 
 	/**
