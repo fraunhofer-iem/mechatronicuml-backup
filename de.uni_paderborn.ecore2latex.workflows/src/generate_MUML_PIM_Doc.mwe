@@ -67,21 +67,10 @@
 		<metaModel idRef="mm_emf"/>
 		<globalVarDef name="filename" value="'A_TechDoc_Contents.tex'"/>
 		<globalVarDef name="figurepath" value="'figures/A_technical-reference/packages'"/>
-		<expand value="template::Generate::Generate FOR {modelinstance,muml,actionlanguage,sdmcore,storydiagrams}"/> 
-		<!--
+		<expand value="template::Generate::Generate FOR {modelinstance,muml,actionlanguage,sdmcore,storydiagrams}"/> 	
 		<outlet path="../MUML Syntax and Semantics/" overwrite="true" />
 		<outlet name='PACKAGEFIGURES' path='../MUML Syntax and Semantics/figures/A_technical-reference/packages/' overwrite='false'/>
-		-->
-		<outlet 
-			path="D:/muml/muml_paper/trunk/MUML_Design/MUML Syntax and Semantics"  
-			overwrite="true"
-		/>
-		<outlet 
-			name='PACKAGEFIGURES' 
-			path="D:/muml/muml_paper/trunk/MUML_Design/MUML Syntax and Semantics/figures/A_technical-reference/packages" 
-			overwrite='false'
-		/>
-	</component>
+	</component>		
 </workflow>
 
 
