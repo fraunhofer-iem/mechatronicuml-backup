@@ -13,7 +13,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
@@ -911,9 +913,9 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_PARAMETER_BINDING__EEXPRESSION = "-- for a raise message, all parameter needs a binding\n" +
+	protected static final String ASYNCHRONOUS_MESSAGE_EVENT__RAISE_MESSAGE_EVENT_IMPLIES_PARAMETER_BINDING__EEXPRESSION = "-- A raise message event must bind a value to every parameter\n" +
 		"let messageType : msgtype::MessageType = self.message.instanceOf in\n" +
-		"(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->forAll(p | self.message.parameterBinding.parameter->includes(p))))\n" +
+		"(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))\n" +
 		"-- author: adann";
 
 	/**

@@ -1481,7 +1481,7 @@
         <details key="documentation" value="An AsynchronousMessageEvent is a TransitionEvent that corresponds to &#xD;&#xA;receiving or sending a message. They are used to model asynchronous &#xD;&#xA;communication between realtime statecharts. A trigger events specifies&#xD;&#xA;that the corresponding message has to be received for the transition to be&#xD;&#xA;enabled, a raised event specifies that the corresponding message will be &#xD;&#xA;sent upon execution of the transition. "/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="RaiseMessageEventImpliesParameterBinding" value="-- for a raise message, all parameter needs a binding&#xA;let messageType : msgtype::MessageType = self.message.instanceOf in&#xA;(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->forAll(p | self.message.parameterBinding.parameter->includes(p))))&#xA;-- author: adann"/>
+        <details key="RaiseMessageEventImpliesParameterBinding" value="-- A raise message event must bind a value to every parameter&#xA;let messageType : msgtype::MessageType = self.message.instanceOf in&#xA;(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))&#xA;-- author: adann"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="RaiseMessageEventImpliesParameterBinding"/>
