@@ -6,6 +6,7 @@ String implClassSuffix() : GLOBALVAR ImplClassSuffix;
 
 «DEFINE Generate FOR List[EPackage]-»
 	«FILE (GLOBALVAR filename).toString()»
+		\newcommand{\todoo}[1]{\todo[inline, color=red!40]{ecore2latex: #1}}
 		«FOREACH this.typeSelect(EPackage) AS pack»
 			«EXPAND PackageNavigation FOR pack-»
 		«ENDFOREACH-»
@@ -238,9 +239,7 @@ String implClassSuffix() : GLOBALVAR ImplClassSuffix;
 «ENDDEFINE» 
 
 «DEFINE Cardinality FOR ecore::ETypedElement-»
-	«IF this.lowerBound.toInt()!=0 || this.upperBound.toInt()!=1-»
 \symbol{"5B}«this.lowerBound.toInt()»..«(upperBound.toInt() < 0 ? "$*$" : upperBound.toInt())-»\symbol{"5D}
-	«ENDIF-»
 «ENDDEFINE»
 
 «DEFINE AnnotationDoc FOR ecore::EAnnotation-»
