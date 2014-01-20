@@ -23,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode#isForEach <em>For Each</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,5 +57,32 @@ public interface ComponentStoryNode extends ActivityNode {
 	 * @generated
 	 */
 	void setComponentStoryPattern(ComponentStoryPattern value);
+
+	/**
+	 * Returns the value of the '<em><b>For Each</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>For Each</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>For Each</em>' attribute.
+	 * @see #setForEach(boolean)
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getComponentStoryNode_ForEach()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isForEach();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode#isForEach <em>For Each</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>For Each</em>' attribute.
+	 * @see #isForEach()
+	 * @generated
+	 */
+	void setForEach(boolean value);
 
 } // ComponentStoryNode

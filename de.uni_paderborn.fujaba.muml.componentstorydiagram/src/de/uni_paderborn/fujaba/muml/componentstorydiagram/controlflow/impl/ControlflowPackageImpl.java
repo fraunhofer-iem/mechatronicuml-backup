@@ -181,6 +181,15 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponentStoryNode_ForEach() {
+		return (EAttribute)componentStoryNodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getControllerExchangeNode() {
 		return controllerExchangeNodeEClass;
 	}
@@ -263,6 +272,7 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 
 		componentStoryNodeEClass = createEClass(COMPONENT_STORY_NODE);
 		createEReference(componentStoryNodeEClass, COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN);
+		createEAttribute(componentStoryNodeEClass, COMPONENT_STORY_NODE__FOR_EACH);
 
 		controllerExchangeNodeEClass = createEClass(CONTROLLER_EXCHANGE_NODE);
 		createEReference(controllerExchangeNodeEClass, CONTROLLER_EXCHANGE_NODE__DEADLINE);
@@ -318,6 +328,7 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 
 		initEClass(componentStoryNodeEClass, ComponentStoryNode.class, "ComponentStoryNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentStoryNode_ComponentStoryPattern(), theComponentstorypatternPackage.getComponentStoryPattern(), null, "componentStoryPattern", null, 1, 1, ComponentStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentStoryNode_ForEach(), ecorePackage.getEBoolean(), "forEach", "false", 0, 1, ComponentStoryNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controllerExchangeNodeEClass, ControllerExchangeNode.class, "ControllerExchangeNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControllerExchangeNode_Deadline(), theRealtimestatechartPackage.getRelativeDeadline(), null, "deadline", null, 0, 1, ControllerExchangeNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -348,7 +359,7 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -356,13 +367,13 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });						
+		   });	
 		addAnnotation
 		  (controllerExchangeNodeEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "HasOnlyOneCreateAndOneDestroyPartVariable CorrectNumberOfFadingFunctions NoDeadlineIfStrategyIsATOMIC_SWITCHING"
-		   });		
+		   });
 	}
 
 	/**
@@ -372,7 +383,7 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";						
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
 		addAnnotation
 		  (controllerExchangeNodeEClass, 
 		   source, 
@@ -380,7 +391,7 @@ public class ControlflowPackageImpl extends EPackageImpl implements ControlflowP
 			 "HasOnlyOneCreateAndOneDestroyPartVariable", "let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables->asOrderedSet() in\r\npartVariables->size() = 2 and\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY else\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE else\r\nfalse endif endif\r\n",
 			 "CorrectNumberOfFadingFunctions", "if self.controllerExchangeStrategy <> ControllerExchangeStrategy::FADING_FUNCTION then\r\nself.fadingFunctions->size()=0\r\nelse\r\n\tif self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n\t\t--self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclAsType(muml::component::StructuredComponent).ports->select(i : muml::component::Port | i.oclIsKindOf(muml::component::ContinuousPort))->select(i : muml::component::ContinuousPort | i.outPort = true)->size() = self.fadingFunctions->size()\r\n\t\tself.fadingFunctions->size()>0\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nendif",
 			 "NoDeadlineIfStrategyIsATOMIC_SWITCHING", "if self.controllerExchangeStrategy = ControllerExchangeStrategy::ATOMIC_SWITCHING then\r\nself.deadline.oclIsUndefined()\r\nelse\r\nnot self.deadline.oclIsUndefined()\r\nendif"
-		   });			
+		   });
 	}
 
 } //ControlflowPackageImpl

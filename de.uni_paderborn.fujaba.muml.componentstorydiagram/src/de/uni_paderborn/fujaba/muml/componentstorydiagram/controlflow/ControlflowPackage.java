@@ -247,13 +247,22 @@ public interface ControlflowPackage extends EPackage {
 	int COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>For Each</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_STORY_NODE__FOR_EACH = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Component Story Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_STORY_NODE_FEATURE_COUNT = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 1;
+	int COMPONENT_STORY_NODE_FEATURE_COUNT = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControllerExchangeNodeImpl <em>Controller Exchange Node</em>}' class.
@@ -436,6 +445,17 @@ public interface ControlflowPackage extends EPackage {
 	EReference getComponentStoryNode_ComponentStoryPattern();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode#isForEach <em>For Each</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>For Each</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode#isForEach()
+	 * @see #getComponentStoryNode()
+	 * @generated
+	 */
+	EAttribute getComponentStoryNode_ForEach();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode <em>Controller Exchange Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -556,6 +576,14 @@ public interface ControlflowPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN = eINSTANCE.getComponentStoryNode_ComponentStoryPattern();
+
+		/**
+		 * The meta object literal for the '<em><b>For Each</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_STORY_NODE__FOR_EACH = eINSTANCE.getComponentStoryNode_ForEach();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControllerExchangeNodeImpl <em>Controller Exchange Node</em>}' class.

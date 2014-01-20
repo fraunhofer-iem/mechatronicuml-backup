@@ -21,6 +21,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.storydiagrams.activities.provider.ActivityNodeItemProvider;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
@@ -63,6 +65,7 @@ public class ComponentStoryNodeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addComponentStoryPatternPropertyDescriptor(object);
+			addForEachPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +88,28 @@ public class ComponentStoryNodeItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the For Each feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addForEachPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentStoryNode_forEach_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentStoryNode_forEach_feature", "_UI_ComponentStoryNode_type"),
+				 ControlflowPackage.Literals.COMPONENT_STORY_NODE__FOR_EACH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -154,6 +179,12 @@ public class ComponentStoryNodeItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(ComponentStoryNode.class)) {
+			case ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

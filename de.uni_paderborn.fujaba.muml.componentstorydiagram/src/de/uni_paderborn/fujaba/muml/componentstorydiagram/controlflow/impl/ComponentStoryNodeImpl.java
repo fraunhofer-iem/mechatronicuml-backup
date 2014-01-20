@@ -25,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.Controlflo
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ComponentStoryNodeImpl#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ComponentStoryNodeImpl#isForEach <em>For Each</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +41,25 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	 * @ordered
 	 */
 	protected ComponentStoryPattern componentStoryPattern;
+
+	/**
+	 * The default value of the '{@link #isForEach() <em>For Each</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isForEach()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean FOR_EACH_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isForEach() <em>For Each</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isForEach()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean forEach = FOR_EACH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +128,27 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isForEach() {
+		return forEach;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setForEach(boolean newForEach) {
+		boolean oldForEach = forEach;
+		forEach = newForEach;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH, oldForEach, forEach));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -127,6 +168,8 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 		switch (featureID) {
 			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
 				return getComponentStoryPattern();
+			case ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH:
+				return isForEach();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -141,6 +184,9 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 		switch (featureID) {
 			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
 				setComponentStoryPattern((ComponentStoryPattern)newValue);
+				return;
+			case ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH:
+				setForEach((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,6 +203,9 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
 				setComponentStoryPattern((ComponentStoryPattern)null);
 				return;
+			case ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH:
+				setForEach(FOR_EACH_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -171,8 +220,26 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 		switch (featureID) {
 			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
 				return componentStoryPattern != null;
+			case ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH:
+				return forEach != FOR_EACH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (forEach: ");
+		result.append(forEach);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ComponentStoryNodeImpl
