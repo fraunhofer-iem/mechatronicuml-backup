@@ -114,10 +114,30 @@ helper storeRealtimeStatechart(inout rtsc : RealtimeStatechart, inout theRootNod
 			var newRegion : Region := new Region();
 			state.embeddedRegions += newRegion;
 			newRegion.embeddedStatechart := rtsc;
+			if(not componentRTSC.parentRegion.oclIsUndefined()) then {
+					newRegion.priority:=componentRTSC.parentRegion.priority;
+				}
+				else{
+					newRegion.priority:=state.embeddedRegions.priority->max()+1;
+				}endif;
 		} endif;
 	}
 
 }
+
+query getMaxPriority(regions:Set(Region)):Integer{
+	var maxPriority:Integer:=regions.priority->max();
+	if(maxPriority.oclIsInvalid()) then{
+		maxPriority:=1;
+	}
+	else{
+		maxPriority:=maxPriority+1;
+	}endif;
+	return maxPriority;
+}
+
+
+
 
 -- returns the RTSC of a multi-port corresponding to the behavior RTSC of a multirole 
 query getMultiPortBehaviorRTSC(in theRole : Role, in thePort : DiscretePort) : RealtimeStatechart{
