@@ -36,8 +36,8 @@ main() {
 mapping addRuleBasedReconfigurationController(inout comp : ReconfigurableStructuredComponent){
 	
 	-- create reconfiguration ports
-	comp.ports += new ReconfigurationMessagePort('parent', false); 
-	comp.ports += new ReconfigurationExecutionPort('parent', false);
+	comp.ports += new ReconfigurationMessagePort('reconfMsg', false); 
+	comp.ports += new ReconfigurationExecutionPort('reconfExec', false);
 	
 	-- instantiate reconfiguration controllers and connections
 	comp.controller := new RuleBasedReconfigurationController(comp.name + '_reconfController');
