@@ -154,6 +154,24 @@
                   path="/reconfDrawer/"
                   permission="Full">
             </entry>
+            <entry
+                  defineOnly="false"
+                  description="Creates a reconfiguration message port."
+                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurationMessagePortTool"
+                  kind="tool"
+                  label="Reconfiguration Message Port"
+                  path="/reconfDrawer/"
+                  permission="Full">
+            </entry>
+            <entry
+                  defineOnly="false"
+                  description="Creates a reconfiguration execution port."
+                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurationExecutionPortTool"
+                  kind="tool"
+                  label="Reconfiguration Execution Port"
+                  path="/reconfDrawer/"
+                  permission="Full">
+            </entry>
          </contribution>
      </paletteProvider>
 

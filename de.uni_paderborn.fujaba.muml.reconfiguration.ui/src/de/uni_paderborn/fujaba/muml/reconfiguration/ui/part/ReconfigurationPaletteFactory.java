@@ -20,6 +20,14 @@ public class ReconfigurationPaletteFactory extends PaletteFactory.Adapter {
             return new CreationTool(ReconfigurationElementTypes.ReconfigurableAtomicComponent_2078);
 
         }
+        if (toolId.equals("de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurationMessagePortTool")){
+            return new CreationTool(ReconfigurationElementTypes.ReconfigurationMessagePort_3076);
+
+        }
+        if (toolId.equals("de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurationExecutionPortTool")){
+            return new CreationTool(ReconfigurationElementTypes.ReconfigurationExecutionPort_3077);
+
+        }
         return null;
 	}
 	
