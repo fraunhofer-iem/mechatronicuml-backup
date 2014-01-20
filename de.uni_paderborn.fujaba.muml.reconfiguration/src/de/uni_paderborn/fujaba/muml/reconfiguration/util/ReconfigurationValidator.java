@@ -751,7 +751,46 @@ public class ReconfigurationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateReconfigurationMessagePortInterfaceEntry(ReconfigurationMessagePortInterfaceEntry reconfigurationMessagePortInterfaceEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+		if (!validate_NoCircularContainment(reconfigurationMessagePortInterfaceEntry, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+		if (result || diagnostics != null) result &= validateReconfigurationMessagePortInterfaceEntry_RequestRequiresExpectedResponseTime(reconfigurationMessagePortInterfaceEntry, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the RequestRequiresExpectedResponseTime constraint of '<em>Message Port Interface Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__REQUEST_REQUIRES_EXPECTED_RESPONSE_TIME__EEXPRESSION = "self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST implies (not self.expectedResponseTime.oclIsUndefined())";
+
+	/**
+	 * Validates the RequestRequiresExpectedResponseTime constraint of '<em>Message Port Interface Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReconfigurationMessagePortInterfaceEntry_RequestRequiresExpectedResponseTime(ReconfigurationMessagePortInterfaceEntry reconfigurationMessagePortInterfaceEntry, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ReconfigurationPackage.Literals.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY,
+				 reconfigurationMessagePortInterfaceEntry,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "RequestRequiresExpectedResponseTime",
+				 RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__REQUEST_REQUIRES_EXPECTED_RESPONSE_TIME__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

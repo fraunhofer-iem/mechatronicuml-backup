@@ -107,6 +107,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Each ReconfigurationMessagePortInterfaceEntry defines one reconfiguration &#xD;&#xA;message that is sent by a component to its parent. In addition to the message, &#xD;&#xA;it defines the ReconfigurationMessageType and, in case that it is a request, &#xD;&#xA;the expected response time for the parent."/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="RequestRequiresExpectedResponseTime"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="RequestRequiresExpectedResponseTime" value="self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST implies (not self.expectedResponseTime.oclIsUndefined())"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="reconfigurationMessageType"
         eType="#//ReconfigurationMessageTypeEnum">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

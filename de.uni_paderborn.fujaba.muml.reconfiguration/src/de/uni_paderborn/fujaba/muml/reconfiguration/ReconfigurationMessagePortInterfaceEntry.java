@@ -30,7 +30,8 @@ import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage#getReconfigurationMessagePortInterfaceEntry()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='RequestRequiresExpectedResponseTime'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL RequestRequiresExpectedResponseTime='self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST implies (not self.expectedResponseTime.oclIsUndefined())'"
  * @generated
  */
 public interface ReconfigurationMessagePortInterfaceEntry extends ReconfigurationPortInterfaceEntry {

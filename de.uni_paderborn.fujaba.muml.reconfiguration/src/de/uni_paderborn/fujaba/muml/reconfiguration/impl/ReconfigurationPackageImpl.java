@@ -1459,6 +1459,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "constraints", "ReconfigurationPortRequiresMessageTypes ReconfigurationPortAtStructuredComponentHasNoBehavior"
 		   });	
 		addAnnotation
+		  (reconfigurationMessagePortInterfaceEntryEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "RequestRequiresExpectedResponseTime"
+		   });	
+		addAnnotation
 		  (managerEClass, 
 		   source, 
 		   new String[] {
@@ -1510,6 +1516,12 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		   new String[] {
 			 "ReconfigurationPortRequiresMessageTypes", "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
 			 "ReconfigurationPortAtStructuredComponentHasNoBehavior", "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\r\n\timplies self.behavior.oclIsUndefined()"
+		   });	
+		addAnnotation
+		  (reconfigurationMessagePortInterfaceEntryEClass, 
+		   source, 
+		   new String[] {
+			 "RequestRequiresExpectedResponseTime", "self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST implies (not self.expectedResponseTime.oclIsUndefined())"
 		   });	
 		addAnnotation
 		  (managerEClass, 
