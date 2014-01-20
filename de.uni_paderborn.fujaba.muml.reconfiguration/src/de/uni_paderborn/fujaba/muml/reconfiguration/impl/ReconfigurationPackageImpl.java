@@ -31,6 +31,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
@@ -181,6 +183,20 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	private EClass reconfigurationPortDelegationConnectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fadingComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fadingFunctionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -702,6 +718,51 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFadingComponent() {
+		return fadingComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFadingComponent_FadingFunction() {
+		return (EReference)fadingComponentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFadingFunction() {
+		return fadingFunctionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFadingFunction_FromPort() {
+		return (EReference)fadingFunctionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFadingFunction_ToPort() {
+		return (EReference)fadingFunctionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getReconfigurationMessageTypeEnum() {
 		return reconfigurationMessageTypeEnumEEnum;
 	}
@@ -1158,6 +1219,13 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 
 		reconfigurationPortDelegationConnectorEClass = createEClass(RECONFIGURATION_PORT_DELEGATION_CONNECTOR);
 
+		fadingComponentEClass = createEClass(FADING_COMPONENT);
+		createEReference(fadingComponentEClass, FADING_COMPONENT__FADING_FUNCTION);
+
+		fadingFunctionEClass = createEClass(FADING_FUNCTION);
+		createEReference(fadingFunctionEClass, FADING_FUNCTION__FROM_PORT);
+		createEReference(fadingFunctionEClass, FADING_FUNCTION__TO_PORT);
+
 		// Create enums
 		reconfigurationMessageTypeEnumEEnum = createEEnum(RECONFIGURATION_MESSAGE_TYPE_ENUM);
 	}
@@ -1241,6 +1309,9 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		structuralConditionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		reconfigurationPortAssemblyConnectorEClass.getESuperTypes().add(theComponentPackage.getPortConnector());
 		reconfigurationPortDelegationConnectorEClass.getESuperTypes().add(theComponentPackage.getPortConnector());
+		fadingComponentEClass.getESuperTypes().add(theComponentPackage.getAtomicComponent());
+		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(reconfigurableComponentEClass, ReconfigurableComponent.class, "ReconfigurableComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1342,6 +1413,13 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 		initEClass(reconfigurationPortAssemblyConnectorEClass, ReconfigurationPortAssemblyConnector.class, "ReconfigurationPortAssemblyConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(reconfigurationPortDelegationConnectorEClass, ReconfigurationPortDelegationConnector.class, "ReconfigurationPortDelegationConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(fadingComponentEClass, FadingComponent.class, "FadingComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFadingComponent_FadingFunction(), this.getFadingFunction(), null, "fadingFunction", null, 0, -1, FadingComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fadingFunctionEClass, FadingFunction.class, "FadingFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFadingFunction_FromPort(), theComponentPackage.getPort(), null, "fromPort", null, 1, 1, FadingFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFadingFunction_ToPort(), theComponentPackage.getPort(), null, "toPort", null, 1, 1, FadingFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(reconfigurationMessageTypeEnumEEnum, ReconfigurationMessageTypeEnum.class, "ReconfigurationMessageTypeEnum");

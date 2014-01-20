@@ -18,6 +18,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
@@ -180,6 +182,10 @@ public class ReconfigurationValidator extends EObjectValidator {
 				return validateReconfigurationPortAssemblyConnector((ReconfigurationPortAssemblyConnector)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_PORT_DELEGATION_CONNECTOR:
 				return validateReconfigurationPortDelegationConnector((ReconfigurationPortDelegationConnector)value, diagnostics, context);
+			case ReconfigurationPackage.FADING_COMPONENT:
+				return validateFadingComponent((FadingComponent)value, diagnostics, context);
+			case ReconfigurationPackage.FADING_FUNCTION:
+				return validateFadingFunction((FadingFunction)value, diagnostics, context);
 			case ReconfigurationPackage.RECONFIGURATION_MESSAGE_TYPE_ENUM:
 				return validateReconfigurationMessageTypeEnum((ReconfigurationMessageTypeEnum)value, diagnostics, context);
 			default:
@@ -915,6 +921,39 @@ public class ReconfigurationValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFadingComponent(FadingComponent fadingComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(fadingComponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_SoftwareComponentRequiresBehavior(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_ValidComponentType(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_SoftwareComponentValidPorts(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_ContinuousComponentValidPorts(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_AtomicComponentsNamesMustBeUnique(fadingComponent, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFadingFunction(FadingFunction fadingFunction, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(fadingFunction, diagnostics, context);
 	}
 
 	/**

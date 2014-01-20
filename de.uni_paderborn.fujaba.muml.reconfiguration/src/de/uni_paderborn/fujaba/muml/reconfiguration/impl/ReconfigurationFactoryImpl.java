@@ -17,6 +17,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
@@ -97,6 +99,8 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 			case ReconfigurationPackage.SIGNATURE: return createSignature();
 			case ReconfigurationPackage.RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR: return createReconfigurationPortAssemblyConnector();
 			case ReconfigurationPackage.RECONFIGURATION_PORT_DELEGATION_CONNECTOR: return createReconfigurationPortDelegationConnector();
+			case ReconfigurationPackage.FADING_COMPONENT: return createFadingComponent();
+			case ReconfigurationPackage.FADING_FUNCTION: return createFadingFunction();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -310,6 +314,26 @@ public class ReconfigurationFactoryImpl extends EFactoryImpl implements Reconfig
 	public ReconfigurationPortDelegationConnector createReconfigurationPortDelegationConnector() {
 		ReconfigurationPortDelegationConnectorImpl reconfigurationPortDelegationConnector = new ReconfigurationPortDelegationConnectorImpl();
 		return reconfigurationPortDelegationConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FadingComponent createFadingComponent() {
+		FadingComponentImpl fadingComponent = new FadingComponentImpl();
+		return fadingComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FadingFunction createFadingFunction() {
+		FadingFunctionImpl fadingFunction = new FadingFunctionImpl();
+		return fadingFunction;
 	}
 
 	/**

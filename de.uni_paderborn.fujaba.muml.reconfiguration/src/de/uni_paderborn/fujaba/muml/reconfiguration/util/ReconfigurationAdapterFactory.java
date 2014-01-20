@@ -30,6 +30,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
@@ -207,6 +209,14 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseReconfigurationPortDelegationConnector(ReconfigurationPortDelegationConnector object) {
 				return createReconfigurationPortDelegationConnectorAdapter();
+			}
+			@Override
+			public Adapter caseFadingComponent(FadingComponent object) {
+				return createFadingComponentAdapter();
+			}
+			@Override
+			public Adapter caseFadingFunction(FadingFunction object) {
+				return createFadingFunctionAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -505,6 +515,34 @@ public class ReconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReconfigurationPortDelegationConnectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent <em>Fading Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent
+	 * @generated
+	 */
+	public Adapter createFadingComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction <em>Fading Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction
+	 * @generated
+	 */
+	public Adapter createFadingFunctionAdapter() {
 		return null;
 	}
 

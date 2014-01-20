@@ -2406,6 +2406,179 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT_DELEGATION_CONNECTOR_FEATURE_COUNT = ComponentPackage.PORT_CONNECTOR_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingComponentImpl <em>Fading Component</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingComponentImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getFadingComponent()
+	 * @generated
+	 */
+	int FADING_COMPONENT = 25;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT__ANNOTATION = ComponentPackage.ATOMIC_COMPONENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT__EXTENSION = ComponentPackage.ATOMIC_COMPONENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT__NAME = ComponentPackage.ATOMIC_COMPONENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT__COMMENT = ComponentPackage.ATOMIC_COMPONENT__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT__CONSTRAINT = ComponentPackage.ATOMIC_COMPONENT__CONSTRAINT;
+
+	/**
+	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT__PORTS = ComponentPackage.ATOMIC_COMPONENT__PORTS;
+
+	/**
+	 * The feature id for the '<em><b>Component Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT__COMPONENT_KIND = ComponentPackage.ATOMIC_COMPONENT__COMPONENT_KIND;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT__BEHAVIOR = ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Fading Function</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT__FADING_FUNCTION = ComponentPackage.ATOMIC_COMPONENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Fading Component</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_FEATURE_COUNT = ComponentPackage.ATOMIC_COMPONENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingFunctionImpl <em>Fading Function</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingFunctionImpl
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getFadingFunction()
+	 * @generated
+	 */
+	int FADING_FUNCTION = 26;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_FUNCTION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_FUNCTION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_FUNCTION__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_FUNCTION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>From Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_FUNCTION__FROM_PORT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>To Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_FUNCTION__TO_PORT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Fading Function</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_FUNCTION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum <em>Message Type Enum</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2413,7 +2586,7 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getReconfigurationMessageTypeEnum()
 	 * @generated
 	 */
-	int RECONFIGURATION_MESSAGE_TYPE_ENUM = 25;
+	int RECONFIGURATION_MESSAGE_TYPE_ENUM = 27;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent <em>Reconfigurable Structured Component</em>}'.
@@ -2827,6 +3000,59 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getReconfigurationPortDelegationConnector();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent <em>Fading Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fading Component</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent
+	 * @generated
+	 */
+	EClass getFadingComponent();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent#getFadingFunction <em>Fading Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Fading Function</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent#getFadingFunction()
+	 * @see #getFadingComponent()
+	 * @generated
+	 */
+	EReference getFadingComponent_FadingFunction();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction <em>Fading Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fading Function</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction
+	 * @generated
+	 */
+	EClass getFadingFunction();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction#getFromPort <em>From Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction#getFromPort()
+	 * @see #getFadingFunction()
+	 * @generated
+	 */
+	EReference getFadingFunction_FromPort();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction#getToPort <em>To Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>To Port</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction#getToPort()
+	 * @see #getFadingFunction()
+	 * @generated
+	 */
+	EReference getFadingFunction_ToPort();
 
 	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum <em>Message Type Enum</em>}'.
@@ -3590,6 +3816,50 @@ public interface ReconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RECONFIGURATION_PORT_DELEGATION_CONNECTOR = eINSTANCE.getReconfigurationPortDelegationConnector();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingComponentImpl <em>Fading Component</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingComponentImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getFadingComponent()
+		 * @generated
+		 */
+		EClass FADING_COMPONENT = eINSTANCE.getFadingComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Fading Function</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FADING_COMPONENT__FADING_FUNCTION = eINSTANCE.getFadingComponent_FadingFunction();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingFunctionImpl <em>Fading Function</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.FadingFunctionImpl
+		 * @see de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationPackageImpl#getFadingFunction()
+		 * @generated
+		 */
+		EClass FADING_FUNCTION = eINSTANCE.getFadingFunction();
+
+		/**
+		 * The meta object literal for the '<em><b>From Port</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FADING_FUNCTION__FROM_PORT = eINSTANCE.getFadingFunction_FromPort();
+
+		/**
+		 * The meta object literal for the '<em><b>To Port</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FADING_FUNCTION__TO_PORT = eINSTANCE.getFadingFunction_ToPort();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessageTypeEnum <em>Message Type Enum</em>}' enum.

@@ -103,6 +103,13 @@
     </genClasses>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationPortAssemblyConnector"/>
     <genClasses ecoreClass="MumlReconfiguration.ecore#//ReconfigurationPortDelegationConnector"/>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//FadingComponent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//FadingComponent/fadingFunction"/>
+    </genClasses>
+    <genClasses ecoreClass="MumlReconfiguration.ecore#//FadingFunction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//FadingFunction/fromPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MumlReconfiguration.ecore#//FadingFunction/toPort"/>
+    </genClasses>
     <nestedGenPackages prefix="Expression" basePackage="de.uni_paderborn.fujaba.muml.reconfiguration"
         disposableProviderFactory="true" ecorePackage="MumlReconfiguration.ecore#//expression">
       <genClasses ecoreClass="MumlReconfiguration.ecore#//expression/ActivityCallExpression">

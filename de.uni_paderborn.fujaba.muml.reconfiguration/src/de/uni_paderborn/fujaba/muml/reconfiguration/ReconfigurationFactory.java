@@ -188,6 +188,24 @@ public interface ReconfigurationFactory extends EFactory {
 	ReconfigurationPortDelegationConnector createReconfigurationPortDelegationConnector();
 
 	/**
+	 * Returns a new object of class '<em>Fading Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fading Component</em>'.
+	 * @generated
+	 */
+	FadingComponent createFadingComponent();
+
+	/**
+	 * Returns a new object of class '<em>Fading Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fading Function</em>'.
+	 * @generated
+	 */
+	FadingFunction createFadingFunction();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

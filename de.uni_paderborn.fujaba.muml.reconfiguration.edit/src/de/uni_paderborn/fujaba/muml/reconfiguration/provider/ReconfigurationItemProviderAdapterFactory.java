@@ -489,6 +489,52 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FadingComponentItemProvider fadingComponentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFadingComponentAdapter() {
+		if (fadingComponentItemProvider == null) {
+			fadingComponentItemProvider = new FadingComponentItemProvider(this);
+		}
+
+		return fadingComponentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FadingFunctionItemProvider fadingFunctionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFadingFunctionAdapter() {
+		if (fadingFunctionItemProvider == null) {
+			fadingFunctionItemProvider = new FadingFunctionItemProvider(this);
+		}
+
+		return fadingFunctionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -605,6 +651,8 @@ public class ReconfigurationItemProviderAdapterFactory extends ReconfigurationAd
 		if (signatureItemProvider != null) signatureItemProvider.dispose();
 		if (reconfigurationPortAssemblyConnectorItemProvider != null) reconfigurationPortAssemblyConnectorItemProvider.dispose();
 		if (reconfigurationPortDelegationConnectorItemProvider != null) reconfigurationPortDelegationConnectorItemProvider.dispose();
+		if (fadingComponentItemProvider != null) fadingComponentItemProvider.dispose();
+		if (fadingFunctionItemProvider != null) fadingFunctionItemProvider.dispose();
 	}
 
 }

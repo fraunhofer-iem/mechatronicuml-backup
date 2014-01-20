@@ -29,6 +29,8 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationThreePhase;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Executor;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutorSpecificationEntry;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent;
+import de.uni_paderborn.fujaba.muml.reconfiguration.FadingFunction;
 import de.uni_paderborn.fujaba.muml.reconfiguration.InternalReconfigurationCommunicationPort;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Manager;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ManagerSpecificationEntry;
@@ -369,6 +371,29 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ReconfigurationPackage.FADING_COMPONENT: {
+				FadingComponent fadingComponent = (FadingComponent)theEObject;
+				T result = caseFadingComponent(fadingComponent);
+				if (result == null) result = caseAtomicComponent(fadingComponent);
+				if (result == null) result = caseComponent(fadingComponent);
+				if (result == null) result = caseBehavioralElement(fadingComponent);
+				if (result == null) result = caseConstrainableElement(fadingComponent);
+				if (result == null) result = caseDataType(fadingComponent);
+				if (result == null) result = caseNamedElement(fadingComponent);
+				if (result == null) result = caseExtendableElement(fadingComponent);
+				if (result == null) result = caseCommentableElement(fadingComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ReconfigurationPackage.FADING_FUNCTION: {
+				FadingFunction fadingFunction = (FadingFunction)theEObject;
+				T result = caseFadingFunction(fadingFunction);
+				if (result == null) result = caseNamedElement(fadingFunction);
+				if (result == null) result = caseCommentableElement(fadingFunction);
+				if (result == null) result = caseExtendableElement(fadingFunction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -610,6 +635,36 @@ public class ReconfigurationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseReconfigurationPortDelegationConnector(ReconfigurationPortDelegationConnector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fading Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fading Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFadingComponent(FadingComponent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fading Function</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fading Function</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFadingFunction(FadingFunction object) {
 		return null;
 	}
 
