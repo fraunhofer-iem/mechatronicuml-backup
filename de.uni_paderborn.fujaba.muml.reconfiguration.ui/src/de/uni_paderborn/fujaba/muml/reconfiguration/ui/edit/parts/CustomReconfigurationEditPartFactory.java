@@ -53,6 +53,9 @@ public class CustomReconfigurationEditPartFactory extends
 			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortAssemblyConnectorEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationPortAssemblyConnectorEditPart(
 						view);
+			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart(
+						view);
 			}
 		}
 		return super.createEditPart(context, model);

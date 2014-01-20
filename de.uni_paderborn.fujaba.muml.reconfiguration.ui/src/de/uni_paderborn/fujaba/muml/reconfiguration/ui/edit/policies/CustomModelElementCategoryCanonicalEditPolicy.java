@@ -76,8 +76,6 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends
 		return null;
 	}
 
-
-
 	private Collection<IAdaptable> refreshConnections() {
 		Domain2Notation domain2NotationMap = new Domain2Notation();
 		Collection<de.uni_paderborn.fujaba.muml.component.diagram.part.MumlLinkDescriptor> linkDescriptors = collectAllLinks(
@@ -135,6 +133,11 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends
 		switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 				.getVisualID(view)) {
 
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart.VISUAL_ID: {
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationDiagramUpdater
@@ -143,7 +146,7 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		
+
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.StaticStructuredComponentEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
@@ -154,47 +157,31 @@ public class CustomModelElementCategoryCanonicalEditPolicy extends
 		}
 
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ManagerEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-//				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
-//						.getDiscretePort_3010ContainedLinks(view));
-			}
+			
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		
+
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ExecutorEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				//TODO
-//				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
-//						.getDiscretePort_3010ContainedLinks(view));
-			}
+			
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		
+
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-//				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
-//						.getDiscretePort_3010ContainedLinks(view));
-			}
+			
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		
+
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-//				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
-//						.getDiscretePort_3010ContainedLinks(view));
-			}
+			
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		
+
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.InternalReconfigurationCommunicationPortEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-//				result.addAll(de.uni_paderborn.fujaba.muml.component.diagram.part.MumlDiagramUpdater
-//						.getDiscretePort_3010ContainedLinks(view));
-			}
+			
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}

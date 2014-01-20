@@ -41,8 +41,9 @@ public class ReconfigurationElementTypes{
 	private static Set<IElementType> KNOWN_ELEMENT_TYPES;
 
 
-	public static final IElementType ReconfigurableStructuredComponent_2076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent_2076"); //$NON-NLS-1$
-	public static final IElementType ReconfigurationMessagePort_3076= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort_3076"); //$NON-NLS-1$
+	public static final IElementType ReconfigurableAtomicComponent_2078 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent_2078");
+	public static final IElementType ReconfigurableStructuredComponent_2076 = getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent_2076"); 
+	public static final IElementType ReconfigurationMessagePort_3076= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationMessagePort_3076"); 
 	public static final IElementType ReconfigurationExecutionPort_3077= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationExecutionPort_3077");
 	public static final IElementType RuleBasedReconfigurationController_7076= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.RuleBasedReconfigurationController_7076");
 	public static final IElementType Manager_2075= getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.Manager_2075");
@@ -51,8 +52,8 @@ public class ReconfigurationElementTypes{
 	public static final IElementType ReconfigurationPortAssemblyConnector_4075=getElementType("de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPortAssemblyConnector_4075");
 	public static final IElementType ComponentPart_3012 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.ComponentPart_3012");
 	public static final IElementType DiscretePort_3010 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.DiscretePort_3010");
-	
-	
+	public static final IElementType HybridPort_3013 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.HybridPort_3013");
+	public static final IElementType ContinuousPort_3011 = getElementType("de.uni_paderborn.fujaba.muml.component.diagram.ContinuousPort_3011");
 	
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
@@ -89,7 +90,10 @@ public class ReconfigurationElementTypes{
 		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 
-
+			elements.put(
+					ReconfigurableAtomicComponent_2078,
+					de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+							.getReconfigurableAtomicComponent());
 			elements.put(
 					ReconfigurableStructuredComponent_2076,
 					de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
@@ -120,6 +124,14 @@ public class ReconfigurationElementTypes{
 					DiscretePort_3010,
 					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 							.getDiscretePort());
+			elements.put(
+					HybridPort_3013,
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+							.getHybridPort());
+			elements.put(
+					ContinuousPort_3011,
+					de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
+							.getContinuousPort());
 
 		}
 		return (ENamedElement) elements.get(type);
@@ -138,6 +150,7 @@ public class ReconfigurationElementTypes{
 	public static boolean isKnownElementType(IElementType elementType) {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
+			KNOWN_ELEMENT_TYPES.add(ReconfigurableAtomicComponent_2078);
 			KNOWN_ELEMENT_TYPES.add(ReconfigurableStructuredComponent_2076);
 			KNOWN_ELEMENT_TYPES.add(ReconfigurationMessagePort_3076);
 			KNOWN_ELEMENT_TYPES.add(ReconfigurationExecutionPort_3077);
@@ -147,6 +160,8 @@ public class ReconfigurationElementTypes{
 			KNOWN_ELEMENT_TYPES.add(ReconfigurationPortAssemblyConnector_4075);
 			KNOWN_ELEMENT_TYPES.add(ComponentPart_3012);
 			KNOWN_ELEMENT_TYPES.add(DiscretePort_3010);
+			KNOWN_ELEMENT_TYPES.add(HybridPort_3013);
+			KNOWN_ELEMENT_TYPES.add(ContinuousPort_3011);
 			//TODO add Coordination Protocol Occurence
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -157,7 +172,8 @@ public class ReconfigurationElementTypes{
 	 */
 	public static IElementType getElementType(int visualID) {
 		switch (visualID) {
-
+		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart.VISUAL_ID:
+			return ReconfigurableAtomicComponent_2078;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableStructuredComponentEditPart.VISUAL_ID:
 			return ReconfigurableStructuredComponent_2076;
 		case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
@@ -173,6 +189,10 @@ public class ReconfigurationElementTypes{
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart.VISUAL_ID:
 			return ComponentPart_3012;
 		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
+			return DiscretePort_3010;
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
+			return DiscretePort_3010;
+		case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
 			return DiscretePort_3010;
 			//TODO add assembly
 		

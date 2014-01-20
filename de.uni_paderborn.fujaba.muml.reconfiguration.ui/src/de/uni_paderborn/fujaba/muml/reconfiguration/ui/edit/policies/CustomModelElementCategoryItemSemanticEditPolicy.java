@@ -9,9 +9,13 @@ public class CustomModelElementCategoryItemSemanticEditPolicy extends ModelEleme
 	
 	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
+		if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.ReconfigurableAtomicComponent_2078== req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.commands.ReconfigurableAtomicComponentCreateCommand(
+					req));
+		}
 		if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.ReconfigurableStructuredComponent_2076== req
 				.getElementType()) {
-			//TODO create own CreateCommand
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.commands.ReconfigurableStructuredComponentCreateCommand(
 					req));
 		}

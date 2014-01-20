@@ -110,6 +110,10 @@
                class="ReconfigurableStructuredComponent"
                packageNsUri="http://www.fujaba.de/muml/reconfiguration/0.3.18">
          </child>
+         <child
+               class="ReconfigurableAtomicComponent"
+               packageNsUri="http://www.fujaba.de/muml/reconfiguration/0.3.18">
+         </child>
       </category>
    </extension>
   <extension
@@ -138,6 +142,15 @@
                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableStructuredComponentTool"
                   kind="tool"
                   label="Reconfigurable Structured Component"
+                  path="/reconfDrawer/"
+                  permission="Full">
+            </entry>
+            <entry
+                  defineOnly="false"
+                  description="Creates a reconfigurable atomic component."
+                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurableAtomicComponentTool"
+                  kind="tool"
+                  label="Reconfigurable Atomic Component"
                   path="/reconfDrawer/"
                   permission="Full">
             </entry>
@@ -255,6 +268,17 @@
                 <param
                       name="semanticHint"
                       value="2076">
+                </param>
+             </metamodelType>
+             <metamodelType
+                   eclass="ReconfigurableAtomicComponent"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.ReconfigurableAtomicComponentEditHelper"
+                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableAtomicComponent_2078"
+                   kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+                   name="ReconfigurableAtomicComponent">
+                <param
+                      name="semanticHint"
+                      value="2078">
                 </param>
              </metamodelType>
           </metamodel>
