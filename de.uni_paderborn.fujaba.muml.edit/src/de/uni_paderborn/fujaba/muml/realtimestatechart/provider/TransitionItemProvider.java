@@ -47,6 +47,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationChannel;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.ClockPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.TransitionEndpointPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.TransitionMessageEventPropertyDescriptor;
 
 /**
@@ -238,11 +239,11 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 	 * This adds a property descriptor for the Target feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addTargetPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new TransitionEndpointPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Transition_target_feature"),
@@ -260,11 +261,11 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 	 * This adds a property descriptor for the Source feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSourcePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new TransitionEndpointPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Transition_source_feature"),
