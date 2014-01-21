@@ -51,6 +51,8 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			refresh();
 		}
 	};
+	protected Label label;
+	protected Composite listContainer;
 
 	protected TableViewer tableViewer;
 	protected EObject selection;
@@ -100,11 +102,11 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			parent = container;
 		}
 
-		Label label = toolkit.createLabel(parent, getLabelText());
+		label = toolkit.createLabel(parent, getLabelText());
 		label.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false));
 
 		// List container
-		Composite listContainer = new Composite(parent, SWT.NONE);
+		listContainer = new Composite(parent, SWT.NONE);
 		GridLayout listContainerLayout = new GridLayout(2, false);
 		listContainerLayout.marginWidth = listContainerLayout.marginHeight = 0;
 		listContainer.setLayout(listContainerLayout);
@@ -388,7 +390,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 
 	@Override
 	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { container }) {
+		for (Control control : new Control[] { container, label, listContainer }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
 				if (control.getLayoutData() instanceof GridData) {
