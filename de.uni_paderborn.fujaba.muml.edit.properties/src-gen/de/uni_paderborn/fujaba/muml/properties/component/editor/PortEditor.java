@@ -31,6 +31,10 @@ public abstract class PortEditor
 			addCommentableElementCommentEditor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.extensions".equals(getTab())) {
+			addExtendableElementExtensionEditor(null, true);
+		}
+
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addNamedElementNameEditor(null, true);
 		}
@@ -83,6 +87,30 @@ public abstract class PortEditor
 						.getCommentableElement_Comment(), true);
 
 		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addExtendableElementExtensionEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createExtendableElementExtensionEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtendableElementExtensionEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getExtendableElement_Extension());
+
+		editor.addVisibilityFilter("not extension->isEmpty()", getEClass());
 
 		return editor;
 

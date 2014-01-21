@@ -27,6 +27,7 @@
       <genClass href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement"/>
       <properties tab="//@tabs.2">
         <genFeature href="../../org.storydriven.core/model/core.uml.genmodel#//core/ExtendableElement/extension"/>
+        <filters xsi:type="de.uni_paderborn.fujaba:OCLPropertyFilter" expression="not extension->isEmpty()"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
     </classes>

@@ -47,6 +47,8 @@ public abstract class ExtendableElementEditor
 				org.storydriven.core.CorePackage.eINSTANCE
 						.getExtendableElement_Extension());
 
+		editor.addVisibilityFilter("not extension->isEmpty()", getEClass());
+
 		return editor;
 
 	}

@@ -169,7 +169,8 @@ public class ComponentPartEditor
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.documentation",
-							"property.tab.general"}).contains(tab);
+							"property.tab.extensions", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

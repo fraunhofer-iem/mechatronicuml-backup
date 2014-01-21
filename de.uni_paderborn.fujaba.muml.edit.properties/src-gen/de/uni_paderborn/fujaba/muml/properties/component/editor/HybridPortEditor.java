@@ -89,8 +89,9 @@ public class HybridPortEditor
 							"property.tab.general", "property.tab.general",
 							"property.tab.general",
 							"property.tab.documentation",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+							"property.tab.extensions", "property.tab.general",
+							"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 
