@@ -351,13 +351,6 @@
                       body="'entry'"/>
                 </initializers>
               </domainInitializer>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="realtimestatechart.gmfgraph#EntryExitPointExternalLabel"/>
-                <features
-                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="realtimestatechart.gmftool#//@palette/@tools.1/@tools.4"/>
@@ -382,13 +375,6 @@
                       body="'exit'"/>
                 </initializers>
               </domainInitializer>
-              <labelMappings
-                  xsi:type="gmfmap:FeatureLabelMapping">
-                <diagramLabel
-                    href="realtimestatechart.gmfgraph#EntryExitPointExternalLabel"/>
-                <features
-                    href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
-              </labelMappings>
               <tool
                   xsi:type="gmftool:CreationTool"
                   href="realtimestatechart.gmftool#//@palette/@tools.1/@tools.5"/>

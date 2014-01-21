@@ -603,25 +603,6 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels
-          xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5058"
-          editPartClassName="EntryPointNameEditPart"
-          itemSemanticEditPolicyClassName="EntryPointNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="EntryPointNameViewFactory">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:InnerClassViewmap"
-            className="EntryExitPointExternalLabelFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EntryExitPointExternalLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EntryExitPointExternalLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.6">
-          <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-        </modelFacet>
-      </labels>
     </childNodes>
     <childNodes
         xsi:type="gmfgen:GenChildSideAffixedNode"
@@ -669,25 +650,6 @@
           </initializers>
         </modelElementInitializer>
       </modelFacet>
-      <labels
-          xsi:type="gmfgen:GenExternalNodeLabel"
-          visualID="5059"
-          editPartClassName="ExitPointNameEditPart"
-          itemSemanticEditPolicyClassName="ExitPointNameItemSemanticEditPolicy"
-          notationViewFactoryClassName="ExitPointNameViewFactory">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:InnerClassViewmap"
-            className="EntryExitPointExternalLabelFigure"
-            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EntryExitPointExternalLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EntryExitPointExternalLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.6">
-          <metaFeatures
-              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
-        </modelFacet>
-      </labels>
     </childNodes>
     <topLevelNodes
         visualID="2007"
@@ -1350,7 +1312,7 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.8/@labels.0/@modelFacet //@diagram/@childNodes.9/@labels.0/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+        uses="//@diagram/@childNodes.6/@labels.1/@modelFacet //@diagram/@childNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.6/@labels.2/@modelFacet"

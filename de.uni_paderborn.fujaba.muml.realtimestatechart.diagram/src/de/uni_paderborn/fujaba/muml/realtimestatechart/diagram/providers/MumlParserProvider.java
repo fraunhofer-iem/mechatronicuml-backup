@@ -136,44 +136,6 @@ public class MumlParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser entryPointName_5058Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getEntryPointName_5058Parser() {
-		if (entryPointName_5058Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.MessageFormatParser(
-					features);
-			entryPointName_5058Parser = parser;
-		}
-		return entryPointName_5058Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser exitPointName_5059Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getExitPointName_5059Parser() {
-		if (exitPointName_5059Parser == null) {
-			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
-					.getNamedElement_Name() };
-			de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.MessageFormatParser(
-					features);
-			exitPointName_5059Parser = parser;
-		}
-		return exitPointName_5059Parser;
-	}
-
-	/**
-	 * @generated
-	 */
 	private IParser getTransitionLabel_6005Parser() {
 		return new de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.parsers.TransitionLabelExpressionLabelParser6005();
 	}
@@ -212,10 +174,6 @@ public class MumlParserProvider extends AbstractProvider implements
 			return getRegionPriority_5064Parser();
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel7EditPart.VISUAL_ID:
 			return getRegionLabel_5065Parser();
-		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.EntryPointNameEditPart.VISUAL_ID:
-			return getEntryPointName_5058Parser();
-		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.ExitPointNameEditPart.VISUAL_ID:
-			return getExitPointName_5059Parser();
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel8EditPart.VISUAL_ID:
 			return getTransitionLabel_6005Parser();
 		case de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.edit.parts.WrappingLabel9EditPart.VISUAL_ID:

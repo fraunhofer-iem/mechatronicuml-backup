@@ -72,18 +72,10 @@
   </childNodeTraces>
   <childNodeTraces
       visualID="3040"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/realtimestatechart/0.4.0' and _eClass_.name = 'EntryPoint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/realtimestatechart/0.4.0' and _eClass_.name = 'State') and _containmentMF_.name = 'connectionPoints')">
-    <nodeLabelTraces
-        visualID="5058"
-        queryText="true"/>
-  </childNodeTraces>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/realtimestatechart/0.4.0' and _eClass_.name = 'EntryPoint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/realtimestatechart/0.4.0' and _eClass_.name = 'State') and _containmentMF_.name = 'connectionPoints')"/>
   <childNodeTraces
       visualID="3041"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/realtimestatechart/0.4.0' and _eClass_.name = 'ExitPoint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/realtimestatechart/0.4.0' and _eClass_.name = 'State') and _containmentMF_.name = 'connectionPoints')">
-    <nodeLabelTraces
-        visualID="5059"
-        queryText="true"/>
-  </childNodeTraces>
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/realtimestatechart/0.4.0' and _eClass_.name = 'ExitPoint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/realtimestatechart/0.4.0' and _eClass_.name = 'State') and _containmentMF_.name = 'connectionPoints')"/>
   <childNodeTraces
       visualID="3042"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/realtimestatechart/0.4.0' and _eClass_.name = 'Region') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/realtimestatechart/0.4.0' and _eClass_.name = 'State') and _containmentMF_.name = 'embeddedRegions')">
