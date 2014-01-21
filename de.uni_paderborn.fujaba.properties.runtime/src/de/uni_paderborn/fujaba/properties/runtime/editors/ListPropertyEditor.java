@@ -322,7 +322,7 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		super.valueChanged();
 		updateAdapters(); // we register an adapter for each value, see addListeners()
 
-		if (tableViewer != null) {
+		if (tableViewer != null && !tableViewer.getTable().isDisposed()) {
 			tableViewer.removeSelectionChangedListener(selectionChangedListener);
 			tableViewer.setInput(value);
 			tableViewer.addSelectionChangedListener(selectionChangedListener);
