@@ -1526,7 +1526,6 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		stateEClass.getESuperTypes().add(this.getVertex());
 		vertexEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		vertexEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
-		transitionEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 		transitionEClass.getESuperTypes().add(this.getPrioritizedElement());
 		transitionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		clockConstraintEClass.getESuperTypes().add(theCorePackage.getExtendableElement());

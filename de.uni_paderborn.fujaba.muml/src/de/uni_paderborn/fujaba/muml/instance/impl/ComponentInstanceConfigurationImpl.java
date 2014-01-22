@@ -188,7 +188,7 @@ public class ComponentInstanceConfigurationImpl extends NamedElementImpl impleme
 	 */
 	public StructuredComponentInstance getParentStructuredComponentInstance() {
 		if (eContainerFeatureID() != InstancePackage.COMPONENT_INSTANCE_CONFIGURATION__PARENT_STRUCTURED_COMPONENT_INSTANCE) return null;
-		return (StructuredComponentInstance)eInternalContainer();
+		return (StructuredComponentInstance)eContainer();
 	}
 
 	/**

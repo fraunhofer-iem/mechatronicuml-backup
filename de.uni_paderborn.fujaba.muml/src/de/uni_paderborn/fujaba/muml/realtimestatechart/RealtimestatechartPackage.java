@@ -1550,22 +1550,31 @@ public interface RealtimestatechartPackage extends EPackage {
 	int STATE_OPERATION_COUNT = VERTEX_OPERATION_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int PRIORITIZED_ELEMENT__PRIORITY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * The number of structural features of the '<em>Prioritized Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int PRIORITIZED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Prioritized Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIORITIZED_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Priority</b></em>' attribute.
@@ -1574,7 +1583,25 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__PRIORITY = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int TRANSITION__PRIORITY = PRIORITIZED_ELEMENT__PRIORITY;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__ANNOTATION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__EXTENSION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1583,7 +1610,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__COMMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int TRANSITION__COMMENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Synchronization</b></em>' containment reference.
@@ -1592,7 +1619,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SYNCHRONIZATION = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int TRANSITION__SYNCHRONIZATION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -1601,7 +1628,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TARGET = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int TRANSITION__TARGET = PRIORITIZED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -1610,7 +1637,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SOURCE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int TRANSITION__SOURCE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Statechart</b></em>' reference.
@@ -1619,7 +1646,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__STATECHART = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+	int TRANSITION__STATECHART = PRIORITIZED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clock Resets</b></em>' reference list.
@@ -1628,7 +1655,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_RESETS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
+	int TRANSITION__CLOCK_RESETS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Trigger Message Event</b></em>' reference.
@@ -1637,7 +1664,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TRIGGER_MESSAGE_EVENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 7;
+	int TRANSITION__TRIGGER_MESSAGE_EVENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Raise Message Event</b></em>' reference.
@@ -1646,7 +1673,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RAISE_MESSAGE_EVENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 8;
+	int TRANSITION__RAISE_MESSAGE_EVENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Clock Constraints</b></em>' containment reference list.
@@ -1655,7 +1682,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__CLOCK_CONSTRAINTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 9;
+	int TRANSITION__CLOCK_CONSTRAINTS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Absolute Deadlines</b></em>' containment reference list.
@@ -1664,7 +1691,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ABSOLUTE_DEADLINES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 10;
+	int TRANSITION__ABSOLUTE_DEADLINES = PRIORITIZED_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Relative Deadline</b></em>' containment reference.
@@ -1673,7 +1700,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RELATIVE_DEADLINE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 11;
+	int TRANSITION__RELATIVE_DEADLINE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Blockable</b></em>' attribute.
@@ -1682,7 +1709,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__BLOCKABLE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 12;
+	int TRANSITION__BLOCKABLE = PRIORITIZED_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -1691,7 +1718,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__GUARD = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 13;
+	int TRANSITION__GUARD = PRIORITIZED_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Events</b></em>' containment reference list.
@@ -1700,7 +1727,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EVENTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 14;
+	int TRANSITION__EVENTS = PRIORITIZED_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -1709,7 +1736,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__ACTION = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 15;
+	int TRANSITION__ACTION = PRIORITIZED_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Urgent</b></em>' attribute.
@@ -1718,7 +1745,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__URGENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 16;
+	int TRANSITION__URGENT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Receiver Message Types</b></em>' reference list.
@@ -1727,7 +1754,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__RECEIVER_MESSAGE_TYPES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 17;
+	int TRANSITION__RECEIVER_MESSAGE_TYPES = PRIORITIZED_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Sender Message Types</b></em>' reference list.
@@ -1736,7 +1763,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SENDER_MESSAGE_TYPES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 18;
+	int TRANSITION__SENDER_MESSAGE_TYPES = PRIORITIZED_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -1745,7 +1772,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 19;
+	int TRANSITION_FEATURE_COUNT = PRIORITIZED_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1754,7 +1781,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___ECLASS = CorePackage.EXTENDABLE_ELEMENT___ECLASS;
+	int TRANSITION___ECLASS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -1763,7 +1790,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___EIS_PROXY = CorePackage.EXTENDABLE_ELEMENT___EIS_PROXY;
+	int TRANSITION___EIS_PROXY = PRIORITIZED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -1772,7 +1799,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___ERESOURCE = CorePackage.EXTENDABLE_ELEMENT___ERESOURCE;
+	int TRANSITION___ERESOURCE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -1781,7 +1808,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___ECONTAINER = CorePackage.EXTENDABLE_ELEMENT___ECONTAINER;
+	int TRANSITION___ECONTAINER = PRIORITIZED_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -1790,7 +1817,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___ECONTAINING_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
+	int TRANSITION___ECONTAINING_FEATURE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -1799,7 +1826,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___ECONTAINMENT_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
+	int TRANSITION___ECONTAINMENT_FEATURE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -1808,7 +1835,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___ECONTENTS = CorePackage.EXTENDABLE_ELEMENT___ECONTENTS;
+	int TRANSITION___ECONTENTS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -1817,7 +1844,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___EALL_CONTENTS = CorePackage.EXTENDABLE_ELEMENT___EALL_CONTENTS;
+	int TRANSITION___EALL_CONTENTS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -1826,7 +1853,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___ECROSS_REFERENCES = CorePackage.EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
+	int TRANSITION___ECROSS_REFERENCES = PRIORITIZED_ELEMENT_OPERATION_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1835,7 +1862,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int TRANSITION___EGET__ESTRUCTURALFEATURE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1844,7 +1871,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int TRANSITION___EGET__ESTRUCTURALFEATURE_BOOLEAN = PRIORITIZED_ELEMENT_OPERATION_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1853,7 +1880,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int TRANSITION___ESET__ESTRUCTURALFEATURE_OBJECT = PRIORITIZED_ELEMENT_OPERATION_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1862,7 +1889,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int TRANSITION___EIS_SET__ESTRUCTURALFEATURE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 12;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1871,7 +1898,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int TRANSITION___EUNSET__ESTRUCTURALFEATURE = PRIORITIZED_ELEMENT_OPERATION_COUNT + 13;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1880,7 +1907,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int TRANSITION___EINVOKE__EOPERATION_ELIST = PRIORITIZED_ELEMENT_OPERATION_COUNT + 14;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1889,7 +1916,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int TRANSITION___GET_EXTENSION__ECLASS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 15;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1898,7 +1925,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int TRANSITION___PROVIDE_EXTENSION__ECLASS = PRIORITIZED_ELEMENT_OPERATION_COUNT + 16;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1907,7 +1934,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int TRANSITION___GET_ANNOTATION__STRING = PRIORITIZED_ELEMENT_OPERATION_COUNT + 17;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1916,7 +1943,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int TRANSITION___PROVIDE_ANNOTATION__STRING = PRIORITIZED_ELEMENT_OPERATION_COUNT + 18;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -1925,7 +1952,7 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
+	int TRANSITION_OPERATION_COUNT = PRIORITIZED_ELEMENT_OPERATION_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -3069,33 +3096,6 @@ public interface RealtimestatechartPackage extends EPackage {
 	 * @ordered
 	 */
 	int SYNCHRONIZATION_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Priority</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIORITIZED_ELEMENT__PRIORITY = 0;
-
-	/**
-	 * The number of structural features of the '<em>Prioritized Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIORITIZED_ELEMENT_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Prioritized Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIORITIZED_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.realtimestatechart.impl.RealtimeStatechartImpl <em>Realtime Statechart</em>}' class.
