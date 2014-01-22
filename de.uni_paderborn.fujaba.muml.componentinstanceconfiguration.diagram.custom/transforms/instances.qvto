@@ -1,5 +1,6 @@
 import InstanceLibrary;
-transformation InstantiationTransformation(inout instance : InstancePackage);
+import updateInstance;
+transformation InstantiationTransformation(inout instance : InstancePackage) extends updateInstance;
 
 modeltype MumlPackage uses muml('http://www.fujaba.de/muml/0.4.0');
 modeltype ModelInstancePackage uses modelinstance('http://www.fujaba.de/modelinstance/0.4.0');
@@ -16,16 +17,17 @@ main() {
 
 	// process AtomicComponentInstances
 	instance.rootObjects()[AtomicComponentInstance]->forEach(ci) {
-		ci.portInstances := ci.componentType.createPortInstances(NULL_COMPONENT_PART_HELPER); // using helper instead of "null", because of QVTO-Bug
+		if (not ci.componentType.oclIsUndefined()) then {
+			ci.portInstances += ci.syncPortInstances(); // update PortInstances
+			} endif;
 	};
 	
 	// process StructuredComponentInstances
 	instance.rootObjects()[StructuredComponentInstance]->forEach(ci) {
 		// Remove old port instances from resource
-		ci.portInstances->forEach(pi) {
-			instance.removeElement(pi);
-		};
-		ci.portInstances := ci.componentType.createPortInstances(NULL_COMPONENT_PART_HELPER); // using helper instead of "null", because of QVTO-Bug
+		if (not ci.componentType.oclIsUndefined()) then {
+			ci.portInstances += ci.syncPortInstances(); // update PortInstances
+			} endif;
 		
 		// Remove old embedded cic from resource
 		instance.removeElement(ci.embeddedCIC);
