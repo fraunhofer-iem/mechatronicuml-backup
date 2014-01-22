@@ -1253,14 +1253,13 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNUMBERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBOOLEANTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cSTRINGTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final Keyword cNullKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cNullKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		
 		//Literal returns ecore::EString:
-		//	NUMBER | BOOLEAN | INT | STRING | "null";
+		//	NUMBER | BOOLEAN | INT | "null";
 		public ParserRule getRule() { return rule; }
 
-		//NUMBER | BOOLEAN | INT | STRING | "null"
+		//NUMBER | BOOLEAN | INT | "null"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NUMBER
@@ -1272,11 +1271,8 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_3() { return cSTRINGTerminalRuleCall_3; }
-
 		//"null"
-		public Keyword getNullKeyword_4() { return cNullKeyword_4; }
+		public Keyword getNullKeyword_3() { return cNullKeyword_3; }
 	}
 
 	public class ExtendedTypedNamedElementExpressionElements extends AbstractParserRuleElementFinder {
@@ -2507,7 +2503,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Literal returns ecore::EString:
-	//	NUMBER | BOOLEAN | INT | STRING | "null";
+	//	NUMBER | BOOLEAN | INT | "null";
 	public LiteralElements getLiteralAccess() {
 		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
 	}

@@ -731,7 +731,6 @@
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
         <elements xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
-        <elements xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
         <elements xsi:type="xtext:Keyword" value="null"/>
       </alternatives>
     </rules>
