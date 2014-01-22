@@ -584,6 +584,13 @@ public class GrammarTest {
 		assertNull(loadResult.getEObject());
 	}
 	
+	@Test
+	public void testNoStringLiterals() {
+		loadFromString("{ foo := \"foobar\"; }");
+		assertTrue(loadResult.hasError());
+		assertNull(loadResult.getEObject());
+	}
+	
 	protected static void assertValidEObject(EObject object) {
 		assertTrue(validEObject(object));
 	}
