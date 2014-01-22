@@ -21,13 +21,18 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
+import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Message} object.
@@ -74,11 +79,11 @@ public class MessageItemProvider
 	 * This adds a property descriptor for the Instance Of feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addInstanceOfPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Message_instanceOf_feature"),
@@ -89,7 +94,29 @@ public class MessageItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null) {
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				Message message = (Message) object;
+				
+				if (message.eContainer() instanceof AsynchronousMessageEvent) {
+					AsynchronousMessageEvent messageEvent = (AsynchronousMessageEvent) message.eContainer();
+					if (messageEvent.eContainer() instanceof Transition) {
+						Transition transition = (Transition) messageEvent.eContainer();
+						if (transition.getStatechart() != null && transition.getStatechart().getBehavioralElement() != null) {
+							BehavioralElement behavioralElement = transition.getStatechart().getBehavioralElement();
+							// XXX Todo: Get receiver or sender message interface
+							if (messageEvent.getKind() == EventKind.TRIGGER) {
+							} else if (messageEvent.getKind() == EventKind.RAISE) {
+							}
+
+						}
+					}
+				}
+
+				return super.getChoiceOfValues(object);
+			}
+		});
 	}
 
 	/**
