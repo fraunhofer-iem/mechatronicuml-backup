@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.behavior.provider;
 
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
@@ -29,6 +31,7 @@ import org.storydriven.core.provider.ExtendableElementItemProvider;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.behavior.ParameterBinding;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.behavior.ParameterBinding} object.
@@ -75,11 +78,11 @@ public class ParameterBindingItemProvider
 	 * This adds a property descriptor for the Parameter feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addParameterPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ParameterBinding_parameter_feature"),
@@ -90,7 +93,22 @@ public class ParameterBindingItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null) {
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					ParameterBinding parameterBinding = (ParameterBinding) object;
+					if (parameterBinding.eContainer() instanceof Message) {
+						Message message = (Message) parameterBinding.eContainer();
+						if (message.getInstanceOf() != null) {
+							return message.getInstanceOf().getParameters();
+						} else {
+							return new ArrayList<Object>();
+						}
+					}
+					
+					return super.getChoiceOfValues(object);
+				}
+			});
 	}
 
 	/**
