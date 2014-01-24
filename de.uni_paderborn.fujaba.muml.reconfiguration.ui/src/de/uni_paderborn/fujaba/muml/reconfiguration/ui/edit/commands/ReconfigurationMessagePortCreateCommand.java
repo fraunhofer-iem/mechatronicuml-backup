@@ -57,10 +57,10 @@ public class ReconfigurationMessagePortCreateCommand extends EditElementCommand 
 		owner.getPorts().add(newElement);
 
 		//TODO check if we have to initialize
-//		de.uni_paderborn.fujaba.muml.component.diagram.providers.ElementInitializers
-//				.getInstance().init_HybridPort_3013(newElement);
-//
-//		doConfigure(newElement, monitor, info);
+		((de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ElementInitializers)de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ElementInitializers
+				.getInstance()).init_ReconfigurationMessagePort_3076(newElement);
+
+		doConfigure(newElement, monitor, info);
 
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
