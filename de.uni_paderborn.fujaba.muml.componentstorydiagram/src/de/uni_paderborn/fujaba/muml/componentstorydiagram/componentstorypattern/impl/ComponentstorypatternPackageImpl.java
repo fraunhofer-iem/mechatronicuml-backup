@@ -15,10 +15,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
-import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable;
@@ -26,7 +24,6 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable;
@@ -93,19 +90,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * @generated
 	 */
 	private EClass delegationVariableEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass callEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass fadingFunctionEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -356,15 +340,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPartVariable_Call() {
-		return (EReference)partVariableEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getConnectorVariable() {
 		return connectorVariableEClass;
 	}
@@ -412,60 +387,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 */
 	public EReference getDelegationVariable_Type() {
 		return (EReference)delegationVariableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCall() {
-		return callEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCall_Callee() {
-		return (EReference)callEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCall_ParameterBinding() {
-		return (EReference)callEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFadingFunction() {
-		return fadingFunctionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFadingFunction_FromPort() {
-		return (EReference)fadingFunctionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFadingFunction_ToPort() {
-		return (EReference)fadingFunctionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -562,7 +483,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		partVariableEClass = createEClass(PART_VARIABLE);
 		createEReference(partVariableEClass, PART_VARIABLE__PORT_VARIABLES);
 		createEReference(partVariableEClass, PART_VARIABLE__TYPE);
-		createEReference(partVariableEClass, PART_VARIABLE__CALL);
 
 		connectorVariableEClass = createEClass(CONNECTOR_VARIABLE);
 		createEReference(connectorVariableEClass, CONNECTOR_VARIABLE__PORT_VARIABLES);
@@ -572,14 +492,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		delegationVariableEClass = createEClass(DELEGATION_VARIABLE);
 		createEReference(delegationVariableEClass, DELEGATION_VARIABLE__TYPE);
-
-		callEClass = createEClass(CALL);
-		createEReference(callEClass, CALL__CALLEE);
-		createEReference(callEClass, CALL__PARAMETER_BINDING);
-
-		fadingFunctionEClass = createEClass(FADING_FUNCTION);
-		createEReference(fadingFunctionEClass, FADING_FUNCTION__FROM_PORT);
-		createEReference(fadingFunctionEClass, FADING_FUNCTION__TO_PORT);
 
 		singlePortVariableEClass = createEClass(SINGLE_PORT_VARIABLE);
 		createEReference(singlePortVariableEClass, SINGLE_PORT_VARIABLE__MULTI_PORT_VARIABLE);
@@ -618,8 +530,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
-		ControlflowPackage theControlflowPackage = (ControlflowPackage)EPackage.Registry.INSTANCE.getEPackage(ControlflowPackage.eNS_URI);
-		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -638,9 +548,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		connectorVariableEClass.getESuperTypes().add(theConnectorPackage.getConnector());
 		assemblyVariableEClass.getESuperTypes().add(this.getConnectorVariable());
 		delegationVariableEClass.getESuperTypes().add(this.getConnectorVariable());
-		callEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
-		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		fadingFunctionEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		singlePortVariableEClass.getESuperTypes().add(this.getPortVariable());
 		multiPortVariableEClass.getESuperTypes().add(this.getPortVariable());
 
@@ -649,9 +556,9 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		initEReference(getComponentStoryPattern_ThisVariable(), this.getComponentVariable(), null, "thisVariable", null, 1, 1, ComponentStoryPattern.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentStoryPatternVariableEClass, ComponentStoryPatternVariable.class, "ComponentStoryPatternVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponentStoryPatternVariable_BindingSemantics(), thePatternsPackage.getBindingSemantics(), "bindingSemantics", "BindingSemantics.MANDATORY", 0, 1, ComponentStoryPatternVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentStoryPatternVariable_BindingOperator(), thePatternsPackage.getBindingOperator(), "bindingOperator", "BindingOperator.CHECK_ONLY", 0, 1, ComponentStoryPatternVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentStoryPatternVariable_BindingState(), thePatternsPackage.getBindingState(), "bindingState", "BindingState.UNBOUND", 0, 1, ComponentStoryPatternVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentStoryPatternVariable_BindingSemantics(), thePatternsPackage.getBindingSemantics(), "bindingSemantics", "MANDATORY", 0, 1, ComponentStoryPatternVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentStoryPatternVariable_BindingOperator(), thePatternsPackage.getBindingOperator(), "bindingOperator", "CHECK_ONLY", 0, 1, ComponentStoryPatternVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentStoryPatternVariable_BindingState(), thePatternsPackage.getBindingState(), "bindingState", "UNBOUND", 0, 1, ComponentStoryPatternVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentVariableEClass, ComponentVariable.class, "ComponentVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComponentVariable_PortVariables(), this.getPortVariable(), null, "portVariables", null, 0, -1, ComponentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -666,7 +573,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		initEClass(partVariableEClass, PartVariable.class, "PartVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPartVariable_PortVariables(), this.getPortVariable(), null, "portVariables", null, 0, -1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPartVariable_Type(), theComponentPackage.getComponentPart(), null, "type", null, 1, 1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPartVariable_Call(), this.getCall(), null, "call", null, 0, 1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorVariableEClass, ConnectorVariable.class, "ConnectorVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnectorVariable_PortVariables(), this.getPortVariable(), null, "portVariables", null, 0, -1, ConnectorVariable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -676,14 +582,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		initEClass(delegationVariableEClass, DelegationVariable.class, "DelegationVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDelegationVariable_Type(), theComponentPackage.getDelegationConnector(), null, "type", null, 1, 1, DelegationVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCall_Callee(), theControlflowPackage.getComponentStoryRule(), null, "callee", null, 1, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCall_ParameterBinding(), theBehaviorPackage.getParameterBinding(), null, "parameterBinding", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(fadingFunctionEClass, FadingFunction.class, "FadingFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFadingFunction_FromPort(), this.getPortVariable(), null, "fromPort", null, 1, 1, FadingFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFadingFunction_ToPort(), this.getPortVariable(), null, "toPort", null, 1, 1, FadingFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(singlePortVariableEClass, SinglePortVariable.class, "SinglePortVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSinglePortVariable_MultiPortVariable(), this.getMultiPortVariable(), this.getMultiPortVariable_SubPortVariables(), "multiPortVariable", null, 0, 1, SinglePortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

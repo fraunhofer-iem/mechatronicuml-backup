@@ -80,15 +80,6 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="FadingFunction"
-          description="Create new FadingFunction">
-        <smallIcon
-            xsi:type="gmftool:BundleImage"
-            path="icons/FadingFunction.png"
-            bundle="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="PartVariable"
           description="Create new PartVariable">
         <smallIcon

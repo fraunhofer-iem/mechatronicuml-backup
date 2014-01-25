@@ -163,7 +163,7 @@
         compartments="//@diagram/@compartments.3"
         graphicalNodeEditPolicyClassName="ComponentVariableGraphicalNodeEditPolicy"
         createCommandClassName="ComponentVariableCreateCommand"
-        containers="//@diagram/@compartments.2 //@diagram/@compartments.8">
+        containers="//@diagram/@compartments.2 //@diagram/@compartments.7">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -780,7 +780,7 @@
         itemSemanticEditPolicyClassName="ControllerExchangeNodeItemSemanticEditPolicy"
         notationViewFactoryClassName="ControllerExchangeNodeViewFactory"
         canonicalEditPolicyClassName="ControllerExchangeNodeCanonicalEditPolicy"
-        compartments="//@diagram/@compartments.6 //@diagram/@compartments.7"
+        compartments="//@diagram/@compartments.6"
         graphicalNodeEditPolicyClassName="ControllerExchangeNodeGraphicalNodeEditPolicy"
         createCommandClassName="ControllerExchangeNodeCreateCommand"
         containers="//@diagram/@compartments.0">
@@ -905,7 +905,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.4"/>
+            parser="//@labelParsers/@implementations.3"/>
       </labels>
       <labels
           visualID="5044"
@@ -925,7 +925,7 @@
         </viewmap>
         <modelFacet
             xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.5"/>
+            parser="//@labelParsers/@implementations.4"/>
       </labels>
     </childNodes>
     <childNodes
@@ -934,10 +934,10 @@
         itemSemanticEditPolicyClassName="ComponentStoryPattern2ItemSemanticEditPolicy"
         notationViewFactoryClassName="ComponentStoryPatternViewFactory"
         canonicalEditPolicyClassName="ComponentStoryPattern2CanonicalEditPolicy"
-        compartments="//@diagram/@compartments.8"
+        compartments="//@diagram/@compartments.7"
         graphicalNodeEditPolicyClassName="ComponentStoryPattern2GraphicalNodeEditPolicy"
         createCommandClassName="ComponentStoryPattern2CreateCommand"
-        containers="//@diagram/@compartments.7">
+        containers="//@diagram/@compartments.6">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <elementType
@@ -955,62 +955,6 @@
         <childMetaFeature
             href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode/componentStoryPattern"/>
       </modelFacet>
-    </childNodes>
-    <childNodes
-        visualID="3023"
-        editPartClassName="FadingFunctionEditPart"
-        itemSemanticEditPolicyClassName="FadingFunctionItemSemanticEditPolicy"
-        notationViewFactoryClassName="FadingFunctionViewFactory"
-        canonicalEditPolicyClassName="FadingFunctionCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="FadingFunctionGraphicalNodeEditPolicy"
-        createCommandClassName="FadingFunctionCreateCommand"
-        containers="//@diagram/@compartments.6">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="FadingFunctionEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="FadingFunctionFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class FadingFunctionFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureFadingFunctionLabel; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public FadingFunctionFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureFadingFunctionLabel = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureFadingFunctionLabel.setText(&quot;FadingFunction&quot;);&#xA;&#xA;this.add(fFigureFadingFunctionLabel);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureFadingFunctionLabel() {&#xA;&#x9;&#x9;return fFigureFadingFunctionLabel;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:DefaultSizeAttributes"
-            width="-1"
-            height="-1"/>
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedBackground="true"/>
-      </viewmap>
-      <modelFacet>
-        <metaClass
-            href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/FadingFunction"/>
-        <containmentMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode/fadingFunctions"/>
-        <childMetaFeature
-            href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode/fadingFunctions"/>
-      </modelFacet>
-      <labels
-          visualID="5042"
-          editPartClassName="WrappingLabel3EditPart"
-          itemSemanticEditPolicyClassName="WrappingLabel3ItemSemanticEditPolicy"
-          notationViewFactoryClassName="FadingFunctionLabelViewFactory"
-          readOnly="true">
-        <diagramRunTimeClass
-            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureFadingFunctionLabel"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
-          <attributes
-              xsi:type="gmfgen:StyleAttributes"
-              fixedForeground="true"
-              fixedBackground="true"/>
-        </viewmap>
-        <modelFacet
-            xsi:type="gmfgen:ExpressionLabelModelFacet"
-            parser="//@labelParsers/@implementations.3"/>
-      </labels>
     </childNodes>
     <topLevelNodes
         visualID="2003"
@@ -1165,8 +1109,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.18"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.19"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.17"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.18"/>
     </links>
     <links
         visualID="4005"
@@ -1222,8 +1166,8 @@
         </modelFacet>
       </labels>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.20"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.21"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.19"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.20"/>
     </links>
     <compartments
         visualID="7001"
@@ -1350,28 +1294,6 @@
         itemSemanticEditPolicyClassName="ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentItemSemanticEditPolicy"
         notationViewFactoryClassName="ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentViewFactory"
         canonicalEditPolicyClassName="ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentCanonicalEditPolicy"
-        childNodes="//@diagram/@childNodes.14"
-        title="ControllerExchangeNodeFadingFunctionsCompartment"
-        canCollapse="false"
-        needsTitle="false"
-        node="//@diagram/@childNodes.12">
-      <diagramRunTimeClass
-          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <viewmap
-          xsi:type="gmfgen:ParentAssignedViewmap"
-          getterName="getFigureControllerExchangeNodeFadingFunctionsContainer"
-          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
-      <behaviour
-          xsi:type="gmfgen:CustomBehaviour"
-          key="de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.COMPARTMENT_BORDER_ROLE"
-          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.common.edit.policies.compartment.BorderlessCompartmentEditPolicy"/>
-    </compartments>
-    <compartments
-        visualID="7011"
-        editPartClassName="ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart"
-        itemSemanticEditPolicyClassName="ControllerExchangeNodeControllerExchangeNodeCompartmentItemSemanticEditPolicy"
-        notationViewFactoryClassName="ControllerExchangeNodeControllerExchangeNodeCompartmentViewFactory"
-        canonicalEditPolicyClassName="ControllerExchangeNodeControllerExchangeNodeCompartmentCanonicalEditPolicy"
         childNodes="//@diagram/@childNodes.13"
         title="ControllerExchangeNodeCompartment"
         canCollapse="false"
@@ -1456,12 +1378,6 @@
       <groups
           title="Component Story Pattern"
           collapse="true">
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="FadingFunction"
-            description="Create new FadingFunction"
-            smallIconPath="/de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom/icons/FadingFunction.png"
-            genNodes="//@diagram/@childNodes.14"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="PartVariable"
@@ -1605,54 +1521,52 @@
     <providers
         xsi:type="gmfgen:GenExpressionInterpreter">
       <expressions
-          body="--'activity'"/>
+          body="'activity'"/>
       <expressions
-          body="--'componentStoryPattern'"/>
+          body="'componentStoryPattern'"/>
       <expressions
-          body="--'this'"/>
+          body="'this'"/>
       <expressions
-          body="--storydiagrams::patterns::BindingState::BOUND"/>
+          body="storydiagrams::patterns::BindingState::BOUND"/>
       <expressions
-          body="--storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
       <expressions
-          body="--'componentStoryNode'"/>
-      <expressions
-          xsi:type="gmfgen:GenConstraint"
-          body="--self.multiPortVariable.oclIsUndefined()"/>
-      <expressions
-          body="--let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;--let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;--let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;--if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;--selfName&#xD;&#xA;--else&#xD;&#xA;--selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;--endif"/>
-      <expressions
-          body="--'componentStoryPattern'"/>
-      <expressions
-          body="--'this'"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingState::BOUND"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingSemantics::MANDATORY"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingOperator::DESTROY"/>
-      <expressions
-          body="--storydiagrams::patterns::BindingOperator::CREATE"/>
-      <expressions
-          body="--'controllerExchangeNode'"/>
-      <expressions
-          body="----self.fromPort.oclAsType(PortVariable).name.concat(' → ').concat(self.toPort.oclAsType(PortVariable).name).concat(' : ').concat(self.name)&#xD;&#xA;---- 'hallo'&#xD;&#xA;--&#xD;&#xA;--&#xD;&#xA;--(&#xD;&#xA;--&#x9;if self.fromPort.name.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;'null'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;self.fromPort.name&#xD;&#xA;--&#x9;endif&#xD;&#xA;--).concat(' → ').concat(&#xD;&#xA;--&#x9;if self.toPort.name.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;'null'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;self.toPort.name&#xD;&#xA;--&#x9;endif&#xD;&#xA;--).concat(' : ').concat(&#xD;&#xA;--&#x9;if self.name.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;'null'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;self.name&#xD;&#xA;--&#x9;endif&#xD;&#xA;--)"/>
-      <expressions
-          body="--if self.controllerExchangeStrategy &lt;> ControllerExchangeStrategy::ATOMIC_SWITCHING then&#xD;&#xA;--&#x9;&#xD;&#xA;--&#x9;if self.deadline.oclIsUndefined() then&#xD;&#xA;--&#x9;&#x9;''&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;'['.concat(&#xA;--&#x9;&#x9;&#x9;-- explicitely access NaturalNumber,value and NaturalNumber.infinity so that the OCL Impact Analyzer listens to model changes.&#xD;&#xA;--&#x9;&#x9;&#x9;if self.deadline.lowerBound.value.oclIsUndefined() or self.deadline.lowerBound.infinity.oclIsUndefined() then 'null' else self.deadline.lowerBound.toString() endif&#xD;&#xA;--&#x9;&#x9;).concat(';').concat(&#xA;--&#x9;&#x9;&#x9;-- explicitely access NaturalNumber,value and NaturalNumber.infinity so that the OCL Impact Analyzer listens to model changes.&#xD;&#xA;--&#x9;&#x9;&#x9;if self.deadline.upperBound.value.oclIsUndefined() or self.deadline.upperBound.infinity.oclIsundefined() then 'null' else self.deadline.upperBound.toString() endif&#xD;&#xA;--&#x9;&#x9;).concat(']')&#xD;&#xA;--&#x9;endif&#xD;&#xA;--&#xD;&#xA;--else&#xD;&#xA;--&#x9;''&#xD;&#xA;--endif"/>
-      <expressions
-          body="--if ControllerExchangeStrategy::FADING_FUNCTION = self.controllerExchangeStrategy then&#xD;&#xA;--&#x9;'Cross'&#xD;&#xA;--else&#xD;&#xA;--&#x9;if ControllerExchangeStrategy::FLAT_SWITCHING = self.controllerExchangeStrategy then&#xD;&#xA;--&#x9;&#x9;'Flat'&#xD;&#xA;--&#x9;else&#xD;&#xA;--&#x9;&#x9;'Atomic'&#xD;&#xA;--&#x9;endif&#xD;&#xA;--endif"/>
+          body="'componentStoryNode'"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;--not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+          body="self.multiPortVariable.oclIsUndefined()"/>
+      <expressions
+          body="let compName : String = if self.type.componentType.name.oclIsUndefined() then 'null' else&#x9;self.type.componentType.name endif in&#xD;&#xA;let partName : String = if self.type.name.oclIsUndefined() then ' ' else&#x9;' / '.concat(self.type.name) endif in&#xD;&#xA;let selfName : String = if self.name.oclIsUndefined() then 'null' else self.name endif in&#xD;&#xA;if bindingState = storydiagrams::patterns::BindingState::BOUND then&#xD;&#xA;selfName&#xD;&#xA;else&#xD;&#xA;selfName.concat(partName.concat(' : '.concat(compName)))&#xD;&#xA;endif"/>
+      <expressions
+          body="'componentStoryPattern'"/>
+      <expressions
+          body="'this'"/>
+      <expressions
+          body="storydiagrams::patterns::BindingState::BOUND"/>
+      <expressions
+          body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
+      <expressions
+          body="storydiagrams::patterns::BindingOperator::DESTROY"/>
+      <expressions
+          body="storydiagrams::patterns::BindingOperator::CREATE"/>
+      <expressions
+          body="'controllerExchangeNode'"/>
+      <expressions
+          body="if self.controllerExchangeStrategy &lt;> ControllerExchangeStrategy::ATOMIC_SWITCHING then&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;if self.deadline.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;-- explicitely access NaturalNumber,value and NaturalNumber.infinity so that the OCL Impact Analyzer listens to model changes.&#xD;&#xA;&#x9;&#x9;&#x9;if self.deadline.lowerBound.value.oclIsUndefined() or self.deadline.lowerBound.infinity.oclIsUndefined() then 'null' else self.deadline.lowerBound.toString() endif&#xD;&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;-- explicitely access NaturalNumber,value and NaturalNumber.infinity so that the OCL Impact Analyzer listens to model changes.&#xD;&#xA;&#x9;&#x9;&#x9;if self.deadline.upperBound.value.oclIsUndefined() or self.deadline.upperBound.infinity.oclIsundefined() then 'null' else self.deadline.upperBound.toString() endif&#xD;&#xA;&#x9;&#x9;).concat(']')&#xD;&#xA;&#x9;endif&#xD;&#xA;&#xD;&#xA;else&#xD;&#xA;&#x9;''&#xD;&#xA;endif"/>
+      <expressions
+          body="if ControllerExchangeStrategy::FADING_FUNCTION = self.controllerExchangeStrategy then&#xD;&#xA;&#x9;'Cross'&#xD;&#xA;else&#xD;&#xA;&#x9;if ControllerExchangeStrategy::FLAT_SWITCHING = self.controllerExchangeStrategy then&#xD;&#xA;&#x9;&#x9;'Flat'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'Atomic'&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----Create AssemblyVariable between PortVariables of different PartVariables&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() &lt;> oppositeEnd.eContainer()"/>
+          body="--Create AssemblyVariable between PortVariables of PartVariables&#xD;&#xA;not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+          body="--Create AssemblyVariable between PortVariables of different PartVariables&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() &lt;> oppositeEnd.eContainer()"/>
       <expressions
           xsi:type="gmfgen:GenConstraint"
-          body="----End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
+          body="--Start creation of DelegationVariable at PortVariable of ComponentVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()"/>
+      <expressions
+          xsi:type="gmfgen:GenConstraint"
+          body="--End creation of DelegationVariable at PortVariable of PartVariable&#xD;&#xA;self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer() = oppositeEnd.oclAsType(ecore::EObject).eContainer().eContainer()"/>
     </providers>
   </expressionProviders>
   <labelParsers
@@ -1666,32 +1580,21 @@
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.3/@labels.1/@modelFacet"
-        className="PartVariableLabelExpressionLabelParser5018"
         viewExpression="//@expressionProviders/@providers.0/@expressions.7">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/PartVariable"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
-        uses="//@diagram/@childNodes.14/@labels.0/@modelFacet"
-        className="FadingFunctionLabelExpressionLabelParser5042"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
-      <expressionContext
-          href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/componentstorypattern/FadingFunction"/>
-    </implementations>
-    <implementations
-        xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.12/@labels.1/@modelFacet"
-        className="ControllerExchangeNodeLabelExpressionLabelParser5043"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.15">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode"/>
     </implementations>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@childNodes.12/@labels.2/@modelFacet"
-        className="ControllerExchangeNodeLabelExpressionLabelParser5044"
-        viewExpression="//@expressionProviders/@providers.0/@expressions.17">
+        viewExpression="//@expressionProviders/@providers.0/@expressions.16">
       <expressionContext
           href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.genmodel#//componentstorydiagram/controlflow/ControllerExchangeNode"/>
     </implementations>

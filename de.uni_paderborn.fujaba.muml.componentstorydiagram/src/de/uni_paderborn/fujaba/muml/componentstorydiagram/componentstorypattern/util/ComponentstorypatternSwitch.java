@@ -14,14 +14,12 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable;
@@ -171,22 +169,6 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentstorypatternPackage.CALL: {
-				Call call = (Call)theEObject;
-				T result = caseCall(call);
-				if (result == null) result = caseExtendableElement(call);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ComponentstorypatternPackage.FADING_FUNCTION: {
-				FadingFunction fadingFunction = (FadingFunction)theEObject;
-				T result = caseFadingFunction(fadingFunction);
-				if (result == null) result = caseNamedElement(fadingFunction);
-				if (result == null) result = caseCommentableElement(fadingFunction);
-				if (result == null) result = caseExtendableElement(fadingFunction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE: {
 				SinglePortVariable singlePortVariable = (SinglePortVariable)theEObject;
 				T result = caseSinglePortVariable(singlePortVariable);
@@ -332,36 +314,6 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDelegationVariable(DelegationVariable object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Call</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Call</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCall(Call object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fading Function</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fading Function</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFadingFunction(FadingFunction object) {
 		return null;
 	}
 

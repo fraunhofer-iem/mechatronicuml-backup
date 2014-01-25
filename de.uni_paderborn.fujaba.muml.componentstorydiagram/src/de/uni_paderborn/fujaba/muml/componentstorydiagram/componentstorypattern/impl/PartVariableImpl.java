@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable;
@@ -32,7 +31,6 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.PartVariableImpl#getPortVariables <em>Port Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.PartVariableImpl#getType <em>Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.PartVariableImpl#getCall <em>Call</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,16 +56,6 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 	 * @ordered
 	 */
 	protected ComponentPart type;
-
-	/**
-	 * The cached value of the '{@link #getCall() <em>Call</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCall()
-	 * @generated
-	 * @ordered
-	 */
-	protected Call call;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,44 +131,6 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Call getCall() {
-		if (call != null && call.eIsProxy()) {
-			InternalEObject oldCall = (InternalEObject)call;
-			call = (Call)eResolveProxy(oldCall);
-			if (call != oldCall) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComponentstorypatternPackage.PART_VARIABLE__CALL, oldCall, call));
-			}
-		}
-		return call;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Call basicGetCall() {
-		return call;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCall(Call newCall) {
-		Call oldCall = call;
-		call = newCall;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.PART_VARIABLE__CALL, oldCall, call));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -203,9 +153,6 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case ComponentstorypatternPackage.PART_VARIABLE__CALL:
-				if (resolve) return getCall();
-				return basicGetCall();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -226,9 +173,6 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
 				setType((ComponentPart)newValue);
 				return;
-			case ComponentstorypatternPackage.PART_VARIABLE__CALL:
-				setCall((Call)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -247,9 +191,6 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
 				setType((ComponentPart)null);
 				return;
-			case ComponentstorypatternPackage.PART_VARIABLE__CALL:
-				setCall((Call)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -266,8 +207,6 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 				return portVariables != null && !portVariables.isEmpty();
 			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
 				return type != null;
-			case ComponentstorypatternPackage.PART_VARIABLE__CALL:
-				return call != null;
 		}
 		return super.eIsSet(featureID);
 	}

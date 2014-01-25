@@ -33,7 +33,7 @@ import org.storydriven.storydiagrams.patterns.BindingState;
 public interface ComponentStoryPatternVariable extends NamedElement, CommentableElement {
 	/**
 	 * Returns the value of the '<em><b>Binding Semantics</b></em>' attribute.
-	 * The default value is <code>"BindingSemantics.MANDATORY"</code>.
+	 * The default value is <code>"MANDATORY"</code>.
 	 * The literals are from the enumeration {@link org.storydriven.storydiagrams.patterns.BindingSemantics}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -45,7 +45,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	 * @see org.storydriven.storydiagrams.patterns.BindingSemantics
 	 * @see #setBindingSemantics(BindingSemantics)
 	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getComponentStoryPatternVariable_BindingSemantics()
-	 * @model default="BindingSemantics.MANDATORY"
+	 * @model default="MANDATORY"
 	 * @generated
 	 */
 	BindingSemantics getBindingSemantics();
@@ -63,7 +63,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 
 	/**
 	 * Returns the value of the '<em><b>Binding Operator</b></em>' attribute.
-	 * The default value is <code>"BindingOperator.CHECK_ONLY"</code>.
+	 * The default value is <code>"CHECK_ONLY"</code>.
 	 * The literals are from the enumeration {@link org.storydriven.storydiagrams.patterns.BindingOperator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -75,7 +75,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	 * @see org.storydriven.storydiagrams.patterns.BindingOperator
 	 * @see #setBindingOperator(BindingOperator)
 	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getComponentStoryPatternVariable_BindingOperator()
-	 * @model default="BindingOperator.CHECK_ONLY"
+	 * @model default="CHECK_ONLY"
 	 * @generated
 	 */
 	BindingOperator getBindingOperator();
@@ -93,7 +93,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 
 	/**
 	 * Returns the value of the '<em><b>Binding State</b></em>' attribute.
-	 * The default value is <code>"BindingState.UNBOUND"</code>.
+	 * The default value is <code>"UNBOUND"</code>.
 	 * The literals are from the enumeration {@link org.storydriven.storydiagrams.patterns.BindingState}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -105,7 +105,7 @@ public interface ComponentStoryPatternVariable extends NamedElement, Commentable
 	 * @see org.storydriven.storydiagrams.patterns.BindingState
 	 * @see #setBindingState(BindingState)
 	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getComponentStoryPatternVariable_BindingState()
-	 * @model default="BindingState.UNBOUND"
+	 * @model default="UNBOUND"
 	 * @generated
 	 */
 	BindingState getBindingState();

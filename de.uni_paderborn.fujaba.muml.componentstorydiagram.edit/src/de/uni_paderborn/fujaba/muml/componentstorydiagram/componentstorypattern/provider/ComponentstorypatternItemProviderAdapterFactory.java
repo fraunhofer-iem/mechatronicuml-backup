@@ -213,52 +213,6 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CallItemProvider callItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCallAdapter() {
-		if (callItemProvider == null) {
-			callItemProvider = new CallItemProvider(this);
-		}
-
-		return callItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FadingFunctionItemProvider fadingFunctionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFadingFunctionAdapter() {
-		if (fadingFunctionItemProvider == null) {
-			fadingFunctionItemProvider = new FadingFunctionItemProvider(this);
-		}
-
-		return fadingFunctionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -409,8 +363,6 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 		if (partVariableItemProvider != null) partVariableItemProvider.dispose();
 		if (assemblyVariableItemProvider != null) assemblyVariableItemProvider.dispose();
 		if (delegationVariableItemProvider != null) delegationVariableItemProvider.dispose();
-		if (callItemProvider != null) callItemProvider.dispose();
-		if (fadingFunctionItemProvider != null) fadingFunctionItemProvider.dispose();
 		if (singlePortVariableItemProvider != null) singlePortVariableItemProvider.dispose();
 		if (multiPortVariableItemProvider != null) multiPortVariableItemProvider.dispose();
 	}

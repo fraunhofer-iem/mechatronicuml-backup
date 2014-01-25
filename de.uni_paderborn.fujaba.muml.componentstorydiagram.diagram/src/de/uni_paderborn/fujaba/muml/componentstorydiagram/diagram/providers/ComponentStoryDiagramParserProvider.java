@@ -43,7 +43,7 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	 * @generated
 	 */
 	private IParser getPartVariableLabel_5018Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.PartVariableLabelExpressionLabelParser5018();
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.PartVariableLabelExpressionLabelParser();
 	}
 
 	/**
@@ -153,21 +153,14 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	 * @generated
 	 */
 	private IParser getControllerExchangeNodeLabel_5043Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5043();
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser();
 	}
 
 	/**
 	 * @generated
 	 */
 	private IParser getControllerExchangeNodeLabel_5044Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser5044();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getFadingFunctionLabel_5042Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.FadingFunctionLabelExpressionLabelParser5042();
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser();
 	}
 
 	/**
@@ -235,8 +228,6 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 			return getControllerExchangeNodeLabel_5043Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
 			return getControllerExchangeNodeLabel_5044Parser();
-		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel3EditPart.VISUAL_ID:
-			return getFadingFunctionLabel_5042Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableNameEditPart.VISUAL_ID:
 			return getAssemblyVariableName_6004Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID:

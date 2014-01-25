@@ -54,7 +54,7 @@ public class ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartm
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
-				.getControllerExchangeNode_FadingFunctions();
+				.getControllerExchangeNode_ComponentStoryPattern();
 	}
 
 	/**
@@ -87,7 +87,7 @@ public class ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartm
 				int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 						.getVisualID(childView);
 				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.FadingFunctionEditPart.VISUAL_ID });
+						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
@@ -104,7 +104,7 @@ public class ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartm
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-				.getControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartment_7009SemanticChildren(viewObject);
+				.getControllerExchangeNodeControllerExchangeNodeCompartment_7009SemanticChildren(viewObject);
 
 	}
 
@@ -121,7 +121,7 @@ public class ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartm
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.FadingFunctionEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 				.getVisualID(view);
 	}
 

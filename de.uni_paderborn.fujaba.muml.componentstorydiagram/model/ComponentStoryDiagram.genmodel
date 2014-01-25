@@ -9,11 +9,6 @@
       disposableProviderFactory="true" ecorePackage="ComponentStoryDiagram.ecore#/">
     <nestedGenPackages prefix="Controlflow" basePackage="de.uni_paderborn.fujaba.muml.componentstorydiagram"
         disposableProviderFactory="true" ecorePackage="ComponentStoryDiagram.ecore#//controlflow">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeStrategy">
-        <genEnumLiterals ecoreEnumLiteral="ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeStrategy/ATOMIC_SWITCHING"/>
-        <genEnumLiterals ecoreEnumLiteral="ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeStrategy/FADING_FUNCTION"/>
-        <genEnumLiterals ecoreEnumLiteral="ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeStrategy/FLAT_SWITCHING"/>
-      </genEnums>
       <genClasses ecoreClass="ComponentStoryDiagram.ecore#//controlflow/ComponentStoryRule">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//controlflow/ComponentStoryRule/activity"/>
       </genClasses>
@@ -26,8 +21,6 @@
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/deadline"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/componentStoryPattern"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/controllerExchangeStrategy"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/fadingFunctions"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Componentstorypattern" basePackage="de.uni_paderborn.fujaba.muml.componentstorydiagram"
@@ -56,8 +49,6 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable/portVariables"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable/type"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable/call"/>
       </genClasses>
       <genClasses image="false" ecoreClass="ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable">
         <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/ConnectorVariable/portVariables"/>
@@ -69,17 +60,6 @@
       <genClasses ecoreClass="ComponentStoryDiagram.ecore#//componentstorypattern/DelegationVariable">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/DelegationVariable/type"/>
-      </genClasses>
-      <genClasses ecoreClass="ComponentStoryDiagram.ecore#//componentstorypattern/Call">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/Call/callee"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/Call/parameterBinding"/>
-      </genClasses>
-      <genClasses ecoreClass="ComponentStoryDiagram.ecore#//componentstorypattern/FadingFunction">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/FadingFunction/fromPort"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//componentstorypattern/FadingFunction/toPort"/>
       </genClasses>
       <genClasses ecoreClass="ComponentStoryDiagram.ecore#//componentstorypattern/SinglePortVariable">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

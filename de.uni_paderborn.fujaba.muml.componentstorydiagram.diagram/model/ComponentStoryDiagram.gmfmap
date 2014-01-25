@@ -161,7 +161,7 @@
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
-                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
+                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.0"/>
                       <diagramNode
                           href="ComponentStoryDiagram.gmfgraph#PartVariable"/>
                       <children
@@ -198,7 +198,7 @@
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
-                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
+                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
                       <diagramNode
                           href="ComponentStoryDiagram.gmfgraph#MultiPortVariable"/>
                       <children
@@ -210,7 +210,7 @@
                               href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/SinglePortVariable"/>
                           <tool
                               xsi:type="gmftool:CreationTool"
-                              href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
+                              href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
                           <diagramNode
                               href="ComponentStoryDiagram.gmfgraph#InnerSinglePortVariable"/>
                         </ownedChild>
@@ -246,7 +246,7 @@
                       </labelMappings>
                       <tool
                           xsi:type="gmftool:CreationTool"
-                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.2"/>
+                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
                       <diagramNode
                           href="ComponentStoryDiagram.gmfgraph#SinglePortVariable"/>
                     </ownedChild>
@@ -440,38 +440,11 @@
           <diagramNode
               href="ComponentStoryDiagram.gmfgraph#ControllerExchangeNode"/>
           <children
-              compartment="//@nodes.0/@ownedChild/@children.4/@ownedChild/@compartments.1"
+              compartment="//@nodes.0/@ownedChild/@children.4/@ownedChild/@compartments.0"
               referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/componentStoryPattern"/>
           </children>
-          <children
-              compartment="//@nodes.0/@ownedChild/@children.4/@ownedChild/@compartments.0">
-            <containmentFeature
-                href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//controlflow/ControllerExchangeNode/fadingFunctions"/>
-            <ownedChild>
-              <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/FadingFunction"/>
-              <labelMappings
-                  xsi:type="gmfmap:ExpressionLabelMapping"
-                  readOnly="true">
-                <diagramLabel
-                    href="ComponentStoryDiagram.gmfgraph#FadingFunctionLabel"/>
-                <viewExpression
-                    body="--self.fromPort.oclAsType(PortVariable).name.concat(' → ').concat(self.toPort.oclAsType(PortVariable).name).concat(' : ').concat(self.name)&#xD;&#xA;-- 'hallo'&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;(&#xD;&#xA;&#x9;if self.fromPort.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.fromPort.name&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(' → ').concat(&#xD;&#xA;&#x9;if self.toPort.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.toPort.name&#xD;&#xA;&#x9;endif&#xD;&#xA;).concat(' : ').concat(&#xD;&#xA;&#x9;if self.name.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;'null'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;self.name&#xD;&#xA;&#x9;endif&#xD;&#xA;)"/>
-              </labelMappings>
-              <tool
-                  xsi:type="gmftool:CreationTool"
-                  href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.0"/>
-              <diagramNode
-                  href="ComponentStoryDiagram.gmfgraph#FadingFunctionNode"/>
-            </ownedChild>
-          </children>
-          <compartments
-              children="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.1">
-            <compartment
-                href="ComponentStoryDiagram.gmfgraph#ControllerExchangeNodeFadingFunctionsCompartment"/>
-          </compartments>
           <compartments
               children="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0">
             <compartment
@@ -524,7 +497,7 @@
         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/connectorVariables"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
+        href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
     <diagramLink
         href="ComponentStoryDiagram.gmfgraph#AssemblyVariable"/>
     <sourceMetaFeature
@@ -556,7 +529,7 @@
         href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/connectorVariables"/>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
+        href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.4"/>
     <diagramLink
         href="ComponentStoryDiagram.gmfgraph#DelegationVariable"/>
     <sourceMetaFeature

@@ -6,16 +6,12 @@ import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.ENamedElement;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.emf.type.core.ElementTypeRegistry;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypeImages;
 import org.eclipse.gmf.tooling.runtime.providers.DiagramElementTypes;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.swt.graphics.Image;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
@@ -112,11 +108,6 @@ public class ComponentStoryDiagramElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ComponentStoryPattern_3022 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryPattern_3022"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType FadingFunction_3023 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.FadingFunction_3023"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -241,11 +232,6 @@ public class ComponentStoryDiagramElementTypes {
 					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getComponentStoryPattern());
 
-			elements.put(
-					FadingFunction_3023,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getFadingFunction());
-
 			elements.put(ActivityEdge_4001,
 					ActivitiesPackage.eINSTANCE.getActivityEdge());
 
@@ -291,7 +277,6 @@ public class ComponentStoryDiagramElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_3010);
 			KNOWN_ELEMENT_TYPES.add(ControllerExchangeNode_3021);
 			KNOWN_ELEMENT_TYPES.add(ComponentStoryPattern_3022);
-			KNOWN_ELEMENT_TYPES.add(FadingFunction_3023);
 			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4001);
 			KNOWN_ELEMENT_TYPES.add(AssemblyVariable_4004);
 			KNOWN_ELEMENT_TYPES.add(DelegationVariable_4005);
@@ -336,8 +321,6 @@ public class ComponentStoryDiagramElementTypes {
 			return ControllerExchangeNode_3021;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID:
 			return ComponentStoryPattern_3022;
-		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.FadingFunctionEditPart.VISUAL_ID:
-			return FadingFunction_3023;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID:
 			return ActivityEdge_4001;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:

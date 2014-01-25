@@ -527,22 +527,13 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int PART_VARIABLE__TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Call</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PART_VARIABLE__CALL = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Part Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PART_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 3;
+	int PART_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.ConnectorVariableImpl <em>Connector Variable</em>}' class.
@@ -863,135 +854,6 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int DELEGATION_VARIABLE_FEATURE_COUNT = CONNECTOR_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.CallImpl <em>Call</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.CallImpl
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl#getCall()
-	 * @generated
-	 */
-	int CALL = 8;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALL__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALL__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Callee</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALL__CALLEE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Parameter Binding</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALL__PARAMETER_BINDING = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Call</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALL_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.FadingFunctionImpl <em>Fading Function</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.FadingFunctionImpl
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl#getFadingFunction()
-	 * @generated
-	 */
-	int FADING_FUNCTION = 9;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__ANNOTATION = CorePackage.NAMED_ELEMENT__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__EXTENSION = CorePackage.NAMED_ELEMENT__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>From Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__FROM_PORT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>To Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION__TO_PORT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Fading Function</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FADING_FUNCTION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-
-	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.SinglePortVariableImpl <em>Single Port Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -999,7 +861,7 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl#getSinglePortVariable()
 	 * @generated
 	 */
-	int SINGLE_PORT_VARIABLE = 10;
+	int SINGLE_PORT_VARIABLE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1117,7 +979,7 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl#getMultiPortVariable()
 	 * @generated
 	 */
-	int MULTI_PORT_VARIABLE = 11;
+	int MULTI_PORT_VARIABLE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1420,17 +1282,6 @@ public interface ComponentstorypatternPackage extends EPackage {
 	EReference getPartVariable_Type();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable#getCall <em>Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Call</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable#getCall()
-	 * @see #getPartVariable()
-	 * @generated
-	 */
-	EReference getPartVariable_Call();
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ConnectorVariable <em>Connector Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1492,70 +1343,6 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDelegationVariable_Type();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call <em>Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Call</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call
-	 * @generated
-	 */
-	EClass getCall();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call#getCallee <em>Callee</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Callee</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call#getCallee()
-	 * @see #getCall()
-	 * @generated
-	 */
-	EReference getCall_Callee();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call#getParameterBinding <em>Parameter Binding</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameter Binding</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call#getParameterBinding()
-	 * @see #getCall()
-	 * @generated
-	 */
-	EReference getCall_ParameterBinding();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction <em>Fading Function</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fading Function</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction
-	 * @generated
-	 */
-	EClass getFadingFunction();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction#getFromPort <em>From Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>From Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction#getFromPort()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EReference getFadingFunction_FromPort();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction#getToPort <em>To Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>To Port</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction#getToPort()
-	 * @see #getFadingFunction()
-	 * @generated
-	 */
-	EReference getFadingFunction_ToPort();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable <em>Single Port Variable</em>}'.
@@ -1762,13 +1549,6 @@ public interface ComponentstorypatternPackage extends EPackage {
 		 */
 		EReference PART_VARIABLE__TYPE = eINSTANCE.getPartVariable_Type();
 		/**
-		 * The meta object literal for the '<em><b>Call</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PART_VARIABLE__CALL = eINSTANCE.getPartVariable_Call();
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.ConnectorVariableImpl <em>Connector Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1816,52 +1596,6 @@ public interface ComponentstorypatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DELEGATION_VARIABLE__TYPE = eINSTANCE.getDelegationVariable_Type();
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.CallImpl <em>Call</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.CallImpl
-		 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl#getCall()
-		 * @generated
-		 */
-		EClass CALL = eINSTANCE.getCall();
-		/**
-		 * The meta object literal for the '<em><b>Callee</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CALL__CALLEE = eINSTANCE.getCall_Callee();
-		/**
-		 * The meta object literal for the '<em><b>Parameter Binding</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CALL__PARAMETER_BINDING = eINSTANCE.getCall_ParameterBinding();
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.FadingFunctionImpl <em>Fading Function</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.FadingFunctionImpl
-		 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl#getFadingFunction()
-		 * @generated
-		 */
-		EClass FADING_FUNCTION = eINSTANCE.getFadingFunction();
-		/**
-		 * The meta object literal for the '<em><b>From Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FADING_FUNCTION__FROM_PORT = eINSTANCE.getFadingFunction_FromPort();
-		/**
-		 * The meta object literal for the '<em><b>To Port</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FADING_FUNCTION__TO_PORT = eINSTANCE.getFadingFunction_ToPort();
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.SinglePortVariableImpl <em>Single Port Variable</em>}' class.
 		 * <!-- begin-user-doc -->

@@ -13,14 +13,12 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable;
@@ -76,8 +74,6 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 			case ComponentstorypatternPackage.PART_VARIABLE: return createPartVariable();
 			case ComponentstorypatternPackage.ASSEMBLY_VARIABLE: return createAssemblyVariable();
 			case ComponentstorypatternPackage.DELEGATION_VARIABLE: return createDelegationVariable();
-			case ComponentstorypatternPackage.CALL: return createCall();
-			case ComponentstorypatternPackage.FADING_FUNCTION: return createFadingFunction();
 			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE: return createSinglePortVariable();
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE: return createMultiPortVariable();
 			default:
@@ -143,26 +139,6 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	public DelegationVariable createDelegationVariable() {
 		DelegationVariableImpl delegationVariable = new DelegationVariableImpl();
 		return delegationVariable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Call createCall() {
-		CallImpl call = new CallImpl();
-		return call;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public FadingFunction createFadingFunction() {
-		FadingFunctionImpl fadingFunction = new FadingFunctionImpl();
-		return fadingFunction;
 	}
 
 	/**

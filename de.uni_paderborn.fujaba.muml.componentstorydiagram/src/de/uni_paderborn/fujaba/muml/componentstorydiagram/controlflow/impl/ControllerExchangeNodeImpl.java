@@ -6,23 +6,16 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
 
 /**
@@ -34,8 +27,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControllerExchangeNodeImpl#getDeadline <em>Deadline</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControllerExchangeNodeImpl#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControllerExchangeNodeImpl#getControllerExchangeStrategy <em>Controller Exchange Strategy</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControllerExchangeNodeImpl#getFadingFunctions <em>Fading Functions</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,36 +52,6 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	 * @ordered
 	 */
 	protected ComponentStoryPattern componentStoryPattern;
-
-	/**
-	 * The default value of the '{@link #getControllerExchangeStrategy() <em>Controller Exchange Strategy</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getControllerExchangeStrategy()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final ControllerExchangeStrategy CONTROLLER_EXCHANGE_STRATEGY_EDEFAULT = ControllerExchangeStrategy.ATOMIC_SWITCHING;
-
-	/**
-	 * The cached value of the '{@link #getControllerExchangeStrategy() <em>Controller Exchange Strategy</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getControllerExchangeStrategy()
-	 * @generated
-	 * @ordered
-	 */
-	protected ControllerExchangeStrategy controllerExchangeStrategy = CONTROLLER_EXCHANGE_STRATEGY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getFadingFunctions() <em>Fading Functions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFadingFunctions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<FadingFunction> fadingFunctions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,39 +163,6 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControllerExchangeStrategy getControllerExchangeStrategy() {
-		return controllerExchangeStrategy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setControllerExchangeStrategy(ControllerExchangeStrategy newControllerExchangeStrategy) {
-		ControllerExchangeStrategy oldControllerExchangeStrategy = controllerExchangeStrategy;
-		controllerExchangeStrategy = newControllerExchangeStrategy == null ? CONTROLLER_EXCHANGE_STRATEGY_EDEFAULT : newControllerExchangeStrategy;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY, oldControllerExchangeStrategy, controllerExchangeStrategy));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<FadingFunction> getFadingFunctions() {
-		if (fadingFunctions == null) {
-			fadingFunctions = new EObjectContainmentEList<FadingFunction>(FadingFunction.class, this, ControlflowPackage.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS);
-		}
-		return fadingFunctions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -242,8 +170,6 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 				return basicSetDeadline(null, msgs);
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				return basicSetComponentStoryPattern(null, msgs);
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS:
-				return ((InternalEList<?>)getFadingFunctions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -260,10 +186,6 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 				return getDeadline();
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				return getComponentStoryPattern();
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY:
-				return getControllerExchangeStrategy();
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS:
-				return getFadingFunctions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -283,13 +205,6 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				setComponentStoryPattern((ComponentStoryPattern)newValue);
 				return;
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY:
-				setControllerExchangeStrategy((ControllerExchangeStrategy)newValue);
-				return;
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS:
-				getFadingFunctions().clear();
-				getFadingFunctions().addAll((Collection<? extends FadingFunction>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -308,12 +223,6 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				setComponentStoryPattern((ComponentStoryPattern)null);
 				return;
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY:
-				setControllerExchangeStrategy(CONTROLLER_EXCHANGE_STRATEGY_EDEFAULT);
-				return;
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS:
-				getFadingFunctions().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -330,28 +239,8 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 				return deadline != null;
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				return componentStoryPattern != null;
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY:
-				return controllerExchangeStrategy != CONTROLLER_EXCHANGE_STRATEGY_EDEFAULT;
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS:
-				return fadingFunctions != null && !fadingFunctions.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (controllerExchangeStrategy: ");
-		result.append(controllerExchangeStrategy);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ControllerExchangeNodeImpl

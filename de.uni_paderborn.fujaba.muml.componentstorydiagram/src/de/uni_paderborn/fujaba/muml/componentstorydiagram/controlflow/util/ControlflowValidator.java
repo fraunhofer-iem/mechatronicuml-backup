@@ -18,7 +18,6 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentS
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy;
 
 
 /**
@@ -99,8 +98,6 @@ public class ControlflowValidator extends EObjectValidator {
 				return validateComponentStoryNode((ComponentStoryNode)value, diagnostics, context);
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE:
 				return validateControllerExchangeNode((ControllerExchangeNode)value, diagnostics, context);
-			case ControlflowPackage.CONTROLLER_EXCHANGE_STRATEGY:
-				return validateControllerExchangeStrategy((ControllerExchangeStrategy)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -248,15 +245,6 @@ public class ControlflowValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateControllerExchangeStrategy(ControllerExchangeStrategy controllerExchangeStrategy, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
 	}
 
 	/**

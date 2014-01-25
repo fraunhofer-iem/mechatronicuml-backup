@@ -15,14 +15,12 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.AssemblyVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.Call;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.DelegationVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PortVariable;
@@ -117,10 +115,6 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 				return validateAssemblyVariable((AssemblyVariable)value, diagnostics, context);
 			case ComponentstorypatternPackage.DELEGATION_VARIABLE:
 				return validateDelegationVariable((DelegationVariable)value, diagnostics, context);
-			case ComponentstorypatternPackage.CALL:
-				return validateCall((Call)value, diagnostics, context);
-			case ComponentstorypatternPackage.FADING_FUNCTION:
-				return validateFadingFunction((FadingFunction)value, diagnostics, context);
 			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE:
 				return validateSinglePortVariable((SinglePortVariable)value, diagnostics, context);
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE:
@@ -604,24 +598,6 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateConnectorVariable_SameBindingOperatorAsPortVariable(delegationVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validateConnectorVariable_ExistingConnectorBetweenPortVariableTypes(delegationVariable, diagnostics, context);
 		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCall(Call call, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(call, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateFadingFunction(FadingFunction fadingFunction, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(fadingFunction, diagnostics, context);
 	}
 
 	/**

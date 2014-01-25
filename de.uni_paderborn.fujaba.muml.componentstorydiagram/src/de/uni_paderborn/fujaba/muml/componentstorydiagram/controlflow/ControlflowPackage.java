@@ -8,7 +8,6 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
@@ -365,42 +364,13 @@ public interface ControlflowPackage extends EPackage {
 	int CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Controller Exchange Strategy</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Fading Functions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Controller Exchange Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_EXCHANGE_NODE_FEATURE_COUNT = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 4;
-
-	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy <em>Controller Exchange Strategy</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControlflowPackageImpl#getControllerExchangeStrategy()
-	 * @generated
-	 */
-	int CONTROLLER_EXCHANGE_STRATEGY = 3;
-
+	int CONTROLLER_EXCHANGE_NODE_FEATURE_COUNT = ActivitiesPackage.ACTIVITY_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule <em>Component Story Rule</em>}'.
@@ -486,38 +456,6 @@ public interface ControlflowPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getControllerExchangeNode_ComponentStoryPattern();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getControllerExchangeStrategy <em>Controller Exchange Strategy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Controller Exchange Strategy</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getControllerExchangeStrategy()
-	 * @see #getControllerExchangeNode()
-	 * @generated
-	 */
-	EAttribute getControllerExchangeNode_ControllerExchangeStrategy();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getFadingFunctions <em>Fading Functions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Fading Functions</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getFadingFunctions()
-	 * @see #getControllerExchangeNode()
-	 * @generated
-	 */
-	EReference getControllerExchangeNode_FadingFunctions();
-
-	/**
-	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy <em>Controller Exchange Strategy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Controller Exchange Strategy</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy
-	 * @generated
-	 */
-	EEnum getControllerExchangeStrategy();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -610,32 +548,6 @@ public interface ControlflowPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN = eINSTANCE.getControllerExchangeNode_ComponentStoryPattern();
-
-		/**
-		 * The meta object literal for the '<em><b>Controller Exchange Strategy</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY = eINSTANCE.getControllerExchangeNode_ControllerExchangeStrategy();
-
-		/**
-		 * The meta object literal for the '<em><b>Fading Functions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS = eINSTANCE.getControllerExchangeNode_FadingFunctions();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy <em>Controller Exchange Strategy</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy
-		 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControlflowPackageImpl#getControllerExchangeStrategy()
-		 * @generated
-		 */
-		EEnum CONTROLLER_EXCHANGE_STRATEGY = eINSTANCE.getControllerExchangeStrategy();
 
 	}
 

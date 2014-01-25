@@ -223,7 +223,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Component Story"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3001,3011,3012,3014,3016,3017,3018,3019,3020,3007,3008,3010,3021,3022,3023"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2003,3001,3011,3012,3014,3016,3017,3018,3019,3020,3007,3008,3010,3021,3022"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4004,4005"/>
       </viewProvider>
    </extension>
@@ -236,16 +236,16 @@
             <method name="getType()" value="Component Story"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2003,3001,3011,3012,3014,3016,3017,3018,3019,3020,3007,3008,3010,3021,3022,3023"/>
+            <method name="getType()" value="2003,3001,3011,3012,3014,3016,3017,3018,3019,3020,3007,3008,3010,3021,3022"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4004,4005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5011,5001,5019,5020,5017,5018,5021,5022,5023,5024,5025,5026,5027,5028,5010,5041,5043,5044,5042"/>
+            <method name="getType()" value="5011,5001,5019,5020,5017,5018,5021,5022,5023,5024,5025,5026,5027,5028,5010,5041,5043,5044"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002,7005,7006,7007,7008,7009,7011,7010"/>
+            <method name="getType()" value="7001,7002,7005,7006,7007,7008,7009,7010"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -271,8 +271,7 @@
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart" id="ActivityFinalNode_3010"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart" id="ControllerExchangeNode_3021"/>
          <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart" id="ComponentStoryPattern_3022"/>
-         <object class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.FadingFunctionEditPart" id="FadingFunction_3023"/>
-         <context elements="ComponentStoryRule_1000,Activity_2003,ComponentStoryNode_3001,ComponentStoryPattern_3011,ComponentVariable_3012,PartVariable_3014,MultiPortVariable_3016,SinglePortVariable_3017,SinglePortVariable_3018,MultiPortVariable_3019,SinglePortVariable_3020,InitialNode_3007,JunctionNode_3008,ActivityFinalNode_3010,ControllerExchangeNode_3021,ComponentStoryPattern_3022,FadingFunction_3023"/>
+         <context elements="ComponentStoryRule_1000,Activity_2003,ComponentStoryNode_3001,ComponentStoryPattern_3011,ComponentVariable_3012,PartVariable_3014,MultiPortVariable_3016,SinglePortVariable_3017,SinglePortVariable_3018,MultiPortVariable_3019,SinglePortVariable_3020,InitialNode_3007,JunctionNode_3008,ActivityFinalNode_3010,ControllerExchangeNode_3021,ComponentStoryPattern_3022"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -441,16 +440,6 @@
             <param name="semanticHint" value="3022"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
-         <metamodelType
-               id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.FadingFunction_3023"
-               name="%metatype.name.FadingFunction_3023"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="FadingFunction"
-               edithelper="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.helpers.FadingFunctionEditHelper">
-            <param name="semanticHint" value="3023"/>
-         </metamodelType>
-      </metamodel>
       <metamodel nsURI="http://www.storydriven.org/storydiagrams/activities/0.2.1">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ActivityEdge_4001"
@@ -509,7 +498,6 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ActivityFinalNode_3010"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ControllerExchangeNode_3021"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryPattern_3022"/>
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.FadingFunction_3023"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ActivityEdge_4001"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.AssemblyVariable_4004"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.DelegationVariable_4005"/>

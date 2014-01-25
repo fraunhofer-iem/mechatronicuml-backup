@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
@@ -18,7 +17,6 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentS
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy;
 
 
 /**
@@ -78,36 +76,6 @@ public class ControlflowFactoryImpl extends EFactoryImpl implements ControlflowF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case ControlflowPackage.CONTROLLER_EXCHANGE_STRATEGY:
-				return createControllerExchangeStrategyFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case ControlflowPackage.CONTROLLER_EXCHANGE_STRATEGY:
-				return convertControllerExchangeStrategyToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ComponentStoryRule createComponentStoryRule() {
 		ComponentStoryRuleImpl componentStoryRule = new ComponentStoryRuleImpl();
 		return componentStoryRule;
@@ -131,26 +99,6 @@ public class ControlflowFactoryImpl extends EFactoryImpl implements ControlflowF
 	public ControllerExchangeNode createControllerExchangeNode() {
 		ControllerExchangeNodeImpl controllerExchangeNode = new ControllerExchangeNodeImpl();
 		return controllerExchangeNode;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ControllerExchangeStrategy createControllerExchangeStrategyFromString(EDataType eDataType, String initialValue) {
-		ControllerExchangeStrategy result = ControllerExchangeStrategy.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertControllerExchangeStrategyToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

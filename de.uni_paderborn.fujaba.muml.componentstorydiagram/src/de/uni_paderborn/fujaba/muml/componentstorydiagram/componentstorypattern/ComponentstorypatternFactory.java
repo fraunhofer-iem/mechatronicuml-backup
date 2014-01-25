@@ -80,24 +80,6 @@ public interface ComponentstorypatternFactory extends EFactory {
 	DelegationVariable createDelegationVariable();
 
 	/**
-	 * Returns a new object of class '<em>Call</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Call</em>'.
-	 * @generated
-	 */
-	Call createCall();
-
-	/**
-	 * Returns a new object of class '<em>Fading Function</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fading Function</em>'.
-	 * @generated
-	 */
-	FadingFunction createFadingFunction();
-
-	/**
 	 * Returns a new object of class '<em>Single Port Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

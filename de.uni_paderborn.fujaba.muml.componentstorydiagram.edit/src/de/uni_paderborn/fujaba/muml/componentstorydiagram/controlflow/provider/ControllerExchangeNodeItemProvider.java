@@ -27,7 +27,6 @@ import org.storydriven.storydiagrams.activities.provider.ActivityNodeItemProvide
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
@@ -72,7 +71,6 @@ public class ControllerExchangeNodeItemProvider
 
 			addDeadlinePropertyDescriptor(object);
 			addComponentStoryPatternPropertyDescriptor(object);
-			addControllerExchangeStrategyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -205,28 +203,6 @@ public class ControllerExchangeNodeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Controller Exchange Strategy feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addControllerExchangeStrategyPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ControllerExchangeNode_controllerExchangeStrategy_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ControllerExchangeNode_controllerExchangeStrategy_feature", "_UI_ControllerExchangeNode_type"),
-				 ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -239,7 +215,6 @@ public class ControllerExchangeNodeItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE);
-			childrenFeatures.add(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -294,11 +269,7 @@ public class ControllerExchangeNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ControllerExchangeNode.class)) {
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__CONTROLLER_EXCHANGE_STRATEGY:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -320,11 +291,6 @@ public class ControllerExchangeNodeItemProvider
 			(createChildParameter
 				(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE,
 				 RealtimestatechartFactory.eINSTANCE.createRelativeDeadline()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__FADING_FUNCTIONS,
-				 ComponentstorypatternFactory.eINSTANCE.createFadingFunction()));
 	}
 
 	/**

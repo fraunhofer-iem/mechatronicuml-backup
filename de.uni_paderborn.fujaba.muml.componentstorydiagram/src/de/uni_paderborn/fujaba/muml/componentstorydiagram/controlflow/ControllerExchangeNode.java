@@ -6,11 +6,9 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow;
 
-import org.eclipse.emf.common.util.EList;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
 
 /**
@@ -27,8 +25,6 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getDeadline <em>Deadline</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getControllerExchangeStrategy <em>Controller Exchange Strategy</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getFadingFunctions <em>Fading Functions</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,50 +84,5 @@ public interface ControllerExchangeNode extends ActivityNode {
 	 * @generated
 	 */
 	void setComponentStoryPattern(ComponentStoryPattern value);
-
-	/**
-	 * Returns the value of the '<em><b>Controller Exchange Strategy</b></em>' attribute.
-	 * The default value is <code>"ControllerExchangeStrategy.ATOMIC_SWITCHING"</code>.
-	 * The literals are from the enumeration {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Controller Exchange Strategy</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controller Exchange Strategy</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy
-	 * @see #setControllerExchangeStrategy(ControllerExchangeStrategy)
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getControllerExchangeNode_ControllerExchangeStrategy()
-	 * @model default="ControllerExchangeStrategy.ATOMIC_SWITCHING" required="true"
-	 * @generated
-	 */
-	ControllerExchangeStrategy getControllerExchangeStrategy();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getControllerExchangeStrategy <em>Controller Exchange Strategy</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Controller Exchange Strategy</em>' attribute.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeStrategy
-	 * @see #getControllerExchangeStrategy()
-	 * @generated
-	 */
-	void setControllerExchangeStrategy(ControllerExchangeStrategy value);
-
-	/**
-	 * Returns the value of the '<em><b>Fading Functions</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.FadingFunction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * A fading function defines how the value of one out-port of a continuous component is faded to the value of another out-port of a continuous component. For each out-port of a continuous component to be deleted, one fading function is required.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Fading Functions</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getControllerExchangeNode_FadingFunctions()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<FadingFunction> getFadingFunctions();
 
 } // ControllerExchangeNode

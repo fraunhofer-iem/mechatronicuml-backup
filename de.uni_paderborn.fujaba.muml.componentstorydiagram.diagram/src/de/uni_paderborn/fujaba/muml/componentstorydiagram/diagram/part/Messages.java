@@ -323,62 +323,52 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String FadingFunction1CreationTool_title;
+	public static String PartVariable1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String FadingFunction1CreationTool_desc;
+	public static String PartVariable1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String PartVariable2CreationTool_title;
+	public static String SinglePortVariable2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String PartVariable2CreationTool_desc;
+	public static String SinglePortVariable2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String SinglePortVariable3CreationTool_title;
+	public static String MultiPortVariable3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SinglePortVariable3CreationTool_desc;
+	public static String MultiPortVariable3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String MultiPortVariable4CreationTool_title;
+	public static String AssemblyVariable4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String MultiPortVariable4CreationTool_desc;
+	public static String AssemblyVariable4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String AssemblyVariable5CreationTool_title;
+	public static String DelegationVariable5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String AssemblyVariable5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String DelegationVariable6CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String DelegationVariable6CreationTool_desc;
+	public static String DelegationVariable5CreationTool_desc;
 
 	/**
 	 * @generated
@@ -414,11 +404,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String ControllerExchangeNodeControllerExchangeNodeFadingFunctionsCompartmentEditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ControllerExchangeNodeControllerExchangeNodeCompartmentEditPart_title;
 
 	/**
 	 * @generated

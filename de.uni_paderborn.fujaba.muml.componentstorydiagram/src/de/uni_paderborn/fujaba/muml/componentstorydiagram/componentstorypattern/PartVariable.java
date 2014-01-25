@@ -20,7 +20,6 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable#getPortVariables <em>Port Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable#getType <em>Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable#getCall <em>Call</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,31 +70,5 @@ public interface PartVariable extends ComponentStoryPatternVariable {
 	 * @generated
 	 */
 	void setType(ComponentPart value);
-
-	/**
-	 * Returns the value of the '<em><b>Call</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Call</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Call</em>' reference.
-	 * @see #setCall(Call)
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage#getPartVariable_Call()
-	 * @model
-	 * @generated
-	 */
-	Call getCall();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable#getCall <em>Call</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Call</em>' reference.
-	 * @see #getCall()
-	 * @generated
-	 */
-	void setCall(Call value);
 
 } // PartVariable
