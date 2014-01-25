@@ -3,6 +3,9 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.provider;
 
 
+import de.uni_paderborn.fujaba.muml.componentstorypattern.provider.BindingOperatorPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.provider.BindingSemanticsPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.provider.BindingStatePropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 
@@ -101,11 +104,11 @@ public class ComponentStoryPatternVariableItemProvider
 	 * This adds a property descriptor for the Binding Semantics feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addBindingSemanticsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new BindingSemanticsPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ComponentStoryPatternVariable_bindingSemantics_feature"),
@@ -123,11 +126,11 @@ public class ComponentStoryPatternVariableItemProvider
 	 * This adds a property descriptor for the Binding Operator feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addBindingOperatorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new BindingOperatorPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ComponentStoryPatternVariable_bindingOperator_feature"),
@@ -145,11 +148,11 @@ public class ComponentStoryPatternVariableItemProvider
 	 * This adds a property descriptor for the Binding State feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addBindingStatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new BindingStatePropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_ComponentStoryPatternVariable_bindingState_feature"),

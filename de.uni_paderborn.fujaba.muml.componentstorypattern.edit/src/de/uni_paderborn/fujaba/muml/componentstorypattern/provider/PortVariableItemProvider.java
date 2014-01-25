@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.provider;
 
 
+import de.uni_paderborn.fujaba.muml.componentstorypattern.provider.TypePropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
 
@@ -90,11 +91,11 @@ public class PortVariableItemProvider
 	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new TypePropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_PortVariable_type_feature"),
