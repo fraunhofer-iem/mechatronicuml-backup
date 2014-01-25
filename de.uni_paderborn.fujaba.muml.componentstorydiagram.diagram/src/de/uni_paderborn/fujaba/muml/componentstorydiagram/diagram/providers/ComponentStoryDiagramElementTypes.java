@@ -175,42 +175,42 @@ public class ComponentStoryDiagramElementTypes {
 
 			elements.put(
 					ComponentStoryPattern_3011,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getComponentStoryPattern());
 
 			elements.put(
 					ComponentVariable_3012,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getComponentVariable());
 
 			elements.put(
 					PartVariable_3014,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getPartVariable());
 
 			elements.put(
 					MultiPortVariable_3016,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getMultiPortVariable());
 
 			elements.put(
 					SinglePortVariable_3017,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getSinglePortVariable());
 
 			elements.put(
 					SinglePortVariable_3018,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getSinglePortVariable());
 
 			elements.put(
 					MultiPortVariable_3019,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getMultiPortVariable());
 
 			elements.put(
 					SinglePortVariable_3020,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getSinglePortVariable());
 
 			elements.put(InitialNode_3007,
@@ -229,7 +229,7 @@ public class ComponentStoryDiagramElementTypes {
 
 			elements.put(
 					ComponentStoryPattern_3022,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getComponentStoryPattern());
 
 			elements.put(ActivityEdge_4001,
@@ -237,12 +237,12 @@ public class ComponentStoryDiagramElementTypes {
 
 			elements.put(
 					AssemblyVariable_4004,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getAssemblyVariable());
 
 			elements.put(
 					DelegationVariable_4005,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getDelegationVariable());
 		}
 		return (ENamedElement) elements.get(type);

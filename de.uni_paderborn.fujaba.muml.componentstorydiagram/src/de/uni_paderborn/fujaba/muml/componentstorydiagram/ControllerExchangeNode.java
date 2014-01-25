@@ -4,7 +4,7 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram;
 
 import org.storydriven.storydiagrams.activities.ActivityNode;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
 
 /**

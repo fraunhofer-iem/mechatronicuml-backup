@@ -12,15 +12,15 @@ import org.storydriven.storydiagrams.activities.Activity;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityActivityCompartmentEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityEditPart.ActivityFigure;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentVariableItemSemanticEditPolicy;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 
 public class CustomComponentVariableEditPart extends ComponentVariableEditPart {
 

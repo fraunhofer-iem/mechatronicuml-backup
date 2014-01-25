@@ -3,9 +3,9 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.p
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.util.CsdmUtility;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 
 public class CustomAssemblyVariableEditPart extends AssemblyVariableEditPart {
 	

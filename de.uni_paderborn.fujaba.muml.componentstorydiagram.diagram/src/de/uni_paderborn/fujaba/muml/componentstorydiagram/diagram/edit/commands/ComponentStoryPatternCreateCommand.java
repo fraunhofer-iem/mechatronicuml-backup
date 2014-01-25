@@ -54,7 +54,7 @@ public class ComponentStoryPatternCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern newElement = de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern newElement = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 				.createComponentStoryPattern();
 
 		de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode owner = (de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode) getElementToEdit();
@@ -70,7 +70,7 @@ public class ComponentStoryPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern newElement,
+			de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

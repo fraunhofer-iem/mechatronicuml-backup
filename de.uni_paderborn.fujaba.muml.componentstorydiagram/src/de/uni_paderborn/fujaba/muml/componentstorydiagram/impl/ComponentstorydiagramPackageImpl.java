@@ -15,9 +15,8 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl.ComponentstorypatternPackageImpl;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.util.ComponentstorydiagramValidator;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 
@@ -93,18 +92,13 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		isInited = true;
 
 		// Initialize simple dependencies
-		ReconfigurationPackage.eINSTANCE.eClass();
-
-		// Obtain or create and register interdependencies
-		ComponentstorypatternPackageImpl theComponentstorypatternPackage = (ComponentstorypatternPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentstorypatternPackage.eNS_URI) instanceof ComponentstorypatternPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentstorypatternPackage.eNS_URI) : ComponentstorypatternPackage.eINSTANCE);
+		ComponentstorypatternPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theComponentstorydiagramPackage.createPackageContents();
-		theComponentstorypatternPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theComponentstorydiagramPackage.initializePackageContents();
-		theComponentstorypatternPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -260,13 +254,10 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ComponentstorypatternPackage theComponentstorypatternPackage = (ComponentstorypatternPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentstorypatternPackage.eNS_URI);
 		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
+		ComponentstorypatternPackage theComponentstorypatternPackage = (ComponentstorypatternPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentstorypatternPackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
-
-		// Add subpackages
-		getESubpackages().add(theComponentstorypatternPackage);
 
 		// Create type parameters
 

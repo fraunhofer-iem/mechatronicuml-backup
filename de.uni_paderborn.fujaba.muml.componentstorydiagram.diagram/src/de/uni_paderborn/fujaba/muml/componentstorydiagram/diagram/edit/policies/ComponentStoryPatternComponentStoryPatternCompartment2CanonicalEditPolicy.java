@@ -53,7 +53,7 @@ public class ComponentStoryPatternComponentStoryPatternCompartment2CanonicalEdit
 	 * @generated
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+		return de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 				.getComponentStoryPattern_ThisVariable();
 	}
 

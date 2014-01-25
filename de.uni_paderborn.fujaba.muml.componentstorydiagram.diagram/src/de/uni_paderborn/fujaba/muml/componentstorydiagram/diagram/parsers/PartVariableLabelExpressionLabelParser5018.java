@@ -39,7 +39,7 @@ public class PartVariableLabelExpressionLabelParser5018 extends
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
 						7,
-						de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 								.getPartVariable(), null).body();
 	}
 

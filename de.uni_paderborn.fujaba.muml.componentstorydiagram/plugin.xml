@@ -7,10 +7,6 @@
 --><plugin>
 
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      
-      <package class="de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage" genModel="model/ComponentStoryDiagram.genmodel" uri="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3"/>
-   </extension>
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package

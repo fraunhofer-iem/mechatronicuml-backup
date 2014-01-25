@@ -17,8 +17,8 @@ import org.storydriven.storydiagrams.patterns.BindingSemantics;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyUtils;
 import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditPolicy;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPatternVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPatternVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 
 /**
  * This edit policy updates the visualization of a

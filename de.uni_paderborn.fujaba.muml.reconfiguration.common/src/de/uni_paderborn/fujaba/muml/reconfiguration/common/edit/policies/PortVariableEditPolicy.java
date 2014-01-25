@@ -5,7 +5,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy;
 import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 
 public class PortVariableEditPolicy extends PortTypeEditPolicy {
 	@Override

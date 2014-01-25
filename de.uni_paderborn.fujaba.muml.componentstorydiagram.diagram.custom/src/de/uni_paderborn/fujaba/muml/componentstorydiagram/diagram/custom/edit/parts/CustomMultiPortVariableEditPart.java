@@ -3,10 +3,10 @@ package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.edit.p
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gmf.runtime.notation.View;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.SinglePortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 
 public class CustomMultiPortVariableEditPart extends MultiPortVariableEditPart {
 

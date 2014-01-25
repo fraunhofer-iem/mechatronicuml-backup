@@ -23,7 +23,7 @@ import org.storydriven.storydiagrams.activities.provider.ActivityNodeItemProvide
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode} object.

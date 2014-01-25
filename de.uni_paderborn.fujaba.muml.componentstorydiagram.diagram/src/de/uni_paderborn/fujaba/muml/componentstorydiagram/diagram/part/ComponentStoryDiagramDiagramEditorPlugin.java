@@ -140,7 +140,7 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.componentstorydiagram.provider.ComponentstorydiagramItemProviderAdapterFactory());
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());

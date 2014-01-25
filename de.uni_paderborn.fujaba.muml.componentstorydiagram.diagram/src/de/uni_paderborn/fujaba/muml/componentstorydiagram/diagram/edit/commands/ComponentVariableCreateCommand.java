@@ -41,7 +41,7 @@ public class ComponentVariableCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern container = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern container = (de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern) getElementToEdit();
 		if (container.getThisVariable() != null) {
 			return false;
 		}
@@ -54,10 +54,10 @@ public class ComponentVariableCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable newElement = de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable newElement = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 				.createComponentVariable();
 
-		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern owner = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern owner = (de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern) getElementToEdit();
 		owner.setThisVariable(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -70,7 +70,7 @@ public class ComponentVariableCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentVariable newElement,
+			de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

@@ -11,7 +11,7 @@ import org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
 
 /**
  * <!-- begin-user-doc -->

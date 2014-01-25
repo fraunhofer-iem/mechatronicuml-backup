@@ -60,7 +60,7 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+                      href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern/thisVariable"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -74,7 +74,7 @@
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingState"/>
                       <value
                           body="storydiagrams::patterns::BindingState::BOUND"/>
                     </initializers>
@@ -82,7 +82,7 @@
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingSemantics"/>
                       <value
                           body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
                     </initializers>
@@ -117,16 +117,16 @@
                 href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ComponentStoryNode/componentStoryPattern"/>
             <ownedChild>
               <domainMetaElement
-                  href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPattern"/>
+                  href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
               <diagramNode
                   href="ComponentStoryDiagram.gmfgraph#ComponentStoryPattern"/>
               <children
                   compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
                 <containmentFeature
-                    href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+                    href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern/thisVariable"/>
                 <ownedChild>
                   <domainMetaElement
-                      href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable"/>
+                      href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable"/>
                   <labelMappings
                       readOnly="true">
                     <diagramLabel
@@ -142,10 +142,10 @@
                   <children
                       compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
                     <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/partVariables"/>
+                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/partVariables"/>
                     <ownedChild>
                       <domainMetaElement
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable"/>
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//PartVariable"/>
                       <labelMappings
                           readOnly="true">
                         <diagramLabel
@@ -167,21 +167,21 @@
                       <children
                           referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
                         <containmentFeature
-                            href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable/portVariables"/>
+                            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
                       </children>
                       <children
                           referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild">
                         <containmentFeature
-                            href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/PartVariable/portVariables"/>
+                            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
                       </children>
                     </ownedChild>
                   </children>
                   <children>
                     <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/portVariables"/>
+                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/portVariables"/>
                     <ownedChild>
                       <domainMetaElement
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/MultiPortVariable"/>
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortVariable"/>
                       <labelMappings
                           readOnly="true">
                         <diagramLabel
@@ -204,10 +204,10 @@
                       <children
                           compartment="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild/@compartments.0">
                         <containmentFeature
-                            href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/MultiPortVariable/gmfSubPortVariables"/>
+                            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//MultiPortVariable/gmfSubPortVariables"/>
                         <ownedChild>
                           <domainMetaElement
-                              href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/SinglePortVariable"/>
+                              href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//SinglePortVariable"/>
                           <tool
                               xsi:type="gmftool:CreationTool"
                               href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.1"/>
@@ -224,10 +224,10 @@
                   </children>
                   <children>
                     <containmentFeature
-                        href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/portVariables"/>
+                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/portVariables"/>
                     <ownedChild>
                       <domainMetaElement
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/SinglePortVariable"/>
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//SinglePortVariable"/>
                       <domainSpecialization
                           body="self.multiPortVariable.oclIsUndefined()"/>
                       <labelMappings
@@ -346,7 +346,7 @@
                     xsi:type="gmfmap:ReferenceNewElementSpec">
                   <feature
                       xsi:type="ecore:EReference"
-                      href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPattern/thisVariable"/>
+                      href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern/thisVariable"/>
                   <newElementInitializers>
                     <initializers
                         xsi:type="gmfmap:FeatureValueSpec">
@@ -360,7 +360,7 @@
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingState"/>
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingState"/>
                       <value
                           body="storydiagrams::patterns::BindingState::BOUND"/>
                     </initializers>
@@ -368,7 +368,7 @@
                         xsi:type="gmfmap:FeatureValueSpec">
                       <feature
                           xsi:type="ecore:EAttribute"
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingSemantics"/>
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingSemantics"/>
                       <value
                           body="storydiagrams::patterns::BindingSemantics::MANDATORY"/>
                     </initializers>
@@ -376,13 +376,13 @@
                         xsi:type="gmfmap:ReferenceNewElementSpec">
                       <feature
                           xsi:type="ecore:EReference"
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/partVariables"/>
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/partVariables"/>
                       <newElementInitializers>
                         <initializers
                             xsi:type="gmfmap:FeatureValueSpec">
                           <feature
                               xsi:type="ecore:EAttribute"
-                              href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+                              href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingOperator"/>
                           <value
                               body="storydiagrams::patterns::BindingOperator::DESTROY"/>
                         </initializers>
@@ -392,7 +392,7 @@
                             xsi:type="gmfmap:FeatureValueSpec">
                           <feature
                               xsi:type="ecore:EAttribute"
-                              href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentStoryPatternVariable/bindingOperator"/>
+                              href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPatternVariable/bindingOperator"/>
                           <value
                               body="storydiagrams::patterns::BindingOperator::CREATE"/>
                         </initializers>
@@ -483,7 +483,7 @@
   </links>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/AssemblyVariable"/>
+        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//AssemblyVariable"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
@@ -494,7 +494,7 @@
           href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </labelMappings>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/connectorVariables"/>
+        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.3"/>
@@ -515,7 +515,7 @@
   </links>
   <links>
     <domainMetaElement
-        href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/DelegationVariable"/>
+        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//DelegationVariable"/>
     <labelMappings
         xsi:type="gmfmap:FeatureLabelMapping">
       <diagramLabel
@@ -526,7 +526,7 @@
           href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
     </labelMappings>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//componentstorypattern/ComponentVariable/connectorVariables"/>
+        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/connectorVariables"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.4"/>

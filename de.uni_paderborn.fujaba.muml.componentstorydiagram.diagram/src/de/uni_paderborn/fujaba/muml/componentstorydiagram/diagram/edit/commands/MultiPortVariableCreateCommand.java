@@ -50,10 +50,10 @@ public class MultiPortVariableCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable newElement = de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+		de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable newElement = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 				.createMultiPortVariable();
 
-		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable owner = (de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.PartVariable) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable owner = (de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable) getElementToEdit();
 		owner.getPortVariables().add(newElement);
 
 		doConfigure(newElement, monitor, info);
@@ -66,7 +66,7 @@ public class MultiPortVariableCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.MultiPortVariable newElement,
+			de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())
