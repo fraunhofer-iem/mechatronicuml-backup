@@ -28,6 +28,7 @@ import org.storydriven.core.provider.ExtendableElementItemProvider;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EventKind;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Message;
@@ -99,21 +100,32 @@ public class MessageItemProvider
 			public Collection<?> getChoiceOfValues(Object object) {
 				Message message = (Message) object;
 				
+				// Derive messageEvent and discreteInteractionEndpoint
+				AsynchronousMessageEvent messageEvent = null;
+				DiscreteInteractionEndpoint discreteInteractionEndpoint = null;
 				if (message.eContainer() instanceof AsynchronousMessageEvent) {
-					AsynchronousMessageEvent messageEvent = (AsynchronousMessageEvent) message.eContainer();
+					messageEvent = (AsynchronousMessageEvent) message.eContainer();
 					if (messageEvent.eContainer() instanceof Transition) {
 						Transition transition = (Transition) messageEvent.eContainer();
 						if (transition.getStatechart() != null && transition.getStatechart().getBehavioralElement() != null) {
 							BehavioralElement behavioralElement = transition.getStatechart().getBehavioralElement();
-							// XXX Todo: Get receiver or sender message interface
-							if (messageEvent.getKind() == EventKind.TRIGGER) {
-							} else if (messageEvent.getKind() == EventKind.RAISE) {
+							if (behavioralElement instanceof DiscreteInteractionEndpoint) {
+								discreteInteractionEndpoint = (DiscreteInteractionEndpoint) behavioralElement;
 							}
-
 						}
 					}
 				}
+				
+				// Get correct message types
+				if (messageEvent != null && discreteInteractionEndpoint != null) {
+					if (messageEvent.getKind() == EventKind.TRIGGER && !discreteInteractionEndpoint.getReceiverMessageTypes().isEmpty()) {
+						return discreteInteractionEndpoint.getReceiverMessageTypes();
+					} else if (messageEvent.getKind() == EventKind.RAISE && !discreteInteractionEndpoint.getSenderMessageTypes().isEmpty()) {
+						return discreteInteractionEndpoint.getSenderMessageTypes();
+					}
+				}
 
+				// None found; show all
 				return super.getChoiceOfValues(object);
 			}
 		});
