@@ -99,6 +99,7 @@ public class PartVariableItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES);
+			childrenFeatures.add(ComponentstorypatternPackage.Literals.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS);
 		}
 		return childrenFeatures;
 	}
@@ -154,6 +155,7 @@ public class PartVariableItemProvider
 
 		switch (notification.getFeatureID(PartVariable.class)) {
 			case ComponentstorypatternPackage.PART_VARIABLE__PORT_VARIABLES:
+			case ComponentstorypatternPackage.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

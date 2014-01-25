@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
@@ -24,6 +25,7 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.util.ComponentstorypatternValidator;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
@@ -104,6 +106,13 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * @generated
 	 */
 	private EClass multiPortVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass triggerEmbeddedComponentExpressionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -336,6 +345,15 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPartVariable_TriggerEmbeddedComponentExpressions() {
+		return (EReference)partVariableEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConnectorVariable() {
 		return connectorVariableEClass;
 	}
@@ -435,6 +453,15 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTriggerEmbeddedComponentExpression() {
+		return triggerEmbeddedComponentExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ComponentstorypatternFactory getComponentstorypatternFactory() {
 		return (ComponentstorypatternFactory)getEFactoryInstance();
 	}
@@ -479,6 +506,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		partVariableEClass = createEClass(PART_VARIABLE);
 		createEReference(partVariableEClass, PART_VARIABLE__PORT_VARIABLES);
 		createEReference(partVariableEClass, PART_VARIABLE__TYPE);
+		createEReference(partVariableEClass, PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS);
 
 		connectorVariableEClass = createEClass(CONNECTOR_VARIABLE);
 		createEReference(connectorVariableEClass, CONNECTOR_VARIABLE__PORT_VARIABLES);
@@ -495,6 +523,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		multiPortVariableEClass = createEClass(MULTI_PORT_VARIABLE);
 		createEReference(multiPortVariableEClass, MULTI_PORT_VARIABLE__SUB_PORT_VARIABLES);
 		createEReference(multiPortVariableEClass, MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES);
+
+		triggerEmbeddedComponentExpressionEClass = createEClass(TRIGGER_EMBEDDED_COMPONENT_EXPRESSION);
 	}
 
 	/**
@@ -526,6 +556,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		ReconfigurationPackage theReconfigurationPackage = (ReconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ReconfigurationPackage.eNS_URI);
 		ConnectorPackage theConnectorPackage = (ConnectorPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectorPackage.eNS_URI);
 		ComponentPackage theComponentPackage = (ComponentPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentPackage.eNS_URI);
+		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -546,6 +577,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		delegationVariableEClass.getESuperTypes().add(this.getConnectorVariable());
 		singlePortVariableEClass.getESuperTypes().add(this.getPortVariable());
 		multiPortVariableEClass.getESuperTypes().add(this.getPortVariable());
+		triggerEmbeddedComponentExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentStoryPatternEClass, ComponentStoryPattern.class, "ComponentStoryPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -569,6 +601,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		initEClass(partVariableEClass, PartVariable.class, "PartVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPartVariable_PortVariables(), this.getPortVariable(), null, "portVariables", null, 0, -1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPartVariable_Type(), theComponentPackage.getComponentPart(), null, "type", null, 1, 1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPartVariable_TriggerEmbeddedComponentExpressions(), this.getTriggerEmbeddedComponentExpression(), null, "triggerEmbeddedComponentExpressions", null, 0, 1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorVariableEClass, ConnectorVariable.class, "ConnectorVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnectorVariable_PortVariables(), this.getPortVariable(), null, "portVariables", null, 0, -1, ConnectorVariable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -585,6 +618,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		initEClass(multiPortVariableEClass, MultiPortVariable.class, "MultiPortVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMultiPortVariable_SubPortVariables(), this.getSinglePortVariable(), this.getSinglePortVariable_MultiPortVariable(), "subPortVariables", null, 0, -1, MultiPortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMultiPortVariable_GmfSubPortVariables(), this.getSinglePortVariable(), null, "gmfSubPortVariables", null, 0, -1, MultiPortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(triggerEmbeddedComponentExpressionEClass, TriggerEmbeddedComponentExpression.class, "TriggerEmbeddedComponentExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -635,7 +670,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "constraints", "MustNotConnectCreateAndDestroyPorts SameBindingOperatorAsPortVariable ExistingConnectorBetweenPortVariableTypes"
-		   });				
+		   });					
 	}
 
 	/**
@@ -698,7 +733,7 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "derivation", "self.subPortVariables"
-		   });
+		   });	
 	}
 
 } //ComponentstorypatternPackageImpl

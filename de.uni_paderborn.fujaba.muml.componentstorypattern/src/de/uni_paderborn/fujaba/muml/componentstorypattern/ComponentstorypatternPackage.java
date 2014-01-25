@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.core.CorePackage;
+import org.storydriven.core.expressions.ExpressionsPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -522,13 +523,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int PART_VARIABLE__TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Trigger Embedded Component Expressions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Part Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PART_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
+	int PART_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ConnectorVariableImpl <em>Connector Variable</em>}' class.
@@ -1095,6 +1105,53 @@ public interface ComponentstorypatternPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.TriggerEmbeddedComponentExpressionImpl <em>Trigger Embedded Component Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.TriggerEmbeddedComponentExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getTriggerEmbeddedComponentExpression()
+	 * @generated
+	 */
+	int TRIGGER_EMBEDDED_COMPONENT_EXPRESSION = 10;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__ANNOTATION = ExpressionsPackage.EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__EXTENSION = ExpressionsPackage.EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__COMMENT = ExpressionsPackage.EXPRESSION__COMMENT;
+
+	/**
+	 * The number of structural features of the '<em>Trigger Embedded Component Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_FEATURE_COUNT = ExpressionsPackage.EXPRESSION_FEATURE_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern <em>Component Story Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1277,6 +1334,17 @@ public interface ComponentstorypatternPackage extends EPackage {
 	EReference getPartVariable_Type();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable#getTriggerEmbeddedComponentExpressions <em>Trigger Embedded Component Expressions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Trigger Embedded Component Expressions</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable#getTriggerEmbeddedComponentExpressions()
+	 * @see #getPartVariable()
+	 * @generated
+	 */
+	EReference getPartVariable_TriggerEmbeddedComponentExpressions();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.ConnectorVariable <em>Connector Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1391,6 +1459,16 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMultiPortVariable_GmfSubPortVariables();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression <em>Trigger Embedded Component Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Trigger Embedded Component Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression
+	 * @generated
+	 */
+	EClass getTriggerEmbeddedComponentExpression();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1561,6 +1639,14 @@ public interface ComponentstorypatternPackage extends EPackage {
 		EReference PART_VARIABLE__TYPE = eINSTANCE.getPartVariable_Type();
 
 		/**
+		 * The meta object literal for the '<em><b>Trigger Embedded Component Expressions</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS = eINSTANCE.getPartVariable_TriggerEmbeddedComponentExpressions();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ConnectorVariableImpl <em>Connector Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1657,6 +1743,16 @@ public interface ComponentstorypatternPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MULTI_PORT_VARIABLE__GMF_SUB_PORT_VARIABLES = eINSTANCE.getMultiPortVariable_GmfSubPortVariables();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.TriggerEmbeddedComponentExpressionImpl <em>Trigger Embedded Component Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.TriggerEmbeddedComponentExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getTriggerEmbeddedComponentExpression()
+		 * @generated
+		 */
+		EClass TRIGGER_EMBEDDED_COMPONENT_EXPRESSION = eINSTANCE.getTriggerEmbeddedComponentExpression();
 
 	}
 

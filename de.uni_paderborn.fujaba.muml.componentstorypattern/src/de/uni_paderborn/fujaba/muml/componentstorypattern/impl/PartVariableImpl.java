@@ -17,6 +17,7 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PartVariableImpl#getPortVariables <em>Port Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PartVariableImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.PartVariableImpl#getTriggerEmbeddedComponentExpressions <em>Trigger Embedded Component Expressions</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +54,16 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 	 * @ordered
 	 */
 	protected ComponentPart type;
+
+	/**
+	 * The cached value of the '{@link #getTriggerEmbeddedComponentExpressions() <em>Trigger Embedded Component Expressions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTriggerEmbeddedComponentExpressions()
+	 * @generated
+	 * @ordered
+	 */
+	protected TriggerEmbeddedComponentExpression triggerEmbeddedComponentExpressions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,11 +139,56 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public TriggerEmbeddedComponentExpression getTriggerEmbeddedComponentExpressions() {
+		return triggerEmbeddedComponentExpressions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTriggerEmbeddedComponentExpressions(TriggerEmbeddedComponentExpression newTriggerEmbeddedComponentExpressions, NotificationChain msgs) {
+		TriggerEmbeddedComponentExpression oldTriggerEmbeddedComponentExpressions = triggerEmbeddedComponentExpressions;
+		triggerEmbeddedComponentExpressions = newTriggerEmbeddedComponentExpressions;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS, oldTriggerEmbeddedComponentExpressions, newTriggerEmbeddedComponentExpressions);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTriggerEmbeddedComponentExpressions(TriggerEmbeddedComponentExpression newTriggerEmbeddedComponentExpressions) {
+		if (newTriggerEmbeddedComponentExpressions != triggerEmbeddedComponentExpressions) {
+			NotificationChain msgs = null;
+			if (triggerEmbeddedComponentExpressions != null)
+				msgs = ((InternalEObject)triggerEmbeddedComponentExpressions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentstorypatternPackage.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS, null, msgs);
+			if (newTriggerEmbeddedComponentExpressions != null)
+				msgs = ((InternalEObject)newTriggerEmbeddedComponentExpressions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentstorypatternPackage.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS, null, msgs);
+			msgs = basicSetTriggerEmbeddedComponentExpressions(newTriggerEmbeddedComponentExpressions, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorypatternPackage.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS, newTriggerEmbeddedComponentExpressions, newTriggerEmbeddedComponentExpressions));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ComponentstorypatternPackage.PART_VARIABLE__PORT_VARIABLES:
 				return ((InternalEList<?>)getPortVariables()).basicRemove(otherEnd, msgs);
+			case ComponentstorypatternPackage.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS:
+				return basicSetTriggerEmbeddedComponentExpressions(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -149,6 +206,8 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
+			case ComponentstorypatternPackage.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS:
+				return getTriggerEmbeddedComponentExpressions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,6 +228,9 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
 				setType((ComponentPart)newValue);
 				return;
+			case ComponentstorypatternPackage.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS:
+				setTriggerEmbeddedComponentExpressions((TriggerEmbeddedComponentExpression)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -187,6 +249,9 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
 				setType((ComponentPart)null);
 				return;
+			case ComponentstorypatternPackage.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS:
+				setTriggerEmbeddedComponentExpressions((TriggerEmbeddedComponentExpression)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,6 +268,8 @@ public class PartVariableImpl extends ComponentStoryPatternVariableImpl implemen
 				return portVariables != null && !portVariables.isEmpty();
 			case ComponentstorypatternPackage.PART_VARIABLE__TYPE:
 				return type != null;
+			case ComponentstorypatternPackage.PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS:
+				return triggerEmbeddedComponentExpressions != null;
 		}
 		return super.eIsSet(featureID);
 	}

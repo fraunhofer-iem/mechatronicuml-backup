@@ -21,6 +21,7 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -114,6 +115,8 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 				return validateSinglePortVariable((SinglePortVariable)value, diagnostics, context);
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE:
 				return validateMultiPortVariable((MultiPortVariable)value, diagnostics, context);
+			case ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION:
+				return validateTriggerEmbeddedComponentExpression((TriggerEmbeddedComponentExpression)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -635,6 +638,15 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validatePortVariable_SameBindingSemanticsAsParent(multiPortVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePortVariable_ValidTypeOfPortVariable(multiPortVariable, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTriggerEmbeddedComponentExpression(TriggerEmbeddedComponentExpression triggerEmbeddedComponentExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(triggerEmbeddedComponentExpression, diagnostics, context);
 	}
 
 	/**
