@@ -14,6 +14,7 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,6 +94,8 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 				return validateComponentStoryNode((ComponentStoryNode)value, diagnostics, context);
 			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE:
 				return validateControllerExchangeNode((ControllerExchangeNode)value, diagnostics, context);
+			case ComponentstorydiagramPackage.SEND_RECONFIGURATION_MESSAGE_EXPRESSION:
+				return validateSendReconfigurationMessageExpression((SendReconfigurationMessageExpression)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -240,6 +243,15 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSendReconfigurationMessageExpression(SendReconfigurationMessageExpression sendReconfigurationMessageExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(sendReconfigurationMessageExpression, diagnostics, context);
 	}
 
 	/**

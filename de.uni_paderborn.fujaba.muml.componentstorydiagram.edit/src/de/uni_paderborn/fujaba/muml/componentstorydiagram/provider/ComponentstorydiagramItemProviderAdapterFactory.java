@@ -140,6 +140,29 @@ public class ComponentstorydiagramItemProviderAdapterFactory extends Componentst
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SendReconfigurationMessageExpressionItemProvider sendReconfigurationMessageExpressionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSendReconfigurationMessageExpressionAdapter() {
+		if (sendReconfigurationMessageExpressionItemProvider == null) {
+			sendReconfigurationMessageExpressionItemProvider = new SendReconfigurationMessageExpressionItemProvider(this);
+		}
+
+		return sendReconfigurationMessageExpressionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,6 +264,7 @@ public class ComponentstorydiagramItemProviderAdapterFactory extends Componentst
 		if (componentStoryRuleItemProvider != null) componentStoryRuleItemProvider.dispose();
 		if (componentStoryNodeItemProvider != null) componentStoryNodeItemProvider.dispose();
 		if (controllerExchangeNodeItemProvider != null) controllerExchangeNodeItemProvider.dispose();
+		if (sendReconfigurationMessageExpressionItemProvider != null) sendReconfigurationMessageExpressionItemProvider.dispose();
 	}
 
 }

@@ -8,12 +8,15 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
 
 /**
@@ -102,6 +105,16 @@ public class ComponentstorydiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ComponentstorydiagramPackage.SEND_RECONFIGURATION_MESSAGE_EXPRESSION: {
+				SendReconfigurationMessageExpression sendReconfigurationMessageExpression = (SendReconfigurationMessageExpression)theEObject;
+				T result = caseSendReconfigurationMessageExpression(sendReconfigurationMessageExpression);
+				if (result == null) result = caseTriggerEmbeddedComponentExpression(sendReconfigurationMessageExpression);
+				if (result == null) result = caseExpression(sendReconfigurationMessageExpression);
+				if (result == null) result = caseCommentableElement(sendReconfigurationMessageExpression);
+				if (result == null) result = caseExtendableElement(sendReconfigurationMessageExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -148,6 +161,21 @@ public class ComponentstorydiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseControllerExchangeNode(ControllerExchangeNode object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Send Reconfiguration Message Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Send Reconfiguration Message Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSendReconfigurationMessageExpression(SendReconfigurationMessageExpression object) {
 		return null;
 	}
 
@@ -223,6 +251,36 @@ public class ComponentstorydiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseActivityNode(ActivityNode object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExpression(Expression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Trigger Embedded Component Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Trigger Embedded Component Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTriggerEmbeddedComponentExpression(TriggerEmbeddedComponentExpression object) {
 		return null;
 	}
 

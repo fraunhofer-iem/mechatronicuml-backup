@@ -9,12 +9,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
+import org.storydriven.core.expressions.Expression;
 import org.storydriven.storydiagrams.activities.ActivityNode;
 
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
 
 /**
@@ -86,6 +89,10 @@ public class ComponentstorydiagramAdapterFactory extends AdapterFactoryImpl {
 				return createControllerExchangeNodeAdapter();
 			}
 			@Override
+			public Adapter caseSendReconfigurationMessageExpression(SendReconfigurationMessageExpression object) {
+				return createSendReconfigurationMessageExpressionAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -104,6 +111,14 @@ public class ComponentstorydiagramAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseActivityNode(ActivityNode object) {
 				return createActivityNodeAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object) {
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter caseTriggerEmbeddedComponentExpression(TriggerEmbeddedComponentExpression object) {
+				return createTriggerEmbeddedComponentExpressionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -164,6 +179,20 @@ public class ComponentstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createControllerExchangeNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression <em>Send Reconfiguration Message Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression
+	 * @generated
+	 */
+	public Adapter createSendReconfigurationMessageExpressionAdapter() {
 		return null;
 	}
 
@@ -234,6 +263,34 @@ public class ComponentstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActivityNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.expressions.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.expressions.Expression
+	 * @generated
+	 */
+	public Adapter createExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression <em>Trigger Embedded Component Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.TriggerEmbeddedComponentExpression
+	 * @generated
+	 */
+	public Adapter createTriggerEmbeddedComponentExpressionAdapter() {
 		return null;
 	}
 

@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 
 /**
@@ -370,6 +371,71 @@ public interface ComponentstorydiagramPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.SendReconfigurationMessageExpressionImpl <em>Send Reconfiguration Message Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.SendReconfigurationMessageExpressionImpl
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ComponentstorydiagramPackageImpl#getSendReconfigurationMessageExpression()
+	 * @generated
+	 */
+	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION__ANNOTATION = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION__EXTENSION = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION__COMMENT = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Reconfiguration Message Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION__RECONFIGURATION_MESSAGE_TYPE = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Parameter Bindings</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION__PARAMETER_BINDINGS = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Send Reconfiguration Message Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEND_RECONFIGURATION_MESSAGE_EXPRESSION_FEATURE_COUNT = ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION_FEATURE_COUNT + 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule <em>Component Story Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -455,6 +521,38 @@ public interface ComponentstorydiagramPackage extends EPackage {
 	EReference getControllerExchangeNode_ComponentStoryPattern();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression <em>Send Reconfiguration Message Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Send Reconfiguration Message Expression</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression
+	 * @generated
+	 */
+	EClass getSendReconfigurationMessageExpression();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression#getReconfigurationMessageType <em>Reconfiguration Message Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Reconfiguration Message Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression#getReconfigurationMessageType()
+	 * @see #getSendReconfigurationMessageExpression()
+	 * @generated
+	 */
+	EReference getSendReconfigurationMessageExpression_ReconfigurationMessageType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression#getParameterBindings <em>Parameter Bindings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameter Bindings</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression#getParameterBindings()
+	 * @see #getSendReconfigurationMessageExpression()
+	 * @generated
+	 */
+	EReference getSendReconfigurationMessageExpression_ParameterBindings();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -538,6 +636,29 @@ public interface ComponentstorydiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN = eINSTANCE.getControllerExchangeNode_ComponentStoryPattern();
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.SendReconfigurationMessageExpressionImpl <em>Send Reconfiguration Message Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.SendReconfigurationMessageExpressionImpl
+		 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ComponentstorydiagramPackageImpl#getSendReconfigurationMessageExpression()
+		 * @generated
+		 */
+		EClass SEND_RECONFIGURATION_MESSAGE_EXPRESSION = eINSTANCE.getSendReconfigurationMessageExpression();
+		/**
+		 * The meta object literal for the '<em><b>Reconfiguration Message Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEND_RECONFIGURATION_MESSAGE_EXPRESSION__RECONFIGURATION_MESSAGE_TYPE = eINSTANCE.getSendReconfigurationMessageExpression_ReconfigurationMessageType();
+		/**
+		 * The meta object literal for the '<em><b>Parameter Bindings</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEND_RECONFIGURATION_MESSAGE_EXPRESSION__PARAMETER_BINDINGS = eINSTANCE.getSendReconfigurationMessageExpression_ParameterBindings();
 
 	}
 

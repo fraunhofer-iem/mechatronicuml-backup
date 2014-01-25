@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,6 +62,7 @@ public class ComponentstorydiagramFactoryImpl extends EFactoryImpl implements Co
 			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE: return createComponentStoryRule();
 			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE: return createComponentStoryNode();
 			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE: return createControllerExchangeNode();
+			case ComponentstorydiagramPackage.SEND_RECONFIGURATION_MESSAGE_EXPRESSION: return createSendReconfigurationMessageExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -94,6 +96,16 @@ public class ComponentstorydiagramFactoryImpl extends EFactoryImpl implements Co
 	public ControllerExchangeNode createControllerExchangeNode() {
 		ControllerExchangeNodeImpl controllerExchangeNode = new ControllerExchangeNodeImpl();
 		return controllerExchangeNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SendReconfigurationMessageExpression createSendReconfigurationMessageExpression() {
+		SendReconfigurationMessageExpressionImpl sendReconfigurationMessageExpression = new SendReconfigurationMessageExpressionImpl();
+		return sendReconfigurationMessageExpression;
 	}
 
 	/**

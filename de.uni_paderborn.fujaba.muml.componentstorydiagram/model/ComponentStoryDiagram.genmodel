@@ -18,5 +18,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//ControllerExchangeNode/deadline"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//ControllerExchangeNode/componentStoryPattern"/>
     </genClasses>
+    <genClasses ecoreClass="ComponentStoryDiagram.ecore#//SendReconfigurationMessageExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//SendReconfigurationMessageExpression/reconfigurationMessageType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryDiagram.ecore#//SendReconfigurationMessageExpression/parameterBindings"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

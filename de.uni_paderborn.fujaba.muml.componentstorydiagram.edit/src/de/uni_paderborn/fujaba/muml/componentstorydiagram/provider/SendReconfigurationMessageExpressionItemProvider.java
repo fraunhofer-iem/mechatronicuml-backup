@@ -1,0 +1,196 @@
+/**
+ */
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.provider;
+
+
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorFactory;
+
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression;
+
+import de.uni_paderborn.fujaba.muml.componentstorypattern.provider.TriggerEmbeddedComponentExpressionItemProvider;
+
+import java.util.Collection;
+import java.util.List;
+
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+/**
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression} object.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class SendReconfigurationMessageExpressionItemProvider
+	extends TriggerEmbeddedComponentExpressionItemProvider
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
+	/**
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SendReconfigurationMessageExpressionItemProvider(AdapterFactory adapterFactory) {
+		super(adapterFactory);
+	}
+
+	/**
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
+
+			addReconfigurationMessageTypePropertyDescriptor(object);
+		}
+		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Reconfiguration Message Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReconfigurationMessageTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SendReconfigurationMessageExpression_reconfigurationMessageType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SendReconfigurationMessageExpression_reconfigurationMessageType_feature", "_UI_SendReconfigurationMessageExpression_type"),
+				 ComponentstorydiagramPackage.Literals.SEND_RECONFIGURATION_MESSAGE_EXPRESSION__RECONFIGURATION_MESSAGE_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(ComponentstorydiagramPackage.Literals.SEND_RECONFIGURATION_MESSAGE_EXPRESSION__PARAMETER_BINDINGS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns SendReconfigurationMessageExpression.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/SendReconfigurationMessageExpression"));
+	}
+
+	/**
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getText(Object object) {
+		String label = ((SendReconfigurationMessageExpression)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_SendReconfigurationMessageExpression_type") :
+			getString("_UI_SendReconfigurationMessageExpression_type") + " " + label;
+	}
+
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void notifyChanged(Notification notification) {
+		updateChildren(notification);
+
+		switch (notification.getFeatureID(SendReconfigurationMessageExpression.class)) {
+			case ComponentstorydiagramPackage.SEND_RECONFIGURATION_MESSAGE_EXPRESSION__PARAMETER_BINDINGS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentstorydiagramPackage.Literals.SEND_RECONFIGURATION_MESSAGE_EXPRESSION__PARAMETER_BINDINGS,
+				 BehaviorFactory.eINSTANCE.createParameterBinding()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ComponentStoryDiagramEditPlugin.INSTANCE;
+	}
+
+}

@@ -49,6 +49,15 @@ public interface ComponentstorydiagramFactory extends EFactory {
 	ControllerExchangeNode createControllerExchangeNode();
 
 	/**
+	 * Returns a new object of class '<em>Send Reconfiguration Message Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Send Reconfiguration Message Expression</em>'.
+	 * @generated
+	 */
+	SendReconfigurationMessageExpression createSendReconfigurationMessageExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

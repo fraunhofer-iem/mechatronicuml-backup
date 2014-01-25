@@ -10,13 +10,16 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.storydiagrams.activities.ActivitiesPackage;
 
+import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.SendReconfigurationMessageExpression;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.util.ComponentstorydiagramValidator;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
+import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage;
 
@@ -45,6 +48,12 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 	 * @generated
 	 */
 	private EClass controllerExchangeNodeEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sendReconfigurationMessageExpressionEClass = null;
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -195,6 +204,33 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getSendReconfigurationMessageExpression() {
+		return sendReconfigurationMessageExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSendReconfigurationMessageExpression_ReconfigurationMessageType() {
+		return (EReference)sendReconfigurationMessageExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSendReconfigurationMessageExpression_ParameterBindings() {
+		return (EReference)sendReconfigurationMessageExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ComponentstorydiagramFactory getComponentstorydiagramFactory() {
 		return (ComponentstorydiagramFactory)getEFactoryInstance();
 	}
@@ -228,6 +264,10 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		controllerExchangeNodeEClass = createEClass(CONTROLLER_EXCHANGE_NODE);
 		createEReference(controllerExchangeNodeEClass, CONTROLLER_EXCHANGE_NODE__DEADLINE);
 		createEReference(controllerExchangeNodeEClass, CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN);
+
+		sendReconfigurationMessageExpressionEClass = createEClass(SEND_RECONFIGURATION_MESSAGE_EXPRESSION);
+		createEReference(sendReconfigurationMessageExpressionEClass, SEND_RECONFIGURATION_MESSAGE_EXPRESSION__RECONFIGURATION_MESSAGE_TYPE);
+		createEReference(sendReconfigurationMessageExpressionEClass, SEND_RECONFIGURATION_MESSAGE_EXPRESSION__PARAMETER_BINDINGS);
 	}
 
 	/**
@@ -258,6 +298,8 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		ActivitiesPackage theActivitiesPackage = (ActivitiesPackage)EPackage.Registry.INSTANCE.getEPackage(ActivitiesPackage.eNS_URI);
 		ComponentstorypatternPackage theComponentstorypatternPackage = (ComponentstorypatternPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentstorypatternPackage.eNS_URI);
 		RealtimestatechartPackage theRealtimestatechartPackage = (RealtimestatechartPackage)EPackage.Registry.INSTANCE.getEPackage(RealtimestatechartPackage.eNS_URI);
+		MsgtypePackage theMsgtypePackage = (MsgtypePackage)EPackage.Registry.INSTANCE.getEPackage(MsgtypePackage.eNS_URI);
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -267,6 +309,7 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		componentStoryRuleEClass.getESuperTypes().add(theReconfigurationPackage.getReconfigurationRule());
 		componentStoryNodeEClass.getESuperTypes().add(theActivitiesPackage.getActivityNode());
 		controllerExchangeNodeEClass.getESuperTypes().add(theActivitiesPackage.getActivityNode());
+		sendReconfigurationMessageExpressionEClass.getESuperTypes().add(theComponentstorypatternPackage.getTriggerEmbeddedComponentExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentStoryRuleEClass, ComponentStoryRule.class, "ComponentStoryRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -279,6 +322,10 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		initEClass(controllerExchangeNodeEClass, ControllerExchangeNode.class, "ControllerExchangeNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getControllerExchangeNode_Deadline(), theRealtimestatechartPackage.getRelativeDeadline(), null, "deadline", null, 0, 1, ControllerExchangeNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getControllerExchangeNode_ComponentStoryPattern(), theComponentstorypatternPackage.getComponentStoryPattern(), null, "componentStoryPattern", null, 1, 1, ControllerExchangeNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sendReconfigurationMessageExpressionEClass, SendReconfigurationMessageExpression.class, "SendReconfigurationMessageExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSendReconfigurationMessageExpression_ReconfigurationMessageType(), theMsgtypePackage.getMessageType(), null, "reconfigurationMessageType", null, 0, 1, SendReconfigurationMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSendReconfigurationMessageExpression_ParameterBindings(), theBehaviorPackage.getParameterBinding(), null, "parameterBindings", null, 0, -1, SendReconfigurationMessageExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -311,7 +358,7 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		   source, 
 		   new String[] {
 			 "constraints", "HasOnlyOneCreateAndOneDestroyPartVariable CorrectNumberOfFadingFunctions NoDeadlineIfStrategyIsATOMIC_SWITCHING"
-		   });	
+		   });		
 	}
 
 	/**
@@ -329,7 +376,7 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 			 "HasOnlyOneCreateAndOneDestroyPartVariable", "let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables->asOrderedSet() in\r\npartVariables->size() = 2 and\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY else\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE else\r\nfalse endif endif\r\n",
 			 "CorrectNumberOfFadingFunctions", "if self.controllerExchangeStrategy <> ControllerExchangeStrategy::FADING_FUNCTION then\r\nself.fadingFunctions->size()=0\r\nelse\r\n\tif self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n\t\t--self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclAsType(muml::component::StructuredComponent).ports->select(i : muml::component::Port | i.oclIsKindOf(muml::component::ContinuousPort))->select(i : muml::component::ContinuousPort | i.outPort = true)->size() = self.fadingFunctions->size()\r\n\t\tself.fadingFunctions->size()>0\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nendif",
 			 "NoDeadlineIfStrategyIsATOMIC_SWITCHING", "if self.controllerExchangeStrategy = ControllerExchangeStrategy::ATOMIC_SWITCHING then\r\nself.deadline.oclIsUndefined()\r\nelse\r\nnot self.deadline.oclIsUndefined()\r\nendif"
-		   });		
+		   });			
 	}
 
 } //ComponentstorydiagramPackageImpl
