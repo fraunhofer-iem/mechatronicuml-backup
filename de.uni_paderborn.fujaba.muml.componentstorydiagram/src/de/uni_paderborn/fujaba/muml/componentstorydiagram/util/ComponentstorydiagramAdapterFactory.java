@@ -6,8 +6,16 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.ExtendableElement;
+import org.storydriven.core.NamedElement;
+import org.storydriven.storydiagrams.activities.ActivityNode;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,6 +74,38 @@ public class ComponentstorydiagramAdapterFactory extends AdapterFactoryImpl {
 	protected ComponentstorydiagramSwitch<Adapter> modelSwitch =
 		new ComponentstorydiagramSwitch<Adapter>() {
 			@Override
+			public Adapter caseComponentStoryRule(ComponentStoryRule object) {
+				return createComponentStoryRuleAdapter();
+			}
+			@Override
+			public Adapter caseComponentStoryNode(ComponentStoryNode object) {
+				return createComponentStoryNodeAdapter();
+			}
+			@Override
+			public Adapter caseControllerExchangeNode(ControllerExchangeNode object) {
+				return createControllerExchangeNodeAdapter();
+			}
+			@Override
+			public Adapter caseExtendableElement(ExtendableElement object) {
+				return createExtendableElementAdapter();
+			}
+			@Override
+			public Adapter caseCommentableElement(CommentableElement object) {
+				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseReconfigurationRule(ReconfigurationRule object) {
+				return createReconfigurationRuleAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseActivityNode(ActivityNode object) {
+				return createActivityNodeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -86,16 +126,114 @@ public class ComponentstorydiagramAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.Dummy <em>Dummy</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule <em>Component Story Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.Dummy
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule
 	 * @generated
 	 */
-	public Adapter createDummyAdapter() {
+	public Adapter createComponentStoryRuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode <em>Component Story Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode
+	 * @generated
+	 */
+	public Adapter createComponentStoryNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode <em>Controller Exchange Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode
+	 * @generated
+	 */
+	public Adapter createControllerExchangeNodeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.ExtendableElement
+	 * @generated
+	 */
+	public Adapter createExtendableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.CommentableElement <em>Commentable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.CommentableElement
+	 * @generated
+	 */
+	public Adapter createCommentableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule <em>Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule
+	 * @generated
+	 */
+	public Adapter createReconfigurationRuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.core.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.core.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.storydriven.storydiagrams.activities.ActivityNode <em>Activity Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.storydriven.storydiagrams.activities.ActivityNode
+	 * @generated
+	 */
+	public Adapter createActivityNodeAdapter() {
 		return null;
 	}
 

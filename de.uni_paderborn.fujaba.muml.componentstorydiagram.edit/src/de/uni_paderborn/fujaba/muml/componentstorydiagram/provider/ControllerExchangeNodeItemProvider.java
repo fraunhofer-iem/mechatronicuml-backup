@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.provider;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.provider;
 
 
 import java.util.Collection;
@@ -27,15 +23,16 @@ import org.storydriven.storydiagrams.activities.provider.ActivityNodeItemProvide
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.EnumerationPropertyDescriptor;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -69,12 +66,10 @@ public class ControllerExchangeNodeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addDeadlinePropertyDescriptor(object);
-			addComponentStoryPatternPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
-
+	
 	/**
 	 * This adds a property descriptor for the Deadline feature.
 	 * <!-- begin-user-doc -->
@@ -87,7 +82,7 @@ public class ControllerExchangeNodeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ControllerExchangeNode_deadline_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ControllerExchangeNode_deadline_feature", "_UI_ControllerExchangeNode_type"),
-				 ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE,
+				 ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE,
 				 true,
 				 false,
 				 false,
@@ -181,28 +176,6 @@ public class ControllerExchangeNodeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Component Story Pattern feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addComponentStoryPatternPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ControllerExchangeNode_componentStoryPattern_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ControllerExchangeNode_componentStoryPattern_feature", "_UI_ControllerExchangeNode_type"),
-				 ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -214,7 +187,8 @@ public class ControllerExchangeNodeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE);
+			childrenFeatures.add(ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE);
+			childrenFeatures.add(ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN);
 		}
 		return childrenFeatures;
 	}
@@ -269,7 +243,8 @@ public class ControllerExchangeNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ControllerExchangeNode.class)) {
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -289,8 +264,13 @@ public class ControllerExchangeNodeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE,
+				(ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE__DEADLINE,
 				 RealtimestatechartFactory.eINSTANCE.createRelativeDeadline()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN,
+				 ComponentstorypatternFactory.eINSTANCE.createComponentStoryPattern()));
 	}
 
 	/**

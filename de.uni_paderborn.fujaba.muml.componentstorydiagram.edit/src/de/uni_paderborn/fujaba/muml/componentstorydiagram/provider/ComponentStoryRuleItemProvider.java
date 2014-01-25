@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.provider;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.provider;
 
 
 import java.util.Collection;
@@ -23,12 +19,12 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.storydiagrams.activities.ActivitiesFactory;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.provider.ReconfigurationRuleItemProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -78,7 +74,7 @@ public class ComponentStoryRuleItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ControlflowPackage.Literals.COMPONENT_STORY_RULE__ACTIVITY);
+			childrenFeatures.add(ComponentstorydiagramPackage.Literals.COMPONENT_STORY_RULE__ACTIVITY);
 		}
 		return childrenFeatures;
 	}
@@ -133,7 +129,7 @@ public class ComponentStoryRuleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentStoryRule.class)) {
-			case ControlflowPackage.COMPONENT_STORY_RULE__ACTIVITY:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -153,7 +149,7 @@ public class ComponentStoryRuleItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ControlflowPackage.Literals.COMPONENT_STORY_RULE__ACTIVITY,
+				(ComponentstorydiagramPackage.Literals.COMPONENT_STORY_RULE__ACTIVITY,
 				 ActivitiesFactory.eINSTANCE.createActivity()));
 	}
 

@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.provider;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.provider;
 
 
 import java.util.Collection;
@@ -25,12 +21,12 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.storydiagrams.activities.provider.ActivityNodeItemProvider;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -64,32 +60,9 @@ public class ComponentStoryNodeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addComponentStoryPatternPropertyDescriptor(object);
 			addForEachPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Component Story Pattern feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addComponentStoryPatternPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComponentStoryNode_componentStoryPattern_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentStoryNode_componentStoryPattern_feature", "_UI_ComponentStoryNode_type"),
-				 ControlflowPackage.Literals.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -105,7 +78,7 @@ public class ComponentStoryNodeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ComponentStoryNode_forEach_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentStoryNode_forEach_feature", "_UI_ComponentStoryNode_type"),
-				 ControlflowPackage.Literals.COMPONENT_STORY_NODE__FOR_EACH,
+				 ComponentstorydiagramPackage.Literals.COMPONENT_STORY_NODE__FOR_EACH,
 				 true,
 				 false,
 				 false,
@@ -126,7 +99,7 @@ public class ComponentStoryNodeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ControlflowPackage.Literals.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN);
+			childrenFeatures.add(ComponentstorydiagramPackage.Literals.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN);
 		}
 		return childrenFeatures;
 	}
@@ -181,8 +154,11 @@ public class ComponentStoryNodeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentStoryNode.class)) {
-			case ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__FOR_EACH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -201,7 +177,7 @@ public class ComponentStoryNodeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ControlflowPackage.Literals.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN,
+				(ComponentstorydiagramPackage.Literals.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN,
 				 ComponentstorypatternFactory.eINSTANCE.createComponentStoryPattern()));
 	}
 

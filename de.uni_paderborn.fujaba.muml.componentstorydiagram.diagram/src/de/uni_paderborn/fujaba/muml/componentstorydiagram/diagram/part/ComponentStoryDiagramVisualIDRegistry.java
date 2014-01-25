@@ -85,9 +85,9 @@ public class ComponentStoryDiagramVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+		if (de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 				.getComponentStoryRule().isSuperTypeOf(domainElement.eClass())
-				&& isDiagram((de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule) domainElement)) {
+				&& isDiagram((de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryRuleEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -152,7 +152,7 @@ public class ComponentStoryDiagramVisualIDRegistry {
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityActivityCompartmentEditPart.VISUAL_ID:
-			if (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 					.getComponentStoryNode().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeEditPart.VISUAL_ID;
@@ -169,7 +169,7 @@ public class ComponentStoryDiagramVisualIDRegistry {
 					.isSuperTypeOf(domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityFinalNodeEditPart.VISUAL_ID;
 			}
-			if (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+			if (de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 					.getControllerExchangeNode().isSuperTypeOf(
 							domainElement.eClass())) {
 				return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeEditPart.VISUAL_ID;
@@ -469,7 +469,7 @@ public class ComponentStoryDiagramVisualIDRegistry {
 	 * @generated
 	 */
 	private static boolean isDiagram(
-			de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule element) {
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule element) {
 		return true;
 	}
 

@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.provider;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;

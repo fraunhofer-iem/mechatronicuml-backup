@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.util;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.util;
 
 import java.util.Map;
 
@@ -14,27 +10,26 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode;
-
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage
+ * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage
  * @generated
  */
-public class ControlflowValidator extends EObjectValidator {
+public class ComponentstorydiagramValidator extends EObjectValidator {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final ControlflowValidator INSTANCE = new ControlflowValidator();
+	public static final ComponentstorydiagramValidator INSTANCE = new ComponentstorydiagramValidator();
 
 	/**
 	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
@@ -44,7 +39,7 @@ public class ControlflowValidator extends EObjectValidator {
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
 	 */
-	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow";
+	public static final String DIAGNOSTIC_SOURCE = "de.uni_paderborn.fujaba.muml.componentstorydiagram";
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
@@ -68,7 +63,7 @@ public class ControlflowValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlflowValidator() {
+	public ComponentstorydiagramValidator() {
 		super();
 	}
 
@@ -80,7 +75,7 @@ public class ControlflowValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-	  return ControlflowPackage.eINSTANCE;
+	  return ComponentstorydiagramPackage.eINSTANCE;
 	}
 
 	/**
@@ -92,11 +87,11 @@ public class ControlflowValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case ControlflowPackage.COMPONENT_STORY_RULE:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE:
 				return validateComponentStoryRule((ComponentStoryRule)value, diagnostics, context);
-			case ControlflowPackage.COMPONENT_STORY_NODE:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE:
 				return validateComponentStoryNode((ComponentStoryNode)value, diagnostics, context);
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE:
 				return validateControllerExchangeNode((ControllerExchangeNode)value, diagnostics, context);
 			default:
 				return true;
@@ -164,7 +159,7 @@ public class ControlflowValidator extends EObjectValidator {
 	public boolean validateControllerExchangeNode_HasOnlyOneCreateAndOneDestroyPartVariable(ControllerExchangeNode controllerExchangeNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE,
+				(ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE,
 				 controllerExchangeNode,
 				 diagnostics,
 				 context,
@@ -202,7 +197,7 @@ public class ControlflowValidator extends EObjectValidator {
 	public boolean validateControllerExchangeNode_CorrectNumberOfFadingFunctions(ControllerExchangeNode controllerExchangeNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE,
+				(ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE,
 				 controllerExchangeNode,
 				 diagnostics,
 				 context,
@@ -235,7 +230,7 @@ public class ControlflowValidator extends EObjectValidator {
 	public boolean validateControllerExchangeNode_NoDeadlineIfStrategyIsATOMIC_SWITCHING(ControllerExchangeNode controllerExchangeNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE,
+				(ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE,
 				 controllerExchangeNode,
 				 diagnostics,
 				 context,
@@ -261,4 +256,4 @@ public class ControlflowValidator extends EObjectValidator {
 		return super.getResourceLocator();
 	}
 
-} //ControlflowValidator
+} //ComponentstorydiagramValidator

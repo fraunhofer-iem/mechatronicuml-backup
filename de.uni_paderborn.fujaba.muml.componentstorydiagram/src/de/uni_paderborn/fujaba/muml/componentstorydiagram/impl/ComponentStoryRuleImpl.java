@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -13,8 +9,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.storydiagrams.activities.Activity;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl;
 
 /**
@@ -24,7 +20,7 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.impl.ReconfigurationRuleImpl
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ComponentStoryRuleImpl#getActivity <em>Activity</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ComponentStoryRuleImpl#getActivity <em>Activity</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,7 +53,7 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ControlflowPackage.Literals.COMPONENT_STORY_RULE;
+		return ComponentstorydiagramPackage.Literals.COMPONENT_STORY_RULE;
 	}
 
 	/**
@@ -78,7 +74,7 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 		Activity oldActivity = activity;
 		activity = newActivity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ControlflowPackage.COMPONENT_STORY_RULE__ACTIVITY, oldActivity, newActivity);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY, oldActivity, newActivity);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -93,14 +89,14 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 		if (newActivity != activity) {
 			NotificationChain msgs = null;
 			if (activity != null)
-				msgs = ((InternalEObject)activity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.COMPONENT_STORY_RULE__ACTIVITY, null, msgs);
+				msgs = ((InternalEObject)activity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY, null, msgs);
 			if (newActivity != null)
-				msgs = ((InternalEObject)newActivity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.COMPONENT_STORY_RULE__ACTIVITY, null, msgs);
+				msgs = ((InternalEObject)newActivity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY, null, msgs);
 			msgs = basicSetActivity(newActivity, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.COMPONENT_STORY_RULE__ACTIVITY, newActivity, newActivity));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY, newActivity, newActivity));
 	}
 
 	/**
@@ -111,7 +107,7 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ControlflowPackage.COMPONENT_STORY_RULE__ACTIVITY:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY:
 				return basicSetActivity(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -125,7 +121,7 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ControlflowPackage.COMPONENT_STORY_RULE__ACTIVITY:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY:
 				return getActivity();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -139,7 +135,7 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ControlflowPackage.COMPONENT_STORY_RULE__ACTIVITY:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY:
 				setActivity((Activity)newValue);
 				return;
 		}
@@ -154,7 +150,7 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ControlflowPackage.COMPONENT_STORY_RULE__ACTIVITY:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY:
 				setActivity((Activity)null);
 				return;
 		}
@@ -169,7 +165,7 @@ public class ComponentStoryRuleImpl extends ReconfigurationRuleImpl implements C
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ControlflowPackage.COMPONENT_STORY_RULE__ACTIVITY:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE__ACTIVITY:
 				return activity != null;
 		}
 		return super.eIsSet(featureID);

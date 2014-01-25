@@ -36,7 +36,7 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public void init_ComponentStoryNode_3001(
-			de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode instance) {
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern newInstance_0_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 					.createComponentStoryPattern();
@@ -85,7 +85,7 @@ public class ElementInitializers {
 			Object value_1 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
 							5,
-							de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 									.getComponentStoryNode(), null).evaluate(
 							instance);
 			instance.setName((String) value_1);
@@ -99,7 +99,7 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public void init_ControllerExchangeNode_3021(
-			de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode instance) {
+			de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode instance) {
 		try {
 			de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern newInstance_0_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 					.createComponentStoryPattern();
@@ -179,7 +179,7 @@ public class ElementInitializers {
 			Object value_1 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
 							14,
-							de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+							de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 									.getControllerExchangeNode(), null)
 					.evaluate(instance);
 			instance.setName((String) value_1);

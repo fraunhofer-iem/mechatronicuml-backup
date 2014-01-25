@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -13,9 +9,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
 
 /**
@@ -25,8 +21,8 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControllerExchangeNodeImpl#getDeadline <em>Deadline</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ControllerExchangeNodeImpl#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ControllerExchangeNodeImpl#getDeadline <em>Deadline</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ControllerExchangeNodeImpl#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
  * </ul>
  * </p>
  *
@@ -69,7 +65,7 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ControlflowPackage.Literals.CONTROLLER_EXCHANGE_NODE;
+		return ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE;
 	}
 
 	/**
@@ -90,7 +86,7 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 		RelativeDeadline oldDeadline = deadline;
 		deadline = newDeadline;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE, oldDeadline, newDeadline);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE, oldDeadline, newDeadline);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -105,14 +101,14 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 		if (newDeadline != deadline) {
 			NotificationChain msgs = null;
 			if (deadline != null)
-				msgs = ((InternalEObject)deadline).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE, null, msgs);
+				msgs = ((InternalEObject)deadline).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE, null, msgs);
 			if (newDeadline != null)
-				msgs = ((InternalEObject)newDeadline).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE, null, msgs);
+				msgs = ((InternalEObject)newDeadline).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE, null, msgs);
 			msgs = basicSetDeadline(newDeadline, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE, newDeadline, newDeadline));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE, newDeadline, newDeadline));
 	}
 
 	/**
@@ -133,7 +129,7 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 		ComponentStoryPattern oldComponentStoryPattern = componentStoryPattern;
 		componentStoryPattern = newComponentStoryPattern;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, oldComponentStoryPattern, newComponentStoryPattern);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, oldComponentStoryPattern, newComponentStoryPattern);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -148,14 +144,14 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 		if (newComponentStoryPattern != componentStoryPattern) {
 			NotificationChain msgs = null;
 			if (componentStoryPattern != null)
-				msgs = ((InternalEObject)componentStoryPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, null, msgs);
+				msgs = ((InternalEObject)componentStoryPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, null, msgs);
 			if (newComponentStoryPattern != null)
-				msgs = ((InternalEObject)newComponentStoryPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, null, msgs);
+				msgs = ((InternalEObject)newComponentStoryPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, null, msgs);
 			msgs = basicSetComponentStoryPattern(newComponentStoryPattern, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, newComponentStoryPattern, newComponentStoryPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN, newComponentStoryPattern, newComponentStoryPattern));
 	}
 
 	/**
@@ -166,9 +162,9 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
 				return basicSetDeadline(null, msgs);
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				return basicSetComponentStoryPattern(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -182,9 +178,9 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
 				return getDeadline();
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				return getComponentStoryPattern();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -195,14 +191,13 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
 				setDeadline((RelativeDeadline)newValue);
 				return;
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				setComponentStoryPattern((ComponentStoryPattern)newValue);
 				return;
 		}
@@ -217,10 +212,10 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
 				setDeadline((RelativeDeadline)null);
 				return;
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				setComponentStoryPattern((ComponentStoryPattern)null);
 				return;
 		}
@@ -235,9 +230,9 @@ public class ControllerExchangeNodeImpl extends ActivityNodeImpl implements Cont
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__DEADLINE:
 				return deadline != null;
-			case ControlflowPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE__COMPONENT_STORY_PATTERN:
 				return componentStoryPattern != null;
 		}
 		return super.eIsSet(featureID);

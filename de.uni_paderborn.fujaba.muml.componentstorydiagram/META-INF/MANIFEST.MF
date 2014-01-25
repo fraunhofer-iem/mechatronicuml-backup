@@ -7,12 +7,12 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern,
+Export-Package: de.uni_paderborn.fujaba.muml.componentstorydiagram,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern,
  de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.impl,
  de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.util,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl,
- de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.util
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.impl,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.storydriven.core;visibility:=reexport,

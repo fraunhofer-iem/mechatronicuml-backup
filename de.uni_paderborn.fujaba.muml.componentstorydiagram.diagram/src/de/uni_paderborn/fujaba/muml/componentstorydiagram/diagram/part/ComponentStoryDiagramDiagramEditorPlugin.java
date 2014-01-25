@@ -138,7 +138,7 @@ public class ComponentStoryDiagramDiagramEditorPlugin extends AbstractUIPlugin {
 
 		// Default Factories
 		factories
-				.add(new de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.provider.ControlflowItemProviderAdapterFactory());
+				.add(new de.uni_paderborn.fujaba.muml.componentstorydiagram.provider.ComponentstorydiagramItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.provider.ComponentstorypatternItemProviderAdapterFactory());
 		factories.add(new CoreItemProviderAdapterFactory());

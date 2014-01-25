@@ -41,7 +41,7 @@ public class ComponentStoryPatternCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
-		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode container = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode container = (de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode) getElementToEdit();
 		if (container.getComponentStoryPattern() != null) {
 			return false;
 		}
@@ -57,7 +57,7 @@ public class ComponentStoryPatternCreateCommand extends EditElementCommand {
 		de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern newElement = de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 				.createComponentStoryPattern();
 
-		de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode owner = (de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode) getElementToEdit();
+		de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode owner = (de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode) getElementToEdit();
 		owner.setComponentStoryPattern(newElement);
 
 		doConfigure(newElement, monitor, info);

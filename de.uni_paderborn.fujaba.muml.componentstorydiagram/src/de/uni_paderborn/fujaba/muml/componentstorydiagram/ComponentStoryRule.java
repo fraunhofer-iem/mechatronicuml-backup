@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram;
 
 import org.storydriven.storydiagrams.activities.Activity;
 
@@ -22,11 +18,11 @@ import de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationRule;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule#getActivity <em>Activity</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule#getActivity <em>Activity</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getComponentStoryRule()
+ * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryRule()
  * @model
  * @generated
  */
@@ -41,14 +37,14 @@ public interface ComponentStoryRule extends ReconfigurationRule {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Activity</em>' containment reference.
 	 * @see #setActivity(Activity)
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getComponentStoryRule_Activity()
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryRule_Activity()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Activity getActivity();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule#getActivity <em>Activity</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule#getActivity <em>Activity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Activity</em>' containment reference.

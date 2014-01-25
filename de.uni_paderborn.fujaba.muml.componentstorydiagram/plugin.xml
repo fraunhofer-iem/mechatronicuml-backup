@@ -6,10 +6,6 @@
  $Id$
 --><plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      
-      <package class="de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage" genModel="model/ComponentStoryDiagram.genmodel" uri="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1"/>
-   </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       
@@ -20,7 +16,7 @@
       <package
             class="de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage"
             genModel="model/ComponentStoryDiagram.genmodel"
-            uri="http://www.fujaba.de/muml/componentstorydiagram/0.3.1">
+            uri="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
       </package>
    </extension>
 

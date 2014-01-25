@@ -8,8 +8,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +29,7 @@ public class ComponentstorydiagramFactoryImpl extends EFactoryImpl implements Co
 	 */
 	public static ComponentstorydiagramFactory init() {
 		try {
-			ComponentstorydiagramFactory theComponentstorydiagramFactory = (ComponentstorydiagramFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/componentstorydiagram/0.3.1"); 
+			ComponentstorydiagramFactory theComponentstorydiagramFactory = (ComponentstorydiagramFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/componentstorydiagram/0.4.0"); 
 			if (theComponentstorydiagramFactory != null) {
 				return theComponentstorydiagramFactory;
 			}
@@ -55,9 +58,42 @@ public class ComponentstorydiagramFactoryImpl extends EFactoryImpl implements Co
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ComponentstorydiagramPackage.COMPONENT_STORY_RULE: return createComponentStoryRule();
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE: return createComponentStoryNode();
+			case ComponentstorydiagramPackage.CONTROLLER_EXCHANGE_NODE: return createControllerExchangeNode();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentStoryRule createComponentStoryRule() {
+		ComponentStoryRuleImpl componentStoryRule = new ComponentStoryRuleImpl();
+		return componentStoryRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentStoryNode createComponentStoryNode() {
+		ComponentStoryNodeImpl componentStoryNode = new ComponentStoryNodeImpl();
+		return componentStoryNode;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ControllerExchangeNode createControllerExchangeNode() {
+		ControllerExchangeNodeImpl controllerExchangeNode = new ControllerExchangeNodeImpl();
+		return controllerExchangeNode;
 	}
 
 	/**

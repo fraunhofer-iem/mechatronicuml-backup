@@ -31,7 +31,7 @@ import org.storydriven.storydiagrams.calls.CallsFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.provider.ComponentStoryDiagramEditPlugin;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.provider.ComponentStoryDiagramEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern} object.

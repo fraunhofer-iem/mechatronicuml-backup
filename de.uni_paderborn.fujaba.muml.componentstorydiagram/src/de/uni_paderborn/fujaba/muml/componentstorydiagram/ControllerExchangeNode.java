@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram;
 
 import org.storydriven.storydiagrams.activities.ActivityNode;
 
@@ -23,12 +19,12 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.RelativeDeadline;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getDeadline <em>Deadline</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode#getDeadline <em>Deadline</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getControllerExchangeNode()
+ * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getControllerExchangeNode()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL HasOnlyOneCreateAndOneDestroyPartVariable='let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables->asOrderedSet() in\r\npartVariables->size() = 2 and\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY else\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE else\r\nfalse endif endif\r\n' CorrectNumberOfFadingFunctions='if self.controllerExchangeStrategy <> ControllerExchangeStrategy::FADING_FUNCTION then\r\nself.fadingFunctions->size()=0\r\nelse\r\n\tif self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n\t\t--self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclAsType(muml::component::StructuredComponent).ports->select(i : muml::component::Port | i.oclIsKindOf(muml::component::ContinuousPort))->select(i : muml::component::ContinuousPort | i.outPort = true)->size() = self.fadingFunctions->size()\r\n\t\tself.fadingFunctions->size()>0\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nendif' NoDeadlineIfStrategyIsATOMIC_SWITCHING='if self.controllerExchangeStrategy = ControllerExchangeStrategy::ATOMIC_SWITCHING then\r\nself.deadline.oclIsUndefined()\r\nelse\r\nnot self.deadline.oclIsUndefined()\r\nendif'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='HasOnlyOneCreateAndOneDestroyPartVariable CorrectNumberOfFadingFunctions NoDeadlineIfStrategyIsATOMIC_SWITCHING'"
  * @generated
@@ -43,14 +39,14 @@ public interface ControllerExchangeNode extends ActivityNode {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Deadline</em>' containment reference.
 	 * @see #setDeadline(RelativeDeadline)
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getControllerExchangeNode_Deadline()
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getControllerExchangeNode_Deadline()
 	 * @model containment="true"
 	 * @generated
 	 */
 	RelativeDeadline getDeadline();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getDeadline <em>Deadline</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode#getDeadline <em>Deadline</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Deadline</em>' containment reference.
@@ -63,20 +59,20 @@ public interface ControllerExchangeNode extends ActivityNode {
 	 * Returns the value of the '<em><b>Component Story Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Component Story Pattern</em>' reference isn't clear,
+	 * If the meaning of the '<em>Component Story Pattern</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Component Story Pattern</em>' containment reference.
 	 * @see #setComponentStoryPattern(ComponentStoryPattern)
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getControllerExchangeNode_ComponentStoryPattern()
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getControllerExchangeNode_ComponentStoryPattern()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	ComponentStoryPattern getComponentStoryPattern();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode#getComponentStoryPattern <em>Component Story Pattern</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode#getComponentStoryPattern <em>Component Story Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Component Story Pattern</em>' containment reference.

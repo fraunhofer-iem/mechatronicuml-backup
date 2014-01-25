@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram;
 
 import org.storydriven.storydiagrams.activities.ActivityNode;
 
@@ -22,12 +18,12 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode#isForEach <em>For Each</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode#isForEach <em>For Each</em>}</li>
  * </ul>
  * </p>
  *
- * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getComponentStoryNode()
+ * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryNode()
  * @model
  * @generated
  */
@@ -36,20 +32,20 @@ public interface ComponentStoryNode extends ActivityNode {
 	 * Returns the value of the '<em><b>Component Story Pattern</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Component Story Pattern</em>' reference isn't clear,
+	 * If the meaning of the '<em>Component Story Pattern</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Component Story Pattern</em>' containment reference.
 	 * @see #setComponentStoryPattern(ComponentStoryPattern)
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getComponentStoryNode_ComponentStoryPattern()
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryNode_ComponentStoryPattern()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	ComponentStoryPattern getComponentStoryPattern();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode#getComponentStoryPattern <em>Component Story Pattern</em>}' containment reference.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode#getComponentStoryPattern <em>Component Story Pattern</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Component Story Pattern</em>' containment reference.
@@ -69,14 +65,14 @@ public interface ComponentStoryNode extends ActivityNode {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>For Each</em>' attribute.
 	 * @see #setForEach(boolean)
-	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage#getComponentStoryNode_ForEach()
+	 * @see de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage#getComponentStoryNode_ForEach()
 	 * @model default="false"
 	 * @generated
 	 */
 	boolean isForEach();
 
 	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode#isForEach <em>For Each</em>}' attribute.
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode#isForEach <em>For Each</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>For Each</em>' attribute.

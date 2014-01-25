@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -13,9 +9,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.storydriven.storydiagrams.activities.impl.ActivityNodeImpl;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.componentstorypattern.ComponentStoryPattern;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode;
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,8 +20,8 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.Controlflo
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ComponentStoryNodeImpl#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.impl.ComponentStoryNodeImpl#isForEach <em>For Each</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ComponentStoryNodeImpl#getComponentStoryPattern <em>Component Story Pattern</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorydiagram.impl.ComponentStoryNodeImpl#isForEach <em>For Each</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +47,7 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	 * @ordered
 	 */
 	protected static final boolean FOR_EACH_EDEFAULT = false;
+
 	/**
 	 * The cached value of the '{@link #isForEach() <em>For Each</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -77,7 +74,7 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ControlflowPackage.Literals.COMPONENT_STORY_NODE;
+		return ComponentstorydiagramPackage.Literals.COMPONENT_STORY_NODE;
 	}
 
 	/**
@@ -98,7 +95,7 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 		ComponentStoryPattern oldComponentStoryPattern = componentStoryPattern;
 		componentStoryPattern = newComponentStoryPattern;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, oldComponentStoryPattern, newComponentStoryPattern);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentstorydiagramPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, oldComponentStoryPattern, newComponentStoryPattern);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -113,14 +110,14 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 		if (newComponentStoryPattern != componentStoryPattern) {
 			NotificationChain msgs = null;
 			if (componentStoryPattern != null)
-				msgs = ((InternalEObject)componentStoryPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, null, msgs);
+				msgs = ((InternalEObject)componentStoryPattern).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentstorydiagramPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, null, msgs);
 			if (newComponentStoryPattern != null)
-				msgs = ((InternalEObject)newComponentStoryPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, null, msgs);
+				msgs = ((InternalEObject)newComponentStoryPattern).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentstorydiagramPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, null, msgs);
 			msgs = basicSetComponentStoryPattern(newComponentStoryPattern, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, newComponentStoryPattern, newComponentStoryPattern));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorydiagramPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN, newComponentStoryPattern, newComponentStoryPattern));
 	}
 
 	/**
@@ -141,7 +138,7 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 		boolean oldForEach = forEach;
 		forEach = newForEach;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH, oldForEach, forEach));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentstorydiagramPackage.COMPONENT_STORY_NODE__FOR_EACH, oldForEach, forEach));
 	}
 
 	/**
@@ -152,7 +149,7 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
 				return basicSetComponentStoryPattern(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -166,9 +163,9 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
 				return getComponentStoryPattern();
-			case ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__FOR_EACH:
 				return isForEach();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -182,10 +179,10 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
 				setComponentStoryPattern((ComponentStoryPattern)newValue);
 				return;
-			case ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__FOR_EACH:
 				setForEach((Boolean)newValue);
 				return;
 		}
@@ -200,10 +197,10 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
 				setComponentStoryPattern((ComponentStoryPattern)null);
 				return;
-			case ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__FOR_EACH:
 				setForEach(FOR_EACH_EDEFAULT);
 				return;
 		}
@@ -218,9 +215,9 @@ public class ComponentStoryNodeImpl extends ActivityNodeImpl implements Componen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ControlflowPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__COMPONENT_STORY_PATTERN:
 				return componentStoryPattern != null;
-			case ControlflowPackage.COMPONENT_STORY_NODE__FOR_EACH:
+			case ComponentstorydiagramPackage.COMPONENT_STORY_NODE__FOR_EACH:
 				return forEach != FOR_EACH_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

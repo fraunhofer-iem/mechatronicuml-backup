@@ -1,10 +1,6 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
-package de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.provider;
+package de.uni_paderborn.fujaba.muml.componentstorydiagram.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,7 +20,7 @@ import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.util.ControlflowAdapterFactory;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.util.ComponentstorydiagramAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -35,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.util.Contr
  * <!-- end-user-doc -->
  * @generated
  */
-public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class ComponentstorydiagramItemProviderAdapterFactory extends ComponentstorydiagramAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -66,7 +62,7 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ControlflowItemProviderAdapterFactory() {
+	public ComponentstorydiagramItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -75,7 +71,7 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -83,7 +79,7 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 	protected ComponentStoryRuleItemProvider componentStoryRuleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryRule}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryRule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -98,7 +94,7 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -106,7 +102,7 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 	protected ComponentStoryNodeItemProvider componentStoryNodeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ComponentStoryNode}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentStoryNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -121,7 +117,7 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -129,7 +125,7 @@ public class ControlflowItemProviderAdapterFactory extends ControlflowAdapterFac
 	protected ControllerExchangeNodeItemProvider controllerExchangeNodeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControllerExchangeNode}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorydiagram.ControllerExchangeNode}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

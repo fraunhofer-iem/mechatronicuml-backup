@@ -39,7 +39,7 @@ public class ControllerExchangeNodeLabelExpressionLabelParser5044 extends
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 				.getExpression(
 						17,
-						de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+						de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 								.getControllerExchangeNode(), null).body();
 	}
 

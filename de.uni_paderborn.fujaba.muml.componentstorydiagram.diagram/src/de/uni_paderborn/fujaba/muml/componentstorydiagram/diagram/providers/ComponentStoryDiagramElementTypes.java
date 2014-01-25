@@ -162,7 +162,7 @@ public class ComponentStoryDiagramElementTypes {
 
 			elements.put(
 					ComponentStoryRule_1000,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 							.getComponentStoryRule());
 
 			elements.put(Activity_2003,
@@ -170,7 +170,7 @@ public class ComponentStoryDiagramElementTypes {
 
 			elements.put(
 					ComponentStoryNode_3001,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 							.getComponentStoryNode());
 
 			elements.put(
@@ -224,7 +224,7 @@ public class ComponentStoryDiagramElementTypes {
 
 			elements.put(
 					ControllerExchangeNode_3021,
-					de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.ControlflowPackage.eINSTANCE
+					de.uni_paderborn.fujaba.muml.componentstorydiagram.ComponentstorydiagramPackage.eINSTANCE
 							.getControllerExchangeNode());
 
 			elements.put(
