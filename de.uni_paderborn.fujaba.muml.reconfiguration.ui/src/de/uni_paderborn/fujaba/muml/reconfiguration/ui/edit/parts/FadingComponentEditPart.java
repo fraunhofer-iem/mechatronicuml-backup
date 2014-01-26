@@ -1,8 +1,11 @@
 package de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts;
 
+import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.Label;
+import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
@@ -33,18 +36,21 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Device;
 import org.eclipse.swt.graphics.Font;
+import org.eclipse.swt.graphics.LineAttributes;
+import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
  */
-public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShapeEditPart {
+public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 2078;
+	public static final int VISUAL_ID = 2079;
 
 	/**
 	 * @generated
@@ -59,7 +65,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 	/**
 	 * @generated
 	 */
-	public ReconfigurableAtomicComponentEditPart(View view) {
+	public FadingComponentEditPart(View view) {
 		super(view);
 	}
 
@@ -70,21 +76,22 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(
-						de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry.TYPED_INSTANCE));
+						de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry.TYPED_INSTANCE));
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ReconfigurableAtomicComponentItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.FadingComponentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE,
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ReconfigurableAtomicComponentCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.FadingComponentCanonicalEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.OPEN_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy());
-		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
+		// XXX need an SCR to runtime to have another abstract superclass that
+		// would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 
 		installEditPolicy(
@@ -105,13 +112,9 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				View childView = (View) child.getModel();
-				switch (de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationVisualIDRegistry
+				switch (de.uni_paderborn.fujaba.muml.component.diagram.part.MumlVisualIDRegistry
 						.getVisualID(childView)) {
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart.VISUAL_ID:
 				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart.VISUAL_ID:
-				case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy();
 				}
 				EditPolicy result = child
@@ -137,14 +140,14 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ComponentFigure();
+		return primaryShape = new FadingComponentFigure();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ComponentFigure getPrimaryShape() {
-		return (ComponentFigure) primaryShape;
+	public FadingComponentFigure getPrimaryShape() {
+		return (FadingComponentFigure) primaryShape;
 	}
 
 	/**
@@ -156,15 +159,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 					.setLabel(getPrimaryShape().getFigureComponentNameFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
+
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.SOUTH);
@@ -174,33 +169,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 							.getFigure(), locator);
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.add(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) childEditPart)
-							.getFigure(), locator);
-			return true;
-		}
+
 		return false;
 	}
 
@@ -211,13 +180,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart) {
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart) childEditPart)
-							.getFigure());
-			return true;
-		}
+
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ContinuousPortEditPart) {
 			getBorderedFigure()
 					.getBorderItemContainer()
@@ -225,28 +188,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 							.getFigure());
 			return true;
 		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.HybridPortEditPart) childEditPart)
-							.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationMessagePortEditPart) childEditPart)
-							.getFigure());
-			return true;
-		}
-		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart) {
-			getBorderedFigure()
-					.getBorderItemContainer()
-					.remove(((de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurationExecutionPortEditPart) childEditPart)
-							.getFigure());
-			return true;
-		}
-		
+
 		return false;
 	}
 
@@ -295,8 +237,8 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 	/**
 	 * Creates figure for this edit part.
 	 * 
-	 * Body of this method does not depend on settings in generation model
-	 * so you may safely remove <i>generated</i> tag and modify it.
+	 * Body of this method does not depend on settings in generation model so
+	 * you may safely remove <i>generated</i> tag and modify it.
 	 * 
 	 * @generated
 	 */
@@ -310,9 +252,11 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 	}
 
 	/**
-	 * Default implementation treats passed figure as content pane.
-	 * Respects layout one may have set for generated figure.
-	 * @param nodeShape instance of generated figure class
+	 * Default implementation treats passed figure as content pane. Respects
+	 * layout one may have set for generated figure.
+	 * 
+	 * @param nodeShape
+	 *            instance of generated figure class
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
@@ -381,7 +325,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 	/**
 	 * @generated
 	 */
-	public class ComponentFigure extends RectangleFigure {
+	public class FadingComponentFigure extends RectangleFigure {
 
 		/**
 		 * @generated
@@ -391,7 +335,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 		/**
 		 * @generated
 		 */
-		public ComponentFigure() {
+		public FadingComponentFigure() {
 			this.setLayoutManager(new StackLayout());
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
@@ -422,7 +366,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 			componentIconFigure1.setFill(false);
 			componentIconFigure1.setOutline(false);
 			componentIconFigure1.setPreferredSize(new Dimension(getMapMode()
-					.DPtoLP(20), getMapMode().DPtoLP(20)));
+					.DPtoLP(35), getMapMode().DPtoLP(20)));
 
 			GridData constraintComponentIconFigure1 = new GridData();
 			constraintComponentIconFigure1.verticalAlignment = GridData.BEGINNING;
@@ -448,7 +392,7 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 			RectangleFigure b13 = new RectangleFigure();
 
 			componentIconOuter2.add(b13, new Rectangle(getMapMode().DPtoLP(4),
-					getMapMode().DPtoLP(0), getMapMode().DPtoLP(16),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(30),
 					getMapMode().DPtoLP(20)));
 
 			RectangleFigure componentIconInner12 = new RectangleFigure();
@@ -479,6 +423,62 @@ public class ReconfigurableAtomicComponentEditPart extends AbstractBorderedShape
 					getMapMode().DPtoLP(10), getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(6)));
 
+			// FadingComponent specific
+			
+			Color green = new Color(Display.getCurrent(), 0, 150, 0);
+			RectangleFigure plusFigure = new RectangleFigure();
+
+			plusFigure.setFill(false);
+			plusFigure.setOutline(true);
+			plusFigure.setForegroundColor(green);
+
+			plusFigure.setLayoutManager(new XYLayout());
+			WrappingLabel plus = new WrappingLabel();
+
+			plus.setText("+");
+			plus.setAlignment(PositionConstants.CENTER);
+
+			plus.setForegroundColor(green);
+			
+			plus.setFont(new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+					.getFontData()[0].getName(), 7, SWT.NORMAL));
+
+			plusFigure.add(plus, new Rectangle(getMapMode()
+					.DPtoLP(0), getMapMode().DPtoLP(-1), getMapMode().DPtoLP(10),
+					getMapMode().DPtoLP(10)));
+
+			componentIconOuter2.add(plusFigure, new Rectangle(getMapMode()
+					.DPtoLP(13), getMapMode().DPtoLP(5), getMapMode().DPtoLP(9),
+					getMapMode().DPtoLP(10)));
+			
+			
+			Color red = new Color(Display.getCurrent(), 150, 0, 0);
+			RectangleFigure minusFigure = new RectangleFigure();
+
+			minusFigure.setFill(false);
+			minusFigure.setOutline(true);
+			minusFigure.setForegroundColor(red);
+
+			minusFigure.setLayoutManager(new XYLayout());
+			
+			WrappingLabel minus = new WrappingLabel();
+			minus.setText("-");
+			minus.setAlignment(PositionConstants.TOP);
+			minus.setForegroundColor(red);
+			minus.setFont(new Font(
+			Display.getCurrent(), Display.getDefault().getSystemFont()
+			.getFontData()[0].getName(), 7, SWT.NORMAL));
+
+			minusFigure.add(minus,  new Rectangle(getMapMode()
+					.DPtoLP(-1), getMapMode().DPtoLP(-2), getMapMode().DPtoLP(10),
+					getMapMode().DPtoLP(10)));
+
+			componentIconOuter2.add(minusFigure, new Rectangle(getMapMode()
+					.DPtoLP(23), getMapMode().DPtoLP(5), getMapMode().DPtoLP(9),
+					getMapMode().DPtoLP(10)));
+			
+			
 			// Process FigureRef details
 
 			componentIconRectangle0.add(componentIconFigure1);

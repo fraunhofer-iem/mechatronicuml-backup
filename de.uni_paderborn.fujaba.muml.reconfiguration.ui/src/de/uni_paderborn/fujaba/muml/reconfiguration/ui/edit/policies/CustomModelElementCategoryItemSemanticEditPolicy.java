@@ -19,6 +19,12 @@ public class CustomModelElementCategoryItemSemanticEditPolicy extends ModelEleme
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.commands.ReconfigurableStructuredComponentCreateCommand(
 					req));
 		}
+		
+		if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.FadingComponent_2079== req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.commands.FadingComponentCreateCommand(
+					req));
+		}
 
 		return super.getCreateCommand(req);
 	}

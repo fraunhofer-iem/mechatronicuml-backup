@@ -114,6 +114,10 @@
                class="ReconfigurableAtomicComponent"
                packageNsUri="http://www.fujaba.de/muml/reconfiguration/0.3.18">
          </child>
+         <child
+               class="FadingComponent"
+               packageNsUri="http://www.fujaba.de/muml/reconfiguration/0.3.18">
+         </child>
       </category>
    </extension>
   <extension
@@ -169,6 +173,15 @@
                   id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.ReconfigurationExecutionPortTool"
                   kind="tool"
                   label="Reconfiguration Execution Port"
+                  path="/reconfDrawer/"
+                  permission="Full">
+            </entry>
+            <entry
+                  defineOnly="false"
+                  description="Creates a fading component."
+                  id="de.uni_paderborn.fujaba.muml.reconfiguration.ui.FadingComponentTool"
+                  kind="tool"
+                  label="Fading Component"
                   path="/reconfDrawer/"
                   permission="Full">
             </entry>
@@ -297,6 +310,17 @@
                 <param
                       name="semanticHint"
                       value="2078">
+                </param>
+             </metamodelType>
+             <metamodelType
+                   eclass="FadingComponent"
+                   edithelper="de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers.FadingComponentEditHelper"
+                   id="de.uni_paderborn.fujaba.muml.reconfiguration.FadingComponent_2079"
+                   kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+                   name="FadingComponent">
+                <param
+                      name="semanticHint"
+                      value="2079">
                 </param>
              </metamodelType>
           </metamodel>

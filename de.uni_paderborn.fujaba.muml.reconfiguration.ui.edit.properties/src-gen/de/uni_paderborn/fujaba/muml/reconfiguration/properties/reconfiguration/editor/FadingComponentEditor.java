@@ -23,6 +23,32 @@ public class FadingComponentEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addFadingComponentFadingFunctionEditor(null, true);
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addFadingComponentFadingFunctionEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createFadingComponentFadingFunctionEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFadingComponentFadingFunctionEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+						.getFadingComponent_FadingFunction());
+
+		return editor;
+
 	}
 
 	//
@@ -58,7 +84,7 @@ public class FadingComponentEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.extensions",
+							"property.tab.general", "property.tab.extensions",
 							"property.tab.documentation",
 							"property.tab.general", "property.tab.general"})
 					.contains(tab);

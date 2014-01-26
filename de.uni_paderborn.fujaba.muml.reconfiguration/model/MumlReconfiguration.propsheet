@@ -222,6 +222,11 @@
     </classes>
     <classes>
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/FadingComponent"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/FadingComponent/fadingFunction"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
       <superClasses href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#//@packages.8/@classes.6"/>
     </classes>
     <classes>

@@ -56,6 +56,9 @@ public class CustomReconfigurationEditPartFactory extends
 			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart.VISUAL_ID:
 				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.ReconfigurableAtomicComponentEditPart(
 						view);
+			case de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.FadingComponentEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.parts.FadingComponentEditPart(
+						view);
 			}
 		}
 		return super.createEditPart(context, model);
