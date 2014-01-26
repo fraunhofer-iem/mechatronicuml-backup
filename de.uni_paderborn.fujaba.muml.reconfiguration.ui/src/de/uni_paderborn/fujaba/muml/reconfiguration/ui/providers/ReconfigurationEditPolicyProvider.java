@@ -11,34 +11,50 @@ import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPolicies
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvider;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.muml.component.PortPart;
+import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts.CustomPortPartEditPart;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomModelElementCategoryCanonicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomModelElementCategoryItemSemanticEditPolicy;
 
+public class ReconfigurationEditPolicyProvider extends AbstractProvider
+		implements IEditPolicyProvider {
 
+	public void createEditPolicies(EditPart ep) {
+		if (ep instanceof IGraphicalEditPart) {
+			EObject element = ((IGraphicalEditPart) ep)
+					.resolveSemanticElement();
+			if (element instanceof ModelElementCategory) {
+				ep.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
+						new CustomModelElementCategoryItemSemanticEditPolicy());
+				ep.installEditPolicy(
+						"CustomCanonical",
+						new CustomModelElementCategoryCanonicalEditPolicy(false));
+			}
+			if (element instanceof PortPart) {
+				ep.installEditPolicy(
+						de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
+						new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomPortPartEditPolicy());
+			}
+		}
+	}
 
-public class ReconfigurationEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
+	public boolean provides(IOperation operation) {
+		if (operation instanceof CreateEditPoliciesOperation) {
+			EditPart ep = ((CreateEditPoliciesOperation) operation)
+					.getEditPart();
+			if (ep instanceof DiagramEditPart
+					&& ep instanceof ModelElementCategoryEditPart) {
+				EObject element = ((IGraphicalEditPart) ep)
+						.resolveSemanticElement();
+				return element instanceof ModelElementCategory;
+			}
+			if (ep instanceof CustomPortPartEditPart){
+				EObject element = ((IGraphicalEditPart) ep).resolveSemanticElement();
+				return element instanceof PortPart;
+			}
+		}
+		return false;
+	}
 
-    public void createEditPolicies(EditPart ep) {
-        if (ep instanceof IGraphicalEditPart) {
-            EObject element = ((IGraphicalEditPart)ep).resolveSemanticElement();
-            if (element instanceof ModelElementCategory) {
-                ep.installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomModelElementCategoryItemSemanticEditPolicy());
-                ep.installEditPolicy("CustomCanonical", new CustomModelElementCategoryCanonicalEditPolicy(false));
-            }
-        }
-    }
-
-    public boolean provides(IOperation operation) {
-        if (operation instanceof CreateEditPoliciesOperation) {
-            EditPart ep = ((CreateEditPoliciesOperation) operation).getEditPart();
-            if (ep instanceof DiagramEditPart && ep instanceof ModelElementCategoryEditPart) {
-                EObject element = ((IGraphicalEditPart)ep).resolveSemanticElement();
-                return element instanceof ModelElementCategory;
-            }
-        }
-        return false;
-    }
-
-	
 }

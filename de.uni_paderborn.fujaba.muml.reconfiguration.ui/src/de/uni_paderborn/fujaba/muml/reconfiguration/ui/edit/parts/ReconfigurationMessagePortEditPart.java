@@ -68,7 +68,7 @@ public class ReconfigurationMessagePortEditPart extends BorderedBorderItemEditPa
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
-				new de.uni_paderborn.fujaba.muml.common.edit.policies.ports.PortTypeEditPolicy());
+				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomPortTypeEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.OPEN_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy());
@@ -123,9 +123,9 @@ public class ReconfigurationMessagePortEditPart extends BorderedBorderItemEditPa
 	 */
 	protected IFigure createNodeShape() {
 		primaryShape = new de.uni_paderborn.fujaba.muml.common.figures.CustomPortFigure();
-		org.eclipse.draw2d.Label label = new Label();
-		label.setText("RM");
-		primaryShape.add(label);
+//		org.eclipse.draw2d.Label label = new Label();
+//		label.setText("RM");
+//		primaryShape.add(label);
 		
 		return primaryShape;
 	}

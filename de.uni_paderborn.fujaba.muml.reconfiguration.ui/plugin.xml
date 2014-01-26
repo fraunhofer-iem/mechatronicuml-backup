@@ -354,6 +354,14 @@
                       value="Component">
                 </method>
              </object>
+             <object
+                   class="org.eclipse.gmf.runtime.notation.Node"
+                   id="generated-nodes">
+                <method
+                      name="getType()"
+                      value="3022">
+                </method>
+             </object>
           </editpolicyProvider>
        </extension>
 </plugin>

@@ -71,7 +71,7 @@ public class InternalReconfigurationCommunicationPortEditPart extends BorderedBo
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
-				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.InternalReconfigurationCommunicationPortTypeEditPolicy());
+				new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomPortTypeEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.OPEN_ROLE,
 				new de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.OpenBehaviorDiagramEditPolicy());
