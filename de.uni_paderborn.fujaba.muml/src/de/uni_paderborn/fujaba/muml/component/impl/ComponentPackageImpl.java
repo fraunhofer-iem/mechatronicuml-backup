@@ -1124,7 +1124,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (componentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "UniquePortNames"
+			 "constraints", "UniquePortNames UniqueComponentNames"
 		   });											
 		addAnnotation
 		  (discretePortEClass, 
@@ -1142,7 +1142,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (atomicComponentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts AtomicComponentsNamesMustBeUnique"
+			 "constraints", "SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts"
 		   });																						
 		addAnnotation
 		  (structuredComponentEClass, 
@@ -1182,7 +1182,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (componentEClass, 
 		   source, 
 		   new String[] {
-			 "UniquePortNames", "self.ports->isUnique(name)"
+			 "UniquePortNames", "self.ports->isUnique(name)",
+			 "UniqueComponentNames", "-- The component\'s name must be unique.\nComponent.allInstances()->isUnique(name)\n-- author: adann"
 		   });						
 		addAnnotation
 		  (getPort_PortConnectors(), 
@@ -1253,8 +1254,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "SoftwareComponentRequiresBehavior", "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())",
 			 "ValidComponentType", "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT",
 			 "SoftwareComponentValidPorts", "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::HybridPort))\n\t)",
-			 "ContinuousComponentValidPorts", "self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))\n\t)",
-			 "AtomicComponentsNamesMustBeUnique", "StaticAtomicComponent.allInstances().name->count(self.name) = 1"
+			 "ContinuousComponentValidPorts", "self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT\n\timplies (\n\t\tself.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))\n\t)"
 		   });						
 		addAnnotation
 		  (getAssemblyConnector_CoordinationProtocolPart(), 

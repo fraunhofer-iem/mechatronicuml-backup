@@ -330,7 +330,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 */
 	public Region getParentRegion() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION) return null;
-		return (Region)eContainer();
+		return (Region)eInternalContainer();
 	}
 
 	/**
@@ -454,7 +454,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSuperStatechartOf(RealtimeStatechart statechart) {
+	public boolean isSuperStatechartOf(final RealtimeStatechart statechart) {
 		// TODO: Replace by OCL's transitive closure?
 				
 		Assert.isLegal(statechart != null);

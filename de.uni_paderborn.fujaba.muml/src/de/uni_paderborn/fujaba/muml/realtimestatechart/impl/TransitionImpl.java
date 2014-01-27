@@ -896,7 +896,7 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Extension getExtension(EClass type) {
+	public Extension getExtension(final EClass type) {
 		return ExtendableElementOperations.getExtension(this, type);
 	}
 
@@ -905,7 +905,7 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Extension provideExtension(EClass type) {
+	public Extension provideExtension(final EClass type) {
 		return ExtendableElementOperations.provideExtension(this, type);
 	}
 
@@ -914,7 +914,7 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAnnotation getAnnotation(String source) {
+	public EAnnotation getAnnotation(final String source) {
 		return ExtendableElementOperations.getAnnotation(this, source);
 	}
 
@@ -923,7 +923,7 @@ public class TransitionImpl extends PrioritizedElementImpl implements Transition
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAnnotation provideAnnotation(String source) {
+	public EAnnotation provideAnnotation(final String source) {
 		return ExtendableElementOperations.provideAnnotation(this, source);
 	}
 

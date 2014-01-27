@@ -13,7 +13,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
+import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -176,6 +178,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniqueComponentNames(component, diagnostics, context);
 		return result;
 	}
 
@@ -203,6 +206,37 @@ public class ComponentValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "UniquePortNames",
 				 COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the UniqueComponentNames constraint of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COMPONENT__UNIQUE_COMPONENT_NAMES__EEXPRESSION = "-- The component's name must be unique.\n" +
+		"Component.allInstances()->isUnique(name)\n" +
+		"-- author: adann";
+
+	/**
+	 * Validates the UniqueComponentNames constraint of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponent_UniqueComponentNames(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.COMPONENT,
+				 component,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "UniqueComponentNames",
+				 COMPONENT__UNIQUE_COMPONENT_NAMES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -609,6 +643,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniqueComponentNames(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentAllowsNoHybridPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ValidComponentType(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(staticStructuredComponent, diagnostics, context);
@@ -635,6 +670,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniqueComponentNames(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_StructuredComponentAllowsNoHybridPorts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ValidComponentType(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_NoCyclicComponentPartHierarchy(structuredComponent, diagnostics, context);
@@ -912,11 +948,11 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(staticAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(staticAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(staticAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniqueComponentNames(staticAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentRequiresBehavior(staticAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_ValidComponentType(staticAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentValidPorts(staticAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_ContinuousComponentValidPorts(staticAtomicComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAtomicComponent_AtomicComponentsNamesMustBeUnique(staticAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStaticComponent_SoftwareComponentOnlyDiscreteOrHybridPorts(staticAtomicComponent, diagnostics, context);
 		return result;
 	}
@@ -937,6 +973,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(staticComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(staticComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(staticComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniqueComponentNames(staticComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStaticComponent_SoftwareComponentOnlyDiscreteOrHybridPorts(staticComponent, diagnostics, context);
 		return result;
 	}
@@ -987,11 +1024,11 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateComponent_UniquePortNames(atomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_UniqueComponentNames(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentRequiresBehavior(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_ValidComponentType(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_SoftwareComponentValidPorts(atomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAtomicComponent_ContinuousComponentValidPorts(atomicComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateAtomicComponent_AtomicComponentsNamesMustBeUnique(atomicComponent, diagnostics, context);
 		return result;
 	}
 
@@ -1113,35 +1150,6 @@ public class ComponentValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "ContinuousComponentValidPorts",
 				 ATOMIC_COMPONENT__CONTINUOUS_COMPONENT_VALID_PORTS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the AtomicComponentsNamesMustBeUnique constraint of '<em>Atomic Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ATOMIC_COMPONENT__ATOMIC_COMPONENTS_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "StaticAtomicComponent.allInstances().name->count(self.name) = 1";
-
-	/**
-	 * Validates the AtomicComponentsNamesMustBeUnique constraint of '<em>Atomic Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAtomicComponent_AtomicComponentsNamesMustBeUnique(AtomicComponent atomicComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentPackage.Literals.ATOMIC_COMPONENT,
-				 atomicComponent,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "AtomicComponentsNamesMustBeUnique",
-				 ATOMIC_COMPONENT__ATOMIC_COMPONENTS_NAMES_MUST_BE_UNIQUE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
