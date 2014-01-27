@@ -90,6 +90,11 @@
     </classes>
     <classes superClasses="//@packages.1/@classes.3">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePort"/>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePort/interfaceEntries"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.4">
       <genClass href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePortInterfaceEntry"/>
@@ -97,6 +102,11 @@
         <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePortInterfaceEntry/reconfigurationMessageType"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
+      </properties>
+      <properties>
+        <genFeature href="MumlReconfiguration.genmodel#//reconfiguration/ReconfigurationMessagePortInterfaceEntry/expectedResponseTime"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.3">

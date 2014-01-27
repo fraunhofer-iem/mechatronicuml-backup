@@ -28,6 +28,11 @@ public class ReconfigurationMessagePortInterfaceEntryEditor
 					null, true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addReconfigurationMessagePortInterfaceEntryExpectedResponseTimeEditor(
+					null, false);
+		}
+
 	}
 
 	/**
@@ -51,6 +56,32 @@ public class ReconfigurationMessagePortInterfaceEntryEditor
 						.getReconfigurationMessagePortInterfaceEntry_ReconfigurationMessageType());
 
 		editor.setTooltipMessage("Defines whether the message is an info message or a request. A request needs\nto be answered by the parent within the expected response time.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addReconfigurationMessagePortInterfaceEntryExpectedResponseTimeEditor(
+			String category, boolean front) {
+		addEditorToCategory(
+				category,
+				createReconfigurationMessagePortInterfaceEntryExpectedResponseTimeEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationMessagePortInterfaceEntryExpectedResponseTimeEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+						.getReconfigurationMessagePortInterfaceEntry_ExpectedResponseTime());
+
+		editor.setTooltipMessage("If the message is a request, then the expected response time denotes how long \nthe parent has time to answer the request. For an info message, no answer of\nthe parent is sent and, consequently, no expected response time is specified.");
 
 		return editor;
 
@@ -89,7 +120,8 @@ public class ReconfigurationMessagePortInterfaceEntryEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.extensions"}).contains(tab);
+							"property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 
