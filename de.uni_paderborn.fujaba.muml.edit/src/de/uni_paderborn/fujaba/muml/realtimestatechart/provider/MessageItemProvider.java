@@ -100,28 +100,22 @@ public class MessageItemProvider
 			public Collection<?> getChoiceOfValues(Object object) {
 				Message message = (Message) object;
 				
-				// Derive messageEvent and discreteInteractionEndpoint
+				// Derive messageEvent and transition
 				AsynchronousMessageEvent messageEvent = null;
-				DiscreteInteractionEndpoint discreteInteractionEndpoint = null;
+				Transition transition = null;
 				if (message.eContainer() instanceof AsynchronousMessageEvent) {
 					messageEvent = (AsynchronousMessageEvent) message.eContainer();
 					if (messageEvent.eContainer() instanceof Transition) {
-						Transition transition = (Transition) messageEvent.eContainer();
-						if (transition.getStatechart() != null && transition.getStatechart().getBehavioralElement() != null) {
-							BehavioralElement behavioralElement = transition.getStatechart().getBehavioralElement();
-							if (behavioralElement instanceof DiscreteInteractionEndpoint) {
-								discreteInteractionEndpoint = (DiscreteInteractionEndpoint) behavioralElement;
-							}
-						}
+						transition = (Transition) messageEvent.eContainer();
 					}
 				}
 				
 				// Get correct message types
-				if (messageEvent != null && discreteInteractionEndpoint != null) {
-					if (messageEvent.getKind() == EventKind.TRIGGER && !discreteInteractionEndpoint.getReceiverMessageTypes().isEmpty()) {
-						return discreteInteractionEndpoint.getReceiverMessageTypes();
-					} else if (messageEvent.getKind() == EventKind.RAISE && !discreteInteractionEndpoint.getSenderMessageTypes().isEmpty()) {
-						return discreteInteractionEndpoint.getSenderMessageTypes();
+				if (messageEvent != null && transition != null) {
+					if (messageEvent.getKind() == EventKind.TRIGGER && !transition.getReceiverMessageTypes().isEmpty()) {
+						return transition.getReceiverMessageTypes();
+					} else if (messageEvent.getKind() == EventKind.RAISE && !transition.getSenderMessageTypes().isEmpty()) {
+						return transition.getSenderMessageTypes();
 					}
 				}
 
