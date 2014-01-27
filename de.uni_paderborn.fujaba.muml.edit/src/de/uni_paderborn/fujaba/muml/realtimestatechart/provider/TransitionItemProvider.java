@@ -13,9 +13,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -29,14 +29,12 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.expressions.ExpressionsFactory;
 import org.storydriven.core.expressions.ExpressionsPackage;
 import org.storydriven.core.expressions.common.CommonExpressionsFactory;
-import org.storydriven.core.provider.ExtendableElementItemProvider;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.utils.FujabaEcoreUtil;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.EventKind;
@@ -55,7 +53,7 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.descriptor.TransitionMess
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class TransitionItemProvider extends ExtendableElementItemProvider implements
+public class TransitionItemProvider extends PrioritizedElementItemProvider implements
 		IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
@@ -79,7 +77,6 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPriorityPropertyDescriptor(object);
 			addCommentPropertyDescriptor(object);
 			addSynchronizationPropertyDescriptor(object);
 			addTargetPropertyDescriptor(object);
@@ -103,28 +100,6 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 	}
 
 	/**
-	 * This adds a property descriptor for the Priority feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPriorityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PrioritizedElement_priority_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PrioritizedElement_priority_feature", "_UI_PrioritizedElement_type"),
-				 RealtimestatechartPackage.Literals.PRIORITIZED_ELEMENT__PRIORITY,
-				 true,
-				 false,
-				 true,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	 /**
 	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -878,6 +853,8 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION);
+			childrenFeatures.add(CorePackage.Literals.EXTENDABLE_ELEMENT__EXTENSION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__CLOCK_CONSTRAINTS);
 			childrenFeatures.add(RealtimestatechartPackage.Literals.TRANSITION__ABSOLUTE_DEADLINES);
@@ -962,6 +939,8 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			case RealtimestatechartPackage.TRANSITION__SENDER_MESSAGE_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case RealtimestatechartPackage.TRANSITION__ANNOTATION:
+			case RealtimestatechartPackage.TRANSITION__EXTENSION:
 			case RealtimestatechartPackage.TRANSITION__SYNCHRONIZATION:
 			case RealtimestatechartPackage.TRANSITION__CLOCK_CONSTRAINTS:
 			case RealtimestatechartPackage.TRANSITION__ABSOLUTE_DEADLINES:
@@ -986,6 +965,11 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
+				 EcoreFactory.eINSTANCE.createEAnnotation()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -1046,17 +1030,6 @@ public class TransitionItemProvider extends ExtendableElementItemProvider implem
 			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__ACTION,
 				 RealtimestatechartFactory.eINSTANCE.createAction()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return MumlEditPlugin.INSTANCE;
 	}
 
 }
