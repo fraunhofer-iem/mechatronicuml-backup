@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.IFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
@@ -322,6 +323,14 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	@Override
 	public void setInput(Object object) {
+		// Do not change the value, if the resource has not been set, yet.
+		// Reason: Notification is sent before and after the container is set,
+		//         so we only react on the second notification.
+		if (object instanceof EObject && ((EObject) object).eResource() == null) {
+			object = null;
+		}
+		
+		
 		if (input != object) {
 			super.setInput(object);
 			for (IPropertyEditor editor : propertyEditors) {

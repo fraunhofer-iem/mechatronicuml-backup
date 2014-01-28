@@ -95,7 +95,11 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	@Override
 	public void setInput(Object object) {
 		// When object is of wrong type, unset current object and use none.
-		if (false == object instanceof EObject) {
+	
+		// Also do not change the value, if the resource has not been set, yet.
+		// Reason: Notification is sent before and after the container is set,
+		//         so we only react on the second notification.
+		if (false == object instanceof EObject || ((EObject) object).eResource() == null) {
 			object = null;
 		}
 		super.setInput(object);
@@ -169,11 +173,22 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 			}
 		}
 		if (newValue != value || (value != null && !value.equals(newValue))) {
-			value = newValue;
-			if (feature.isMany()) { // copy collection
-				value = new ArrayList<Object>((Collection<?>) value);
+			boolean hasResource = true;
+			if (newValue instanceof EObject) {
+				EObject eObject = (EObject) newValue;
+				hasResource = eObject.eResource() != null;
 			}
-			valueChanged();
+			
+			// Do not change the value, if the resource has not been set, yet.
+			// Reason: Notification is sent before and after the container is set,
+			//         so we only react on the second notification.
+			if (hasResource) {
+				value = newValue;
+				if (feature.isMany()) { // copy collection
+					value = new ArrayList<Object>((Collection<?>) value);
+				}
+				valueChanged();
+			}
 		}
 	}
 
@@ -318,7 +333,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 
 	public ResourceSet getResourceSet() {
-		if (element != null && element.eResource() != null) {
+		if (element != null) {
 			return element.eResource().getResourceSet();
 		}
 		return null;
