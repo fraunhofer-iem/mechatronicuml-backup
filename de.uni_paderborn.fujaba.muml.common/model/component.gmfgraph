@@ -21,6 +21,7 @@
       </actualFigure>
       <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.1/@children.0"/>
       <accessors figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="StructuredComponentFigure">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="ComponentFigure">

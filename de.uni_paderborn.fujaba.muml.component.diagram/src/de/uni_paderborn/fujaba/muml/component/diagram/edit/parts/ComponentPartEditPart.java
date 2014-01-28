@@ -323,6 +323,11 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureComponentIconRectangle;
+
+		/**
+		 * @generated
+		 */
 		public ComponentMultiFigure() {
 			this.setLayoutManager(new StackLayout());
 			this.setFill(false);
@@ -497,6 +502,13 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public RectangleFigure getFigureInnerRectContainer() {
 			return fFigureInnerRectContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureComponentIconRectangle() {
+			return fFigureComponentIconRectangle;
 		}
 
 	}
