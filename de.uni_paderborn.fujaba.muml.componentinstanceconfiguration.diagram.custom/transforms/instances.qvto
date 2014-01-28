@@ -33,7 +33,9 @@ main() {
 		instance.removeElement(ci.embeddedCIC);
 		ci.embeddedCIC := new ComponentInstanceConfiguration(ci.componentType.oclAsType(StructuredComponent));
 		
-		if (ci.container().oclIsKindOf(ComponentInstanceConfiguration)) then {
+		//Talko to Ingo what the purpose of this code is
+		
+		/*if (ci.container().oclIsKindOf(ComponentInstanceConfiguration)) then {
 			//do not remove connector from the overal root node
 			if(not ci.container().container().oclIsKindOf(ModelElementCategory)) then{
 			// Remove old connector instances from resource
@@ -42,23 +44,8 @@ main() {
 			}; 
 			ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances := Set { };
 				}endif;
-			// Add new connector instances
-			ci.componentType[StructuredComponent].connectors->forEach(portConnector) {
-				var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
-				var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
-				if (endpoint1 != endpoint2) then {
-					endpoint1.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance1) {
-						endpoint2.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance2) {
-							if (not endpointInstance1.oclIsKindOf(DiscreteMultiPortInstance) and not endpointInstance2.oclIsKindOf(DiscreteMultiPortInstance) and ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) or connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
-								ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
-									Set { endpointInstance1, endpointInstance2 }
-								)[PortConnectorInstance];
-							} endif;
-						};
-					};
-				} endif;
-			};
-		} endif;
+			
+		} endif;  */
 		
 	};
 	
@@ -66,7 +53,6 @@ main() {
 	instance.removeElement(NULL_COMPONENT_PART_HELPER);
 	instance.removeElement(NULL_PORT_PART_HELPER);
 }
-
 
 
 

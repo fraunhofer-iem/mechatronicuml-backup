@@ -119,6 +119,8 @@ constructor ComponentInstanceConfiguration::ComponentInstanceConfiguration(compo
 	};
 
 	portConnectorInstances := componentInstances.portInstances.portConnectorInstances;
+	portConnectorInstances += result.createConnectors(component);
+	
 }
 
 
@@ -182,6 +184,28 @@ constructor StructuredComponentInstance::StructuredComponentInstance(type : Stru
 	} endif;
 	
 	embeddedCIC := new ComponentInstanceConfiguration(type);
+}
+
+//new Query to createConnetctorInstances
+query ComponentInstanceConfiguration::createConnectors(parentStructuredComponent:StructuredComponent):Set(PortConnectorInstance){
+	var newConnectors:Set(PortConnectorInstance)=Set{};
+	// Add new connector instances
+			parentStructuredComponent.connectors->forEach(portConnector) {
+				var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
+				var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
+				if (endpoint1 != endpoint2) then {
+					endpoint1.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance1) {
+						endpoint2.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance2) {
+							if (not endpointInstance1.oclIsKindOf(DiscreteMultiPortInstance) and not endpointInstance2.oclIsKindOf(DiscreteMultiPortInstance) and self.portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) or connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
+								newConnectors += portConnector.createConnectorInstance(
+									Set { endpointInstance1, endpointInstance2 }
+								)[PortConnectorInstance];
+							} endif;
+						};
+					};
+				} endif;
+			};
+	return newConnectors;
 }
 
 
