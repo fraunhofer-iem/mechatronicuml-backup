@@ -1,27 +1,22 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gmf.runtime.notation.View;
-import org.eclipse.m2m.qvt.oml.BasicModelExtent;
-import org.eclipse.m2m.qvt.oml.ModelExtent;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
-import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart;
+import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 import de.uni_paderborn.fujaba.muml.valuetype.NaturalNumber;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
  * A customized EditPart for ComponentParts. A customized Figure will be used,
@@ -38,7 +33,9 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 
 	@Override
 	protected IFigure createNodeShape() {
-		return primaryShape = new CustomComponentMultiFigure();
+		IFigure figure = super.createNodeShape();
+		setPartMulti((ComponentMultiFigure) figure, false);
+		return figure;
 	}
 
 	// Note: The following is the unchanged default implementation, can be
@@ -81,14 +78,27 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	@Override
 	protected void addSemanticListeners() {
 		super.addSemanticListeners();
-		addListenerFilter(
-				"ComponentType", this, (EObject) resolveSemanticElement().eGet(ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE));//$NON-NLS-1$ $NON-NLS-2$
+		
+		ComponentPart componentPart =  (ComponentPart) resolveSemanticElement();
+		Cardinality cardinality = componentPart.getCardinality();
+		addListenerFilter("ComponentType", this, componentPart.getComponentType());//$NON-NLS-1$
+		
+		if (cardinality != null) {
+			addListenerFilter("Cardinality", this, cardinality);//$NON-NLS-1
+			
+			NaturalNumber upperBound = cardinality.getUpperBound();
+			if (upperBound != null) {
+				addListenerFilter("Cardinality.upperBound", this, upperBound);
+			}
+		}
 	}
 
 	@Override
 	protected void removeSemanticListeners() {
 		super.removeSemanticListeners();
 		removeListenerFilter("ComponentType"); //$NON-NLS-1$
+		removeListenerFilter("Cardinality"); //$NON-NLS-1$
+		removeListenerFilter("Cardinality.upperBound"); //$NON-NLS-1$
 	}
 
 	/**
@@ -97,11 +107,16 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	 */
 	@Override
 	protected final void handleNotificationEvent(final Notification notification) {
-		Object feature = notification.getFeature();
+		EStructuralFeature feature = (EStructuralFeature) notification.getFeature();
 
-		if (ComponentPackage.Literals.COMPONENT_PART__CARDINALITY
-				.equals(feature)) {
+		if (ComponentPackage.Literals.COMPONENT_PART__CARDINALITY.equals(feature) || 
+				ValuetypePackage.Literals.CARDINALITY.equals(feature.getEContainingClass()) ||
+				ValuetypePackage.Literals.NATURAL_NUMBER.equals(feature.getEContainingClass())) {
 			updateCardinality();
+			
+			// Remove and recreate listeners
+			reactivateSemanticModel();
+			
 		} else if (ComponentPackage.Literals.COMPONENT_PART__COMPONENT_TYPE
 				.equals(feature)) {
 
@@ -132,7 +147,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	 * Updates the PartFigure to visualize a multi-part, if necessary.
 	 */
 	public void updateCardinality() {
-		CustomComponentMultiFigure figure = (CustomComponentMultiFigure) primaryShape;
+		ComponentMultiFigure figure = (ComponentMultiFigure) primaryShape;
 		ComponentPart componentPart = (ComponentPart) getNotationView()
 				.getElement();
 		if (figure != null) {
@@ -145,39 +160,31 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 					isMulti = true;
 				}
 			}
-			figure.setPartMulti(isMulti);
+			setPartMulti(figure, isMulti);
 		}
 	}
 
-	public class CustomComponentMultiFigure extends ComponentMultiFigure {
-		public CustomComponentMultiFigure() {
-			super();
-			// this.getFigureComponentNameFigure().setTextUnderline(true);
-			setPartMulti(false);
+	public static void setPartMulti(ComponentMultiFigure figure, boolean isMulti) {
+		// Calculate new Margin for top and right.
+		int marginTop = 0;
+		int marginRight = 0;
+		if (isMulti) {
+			marginTop = 8;
+			marginRight = 3;
 		}
 
-		public void setPartMulti(boolean isMulti) {
-			// Calculate new Margin for top and right.
-			int marginTop = 0;
-			int marginRight = 0;
-			if (isMulti) {
-				marginTop = 8;
-				marginRight = 3;
-			}
+		// Calculate new preferred size, which is the original size
+		// minus the margin.
+		if (figure.getParent() != null) {
+			Dimension preferredSize = figure.getParent().getPreferredSize()
+					.getCopy();
+			preferredSize.expand(-marginRight, -marginTop);
 
-			// Calculate new preferred size, which is the original size
-			// minus the margin.
-			if (getParent() != null) {
-				Dimension preferredSize = getParent().getPreferredSize()
-						.getCopy();
-				preferredSize.expand(-marginRight, -marginTop);
-
-				// Set the new margin and the new preferred size.
-				RectangleFigure innerRectContainer = getFigureInnerRectContainer();
-				innerRectContainer.setBorder(new MarginBorder(marginTop, 0, 0,
-						marginRight));
-				innerRectContainer.setPreferredSize(preferredSize);
-			}
+			// Set the new margin and the new preferred size.
+			RectangleFigure innerRectContainer = figure.getFigureInnerRectContainer();
+			innerRectContainer.setBorder(new MarginBorder(marginTop, 0, 0,
+					marginRight));
+			innerRectContainer.setPreferredSize(preferredSize);
 		}
 	}
 

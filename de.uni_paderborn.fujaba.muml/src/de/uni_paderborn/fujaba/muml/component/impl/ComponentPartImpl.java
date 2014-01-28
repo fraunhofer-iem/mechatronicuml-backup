@@ -22,6 +22,7 @@ import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
+import de.uni_paderborn.fujaba.common.adapter.DerivedAttributeAdapter;
 import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPart;
@@ -29,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
+import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,10 +114,12 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected ComponentPartImpl() {
 		super();
+		DerivedAttributeAdapter adapter = new DerivedAttributeAdapter(this, ComponentPackage.Literals.COMPONENT_PART__MULTI_PART);
+		adapter.addNavigatedDependency(ComponentPackage.Literals.COMPONENT_PART__CARDINALITY, ValuetypePackage.Literals.CARDINALITY__UPPER_BOUND);
 	}
 
 	/**
