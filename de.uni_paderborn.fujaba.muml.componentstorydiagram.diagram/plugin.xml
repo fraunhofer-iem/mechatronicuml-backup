@@ -98,7 +98,7 @@
          
          <child
                class="ComponentStoryRule"
-               packageNsUri="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1">
+               packageNsUri="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
          </child>
          
       </category>
@@ -116,7 +116,7 @@
             modelElementCategoryKey="org.storydriven.storydiagrams.activities.category"
             modelId="Component Story">
          <diagramElement
-               packageNsURI="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1"
+               packageNsURI="http://www.fujaba.de/muml/componentstorydiagram/0.4.0"
                className="ComponentStoryRule">
          </diagramElement>
          
@@ -284,7 +284,7 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryRule_1000"
                name="%metatype.name.ComponentStoryRule_1000"
@@ -304,7 +304,7 @@
             <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryNode_3001"
                name="%metatype.name.ComponentStoryNode_3001"
@@ -314,7 +314,7 @@
             <param name="semanticHint" value="3001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryPattern_3011"
                name="%metatype.name.ComponentStoryPattern_3011"
@@ -324,7 +324,7 @@
             <param name="semanticHint" value="3011"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentVariable_3012"
                name="%metatype.name.ComponentVariable_3012"
@@ -334,7 +334,7 @@
             <param name="semanticHint" value="3012"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.PartVariable_3014"
                name="%metatype.name.PartVariable_3014"
@@ -344,7 +344,7 @@
             <param name="semanticHint" value="3014"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.MultiPortVariable_3016"
                name="%metatype.name.MultiPortVariable_3016"
@@ -354,7 +354,7 @@
             <param name="semanticHint" value="3016"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3017"
                name="%metatype.name.SinglePortVariable_3017"
@@ -364,7 +364,7 @@
             <param name="semanticHint" value="3017"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3018"
                name="%metatype.name.SinglePortVariable_3018"
@@ -373,7 +373,7 @@
             <param name="semanticHint" value="3018"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.MultiPortVariable_3019"
                name="%metatype.name.MultiPortVariable_3019"
@@ -382,7 +382,7 @@
             <param name="semanticHint" value="3019"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.SinglePortVariable_3020"
                name="%metatype.name.SinglePortVariable_3020"
@@ -421,7 +421,7 @@
             <param name="semanticHint" value="3010"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/controlflow/0.3.1">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/0.4.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ControllerExchangeNode_3021"
                name="%metatype.name.ControllerExchangeNode_3021"
@@ -431,7 +431,7 @@
             <param name="semanticHint" value="3021"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryPattern_3022"
                name="%metatype.name.ComponentStoryPattern_3022"
@@ -450,7 +450,7 @@
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.AssemblyVariable_4004"
                name="%metatype.name.AssemblyVariable_4004"
@@ -460,7 +460,7 @@
             <param name="semanticHint" value="4004"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="http://www.fujaba.de/muml/componentstorydiagram/componentstorypattern/0.3.3">
+      <metamodel nsURI="http://www.fujaba.de/muml/componentstorypattern/0.4.0">
          <metamodelType
                id="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.DelegationVariable_4005"
                name="%metatype.name.DelegationVariable_4005"

@@ -18,7 +18,7 @@ public class ComponentStoryDiagramCreationWizard
 		super.init(workbench, selection);
 
 		setDefaultPageImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
-				.getBundledImageDescriptor("icons/wizban/NewControlflowWizard.gif")); //$NON-NLS-1$
+				.getBundledImageDescriptor("icons/wizban/NewComponentstorydiagramWizard.gif")); //$NON-NLS-1$
 
 	}
 
