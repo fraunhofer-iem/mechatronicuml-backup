@@ -318,7 +318,7 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 	}
 
 	public ResourceSet getResourceSet() {
-		if (element != null) {
+		if (element != null && element.eResource() != null) {
 			return element.eResource().getResourceSet();
 		}
 		return null;
