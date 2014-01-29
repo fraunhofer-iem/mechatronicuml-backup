@@ -8,6 +8,7 @@
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.simulink(\..+)?" searchPathRef="matlab"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.model\.gen(\..+)?|^de\.uni_paderborn\.fujaba\.muml\.gen(\..+)?" searchPathRef="modelica"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.modelica(\..+)?" searchPathRef="modelica"/>
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.graphviz(\..+)?" searchPathRef="modelica"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.actionLanguage\.matlab(\..+)?" searchPathRef="matlab"/>
   <rm:locator pattern="^de\.upb\.swt\.qvt(\..+)?" searchPathRef="tgg"/>
   <rm:locator pattern="^com\.tools\.logging(\..+)?" searchPathRef="tgg"/>
