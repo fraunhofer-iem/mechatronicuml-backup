@@ -54,13 +54,11 @@
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
       <genClass href="Ecore.genmodel#//ecore/EClassifier"/>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.0" reconcile="false">
         <genFeature href="Ecore.genmodel#//ecore/EClassifier/instanceClassName"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.0" reconcile="false">
         <genFeature href="Ecore.genmodel#//ecore/EClassifier/instanceTypeName"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.3">
@@ -128,9 +126,8 @@
         <genFeature href="Ecore.genmodel#//ecore/EPackage/nsPrefix"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.0" reconcile="false">
         <genFeature href="Ecore.genmodel#//ecore/EPackage/eFactoryInstance"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.16">

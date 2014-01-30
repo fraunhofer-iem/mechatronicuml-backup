@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Properties
-Bundle-SymbolicName: org.eclipse.emf.ecore.edit.properties; singleton:=true
+Bundle-SymbolicName: org.eclipse.emf.ecore.improved.edit.properties;singleton:=true
 Bundle-Version: 0.1
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.core.runtime,

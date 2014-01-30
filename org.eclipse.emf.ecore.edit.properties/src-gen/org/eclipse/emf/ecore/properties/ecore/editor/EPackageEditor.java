@@ -31,10 +31,6 @@ public class EPackageEditor
 			addEPackageNsPrefix_DefaultTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEPackageEFactoryInstance_DefaultTab_Editor(null, true);
-		}
-
 	}
 
 	/**
@@ -76,28 +72,6 @@ public class EPackageEditor
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
 						.getEPackage_NsPrefix(), false);
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addEPackageEFactoryInstance_DefaultTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createEPackageEFactoryInstance_DefaultTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEPackageEFactoryInstance_DefaultTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
-						.getEPackage_EFactoryInstance());
 
 		return editor;
 
