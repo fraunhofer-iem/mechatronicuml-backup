@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="org.eclipse.emf.ecore.editor.improved.contributor">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="org.eclipse.emf.ecore.editor.improved.contributor">
+          <propertyTab
+             category="domain"
+             id="tab.default"
+             label="Default"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="org.eclipse.emf.ecore.editor.improved.contributor">
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.DefaultTabElementFilter"
+            id="tab.default"
+            tab="tab.default">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EAttributeEditor$Factory"
+             type="org.eclipse.emf.ecore.EAttribute">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EAnnotationEditor$Factory"
+             type="org.eclipse.emf.ecore.EAnnotation">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EClassEditor$Factory"
+             type="org.eclipse.emf.ecore.EClass">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EDataTypeEditor$Factory"
+             type="org.eclipse.emf.ecore.EDataType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EEnumEditor$Factory"
+             type="org.eclipse.emf.ecore.EEnum">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EEnumLiteralEditor$Factory"
+             type="org.eclipse.emf.ecore.EEnumLiteral">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EFactoryEditor$Factory"
+             type="org.eclipse.emf.ecore.EFactory">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EObjectEditor$Factory"
+             type="org.eclipse.emf.ecore.EObject">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EOperationEditor$Factory"
+             type="org.eclipse.emf.ecore.EOperation">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EPackageEditor$Factory"
+             type="org.eclipse.emf.ecore.EPackage">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EParameterEditor$Factory"
+             type="org.eclipse.emf.ecore.EParameter">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EReferenceEditor$Factory"
+             type="org.eclipse.emf.ecore.EReference">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EStringToStringMapEntryEditor$Factory"
+             type="org.eclipse.emf.ecore.EStringToStringMapEntry">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.EGenericTypeEditor$Factory"
+             type="org.eclipse.emf.ecore.EGenericType">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.eclipse.emf.ecore.properties.ecore.editor.ETypeParameterEditor$Factory"
+             type="org.eclipse.emf.ecore.ETypeParameter">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+</plugin>
