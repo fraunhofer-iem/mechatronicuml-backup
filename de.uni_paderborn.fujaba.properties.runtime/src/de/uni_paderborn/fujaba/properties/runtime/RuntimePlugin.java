@@ -251,7 +251,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		for (int p = 0; p < camelCased.length(); p++) {
 			char c = camelCased.charAt(p);
 			newWord = Character.isUpperCase(c);
-			if (newWord && !oldWord) {
+			if (newWord && !oldWord && buffer.length() > 1) {
 				buffer.append(' ');
 			}
 			oldWord = newWord;
