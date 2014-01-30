@@ -41,6 +41,7 @@ public class TreeViewerSearchFilter extends ViewerFilter {
 		if (visited.contains(element)) {
 			return false;
 		}
+		visited.add(element);
 		if (cache.containsKey(element)) {
 			return cache.get(element);
 		}
@@ -89,4 +90,8 @@ public class TreeViewerSearchFilter extends ViewerFilter {
 		cache.clear();
 		directCache.clear();
 	}
+
+//	public Collection<?> getDirectMatches() {
+//		return directCache.keySet();
+//	}
 }

@@ -59,77 +59,77 @@
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EAttributeEditor$Factory"
-             type="org.eclipse.emf.ecore.EAttribute">
+             type="http://www.eclipse.org/emf/2002/Ecore#EAttribute">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EAnnotationEditor$Factory"
-             type="org.eclipse.emf.ecore.EAnnotation">
+             type="http://www.eclipse.org/emf/2002/Ecore#EAnnotation">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EClassEditor$Factory"
-             type="org.eclipse.emf.ecore.EClass">
+             type="http://www.eclipse.org/emf/2002/Ecore#EClass">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EDataTypeEditor$Factory"
-             type="org.eclipse.emf.ecore.EDataType">
+             type="http://www.eclipse.org/emf/2002/Ecore#EDataType">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EEnumEditor$Factory"
-             type="org.eclipse.emf.ecore.EEnum">
+             type="http://www.eclipse.org/emf/2002/Ecore#EEnum">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EEnumLiteralEditor$Factory"
-             type="org.eclipse.emf.ecore.EEnumLiteral">
+             type="http://www.eclipse.org/emf/2002/Ecore#EEnumLiteral">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EFactoryEditor$Factory"
-             type="org.eclipse.emf.ecore.EFactory">
+             type="http://www.eclipse.org/emf/2002/Ecore#EFactory">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EObjectEditor$Factory"
-             type="org.eclipse.emf.ecore.EObject">
+             type="http://www.eclipse.org/emf/2002/Ecore#EObject">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EOperationEditor$Factory"
-             type="org.eclipse.emf.ecore.EOperation">
+             type="http://www.eclipse.org/emf/2002/Ecore#EOperation">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EPackageEditor$Factory"
-             type="org.eclipse.emf.ecore.EPackage">
+             type="http://www.eclipse.org/emf/2002/Ecore#EPackage">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EParameterEditor$Factory"
-             type="org.eclipse.emf.ecore.EParameter">
+             type="http://www.eclipse.org/emf/2002/Ecore#EParameter">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EReferenceEditor$Factory"
-             type="org.eclipse.emf.ecore.EReference">
+             type="http://www.eclipse.org/emf/2002/Ecore#EReference">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EStringToStringMapEntryEditor$Factory"
-             type="org.eclipse.emf.ecore.EStringToStringMapEntry">
+             type="http://www.eclipse.org/emf/2002/Ecore#EStringToStringMapEntry">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.EGenericTypeEditor$Factory"
-             type="org.eclipse.emf.ecore.EGenericType">
+             type="http://www.eclipse.org/emf/2002/Ecore#EGenericType">
        </propertyEditor>
     
        <propertyEditor
              factory="org.eclipse.emf.ecore.properties.ecore.editor.ETypeParameterEditor$Factory"
-             type="org.eclipse.emf.ecore.ETypeParameter">
+             type="http://www.eclipse.org/emf/2002/Ecore#ETypeParameter">
        </propertyEditor>
     
     </propertyEditors>

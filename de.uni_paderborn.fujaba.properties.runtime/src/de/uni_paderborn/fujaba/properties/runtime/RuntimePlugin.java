@@ -172,10 +172,13 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	}
 
 	public static List<IPropertyEditorFactory> getPropertyEditorFactories(EClassifier eClass) {
-		// TODO can this be done in a nicer way to get the qualified class name?
+		// XXX: Legacy support; remove
 		String qualifiedName = eClass.getInstanceClassName();
-
-		return getPropertyEditorFactories(qualifiedName);
+		List<IPropertyEditorFactory> factories = getPropertyEditorFactories(qualifiedName);
+		
+		qualifiedName = eClass.getEPackage().getNsURI() + "#" + eClass.getName();
+		factories.addAll(getPropertyEditorFactories(qualifiedName));
+		return factories;
 	}
 
 	public static List<IPropertyEditorFactory> getPropertyEditorFactories(String type) {
@@ -184,7 +187,7 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		if (list != null) {
 			return list;
 		}
-		return Collections.emptyList();
+		return new ArrayList<IPropertyEditorFactory>();
 	}
 
 	public static Set<String> getRegisteredPropertyEditorTypes() {

@@ -1,10 +1,7 @@
 package org.eclipse.emf.ecore.presentation;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EObject;
@@ -31,6 +28,7 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusEvent;
@@ -46,16 +44,46 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.ToolBar;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
 /**
  * This is an improved Ecore model editor.
  */
 public class ImprovedEcoreEditor extends
-		org.eclipse.emf.ecore.presentation.EcoreEditor {
+		org.eclipse.emf.ecore.presentation.EcoreEditor implements ITabbedPropertySheetPageContributor {
+
+	// BEGIN Tabbed Properties
+	public static final String PROPERTIES_CONTRIBUTOR = "org.eclipse.emf.ecore.editor.improved.contributor";
+
+	protected TabbedPropertySheetPage propertySheetPage;
+
+	public IPropertySheetPage getPropertySheetPage() {
+		if (propertySheetPage == null
+				|| propertySheetPage.getControl().isDisposed()) {
+			propertySheetPage = new TabbedPropertySheetPage(this);
+		}
+		return propertySheetPage;
+	}
+
+	public String getContributorId() {
+		return PROPERTIES_CONTRIBUTOR;
+	}
+	// END Tabbed Properties	
+	
 
 	protected static final String DEFAULT_SEARCH_TEXT = "<Enter search term here>";
 	public static final long FILTER_TIMEOUT = 350;
 	protected TreeViewerSearchFilter searchViewerFilter;
+	protected ViewerFilter annotationFilter = new ViewerFilter() {
+		public boolean select(Viewer viewer, Object parentElement, Object element) {
+			if (element instanceof EAnnotation) {
+				return false;
+			}
+			return true;
+		};
+	};
 
 	// Default sorter is alphabetically; so just perfect for us!
 	protected ViewerSorter sorter = new ViewerSorter() {
@@ -97,6 +125,7 @@ public class ImprovedEcoreEditor extends
 	protected InheritanceContentProvider inheritanceContentProvider;
 
 	// actions
+	protected Action actionShowAnnotations;
 	protected Action actionSort;
 	protected Action actionMarkDerived;
 	protected Action actionInheritanceNone;
@@ -280,7 +309,23 @@ public class ImprovedEcoreEditor extends
 		return pageContainer;
 	}
 
-	protected void setFilterText(String filterText) {
+	protected synchronized void setFilterText(String filterText) {
+		actionInheritanceNone.setEnabled(filterText.isEmpty());
+		actionInheritanceFeatures.setEnabled(filterText.isEmpty());
+		actionInheritanceHierarchy.setEnabled(filterText.isEmpty());
+
+		if (!filterText.isEmpty()) {
+			inheritanceContentProvider.setInheritanceMode(InheritanceMode.NONE);
+		} else {
+			if (actionInheritanceNone.isChecked()) {
+				inheritanceContentProvider.setInheritanceMode(InheritanceMode.NONE);
+			} else if (actionInheritanceFeatures.isChecked()) {
+				inheritanceContentProvider.setInheritanceMode(InheritanceMode.FEATURES);
+			} else if (actionInheritanceHierarchy.isChecked()) {
+				inheritanceContentProvider.setInheritanceMode(InheritanceMode.HIERARCHY);
+			}
+		}		
+		
 		searchViewerFilter.setFilterText(filterText);
 		selectionViewer.refresh();
 		if (!filterText.isEmpty()) {
@@ -289,6 +334,18 @@ public class ImprovedEcoreEditor extends
 	}
 
 	protected void initializeToolBarManager(ToolBarManager toolBarManager) {
+		// Show Annotations
+		actionShowAnnotations = new Action("Show Annotations", Action.AS_CHECK_BOX) {
+			@Override
+			public void run() {
+				setShowAnnotations(isChecked());
+
+			}
+		};
+		actionShowAnnotations.setImageDescriptor(ImprovedEcoreEditorPlugin
+				.getImageDescriptor("icons/annotation.gif"));
+
+		
 		// Sort
 		actionSort = new Action("Sort", Action.AS_CHECK_BOX) {
 			@Override
@@ -374,6 +431,8 @@ public class ImprovedEcoreEditor extends
 		// toolBarManager.add(actionExpandAll);
 		toolBarManager.add(actionCollapseAll);
 		toolBarManager.add(new Separator());
+		toolBarManager.add(actionShowAnnotations);
+		toolBarManager.add(new Separator());
 		toolBarManager.add(actionInheritanceNone);
 		toolBarManager.add(actionInheritanceFeatures);
 		toolBarManager.add(actionInheritanceHierarchy);
@@ -382,6 +441,8 @@ public class ImprovedEcoreEditor extends
 		toolBarManager.add(actionSort);
 
 		// Read preferences
+		setShowAnnotations(Boolean.parseBoolean(ImprovedEcoreEditorPlugin
+				.getPreferencesValue("showAnnotations", Boolean.TRUE.toString())));
 		activateSorter(Boolean.parseBoolean(ImprovedEcoreEditorPlugin
 				.getPreferencesValue("sort", Boolean.TRUE.toString())));
 		setMarkDerived(Boolean.parseBoolean(ImprovedEcoreEditorPlugin
@@ -394,25 +455,6 @@ public class ImprovedEcoreEditor extends
 
 	}
 
-	private void setInheritanceMode(InheritanceMode mode) {
-		switch (mode) {
-		case NONE:
-			actionInheritanceNone.setChecked(true);
-			break;
-		case FEATURES:
-			actionInheritanceFeatures.setChecked(true);
-			break;
-		case HIERARCHY:
-			actionInheritanceHierarchy.setChecked(true);
-			break;
-		}
-
-		inheritanceContentProvider.setInheritanceMode(mode);
-		selectionViewer.refresh();
-
-		ImprovedEcoreEditorPlugin.setPreferencesValue("inheritanceMode",
-				mode.toString());
-	}
 
 	public class ImprovedLabelProvider extends DefaultLabelProvider {
 
@@ -563,6 +605,41 @@ public class ImprovedEcoreEditor extends
 		// Set preference
 		ImprovedEcoreEditorPlugin.setPreferencesValue("sort",
 				Boolean.valueOf(active).toString());
+	}
+	protected void setShowAnnotations(boolean show) {
+		if (actionShowAnnotations.isChecked() != show) {
+			actionShowAnnotations.setChecked(show);
+		}
+
+		if (!show) {
+			selectionViewer.addFilter(annotationFilter);
+		} else {
+			selectionViewer.removeFilter(annotationFilter);
+		}
+
+		// Set preference
+		ImprovedEcoreEditorPlugin.setPreferencesValue("showAnnotations",
+				Boolean.valueOf(show).toString());
+	}
+
+	private void setInheritanceMode(InheritanceMode mode) {
+		switch (mode) {
+		case NONE:
+			actionInheritanceNone.setChecked(true);
+			break;
+		case FEATURES:
+			actionInheritanceFeatures.setChecked(true);
+			break;
+		case HIERARCHY:
+			actionInheritanceHierarchy.setChecked(true);
+			break;
+		}
+
+		inheritanceContentProvider.setInheritanceMode(mode);
+		selectionViewer.refresh();
+
+		ImprovedEcoreEditorPlugin.setPreferencesValue("inheritanceMode",
+				mode.toString());
 	}
 
 }

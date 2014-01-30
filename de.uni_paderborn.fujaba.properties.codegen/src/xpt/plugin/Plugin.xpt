@@ -94,7 +94,7 @@
     «FOREACH packages.classes.reject(e | e.genClass.ecoreClass.abstract) AS this»
        <propertyEditor
              factory="«genQualifiedEditorName()»$Factory"
-             type="«genClass.fullyQualifiedName()»">
+             type="«genClass.ecoreClass.ePackage.nsURI»#«genClass.ecoreClass.name»">
        </propertyEditor>
     «ENDFOREACH»
     </propertyEditors>
