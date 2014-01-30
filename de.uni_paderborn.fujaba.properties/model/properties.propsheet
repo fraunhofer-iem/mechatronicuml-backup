@@ -63,7 +63,7 @@
         <genFeature href="properties.genmodel#//properties/Reconciler/reconcileProperties"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" properties="//@packages.0/@classes.1/@properties.0 //@packages.0/@classes.1/@properties.1 //@packages.0/@classes.1/@properties.2 //@packages.0/@classes.1/@properties.3"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.1/@properties.0 //@packages.0/@classes.1/@properties.1 //@packages.0/@classes.1/@properties.2 //@packages.0/@classes.1/@properties.3"/>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/CustomTransformation"/>
@@ -79,7 +79,7 @@
         <genFeature href="properties.genmodel#//properties/CustomTransformation/position"/>
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" properties="//@packages.0/@classes.2/@properties.1"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.2/@properties.1"/>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/Plugin"/>
@@ -158,8 +158,8 @@
         <genFeature href="properties.genmodel#//properties/PropertyCategory/properties"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" properties="//@packages.0/@classes.7/@properties.1 //@packages.0/@classes.7/@properties.2"/>
-      <propertyCategories title="Lists" open="true" properties="//@packages.0/@classes.7/@properties.3"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.7/@properties.1 //@packages.0/@classes.7/@properties.2"/>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.7/@properties.3"/>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/Property"/>
@@ -183,7 +183,7 @@
         <genFeature href="properties.genmodel#//properties/Property/reconcile"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" properties="//@packages.0/@classes.8/@properties.4"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.8/@properties.4"/>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/PropertyEditor"/>
@@ -194,7 +194,7 @@
         <genFeature href="properties.genmodel#//properties/TextPropertyEditor/multiLine"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <propertyCategories title="Booleans" open="true" properties="//@packages.0/@classes.10/@properties.0"/>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.10/@properties.0"/>
     </classes>
     <classes superClasses="//@packages.0/@classes.9">
       <genClass href="properties.genmodel#//properties/SpinnerPropertyEditor"/>
@@ -235,7 +235,7 @@
       <genClass href="properties.genmodel#//properties/OCLPropertyFilter"/>
       <properties tab="//@tabs.0" reconcile="false">
         <genFeature href="properties.genmodel#//properties/OCLPropertyFilter/expression"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:OCLPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.properties.editor.CustomOCLPropertyEditor"/>
       </properties>
     </classes>
   </packages>

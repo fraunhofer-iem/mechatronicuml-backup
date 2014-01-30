@@ -97,7 +97,7 @@
       <details key="constraints" value="UniqueFeatures UniqueCategoryTitles PropertiesFromSelfOrSuperclasses"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="UniqueFeatures" value="properties->isUnique(genFeature)"/>
+      <details key="UniqueFeatures" value="true -- properties->isUnique(genFeature)"/>
       <details key="UniqueCategoryTitles" value="propertyCategories->isUnique(title)"/>
       <details key="PropertiesFromSelfOrSuperclasses" value="properties->forAll(p | Set { self }->union(allSuperClasses).genClass.ecoreClass->includes(p.genFeature.ecoreFeature.eContainingClass))"/>
     </eAnnotations>

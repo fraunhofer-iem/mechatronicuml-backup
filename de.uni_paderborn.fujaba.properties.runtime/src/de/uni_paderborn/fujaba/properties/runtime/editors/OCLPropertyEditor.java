@@ -33,6 +33,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	private Composite composite;
 	private EmbeddedXtextEditor embeddedXtextEditor;
 	protected int saving = 0;
+	protected Label label;
 
 	public OCLPropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature) {
@@ -42,7 +43,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 	@Override
 	public void createControls(Composite parent, FormToolkit toolkit) {
 		super.createControls(parent, toolkit);
-		Label label = toolkit.createLabel(parent, getLabelText());
+		label = toolkit.createLabel(parent, getLabelText());
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 		}
@@ -133,19 +134,11 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 		}
 	}
 	
-	private void updateContext() {
-		// Find Class object by running up the containment hierarchy and use it as context element
-		EObject object = element;
-		while (object != null && false == object instanceof de.uni_paderborn.fujaba.properties.Class) {
-			object = object.eContainer();
-		}
-		if (object != null) {
-			de.uni_paderborn.fujaba.properties.Class clazz = (de.uni_paderborn.fujaba.properties.Class) object;
-			updateContext(clazz.getGenClass().getEcoreClassifier());
-		}
+	protected void updateContext() {
+		updateContext(element.eClass());
 	}
 
-	private void updateContext(final EClassifier contextClassifier) {
+	protected void updateContext(final EClassifier contextClassifier) {
 		final BaseDocument editorDocument = (BaseDocument) embeddedXtextEditor
 				.getDocument();
 		editorDocument.modify(new IUnitOfWork<Object, XtextResource>() {
@@ -171,7 +164,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 
 	@Override
 	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { composite }) {
+		for (Control control : new Control[] { composite, label }) {
 			if (control != null && !control.isDisposed()) {
 				control.setVisible(visible);
 				if (control.getLayoutData() instanceof GridData) {

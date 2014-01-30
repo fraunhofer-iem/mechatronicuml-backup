@@ -27,7 +27,7 @@ public class EOperationEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEOperationEExceptionsEditor(
+			addEOperationEExceptions_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -36,15 +36,16 @@ public class EOperationEditor
 	/**
 	 * @generated
 	 */
-	protected void addEOperationEExceptionsEditor(String category, boolean front) {
-		addEditorToCategory(category, createEOperationEExceptionsEditor(),
-				front);
+	protected void addEOperationEExceptions_DefaultTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createEOperationEExceptions_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEOperationEExceptionsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEOperationEExceptions_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -84,7 +85,8 @@ public class EOperationEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"tab.default", "tab.default",
 							"tab.default", "tab.default", "tab.default",
-							"tab.default", "tab.default"}).contains(tab);
+							"tab.default", "tab.default", "tab.documentation"})
+					.contains(tab);
 		}
 	}
 

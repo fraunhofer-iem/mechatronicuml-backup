@@ -60,6 +60,9 @@
           <propertyTab
              category="domain"
              id="«id»"
+             «IF afterTab != ""-»
+             afterTab="«afterTab»"
+             «ENDIF-»
              label="«name»"/>
           «ENDFOREACH»
       </propertyTabs>

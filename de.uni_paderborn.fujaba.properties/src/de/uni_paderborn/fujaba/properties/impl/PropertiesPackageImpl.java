@@ -1290,7 +1290,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		  (classEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueFeatures", "properties->isUnique(genFeature)",
+			 "UniqueFeatures", "true -- properties->isUnique(genFeature)",
 			 "UniqueCategoryTitles", "propertyCategories->isUnique(title)",
 			 "PropertiesFromSelfOrSuperclasses", "properties->forAll(p | Set { self }->union(allSuperClasses).genClass.ecoreClass->includes(p.genFeature.ecoreFeature.eContainingClass))"
 		   });		

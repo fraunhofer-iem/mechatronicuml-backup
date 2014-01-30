@@ -27,27 +27,27 @@ public abstract class ETypedElementEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addETypedElementOrderedEditor(
+			addETypedElementOrdered_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addETypedElementUniqueEditor(
+			addETypedElementUnique_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addETypedElementLowerBoundEditor(null, true);
+			addETypedElementLowerBound_DefaultTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addETypedElementUpperBoundEditor(null, true);
+			addETypedElementUpperBound_DefaultTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addETypedElementETypeEditor(null, true);
+			addETypedElementEType_DefaultTab_Editor(null, true);
 		}
 
 	}
@@ -55,14 +55,16 @@ public abstract class ETypedElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addETypedElementOrderedEditor(String category, boolean front) {
-		addEditorToCategory(category, createETypedElementOrderedEditor(), front);
+	protected void addETypedElementOrdered_DefaultTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createETypedElementOrdered_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypedElementOrderedEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypedElementOrdered_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -75,14 +77,16 @@ public abstract class ETypedElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addETypedElementUniqueEditor(String category, boolean front) {
-		addEditorToCategory(category, createETypedElementUniqueEditor(), front);
+	protected void addETypedElementUnique_DefaultTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createETypedElementUnique_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypedElementUniqueEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypedElementUnique_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -95,16 +99,16 @@ public abstract class ETypedElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addETypedElementLowerBoundEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createETypedElementLowerBoundEditor(),
-				front);
+	protected void addETypedElementLowerBound_DefaultTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createETypedElementLowerBound_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypedElementLowerBoundEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypedElementLowerBound_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -117,16 +121,16 @@ public abstract class ETypedElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addETypedElementUpperBoundEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createETypedElementUpperBoundEditor(),
-				front);
+	protected void addETypedElementUpperBound_DefaultTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createETypedElementUpperBound_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypedElementUpperBoundEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypedElementUpperBound_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -139,14 +143,16 @@ public abstract class ETypedElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addETypedElementETypeEditor(String category, boolean front) {
-		addEditorToCategory(category, createETypedElementETypeEditor(), front);
+	protected void addETypedElementEType_DefaultTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createETypedElementEType_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypedElementETypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createETypedElementEType_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE

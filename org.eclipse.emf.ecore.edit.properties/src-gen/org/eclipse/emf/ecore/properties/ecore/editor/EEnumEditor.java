@@ -54,7 +54,8 @@ public class EEnumEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"tab.default", "tab.default",
-							"tab.default", "tab.default"}).contains(tab);
+							"tab.default", "tab.default", "tab.documentation"})
+					.contains(tab);
 		}
 	}
 

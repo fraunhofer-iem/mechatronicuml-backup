@@ -55,7 +55,7 @@ public class EParameterEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"tab.default", "tab.default",
 							"tab.default", "tab.default", "tab.default",
-							"tab.default"}).contains(tab);
+							"tab.default", "tab.documentation"}).contains(tab);
 		}
 	}
 

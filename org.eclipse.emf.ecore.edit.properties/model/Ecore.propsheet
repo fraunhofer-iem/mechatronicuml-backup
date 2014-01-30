@@ -11,6 +11,8 @@
     <requiredBundles>org.eclipse.emf.ecore.edit</requiredBundles>
   </plugin>
   <tabs id="tab.default" name="Default"/>
+  <tabs id="tab.documentation" name="Documentation" afterTab="tab.default"/>
+  <tabs id="tab.ocl" name="OCL" afterTab="tab.documentation"/>
   <packages>
     <genPackage href="Ecore.genmodel#//ecore"/>
     <classes superClasses="//@packages.0/@classes.15">
@@ -92,6 +94,11 @@
     </classes>
     <classes>
       <genClass href="Ecore.genmodel#//ecore/EModelElement"/>
+      <properties tab="//@tabs.1" reconcile="false">
+        <genFeature href="Ecore.genmodel#//ecore/EModelElement/eAnnotations"/>
+        <filters xsi:type="de.uni_paderborn.fujaba:OCLPropertyFilter" expression="true or not eAnnotations->select(source = 'http://www.eclipse.org/emf/2002/GenModel')->isEmpty()"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.EcoreDocumentationPropertyEditor"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.0/@classes.8">
       <genClass href="Ecore.genmodel#//ecore/ENamedElement"/>
@@ -208,9 +215,15 @@
         <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/key"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.0" reconcile="false">
         <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
+        <filters xsi:type="de.uni_paderborn.fujaba:OCLPropertyFilter" expression="not eContainer().oclIsKindOf(ecore::EAnnotation) or eContainer().oclAsType(ecore::EAnnotation).source &lt;> 'http://www.eclipse.org/emf/2002/Ecore/OCL'"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor" multiLine="true"/>
+      </properties>
+      <properties tab="//@tabs.2" reconcile="false">
+        <genFeature href="Ecore.genmodel#//ecore/EStringToStringMapEntry/value"/>
+        <filters xsi:type="de.uni_paderborn.fujaba:OCLPropertyFilter" expression="eContainer().oclIsKindOf(ecore::EAnnotation) and eContainer().oclAsType(ecore::EAnnotation).source = 'http://www.eclipse.org/emf/2002/Ecore/OCL'"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="org.eclipse.emf.ecore.properties.ecore.editor.CustomOCLPropertyEditor"/>
       </properties>
     </classes>
     <classes>

@@ -24,11 +24,11 @@ public class EGenericTypeEditor
 		super.createProperties();
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEGenericTypeETypeParameterEditor(null, true);
+			addEGenericTypeETypeParameter_DefaultTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEGenericTypeEClassifierEditor(null, true);
+			addEGenericTypeEClassifier_DefaultTab_Editor(null, true);
 		}
 
 	}
@@ -36,16 +36,16 @@ public class EGenericTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addEGenericTypeETypeParameterEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createEGenericTypeETypeParameterEditor(),
-				front);
+	protected void addEGenericTypeETypeParameter_DefaultTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createEGenericTypeETypeParameter_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEGenericTypeETypeParameterEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEGenericTypeETypeParameter_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -58,16 +58,16 @@ public class EGenericTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addEGenericTypeEClassifierEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createEGenericTypeEClassifierEditor(),
-				front);
+	protected void addEGenericTypeEClassifier_DefaultTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createEGenericTypeEClassifier_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEGenericTypeEClassifierEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEGenericTypeEClassifier_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE

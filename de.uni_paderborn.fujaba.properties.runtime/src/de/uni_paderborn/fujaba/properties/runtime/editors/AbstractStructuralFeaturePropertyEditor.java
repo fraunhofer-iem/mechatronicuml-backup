@@ -37,6 +37,7 @@ import org.eclipse.ocl.examples.eventmanager.EventManagerFactory;
 import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzer;
 import org.eclipse.ocl.examples.impactanalyzer.ImpactAnalyzerFactory;
 import org.eclipse.ocl.examples.impactanalyzer.util.OCLFactory;
+import org.eclipse.ocl.options.ParsingOptions;
 import org.eclipse.swt.widgets.Display;
 
 import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
@@ -369,6 +370,9 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		try {
 			Helper helper = RuntimePlugin.OCL_ECORE.createOCLHelper();
 			helper.setAttributeContext(context, feature);
+			ParsingOptions.setOption(helper.getEnvironment(),
+				    ParsingOptions.implicitRootClass(helper.getEnvironment()),
+				    EcorePackage.Literals.EOBJECT);
 			OCLExpression expression = helper.createQuery(oclExpression);
 			registerOCLAdapter(expression, adapter)	;
 			

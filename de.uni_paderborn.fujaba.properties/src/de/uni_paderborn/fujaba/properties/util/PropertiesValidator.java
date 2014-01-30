@@ -346,7 +346,7 @@ public class PropertiesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CLASS__UNIQUE_FEATURES__EEXPRESSION = "properties->isUnique(genFeature)";
+	protected static final String CLASS__UNIQUE_FEATURES__EEXPRESSION = "true -- properties->isUnique(genFeature)";
 
 	/**
 	 * Validates the UniqueFeatures constraint of '<em>Class</em>'.

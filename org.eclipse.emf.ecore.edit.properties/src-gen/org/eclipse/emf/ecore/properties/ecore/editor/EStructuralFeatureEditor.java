@@ -27,35 +27,36 @@ public abstract class EStructuralFeatureEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEStructuralFeatureChangeableEditor(
+			addEStructuralFeatureChangeable_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEStructuralFeatureVolatileEditor(
+			addEStructuralFeatureVolatile_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEStructuralFeatureTransientEditor(
+			addEStructuralFeatureTransient_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEStructuralFeatureDefaultValueLiteralEditor(null, true);
+			addEStructuralFeatureDefaultValueLiteral_DefaultTab_Editor(null,
+					true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEStructuralFeatureUnsettableEditor(
+			addEStructuralFeatureUnsettable_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEStructuralFeatureDerivedEditor(
+			addEStructuralFeatureDerived_DefaultTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -65,16 +66,16 @@ public abstract class EStructuralFeatureEditor
 	/**
 	 * @generated
 	 */
-	protected void addEStructuralFeatureChangeableEditor(String category,
-			boolean front) {
+	protected void addEStructuralFeatureChangeable_DefaultTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createEStructuralFeatureChangeableEditor(), front);
+				createEStructuralFeatureChangeable_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureChangeableEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureChangeable_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -87,16 +88,16 @@ public abstract class EStructuralFeatureEditor
 	/**
 	 * @generated
 	 */
-	protected void addEStructuralFeatureVolatileEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createEStructuralFeatureVolatileEditor(),
-				front);
+	protected void addEStructuralFeatureVolatile_DefaultTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createEStructuralFeatureVolatile_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureVolatileEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureVolatile_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -109,16 +110,16 @@ public abstract class EStructuralFeatureEditor
 	/**
 	 * @generated
 	 */
-	protected void addEStructuralFeatureTransientEditor(String category,
-			boolean front) {
+	protected void addEStructuralFeatureTransient_DefaultTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createEStructuralFeatureTransientEditor(), front);
+				createEStructuralFeatureTransient_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureTransientEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureTransient_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -131,16 +132,18 @@ public abstract class EStructuralFeatureEditor
 	/**
 	 * @generated
 	 */
-	protected void addEStructuralFeatureDefaultValueLiteralEditor(
+	protected void addEStructuralFeatureDefaultValueLiteral_DefaultTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createEStructuralFeatureDefaultValueLiteralEditor(), front);
+		addEditorToCategory(
+				category,
+				createEStructuralFeatureDefaultValueLiteral_DefaultTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureDefaultValueLiteralEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureDefaultValueLiteral_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -153,16 +156,16 @@ public abstract class EStructuralFeatureEditor
 	/**
 	 * @generated
 	 */
-	protected void addEStructuralFeatureUnsettableEditor(String category,
-			boolean front) {
+	protected void addEStructuralFeatureUnsettable_DefaultTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createEStructuralFeatureUnsettableEditor(), front);
+				createEStructuralFeatureUnsettable_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureUnsettableEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureUnsettable_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -175,16 +178,16 @@ public abstract class EStructuralFeatureEditor
 	/**
 	 * @generated
 	 */
-	protected void addEStructuralFeatureDerivedEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createEStructuralFeatureDerivedEditor(),
-				front);
+	protected void addEStructuralFeatureDerived_DefaultTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createEStructuralFeatureDerived_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureDerivedEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEStructuralFeatureDerived_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE

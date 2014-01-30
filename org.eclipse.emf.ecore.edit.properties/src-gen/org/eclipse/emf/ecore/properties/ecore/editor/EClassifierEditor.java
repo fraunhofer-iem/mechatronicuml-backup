@@ -24,11 +24,11 @@ public abstract class EClassifierEditor
 		super.createProperties();
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEClassifierInstanceClassNameEditor(null, true);
+			addEClassifierInstanceClassName_DefaultTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEClassifierInstanceTypeNameEditor(null, true);
+			addEClassifierInstanceTypeName_DefaultTab_Editor(null, true);
 		}
 
 	}
@@ -36,16 +36,16 @@ public abstract class EClassifierEditor
 	/**
 	 * @generated
 	 */
-	protected void addEClassifierInstanceClassNameEditor(String category,
-			boolean front) {
+	protected void addEClassifierInstanceClassName_DefaultTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createEClassifierInstanceClassNameEditor(), front);
+				createEClassifierInstanceClassName_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEClassifierInstanceClassNameEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEClassifierInstanceClassName_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -58,16 +58,16 @@ public abstract class EClassifierEditor
 	/**
 	 * @generated
 	 */
-	protected void addEClassifierInstanceTypeNameEditor(String category,
-			boolean front) {
+	protected void addEClassifierInstanceTypeName_DefaultTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createEClassifierInstanceTypeNameEditor(), front);
+				createEClassifierInstanceTypeName_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEClassifierInstanceTypeNameEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEClassifierInstanceTypeName_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE

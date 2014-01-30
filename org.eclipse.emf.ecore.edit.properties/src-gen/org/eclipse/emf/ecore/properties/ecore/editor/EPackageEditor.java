@@ -24,15 +24,15 @@ public class EPackageEditor
 		super.createProperties();
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEPackageNsURIEditor(null, true);
+			addEPackageNsURI_DefaultTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEPackageNsPrefixEditor(null, true);
+			addEPackageNsPrefix_DefaultTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEPackageEFactoryInstanceEditor(null, true);
+			addEPackageEFactoryInstance_DefaultTab_Editor(null, true);
 		}
 
 	}
@@ -40,14 +40,16 @@ public class EPackageEditor
 	/**
 	 * @generated
 	 */
-	protected void addEPackageNsURIEditor(String category, boolean front) {
-		addEditorToCategory(category, createEPackageNsURIEditor(), front);
+	protected void addEPackageNsURI_DefaultTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createEPackageNsURI_DefaultTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEPackageNsURIEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEPackageNsURI_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -60,14 +62,16 @@ public class EPackageEditor
 	/**
 	 * @generated
 	 */
-	protected void addEPackageNsPrefixEditor(String category, boolean front) {
-		addEditorToCategory(category, createEPackageNsPrefixEditor(), front);
+	protected void addEPackageNsPrefix_DefaultTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createEPackageNsPrefix_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEPackageNsPrefixEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEPackageNsPrefix_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -80,16 +84,16 @@ public class EPackageEditor
 	/**
 	 * @generated
 	 */
-	protected void addEPackageEFactoryInstanceEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createEPackageEFactoryInstanceEditor(),
-				front);
+	protected void addEPackageEFactoryInstance_DefaultTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createEPackageEFactoryInstance_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEPackageEFactoryInstanceEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEPackageEFactoryInstance_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -128,7 +132,8 @@ public class EPackageEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"tab.default", "tab.default",
-							"tab.default", "tab.default"}).contains(tab);
+							"tab.default", "tab.default", "tab.documentation"})
+					.contains(tab);
 		}
 	}
 

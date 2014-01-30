@@ -24,11 +24,11 @@ public class EEnumLiteralEditor
 		super.createProperties();
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEEnumLiteralValueEditor(null, true);
+			addEEnumLiteralValue_DefaultTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "tab.default".equals(getTab())) {
-			addEEnumLiteralLiteralEditor(null, true);
+			addEEnumLiteralLiteral_DefaultTab_Editor(null, true);
 		}
 
 	}
@@ -36,14 +36,16 @@ public class EEnumLiteralEditor
 	/**
 	 * @generated
 	 */
-	protected void addEEnumLiteralValueEditor(String category, boolean front) {
-		addEditorToCategory(category, createEEnumLiteralValueEditor(), front);
+	protected void addEEnumLiteralValue_DefaultTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createEEnumLiteralValue_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEEnumLiteralValueEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEEnumLiteralValue_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -56,14 +58,16 @@ public class EEnumLiteralEditor
 	/**
 	 * @generated
 	 */
-	protected void addEEnumLiteralLiteralEditor(String category, boolean front) {
-		addEditorToCategory(category, createEEnumLiteralLiteralEditor(), front);
+	protected void addEEnumLiteralLiteral_DefaultTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createEEnumLiteralLiteral_DefaultTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEEnumLiteralLiteralEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEEnumLiteralLiteral_DefaultTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.eclipse.emf.ecore.EcorePackage.eINSTANCE
@@ -102,7 +106,7 @@ public class EEnumLiteralEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"tab.default", "tab.default",
-							"tab.default"}).contains(tab);
+							"tab.default", "tab.documentation"}).contains(tab);
 		}
 	}
 

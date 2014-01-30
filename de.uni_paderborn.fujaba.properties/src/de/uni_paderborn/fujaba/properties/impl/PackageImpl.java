@@ -131,7 +131,7 @@ public class PackageImpl extends EObjectImpl implements de.uni_paderborn.fujaba.
 	 */
 	public PropertyGenerator getGenerator() {
 		if (eContainerFeatureID() != PropertiesPackage.PACKAGE__GENERATOR) return null;
-		return (PropertyGenerator)eInternalContainer();
+		return (PropertyGenerator)eContainer();
 	}
 
 	/**

@@ -214,6 +214,10 @@ public class ImprovedEcoreEditor extends
 			EGenericType type = (EGenericType) object;
 			object = type.getEClassifier();
 			selectionViewer.setSelection(new StructuredSelection(object));
+		} else if (object instanceof InheritanceNode) {
+			InheritanceNode node = (InheritanceNode) object;
+			object = node.object;
+			selectionViewer.setSelection(new StructuredSelection(object));
 		}
 		selectionViewer.setExpandedState(object,
 				!selectionViewer.getExpandedState(object));

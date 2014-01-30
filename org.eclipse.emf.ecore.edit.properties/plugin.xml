@@ -29,7 +29,18 @@
           <propertyTab
              category="domain"
              id="tab.default"
+             afterTab=""
              label="Default"/>
+          <propertyTab
+             category="domain"
+             id="tab.documentation"
+             afterTab="tab.default"
+             label="Documentation"/>
+          <propertyTab
+             category="domain"
+             id="tab.ocl"
+             afterTab="tab.documentation"
+             label="OCL"/>
           
       </propertyTabs>
   </extension>
@@ -44,6 +55,24 @@
             filter="org.eclipse.emf.ecore.properties.tabs.DefaultTabElementFilter"
             id="tab.default"
             tab="tab.default">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.DocumentationTabElementFilter"
+            id="tab.documentation"
+            tab="tab.documentation">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="org.eclipse.emf.ecore.properties.tabs.OCLTabElementFilter"
+            id="tab.ocl"
+            tab="tab.ocl">
              <input
                type="org.eclipse.emf.ecore.EObject">
              </input>
