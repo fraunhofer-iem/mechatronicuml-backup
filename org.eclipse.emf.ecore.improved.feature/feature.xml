@@ -21,14 +21,14 @@
    </requires>
 
    <plugin
-         id="org.eclipse.emf.ecore.editor.improved"
+         id="org.eclipse.emf.ecore.improved.edit.properties"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.emf.ecore.edit.properties"
+         id="org.eclipse.emf.ecore.improved.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
