@@ -47,7 +47,7 @@ public class EcoreDocumentationPropertyEditor extends TextPropertyEditor {
 
 	protected EModelElement getModelElement() {
 		EObject object = element;
-		while ((false == object instanceof EClass) && object != null) {
+		while ((object instanceof EAnnotation) && object != null) { // forbid annotations
 			object = object.eContainer();
 		}
 		return (EModelElement) object;
