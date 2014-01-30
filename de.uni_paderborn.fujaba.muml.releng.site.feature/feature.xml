@@ -54,7 +54,7 @@
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.emf.ecore.improvements.feature"
+         id="org.eclipse.emf.ecore.improved.feature"
          version="0.0.0"/>
 
 </feature>
