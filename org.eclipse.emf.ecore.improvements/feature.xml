@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.emf.ecore.improvements"
+      id="org.eclipse.emf.ecore.improvements.feature"
       label="Ecore Meta-Modeling Tools (Improvements)"
       version="1.0.0.qualifier">
 
