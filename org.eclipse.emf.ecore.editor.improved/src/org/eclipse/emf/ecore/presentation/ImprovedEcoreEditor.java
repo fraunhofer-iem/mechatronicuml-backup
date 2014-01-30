@@ -181,11 +181,7 @@ public class ImprovedEcoreEditor extends
 	}
 
 	protected void doubleClicked(Object object) {
-		if (object instanceof EStructuralFeature) {
-			EStructuralFeature feature = (EStructuralFeature) object;
-			object = feature.getEType();
-			selectionViewer.setSelection(new StructuredSelection(object));
-		} else if (object instanceof EGenericType) {
+		if (object instanceof EGenericType) {
 			EGenericType type = (EGenericType) object;
 			object = type.getEClassifier();
 			selectionViewer.setSelection(new StructuredSelection(object));
