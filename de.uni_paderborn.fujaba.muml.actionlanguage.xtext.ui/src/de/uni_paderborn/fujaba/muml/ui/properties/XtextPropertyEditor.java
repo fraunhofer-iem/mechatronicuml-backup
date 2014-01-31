@@ -1,7 +1,9 @@
 package de.uni_paderborn.fujaba.muml.ui.properties;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -42,7 +44,7 @@ public class XtextPropertyEditor extends
 		AbstractStructuralFeaturePropertyEditor {
 	private final int MINIMUM_HEIGHT = 100; 
 	
-	
+	private Label label;
 	private Composite container;
 	private boolean active = false;
 	private int updating = 0;
@@ -95,8 +97,7 @@ public class XtextPropertyEditor extends
 		}
 
 		// Create label
-		Label label = toolkit.createLabel(parent, getLabelText());
-		installTooltip(label);
+		label = toolkit.createLabel(parent, getLabelText());
 		label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 
 		// Create container with border
@@ -117,7 +118,6 @@ public class XtextPropertyEditor extends
 				languageName);
 		LanguageResource.setInjector(injector);
 		embeddedXtextEditor = new EmbeddedXtextEditor(innerContainer, injector);
-		installTooltip(embeddedXtextEditor.getViewer().getTextWidget());
 		saveModelListener = new SaveModelListener();
 		embeddedXtextEditor.getDocument().addModelListener(saveModelListener);
 		final StyledText textWidget = embeddedXtextEditor.getViewer().getTextWidget();
@@ -280,16 +280,16 @@ public class XtextPropertyEditor extends
 	}
 
 	@Override
-	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { container }) {
-			if (control != null && !control.isDisposed()) {
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
-			}
+	protected Collection<Control> getControls() {
+		List<Control> controls = new ArrayList<Control>();
+		if (embeddedXtextEditor != null) {
+			controls.add(embeddedXtextEditor.getViewer().getTextWidget());
 		}
+		controls.add(label);
+		controls.add(container);
+		return controls;
 	}
+	
 	
 	@Override
 	public void refresh() {
