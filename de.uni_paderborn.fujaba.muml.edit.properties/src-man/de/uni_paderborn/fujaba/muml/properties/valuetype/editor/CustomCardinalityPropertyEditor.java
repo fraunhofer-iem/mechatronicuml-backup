@@ -1,4 +1,8 @@
 package de.uni_paderborn.fujaba.muml.properties.valuetype.editor;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -38,7 +42,6 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 	public void createControls(Composite parent,
 			FormToolkit toolkit) {
 		label = toolkit.createLabel(parent, getLabelText());
-		installTooltip(label);
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 		}
@@ -61,7 +64,6 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 		gridData.minimumWidth = TEXT_WIDTH;
 		lowerBound.setLayoutData(gridData);
 		
-		installTooltip(lowerBound);
 		lowerBound.addModifyListener(new ModifyListener() {
 
 			@Override
@@ -93,7 +95,6 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 		gridData = new GridData(SWT.LEFT, SWT.FILL, false, false);
 		gridData.minimumWidth = TEXT_WIDTH;
 		upperBound.setLayoutData(gridData);
-		installTooltip(upperBound);
 		upperBound.addModifyListener(new ModifyListener() {
 
 			@Override
@@ -136,19 +137,18 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 		modify(); // If dialog was closed before text lost focus
 		super.dispose();
 	}
+	
 
 	@Override
-	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { label, lowerBound, dots, upperBound }) {
-			if (control != null && !control.isDisposed()) {
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
-			}
-		}
+	protected Collection<Control> getControls() {
+		List<Control> controls = new ArrayList<Control>();
+		controls.add(label);
+		controls.add(lowerBound);
+		controls.add(upperBound);
+		controls.add(dots);
+		return controls;
 	}
-	
+		
 	@Override
 	public void setFocus() {
 		if (lowerBound != null && !lowerBound.isDisposed()) {
