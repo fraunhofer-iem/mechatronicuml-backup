@@ -1,5 +1,9 @@
 package de.uni_paderborn.fujaba.properties.runtime.editors;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.SWT;
@@ -31,7 +35,6 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			FormToolkit toolkit) {
 		super.createControls(parent, toolkit);
 		label = toolkit.createLabel(parent, getLabelText());
-		installTooltip(label);
 		if (parent.getLayout() instanceof GridLayout) {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 		}
@@ -40,7 +43,6 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 			style |= SWT.MULTI | SWT.V_SCROLL;
 		}
 		text = toolkit.createText(parent, "", style);
-		installTooltip(text);
 		if (parent.getLayout() instanceof GridLayout) {
 			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
 			if (multiLine) {
@@ -116,16 +118,13 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	}
 
 	@Override
-	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { label, text }) {
-			if (control != null && !control.isDisposed()) {
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
-			}
-		}
+	protected Collection<Control> getControls() {
+		List<Control> controls = new ArrayList<Control>();
+		controls.add(label);
+		controls.add(text);
+		return controls;
 	}
+	
 	
 	@Override
 	public void setFocus() {

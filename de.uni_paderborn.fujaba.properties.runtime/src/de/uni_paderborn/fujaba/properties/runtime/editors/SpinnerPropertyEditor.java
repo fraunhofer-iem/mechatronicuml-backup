@@ -1,5 +1,9 @@
 package de.uni_paderborn.fujaba.properties.runtime.editors;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EDataType;
@@ -33,10 +37,8 @@ public class SpinnerPropertyEditor extends
 	public void createControls(Composite parent, FormToolkit toolkit) {
 		super.createControls(parent, toolkit);
 		label = toolkit.createLabel(parent, getLabelText());
-		installTooltip(label);
 
 		spinner = new Spinner(parent, SWT.BORDER | toolkit.getOrientation());
-		installTooltip(spinner);
 		toolkit.paintBordersFor(spinner);
 		toolkit.adapt(spinner);
 		// if (parent.getLayout() instanceof GridLayout) {
@@ -124,18 +126,15 @@ public class SpinnerPropertyEditor extends
 		modify();
 	}
 
-	@Override
-	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { label, spinner }) {
-			if (control != null && !control.isDisposed()) {
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
-			}
-		}
-	}
 
+	@Override
+	protected Collection<Control> getControls() {
+		List<Control> controls = new ArrayList<Control>();
+		controls.add(label);
+		controls.add(spinner);
+		return controls;
+	}
+	
 	@Override
 	public void setFocus() {
 		if (spinner != null && !spinner.isDisposed()) {

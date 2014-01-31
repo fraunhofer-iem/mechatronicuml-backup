@@ -89,8 +89,6 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 		}
 
 		Combo combo = new Combo(parent, SWT.BORDER | SWT.DROP_DOWN | SWT.READ_ONLY);
-		installTooltip(combo);
-		installTooltip(label);
 		comboViewer = new ComboViewer(combo);
 		comboViewer.setContentProvider(ArrayContentProvider.getInstance());
 		comboViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
@@ -227,22 +225,18 @@ public class ComboPropertyEditor extends AbstractStructuralFeaturePropertyEditor
 			setValue(selectedElements.get(0));
 		}
 	}
+	
 
 	@Override
-	protected void doSetVisible(boolean visible) {
+	protected Collection<Control> getControls() {
 		List<Control> controls = new ArrayList<Control>();
-		controls.addAll(Arrays.asList(new Control[] { label, searchButton, composite }));
-		if ( comboViewer != null) {
-			 controls.add(comboViewer.getCombo());
+		if (comboViewer != null) {
+			controls.add(comboViewer.getCombo());
 		}
-		for (Control control : controls) {
-			if (control != null && !control.isDisposed()) {
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
-			}
-		}
+		controls.add(label);
+		controls.add(searchButton);
+		controls.add(composite);
+		return controls;
 	}
 	
 	@Override

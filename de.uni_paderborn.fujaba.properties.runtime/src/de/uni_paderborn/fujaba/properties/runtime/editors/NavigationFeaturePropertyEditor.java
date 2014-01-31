@@ -26,6 +26,7 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.events.IExpansionListener;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -289,7 +290,7 @@ public class NavigationFeaturePropertyEditor extends
 	protected void doSetVisible(boolean visible) {
 		navigatedEditor.setVisible(visible);
 	}
-	
+
 	@Override
 	public void setTooltipMessage(String message) {
 		super.setTooltipMessage(message);
@@ -298,5 +299,10 @@ public class NavigationFeaturePropertyEditor extends
 	@Override
 	public void setFocus() {
 		navigatedEditor.setFocus();
+	}
+
+	@Override
+	protected Collection<Control> getControls() {
+		return navigatedEditor.getControls();
 	}
 }

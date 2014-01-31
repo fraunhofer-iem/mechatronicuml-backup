@@ -1,7 +1,9 @@
 package de.uni_paderborn.fujaba.properties.runtime.editors;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -17,6 +19,7 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public class OptionPropertyEditor extends
@@ -24,6 +27,7 @@ public class OptionPropertyEditor extends
 	private ILabelProvider labelProvider;
 	private FormToolkit toolkit;
 	private Composite composite;
+	private Label label;
 	private Map<Object, Button> buttons = new HashMap<Object, Button>();
 	
 	public OptionPropertyEditor(AdapterFactory adapterFactory, EStructuralFeature feature) {
@@ -46,7 +50,7 @@ public class OptionPropertyEditor extends
 			container.setLayout(layout);
 			parent = container;
 		}
-		installTooltip(toolkit.createLabel(parent, getLabelText()));
+		label = toolkit.createLabel(parent, getLabelText());
 		RowLayout rowLayout = new RowLayout(SWT.HORIZONTAL);
 		rowLayout.marginTop = 0;
 		rowLayout.marginHeight = 0;
@@ -85,7 +89,6 @@ public class OptionPropertyEditor extends
 						label = "null";
 					}
 					Button button = toolkit.createButton(composite, label, SWT.RADIO);
-					installTooltip(button);
 					button.addSelectionListener(new SelectionAdapter() {
 						@Override
 						public void widgetSelected(SelectionEvent e) {
@@ -145,16 +148,14 @@ public class OptionPropertyEditor extends
 		}
 	}
 
+
 	@Override
-	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { composite }) {
-			if (control != null && !control.isDisposed()) {
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
-			}
-		}
+	protected Collection<Control> getControls() {
+		List<Control> controls = new ArrayList<Control>();
+		controls.add(label);
+		controls.addAll(buttons.values());
+		controls.add(composite);
+		return controls;
 	}
 	
 	@Override

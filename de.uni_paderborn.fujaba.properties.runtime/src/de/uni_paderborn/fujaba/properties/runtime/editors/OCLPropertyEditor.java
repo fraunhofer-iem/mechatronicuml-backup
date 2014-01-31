@@ -1,5 +1,9 @@
 package de.uni_paderborn.fujaba.properties.runtime.editors;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClassifier;
@@ -68,8 +72,6 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 																			 * |
 																			 */
 		SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
-		installTooltip(embeddedXtextEditor.getViewer().getTextWidget());
-		installTooltip(label);
 
 		embeddedXtextEditor.getDocument().addModelListener(
 				new IXtextModelListener() {
@@ -161,17 +163,17 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 		modify(); // If dialog was closed before text lost focus
 		super.dispose();
 	}
+	
 
 	@Override
-	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { composite, label }) {
-			if (control != null && !control.isDisposed()) {
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
-			}
+	protected Collection<Control> getControls() {
+		List<Control> controls = new ArrayList<Control>();
+		if (embeddedXtextEditor != null) {
+			controls.add(embeddedXtextEditor.getViewer().getTextWidget());
 		}
+		controls.add(label);
+		controls.add(composite);
+		return controls;
 	}
 	
 	@Override

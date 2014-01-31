@@ -1,5 +1,9 @@
 package de.uni_paderborn.fujaba.properties.runtime.editors;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.SWT;
@@ -41,7 +45,6 @@ public class CheckboxPropertyEditor extends
 			}
 		});
 		
-		installTooltip(checkbox);
 		// Create two option buttons for a boolean feature, or multiple for
 		// a enumeration
 
@@ -65,15 +68,10 @@ public class CheckboxPropertyEditor extends
 	}
 
 	@Override
-	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { checkbox }) {
-			if (control != null && !control.isDisposed()) {
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
-			}
-		}
+	protected Collection<Control> getControls() {
+		List<Control> controls = new ArrayList<Control>();
+		controls.add(checkbox);
+		return controls;
 	}
 	
 	@Override

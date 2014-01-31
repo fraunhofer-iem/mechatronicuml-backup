@@ -1,6 +1,7 @@
 package de.uni_paderborn.fujaba.properties.runtime.editors;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -228,15 +229,10 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			
 			
 			// Install tooltip into section's header and section
-			installTooltip(section);
-			for (Control control : section.getChildren()) {
-				installTooltip(control);
-			}
-			
+		
 		} else {
 			childrenComposite = toolkit.createComposite(parent);
 			childrenComposite.setLayoutData(layoutData);
-			installTooltip(childrenComposite);
 
 		}
 		Layout layout = createLayout();
@@ -372,17 +368,18 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	public Section getSection() {
 		return section;
 	}
-
+	
 	@Override
-	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { section, childrenComposite }) {
-			if (control != null && !control.isDisposed()) {
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
+	protected Collection<Control> getControls() {
+		List<Control> controls = new ArrayList<Control>();
+		controls.add(section);
+		controls.add(childrenComposite);
+		if (section != null) {
+			for (Control control : section.getChildren()) {
+				controls.add(control);
 			}
 		}
+		return controls;
 	}
 	
 	public void setFocus() {

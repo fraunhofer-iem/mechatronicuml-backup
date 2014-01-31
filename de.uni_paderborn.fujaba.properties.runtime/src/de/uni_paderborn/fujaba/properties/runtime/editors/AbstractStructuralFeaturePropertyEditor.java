@@ -139,6 +139,11 @@ public abstract class AbstractStructuralFeaturePropertyEditor extends
 		// Reset itemPropertyDescriptor
 		itemPropertyDescriptor = getItemPropertyDescriptor(adapterFactory, feature, input);
 		
+		if (itemPropertyDescriptor != null && (tooltipMessage == null || tooltipMessage.isEmpty())) {
+			tooltipMessage = itemPropertyDescriptor.getDescription(input);
+		}
+		installTooltip();
+		
 		// calls refresh because of input change
 		super.inputChanged(oldObject);
 

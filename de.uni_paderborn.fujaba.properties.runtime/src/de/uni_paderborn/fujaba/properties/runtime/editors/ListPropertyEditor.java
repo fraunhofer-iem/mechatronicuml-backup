@@ -116,8 +116,6 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 
 		org.eclipse.swt.widgets.Table table = toolkit.createTable(
 				listContainer, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
-		installTooltip(table);
-		installTooltip(label);
 
 		GridData tableGridData = new GridData(SWT.FILL, SWT.FILL, true, true);
 		tableGridData.minimumWidth = 120;
@@ -389,17 +387,16 @@ public class ListPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	}
 
 	@Override
-	protected void doSetVisible(boolean visible) {
-		for (Control control : new Control[] { container, label, listContainer }) {
-			if (control != null && !control.isDisposed()) {
-				control.setVisible(visible);
-				if (control.getLayoutData() instanceof GridData) {
-					((GridData) control.getLayoutData()).exclude = !visible;
-				}
-			}
+	protected Collection<Control> getControls() {
+		List<Control> controls = new ArrayList<Control>();
+		if (tableViewer != null) {
+			controls.add(tableViewer.getTable());
 		}
+		controls.add(label);
+		controls.add(container);
+		controls.add(listContainer);
+		return controls;
 	}
-	
 	
 	@Override
 	public void dispose() {

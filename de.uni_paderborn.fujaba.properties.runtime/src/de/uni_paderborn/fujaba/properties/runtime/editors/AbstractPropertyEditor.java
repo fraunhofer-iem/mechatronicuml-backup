@@ -1,12 +1,18 @@
 package de.uni_paderborn.fujaba.properties.runtime.editors;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.jface.viewers.IFilter;
+import org.eclipse.swt.events.FocusAdapter;
+import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
@@ -27,6 +33,14 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	protected String tooltipMessage = "";
 
+	protected FocusListener focusListener = new FocusAdapter() {
+		public void focusGained(org.eclipse.swt.events.FocusEvent e) {
+			   // Write to status bar
+//			   IActionBars bars = getViewSite().getActionBars();
+//			   bars.getStatusLineManager().setMessage("Hello");
+		};
+	};
+	
 	public AbstractPropertyEditor(AdapterFactory adapterFactory) {
 		if (adapterFactory == null) {
 			adapterFactory = RuntimePlugin.DEFAULT_ADAPTER_FACTORY;
@@ -132,15 +146,34 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 		}
 	}
 
-	protected abstract void doSetVisible(boolean visible);
+	protected void doSetVisible(boolean visible) {
+		for (Control control : getControls()) {
+			if (control != null && !control.isDisposed()) {
+				control.setVisible(visible);
+				if (control.getLayoutData() instanceof GridData) {
+					((GridData) control.getLayoutData()).exclude = !visible;
+				}
+			}
+		}
+	}
 
 	@Override
 	public void setTooltipMessage(String message) {
 		this.tooltipMessage = message;
 	}
 	
+	protected void installTooltip() {
+		for (Control control : getControls()) {
+			installTooltip(control);
+		}
+	}
+	
 	protected void installTooltip(Control control) {
 		control.setToolTipText(tooltipMessage);
+		control.removeFocusListener(focusListener);
+		control.addFocusListener(focusListener);
 	}
+	
+	protected abstract Collection<Control> getControls();
 
 }
