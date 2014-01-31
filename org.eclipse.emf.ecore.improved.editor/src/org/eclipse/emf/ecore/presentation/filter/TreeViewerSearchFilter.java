@@ -16,28 +16,28 @@ public class TreeViewerSearchFilter extends ViewerFilter {
 	protected Map<Object, Boolean> cache = new HashMap<Object, Boolean>();
 	protected String filterTextLowercase = "";
 	protected Map<Object, Boolean> directCache = new HashMap<Object, Boolean>();
-
+	protected List<ViewerFilter> subFilters = new ArrayList<ViewerFilter>();
 
 	public TreeViewerSearchFilter() {
 	}
 	
-	@Override
 	public boolean select(Viewer viewer, Object parentElement, Object element) {
-		return selectElement(viewer, element);
+		return select(viewer, parentElement, element, new ArrayList<Object>());
 	}
 	
-	public boolean selectElement(Viewer viewer, Object element) {
+	public boolean select(Viewer viewer, Object parentElement, Object element, List<Object> visited) {
 		ITreeContentProvider contentProvider = (ITreeContentProvider) ((ContentViewer) viewer).getContentProvider();
 		ILabelProvider labelProvider = (ILabelProvider) ((ContentViewer) viewer).getLabelProvider();
 
-		return selectElement(contentProvider, labelProvider, element, new ArrayList<Object>());
-	}
-
-	public boolean selectElement(ITreeContentProvider contentProvider, ILabelProvider labelProvider, Object element, List<Object> visited) {
+		for (ViewerFilter subFilter : subFilters) {
+			if (!subFilter.select(viewer,  parentElement,  element)) {
+				return false;
+			}
+		}
+		
 		if (filterTextLowercase.isEmpty()) {
 			return true;
 		}
-
 		if (visited.contains(element)) {
 			return false;
 		}
@@ -49,7 +49,7 @@ public class TreeViewerSearchFilter extends ViewerFilter {
 		
 		if (selected == false) {
 			for (Object child : contentProvider.getChildren(element)) {
-				if (selectElement(contentProvider, labelProvider, child, visited)) {
+				if (select(viewer, element, child, visited)) {
 					selected = true;
 					break;
 				}
@@ -58,7 +58,7 @@ public class TreeViewerSearchFilter extends ViewerFilter {
 		cache.put(element, selected);
 		return selected;
 	}
-	
+
 	public boolean directSelect(Object element) {
 		return directSelect(element, null); // just read cache
 	}
@@ -87,11 +87,27 @@ public class TreeViewerSearchFilter extends ViewerFilter {
 
 	public void setFilterText(String filterText) {
 		this.filterTextLowercase = filterText.toLowerCase();
-		cache.clear();
-		directCache.clear();
+		recalculate();
 	}
 
+	public void recalculate() {
+		cache.clear();
+		directCache.clear();		
+	}
+
+	public void addSubFilter(ViewerFilter filter) {
+		subFilters.add(filter);
+		recalculate();
+	}
+	public void removeSubFilter(ViewerFilter filter) {
+		subFilters.remove(filter);
+		recalculate();
+	}
 //	public Collection<?> getDirectMatches() {
 //		return directCache.keySet();
 //	}
+
+	public boolean isEmptyFilterText() {
+		return filterTextLowercase== null || filterTextLowercase.isEmpty();
+	}
 }

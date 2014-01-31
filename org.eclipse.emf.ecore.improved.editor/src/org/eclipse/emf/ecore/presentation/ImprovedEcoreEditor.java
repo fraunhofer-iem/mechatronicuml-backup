@@ -616,9 +616,14 @@ public class ImprovedEcoreEditor extends
 		}
 
 		if (!show) {
-			selectionViewer.addFilter(annotationFilter);
+			searchViewerFilter.addSubFilter(annotationFilter);
 		} else {
-			selectionViewer.removeFilter(annotationFilter);
+			searchViewerFilter.removeSubFilter(annotationFilter);
+		}
+
+		selectionViewer.refresh();
+		if (!searchViewerFilter.isEmptyFilterText()) {
+			selectionViewer.expandAll();
 		}
 
 		// Set preference
