@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.ocl.examples.domain.values.Value;
 import org.eclipse.ocl.examples.xtext.console.XtextConsolePlugin;
@@ -16,8 +14,11 @@ import org.eclipse.ocl.examples.xtext.essentialocl.ui.model.BaseDocument;
 import org.eclipse.ocl.examples.xtext.essentialocl.utilities.EssentialOCLCSResource;
 import org.eclipse.ocl.examples.xtext.essentialocl.utilities.EssentialOCLPlugin;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -26,14 +27,15 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.model.IXtextModelListener;
-import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
-import org.eclipse.xtext.ui.editor.outline.impl.EObjectNode;
-import org.eclipse.xtext.ui.editor.outline.impl.EStructuralFeatureNode;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 
 import com.google.inject.Injector;
 
+import de.uni_paderborn.fujaba.properties.runtime.RuntimePlugin;
+
 public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
+	private final int MINIMUM_HEIGHT = 100; 
+
 	private Composite composite;
 	private EmbeddedXtextEditor embeddedXtextEditor;
 	protected int saving = 0;
@@ -52,16 +54,19 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 		}
 		composite = new Composite(parent, SWT.BORDER);
+		GridData gridData = null;
 		if (parent.getLayout() instanceof GridLayout) {
-			GridData gridData = new GridData(SWT.FILL, SWT.FILL, true, false);
-			gridData.minimumHeight = 80;
-			gridData.heightHint = 80;
+			gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+			gridData.minimumWidth = 200;
+			gridData.minimumHeight = MINIMUM_HEIGHT;
 			composite.setLayoutData(gridData);
 		}
 		GridLayout gridLayout = new GridLayout(1, false);
 		gridLayout.horizontalSpacing = gridLayout.verticalSpacing = 0;
 		gridLayout.marginWidth = gridLayout.marginHeight = 0;
 		composite.setLayout(gridLayout);
+		
+		
 
 		// create ocl editor
 		Injector injector = XtextConsolePlugin.getInstance().getInjector(
@@ -72,7 +77,21 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 																			 * |
 																			 */
 		SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
-
+		final StyledText textWidget = embeddedXtextEditor.getViewer().getTextWidget();
+		if (gridData != null) {
+			final GridData finalGridData = gridData;
+			textWidget.addModifyListener(new ModifyListener() {
+	
+				@Override
+				public void modifyText(ModifyEvent e) {
+					int height = textWidget.computeSize(SWT.DEFAULT, SWT.DEFAULT).y + 20;
+					finalGridData.minimumHeight = Math.max(MINIMUM_HEIGHT, height);
+					RuntimePlugin.revalidateLayout(composite);
+				}
+				
+			});
+		}
+		
 		embeddedXtextEditor.getDocument().addModelListener(
 				new IXtextModelListener() {
 					public void modelChanged(XtextResource resource) {
