@@ -1245,7 +1245,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (getComponentPart_MultiPart(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity"
+			 "derivation", "if (not self.cardinality.oclIsUndefined() and not self.cardinality.upperBound.oclIsUndefined()) then\nself.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity\nelse false\nendif"
 		   });				
 		addAnnotation
 		  (atomicComponentEClass, 
