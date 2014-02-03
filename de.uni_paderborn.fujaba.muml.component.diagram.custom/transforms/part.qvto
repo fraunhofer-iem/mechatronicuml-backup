@@ -13,25 +13,26 @@ main() {
 		// that will be removed after the replacement are also removed from the resource.
 		// See MUML #564
 		if(not part.componentType.oclIsUndefined()) then{
-			part.portParts->forEach(p) {
+			part.portParts->forEach(portPart) {
 				-- only delete those port parts whose port type is not contained in the current component type (see #591)
-				if (part.componentType.ports ->excludes(p.portType)) then {
+				if (part.componentType.ports ->excludes(portPart.portType)) then {
 					// also remove from coordination protocol part
 					part.parentComponent.coordinationProtocolParts->forEach(c) {
-						c.portParts := c.portParts->excluding(p); 
+						c.portParts := c.portParts->excluding(portPart); 
 					};
 					
 					// Remove all its connectors
-					var connectors : Set(Connector) := p.connectors;
+					var connectors : Set(Connector) := portPart.connectors;
 					connectors->forEach(c) {
 						c.connectorEndpoints := Set { };
 						if (c.oclIsKindOf(PortConnector)) then {
 							part.parentComponent.connectors := part.parentComponent.connectors->excluding(c.oclAsType(PortConnector));
 						} endif;
+					input.removeElement(c);
 					};
 					
 					// remove from resource
-					input.removeElement(p);
+					input.removeElement(portPart);
 				}endif;
 			};
 
