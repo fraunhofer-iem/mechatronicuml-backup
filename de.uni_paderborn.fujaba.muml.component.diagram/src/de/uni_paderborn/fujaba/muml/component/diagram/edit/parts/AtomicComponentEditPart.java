@@ -356,6 +356,11 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
+		private RectangleFigure fFigureComponentIconRectangle;
+
+		/**
+		 * @generated
+		 */
 		public ComponentFigure() {
 			this.setLayoutManager(new StackLayout());
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
@@ -369,18 +374,18 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure componentIconRectangle0 = new RectangleFigure();
+			fFigureComponentIconRectangle = new RectangleFigure();
 
-			componentIconRectangle0.setFill(false);
-			componentIconRectangle0.setOutline(false);
+			fFigureComponentIconRectangle.setFill(false);
+			fFigureComponentIconRectangle.setOutline(false);
 
-			this.add(componentIconRectangle0);
+			this.add(fFigureComponentIconRectangle);
 
-			GridLayout layoutComponentIconRectangle0 = new GridLayout();
-			layoutComponentIconRectangle0.numColumns = 1;
-			layoutComponentIconRectangle0.makeColumnsEqualWidth = false;
-			componentIconRectangle0
-					.setLayoutManager(layoutComponentIconRectangle0);
+			GridLayout layoutFFigureComponentIconRectangle = new GridLayout();
+			layoutFFigureComponentIconRectangle.numColumns = 1;
+			layoutFFigureComponentIconRectangle.makeColumnsEqualWidth = false;
+			fFigureComponentIconRectangle
+					.setLayoutManager(layoutFFigureComponentIconRectangle);
 
 			RectangleFigure componentIconFigure1 = new RectangleFigure();
 
@@ -397,7 +402,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 			constraintComponentIconFigure1.verticalSpan = 1;
 			constraintComponentIconFigure1.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure1.grabExcessVerticalSpace = false;
-			componentIconRectangle0.add(componentIconFigure1,
+			fFigureComponentIconRectangle.add(componentIconFigure1,
 					constraintComponentIconFigure1);
 
 			componentIconFigure1.setLayoutManager(new StackLayout());
@@ -446,7 +451,7 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 
 			// Process FigureRef details
 
-			componentIconRectangle0.add(componentIconFigure1);
+			fFigureComponentIconRectangle.add(componentIconFigure1);
 
 			RectangleFigure componentNameRectangle0 = new RectangleFigure();
 
@@ -485,6 +490,13 @@ public class AtomicComponentEditPart extends AbstractBorderedShapeEditPart {
 		 */
 		public WrappingLabel getFigureComponentNameFigure() {
 			return fFigureComponentNameFigure;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RectangleFigure getFigureComponentIconRectangle() {
+			return fFigureComponentIconRectangle;
 		}
 
 	}

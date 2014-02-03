@@ -375,18 +375,18 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			fFigureInnerRectContainer.add(componentFigure1);
 			componentFigure1.setLayoutManager(new StackLayout());
 
-			RectangleFigure componentIconRectangle2 = new RectangleFigure();
+			fFigureComponentIconRectangle = new RectangleFigure();
 
-			componentIconRectangle2.setFill(false);
-			componentIconRectangle2.setOutline(false);
+			fFigureComponentIconRectangle.setFill(false);
+			fFigureComponentIconRectangle.setOutline(false);
 
-			componentFigure1.add(componentIconRectangle2);
+			componentFigure1.add(fFigureComponentIconRectangle);
 
-			GridLayout layoutComponentIconRectangle2 = new GridLayout();
-			layoutComponentIconRectangle2.numColumns = 1;
-			layoutComponentIconRectangle2.makeColumnsEqualWidth = false;
-			componentIconRectangle2
-					.setLayoutManager(layoutComponentIconRectangle2);
+			GridLayout layoutFFigureComponentIconRectangle = new GridLayout();
+			layoutFFigureComponentIconRectangle.numColumns = 1;
+			layoutFFigureComponentIconRectangle.makeColumnsEqualWidth = false;
+			fFigureComponentIconRectangle
+					.setLayoutManager(layoutFFigureComponentIconRectangle);
 
 			RectangleFigure componentIconFigure3 = new RectangleFigure();
 
@@ -403,7 +403,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 			constraintComponentIconFigure3.verticalSpan = 1;
 			constraintComponentIconFigure3.grabExcessHorizontalSpace = true;
 			constraintComponentIconFigure3.grabExcessVerticalSpace = false;
-			componentIconRectangle2.add(componentIconFigure3,
+			fFigureComponentIconRectangle.add(componentIconFigure3,
 					constraintComponentIconFigure3);
 
 			componentIconFigure3.setLayoutManager(new StackLayout());
@@ -452,7 +452,7 @@ public class ComponentPartEditPart extends AbstractBorderedShapeEditPart {
 
 			// Process FigureRef details
 
-			componentIconRectangle2.add(componentIconFigure3);
+			fFigureComponentIconRectangle.add(componentIconFigure3);
 
 			RectangleFigure componentNameRectangle2 = new RectangleFigure();
 
