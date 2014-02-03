@@ -186,12 +186,12 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 		}
 
 		String lowerBoundText = "null";
-		if (cardinality != null) {
+		if (cardinality != null &&  cardinality.getLowerBound() != null) {
 			lowerBoundText = cardinality.getLowerBound().toString();
 		}
 
 		String upperBoundText = "null";
-		if (value != null) {
+		if (value != null && cardinality.getUpperBound() != null) {
 			upperBoundText = cardinality.getUpperBound().toString();
 		}
 
