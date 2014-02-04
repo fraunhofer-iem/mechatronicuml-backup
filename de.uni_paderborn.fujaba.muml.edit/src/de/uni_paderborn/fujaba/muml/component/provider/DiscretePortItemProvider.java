@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.uni_paderborn.fujaba.common.descriptor.DefaultChainedPropertyDescriptor;
 import de.uni_paderborn.fujaba.common.descriptor.IChainedPropertyDescriptor;
+import de.uni_paderborn.fujaba.muml.ItemProviderUtilities;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
@@ -470,14 +471,15 @@ public class DiscretePortItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((DiscretePort)object).getName();
+		String qualifiedName = " (" + ItemProviderUtilities.getFullyQualifiedName(object) + ")";
 		return label == null || label.length() == 0 ?
-			getString("_UI_DiscretePort_type") :
-			getString("_UI_DiscretePort_type") + " " + label;
+			getString("_UI_DiscretePort_type") + qualifiedName :
+			getString("_UI_DiscretePort_type") + " " + label + qualifiedName;
 	}
 
 	/**

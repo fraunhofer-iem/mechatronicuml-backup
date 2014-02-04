@@ -22,9 +22,11 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.storydriven.core.provider.NamedElementItemProvider;
 
+import de.uni_paderborn.fujaba.muml.ItemProviderUtilities;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Clock} object.
@@ -107,18 +109,10 @@ public class ClockItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Clock clock = (Clock) object;
-		StringBuffer buffer = new StringBuffer();
-		if (clock.getStatechart() != null && clock.getStatechart().getName() != null) {
-			buffer.append(clock.getStatechart().getName());
-			buffer.append(": ");
-		}
-		if (clock.getName() != null) {
-			buffer.append(clock.getName());
-		}
-
-		return buffer.length() == 0 ? getString("_UI_Clock_type")
-				: getString("_UI_Clock_type") + " " + buffer.toString();
+		String label = ((Clock)object).getName();
+		String qualifiedName = " (" + ItemProviderUtilities.getFullyQualifiedName(object) + ")";
+		return label == null || label.length() == 0 ?
+			getString("_UI_Clock_type") + qualifiedName: getString("_UI_Clock_type") + " " + label + qualifiedName;
 	}
 
 	/**

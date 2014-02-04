@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.muml.ItemProviderUtilities;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.connector.provider.DiscreteInteractionEndpointItemProvider;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
@@ -149,24 +150,11 @@ public class RoleItemProvider extends DiscreteInteractionEndpointItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Role role = (Role) object;
-		StringBuffer b = new StringBuffer();
-		if (role.getCoordinationProtocol() != null
-				&& role.getCoordinationProtocol().getName() != null) {
-			b.append(role.getCoordinationProtocol().getName());
-			b.append('.');
-		}
-		b.append(role.getName());
-		String label = b.toString();
-		return label == null || label.length() == 0 ? getString("_UI_Role_type")
-				: getString("_UI_Role_type") + " " + label;
-
-		// # original generated:
-		//
-		// String label = ((Role)object).getName();
-		// return label == null || label.length() == 0 ?
-		// getString("_UI_Role_type") :
-		// getString("_UI_Role_type") + " " + label;
+		 String label = ((Role)object).getName();
+		 String qualifiedName = " (" + ItemProviderUtilities.getFullyQualifiedName(object) + ")";
+		 return label == null || label.length() == 0 ?
+			 getString("_UI_Role_type") + qualifiedName:
+			 getString("_UI_Role_type") + " " + label + qualifiedName;
 	}
 
 	/**

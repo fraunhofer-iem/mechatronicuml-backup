@@ -25,6 +25,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import de.uni_paderborn.fujaba.muml.ItemProviderUtilities;
 import de.uni_paderborn.fujaba.muml.component.StaticAtomicComponent;
 
 /**
@@ -87,7 +88,7 @@ public class StaticAtomicComponentItemProvider
 	public String getText(Object object) {
 		String label = ((StaticAtomicComponent)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_StaticAtomicComponent_type") :
+			getString("_UI_StaticAtomicComponent_type"):
 			getString("_UI_StaticAtomicComponent_type") + " " + label;
 	}
 

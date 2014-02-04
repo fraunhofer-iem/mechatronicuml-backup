@@ -23,6 +23,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import de.uni_paderborn.fujaba.muml.ItemProviderUtilities;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartFactory;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
@@ -419,14 +420,15 @@ public class StateItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((State)object).getName();
+		String qualifiedName = " (" + ItemProviderUtilities.getFullyQualifiedName(object) + ")";
 		return label == null || label.length() == 0 ?
-			getString("_UI_State_type") :
-			getString("_UI_State_type") + " " + label;
+			getString("_UI_State_type") + qualifiedName :
+			getString("_UI_State_type") + " " + label + qualifiedName;
 	}
 
 	/**
