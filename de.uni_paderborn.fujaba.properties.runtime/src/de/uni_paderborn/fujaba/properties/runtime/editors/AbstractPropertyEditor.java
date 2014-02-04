@@ -35,12 +35,12 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	protected FocusListener focusListener = new FocusAdapter() {
 		public void focusGained(org.eclipse.swt.events.FocusEvent e) {
-			   // Write to status bar
-//			   IActionBars bars = getViewSite().getActionBars();
-//			   bars.getStatusLineManager().setMessage("Hello");
+			// Write to status bar
+			// IActionBars bars = getViewSite().getActionBars();
+			// bars.getStatusLineManager().setMessage("Hello");
 		};
 	};
-	
+
 	public AbstractPropertyEditor(AdapterFactory adapterFactory) {
 		if (adapterFactory == null) {
 			adapterFactory = RuntimePlugin.DEFAULT_ADAPTER_FACTORY;
@@ -161,19 +161,29 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 	public void setTooltipMessage(String message) {
 		this.tooltipMessage = message;
 	}
-	
+
 	protected void installTooltip() {
 		for (Control control : getControls()) {
-			installTooltip(control);
+			if (control != null) { // elements can be null, see javadoc of getControls()
+				installTooltip(control);
+			}
 		}
 	}
-	
+
 	protected void installTooltip(Control control) {
 		control.setToolTipText(tooltipMessage);
 		control.removeFocusListener(focusListener);
 		control.addFocusListener(focusListener);
 	}
-	
+
+	/**
+	 * Returns the GUI elements that this editor consists of. They are used to
+	 * call setVisible() on them, or to set a tooltip. Elements in this list are
+	 * allowed to be null. The caller of this method is responsible for null
+	 * checks.
+	 * 
+	 * @return the gui control elements of this editor.
+	 */
 	protected abstract Collection<Control> getControls();
 
 }
