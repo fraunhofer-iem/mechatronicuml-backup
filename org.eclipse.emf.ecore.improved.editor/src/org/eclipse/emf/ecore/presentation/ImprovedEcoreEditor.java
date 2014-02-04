@@ -125,12 +125,14 @@ public class ImprovedEcoreEditor extends
 	protected InheritanceContentProvider inheritanceContentProvider;
 
 	// actions
+	protected Action actionMarkAbstract;
 	protected Action actionShowAnnotations;
 	protected Action actionSort;
 	protected Action actionMarkDerived;
 	protected Action actionInheritanceNone;
 	protected Action actionInheritanceFeatures;
 	protected Action actionInheritanceHierarchy;
+	protected Action actionExpandAll;
 
 	private ToolBarManager toolBarManager;
 
@@ -320,14 +322,18 @@ public class ImprovedEcoreEditor extends
 
 		if (!filterText.isEmpty()) {
 			inheritanceContentProvider.setInheritanceMode(InheritanceMode.NONE);
+			actionExpandAll.setEnabled(true);
 		} else {
+			InheritanceMode mode = InheritanceMode.NONE;
 			if (actionInheritanceNone.isChecked()) {
-				inheritanceContentProvider.setInheritanceMode(InheritanceMode.NONE);
+				mode = InheritanceMode.NONE;
 			} else if (actionInheritanceFeatures.isChecked()) {
-				inheritanceContentProvider.setInheritanceMode(InheritanceMode.FEATURES);
+				mode = InheritanceMode.FEATURES;
 			} else if (actionInheritanceHierarchy.isChecked()) {
-				inheritanceContentProvider.setInheritanceMode(InheritanceMode.HIERARCHY);
+				mode = InheritanceMode.HIERARCHY;
 			}
+			inheritanceContentProvider.setInheritanceMode(mode);
+			actionExpandAll.setEnabled(mode != InheritanceMode.HIERARCHY);
 		}		
 		
 		searchViewerFilter.setFilterText(filterText);
@@ -338,12 +344,21 @@ public class ImprovedEcoreEditor extends
 	}
 
 	protected void initializeToolBarManager(ToolBarManager toolBarManager) {
+		// Mark abstract classes
+		actionMarkAbstract = new Action("Mark abstract classes (italics font)", Action.AS_CHECK_BOX) {
+			@Override
+			public void run() {
+				setMarkAbstractClasses(isChecked());
+			}
+		};
+		actionMarkAbstract.setImageDescriptor(ImprovedEcoreEditorPlugin
+				.getImageDescriptor("icons/abstract.gif"));
+		
 		// Show Annotations
 		actionShowAnnotations = new Action("Show Annotations", Action.AS_CHECK_BOX) {
 			@Override
 			public void run() {
 				setShowAnnotations(isChecked());
-
 			}
 		};
 		actionShowAnnotations.setImageDescriptor(ImprovedEcoreEditorPlugin
@@ -373,7 +388,7 @@ public class ImprovedEcoreEditor extends
 				.getImageDescriptor("icons/derived.gif"));
 
 		// Inheritance: NONE
-		actionInheritanceNone = new Action("No additional inheritance",
+		actionInheritanceNone = new Action("No additional inheritance information",
 				Action.AS_RADIO_BUTTON) {
 			@Override
 			public void run() {
@@ -412,7 +427,7 @@ public class ImprovedEcoreEditor extends
 				.getImageDescriptor("icons/hierarchy.gif"));
 
 		// Expand all
-		Action actionExpandAll = new Action("Expand All",
+		actionExpandAll = new Action("Expand All",
 				ImprovedEcoreEditorPlugin
 						.getImageDescriptor("icons/expandall.gif")) {
 			@Override
@@ -432,7 +447,7 @@ public class ImprovedEcoreEditor extends
 		};
 
 		// add to toolbar manager
-		// toolBarManager.add(actionExpandAll);
+		toolBarManager.add(actionExpandAll);
 		toolBarManager.add(actionCollapseAll);
 		toolBarManager.add(new Separator());
 		toolBarManager.add(actionShowAnnotations);
@@ -442,7 +457,9 @@ public class ImprovedEcoreEditor extends
 		toolBarManager.add(actionInheritanceHierarchy);
 		toolBarManager.add(new Separator());
 		toolBarManager.add(actionMarkDerived);
+		toolBarManager.add(actionMarkAbstract);
 		toolBarManager.add(actionSort);
+
 
 		// Read preferences
 		setShowAnnotations(Boolean.parseBoolean(ImprovedEcoreEditorPlugin
@@ -454,7 +471,10 @@ public class ImprovedEcoreEditor extends
 		setInheritanceMode(InheritanceMode.valueOf(ImprovedEcoreEditorPlugin
 				.getPreferencesValue("inheritanceMode",
 						InheritanceMode.NONE.toString())));
-
+		setMarkAbstractClasses(Boolean.parseBoolean(ImprovedEcoreEditorPlugin
+				.getPreferencesValue("markAbstractClasses", Boolean.FALSE.toString())));
+		
+		
 		toolBarManager.update(true);
 
 	}
@@ -502,7 +522,7 @@ public class ImprovedEcoreEditor extends
 		public Font getFont(Object object) {
 			if (object instanceof EClass) {
 				EClass eClass = (EClass) object;
-				if (eClass.isAbstract()) {
+				if (eClass.isAbstract() && actionMarkAbstract != null && actionMarkAbstract.isChecked()) {
 					return fontItalic;
 				}
 			}
@@ -610,6 +630,20 @@ public class ImprovedEcoreEditor extends
 		ImprovedEcoreEditorPlugin.setPreferencesValue("sort",
 				Boolean.valueOf(active).toString());
 	}
+
+	protected void setMarkAbstractClasses(boolean show) {
+		if (actionMarkAbstract.isChecked() != show) {
+			actionMarkAbstract.setChecked(show);
+		}
+
+		selectionViewer.refresh();
+
+		// Set preference
+		ImprovedEcoreEditorPlugin.setPreferencesValue("markAbstractClasses",
+				Boolean.valueOf(show).toString());
+	}
+	
+	
 	protected void setShowAnnotations(boolean show) {
 		if (actionShowAnnotations.isChecked() != show) {
 			actionShowAnnotations.setChecked(show);
@@ -643,6 +677,8 @@ public class ImprovedEcoreEditor extends
 			actionInheritanceHierarchy.setChecked(true);
 			break;
 		}
+		
+		actionExpandAll.setEnabled(mode != InheritanceMode.HIERARCHY);
 
 		inheritanceContentProvider.setInheritanceMode(mode);
 		selectionViewer.refresh();
