@@ -28,9 +28,13 @@ import org.storydriven.core.expressions.common.CommonExpressionsFactory;
 import org.storydriven.core.provider.ExtendableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.SynchronizationKind;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Transition;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Synchronization} object.
@@ -78,11 +82,11 @@ public class SynchronizationItemProvider
 	 * This adds a property descriptor for the Sync Channel feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSyncChannelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Synchronization_syncChannel_feature"),
@@ -93,7 +97,32 @@ public class SynchronizationItemProvider
 				 true,
 				 null,
 				 null,
-				 null));
+				 null)
+		{
+			@Override
+			public Collection<?> getChoiceOfValues(Object object) {
+				Synchronization synchronization = (Synchronization) object;
+				if (synchronization.eContainer() instanceof Transition) {
+					Transition transition = (Transition) synchronization.eContainer();
+					RealtimeStatechart statechart = transition.getStatechart();
+					
+					Region region = null;
+					if (statechart != null) {
+						region = statechart.getParentRegion();
+					}
+					
+					State state = null;
+					if (region != null) {
+						state = region.getParentState();
+					}
+					
+					if (state != null) {
+						return state.getAllAvailableChannels();
+					}
+				}
+				return super.getChoiceOfValues(object);
+			}	
+		});
 	}
 
 	/**
