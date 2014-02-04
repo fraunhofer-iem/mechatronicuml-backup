@@ -148,7 +148,7 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	protected void doSetVisible(boolean visible) {
 		for (Control control : getControls()) {
-			if (control != null && !control.isDisposed()) {
+			if (control != null && !control.isDisposed()) { // elements can be null, see javadoc of getControls()
 				control.setVisible(visible);
 				if (control.getLayoutData() instanceof GridData) {
 					((GridData) control.getLayoutData()).exclude = !visible;
@@ -164,7 +164,7 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	protected void installTooltip() {
 		for (Control control : getControls()) {
-			if (control != null) { // elements can be null, see javadoc of getControls()
+			if (control != null && !control.isDisposed()) { // elements can be null, see javadoc of getControls()
 				installTooltip(control);
 			}
 		}
@@ -178,9 +178,12 @@ public abstract class AbstractPropertyEditor implements IPropertyEditor {
 
 	/**
 	 * Returns the GUI elements that this editor consists of. They are used to
-	 * call setVisible() on them, or to set a tooltip. Elements in this list are
-	 * allowed to be null. The caller of this method is responsible for null
-	 * checks.
+	 * call setVisible() on them, or to set a tooltip.
+	 * 
+	 * <b>
+	 * Elements in this list are allowed to be null.
+	 * The caller of this method is responsible for null checks.
+	 * </b>
 	 * 
 	 * @return the gui control elements of this editor.
 	 */
