@@ -72,7 +72,8 @@ public class ImprovedEcoreEditor extends
 	}
 	// END Tabbed Properties	
 	
-
+	
+	
 	protected static final String DEFAULT_SEARCH_TEXT = "<Enter search term here>";
 	public static final long FILTER_TIMEOUT = 350;
 	protected TreeViewerSearchFilter searchViewerFilter;
