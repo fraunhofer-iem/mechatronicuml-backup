@@ -71,11 +71,7 @@ public class EcoreWalker {
 				projects.add(new String[] { "de.uni_paderborn.fujaba.muml", "/model/muml.ecore" });
 				projects.add(new String[] { "de.uni_paderborn.fujaba.muml.actionlanguage",
 						"/model/actionlanguage.ecore" });
-				projects.add(new String[] { "de.uni_paderborn.fujaba.muml.reconfiguration",
-						"/model/MumlReconfiguration.ecore" });
-				projects.add(new String[] { "de.uni_paderborn.fujaba.muml.componentstorydiagram",
-						"/model/ComponentStoryDiagram.ecore" });
-			//	projects.add(new String[] {"de.uni_paderborn.fujaba.muml.hardware","/model/hardware.ecore"});
+				projects.add(new String[] {"de.uni_paderborn.fujaba.muml.hardware","/model/hardware.ecore"});
 
 				for (String[] path : projects) {
 					try {

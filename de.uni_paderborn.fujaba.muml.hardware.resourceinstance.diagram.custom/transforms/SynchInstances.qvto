@@ -40,7 +40,7 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 	input.rootObjects()[StructuredResourceInstance]->forEach(sri){
 		log("Initialize the StructuredResourceInstance for" +sri.eClass().name +", Name:" +sri.name);
 			sri.isResourceTypeSet();
-			sri.name:=sri.resourceType.name;
+			//sri.name:=sri.resourceType.name;
 			sri.embeddedAtomicResourceInstances+=sri.synchEmbeddedAtomicResourceInstances();
 			sri.hwportInstances+=sri.synchHWPortInstances();
 	};
@@ -50,7 +50,7 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 		log("Initialize the DeviceInstance for" +di.eClass().name +", Name:" +di.name);
 		di.isResourceTypeSet();
 		if(di.resourceType.oclIsTypeOf(ResourceTypePackage::Device) and di.resourceType.oclAsType(ResourceTypePackage::Device).deviceType=ResourceTypePackage::DeviceKind::SENSOR) then{
-		di.name:=di.resourceType.name;
+		//di.name:=di.resourceType.name;
 		di.hwportInstances+=di.synchHWPortInstances();
 		}
 		endif;

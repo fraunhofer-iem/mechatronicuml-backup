@@ -536,9 +536,9 @@
         <details key="constraints" value="CheckResourceType AllAtomicResourceTypesAreInitialized AllHWPortsAreInitialized"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="AllAtomicResourceTypesAreInitialized" value="self.resourceType.oclAsType(resourcetype::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(platform::AtomicResourceInstance).resourceType = atomicResourceType))&#xA;"/>
+        <details key="AllAtomicResourceTypesAreInitialized" value="if(self.resourceType.oclIsUndefined()) then&#xA;&#x9;true&#xA;else &#xA;&#x9;self.resourceType.oclAsType(resourcetype::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(platform::AtomicResourceInstance).resourceType = atomicResourceType))&#xA;endif"/>
         <details key="CheckResourceType" value="self.resourceType.oclIsKindOf(resourcetype::StructuredResource)"/>
-        <details key="AllHWPortsAreInitialized" value="self.resourceType.oclAsType(resourcetype::StructuredResource).hwports->forAll(hwport | self.hwportInstances->exists(hwportInstance | hwportInstance.oclAsType(platform::HWPortInstance).hwportType = hwport))&#xA;"/>
+        <details key="AllHWPortsAreInitialized" value="let hardwareports:Set(resourcetype::HWPort) = self.resourceType.oclAsType(resourcetype::StructuredResource).hwports in&#xA;let hardwareportinstances:Set(platform::HWPortInstance) = self.hwportInstances in&#xA; if (self.resourceType.oclIsUndefined()) then&#xA;&#x9;true&#xA;else&#xA;hardwareports->select(port|port.oclAsType(resourcetype::HWPort).cardinality.lowerBound.value>=1)->forAll(hwport | self.hwportInstances->exists(hwportInstance | hwportInstance.oclAsType(platform::HWPortInstance).hwportType = hwport))&#xA;endif"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a structured resource at instance level.&#xA;A StructuredResourceInstance is  derived from its resourcetype.&#xA;The embedded AtomicResourceInstances of this StructuredResourceInstance are derived from its type."/>

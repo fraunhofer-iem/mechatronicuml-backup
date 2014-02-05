@@ -540,8 +540,11 @@ public class PlatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_RESOURCE_INSTANCE__ALL_ATOMIC_RESOURCE_TYPES_ARE_INITIALIZED__EEXPRESSION = "self.resourceType.oclAsType(resourcetype::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(platform::AtomicResourceInstance).resourceType = atomicResourceType))\n" +
-		"";
+	protected static final String STRUCTURED_RESOURCE_INSTANCE__ALL_ATOMIC_RESOURCE_TYPES_ARE_INITIALIZED__EEXPRESSION = "if(self.resourceType.oclIsUndefined()) then\n" +
+		"\ttrue\n" +
+		"else \n" +
+		"\tself.resourceType.oclAsType(resourcetype::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(platform::AtomicResourceInstance).resourceType = atomicResourceType))\n" +
+		"endif";
 
 	/**
 	 * Validates the AllAtomicResourceTypesAreInitialized constraint of '<em>Structured Resource Instance</em>'.
@@ -570,8 +573,13 @@ public class PlatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_RESOURCE_INSTANCE__ALL_HW_PORTS_ARE_INITIALIZED__EEXPRESSION = "self.resourceType.oclAsType(resourcetype::StructuredResource).hwports->forAll(hwport | self.hwportInstances->exists(hwportInstance | hwportInstance.oclAsType(platform::HWPortInstance).hwportType = hwport))\n" +
-		"";
+	protected static final String STRUCTURED_RESOURCE_INSTANCE__ALL_HW_PORTS_ARE_INITIALIZED__EEXPRESSION = "let hardwareports:Set(resourcetype::HWPort) = self.resourceType.oclAsType(resourcetype::StructuredResource).hwports in\n" +
+		"let hardwareportinstances:Set(platform::HWPortInstance) = self.hwportInstances in\n" +
+		" if (self.resourceType.oclIsUndefined()) then\n" +
+		"\ttrue\n" +
+		"else\n" +
+		"hardwareports->select(port|port.oclAsType(resourcetype::HWPort).cardinality.lowerBound.value>=1)->forAll(hwport | self.hwportInstances->exists(hwportInstance | hwportInstance.oclAsType(platform::HWPortInstance).hwportType = hwport))\n" +
+		"endif";
 
 	/**
 	 * Validates the AllHWPortsAreInitialized constraint of '<em>Structured Resource Instance</em>'.

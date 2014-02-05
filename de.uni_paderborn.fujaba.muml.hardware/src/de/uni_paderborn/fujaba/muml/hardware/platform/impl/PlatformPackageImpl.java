@@ -2017,9 +2017,9 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		  (structuredResourceInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "AllAtomicResourceTypesAreInitialized", "self.resourceType.oclAsType(resourcetype::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(platform::AtomicResourceInstance).resourceType = atomicResourceType))\n",
+			 "AllAtomicResourceTypesAreInitialized", "if(self.resourceType.oclIsUndefined()) then\n\ttrue\nelse \n\tself.resourceType.oclAsType(resourcetype::StructuredResource).embeddedAtomicResources->forAll(atomicResourceType | self.embeddedAtomicResourceInstances->exists(atomicResourceInstance | atomicResourceInstance.oclAsType(platform::AtomicResourceInstance).resourceType = atomicResourceType))\nendif",
 			 "CheckResourceType", "self.resourceType.oclIsKindOf(resourcetype::StructuredResource)",
-			 "AllHWPortsAreInitialized", "self.resourceType.oclAsType(resourcetype::StructuredResource).hwports->forAll(hwport | self.hwportInstances->exists(hwportInstance | hwportInstance.oclAsType(platform::HWPortInstance).hwportType = hwport))\n"
+			 "AllHWPortsAreInitialized", "let hardwareports:Set(resourcetype::HWPort) = self.resourceType.oclAsType(resourcetype::StructuredResource).hwports in\nlet hardwareportinstances:Set(platform::HWPortInstance) = self.hwportInstances in\n if (self.resourceType.oclIsUndefined()) then\n\ttrue\nelse\nhardwareports->select(port|port.oclAsType(resourcetype::HWPort).cardinality.lowerBound.value>=1)->forAll(hwport | self.hwportInstances->exists(hwportInstance | hwportInstance.oclAsType(platform::HWPortInstance).hwportType = hwport))\nendif"
 		   });							
 		addAnnotation
 		  (busEClass, 
