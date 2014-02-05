@@ -322,19 +322,13 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 				.getType(de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart.VISUAL_ID));
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	public class FadingComponentFigure extends RectangleFigure {
 
-		/**
-		 * @generated
-		 */
+		
 		private WrappingLabel fFigureComponentNameFigure;
 
-		/**
-		 * @generated
-		 */
+		
 		public FadingComponentFigure() {
 			this.setLayoutManager(new StackLayout());
 			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
@@ -343,9 +337,7 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 			createContents();
 		}
 
-		/**
-		 * @generated
-		 */
+		
 		private void createContents() {
 
 			RectangleFigure componentIconRectangle0 = new RectangleFigure();
@@ -515,12 +507,11 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 
 		}
 
-		/**
-		 * @generated
-		 */
+		
 		public WrappingLabel getFigureComponentNameFigure() {
 			return fFigureComponentNameFigure;
 		}
+	
 
 	}
 

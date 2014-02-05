@@ -11,8 +11,10 @@ import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPolicies
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvider;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
+import de.uni_paderborn.fujaba.muml.component.ComponentPart;
 import de.uni_paderborn.fujaba.muml.component.PortPart;
 import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.parts.CustomPortPartEditPart;
+import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ComponentPartEditPart;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.ModelElementCategoryEditPart;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomModelElementCategoryCanonicalEditPolicy;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomModelElementCategoryItemSemanticEditPolicy;
@@ -36,6 +38,12 @@ public class ReconfigurationEditPolicyProvider extends AbstractProvider
 						de.uni_paderborn.fujaba.muml.common.edit.policies.EditPolicyRoles.PORT_VISUALIZATION_ROLE,
 						new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.CustomPortPartEditPolicy());
 			}
+
+			if (element instanceof ComponentPart) {
+				ep.installEditPolicy(
+						"ComponentPartIconRole",
+						new de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.policies.ComponentPartIconEditPolicy());
+			}
 		}
 	}
 
@@ -49,9 +57,16 @@ public class ReconfigurationEditPolicyProvider extends AbstractProvider
 						.resolveSemanticElement();
 				return element instanceof ModelElementCategory;
 			}
-			if (ep instanceof CustomPortPartEditPart){
-				EObject element = ((IGraphicalEditPart) ep).resolveSemanticElement();
+			if (ep instanceof CustomPortPartEditPart) {
+				EObject element = ((IGraphicalEditPart) ep)
+						.resolveSemanticElement();
 				return element instanceof PortPart;
+			}
+
+			if (ep instanceof ComponentPartEditPart) {
+				EObject element = ((IGraphicalEditPart) ep)
+						.resolveSemanticElement();
+				return element instanceof ComponentPart;
 			}
 		}
 		return false;
