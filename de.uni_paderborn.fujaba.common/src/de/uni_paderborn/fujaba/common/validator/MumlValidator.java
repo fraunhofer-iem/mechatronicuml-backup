@@ -16,29 +16,10 @@ public class MumlValidator extends EObjectValidator {
 			Map<Object, Object> context, String constraint, int severity,
 			String source, int code) {
 
-		String message = "";
 		
 		// Try to create message by using the comment in the OCL.
 		String ocl = getOCL(eClass, constraint);
-		if (ocl != null) {
-			ocl = ocl.trim();
-
-			StringBuilder builder = new StringBuilder();
-			
-			
-			for (String line : ocl.split("\n")) {
-				line = line.trim();
-				if (line.startsWith("--")) {
-					line = line.substring(2).trim();
-					if (line.length() > 0) {
-						builder.append(line);
-						builder.append('\n');
-					}
-				}
-				break;
-			}
-			message = builder.toString();
-		}
+		String message = getErrorMessage(ocl);
 		
 		// If we have no message, create one by using the constraint name.
 		if (message.length() == 0) {
@@ -58,6 +39,36 @@ public class MumlValidator extends EObjectValidator {
 		
 //		super.reportConstraintDelegateViolation(eClass, eObject, diagnostics,
 //				context, constraint, severity, source, code);
+	}
+
+	/**
+	 * Finds the error message that is provided as comment in the ocl code.
+	 * @param ocl The ocl code.
+	 * @return The error message, or an empty string; never null.
+	 */
+	public static String getErrorMessage(String ocl) {
+		String message = "";
+
+		if (ocl != null) {
+			ocl = ocl.trim();
+
+			StringBuilder builder = new StringBuilder();
+			
+			
+			for (String line : ocl.split("\n")) {
+				line = line.trim();
+				if (line.startsWith("--")) {
+					line = line.substring(2).trim();
+					if (line.length() > 0) {
+						builder.append(line);
+						builder.append('\n');
+					}
+				}
+				break;
+			}
+			message = builder.toString();
+		}
+		return message;
 	}
 
 	private static String getOCL(EClass eClass, String name) {
