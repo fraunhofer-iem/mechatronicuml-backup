@@ -43,6 +43,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.storydriven.core.CorePackage;
 
+import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.tests.resource.IResourceVisitor;
 import de.uni_paderborn.fujaba.muml.tests.resource.ProblemCollector;
 
@@ -147,6 +148,8 @@ public class MetamodelOCLTest extends TraverseTest {
 		return contents;
 	}
 	
+	int numMissingMessages = 0;
+
 
 	/**
 	 * Tests, if all OCL constraints are evaluating to either true or false (not
@@ -155,8 +158,10 @@ public class MetamodelOCLTest extends TraverseTest {
 	@Test
 	public void validOclConstraints() {
 		final ProblemCollector problems = new ProblemCollector();
+		numMissingMessages = 0;
 
 		for (EPackage p : packages) {
+
 			accept(p, new IResourceVisitor() {
 				@Override
 				public boolean visit(EObject element) {
@@ -185,6 +190,7 @@ public class MetamodelOCLTest extends TraverseTest {
 								}
 							}
 						}
+
 						// Evaluate active constraints
 						for (String constraintName : activatedConstraints) {
 							if (!constraints.containsKey(constraintName)) {
@@ -196,6 +202,14 @@ public class MetamodelOCLTest extends TraverseTest {
 							}
 							String constraintOCL = constraints
 									.get(constraintName);
+							
+							// Check for valid error message in the OCL
+							if (MumlValidator.getErrorMessage(constraintOCL).isEmpty()) {
+								problems.add("ERROR: " + eClass.getEPackage().getName() + "." + eClass.getName() + "."
+										+ constraintName + ": " + "No valid error message provided!");
+								numMissingMessages++;
+							}
+							
 							try {
 								EClass clazz = eClass;
 								if (eClass.isAbstract()) {
@@ -221,6 +235,7 @@ public class MetamodelOCLTest extends TraverseTest {
 										+ e.getLocalizedMessage());
 							}
 						}
+						
 						return false;
 					}
 					return true;
@@ -228,6 +243,8 @@ public class MetamodelOCLTest extends TraverseTest {
 
 			});
 		}
+		problems.add(0, "INFO: number of missing messages: " + numMissingMessages);
+	
 		problems.fail();
 	}
 
