@@ -37,7 +37,7 @@ public class PlatformInstanceWizard extends Wizard implements INewWizard {
 			HWPlatformInstanceConfiguration selectedElement, TransactionalEditingDomain editingDomain) {
 		super();
 		model = new WizardModel();
-		model.setSelectedHWPlatformInstanceConfiguration( selectedElement);
+		model.setSelectedHWPlatformInstanceConfiguration(selectedElement);
 		this.editingDomain=editingDomain;
 	}
 

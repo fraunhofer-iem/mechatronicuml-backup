@@ -2,7 +2,8 @@ package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.wi
 
 
 
-import org.eclipse.m2m.internal.qvt.oml.stdlib.DictionaryImpl;
+import org.eclipse.m2m.qvt.oml.util.Dictionary;
+import org.eclipse.m2m.qvt.oml.util.Utils;
 
 import de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstanceConfiguration;
@@ -13,7 +14,7 @@ public class WizardModel {
 	
 	private HWPlatform selectedHWPlatform;
 	
-	private DictionaryImpl<String, Integer> configuration;
+	private Dictionary<String, Integer> configuration;
 	
 	private boolean isHWPlatformSet;
 	
@@ -21,7 +22,7 @@ public class WizardModel {
 		selectedHWPlatform=null;
 		selectedHWPlatformInstanceConfiguration=null;
 		isHWPlatformSet=false;
-		configuration= new DictionaryImpl<String, Integer>(); 
+		configuration= Utils.createDictionary(); 
 	}
 
 	public HWPlatformInstanceConfiguration getSelectedHWPlatformInstanceConfiguration() {
@@ -42,7 +43,7 @@ public class WizardModel {
 		this.isHWPlatformSet=true;
 	}
 
-	public DictionaryImpl<String, Integer> getConfiguration() {
+	public Dictionary<String, Integer> getConfiguration() {
 		return configuration;
 	}
 

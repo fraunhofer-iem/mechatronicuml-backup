@@ -1,7 +1,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.wizard;
 
 import org.eclipse.jface.wizard.WizardPage;
-import org.eclipse.m2m.internal.qvt.oml.stdlib.DictionaryImpl;
+import org.eclipse.m2m.qvt.oml.util.Dictionary;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.TableEditor;
@@ -101,12 +101,15 @@ public class ConfigurePage extends WizardPage implements Listener {
 
 				editor = new TableEditor(table);
 				CCombo combo = new CCombo(table, SWT.NONE);
-				combo.setText("Times");
+			//	combo.setText("Times");
 				combos[i] = combo;
 				for (long j = currentPart.getCardinality().getLowerBound()
 						.getValue(); j <= currentPart.getCardinality()
 						.getUpperBound().getValue(); j++) {
 					combo.add(Long.toString(j));
+				}
+				if(combo.getItemCount()>0){
+					combo.select(0);
 				}
 
 				editor.grabHorizontal = true;
@@ -120,7 +123,7 @@ public class ConfigurePage extends WizardPage implements Listener {
 	protected void saveDataToModel() {
 		PlatformInstanceWizard wizard = (PlatformInstanceWizard) getWizard();
 		WizardModel model = wizard.getModel();
-		DictionaryImpl<String, Integer> config = model.getConfiguration();
+		Dictionary<String, Integer> config = model.getConfiguration();
 		TableItem[] items = table.getItems();
 		HWPlatform selectedHWPlatform = model.getSelectedHWPlatform();
 		PlatformPart currentPart;

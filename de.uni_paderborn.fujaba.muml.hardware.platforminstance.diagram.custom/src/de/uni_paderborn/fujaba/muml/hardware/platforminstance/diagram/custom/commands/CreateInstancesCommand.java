@@ -3,12 +3,12 @@ package de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.custom.co
 import java.util.Collections;
 
 import org.eclipse.emf.edit.command.ChangeCommand;
-import org.eclipse.m2m.internal.qvt.oml.stdlib.DictionaryImpl;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
 import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
+import org.eclipse.m2m.qvt.oml.util.Dictionary;
 
 import de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform;
 import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
@@ -25,9 +25,9 @@ public class CreateInstancesCommand extends ChangeCommand {
 
 	private HWPlatformInstanceConfiguration hwPlatformInstanceConfiguration;
 	private HWPlatform hwPlatform;
-	private DictionaryImpl<String, Integer> config;
+	private Dictionary<String, Integer> config;
 
-	public CreateInstancesCommand(HWPlatformInstanceConfiguration instance,HWPlatform platform, DictionaryImpl<String,Integer> config) {
+	public CreateInstancesCommand(HWPlatformInstanceConfiguration instance,HWPlatform platform, Dictionary<String,Integer> config) {
 		super(instance);
 		this.hwPlatformInstanceConfiguration = instance;
 		this.hwPlatform=platform;
