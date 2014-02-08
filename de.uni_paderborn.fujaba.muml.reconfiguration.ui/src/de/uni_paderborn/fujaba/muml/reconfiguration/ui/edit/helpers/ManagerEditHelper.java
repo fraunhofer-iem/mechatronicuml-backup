@@ -12,9 +12,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.helpers;
 
-/**
- * @generated
- */
+
 public class ManagerEditHelper
 		extends
 		de.uni_paderborn.fujaba.muml.component.diagram.edit.helpers.MumlBaseEditHelper {

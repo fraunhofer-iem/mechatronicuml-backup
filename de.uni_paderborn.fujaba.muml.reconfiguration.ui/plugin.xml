@@ -326,16 +326,6 @@
           </metamodel>
        </extension>
        <extension
-             id="element-types-bindings"
-             point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
-          <binding
-                context="de.uni_paderborn.fujaba.muml.component.diagram.TypeContext">
-             <elementType
-                   ref="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurableStructuredComponent_2076">
-             </elementType>
-          </binding>
-       </extension>
-       <extension
              point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
           <editor
                 editorId="de.uni_paderborn.fujaba.muml.component.diagram.part.ComponentDiagramEditorID"
@@ -351,6 +341,14 @@
              <topLevelNode
                    domainElement="ReconfigurableStructuredComponent"
                    semanticHint="2076">
+             </topLevelNode>
+             <topLevelNode
+                   domainElement="FadingComponent"
+                   semanticHint="2079">
+             </topLevelNode>
+             <topLevelNode
+                   domainElement="ReconfigurableAtomicComponent"
+                   semanticHint="2078">
              </topLevelNode>
           </editor>
        </extension>

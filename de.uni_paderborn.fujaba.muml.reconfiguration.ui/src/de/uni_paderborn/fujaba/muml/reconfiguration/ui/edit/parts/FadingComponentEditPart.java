@@ -42,36 +42,24 @@ import org.eclipse.swt.graphics.LineAttributes;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
 
-/**
- * @generated
- */
+
 public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 
-	/**
-	 * @generated
-	 */
+	
 	public static final int VISUAL_ID = 2079;
 
-	/**
-	 * @generated
-	 */
+	
 	protected IFigure contentPane;
 
-	/**
-	 * @generated
-	 */
+	
 	protected IFigure primaryShape;
 
-	/**
-	 * @generated
-	 */
+	
 	public FadingComponentEditPart(View view) {
 		super(view);
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected void createDefaultEditPolicies() {
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
@@ -104,9 +92,7 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
@@ -136,23 +122,17 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 		return lep;
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected IFigure createNodeShape() {
 		return primaryShape = new FadingComponentFigure();
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	public FadingComponentFigure getPrimaryShape() {
 		return (FadingComponentFigure) primaryShape;
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart) {
 			((de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart) childEditPart)
@@ -173,9 +153,7 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 		return false;
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.AtomicComponentNameEditPart) {
 			return true;
@@ -192,9 +170,7 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 		return false;
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected void addChildVisual(EditPart childEditPart, int index) {
 		if (addFixedChild(childEditPart)) {
 			return;
@@ -202,9 +178,7 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 		super.addChildVisual(childEditPart, -1);
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected void removeChildVisual(EditPart childEditPart) {
 		if (removeFixedChild(childEditPart)) {
 			return;
@@ -212,9 +186,7 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 		super.removeChildVisual(childEditPart);
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
@@ -222,9 +194,7 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 		return getContentPane();
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(130, 47);
 
@@ -234,14 +204,7 @@ public class FadingComponentEditPart extends AbstractBorderedShapeEditPart {
 		return result;
 	}
 
-	/**
-	 * Creates figure for this edit part.
-	 * 
-	 * Body of this method does not depend on settings in generation model so
-	 * you may safely remove <i>generated</i> tag and modify it.
-	 * 
-	 * @generated
-	 */
+	
 	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());

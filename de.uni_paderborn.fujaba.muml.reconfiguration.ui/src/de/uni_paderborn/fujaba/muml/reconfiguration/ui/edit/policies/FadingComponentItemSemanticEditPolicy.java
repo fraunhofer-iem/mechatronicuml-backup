@@ -14,38 +14,29 @@ import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
-/**
- * @generated
- */
 public class FadingComponentItemSemanticEditPolicy
 		extends
 		de.uni_paderborn.fujaba.muml.component.diagram.edit.policies.MumlBaseItemSemanticEditPolicy {
 
-	/**
-	 * @generated
-	 */
 	public FadingComponentItemSemanticEditPolicy() {
 		super(
 				de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.StaticAtomicComponent_2006);
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected Command getCreateCommand(CreateElementRequest req) {
 		
 		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011 == req
 				.getElementType()) {
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.ContinuousPortCreateCommand(
 					req));
+			
 		}
 		
 		return super.getCreateCommand(req);
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
@@ -64,9 +55,7 @@ public class FadingComponentItemSemanticEditPolicy
 		return getGEFWrapper(cmd.reduce());
 	}
 
-	/**
-	 * @generated
-	 */
+	
 	private void addDestroyChildNodesCommand(ICompositeCommand cmd) {
 		View view = (View) getHost().getModel();
 		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {

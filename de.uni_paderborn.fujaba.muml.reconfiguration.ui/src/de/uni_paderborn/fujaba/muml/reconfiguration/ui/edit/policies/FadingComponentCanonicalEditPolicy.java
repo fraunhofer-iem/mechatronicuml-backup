@@ -106,7 +106,7 @@ public class FadingComponentCanonicalEditPolicy extends
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.reconfiguration.ui.part.ReconfigurationDiagramUpdater
-				.getReconfigurableAtomicComponent_2078SemanticChildren(viewObject);
+				.getFadingComponent_2079SemanticChildren(viewObject);
 
 	}
 
