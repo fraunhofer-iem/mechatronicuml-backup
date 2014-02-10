@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.component.util.ComponentValidator;
 import de.uni_paderborn.fujaba.muml.connector.util.ConnectorValidator;
+import de.uni_paderborn.fujaba.muml.reconfiguration.*;
 import de.uni_paderborn.fujaba.muml.reconfiguration.Controller;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecification;
 import de.uni_paderborn.fujaba.muml.reconfiguration.ExecutionTimingSpecificationSinglePhase;
@@ -209,6 +210,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(reconfigurableStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniqueComponentNames(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_StructuredComponentAllowsNoHybridPorts(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_ValidComponentType(reconfigurableStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateStructuredComponent_NoCyclicComponentPartHierarchy(reconfigurableStructuredComponent, diagnostics, context);
@@ -234,11 +236,11 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(reconfigurableAtomicComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniqueComponentNames(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_SoftwareComponentRequiresBehavior(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_ValidComponentType(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_SoftwareComponentValidPorts(reconfigurableAtomicComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_ContinuousComponentValidPorts(reconfigurableAtomicComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_AtomicComponentsNamesMustBeUnique(reconfigurableAtomicComponent, diagnostics, context);
 		return result;
 	}
 
@@ -524,6 +526,7 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(reconfigurableComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(reconfigurableComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(reconfigurableComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniqueComponentNames(reconfigurableComponent, diagnostics, context);
 		return result;
 	}
 
@@ -978,11 +981,11 @@ public class ReconfigurationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fadingComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fadingComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniquePortNames(fadingComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= componentValidator.validateComponent_UniqueComponentNames(fadingComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_SoftwareComponentRequiresBehavior(fadingComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_ValidComponentType(fadingComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_SoftwareComponentValidPorts(fadingComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_ContinuousComponentValidPorts(fadingComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= componentValidator.validateAtomicComponent_AtomicComponentsNamesMustBeUnique(fadingComponent, diagnostics, context);
 		return result;
 	}
 
