@@ -243,8 +243,9 @@ public class MetamodelOCLTest extends TraverseTest {
 
 			});
 		}
-		problems.add(0, "INFO: number of missing messages: " + numMissingMessages);
-	
+		if (numMissingMessages > 0) {
+			problems.add(0, "INFO: number of missing messages: " + numMissingMessages);
+		}
 		problems.fail();
 	}
 
