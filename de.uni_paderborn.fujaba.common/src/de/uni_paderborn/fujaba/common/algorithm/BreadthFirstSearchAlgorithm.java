@@ -12,7 +12,7 @@ import java.util.Queue;
  * @author bingo
  *
  */
-public class BreadthFirstSearchAlgorithm implements ISearchAlgorithm {
+public class BreadthFirstSearchAlgorithm<T> implements ISearchAlgorithm<T> {
 
 	/**
 	 * Starts a BFS-Search in the graph starting at startNode.
@@ -26,18 +26,18 @@ public class BreadthFirstSearchAlgorithm implements ISearchAlgorithm {
 	 *            stopped and considered successful.
 	 * @return <code>true</code>, if the node has been found.
 	 */
-	public boolean search(Object startNode, ISearchVisitor searchVisitor) {
-		List<Object> visited = new ArrayList<Object>();
-		Queue<Object> unvisited = new LinkedList<Object>();
+	public boolean search(T startNode, ISearchVisitor<T> searchVisitor) {
+		List<T> visited = new ArrayList<T>();
+		Queue<T> unvisited = new LinkedList<T>();
 		unvisited.add(startNode);
 		while (!unvisited.isEmpty()) {
-			Object current = unvisited.poll();
+			T current = unvisited.poll();
 			if (!visited.contains(current)) {
 				boolean continueSearch = searchVisitor.visit(current);
 				if (!continueSearch) {
 					return true;
 				}
-				Collection<?> adjacentNodes = searchVisitor
+				Collection<T> adjacentNodes = searchVisitor
 						.getAdjacentNodes(current);
 				unvisited.addAll(adjacentNodes);
 				visited.add(current);

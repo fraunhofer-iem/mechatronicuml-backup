@@ -7,7 +7,7 @@ package de.uni_paderborn.fujaba.common.algorithm;
  * @author bingo
  * 
  */
-public interface ISearchAlgorithm {
+public interface ISearchAlgorithm<T> {
 
 	/**
 	 * Starts a search in the graph starting at startNode.
@@ -21,6 +21,6 @@ public interface ISearchAlgorithm {
 	 *            stopped and considered successful.
 	 * @return <code>true</code>, if the node has been found.
 	 */
-	boolean search(Object startNode, ISearchVisitor searchVisitor);
+	boolean search(T startNode, ISearchVisitor<T> searchVisitor);
 
 }

@@ -9,7 +9,7 @@ import java.util.Collection;
  * @author bingo
  * 
  */
-public interface ISearchVisitor {
+public interface ISearchVisitor<T> {
 
 	/**
 	 * Visits the given node.
@@ -19,7 +19,7 @@ public interface ISearchVisitor {
 	 * @return <code>true</code> if the search should go on normally. A concrete
 	 *         algorithm decides what to do, if <code>false</code> is returned.
 	 */
-	boolean visit(Object node);
+	boolean visit(T node);
 
 	/**
 	 * Returns the list of adjacent nodes. This is used to traverse the graph.
@@ -28,5 +28,5 @@ public interface ISearchVisitor {
 	 *            The node in question.
 	 * @return The adjacent nodes for this node.
 	 */
-	Collection<?> getAdjacentNodes(Object node);
+	Collection<T> getAdjacentNodes(T node);
 }

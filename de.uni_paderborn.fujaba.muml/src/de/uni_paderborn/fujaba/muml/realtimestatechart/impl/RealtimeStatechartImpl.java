@@ -459,19 +459,18 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 				
 		Assert.isLegal(statechart != null);
 		
-		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();
-		return bfs.search(statechart, new ISearchVisitor() {
+		BreadthFirstSearchAlgorithm<RealtimeStatechart> bfs = new BreadthFirstSearchAlgorithm<RealtimeStatechart>();
+		return bfs.search(statechart, new ISearchVisitor<RealtimeStatechart>() {
 		
 			@Override
-			public boolean visit(Object object) {
-				return !RealtimeStatechartImpl.this.equals(object);
+			public boolean visit(RealtimeStatechart rtsc) {
+				return !RealtimeStatechartImpl.this.equals(rtsc);
 			}
 		
 			@Override
-			public List<?> getAdjacentNodes(Object object) {
-				RealtimeStatechart rtsc = (RealtimeStatechart) object;
+			public List<RealtimeStatechart> getAdjacentNodes(RealtimeStatechart rtsc) {
 		
-				List<Object> parentStatecharts = new ArrayList<Object>();
+				List<RealtimeStatechart> parentStatecharts = new ArrayList<RealtimeStatechart>();
 		
 				Region region = rtsc.getParentRegion();
 				if (region != null) {
