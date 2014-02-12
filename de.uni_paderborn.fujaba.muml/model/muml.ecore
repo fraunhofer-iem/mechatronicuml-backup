@@ -197,7 +197,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="SoftwareComponentRequiresBehavior" value="-- Software component must have a behavior&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())"/>
         <details key="ValidComponentType" value="-- Atomic component must be of type SOFTWARE or CONTINUOUS.&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT"/>
-        <details key="SoftwareComponentValidPorts" value="-- Software component must only have discrete or hybrid ports.&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::HybridPort))&#xA;&#x9;)"/>
+        <details key="SoftwareComponentValidPorts" value="-- Software component must only have hybrid ports or discrete ports&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) or p.oclIsKindOf(component::HybridPort))&#xA;&#x9;)"/>
         <details key="ContinuousComponentValidPorts" value="-- Continuous Component must only have continuous ports.&#xA;self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT&#xA;&#x9;implies (&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))&#xA;&#x9;)"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -322,6 +322,7 @@
         <details key="DiscreteStructuredComponentValidParts" value="-- Structured software component must only have software component parts &#xD;&#xA;if (not self.allAtomicComponents->oclIsUndefined()) then&#xD;&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsKindOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->forAll(componentKind = component::ComponentKind::SOFTWARE_COMPONENT)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif"/>
         <details key="HybridStructuredComponentValidPorts" value="-- Structured hybrid component must only have discrete or continuous ports&#xD;&#xA;self.componentKind = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))&#xD;&#xA;&#x9;)"/>
         <details key="ComponentPartsHaveUniqueName" value="-- Names of embedded component parts must be unique&#xA;self.embeddedComponentParts -> isUnique(name)"/>
+        <details key="SoftwareComponentOnlyDiscreteOrHybridPorts" value="-- Software component must not have continuous ports&#xD;&#xA;self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(p | not p.oclIsKindOf(ContinuousPort))"/>
       </eAnnotations>
       <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -489,7 +490,7 @@
         <details key="constraints" value="SoftwareComponentOnlyDiscreteOrHybridPorts"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SoftwareComponentOnlyDiscreteOrHybridPorts" value="-- Static Components with component type &quot;SOFTARE_COMPONENT&quot; must only have discrete ports and hybrid ports.&#xD;&#xA;self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()"/>
+        <details key="SoftwareComponentOnlyDiscreteOrHybridPorts" value="-- Static software components must only have discrete ports and hybrid ports.&#xD;&#xA;self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()"/>
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
@@ -1904,7 +1905,7 @@
           eType="#//connector/Connector" eOpposite="#//connector/Connector/connectorEndpoints"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="connectorEndpoints" lowerBound="2"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectorEndpoints" lowerBound="1"
           upperBound="2" eType="#//connector/ConnectorEndpoint" eOpposite="#//connector/ConnectorEndpoint/connectors"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpointInstance" abstract="true"
