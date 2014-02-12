@@ -37,22 +37,7 @@ log("QVT-O Script \"updateInstance.qvto\" started.");
 			oldConnectorInstances:=ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances;
 			connectorsToInit:=ci.componentType.oclAsType(StructuredComponent).connectors->select(connector|not oldConnectorInstances.type->includes(connector));
 			
-			// Add new connector instances
-			connectorsToInit->forEach(portConnector) {
-				var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
-				var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
-				if (endpoint1 != endpoint2) then {
-					endpoint1.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance1) {
-						endpoint2.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance2) {
-							if (not endpointInstance1.oclIsKindOf(DiscreteMultiPortInstance) and not endpointInstance2.oclIsKindOf(DiscreteMultiPortInstance) and ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) or connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
-								ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
-									Set { endpointInstance1, endpointInstance2 }
-								)[PortConnectorInstance];
-							} endif;
-						};
-					};
-				} endif;
-			};
+			
 		} endif;
 	}endif;
 };
@@ -191,22 +176,7 @@ query ComponentInstanceConfiguration::updateComponentInstanceConfiguration(struc
 			oldConnectorInstances:=ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances;
 			connectorsToInit:=ci.componentType.oclAsType(StructuredComponent).connectors->select(connector|not oldConnectorInstances.type->includes(connector));
 			
-			// Add new connector instances
-			connectorsToInit->forEach(portConnector) {
-				var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
-				var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
-				if (endpoint1 != endpoint2) then {
-					endpoint1.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance1) {
-						endpoint2.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance2) {
-							if (not endpointInstance1.oclIsKindOf(DiscreteMultiPortInstance) and not endpointInstance2.oclIsKindOf(DiscreteMultiPortInstance) and ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) or connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
-								ci.container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
-									Set { endpointInstance1, endpointInstance2 }
-								)[PortConnectorInstance];
-							} endif;
-						};
-					};
-				} endif;
-			};
+			
 		} endif;
 	};
 	

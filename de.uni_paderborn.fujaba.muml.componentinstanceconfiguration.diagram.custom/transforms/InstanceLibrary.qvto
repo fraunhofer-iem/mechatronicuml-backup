@@ -88,11 +88,35 @@ query ConnectorEndpoint::createInstance(part : ComponentPart, portPart : PortPar
 query Connector::otherEnd(thisEnd : ConnectorEndpoint) : ConnectorEndpoint {
 	return self.connectorEndpoints->select(e | e != thisEnd)->first();
 }
-query Connector::createConnectorInstance(endpoints : Set(ConnectorEndpointInstance)) : ConnectorInstance {
+
+//replaced this with the mapping mapConnectorInstance
+// thus this can be DELETED
+query Connector::createConnectorInstance(endpoints : Set(ConnectorEndpoint)) : ConnectorInstance {
 	var connectorInstance : ConnectorInstance := self.primCreateConnectorInstance();
-	connectorInstance.connectorEndpointInstances := endpoints;
+	connectorInstance.connectorEndpointInstances :=endpoints.late resolve(PortInstance);
 	return connectorInstance;
 }
+
+ mapping Connector::mapConnectorInstance(endpoints : Set(ConnectorEndpoint)) : ConnectorInstance {
+init{
+	switch{ 	
+			case (self.oclIsKindOf(AssemblyConnector)){
+			result:=new AssemblyConnectorInstance(self.oclAsType(AssemblyConnector));
+					}
+			case (self.oclIsKindOf(DelegationConnector)){
+			result:=new DelegationConnectorInstance(self.oclAsType(DelegationConnector));
+					}
+			
+			else{//sollte nich aufgerufen werden
+				result:=self.createConnectorInstance(endpoints);
+				}
+		};	
+}
+
+	result.connectorEndpointInstances:=endpoints.late resolve(PortInstance);
+}
+
+
 query Connector::primCreateConnectorInstance() : ConnectorInstance {
 	assert fatal (false) with log ("Tried to instantiate abstract class Connector.");
 	return null;
@@ -110,15 +134,25 @@ query DelegationConnector::primCreateConnectorInstance() : ConnectorInstance {
 // Constructors
 constructor ComponentInstanceConfiguration::ComponentInstanceConfiguration(component : StructuredComponent) {
 	name := component.name;
+	var count : Integer := 0;
 	
 	component.embeddedComponentParts->select(p | p.componentType.oclIsKindOf(AtomicComponent))->forEach(part) {
-		componentInstances += new AtomicComponentInstance(part.componentType.oclAsType(AtomicComponent), part);
+	count := 0;
+	while (count < part.cardinality.lowerBound.toInteger()) {
+				componentInstances += new AtomicComponentInstance(part.componentType.oclAsType(AtomicComponent), part);
+		
+		count := count + 1;
+	};
 	};
 	component.embeddedComponentParts->select(p | p.componentType.oclIsKindOf(StructuredComponent))->forEach(part) {
+	count := 0;
+	while (count < part.cardinality.lowerBound.toInteger()) {
 		componentInstances += new StructuredComponentInstance(part.componentType.oclAsType(StructuredComponent), part);
+			count := count + 1;
+	};
+	
 	};
 
-	portConnectorInstances := componentInstances.portInstances.portConnectorInstances;
 	portConnectorInstances += result.createConnectors(component);
 	
 }
@@ -164,25 +198,6 @@ constructor StructuredComponentInstance::StructuredComponentInstance(type : Stru
 		portInstances := componentType.createPortInstances(part);
 	} endif;
 	
-	// Create ConnectorInstances
-	if (container().oclIsKindOf(ComponentInstanceConfiguration)) then {
-		componentType[StructuredComponent].connectors->forEach(portConnector) {
-			var endpoint1 : ConnectorEndpoint := portConnector.connectorEndpoints->first();
-			var endpoint2 : ConnectorEndpoint := portConnector.connectorEndpoints->last();
-			if (endpoint1 != endpoint2) then {
-				endpoint1.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance1) {
-					endpoint2.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance2) {
-						if (not endpointInstance1.oclIsKindOf(DiscreteMultiPortInstance) and not endpointInstance2.oclIsKindOf(DiscreteMultiPortInstance) and container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) or connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
-							container().oclAsType(ComponentInstanceConfiguration).portConnectorInstances += portConnector.createConnectorInstance(
-								Set { endpointInstance1, endpointInstance2 }
-							)[PortConnectorInstance];
-						} endif;
-					};
-				};
-			} endif;
-		};
-	} endif;
-	
 	embeddedCIC := new ComponentInstanceConfiguration(type);
 }
 
@@ -197,8 +212,8 @@ query ComponentInstanceConfiguration::createConnectors(parentStructuredComponent
 					endpoint1.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance1) {
 						endpoint2.resolve().oclAsSet()[PortInstance]->forEach(endpointInstance2) {
 							if (not endpointInstance1.oclIsKindOf(DiscreteMultiPortInstance) and not endpointInstance2.oclIsKindOf(DiscreteMultiPortInstance) and self.portConnectorInstances->select(connectorEndpointInstances->includes(endpointInstance1) or connectorEndpointInstances->includes(endpointInstance2))->isEmpty()) then {
-								newConnectors += portConnector.createConnectorInstance(
-									Set { endpointInstance1, endpointInstance2 }
+								newConnectors += portConnector->map mapConnectorInstance(
+									Set { endpoint1, endpoint2 }
 								)[PortConnectorInstance];
 							} endif;
 						};
