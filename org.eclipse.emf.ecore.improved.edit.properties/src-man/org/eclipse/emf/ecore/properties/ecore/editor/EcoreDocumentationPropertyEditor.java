@@ -55,9 +55,8 @@ public class EcoreDocumentationPropertyEditor extends TextPropertyEditor {
 
 
 	@Override
-	protected void modify() {
-		
-		String newValue = currentValue; 
+	protected void doSetValue(Object newObject) {
+		String newValue = newObject.toString();
 		String documentation = getDocumentation(value);
 		if (text != null && !newValue.equals(documentation)) {
 			//setValue(newValue);
