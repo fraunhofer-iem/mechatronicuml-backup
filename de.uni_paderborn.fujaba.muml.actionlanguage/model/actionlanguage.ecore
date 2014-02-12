@@ -151,12 +151,11 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Operation calls are used to call an operation with concrete parameter bindings. "/>
     </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="AllParametersMustBeBound" value="-- An OperationCall must bind a value to every parameter&#xA;not operation.oclIsUndefined() implies &#xA;operation.parameters->asSet() = parameterBinding.parameter->asSet()&#xA;-- author: bingo"/>
-      <details key="UniqueParameterBindings" value="-- An OperationCall must not bind multiple values to any parameter&#xA;parameterBinding->isUnique(parameter)&#xA;-- author: bingo"/>
-    </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="AllParametersMustBeBound UniqueParameterBindings"/>
+      <details key="constraints" value="ParameterBindingForEveryParameter"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ParameterBindingForEveryParameter" value="-- An OperationCall must bind exactly one value to every parameter&#xA;not operation.oclIsUndefined() implies &#xA;operation.parameters->asBag() = parameterBinding.parameter->asBag()&#xA;-- author: bingo, adann"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
         eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Operation">
