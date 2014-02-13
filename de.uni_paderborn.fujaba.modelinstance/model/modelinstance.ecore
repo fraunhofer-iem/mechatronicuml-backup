@@ -21,7 +21,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ecoreDataTypes" upperBound="-1"
-        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDataType"/>
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ModelElementCategory">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -33,12 +33,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The ModelElementCategory contains all model elements of a FUJABA model that&#xD;&#xA;have the same type and will be opened by the same editor. A ModelElementCategory&#xD;&#xA;may only store subclasses of NamedElement."/>
     </eAnnotations>
-    <eOperations name="isValidElement" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+    <eOperations name="isValidElement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Evaluates for the passed object whether it is a valid model element for this &#xD;&#xA;ModelElementCategory."/>
         <details key="body" value="boolean valid = false;&#xD;&#xA;&#xD;&#xA;ModelInstancePlugin plugin = ModelInstancePlugin.getInstance();&#xD;&#xA;if (plugin != null) {&#xD;&#xA;&#x9;ModelElementCategoryRegistry registry = plugin.getModelElementCategoryRegistry();&#xD;&#xA;&#x9;valid = registry.isValidCategory(key, object);&#xD;&#xA;}&#xD;&#xA;return valid;"/>
       </eAnnotations>
-      <eParameters name="object" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="object" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="modelElements" upperBound="-1"
         eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//ExtendableElement"
