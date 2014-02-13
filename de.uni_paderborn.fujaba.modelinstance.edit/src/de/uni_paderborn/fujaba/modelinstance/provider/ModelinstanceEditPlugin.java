@@ -44,7 +44,6 @@ public final class ModelinstanceEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
-		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 
