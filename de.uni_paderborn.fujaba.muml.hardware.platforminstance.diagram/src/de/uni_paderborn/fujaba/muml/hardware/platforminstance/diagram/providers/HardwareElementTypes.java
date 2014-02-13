@@ -97,7 +97,8 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType BusPortInstance_3012 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.BusPortInstance_3012"); //$NON-NLS-1$
+	public static final IElementType HWPortPart_3015 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortPart_3015"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -236,9 +237,9 @@ public class HardwareElementTypes {
 							.getHWPlatformInstance());
 
 			elements.put(
-					BusPortInstance_3012,
+					HWPortPart_3015,
 					de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-							.getBusPortInstance());
+							.getHWPortPart());
 
 			elements.put(
 					ActuatorInstance_3013,
@@ -304,7 +305,7 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Bus_3009);
 			KNOWN_ELEMENT_TYPES.add(Bridge_3010);
 			KNOWN_ELEMENT_TYPES.add(HWPlatformInstance_3011);
-			KNOWN_ELEMENT_TYPES.add(BusPortInstance_3012);
+			KNOWN_ELEMENT_TYPES.add(HWPortPart_3015);
 			KNOWN_ELEMENT_TYPES.add(ActuatorInstance_3013);
 			KNOWN_ELEMENT_TYPES.add(SensorInstance_3014);
 			KNOWN_ELEMENT_TYPES.add(Delegation_4001);
@@ -347,8 +348,8 @@ public class HardwareElementTypes {
 			return Bridge_3010;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
 			return HWPlatformInstance_3011;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusPortInstance2EditPart.VISUAL_ID:
-			return BusPortInstance_3012;
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
+			return HWPortPart_3015;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
 			return ActuatorInstance_3013;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.SensorInstanceEditPart.VISUAL_ID:

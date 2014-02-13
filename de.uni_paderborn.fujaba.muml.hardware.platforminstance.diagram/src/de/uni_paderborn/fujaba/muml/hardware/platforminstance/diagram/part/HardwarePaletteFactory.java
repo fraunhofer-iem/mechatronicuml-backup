@@ -49,13 +49,15 @@ public class HardwarePaletteFactory {
 		paletteContainer
 				.setDescription(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Misreferencedtools2Group_desc);
 		paletteContainer.add(createStructuredResourceInstance1CreationTool());
-		paletteContainer.add(createBus2CreationTool());
-		paletteContainer.add(createBridge3CreationTool());
-		paletteContainer.add(createActuatorInstance4CreationTool());
-		paletteContainer.add(createSensorInstance5CreationTool());
-		paletteContainer.add(createDelegation6CreationTool());
-		paletteContainer.add(createLink7CreationTool());
-		paletteContainer.add(createToBus8CreationTool());
+		paletteContainer.add(createBusPortInstance2CreationTool());
+		paletteContainer.add(createLinkPortInstance3CreationTool());
+		paletteContainer.add(createBus4CreationTool());
+		paletteContainer.add(createBridge5CreationTool());
+		paletteContainer.add(createActuatorInstance6CreationTool());
+		paletteContainer.add(createSensorInstance7CreationTool());
+		paletteContainer.add(createDelegation8CreationTool());
+		paletteContainer.add(createLink9CreationTool());
+		paletteContainer.add(createToBus10CreationTool());
 		return paletteContainer;
 	}
 
@@ -98,13 +100,47 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createBus2CreationTool() {
+	private ToolEntry createBusPortInstance2CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Bus2CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Bus2CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.BusPortInstance2CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.BusPortInstance2CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusPortInstance_3007));
+		entry.setId("createBusPortInstance2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/busportInst_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/busportInst_large.gif")); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createLinkPortInstance3CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.LinkPortInstance3CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.LinkPortInstance3CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.LinkPortInstance_3008));
+		entry.setId("createLinkPortInstance3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkportInst_small.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
+				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/linkportInst_large.gif")); //$NON-NLS-1$
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createBus4CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Bus4CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Bus4CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.Bus_3009));
-		entry.setId("createBus2CreationTool"); //$NON-NLS-1$
+		entry.setId("createBus4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/bus_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
@@ -115,13 +151,13 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createBridge3CreationTool() {
+	private ToolEntry createBridge5CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Bridge3CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Bridge3CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Bridge5CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Bridge5CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.Bridge_3010));
-		entry.setId("createBridge3CreationTool"); //$NON-NLS-1$
+		entry.setId("createBridge5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/bridge_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
@@ -132,13 +168,13 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createActuatorInstance4CreationTool() {
+	private ToolEntry createActuatorInstance6CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.ActuatorInstance4CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.ActuatorInstance4CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.ActuatorInstance6CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.ActuatorInstance6CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.ActuatorInstance_3013));
-		entry.setId("createActuatorInstance4CreationTool"); //$NON-NLS-1$
+		entry.setId("createActuatorInstance6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/actuator_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
@@ -149,13 +185,13 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSensorInstance5CreationTool() {
+	private ToolEntry createSensorInstance7CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.SensorInstance5CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.SensorInstance5CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.SensorInstance7CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.SensorInstance7CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.SensorInstance_3014));
-		entry.setId("createSensorInstance5CreationTool"); //$NON-NLS-1$
+		entry.setId("createSensorInstance7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/sensor_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
@@ -166,13 +202,13 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createDelegation6CreationTool() {
+	private ToolEntry createDelegation8CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Delegation6CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Delegation6CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Delegation8CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Delegation8CreationTool_desc,
 				Collections
 						.singletonList(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.Delegation_4001));
-		entry.setId("createDelegation6CreationTool"); //$NON-NLS-1$
+		entry.setId("createDelegation8CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/delegation_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
@@ -183,15 +219,15 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createLink7CreationTool() {
+	private ToolEntry createLink9CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.Link_4002);
 		types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.Link_4005);
 		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Link7CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Link7CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Link9CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.Link9CreationTool_desc,
 				types);
-		entry.setId("createLink7CreationTool"); //$NON-NLS-1$
+		entry.setId("createLink9CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/link_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
@@ -202,15 +238,15 @@ public class HardwarePaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createToBus8CreationTool() {
+	private ToolEntry createToBus10CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstanceConnectedMedia_4006);
 		types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.CommunicationMediaConnectedBridges_4004);
 		LinkToolEntry entry = new LinkToolEntry(
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.ToBus8CreationTool_title,
-				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.ToBus8CreationTool_desc,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.ToBus10CreationTool_title,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.ToBus10CreationTool_desc,
 				types);
-		entry.setId("createToBus8CreationTool"); //$NON-NLS-1$
+		entry.setId("createToBus10CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.hardware.common/icons/toBus_small.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.PlatformInstanceDiagramEditorPlugin

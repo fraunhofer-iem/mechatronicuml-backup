@@ -30,5 +30,7 @@ public class CustomPlatformInstanceEditPart extends HWPlatformInstanceEditPart {
 	public void activate() {
 		super.activate();
 	}
+	
+	
 
 }

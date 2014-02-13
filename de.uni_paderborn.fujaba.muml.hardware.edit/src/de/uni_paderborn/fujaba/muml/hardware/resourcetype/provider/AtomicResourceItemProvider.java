@@ -54,31 +54,8 @@ public class AtomicResourceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addParentStructuredResourcePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent Structured Resource feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParentStructuredResourcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AtomicResource_parentStructuredResource_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AtomicResource_parentStructuredResource_feature", "_UI_AtomicResource_type"),
-				 ResourcetypePackage.Literals.ATOMIC_RESOURCE__PARENT_STRUCTURED_RESOURCE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

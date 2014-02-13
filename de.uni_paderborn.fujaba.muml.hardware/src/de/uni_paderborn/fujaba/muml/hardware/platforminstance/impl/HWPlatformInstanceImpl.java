@@ -20,6 +20,7 @@ import de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.platform.Delegation;
 import de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform;
 import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance;
+import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance;
 import de.uni_paderborn.fujaba.muml.hardware.platforminstance.PlatforminstancePackage;
@@ -102,7 +103,7 @@ public class HWPlatformInstanceImpl extends NamedElementImpl implements HWPlatfo
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<HWPortInstance> delegationPorts;
+	protected EList<HWPortPart> delegationPorts;
 
 	/**
 	 * The cached value of the '{@link #getDelegations() <em>Delegations</em>}' containment reference list.
@@ -222,9 +223,9 @@ public class HWPlatformInstanceImpl extends NamedElementImpl implements HWPlatfo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<HWPortInstance> getDelegationPorts() {
+	public EList<HWPortPart> getDelegationPorts() {
 		if (delegationPorts == null) {
-			delegationPorts = new EObjectContainmentEList<HWPortInstance>(HWPortInstance.class, this, PlatforminstancePackage.HW_PLATFORM_INSTANCE__DELEGATION_PORTS);
+			delegationPorts = new EObjectContainmentEList<HWPortPart>(HWPortPart.class, this, PlatforminstancePackage.HW_PLATFORM_INSTANCE__DELEGATION_PORTS);
 		}
 		return delegationPorts;
 	}
@@ -318,7 +319,7 @@ public class HWPlatformInstanceImpl extends NamedElementImpl implements HWPlatfo
 				return;
 			case PlatforminstancePackage.HW_PLATFORM_INSTANCE__DELEGATION_PORTS:
 				getDelegationPorts().clear();
-				getDelegationPorts().addAll((Collection<? extends HWPortInstance>)newValue);
+				getDelegationPorts().addAll((Collection<? extends HWPortPart>)newValue);
 				return;
 			case PlatforminstancePackage.HW_PLATFORM_INSTANCE__DELEGATIONS:
 				getDelegations().clear();

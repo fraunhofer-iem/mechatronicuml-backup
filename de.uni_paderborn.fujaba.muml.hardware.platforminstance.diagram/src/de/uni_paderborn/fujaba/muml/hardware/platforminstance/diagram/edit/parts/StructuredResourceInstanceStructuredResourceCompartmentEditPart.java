@@ -5,6 +5,7 @@ import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
@@ -17,7 +18,7 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
  * @generated
  */
 public class StructuredResourceInstanceStructuredResourceCompartmentEditPart
-		extends ListCompartmentEditPart {
+		extends ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
@@ -30,13 +31,6 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart
 	public StructuredResourceInstanceStructuredResourceCompartmentEditPart(
 			View view) {
 		super(view);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected boolean hasModelChildrenChanged(Notification evt) {
-		return false;
 	}
 
 	/**
@@ -96,29 +90,6 @@ public class StructuredResourceInstanceStructuredResourceCompartmentEditPart
 		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
 			super.setRatio(ratio);
 		}
-	}
-
-	// Fix to hide this Compartment, if it has no children. See also GMF bug:
-	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=147855
-	// and workaround:
-	// http://www.eclipse.org/forums/index.php/m/9761/
-	/**
-	 * @generated
-	 */
-	protected void refreshVisibility() {
-		final View notationView = getNotationView();
-		final boolean hasChildren = notationView.getChildren().size() > 0;
-		setVisibility(hasChildren);
-	}
-
-	// This is also part of the fix mentioned above.
-	/**
-	 * @generated
-	 */
-	@Override
-	protected void handleNotificationEvent(Notification event) {
-		refreshVisibility();
-		super.handleNotificationEvent(event);
 	}
 
 }

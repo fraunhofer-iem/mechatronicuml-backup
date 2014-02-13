@@ -55,7 +55,7 @@
         <containmentFeature
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platforminstance/HWPlatformInstance/delegationPorts"/>
         <referencedChild
-            href="../../de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram/model/resourceinstance.gmfmap#//@nodes.2/@ownedChild/@children.5/@ownedChild"/>
+            href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfmap#//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild"/>
       </children>
       <children
           compartment="//@nodes.0/@ownedChild/@compartments.0">
@@ -82,7 +82,7 @@
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/Delegation"/>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/HWPlatform/delegations"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platforminstance/HWPlatformInstance/delegations"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -98,7 +98,7 @@
       <sourceEnd
           body="self.oclIsTypeOf(platform::HWPortPart)"/>
       <targetEnd
-          body="self.oclAsType(platform::HWPortInstance).isDelegationPort"/>
+          body="self.oclIsTypeOf(platform::HWPortInstance)"/>
     </creationConstraints>
   </links>
   <links>
@@ -143,7 +143,7 @@
           body="'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
     </labelMappings>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/HWPlatform/embeddedCommunicationResources"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platforminstance/HWPlatformInstance/communicationResources"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmftool#//@palette/@tools.0/@tools.3"/>
@@ -173,7 +173,7 @@
         href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/HWPortInstance/connectedMedia"/>
     <creationConstraints>
       <sourceEnd
-          body="self.oclIsTypeOf(platform::BusPortInstance)"/>
+          body="self.oclIsTypeOf(platform::BusPortInstance) or self.oclIsTypeOf(platform::HWPortPart)"/>
       <targetEnd
           body="self.oclIsTypeOf(platform::Bus)"/>
     </creationConstraints>
@@ -236,7 +236,7 @@
           body="'Enter bandwidth in form of: Value bs/kbs/mbs'"/>
     </labelMappings>
     <containmentFeature
-        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/HWPlatform/embeddedCommunicationResources"/>
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platforminstance/HWPlatformInstance/communicationResources"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmftool#//@palette/@tools.0/@tools.3"/>

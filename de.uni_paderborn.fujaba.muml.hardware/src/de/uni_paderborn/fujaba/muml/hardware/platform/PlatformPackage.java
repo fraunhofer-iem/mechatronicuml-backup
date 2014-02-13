@@ -2432,7 +2432,7 @@ public interface PlatformPackage extends EPackage {
 	int DELEGATION__COMMENT = CorePackage.COMMENTABLE_ELEMENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Hw Port Instance</b></em>' reference.
+	 * The feature id for the '<em><b>Hw Port Instance</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3320,10 +3320,10 @@ public interface PlatformPackage extends EPackage {
 	EClass getDelegation();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.platform.Delegation#getHwPortInstance <em>Hw Port Instance</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.platform.Delegation#getHwPortInstance <em>Hw Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Hw Port Instance</em>'.
+	 * @return the meta object for the reference list '<em>Hw Port Instance</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.Delegation#getHwPortInstance()
 	 * @see #getDelegation()
 	 * @generated
@@ -4055,7 +4055,7 @@ public interface PlatformPackage extends EPackage {
 		EClass DELEGATION = eINSTANCE.getDelegation();
 
 		/**
-		 * The meta object literal for the '<em><b>Hw Port Instance</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Hw Port Instance</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

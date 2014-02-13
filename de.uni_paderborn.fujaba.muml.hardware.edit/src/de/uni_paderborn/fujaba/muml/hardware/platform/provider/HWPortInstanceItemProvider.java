@@ -70,7 +70,6 @@ public class HWPortInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addHwportTypePropertyDescriptor(object);
-			addParentResourceInstancePropertyDescriptor(object);
 			addProtocolPropertyDescriptor(object);
 			addConnectedMediaPropertyDescriptor(object);
 			addIsDelegationPortPropertyDescriptor(object);
@@ -124,28 +123,6 @@ public class HWPortInstanceItemProvider
 				return choices;
 			}
 		});
-	}
-
-	/**
-	 * This adds a property descriptor for the Parent Resource Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParentResourceInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HWPortInstance_parentResourceInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HWPortInstance_parentResourceInstance_feature", "_UI_HWPortInstance_type"),
-				 PlatformPackage.Literals.HW_PORT_INSTANCE__PARENT_RESOURCE_INSTANCE,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**

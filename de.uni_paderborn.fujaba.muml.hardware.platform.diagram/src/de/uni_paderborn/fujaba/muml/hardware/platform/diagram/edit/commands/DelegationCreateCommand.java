@@ -109,7 +109,7 @@ public class DelegationCreateCommand extends EditElementCommand {
 				.createDelegation();
 		getContainer().getDelegations().add(newElement);
 		newElement.setHwPortPart(getSource());
-		newElement.setHwPortInstance(getTarget());
+		newElement.getHwPortInstance().add(getTarget());
 		doConfigure(newElement, monitor, info);
 		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);

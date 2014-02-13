@@ -424,6 +424,10 @@
           xsi:type="gmfgen:CustomBehaviour"
           key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE"
           editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstancePartEditPolicy"/>
+      <behaviour
+          xsi:type="gmfgen:CustomBehaviour"
+          key="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESIZE_CONTAINER"
+          editPolicyQualifiedClassName="de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.container.EnlargeContainerEditPolicy"/>
       <modelFacet>
         <metaClass
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/platform/ResourceInstancePart"/>

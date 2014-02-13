@@ -136,8 +136,11 @@ public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand 
 	 */
 	protected CommandResult reorientSource() throws ExecutionException {
 
-		getOldSource().setConnectedMedia(null);
-		getNewSource().setConnectedMedia(getOldTarget());
+		// Enhancement for MUML-BUG #446
+		if (getOldSource().getConnectedMedia().size() > 1) {
+			getOldSource().getConnectedMedia().remove(getOldTarget());
+		}
+		getNewSource().getConnectedMedia().add(getOldTarget());
 
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}
@@ -147,7 +150,11 @@ public class HWPortPartConnectedMediaReorientCommand extends EditElementCommand 
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 
-		getOldSource().setConnectedMedia(getNewTarget());
+		// Enhancement for MUML-BUG #446
+		if (getOldSource().getConnectedMedia().size() > 1) {
+			getOldSource().getConnectedMedia().remove(getOldTarget());
+		}
+		getOldSource().getConnectedMedia().add(getNewTarget());
 
 		return CommandResult.newOKCommandResult(referenceOwner);
 	}

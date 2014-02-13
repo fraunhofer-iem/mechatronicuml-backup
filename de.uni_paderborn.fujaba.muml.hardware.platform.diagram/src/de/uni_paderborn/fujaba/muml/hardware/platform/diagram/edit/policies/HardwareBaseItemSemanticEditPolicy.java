@@ -353,7 +353,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia target,
 				View sourceView, View targetView) {
 			if (source != null) {
-				if (source.getConnectedMedia() != null) {
+				if (source.getConnectedMedia().contains(target)) {
 					return false;
 				}
 			}

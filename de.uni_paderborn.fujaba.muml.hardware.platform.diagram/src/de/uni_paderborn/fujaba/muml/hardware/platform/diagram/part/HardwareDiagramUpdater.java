@@ -744,8 +744,13 @@ public class HardwareDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance dst = link
-					.getHwPortInstance();
+			List targets = link.getHwPortInstance();
+			Object theTarget = !targets.isEmpty() ? targets
+					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) {
+				continue;
+			}
+			de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance dst = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) theTarget;
 			de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart src = link
 					.getHwPortPart();
 			result.add(new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor(
@@ -1019,8 +1024,13 @@ public class HardwareDiagramUpdater {
 					.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance dst = link
-					.getHwPortInstance();
+			List targets = link.getHwPortInstance();
+			Object theTarget = !targets.isEmpty() ? targets
+					.get(targets.size() - 1) : null; // Adapted for MUML-BUG #446
+			if (false == theTarget instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) {
+				continue;
+			}
+			de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance dst = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) theTarget;
 			de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart src = link
 					.getHwPortPart();
 			if (src != source) {
@@ -1098,16 +1108,16 @@ public class HardwareDiagramUpdater {
 	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> getOutgoingFeatureModelFacetLinks_HWPortPart_ConnectedMedia_4027(
 			de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source) {
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor>();
-		de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia destination = source
-				.getConnectedMedia();
-		if (destination == null) {
-			return result;
+		for (Iterator<?> destinations = source.getConnectedMedia().iterator(); destinations
+				.hasNext();) {
+			de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia destination = (de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia) destinations
+					.next();
+			result.add(new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor(
+					source,
+					destination,
+					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.HWPortPartConnectedMedia_4027,
+					de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID));
 		}
-		result.add(new de.uni_paderborn.fujaba.muml.hardware.platform.diagram.part.HardwareLinkDescriptor(
-				source,
-				destination,
-				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.providers.HardwareElementTypes.HWPortPartConnectedMedia_4027,
-				de.uni_paderborn.fujaba.muml.hardware.platform.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID));
 		return result;
 	}
 

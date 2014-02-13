@@ -278,72 +278,92 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Bus2CreationTool_title;
+	public static String BusPortInstance2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Bus2CreationTool_desc;
+	public static String BusPortInstance2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Bridge3CreationTool_title;
+	public static String LinkPortInstance3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Bridge3CreationTool_desc;
+	public static String LinkPortInstance3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ActuatorInstance4CreationTool_title;
+	public static String Bus4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ActuatorInstance4CreationTool_desc;
+	public static String Bus4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String SensorInstance5CreationTool_title;
+	public static String Bridge5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String SensorInstance5CreationTool_desc;
+	public static String Bridge5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Delegation6CreationTool_title;
+	public static String ActuatorInstance6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Delegation6CreationTool_desc;
+	public static String ActuatorInstance6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Link7CreationTool_title;
+	public static String SensorInstance7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Link7CreationTool_desc;
+	public static String SensorInstance7CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String ToBus8CreationTool_title;
+	public static String Delegation8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ToBus8CreationTool_desc;
+	public static String Delegation8CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Link9CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Link9CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String ToBus10CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ToBus10CreationTool_desc;
 
 	/**
 	 * @generated
@@ -408,17 +428,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_BusPortInstance_3012_incominglinks;
-
-	/**
-	 * @generated
-	 */
-	public static String NavigatorGroupName_BusPortInstance_3012_outgoinglinks;
+	public static String NavigatorGroupName_HWPortPart_3015_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_Delegation_4001_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Delegation_4001_source;
 
 	/**
 	 * @generated

@@ -38,7 +38,7 @@ public class SensorInstanceLabelExpressionLabelParser5039 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						37,
+						38,
 						de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 								.getSensorInstance(), null).body();
 	}

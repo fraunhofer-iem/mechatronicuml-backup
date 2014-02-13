@@ -62,8 +62,14 @@ public class DelegationReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart && newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target = getLink()
-				.getHwPortInstance();
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
+		if (getLink().getHwPortInstance().size() != 1) {
+		  return false;
+		}
+		 */
+		de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) getLink()
+				.getHwPortInstance().get(0);
 		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform)) {
 			return false;
 		}
@@ -152,7 +158,11 @@ public class DelegationReorientCommand extends EditElementCommand {
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 
-		getLink().setHwPortInstance(getNewTarget());
+		// Enhancement for MUML-BUG #446
+		if (getLink().getHwPortInstance().size() > 1) {
+			getLink().getHwPortInstance().remove(getOldTarget());
+		}
+		getLink().getHwPortInstance().add(getNewTarget());
 
 		return CommandResult.newOKCommandResult(getLink());
 	}

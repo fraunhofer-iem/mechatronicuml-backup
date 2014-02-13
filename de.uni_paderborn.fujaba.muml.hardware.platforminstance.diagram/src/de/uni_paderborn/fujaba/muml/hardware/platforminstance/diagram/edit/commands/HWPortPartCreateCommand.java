@@ -15,12 +15,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class BusPortInstance2CreateCommand extends EditElementCommand {
+public class HWPortPartCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public BusPortInstance2CreateCommand(CreateElementRequest req) {
+	public HWPortPartCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,8 +50,8 @@ public class BusPortInstance2CreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.hardware.platform.BusPortInstance newElement = de.uni_paderborn.fujaba.muml.hardware.platform.PlatformFactory.eINSTANCE
-				.createBusPortInstance();
+		de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart newElement = de.uni_paderborn.fujaba.muml.hardware.platform.PlatformFactory.eINSTANCE
+				.createHWPortPart();
 
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance owner = (de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance) getElementToEdit();
 		owner.getDelegationPorts().add(newElement);
@@ -66,7 +66,7 @@ public class BusPortInstance2CreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.hardware.platform.BusPortInstance newElement,
+			de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

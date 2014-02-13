@@ -12,4 +12,6 @@ public interface EditPolicyRoles {
 
 	   // Key for edit policy installation
     public static final String RESIZE_CONTAINER = "ResizeContainer";
+    public static final String FIT_CONTAINER = "FitContainer";
+
 }

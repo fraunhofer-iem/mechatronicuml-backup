@@ -70,10 +70,10 @@ public class Link2ReorientCommand extends EditElementCommand {
 		 */
 		de.uni_paderborn.fujaba.muml.hardware.platform.Bridge target = (de.uni_paderborn.fujaba.muml.hardware.platform.Bridge) getLink()
 				.getConnectedBridges().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform) getLink()
+		de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container = (de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -107,10 +107,10 @@ public class Link2ReorientCommand extends EditElementCommand {
 		 */
 		de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) getLink()
 				.getConnectedHWPortInstances().get(0);
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform) getLink()
+		de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container = (de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());

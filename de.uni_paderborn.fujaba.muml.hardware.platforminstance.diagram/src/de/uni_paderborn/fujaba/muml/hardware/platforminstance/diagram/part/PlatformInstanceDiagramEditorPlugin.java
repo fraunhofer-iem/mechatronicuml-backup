@@ -140,7 +140,6 @@ public class PlatformInstanceDiagramEditorPlugin extends AbstractUIPlugin {
 		factories.add(new CoreItemProviderAdapterFactory());
 		factories.add(new ExpressionsItemProviderAdapterFactory());
 		factories.add(new CommonExpressionsItemProviderAdapterFactory());
-		factories.add(new EcoreItemProviderAdapterFactory());
 		factories
 				.add(new de.uni_paderborn.fujaba.muml.component.provider.ComponentItemProviderAdapterFactory());
 		factories

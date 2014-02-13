@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationResource;
 import de.uni_paderborn.fujaba.muml.hardware.platform.Delegation;
 import de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform;
 import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance;
+import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
 
 /**
@@ -128,7 +129,7 @@ public interface HWPlatformInstance extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Delegation Ports</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Delegation Ports</em>' reference list isn't clear,
@@ -143,7 +144,7 @@ public interface HWPlatformInstance extends NamedElement {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<HWPortInstance> getDelegationPorts();
+	EList<HWPortPart> getDelegationPorts();
 
 	/**
 	 * Returns the value of the '<em><b>Delegations</b></em>' containment reference list.

@@ -38,7 +38,7 @@ public class HWPlatformInstanceLabelExpressionLabelParser5034 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						39,
+						40,
 						de.uni_paderborn.fujaba.muml.hardware.platforminstance.PlatforminstancePackage.eINSTANCE
 								.getHWPlatformInstance(), null).body();
 	}

@@ -83,7 +83,7 @@ public class HWPortPartConnectedMediaCreateCommand extends EditElementCommand {
 		}
 
 		if (getSource() != null && getTarget() != null) {
-			getSource().setConnectedMedia(getTarget());
+			getSource().getConnectedMedia().add(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
 

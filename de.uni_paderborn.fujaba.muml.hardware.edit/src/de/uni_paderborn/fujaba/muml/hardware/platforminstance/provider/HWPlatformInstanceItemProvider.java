@@ -293,12 +293,7 @@ public class HWPlatformInstanceItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PlatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__DELEGATION_PORTS,
-				 PlatformFactory.eINSTANCE.createBusPortInstance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(PlatforminstancePackage.Literals.HW_PLATFORM_INSTANCE__DELEGATION_PORTS,
-				 PlatformFactory.eINSTANCE.createLinkPortInstance()));
+				 PlatformFactory.eINSTANCE.createHWPortPart()));
 
 		newChildDescriptors.add
 			(createChildParameter

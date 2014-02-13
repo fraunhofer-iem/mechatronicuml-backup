@@ -30,7 +30,7 @@ public class HardwareOCLFactory {
 	 * @generated
 	 */
 	protected HardwareOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression[60];
+		this.expressions = new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression[61];
 	}
 
 	/**
@@ -85,13 +85,14 @@ public class HardwareOCLFactory {
 					"--\'Enter bandwidth in form of: Value bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let proto : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\n--proto".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'Bridge\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--let portName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\n--let portType : String = if self.hwPortInstance.oclIsUndefined() then \'null\' else self.hwPortInstance.name endif in\r\n--let protocolName : String = if self.protocol.oclIsUndefined() then \'null\' else self.protocol.name endif in\r\n--portName +\': \' + portType + \'\\n\' + protocolName".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let nameToShow : String = if (self.oclIsTypeOf(platforminstance::HWPlatformInstance)) then \n--\tself.name.toString() +\' :\'+ self.oclAsType(platforminstance::HWPlatformInstance).hwplatformType.name.toString()\n--else \n--\tself.name.toString()\n--endif \n-- in\n--nameToShow".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::HWPortPart)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclAsType(platform::HWPortInstance).isDelegationPort".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsTypeOf(platform::HWPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.connectedBridges->isEmpty()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--0".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--DataRateUnit::bs".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
@@ -99,7 +100,7 @@ public class HardwareOCLFactory {
 					"--\'Enter bandwidth in form of: Value bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(platform::BusPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsTypeOf(platform::BusPortInstance) or self.oclIsTypeOf(platform::HWPortPart)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bus)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bus)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bridge)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

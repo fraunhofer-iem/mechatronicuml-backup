@@ -23,12 +23,12 @@ import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 /**
  * @generated
  */
-public class ActuatorInstanceLabelExpressionLabelParser5036 extends
+public class HWPortPartLabelExpressionLabelParser5041 extends
 		ExpressionLabelParserBase {
 	/**
 	 * @generated
 	 */
-	public ActuatorInstanceLabelExpressionLabelParser5036() {
+	public HWPortPartLabelExpressionLabelParser5041() {
 	}
 
 	/**
@@ -38,9 +38,9 @@ public class ActuatorInstanceLabelExpressionLabelParser5036 extends
 	protected String getExpressionBody() {
 		return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						36,
+						35,
 						de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-								.getActuatorInstance(), null).body();
+								.getHWPortPart(), null).body();
 	}
 
 	/**

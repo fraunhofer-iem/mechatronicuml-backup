@@ -74,6 +74,9 @@ public class ResourceInstancePartEditPart extends AbstractBorderedShapeEditPart 
 		installEditPolicy(
 				de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESOURCE_VISUALIZATION_ROLE,
 				new de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.resource.ResourceInstancePartEditPolicy());
+		installEditPolicy(
+				de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.EditPolicyRoles.RESIZE_CONTAINER,
+				new de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.container.EnlargeContainerEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
 

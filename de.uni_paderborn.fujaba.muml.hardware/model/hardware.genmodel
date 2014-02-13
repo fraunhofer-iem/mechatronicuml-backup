@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.uni_paderborn.fujaba.muml.hardware/src" modelPluginID="de.uni_paderborn.fujaba.muml.hardware"
     templateDirectory="" redirection="" modelName="Hardware" modelPluginClass="" rootImplementsInterface=""
     booleanFlagsField="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
-    suppressGenModelAnnotations="false" copyrightFields="false" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+    suppressGenModelAnnotations="false" copyrightFields="false" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml">
   <foreignModel>hardware.ecore</foreignModel>
   <genPackages prefix="Hardware" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
       fileExtensions="fujaba" ecorePackage="hardware.ecore#/">
@@ -96,13 +96,13 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/Processor/nbPipelineStages"/>
       </genClasses>
       <genClasses image="false" ecoreClass="hardware.ecore#//resourcetype/AtomicResource">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/AtomicResource/parentStructuredResource"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/AtomicResource/parentStructuredResource"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//resourcetype/StructuredResource">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/StructuredResource/embeddedAtomicResources"/>
       </genClasses>
       <genClasses ecoreClass="hardware.ecore#//resourcetype/HWPort">
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/HWPort/parentResource"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/HWPort/parentResource"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hardware.ecore#//resourcetype/HWPort/portType"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//resourcetype/HWPort/protocol"/>
@@ -210,7 +210,7 @@
       <genClasses image="false" ecoreClass="hardware.ecore#//platform/HWPortInstance">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/hwportType"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/parentResourceInstance"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/parentResourceInstance"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/queuingTime"/>
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference hardware.ecore#//platform/HWPortInstance/protocol"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

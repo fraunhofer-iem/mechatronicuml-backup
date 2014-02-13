@@ -135,8 +135,10 @@ init{
 					}
 			case (self.oclIsTypeOf(LinkPortInstance)){
 			result:=new LinkPortInstance();
-			result.connectedMedia:=self.connectedMedia.resolve(Link)->asOrderedSet()->intersection(parent.communicationResources[Link]);			
+			result.connectedMedia:=self.connectedMedia.resolve(Link)->asOrderedSet()->intersection(parent.communicationResources[Link]);
+						
 					}
+					
 			else{//sollte nich aufgerufen werden
 				result:=new BusPortInstance();
 				}
@@ -164,7 +166,7 @@ init{
 helper Delegation::createDelegation(number:String, inout parent:HWPlatformInstance):Set(Delegation){
 	var delegations:Set(Delegation);
 	delegations:=parent.delegations+=self->map createDelegation(number);
-	parent.delegationPorts+=self.hwPortInstance->select(port|port.isDelegationPort=true)->map createPort(number,parent);
+//	parent.delegationPorts+=self.hwPortInstance->select(port|port.isDelegationPort=true)->map createPort(number,parent);
 	return delegations;
 }
 

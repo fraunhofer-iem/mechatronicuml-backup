@@ -60,7 +60,7 @@ log("QVT-O Script \"ResourceInstanceRepositoryTransformation.qvto\" started.");
 		log("Initialize the DeviceInstance for" +di.eClass().name +", Name:" +di.name);
 		di.isResourceTypeSet();
 		if(di.resourceType.oclIsTypeOf(ResourceTypePackage::Device) and di.resourceType.oclAsType(ResourceTypePackage::Device).deviceType=ResourceTypePackage::DeviceKind::ACTUATOR) then{
-		di.name:=di.resourceType.name;
+		//di.name:=di.resourceType.name;
 		di.hwportInstances+=di.synchHWPortInstances();
 		}
 		endif;

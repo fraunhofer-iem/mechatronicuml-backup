@@ -35,9 +35,9 @@ public class HWPlatformInstance2ItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.BusPortInstance_3012 == req
+		if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortPart_3015 == req
 				.getElementType()) {
-			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.commands.BusPortInstance2CreateCommand(
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.commands.HWPortPartCreateCommand(
 					req));
 		}
 		return super.getCreateCommand(req);
@@ -73,53 +73,12 @@ public class HWPlatformInstance2ItemSemanticEditPolicy
 			Node node = (Node) nit.next();
 			switch (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 					.getVisualID(node)) {
-			case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusPortInstance2EditPart.VISUAL_ID:
-				for (Iterator<?> it = node.getTargetEdges().iterator(); it
-						.hasNext();) {
-					Edge incomingLink = (Edge) it.next();
-					if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationEditPart.VISUAL_ID) {
-						DestroyElementRequest r = new DestroyElementRequest(
-								incomingLink.getElement(), false);
-						cmd.add(new DestroyElementCommand(r));
-						cmd.add(new DeleteCommand(getEditingDomain(),
-								incomingLink));
-						continue;
-					}
-					if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-							.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.LinkEditPart.VISUAL_ID) {
-						DestroyElementRequest r = new DestroyElementRequest(
-								incomingLink.getElement(), false);
-						cmd.add(new DestroyElementCommand(r));
-						cmd.add(new DeleteCommand(getEditingDomain(),
-								incomingLink));
-						continue;
-					}
-				}
+			case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
 				for (Iterator<?> it = node.getSourceEdges().iterator(); it
 						.hasNext();) {
 					Edge outgoingLink = (Edge) it.next();
 					if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.LinkEditPart.VISUAL_ID) {
-						DestroyElementRequest r = new DestroyElementRequest(
-								outgoingLink.getElement(), false);
-						cmd.add(new DestroyElementCommand(r));
-						cmd.add(new DeleteCommand(getEditingDomain(),
-								outgoingLink));
-						continue;
-					}
-					if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceConnectedMediaEditPart.VISUAL_ID) {
-						DestroyReferenceRequest r = new DestroyReferenceRequest(
-								outgoingLink.getSource().getElement(), null,
-								outgoingLink.getTarget().getElement(), false);
-						cmd.add(new DestroyReferenceCommand(r));
-						cmd.add(new DeleteCommand(getEditingDomain(),
-								outgoingLink));
-						continue;
-					}
-					if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
-							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.Link2EditPart.VISUAL_ID) {
+							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.DelegationEditPart.VISUAL_ID) {
 						DestroyElementRequest r = new DestroyElementRequest(
 								outgoingLink.getElement(), false);
 						cmd.add(new DestroyElementCommand(r));

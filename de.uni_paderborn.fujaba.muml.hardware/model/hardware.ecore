@@ -897,7 +897,7 @@
         <details key="HWPortInstanceToDelegationPort" value="self.hwPortInstance.isDelegationPort"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortInstance" lowerBound="1"
-          eType="#//platform/HWPortInstance" eOpposite="#//platform/HWPortInstance/delegation">
+          upperBound="2" eType="#//platform/HWPortInstance" eOpposite="#//platform/HWPortInstance/delegation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The HWPortInstances that are connected via this delegation."/>
         </eAnnotations>
@@ -1105,7 +1105,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="delegationPorts" upperBound="-1"
-          eType="#//platform/HWPortInstance" containment="true">
+          eType="#//platform/HWPortPart" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The delegation ports of this HWPlatformInstance. They are derived from the HWPlatform type."/>
         </eAnnotations>

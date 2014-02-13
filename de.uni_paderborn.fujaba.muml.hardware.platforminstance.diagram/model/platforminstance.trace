@@ -160,13 +160,6 @@
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3012"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/platform/1.0/' and _eClass_.name = 'BusPortInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/platforminstance/1.0/' and _eClass_.name = 'HWPlatformInstance') and _containmentMF_.name = 'delegationPorts')">
-    <nodeLabelTraces
-        visualID="5032"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
       visualID="3013"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/platform/1.0/' and _eClass_.name = 'ActuatorInstance') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/platforminstance/1.0/' and _eClass_.name = 'HWPlatformInstance') and _containmentMF_.name = 'resourceInstances')">
     <nodeLabelTraces
@@ -190,6 +183,13 @@
         queryText="true"/>
     <nodeLabelTraces
         visualID="5040"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3015"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/platform/1.0/' and _eClass_.name = 'HWPortPart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/platforminstance/1.0/' and _eClass_.name = 'HWPlatformInstance') and _containmentMF_.name = 'delegationPorts')">
+    <nodeLabelTraces
+        visualID="5041"
         queryText="true"/>
   </childNodeTraces>
   <linkTraces

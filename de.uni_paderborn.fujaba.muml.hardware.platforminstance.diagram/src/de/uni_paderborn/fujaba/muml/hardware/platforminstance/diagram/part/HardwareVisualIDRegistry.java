@@ -128,8 +128,8 @@ public class HardwareVisualIDRegistry {
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-					.getBusPortInstance().isSuperTypeOf(domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusPortInstance2EditPart.VISUAL_ID;
+					.getHWPortPart().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.StructuredResourceInstanceEditPart.VISUAL_ID:
@@ -145,8 +145,8 @@ public class HardwareVisualIDRegistry {
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstance2EditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-					.getBusPortInstance().isSuperTypeOf(domainElement.eClass())) {
-				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusPortInstance2EditPart.VISUAL_ID;
+					.getHWPortPart().isSuperTypeOf(domainElement.eClass())) {
+				return de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID;
 			}
 			break;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.ActuatorInstanceEditPart.VISUAL_ID:
@@ -294,7 +294,7 @@ public class HardwareVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusPortInstance2EditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -427,11 +427,11 @@ public class HardwareVisualIDRegistry {
 			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPlatformInstanceHWPlatformCompartment2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusPortInstance2EditPart.VISUAL_ID == nodeVisualID) {
+			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusPortInstance2EditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
 			if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
@@ -583,7 +583,7 @@ public class HardwareVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.hardware.platform.Link domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						42,
+						43,
 						de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 								.getLink(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
@@ -596,7 +596,7 @@ public class HardwareVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.hardware.platform.Link domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						53,
+						54,
 						de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 								.getLink(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
@@ -646,7 +646,7 @@ public class HardwareVisualIDRegistry {
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.LinkPortInstanceEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusEditPart.VISUAL_ID:
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BridgeEditPart.VISUAL_ID:
-		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.BusPortInstance2EditPart.VISUAL_ID:
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

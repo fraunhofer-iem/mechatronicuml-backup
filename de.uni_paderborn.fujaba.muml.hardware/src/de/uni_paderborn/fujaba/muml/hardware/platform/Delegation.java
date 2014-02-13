@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.hardware.platform;
 
+import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 
 /**
@@ -33,31 +34,21 @@ import org.storydriven.core.CommentableElement;
  */
 public interface Delegation extends CommentableElement {
 	/**
-	 * Returns the value of the '<em><b>Hw Port Instance</b></em>' reference.
+	 * Returns the value of the '<em><b>Hw Port Instance</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance#getDelegation <em>Delegation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The HWPortInstances that are connected via this delegation.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Hw Port Instance</em>' reference.
-	 * @see #setHwPortInstance(HWPortInstance)
+	 * @return the value of the '<em>Hw Port Instance</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getDelegation_HwPortInstance()
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance#getDelegation
-	 * @model opposite="delegation" required="true"
+	 * @model opposite="delegation" required="true" upper="2"
 	 * @generated
 	 */
-	HWPortInstance getHwPortInstance();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.platform.Delegation#getHwPortInstance <em>Hw Port Instance</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Hw Port Instance</em>' reference.
-	 * @see #getHwPortInstance()
-	 * @generated
-	 */
-	void setHwPortInstance(HWPortInstance value);
+	EList<HWPortInstance> getHwPortInstance();
 
 	/**
 	 * Returns the value of the '<em><b>Hw Port Part</b></em>' reference.

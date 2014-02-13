@@ -6,7 +6,7 @@ package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.container;
  */
 
 /**
-* * Copyright (c) 2013 committers of YAKINDU and others.
+ * * Copyright (c) 2013 committers of YAKINDU and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,6 @@ import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.Request;
-import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.editpolicies.AbstractEditPolicy;
@@ -39,10 +38,10 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.figures.ShapeCompartmentFigure;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
+import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 /**
  * 
  * @author andreas muelder - Initial contribution and API
@@ -59,12 +58,14 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 
 	@Override
 	public Command getCommand(Request request) {
-		if (!RequestConstants.REQ_RESIZE.equals(request.getType())
-				&& !RequestConstants.REQ_MOVE.equals(request.getType())) {
-			return null;
-		} else {
-			return resizeContainerCommand(request);
 
+		if (RequestConstants.REQ_RESIZE.equals(request.getType())
+				|| RequestConstants.REQ_MOVE.equals(request.getType())) {
+			return resizeContainerCommand(request);
+		}
+		else {
+			
+			return null;
 		}
 	}
 
@@ -113,11 +114,10 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 			containerHierachy = collectContainerHierachy();
 		}
 		if (!RequestConstants.REQ_RESIZE.equals(request.getType())
-				&& !RequestConstants.REQ_MOVE.equals(request.getType())){
+				&& !RequestConstants.REQ_MOVE.equals(request.getType())) {
 			return;
 
-		}
-		else{
+		} else {
 			showContainerFeedback((ChangeBoundsRequest) request);
 		}
 	}
@@ -149,7 +149,7 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 		List<IGraphicalEditPart> result = new ArrayList<IGraphicalEditPart>();
 		IGraphicalEditPart containerEditPart = (IGraphicalEditPart) getHost();
 		while (containerEditPart != null) {
-			containerEditPart = getContainer(containerEditPart);
+			containerEditPart = getParentEditPart(containerEditPart);
 			if (containerEditPart != null)
 				result.add(containerEditPart);
 		}
@@ -181,8 +181,9 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 			if (request.getEditParts().contains(childPart)) {
 				continue;
 			}
-			if (childPart == containerEditPart)
+			if (childPart == containerEditPart) {
 				continue;
+			}
 			showChildFeedback(childPart, moveDelta, containerFeedbackBounds);
 		}
 	}
@@ -226,10 +227,15 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 		return boundsCache.get(figure).getCopy();
 	}
 
+	/**
+	 * 
+	 * @param host
+	 * @return FIXME: this shall be removed / seems useless
+	 */
 	private IGraphicalEditPart getContainer(IGraphicalEditPart host) {
-		IGraphicalEditPart containerEditPart = getParent(host);
+		IGraphicalEditPart containerEditPart = getParentEditPart(host);
 		if (containerEditPart == null) {
-			containerEditPart = getParent(host);
+			containerEditPart = getParentEditPart(host);
 			if (containerEditPart == null)
 				return null;
 		}
@@ -267,7 +273,7 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 		figure.getParent().setConstraint(figure, bounds);
 	}
 
-	// here i think i have to calculate the refitting
+	// here i think i have to calculate the resizing
 	@SuppressWarnings({ "unchecked" })
 	private Rectangle calculateFeedbackBounds(ChangeBoundsRequest request,
 			Rectangle feedbackBounds, int level, IFigure containerFigure) {
@@ -288,6 +294,8 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 					|| request.getSizeDelta().width < 0
 					|| request.getMoveDelta().x < 0
 					|| request.getMoveDelta().y < 0) {
+				// FIXME:Remove Debug Output
+				// TODO :TEST
 				System.out.println("If pfad");
 				result.resize(request.getSizeDelta());
 				result.resize(request.getMoveDelta().x,
@@ -313,27 +321,30 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 					}
 				}
 
-				// Dimension max = Dimension.max(result.getSize(),
-				// preferredSize);
+				Dimension max = Dimension.max(result.getSize(), containerFigure
+						.getMinimumSize().getCopy());
 
-				// result.setSize(max);
+				result.setSize(max);
 
 			} else {
 				result.union(transformedRect);
+				// FIXME:REMOVE DEBUG output
 				System.out.println("else teil");
 				Dimension max = Dimension.max(result.getSize(), preferredSize);
 
 				result.setSize(max);
 			}
-			if (result.x < feedbackBounds.x || result.y < feedbackBounds.y) {
-				return feedbackBounds;
-
-			}
+			/*
+			 * if (result.x < feedbackBounds.x || result.y < feedbackBounds.y) {
+			 * return feedbackBounds;
+			 * 
+			 * }
+			 */
 		}
 		return result;
 	}
 
-	protected IGraphicalEditPart getParent(EditPart part) {
+	protected IGraphicalEditPart getParentEditPart(EditPart part) {
 		part = part.getParent();
 		while (!(part instanceof ShapeNodeEditPart)) {
 			part = part.getParent();

@@ -62,12 +62,18 @@ public class DelegationReorientCommand extends EditElementCommand {
 		if (!(oldEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart && newEnd instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target = getLink()
-				.getHwPortInstance();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform)) {
+		// Removed this check, because other cases are now implemented; Enhancement for MUML-BUG #446
+		/*
+		if (getLink().getHwPortInstance().size() != 1) {
+		  return false;
+		}
+		 */
+		de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance) getLink()
+				.getHwPortInstance().get(0);
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform) getLink()
+		de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container = (de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -96,10 +102,10 @@ public class DelegationReorientCommand extends EditElementCommand {
 		}
 		de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source = getLink()
 				.getHwPortPart();
-		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform)) {
+		if (!(getLink().eContainer() instanceof de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance)) {
 			return false;
 		}
-		de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform) getLink()
+		de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container = (de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance) getLink()
 				.eContainer();
 		View sourceView = de.uni_paderborn.fujaba.muml.common.edit.policies.node.ConnectionConfigureHelperGraphicalNodeEditPolicy
 				.getSourceView(getRequest());
@@ -152,7 +158,11 @@ public class DelegationReorientCommand extends EditElementCommand {
 	 */
 	protected CommandResult reorientTarget() throws ExecutionException {
 
-		getLink().setHwPortInstance(getNewTarget());
+		// Enhancement for MUML-BUG #446
+		if (getLink().getHwPortInstance().size() > 1) {
+			getLink().getHwPortInstance().remove(getOldTarget());
+		}
+		getLink().getHwPortInstance().add(getNewTarget());
 
 		return CommandResult.newOKCommandResult(getLink());
 	}

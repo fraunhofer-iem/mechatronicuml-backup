@@ -348,7 +348,7 @@ public abstract class HWPortInstanceImpl extends NamedElementImpl implements HWP
 	 */
 	public EList<Delegation> getDelegation() {
 		if (delegation == null) {
-			delegation = new EObjectWithInverseResolvingEList<Delegation>(Delegation.class, this, PlatformPackage.HW_PORT_INSTANCE__DELEGATION, PlatformPackage.DELEGATION__HW_PORT_INSTANCE);
+			delegation = new EObjectWithInverseResolvingEList.ManyInverse<Delegation>(Delegation.class, this, PlatformPackage.HW_PORT_INSTANCE__DELEGATION, PlatformPackage.DELEGATION__HW_PORT_INSTANCE);
 		}
 		return delegation;
 	}

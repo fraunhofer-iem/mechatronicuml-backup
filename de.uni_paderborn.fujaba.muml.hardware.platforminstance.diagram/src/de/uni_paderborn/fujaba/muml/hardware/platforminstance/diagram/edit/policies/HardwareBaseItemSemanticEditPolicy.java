@@ -325,7 +325,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateDelegation_4001(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target,
 				View sourceView, View targetView) {
@@ -337,7 +337,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateLink_4002(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target,
 				View sourceView, View targetView) {
@@ -392,7 +392,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canCreateLink_4005(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Bridge target,
 				View sourceView, View targetView) {
@@ -404,7 +404,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistDelegation_4001(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Delegation linkInstance,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target,
@@ -425,7 +425,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									40,
+									41,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortPart(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -450,7 +450,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									41,
+									42,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortInstance(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -473,7 +473,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorDelegation_4001(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target,
 				View sourceView, View targetView) {
@@ -493,7 +493,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									40,
+									41,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortPart(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -530,7 +530,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									41,
+									42,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortInstance(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -565,7 +565,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistLink_4002(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Link linkInstance,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target,
@@ -586,7 +586,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									47,
+									48,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -611,7 +611,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									48,
+									49,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortInstance(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -634,7 +634,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorLink_4002(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance target,
 				View sourceView, View targetView) {
@@ -654,7 +654,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									47,
+									48,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -691,7 +691,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									48,
+									49,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortInstance(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -745,7 +745,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									49,
+									50,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -770,7 +770,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									50,
+									51,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getCommunicationMedia(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -812,7 +812,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									49,
+									50,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -849,7 +849,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									50,
+									51,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getCommunicationMedia(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -903,7 +903,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									51,
+									52,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getCommunicationMedia(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -928,7 +928,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									52,
+									53,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getBridge(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -970,7 +970,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									51,
+									52,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getCommunicationMedia(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -1007,7 +1007,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									52,
+									53,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getBridge(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -1042,7 +1042,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public boolean canExistLink_4005(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Link linkInstance,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Bridge target,
@@ -1063,7 +1063,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									58,
+									59,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -1088,7 +1088,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									59,
+									60,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getBridge(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
@@ -1111,7 +1111,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		 * @generated
 		 */
 		public java.lang.String getErrorLink_4005(
-				de.uni_paderborn.fujaba.muml.hardware.platform.HWPlatform container,
+				de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container,
 				de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance source,
 				de.uni_paderborn.fujaba.muml.hardware.platform.Bridge target,
 				View sourceView, View targetView) {
@@ -1131,7 +1131,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									58,
+									59,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getHWPortInstance(), envType);
 					Object sourceVal = expression.evaluate(source, env); //$NON-NLS-1$
@@ -1168,7 +1168,7 @@ public class HardwareBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareAbstractExpression expression = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 							.getExpression(
-									59,
+									60,
 									de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 											.getBridge(), envType);
 					Object targetVal = expression.evaluate(target, env); //$NON-NLS-1$
