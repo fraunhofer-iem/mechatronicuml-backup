@@ -58,7 +58,7 @@ public interface HWPlatform extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Embedded Communication Resources</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPlatform_EmbeddedCommunicationResources()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<CommunicationResource> getEmbeddedCommunicationResources();

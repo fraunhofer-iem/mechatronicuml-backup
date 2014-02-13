@@ -94,12 +94,6 @@
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/Delegation/hwPortInstance"/>
-    <creationConstraints>
-      <sourceEnd
-          body="self.oclIsTypeOf(platform::HWPortPart)"/>
-      <targetEnd
-          body="self.oclIsTypeOf(platform::HWPortInstance)"/>
-    </creationConstraints>
   </links>
   <links>
     <domainMetaElement
@@ -253,6 +247,22 @@
           body="self.oclIsTypeOf(platform::LinkPortInstance)"/>
       <targetEnd
           body="self.oclIsTypeOf(platform::Bridge)"/>
+    </creationConstraints>
+  </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmftool#//@palette/@tools.0/@tools.2"/>
+    <diagramLink
+        href="../../de.uni_paderborn.fujaba.muml.hardware.platform.diagram/model/platform.gmfgraph#toBus"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/HWPortPart/connectedMedia"/>
+    <creationConstraints>
+      <sourceEnd
+          body="self.oclIsTypeOf(platform::BusPortInstance) or self.oclIsTypeOf(platform::HWPortPart)"/>
+      <targetEnd
+          body="self.oclIsTypeOf(platform::Bus)"/>
     </creationConstraints>
   </links>
   <diagram>

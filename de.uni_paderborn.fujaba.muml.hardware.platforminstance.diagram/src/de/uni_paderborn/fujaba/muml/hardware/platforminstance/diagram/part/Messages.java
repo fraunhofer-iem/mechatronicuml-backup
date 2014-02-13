@@ -483,12 +483,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Link_4005_incominglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_HWPortInstanceConnectedMedia_4006_target;
 
 	/**
 	 * @generated
 	 */
 	public static String NavigatorGroupName_HWPortInstanceConnectedMedia_4006_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HWPortPartConnectedMedia_4007_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_HWPortPartConnectedMedia_4007_source;
 
 	/**
 	 * @generated

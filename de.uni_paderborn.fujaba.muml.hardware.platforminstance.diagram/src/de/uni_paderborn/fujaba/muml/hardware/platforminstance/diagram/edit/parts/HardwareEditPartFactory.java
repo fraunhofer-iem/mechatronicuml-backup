@@ -285,6 +285,10 @@ public class HardwareEditPartFactory implements EditPartFactory {
 				return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.WrappingLabel29EditPart(
 						view);
 
+			case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID:
+				return new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart(
+						view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

@@ -140,6 +140,9 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceConnectedMediaEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.fujaba.de/muml/hardware/platform/1.0/?HWPortInstance?connectedMedia", de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstanceConnectedMedia_4006); //$NON-NLS-1$
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?http://www.fujaba.de/muml/hardware/platform/1.0/?HWPortPart?connectedMedia", de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortPartConnectedMedia_4007); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -238,6 +241,8 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 			return getLink_4005Text(view);
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceConnectedMediaEditPart.VISUAL_ID:
 			return getHWPortInstanceConnectedMedia_4006Text(view);
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID:
+			return getHWPortPartConnectedMedia_4007Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -661,6 +666,13 @@ public class HardwareNavigatorLabelProvider extends LabelProvider implements
 	 * @generated
 	 */
 	private String getHWPortInstanceConnectedMedia_4006Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getHWPortPartConnectedMedia_4007Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

@@ -660,8 +660,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedCommunicationResources"
-          lowerBound="1" upperBound="-1" eType="#//platform/CommunicationResource"
-          containment="true">
+          upperBound="-1" eType="#//platform/CommunicationResource" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The CommunicationResources this HWPlatform contains."/>
         </eAnnotations>
@@ -891,7 +890,7 @@
         <details key="documentation" value="This class represents a delegation.&#xA; A delegation connects a hwport of a StructuredResourceInstance and a port of &#xD;&#xA;HWPlatform that contains the StructuredResourceInstance.&#xD;&#xA;A delegation has no behavior.&#xA;At runtime level, the port of the HWPlatform and the port of the StructuredResourceInstance will be the same. &#xA;It is used as a technique for encapsulation of a HWPlatform."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="HWPortInstanceToDelegationPort"/>
+        <details key="constraints" value=""/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="HWPortInstanceToDelegationPort" value="self.hwPortInstance.isDelegationPort"/>
@@ -910,9 +909,9 @@
         <details key="constraints" value="SameProtocol BusPort2Bus LinkPort2Link"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SameProtocol" value="if (self.connectedMedia->size()>0) then&#xA;&#x9;self.connectedMedia.protocol=self.protocol&#xA;else true&#xA;endif"/>
-        <details key="BusPort2Bus" value="if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and not self.connectedMedia.oclIsUndefined()) then&#xA;&#x9;self.connectedMedia.oclIsTypeOf(platform::Bus)&#xA;else true&#xA;endif"/>
-        <details key="LinkPort2Link" value="if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and not self.connectedMedia.oclIsUndefined()) then&#xA;&#x9;self.connectedMedia.oclIsTypeOf(platform::Link)&#xA;else true&#xA;endif"/>
+        <details key="SameProtocol" value="if (self.connectedMedia->size()>0) then&#xA;&#x9;self.connectedMedia->first().protocol=self.protocol&#xA;else true&#xA;endif"/>
+        <details key="BusPort2Bus" value="if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and  self.connectedMedia->size()>0) then&#xA;&#x9;self.connectedMedia->first().oclIsTypeOf(platform::Bus)&#xA;else true&#xA;&#xA;endif"/>
+        <details key="LinkPort2Link" value="if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and  self.connectedMedia->size()>0) then&#xA;&#x9;self.connectedMedia->first().oclIsTypeOf(platform::Link)&#xA;else true&#xA;endif"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortInstance" lowerBound="1"
           eType="#//platform/HWPortInstance"/>
@@ -922,7 +921,7 @@
           eType="#//resourcetype/CommunicationProtocol" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.hwPortInstance.protocol"/>
+          <details key="derivation" value="if(self.hwPortInstance.oclIsUndefined()) then&#xA;&#x9;null &#xA;else&#xA; self.hwPortInstance.protocol&#xA; endif&#xA; "/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The used protocol of this HWPortInstance."/>

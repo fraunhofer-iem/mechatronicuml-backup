@@ -329,7 +329,7 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="PlatformInstance"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3015,3013,3014"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4006,4004,4005"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4006,4004,4005,4007"/>
       </viewProvider>
    </extension>
 
@@ -344,7 +344,7 @@
             <method name="getType()" value="2001,3001,3002,3003,3004,3005,3006,3007,3008,3009,3010,3011,3015,3013,3014"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4002,4006,4004,4005"/>
+            <method name="getType()" value="4001,4002,4006,4004,4005,4007"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5034,5026,5027,5028,5001,5002,5003,5004,5005,5006,5007,5008,5009,5010,5011,5012,5013,5014,5015,5016,5017,5018,5019,5020,5021,5022,5023,5024,5025,5029,5030,5031,5033,5041,5035,5036,5037,5038,5039,5040"/>
@@ -602,6 +602,15 @@
             <param name="semanticHint" value="4005"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/platform/1.0/">
+         <specializationType
+               id="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortPartConnectedMedia_4007"
+               name="%metatype.name.HWPortPartConnectedMedia_4007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4007"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -635,6 +644,7 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortInstanceConnectedMedia_4006"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.CommunicationMediaConnectedBridges_4004"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.Link_4005"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortPartConnectedMedia_4007"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

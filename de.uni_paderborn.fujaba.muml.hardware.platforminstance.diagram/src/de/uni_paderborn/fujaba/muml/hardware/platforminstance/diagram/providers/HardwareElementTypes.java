@@ -136,6 +136,11 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType HWPortPartConnectedMedia_4007 = getElementType("de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.HWPortPartConnectedMedia_4007"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
@@ -275,6 +280,11 @@ public class HardwareElementTypes {
 					Link_4005,
 					de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 							.getLink());
+
+			elements.put(
+					HWPortPartConnectedMedia_4007,
+					de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
+							.getHWPortPart_ConnectedMedia());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -313,6 +323,7 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES.add(HWPortInstanceConnectedMedia_4006);
 			KNOWN_ELEMENT_TYPES.add(CommunicationMediaConnectedBridges_4004);
 			KNOWN_ELEMENT_TYPES.add(Link_4005);
+			KNOWN_ELEMENT_TYPES.add(HWPortPartConnectedMedia_4007);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -364,6 +375,8 @@ public class HardwareElementTypes {
 			return CommunicationMediaConnectedBridges_4004;
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.Link2EditPart.VISUAL_ID:
 			return Link_4005;
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID:
+			return HWPortPartConnectedMedia_4007;
 		}
 		return null;
 	}

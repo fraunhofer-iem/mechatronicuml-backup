@@ -52,6 +52,10 @@ public class LinkItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.commands.CommunicationMediaConnectedBridgesCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
+		if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortPartConnectedMedia_4007 == req
+				.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -68,6 +72,11 @@ public class LinkItemSemanticEditPolicy
 		if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.CommunicationMediaConnectedBridges_4004 == req
 				.getElementType()) {
 			return null;
+		}
+		if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortPartConnectedMedia_4007 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.commands.HWPortPartConnectedMediaCreateCommand(
+					req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -86,6 +95,9 @@ public class LinkItemSemanticEditPolicy
 					req));
 		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.CommunicationMediaConnectedBridgesEditPart.VISUAL_ID:
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.commands.CommunicationMediaConnectedBridgesReorientCommand(
+					req));
+		case de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID:
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.commands.HWPortPartConnectedMediaReorientCommand(
 					req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);

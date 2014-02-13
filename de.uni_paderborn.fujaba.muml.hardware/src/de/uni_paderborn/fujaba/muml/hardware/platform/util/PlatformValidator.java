@@ -1034,46 +1034,7 @@ public class PlatformValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDelegation(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(delegation, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegation, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegation_HWPortInstanceToDelegationPort(delegation, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the HWPortInstanceToDelegationPort constraint of '<em>Delegation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION__HW_PORT_INSTANCE_TO_DELEGATION_PORT__EEXPRESSION = "self.hwPortInstance.isDelegationPort";
-
-	/**
-	 * Validates the HWPortInstanceToDelegationPort constraint of '<em>Delegation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegation_HWPortInstanceToDelegationPort(Delegation delegation, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(PlatformPackage.Literals.DELEGATION,
-				 delegation,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "HWPortInstanceToDelegationPort",
-				 DELEGATION__HW_PORT_INSTANCE_TO_DELEGATION_PORT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(delegation, diagnostics, context);
 	}
 
 	/**
@@ -1104,7 +1065,7 @@ public class PlatformValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String HW_PORT_PART__SAME_PROTOCOL__EEXPRESSION = "if (self.connectedMedia->size()>0) then\n" +
-		"\tself.connectedMedia.protocol=self.protocol\n" +
+		"\tself.connectedMedia->first().protocol=self.protocol\n" +
 		"else true\n" +
 		"endif";
 
@@ -1135,9 +1096,10 @@ public class PlatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String HW_PORT_PART__BUS_PORT2_BUS__EEXPRESSION = "if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n" +
-		"\tself.connectedMedia.oclIsTypeOf(platform::Bus)\n" +
+	protected static final String HW_PORT_PART__BUS_PORT2_BUS__EEXPRESSION = "if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and  self.connectedMedia->size()>0) then\n" +
+		"\tself.connectedMedia->first().oclIsTypeOf(platform::Bus)\n" +
 		"else true\n" +
+		"\n" +
 		"endif";
 
 	/**
@@ -1167,8 +1129,8 @@ public class PlatformValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String HW_PORT_PART__LINK_PORT2_LINK__EEXPRESSION = "if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n" +
-		"\tself.connectedMedia.oclIsTypeOf(platform::Link)\n" +
+	protected static final String HW_PORT_PART__LINK_PORT2_LINK__EEXPRESSION = "if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and  self.connectedMedia->size()>0) then\n" +
+		"\tself.connectedMedia->first().oclIsTypeOf(platform::Link)\n" +
 		"else true\n" +
 		"endif";
 

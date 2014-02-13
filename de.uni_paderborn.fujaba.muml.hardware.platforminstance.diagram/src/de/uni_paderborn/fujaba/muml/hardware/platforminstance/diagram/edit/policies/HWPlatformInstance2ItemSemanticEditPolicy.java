@@ -86,6 +86,16 @@ public class HWPlatformInstance2ItemSemanticEditPolicy
 								outgoingLink));
 						continue;
 					}
+					if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
+							.getVisualID(outgoingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID) {
+						DestroyReferenceRequest r = new DestroyReferenceRequest(
+								outgoingLink.getSource().getElement(), null,
+								outgoingLink.getTarget().getElement(), false);
+						cmd.add(new DestroyReferenceCommand(r));
+						cmd.add(new DeleteCommand(getEditingDomain(),
+								outgoingLink));
+						continue;
+					}
 				}
 
 				cmd.add(new DestroyElementCommand(new DestroyElementRequest(
@@ -115,6 +125,17 @@ public class HWPlatformInstance2ItemSemanticEditPolicy
 							Edge incomingLink = (Edge) it.next();
 							if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
 									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortInstanceConnectedMediaEditPart.VISUAL_ID) {
+								DestroyReferenceRequest r = new DestroyReferenceRequest(
+										incomingLink.getSource().getElement(),
+										null, incomingLink.getTarget()
+												.getElement(), false);
+								cmd.add(new DestroyReferenceCommand(r));
+								cmd.add(new DeleteCommand(getEditingDomain(),
+										incomingLink));
+								continue;
+							}
+							if (de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareVisualIDRegistry
+									.getVisualID(incomingLink) == de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID) {
 								DestroyReferenceRequest r = new DestroyReferenceRequest(
 										incomingLink.getSource().getElement(),
 										null, incomingLink.getTarget()

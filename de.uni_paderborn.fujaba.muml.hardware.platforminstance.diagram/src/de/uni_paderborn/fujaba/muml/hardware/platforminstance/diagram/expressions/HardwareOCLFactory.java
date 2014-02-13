@@ -91,8 +91,6 @@ public class HardwareOCLFactory {
 					"--\': \' + if self.resourceType.oclIsUndefined() then \'null\' else self.resourceType.name endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\' \'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--let nameToShow : String = if (self.oclIsTypeOf(platforminstance::HWPlatformInstance)) then \n--\tself.name.toString() +\' :\'+ self.oclAsType(platforminstance::HWPlatformInstance).hwplatformType.name.toString()\n--else \n--\tself.name.toString()\n--endif \n-- in\n--nameToShow".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(platform::HWPortPart)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
-					"--self.oclIsTypeOf(platform::HWPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.connectedBridges->isEmpty()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--0".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--DataRateUnit::bs".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
@@ -111,6 +109,8 @@ public class HardwareOCLFactory {
 					"--\'Enter bandwidth in form of: Value bs/kbs/mbs\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::LinkPortInstance)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--self.oclIsTypeOf(platform::Bridge)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsTypeOf(platform::BusPortInstance) or self.oclIsTypeOf(platform::HWPortPart)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--self.oclIsTypeOf(platform::Bus)".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 			};
 			cached.expressions[index] = getExpression(
 					exprBodies[index],

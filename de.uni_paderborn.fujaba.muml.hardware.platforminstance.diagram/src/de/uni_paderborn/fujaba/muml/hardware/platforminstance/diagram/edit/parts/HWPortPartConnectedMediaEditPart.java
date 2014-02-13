@@ -17,7 +17,7 @@ public class HWPortPartConnectedMediaEditPart extends ConnectionNodeEditPart
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 4003;
+	public static final int VISUAL_ID = 4007;
 
 	/**
 	 * @generated
@@ -26,7 +26,15 @@ public class HWPortPartConnectedMediaEditPart extends ConnectionNodeEditPart
 		super(view);
 	}
 
-	
+	/**
+	 * @generated
+	 */
+	protected void createDefaultEditPolicies() {
+		super.createDefaultEditPolicies();
+		installEditPolicy(
+				EditPolicyRoles.SEMANTIC_ROLE,
+				new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.policies.HWPortPartConnectedMediaItemSemanticEditPolicy());
+	}
 
 	/**
 	 * Creates figure for this edit part.

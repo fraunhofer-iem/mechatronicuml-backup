@@ -1342,7 +1342,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		initEClass(hwPlatformEClass, HWPlatform.class, "HWPlatform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPlatform_EmbeddedPlatformParts(), this.getPlatformPart(), this.getPlatformPart_ParentHWPlatform(), "embeddedPlatformParts", null, 1, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHWPlatform_EmbeddedCommunicationResources(), this.getCommunicationResource(), null, "embeddedCommunicationResources", null, 1, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHWPlatform_EmbeddedCommunicationResources(), this.getCommunicationResource(), null, "embeddedCommunicationResources", null, 0, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPlatform_DelegationPorts(), this.getHWPortInstance(), null, "delegationPorts", null, 0, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPlatform_Delegations(), this.getDelegation(), null, "delegations", null, 0, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1959,7 +1959,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		  (delegationEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "HWPortInstanceToDelegationPort"
+			 "constraints", ""
 		   });				
 		addAnnotation
 		  (hwPortPartEClass, 
@@ -2105,15 +2105,15 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		  (hwPortPartEClass, 
 		   source, 
 		   new String[] {
-			 "SameProtocol", "if (self.connectedMedia->size()>0) then\n\tself.connectedMedia.protocol=self.protocol\nelse true\nendif",
-			 "BusPort2Bus", "if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n\tself.connectedMedia.oclIsTypeOf(platform::Bus)\nelse true\nendif",
-			 "LinkPort2Link", "if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n\tself.connectedMedia.oclIsTypeOf(platform::Link)\nelse true\nendif"
+			 "SameProtocol", "if (self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().protocol=self.protocol\nelse true\nendif",
+			 "BusPort2Bus", "if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and  self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().oclIsTypeOf(platform::Bus)\nelse true\n\nendif",
+			 "LinkPort2Link", "if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and  self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().oclIsTypeOf(platform::Link)\nelse true\nendif"
 		   });		
 		addAnnotation
 		  (getHWPortPart_Protocol(), 
 		   source, 
 		   new String[] {
-			 "derivation", "self.hwPortInstance.protocol"
+			 "derivation", "if(self.hwPortInstance.oclIsUndefined()) then\n\tnull \nelse\n self.hwPortInstance.protocol\n endif\n "
 		   });	
 	}
 

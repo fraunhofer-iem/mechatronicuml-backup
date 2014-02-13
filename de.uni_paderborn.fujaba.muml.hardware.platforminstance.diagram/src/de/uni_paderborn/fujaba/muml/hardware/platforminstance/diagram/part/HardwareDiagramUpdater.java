@@ -691,7 +691,11 @@ public class HardwareDiagramUpdater {
 	 */
 	public static List<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getHWPortPart_3015ContainedLinks(
 			View view) {
-		return Collections.emptyList();
+		de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart modelElement = (de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart) view
+				.getElement();
+		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_HWPortPart_ConnectedMedia_4007(modelElement));
+		return result;
 	}
 
 	/**
@@ -844,6 +848,8 @@ public class HardwareDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_HWPortInstance_ConnectedMedia_4006(
 				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_HWPortPart_ConnectedMedia_4007(
+				modelElement, crossReferences));
 		return result;
 	}
 
@@ -916,6 +922,8 @@ public class HardwareDiagramUpdater {
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_HWPortInstance_ConnectedMedia_4006(
 				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_HWPortPart_ConnectedMedia_4007(
+				modelElement, crossReferences));
 		return result;
 	}
 
@@ -930,6 +938,8 @@ public class HardwareDiagramUpdater {
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_HWPortInstance_ConnectedMedia_4006(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_HWPortPart_ConnectedMedia_4007(
 				modelElement, crossReferences));
 		return result;
 	}
@@ -1055,6 +1065,7 @@ public class HardwareDiagramUpdater {
 				.getElement();
 		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Delegation_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_HWPortPart_ConnectedMedia_4007(modelElement));
 		return result;
 	}
 
@@ -1376,6 +1387,28 @@ public class HardwareDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getIncomingFeatureModelFacetLinks_HWPortPart_ConnectedMedia_4007(
+			de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
+					.getHWPortPart_ConnectedMedia()) {
+				result.add(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor(
+						setting.getEObject(),
+						target,
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortPartConnectedMedia_4007,
+						de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getOutgoingTypeModelFacetLinks_Delegation_4001(
 			de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source) {
 		de.uni_paderborn.fujaba.muml.hardware.platforminstance.HWPlatformInstance container = null;
@@ -1571,6 +1604,25 @@ public class HardwareDiagramUpdater {
 					link,
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.Link_4005,
 					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.Link2EditPart.VISUAL_ID));
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> getOutgoingFeatureModelFacetLinks_HWPortPart_ConnectedMedia_4007(
+			de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart source) {
+		LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor> result = new LinkedList<de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor>();
+		for (Iterator<?> destinations = source.getConnectedMedia().iterator(); destinations
+				.hasNext();) {
+			de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia destination = (de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia) destinations
+					.next();
+			result.add(new de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.HardwareLinkDescriptor(
+					source,
+					destination,
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortPartConnectedMedia_4007,
+					de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.edit.parts.HWPortPartConnectedMediaEditPart.VISUAL_ID));
 		}
 		return result;
 	}

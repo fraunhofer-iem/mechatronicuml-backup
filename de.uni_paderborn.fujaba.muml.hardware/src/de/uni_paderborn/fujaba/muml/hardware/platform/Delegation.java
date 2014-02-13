@@ -28,7 +28,7 @@ import org.storydriven.core.CommentableElement;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getDelegation()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='HWPortInstanceToDelegationPort'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints=''"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL HWPortInstanceToDelegationPort='self.hwPortInstance.isDelegationPort'"
  * @generated
  */

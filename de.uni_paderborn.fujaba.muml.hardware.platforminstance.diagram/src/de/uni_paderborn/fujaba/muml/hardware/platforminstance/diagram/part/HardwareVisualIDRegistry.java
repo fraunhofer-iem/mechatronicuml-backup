@@ -583,7 +583,7 @@ public class HardwareVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.hardware.platform.Link domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						43,
+						41,
 						de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 								.getLink(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
@@ -596,7 +596,7 @@ public class HardwareVisualIDRegistry {
 			de.uni_paderborn.fujaba.muml.hardware.platform.Link domainElement) {
 		Object result = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 				.getExpression(
-						54,
+						52,
 						de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 								.getLink(), null).evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();

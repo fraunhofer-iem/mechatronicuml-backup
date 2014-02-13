@@ -239,9 +239,10 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createToBus10CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortInstanceConnectedMedia_4006);
 		types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.CommunicationMediaConnectedBridges_4004);
+		types.add(de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.providers.HardwareElementTypes.HWPortPartConnectedMedia_4007);
 		LinkToolEntry entry = new LinkToolEntry(
 				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.ToBus10CreationTool_title,
 				de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.part.Messages.ToBus10CreationTool_desc,

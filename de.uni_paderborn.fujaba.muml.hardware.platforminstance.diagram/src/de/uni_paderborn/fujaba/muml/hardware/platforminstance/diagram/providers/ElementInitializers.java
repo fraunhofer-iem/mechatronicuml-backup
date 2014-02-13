@@ -117,7 +117,7 @@ public class ElementInitializers {
 			instance.setBandwidth(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							44,
+							42,
 							de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 									.getDataRate(), null).evaluate(
 							newInstance_0_0);
@@ -128,7 +128,7 @@ public class ElementInitializers {
 			newInstance_0_0.setValue(((Double) value_0_0_0).doubleValue());
 			Object value_0_0_1 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							45,
+							43,
 							de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 									.getDataRate(), null).evaluate(
 							newInstance_0_0);
@@ -158,7 +158,7 @@ public class ElementInitializers {
 			instance.setBandwidth(newInstance_0_0);
 			Object value_0_0_0 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							55,
+							53,
 							de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 									.getDataRate(), null).evaluate(
 							newInstance_0_0);
@@ -169,7 +169,7 @@ public class ElementInitializers {
 			newInstance_0_0.setValue(((Double) value_0_0_0).doubleValue());
 			Object value_0_0_1 = de.uni_paderborn.fujaba.muml.hardware.platforminstance.diagram.expressions.HardwareOCLFactory
 					.getExpression(
-							56,
+							54,
 							de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
 									.getDataRate(), null).evaluate(
 							newInstance_0_0);

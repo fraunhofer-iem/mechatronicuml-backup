@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPortPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameProtocol BusPort2Bus LinkPort2Link'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameProtocol='if (self.connectedMedia->size()>0) then\n\tself.connectedMedia.protocol=self.protocol\nelse true\nendif' BusPort2Bus='if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n\tself.connectedMedia.oclIsTypeOf(platform::Bus)\nelse true\nendif' LinkPort2Link='if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and not self.connectedMedia.oclIsUndefined()) then\n\tself.connectedMedia.oclIsTypeOf(platform::Link)\nelse true\nendif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameProtocol='if (self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().protocol=self.protocol\nelse true\nendif' BusPort2Bus='if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and  self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().oclIsTypeOf(platform::Bus)\nelse true\n\nendif' LinkPort2Link='if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and  self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().oclIsTypeOf(platform::Link)\nelse true\nendif'"
  * @generated
  */
 public interface HWPortPart extends NamedElement {
@@ -81,7 +81,7 @@ public interface HWPortPart extends NamedElement {
 	 * @return the value of the '<em>Protocol</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPortPart_Protocol()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.hwPortInstance.protocol'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if(self.hwPortInstance.oclIsUndefined()) then\n\tnull \nelse\n self.hwPortInstance.protocol\n endif\n '"
 	 * @generated
 	 */
 	CommunicationProtocol getProtocol();
