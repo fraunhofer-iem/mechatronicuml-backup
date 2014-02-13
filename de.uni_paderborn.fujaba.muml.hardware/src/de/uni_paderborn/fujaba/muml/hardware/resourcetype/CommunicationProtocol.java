@@ -30,7 +30,7 @@ import org.storydriven.core.NamedElement;
 public interface CommunicationProtocol extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Is Time Triggered</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Time Triggered</em>' attribute isn't clear,
@@ -43,7 +43,7 @@ public interface CommunicationProtocol extends NamedElement {
 	 * @return the value of the '<em>Is Time Triggered</em>' attribute.
 	 * @see #setIsTimeTriggered(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage#getCommunicationProtocol_IsTimeTriggered()
-	 * @model default="" required="true"
+	 * @model default="false" required="true"
 	 * @generated
 	 */
 	boolean isIsTimeTriggered();
@@ -60,6 +60,7 @@ public interface CommunicationProtocol extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Is Event Triggered</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Event Triggered</em>' attribute isn't clear,
@@ -72,7 +73,7 @@ public interface CommunicationProtocol extends NamedElement {
 	 * @return the value of the '<em>Is Event Triggered</em>' attribute.
 	 * @see #setIsEventTriggered(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage#getCommunicationProtocol_IsEventTriggered()
-	 * @model required="true"
+	 * @model default="false" required="true"
 	 * @generated
 	 */
 	boolean isIsEventTriggered();
