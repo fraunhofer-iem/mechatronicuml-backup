@@ -916,8 +916,8 @@
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortInstance" lowerBound="1"
           eType="#//platform/HWPortInstance"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedMedia" eType="#//platform/CommunicationMedia"
-          eOpposite="#//platform/CommunicationMedia/connectedHWPortParts"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedMedia" upperBound="-1"
+          eType="#//platform/CommunicationMedia" eOpposite="#//platform/CommunicationMedia/connectedHWPortParts"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
           eType="#//resourcetype/CommunicationProtocol" changeable="false" volatile="true"
           transient="true" derived="true">

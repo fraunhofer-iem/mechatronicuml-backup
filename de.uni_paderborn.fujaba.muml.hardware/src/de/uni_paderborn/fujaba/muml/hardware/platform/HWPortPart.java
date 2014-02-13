@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.platform;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +54,8 @@ public interface HWPortPart extends NamedElement {
 	void setHwPortInstance(HWPortInstance value);
 
 	/**
-	 * Returns the value of the '<em><b>Connected Media</b></em>' reference.
+	 * Returns the value of the '<em><b>Connected Media</b></em>' reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia}.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortParts <em>Connected HW Port Parts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -61,24 +63,13 @@ public interface HWPortPart extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connected Media</em>' reference.
-	 * @see #setConnectedMedia(CommunicationMedia)
+	 * @return the value of the '<em>Connected Media</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPortPart_ConnectedMedia()
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortParts
 	 * @model opposite="connectedHWPortParts"
 	 * @generated
 	 */
-	CommunicationMedia getConnectedMedia();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getConnectedMedia <em>Connected Media</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Connected Media</em>' reference.
-	 * @see #getConnectedMedia()
-	 * @generated
-	 */
-	void setConnectedMedia(CommunicationMedia value);
+	EList<CommunicationMedia> getConnectedMedia();
 
 	/**
 	 * Returns the value of the '<em><b>Protocol</b></em>' reference.

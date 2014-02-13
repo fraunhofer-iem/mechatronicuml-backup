@@ -2506,7 +2506,7 @@ public interface PlatformPackage extends EPackage {
 	int HW_PORT_PART__HW_PORT_INSTANCE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Connected Media</b></em>' reference.
+	 * The feature id for the '<em><b>Connected Media</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3363,10 +3363,10 @@ public interface PlatformPackage extends EPackage {
 	EReference getHWPortPart_HwPortInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getConnectedMedia <em>Connected Media</em>}'.
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getConnectedMedia <em>Connected Media</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Connected Media</em>'.
+	 * @return the meta object for the reference list '<em>Connected Media</em>'.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart#getConnectedMedia()
 	 * @see #getHWPortPart()
 	 * @generated
@@ -4089,7 +4089,7 @@ public interface PlatformPackage extends EPackage {
 		EReference HW_PORT_PART__HW_PORT_INSTANCE = eINSTANCE.getHWPortPart_HwPortInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Connected Media</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Connected Media</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

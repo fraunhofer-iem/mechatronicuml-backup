@@ -4,10 +4,13 @@ package de.uni_paderborn.fujaba.muml.hardware.platform.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia;
@@ -15,6 +18,7 @@ import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance;
 import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortPart;
 import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,14 +47,14 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	protected HWPortInstance hwPortInstance;
 
 	/**
-	 * The cached value of the '{@link #getConnectedMedia() <em>Connected Media</em>}' reference.
+	 * The cached value of the '{@link #getConnectedMedia() <em>Connected Media</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConnectedMedia()
 	 * @generated
 	 * @ordered
 	 */
-	protected CommunicationMedia connectedMedia;
+	protected EList<CommunicationMedia> connectedMedia;
 
 	/**
 	 * The cached setting delegate for the '{@link #getProtocol() <em>Protocol</em>}' reference.
@@ -124,59 +128,11 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommunicationMedia getConnectedMedia() {
-		if (connectedMedia != null && connectedMedia.eIsProxy()) {
-			InternalEObject oldConnectedMedia = (InternalEObject)connectedMedia;
-			connectedMedia = (CommunicationMedia)eResolveProxy(oldConnectedMedia);
-			if (connectedMedia != oldConnectedMedia) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA, oldConnectedMedia, connectedMedia));
-			}
+	public EList<CommunicationMedia> getConnectedMedia() {
+		if (connectedMedia == null) {
+			connectedMedia = new EObjectWithInverseResolvingEList.ManyInverse<CommunicationMedia>(CommunicationMedia.class, this, PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA, PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_PARTS);
 		}
 		return connectedMedia;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CommunicationMedia basicGetConnectedMedia() {
-		return connectedMedia;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetConnectedMedia(CommunicationMedia newConnectedMedia, NotificationChain msgs) {
-		CommunicationMedia oldConnectedMedia = connectedMedia;
-		connectedMedia = newConnectedMedia;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA, oldConnectedMedia, newConnectedMedia);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setConnectedMedia(CommunicationMedia newConnectedMedia) {
-		if (newConnectedMedia != connectedMedia) {
-			NotificationChain msgs = null;
-			if (connectedMedia != null)
-				msgs = ((InternalEObject)connectedMedia).eInverseRemove(this, PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_PARTS, CommunicationMedia.class, msgs);
-			if (newConnectedMedia != null)
-				msgs = ((InternalEObject)newConnectedMedia).eInverseAdd(this, PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_PARTS, CommunicationMedia.class, msgs);
-			msgs = basicSetConnectedMedia(newConnectedMedia, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA, newConnectedMedia, newConnectedMedia));
 	}
 
 	/**
@@ -202,13 +158,12 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
-				if (connectedMedia != null)
-					msgs = ((InternalEObject)connectedMedia).eInverseRemove(this, PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_PARTS, CommunicationMedia.class, msgs);
-				return basicSetConnectedMedia((CommunicationMedia)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectedMedia()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -222,7 +177,7 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
-				return basicSetConnectedMedia(null, msgs);
+				return ((InternalEList<?>)getConnectedMedia()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -239,8 +194,7 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 				if (resolve) return getHwPortInstance();
 				return basicGetHwPortInstance();
 			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
-				if (resolve) return getConnectedMedia();
-				return basicGetConnectedMedia();
+				return getConnectedMedia();
 			case PlatformPackage.HW_PORT_PART__PROTOCOL:
 				if (resolve) return getProtocol();
 				return basicGetProtocol();
@@ -253,6 +207,7 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -260,7 +215,8 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 				setHwPortInstance((HWPortInstance)newValue);
 				return;
 			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
-				setConnectedMedia((CommunicationMedia)newValue);
+				getConnectedMedia().clear();
+				getConnectedMedia().addAll((Collection<? extends CommunicationMedia>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -278,7 +234,7 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 				setHwPortInstance((HWPortInstance)null);
 				return;
 			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
-				setConnectedMedia((CommunicationMedia)null);
+				getConnectedMedia().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -295,7 +251,7 @@ public class HWPortPartImpl extends NamedElementImpl implements HWPortPart {
 			case PlatformPackage.HW_PORT_PART__HW_PORT_INSTANCE:
 				return hwPortInstance != null;
 			case PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA:
-				return connectedMedia != null;
+				return connectedMedia != null && !connectedMedia.isEmpty();
 			case PlatformPackage.HW_PORT_PART__PROTOCOL:
 				return PROTOCOL__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}

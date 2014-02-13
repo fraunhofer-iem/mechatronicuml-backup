@@ -293,7 +293,7 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 	 */
 	public EList<HWPortPart> getConnectedHWPortParts() {
 		if (connectedHWPortParts == null) {
-			connectedHWPortParts = new EObjectWithInverseResolvingEList<HWPortPart>(HWPortPart.class, this, PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_PARTS, PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA);
+			connectedHWPortParts = new EObjectWithInverseResolvingEList.ManyInverse<HWPortPart>(HWPortPart.class, this, PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_PARTS, PlatformPackage.HW_PORT_PART__CONNECTED_MEDIA);
 		}
 		return connectedHWPortParts;
 	}
