@@ -591,6 +591,34 @@ public class GrammarTest {
 		assertNull(loadResult.getEObject());
 	}
 	
+	@Test
+	public void testNoEqualMinusOperator() {
+		loadFromString("{ foo =- 2; }");
+		assertTrue(loadResult.hasError());
+		assertNull(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testNoEqualPlusOperator() {
+		loadFromString("{ foo =+ 1; }");
+		assertTrue(loadResult.hasError());
+		assertNull(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testValidMinusEqualOperator() {
+		loadFromString("{ foo -= 2; }");
+		assertFalse(loadResult.hasError());
+		assertNotNull(loadResult.getEObject());
+	}
+	
+	@Test
+	public void testValidPlusEqualOperator() {
+		loadFromString("{ foo += 1; }");
+		assertFalse(loadResult.hasError());
+		assertNotNull(loadResult.getEObject());
+	}
+	
 	protected static void assertValidEObject(EObject object) {
 		assertTrue(validEObject(object));
 	}
