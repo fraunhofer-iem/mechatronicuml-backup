@@ -45,7 +45,6 @@ public final class ActionlanguageEditPlugin extends EMFPlugin {
 	public ActionlanguageEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     EcoreEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
 		   });

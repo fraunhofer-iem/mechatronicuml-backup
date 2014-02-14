@@ -107,7 +107,7 @@ enum IncrementDecrementOperatorExpression returns actionlanguage::IncrementDecre
 ;
 
 enum AssignOperator returns actionlanguage::AssignOperator:
-	ASSIGN=':=' | PLUS_EQUAL='+='| EQUAL_PLUS='=+' | MINUS_EQUAL='-='| EQUAL_MINUS='=-'
+	ASSIGN=':=' | PLUS_EQUAL='+='| MINUS_EQUAL='-='
 ;
 
 // end of assignment

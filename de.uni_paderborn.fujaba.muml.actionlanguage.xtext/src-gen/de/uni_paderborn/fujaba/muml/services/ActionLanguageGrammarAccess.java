@@ -1679,18 +1679,14 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cASSIGNColonEqualsSignKeyword_0_0 = (Keyword)cASSIGNEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cPLUS_EQUALEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cPLUS_EQUALPlusSignEqualsSignKeyword_1_0 = (Keyword)cPLUS_EQUALEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cEQUAL_PLUSEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cEQUAL_PLUSEqualsSignPlusSignKeyword_2_0 = (Keyword)cEQUAL_PLUSEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cMINUS_EQUALEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cMINUS_EQUALHyphenMinusEqualsSignKeyword_3_0 = (Keyword)cMINUS_EQUALEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cEQUAL_MINUSEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cEQUAL_MINUSEqualsSignHyphenMinusKeyword_4_0 = (Keyword)cEQUAL_MINUSEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cMINUS_EQUALEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cMINUS_EQUALHyphenMinusEqualsSignKeyword_2_0 = (Keyword)cMINUS_EQUALEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum AssignOperator returns actionlanguage::AssignOperator:
-		//	ASSIGN=":=" | PLUS_EQUAL="+=" | EQUAL_PLUS="=+" | MINUS_EQUAL="-=" | EQUAL_MINUS="=-";
+		//	ASSIGN=":=" | PLUS_EQUAL="+=" | MINUS_EQUAL="-=";
 		public EnumRule getRule() { return rule; }
 
-		//ASSIGN=":=" | PLUS_EQUAL="+=" | EQUAL_PLUS="=+" | MINUS_EQUAL="-=" | EQUAL_MINUS="=-"
+		//ASSIGN=":=" | PLUS_EQUAL="+=" | MINUS_EQUAL="-="
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ASSIGN=":="
@@ -1705,23 +1701,11 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 		//"+="
 		public Keyword getPLUS_EQUALPlusSignEqualsSignKeyword_1_0() { return cPLUS_EQUALPlusSignEqualsSignKeyword_1_0; }
 
-		//EQUAL_PLUS="=+"
-		public EnumLiteralDeclaration getEQUAL_PLUSEnumLiteralDeclaration_2() { return cEQUAL_PLUSEnumLiteralDeclaration_2; }
-
-		//"=+"
-		public Keyword getEQUAL_PLUSEqualsSignPlusSignKeyword_2_0() { return cEQUAL_PLUSEqualsSignPlusSignKeyword_2_0; }
-
 		//MINUS_EQUAL="-="
-		public EnumLiteralDeclaration getMINUS_EQUALEnumLiteralDeclaration_3() { return cMINUS_EQUALEnumLiteralDeclaration_3; }
+		public EnumLiteralDeclaration getMINUS_EQUALEnumLiteralDeclaration_2() { return cMINUS_EQUALEnumLiteralDeclaration_2; }
 
 		//"-="
-		public Keyword getMINUS_EQUALHyphenMinusEqualsSignKeyword_3_0() { return cMINUS_EQUALHyphenMinusEqualsSignKeyword_3_0; }
-
-		//EQUAL_MINUS="=-"
-		public EnumLiteralDeclaration getEQUAL_MINUSEnumLiteralDeclaration_4() { return cEQUAL_MINUSEnumLiteralDeclaration_4; }
-
-		//"=-"
-		public Keyword getEQUAL_MINUSEqualsSignHyphenMinusKeyword_4_0() { return cEQUAL_MINUSEqualsSignHyphenMinusKeyword_4_0; }
+		public Keyword getMINUS_EQUALHyphenMinusEqualsSignKeyword_2_0() { return cMINUS_EQUALHyphenMinusEqualsSignKeyword_2_0; }
 	}
 
 	public class LogicalOrOperatorElements extends AbstractEnumRuleElementFinder {
@@ -2197,7 +2181,7 @@ public class ActionLanguageGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum AssignOperator returns actionlanguage::AssignOperator:
-	//	ASSIGN=":=" | PLUS_EQUAL="+=" | EQUAL_PLUS="=+" | MINUS_EQUAL="-=" | EQUAL_MINUS="=-";
+	//	ASSIGN=":=" | PLUS_EQUAL="+=" | MINUS_EQUAL="-=";
 	public AssignOperatorElements getAssignOperatorAccess() {
 		return (unknownRuleAssignOperator != null) ? unknownRuleAssignOperator : (unknownRuleAssignOperator = new AssignOperatorElements());
 	}

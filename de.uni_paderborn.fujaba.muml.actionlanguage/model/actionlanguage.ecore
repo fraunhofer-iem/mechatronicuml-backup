@@ -12,9 +12,7 @@
     <eLiterals name="UNSET" literal="UNSET"/>
     <eLiterals name="ASSIGN" value="1" literal=":="/>
     <eLiterals name="PLUS_EQUAL" value="2" literal="+="/>
-    <eLiterals name="EQUAL_PLUS" value="3" literal="=+"/>
     <eLiterals name="MINUS_EQUAL" value="4" literal="-="/>
-    <eLiterals name="EQUAL_MINUS" value="5" literal="=-"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IncrementDecrementOperator">
     <eLiterals name="UNSET" literal="UNSET"/>

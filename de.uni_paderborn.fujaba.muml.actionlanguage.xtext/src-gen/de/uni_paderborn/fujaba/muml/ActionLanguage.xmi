@@ -279,16 +279,8 @@
           <literal value="+="/>
         </elements>
         <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//AssignOperator/EQUAL_PLUS"/>
-          <literal value="=+"/>
-        </elements>
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
           <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//AssignOperator/MINUS_EQUAL"/>
           <literal value="-="/>
-        </elements>
-        <elements xsi:type="xtext:EnumLiteralDeclaration">
-          <enumLiteral href="http://www.fujaba.de/muml/actionlanguage/0.4.0#//AssignOperator/EQUAL_MINUS"/>
-          <literal value="=-"/>
         </elements>
       </alternatives>
     </rules>

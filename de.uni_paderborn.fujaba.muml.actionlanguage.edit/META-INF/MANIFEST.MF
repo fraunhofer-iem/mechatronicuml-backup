@@ -5,10 +5,17 @@ Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.actionlanguage.edit;singleton:
 Bundle-Version: 0.4.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.actionlanguage.provider.ActionlanguageEditPlugin$Implementation
-Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Vendor: Software Engineering Group,
+ Heinz Nixdorf Institute,
+ University of Paderborn
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.actionlanguage.provider
-Require-Bundle: de.uni_paderborn.fujaba.muml.actionlanguage;bundle-version="0.3.1";visibility:=reexport,
- de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1"
+Require-Bundle: org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml.actionlanguage;visibility:=reexport;bundle-version="0.3.1",
+ org.eclipse.emf.edit;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml;visibility:=reexport,
+ de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1",
+ org.storydriven.core;visibility:=reexport,
+ org.storydriven.core.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -927,9 +927,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.UNSET);
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.ASSIGN);
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.PLUS_EQUAL);
-		addEEnumLiteral(assignOperatorEEnum, AssignOperator.EQUAL_PLUS);
 		addEEnumLiteral(assignOperatorEEnum, AssignOperator.MINUS_EQUAL);
-		addEEnumLiteral(assignOperatorEEnum, AssignOperator.EQUAL_MINUS);
 
 		initEEnum(incrementDecrementOperatorEEnum, IncrementDecrementOperator.class, "IncrementDecrementOperator");
 		addEEnumLiteral(incrementDecrementOperatorEEnum, IncrementDecrementOperator.UNSET);

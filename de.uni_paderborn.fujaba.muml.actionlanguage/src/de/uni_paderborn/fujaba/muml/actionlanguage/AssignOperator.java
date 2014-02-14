@@ -49,16 +49,6 @@ public enum AssignOperator implements Enumerator {
 	PLUS_EQUAL(2, "PLUS_EQUAL", "+="),
 
 	/**
-	 * The '<em><b>EQUAL PLUS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EQUAL_PLUS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EQUAL_PLUS(3, "EQUAL_PLUS", "=+"),
-
-	/**
 	 * The '<em><b>MINUS EQUAL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,17 +56,7 @@ public enum AssignOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MINUS_EQUAL(4, "MINUS_EQUAL", "-="),
-
-	/**
-	 * The '<em><b>EQUAL MINUS</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EQUAL_MINUS_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EQUAL_MINUS(5, "EQUAL_MINUS", "=-");
+	MINUS_EQUAL(4, "MINUS_EQUAL", "-=");
 
 	/**
 	 * The '<em><b>UNSET</b></em>' literal value.
@@ -124,21 +104,6 @@ public enum AssignOperator implements Enumerator {
 	public static final int PLUS_EQUAL_VALUE = 2;
 
 	/**
-	 * The '<em><b>EQUAL PLUS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EQUAL PLUS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EQUAL_PLUS
-	 * @model literal="=+"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EQUAL_PLUS_VALUE = 3;
-
-	/**
 	 * The '<em><b>MINUS EQUAL</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -154,21 +119,6 @@ public enum AssignOperator implements Enumerator {
 	public static final int MINUS_EQUAL_VALUE = 4;
 
 	/**
-	 * The '<em><b>EQUAL MINUS</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>EQUAL MINUS</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EQUAL_MINUS
-	 * @model literal="=-"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EQUAL_MINUS_VALUE = 5;
-
-	/**
 	 * An array of all the '<em><b>Assign Operator</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -179,9 +129,7 @@ public enum AssignOperator implements Enumerator {
 			UNSET,
 			ASSIGN,
 			PLUS_EQUAL,
-			EQUAL_PLUS,
 			MINUS_EQUAL,
-			EQUAL_MINUS,
 		};
 
 	/**
@@ -235,9 +183,7 @@ public enum AssignOperator implements Enumerator {
 			case UNSET_VALUE: return UNSET;
 			case ASSIGN_VALUE: return ASSIGN;
 			case PLUS_EQUAL_VALUE: return PLUS_EQUAL;
-			case EQUAL_PLUS_VALUE: return EQUAL_PLUS;
 			case MINUS_EQUAL_VALUE: return MINUS_EQUAL;
-			case EQUAL_MINUS_VALUE: return EQUAL_MINUS;
 		}
 		return null;
 	}

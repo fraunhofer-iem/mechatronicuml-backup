@@ -1792,24 +1792,10 @@ rule__AssignOperator__Alternatives
 )
 
     |(
-{ before(grammarAccess.getAssignOperatorAccess().getEQUAL_PLUSEnumLiteralDeclaration_2()); }
-(	'=+' 
-)
-{ after(grammarAccess.getAssignOperatorAccess().getEQUAL_PLUSEnumLiteralDeclaration_2()); }
-)
-
-    |(
-{ before(grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_3()); }
+{ before(grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_2()); }
 (	'-=' 
 )
-{ after(grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_3()); }
-)
-
-    |(
-{ before(grammarAccess.getAssignOperatorAccess().getEQUAL_MINUSEnumLiteralDeclaration_4()); }
-(	'=-' 
-)
-{ after(grammarAccess.getAssignOperatorAccess().getEQUAL_MINUSEnumLiteralDeclaration_4()); }
+{ after(grammarAccess.getAssignOperatorAccess().getMINUS_EQUALEnumLiteralDeclaration_2()); }
 )
 
 ;
