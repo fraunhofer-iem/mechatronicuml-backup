@@ -12,7 +12,7 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_pS5nlo5wEeOlcfUEVsVLdA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_pS5nl45wEeOlcfUEVsVLdA"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_pS5AgY5wEeOlcfUEVsVLdA" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_pS5AgY5wEeOlcfUEVsVLdA" fontName="Arial" fontHeight="10" lineColor="0"/>
     <element xmi:type="ecore:EClass" href="hardware.ecore#//platforminstance/HWPlatformInstance"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pS5Ago5wEeOlcfUEVsVLdA" x="220" y="124"/>
   </children>
@@ -28,7 +28,7 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_pTD_qo5wEeOlcfUEVsVLdA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_pTD_q45wEeOlcfUEVsVLdA"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_pTD_oY5wEeOlcfUEVsVLdA" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_pTD_oY5wEeOlcfUEVsVLdA" fontName="Arial" fontHeight="10" lineColor="0"/>
     <element xmi:type="ecore:EClass" href="hardware.ecore#//platforminstance/HWPlatformInstanceConfiguration"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pTD_oo5wEeOlcfUEVsVLdA" x="156" y="20"/>
   </children>
@@ -47,9 +47,9 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_0Q0Gpo5wEeOlcfUEVsVLdA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_0Q0Gp45wEeOlcfUEVsVLdA"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_0Qy4gY5wEeOlcfUEVsVLdA" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_0Qy4gY5wEeOlcfUEVsVLdA" fontName="Arial" fontHeight="10" lineColor="0"/>
     <element xmi:type="ecore:EClass" href="hardware.ecore#//platform/HWPlatform"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Qy4go5wEeOlcfUEVsVLdA" x="229" y="262"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Qy4go5wEeOlcfUEVsVLdA" x="229" y="262" width="134"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_0Q0tsI5wEeOlcfUEVsVLdA" type="1001">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0Q0tvI5wEeOlcfUEVsVLdA" source="Shortcut">
@@ -66,34 +66,34 @@
       <styles xmi:type="notation:SortingStyle" xmi:id="_0Q0tuo5wEeOlcfUEVsVLdA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_0Q0tu45wEeOlcfUEVsVLdA"/>
     </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_0Q0tsY5wEeOlcfUEVsVLdA" fontColor="4210752" fontName="Cantarell" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_0Q0tsY5wEeOlcfUEVsVLdA" fontName="Arial" fontHeight="10" lineColor="0"/>
     <element xmi:type="ecore:EClass" href="hardware.ecore#//platform/ResourceInstance"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Q0tso5wEeOlcfUEVsVLdA" x="20" y="262"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0Q0tso5wEeOlcfUEVsVLdA" x="20" y="262" width="163"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_pSuBYY5wEeOlcfUEVsVLdA"/>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_sQZ6gI5wEeOlcfUEVsVLdA" name="layout:de.cau.cs.kieler.direction" stringValue="DOWN"/>
   <element xmi:type="ecore:EPackage" href="hardware.ecore#//platforminstance"/>
   <edges xmi:type="notation:Edge" xmi:id="_pTFNx45wEeOlcfUEVsVLdA" type="3002" source="_pS5AgI5wEeOlcfUEVsVLdA" target="_pS5AgI5wEeOlcfUEVsVLdA">
     <children xmi:type="notation:Node" xmi:id="_pTFNy45wEeOlcfUEVsVLdA" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_pTFNzI5wEeOlcfUEVsVLdA" x="-18" y="-74"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_pTFNzI5wEeOlcfUEVsVLdA" x="17" y="164"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_pTFNzY5wEeOlcfUEVsVLdA" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_pTFNzo5wEeOlcfUEVsVLdA" x="10" y="10"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_pTFNyI5wEeOlcfUEVsVLdA" routing="Rectilinear" lineColor="4210752"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_pTFNyY5wEeOlcfUEVsVLdA" fontColor="4210752" fontName="Cantarell" fontHeight="10"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_pTFNyI5wEeOlcfUEVsVLdA" routing="Rectilinear" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_pTFNyY5wEeOlcfUEVsVLdA" fontName="Arial" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="hardware.ecore#//platforminstance/HWPlatformInstance/hwplatformInstances"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pTFNyo5wEeOlcfUEVsVLdA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_pTFNz45wEeOlcfUEVsVLdA" type="3002" source="_pTD_oI5wEeOlcfUEVsVLdA" target="_pS5AgI5wEeOlcfUEVsVLdA">
     <children xmi:type="notation:Node" xmi:id="_pTFN045wEeOlcfUEVsVLdA" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_pTFN1I5wEeOlcfUEVsVLdA" x="-1" y="-62"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_pTFN1I5wEeOlcfUEVsVLdA" x="-6" y="-65"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_pTF00I5wEeOlcfUEVsVLdA" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_pTF00Y5wEeOlcfUEVsVLdA" x="-1" y="-12"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_pTF00Y5wEeOlcfUEVsVLdA" x="-1" y="15"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_pTFN0I5wEeOlcfUEVsVLdA" routing="Rectilinear" lineColor="4210752"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_pTFN0Y5wEeOlcfUEVsVLdA" fontColor="4210752" fontName="Cantarell" fontHeight="10"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_pTFN0I5wEeOlcfUEVsVLdA" routing="Rectilinear" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_pTFN0Y5wEeOlcfUEVsVLdA" fontName="Arial" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="hardware.ecore#//platforminstance/HWPlatformInstanceConfiguration/hwplatformInstances"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pTFN0o5wEeOlcfUEVsVLdA" points="[0, 0, 0, -59]$[0, 40, 0, -19]$[0, 59, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pUUj4I5wEeOlcfUEVsVLdA" id="(0.49999993218315975,1.0)"/>
@@ -101,27 +101,27 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_0RQLgI5wEeOlcfUEVsVLdA" type="3002" source="_pS5AgI5wEeOlcfUEVsVLdA" target="_0Qy4gI5wEeOlcfUEVsVLdA">
     <children xmi:type="notation:Node" xmi:id="_0RQykI5wEeOlcfUEVsVLdA" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_0RQykY5wEeOlcfUEVsVLdA" x="4" y="-49"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_0RQykY5wEeOlcfUEVsVLdA" x="6" y="-69"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_0RQyko5wEeOlcfUEVsVLdA" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_0RQyk45wEeOlcfUEVsVLdA" x="4" y="-4"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_0RQyk45wEeOlcfUEVsVLdA" x="6" y="16"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_0RQLgY5wEeOlcfUEVsVLdA" routing="Rectilinear" lineColor="4210752"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_0RQLgo5wEeOlcfUEVsVLdA" fontColor="4210752" fontName="Cantarell" fontHeight="10"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_0RQLgY5wEeOlcfUEVsVLdA" routing="Rectilinear" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_0RQLgo5wEeOlcfUEVsVLdA" fontName="Arial" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="hardware.ecore#//platforminstance/HWPlatformInstance/hwplatformType"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0RQLg45wEeOlcfUEVsVLdA" points="[0, 0, 0, -93]$[0, 74, 0, -19]$[0, 93, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0RQLg45wEeOlcfUEVsVLdA" points="[13, 0, 26, -95]$[13, 95, 26, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0RrpUI5wEeOlcfUEVsVLdA" id="(0.5,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0RrpUY5wEeOlcfUEVsVLdA" id="(0.5,0.0)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_0RRZoI5wEeOlcfUEVsVLdA" type="3002" source="_pS5AgI5wEeOlcfUEVsVLdA" target="_0Q0tsI5wEeOlcfUEVsVLdA">
     <children xmi:type="notation:Node" xmi:id="_0RRZpI5wEeOlcfUEVsVLdA" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_0RRZpY5wEeOlcfUEVsVLdA" x="-33" y="-30"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_0RRZpY5wEeOlcfUEVsVLdA" x="14" y="18"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_0RRZpo5wEeOlcfUEVsVLdA" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_0RRZp45wEeOlcfUEVsVLdA" x="4" y="-13"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_0RRZp45wEeOlcfUEVsVLdA" x="45" y="-2"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_0RRZoY5wEeOlcfUEVsVLdA" routing="Rectilinear" lineColor="4210752"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_0RRZoo5wEeOlcfUEVsVLdA" fontColor="4210752" fontName="Cantarell" fontHeight="10"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_0RRZoY5wEeOlcfUEVsVLdA" routing="Rectilinear" lineColor="0"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_0RRZoo5wEeOlcfUEVsVLdA" fontName="Arial" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="hardware.ecore#//platforminstance/HWPlatformInstance/resourceInstances"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0RRZo45wEeOlcfUEVsVLdA" points="[0, 0, 173, -93]$[-173, 74, 0, -19]$[-173, 93, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0RsQaI5wEeOlcfUEVsVLdA" id="(0.25,1.0)"/>
