@@ -42,7 +42,6 @@ public final class AllocationEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
-		     EcoreEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
 		   });
 	}

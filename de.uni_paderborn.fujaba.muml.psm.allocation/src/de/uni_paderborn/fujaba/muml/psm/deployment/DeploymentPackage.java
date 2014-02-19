@@ -391,13 +391,22 @@ public interface DeploymentPackage extends EPackage {
 	int COMMUNICATION_LINK__CONNECTOR_ENDPOINTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMUNICATION_LINK__SELF_CONNECTOR = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Deployment</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK__DEPLOYMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 2;
+	int COMMUNICATION_LINK__DEPLOYMENT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Quality Of Service</b></em>' reference.
@@ -406,7 +415,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK__QUALITY_OF_SERVICE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 3;
+	int COMMUNICATION_LINK__QUALITY_OF_SERVICE = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Deployed Assembly Instances</b></em>' reference list.
@@ -415,7 +424,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 4;
+	int COMMUNICATION_LINK__DEPLOYED_ASSEMBLY_INSTANCES = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Hardware Ports</b></em>' reference list.
@@ -424,7 +433,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK__HARDWARE_PORTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 5;
+	int COMMUNICATION_LINK__HARDWARE_PORTS = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Communication Link</em>' class.
@@ -433,7 +442,7 @@ public interface DeploymentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMUNICATION_LINK_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 6;
+	int COMMUNICATION_LINK_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 7;
 
 
 	/**

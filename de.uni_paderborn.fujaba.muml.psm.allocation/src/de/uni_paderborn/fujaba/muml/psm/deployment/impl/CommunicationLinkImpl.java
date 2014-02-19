@@ -42,6 +42,7 @@ import de.uni_paderborn.fujaba.muml.psm.deployment.LinkQualityOfService;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.deployment.impl.CommunicationLinkImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.deployment.impl.CommunicationLinkImpl#getConnectorEndpoints <em>Connector Endpoints</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.psm.deployment.impl.CommunicationLinkImpl#isSelfConnector <em>Self Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.deployment.impl.CommunicationLinkImpl#getDeployment <em>Deployment</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.deployment.impl.CommunicationLinkImpl#getQualityOfService <em>Quality Of Service</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.psm.deployment.impl.CommunicationLinkImpl#getDeployedAssemblyInstances <em>Deployed Assembly Instances</em>}</li>
@@ -81,6 +82,16 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 	 * @ordered
 	 */
 	protected EList<ConnectorEndpoint> connectorEndpoints;
+
+	/**
+	 * The cached setting delegate for the '{@link #isSelfConnector() <em>Self Connector</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelfConnector()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SELF_CONNECTOR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ConnectorPackage.Literals.CONNECTOR__SELF_CONNECTOR).getSettingDelegate();
 
 	/**
 	 * The cached value of the '{@link #getQualityOfService() <em>Quality Of Service</em>}' reference.
@@ -162,6 +173,15 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 			connectorEndpoints = new EObjectWithInverseResolvingEList.ManyInverse<ConnectorEndpoint>(ConnectorEndpoint.class, this, DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS, ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS);
 		}
 		return connectorEndpoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSelfConnector() {
+		return (Boolean)SELF_CONNECTOR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -326,6 +346,8 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 				return getComment();
 			case DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS:
 				return getConnectorEndpoints();
+			case DeploymentPackage.COMMUNICATION_LINK__SELF_CONNECTOR:
+				return isSelfConnector();
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT:
 				return getDeployment();
 			case DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE:
@@ -408,6 +430,8 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
 			case DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS:
 				return connectorEndpoints != null && !connectorEndpoints.isEmpty();
+			case DeploymentPackage.COMMUNICATION_LINK__SELF_CONNECTOR:
+				return SELF_CONNECTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case DeploymentPackage.COMMUNICATION_LINK__DEPLOYMENT:
 				return getDeployment() != null;
 			case DeploymentPackage.COMMUNICATION_LINK__QUALITY_OF_SERVICE:
@@ -436,6 +460,7 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 		if (baseClass == Connector.class) {
 			switch (derivedFeatureID) {
 				case DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS: return ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
+				case DeploymentPackage.COMMUNICATION_LINK__SELF_CONNECTOR: return ConnectorPackage.CONNECTOR__SELF_CONNECTOR;
 				default: return -1;
 			}
 		}
@@ -458,6 +483,7 @@ public class CommunicationLinkImpl extends ExtendableElementImpl implements Comm
 		if (baseClass == Connector.class) {
 			switch (baseFeatureID) {
 				case ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS: return DeploymentPackage.COMMUNICATION_LINK__CONNECTOR_ENDPOINTS;
+				case ConnectorPackage.CONNECTOR__SELF_CONNECTOR: return DeploymentPackage.COMMUNICATION_LINK__SELF_CONNECTOR;
 				default: return -1;
 			}
 		}

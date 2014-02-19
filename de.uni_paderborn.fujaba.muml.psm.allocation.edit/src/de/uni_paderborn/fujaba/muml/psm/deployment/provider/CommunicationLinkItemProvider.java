@@ -66,6 +66,7 @@ public class CommunicationLinkItemProvider
 
 			addCommentPropertyDescriptor(object);
 			addConnectorEndpointsPropertyDescriptor(object);
+			addSelfConnectorPropertyDescriptor(object);
 			addQualityOfServicePropertyDescriptor(object);
 			addDeployedAssemblyInstancesPropertyDescriptor(object);
 			addHardwarePortsPropertyDescriptor(object);
@@ -113,6 +114,28 @@ public class CommunicationLinkItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Self Connector feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelfConnectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Connector_selfConnector_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Connector_selfConnector_feature", "_UI_Connector_type"),
+				 ConnectorPackage.Literals.CONNECTOR__SELF_CONNECTOR,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -221,6 +244,7 @@ public class CommunicationLinkItemProvider
 
 		switch (notification.getFeatureID(CommunicationLink.class)) {
 			case DeploymentPackage.COMMUNICATION_LINK__COMMENT:
+			case DeploymentPackage.COMMUNICATION_LINK__SELF_CONNECTOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
