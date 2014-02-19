@@ -463,13 +463,15 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 		  (dataSizeEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
-			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();"
+			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();",
+			 "documentation", "Converts the entered data size into a String with the appended unit."
 		   });		
 		addAnnotation
 		  (dataSizeEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
-			 "body", "double inByte=0;\n\t\tif(unit!=null){\n\t\tinByte=value*Math.pow(2, unit.getValue());\t\n\t\t}\nreturn inByte;"
+			 "body", "double inByte=0;\n\t\tif(unit!=null){\n\t\tinByte=value*Math.pow(2, unit.getValue());\t\n\t\t}\nreturn inByte;",
+			 "documentation", "Converts the entered data size in Bytes."
 		   });		
 		addAnnotation
 		  (getDataSize_Value(), 
@@ -499,13 +501,15 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 		  (frequencyEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
-			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();"
+			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();",
+			 "documentation", "Converts the entered frequency into a String with the appended unit."
 		   });		
 		addAnnotation
 		  (frequencyEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
-			 "body", "double inHz=0;\n\t\tif(unit!=null){\n\t\tinHz=value*Math.pow(10, unit.getValue());\t\n\t\t}\nreturn inHz;"
+			 "body", "double inHz=0;\n\t\tif(unit!=null){\n\t\tinHz=value*Math.pow(10, unit.getValue());\t\n\t\t}\nreturn inHz;",
+			 "documentation", "Converts the entered frequency in Hz."
 		   });		
 		addAnnotation
 		  (getFrequency_Value(), 
@@ -541,13 +545,15 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 		  (dataRateEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
-			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();"
+			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();",
+			 "documentation", "Converts the entered data rate into a String with the appended unit."
 		   });		
 		addAnnotation
 		  (dataRateEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
-			 "body", "double inBpS=0;\n\t\tif(unit!=null){\n\t\tinBpS=value*Math.pow(2, unit.getValue());\t\n\t\t}\nreturn inBpS;"
+			 "body", "double inBpS=0;\n\t\tif(unit!=null){\n\t\tinBpS=value*Math.pow(2, unit.getValue());\t\n\t\t}\nreturn inBpS;",
+			 "documentation", "Converts the entered data rate in bytes per second."
 		   });		
 		addAnnotation
 		  (getDataRate_Value(), 

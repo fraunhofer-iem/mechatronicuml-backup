@@ -58,6 +58,9 @@ public interface Delegation extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The HWPortPart to which this delegation is connected.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hw Port Part</em>' reference.
 	 * @see #setHwPortPart(HWPortPart)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getDelegation_HwPortPart()

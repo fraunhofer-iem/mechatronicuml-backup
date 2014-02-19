@@ -149,6 +149,9 @@ public interface Cache extends MemoryResource {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The processors which use this cache.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Used By Processor</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage#getCache_UsedByProcessor()
 	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.Processor#getOwnedCache

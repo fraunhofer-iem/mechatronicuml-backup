@@ -1716,6 +1716,12 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 			 "documentation", "The Bridges of this HWPlatform. \nThey are derived from the reference embeddedCommunicationResource of the hwplatformType."
 		   });		
 		addAnnotation
+		  (getHWPlatformPart_DelegationPorts(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The delegation ports of this HWPlatformPart.\nThey are derived from the hwPlatformType."
+		   });		
+		addAnnotation
 		  (sensorInstanceEClass, 
 		   source, 
 		   new String[] {
@@ -1864,7 +1870,31 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "documentation", "The HWPortInstances that are connected via this delegation."
-		   });					
+		   });		
+		addAnnotation
+		  (getDelegation_HwPortPart(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPortPart to which this delegation is connected."
+		   });				
+		addAnnotation
+		  (hwPortPartEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "This class represents a hardware port of a PlatformPart."
+		   });		
+		addAnnotation
+		  (getHWPortPart_HwPortInstance(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The HWPortInstance from which this HWPortPart is derived."
+		   });		
+		addAnnotation
+		  (getHWPortPart_ConnectedMedia(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The communication media to which this HWPortPart is connected."
+		   });			
 		addAnnotation
 		  (getHWPortPart_Protocol(), 
 		   source, 
@@ -1948,7 +1978,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "constraints", "NoLoop"
-		   });												
+		   });													
 		addAnnotation
 		  (hwPortInstanceEClass, 
 		   source, 
@@ -1960,13 +1990,13 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "constraints", ""
-		   });				
+		   });					
 		addAnnotation
 		  (hwPortPartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "SameProtocol BusPort2Bus LinkPort2Link"
-		   });			
+		   });						
 	}
 
 	/**
@@ -2064,7 +2094,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "derivation", "if hwplatformType.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tself.hwplatformType.embeddedCommunicationResources->select(c| c.oclIsTypeOf(platform::Bridge)).oclAsType(platform::Bridge)->asOrderedSet()\nendif"
-		   });									
+		   });										
 		addAnnotation
 		  (hwPortInstanceEClass, 
 		   source, 
@@ -2100,7 +2130,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "HWPortInstanceToDelegationPort", "self.hwPortInstance.isDelegationPort"
-		   });				
+		   });					
 		addAnnotation
 		  (hwPortPartEClass, 
 		   source, 
@@ -2108,7 +2138,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 			 "SameProtocol", "if (self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().protocol=self.protocol\nelse true\nendif",
 			 "BusPort2Bus", "if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and  self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().oclIsTypeOf(platform::Bus)\nelse true\n\nendif",
 			 "LinkPort2Link", "if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and  self.connectedMedia->size()>0) then\n\tself.connectedMedia->first().oclIsTypeOf(platform::Link)\nelse true\nendif"
-		   });		
+		   });					
 		addAnnotation
 		  (getHWPortPart_Protocol(), 
 		   source, 

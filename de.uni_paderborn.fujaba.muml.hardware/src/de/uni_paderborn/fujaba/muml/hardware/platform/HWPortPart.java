@@ -12,6 +12,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>HW Port Part</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * This class represents a hardware port of a PlatformPart.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -35,6 +39,9 @@ public interface HWPortPart extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The HWPortInstance from which this HWPortPart is derived.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Hw Port Instance</em>' reference.
 	 * @see #setHwPortInstance(HWPortInstance)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPortPart_HwPortInstance()
@@ -63,6 +70,9 @@ public interface HWPortPart extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The communication media to which this HWPortPart is connected.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connected Media</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPortPart_ConnectedMedia()
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortParts

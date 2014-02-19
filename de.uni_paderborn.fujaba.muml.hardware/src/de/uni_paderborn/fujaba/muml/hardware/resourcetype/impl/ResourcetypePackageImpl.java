@@ -1154,6 +1154,12 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 			 "documentation", "The associativity of this cache. It represents the number of blocks in one set. An associativity of 1 represents a direct mapped cache."
 		   });		
 		addAnnotation
+		  (getCache_UsedByProcessor(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The processors which use this cache."
+		   });		
+		addAnnotation
 		  (programmableLogicDeviceEClass, 
 		   source, 
 		   new String[] {
@@ -1242,7 +1248,19 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		   source, 
 		   new String[] {
 			 "documentation", "The CommunicationProtocol this HWPort uses to transmit data."
+		   });		
+		addAnnotation
+		  (getHWPort_Cardinality(), 
+		   source, 
+		   new String[] {
+			 "documentation", "The cardinality of this HWPort.\nIt determines the number of allowed hardware port instances."
 		   });			
+		addAnnotation
+		  (getHWPort_MultiHWPort(), 
+		   source, 
+		   new String[] {
+			 "documentation", "This attribute indicates whether this HWPort is a multi port or not."
+		   });		
 		addAnnotation
 		  (deviceKindEEnum, 
 		   source, 
@@ -1386,7 +1404,7 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		   source, 
 		   new String[] {
 			 "constraints", "RAMimpliesRW"
-		   });																	
+		   });																		
 		addAnnotation
 		  (processorEClass, 
 		   source, 
@@ -1398,7 +1416,7 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		   source, 
 		   new String[] {
 			 "constraints", "BusProtocolImpliesBusType LinkProtocolImpliesLinkType"
-		   });																
+		   });																		
 		addAnnotation
 		  (resourceTypeRepositoryEClass, 
 		   source, 
@@ -1421,7 +1439,7 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		   new String[] {
 			 "RAMimpliesRW", "self.memoryType = MemoryKind::RAM implies self.memoryAccess=MemoryAccessKind::READ_WRITE",
 			 "ROMimpliesReadOnly", "self.memoryType = MemoryKind::ROM implies self.memoryAccess = MemoryAccessKind::READ_ONLY"
-		   });															
+		   });																
 		addAnnotation
 		  (processorEClass, 
 		   source, 
@@ -1434,13 +1452,13 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		   new String[] {
 			 "BusProtocolImpliesBusType", "self.protocol.oclIsTypeOf(resourcetype::BusProtocol) implies self.portType=resourcetype::HWPortKind::BUS",
 			 "LinkProtocolImpliesLinkType", "self.protocol.oclIsTypeOf(resourcetype::LinkProtocol) implies self.portType=resourcetype::HWPortKind::LINK\n"
-		   });					
+		   });						
 		addAnnotation
 		  (getHWPort_MultiHWPort(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if (self.cardinality.oclIsUndefined()) then false else self.cardinality.upperBound.value>1 endif\n"
-		   });										
+		   });											
 		addAnnotation
 		  (resourceTypeRepositoryEClass, 
 		   source, 

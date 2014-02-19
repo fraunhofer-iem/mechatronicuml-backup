@@ -90,6 +90,9 @@ public interface DataRate extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Converts the entered data rate into a String with the appended unit.
+	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();'"
 	 * @generated
 	 */
@@ -98,6 +101,9 @@ public interface DataRate extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Converts the entered data rate in bytes per second.
+	 * <!-- end-model-doc -->
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='double inBpS=0;\n\t\tif(unit!=null){\n\t\tinBpS=value*Math.pow(2, unit.getValue());\t\n\t\t}\nreturn inBpS;'"
 	 * @generated

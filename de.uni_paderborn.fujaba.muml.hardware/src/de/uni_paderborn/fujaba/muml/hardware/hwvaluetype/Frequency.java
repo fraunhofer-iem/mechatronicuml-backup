@@ -90,6 +90,9 @@ public interface Frequency extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Converts the entered frequency into a String with the appended unit.
+	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();'"
 	 * @generated
 	 */
@@ -98,6 +101,9 @@ public interface Frequency extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Converts the entered frequency in Hz.
+	 * <!-- end-model-doc -->
 	 * @model kind="operation"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='double inHz=0;\n\t\tif(unit!=null){\n\t\tinHz=value*Math.pow(10, unit.getValue());\t\n\t\t}\nreturn inHz;'"
 	 * @generated

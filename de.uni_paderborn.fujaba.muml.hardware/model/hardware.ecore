@@ -96,7 +96,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="usedByProcessor" upperBound="-1"
-          eType="#//resourcetype/Processor" eOpposite="#//resourcetype/Processor/ownedCache"/>
+          eType="#//resourcetype/Processor" eOpposite="#//resourcetype/Processor/ownedCache">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The processors which use this cache."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ProgrammableLogicDevice" eSuperTypes="#//resourcetype/ComputingResource">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -197,12 +201,19 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/Cardinality"
-          containment="true"/>
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cardinality of this HWPort.&#xA;It determines the number of allowed hardware port instances."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiHWPort" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if (self.cardinality.oclIsUndefined()) then false else self.cardinality.upperBound.value>1 endif&#xA;"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="This attribute indicates whether this HWPort is a multi port or not."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -612,11 +623,6 @@
           <details key="documentation" value="The size of a data frame."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSerial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Determines if this CommunicationMedia uses a serial communication."/>
-        </eAnnotations>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidth" lowerBound="1"
           eType="#//hwvaluetype/DataRate" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -645,6 +651,11 @@
           upperBound="-1" eType="#//platform/HWPortInstance" eOpposite="#//platform/HWPortInstance/connectedMedia">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The connected HWPortInstances."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSerial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Determines if this CommunicationMedia uses a serial communication."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -730,7 +741,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="delegationPorts" upperBound="-1"
-          eType="#//platform/HWPortPart" containment="true"/>
+          eType="#//platform/HWPortPart" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The delegation ports of this HWPlatformPart.&#xA;They are derived from the hwPlatformType."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SensorInstance" eSuperTypes="#//platform/DeviceInstance">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -902,7 +917,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortPart" lowerBound="1"
-          eType="#//platform/HWPortPart"/>
+          eType="#//platform/HWPortPart">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The HWPortPart to which this delegation is connected."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="HWPortPart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -913,10 +932,21 @@
         <details key="BusPort2Bus" value="if (self.hwPortInstance.oclIsTypeOf(platform::BusPortInstance) and  self.connectedMedia->size()>0) then&#xA;&#x9;self.connectedMedia->first().oclIsTypeOf(platform::Bus)&#xA;else true&#xA;&#xA;endif"/>
         <details key="LinkPort2Link" value="if (self.hwPortInstance.oclIsTypeOf(platform::LinkPortInstance) and  self.connectedMedia->size()>0) then&#xA;&#x9;self.connectedMedia->first().oclIsTypeOf(platform::Link)&#xA;else true&#xA;endif"/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This class represents a hardware port of a PlatformPart."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="hwPortInstance" lowerBound="1"
-          eType="#//platform/HWPortInstance"/>
+          eType="#//platform/HWPortInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The HWPortInstance from which this HWPortPart is derived."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedMedia" upperBound="-1"
-          eType="#//platform/CommunicationMedia" eOpposite="#//platform/CommunicationMedia/connectedHWPortParts"/>
+          eType="#//platform/CommunicationMedia" eOpposite="#//platform/CommunicationMedia/connectedHWPortParts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The communication media to which this HWPortPart is connected."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" lowerBound="1"
           eType="#//resourcetype/CommunicationProtocol" changeable="false" volatile="true"
           transient="true" derived="true">
@@ -946,11 +976,13 @@
       <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="// Return value concatenated with unit&#xA;StringBuffer sb = new StringBuffer();&#xA;sb.append(String.valueOf(value));&#xA;&#x9;if (unit != null) {&#xA;&#x9;&#x9;sb.append(' ');&#xA;&#x9;&#x9;sb.append(unit.toString());&#xA;&#x9;&#x9;}&#xA;return sb.toString();"/>
+          <details key="documentation" value="Converts the entered data size into a String with the appended unit."/>
         </eAnnotations>
       </eOperations>
       <eOperations name="getInByte" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="double inByte=0;&#xA;&#x9;&#x9;if(unit!=null){&#xA;&#x9;&#x9;inByte=value*Math.pow(2, unit.getValue());&#x9;&#xA;&#x9;&#x9;}&#xA;return inByte;"/>
+          <details key="documentation" value="Converts the entered data size in Bytes."/>
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
@@ -983,11 +1015,13 @@
       <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="// Return value concatenated with unit&#xA;StringBuffer sb = new StringBuffer();&#xA;sb.append(String.valueOf(value));&#xA;&#x9;if (unit != null) {&#xA;&#x9;&#x9;sb.append(' ');&#xA;&#x9;&#x9;sb.append(unit.toString());&#xA;&#x9;&#x9;}&#xA;return sb.toString();"/>
+          <details key="documentation" value="Converts the entered frequency into a String with the appended unit."/>
         </eAnnotations>
       </eOperations>
       <eOperations name="getInHz" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="double inHz=0;&#xA;&#x9;&#x9;if(unit!=null){&#xA;&#x9;&#x9;inHz=value*Math.pow(10, unit.getValue());&#x9;&#xA;&#x9;&#x9;}&#xA;return inHz;"/>
+          <details key="documentation" value="Converts the entered frequency in Hz."/>
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
@@ -1025,11 +1059,13 @@
       <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="// Return value concatenated with unit&#xA;StringBuffer sb = new StringBuffer();&#xA;sb.append(String.valueOf(value));&#xA;&#x9;if (unit != null) {&#xA;&#x9;&#x9;sb.append(' ');&#xA;&#x9;&#x9;sb.append(unit.toString());&#xA;&#x9;&#x9;}&#xA;return sb.toString();"/>
+          <details key="documentation" value="Converts the entered data rate into a String with the appended unit."/>
         </eAnnotations>
       </eOperations>
       <eOperations name="getInBpS" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="double inBpS=0;&#xA;&#x9;&#x9;if(unit!=null){&#xA;&#x9;&#x9;inBpS=value*Math.pow(2, unit.getValue());&#x9;&#xA;&#x9;&#x9;}&#xA;return inBpS;"/>
+          <details key="documentation" value="Converts the entered data rate in bytes per second."/>
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">

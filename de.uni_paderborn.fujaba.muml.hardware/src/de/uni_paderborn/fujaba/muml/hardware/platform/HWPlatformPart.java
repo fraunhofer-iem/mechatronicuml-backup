@@ -81,6 +81,10 @@ public interface HWPlatformPart extends PlatformPart {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The delegation ports of this HWPlatformPart.
+	 * They are derived from the hwPlatformType.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Delegation Ports</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage#getHWPlatformPart_DelegationPorts()
 	 * @model containment="true"

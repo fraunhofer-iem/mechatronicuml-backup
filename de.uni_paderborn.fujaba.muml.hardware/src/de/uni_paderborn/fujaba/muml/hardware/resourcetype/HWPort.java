@@ -124,6 +124,10 @@ public interface HWPort extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The cardinality of this HWPort.
+	 * It determines the number of allowed hardware port instances.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
 	 * @see #setCardinality(Cardinality)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage#getHWPort_Cardinality()
@@ -150,6 +154,9 @@ public interface HWPort extends NamedElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This attribute indicates whether this HWPort is a multi port or not.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Multi HW Port</em>' attribute.
 	 * @see #setMultiHWPort(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage#getHWPort_MultiHWPort()
