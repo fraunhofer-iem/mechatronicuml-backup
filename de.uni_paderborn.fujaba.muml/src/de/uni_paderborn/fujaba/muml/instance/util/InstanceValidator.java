@@ -467,9 +467,11 @@ public class InstanceValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_SINGLE_PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_DELEGATION_CONNECTOR_INSTANCES__EEXPRESSION = "-- PortInstance must have not have mulltiple Delegation Connector Instances assigned.\r\n" +
-		"portConnectorInstances->select(\r\n" +
-		"\tci | ci.oclIsKindOf(DelegationConnectorInstance)) -> size() <= 1";
+	protected static final String DISCRETE_SINGLE_PORT_INSTANCE__PORT_INSTANCE_NOT_MULTIPLE_DELEGATION_CONNECTOR_INSTANCES__EEXPRESSION = "-- PortInstance must have not have multiple Delegation Connector Instances per directiond assigned.\r\n" +
+		"let delegationInstances : Set(instance::DelegationConnectorInstance) = portConnectorInstances->select(oclIsKindOf(instance::DelegationConnectorInstance)).oclAsType(instance::DelegationConnectorInstance)->asSet() in\r\n" +
+		"let incoming : Set(instance::DelegationConnectorInstance) = delegationInstances->select(di | di.portInstances->forAll(pi |pi = self or pi.componentInstance->closure(p | if p.oclIsKindOf(instance::StructuredComponentInstance) then p.oclAsType(instance::StructuredComponentInstance).embeddedCIC.componentInstances else OrderedSet { p } endif)->includes(self.componentInstance))) in\r\n" +
+		"let outgoing : Set(instance::DelegationConnectorInstance) = delegationInstances->select(di | di.portInstances->forAll(pi |pi = self or self.componentInstance->closure(p | if p.oclIsKindOf(instance::StructuredComponentInstance) then p.oclAsType(instance::StructuredComponentInstance).embeddedCIC.componentInstances else OrderedSet { p } endif)->includes(pi.componentInstance))) in\r\n" +
+		"incoming->size() <= 1 and outgoing->size() <= 1";
 
 	/**
 	 * Validates the PortInstanceNotMultipleDelegationConnectorInstances constraint of '<em>Discrete Single Port Instance</em>'.
