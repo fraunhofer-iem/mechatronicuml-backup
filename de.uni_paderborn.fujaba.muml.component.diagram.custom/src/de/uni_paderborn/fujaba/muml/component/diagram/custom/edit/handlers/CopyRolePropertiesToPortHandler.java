@@ -1,38 +1,30 @@
 package de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.handlers;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.gmf.runtime.common.core.command.CommandResult;
-import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
-import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
-import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
-import org.eclipse.m2m.qvt.oml.ExecutionDiagnostic;
 import org.eclipse.m2m.qvt.oml.ModelExtent;
 import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
+import de.uni_paderborn.fujaba.common.FujabaCommonPlugin;
+import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.muml.component.DiscretePort;
-import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.component.diagram.custom.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.component.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.component.diagram.edit.parts.DiscretePortEditPart;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
@@ -49,7 +41,7 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 
 		// get and process current selection
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
-
+		
 		// collect all StaticStructureComponents from the selection
 		Iterator iter = ((IStructuredSelection) selection).iterator();
 		while (iter.hasNext()) {
@@ -75,8 +67,9 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 									"RoleAndAdaptationBehavior not set",
 									"The multi Role needs to specify a \"RoleAndAdaptationBehavior\".");
 
-				} else {
+				} else if (FujabaCommonPlugin.showValidationResults(Collections.singletonList(role), "Role validation failed, no role properties were copied.")) {
 					updatePort(editPart.getEditingDomain(), port);
+				
 					if (hadReceiverMessageBuffer) {
 						MessageDialog
 							.openInformation(window.getShell(),
@@ -96,11 +89,17 @@ public class CopyRolePropertiesToPortHandler extends AbstractHandler {
 		
 		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { inputExtent });
 		
+
+		// Load QVTO script
+		TransformationExecutor transformationExecutor = Activator.getInstance()
+				.getTransformationExecutor(Activator.COPYTOPORT_TRANSFORMATION, false);		
+		
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				Activator.COPYTOPORT_TRANSFORMATION,
+				transformationExecutor,
 				modelExtents);
-		if(command.canExecute()){
-		editingDomain.getCommandStack().execute(command);
+
+		if (command.canExecute()){
+			editingDomain.getCommandStack().execute(command);
 		}
 		
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {

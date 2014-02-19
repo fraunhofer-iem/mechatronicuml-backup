@@ -2,6 +2,7 @@ package de.uni_paderborn.fujaba.common;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -13,7 +14,16 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.ui.dialogs.DiagnosticDialog;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.Diagnostician;
+import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.ui.PlatformUI;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -234,5 +244,44 @@ public class FujabaCommonPlugin implements BundleActivator {
 		}
 		
 		return factories;
+	}
+	
+	
+	public static boolean showValidationResults(Collection collection, String message) {
+
+		Diagnostician diagnostician = new Diagnostician() {
+			public String getObjectLabel(EObject eObject) {
+				// BEGIN Fix for muml bug #341:
+				try {
+					return EMFCoreUtil.getName(eObject);
+				} catch (NullPointerException e) {
+					return "null";
+				}
+				// END Fix
+			}
+		};
+		BasicDiagnostic diagnostic = new BasicDiagnostic
+	          (EObjectValidator.DIAGNOSTIC_SOURCE,
+	           0,
+	           "Diagnosis of several elements",
+	           collection.toArray()
+	          );
+
+	    Map<Object, Object> context = diagnostician.createDefaultContext();
+
+		boolean valid = true;
+		for (Object element : collection) {
+			if (element instanceof EObject && !diagnostician.validate((EObject) element, diagnostic, context)) {
+				valid = false;
+			}
+		}
+		
+		if (!valid) {
+			if (diagnostic.getSeverity() != Diagnostic.OK) {
+			    DiagnosticDialog.open
+	            (PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), "ERROR", message, diagnostic);					}
+		}
+		
+		return valid;
 	}
 }

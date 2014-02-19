@@ -14,7 +14,7 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-import de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.commands.ExecuteQvtoTransformationCommand;
+import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 
 public class Activator extends AbstractUIPlugin {
@@ -77,8 +77,12 @@ public class Activator extends AbstractUIPlugin {
 		List<ModelExtent> modelExtents = Arrays
 				.asList(new ModelExtent[] { inputExtent });
 
+
+		TransformationExecutor transformationExecutor = Activator.getInstance()
+				.getTransformationExecutor(Activator.CREATE_INSTANCE_TRANSFORMATION, false);		
+		
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				Activator.CREATE_INSTANCE_TRANSFORMATION, modelExtents);
+				transformationExecutor, modelExtents);
 		editingDomain.getCommandStack().execute(command);
 
 		if (!command.hasChanged()) {
@@ -94,8 +98,12 @@ public class Activator extends AbstractUIPlugin {
 		List<ModelExtent> modelExtents = Arrays
 				.asList(new ModelExtent[] { inputExtent });
 
+
+		TransformationExecutor transformationExecutor = Activator.getInstance()
+				.getTransformationExecutor(Activator.UPDATE_INSTANCE_TRANSFORMATION, false);		
+		
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				Activator.UPDATE_INSTANCE_TRANSFORMATION, modelExtents);
+				transformationExecutor, modelExtents);
 		if(command.canExecute()){
 			editingDomain.getCommandStack().execute(command);
 		}
