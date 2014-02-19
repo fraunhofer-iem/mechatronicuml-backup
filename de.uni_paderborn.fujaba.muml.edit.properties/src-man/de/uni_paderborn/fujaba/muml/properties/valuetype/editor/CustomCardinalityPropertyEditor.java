@@ -158,25 +158,32 @@ public class CustomCardinalityPropertyEditor extends AbstractStructuralFeaturePr
 
 	protected void modify() {
 		// Get or create Cardinality
-		Cardinality cardinality;
-		if (value instanceof Cardinality) {
-			cardinality = (Cardinality) value;
-		} else {
-			cardinality = (Cardinality) EcoreUtil.create(ValuetypePackage.Literals.CARDINALITY);
-		}
+ 		Cardinality cardinality;
+ 		if (value instanceof Cardinality) {
+ 			cardinality = (Cardinality) value;
+ 		} else {
+ 			cardinality = (Cardinality) EcoreUtil.create(ValuetypePackage.Literals.CARDINALITY);
+ 		}
+
+		// Make sure that the setValue() method always calls doSetValue()
+ 		value = null;
+
+		setValue(cardinality);
+	}
+
+	@Override
+	protected void doSetValue(Object newValue) {
 
 		// Set Lower Bound
-		IItemPropertyDescriptor lowerBoundDescriptor = getItemPropertyDescriptor(adapterFactory, ValuetypePackage.Literals.CARDINALITY__LOWER_BOUND, cardinality);
-		lowerBoundDescriptor.setPropertyValue(cardinality, currentLowerBound);
-		
+		IItemPropertyDescriptor lowerBoundDescriptor = getItemPropertyDescriptor(adapterFactory, ValuetypePackage.Literals.CARDINALITY__LOWER_BOUND, newValue);
+		lowerBoundDescriptor.setPropertyValue(newValue, currentLowerBound);
+
 		// Set Upper Bound
-		IItemPropertyDescriptor upperBoundDescriptor = getItemPropertyDescriptor(adapterFactory, ValuetypePackage.Literals.CARDINALITY__UPPER_BOUND, cardinality);
-		upperBoundDescriptor.setPropertyValue(cardinality, currentUpperBound);
+		IItemPropertyDescriptor upperBoundDescriptor = getItemPropertyDescriptor(adapterFactory, ValuetypePackage.Literals.CARDINALITY__UPPER_BOUND, newValue);
+		upperBoundDescriptor.setPropertyValue(newValue, currentUpperBound);
 
 		// Set new Cardinality
-		if (value != cardinality) {
-			setValue(cardinality);
-		}
+		super.doSetValue(newValue);
 	}
 
 	protected void setText(Object value) {
