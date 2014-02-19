@@ -259,6 +259,15 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getConnector_SelfConnector() {
+		return (EAttribute)connectorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConnectorEndpointInstance() {
 		return connectorEndpointInstanceEClass;
 	}
@@ -530,6 +539,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 
 		connectorEClass = createEClass(CONNECTOR);
 		createEReference(connectorEClass, CONNECTOR__CONNECTOR_ENDPOINTS);
+		createEAttribute(connectorEClass, CONNECTOR__SELF_CONNECTOR);
 
 		connectorEndpointInstanceEClass = createEClass(CONNECTOR_ENDPOINT_INSTANCE);
 		createEReference(connectorEndpointInstanceEClass, CONNECTOR_ENDPOINT_INSTANCE__CONNECTOR_INSTANCES);
@@ -620,7 +630,8 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 		initEReference(getConnectorEndpoint_Connectors(), this.getConnector(), this.getConnector_ConnectorEndpoints(), "connectors", null, 0, -1, ConnectorEndpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEClass, Connector.class, "Connector", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnector_ConnectorEndpoints(), this.getConnectorEndpoint(), this.getConnectorEndpoint_Connectors(), "connectorEndpoints", null, 2, 2, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnector_ConnectorEndpoints(), this.getConnectorEndpoint(), this.getConnectorEndpoint_Connectors(), "connectorEndpoints", null, 1, 2, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConnector_SelfConnector(), ecorePackage.getEBoolean(), "selfConnector", null, 1, 1, Connector.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEndpointInstanceEClass, ConnectorEndpointInstance.class, "ConnectorEndpointInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnectorEndpointInstance_ConnectorInstances(), this.getConnectorInstance(), this.getConnectorInstance_ConnectorEndpointInstances(), "connectorInstances", null, 0, -1, ConnectorEndpointInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -681,7 +692,7 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });				
+		   });					
 		addAnnotation
 		  (discreteInteractionEndpointEClass, 
 		   source, 
@@ -697,12 +708,18 @@ public class ConnectorPackageImpl extends EPackageImpl implements ConnectorPacka
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";						
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";				
+		addAnnotation
+		  (getConnector_SelfConnector(), 
+		   source, 
+		   new String[] {
+			 "derivation", "self.connectorEndpoints->size() = 1\r\n-- author: bingo, cgerking, see MUML #872"
+		   });				
 		addAnnotation
 		  (discreteInteractionEndpointEClass, 
 		   source, 
 		   new String[] {
-			 "ReceivingInteractionEndpointRequiresMessageBuffer", "self.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
+			 "ReceivingInteractionEndpointRequiresMessageBuffer", "-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
 			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))"
 		   });									
 		addAnnotation

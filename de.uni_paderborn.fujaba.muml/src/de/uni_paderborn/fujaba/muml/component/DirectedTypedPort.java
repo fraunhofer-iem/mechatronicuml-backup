@@ -36,7 +36,7 @@ import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDirectedTypedPort()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='InitializeExpressionOnlyForOutPorts'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL InitializeExpressionOnlyForOutPorts='self.kind = component::PortDirectionKind::IN implies self.initializeExpression.oclIsUndefined()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL InitializeExpressionOnlyForOutPorts='-- Only out ports may have an initialize expression.\nself.kind <> component::PortDirectionKind::OUT implies self.initializeExpression.oclIsUndefined()'"
  * @generated
  */
 public interface DirectedTypedPort extends Port, TypedNamedElement {

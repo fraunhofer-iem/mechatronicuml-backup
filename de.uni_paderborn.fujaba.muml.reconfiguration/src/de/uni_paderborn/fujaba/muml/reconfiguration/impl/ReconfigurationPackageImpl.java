@@ -1443,7 +1443,7 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
 		addAnnotation
 		  (this, 
 		   source, 
@@ -1451,43 +1451,43 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });	
+		   });														
 		addAnnotation
 		  (reconfigurationPortEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ReconfigurationPortRequiresMessageTypes ReconfigurationPortAtStructuredComponentHasNoBehavior"
-		   });	
+		   });									
 		addAnnotation
 		  (reconfigurationMessagePortInterfaceEntryEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "RequestRequiresExpectedResponseTime"
-		   });	
+		   });																												
 		addAnnotation
 		  (managerEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ImplementMessagesOfChildren ImplementMessagesOfferedToParent TreatAndNotPropagateMessagesOfferedToParent PropagatedMessageMustAppearInRMPort"
-		   });	
+		   });									
 		addAnnotation
 		  (managerSpecificationEntryEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "NotTreatAndPropagate InvokePlannerOnlyForTreatedMessage TimeForPlanningRequiresToInvokePlanner OnlyBlockTreatedMessage"
-		   });	
+		   });																																			
 		addAnnotation
 		  (reconfigurationPortAssemblyConnectorEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyConnectReconfigurationPorts"
-		   });	
+		   });				
 		addAnnotation
 		  (reconfigurationPortDelegationConnectorEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "OnlyConnectReconfigurationPorts"
-		   });
+		   });	
 	}
 
 	/**
@@ -1497,32 +1497,32 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";								
 		addAnnotation
 		  (getReconfigurableStructuredComponent_Manager(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).manager else null endif"
-		   });	
+		   });			
 		addAnnotation
 		  (getReconfigurableStructuredComponent_Executor(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.controller.oclIsKindOf(RuleBasedReconfigurationController) then self.controller.oclAsType(RuleBasedReconfigurationController).executor else null endif"
-		   });	
+		   });					
 		addAnnotation
 		  (reconfigurationPortEClass, 
 		   source, 
 		   new String[] {
 			 "ReconfigurationPortRequiresMessageTypes", "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
 			 "ReconfigurationPortAtStructuredComponentHasNoBehavior", "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\r\n\timplies self.behavior.oclIsUndefined()"
-		   });	
+		   });											
 		addAnnotation
 		  (reconfigurationMessagePortInterfaceEntryEClass, 
 		   source, 
 		   new String[] {
 			 "RequestRequiresExpectedResponseTime", "self.reconfigurationMessageType = ReconfigurationMessageTypeEnum::REQUEST implies (not self.expectedResponseTime.oclIsUndefined())"
-		   });	
+		   });																												
 		addAnnotation
 		  (managerEClass, 
 		   source, 
@@ -1531,13 +1531,13 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "ImplementMessagesOfferedToParent", "-- The manager needs to contain ManagerSpecificationEntries for each reconfiguration message that is provided by the reconfiguration execution port.\r\n(self.reconfigurationController.structuredComponent.ports -> \r\n\t\t\tselect(oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort).interfaceEntries.messageType\r\n\t\t\t->forAll(mt : msgtype::MessageType | self.specificationEntries -> select(messageType = mt) -> size() > 0)",
 			 "TreatAndNotPropagateMessagesOfferedToParent", "-- All reconfiguration messages offered to the parent in the reconfiguration execution port need to be treated and not propagated in the manager specification.\r\nself.specificationEntries -> select(entry : ManagerSpecificationEntry | self.reconfigurationController.structuredComponent.ports\r\n\t-> select(oclIsTypeOf(ReconfigurationExecutionPort)).oclAsType(ReconfigurationExecutionPort).interfaceEntries \r\n\t-> select(messageType = entry.messageType) -> size() > 0) -> forAll(treat = true and propagate = false)",
 			 "PropagatedMessageMustAppearInRMPort", "self.reconfigurationController.structuredComponent.ports -> any(oclIsKindOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort).interfaceEntries.messageType -- messages in RM Port\r\n= \r\nself.specificationEntries -> select(propagate = true).messageType -- message propagated in manager specification"
-		   });	
+		   });					
 		addAnnotation
 		  (getManager_ReconfigurationMessagePorts(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.ports -> select(p | p.oclIsTypeOf(ReconfigurationMessagePort)).oclAsType(ReconfigurationMessagePort)"
-		   });	
+		   });					
 		addAnnotation
 		  (managerSpecificationEntryEClass, 
 		   source, 
@@ -1546,25 +1546,25 @@ public class ReconfigurationPackageImpl extends EPackageImpl implements Reconfig
 			 "InvokePlannerOnlyForTreatedMessage", "self.invokePlanner implies self.treat",
 			 "TimeForPlanningRequiresToInvokePlanner", "(not self.timeForPlanning.oclIsUndefined()) implies self.invokePlanner",
 			 "OnlyBlockTreatedMessage", "self.blockable implies self.treat"
-		   });	
+		   });															
 		addAnnotation
 		  (getExecutor_ReconfigurationExecutionPorts(), 
 		   source, 
 		   new String[] {
 			 "derivation", "(self.ports -> select(p | p.oclIsTypeOf(ReconfigurationExecutionPort))).oclAsType(ReconfigurationExecutionPort)"
-		   });	
+		   });											
 		addAnnotation
 		  (getReconfigurationRule_Name(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if self.signature.oclIsUndefined() then null else self.signature.name endif"
-		   });	
+		   });											
 		addAnnotation
 		  (reconfigurationPortAssemblyConnectorEClass, 
 		   source, 
 		   new String[] {
 			 "OnlyConnectReconfigurationPorts", "-- A reconfiguration Port Assembly may only connect reconfiguration ports or a port part typed by a reconfiguration port.\r\n(self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 2) -- two reconfiguration ports\r\nor \r\n((self.connectorEndpoints -> select(oclIsKindOf(ReconfigurationPort)) -> size() = 1) and -- or one reconfiguration port and one port part\r\n(self.connectorEndpoints -> select(oclIsKindOf(component::PortPart)) -> size() = 1) and \r\n(self.connectorEndpoints -> any(oclIsKindOf(component::PortPart)).oclAsType(component::PortPart).portType.oclIsKindOf(ReconfigurationPort))) -- that is typed over a reconfiguration port"
-		   });	
+		   });				
 		addAnnotation
 		  (reconfigurationPortDelegationConnectorEClass, 
 		   source, 

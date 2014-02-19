@@ -348,13 +348,22 @@ public interface ConnectorPackage extends EPackage {
 	int CONNECTOR__CONNECTOR_ENDPOINTS = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__SELF_CONNECTOR = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 1;
+	int CONNECTOR_FEATURE_COUNT = CorePackage.COMMENTABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -2471,6 +2480,17 @@ public interface ConnectorPackage extends EPackage {
 	EReference getConnector_ConnectorEndpoints();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.connector.Connector#isSelfConnector <em>Self Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Self Connector</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.connector.Connector#isSelfConnector()
+	 * @see #getConnector()
+	 * @generated
+	 */
+	EAttribute getConnector_SelfConnector();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance <em>Endpoint Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2817,6 +2837,14 @@ public interface ConnectorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CONNECTOR__CONNECTOR_ENDPOINTS = eINSTANCE.getConnector_ConnectorEndpoints();
+
+		/**
+		 * The meta object literal for the '<em><b>Self Connector</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONNECTOR__SELF_CONNECTOR = eINSTANCE.getConnector_SelfConnector();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.connector.impl.ConnectorEndpointInstanceImpl <em>Endpoint Instance</em>}' class.

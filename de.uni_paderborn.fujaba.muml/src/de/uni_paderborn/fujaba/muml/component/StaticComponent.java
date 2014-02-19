@@ -22,7 +22,7 @@ package de.uni_paderborn.fujaba.muml.component;
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getStaticComponent()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SoftwareComponentOnlyDiscreteOrHybridPorts'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SoftwareComponentOnlyDiscreteOrHybridPorts='-- Static Components with component type \"SOFTARE_COMPONENT\" must only have discrete ports and hybrid ports.\r\nself.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SoftwareComponentOnlyDiscreteOrHybridPorts='-- Static software components must only have discrete ports and hybrid ports.\r\nself.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()'"
  * @generated
  */
 public interface StaticComponent extends Component {

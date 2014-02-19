@@ -2888,6 +2888,15 @@ public interface ComponentPackage extends EPackage {
 	int PORT_CONNECTOR__CONNECTOR_ENDPOINTS = ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
 
 	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_CONNECTOR__SELF_CONNECTOR = ConnectorPackage.CONNECTOR__SELF_CONNECTOR;
+
+	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3130,6 +3139,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSEMBLY_CONNECTOR__CONNECTOR_ENDPOINTS = PORT_CONNECTOR__CONNECTOR_ENDPOINTS;
+
+	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_CONNECTOR__SELF_CONNECTOR = PORT_CONNECTOR__SELF_CONNECTOR;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
@@ -3392,6 +3410,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELEGATION_CONNECTOR__CONNECTOR_ENDPOINTS = PORT_CONNECTOR__CONNECTOR_ENDPOINTS;
+
+	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_CONNECTOR__SELF_CONNECTOR = PORT_CONNECTOR__SELF_CONNECTOR;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.

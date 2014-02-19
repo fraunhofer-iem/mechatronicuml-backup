@@ -25,7 +25,7 @@ package de.uni_paderborn.fujaba.muml.protocol;
  *
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage#getCoordinationProtocol()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CoordinationProtocolNamesMustBeUnique'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CoordinationProtocolNamesMustBeUnique='CoordinationProtocol.allInstances()->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CoordinationProtocolNamesMustBeUnique='-- Coordination Protocols must have unique names\nCoordinationProtocol.allInstances()->isUnique(name)'"
  * @generated
  */
 public interface CoordinationProtocol extends AbstractCoordinationSpecification {

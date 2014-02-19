@@ -995,6 +995,15 @@ public interface ProtocolPackage extends EPackage {
 	int ROLE_CONNECTOR__CONNECTOR_ENDPOINTS = ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
 
 	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_CONNECTOR__SELF_CONNECTOR = ConnectorPackage.CONNECTOR__SELF_CONNECTOR;
+
+	/**
 	 * The feature id for the '<em><b>Coordination Protocol</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

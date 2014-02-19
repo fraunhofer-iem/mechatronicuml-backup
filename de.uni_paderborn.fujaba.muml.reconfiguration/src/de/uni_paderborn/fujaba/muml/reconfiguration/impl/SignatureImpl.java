@@ -110,7 +110,7 @@ public class SignatureImpl extends NamedElementImpl implements Signature {
 	 */
 	public ReconfigurationRule getReconfigurationRule() {
 		if (eContainerFeatureID() != ReconfigurationPackage.SIGNATURE__RECONFIGURATION_RULE) return null;
-		return (ReconfigurationRule)eInternalContainer();
+		return (ReconfigurationRule)eContainer();
 	}
 
 	/**

@@ -265,7 +265,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__NO_OUTGOING_TRANSITION_OF_FINAL_STATE__EEXPRESSION = "self.final implies self.outgoingTransitions->isEmpty()";
+	protected static final String STATE__NO_OUTGOING_TRANSITION_OF_FINAL_STATE__EEXPRESSION = "-- Final states must not have outgoing transitions\n" +
+		"self.final implies self.outgoingTransitions->isEmpty()";
 
 	/**
 	 * Validates the NoOutgoingTransitionOfFinalState constraint of '<em>State</em>'.
@@ -294,7 +295,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__NO_REGIONS_OF_FINAL_STATE__EEXPRESSION = "self.final implies self.embeddedRegions->isEmpty()";
+	protected static final String STATE__NO_REGIONS_OF_FINAL_STATE__EEXPRESSION = "-- Final states must not have regions\n" +
+		"self.final implies self.embeddedRegions->isEmpty()";
 
 	/**
 	 * Validates the NoRegionsOfFinalState constraint of '<em>State</em>'.
@@ -323,7 +325,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__UNIQUE_PRIORITIES_OF_OUTGOING_TRANSITIONS__EEXPRESSION = "self.outgoingTransitions->isUnique(priority) ";
+	protected static final String STATE__UNIQUE_PRIORITIES_OF_OUTGOING_TRANSITIONS__EEXPRESSION = "-- Outgoing transitions must have a unique priority\n" +
+		"self.outgoingTransitions->isUnique(priority) ";
 
 	/**
 	 * Validates the UniquePrioritiesOfOutgoingTransitions constraint of '<em>State</em>'.
@@ -352,7 +355,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__UNIQUE_PRIORITIES_OF_REGIONS__EEXPRESSION = "self.embeddedRegions->isUnique(priority)";
+	protected static final String STATE__UNIQUE_PRIORITIES_OF_REGIONS__EEXPRESSION = "-- Regions must have a unique priority\n" +
+		"self.embeddedRegions->isUnique(priority)";
 
 	/**
 	 * Validates the UniquePrioritiesOfRegions constraint of '<em>State</em>'.
@@ -381,7 +385,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__UNIQUE_CHANNEL_NAMES__EEXPRESSION = "self.channels->isUnique(name)";
+	protected static final String STATE__UNIQUE_CHANNEL_NAMES__EEXPRESSION = "-- Synchronization channels must have a unique name\n" +
+		"self.channels->isUnique(name)";
 
 	/**
 	 * Validates the UniqueChannelNames constraint of '<em>State</em>'.
@@ -410,7 +415,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__UNIQUE_REGION_NAMES__EEXPRESSION = "self.embeddedRegions->isUnique(name)";
+	protected static final String STATE__UNIQUE_REGION_NAMES__EEXPRESSION = "-- Regions must have a unique name\n" +
+		"self.embeddedRegions->isUnique(name)";
 
 	/**
 	 * Validates the UniqueRegionNames constraint of '<em>State</em>'.
@@ -439,7 +445,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE__INVALID_CLOCK_CONSTRAINT_OPERATOR__EEXPRESSION = "self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))";
+	protected static final String STATE__INVALID_CLOCK_CONSTRAINT_OPERATOR__EEXPRESSION = "-- Clock Constraints must only use operators LESS and LESS_OR_EQUAL\n" +
+		"self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))";
 
 	/**
 	 * Validates the InvalidClockConstraintOperator constraint of '<em>State</em>'.
@@ -594,7 +601,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__TRIGGER_MESSAGE_EVENTS_MUST_NOT_HAVE_AN_OWNED_PARAMETER_BINDING__EEXPRESSION = "not self.triggerMessageEvent.message.oclIsUndefined() implies\r\n" +
+	protected static final String TRANSITION__TRIGGER_MESSAGE_EVENTS_MUST_NOT_HAVE_AN_OWNED_PARAMETER_BINDING__EEXPRESSION = "-- Trigger Message Event must be parameterless (no parameter binding allowed)\r\n" +
+		"not self.triggerMessageEvent.message.oclIsUndefined() implies\r\n" +
 		"self.triggerMessageEvent.message.parameterBinding->isEmpty()";
 
 	/**
@@ -624,7 +632,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)";
+	protected static final String TRANSITION__VALID_TRIGGER_MESSAGE_EVENTS__EEXPRESSION = "-- Trigger message type must be added to receiver message types\n" +
+		"not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)";
 
 	/**
 	 * Validates the ValidTriggerMessageEvents constraint of '<em>Transition</em>'.
@@ -653,7 +662,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION = "not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)";
+	protected static final String TRANSITION__VALID_RAISE_MESSAGE_EVENTS__EEXPRESSION = "-- Raise message type must be added to sender message types\n" +
+		"not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)";
 
 	/**
 	 * Validates the ValidRaiseMessageEvents constraint of '<em>Transition</em>'.
@@ -682,7 +692,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__STATE_CONNECTION_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION = "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
+	protected static final String TRANSITION__STATE_CONNECTION_POINT_INCOMING_TRANSITIONS_NO_SIDE_EFFECTS_OR_DEADLINES__EEXPRESSION = "-- Transitions to state connection points must not define side effects or deadlines\r\n" +
+		"(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
 		"\timplies (\r\n" +
 		"\t\tself.clockResets->isEmpty()\r\n" +
 		"\t\tand self.action.oclIsUndefined()\r\n" +
@@ -718,7 +729,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__STATE_CONNECTION_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION = "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
+	protected static final String TRANSITION__STATE_CONNECTION_POINT_OUTGOING_TRANSITIONS_NO_CONDITIONS__EEXPRESSION = "-- Transitions from state connection points must not have conditions\r\n" +
+		"(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
 		"\timplies (\r\n" +
 		"\t\tself.triggerMessageEvent.oclIsUndefined()\r\n" +
 		"\t\tand self.clockConstraints->isEmpty()\r\n" +
@@ -753,7 +765,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__STATE_CONNECTION_POINT_OUTGOING_TRANSITIONS_MUST_BE_URGENT__EEXPRESSION = "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
+	protected static final String TRANSITION__STATE_CONNECTION_POINT_OUTGOING_TRANSITIONS_MUST_BE_URGENT__EEXPRESSION = "-- Transitions from state connection points must be urgent\r\n" +
+		"(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n" +
 		"\timplies (\r\n" +
 		"\t\tself.urgent\r\n" +
 		"\t)";
@@ -785,7 +798,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__NO_COMBINATION_OF_RELATIVE_AND_ABSOLUTE_DEADLINES__EEXPRESSION = "(not self.relativeDeadline.oclIsUndefined()) implies (self.absoluteDeadlines->isEmpty())";
+	protected static final String TRANSITION__NO_COMBINATION_OF_RELATIVE_AND_ABSOLUTE_DEADLINES__EEXPRESSION = "-- Defining both relative and absolute deadlines is forbidden\n" +
+		"(not self.relativeDeadline.oclIsUndefined()) implies (self.absoluteDeadlines->isEmpty())";
 
 	/**
 	 * Validates the NoCombinationOfRelativeAndAbsoluteDeadlines constraint of '<em>Transition</em>'.
@@ -1071,7 +1085,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PRIORITIZED_ELEMENT__PRIORITY_GREATER_OR_EQUAL_ONE__EEXPRESSION = "self.priority >= 1";
+	protected static final String PRIORITIZED_ELEMENT__PRIORITY_GREATER_OR_EQUAL_ONE__EEXPRESSION = "-- Priority must be >= 1\n" +
+		"self.priority >= 1";
 
 	/**
 	 * Validates the PriorityGreaterOrEqualOne constraint of '<em>Prioritized Element</em>'.
@@ -1121,7 +1136,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION = "self.states->isUnique(name)";
+	protected static final String REALTIME_STATECHART__UNIQUE_NAME_OF_STATES__EEXPRESSION = "-- State names must be unique\n" +
+		"self.states->isUnique(name)";
 
 	/**
 	 * Validates the UniqueNameOfStates constraint of '<em>Realtime Statechart</em>'.
@@ -1185,7 +1201,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String REALTIME_STATECHART__ONE_INITIAL_STATE__EEXPRESSION = "self.states->select(s |  s.initial)->size() = 1";
+	protected static final String REALTIME_STATECHART__ONE_INITIAL_STATE__EEXPRESSION = "-- An initial state is missing\n" +
+		"self.states->select(s |  s.initial)->size() = 1";
 
 	/**
 	 * Validates the OneInitialState constraint of '<em>Realtime Statechart</em>'.
@@ -1287,7 +1304,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATE_CONNECTION_POINT__CONNECTION_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION = "not self.state.oclIsUndefined() implies not self.state.simple";
+	protected static final String STATE_CONNECTION_POINT__CONNECTION_POINTS_ONLY_AT_COMPOSITE_STATES__EEXPRESSION = "-- State connection points are only allowed at composite (non-simple) states\n" +
+		"not self.state.oclIsUndefined() implies not self.state.simple";
 
 	/**
 	 * Validates the ConnectionPointsOnlyAtCompositeStates constraint of '<em>State Connection Point</em>'.
@@ -1337,7 +1355,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ENTRY_POINT__AT_LEAST_ONE_INCOMING_TRANSITION__EEXPRESSION = "self.incomingTransitions ->notEmpty()";
+	protected static final String ENTRY_POINT__AT_LEAST_ONE_INCOMING_TRANSITION__EEXPRESSION = "-- Entry point needs at least one incoming transition\n" +
+		"self.incomingTransitions ->notEmpty()";
 
 	/**
 	 * Validates the AtLeastOneIncomingTransition constraint of '<em>Entry Point</em>'.
@@ -1461,7 +1480,8 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String EXIT_POINT__ONE_OUTGOING_TRANSITION__EEXPRESSION = "self.outgoingTransitions->size() = 1";
+	protected static final String EXIT_POINT__ONE_OUTGOING_TRANSITION__EEXPRESSION = "-- Exit point must have exactly one outgoing transition\n" +
+		"self.outgoingTransitions->size() = 1";
 
 	/**
 	 * Validates the OneOutgoingTransition constraint of '<em>Exit Point</em>'.

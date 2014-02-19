@@ -1801,13 +1801,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (stateEClass, 
 		   source, 
 		   new String[] {
-			 "NoOutgoingTransitionOfFinalState", "self.final implies self.outgoingTransitions->isEmpty()",
-			 "NoRegionsOfFinalState", "self.final implies self.embeddedRegions->isEmpty()",
-			 "UniquePrioritiesOfOutgoingTransitions", "self.outgoingTransitions->isUnique(priority) ",
-			 "UniquePrioritiesOfRegions", "self.embeddedRegions->isUnique(priority)",
-			 "UniqueChannelNames", "self.channels->isUnique(name)",
-			 "UniqueRegionNames", "self.embeddedRegions->isUnique(name)",
-			 "InvalidClockConstraintOperator", "self.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))",
+			 "NoOutgoingTransitionOfFinalState", "-- Final states must not have outgoing transitions\nself.final implies self.outgoingTransitions->isEmpty()",
+			 "NoRegionsOfFinalState", "-- Final states must not have regions\nself.final implies self.embeddedRegions->isEmpty()",
+			 "UniquePrioritiesOfOutgoingTransitions", "-- Outgoing transitions must have a unique priority\nself.outgoingTransitions->isUnique(priority) ",
+			 "UniquePrioritiesOfRegions", "-- Regions must have a unique priority\nself.embeddedRegions->isUnique(priority)",
+			 "UniqueChannelNames", "-- Synchronization channels must have a unique name\nself.channels->isUnique(name)",
+			 "UniqueRegionNames", "-- Regions must have a unique name\nself.embeddedRegions->isUnique(name)",
+			 "InvalidClockConstraintOperator", "-- Clock Constraints must only use operators LESS and LESS_OR_EQUAL\nself.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))",
 			 "UniqueStateConnectionPointNames", "-- State Connection Points of a composite state must have unique names.\r\nself.connectionPoints->isUnique(name)"
 		   });													
 		addAnnotation
@@ -1845,13 +1845,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "LegalTransitionsOnly", "-- Only specific types of transitions are allowed\r\n\r\nif (self.source.oclIsUndefined() or self.target.oclIsUndefined()) then\r\ntrue\r\nelse\r\n-- State A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(State)))\t\r\nor\r\n-- EntryPoint of A1 to State A2, where A1 is the direct parent state of A2\r\n(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(State)))\t\r\nor\r\n-- EntryPoint of A1 to EntryPoint of A2, where A1 is the direct parent state of A2\r\n(self.source.oclIsKindOf(EntryPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(EntryPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.target.oclAsType(EntryPoint).state))\r\nor\r\n-- ExitPoint of A1 to ExitPoint of A2, where A2 is the direct parent state of A1\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(ExitPoint) and self.target.oclAsType(ExitPoint).state.embeddedRegions.embeddedStatechart.states->includes(self.source.oclAsType(ExitPoint).state))\r\n\r\nor \r\n-- State A to State B within the same statechart\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(State) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(State).parentStatechart)\r\nor\r\n-- State A to EntryPoint of B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(State) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(State).parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)\r\nor\r\n-- ExitPoint of A to EntryPoint of B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(EntryPoint) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(EntryPoint).state.parentStatechart)\r\nor\r\n-- ExitPoint of A to State B, where A and B are in the same statechart\r\n(self.source.oclIsKindOf(ExitPoint) and self.target.oclIsKindOf(State) and self.source.oclAsType(ExitPoint).state.parentStatechart = self.target.oclAsType(State).parentStatechart)\r\nendif",
-			 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding", "not self.triggerMessageEvent.message.oclIsUndefined() implies\r\nself.triggerMessageEvent.message.parameterBinding->isEmpty()",
-			 "ValidTriggerMessageEvents", "not triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)",
-			 "ValidRaiseMessageEvents", "not raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)",
-			 "StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines", "(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
-			 "StateConnectionPointOutgoingTransitionsNoConditions", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t\tand self.synchronization.oclIsUndefined()\r\n\t)",
-			 "StateConnectionPointOutgoingTransitionsMustBeUrgent", "(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.urgent\r\n\t)",
-			 "NoCombinationOfRelativeAndAbsoluteDeadlines", "(not self.relativeDeadline.oclIsUndefined()) implies (self.absoluteDeadlines->isEmpty())",
+			 "TriggerMessageEventsMustNotHaveAnOwnedParameterBinding", "-- Trigger Message Event must be parameterless (no parameter binding allowed)\r\nnot self.triggerMessageEvent.message.oclIsUndefined() implies\r\nself.triggerMessageEvent.message.parameterBinding->isEmpty()",
+			 "ValidTriggerMessageEvents", "-- Trigger message type must be added to receiver message types\nnot triggerMessageEvent.message.instanceOf.oclIsUndefined() implies receiverMessageTypes->includes(triggerMessageEvent.message.instanceOf)",
+			 "ValidRaiseMessageEvents", "-- Raise message type must be added to sender message types\nnot raiseMessageEvent.message.instanceOf.oclIsUndefined() implies senderMessageTypes->includes(raiseMessageEvent.message.instanceOf)",
+			 "StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines", "-- Transitions to state connection points must not define side effects or deadlines\r\n(not self.target.oclIsUndefined() and self.target.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.clockResets->isEmpty()\r\n\t\tand self.action.oclIsUndefined()\r\n\t\tand self.raiseMessageEvent.oclIsUndefined()\r\n\t\tand self.absoluteDeadlines->isEmpty()\r\n\t\tand self.relativeDeadline.oclIsUndefined()\r\n\t)",
+			 "StateConnectionPointOutgoingTransitionsNoConditions", "-- Transitions from state connection points must not have conditions\r\n(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.triggerMessageEvent.oclIsUndefined()\r\n\t\tand self.clockConstraints->isEmpty()\r\n\t\tand self.guard.oclIsUndefined()\r\n\t\tand self.synchronization.oclIsUndefined()\r\n\t)",
+			 "StateConnectionPointOutgoingTransitionsMustBeUrgent", "-- Transitions from state connection points must be urgent\r\n(not self.source.oclIsUndefined() and self.source.oclIsKindOf(realtimestatechart::StateConnectionPoint))\r\n\timplies (\r\n\t\tself.urgent\r\n\t)",
+			 "NoCombinationOfRelativeAndAbsoluteDeadlines", "-- Defining both relative and absolute deadlines is forbidden\n(not self.relativeDeadline.oclIsUndefined()) implies (self.absoluteDeadlines->isEmpty())",
 			 "NoCombinationOfReceivedSynchronizationAndTriggerMessage", "-- A transition must not specify a received synchronization and a trigger message at the same time\r\n((not self.synchronization.oclIsUndefined()) and (self.synchronization.kind = SynchronizationKind::RECEIVE))\r\nimplies\r\nself.triggerMessageEvent.oclIsUndefined()",
 			 "TransitionMustBeContainedByCorrectStatechart", "-- A transition must be contained by its associated statechart\r\n(not self.statechart.oclIsUndefined()) implies (self.statechart.transitions->includes(self))"
 		   });						
@@ -1902,15 +1902,15 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (prioritizedElementEClass, 
 		   source, 
 		   new String[] {
-			 "PriorityGreaterOrEqualOne", "self.priority >= 1"
+			 "PriorityGreaterOrEqualOne", "-- Priority must be >= 1\nself.priority >= 1"
 		   });			
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueNameOfStates", "self.states->isUnique(name)",
+			 "UniqueNameOfStates", "-- State names must be unique\nself.states->isUnique(name)",
 			 "NoCycles", "-- If we are contained within a statechart...\r\n(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n\r\nimplies\r\n\r\n-- ... then we must not be a super statechart of it.\r\n(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))",
-			 "OneInitialState", "self.states->select(s |  s.initial)->size() = 1"
+			 "OneInitialState", "-- An initial state is missing\nself.states->select(s |  s.initial)->size() = 1"
 		   });										
 		addAnnotation
 		  (getRealtimeStatechart_Flat(), 
@@ -1946,13 +1946,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (stateConnectionPointEClass, 
 		   source, 
 		   new String[] {
-			 "ConnectionPointsOnlyAtCompositeStates", "not self.state.oclIsUndefined() implies not self.state.simple"
+			 "ConnectionPointsOnlyAtCompositeStates", "-- State connection points are only allowed at composite (non-simple) states\nnot self.state.oclIsUndefined() implies not self.state.simple"
 		   });					
 		addAnnotation
 		  (entryPointEClass, 
 		   source, 
 		   new String[] {
-			 "AtLeastOneIncomingTransition", "self.incomingTransitions ->notEmpty()",
+			 "AtLeastOneIncomingTransition", "-- Entry point needs at least one incoming transition\nself.incomingTransitions ->notEmpty()",
 			 "OneOutgoingTransitionPerRegion", "-- all regions of the parent state must have exactly one vertex that the EntryPoint connects to\r\n(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |\r\n\tself.outgoingTransitions->one(t |\r\n\t\t(t.target.oclIsKindOf(State) and t.target.oclAsType(State).parentStatechart.parentRegion = r)\r\n\t\tor\r\n\t\t(t.target.oclIsKindOf(EntryPoint) and t.target.oclAsType(EntryPoint).state.parentStatechart.parentRegion = r)\r\n\t)\r\n)"
 		   });				
 		addAnnotation
@@ -1960,7 +1960,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "AtLeastOneIncomingTransitionPerRegion", "-- all regions of the parent state must have at least one vertex that connects to the ExitPoint\r\n(not self.state.oclIsUndefined()) implies self.state.embeddedRegions->forAll(r |\r\n\tself.incomingTransitions->exists(t |\r\n\t\t(t.source.oclIsKindOf(State) and t.source.oclAsType(State).parentStatechart.parentRegion = r)\r\n\t\tor\r\n\t\t(t.source.oclIsKindOf(ExitPoint) and t.source.oclAsType(ExitPoint).state.parentStatechart.parentRegion = r)\r\n\t)\r\n)",
-			 "OneOutgoingTransition", "self.outgoingTransitions->size() = 1",
+			 "OneOutgoingTransition", "-- Exit point must have exactly one outgoing transition\nself.outgoingTransitions->size() = 1",
 			 "AtMostOneConnectingRegionWithSynchronizations", "-- There must be at most one region with synchronizing transitions that connect (directly or indirectly) to the exit point\r\n\r\nlet exitTransitions : Collection(Transition) = \r\n\r\nself.incomingTransitions->union(\r\n   self.incomingTransitions->closure(t | \r\n\tif t.source.oclIsKindOf(ExitPoint)\r\n\tthen t.source.incomingTransitions\r\n\telse Sequence{}\r\n\tendif\r\n   )\r\n)\r\n\r\nin exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 <> t2 and (not t1.synchronization.oclIsUndefined()) and (not t2.synchronization.oclIsUndefined())) implies (t1.statechart = t2.statechart))",
 			 "AtMostOneConnectingRegionWithTriggerMessageEvents", "-- There must be at most one region with transitions that have a trigger message event and connect (directly or indirectly) to the exit point\r\n\r\nlet exitTransitions : Collection(Transition) = \r\n\r\nself.incomingTransitions->union(\r\n   self.incomingTransitions->closure(t | \r\n\tif t.source.oclIsKindOf(ExitPoint)\r\n\tthen t.source.incomingTransitions\r\n\telse Sequence{}\r\n\tendif\r\n   )\r\n)\r\n\r\nin exitTransitions->forAll(t1 : Transition, t2: Transition | (t1 <> t2 and (not t1.triggerMessageEvent.oclIsUndefined()) and (not t2.triggerMessageEvent.oclIsUndefined())) implies (t1.statechart = t2.statechart))"
 		   });

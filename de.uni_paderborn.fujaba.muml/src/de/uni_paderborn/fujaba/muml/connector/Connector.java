@@ -18,6 +18,7 @@ import org.storydriven.core.CommentableElement;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.Connector#getConnectorEndpoints <em>Connector Endpoints</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.Connector#isSelfConnector <em>Self Connector</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,9 +40,25 @@ public interface Connector extends CommentableElement {
 	 * @return the value of the '<em>Connector Endpoints</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnector_ConnectorEndpoints()
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint#getConnectors
-	 * @model opposite="connectors" lower="2" upper="2"
+	 * @model opposite="connectors" required="true" upper="2"
 	 * @generated
 	 */
 	EList<ConnectorEndpoint> getConnectorEndpoints();
+
+	/**
+	 * Returns the value of the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Self Connector</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Self Connector</em>' attribute.
+	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnector_SelfConnector()
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpoints->size() = 1\r\n-- author: bingo, cgerking, see MUML #872'"
+	 * @generated
+	 */
+	boolean isSelfConnector();
 
 } // Connector

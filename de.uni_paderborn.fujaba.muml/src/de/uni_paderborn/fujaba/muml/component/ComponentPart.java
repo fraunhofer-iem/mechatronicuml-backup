@@ -39,7 +39,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getComponentPart()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='if self.cardinality.lowerBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.lowerBound->notEmpty()\r\nendif' TypeNotEqualToParent='self.componentType <> self.parentComponent' CardinalityUpperBoundSet='if self.cardinality.upperBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.upperBound->notEmpty()\r\nendif'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CardinalityLowerBoundSet='-- Lower bound of cardinality must be set\r\nif self.cardinality.lowerBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.lowerBound->notEmpty()\r\nendif' TypeNotEqualToParent='-- Component Part must have the same type as its parent structured component\nself.componentType <> self.parentComponent' CardinalityUpperBoundSet='-- Upper bound of cardinality must be set\r\nif self.cardinality.upperBound.oclIsUndefined() then\r\nfalse\r\nelse\r\nself.cardinality.upperBound->notEmpty()\r\nendif'"
  * @generated
  */
 public interface ComponentPart extends NamedElement, CommentableElement, DataType {

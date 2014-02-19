@@ -333,7 +333,7 @@ public class MsgtypePackageImpl extends EPackageImpl implements MsgtypePackage {
 		  (messageTypeEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueParameterNames", "self.parameters->isUnique(name)"
+			 "UniqueParameterNames", "-- Parameter names must be unique\nself.parameters->isUnique(name)"
 		   });					
 	}
 

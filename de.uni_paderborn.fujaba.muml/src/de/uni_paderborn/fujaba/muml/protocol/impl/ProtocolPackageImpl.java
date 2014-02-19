@@ -499,7 +499,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "RoleRequiresBehavior RoleRequiresMessageTypes ReceiverRoleRequiresMessageBuffer ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresRoleAndAdaptationBehavior"
+			 "constraints", "RoleRequiresBehavior RoleRequiresMessageTypes ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer MultiRoleRequiresRoleAndAdaptationBehavior"
 		   });									
 		addAnnotation
 		  (roleConnectorEClass, 
@@ -521,7 +521,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (abstractCoordinationSpecificationEClass, 
 		   source, 
 		   new String[] {
-			 "UniqueRoleNames", "self.roles->isUnique(name)",
+			 "UniqueRoleNames", "-- Names of roles must be unique\nself.roles->isUnique(name)",
 			 "RoleMessageTypesMustBeCompatible", "-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()\r\n)",
 			 "SingleRoleImpliesMultiRole", "-- Only one role exists, so it must be a Multi Role.\r\nself.roles->size() = 1 implies self.roles->any(true).multiRole"
 		   });						
@@ -529,7 +529,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (coordinationProtocolEClass, 
 		   source, 
 		   new String[] {
-			 "CoordinationProtocolNamesMustBeUnique", "CoordinationProtocol.allInstances()->isUnique(name)"
+			 "CoordinationProtocolNamesMustBeUnique", "-- Coordination Protocols must have unique names\nCoordinationProtocol.allInstances()->isUnique(name)"
 		   });		
 		addAnnotation
 		  (getCoordinationProtocol_GmfCoordinationProtocol(), 
@@ -541,11 +541,10 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (roleEClass, 
 		   source, 
 		   new String[] {
-			 "RoleRequiresBehavior", "not self.behavior.oclIsUndefined()",
-			 "RoleRequiresMessageTypes", "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
-			 "ReceiverRoleRequiresMessageBuffer", "self.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()",
+			 "RoleRequiresBehavior", "-- Role requires behavior\nnot self.behavior.oclIsUndefined()",
+			 "RoleRequiresMessageTypes", "-- Role requires message types to be set\nself.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()",
 			 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer", "-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))",
-			 "MultiRoleRequiresRoleAndAdaptationBehavior", "self.multiRole implies \r\n((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"
+			 "MultiRoleRequiresRoleAndAdaptationBehavior", "-- Multi roles need adaptationBehavior and roleAndAdaptationBehavior set\r\nself.multiRole implies \r\n((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))"
 		   });			
 		addAnnotation
 		  (getRole_RoleConnector(), 
@@ -563,7 +562,7 @@ public class ProtocolPackageImpl extends EPackageImpl implements ProtocolPackage
 		  (roleConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "OnlyRolesOfSameCoordinationProtocol", "if self.coordinationProtocol.roles->oclIsUndefined() then \r\ntrue\r\nelse\r\nself.coordinationProtocol.roles = self.roles\r\nendif"
+			 "OnlyRolesOfSameCoordinationProtocol", "-- Role connector must not connect roles at different coordination protocols\r\nif self.coordinationProtocol.roles->oclIsUndefined() then \r\ntrue\r\nelse\r\nself.coordinationProtocol.roles = self.roles\r\nendif"
 		   });				
 		addAnnotation
 		  (getRoleConnector_Roles(), 

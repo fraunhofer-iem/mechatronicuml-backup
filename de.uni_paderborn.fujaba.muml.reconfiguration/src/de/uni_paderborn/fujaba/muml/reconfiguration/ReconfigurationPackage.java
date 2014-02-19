@@ -2324,6 +2324,15 @@ public interface ReconfigurationPackage extends EPackage {
 	int RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR__CONNECTOR_ENDPOINTS = ComponentPackage.PORT_CONNECTOR__CONNECTOR_ENDPOINTS;
 
 	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT_ASSEMBLY_CONNECTOR__SELF_CONNECTOR = ComponentPackage.PORT_CONNECTOR__SELF_CONNECTOR;
+
+	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2386,6 +2395,15 @@ public interface ReconfigurationPackage extends EPackage {
 	 * @ordered
 	 */
 	int RECONFIGURATION_PORT_DELEGATION_CONNECTOR__CONNECTOR_ENDPOINTS = ComponentPackage.PORT_CONNECTOR__CONNECTOR_ENDPOINTS;
+
+	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECONFIGURATION_PORT_DELEGATION_CONNECTOR__SELF_CONNECTOR = ComponentPackage.PORT_CONNECTOR__SELF_CONNECTOR;
 
 	/**
 	 * The feature id for the '<em><b>Parent Component</b></em>' container reference.

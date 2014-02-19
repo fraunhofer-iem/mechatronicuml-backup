@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage#getNaturalNumber()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ValueGreaterOrEqualZero'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValueGreaterOrEqualZero='self.value >= 0'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ValueGreaterOrEqualZero='-- Natural number must not be negative\nself.value >= 0'"
  * @generated
  */
 public interface NaturalNumber extends EObject {

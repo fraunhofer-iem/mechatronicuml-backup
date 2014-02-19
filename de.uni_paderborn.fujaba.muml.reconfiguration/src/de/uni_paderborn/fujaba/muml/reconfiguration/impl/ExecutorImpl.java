@@ -186,7 +186,7 @@ public class ExecutorImpl extends CommentableElementImpl implements Executor {
 	 */
 	public RuleBasedReconfigurationController getReconfigurationController() {
 		if (eContainerFeatureID() != ReconfigurationPackage.EXECUTOR__RECONFIGURATION_CONTROLLER) return null;
-		return (RuleBasedReconfigurationController)eInternalContainer();
+		return (RuleBasedReconfigurationController)eContainer();
 	}
 
 	/**

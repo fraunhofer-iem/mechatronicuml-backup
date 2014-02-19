@@ -38,7 +38,7 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 	 */
 	public static ValuetypeFactory init() {
 		try {
-			ValuetypeFactory theValuetypeFactory = (ValuetypeFactory)EPackage.Registry.INSTANCE.getEFactory(ValuetypePackage.eNS_URI);
+			ValuetypeFactory theValuetypeFactory = (ValuetypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/valuetype/0.4.0"); 
 			if (theValuetypeFactory != null) {
 				return theValuetypeFactory;
 			}

@@ -251,7 +251,8 @@ public class ValuetypeValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String NATURAL_NUMBER__VALUE_GREATER_OR_EQUAL_ZERO__EEXPRESSION = "self.value >= 0";
+	protected static final String NATURAL_NUMBER__VALUE_GREATER_OR_EQUAL_ZERO__EEXPRESSION = "-- Natural number must not be negative\n" +
+		"self.value >= 0";
 
 	/**
 	 * Validates the ValueGreaterOrEqualZero constraint of '<em>Natural Number</em>'.

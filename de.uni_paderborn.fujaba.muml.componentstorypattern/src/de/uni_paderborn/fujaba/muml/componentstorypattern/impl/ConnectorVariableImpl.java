@@ -27,6 +27,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ConnectorVariableImpl#getConnectorEndpoints <em>Connector Endpoints</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ConnectorVariableImpl#isSelfConnector <em>Self Connector</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ConnectorVariableImpl#getPortVariables <em>Port Variables</em>}</li>
  * </ul>
  * </p>
@@ -43,6 +44,16 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 	 * @ordered
 	 */
 	protected EList<ConnectorEndpoint> connectorEndpoints;
+
+	/**
+	 * The cached setting delegate for the '{@link #isSelfConnector() <em>Self Connector</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelfConnector()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SELF_CONNECTOR__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ConnectorPackage.Literals.CONNECTOR__SELF_CONNECTOR).getSettingDelegate();
 
 	/**
 	 * The cached setting delegate for the '{@link #getPortVariables() <em>Port Variables</em>}' reference list.
@@ -83,6 +94,15 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 			connectorEndpoints = new EObjectWithInverseResolvingEList.ManyInverse<ConnectorEndpoint>(ConnectorEndpoint.class, this, ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS, ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS);
 		}
 		return connectorEndpoints;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSelfConnector() {
+		return (Boolean)SELF_CONNECTOR__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
 	}
 
 	/**
@@ -134,6 +154,8 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 		switch (featureID) {
 			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS:
 				return getConnectorEndpoints();
+			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__SELF_CONNECTOR:
+				return isSelfConnector();
 			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__PORT_VARIABLES:
 				return getPortVariables();
 		}
@@ -182,6 +204,8 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 		switch (featureID) {
 			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS:
 				return connectorEndpoints != null && !connectorEndpoints.isEmpty();
+			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__SELF_CONNECTOR:
+				return SELF_CONNECTOR__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case ComponentstorypatternPackage.CONNECTOR_VARIABLE__PORT_VARIABLES:
 				return PORT_VARIABLES__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
@@ -198,6 +222,7 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 		if (baseClass == Connector.class) {
 			switch (derivedFeatureID) {
 				case ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS: return ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS;
+				case ComponentstorypatternPackage.CONNECTOR_VARIABLE__SELF_CONNECTOR: return ConnectorPackage.CONNECTOR__SELF_CONNECTOR;
 				default: return -1;
 			}
 		}
@@ -214,6 +239,7 @@ public abstract class ConnectorVariableImpl extends ComponentStoryPatternVariabl
 		if (baseClass == Connector.class) {
 			switch (baseFeatureID) {
 				case ConnectorPackage.CONNECTOR__CONNECTOR_ENDPOINTS: return ComponentstorypatternPackage.CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS;
+				case ConnectorPackage.CONNECTOR__SELF_CONNECTOR: return ComponentstorypatternPackage.CONNECTOR_VARIABLE__SELF_CONNECTOR;
 				default: return -1;
 			}
 		}

@@ -32,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.behavior.Parameter;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage#getMessageType()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueParameterNames='self.parameters->isUnique(name)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueParameterNames='-- Parameter names must be unique\nself.parameters->isUnique(name)'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueParameterNames'"
  * @generated
  */

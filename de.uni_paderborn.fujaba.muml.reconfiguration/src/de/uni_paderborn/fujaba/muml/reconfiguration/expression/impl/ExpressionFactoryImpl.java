@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.expression.impl;
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.expression.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -32,7 +33,7 @@ public class ExpressionFactoryImpl extends EFactoryImpl implements ExpressionFac
 	 */
 	public static ExpressionFactory init() {
 		try {
-			ExpressionFactory theExpressionFactory = (ExpressionFactory)EPackage.Registry.INSTANCE.getEFactory(ExpressionPackage.eNS_URI);
+			ExpressionFactory theExpressionFactory = (ExpressionFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"); 
 			if (theExpressionFactory != null) {
 				return theExpressionFactory;
 			}

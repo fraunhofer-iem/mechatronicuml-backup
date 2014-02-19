@@ -146,7 +146,8 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ABSTRACT_COORDINATION_SPECIFICATION__UNIQUE_ROLE_NAMES__EEXPRESSION = "self.roles->isUnique(name)";
+	protected static final String ABSTRACT_COORDINATION_SPECIFICATION__UNIQUE_ROLE_NAMES__EEXPRESSION = "-- Names of roles must be unique\n" +
+		"self.roles->isUnique(name)";
 
 	/**
 	 * Validates the UniqueRoleNames constraint of '<em>Abstract Coordination Specification</em>'.
@@ -258,7 +259,8 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "if self.coordinationProtocol.roles->oclIsUndefined() then \r\n" +
+	protected static final String ROLE_CONNECTOR__ONLY_ROLES_OF_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "-- Role connector must not connect roles at different coordination protocols\r\n" +
+		"if self.coordinationProtocol.roles->oclIsUndefined() then \r\n" +
 		"true\r\n" +
 		"else\r\n" +
 		"self.coordinationProtocol.roles = self.roles\r\n" +
@@ -313,7 +315,8 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COORDINATION_PROTOCOL__COORDINATION_PROTOCOL_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "CoordinationProtocol.allInstances()->isUnique(name)";
+	protected static final String COORDINATION_PROTOCOL__COORDINATION_PROTOCOL_NAMES_MUST_BE_UNIQUE__EEXPRESSION = "-- Coordination Protocols must have unique names\n" +
+		"CoordinationProtocol.allInstances()->isUnique(name)";
 
 	/**
 	 * Validates the CoordinationProtocolNamesMustBeUnique constraint of '<em>Coordination Protocol</em>'.
@@ -355,7 +358,6 @@ public class ProtocolValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateRole_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresBehavior(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_RoleRequiresMessageTypes(role, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRole_ReceiverRoleRequiresMessageBuffer(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRole_MultiRoleRequiresRoleAndAdaptationBehavior(role, diagnostics, context);
 		return result;
 	}
@@ -366,7 +368,8 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE__ROLE_REQUIRES_BEHAVIOR__EEXPRESSION = "not self.behavior.oclIsUndefined()";
+	protected static final String ROLE__ROLE_REQUIRES_BEHAVIOR__EEXPRESSION = "-- Role requires behavior\n" +
+		"not self.behavior.oclIsUndefined()";
 
 	/**
 	 * Validates the RoleRequiresBehavior constraint of '<em>Role</em>'.
@@ -395,7 +398,8 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE__ROLE_REQUIRES_MESSAGE_TYPES__EEXPRESSION = "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()";
+	protected static final String ROLE__ROLE_REQUIRES_MESSAGE_TYPES__EEXPRESSION = "-- Role requires message types to be set\n" +
+		"self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()";
 
 	/**
 	 * Validates the RoleRequiresMessageTypes constraint of '<em>Role</em>'.
@@ -413,37 +417,6 @@ public class ProtocolValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "RoleRequiresMessageTypes",
 				 ROLE__ROLE_REQUIRES_MESSAGE_TYPES__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the ReceiverRoleRequiresMessageBuffer constraint of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String ROLE__RECEIVER_ROLE_REQUIRES_MESSAGE_BUFFER__EEXPRESSION = "self.receiverMessageTypes->notEmpty() \r\n" +
-		"implies \r\n" +
-		"self.receiverMessageBuffer->notEmpty()";
-
-	/**
-	 * Validates the ReceiverRoleRequiresMessageBuffer constraint of '<em>Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateRole_ReceiverRoleRequiresMessageBuffer(Role role, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ProtocolPackage.Literals.ROLE,
-				 role,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ReceiverRoleRequiresMessageBuffer",
-				 ROLE__RECEIVER_ROLE_REQUIRES_MESSAGE_BUFFER__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -493,7 +466,8 @@ public class ProtocolValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ROLE__MULTI_ROLE_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "self.multiRole implies \r\n" +
+	protected static final String ROLE__MULTI_ROLE_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- Multi roles need adaptationBehavior and roleAndAdaptationBehavior set\r\n" +
+		"self.multiRole implies \r\n" +
 		"((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))";
 
 	/**

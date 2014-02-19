@@ -70,7 +70,7 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 */
 	public StructType getStructType() {
 		if (eContainerFeatureID() != StructdatatypePackage.ATTRIBUTE__STRUCT_TYPE) return null;
-		return (StructType)eInternalContainer();
+		return (StructType)eContainer();
 	}
 
 	/**

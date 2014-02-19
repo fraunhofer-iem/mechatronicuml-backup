@@ -330,7 +330,7 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 */
 	public Region getParentRegion() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.REALTIME_STATECHART__PARENT_REGION) return null;
-		return (Region)eInternalContainer();
+		return (Region)eContainer();
 	}
 
 	/**
@@ -454,23 +454,24 @@ public class RealtimeStatechartImpl extends NamedElementImpl implements Realtime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSuperStatechartOf(final RealtimeStatechart statechart) {
+	public boolean isSuperStatechartOf(RealtimeStatechart statechart) {
 		// TODO: Replace by OCL's transitive closure?
 				
 		Assert.isLegal(statechart != null);
 		
-		BreadthFirstSearchAlgorithm<RealtimeStatechart> bfs = new BreadthFirstSearchAlgorithm<RealtimeStatechart>();
-		return bfs.search(statechart, new ISearchVisitor<RealtimeStatechart>() {
+		BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();
+		return bfs.search(statechart, new ISearchVisitor() {
 		
 			@Override
-			public boolean visit(RealtimeStatechart rtsc) {
-				return !RealtimeStatechartImpl.this.equals(rtsc);
+			public boolean visit(Object object) {
+				return !RealtimeStatechartImpl.this.equals(object);
 			}
 		
 			@Override
-			public List<RealtimeStatechart> getAdjacentNodes(RealtimeStatechart rtsc) {
+			public List<?> getAdjacentNodes(Object object) {
+				RealtimeStatechart rtsc = (RealtimeStatechart) object;
 		
-				List<RealtimeStatechart> parentStatecharts = new ArrayList<RealtimeStatechart>();
+				List<Object> parentStatecharts = new ArrayList<Object>();
 		
 				Region region = rtsc.getParentRegion();
 				if (region != null) {

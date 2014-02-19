@@ -125,7 +125,8 @@ public class MsgtypeValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String MESSAGE_TYPE__UNIQUE_PARAMETER_NAMES__EEXPRESSION = "self.parameters->isUnique(name)";
+	protected static final String MESSAGE_TYPE__UNIQUE_PARAMETER_NAMES__EEXPRESSION = "-- Parameter names must be unique\n" +
+		"self.parameters->isUnique(name)";
 
 	/**
 	 * Validates the UniqueParameterNames constraint of '<em>Message Type</em>'.

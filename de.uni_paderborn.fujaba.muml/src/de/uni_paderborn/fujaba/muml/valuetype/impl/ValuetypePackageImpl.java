@@ -559,7 +559,7 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		  (naturalNumberEClass, 
 		   source, 
 		   new String[] {
-			 "ValueGreaterOrEqualZero", "self.value >= 0"
+			 "ValueGreaterOrEqualZero", "-- Natural number must not be negative\nself.value >= 0"
 		   });					
 		addAnnotation
 		  (getNaturalNumber__LessOrEqual__NaturalNumber(), 

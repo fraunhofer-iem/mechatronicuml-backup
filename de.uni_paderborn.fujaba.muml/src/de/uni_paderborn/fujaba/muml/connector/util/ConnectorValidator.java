@@ -184,7 +184,8 @@ public class ConnectorValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_INTERACTION_ENDPOINT__RECEIVING_INTERACTION_ENDPOINT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION = "self.receiverMessageTypes->notEmpty() \r\n" +
+	protected static final String DISCRETE_INTERACTION_ENDPOINT__RECEIVING_INTERACTION_ENDPOINT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION = "-- Receiver message types need receiver message buffer\r\n" +
+		"self.receiverMessageTypes->notEmpty() \r\n" +
 		"implies \r\n" +
 		"self.receiverMessageBuffer->notEmpty()";
 

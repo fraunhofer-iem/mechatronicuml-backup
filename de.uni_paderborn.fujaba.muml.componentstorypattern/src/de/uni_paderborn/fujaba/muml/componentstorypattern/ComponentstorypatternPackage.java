@@ -623,13 +623,22 @@ public interface ComponentstorypatternPackage extends EPackage {
 	int CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_VARIABLE__SELF_CONNECTOR = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Port Variables</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_VARIABLE__PORT_VARIABLES = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
+	int CONNECTOR_VARIABLE__PORT_VARIABLES = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Connector Variable</em>' class.
@@ -638,7 +647,7 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
+	int CONNECTOR_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.AssemblyVariableImpl <em>Assembly Variable</em>}' class.
@@ -721,6 +730,15 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSEMBLY_VARIABLE__CONNECTOR_ENDPOINTS = CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS;
+
+	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSEMBLY_VARIABLE__SELF_CONNECTOR = CONNECTOR_VARIABLE__SELF_CONNECTOR;
 
 	/**
 	 * The feature id for the '<em><b>Port Variables</b></em>' reference list.
@@ -830,6 +848,15 @@ public interface ComponentstorypatternPackage extends EPackage {
 	 * @ordered
 	 */
 	int DELEGATION_VARIABLE__CONNECTOR_ENDPOINTS = CONNECTOR_VARIABLE__CONNECTOR_ENDPOINTS;
+
+	/**
+	 * The feature id for the '<em><b>Self Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DELEGATION_VARIABLE__SELF_CONNECTOR = CONNECTOR_VARIABLE__SELF_CONNECTOR;
 
 	/**
 	 * The feature id for the '<em><b>Port Variables</b></em>' reference list.

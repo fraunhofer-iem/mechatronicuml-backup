@@ -188,7 +188,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION = "self.ports->isUnique(name)";
+	protected static final String COMPONENT__UNIQUE_PORT_NAMES__EEXPRESSION = "-- Port names must be unique\n" +
+		"self.ports->isUnique(name)";
 
 	/**
 	 * Validates the UniquePortNames constraint of '<em>Component</em>'.
@@ -303,7 +304,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_MESSAGE_TYPES__EEXPRESSION = "self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()";
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_MESSAGE_TYPES__EEXPRESSION = "-- Discrete Port must define sender or receiver message types\n" +
+		"self.senderMessageTypes->notEmpty() or self.receiverMessageTypes->notEmpty()";
 
 	/**
 	 * Validates the DiscretePortRequiresMessageTypes constraint of '<em>Discrete Port</em>'.
@@ -332,7 +334,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_TYPES__EEXPRESSION = "not self.refinedRole.oclIsUndefined() implies\r\n" +
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_TYPES__EEXPRESSION = "-- Discrete Port must have the same message types as its refined role\r\n" +
+		"not self.refinedRole.oclIsUndefined() implies\r\n" +
 		"\t(self.senderMessageTypes = self.refinedRole.senderMessageTypes\r\n" +
 		"\t and\r\n" +
 		"\t self.receiverMessageTypes = self.refinedRole.receiverMessageTypes\r\n" +
@@ -396,7 +399,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_AT_STRUCTURED_COMPONENT_HAS_NO_BEHAVIOR__EEXPRESSION = "(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n" +
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_AT_STRUCTURED_COMPONENT_HAS_NO_BEHAVIOR__EEXPRESSION = "-- Discrete Prot at Structured Component must not have behavior\n" +
+		"(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n" +
 		"\timplies self.behavior.oclIsUndefined()";
 
 	/**
@@ -426,7 +430,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_ROLE__EEXPRESSION = "self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()";
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_ROLE__EEXPRESSION = "-- Discrete Port must refine a role\n" +
+		"self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()";
 
 	/**
 	 * Validates the DiscretePortRequiresRole constraint of '<em>Discrete Port</em>'.
@@ -455,7 +460,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__DISCRETE_PORT_CARDINALITY_MUST_COMPLY_WITH_REFINED_ROLE_CARDINALITY__EEXPRESSION = "((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) \r\n" +
+	protected static final String DISCRETE_PORT__DISCRETE_PORT_CARDINALITY_MUST_COMPLY_WITH_REFINED_ROLE_CARDINALITY__EEXPRESSION = "-- Cardinality of discrete port and its refined role must match\r\n" +
+		"((not self.cardinality.oclIsUndefined()) and (not self.refinedRole.oclIsUndefined())) \r\n" +
 		"implies \r\n" +
 		"((not self.multi) or self.cardinality.lowerBound.greaterOrEqual(self.refinedRole.cardinality.lowerBound) and self.cardinality.upperBound.lessOrEqual(self.refinedRole.cardinality.upperBound))";
 
@@ -486,7 +492,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) \r\n" +
+	protected static final String DISCRETE_PORT__MULTI_PORT_OF_ATOMIC_COMPONENT_REQUIRES_ROLE_AND_ADAPTATION_BEHAVIOR__EEXPRESSION = "-- Multi port of atomic component requires adaptationBehavior and roleAndAdaptationBehavior\r\n" +
+		"(self.multiPort and self.component.oclIsKindOf(AtomicComponent)) \r\n" +
 		"implies \r\n" +
 		"((not self.adaptationBehavior.oclIsUndefined()) and (not self.roleAndAdaptationBehavior.oclIsUndefined()))";
 
@@ -538,7 +545,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT_PART__CARDINALITY_LOWER_BOUND_SET__EEXPRESSION = "if self.cardinality.lowerBound.oclIsUndefined() then\r\n" +
+	protected static final String COMPONENT_PART__CARDINALITY_LOWER_BOUND_SET__EEXPRESSION = "-- Lower bound of cardinality must be set\r\n" +
+		"if self.cardinality.lowerBound.oclIsUndefined() then\r\n" +
 		"false\r\n" +
 		"else\r\n" +
 		"self.cardinality.lowerBound->notEmpty()\r\n" +
@@ -571,7 +579,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT_PART__TYPE_NOT_EQUAL_TO_PARENT__EEXPRESSION = "self.componentType <> self.parentComponent";
+	protected static final String COMPONENT_PART__TYPE_NOT_EQUAL_TO_PARENT__EEXPRESSION = "-- Component Part must have the same type as its parent structured component\n" +
+		"self.componentType <> self.parentComponent";
 
 	/**
 	 * Validates the TypeNotEqualToParent constraint of '<em>Part</em>'.
@@ -600,7 +609,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPONENT_PART__CARDINALITY_UPPER_BOUND_SET__EEXPRESSION = "if self.cardinality.upperBound.oclIsUndefined() then\r\n" +
+	protected static final String COMPONENT_PART__CARDINALITY_UPPER_BOUND_SET__EEXPRESSION = "-- Upper bound of cardinality must be set\r\n" +
+		"if self.cardinality.upperBound.oclIsUndefined() then\r\n" +
 		"false\r\n" +
 		"else\r\n" +
 		"self.cardinality.upperBound->notEmpty()\r\n" +
@@ -650,6 +660,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidParts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_HybridStructuredComponentValidPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ComponentPartsHaveUniqueName(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_SoftwareComponentNoContinuousPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStaticComponent_SoftwareComponentOnlyDiscreteOrHybridPorts(staticStructuredComponent, diagnostics, context);
 		return result;
 	}
@@ -677,6 +688,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateStructuredComponent_DiscreteStructuredComponentValidParts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_HybridStructuredComponentValidPorts(structuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_ComponentPartsHaveUniqueName(structuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStructuredComponent_SoftwareComponentNoContinuousPorts(structuredComponent, diagnostics, context);
 		return result;
 	}
 
@@ -716,7 +728,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION = "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\n" +
+	protected static final String STRUCTURED_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION = "-- Structured components must be either software or hybrid components\n" +
+		"self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\n" +
 		"or self.componentKind = component::ComponentKind::HYBRID_COMPONENT";
 
 	/**
@@ -746,7 +759,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION = "if self.allStructuredComponents->oclIsUndefined() then\r\n" +
+	protected static final String STRUCTURED_COMPONENT__NO_CYCLIC_COMPONENT_PART_HIERARCHY__EEXPRESSION = "-- Hierarchy of embedded component parts must not include myself\r\n" +
+		"if self.allStructuredComponents->oclIsUndefined() then\r\n" +
 		"false\r\n" +
 		"else\r\n" +
 		"not self.allStructuredComponents->includes(self)\r\n" +
@@ -779,7 +793,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION = "if (not self.allAtomicComponents->oclIsUndefined()) then\r\n" +
+	protected static final String STRUCTURED_COMPONENT__DISCRETE_STRUCTURED_COMPONENT_VALID_PARTS__EEXPRESSION = "-- Structured software component must only have software component parts \r\n" +
+		"if (not self.allAtomicComponents->oclIsUndefined()) then\r\n" +
 		"self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\r\n" +
 		"implies\r\n" +
 		"\t-- collect all atomic components from parent parts and union them\r\n" +
@@ -820,7 +835,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentKind = component::ComponentKind::HYBRID_COMPONENT\r\n" +
+	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PORTS__EEXPRESSION = "-- Structured hybrid component must only have discrete or continuous ports\r\n" +
+		"self.componentKind = component::ComponentKind::HYBRID_COMPONENT\r\n" +
 		"\timplies (\r\n" +
 		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\r\n" +
 		"\t)";
@@ -852,7 +868,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STRUCTURED_COMPONENT__COMPONENT_PARTS_HAVE_UNIQUE_NAME__EEXPRESSION = "self.embeddedComponentParts -> isUnique(name)";
+	protected static final String STRUCTURED_COMPONENT__COMPONENT_PARTS_HAVE_UNIQUE_NAME__EEXPRESSION = "-- Names of embedded component parts must be unique\n" +
+		"self.embeddedComponentParts -> isUnique(name)";
 
 	/**
 	 * Validates the ComponentPartsHaveUniqueName constraint of '<em>Structured Component</em>'.
@@ -870,6 +887,36 @@ public class ComponentValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "ComponentPartsHaveUniqueName",
 				 STRUCTURED_COMPONENT__COMPONENT_PARTS_HAVE_UNIQUE_NAME__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the SoftwareComponentNoContinuousPorts constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STRUCTURED_COMPONENT__SOFTWARE_COMPONENT_NO_CONTINUOUS_PORTS__EEXPRESSION = "-- Software component must not have continuous ports\r\n" +
+		"self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(p | not p.oclIsKindOf(ContinuousPort))";
+
+	/**
+	 * Validates the SoftwareComponentNoContinuousPorts constraint of '<em>Structured Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStructuredComponent_SoftwareComponentNoContinuousPorts(StructuredComponent structuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.STRUCTURED_COMPONENT,
+				 structuredComponent,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SoftwareComponentNoContinuousPorts",
+				 STRUCTURED_COMPONENT__SOFTWARE_COMPONENT_NO_CONTINUOUS_PORTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -900,7 +947,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION_ONLY_FOR_OUT_PORTS__EEXPRESSION = "self.kind = component::PortDirectionKind::IN implies self.initializeExpression.oclIsUndefined()";
+	protected static final String DIRECTED_TYPED_PORT__INITIALIZE_EXPRESSION_ONLY_FOR_OUT_PORTS__EEXPRESSION = "-- Only out ports may have an initialize expression.\n" +
+		"self.kind <> component::PortDirectionKind::OUT implies self.initializeExpression.oclIsUndefined()";
 
 	/**
 	 * Validates the InitializeExpressionOnlyForOutPorts constraint of '<em>Directed Typed Port</em>'.
@@ -984,7 +1032,7 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String STATIC_COMPONENT__SOFTWARE_COMPONENT_ONLY_DISCRETE_OR_HYBRID_PORTS__EEXPRESSION = "-- Static Components with component type \"SOFTARE_COMPONENT\" must only have discrete ports and hybrid ports.\r\n" +
+	protected static final String STATIC_COMPONENT__SOFTWARE_COMPONENT_ONLY_DISCRETE_OR_HYBRID_PORTS__EEXPRESSION = "-- Static software components must only have discrete ports and hybrid ports.\r\n" +
 		"self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()";
 
 	/**
@@ -1038,7 +1086,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ATOMIC_COMPONENT__SOFTWARE_COMPONENT_REQUIRES_BEHAVIOR__EEXPRESSION = "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())";
+	protected static final String ATOMIC_COMPONENT__SOFTWARE_COMPONENT_REQUIRES_BEHAVIOR__EEXPRESSION = "-- Software component must have a behavior\n" +
+		"self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT implies (not self.behavior.oclIsUndefined())";
 
 	/**
 	 * Validates the SoftwareComponentRequiresBehavior constraint of '<em>Atomic Component</em>'.
@@ -1067,7 +1116,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ATOMIC_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION = "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\n" +
+	protected static final String ATOMIC_COMPONENT__VALID_COMPONENT_TYPE__EEXPRESSION = "-- Atomic component must be of type SOFTWARE or CONTINUOUS.\n" +
+		"self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\n" +
 		"or self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT";
 
 	/**
@@ -1097,9 +1147,10 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ATOMIC_COMPONENT__SOFTWARE_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\n" +
+	protected static final String ATOMIC_COMPONENT__SOFTWARE_COMPONENT_VALID_PORTS__EEXPRESSION = "-- Software component must only have hybrid ports or discrete ports\n" +
+		"self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\n" +
 		"\timplies (\n" +
-		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::HybridPort))\n" +
+		"\t\tself.ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) or p.oclIsKindOf(component::HybridPort))\n" +
 		"\t)";
 
 	/**
@@ -1129,7 +1180,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String ATOMIC_COMPONENT__CONTINUOUS_COMPONENT_VALID_PORTS__EEXPRESSION = "self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT\n" +
+	protected static final String ATOMIC_COMPONENT__CONTINUOUS_COMPONENT_VALID_PORTS__EEXPRESSION = "-- Continuous Component must only have continuous ports.\n" +
+		"self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT\n" +
 		"\timplies (\n" +
 		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))\n" +
 		"\t)";
@@ -1170,7 +1222,244 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateAssemblyConnector(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(assemblyConnector, diagnostics, context);
+		if (!validate_NoCircularContainment(assemblyConnector, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_SelfAssemblyOnlyForMultiPortsOrMultiParts(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDirectedTypedPortsRequiresSameDataType(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsOrDirectedTypedPorts(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_ValidPortDirections(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresDifferentRoles(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsCompatibleMessageTypes(assemblyConnector, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the SelfAssemblyOnlyForMultiPortsOrMultiParts constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR__SELF_ASSEMBLY_ONLY_FOR_MULTI_PORTS_OR_MULTI_PARTS__EEXPRESSION = "--  Self assembly only allowed for multi ports and multi component-parts\n" +
+		"selfConnector implies\n" +
+		"let portPart : PortPart = portParts->first() in\n" +
+		"portPart.portType.oclIsKindOf(component::DiscretePort) and (portPart.portType.oclAsType(component::DiscretePort).multi or portPart.componentPart.multiPart)\n" +
+		"-- author: bingo, cgerking, see MUML #872";
+
+	/**
+	 * Validates the SelfAssemblyOnlyForMultiPortsOrMultiParts constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnector_SelfAssemblyOnlyForMultiPortsOrMultiParts(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
+				 assemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "SelfAssemblyOnlyForMultiPortsOrMultiParts",
+				 ASSEMBLY_CONNECTOR__SELF_ASSEMBLY_ONLY_FOR_MULTI_PORTS_OR_MULTI_PARTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyBetweenDirectedTypedPortsRequiresSameDataType constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DIRECTED_TYPED_PORTS_REQUIRES_SAME_DATA_TYPE__EEXPRESSION = "-- Assembly between DirectedTypedPorts requires same Data Type\n" +
+		"let directedTypedPorts : Sequence(component::DirectedTypedPort) = portParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort) in\n" +
+		"directedTypedPorts->forAll(p1,p2 | p1.dataType = p2.dataType)\n" +
+		"-- author: bingo, cgerking, see MUML #873";
+
+	/**
+	 * Validates the AssemblyBetweenDirectedTypedPortsRequiresSameDataType constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnector_AssemblyBetweenDirectedTypedPortsRequiresSameDataType(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
+				 assemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyBetweenDirectedTypedPortsRequiresSameDataType",
+				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DIRECTED_TYPED_PORTS_REQUIRES_SAME_DATA_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsOrDirectedTypedPorts constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_OR_DIRECTED_TYPED_PORTS__EEXPRESSION = "-- Assembly may only connect exclusively Discrete Ports or exclusively Directed Typed Ports\n" +
+		"(portParts.portType->forAll(oclIsKindOf(component::DiscretePort)) or portParts.portType->forAll(oclIsKindOf(component::DirectedTypedPort)))\n" +
+		"-- author: bingo, cgerking, see MUML #874";
+
+	/**
+	 * Validates the AssemblyBetweenDiscretePortsOrDirectedTypedPorts constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsOrDirectedTypedPorts(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
+				 assemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyBetweenDiscretePortsOrDirectedTypedPorts",
+				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_OR_DIRECTED_TYPED_PORTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidPortDirections constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR__VALID_PORT_DIRECTIONS__EEXPRESSION = "-- Assembly may only connect Directed Typed Ports with different Port Direction Kinds\n" +
+		"portParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->isUnique(kind)\n" +
+		"-- author: bingo, cgerking, see MUML #875";
+
+	/**
+	 * Validates the ValidPortDirections constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnector_ValidPortDirections(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
+				 assemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidPortDirections",
+				 ASSEMBLY_CONNECTOR__VALID_PORT_DIRECTIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PROTOCOL__EEXPRESSION = "-- Assembly may only connect ports refining roles of the same coordination protocol\n" +
+		"portParts.refinedRole->reject(oclIsUndefined())->forAll(r1,r2 | r1.coordinationProtocol = r2.coordinationProtocol)\n" +
+		"-- author: bingo, cgerking, see MUML #876";
+
+	/**
+	 * Validates the AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
+				 assemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol",
+				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_COORDINATION_PROTOCOL__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsRequiresDifferentRoles constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_DIFFERENT_ROLES__EEXPRESSION = "-- Assembly may only connect ports refining different roles\n" +
+		"portParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)\n" +
+		"-- author: bingo, cgerking, see MUML #877";
+
+	/**
+	 * Validates the AssemblyBetweenDiscretePortsRequiresDifferentRoles constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresDifferentRoles(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
+				 assemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyBetweenDiscretePortsRequiresDifferentRoles",
+				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_REQUIRES_DIFFERENT_ROLES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyBetweenDiscretePortsCompatibleMessageTypes constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_COMPATIBLE_MESSAGE_TYPES__EEXPRESSION = "-- Assembly may only connect discrete ports with compatible message types (a.senderMessageTypes = b.receiverMessageTypes)\n" +
+		"portParts.portType->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->\n" +
+		"forAll(p1, p2 | p1 <> p2 implies p1.senderMessageTypes->asSet() = p2.receiverMessageTypes->asSet())\n" +
+		"-- author: bingo, cgerking, see MUML #878";
+
+	/**
+	 * Validates the AssemblyBetweenDiscretePortsCompatibleMessageTypes constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnector_AssemblyBetweenDiscretePortsCompatibleMessageTypes(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
+				 assemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyBetweenDiscretePortsCompatibleMessageTypes",
+				 ASSEMBLY_CONNECTOR__ASSEMBLY_BETWEEN_DISCRETE_PORTS_COMPATIBLE_MESSAGE_TYPES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1179,7 +1468,222 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateDelegationConnector(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(delegationConnector, diagnostics, context);
+		if (!validate_NoCircularContainment(delegationConnector, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDirectedTypedPortsRequiresSameDataType(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsOrDirectedTypedPorts(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsEqualMessageTypes(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnector_ValidPortDirections(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameRoles(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnector_DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart(delegationConnector, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the DelegationBetweenDirectedTypedPortsRequiresSameDataType constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DIRECTED_TYPED_PORTS_REQUIRES_SAME_DATA_TYPE__EEXPRESSION = "-- Delegation between DirectedTypedPorts requires same Data Type\r\n" +
+		"(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and portPart.portType.oclIsKindOf(component::DirectedTypedPort) and port.oclIsKindOf(component::DirectedTypedPort))\r\n" +
+		"implies \r\n" +
+		"portPart.portType.oclAsType(component::DirectedTypedPort).dataType = port.oclAsType(component::DirectedTypedPort).dataType\r\n" +
+		"-- author: bingo, cgerking, see MUML #879";
+
+	/**
+	 * Validates the DelegationBetweenDirectedTypedPortsRequiresSameDataType constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegationConnector_DelegationBetweenDirectedTypedPortsRequiresSameDataType(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
+				 delegationConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DelegationBetweenDirectedTypedPortsRequiresSameDataType",
+				 DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DIRECTED_TYPED_PORTS_REQUIRES_SAME_DATA_TYPE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DelegationBetweenDiscretePortsOrDirectedTypedPorts constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_OR_DIRECTED_TYPED_PORTS__EEXPRESSION = "-- Delegation may only connect exclusively Discrete Ports or exclusively Directed Typed Ports\r\n" +
+		"(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())\r\n" +
+		"implies \r\n" +
+		"let ports : OrderedSet(Port) = OrderedSet { portPart.portType, port } in\r\n" +
+		"(ports->forAll(oclIsKindOf(component::DiscretePort)) or ports->forAll(oclIsKindOf(component::DirectedTypedPort)))\r\n" +
+		"-- author: bingo, cgerking, see MUML #880";
+
+	/**
+	 * Validates the DelegationBetweenDiscretePortsOrDirectedTypedPorts constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegationConnector_DelegationBetweenDiscretePortsOrDirectedTypedPorts(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
+				 delegationConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DelegationBetweenDiscretePortsOrDirectedTypedPorts",
+				 DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_OR_DIRECTED_TYPED_PORTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DelegationBetweenDiscretePortsEqualMessageTypes constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_EQUAL_MESSAGE_TYPES__EEXPRESSION = "-- Delegation may only connect discrete ports with equal message types\r\n" +
+		"(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())\r\n" +
+		"implies \r\n" +
+		"let ports : OrderedSet(Port) = OrderedSet { portPart.portType, port } in\r\n" +
+		"ports->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->forAll(p1, p2 | p1.senderMessageTypes->asSet() = p2.senderMessageTypes->asSet() and p1.receiverMessageTypes->asSet() = p2.receiverMessageTypes->asSet())\r\n" +
+		"-- author: bingo, cgerking, see MUML #81";
+
+	/**
+	 * Validates the DelegationBetweenDiscretePortsEqualMessageTypes constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegationConnector_DelegationBetweenDiscretePortsEqualMessageTypes(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
+				 delegationConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DelegationBetweenDiscretePortsEqualMessageTypes",
+				 DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_EQUAL_MESSAGE_TYPES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ValidPortDirections constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION_CONNECTOR__VALID_PORT_DIRECTIONS__EEXPRESSION = "-- Delegation may only connect Directed Typed Ports with different Port Direction Kinds\r\n" +
+		"(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())\r\n" +
+		"implies \r\n" +
+		"let ports : OrderedSet (Port) = OrderedSet { portPart.portType, port } in ports->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->forAll(p1, p2 | p1.kind = p2.kind)\r\n" +
+		"-- author: bingo, cgerking, see MUML #882";
+
+	/**
+	 * Validates the ValidPortDirections constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegationConnector_ValidPortDirections(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
+				 delegationConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ValidPortDirections",
+				 DELEGATION_CONNECTOR__VALID_PORT_DIRECTIONS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DelegationBetweenDiscretePortsRequiresSameRoles constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_ROLES__EEXPRESSION = "-- Delegation may only connect ports refining same roles\r\n" +
+		"(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and self.port.oclIsKindOf(DiscretePort)) \r\n" +
+		"implies \r\n" +
+		"self.port.oclAsType(DiscretePort).refinedRole = self.portPart.refinedRole\r\n" +
+		"-- author: bingo, cgerking, see MUML #883";
+
+	/**
+	 * Validates the DelegationBetweenDiscretePortsRequiresSameRoles constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameRoles(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
+				 delegationConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DelegationBetweenDiscretePortsRequiresSameRoles",
+				 DELEGATION_CONNECTOR__DELEGATION_BETWEEN_DISCRETE_PORTS_REQUIRES_SAME_ROLES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION_CONNECTOR__DISCRETE_MULTI_PORT_DELEGATION_REQUIRES_MULTI_PORT_OR_SINGLE_PORT_AND_MULTI_PART__EEXPRESSION = "-- Delegation starting at Multi Port must connect to a multi port or single port at multi part\r\n" +
+		"(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and self.port.oclIsKindOf(DiscretePort) and self.port.oclAsType(DiscretePort).multi)\r\n" +
+		"implies\r\n" +
+		"((self.portPart.portType.oclIsKindOf(DiscretePort) and self.portPart.portType.oclAsType(DiscretePort).multi) or self.portPart.componentPart.multiPart)\r\n" +
+		"-- author: bingo, cgerking, see MUML #884";
+
+	/**
+	 * Validates the DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegationConnector_DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
+				 delegationConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart",
+				 DELEGATION_CONNECTOR__DISCRETE_MULTI_PORT_DELEGATION_REQUIRES_MULTI_PORT_OR_SINGLE_PORT_AND_MULTI_PART__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -1226,7 +1730,8 @@ public class ComponentValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COORDINATION_PROTOCOL_PART__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION = "not self.portParts->oclIsUndefined()\r\n" +
+	protected static final String COORDINATION_PROTOCOL_PART__ONLY_DISCRETE_PORT_PARTS__EEXPRESSION = "-- Coordination Protocol Part must only have discrete Port Parts\r\n" +
+		"not self.portParts->oclIsUndefined()\r\n" +
 		"implies\r\n" +
 		"self.portParts->forAll(p : PortPart | p.portType.oclIsKindOf(DiscretePort))";
 

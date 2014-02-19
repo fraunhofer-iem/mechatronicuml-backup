@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.impl;
 
+import de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -31,7 +32,7 @@ public class ProtocolinstantiationFactoryImpl extends EFactoryImpl implements Pr
 	 */
 	public static ProtocolinstantiationFactory init() {
 		try {
-			ProtocolinstantiationFactory theProtocolinstantiationFactory = (ProtocolinstantiationFactory)EPackage.Registry.INSTANCE.getEFactory(ProtocolinstantiationPackage.eNS_URI);
+			ProtocolinstantiationFactory theProtocolinstantiationFactory = (ProtocolinstantiationFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0"); 
 			if (theProtocolinstantiationFactory != null) {
 				return theProtocolinstantiationFactory;
 			}

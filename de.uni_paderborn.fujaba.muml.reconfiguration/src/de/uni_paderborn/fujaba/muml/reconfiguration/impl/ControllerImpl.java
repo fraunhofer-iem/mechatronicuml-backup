@@ -176,7 +176,7 @@ public abstract class ControllerImpl extends NamedElementImpl implements Control
 	 */
 	public ReconfigurableStructuredComponent getStructuredComponent() {
 		if (eContainerFeatureID() != ReconfigurationPackage.CONTROLLER__STRUCTURED_COMPONENT) return null;
-		return (ReconfigurableStructuredComponent)eInternalContainer();
+		return (ReconfigurableStructuredComponent)eContainer();
 	}
 
 	/**
