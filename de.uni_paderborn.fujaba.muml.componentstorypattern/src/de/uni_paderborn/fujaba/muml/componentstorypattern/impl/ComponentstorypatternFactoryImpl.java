@@ -35,7 +35,7 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	 */
 	public static ComponentstorypatternFactory init() {
 		try {
-			ComponentstorypatternFactory theComponentstorypatternFactory = (ComponentstorypatternFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/componentstorypattern/0.4.0"); 
+			ComponentstorypatternFactory theComponentstorypatternFactory = (ComponentstorypatternFactory)EPackage.Registry.INSTANCE.getEFactory(ComponentstorypatternPackage.eNS_URI);
 			if (theComponentstorypatternFactory != null) {
 				return theComponentstorypatternFactory;
 			}
@@ -72,6 +72,7 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 			case ComponentstorypatternPackage.DELEGATION_VARIABLE: return createDelegationVariable();
 			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE: return createSinglePortVariable();
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE: return createMultiPortVariable();
+			case ComponentstorypatternPackage.FADING_COMPONENT_VARIABLE: return createFadingComponentVariable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -155,6 +156,16 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	public MultiPortVariable createMultiPortVariable() {
 		MultiPortVariableImpl multiPortVariable = new MultiPortVariableImpl();
 		return multiPortVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FadingComponentVariable createFadingComponentVariable() {
+		FadingComponentVariableImpl fadingComponentVariable = new FadingComponentVariableImpl();
+		return fadingComponentVariable;
 	}
 
 	/**

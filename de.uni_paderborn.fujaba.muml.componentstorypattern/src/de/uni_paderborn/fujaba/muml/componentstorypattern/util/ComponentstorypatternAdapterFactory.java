@@ -128,6 +128,10 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 				return createTriggerEmbeddedComponentExpressionAdapter();
 			}
 			@Override
+			public Adapter caseFadingComponentVariable(FadingComponentVariable object) {
+				return createFadingComponentVariableAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -322,6 +326,20 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTriggerEmbeddedComponentExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable <em>Fading Component Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable
+	 * @generated
+	 */
+	public Adapter createFadingComponentVariableAdapter() {
 		return null;
 	}
 

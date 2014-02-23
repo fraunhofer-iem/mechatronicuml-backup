@@ -118,6 +118,8 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 				return validateMultiPortVariable((MultiPortVariable)value, diagnostics, context);
 			case ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION:
 				return validateTriggerEmbeddedComponentExpression((TriggerEmbeddedComponentExpression)value, diagnostics, context);
+			case ComponentstorypatternPackage.FADING_COMPONENT_VARIABLE:
+				return validateFadingComponentVariable((FadingComponentVariable)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -648,6 +650,15 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 */
 	public boolean validateTriggerEmbeddedComponentExpression(TriggerEmbeddedComponentExpression triggerEmbeddedComponentExpression, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(triggerEmbeddedComponentExpression, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFadingComponentVariable(FadingComponentVariable fadingComponentVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(fadingComponentVariable, diagnostics, context);
 	}
 
 	/**

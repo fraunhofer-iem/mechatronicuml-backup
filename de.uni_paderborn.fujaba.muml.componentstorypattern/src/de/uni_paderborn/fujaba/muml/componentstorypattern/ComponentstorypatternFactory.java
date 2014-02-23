@@ -94,6 +94,15 @@ public interface ComponentstorypatternFactory extends EFactory {
 	MultiPortVariable createMultiPortVariable();
 
 	/**
+	 * Returns a new object of class '<em>Fading Component Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fading Component Variable</em>'.
+	 * @generated
+	 */
+	FadingComponentVariable createFadingComponentVariable();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

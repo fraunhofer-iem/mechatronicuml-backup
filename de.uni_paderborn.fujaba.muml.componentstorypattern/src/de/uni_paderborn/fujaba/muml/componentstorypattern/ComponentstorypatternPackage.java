@@ -1179,6 +1179,107 @@ public interface ComponentstorypatternPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.FadingComponentVariableImpl <em>Fading Component Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.FadingComponentVariableImpl
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getFadingComponentVariable()
+	 * @generated
+	 */
+	int FADING_COMPONENT_VARIABLE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_VARIABLE__ANNOTATION = COMPONENT_STORY_PATTERN_VARIABLE__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_VARIABLE__EXTENSION = COMPONENT_STORY_PATTERN_VARIABLE__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_VARIABLE__NAME = COMPONENT_STORY_PATTERN_VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_VARIABLE__COMMENT = COMPONENT_STORY_PATTERN_VARIABLE__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Binding Semantics</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_VARIABLE__BINDING_SEMANTICS = COMPONENT_STORY_PATTERN_VARIABLE__BINDING_SEMANTICS;
+
+	/**
+	 * The feature id for the '<em><b>Binding Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_VARIABLE__BINDING_OPERATOR = COMPONENT_STORY_PATTERN_VARIABLE__BINDING_OPERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Binding State</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_VARIABLE__BINDING_STATE = COMPONENT_STORY_PATTERN_VARIABLE__BINDING_STATE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_VARIABLE__TYPE = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Applied Fading Function</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_VARIABLE__APPLIED_FADING_FUNCTION = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Fading Component Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FADING_COMPONENT_VARIABLE_FEATURE_COUNT = COMPONENT_STORY_PATTERN_VARIABLE_FEATURE_COUNT + 2;
+
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern <em>Component Story Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1498,6 +1599,38 @@ public interface ComponentstorypatternPackage extends EPackage {
 	EClass getTriggerEmbeddedComponentExpression();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable <em>Fading Component Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fading Component Variable</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable
+	 * @generated
+	 */
+	EClass getFadingComponentVariable();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable#getType()
+	 * @see #getFadingComponentVariable()
+	 * @generated
+	 */
+	EReference getFadingComponentVariable_Type();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable#getAppliedFadingFunction <em>Applied Fading Function</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Applied Fading Function</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable#getAppliedFadingFunction()
+	 * @see #getFadingComponentVariable()
+	 * @generated
+	 */
+	EReference getFadingComponentVariable_AppliedFadingFunction();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1780,6 +1913,32 @@ public interface ComponentstorypatternPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRIGGER_EMBEDDED_COMPONENT_EXPRESSION = eINSTANCE.getTriggerEmbeddedComponentExpression();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.impl.FadingComponentVariableImpl <em>Fading Component Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.FadingComponentVariableImpl
+		 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.impl.ComponentstorypatternPackageImpl#getFadingComponentVariable()
+		 * @generated
+		 */
+		EClass FADING_COMPONENT_VARIABLE = eINSTANCE.getFadingComponentVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FADING_COMPONENT_VARIABLE__TYPE = eINSTANCE.getFadingComponentVariable_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Applied Fading Function</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FADING_COMPONENT_VARIABLE__APPLIED_FADING_FUNCTION = eINSTANCE.getFadingComponentVariable_AppliedFadingFunction();
 
 	}
 
