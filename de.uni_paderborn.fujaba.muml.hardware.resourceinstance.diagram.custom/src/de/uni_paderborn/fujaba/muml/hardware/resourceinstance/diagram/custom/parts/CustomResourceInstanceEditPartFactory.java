@@ -16,30 +16,28 @@ import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.part.Hardw
  * @author adann
  * 
  */
-public class CustomResourceInstanceEditPartFactory extends HardwareEditPartFactory{
-	
+public class CustomResourceInstanceEditPartFactory extends
+		HardwareEditPartFactory {
+
 	@Override
-	public EditPart createEditPart(EditPart context, Object model){
-		if(model instanceof View){
-			View view= (View) model;
-			
+	public EditPart createEditPart(EditPart context, Object model) {
+		if (model instanceof View) {
+			View view = (View) model;
+
 			switch (HardwareVisualIDRegistry.getVisualID(view)) {
 			case StructuredResourceInstanceEditPart.VISUAL_ID:
 				return new CustomStructuredResourceInstanceEditPart(view);
-			
-		
-				
+
 			case SensorInstanceEditPart.VISUAL_ID:
 				return new CustomSensorInstanceEditPart(view);
-				
+
 			case ActuatorInstanceEditPart.VISUAL_ID:
 				return new CustomActuatorInstanceEditPart(view);
-							
+
 			}
-			
+
 		}
-		
-		
+
 		return super.createEditPart(context, model);
 	}
 

@@ -9,7 +9,7 @@ import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.Res
 import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.platform.StructuredResourceInstance;
-import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.edit.commands.CreateInstancesCommand;
+import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.StructuredResourceInstanceEditPart;
 
 /**
@@ -71,9 +71,7 @@ public class CustomStructuredResourceInstanceEditPart extends
 		if (editingDomain != null) {
 			ResourceInstance resourceInstance = (ResourceInstance) getNotationView()
 					.getElement();
-			CreateInstancesCommand command = new CreateInstancesCommand(
-					resourceInstance);
-			editingDomain.getCommandStack().execute(command);
+			Activator.createInstance(editingDomain, resourceInstance);
 		}
 	}
 

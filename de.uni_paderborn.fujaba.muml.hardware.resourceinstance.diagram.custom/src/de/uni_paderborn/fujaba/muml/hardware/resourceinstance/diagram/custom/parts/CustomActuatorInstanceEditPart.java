@@ -7,7 +7,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
 import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
 import de.uni_paderborn.fujaba.muml.hardware.platform.StructuredResourceInstance;
-import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.edit.commands.CreateInstancesCommand;
+import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.custom.part.Activator;
 import de.uni_paderborn.fujaba.muml.hardware.resourceinstance.diagram.edit.parts.ActuatorInstanceEditPart;
 
 /**
@@ -50,14 +50,11 @@ public class CustomActuatorInstanceEditPart extends ActuatorInstanceEditPart {
 	}
 
 	private void executeTransformation() {
-
 		EditingDomain editingDomain = getEditingDomain();
 		if (editingDomain != null) {
 			ResourceInstance resourceInstance = (ResourceInstance) getNotationView()
 					.getElement();
-			CreateInstancesCommand command = new CreateInstancesCommand(
-					resourceInstance);
-			editingDomain.getCommandStack().execute(command);
+			Activator.createInstance(editingDomain, resourceInstance);
 		}
 	}
 
