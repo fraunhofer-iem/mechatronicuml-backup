@@ -20,6 +20,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.provider.CommentableElementItemProvider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
@@ -62,6 +64,7 @@ public class ConnectorItemProvider
 			super.getPropertyDescriptors(object);
 
 			addConnectorEndpointsPropertyDescriptor(object);
+			addSelfConnectorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,6 +87,28 @@ public class ConnectorItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Self Connector feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelfConnectorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Connector_selfConnector_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Connector_selfConnector_feature", "_UI_Connector_type"),
+				 ConnectorPackage.Literals.CONNECTOR__SELF_CONNECTOR,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -112,6 +137,12 @@ public class ConnectorItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Connector.class)) {
+			case ConnectorPackage.CONNECTOR__SELF_CONNECTOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

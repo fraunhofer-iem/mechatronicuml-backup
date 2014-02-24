@@ -21,7 +21,7 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="UniquePortNames" value="-- Port names must be unique&#xA;self.ports->isUnique(name)"/>
-        <details key="UniqueComponentNames" value="-- The component's name must be unique.&#xA;Component.allInstances()->isUnique(name)&#xA;-- author: adann"/>
+        <details key="UniqueComponentNames" value="-- The component's name must be unique.&#xA;Component.allInstances()->select(c|c&lt;>self)->collect(name)->excludes(self.name)&#xA;-- author: adann"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
           eType="#//component/Port" containment="true" eOpposite="#//component/Port/component">

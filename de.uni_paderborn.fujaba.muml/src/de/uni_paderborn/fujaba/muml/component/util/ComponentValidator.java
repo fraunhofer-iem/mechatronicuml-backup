@@ -219,7 +219,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String COMPONENT__UNIQUE_COMPONENT_NAMES__EEXPRESSION = "-- The component's name must be unique.\n" +
-		"Component.allInstances()->isUnique(name)\n" +
+		"Component.allInstances()->select(c|c<>self)->collect(name)->excludes(self.name)\n" +
 		"-- author: adann";
 
 	/**

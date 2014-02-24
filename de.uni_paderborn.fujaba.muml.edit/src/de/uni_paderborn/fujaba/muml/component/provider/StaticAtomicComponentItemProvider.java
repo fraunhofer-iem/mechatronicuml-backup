@@ -88,7 +88,7 @@ public class StaticAtomicComponentItemProvider
 	public String getText(Object object) {
 		String label = ((StaticAtomicComponent)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_StaticAtomicComponent_type"):
+			getString("_UI_StaticAtomicComponent_type") :
 			getString("_UI_StaticAtomicComponent_type") + " " + label;
 	}
 
