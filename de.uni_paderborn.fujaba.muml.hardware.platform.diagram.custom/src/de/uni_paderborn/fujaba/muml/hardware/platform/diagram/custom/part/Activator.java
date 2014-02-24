@@ -14,8 +14,8 @@ import org.eclipse.m2m.qvt.oml.TransformationExecutor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import de.uni_paderborn.fujaba.common.edit.commands.ExecuteQvtoTransformationCommand;
 import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPart;
-import de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.commands.ExecuteQvtoTransformationCommand;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -82,17 +82,21 @@ public class Activator extends AbstractUIPlugin {
 		}
 		return transformationExecutor;
 	}
-	
-	public static void updateHWPortParts(EditingDomain editingDomain, PlatformPart platformPart) {
-		ModelExtent inputExtent = new BasicModelExtent(Arrays.asList(new EObject[] { platformPart }));
-		
-		List<ModelExtent> modelExtents = Arrays.asList(new ModelExtent[] { inputExtent });
-		
+
+	public static void updateHWPortParts(EditingDomain editingDomain,
+			PlatformPart platformPart) {
+		ModelExtent inputExtent = new BasicModelExtent(
+				Arrays.asList(new EObject[] { platformPart }));
+
+		List<ModelExtent> modelExtents = Arrays
+				.asList(new ModelExtent[] { inputExtent });
+		TransformationExecutor transformationExecutor = Activator.getInstance()
+				.getTransformationExecutor(
+						Activator.UPDATE_HWPORTPART_TRANSFORMATION, false);
 		ExecuteQvtoTransformationCommand command = new ExecuteQvtoTransformationCommand(
-				Activator.UPDATE_HWPORTPART_TRANSFORMATION,
-				modelExtents);
+				transformationExecutor, modelExtents);
 		editingDomain.getCommandStack().execute(command);
-		
+
 		if (!command.hasChanged()) {
 			editingDomain.getCommandStack().undo();
 		}

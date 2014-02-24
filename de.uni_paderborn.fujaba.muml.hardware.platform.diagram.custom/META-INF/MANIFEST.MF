@@ -8,8 +8,7 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.hardware.common;bundle-version="1.0
  de.uni_paderborn.fujaba.muml.hardware.platform.diagram,
  org.eclipse.gmf.runtime.diagram.ui.properties,
  org.eclipse.m2m.qvt.oml;bundle-version="3.1.0"
-Export-Package: de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.commands,
- de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.dialog,
+Export-Package: de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.dialog,
  de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.parsers,
  de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.part,
  de.uni_paderborn.fujaba.muml.hardware.platform.diagram.custom.parts,
