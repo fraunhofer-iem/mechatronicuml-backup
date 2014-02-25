@@ -10,7 +10,7 @@ main() {
 }
 
 mapping inout GenEditorGenerator::settings() {
-	self->map general("resourcetype_diagram","Resource Type Diagram Editor");
+	self->map general("resourcetype_diagram","Resource Type Diagram Editor",true);
 	// self->map editorSpecific();
 }
 

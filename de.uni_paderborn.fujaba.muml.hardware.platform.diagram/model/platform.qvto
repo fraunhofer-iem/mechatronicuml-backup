@@ -10,7 +10,7 @@ main() {
 }
 
 mapping inout GenEditorGenerator::settings() {
-	self->map general("platform_diagram","Platform Diagram Editor");
+	self->map general("platform_diagram","Platform Diagram Editor",true);
 	self->map editorSpecific();
 }
 
