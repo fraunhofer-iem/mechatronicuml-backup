@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.componentstorydiagram.edit;singleton:=true
 Bundle-Version: 0.4.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.componentstorydiagram.controlflow.provider.ComponentStoryDiagramEditPlugin$Implementation
+Bundle-Activator: de.uni_paderborn.fujaba.muml.componentstorydiagram.provider.ComponentStoryDiagramEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
