@@ -6,7 +6,7 @@
   <rm:locator pattern="(^de\.uni_paderborn\.fujaba\.udbm(\..+)?|^de\.uni_paderborn\.fujaba\.umlrt\.udbm(\..+)?)" searchPathRef="udbmbinding"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.reachanalysis(\..+)?" searchPathRef="storychecking"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.simulink(\..+)?" searchPathRef="matlab"/>
-  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.model\.gen(\..+)?|^de\.uni_paderborn\.fujaba\.muml\.gen(\..+)?" searchPathRef="modelica"/>
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.model\.gen\.modelica\.feature$" searchPathRef="modelica"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.modelica(\..+)?" searchPathRef="modelica"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.graphviz(\..+)?" searchPathRef="modelica"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.actionLanguage\.matlab(\..+)?" searchPathRef="matlab"/>
