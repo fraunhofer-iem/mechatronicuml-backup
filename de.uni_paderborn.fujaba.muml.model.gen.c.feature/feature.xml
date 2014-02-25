@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.uni_paderborn.fujaba.muml.model.gen.c.feature"
+      label="MechatronicUML nxtOSEK code generator"
+      version="0.4.0.qualifier"
+      provider-name="Fraunhofer IPT, SOLUNAR GmbH">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="de.uni_paderborn.fujaba.muml"/>
+      <import plugin="de.uni_paderborn.fujaba.modelinstance"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.ocl"/>
+      <import plugin="org.eclipse.ocl.ecore"/>
+      <import plugin="org.eclipse.acceleo.common" version="3.2.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.model" version="3.2.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.profiler" version="3.2.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.acceleo.engine" version="3.2.1" match="greaterOrEqual"/>
+      <import plugin="com.google.guava"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.model.gen.c.beautifier" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.cdt.core" version="5.4.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.8.2" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.logging" version="1.0.4" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.model.gen.c"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.uni_paderborn.fujaba.muml.model.gen.c.beautifier"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
