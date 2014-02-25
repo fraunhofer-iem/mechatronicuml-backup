@@ -1,0 +1,116 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module RealtimeStatechartHeader.
+ */]
+[module RealtimeStatechartHeader('http://www.fujaba.de/muml/0.4.0', 'http://www.fujaba.de/modelinstance/0.4.0', 'http://www.fujaba.de/muml/instance/0.4.0')]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
+
+[**
+ * The documentation of the template generateElement.
+ * @param anOclAny
+ */]
+[template public generate_RTSCHeader(comp: Component, rtsc : RealtimeStatechart) post(trim())]
+
+[file (getFileName(rtsc, true, false), false, 'UTF-8')]
+
+#ifndef [getHeaderDefine(rtsc)/]
+#define [getHeaderDefine(rtsc)/]
+
+[includes(comp, rtsc)/]
+//ENUM
+	[variables(comp, rtsc)/]
+
+//METHOD STUBS
+	[constructor(rtsc)/]
+	[initialize(rtsc)/]
+	[destroy(rtsc)/]		
+	[process(rtsc)/]
+
+	[exit(rtsc)/]
+			
+	[isInState(rtsc)/]
+	[isTerminated(rtsc)/]
+
+#endif /* [getHeaderDefine(rtsc)/] */
+[/file]
+[/template]
+
+
+[**
+ * Generates includes
+ * 
+ * @param statechart
+*/]
+[template public includes (comp:Component, rtsc : RealtimeStatechart) post(trim())]
+#include "../lib/clock.h"
+#include "../lib/syncChannel.h"
+#include "../[comp.getFileName(true)/]"
+[if (rtsc.eAllContents(Operation)->size() > 0)]#include "../operations/Operations.h"[/if]
+[/template]
+
+[**
+ * Generates the enum for the statechart.
+ * 
+ * @param statechart
+*/]
+[template private variables (comp: Component, rtsc: RealtimeStatechart) post(trim())]
+	typedef enum {
+		[for (state : State | rtsc.states) separator (',')]
+			[getStateNames(state)/]	
+		[/for]
+	}[getClassName(rtsc, true)/];
+
+
+struct [getClassName(rtsc)/];
+[/template]
+
+
+[template private getStateNames (state : State) post(trim())]
+[getName(state)/]
+[if not (state.simple)],
+	[for (innerState : State | state.embeddedRegions.embeddedStatechart.states) separator (',')]
+		[getStateNames(innerState)/]
+	[/for]
+[/if]
+[/template]
+
+[**
+ * Generates header of the constructor of the statechart
+ * 
+ * @param statechart
+*/]
+[template public constructor (rtsc : RealtimeStatechart) post(trim())]
+	[getClassName(rtsc)/]* [getConstructorName(rtsc)/]();
+[/template]
+
+[template private initialize (rtsc : RealtimeStatechart) post(trim())]
+	void [getInitializeMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc);
+[for (region: Region | rtsc.eAllContents(Region))]
+	void [getInitializeMethodName(region)/]([getSuperClassName(rtsc)/]* stateChart);
+[/for]
+[/template]
+
+[template private destroy(rtsc : RealtimeStatechart) post(trim())]
+	void [getDestroyMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc);
+[/template]
+
+[template private process (rtsc : RealtimeStatechart) post(trim())]
+	void [getProcessMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc);
+[/template]
+
+[template private exit (rtsc : RealtimeStatechart) post(trim())]
+	[for (region : Region | rtsc.getAllRegions())]
+	void [getExitMethodName(region)/]([getClassName(rtsc)/]* rtsc);
+	[/for]
+[/template]
+
+[template private isInState (rtsc : RealtimeStatechart) post(trim())]
+	int [getIsInStateMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc, [getClassName(rtsc, true)/] state);
+[/template]
+[template private isTerminated (rtsc : RealtimeStatechart) post(trim())]
+	bool [getTerminateMethodName(rtsc)/]([getClassName(rtsc)/]* rtsc);
+[/template]
+
+

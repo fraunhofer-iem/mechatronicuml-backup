@@ -1,0 +1,61 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module Events.
+ */]
+[module Message('http://www.fujaba.de/modelinstance/0.4.0', 'http://www.fujaba.de/muml/0.4.0', 'http://www.fujaba.de/muml/actionlanguage/0.4.0')]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::actionlanguage::expression]
+
+
+[**
+ * The documentation of the template generateMessageFiles.
+ */]
+[template public generateMessageFiles(root : RootNode)]
+
+[generateMessageClass(root)/]
+[generateMessageHeader(root)/]
+
+[/template]
+
+
+[**
+ * The documentation of the template generateMessageClass.
+ */]
+[template private generateMessageClass(root : RootNode)]
+
+[file ('msg/messages.h', false, 'UTF-8')]
+
+#ifndef MESSAGES_H_
+#define MESSAGES_H_
+		
+#include "../lib/event.h"
+
+		[for (msg : MessageType | root.eAllContents(MessageType))]
+			extern Event [getVariableName(msg)/];
+		[/for]
+#endif /* MESSAGES_H_ */
+
+
+[/file]
+
+[/template]
+
+
+[**
+ * The documentation of the template generateMessageHeader.
+ */]
+[template public generateMessageHeader(root : RootNode)]
+
+[file ('msg/messages.c', false, 'UTF-8')]
+
+#include "../lib/event.h"
+
+		[for (msg : MessageType | root.eAllContents(MessageType))]
+			Event [getVariableName(msg)/] = {[i/], "[getVariableName(msg)/]"};
+		[/for]
+
+
+[/file]
+
+[/template]

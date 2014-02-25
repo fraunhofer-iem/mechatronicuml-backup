@@ -1,0 +1,217 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module main.
+ */]
+[module main_C('http://www.fujaba.de/muml/0.4.0', 'http://www.fujaba.de/modelinstance/0.4.0', 'http://www.fujaba.de/muml/instance/0.4.0')]
+
+
+[import de::uni_paderborn::fujaba::muml::model::gen::c::files::make]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::files::OIL]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::files::RealtimeStatechart]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::files::RealtimeStatechartHeader]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::files::componentHeader]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::files::component]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::files::Message]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::files::operations]
+
+[**
+ * Generates a main file. This file contains code to create, initialize
+ * and execute a given MUML model on nxtOSEK.
+ * @param aModelElementCategory
+ */]
+[template public generateANSIC(aRootNode : RootNode)]
+[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+
+[comment create files for every component type/]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
+[generateTypeFiles(modelElementCategory)/]
+[/if]
+[/for]
+
+[comment create message file/]
+[generateMessageFiles(aRootNode)/]
+
+[comment craeate files for RTSCs/]
+[generateRTSCFiles(aRootNode)/]
+
+[comment create makefile for gcc/]
+[generateMakeFile(aRootNode)/]
+
+[comment create Operation files/]
+[generateOperationFiles(aRootNode)/]
+
+[comment create 'main.c'/]
+[file('main.c',false,'UTF-8')]
+[includes(aRootNode)/]
+
+[comment create variable for every used component instance/]
+//variables for component instances
+[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[generateComponentVariables(modelElementCategory)/]
+	[/if]
+[/for]
+
+int main(){
+	[comment create model/]
+	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+			[generateInstanceConfiguration(modelElementCategory)/]
+		[/if]
+	[/for]
+	//initialize model
+	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+			[for (ci : ComponentInstance | modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).componentInstances)]
+				[ci.componentType.getInitializeMethodName()/]([ci.getVariableName()/]);
+			[/for]
+		[/if]
+	[/for]
+
+while (1){
+	[comment execution of model/]
+	[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+	[for (ci : ComponentInstance | modelElementCategory.modelElements->at(1).oclAsType(ComponentInstanceConfiguration).componentInstances)]
+		[ci.componentType.getProcessMethodName()/]([ci.getVariableName()/]);
+	[/for]
+	[/if]
+	[/for]
+}
+}
+[/file]
+[/template]
+
+
+
+
+
+[template private includes(root : RootNode)]
+//general includes
+#include <stdio.h>
+#include <stdlib.h>
+
+
+[comment]
+//including all files for used Realtime Statecharts
+[for (modelElementCategory : ModelElementCategory | root.categories)]
+[for (rtsc : RealtimeStatechart | modelElementCategory.modelElements.oclAsType(RealtimeStatechart))]
+#include "[rtsc.getFileName(true, false)/]"
+[/for]
+[/for]
+[/comment]
+//including all files for used Components
+[for (modelElementCategory : ModelElementCategory | root.categories)]
+	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
+		[for (comp : Component | modelElementCategory.modelElements.oclAsType(Component))]
+#include "[comp.getFileName(true, false)/]"
+		[/for]
+	[/if]
+[/for]
+[/template]
+
+
+[**
+ * Creates a header and an implementation file for every component (type) of the model
+ * (if modelElementCategory is 'components'
+ * @param modelElementCategory
+ */]
+[template public generateTypeFiles(modelElementCategory : ModelElementCategory)? (key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
+[for (component : Component | modelElementCategory.modelElements.oclAsType(Component))]
+[generate_ComponentHeader(component)/]
+[generate_ComponentClass(component)/]
+[/for]
+[/template]
+
+
+[**
+ * Creates a header and an implementation file for every realtime statechart, which is the behavior of
+ * an atomic component of the model (if modelElementCategory is 'realtimestatechart'
+ * @param modelElementCategory
+ */]
+[template public generateRTSCFiles(rootNode : RootNode) ]
+[for (comp: AtomicComponent | rootNode.eAllContents(AtomicComponent))]
+[generate_RTSCHeader(comp, comp.behavior.oclAsType(RealtimeStatechart))/]
+[generate_RTSC(comp, comp.behavior.oclAsType(RealtimeStatechart))/]
+[/for]
+[/template]
+
+[**
+ * Generates code to instanciate a given component instance configuration.
+ * (based on the component type files). Before using this template, it is necessary to
+ * call 'generateTypeFiles' and 'generateRTSCFiles'!
+ * @param modelElementCategory
+ */]
+[template public generateComponentVariables(modelElementCategory : ModelElementCategory) ? (key.matches('de.uni_paderborn.fujaba.muml.instance.category')){
+cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
+]
+[for (cInst : ComponentInstance | cic.eAllContents(ComponentInstance))]
+	[cInst.getClassName()/] * [cInst.getVariableName()/];
+[/for]
+[/template]
+
+
+
+[**
+ * Generates code to instanciate a given component instance configuration.
+ * (based on the component type files). Before using this template, it is necessary to
+ * call 'generateTypeFiles' and 'generateRTSCFiles'!
+ * @param modelElementCategory
+ */]
+[template public generateInstanceConfiguration(modelElementCategory : ModelElementCategory) ? (key.matches('de.uni_paderborn.fujaba.muml.instance.category')){
+cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
+]
+[for (cInst : ComponentInstance | cic.componentInstances)]
+//instantiate components of [cInst.getName()/]
+	[cInst.getVariableName()/] = [getCreateMethodName(cInst)/]();
+	[cInst.configurateInstance()/]
+
+[for (conInst : ConnectorInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.portConnectorInstances)]
+	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([cInst.getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).portType)/],
+	[cInst.getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).portType)/], [conInst.isBidirectional()/]);
+	
+	DiscreteConnectionList_add([cInst.getVariableName()/],[conInst.getVariableName()/])
+[/for]
+[for (conInst : ConnectorInstance | cic.portConnectorInstances)]
+	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([conInst.getEmbeddingComponent().getVariableName()/]->[conInst.getSourceComponent().getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).portType)/],
+	[conInst.getEmbeddingComponent().getVariableName()/]->[conInst.getTargetComponent().getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).portType)/], [conInst.isBidirectional()/]);
+
+	DiscreteConnectionList_add([conInst.getEmbeddingComponent().getVariableName()/]->connectorList,[conInst.getVariableName()/]);
+
+[/for]
+[/for]
+[/template]
+
+
+
+
+
+
+
+[template private configurateInstance(cInst : ComponentInstance) ? (oclIsKindOf(StructuredComponentInstance))post(trim())]
+[for (cPart : ComponentPart | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->collect(componentPart)->asSet())]
+	[for (partInstance : ComponentInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->select(componentPart = cPart))]
+		//instantiate components of [cInst.getName()/]
+		[partInstance.getVariableName()/] = [partInstance.getCreateMethodName()/]();
+		[getAddMethodName(cInst.componentType, partInstance.componentPart)/]([cInst.getVariableName()/], [partInstance.getVariableName()/]);
+		[configurateInstance(partInstance)/]
+	[/for]
+[/for]
+[comment]
+[for (compType : Component | cInst.componentType.oclAsType(StaticStructuredComponent).embeddedComponentParts.componentType)]
+	[for (cPartInst : ComponentInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances) ? (componentType == compType)]
+			
+	[/for]
+
+	[if (not subComp.componentPart.multiPart)]
+		[subComp.parentCIC.parentStructuredComponentInstance.getVariableName()/]->[subComp.getVariableName()/] = [subComp.getCreateMethodName()/]();
+		[if (subComp.oclIsKindOf(StructuredComponentInstance))]
+			[subComp.getClassName()/] * [subComp.getVariableName()/] = [subComp.parentCIC.parentStructuredComponentInstance.getVariableName()/]->[subComp.getVariableName()/];
+			[subComp.configurateInstance()/]
+		[/if]
+	[/if]
+[/for]
+[/comment]
+[/template]

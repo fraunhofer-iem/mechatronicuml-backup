@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="OIL" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::files::OIL" startHeaderPosition="78" endHeaderPosition="469">
+    <documentation xsi:type="mtl:ModuleDocumentation">
+      <body startPosition="32" endPosition="75" value="&#xA;The documentation of the module OIL.&#xA;&#xA;"/>
+    </documentation>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/constraint/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/protocol/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/valuetype/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
+    </input>
+    <imports href="../queries/stringQueries.emtl#/0"/>
+    <imports href="../queries/modelQueries.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateOILFile" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="# include &quot;implementation.oil&quot;&#x9;&#x9;&#xA;&#xA;CPU ATMEL_AT91SAM7S256&#xA;{&#xA;  OS LEJOS_OSEK&#xA;   &#x9;{&#xA;    &#x9;STATUS = EXTENDED;&#xA; &#x9;&#x9;STARTUPHOOK = FALSE;&#xA;    &#x9;ERRORHOOK = FALSE;&#xA;    &#x9;SHUTDOWNHOOK = FALSE;&#xA;    &#x9;PRETASKHOOK = FALSE;&#xA;    &#x9;POSTTASKHOOK = FALSE;&#xA;    &#x9;USEGETSERVICEID = FALSE;&#xA;    &#x9;USEPARAMETERACCESS = FALSE;&#xA;    &#x9;USERESSCHEDULER = FALSE;&#xA;  &#x9;};&#xA;&#xA;  &#x9;/* Definition of application mode */&#xA;  &#x9;APPMODE appmode1{};&#xA;&#xA;  /* Main Task - starts tasks for processing steps in automaton */&#xA;  TASK Task_Main&#xA;&#x9;{&#xA;&#x9;&#x9;AUTOSTART = FALSE;&#xA;&#x9;&#x9;PRIORITY = 1;&#xA;&#x9;&#x9;ACTIVATION = 1;&#xA;&#x9;&#x9;SCHEDULE = FULL;&#xA;&#x9;&#x9;STACKSIZE = 512;&#xA;&#x9;};&#xA;&#xA;&#xA;  /* Initialize Model and other stuff */&#xA;  TASK Task_initModel&#xA;    {&#xA;      AUTOSTART = TRUE&#xA;&#x9;  {&#xA;&#x9;&#x9;APPMODE = appmode1;&#xA;      };&#xA;      PRIORITY = 10;&#xA;      ACTIVATION = 1;&#xA;      SCHEDULE = FULL;&#xA;      STACKSIZE = 512;&#xA;    };&#xA;&#xA;  /* Initialize Model and other stuff */&#xA;  TASK Task_MsgExchange&#xA;    {&#xA;      AUTOSTART = FALSE;&#xA;      PRIORITY = 1;&#xA;      ACTIVATION = 1;&#xA;      SCHEDULE = FULL;&#xA;      STACKSIZE = 512;&#xA;    };&#xA;&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+          <body xsi:type="mtl:TemplateInvocation" definition="/0/generateOSEKTask">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateOILFile/%/%.1/ci">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <loopVariable name="ci">
+            <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/9/Sequence(ComponentInstance)" referredOperation="/1/EObject_Class/eAllContents">
+            <source xsi:type="ocl.ecore:VariableExp" name="aRootNode" referredVariable="/0/generateOILFile/aRootNode">
+              <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/8/ComponentInstance">
+              <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+            </argument>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="};&#xA;&#xA;&#xA;/* Definition of OSEK Alarm Counter */&#xA;  COUNTER SysTimerCnt&#xA;  {&#xA;    MINCYCLE = 1;&#xA;    MAXALLOWEDVALUE = 10000;&#xA;    TICKSPERBASE = 1; /* One tick is equal to 1msec */ &#xA;  };&#xA;&#xA;&#xA;&#xA;&#xA; ALARM Task_Main_Alarm&#xA;  {&#xA;    COUNTER = SysTimerCnt;&#xA;    ACTION = ACTIVATETASK&#xA;    {&#xA;      TASK = Task_Main;&#xA;    };&#xA;    AUTOSTART = TRUE&#xA;    {&#xA;      ALARMTIME = 2;&#xA;      CYCLETIME = 100;&#xA;      APPMODE = appmode1;&#xA;    };&#xA;  };&#xA;/* ----- End Of File ----- */&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="nxtOSEK.oil">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="383" endPosition="469" value="&#xA;The documentation of the template generateOILFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
+        <parametersDocumentation name="anAbsoluteDeadline">
+          <body value=""/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="aRootNode">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateOSEKTask">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/* Task for component '"/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="../queries/stringQueries.emtl#/0/getVariableName.1"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateOSEKTask/ci">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="' */&#xA;TASK "/>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="../queries/stringQueries.emtl#/0/getTaskName"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="ci" referredVariable="/0/generateOSEKTask/ci">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;  {&#xA;    AUTOSTART = FALSE;&#xA;    PRIORITY = 2; //standard priority&#xA;    ACTIVATION = 1;&#xA;    SCHEDULE = NON;&#xA;    STACKSIZE = 512;&#xA;  };&#xA;"/>
+      <parameter name="ci">
+        <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+      </parameter>
+      <guard xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/17">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+        </source>
+        <argument xsi:type="ocl.ecore:TypeExp" eType="/8/AtomicComponentInstance">
+          <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
+        </argument>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+      </guard>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="eAllContents">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="http://www.eclipse.org/acceleo/mtl/3.0/mtlnonstdlib.ecore#//Sequence(OclAny)"/>
+        <eParameters name="filter">
+          <eType xsi:type="ocl.ecore:TypeType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclType"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateOILFile">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateOILFile"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aRootNode">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateOSEKTask">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateOSEKTask"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="ci">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getTaskName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getTaskName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="ci">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getVariableName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../queries/stringQueries.emtl#/0/getVariableName.1"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="cInst">
+          <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RootNode_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Component_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//Component"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//ParameterBinding"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Port_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//Port"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Operation_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Operation"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Parameter"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentPart_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/component/0.4.0#//ComponentPart"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Variable_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Region_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Region"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageTypeRepository_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/msgtype/0.4.0#//MessageTypeRepository"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SynchronizationChannel_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//SynchronizationChannel"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="State_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//State"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PortInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//PortInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Connector_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/connector/0.4.0#//Connector"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Clock_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//Clock"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/connector/0.4.0#//ConnectorInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DataType_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/types/0.4.0#//DataType"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComparingOperator_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.storydriven.org/core/0.3.1#//expressions/common/ComparingOperator"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModelElementCategory_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/modelinstance/0.4.0#//ModelElementCategory"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AtomicComponentInstance_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="ComponentInstance">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="AtomicComponentInstance">
+      <referredType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//AtomicComponentInstance"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(OclAny)" instanceClassName="java.util.List">
+      <elementType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(ComponentInstance)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/instance/0.4.0#//ComponentInstance"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/%">
+      <details key="start" value="29"/>
+      <details key="end" value="77"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateOILFile">
+      <details key="start" value="472"/>
+      <details key="end" value="2275"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateOILFile/%">
+      <details key="start" value="528"/>
+      <details key="end" value="2263"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateOILFile/%/%">
+      <details key="start" value="645"/>
+      <details key="end" value="1645"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateOILFile/%/%.1">
+      <details key="start" value="1711"/>
+      <details key="end" value="1817"/>
+      <details key="line" value="71"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateOILFile/%/%.1/%">
+      <details key="start" value="1786"/>
+      <details key="end" value="1787"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateOILFile/%/%.1/%.1">
+      <details key="start" value="1788"/>
+      <details key="end" value="1808"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateOILFile/%/%.1/%.1/ci">
+      <details key="start" value="1805"/>
+      <details key="end" value="1807"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateOILFile/%/%.1/%.2">
+      <details key="start" value="1810"/>
+      <details key="end" value="1811"/>
+      <details key="line" value="73"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateOILFile/%/%.1/ci">
+      <details key="start" value="1717"/>
+      <details key="end" value="1739"/>
+      <details key="line" value="71"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateOILFile/%/%.1/%.3">
+      <details key="start" value="1742"/>
+      <details key="end" value="1783"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateOILFile/%/%.1/%.3/aRootNode">
+      <details key="start" value="1742"/>
+      <details key="end" value="1751"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateOILFile/%/%.1/%.3/%">
+      <details key="start" value="1765"/>
+      <details key="end" value="1782"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateOILFile/%/%.2">
+      <details key="start" value="1818"/>
+      <details key="end" value="2256"/>
+      <details key="line" value="74"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateOILFile/%/%.3">
+      <details key="start" value="535"/>
+      <details key="end" value="548"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateOILFile/%/%.4">
+      <details key="start" value="557"/>
+      <details key="end" value="564"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateOILFile/%.1">
+      <details key="start" value="380"/>
+      <details key="end" value="471"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateOILFile/%.1/anAbsoluteDeadline">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateOILFile/aRootNode">
+      <details key="start" value="505"/>
+      <details key="end" value="525"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateOSEKTask">
+      <details key="start" value="2277"/>
+      <details key="end" value="2595"/>
+      <details key="line" value="106"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateOSEKTask/%">
+      <details key="start" value="2378"/>
+      <details key="end" value="2401"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateOSEKTask/%.1">
+      <details key="start" value="2402"/>
+      <details key="end" value="2421"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateOSEKTask/%.1/ci">
+      <details key="start" value="2418"/>
+      <details key="end" value="2420"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateOSEKTask/%.2">
+      <details key="start" value="2423"/>
+      <details key="end" value="2433"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateOSEKTask/%.3">
+      <details key="start" value="2434"/>
+      <details key="end" value="2449"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateOSEKTask/%.3/ci">
+      <details key="start" value="2446"/>
+      <details key="end" value="2448"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateOSEKTask/%.4">
+      <details key="start" value="2451"/>
+      <details key="end" value="2583"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateOSEKTask/ci">
+      <details key="start" value="2312"/>
+      <details key="end" value="2334"/>
+      <details key="line" value="106"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateOSEKTask/%.5">
+      <details key="start" value="2339"/>
+      <details key="end" value="2375"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateOSEKTask/%.5/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateOSEKTask/%.5/%">
+      <details key="start" value="2351"/>
+      <details key="end" value="2374"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

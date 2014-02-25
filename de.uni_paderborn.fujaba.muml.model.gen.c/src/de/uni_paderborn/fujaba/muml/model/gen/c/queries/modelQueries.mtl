@@ -1,0 +1,121 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module modelQueries('http://www.fujaba.de/muml/0.4.0', 'http://www.fujaba.de/modelinstance/0.4.0', 'http://www.fujaba.de/muml/instance/0.4.0')]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::actionlanguage::expression]
+
+
+[query public getAllStates(rtsc : RealtimeStatechart) : Set(State) =
+	rtsc.states
+/]
+
+
+
+[query public getAllRegions(rtsc : RealtimeStatechart) : Set(Region) =
+	rtsc.eAllContents(Region)->asSet()
+
+/]
+[query public getInitalState(rtsc : RealtimeStatechart) : State =
+	rtsc.states->select(state : State | state.initial)->at(1)
+/]
+
+[**
+ * @param state
+*/]
+[query public getInnerRegions(state : State) : OrderedSet(Region) = 
+	state.embeddedRegions->sortedBy(priority)->reverse()
+/]
+
+[**
+ * @param region
+*/]
+[query public isExitGenerationNecessary(region : Region) : Boolean =
+	region.eAllContents(Region)->exists(isExitGenerationNecessary()) or 
+	region.eContents(State)->exists(isStateExitGenerationNecessary(false))
+/]
+
+[**
+ * @param state
+*/]
+[query public isStateExitGenerationNecessary(state : State, withInnerRegions : Boolean) : Boolean =
+	not (state.final) and 
+	(
+		not (state.exitEvent.action.oclIsUndefined()) or
+		state.exitEvent.clockResets->size() > 0 or
+		(withInnerRegions and state.embeddedRegions->size() > 0) 
+	)
+/]
+
+[query public getDefaultValue(type : DataType) : String = 
+	if (type.name = 'BOOLEAN') then 
+		'false' 
+	else if (type.name = 'STRING') then 
+		'""' 
+
+	else if (type.name = 'INT') then 
+		'0' 
+	else
+		'UNKNOWN DATATYPE' 
+	endif  
+	endif  
+	endif 
+
+/]
+
+[query public getDefaultValue(var : Variable) : String = 
+	if (var.initializeExpression.oclIsUndefined()) then
+		getDefaultValue(var.dataType)
+	else
+		generateExpression(var.initializeExpression, true, '')
+	endif
+/]
+
+[query public getMainCIC(mec : ModelElementCategory) : ComponentInstanceConfiguration = 
+	mec.modelElements->at(1).oclAsType(ComponentInstanceConfiguration)
+/]
+
+
+
+[query public getBehaviour(component : AtomicComponentInstance) : RealtimeStatechart =
+	component.oclAsType(AtomicComponentInstance).componentType.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart)
+/]
+
+[query public isDiscreteConnection(cInst : ConnectorInstance) : Boolean =
+	cInst.connectorEndpointInstances->at(1).oclIsKindOf(DiscretePortInstance) and cInst.connectorEndpointInstances->at(2).oclIsKindOf(DiscretePortInstance)
+/]
+
+[query public isBidirectional(cInst : ConnectorInstance) : Boolean =
+	cInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).portType.oclAsType(DiscretePort).isDiscreteInOutPort
+/]
+
+[query public getEmbeddingComponent(conInst : ConnectorInstance) : StructuredComponentInstance =
+	conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).componentInstance.parentCIC.parentStructuredComponentInstance
+/]
+
+[query public getSourceComponent(conInst : ConnectorInstance) : ComponentInstance =
+	if ((conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).senderMessageTypes->size()>0) and (conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).receiverMessageTypes->size()>0)) then
+		conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).componentInstance
+	else
+		if (conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).senderMessageTypes->size()>0) then
+		conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).componentInstance
+		else
+		conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).componentInstance
+		endif
+	endif
+/]
+
+[query public getTargetComponent(conInst : ConnectorInstance) : ComponentInstance =
+	if ((conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).senderMessageTypes->size()>0) and (conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).receiverMessageTypes->size()>0)) then
+		conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).componentInstance
+	else
+		if (conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).receiverMessageTypes->size()>0) then
+		conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).componentInstance
+		else
+		conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).componentInstance
+		endif
+	endif
+/]
+
