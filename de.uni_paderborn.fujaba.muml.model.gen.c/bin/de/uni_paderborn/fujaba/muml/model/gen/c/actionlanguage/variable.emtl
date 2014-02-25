@@ -1,22 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="variable" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::actionlanguage::variable" endHeaderPosition="220">
+  <mtl:Module name="variable" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::actionlanguage::variable" endHeaderPosition="499">
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
+    </input>
     <input>
       <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
     </input>
     <input>
       <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
     </input>
     <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+    </input>
+    <input>
       <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
     </input>
     <input>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
     </input>
-    <imports href="expression.emtl#/0"/>
-    <imports href="variable_queries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/expression.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/0"/>
     <imports href="../queries/stringQueries.emtl#/0"/>
-    <imports href="../queries/modelQueries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/queries/modelQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="createVariableDeclarations" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// attribute declarations&#xA;"/>
       <body xsi:type="mtl:ForBlock">
@@ -45,7 +65,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(start="/>
             <body xsi:type="mtl:TemplateInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="expression.emtl#/0/generateExpression.40"/>
+              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/expression.emtl#/0/generateExpression.40"/>
               <argument xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ecore:EClass" href="http://www.storydriven.org/core/0.3.1#//expressions/Expression"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="variable" referredVariable="/0/createVariableDeclarations/%.1/variable">
@@ -127,7 +147,7 @@
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// end attribute declarations"/>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="562" endPosition="641" value="&#xA;Create variable declarations&#xA;@param attributeSet the set of attributes&#xA;&#xA;"/>
+        <body startPosition="841" endPosition="920" value="&#xA;Create variable declarations&#xA;@param attributeSet the set of attributes&#xA;&#xA;"/>
         <parametersDocumentation name="attributeSet">
           <body value=" the set of attributes"/>
         </parametersDocumentation>
@@ -140,9 +160,9 @@
       <init>
         <variable name="lVarDecls" eType="/6/Set(LocalVariableDeclarationStatement)">
           <initExpression xsi:type="mtl:QueryInvocation" eType="/6/Set(LocalVariableDeclarationStatement)">
-            <definition href="variable_queries.emtl#/0/getLocalVariableDeclarationStatementRepr"/>
+            <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/0/getLocalVariableDeclarationStatementRepr"/>
             <argument xsi:type="mtl:QueryInvocation" eType="/6/Set(LocalVariableDeclarationStatement)">
-              <definition href="variable_queries.emtl#/0/getAllLocalVariableDeclarationStatements.1"/>
+              <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/0/getAllLocalVariableDeclarationStatements.1"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="rtsc" referredVariable="/0/createLocalVariableDeclarations/rtsc">
                 <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
               </argument>
@@ -171,7 +191,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
         <body xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="variable_queries.emtl#/0/getTypedNamedElementName"/>
+          <definition href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/0/getTypedNamedElementName"/>
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/behavior/0.4.0#//Variable"/>
             <source xsi:type="ocl.ecore:VariableExp" name="lVarDecl" referredVariable="/0/createLocalVariableDeclarations/%.1/lVarDecl">
@@ -188,7 +208,7 @@
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;// end local variable declarations"/>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="1164" endPosition="1228" value="&#xA;Create local variable declarations&#xA;@param rtsc the rtsc&#xA;&#xA;"/>
+        <body startPosition="1443" endPosition="1507" value="&#xA;Create local variable declarations&#xA;@param rtsc the rtsc&#xA;&#xA;"/>
         <parametersDocumentation name="rtsc">
           <body value=" the rtsc"/>
         </parametersDocumentation>
@@ -243,7 +263,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="expression.emtl#/0/generateExpression.40"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/expression.emtl#/0/generateExpression.40"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="expression">
@@ -261,7 +281,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="variable_queries.emtl#/0/getTypedNamedElementName"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/0/getTypedNamedElementName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="typedNamedElement">
@@ -273,9 +293,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="variable_queries.emtl#/0/getAllLocalVariableDeclarationStatements.1"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/0/getAllLocalVariableDeclarationStatements.1"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SetType" href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        <eType xsi:type="ocl.ecore:SetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
         <eParameters name="rtsc">
           <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#//RealtimeStatechart"/>
         </eParameters>
@@ -285,11 +305,11 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="variable_queries.emtl#/0/getLocalVariableDeclarationStatementRepr"/>
+          <references href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/0/getLocalVariableDeclarationStatementRepr"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SetType" href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        <eType xsi:type="ocl.ecore:SetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
         <eParameters name="lVarDecls">
-          <eType xsi:type="ocl.ecore:SetType" href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+          <eType xsi:type="ocl.ecore:SetType" href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
         </eParameters>
       </eOperations>
       <eOperations name="getTypeName">
@@ -412,7 +432,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Set(LocalVariableDeclarationStatement)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
+        <references href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/variable_queries.emtl#/3/Set(LocalVariableDeclarationStatement)"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Component_Class">
@@ -615,213 +635,213 @@
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/createVariableDeclarations">
-      <details key="start" value="644"/>
-      <details key="end" value="1159"/>
-      <details key="line" value="16"/>
+      <details key="start" value="923"/>
+      <details key="end" value="1438"/>
+      <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/createVariableDeclarations/%">
-      <details key="start" value="716"/>
-      <details key="end" value="743"/>
-      <details key="line" value="17"/>
+      <details key="start" value="995"/>
+      <details key="end" value="1022"/>
+      <details key="line" value="22"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/createVariableDeclarations/%.1">
-      <details key="start" value="743"/>
-      <details key="end" value="1116"/>
-      <details key="line" value="18"/>
+      <details key="start" value="1022"/>
+      <details key="end" value="1395"/>
+      <details key="line" value="23"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/createVariableDeclarations/%.1/%">
-      <details key="start" value="801"/>
-      <details key="end" value="1109"/>
-      <details key="line" value="19"/>
+      <details key="start" value="1080"/>
+      <details key="end" value="1388"/>
+      <details key="line" value="24"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/createVariableDeclarations/%.1/%/%">
-      <details key="start" value="841"/>
-      <details key="end" value="848"/>
-      <details key="line" value="20"/>
+      <details key="start" value="1120"/>
+      <details key="end" value="1127"/>
+      <details key="line" value="25"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/createVariableDeclarations/%.1/%/%.1">
-      <details key="start" value="849"/>
-      <details key="end" value="880"/>
+      <details key="start" value="1128"/>
+      <details key="end" value="1159"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/createVariableDeclarations/%.1/%/%.1/%">
-      <details key="start" value="849"/>
-      <details key="end" value="866"/>
+      <details key="start" value="1128"/>
+      <details key="end" value="1145"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/createVariableDeclarations/%.1/%/%.1/%/variable">
-      <details key="start" value="849"/>
-      <details key="end" value="857"/>
+      <details key="start" value="1128"/>
+      <details key="end" value="1136"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/createVariableDeclarations/%.1/%/%.2">
-      <details key="start" value="883"/>
-      <details key="end" value="884"/>
-      <details key="line" value="20"/>
+      <details key="start" value="1162"/>
+      <details key="end" value="1163"/>
+      <details key="line" value="25"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/createVariableDeclarations/%.1/%/%.3">
-      <details key="start" value="885"/>
-      <details key="end" value="898"/>
+      <details key="start" value="1164"/>
+      <details key="end" value="1177"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/createVariableDeclarations/%.1/%/%.3/variable">
-      <details key="start" value="885"/>
-      <details key="end" value="893"/>
+      <details key="start" value="1164"/>
+      <details key="end" value="1172"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.11" references="/0/createVariableDeclarations/%.1/%/%.4">
-      <details key="start" value="900"/>
-      <details key="end" value="1032"/>
-      <details key="line" value="20"/>
+      <details key="start" value="1179"/>
+      <details key="end" value="1311"/>
+      <details key="line" value="25"/>
     </eAnnotations>
     <eAnnotations source="positions.12" references="/0/createVariableDeclarations/%.1/%/%.4/%">
-      <details key="start" value="955"/>
-      <details key="end" value="962"/>
-      <details key="line" value="20"/>
+      <details key="start" value="1234"/>
+      <details key="end" value="1241"/>
+      <details key="line" value="25"/>
     </eAnnotations>
     <eAnnotations source="positions.13" references="/0/createVariableDeclarations/%.1/%/%.4/%.1">
-      <details key="start" value="963"/>
-      <details key="end" value="1023"/>
+      <details key="start" value="1242"/>
+      <details key="end" value="1302"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.14" references="/0/createVariableDeclarations/%.1/%/%.4/%.1/%">
-      <details key="start" value="982"/>
-      <details key="end" value="1011"/>
+      <details key="start" value="1261"/>
+      <details key="end" value="1290"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.15" references="/0/createVariableDeclarations/%.1/%/%.4/%.1/%/variable">
-      <details key="start" value="982"/>
-      <details key="end" value="990"/>
+      <details key="start" value="1261"/>
+      <details key="end" value="1269"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.16" references="/0/createVariableDeclarations/%.1/%/%.4/%.1/%.1">
-      <details key="start" value="1013"/>
-      <details key="end" value="1018"/>
+      <details key="start" value="1292"/>
+      <details key="end" value="1297"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.17" references="/0/createVariableDeclarations/%.1/%/%.4/%.1/%.2">
-      <details key="start" value="1020"/>
-      <details key="end" value="1022"/>
+      <details key="start" value="1299"/>
+      <details key="end" value="1301"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.18" references="/0/createVariableDeclarations/%.1/%/%.4/%.2">
-      <details key="start" value="1026"/>
-      <details key="end" value="1027"/>
-      <details key="line" value="20"/>
+      <details key="start" value="1305"/>
+      <details key="end" value="1306"/>
+      <details key="line" value="25"/>
     </eAnnotations>
     <eAnnotations source="positions.19" references="/0/createVariableDeclarations/%.1/%/%.4/%.3">
-      <details key="start" value="904"/>
-      <details key="end" value="954"/>
+      <details key="start" value="1183"/>
+      <details key="end" value="1233"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.20" references="/0/createVariableDeclarations/%.1/%/%.4/%.3/%">
-      <details key="start" value="908"/>
-      <details key="end" value="954"/>
+      <details key="start" value="1187"/>
+      <details key="end" value="1233"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.21" references="/0/createVariableDeclarations/%.1/%/%.4/%.3/%/%">
-      <details key="start" value="908"/>
-      <details key="end" value="937"/>
+      <details key="start" value="1187"/>
+      <details key="end" value="1216"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/createVariableDeclarations/%.1/%/%.4/%.3/%/%/variable">
-      <details key="start" value="908"/>
-      <details key="end" value="916"/>
+      <details key="start" value="1187"/>
+      <details key="end" value="1195"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.23" references="/0/createVariableDeclarations/%.1/%/%.5">
-      <details key="start" value="1032"/>
-      <details key="end" value="1034"/>
-      <details key="line" value="20"/>
+      <details key="start" value="1311"/>
+      <details key="end" value="1313"/>
+      <details key="line" value="25"/>
     </eAnnotations>
     <eAnnotations source="positions.24" references="/0/createVariableDeclarations/%.1/%/%.6">
-      <details key="start" value="805"/>
-      <details key="end" value="839"/>
+      <details key="start" value="1084"/>
+      <details key="end" value="1118"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.25" references="/0/createVariableDeclarations/%.1/%/%.6/%">
-      <details key="start" value="805"/>
-      <details key="end" value="819"/>
+      <details key="start" value="1084"/>
+      <details key="end" value="1098"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.26" references="/0/createVariableDeclarations/%.1/%/%.6/%/rtsc">
-      <details key="start" value="805"/>
-      <details key="end" value="809"/>
+      <details key="start" value="1084"/>
+      <details key="end" value="1088"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/createVariableDeclarations/%.1/%/%.6/variable">
-      <details key="start" value="830"/>
-      <details key="end" value="838"/>
+      <details key="start" value="1109"/>
+      <details key="end" value="1117"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.28" references="/0/createVariableDeclarations/%.1/%/%.7">
-      <details key="start" value="1035"/>
-      <details key="end" value="1104"/>
-      <details key="line" value="21"/>
+      <details key="start" value="1314"/>
+      <details key="end" value="1383"/>
+      <details key="line" value="26"/>
     </eAnnotations>
     <eAnnotations source="positions.29" references="/0/createVariableDeclarations/%.1/%/%.7/%">
-      <details key="start" value="1042"/>
-      <details key="end" value="1049"/>
-      <details key="line" value="22"/>
+      <details key="start" value="1321"/>
+      <details key="end" value="1328"/>
+      <details key="line" value="27"/>
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/createVariableDeclarations/%.1/%/%.7/%.1">
-      <details key="start" value="1050"/>
-      <details key="end" value="1081"/>
+      <details key="start" value="1329"/>
+      <details key="end" value="1360"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.31" references="/0/createVariableDeclarations/%.1/%/%.7/%.1/%">
-      <details key="start" value="1050"/>
-      <details key="end" value="1067"/>
+      <details key="start" value="1329"/>
+      <details key="end" value="1346"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.32" references="/0/createVariableDeclarations/%.1/%/%.7/%.1/%/variable">
-      <details key="start" value="1050"/>
-      <details key="end" value="1058"/>
+      <details key="start" value="1329"/>
+      <details key="end" value="1337"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.33" references="/0/createVariableDeclarations/%.1/%/%.7/%.2">
-      <details key="start" value="1084"/>
-      <details key="end" value="1085"/>
-      <details key="line" value="22"/>
+      <details key="start" value="1363"/>
+      <details key="end" value="1364"/>
+      <details key="line" value="27"/>
     </eAnnotations>
     <eAnnotations source="positions.34" references="/0/createVariableDeclarations/%.1/%/%.7/%.3">
-      <details key="start" value="1086"/>
-      <details key="end" value="1099"/>
+      <details key="start" value="1365"/>
+      <details key="end" value="1378"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.35" references="/0/createVariableDeclarations/%.1/%/%.7/%.3/variable">
-      <details key="start" value="1086"/>
-      <details key="end" value="1094"/>
+      <details key="start" value="1365"/>
+      <details key="end" value="1373"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.36" references="/0/createVariableDeclarations/%.1/%/%.7/%.4">
-      <details key="start" value="1101"/>
-      <details key="end" value="1103"/>
-      <details key="line" value="22"/>
+      <details key="start" value="1380"/>
+      <details key="end" value="1382"/>
+      <details key="line" value="27"/>
     </eAnnotations>
     <eAnnotations source="positions.37" references="/0/createVariableDeclarations/%.1/variable">
-      <details key="start" value="749"/>
-      <details key="end" value="768"/>
-      <details key="line" value="18"/>
+      <details key="start" value="1028"/>
+      <details key="end" value="1047"/>
+      <details key="line" value="23"/>
     </eAnnotations>
     <eAnnotations source="positions.38" references="/0/createVariableDeclarations/%.1/%.1">
-      <details key="start" value="771"/>
-      <details key="end" value="797"/>
+      <details key="start" value="1050"/>
+      <details key="end" value="1076"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.39" references="/0/createVariableDeclarations/%.1/%.1/rtsc">
-      <details key="start" value="771"/>
-      <details key="end" value="775"/>
+      <details key="start" value="1050"/>
+      <details key="end" value="1054"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.40" references="/0/createVariableDeclarations/%.2">
-      <details key="start" value="1117"/>
-      <details key="end" value="1147"/>
-      <details key="line" value="25"/>
+      <details key="start" value="1396"/>
+      <details key="end" value="1426"/>
+      <details key="line" value="30"/>
     </eAnnotations>
     <eAnnotations source="positions.41" references="/0/createVariableDeclarations/%.3">
-      <details key="start" value="559"/>
-      <details key="end" value="643"/>
+      <details key="start" value="838"/>
+      <details key="end" value="922"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.42" references="/0/createVariableDeclarations/%.3/attributeSet">
@@ -830,118 +850,118 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.43" references="/0/createVariableDeclarations/rtsc">
-      <details key="start" value="688"/>
-      <details key="end" value="713"/>
-      <details key="line" value="16"/>
+      <details key="start" value="967"/>
+      <details key="end" value="992"/>
+      <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.44" references="/0/createLocalVariableDeclarations">
-      <details key="start" value="1231"/>
-      <details key="end" value="1809"/>
-      <details key="line" value="32"/>
+      <details key="start" value="1510"/>
+      <details key="end" value="2088"/>
+      <details key="line" value="37"/>
     </eAnnotations>
     <eAnnotations source="positions.45" references="/0/createLocalVariableDeclarations/@init">
-      <details key="start" value="1307"/>
-      <details key="end" value="1458"/>
-      <details key="line" value="32"/>
+      <details key="start" value="1586"/>
+      <details key="end" value="1737"/>
+      <details key="line" value="37"/>
     </eAnnotations>
     <eAnnotations source="positions.46" references="/0/createLocalVariableDeclarations/@init/@variable.0">
-      <details key="start" value="1310"/>
-      <details key="end" value="1454"/>
-      <details key="line" value="33"/>
+      <details key="start" value="1589"/>
+      <details key="end" value="1733"/>
+      <details key="line" value="38"/>
     </eAnnotations>
     <eAnnotations source="positions.47" references="/0/createLocalVariableDeclarations/@init/@variable.0/%">
-      <details key="start" value="1363"/>
-      <details key="end" value="1454"/>
+      <details key="start" value="1642"/>
+      <details key="end" value="1733"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.48" references="/0/createLocalVariableDeclarations/@init/@variable.0/%/%">
-      <details key="start" value="1363"/>
-      <details key="end" value="1410"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.49" references="/0/createLocalVariableDeclarations/@init/@variable.0/%/%/rtsc">
-      <details key="start" value="1363"/>
-      <details key="end" value="1367"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.50" references="/0/createLocalVariableDeclarations/%">
-      <details key="start" value="1460"/>
-      <details key="end" value="1492"/>
-      <details key="line" value="35"/>
-    </eAnnotations>
-    <eAnnotations source="positions.51" references="/0/createLocalVariableDeclarations/%.1">
-      <details key="start" value="1492"/>
-      <details key="end" value="1761"/>
-      <details key="line" value="36"/>
-    </eAnnotations>
-    <eAnnotations source="positions.52" references="/0/createLocalVariableDeclarations/%.1/%">
-      <details key="start" value="1661"/>
-      <details key="end" value="1662"/>
-      <details key="line" value="38"/>
-    </eAnnotations>
-    <eAnnotations source="positions.53" references="/0/createLocalVariableDeclarations/%.1/%.1">
-      <details key="start" value="1663"/>
-      <details key="end" value="1703"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.54" references="/0/createLocalVariableDeclarations/%.1/%.1/%">
-      <details key="start" value="1663"/>
+      <details key="start" value="1642"/>
       <details key="end" value="1689"/>
       <details key="line" value="0"/>
     </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/createLocalVariableDeclarations/@init/@variable.0/%/%/rtsc">
+      <details key="start" value="1642"/>
+      <details key="end" value="1646"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/createLocalVariableDeclarations/%">
+      <details key="start" value="1739"/>
+      <details key="end" value="1771"/>
+      <details key="line" value="40"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/createLocalVariableDeclarations/%.1">
+      <details key="start" value="1771"/>
+      <details key="end" value="2040"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/createLocalVariableDeclarations/%.1/%">
+      <details key="start" value="1940"/>
+      <details key="end" value="1941"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/createLocalVariableDeclarations/%.1/%.1">
+      <details key="start" value="1942"/>
+      <details key="end" value="1982"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/createLocalVariableDeclarations/%.1/%.1/%">
+      <details key="start" value="1942"/>
+      <details key="end" value="1968"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
     <eAnnotations source="positions.55" references="/0/createLocalVariableDeclarations/%.1/%.1/%/%">
-      <details key="start" value="1663"/>
-      <details key="end" value="1680"/>
+      <details key="start" value="1942"/>
+      <details key="end" value="1959"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.56" references="/0/createLocalVariableDeclarations/%.1/%.1/%/%/lVarDecl">
-      <details key="start" value="1663"/>
-      <details key="end" value="1671"/>
+      <details key="start" value="1942"/>
+      <details key="end" value="1950"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.57" references="/0/createLocalVariableDeclarations/%.1/%.2">
-      <details key="start" value="1705"/>
-      <details key="end" value="1706"/>
-      <details key="line" value="38"/>
+      <details key="start" value="1984"/>
+      <details key="end" value="1985"/>
+      <details key="line" value="43"/>
     </eAnnotations>
     <eAnnotations source="positions.58" references="/0/createLocalVariableDeclarations/%.1/%.3">
-      <details key="start" value="1707"/>
-      <details key="end" value="1751"/>
+      <details key="start" value="1986"/>
+      <details key="end" value="2030"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.59" references="/0/createLocalVariableDeclarations/%.1/%.3/%">
-      <details key="start" value="1707"/>
-      <details key="end" value="1724"/>
+      <details key="start" value="1986"/>
+      <details key="end" value="2003"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.60" references="/0/createLocalVariableDeclarations/%.1/%.3/%/lVarDecl">
-      <details key="start" value="1707"/>
-      <details key="end" value="1715"/>
+      <details key="start" value="1986"/>
+      <details key="end" value="1994"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.61" references="/0/createLocalVariableDeclarations/%.1/%.4">
-      <details key="start" value="1753"/>
-      <details key="end" value="1755"/>
-      <details key="line" value="38"/>
+      <details key="start" value="2032"/>
+      <details key="end" value="2034"/>
+      <details key="line" value="43"/>
     </eAnnotations>
     <eAnnotations source="positions.62" references="/0/createLocalVariableDeclarations/%.1/lVarDecl">
-      <details key="start" value="1498"/>
-      <details key="end" value="1542"/>
-      <details key="line" value="36"/>
+      <details key="start" value="1777"/>
+      <details key="end" value="1821"/>
+      <details key="line" value="41"/>
     </eAnnotations>
     <eAnnotations source="positions.63" references="/0/createLocalVariableDeclarations/%.1/lVarDecls">
-      <details key="start" value="1545"/>
-      <details key="end" value="1554"/>
+      <details key="start" value="1824"/>
+      <details key="end" value="1833"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.64" references="/0/createLocalVariableDeclarations/%.2">
-      <details key="start" value="1762"/>
-      <details key="end" value="1797"/>
-      <details key="line" value="40"/>
+      <details key="start" value="2041"/>
+      <details key="end" value="2076"/>
+      <details key="line" value="45"/>
     </eAnnotations>
     <eAnnotations source="positions.65" references="/0/createLocalVariableDeclarations/%.3">
-      <details key="start" value="1161"/>
-      <details key="end" value="1230"/>
+      <details key="start" value="1440"/>
+      <details key="end" value="1509"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.66" references="/0/createLocalVariableDeclarations/%.3/rtsc">
@@ -950,9 +970,9 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.67" references="/0/createLocalVariableDeclarations/rtsc">
-      <details key="start" value="1280"/>
-      <details key="end" value="1305"/>
-      <details key="line" value="32"/>
+      <details key="start" value="1559"/>
+      <details key="end" value="1584"/>
+      <details key="line" value="37"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="operations" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::files::operations" startHeaderPosition="85" endHeaderPosition="360">
+  <mtl:Module name="operations" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::files::operations" startHeaderPosition="85" endHeaderPosition="764">
     <documentation xsi:type="mtl:ModuleDocumentation">
       <body startPosition="32" endPosition="82" value="&#xA;The documentation of the module operations.&#xA;&#xA;"/>
     </documentation>
     <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+    </input>
+    <input>
       <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/constraint/0.4.0#/"/>
+    </input>
+    <input>
       <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/protocol/0.4.0#/"/>
+    </input>
+    <input>
       <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/valuetype/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
     </input>
     <imports href="../queries/stringQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateOperationFiles" visibility="Public">
@@ -161,7 +177,7 @@
         </iterSet>
       </body>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="268" endPosition="360" value="&#xA;The documentation of the template generateOperationFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
+        <body startPosition="672" endPosition="764" value="&#xA;The documentation of the template generateOperationFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
         <parametersDocumentation name="anAbsoluteDeadline">
           <body value=""/>
         </parametersDocumentation>
@@ -244,7 +260,7 @@
         </charset>
       </body>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="1018" endPosition="1110" value="&#xA;The documentation of the template generateOperationFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
+        <body startPosition="1422" endPosition="1514" value="&#xA;The documentation of the template generateOperationFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
         <parametersDocumentation name="anAbsoluteDeadline">
           <body value=""/>
         </parametersDocumentation>
@@ -375,7 +391,7 @@
         </charset>
       </body>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="1593" endPosition="1685" value="&#xA;The documentation of the template generateOperationFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
+        <body startPosition="1997" endPosition="2089" value="&#xA;The documentation of the template generateOperationFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
         <parametersDocumentation name="anAbsoluteDeadline">
           <body value=""/>
         </parametersDocumentation>
@@ -825,103 +841,103 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateOperationFiles">
-      <details key="start" value="363"/>
-      <details key="end" value="1012"/>
-      <details key="line" value="12"/>
+      <details key="start" value="767"/>
+      <details key="end" value="1416"/>
+      <details key="line" value="20"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generateOperationFiles/%">
-      <details key="start" value="421"/>
-      <details key="end" value="1000"/>
-      <details key="line" value="13"/>
+      <details key="start" value="825"/>
+      <details key="end" value="1404"/>
+      <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/generateOperationFiles/%/%">
-      <details key="start" value="491"/>
-      <details key="end" value="993"/>
-      <details key="line" value="14"/>
+      <details key="start" value="895"/>
+      <details key="end" value="1397"/>
+      <details key="line" value="22"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/generateOperationFiles/%/%/%">
-      <details key="start" value="581"/>
-      <details key="end" value="987"/>
-      <details key="line" value="15"/>
+      <details key="start" value="985"/>
+      <details key="end" value="1391"/>
+      <details key="line" value="23"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/generateOperationFiles/%/%/%/%">
-      <details key="start" value="734"/>
-      <details key="end" value="980"/>
-      <details key="line" value="16"/>
+      <details key="start" value="1138"/>
+      <details key="end" value="1384"/>
+      <details key="line" value="24"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/generateOperationFiles/%/%/%/%/%">
-      <details key="start" value="890"/>
-      <details key="end" value="891"/>
-      <details key="line" value="17"/>
+      <details key="start" value="1294"/>
+      <details key="end" value="1295"/>
+      <details key="line" value="25"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/generateOperationFiles/%/%/%/%/%.1">
-      <details key="start" value="892"/>
-      <details key="end" value="930"/>
+      <details key="start" value="1296"/>
+      <details key="end" value="1334"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/generateOperationFiles/%/%/%/%/%.1/allOperations">
-      <details key="start" value="916"/>
-      <details key="end" value="929"/>
+      <details key="start" value="1320"/>
+      <details key="end" value="1333"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/generateOperationFiles/%/%/%/%/%.2">
-      <details key="start" value="932"/>
-      <details key="end" value="933"/>
-      <details key="line" value="19"/>
+      <details key="start" value="1336"/>
+      <details key="end" value="1337"/>
+      <details key="line" value="27"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/generateOperationFiles/%/%/%/%/%.3">
-      <details key="start" value="934"/>
-      <details key="end" value="971"/>
+      <details key="start" value="1338"/>
+      <details key="end" value="1375"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.11" references="/0/generateOperationFiles/%/%/%/%/%.3/allOperations">
-      <details key="start" value="957"/>
-      <details key="end" value="970"/>
+      <details key="start" value="1361"/>
+      <details key="end" value="1374"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.12" references="/0/generateOperationFiles/%/%/%/%/%.4">
-      <details key="start" value="973"/>
-      <details key="end" value="974"/>
-      <details key="line" value="20"/>
+      <details key="start" value="1377"/>
+      <details key="end" value="1378"/>
+      <details key="line" value="28"/>
     </eAnnotations>
     <eAnnotations source="positions.13" references="/0/generateOperationFiles/%/%/%/%/allOperations">
-      <details key="start" value="739"/>
-      <details key="end" value="888"/>
-      <details key="line" value="16"/>
+      <details key="start" value="1143"/>
+      <details key="end" value="1292"/>
+      <details key="line" value="24"/>
     </eAnnotations>
     <eAnnotations source="positions.14" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect">
-      <details key="start" value="778"/>
-      <details key="end" value="889"/>
+      <details key="start" value="1182"/>
+      <details key="end" value="1293"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.15" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect">
-      <details key="start" value="778"/>
-      <details key="end" value="865"/>
+      <details key="start" value="1182"/>
+      <details key="end" value="1269"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.16" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/collect">
-      <details key="start" value="778"/>
-      <details key="end" value="835"/>
+      <details key="start" value="1182"/>
+      <details key="end" value="1239"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.17" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/collect/collect">
-      <details key="start" value="778"/>
-      <details key="end" value="826"/>
+      <details key="start" value="1182"/>
+      <details key="end" value="1230"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.18" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/collect/collect/collect">
-      <details key="start" value="778"/>
-      <details key="end" value="799"/>
+      <details key="start" value="1182"/>
+      <details key="end" value="1203"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.19" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/collect/collect/collect/atomics">
-      <details key="start" value="778"/>
-      <details key="end" value="785"/>
+      <details key="start" value="1182"/>
+      <details key="end" value="1189"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.20" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/collect/collect/collect/%">
-      <details key="start" value="786"/>
-      <details key="end" value="799"/>
+      <details key="start" value="1190"/>
+      <details key="end" value="1203"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.21" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/collect/collect/collect/%/temp1">
@@ -945,8 +961,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.25" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/collect/collect/%/%">
-      <details key="start" value="810"/>
-      <details key="end" value="825"/>
+      <details key="start" value="1214"/>
+      <details key="end" value="1229"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.26" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/collect/collect/temp2">
@@ -955,8 +971,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/collect/%">
-      <details key="start" value="827"/>
-      <details key="end" value="835"/>
+      <details key="start" value="1231"/>
+      <details key="end" value="1239"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.28" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/collect/%/temp3">
@@ -980,8 +996,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.32" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/%/%">
-      <details key="start" value="846"/>
-      <details key="end" value="864"/>
+      <details key="start" value="1250"/>
+      <details key="end" value="1268"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.33" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/collect/temp4">
@@ -1000,8 +1016,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.36" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/%/%">
-      <details key="start" value="879"/>
-      <details key="end" value="888"/>
+      <details key="start" value="1283"/>
+      <details key="end" value="1292"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.37" references="/0/generateOperationFiles/%/%/%/%/allOperations/collect/temp5">
@@ -1010,28 +1026,28 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.38" references="/0/generateOperationFiles/%/%/%/atomics">
-      <details key="start" value="586"/>
-      <details key="end" value="732"/>
-      <details key="line" value="15"/>
+      <details key="start" value="990"/>
+      <details key="end" value="1136"/>
+      <details key="line" value="23"/>
     </eAnnotations>
     <eAnnotations source="positions.39" references="/0/generateOperationFiles/%/%/%/atomics/%">
-      <details key="start" value="633"/>
-      <details key="end" value="733"/>
+      <details key="start" value="1037"/>
+      <details key="end" value="1137"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.40" references="/0/generateOperationFiles/%/%/%/atomics/%/%">
-      <details key="start" value="633"/>
-      <details key="end" value="695"/>
+      <details key="start" value="1037"/>
+      <details key="end" value="1099"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.41" references="/0/generateOperationFiles/%/%/%/atomics/%/%/%">
-      <details key="start" value="633"/>
-      <details key="end" value="653"/>
+      <details key="start" value="1037"/>
+      <details key="end" value="1057"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.42" references="/0/generateOperationFiles/%/%/%/atomics/%/%/%/%">
-      <details key="start" value="633"/>
-      <details key="end" value="646"/>
+      <details key="start" value="1037"/>
+      <details key="end" value="1050"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.43" references="/0/generateOperationFiles/%/%/%/atomics/%/%/%/%/self">
@@ -1040,58 +1056,58 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.44" references="/0/generateOperationFiles/%/%/%/atomics/%/%/%/%.1">
-      <details key="start" value="651"/>
-      <details key="end" value="652"/>
+      <details key="start" value="1055"/>
+      <details key="end" value="1056"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.45" references="/0/generateOperationFiles/%/%/%/atomics/%/%/%.1">
-      <details key="start" value="664"/>
-      <details key="end" value="694"/>
+      <details key="start" value="1068"/>
+      <details key="end" value="1098"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.46" references="/0/generateOperationFiles/%/%/%/atomics/%/%.1">
-      <details key="start" value="709"/>
-      <details key="end" value="732"/>
+      <details key="start" value="1113"/>
+      <details key="end" value="1136"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.47" references="/0/generateOperationFiles/%/%/%.1">
-      <details key="start" value="495"/>
-      <details key="end" value="579"/>
+      <details key="start" value="899"/>
+      <details key="end" value="983"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.48" references="/0/generateOperationFiles/%/%/%.1/%">
-      <details key="start" value="496"/>
-      <details key="end" value="520"/>
+      <details key="start" value="900"/>
+      <details key="end" value="924"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.49" references="/0/generateOperationFiles/%/%/%.1/%/modelElementCategory">
-      <details key="start" value="496"/>
-      <details key="end" value="516"/>
+      <details key="start" value="900"/>
+      <details key="end" value="920"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.50" references="/0/generateOperationFiles/%/%/%.1/%.1">
-      <details key="start" value="529"/>
-      <details key="end" value="577"/>
+      <details key="start" value="933"/>
+      <details key="end" value="981"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.51" references="/0/generateOperationFiles/%/modelElementCategory">
-      <details key="start" value="427"/>
-      <details key="end" value="470"/>
-      <details key="line" value="13"/>
+      <details key="start" value="831"/>
+      <details key="end" value="874"/>
+      <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.52" references="/0/generateOperationFiles/%/%.1">
-      <details key="start" value="473"/>
-      <details key="end" value="488"/>
+      <details key="start" value="877"/>
+      <details key="end" value="892"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.53" references="/0/generateOperationFiles/%/%.1/root">
-      <details key="start" value="473"/>
-      <details key="end" value="477"/>
+      <details key="start" value="877"/>
+      <details key="end" value="881"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.54" references="/0/generateOperationFiles/%.1">
-      <details key="start" value="265"/>
-      <details key="end" value="362"/>
+      <details key="start" value="669"/>
+      <details key="end" value="766"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.55" references="/0/generateOperationFiles/%.1/anAbsoluteDeadline">
@@ -1100,163 +1116,163 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.56" references="/0/generateOperationFiles/root">
-      <details key="start" value="403"/>
-      <details key="end" value="418"/>
-      <details key="line" value="12"/>
+      <details key="start" value="807"/>
+      <details key="end" value="822"/>
+      <details key="line" value="20"/>
     </eAnnotations>
     <eAnnotations source="positions.57" references="/0/generateOperationHeader">
-      <details key="start" value="1113"/>
-      <details key="end" value="1588"/>
-      <details key="line" value="31"/>
-    </eAnnotations>
-    <eAnnotations source="positions.58" references="/0/generateOperationHeader/%">
-      <details key="start" value="1193"/>
-      <details key="end" value="1194"/>
-      <details key="line" value="32"/>
-    </eAnnotations>
-    <eAnnotations source="positions.59" references="/0/generateOperationHeader/%.1">
-      <details key="start" value="1194"/>
-      <details key="end" value="1576"/>
-      <details key="line" value="33"/>
-    </eAnnotations>
-    <eAnnotations source="positions.60" references="/0/generateOperationHeader/%.1/%">
-      <details key="start" value="1245"/>
-      <details key="end" value="1316"/>
-      <details key="line" value="34"/>
-    </eAnnotations>
-    <eAnnotations source="positions.61" references="/0/generateOperationHeader/%.1/%.1">
-      <details key="start" value="1316"/>
-      <details key="end" value="1541"/>
-      <details key="line" value="38"/>
-    </eAnnotations>
-    <eAnnotations source="positions.62" references="/0/generateOperationHeader/%.1/%.1/%">
-      <details key="start" value="1362"/>
-      <details key="end" value="1363"/>
+      <details key="start" value="1517"/>
+      <details key="end" value="1992"/>
       <details key="line" value="39"/>
     </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateOperationHeader/%">
+      <details key="start" value="1597"/>
+      <details key="end" value="1598"/>
+      <details key="line" value="40"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateOperationHeader/%.1">
+      <details key="start" value="1598"/>
+      <details key="end" value="1980"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateOperationHeader/%.1/%">
+      <details key="start" value="1649"/>
+      <details key="end" value="1720"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateOperationHeader/%.1/%.1">
+      <details key="start" value="1720"/>
+      <details key="end" value="1945"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateOperationHeader/%.1/%.1/%">
+      <details key="start" value="1766"/>
+      <details key="end" value="1767"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
     <eAnnotations source="positions.63" references="/0/generateOperationHeader/%.1/%.1/%.1">
-      <details key="start" value="1364"/>
-      <details key="end" value="1398"/>
+      <details key="start" value="1768"/>
+      <details key="end" value="1802"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.64" references="/0/generateOperationHeader/%.1/%.1/%.1/%">
-      <details key="start" value="1364"/>
-      <details key="end" value="1384"/>
+      <details key="start" value="1768"/>
+      <details key="end" value="1788"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.65" references="/0/generateOperationHeader/%.1/%.1/%.1/%/operation">
-      <details key="start" value="1364"/>
-      <details key="end" value="1373"/>
+      <details key="start" value="1768"/>
+      <details key="end" value="1777"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.66" references="/0/generateOperationHeader/%.1/%.1/%.2">
-      <details key="start" value="1400"/>
-      <details key="end" value="1401"/>
-      <details key="line" value="40"/>
+      <details key="start" value="1804"/>
+      <details key="end" value="1805"/>
+      <details key="line" value="48"/>
     </eAnnotations>
     <eAnnotations source="positions.67" references="/0/generateOperationHeader/%.1/%.1/%.3">
-      <details key="start" value="1402"/>
-      <details key="end" value="1421"/>
+      <details key="start" value="1806"/>
+      <details key="end" value="1825"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.68" references="/0/generateOperationHeader/%.1/%.1/%.3/operation">
-      <details key="start" value="1402"/>
-      <details key="end" value="1411"/>
+      <details key="start" value="1806"/>
+      <details key="end" value="1815"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.69" references="/0/generateOperationHeader/%.1/%.1/%.4">
-      <details key="start" value="1423"/>
-      <details key="end" value="1424"/>
-      <details key="line" value="40"/>
+      <details key="start" value="1827"/>
+      <details key="end" value="1828"/>
+      <details key="line" value="48"/>
     </eAnnotations>
     <eAnnotations source="positions.70" references="/0/generateOperationHeader/%.1/%.1/%.5">
-      <details key="start" value="1424"/>
-      <details key="end" value="1532"/>
-      <details key="line" value="40"/>
+      <details key="start" value="1828"/>
+      <details key="end" value="1936"/>
+      <details key="line" value="48"/>
     </eAnnotations>
     <eAnnotations source="positions.71" references="/0/generateOperationHeader/%.1/%.1/%.5/%">
-      <details key="start" value="1485"/>
-      <details key="end" value="1509"/>
+      <details key="start" value="1889"/>
+      <details key="end" value="1913"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.72" references="/0/generateOperationHeader/%.1/%.1/%.5/%/%">
-      <details key="start" value="1485"/>
-      <details key="end" value="1495"/>
+      <details key="start" value="1889"/>
+      <details key="end" value="1899"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.73" references="/0/generateOperationHeader/%.1/%.1/%.5/%/%/p">
-      <details key="start" value="1485"/>
-      <details key="end" value="1486"/>
+      <details key="start" value="1889"/>
+      <details key="end" value="1890"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.74" references="/0/generateOperationHeader/%.1/%.1/%.5/%.1">
-      <details key="start" value="1511"/>
-      <details key="end" value="1512"/>
-      <details key="line" value="40"/>
+      <details key="start" value="1915"/>
+      <details key="end" value="1916"/>
+      <details key="line" value="48"/>
     </eAnnotations>
     <eAnnotations source="positions.75" references="/0/generateOperationHeader/%.1/%.1/%.5/%.2">
-      <details key="start" value="1513"/>
-      <details key="end" value="1524"/>
+      <details key="start" value="1917"/>
+      <details key="end" value="1928"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.76" references="/0/generateOperationHeader/%.1/%.1/%.5/%.2/p">
-      <details key="start" value="1513"/>
-      <details key="end" value="1514"/>
+      <details key="start" value="1917"/>
+      <details key="end" value="1918"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.77" references="/0/generateOperationHeader/%.1/%.1/%.5/p">
-      <details key="start" value="1430"/>
-      <details key="end" value="1442"/>
-      <details key="line" value="40"/>
+      <details key="start" value="1834"/>
+      <details key="end" value="1846"/>
+      <details key="line" value="48"/>
     </eAnnotations>
     <eAnnotations source="positions.78" references="/0/generateOperationHeader/%.1/%.1/%.5/%.3">
-      <details key="start" value="1445"/>
-      <details key="end" value="1465"/>
+      <details key="start" value="1849"/>
+      <details key="end" value="1869"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.79" references="/0/generateOperationHeader/%.1/%.1/%.5/%.3/operation">
-      <details key="start" value="1445"/>
-      <details key="end" value="1454"/>
+      <details key="start" value="1849"/>
+      <details key="end" value="1858"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.80" references="/0/generateOperationHeader/%.1/%.1/%.5/%.4">
-      <details key="start" value="1478"/>
-      <details key="end" value="1482"/>
+      <details key="start" value="1882"/>
+      <details key="end" value="1886"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.81" references="/0/generateOperationHeader/%.1/%.1/%.6">
-      <details key="start" value="1532"/>
-      <details key="end" value="1535"/>
-      <details key="line" value="40"/>
+      <details key="start" value="1936"/>
+      <details key="end" value="1939"/>
+      <details key="line" value="48"/>
     </eAnnotations>
     <eAnnotations source="positions.82" references="/0/generateOperationHeader/%.1/%.1/operation">
-      <details key="start" value="1322"/>
-      <details key="end" value="1343"/>
-      <details key="line" value="38"/>
+      <details key="start" value="1726"/>
+      <details key="end" value="1747"/>
+      <details key="line" value="46"/>
     </eAnnotations>
     <eAnnotations source="positions.83" references="/0/generateOperationHeader/%.1/%.1/allOperations">
-      <details key="start" value="1346"/>
-      <details key="end" value="1359"/>
+      <details key="start" value="1750"/>
+      <details key="end" value="1763"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.84" references="/0/generateOperationHeader/%.1/%.2">
-      <details key="start" value="1542"/>
-      <details key="end" value="1569"/>
-      <details key="line" value="42"/>
+      <details key="start" value="1946"/>
+      <details key="end" value="1973"/>
+      <details key="line" value="50"/>
     </eAnnotations>
     <eAnnotations source="positions.85" references="/0/generateOperationHeader/%.1/%.3">
-      <details key="start" value="1201"/>
-      <details key="end" value="1226"/>
+      <details key="start" value="1605"/>
+      <details key="end" value="1630"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.86" references="/0/generateOperationHeader/%.1/%.4">
-      <details key="start" value="1235"/>
-      <details key="end" value="1242"/>
+      <details key="start" value="1639"/>
+      <details key="end" value="1646"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.87" references="/0/generateOperationHeader/%.2">
-      <details key="start" value="1015"/>
-      <details key="end" value="1112"/>
+      <details key="start" value="1419"/>
+      <details key="end" value="1516"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.88" references="/0/generateOperationHeader/%.2/anAbsoluteDeadline">
@@ -1265,253 +1281,253 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.89" references="/0/generateOperationHeader/allOperations">
-      <details key="start" value="1155"/>
-      <details key="end" value="1190"/>
-      <details key="line" value="31"/>
+      <details key="start" value="1559"/>
+      <details key="end" value="1594"/>
+      <details key="line" value="39"/>
     </eAnnotations>
     <eAnnotations source="positions.90" references="/0/generateOperationClass">
-      <details key="start" value="1688"/>
-      <details key="end" value="2299"/>
-      <details key="line" value="51"/>
+      <details key="start" value="2092"/>
+      <details key="end" value="2703"/>
+      <details key="line" value="59"/>
     </eAnnotations>
     <eAnnotations source="positions.91" references="/0/generateOperationClass/%">
-      <details key="start" value="1767"/>
-      <details key="end" value="1768"/>
-      <details key="line" value="52"/>
+      <details key="start" value="2171"/>
+      <details key="end" value="2172"/>
+      <details key="line" value="60"/>
     </eAnnotations>
     <eAnnotations source="positions.92" references="/0/generateOperationClass/%.1">
-      <details key="start" value="1768"/>
-      <details key="end" value="2287"/>
-      <details key="line" value="53"/>
+      <details key="start" value="2172"/>
+      <details key="end" value="2691"/>
+      <details key="line" value="61"/>
     </eAnnotations>
     <eAnnotations source="positions.93" references="/0/generateOperationClass/%.1/%">
-      <details key="start" value="1819"/>
-      <details key="end" value="1843"/>
-      <details key="line" value="54"/>
+      <details key="start" value="2223"/>
+      <details key="end" value="2247"/>
+      <details key="line" value="62"/>
     </eAnnotations>
     <eAnnotations source="positions.94" references="/0/generateOperationClass/%.1/%.1">
-      <details key="start" value="1843"/>
-      <details key="end" value="2279"/>
-      <details key="line" value="55"/>
+      <details key="start" value="2247"/>
+      <details key="end" value="2683"/>
+      <details key="line" value="63"/>
     </eAnnotations>
     <eAnnotations source="positions.95" references="/0/generateOperationClass/%.1/%.1/%">
-      <details key="start" value="1889"/>
-      <details key="end" value="1891"/>
-      <details key="line" value="56"/>
+      <details key="start" value="2293"/>
+      <details key="end" value="2295"/>
+      <details key="line" value="64"/>
     </eAnnotations>
     <eAnnotations source="positions.96" references="/0/generateOperationClass/%.1/%.1/%.1">
-      <details key="start" value="1892"/>
-      <details key="end" value="1926"/>
+      <details key="start" value="2296"/>
+      <details key="end" value="2330"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.97" references="/0/generateOperationClass/%.1/%.1/%.1/%">
-      <details key="start" value="1892"/>
-      <details key="end" value="1912"/>
+      <details key="start" value="2296"/>
+      <details key="end" value="2316"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.98" references="/0/generateOperationClass/%.1/%.1/%.1/%/operation">
-      <details key="start" value="1892"/>
-      <details key="end" value="1901"/>
+      <details key="start" value="2296"/>
+      <details key="end" value="2305"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.99" references="/0/generateOperationClass/%.1/%.1/%.2">
-      <details key="start" value="1928"/>
-      <details key="end" value="1929"/>
-      <details key="line" value="58"/>
+      <details key="start" value="2332"/>
+      <details key="end" value="2333"/>
+      <details key="line" value="66"/>
     </eAnnotations>
     <eAnnotations source="positions.100" references="/0/generateOperationClass/%.1/%.1/%.3">
-      <details key="start" value="1930"/>
-      <details key="end" value="1944"/>
+      <details key="start" value="2334"/>
+      <details key="end" value="2348"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.101" references="/0/generateOperationClass/%.1/%.1/%.3/operation">
-      <details key="start" value="1930"/>
-      <details key="end" value="1939"/>
+      <details key="start" value="2334"/>
+      <details key="end" value="2343"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.102" references="/0/generateOperationClass/%.1/%.1/%.4">
-      <details key="start" value="1946"/>
-      <details key="end" value="1947"/>
-      <details key="line" value="58"/>
+      <details key="start" value="2350"/>
+      <details key="end" value="2351"/>
+      <details key="line" value="66"/>
     </eAnnotations>
     <eAnnotations source="positions.103" references="/0/generateOperationClass/%.1/%.1/%.5">
-      <details key="start" value="1947"/>
-      <details key="end" value="2055"/>
-      <details key="line" value="58"/>
+      <details key="start" value="2351"/>
+      <details key="end" value="2459"/>
+      <details key="line" value="66"/>
     </eAnnotations>
     <eAnnotations source="positions.104" references="/0/generateOperationClass/%.1/%.1/%.5/%">
-      <details key="start" value="2008"/>
-      <details key="end" value="2032"/>
+      <details key="start" value="2412"/>
+      <details key="end" value="2436"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.105" references="/0/generateOperationClass/%.1/%.1/%.5/%/%">
-      <details key="start" value="2008"/>
-      <details key="end" value="2018"/>
+      <details key="start" value="2412"/>
+      <details key="end" value="2422"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.106" references="/0/generateOperationClass/%.1/%.1/%.5/%/%/p">
-      <details key="start" value="2008"/>
-      <details key="end" value="2009"/>
+      <details key="start" value="2412"/>
+      <details key="end" value="2413"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.107" references="/0/generateOperationClass/%.1/%.1/%.5/%.1">
-      <details key="start" value="2034"/>
-      <details key="end" value="2035"/>
-      <details key="line" value="58"/>
+      <details key="start" value="2438"/>
+      <details key="end" value="2439"/>
+      <details key="line" value="66"/>
     </eAnnotations>
     <eAnnotations source="positions.108" references="/0/generateOperationClass/%.1/%.1/%.5/%.2">
-      <details key="start" value="2036"/>
-      <details key="end" value="2047"/>
+      <details key="start" value="2440"/>
+      <details key="end" value="2451"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.109" references="/0/generateOperationClass/%.1/%.1/%.5/%.2/p">
-      <details key="start" value="2036"/>
-      <details key="end" value="2037"/>
+      <details key="start" value="2440"/>
+      <details key="end" value="2441"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.110" references="/0/generateOperationClass/%.1/%.1/%.5/p">
-      <details key="start" value="1953"/>
-      <details key="end" value="1965"/>
-      <details key="line" value="58"/>
+      <details key="start" value="2357"/>
+      <details key="end" value="2369"/>
+      <details key="line" value="66"/>
     </eAnnotations>
     <eAnnotations source="positions.111" references="/0/generateOperationClass/%.1/%.1/%.5/%.3">
-      <details key="start" value="1968"/>
-      <details key="end" value="1988"/>
+      <details key="start" value="2372"/>
+      <details key="end" value="2392"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.112" references="/0/generateOperationClass/%.1/%.1/%.5/%.3/operation">
-      <details key="start" value="1968"/>
-      <details key="end" value="1977"/>
+      <details key="start" value="2372"/>
+      <details key="end" value="2381"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.113" references="/0/generateOperationClass/%.1/%.1/%.5/%.4">
-      <details key="start" value="2001"/>
-      <details key="end" value="2005"/>
+      <details key="start" value="2405"/>
+      <details key="end" value="2409"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.114" references="/0/generateOperationClass/%.1/%.1/%.6">
-      <details key="start" value="2055"/>
-      <details key="end" value="2062"/>
-      <details key="line" value="58"/>
+      <details key="start" value="2459"/>
+      <details key="end" value="2466"/>
+      <details key="line" value="66"/>
     </eAnnotations>
     <eAnnotations source="positions.115" references="/0/generateOperationClass/%.1/%.1/%.7">
-      <details key="start" value="2062"/>
-      <details key="end" value="2265"/>
-      <details key="line" value="59"/>
+      <details key="start" value="2466"/>
+      <details key="end" value="2669"/>
+      <details key="line" value="67"/>
     </eAnnotations>
     <eAnnotations source="positions.116" references="/0/generateOperationClass/%.1/%.1/%.7/%">
-      <details key="start" value="2102"/>
-      <details key="end" value="2136"/>
-      <details key="line" value="59"/>
+      <details key="start" value="2506"/>
+      <details key="end" value="2540"/>
+      <details key="line" value="67"/>
     </eAnnotations>
     <eAnnotations source="positions.117" references="/0/generateOperationClass/%.1/%.1/%.7/%.1">
-      <details key="start" value="2136"/>
-      <details key="end" value="2249"/>
-      <details key="line" value="62"/>
+      <details key="start" value="2540"/>
+      <details key="end" value="2653"/>
+      <details key="line" value="70"/>
     </eAnnotations>
     <eAnnotations source="positions.118" references="/0/generateOperationClass/%.1/%.1/%.7/%.1/%">
-      <details key="start" value="2182"/>
-      <details key="end" value="2212"/>
-      <details key="line" value="63"/>
+      <details key="start" value="2586"/>
+      <details key="end" value="2616"/>
+      <details key="line" value="71"/>
     </eAnnotations>
     <eAnnotations source="positions.119" references="/0/generateOperationClass/%.1/%.1/%.7/%.1/%.1">
-      <details key="start" value="2213"/>
-      <details key="end" value="2240"/>
+      <details key="start" value="2617"/>
+      <details key="end" value="2644"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.120" references="/0/generateOperationClass/%.1/%.1/%.7/%.1/%.1/operation">
-      <details key="start" value="2230"/>
-      <details key="end" value="2239"/>
+      <details key="start" value="2634"/>
+      <details key="end" value="2643"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.121" references="/0/generateOperationClass/%.1/%.1/%.7/%.1/%.2">
-      <details key="start" value="2242"/>
-      <details key="end" value="2244"/>
-      <details key="line" value="64"/>
+      <details key="start" value="2646"/>
+      <details key="end" value="2648"/>
+      <details key="line" value="72"/>
     </eAnnotations>
     <eAnnotations source="positions.122" references="/0/generateOperationClass/%.1/%.1/%.7/%.1/%.3">
-      <details key="start" value="2140"/>
-      <details key="end" value="2180"/>
+      <details key="start" value="2544"/>
+      <details key="end" value="2584"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.123" references="/0/generateOperationClass/%.1/%.1/%.7/%.1/%.3/%">
-      <details key="start" value="2144"/>
-      <details key="end" value="2180"/>
+      <details key="start" value="2548"/>
+      <details key="end" value="2584"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.124" references="/0/generateOperationClass/%.1/%.1/%.7/%.1/%.3/%/%">
-      <details key="start" value="2145"/>
-      <details key="end" value="2170"/>
+      <details key="start" value="2549"/>
+      <details key="end" value="2574"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.125" references="/0/generateOperationClass/%.1/%.1/%.7/%.1/%.3/%/%/%">
-      <details key="start" value="2145"/>
-      <details key="end" value="2165"/>
+      <details key="start" value="2549"/>
+      <details key="end" value="2569"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.126" references="/0/generateOperationClass/%.1/%.1/%.7/%.1/%.3/%/%/%/operation">
-      <details key="start" value="2145"/>
-      <details key="end" value="2154"/>
+      <details key="start" value="2549"/>
+      <details key="end" value="2558"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.127" references="/0/generateOperationClass/%.1/%.1/%.7/%.1/%.3/%/%.1">
-      <details key="start" value="2173"/>
-      <details key="end" value="2179"/>
+      <details key="start" value="2577"/>
+      <details key="end" value="2583"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.128" references="/0/generateOperationClass/%.1/%.1/%.7/%.2">
-      <details key="start" value="2250"/>
-      <details key="end" value="2253"/>
-      <details key="line" value="66"/>
+      <details key="start" value="2654"/>
+      <details key="end" value="2657"/>
+      <details key="line" value="74"/>
     </eAnnotations>
     <eAnnotations source="positions.129" references="/0/generateOperationClass/%.1/%.1/%.7/%.3">
-      <details key="start" value="2074"/>
-      <details key="end" value="2100"/>
+      <details key="start" value="2478"/>
+      <details key="end" value="2504"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.130" references="/0/generateOperationClass/%.1/%.1/%.7/%.3/%">
-      <details key="start" value="2074"/>
-      <details key="end" value="2093"/>
+      <details key="start" value="2478"/>
+      <details key="end" value="2497"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.131" references="/0/generateOperationClass/%.1/%.1/%.7/%.3/%/operation">
-      <details key="start" value="2074"/>
-      <details key="end" value="2083"/>
+      <details key="start" value="2478"/>
+      <details key="end" value="2487"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.132" references="/0/generateOperationClass/%.1/%.1/%.7/%.3/%.1">
-      <details key="start" value="2094"/>
-      <details key="end" value="2100"/>
+      <details key="start" value="2498"/>
+      <details key="end" value="2504"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.133" references="/0/generateOperationClass/%.1/%.1/%.8">
-      <details key="start" value="2265"/>
-      <details key="end" value="2273"/>
-      <details key="line" value="66"/>
+      <details key="start" value="2669"/>
+      <details key="end" value="2677"/>
+      <details key="line" value="74"/>
     </eAnnotations>
     <eAnnotations source="positions.134" references="/0/generateOperationClass/%.1/%.1/operation">
-      <details key="start" value="1849"/>
-      <details key="end" value="1870"/>
-      <details key="line" value="55"/>
+      <details key="start" value="2253"/>
+      <details key="end" value="2274"/>
+      <details key="line" value="63"/>
     </eAnnotations>
     <eAnnotations source="positions.135" references="/0/generateOperationClass/%.1/%.1/allOperations">
-      <details key="start" value="1873"/>
-      <details key="end" value="1886"/>
+      <details key="start" value="2277"/>
+      <details key="end" value="2290"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.136" references="/0/generateOperationClass/%.1/%.2">
-      <details key="start" value="1775"/>
-      <details key="end" value="1800"/>
+      <details key="start" value="2179"/>
+      <details key="end" value="2204"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.137" references="/0/generateOperationClass/%.1/%.3">
-      <details key="start" value="1809"/>
-      <details key="end" value="1816"/>
+      <details key="start" value="2213"/>
+      <details key="end" value="2220"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.138" references="/0/generateOperationClass/%.2">
-      <details key="start" value="1590"/>
-      <details key="end" value="1687"/>
+      <details key="start" value="1994"/>
+      <details key="end" value="2091"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.139" references="/0/generateOperationClass/%.2/anAbsoluteDeadline">
@@ -1520,9 +1536,9 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.140" references="/0/generateOperationClass/allOperations">
-      <details key="start" value="1729"/>
-      <details key="end" value="1764"/>
-      <details key="line" value="51"/>
+      <details key="start" value="2133"/>
+      <details key="end" value="2168"/>
+      <details key="line" value="59"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

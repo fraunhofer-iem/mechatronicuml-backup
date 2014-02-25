@@ -1,30 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="OIL" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::files::OIL" startHeaderPosition="78" endHeaderPosition="469">
+  <mtl:Module name="OIL" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::files::OIL" startHeaderPosition="78" endHeaderPosition="823">
     <documentation xsi:type="mtl:ModuleDocumentation">
       <body startPosition="32" endPosition="75" value="&#xA;The documentation of the module OIL.&#xA;&#xA;"/>
     </documentation>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/constraint/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/protocol/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/valuetype/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
     </input>
     <input>
       <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
     </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+    </input>
     <imports href="../queries/stringQueries.emtl#/0"/>
-    <imports href="../queries/modelQueries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/queries/modelQueries.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateOILFile" visibility="Public">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="# include &quot;implementation.oil&quot;&#x9;&#x9;&#xA;&#xA;CPU ATMEL_AT91SAM7S256&#xA;{&#xA;  OS LEJOS_OSEK&#xA;   &#x9;{&#xA;    &#x9;STATUS = EXTENDED;&#xA; &#x9;&#x9;STARTUPHOOK = FALSE;&#xA;    &#x9;ERRORHOOK = FALSE;&#xA;    &#x9;SHUTDOWNHOOK = FALSE;&#xA;    &#x9;PRETASKHOOK = FALSE;&#xA;    &#x9;POSTTASKHOOK = FALSE;&#xA;    &#x9;USEGETSERVICEID = FALSE;&#xA;    &#x9;USEPARAMETERACCESS = FALSE;&#xA;    &#x9;USERESSCHEDULER = FALSE;&#xA;  &#x9;};&#xA;&#xA;  &#x9;/* Definition of application mode */&#xA;  &#x9;APPMODE appmode1{};&#xA;&#xA;  /* Main Task - starts tasks for processing steps in automaton */&#xA;  TASK Task_Main&#xA;&#x9;{&#xA;&#x9;&#x9;AUTOSTART = FALSE;&#xA;&#x9;&#x9;PRIORITY = 1;&#xA;&#x9;&#x9;ACTIVATION = 1;&#xA;&#x9;&#x9;SCHEDULE = FULL;&#xA;&#x9;&#x9;STACKSIZE = 512;&#xA;&#x9;};&#xA;&#xA;&#xA;  /* Initialize Model and other stuff */&#xA;  TASK Task_initModel&#xA;    {&#xA;      AUTOSTART = TRUE&#xA;&#x9;  {&#xA;&#x9;&#x9;APPMODE = appmode1;&#xA;      };&#xA;      PRIORITY = 10;&#xA;      ACTIVATION = 1;&#xA;      SCHEDULE = FULL;&#xA;      STACKSIZE = 512;&#xA;    };&#xA;&#xA;  /* Initialize Model and other stuff */&#xA;  TASK Task_MsgExchange&#xA;    {&#xA;      AUTOSTART = FALSE;&#xA;      PRIORITY = 1;&#xA;      ACTIVATION = 1;&#xA;      SCHEDULE = FULL;&#xA;      STACKSIZE = 512;&#xA;    };&#xA;&#xA;"/>
@@ -58,7 +71,7 @@
         </charset>
       </body>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="383" endPosition="469" value="&#xA;The documentation of the template generateOILFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
+        <body startPosition="737" endPosition="823" value="&#xA;The documentation of the template generateOILFile.&#xA;@param anAbsoluteDeadline&#xA;&#xA;"/>
         <parametersDocumentation name="anAbsoluteDeadline">
           <body value=""/>
         </parametersDocumentation>
@@ -388,83 +401,83 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateOILFile">
-      <details key="start" value="472"/>
-      <details key="end" value="2275"/>
-      <details key="line" value="13"/>
+      <details key="start" value="826"/>
+      <details key="end" value="2629"/>
+      <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generateOILFile/%">
-      <details key="start" value="528"/>
-      <details key="end" value="2263"/>
-      <details key="line" value="14"/>
+      <details key="start" value="882"/>
+      <details key="end" value="2617"/>
+      <details key="line" value="22"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/generateOILFile/%/%">
-      <details key="start" value="645"/>
-      <details key="end" value="1645"/>
-      <details key="line" value="16"/>
+      <details key="start" value="999"/>
+      <details key="end" value="1999"/>
+      <details key="line" value="24"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/generateOILFile/%/%.1">
-      <details key="start" value="1711"/>
-      <details key="end" value="1817"/>
-      <details key="line" value="71"/>
+      <details key="start" value="2065"/>
+      <details key="end" value="2171"/>
+      <details key="line" value="79"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/generateOILFile/%/%.1/%">
-      <details key="start" value="1786"/>
-      <details key="end" value="1787"/>
-      <details key="line" value="72"/>
+      <details key="start" value="2140"/>
+      <details key="end" value="2141"/>
+      <details key="line" value="80"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/generateOILFile/%/%.1/%.1">
-      <details key="start" value="1788"/>
-      <details key="end" value="1808"/>
+      <details key="start" value="2142"/>
+      <details key="end" value="2162"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/generateOILFile/%/%.1/%.1/ci">
-      <details key="start" value="1805"/>
-      <details key="end" value="1807"/>
+      <details key="start" value="2159"/>
+      <details key="end" value="2161"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/generateOILFile/%/%.1/%.2">
-      <details key="start" value="1810"/>
-      <details key="end" value="1811"/>
-      <details key="line" value="73"/>
+      <details key="start" value="2164"/>
+      <details key="end" value="2165"/>
+      <details key="line" value="81"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/generateOILFile/%/%.1/ci">
-      <details key="start" value="1717"/>
-      <details key="end" value="1739"/>
-      <details key="line" value="71"/>
+      <details key="start" value="2071"/>
+      <details key="end" value="2093"/>
+      <details key="line" value="79"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/generateOILFile/%/%.1/%.3">
-      <details key="start" value="1742"/>
-      <details key="end" value="1783"/>
+      <details key="start" value="2096"/>
+      <details key="end" value="2137"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.11" references="/0/generateOILFile/%/%.1/%.3/aRootNode">
-      <details key="start" value="1742"/>
-      <details key="end" value="1751"/>
+      <details key="start" value="2096"/>
+      <details key="end" value="2105"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.12" references="/0/generateOILFile/%/%.1/%.3/%">
-      <details key="start" value="1765"/>
-      <details key="end" value="1782"/>
+      <details key="start" value="2119"/>
+      <details key="end" value="2136"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.13" references="/0/generateOILFile/%/%.2">
-      <details key="start" value="1818"/>
-      <details key="end" value="2256"/>
-      <details key="line" value="74"/>
+      <details key="start" value="2172"/>
+      <details key="end" value="2610"/>
+      <details key="line" value="82"/>
     </eAnnotations>
     <eAnnotations source="positions.14" references="/0/generateOILFile/%/%.3">
-      <details key="start" value="535"/>
-      <details key="end" value="548"/>
+      <details key="start" value="889"/>
+      <details key="end" value="902"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.15" references="/0/generateOILFile/%/%.4">
-      <details key="start" value="557"/>
-      <details key="end" value="564"/>
+      <details key="start" value="911"/>
+      <details key="end" value="918"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.16" references="/0/generateOILFile/%.1">
-      <details key="start" value="380"/>
-      <details key="end" value="471"/>
+      <details key="start" value="734"/>
+      <details key="end" value="825"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.17" references="/0/generateOILFile/%.1/anAbsoluteDeadline">
@@ -473,58 +486,58 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.18" references="/0/generateOILFile/aRootNode">
-      <details key="start" value="505"/>
-      <details key="end" value="525"/>
-      <details key="line" value="13"/>
+      <details key="start" value="859"/>
+      <details key="end" value="879"/>
+      <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.19" references="/0/generateOSEKTask">
-      <details key="start" value="2277"/>
-      <details key="end" value="2595"/>
-      <details key="line" value="106"/>
+      <details key="start" value="2631"/>
+      <details key="end" value="2949"/>
+      <details key="line" value="114"/>
     </eAnnotations>
     <eAnnotations source="positions.20" references="/0/generateOSEKTask/%">
-      <details key="start" value="2378"/>
-      <details key="end" value="2401"/>
-      <details key="line" value="107"/>
+      <details key="start" value="2732"/>
+      <details key="end" value="2755"/>
+      <details key="line" value="115"/>
     </eAnnotations>
     <eAnnotations source="positions.21" references="/0/generateOSEKTask/%.1">
-      <details key="start" value="2402"/>
-      <details key="end" value="2421"/>
+      <details key="start" value="2756"/>
+      <details key="end" value="2775"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/generateOSEKTask/%.1/ci">
-      <details key="start" value="2418"/>
-      <details key="end" value="2420"/>
+      <details key="start" value="2772"/>
+      <details key="end" value="2774"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.23" references="/0/generateOSEKTask/%.2">
-      <details key="start" value="2423"/>
-      <details key="end" value="2433"/>
-      <details key="line" value="107"/>
+      <details key="start" value="2777"/>
+      <details key="end" value="2787"/>
+      <details key="line" value="115"/>
     </eAnnotations>
     <eAnnotations source="positions.24" references="/0/generateOSEKTask/%.3">
-      <details key="start" value="2434"/>
-      <details key="end" value="2449"/>
+      <details key="start" value="2788"/>
+      <details key="end" value="2803"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.25" references="/0/generateOSEKTask/%.3/ci">
-      <details key="start" value="2446"/>
-      <details key="end" value="2448"/>
+      <details key="start" value="2800"/>
+      <details key="end" value="2802"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.26" references="/0/generateOSEKTask/%.4">
-      <details key="start" value="2451"/>
-      <details key="end" value="2583"/>
-      <details key="line" value="109"/>
+      <details key="start" value="2805"/>
+      <details key="end" value="2937"/>
+      <details key="line" value="117"/>
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/generateOSEKTask/ci">
-      <details key="start" value="2312"/>
-      <details key="end" value="2334"/>
-      <details key="line" value="106"/>
+      <details key="start" value="2666"/>
+      <details key="end" value="2688"/>
+      <details key="line" value="114"/>
     </eAnnotations>
     <eAnnotations source="positions.28" references="/0/generateOSEKTask/%.5">
-      <details key="start" value="2339"/>
-      <details key="end" value="2375"/>
+      <details key="start" value="2693"/>
+      <details key="end" value="2729"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.29" references="/0/generateOSEKTask/%.5/self">
@@ -533,8 +546,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/generateOSEKTask/%.5/%">
-      <details key="start" value="2351"/>
-      <details key="end" value="2374"/>
+      <details key="start" value="2705"/>
+      <details key="end" value="2728"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

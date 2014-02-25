@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="Message" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::files::Message" startHeaderPosition="81" endHeaderPosition="537">
+  <mtl:Module name="Message" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::files::Message" startHeaderPosition="81" endHeaderPosition="891">
     <documentation xsi:type="mtl:ModuleDocumentation">
       <body startPosition="32" endPosition="78" value="&#xA;The documentation of the module Events.&#xA;&#xA;"/>
     </documentation>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
     </input>
     <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/constraint/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/protocol/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
-      <takesTypesFrom href="http://www.fujaba.de/muml/valuetype/0.4.0#/"/>
       <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions"/>
+      <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
     </input>
     <input>
       <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
     </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+    </input>
     <imports href="../queries/stringQueries.emtl#/0"/>
-    <imports href="../queries/modelQueries.emtl#/0"/>
-    <imports href="../actionlanguage/expression.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/queries/modelQueries.emtl#/0"/>
+    <imports href="platform:/resource/de.uni_paderborn.fujaba.muml.model.gen.c/bin/de/uni_paderborn/fujaba/muml/model/gen/c/actionlanguage/expression.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateMessageFiles" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <body xsi:type="mtl:TemplateInvocation" definition="/0/generateMessageClass">
@@ -43,7 +56,7 @@
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="475" endPosition="537" value="&#xA;The documentation of the template generateMessageFiles.&#xA;&#xA;"/>
+        <body startPosition="829" endPosition="891" value="&#xA;The documentation of the template generateMessageFiles.&#xA;&#xA;"/>
       </documentation>
       <parameter name="root">
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
@@ -85,7 +98,7 @@
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="676" endPosition="738" value="&#xA;The documentation of the template generateMessageClass.&#xA;&#xA;"/>
+        <body startPosition="1030" endPosition="1092" value="&#xA;The documentation of the template generateMessageClass.&#xA;&#xA;"/>
       </documentation>
       <parameter name="root">
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
@@ -139,7 +152,7 @@
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="1076" endPosition="1139" value="&#xA;The documentation of the template generateMessageHeader.&#xA;&#xA;"/>
+        <body startPosition="1430" endPosition="1493" value="&#xA;The documentation of the template generateMessageHeader.&#xA;&#xA;"/>
       </documentation>
       <parameter name="root">
         <eType xsi:type="ecore:EClass" href="http://www.fujaba.de/modelinstance/0.4.0#//RootNode"/>
@@ -540,269 +553,269 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateMessageFiles">
-      <details key="start" value="540"/>
-      <details key="end" value="670"/>
-      <details key="line" value="14"/>
+      <details key="start" value="894"/>
+      <details key="end" value="1024"/>
+      <details key="line" value="22"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generateMessageFiles/%">
-      <details key="start" value="596"/>
-      <details key="end" value="597"/>
-      <details key="line" value="15"/>
+      <details key="start" value="950"/>
+      <details key="end" value="951"/>
+      <details key="line" value="23"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/generateMessageFiles/%.1">
-      <details key="start" value="598"/>
-      <details key="end" value="624"/>
+      <details key="start" value="952"/>
+      <details key="end" value="978"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/generateMessageFiles/%.1/root">
-      <details key="start" value="619"/>
-      <details key="end" value="623"/>
+      <details key="start" value="973"/>
+      <details key="end" value="977"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/generateMessageFiles/%.2">
-      <details key="start" value="626"/>
-      <details key="end" value="627"/>
-      <details key="line" value="17"/>
-    </eAnnotations>
-    <eAnnotations source="positions.6" references="/0/generateMessageFiles/%.3">
-      <details key="start" value="628"/>
-      <details key="end" value="655"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.7" references="/0/generateMessageFiles/%.3/root">
-      <details key="start" value="650"/>
-      <details key="end" value="654"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.8" references="/0/generateMessageFiles/%.4">
-      <details key="start" value="657"/>
-      <details key="end" value="658"/>
-      <details key="line" value="18"/>
-    </eAnnotations>
-    <eAnnotations source="positions.9" references="/0/generateMessageFiles/%.5">
-      <details key="start" value="472"/>
-      <details key="end" value="539"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.10" references="/0/generateMessageFiles/root">
-      <details key="start" value="578"/>
-      <details key="end" value="593"/>
-      <details key="line" value="14"/>
-    </eAnnotations>
-    <eAnnotations source="positions.11" references="/0/generateMessageClass">
-      <details key="start" value="741"/>
-      <details key="end" value="1070"/>
+      <details key="start" value="980"/>
+      <details key="end" value="981"/>
       <details key="line" value="25"/>
     </eAnnotations>
-    <eAnnotations source="positions.12" references="/0/generateMessageClass/%">
-      <details key="start" value="798"/>
-      <details key="end" value="799"/>
-      <details key="line" value="26"/>
-    </eAnnotations>
-    <eAnnotations source="positions.13" references="/0/generateMessageClass/%.1">
-      <details key="start" value="799"/>
-      <details key="end" value="1057"/>
-      <details key="line" value="27"/>
-    </eAnnotations>
-    <eAnnotations source="positions.14" references="/0/generateMessageClass/%.1/%">
-      <details key="start" value="841"/>
-      <details key="end" value="912"/>
-      <details key="line" value="28"/>
-    </eAnnotations>
-    <eAnnotations source="positions.15" references="/0/generateMessageClass/%.1/%.1">
-      <details key="start" value="914"/>
-      <details key="end" value="1022"/>
-      <details key="line" value="34"/>
-    </eAnnotations>
-    <eAnnotations source="positions.16" references="/0/generateMessageClass/%.1/%.1/%">
-      <details key="start" value="973"/>
-      <details key="end" value="989"/>
-      <details key="line" value="35"/>
-    </eAnnotations>
-    <eAnnotations source="positions.17" references="/0/generateMessageClass/%.1/%.1/%.1">
-      <details key="start" value="990"/>
-      <details key="end" value="1010"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.18" references="/0/generateMessageClass/%.1/%.1/%.1/msg">
-      <details key="start" value="1006"/>
+    <eAnnotations source="positions.6" references="/0/generateMessageFiles/%.3">
+      <details key="start" value="982"/>
       <details key="end" value="1009"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.19" references="/0/generateMessageClass/%.1/%.1/%.2">
-      <details key="start" value="1012"/>
-      <details key="end" value="1014"/>
-      <details key="line" value="35"/>
+    <eAnnotations source="positions.7" references="/0/generateMessageFiles/%.3/root">
+      <details key="start" value="1004"/>
+      <details key="end" value="1008"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.20" references="/0/generateMessageClass/%.1/%.1/msg">
-      <details key="start" value="920"/>
-      <details key="end" value="937"/>
+    <eAnnotations source="positions.8" references="/0/generateMessageFiles/%.4">
+      <details key="start" value="1011"/>
+      <details key="end" value="1012"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateMessageFiles/%.5">
+      <details key="start" value="826"/>
+      <details key="end" value="893"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateMessageFiles/root">
+      <details key="start" value="932"/>
+      <details key="end" value="947"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateMessageClass">
+      <details key="start" value="1095"/>
+      <details key="end" value="1424"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateMessageClass/%">
+      <details key="start" value="1152"/>
+      <details key="end" value="1153"/>
       <details key="line" value="34"/>
     </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateMessageClass/%.1">
+      <details key="start" value="1153"/>
+      <details key="end" value="1411"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateMessageClass/%.1/%">
+      <details key="start" value="1195"/>
+      <details key="end" value="1266"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateMessageClass/%.1/%.1">
+      <details key="start" value="1268"/>
+      <details key="end" value="1376"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateMessageClass/%.1/%.1/%">
+      <details key="start" value="1327"/>
+      <details key="end" value="1343"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateMessageClass/%.1/%.1/%.1">
+      <details key="start" value="1344"/>
+      <details key="end" value="1364"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateMessageClass/%.1/%.1/%.1/msg">
+      <details key="start" value="1360"/>
+      <details key="end" value="1363"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateMessageClass/%.1/%.1/%.2">
+      <details key="start" value="1366"/>
+      <details key="end" value="1368"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateMessageClass/%.1/%.1/msg">
+      <details key="start" value="1274"/>
+      <details key="end" value="1291"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
     <eAnnotations source="positions.21" references="/0/generateMessageClass/%.1/%.1/%.3">
-      <details key="start" value="940"/>
-      <details key="end" value="970"/>
+      <details key="start" value="1294"/>
+      <details key="end" value="1324"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/generateMessageClass/%.1/%.1/%.3/root">
-      <details key="start" value="940"/>
-      <details key="end" value="944"/>
+      <details key="start" value="1294"/>
+      <details key="end" value="1298"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.23" references="/0/generateMessageClass/%.1/%.1/%.3/%">
-      <details key="start" value="958"/>
-      <details key="end" value="969"/>
+      <details key="start" value="1312"/>
+      <details key="end" value="1323"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.24" references="/0/generateMessageClass/%.1/%.2">
-      <details key="start" value="1023"/>
-      <details key="end" value="1050"/>
-      <details key="line" value="37"/>
+      <details key="start" value="1377"/>
+      <details key="end" value="1404"/>
+      <details key="line" value="45"/>
     </eAnnotations>
     <eAnnotations source="positions.25" references="/0/generateMessageClass/%.1/%.3">
-      <details key="start" value="806"/>
-      <details key="end" value="822"/>
+      <details key="start" value="1160"/>
+      <details key="end" value="1176"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.26" references="/0/generateMessageClass/%.1/%.4">
-      <details key="start" value="831"/>
-      <details key="end" value="838"/>
+      <details key="start" value="1185"/>
+      <details key="end" value="1192"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/generateMessageClass/%.2">
-      <details key="start" value="1058"/>
-      <details key="end" value="1059"/>
-      <details key="line" value="41"/>
+      <details key="start" value="1412"/>
+      <details key="end" value="1413"/>
+      <details key="line" value="49"/>
     </eAnnotations>
     <eAnnotations source="positions.28" references="/0/generateMessageClass/%.3">
-      <details key="start" value="673"/>
-      <details key="end" value="740"/>
+      <details key="start" value="1027"/>
+      <details key="end" value="1094"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.29" references="/0/generateMessageClass/root">
-      <details key="start" value="780"/>
-      <details key="end" value="795"/>
-      <details key="line" value="25"/>
+      <details key="start" value="1134"/>
+      <details key="end" value="1149"/>
+      <details key="line" value="33"/>
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/generateMessageHeader">
-      <details key="start" value="1142"/>
-      <details key="end" value="1432"/>
-      <details key="line" value="48"/>
+      <details key="start" value="1496"/>
+      <details key="end" value="1786"/>
+      <details key="line" value="56"/>
     </eAnnotations>
     <eAnnotations source="positions.31" references="/0/generateMessageHeader/%">
-      <details key="start" value="1199"/>
-      <details key="end" value="1200"/>
-      <details key="line" value="49"/>
+      <details key="start" value="1553"/>
+      <details key="end" value="1554"/>
+      <details key="line" value="57"/>
     </eAnnotations>
     <eAnnotations source="positions.32" references="/0/generateMessageHeader/%.1">
-      <details key="start" value="1200"/>
-      <details key="end" value="1419"/>
-      <details key="line" value="50"/>
+      <details key="start" value="1554"/>
+      <details key="end" value="1773"/>
+      <details key="line" value="58"/>
     </eAnnotations>
     <eAnnotations source="positions.33" references="/0/generateMessageHeader/%.1/%">
-      <details key="start" value="1242"/>
-      <details key="end" value="1270"/>
-      <details key="line" value="51"/>
+      <details key="start" value="1596"/>
+      <details key="end" value="1624"/>
+      <details key="line" value="59"/>
     </eAnnotations>
     <eAnnotations source="positions.34" references="/0/generateMessageHeader/%.1/%.1">
-      <details key="start" value="1272"/>
-      <details key="end" value="1409"/>
-      <details key="line" value="54"/>
+      <details key="start" value="1626"/>
+      <details key="end" value="1763"/>
+      <details key="line" value="62"/>
     </eAnnotations>
     <eAnnotations source="positions.35" references="/0/generateMessageHeader/%.1/%.1/%">
-      <details key="start" value="1331"/>
-      <details key="end" value="1340"/>
-      <details key="line" value="55"/>
+      <details key="start" value="1685"/>
+      <details key="end" value="1694"/>
+      <details key="line" value="63"/>
     </eAnnotations>
     <eAnnotations source="positions.36" references="/0/generateMessageHeader/%.1/%.1/%.1">
-      <details key="start" value="1341"/>
-      <details key="end" value="1361"/>
+      <details key="start" value="1695"/>
+      <details key="end" value="1715"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.37" references="/0/generateMessageHeader/%.1/%.1/%.1/msg">
-      <details key="start" value="1357"/>
-      <details key="end" value="1360"/>
+      <details key="start" value="1711"/>
+      <details key="end" value="1714"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.38" references="/0/generateMessageHeader/%.1/%.1/%.2">
-      <details key="start" value="1363"/>
-      <details key="end" value="1367"/>
-      <details key="line" value="55"/>
+      <details key="start" value="1717"/>
+      <details key="end" value="1721"/>
+      <details key="line" value="63"/>
     </eAnnotations>
     <eAnnotations source="positions.39" references="/0/generateMessageHeader/%.1/%.1/i">
-      <details key="start" value="1368"/>
-      <details key="end" value="1369"/>
+      <details key="start" value="1722"/>
+      <details key="end" value="1723"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.40" references="/0/generateMessageHeader/%.1/%.1/%.3">
-      <details key="start" value="1371"/>
-      <details key="end" value="1374"/>
-      <details key="line" value="55"/>
+      <details key="start" value="1725"/>
+      <details key="end" value="1728"/>
+      <details key="line" value="63"/>
     </eAnnotations>
     <eAnnotations source="positions.41" references="/0/generateMessageHeader/%.1/%.1/%.4">
-      <details key="start" value="1375"/>
-      <details key="end" value="1395"/>
+      <details key="start" value="1729"/>
+      <details key="end" value="1749"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.42" references="/0/generateMessageHeader/%.1/%.1/%.4/msg">
-      <details key="start" value="1391"/>
-      <details key="end" value="1394"/>
+      <details key="start" value="1745"/>
+      <details key="end" value="1748"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.43" references="/0/generateMessageHeader/%.1/%.1/%.5">
-      <details key="start" value="1397"/>
-      <details key="end" value="1401"/>
-      <details key="line" value="55"/>
+      <details key="start" value="1751"/>
+      <details key="end" value="1755"/>
+      <details key="line" value="63"/>
     </eAnnotations>
     <eAnnotations source="positions.44" references="/0/generateMessageHeader/%.1/%.1/msg">
-      <details key="start" value="1278"/>
-      <details key="end" value="1295"/>
-      <details key="line" value="54"/>
+      <details key="start" value="1632"/>
+      <details key="end" value="1649"/>
+      <details key="line" value="62"/>
     </eAnnotations>
     <eAnnotations source="positions.45" references="/0/generateMessageHeader/%.1/%.1/%.6">
-      <details key="start" value="1298"/>
-      <details key="end" value="1328"/>
+      <details key="start" value="1652"/>
+      <details key="end" value="1682"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.46" references="/0/generateMessageHeader/%.1/%.1/%.6/root">
-      <details key="start" value="1298"/>
-      <details key="end" value="1302"/>
+      <details key="start" value="1652"/>
+      <details key="end" value="1656"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.47" references="/0/generateMessageHeader/%.1/%.1/%.6/%">
-      <details key="start" value="1316"/>
-      <details key="end" value="1327"/>
+      <details key="start" value="1670"/>
+      <details key="end" value="1681"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.48" references="/0/generateMessageHeader/%.1/%.2">
-      <details key="start" value="1410"/>
-      <details key="end" value="1412"/>
-      <details key="line" value="57"/>
+      <details key="start" value="1764"/>
+      <details key="end" value="1766"/>
+      <details key="line" value="65"/>
     </eAnnotations>
     <eAnnotations source="positions.49" references="/0/generateMessageHeader/%.1/%.3">
-      <details key="start" value="1207"/>
-      <details key="end" value="1223"/>
+      <details key="start" value="1561"/>
+      <details key="end" value="1577"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.50" references="/0/generateMessageHeader/%.1/%.4">
-      <details key="start" value="1232"/>
-      <details key="end" value="1239"/>
+      <details key="start" value="1586"/>
+      <details key="end" value="1593"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.51" references="/0/generateMessageHeader/%.2">
-      <details key="start" value="1420"/>
-      <details key="end" value="1421"/>
-      <details key="line" value="60"/>
+      <details key="start" value="1774"/>
+      <details key="end" value="1775"/>
+      <details key="line" value="68"/>
     </eAnnotations>
     <eAnnotations source="positions.52" references="/0/generateMessageHeader/%.3">
-      <details key="start" value="1073"/>
-      <details key="end" value="1141"/>
+      <details key="start" value="1427"/>
+      <details key="end" value="1495"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.53" references="/0/generateMessageHeader/root">
-      <details key="start" value="1181"/>
-      <details key="end" value="1196"/>
-      <details key="line" value="48"/>
+      <details key="start" value="1535"/>
+      <details key="end" value="1550"/>
+      <details key="line" value="56"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

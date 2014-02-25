@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="variable_queries" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::actionlanguage::variable_queries" endHeaderPosition="228">
+  <mtl:Module name="variable_queries" nsURI="de::uni_paderborn::fujaba::muml::model::gen::c::actionlanguage::variable_queries" endHeaderPosition="507">
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/connector/0.4.0#/"/>
+    </input>
     <input>
       <takesTypesFrom href="http://www.fujaba.de/muml/behavior/0.4.0#/"/>
-    </input>
-    <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
-    </input>
-    <input>
-      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
     </input>
     <input>
       <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#/"/>
       <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions"/>
       <takesTypesFrom href="http://www.storydriven.org/core/0.3.1#//expressions/common"/>
     </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/actionlanguage/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/msgtype/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/types/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/modelinstance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/component/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/instance/0.4.0#/"/>
+    </input>
+    <input>
+      <takesTypesFrom href="http://www.fujaba.de/muml/realtimestatechart/0.4.0#/"/>
+    </input>
     <ownedModuleElement xsi:type="mtl:Query" name="getFullyQualifiedName" visibility="Public">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="235" endPosition="509" value="&#xA;Returns the fully qualified name of the typed named element. The name&#xA;of the typed named element is prefixed with the fqname and a dot (if fqname &lt;> '').&#xA;@param typedNamedElement the typed named element&#xA;@param fqname a fully qualified name or the empty string&#xA;&#xA;"/>
+        <body startPosition="514" endPosition="788" value="&#xA;Returns the fully qualified name of the typed named element. The name&#xA;of the typed named element is prefixed with the fqname and a dot (if fqname &lt;> '').&#xA;@param typedNamedElement the typed named element&#xA;@param fqname a fully qualified name or the empty string&#xA;&#xA;"/>
         <parametersDocumentation name="typedNamedElement">
           <body value=" the typed named element"/>
         </parametersDocumentation>
@@ -72,7 +90,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getTypedNamedElementName" visibility="Public">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="765" endPosition="862" value="&#xA;Returns the name of the TypedNamedElement&#xA;@param typedNamedElement the TypedNamedElement&#xA;&#xA;"/>
+        <body startPosition="1044" endPosition="1141" value="&#xA;Returns the name of the TypedNamedElement&#xA;@param typedNamedElement the TypedNamedElement&#xA;&#xA;"/>
         <parametersDocumentation name="typedNamedElement">
           <body value=" the TypedNamedElement"/>
         </parametersDocumentation>
@@ -131,7 +149,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getUniqueLocalVariableName">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="1207" endPosition="1315" value="&#xA;Returns a unique name for a local variable&#xA;@param lVarDecl the local variable declaration statement&#xA;&#xA;"/>
+        <body startPosition="1486" endPosition="1594" value="&#xA;Returns a unique name for a local variable&#xA;@param lVarDecl the local variable declaration statement&#xA;&#xA;"/>
         <parametersDocumentation name="lVarDecl">
           <body value=" the local variable declaration statement"/>
         </parametersDocumentation>
@@ -259,7 +277,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getUniqueLocalVariableNameRec">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="1857" endPosition="2017" value="&#xA;Returns a unique by recursively adding a &quot;_local&quot; suffix to the name&#xA;@param name the current name&#xA;@param lVarNames the existing local Variable names&#xA;&#xA;"/>
+        <body startPosition="2136" endPosition="2296" value="&#xA;Returns a unique by recursively adding a &quot;_local&quot; suffix to the name&#xA;@param name the current name&#xA;@param lVarNames the existing local Variable names&#xA;&#xA;"/>
         <parametersDocumentation name="name">
           <body value=" the current name"/>
         </parametersDocumentation>
@@ -302,7 +320,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getEnclosingRTSC">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="2238" endPosition="2345" value="&#xA;Returns the enclosing realtime statechart&#xA;@param lVarDecl the local variable declaration statement&#xA;&#xA;"/>
+        <body startPosition="2517" endPosition="2624" value="&#xA;Returns the enclosing realtime statechart&#xA;@param lVarDecl the local variable declaration statement&#xA;&#xA;"/>
         <parametersDocumentation name="lVarDecl">
           <body value=" the local variable declaration statement"/>
         </parametersDocumentation>
@@ -392,7 +410,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getAllLocalVariableDeclarationStatements" visibility="Public" type="/3/Set(LocalVariableDeclarationStatement)">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="2713" endPosition="2798" value="&#xA;Returns all local variable declaration statements&#xA;@param expr the expression&#xA;&#xA;"/>
+        <body startPosition="2992" endPosition="3077" value="&#xA;Returns all local variable declaration statements&#xA;@param expr the expression&#xA;&#xA;"/>
         <parametersDocumentation name="expr">
           <body value=" the expression"/>
         </parametersDocumentation>
@@ -482,7 +500,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getAllLocalVariableDeclarationStatements" visibility="Public" type="/3/Set(LocalVariableDeclarationStatement)">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="3149" endPosition="3289" value="&#xA;Returns all local variable declaration statements which are used&#xA;inside a transition action.&#xA;@param rtsc the realtime statechart&#xA;&#xA;"/>
+        <body startPosition="3428" endPosition="3568" value="&#xA;Returns all local variable declaration statements which are used&#xA;inside a transition action.&#xA;@param rtsc the realtime statechart&#xA;&#xA;"/>
         <parametersDocumentation name="rtsc">
           <body value=" the realtime statechart"/>
         </parametersDocumentation>
@@ -564,7 +582,7 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="getLocalVariableDeclarationStatementRepr" visibility="Public" type="/3/Set(LocalVariableDeclarationStatement)">
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="3612" endPosition="3770" value="&#xA;Returns a set containing a representant for each LocalVariableDeclarationStatement&#xA;@param lVarDecls the set of local variable declaration statements&#xA;&#xA;"/>
+        <body startPosition="3891" endPosition="4049" value="&#xA;Returns a set containing a representant for each LocalVariableDeclarationStatement&#xA;@param lVarDecls the set of local variable declaration statements&#xA;&#xA;"/>
         <parametersDocumentation name="lVarDecls">
           <body value=" the set of local variable declaration statements"/>
         </parametersDocumentation>
@@ -934,13 +952,13 @@
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/getFullyQualifiedName">
-      <details key="start" value="512"/>
-      <details key="end" value="760"/>
-      <details key="line" value="12"/>
+      <details key="start" value="791"/>
+      <details key="end" value="1039"/>
+      <details key="line" value="17"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/getFullyQualifiedName/%">
-      <details key="start" value="232"/>
-      <details key="end" value="511"/>
+      <details key="start" value="511"/>
+      <details key="end" value="790"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/getFullyQualifiedName/%/typedNamedElement">
@@ -954,83 +972,83 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/getFullyQualifiedName/typedNamedElement">
-      <details key="start" value="548"/>
-      <details key="end" value="585"/>
-      <details key="line" value="12"/>
+      <details key="start" value="827"/>
+      <details key="end" value="864"/>
+      <details key="line" value="17"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/getFullyQualifiedName/fqname">
-      <details key="start" value="587"/>
-      <details key="end" value="602"/>
-      <details key="line" value="12"/>
+      <details key="start" value="866"/>
+      <details key="end" value="881"/>
+      <details key="line" value="17"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/getFullyQualifiedName/%.1">
-      <details key="start" value="616"/>
-      <details key="end" value="757"/>
+      <details key="start" value="895"/>
+      <details key="end" value="1036"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/getFullyQualifiedName/%.1/%">
-      <details key="start" value="619"/>
-      <details key="end" value="630"/>
+      <details key="start" value="898"/>
+      <details key="end" value="909"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/getFullyQualifiedName/%.1/%/fqname">
-      <details key="start" value="619"/>
-      <details key="end" value="625"/>
+      <details key="start" value="898"/>
+      <details key="end" value="904"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/getFullyQualifiedName/%.1/%/%">
-      <details key="start" value="628"/>
-      <details key="end" value="630"/>
+      <details key="start" value="907"/>
+      <details key="end" value="909"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/getFullyQualifiedName/%.1/%.1">
-      <details key="start" value="638"/>
-      <details key="end" value="682"/>
+      <details key="start" value="917"/>
+      <details key="end" value="961"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.11" references="/0/getFullyQualifiedName/%.1/%.1/typedNamedElement">
-      <details key="start" value="638"/>
-      <details key="end" value="655"/>
+      <details key="start" value="917"/>
+      <details key="end" value="934"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.12" references="/0/getFullyQualifiedName/%.1/%.2">
-      <details key="start" value="691"/>
-      <details key="end" value="750"/>
+      <details key="start" value="970"/>
+      <details key="end" value="1029"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.13" references="/0/getFullyQualifiedName/%.1/%.2/%">
-      <details key="start" value="691"/>
-      <details key="end" value="703"/>
+      <details key="start" value="970"/>
+      <details key="end" value="982"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.14" references="/0/getFullyQualifiedName/%.1/%.2/%/fqname">
-      <details key="start" value="691"/>
-      <details key="end" value="697"/>
+      <details key="start" value="970"/>
+      <details key="end" value="976"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.15" references="/0/getFullyQualifiedName/%.1/%.2/%/%">
-      <details key="start" value="700"/>
-      <details key="end" value="703"/>
+      <details key="start" value="979"/>
+      <details key="end" value="982"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.16" references="/0/getFullyQualifiedName/%.1/%.2/%.1">
-      <details key="start" value="706"/>
-      <details key="end" value="750"/>
+      <details key="start" value="985"/>
+      <details key="end" value="1029"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.17" references="/0/getFullyQualifiedName/%.1/%.2/%.1/typedNamedElement">
-      <details key="start" value="706"/>
-      <details key="end" value="723"/>
+      <details key="start" value="985"/>
+      <details key="end" value="1002"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.18" references="/0/getTypedNamedElementName">
-      <details key="start" value="865"/>
-      <details key="end" value="1202"/>
-      <details key="line" value="24"/>
+      <details key="start" value="1144"/>
+      <details key="end" value="1481"/>
+      <details key="line" value="29"/>
     </eAnnotations>
     <eAnnotations source="positions.19" references="/0/getTypedNamedElementName/%">
-      <details key="start" value="762"/>
-      <details key="end" value="864"/>
+      <details key="start" value="1041"/>
+      <details key="end" value="1143"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.20" references="/0/getTypedNamedElementName/%/typedNamedElement">
@@ -1039,88 +1057,88 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.21" references="/0/getTypedNamedElementName/typedNamedElement">
-      <details key="start" value="904"/>
-      <details key="end" value="941"/>
-      <details key="line" value="24"/>
+      <details key="start" value="1183"/>
+      <details key="end" value="1220"/>
+      <details key="line" value="29"/>
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/getTypedNamedElementName/%.1">
-      <details key="start" value="955"/>
-      <details key="end" value="1199"/>
+      <details key="start" value="1234"/>
+      <details key="end" value="1478"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.23" references="/0/getTypedNamedElementName/%.1/%">
-      <details key="start" value="958"/>
-      <details key="end" value="1035"/>
+      <details key="start" value="1237"/>
+      <details key="end" value="1314"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.24" references="/0/getTypedNamedElementName/%.1/%/%">
-      <details key="start" value="958"/>
-      <details key="end" value="988"/>
+      <details key="start" value="1237"/>
+      <details key="end" value="1267"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.25" references="/0/getTypedNamedElementName/%.1/%/%/typedNamedElement">
-      <details key="start" value="958"/>
-      <details key="end" value="975"/>
+      <details key="start" value="1237"/>
+      <details key="end" value="1254"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.26" references="/0/getTypedNamedElementName/%.1/%/%.1">
-      <details key="start" value="1001"/>
-      <details key="end" value="1034"/>
+      <details key="start" value="1280"/>
+      <details key="end" value="1313"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/getTypedNamedElementName/%.1/%.1">
-      <details key="start" value="1043"/>
-      <details key="end" value="1146"/>
+      <details key="start" value="1322"/>
+      <details key="end" value="1425"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.28" references="/0/getTypedNamedElementName/%.1/%.1/%">
-      <details key="start" value="1070"/>
-      <details key="end" value="1145"/>
+      <details key="start" value="1349"/>
+      <details key="end" value="1424"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.29" references="/0/getTypedNamedElementName/%.1/%.1/%/%">
-      <details key="start" value="1070"/>
-      <details key="end" value="1100"/>
+      <details key="start" value="1349"/>
+      <details key="end" value="1379"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/getTypedNamedElementName/%.1/%.1/%/%/typedNamedElement">
-      <details key="start" value="1070"/>
-      <details key="end" value="1087"/>
+      <details key="start" value="1349"/>
+      <details key="end" value="1366"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.31" references="/0/getTypedNamedElementName/%.1/%.1/%/%.1">
-      <details key="start" value="1111"/>
-      <details key="end" value="1144"/>
+      <details key="start" value="1390"/>
+      <details key="end" value="1423"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.32" references="/0/getTypedNamedElementName/%.1/%.2">
-      <details key="start" value="1155"/>
-      <details key="end" value="1192"/>
+      <details key="start" value="1434"/>
+      <details key="end" value="1471"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.33" references="/0/getTypedNamedElementName/%.1/%.2/%">
-      <details key="start" value="1155"/>
-      <details key="end" value="1169"/>
+      <details key="start" value="1434"/>
+      <details key="end" value="1448"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.34" references="/0/getTypedNamedElementName/%.1/%.2/%.1">
-      <details key="start" value="1170"/>
-      <details key="end" value="1192"/>
+      <details key="start" value="1449"/>
+      <details key="end" value="1471"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.35" references="/0/getTypedNamedElementName/%.1/%.2/%.1/typedNamedElement">
-      <details key="start" value="1170"/>
-      <details key="end" value="1187"/>
+      <details key="start" value="1449"/>
+      <details key="end" value="1466"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.36" references="/0/getUniqueLocalVariableName">
-      <details key="start" value="1318"/>
-      <details key="end" value="1852"/>
-      <details key="line" value="36"/>
+      <details key="start" value="1597"/>
+      <details key="end" value="2131"/>
+      <details key="line" value="41"/>
     </eAnnotations>
     <eAnnotations source="positions.37" references="/0/getUniqueLocalVariableName/%">
-      <details key="start" value="1204"/>
-      <details key="end" value="1317"/>
+      <details key="start" value="1483"/>
+      <details key="end" value="1596"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.38" references="/0/getUniqueLocalVariableName/%/lVarDecl">
@@ -1129,183 +1147,183 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.39" references="/0/getUniqueLocalVariableName/lVarDecl">
-      <details key="start" value="1360"/>
-      <details key="end" value="1404"/>
-      <details key="line" value="36"/>
+      <details key="start" value="1639"/>
+      <details key="end" value="1683"/>
+      <details key="line" value="41"/>
     </eAnnotations>
     <eAnnotations source="positions.40" references="/0/getUniqueLocalVariableName/%.1">
-      <details key="start" value="1446"/>
-      <details key="end" value="1847"/>
+      <details key="start" value="1725"/>
+      <details key="end" value="2126"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.41" references="/0/getUniqueLocalVariableName/%.1/%">
-      <details key="start" value="1651"/>
-      <details key="end" value="1847"/>
+      <details key="start" value="1930"/>
+      <details key="end" value="2126"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.42" references="/0/getUniqueLocalVariableName/%.1/%/%">
-      <details key="start" value="1654"/>
-      <details key="end" value="1697"/>
+      <details key="start" value="1933"/>
+      <details key="end" value="1976"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.43" references="/0/getUniqueLocalVariableName/%.1/%/%/lVarNames">
-      <details key="start" value="1654"/>
-      <details key="end" value="1663"/>
+      <details key="start" value="1933"/>
+      <details key="end" value="1942"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.44" references="/0/getUniqueLocalVariableName/%.1/%/%/%">
-      <details key="start" value="1674"/>
-      <details key="end" value="1696"/>
+      <details key="start" value="1953"/>
+      <details key="end" value="1975"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.45" references="/0/getUniqueLocalVariableName/%.1/%/%/%/%">
-      <details key="start" value="1674"/>
-      <details key="end" value="1691"/>
+      <details key="start" value="1953"/>
+      <details key="end" value="1970"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.46" references="/0/getUniqueLocalVariableName/%.1/%/%/%/%/lVarDecl">
-      <details key="start" value="1674"/>
-      <details key="end" value="1682"/>
+      <details key="start" value="1953"/>
+      <details key="end" value="1961"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.47" references="/0/getUniqueLocalVariableName/%.1/%/%.1">
-      <details key="start" value="1705"/>
-      <details key="end" value="1809"/>
+      <details key="start" value="1984"/>
+      <details key="end" value="2088"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.48" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%">
-      <details key="start" value="1735"/>
-      <details key="end" value="1797"/>
+      <details key="start" value="2014"/>
+      <details key="end" value="2076"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.49" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%">
-      <details key="start" value="1735"/>
-      <details key="end" value="1763"/>
+      <details key="start" value="2014"/>
+      <details key="end" value="2042"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.50" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%/%">
-      <details key="start" value="1735"/>
-      <details key="end" value="1757"/>
+      <details key="start" value="2014"/>
+      <details key="end" value="2036"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.51" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%/%/%">
-      <details key="start" value="1735"/>
-      <details key="end" value="1752"/>
+      <details key="start" value="2014"/>
+      <details key="end" value="2031"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.52" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%/%/%/lVarDecl">
-      <details key="start" value="1735"/>
-      <details key="end" value="1743"/>
+      <details key="start" value="2014"/>
+      <details key="end" value="2022"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.53" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%/%.1">
-      <details key="start" value="1760"/>
-      <details key="end" value="1763"/>
+      <details key="start" value="2039"/>
+      <details key="end" value="2042"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.54" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%.1">
-      <details key="start" value="1766"/>
-      <details key="end" value="1797"/>
+      <details key="start" value="2045"/>
+      <details key="end" value="2076"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.55" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%.1/%">
-      <details key="start" value="1766"/>
-      <details key="end" value="1792"/>
+      <details key="start" value="2045"/>
+      <details key="end" value="2071"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.56" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%.1/%/%">
-      <details key="start" value="1766"/>
-      <details key="end" value="1783"/>
+      <details key="start" value="2045"/>
+      <details key="end" value="2062"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.57" references="/0/getUniqueLocalVariableName/%.1/%/%.1/%/%.1/%/%/lVarDecl">
-      <details key="start" value="1766"/>
-      <details key="end" value="1774"/>
+      <details key="start" value="2045"/>
+      <details key="end" value="2053"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.58" references="/0/getUniqueLocalVariableName/%.1/%/%.1/lVarNames">
-      <details key="start" value="1799"/>
-      <details key="end" value="1808"/>
+      <details key="start" value="2078"/>
+      <details key="end" value="2087"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.59" references="/0/getUniqueLocalVariableName/%.1/%/%.2">
-      <details key="start" value="1818"/>
-      <details key="end" value="1840"/>
+      <details key="start" value="2097"/>
+      <details key="end" value="2119"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.60" references="/0/getUniqueLocalVariableName/%.1/%/%.2/%">
-      <details key="start" value="1818"/>
-      <details key="end" value="1835"/>
+      <details key="start" value="2097"/>
+      <details key="end" value="2114"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.61" references="/0/getUniqueLocalVariableName/%.1/%/%.2/%/lVarDecl">
-      <details key="start" value="1818"/>
-      <details key="end" value="1826"/>
+      <details key="start" value="2097"/>
+      <details key="end" value="2105"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.62" references="/0/getUniqueLocalVariableName/%.1/lVarNames">
-      <details key="start" value="1450"/>
-      <details key="end" value="1645"/>
+      <details key="start" value="1729"/>
+      <details key="end" value="1924"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.63" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%">
-      <details key="start" value="1476"/>
-      <details key="end" value="1645"/>
+      <details key="start" value="1755"/>
+      <details key="end" value="1924"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.64" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect">
-      <details key="start" value="1476"/>
-      <details key="end" value="1636"/>
+      <details key="start" value="1755"/>
+      <details key="end" value="1915"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.65" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select">
-      <details key="start" value="1476"/>
-      <details key="end" value="1612"/>
+      <details key="start" value="1755"/>
+      <details key="end" value="1891"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.66" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%">
-      <details key="start" value="1476"/>
-      <details key="end" value="1546"/>
+      <details key="start" value="1755"/>
+      <details key="end" value="1825"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.67" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%/%">
-      <details key="start" value="1476"/>
-      <details key="end" value="1503"/>
+      <details key="start" value="1755"/>
+      <details key="end" value="1782"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.68" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%/%/lVarDecl">
-      <details key="start" value="1476"/>
-      <details key="end" value="1484"/>
+      <details key="start" value="1755"/>
+      <details key="end" value="1763"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.69" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%.1">
-      <details key="start" value="1598"/>
-      <details key="end" value="1611"/>
+      <details key="start" value="1877"/>
+      <details key="end" value="1890"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.70" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%.1/i">
-      <details key="start" value="1598"/>
-      <details key="end" value="1599"/>
+      <details key="start" value="1877"/>
+      <details key="end" value="1878"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.71" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/%.1/lVarDecl">
-      <details key="start" value="1603"/>
-      <details key="end" value="1611"/>
+      <details key="start" value="1882"/>
+      <details key="end" value="1890"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.72" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/select/i">
-      <details key="start" value="1558"/>
-      <details key="end" value="1595"/>
+      <details key="start" value="1837"/>
+      <details key="end" value="1874"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.73" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/%">
-      <details key="start" value="1622"/>
-      <details key="end" value="1635"/>
+      <details key="start" value="1901"/>
+      <details key="end" value="1914"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.74" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/%/%">
-      <details key="start" value="1622"/>
-      <details key="end" value="1630"/>
+      <details key="start" value="1901"/>
+      <details key="end" value="1909"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.75" references="/0/getUniqueLocalVariableName/%.1/lVarNames/%/collect/%/%/temp1">
@@ -1319,13 +1337,13 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.77" references="/0/getUniqueLocalVariableNameRec">
-      <details key="start" value="2020"/>
-      <details key="end" value="2233"/>
-      <details key="line" value="53"/>
+      <details key="start" value="2299"/>
+      <details key="end" value="2512"/>
+      <details key="line" value="58"/>
     </eAnnotations>
     <eAnnotations source="positions.78" references="/0/getUniqueLocalVariableNameRec/%">
-      <details key="start" value="1854"/>
-      <details key="end" value="2019"/>
+      <details key="start" value="2133"/>
+      <details key="end" value="2298"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.79" references="/0/getUniqueLocalVariableNameRec/%/name">
@@ -1339,73 +1357,73 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.81" references="/0/getUniqueLocalVariableNameRec/name">
-      <details key="start" value="2065"/>
-      <details key="end" value="2078"/>
-      <details key="line" value="53"/>
+      <details key="start" value="2344"/>
+      <details key="end" value="2357"/>
+      <details key="line" value="58"/>
     </eAnnotations>
     <eAnnotations source="positions.82" references="/0/getUniqueLocalVariableNameRec/lVarNames">
-      <details key="start" value="2080"/>
-      <details key="end" value="2103"/>
-      <details key="line" value="53"/>
+      <details key="start" value="2359"/>
+      <details key="end" value="2382"/>
+      <details key="line" value="58"/>
     </eAnnotations>
     <eAnnotations source="positions.83" references="/0/getUniqueLocalVariableNameRec/%.1">
-      <details key="start" value="2117"/>
-      <details key="end" value="2230"/>
+      <details key="start" value="2396"/>
+      <details key="end" value="2509"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.84" references="/0/getUniqueLocalVariableNameRec/%.1/%">
-      <details key="start" value="2120"/>
-      <details key="end" value="2145"/>
+      <details key="start" value="2399"/>
+      <details key="end" value="2424"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.85" references="/0/getUniqueLocalVariableNameRec/%.1/%/lVarNames">
-      <details key="start" value="2120"/>
-      <details key="end" value="2129"/>
+      <details key="start" value="2399"/>
+      <details key="end" value="2408"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.86" references="/0/getUniqueLocalVariableNameRec/%.1/%/name">
-      <details key="start" value="2140"/>
-      <details key="end" value="2144"/>
+      <details key="start" value="2419"/>
+      <details key="end" value="2423"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.87" references="/0/getUniqueLocalVariableNameRec/%.1/%.1">
-      <details key="start" value="2153"/>
-      <details key="end" value="2210"/>
+      <details key="start" value="2432"/>
+      <details key="end" value="2489"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.88" references="/0/getUniqueLocalVariableNameRec/%.1/%.1/%">
-      <details key="start" value="2183"/>
-      <details key="end" value="2198"/>
+      <details key="start" value="2462"/>
+      <details key="end" value="2477"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.89" references="/0/getUniqueLocalVariableNameRec/%.1/%.1/%/name">
-      <details key="start" value="2183"/>
-      <details key="end" value="2187"/>
+      <details key="start" value="2462"/>
+      <details key="end" value="2466"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.90" references="/0/getUniqueLocalVariableNameRec/%.1/%.1/%/%">
-      <details key="start" value="2190"/>
-      <details key="end" value="2198"/>
+      <details key="start" value="2469"/>
+      <details key="end" value="2477"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.91" references="/0/getUniqueLocalVariableNameRec/%.1/%.1/lVarNames">
-      <details key="start" value="2200"/>
-      <details key="end" value="2209"/>
+      <details key="start" value="2479"/>
+      <details key="end" value="2488"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.92" references="/0/getUniqueLocalVariableNameRec/%.1/name">
-      <details key="start" value="2219"/>
-      <details key="end" value="2223"/>
+      <details key="start" value="2498"/>
+      <details key="end" value="2502"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.93" references="/0/getEnclosingRTSC">
-      <details key="start" value="2348"/>
-      <details key="end" value="2708"/>
-      <details key="line" value="65"/>
+      <details key="start" value="2627"/>
+      <details key="end" value="2987"/>
+      <details key="line" value="70"/>
     </eAnnotations>
     <eAnnotations source="positions.94" references="/0/getEnclosingRTSC/%">
-      <details key="start" value="2235"/>
-      <details key="end" value="2347"/>
+      <details key="start" value="2514"/>
+      <details key="end" value="2626"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.95" references="/0/getEnclosingRTSC/%/lVarDecl">
@@ -1414,38 +1432,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.96" references="/0/getEnclosingRTSC/lVarDecl">
-      <details key="start" value="2380"/>
-      <details key="end" value="2424"/>
-      <details key="line" value="65"/>
+      <details key="start" value="2659"/>
+      <details key="end" value="2703"/>
+      <details key="line" value="70"/>
     </eAnnotations>
     <eAnnotations source="positions.97" references="/0/getEnclosingRTSC/%.1">
-      <details key="start" value="2450"/>
-      <details key="end" value="2705"/>
+      <details key="start" value="2729"/>
+      <details key="end" value="2984"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.98" references="/0/getEnclosingRTSC/%.1/%">
-      <details key="start" value="2450"/>
-      <details key="end" value="2675"/>
+      <details key="start" value="2729"/>
+      <details key="end" value="2954"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.99" references="/0/getEnclosingRTSC/%.1/%/%">
-      <details key="start" value="2450"/>
-      <details key="end" value="2667"/>
+      <details key="start" value="2729"/>
+      <details key="end" value="2946"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.100" references="/0/getEnclosingRTSC/%.1/%/%/select">
-      <details key="start" value="2450"/>
-      <details key="end" value="2651"/>
+      <details key="start" value="2729"/>
+      <details key="end" value="2930"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.101" references="/0/getEnclosingRTSC/%.1/%/%/select/closure">
-      <details key="start" value="2450"/>
-      <details key="end" value="2610"/>
+      <details key="start" value="2729"/>
+      <details key="end" value="2889"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.102" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%">
-      <details key="start" value="2450"/>
-      <details key="end" value="2493"/>
+      <details key="start" value="2729"/>
+      <details key="end" value="2772"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.103" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%/%">
@@ -1454,63 +1472,63 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.104" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%/%/%/%">
-      <details key="start" value="2450"/>
-      <details key="end" value="2484"/>
+      <details key="start" value="2729"/>
+      <details key="end" value="2763"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.105" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%/%/%/%/lVarDecl">
-      <details key="start" value="2450"/>
-      <details key="end" value="2458"/>
+      <details key="start" value="2729"/>
+      <details key="end" value="2737"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.106" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%/%/%/%/%">
-      <details key="start" value="2469"/>
-      <details key="end" value="2483"/>
+      <details key="start" value="2748"/>
+      <details key="end" value="2762"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.107" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1">
-      <details key="start" value="2526"/>
-      <details key="end" value="2607"/>
+      <details key="start" value="2805"/>
+      <details key="end" value="2886"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.108" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/%">
-      <details key="start" value="2529"/>
-      <details key="end" value="2562"/>
+      <details key="start" value="2808"/>
+      <details key="end" value="2841"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.109" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/%/v">
-      <details key="start" value="2529"/>
-      <details key="end" value="2530"/>
+      <details key="start" value="2808"/>
+      <details key="end" value="2809"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.110" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/%/%">
-      <details key="start" value="2543"/>
-      <details key="end" value="2561"/>
+      <details key="start" value="2822"/>
+      <details key="end" value="2840"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.111" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/v">
-      <details key="start" value="2571"/>
-      <details key="end" value="2572"/>
+      <details key="start" value="2850"/>
+      <details key="end" value="2851"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.112" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/%.1">
-      <details key="start" value="2584"/>
-      <details key="end" value="2598"/>
+      <details key="start" value="2863"/>
+      <details key="end" value="2877"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.113" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/%.1/%.1/v">
-      <details key="start" value="2584"/>
-      <details key="end" value="2585"/>
+      <details key="start" value="2863"/>
+      <details key="end" value="2864"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.114" references="/0/getEnclosingRTSC/%.1/%/%/select/closure/v">
-      <details key="start" value="2503"/>
-      <details key="end" value="2521"/>
+      <details key="start" value="2782"/>
+      <details key="end" value="2800"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.115" references="/0/getEnclosingRTSC/%.1/%/%/select/%">
-      <details key="start" value="2619"/>
-      <details key="end" value="2650"/>
+      <details key="start" value="2898"/>
+      <details key="end" value="2929"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.116" references="/0/getEnclosingRTSC/%.1/%/%/select/%/temp1">
@@ -1519,8 +1537,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.117" references="/0/getEnclosingRTSC/%.1/%/%/select/%/%">
-      <details key="start" value="2631"/>
-      <details key="end" value="2649"/>
+      <details key="start" value="2910"/>
+      <details key="end" value="2928"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.118" references="/0/getEnclosingRTSC/%.1/%/%/select/temp2">
@@ -1529,18 +1547,18 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.119" references="/0/getEnclosingRTSC/%.1/%.1">
-      <details key="start" value="2686"/>
-      <details key="end" value="2704"/>
+      <details key="start" value="2965"/>
+      <details key="end" value="2983"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.120" references="/0/getAllLocalVariableDeclarationStatements">
-      <details key="start" value="2801"/>
-      <details key="end" value="3144"/>
-      <details key="line" value="79"/>
+      <details key="start" value="3080"/>
+      <details key="end" value="3423"/>
+      <details key="line" value="84"/>
     </eAnnotations>
     <eAnnotations source="positions.121" references="/0/getAllLocalVariableDeclarationStatements/%">
-      <details key="start" value="2710"/>
-      <details key="end" value="2800"/>
+      <details key="start" value="2989"/>
+      <details key="end" value="3079"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.122" references="/0/getAllLocalVariableDeclarationStatements/%/expr">
@@ -1549,23 +1567,23 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.123" references="/0/getAllLocalVariableDeclarationStatements/expr">
-      <details key="start" value="2856"/>
-      <details key="end" value="2873"/>
-      <details key="line" value="79"/>
+      <details key="start" value="3135"/>
+      <details key="end" value="3152"/>
+      <details key="line" value="84"/>
     </eAnnotations>
     <eAnnotations source="positions.124" references="/0/getAllLocalVariableDeclarationStatements/select">
-      <details key="start" value="2919"/>
-      <details key="end" value="3141"/>
+      <details key="start" value="3198"/>
+      <details key="end" value="3420"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.125" references="/0/getAllLocalVariableDeclarationStatements/select/closure">
-      <details key="start" value="2919"/>
-      <details key="end" value="3085"/>
+      <details key="start" value="3198"/>
+      <details key="end" value="3364"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.126" references="/0/getAllLocalVariableDeclarationStatements/select/closure/%">
-      <details key="start" value="2919"/>
-      <details key="end" value="2963"/>
+      <details key="start" value="3198"/>
+      <details key="end" value="3242"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.127" references="/0/getAllLocalVariableDeclarationStatements/select/closure/%/%">
@@ -1574,43 +1592,43 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.128" references="/0/getAllLocalVariableDeclarationStatements/select/closure/%/%/%/%">
-      <details key="start" value="2919"/>
-      <details key="end" value="2954"/>
+      <details key="start" value="3198"/>
+      <details key="end" value="3233"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.129" references="/0/getAllLocalVariableDeclarationStatements/select/closure/%/%/%/%/expr">
-      <details key="start" value="2919"/>
-      <details key="end" value="2923"/>
+      <details key="start" value="3198"/>
+      <details key="end" value="3202"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.130" references="/0/getAllLocalVariableDeclarationStatements/select/closure/%/%/%/%/%">
-      <details key="start" value="2937"/>
-      <details key="end" value="2951"/>
+      <details key="start" value="3216"/>
+      <details key="end" value="3230"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.131" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect">
-      <details key="start" value="2996"/>
-      <details key="end" value="3082"/>
+      <details key="start" value="3275"/>
+      <details key="end" value="3361"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.132" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select">
-      <details key="start" value="2996"/>
-      <details key="end" value="3046"/>
+      <details key="start" value="3275"/>
+      <details key="end" value="3325"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.133" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/%">
-      <details key="start" value="2996"/>
-      <details key="end" value="3009"/>
+      <details key="start" value="3275"/>
+      <details key="end" value="3288"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.134" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/%/v">
-      <details key="start" value="2996"/>
-      <details key="end" value="2997"/>
+      <details key="start" value="3275"/>
+      <details key="end" value="3276"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.135" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/%.1">
-      <details key="start" value="3018"/>
-      <details key="end" value="3045"/>
+      <details key="start" value="3297"/>
+      <details key="end" value="3324"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.136" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/%.1/temp1">
@@ -1619,8 +1637,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.137" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/%.1/%">
-      <details key="start" value="3030"/>
-      <details key="end" value="3044"/>
+      <details key="start" value="3309"/>
+      <details key="end" value="3323"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.138" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/select/temp3">
@@ -1629,8 +1647,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.139" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/%">
-      <details key="start" value="3056"/>
-      <details key="end" value="3081"/>
+      <details key="start" value="3335"/>
+      <details key="end" value="3360"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.140" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/%/temp2">
@@ -1639,8 +1657,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.141" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/%/%">
-      <details key="start" value="3066"/>
-      <details key="end" value="3080"/>
+      <details key="start" value="3345"/>
+      <details key="end" value="3359"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.142" references="/0/getAllLocalVariableDeclarationStatements/select/closure/collect/temp4">
@@ -1649,13 +1667,13 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.143" references="/0/getAllLocalVariableDeclarationStatements/select/closure/v">
-      <details key="start" value="2973"/>
-      <details key="end" value="2991"/>
+      <details key="start" value="3252"/>
+      <details key="end" value="3270"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.144" references="/0/getAllLocalVariableDeclarationStatements/select/%">
-      <details key="start" value="3094"/>
-      <details key="end" value="3140"/>
+      <details key="start" value="3373"/>
+      <details key="end" value="3419"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.145" references="/0/getAllLocalVariableDeclarationStatements/select/%/temp3">
@@ -1664,8 +1682,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.146" references="/0/getAllLocalVariableDeclarationStatements/select/%/%">
-      <details key="start" value="3106"/>
-      <details key="end" value="3139"/>
+      <details key="start" value="3385"/>
+      <details key="end" value="3418"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.147" references="/0/getAllLocalVariableDeclarationStatements/select/temp5">
@@ -1674,13 +1692,13 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.148" references="/0/getAllLocalVariableDeclarationStatements.1">
-      <details key="start" value="3292"/>
-      <details key="end" value="3607"/>
-      <details key="line" value="92"/>
+      <details key="start" value="3571"/>
+      <details key="end" value="3886"/>
+      <details key="line" value="97"/>
     </eAnnotations>
     <eAnnotations source="positions.149" references="/0/getAllLocalVariableDeclarationStatements.1/%">
-      <details key="start" value="3146"/>
-      <details key="end" value="3291"/>
+      <details key="start" value="3425"/>
+      <details key="end" value="3570"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.150" references="/0/getAllLocalVariableDeclarationStatements.1/%/rtsc">
@@ -1689,53 +1707,53 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.151" references="/0/getAllLocalVariableDeclarationStatements.1/rtsc">
-      <details key="start" value="3347"/>
-      <details key="end" value="3372"/>
-      <details key="line" value="92"/>
+      <details key="start" value="3626"/>
+      <details key="end" value="3651"/>
+      <details key="line" value="97"/>
     </eAnnotations>
     <eAnnotations source="positions.152" references="/0/getAllLocalVariableDeclarationStatements.1/%.1">
-      <details key="start" value="3418"/>
-      <details key="end" value="3604"/>
+      <details key="start" value="3697"/>
+      <details key="end" value="3883"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.153" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect">
-      <details key="start" value="3418"/>
-      <details key="end" value="3595"/>
+      <details key="start" value="3697"/>
+      <details key="end" value="3874"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.154" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select">
-      <details key="start" value="3418"/>
-      <details key="end" value="3511"/>
+      <details key="start" value="3697"/>
+      <details key="end" value="3790"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.155" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%">
-      <details key="start" value="3418"/>
-      <details key="end" value="3434"/>
+      <details key="start" value="3697"/>
+      <details key="end" value="3713"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.156" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%/rtsc">
-      <details key="start" value="3418"/>
-      <details key="end" value="3422"/>
+      <details key="start" value="3697"/>
+      <details key="end" value="3701"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.157" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1">
-      <details key="start" value="3446"/>
-      <details key="end" value="3508"/>
+      <details key="start" value="3725"/>
+      <details key="end" value="3787"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.158" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%">
-      <details key="start" value="3446"/>
-      <details key="end" value="3473"/>
+      <details key="start" value="3725"/>
+      <details key="end" value="3752"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.159" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%/%">
-      <details key="start" value="3450"/>
-      <details key="end" value="3473"/>
+      <details key="start" value="3729"/>
+      <details key="end" value="3752"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.160" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%/%/%">
-      <details key="start" value="3450"/>
-      <details key="end" value="3456"/>
+      <details key="start" value="3729"/>
+      <details key="end" value="3735"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.161" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%/%/%/temp1">
@@ -1744,18 +1762,18 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.162" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%.1">
-      <details key="start" value="3478"/>
-      <details key="end" value="3508"/>
+      <details key="start" value="3757"/>
+      <details key="end" value="3787"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.163" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%.1/%">
-      <details key="start" value="3478"/>
-      <details key="end" value="3496"/>
+      <details key="start" value="3757"/>
+      <details key="end" value="3775"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.164" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%.1/%/%">
-      <details key="start" value="3478"/>
-      <details key="end" value="3484"/>
+      <details key="start" value="3757"/>
+      <details key="end" value="3763"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.165" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/select/%.1/%.1/%/%/temp1">
@@ -1769,23 +1787,23 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.167" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%">
-      <details key="start" value="3524"/>
-      <details key="end" value="3592"/>
+      <details key="start" value="3803"/>
+      <details key="end" value="3871"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.168" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%/%">
-      <details key="start" value="3524"/>
-      <details key="end" value="3549"/>
+      <details key="start" value="3803"/>
+      <details key="end" value="3828"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.169" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%/%/%">
-      <details key="start" value="3524"/>
-      <details key="end" value="3542"/>
+      <details key="start" value="3803"/>
+      <details key="end" value="3821"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.170" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%/%/%/%">
-      <details key="start" value="3524"/>
-      <details key="end" value="3530"/>
+      <details key="start" value="3803"/>
+      <details key="end" value="3809"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.171" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%/%/%/%/temp2">
@@ -1794,8 +1812,8 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.172" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/%/%/%.1">
-      <details key="start" value="3547"/>
-      <details key="end" value="3548"/>
+      <details key="start" value="3826"/>
+      <details key="end" value="3827"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.173" references="/0/getAllLocalVariableDeclarationStatements.1/%.1/collect/temp7">
@@ -1804,13 +1822,13 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.174" references="/0/getLocalVariableDeclarationStatementRepr">
-      <details key="start" value="3773"/>
-      <details key="end" value="4190"/>
-      <details key="line" value="104"/>
+      <details key="start" value="4052"/>
+      <details key="end" value="4469"/>
+      <details key="line" value="109"/>
     </eAnnotations>
     <eAnnotations source="positions.175" references="/0/getLocalVariableDeclarationStatementRepr/%">
-      <details key="start" value="3609"/>
-      <details key="end" value="3772"/>
+      <details key="start" value="3888"/>
+      <details key="end" value="4051"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.176" references="/0/getLocalVariableDeclarationStatementRepr/%/lVarDecls">
@@ -1819,58 +1837,58 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.177" references="/0/getLocalVariableDeclarationStatementRepr/lVarDecls">
-      <details key="start" value="3828"/>
-      <details key="end" value="3878"/>
-      <details key="line" value="104"/>
+      <details key="start" value="4107"/>
+      <details key="end" value="4157"/>
+      <details key="line" value="109"/>
     </eAnnotations>
     <eAnnotations source="positions.178" references="/0/getLocalVariableDeclarationStatementRepr/iterate">
-      <details key="start" value="3924"/>
-      <details key="end" value="4187"/>
+      <details key="start" value="4203"/>
+      <details key="end" value="4466"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.179" references="/0/getLocalVariableDeclarationStatementRepr/iterate/lVarDecls">
-      <details key="start" value="3924"/>
-      <details key="end" value="3933"/>
+      <details key="start" value="4203"/>
+      <details key="end" value="4212"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.180" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%">
-      <details key="start" value="4037"/>
-      <details key="end" value="4184"/>
+      <details key="start" value="4316"/>
+      <details key="end" value="4463"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.181" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%">
-      <details key="start" value="4040"/>
-      <details key="end" value="4140"/>
+      <details key="start" value="4319"/>
+      <details key="end" value="4419"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.182" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any">
-      <details key="start" value="4040"/>
-      <details key="end" value="4123"/>
+      <details key="start" value="4319"/>
+      <details key="end" value="4402"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.183" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/r">
-      <details key="start" value="4040"/>
-      <details key="end" value="4041"/>
+      <details key="start" value="4319"/>
+      <details key="end" value="4320"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.184" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%">
-      <details key="start" value="4047"/>
-      <details key="end" value="4122"/>
+      <details key="start" value="4326"/>
+      <details key="end" value="4401"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.185" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%">
-      <details key="start" value="4047"/>
-      <details key="end" value="4078"/>
+      <details key="start" value="4326"/>
+      <details key="end" value="4357"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.186" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%">
-      <details key="start" value="4047"/>
-      <details key="end" value="4060"/>
+      <details key="start" value="4326"/>
+      <details key="end" value="4339"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.187" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%/%">
-      <details key="start" value="4047"/>
-      <details key="end" value="4055"/>
+      <details key="start" value="4326"/>
+      <details key="end" value="4334"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.188" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%/%/temp1">
@@ -1879,33 +1897,33 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.189" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%.1">
-      <details key="start" value="4063"/>
-      <details key="end" value="4078"/>
+      <details key="start" value="4342"/>
+      <details key="end" value="4357"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.190" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%.1/%">
-      <details key="start" value="4063"/>
-      <details key="end" value="4073"/>
+      <details key="start" value="4342"/>
+      <details key="end" value="4352"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.191" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%/%.1/%/l">
-      <details key="start" value="4063"/>
-      <details key="end" value="4064"/>
+      <details key="start" value="4342"/>
+      <details key="end" value="4343"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.192" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1">
-      <details key="start" value="4083"/>
-      <details key="end" value="4122"/>
+      <details key="start" value="4362"/>
+      <details key="end" value="4401"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.193" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%">
-      <details key="start" value="4083"/>
-      <details key="end" value="4100"/>
+      <details key="start" value="4362"/>
+      <details key="end" value="4379"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.194" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%/%">
-      <details key="start" value="4083"/>
-      <details key="end" value="4091"/>
+      <details key="start" value="4362"/>
+      <details key="end" value="4370"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.195" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%/%/temp1">
@@ -1914,18 +1932,18 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.196" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%.1">
-      <details key="start" value="4103"/>
-      <details key="end" value="4122"/>
+      <details key="start" value="4382"/>
+      <details key="end" value="4401"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.197" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%.1/%">
-      <details key="start" value="4103"/>
-      <details key="end" value="4113"/>
+      <details key="start" value="4382"/>
+      <details key="end" value="4392"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.198" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/%/%.1/%.1/%/l">
-      <details key="start" value="4103"/>
-      <details key="end" value="4104"/>
+      <details key="start" value="4382"/>
+      <details key="end" value="4383"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.199" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%/any/temp8">
@@ -1934,38 +1952,38 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.200" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%.1">
-      <details key="start" value="4149"/>
-      <details key="end" value="4164"/>
+      <details key="start" value="4428"/>
+      <details key="end" value="4443"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.201" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%.1/r">
-      <details key="start" value="4149"/>
-      <details key="end" value="4150"/>
+      <details key="start" value="4428"/>
+      <details key="end" value="4429"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.202" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/%.1/l">
-      <details key="start" value="4162"/>
-      <details key="end" value="4163"/>
+      <details key="start" value="4441"/>
+      <details key="end" value="4442"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.203" references="/0/getLocalVariableDeclarationStatementRepr/iterate/%/r">
-      <details key="start" value="4175"/>
-      <details key="end" value="4176"/>
+      <details key="start" value="4454"/>
+      <details key="end" value="4455"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.204" references="/0/getLocalVariableDeclarationStatementRepr/iterate/l">
-      <details key="start" value="3943"/>
-      <details key="end" value="3980"/>
+      <details key="start" value="4222"/>
+      <details key="end" value="4259"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.205" references="/0/getLocalVariableDeclarationStatementRepr/iterate/r">
-      <details key="start" value="3982"/>
-      <details key="end" value="4032"/>
+      <details key="start" value="4261"/>
+      <details key="end" value="4311"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.206" references="/0/getLocalVariableDeclarationStatementRepr/iterate/r/%">
-      <details key="start" value="4027"/>
-      <details key="end" value="4032"/>
+      <details key="start" value="4306"/>
+      <details key="end" value="4311"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>
