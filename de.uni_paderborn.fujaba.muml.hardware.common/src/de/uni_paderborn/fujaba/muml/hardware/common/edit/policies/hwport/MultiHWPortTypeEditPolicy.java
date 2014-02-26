@@ -2,7 +2,6 @@ package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
 
@@ -37,19 +36,11 @@ public class MultiHWPortTypeEditPolicy extends HWPortTypeEditPolicy {
 	}
 	
 	@Override
-	protected void addListeners(DiagramEventBroker broker) {
-		super.addListeners(broker);
+	protected void addListeners() {
+		super.addListeners();
 		// in case getPort() != getSemanticElement() because getPort() was
 		// overridden
-		broker.addNotificationListener(getHWPort().getCardinality(), this);
-	}
-
-	@Override
-	protected void removeListeners(DiagramEventBroker broker) {
-		super.removeListeners(broker);
-		// in case getPort() != getSemanticElement() because getPort() was
-		// overridden
-		broker.removeNotificationListener(getHWPort().getCardinality(), this);
+		this.addNotificationListener(getHWPort().getCardinality());
 	}
 
 
