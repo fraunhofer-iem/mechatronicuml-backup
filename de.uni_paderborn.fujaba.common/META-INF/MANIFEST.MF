@@ -8,7 +8,7 @@ Require-Bundle: org.eclipse.gmf.runtime.emf.commands.core;bundle-version="1.4.0"
  org.eclipse.gmf.runtime.emf.ui.properties;bundle-version="1.4.0",
  org.eclipse.ui.views.properties.tabbed;bundle-version="3.5.100",
  org.eclipse.m2m.qvt.oml;bundle-version="3.2.0",
- org.eclipse.xtext;bundle-version="2.4.3"
+ org.eclipse.xtext
 Bundle-Activator: de.uni_paderborn.fujaba.common.FujabaCommonPlugin
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
