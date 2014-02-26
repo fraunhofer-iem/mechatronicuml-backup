@@ -6,7 +6,7 @@
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  */
-package de.uni_paderborn.fujaba.muml.ui.xtfo;
+package de.uni_paderborn.fujaba.properties.runtime.xtfo;
 
 import java.util.ArrayList;
 import java.util.List;

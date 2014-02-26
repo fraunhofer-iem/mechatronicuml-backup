@@ -5,7 +5,7 @@ import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.swt.widgets.Composite;
 
-import de.uni_paderborn.fujaba.muml.common.ILoadResult;
+import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 
 public class ActionLanguageCellEditor extends TextCellEditor {

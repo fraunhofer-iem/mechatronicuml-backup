@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.storydriven.core.expressions.Expression;
 
-import de.uni_paderborn.fujaba.muml.common.ILoadResult;
+import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 
 public abstract class ModelStorage<T extends EObject> implements IModelStorage {

@@ -10,7 +10,7 @@
  *    Cedric Vidal (ProxiAD) - initial API and implementation
  */
 
-package de.uni_paderborn.fujaba.muml.ui.xtfo;
+package de.uni_paderborn.fujaba.properties.runtime.xtfo;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.linking.lazy.LazyLinkingResource;

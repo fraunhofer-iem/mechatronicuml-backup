@@ -18,7 +18,7 @@
  *
  * $Id: ToggleSLCommentAction.java,v 1.1 2011/03/04 22:18:25 ewillink Exp $
  */
-package de.uni_paderborn.fujaba.muml.ui.xtfo;
+package de.uni_paderborn.fujaba.properties.runtime.xtfo;
 
 import java.util.HashMap;
 import java.util.Map;

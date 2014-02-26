@@ -26,13 +26,13 @@ import org.storydriven.core.expressions.common.LogicalExpression;
 import org.storydriven.core.expressions.common.UnaryExpression;
 import org.storydriven.core.expressions.common.UnaryOperator;
 
+import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 import de.uni_paderborn.fujaba.modelinstance.ModelElementCategory;
 import de.uni_paderborn.fujaba.modelinstance.RootNode;
 import de.uni_paderborn.fujaba.modelinstance.categories.ModelElementCategoryRegistry;
 import de.uni_paderborn.fujaba.muml.behavior.Operation;
 import de.uni_paderborn.fujaba.muml.behavior.Parameter;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
-import de.uni_paderborn.fujaba.muml.common.ILoadResult;
 import de.uni_paderborn.fujaba.muml.common.LanguageResource;
 import de.uni_paderborn.fujaba.muml.component.HybridPort;
 import de.uni_paderborn.fujaba.muml.actionlanguage.ArrayInitializeExpression;

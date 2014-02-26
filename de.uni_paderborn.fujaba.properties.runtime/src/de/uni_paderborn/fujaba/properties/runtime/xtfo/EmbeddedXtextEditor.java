@@ -22,7 +22,7 @@
 
 // taken from: org.eclipse.ocl.examples.xtext.console.source_3.1.0.v20110829-0756.jar
 
-package de.uni_paderborn.fujaba.muml.ui.xtfo;
+package de.uni_paderborn.fujaba.properties.runtime.xtfo;
 
 import java.util.Collections;
 import java.util.Iterator;
