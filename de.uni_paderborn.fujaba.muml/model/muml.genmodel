@@ -409,7 +409,7 @@
       <genClasses ecoreClass="muml.ecore#//types/RangedPrimitiveDataType">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//types/RangedPrimitiveDataType/rangedType"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//types/RangedPrimitiveDataType/range"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//types/RangedPrimitiveDataType/range"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Connector" basePackage="de.uni_paderborn.fujaba.muml"

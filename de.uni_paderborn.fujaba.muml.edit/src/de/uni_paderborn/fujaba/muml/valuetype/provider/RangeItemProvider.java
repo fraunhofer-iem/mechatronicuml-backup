@@ -27,7 +27,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.valuetype.Range;
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
-import de.uni_paderborn.fujaba.muml.valuetype.descriptor.NaturalNumberPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.valuetype.Range} object.
@@ -69,16 +68,15 @@ public class RangeItemProvider
 		}
 		return itemPropertyDescriptors;
 	}
-
-	/**
+/**
 	 * This adds a property descriptor for the Lower Bound feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addLowerBoundPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new NaturalNumberPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Range_lowerBound_feature"),
@@ -96,11 +94,11 @@ public class RangeItemProvider
 	 * This adds a property descriptor for the Upper Bound feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void addUpperBoundPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new NaturalNumberPropertyDescriptor
+			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_Range_upperBound_feature"),
@@ -113,6 +111,51 @@ public class RangeItemProvider
 				 null,
 				 null));
 	}
+
+	//
+//	/**
+//	 * This adds a property descriptor for the Lower Bound feature.
+//	 * <!-- begin-user-doc -->
+//	 * <!-- end-user-doc -->
+//	 * @generated NOT
+//	 */
+//	protected void addLowerBoundPropertyDescriptor(Object object) {
+//		itemPropertyDescriptors.add
+//			(new NaturalNumberPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_Range_lowerBound_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_Range_lowerBound_feature", "_UI_Range_type"),
+//				 ValuetypePackage.Literals.RANGE__LOWER_BOUND,
+//				 true,
+//				 false,
+//				 false,
+//				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+//				 null,
+//				 null));
+//	}
+//
+//	/**
+//	 * This adds a property descriptor for the Upper Bound feature.
+//	 * <!-- begin-user-doc -->
+//	 * <!-- end-user-doc -->
+//	 * @generated NOT
+//	 */
+//	protected void addUpperBoundPropertyDescriptor(Object object) {
+//		itemPropertyDescriptors.add
+//			(new NaturalNumberPropertyDescriptor
+//				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+//				 getResourceLocator(),
+//				 getString("_UI_Range_upperBound_feature"),
+//				 getString("_UI_PropertyDescriptor_description", "_UI_Range_upperBound_feature", "_UI_Range_type"),
+//				 ValuetypePackage.Literals.RANGE__UPPER_BOUND,
+//				 true,
+//				 false,
+//				 false,
+//				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+//				 null,
+//				 null));
+//	}
 
 	/**
 	 * This returns Range.gif.
@@ -134,7 +177,7 @@ public class RangeItemProvider
 	@Override
 	public String getText(Object object) {
 		Range range = (Range)object;
-		return getString("_UI_Range_type") + " " + range.getLowerBound();
+		return getString("_UI_Range_type") + " " + range.getLowerBound() + " to " + range.getUpperBound();
 	}
 
 	/**
