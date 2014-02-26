@@ -1,5 +1,8 @@
 package de.uni_paderborn.fujaba.muml.common.edit.policies;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -18,6 +21,8 @@ import org.eclipse.gmf.runtime.notation.View;
  */
 public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 		implements NotificationListener {
+	
+	protected List<EObject> listeningElements = new ArrayList<EObject>(); 
 
 	/**
 	 * Activated this edit policy, does initializing work.
@@ -29,7 +34,7 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 		// add semantic listeners
 		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
 		if (diagramEventBroker != null) {
-			addListeners(diagramEventBroker);
+			addListeners();
 		}
 	}
 
@@ -42,7 +47,7 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 		// remove semantic listeners
 		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
 		if (diagramEventBroker != null) {
-			removeListeners(diagramEventBroker);
+			removeListeners();
 		}
 		super.deactivate();
 	}
@@ -59,9 +64,17 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 		}
 		return null;
 	}
+	
+	/**
+	 * Unregisters and re-registers listeners.
+	 */
+	protected void updateListeners() {
+		removeListeners();
+		addListeners();
+	}
 
 	/**
-	 * Convenience method.
+	 * Convenience method to get the edit part's editing domain.
 	 * 
 	 * @return The host edit part's editing domain.
 	 */
@@ -70,7 +83,7 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 	}
 
 	/**
-	 * Convenience method.
+	 * Convenience method to get the semantic element from the edit part.
 	 * 
 	 * @return The semantic element.
 	 */
@@ -110,26 +123,30 @@ public abstract class NotifyingGraphicalEditPolicy extends GraphicalEditPolicy
 
 	/**
 	 * Add listeners to the event broker.
-	 * 
-	 * @param broker
-	 *            The broker to add listeners to.
 	 */
-	protected void addListeners(DiagramEventBroker broker) {
+	protected void addListeners() {
 		// default implementation listens to all model and notation view changes
-		broker.addNotificationListener(getSemanticElement(), this);
-		broker.addNotificationListener(getNotationView(), this);
+		addNotificationListener(getSemanticElement());
+		addNotificationListener(getNotationView());
 	}
 
 	/**
 	 * Remove listeners to the event broker.
-	 * 
-	 * @param broker
-	 *            The broker to remove listeners from.
 	 */
-	protected void removeListeners(DiagramEventBroker broker) {
-		// default implementation listens to all model and notation view changes
-		broker.removeNotificationListener(getSemanticElement(), this);
-		broker.removeNotificationListener(getNotationView(), this);
+	protected final void removeListeners() {
+		for (EObject element : new ArrayList<EObject>(listeningElements)) {
+			removeNotificationListener(element);
+		}
+	}
+
+	protected void addNotificationListener(EObject element) {
+		listeningElements.add(element);
+		getDiagramEventBroker().addNotificationListener(element, this);
+	}
+
+	protected void removeNotificationListener(EObject element) {
+		getDiagramEventBroker().addNotificationListener(element, this);
+		listeningElements.remove(element);
 	}
 
 }

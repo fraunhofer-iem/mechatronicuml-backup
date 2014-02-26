@@ -55,19 +55,11 @@ public class CustomPortTypeEditPolicy extends PortTypeEditPolicy {
 	}
 
 	@Override
-	protected void addListeners(DiagramEventBroker broker) {
-		super.addListeners(broker);
+	protected void addListeners() {
+		super.addListeners();
 		// in case getPort() != getSemanticElement() because getPort() was
 		// overridden
-		broker.addNotificationListener(getPort(), this);
-	}
-
-	@Override
-	protected void removeListeners(DiagramEventBroker broker) {
-		super.removeListeners(broker);
-		// in case getPort() != getSemanticElement() because getPort() was
-		// overridden
-		broker.removeNotificationListener(getPort(), this);
+		addNotificationListener(getPort());
 	}
 
 	protected void refreshPortType() {

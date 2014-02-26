@@ -31,8 +31,9 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 			containingClass = feature.getEContainingClass();
 		}
 		
-		if (feature == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY || containingClass == ValuetypePackage.Literals.CARDINALITY || feature == ComponentPackage.Literals.DIRECTED_TYPED_PORT__OPTIONAL) {
+		if (feature == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY || containingClass == ValuetypePackage.Literals.NATURAL_NUMBER || containingClass == ValuetypePackage.Literals.CARDINALITY || feature == ComponentPackage.Literals.DIRECTED_TYPED_PORT__OPTIONAL) {
 			refreshArrow();
+			updateListeners();
 			// } else if (notification.getFeature() == C){
 		} else if (notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_TYPES
 				|| notification.getFeature() == ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__SENDER_MESSAGE_TYPES
@@ -43,19 +44,22 @@ public class PortTypeEditPolicy extends PortBaseEditPolicy {
 	}
 
 	@Override
-	protected void addListeners(DiagramEventBroker broker) {
-		super.addListeners(broker);
+	protected void addListeners() {
+		super.addListeners();
+		Port port = getPort();
+		if (port instanceof DiscretePort && ((DiscretePort) port).getCardinality() != null) {
+			Cardinality cardinality = ((DiscretePort) port).getCardinality();
+			addNotificationListener(cardinality);
+			if (cardinality.getLowerBound() != null) {
+				addNotificationListener(cardinality.getLowerBound());
+			}
+			if (cardinality.getUpperBound() != null) {
+				addNotificationListener(cardinality.getUpperBound());
+			}
+		}
 		// in case getPort() != getSemanticElement() because getPort() was
 		// overridden
-		broker.addNotificationListener(getPort(), this);
-	}
-
-	@Override
-	protected void removeListeners(DiagramEventBroker broker) {
-		super.removeListeners(broker);
-		// in case getPort() != getSemanticElement() because getPort() was
-		// overridden
-		broker.removeNotificationListener(getPort(), this);
+		addNotificationListener(port);
 	}
 
 	protected void refreshPortType() {
