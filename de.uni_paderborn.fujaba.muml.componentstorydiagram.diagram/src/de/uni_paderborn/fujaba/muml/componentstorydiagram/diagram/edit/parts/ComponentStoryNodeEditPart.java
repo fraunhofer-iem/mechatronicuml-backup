@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts;
 
 import java.util.ArrayList;
@@ -8,6 +20,7 @@ import org.eclipse.draw2d.BorderLayout;
 import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
@@ -117,14 +130,14 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure createNodeShape() {
-		return primaryShape = new ComponentStoryNodeRoundedFigure();
+		return primaryShape = new ComponentStoryNodeRoundedFigureForEach();
 	}
 
 	/**
 	 * @generated
 	 */
-	public ComponentStoryNodeRoundedFigure getPrimaryShape() {
-		return (ComponentStoryNodeRoundedFigure) primaryShape;
+	public ComponentStoryNodeRoundedFigureForEach getPrimaryShape() {
+		return (ComponentStoryNodeRoundedFigureForEach) primaryShape;
 	}
 
 	/**
@@ -387,7 +400,8 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ComponentStoryNodeRoundedFigure extends RoundedRectangle {
+	public class ComponentStoryNodeRoundedFigureForEach extends
+			RoundedRectangle {
 
 		/**
 		 * @generated
@@ -401,14 +415,17 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		/**
 		 * @generated
 		 */
-		public ComponentStoryNodeRoundedFigure() {
+		private RoundedRectangle fFigureInnerRoundedRectangleContainer;
 
-			BorderLayout layoutThis = new BorderLayout();
-			this.setLayoutManager(layoutThis);
-
+		/**
+		 * @generated
+		 */
+		public ComponentStoryNodeRoundedFigureForEach() {
+			this.setLayoutManager(new StackLayout());
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
 					getMapMode().DPtoLP(12)));
 			this.setFill(false);
+			this.setOutline(false);
 			createContents();
 		}
 
@@ -417,18 +434,66 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure storyNodeNameContainer0 = new RectangleFigure();
+			RoundedRectangle aux10 = new RoundedRectangle();
 
-			storyNodeNameContainer0.setFill(false);
-			storyNodeNameContainer0.setOutline(false);
+			aux10.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
+					getMapMode().DPtoLP(12)));
+			aux10.setFill(false);
+			aux10.setOutline(false);
+			aux10.setBorder(new MarginBorder(getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(3), getMapMode().DPtoLP(8),
+					getMapMode().DPtoLP(0)));
 
-			this.add(storyNodeNameContainer0, BorderLayout.TOP);
+			this.add(aux10);
+			aux10.setLayoutManager(new StackLayout());
 
-			GridLayout layoutStoryNodeNameContainer0 = new GridLayout();
-			layoutStoryNodeNameContainer0.numColumns = 1;
-			layoutStoryNodeNameContainer0.makeColumnsEqualWidth = true;
-			storyNodeNameContainer0
-					.setLayoutManager(layoutStoryNodeNameContainer0);
+			RoundedRectangle shadow1 = new RoundedRectangle();
+
+			shadow1.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
+					getMapMode().DPtoLP(12)));
+
+			aux10.add(shadow1);
+
+			fFigureInnerRoundedRectangleContainer = new RoundedRectangle();
+
+			fFigureInnerRoundedRectangleContainer
+					.setCornerDimensions(new Dimension(getMapMode().DPtoLP(12),
+							getMapMode().DPtoLP(12)));
+			fFigureInnerRoundedRectangleContainer.setFill(false);
+			fFigureInnerRoundedRectangleContainer.setOutline(false);
+			fFigureInnerRoundedRectangleContainer.setBorder(new MarginBorder(
+					getMapMode().DPtoLP(8), getMapMode().DPtoLP(0),
+					getMapMode().DPtoLP(0), getMapMode().DPtoLP(3)));
+
+			this.add(fFigureInnerRoundedRectangleContainer);
+			fFigureInnerRoundedRectangleContainer
+					.setLayoutManager(new StackLayout());
+
+			RoundedRectangle componentStoryNodeRoundedFigure1 = new RoundedRectangle();
+
+			componentStoryNodeRoundedFigure1.setCornerDimensions(new Dimension(
+					getMapMode().DPtoLP(12), getMapMode().DPtoLP(12)));
+
+			fFigureInnerRoundedRectangleContainer
+					.add(componentStoryNodeRoundedFigure1);
+
+			BorderLayout layoutComponentStoryNodeRoundedFigure1 = new BorderLayout();
+			componentStoryNodeRoundedFigure1
+					.setLayoutManager(layoutComponentStoryNodeRoundedFigure1);
+
+			RectangleFigure storyNodeNameContainer2 = new RectangleFigure();
+
+			storyNodeNameContainer2.setFill(false);
+			storyNodeNameContainer2.setOutline(false);
+
+			componentStoryNodeRoundedFigure1.add(storyNodeNameContainer2,
+					BorderLayout.TOP);
+
+			GridLayout layoutStoryNodeNameContainer2 = new GridLayout();
+			layoutStoryNodeNameContainer2.numColumns = 1;
+			layoutStoryNodeNameContainer2.makeColumnsEqualWidth = true;
+			storyNodeNameContainer2
+					.setLayoutManager(layoutStoryNodeNameContainer2);
 
 			fFigureComponentStoryNodeName = new WrappingLabel();
 
@@ -442,28 +507,34 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 			constraintFFigureComponentStoryNodeName.verticalSpan = 1;
 			constraintFFigureComponentStoryNodeName.grabExcessHorizontalSpace = false;
 			constraintFFigureComponentStoryNodeName.grabExcessVerticalSpace = false;
-			storyNodeNameContainer0.add(fFigureComponentStoryNodeName,
+			storyNodeNameContainer2.add(fFigureComponentStoryNodeName,
 					constraintFFigureComponentStoryNodeName);
 
-			RectangleFigure componentStoryNodeContentContainer0 = new RectangleFigure();
+			RectangleFigure componentStoryNodeContentContainer2 = new RectangleFigure();
 
-			componentStoryNodeContentContainer0.setFill(false);
-			componentStoryNodeContentContainer0.setOutline(false);
+			componentStoryNodeContentContainer2.setFill(false);
+			componentStoryNodeContentContainer2.setOutline(false);
 
-			this.add(componentStoryNodeContentContainer0, BorderLayout.CENTER);
+			componentStoryNodeRoundedFigure1.add(
+					componentStoryNodeContentContainer2, BorderLayout.CENTER);
 
-			BorderLayout layoutComponentStoryNodeContentContainer0 = new BorderLayout();
-			componentStoryNodeContentContainer0
-					.setLayoutManager(layoutComponentStoryNodeContentContainer0);
+			BorderLayout layoutComponentStoryNodeContentContainer2 = new BorderLayout();
+			componentStoryNodeContentContainer2
+					.setLayoutManager(layoutComponentStoryNodeContentContainer2);
 
 			fFigureComponentStoryNodePatternContainer = new RectangleFigure();
 
 			fFigureComponentStoryNodePatternContainer.setFill(false);
 			fFigureComponentStoryNodePatternContainer.setOutline(false);
 
-			componentStoryNodeContentContainer0.add(
+			componentStoryNodeContentContainer2.add(
 					fFigureComponentStoryNodePatternContainer,
 					BorderLayout.CENTER);
+
+			// Process FigureRef details
+
+			fFigureInnerRoundedRectangleContainer
+					.add(componentStoryNodeRoundedFigure1);
 
 		}
 
@@ -479,6 +550,13 @@ public class ComponentStoryNodeEditPart extends ShapeNodeEditPart {
 		 */
 		public RectangleFigure getFigureComponentStoryNodePatternContainer() {
 			return fFigureComponentStoryNodePatternContainer;
+		}
+
+		/**
+		 * @generated
+		 */
+		public RoundedRectangle getFigureInnerRoundedRectangleContainer() {
+			return fFigureInnerRoundedRectangleContainer;
 		}
 
 	}

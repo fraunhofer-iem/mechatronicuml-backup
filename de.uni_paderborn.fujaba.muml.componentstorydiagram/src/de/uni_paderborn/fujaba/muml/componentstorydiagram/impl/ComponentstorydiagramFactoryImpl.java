@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.impl;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -30,7 +31,7 @@ public class ComponentstorydiagramFactoryImpl extends EFactoryImpl implements Co
 	 */
 	public static ComponentstorydiagramFactory init() {
 		try {
-			ComponentstorydiagramFactory theComponentstorydiagramFactory = (ComponentstorydiagramFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/componentstorydiagram/0.4.0"); 
+			ComponentstorydiagramFactory theComponentstorydiagramFactory = (ComponentstorydiagramFactory)EPackage.Registry.INSTANCE.getEFactory(ComponentstorydiagramPackage.eNS_URI);
 			if (theComponentstorydiagramFactory != null) {
 				return theComponentstorydiagramFactory;
 			}

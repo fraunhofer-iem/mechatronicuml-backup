@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.util;
 
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;

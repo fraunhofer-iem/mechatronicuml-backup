@@ -139,6 +139,15 @@
          </propertyCategory>
       </propertyContributor>
    </extension>
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpolicyProviders">
+      <editpolicyProvider
+            class="de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.custom.providers.CustomComponentStoryDiagramEditPolicyProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpolicyProvider>
+   </extension>
 
 </plugin>
 
