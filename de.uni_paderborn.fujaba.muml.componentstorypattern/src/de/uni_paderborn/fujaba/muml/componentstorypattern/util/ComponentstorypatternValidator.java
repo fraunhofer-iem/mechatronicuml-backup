@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.util;
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -12,12 +11,14 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
@@ -118,8 +119,10 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 				return validateMultiPortVariable((MultiPortVariable)value, diagnostics, context);
 			case ComponentstorypatternPackage.TRIGGER_EMBEDDED_COMPONENT_EXPRESSION:
 				return validateTriggerEmbeddedComponentExpression((TriggerEmbeddedComponentExpression)value, diagnostics, context);
-			case ComponentstorypatternPackage.FADING_COMPONENT_VARIABLE:
-				return validateFadingComponentVariable((FadingComponentVariable)value, diagnostics, context);
+			case ComponentstorypatternPackage.FADING_COMPONENT_PART_VARIABLE:
+				return validateFadingComponentPartVariable((FadingComponentPartVariable)value, diagnostics, context);
+			case ComponentstorypatternPackage.COMPONENT_PART_VARIABLE:
+				return validateComponentPartVariable((ComponentPartVariable)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -657,8 +660,39 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateFadingComponentVariable(FadingComponentVariable fadingComponentVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(fadingComponentVariable, diagnostics, context);
+	public boolean validateFadingComponentPartVariable(FadingComponentPartVariable fadingComponentPartVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(fadingComponentPartVariable, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePartVariable_SameBindingOperatorAsComponentVariable(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePartVariable_ValidTypeOfPartVariable(fadingComponentPartVariable, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponentPartVariable(ComponentPartVariable componentPartVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(componentPartVariable, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(componentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(componentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(componentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(componentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(componentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(componentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(componentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(componentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePartVariable_SameBindingOperatorAsComponentVariable(componentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePartVariable_ValidTypeOfPartVariable(componentPartVariable, diagnostics, context);
+		return result;
 	}
 
 	/**

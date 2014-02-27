@@ -3,9 +3,8 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.provider;
 
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 
 import java.util.Collection;
 import java.util.List;
@@ -15,7 +14,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -25,13 +23,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PartVariableItemProvider
-	extends ComponentStoryPatternVariableItemProvider
+public class ComponentPartVariableItemProvider
+	extends PartVariableItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -44,7 +42,7 @@ public class PartVariableItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PartVariableItemProvider(AdapterFactory adapterFactory) {
+	public ComponentPartVariableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,31 +57,8 @@ public class PartVariableItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PartVariable_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PartVariable_type_feature", "_UI_PartVariable_type"),
-				 ComponentstorypatternPackage.Literals.PART_VARIABLE__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -98,7 +73,7 @@ public class PartVariableItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES);
+			childrenFeatures.add(ComponentstorypatternPackage.Literals.COMPONENT_PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS);
 		}
 		return childrenFeatures;
 	}
@@ -117,14 +92,14 @@ public class PartVariableItemProvider
 	}
 
 	/**
-	 * This returns PartVariable.gif.
+	 * This returns ComponentPartVariable.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PartVariable"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ComponentPartVariable"));
 	}
 
 	/**
@@ -135,11 +110,12 @@ public class PartVariableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PartVariable)object).getName();
+		String label = ((ComponentPartVariable)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PartVariable_type") :
-			getString("_UI_PartVariable_type") + " " + label;
+			getString("_UI_ComponentPartVariable_type") :
+			getString("_UI_ComponentPartVariable_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -152,8 +128,8 @@ public class PartVariableItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(PartVariable.class)) {
-			case ComponentstorypatternPackage.PART_VARIABLE__PORT_VARIABLES:
+		switch (notification.getFeatureID(ComponentPartVariable.class)) {
+			case ComponentstorypatternPackage.COMPONENT_PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -170,16 +146,6 @@ public class PartVariableItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES,
-				 ComponentstorypatternFactory.eINSTANCE.createSinglePortVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES,
-				 ComponentstorypatternFactory.eINSTANCE.createMultiPortVariable()));
 	}
 
 }

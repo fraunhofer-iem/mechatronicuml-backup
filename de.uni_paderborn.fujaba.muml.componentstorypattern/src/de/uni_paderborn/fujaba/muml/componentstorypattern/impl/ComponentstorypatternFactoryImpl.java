@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.impl;
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -10,14 +9,15 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.SinglePortVariable;
 
 /**
@@ -67,12 +67,12 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN: return createComponentStoryPattern();
 			case ComponentstorypatternPackage.COMPONENT_STORY_PATTERN_VARIABLE: return createComponentStoryPatternVariable();
 			case ComponentstorypatternPackage.COMPONENT_VARIABLE: return createComponentVariable();
-			case ComponentstorypatternPackage.PART_VARIABLE: return createPartVariable();
 			case ComponentstorypatternPackage.ASSEMBLY_VARIABLE: return createAssemblyVariable();
 			case ComponentstorypatternPackage.DELEGATION_VARIABLE: return createDelegationVariable();
 			case ComponentstorypatternPackage.SINGLE_PORT_VARIABLE: return createSinglePortVariable();
 			case ComponentstorypatternPackage.MULTI_PORT_VARIABLE: return createMultiPortVariable();
-			case ComponentstorypatternPackage.FADING_COMPONENT_VARIABLE: return createFadingComponentVariable();
+			case ComponentstorypatternPackage.FADING_COMPONENT_PART_VARIABLE: return createFadingComponentPartVariable();
+			case ComponentstorypatternPackage.COMPONENT_PART_VARIABLE: return createComponentPartVariable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -106,16 +106,6 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	public ComponentVariable createComponentVariable() {
 		ComponentVariableImpl componentVariable = new ComponentVariableImpl();
 		return componentVariable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PartVariable createPartVariable() {
-		PartVariableImpl partVariable = new PartVariableImpl();
-		return partVariable;
 	}
 
 	/**
@@ -163,9 +153,19 @@ public class ComponentstorypatternFactoryImpl extends EFactoryImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FadingComponentVariable createFadingComponentVariable() {
-		FadingComponentVariableImpl fadingComponentVariable = new FadingComponentVariableImpl();
-		return fadingComponentVariable;
+	public FadingComponentPartVariable createFadingComponentPartVariable() {
+		FadingComponentPartVariableImpl fadingComponentPartVariable = new FadingComponentPartVariableImpl();
+		return fadingComponentPartVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentPartVariable createComponentPartVariable() {
+		ComponentPartVariableImpl componentPartVariable = new ComponentPartVariableImpl();
+		return componentPartVariable;
 	}
 
 	/**

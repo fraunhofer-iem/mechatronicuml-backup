@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.util;
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -13,12 +12,14 @@ import org.storydriven.core.NamedElement;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
@@ -128,8 +129,12 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 				return createTriggerEmbeddedComponentExpressionAdapter();
 			}
 			@Override
-			public Adapter caseFadingComponentVariable(FadingComponentVariable object) {
-				return createFadingComponentVariableAdapter();
+			public Adapter caseFadingComponentPartVariable(FadingComponentPartVariable object) {
+				return createFadingComponentPartVariableAdapter();
+			}
+			@Override
+			public Adapter caseComponentPartVariable(ComponentPartVariable object) {
+				return createComponentPartVariableAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -330,16 +335,30 @@ public class ComponentstorypatternAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable <em>Fading Component Variable</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable <em>Fading Component Part Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable
 	 * @generated
 	 */
-	public Adapter createFadingComponentVariableAdapter() {
+	public Adapter createFadingComponentPartVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable <em>Component Part Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable
+	 * @generated
+	 */
+	public Adapter createComponentPartVariableAdapter() {
 		return null;
 	}
 

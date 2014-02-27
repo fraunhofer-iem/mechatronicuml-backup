@@ -188,7 +188,12 @@ public class ComponentVariableItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentstorypatternPackage.Literals.COMPONENT_VARIABLE__PART_VARIABLES,
-				 ComponentstorypatternFactory.eINSTANCE.createPartVariable()));
+				 ComponentstorypatternFactory.eINSTANCE.createFadingComponentPartVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComponentstorypatternPackage.Literals.COMPONENT_VARIABLE__PART_VARIABLES,
+				 ComponentstorypatternFactory.eINSTANCE.createComponentPartVariable()));
 
 		newChildDescriptors.add
 			(createChildParameter

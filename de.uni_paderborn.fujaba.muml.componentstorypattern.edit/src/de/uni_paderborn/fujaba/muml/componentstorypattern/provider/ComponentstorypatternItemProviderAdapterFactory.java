@@ -141,29 +141,6 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PartVariableItemProvider partVariableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPartVariableAdapter() {
-		if (partVariableItemProvider == null) {
-			partVariableItemProvider = new PartVariableItemProvider(this);
-		}
-
-		return partVariableItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -253,6 +230,52 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 		}
 
 		return multiPortVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FadingComponentPartVariableItemProvider fadingComponentPartVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFadingComponentPartVariableAdapter() {
+		if (fadingComponentPartVariableItemProvider == null) {
+			fadingComponentPartVariableItemProvider = new FadingComponentPartVariableItemProvider(this);
+		}
+
+		return fadingComponentPartVariableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentPartVariableItemProvider componentPartVariableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentPartVariableAdapter() {
+		if (componentPartVariableItemProvider == null) {
+			componentPartVariableItemProvider = new ComponentPartVariableItemProvider(this);
+		}
+
+		return componentPartVariableItemProvider;
 	}
 
 	/**
@@ -357,11 +380,12 @@ public class ComponentstorypatternItemProviderAdapterFactory extends Componentst
 		if (componentStoryPatternItemProvider != null) componentStoryPatternItemProvider.dispose();
 		if (componentStoryPatternVariableItemProvider != null) componentStoryPatternVariableItemProvider.dispose();
 		if (componentVariableItemProvider != null) componentVariableItemProvider.dispose();
-		if (partVariableItemProvider != null) partVariableItemProvider.dispose();
 		if (assemblyVariableItemProvider != null) assemblyVariableItemProvider.dispose();
 		if (delegationVariableItemProvider != null) delegationVariableItemProvider.dispose();
 		if (singlePortVariableItemProvider != null) singlePortVariableItemProvider.dispose();
 		if (multiPortVariableItemProvider != null) multiPortVariableItemProvider.dispose();
+		if (fadingComponentPartVariableItemProvider != null) fadingComponentPartVariableItemProvider.dispose();
+		if (componentPartVariableItemProvider != null) componentPartVariableItemProvider.dispose();
 	}
 
 }

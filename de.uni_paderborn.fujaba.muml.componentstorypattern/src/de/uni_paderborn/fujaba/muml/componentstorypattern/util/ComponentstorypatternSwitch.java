@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.util;
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -12,12 +11,14 @@ import org.storydriven.core.NamedElement;
 import org.storydriven.core.expressions.Expression;
 
 import de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
@@ -200,13 +201,25 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComponentstorypatternPackage.FADING_COMPONENT_VARIABLE: {
-				FadingComponentVariable fadingComponentVariable = (FadingComponentVariable)theEObject;
-				T result = caseFadingComponentVariable(fadingComponentVariable);
-				if (result == null) result = caseComponentStoryPatternVariable(fadingComponentVariable);
-				if (result == null) result = caseNamedElement(fadingComponentVariable);
-				if (result == null) result = caseCommentableElement(fadingComponentVariable);
-				if (result == null) result = caseExtendableElement(fadingComponentVariable);
+			case ComponentstorypatternPackage.FADING_COMPONENT_PART_VARIABLE: {
+				FadingComponentPartVariable fadingComponentPartVariable = (FadingComponentPartVariable)theEObject;
+				T result = caseFadingComponentPartVariable(fadingComponentPartVariable);
+				if (result == null) result = casePartVariable(fadingComponentPartVariable);
+				if (result == null) result = caseComponentStoryPatternVariable(fadingComponentPartVariable);
+				if (result == null) result = caseNamedElement(fadingComponentPartVariable);
+				if (result == null) result = caseCommentableElement(fadingComponentPartVariable);
+				if (result == null) result = caseExtendableElement(fadingComponentPartVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComponentstorypatternPackage.COMPONENT_PART_VARIABLE: {
+				ComponentPartVariable componentPartVariable = (ComponentPartVariable)theEObject;
+				T result = caseComponentPartVariable(componentPartVariable);
+				if (result == null) result = casePartVariable(componentPartVariable);
+				if (result == null) result = caseComponentStoryPatternVariable(componentPartVariable);
+				if (result == null) result = caseNamedElement(componentPartVariable);
+				if (result == null) result = caseCommentableElement(componentPartVariable);
+				if (result == null) result = caseExtendableElement(componentPartVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -380,17 +393,32 @@ public class ComponentstorypatternSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fading Component Variable</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fading Component Part Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fading Component Variable</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fading Component Part Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFadingComponentVariable(FadingComponentVariable object) {
+	public T caseFadingComponentPartVariable(FadingComponentPartVariable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Part Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Part Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentPartVariable(ComponentPartVariable object) {
 		return null;
 	}
 

@@ -14,6 +14,7 @@ import org.storydriven.storydiagrams.patterns.PatternsPackage;
 
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.AssemblyVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPatternVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable;
@@ -21,7 +22,7 @@ import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternF
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ConnectorVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.DelegationVariable;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.MultiPortVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.PortVariable;
@@ -120,7 +121,14 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass fadingComponentVariableEClass = null;
+	private EClass fadingComponentPartVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentPartVariableEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -353,15 +361,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPartVariable_TriggerEmbeddedComponentExpressions() {
-		return (EReference)partVariableEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getConnectorVariable() {
 		return connectorVariableEClass;
 	}
@@ -470,8 +469,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFadingComponentVariable() {
-		return fadingComponentVariableEClass;
+	public EClass getFadingComponentPartVariable() {
+		return fadingComponentPartVariableEClass;
 	}
 
 	/**
@@ -479,8 +478,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFadingComponentVariable_Type() {
-		return (EReference)fadingComponentVariableEClass.getEStructuralFeatures().get(0);
+	public EReference getFadingComponentPartVariable_AppliedFadingFunction() {
+		return (EReference)fadingComponentPartVariableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -488,8 +487,17 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFadingComponentVariable_AppliedFadingFunction() {
-		return (EReference)fadingComponentVariableEClass.getEStructuralFeatures().get(1);
+	public EClass getComponentPartVariable() {
+		return componentPartVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentPartVariable_TriggerEmbeddedComponentExpressions() {
+		return (EReference)componentPartVariableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -541,7 +549,6 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		partVariableEClass = createEClass(PART_VARIABLE);
 		createEReference(partVariableEClass, PART_VARIABLE__PORT_VARIABLES);
 		createEReference(partVariableEClass, PART_VARIABLE__TYPE);
-		createEReference(partVariableEClass, PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS);
 
 		connectorVariableEClass = createEClass(CONNECTOR_VARIABLE);
 		createEReference(connectorVariableEClass, CONNECTOR_VARIABLE__PORT_VARIABLES);
@@ -561,9 +568,11 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		triggerEmbeddedComponentExpressionEClass = createEClass(TRIGGER_EMBEDDED_COMPONENT_EXPRESSION);
 
-		fadingComponentVariableEClass = createEClass(FADING_COMPONENT_VARIABLE);
-		createEReference(fadingComponentVariableEClass, FADING_COMPONENT_VARIABLE__TYPE);
-		createEReference(fadingComponentVariableEClass, FADING_COMPONENT_VARIABLE__APPLIED_FADING_FUNCTION);
+		fadingComponentPartVariableEClass = createEClass(FADING_COMPONENT_PART_VARIABLE);
+		createEReference(fadingComponentPartVariableEClass, FADING_COMPONENT_PART_VARIABLE__APPLIED_FADING_FUNCTION);
+
+		componentPartVariableEClass = createEClass(COMPONENT_PART_VARIABLE);
+		createEReference(componentPartVariableEClass, COMPONENT_PART_VARIABLE__TRIGGER_EMBEDDED_COMPONENT_EXPRESSIONS);
 	}
 
 	/**
@@ -617,7 +626,8 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		singlePortVariableEClass.getESuperTypes().add(this.getPortVariable());
 		multiPortVariableEClass.getESuperTypes().add(this.getPortVariable());
 		triggerEmbeddedComponentExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
-		fadingComponentVariableEClass.getESuperTypes().add(this.getComponentStoryPatternVariable());
+		fadingComponentPartVariableEClass.getESuperTypes().add(this.getPartVariable());
+		componentPartVariableEClass.getESuperTypes().add(this.getPartVariable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentStoryPatternEClass, ComponentStoryPattern.class, "ComponentStoryPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -638,10 +648,9 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 		initEReference(getPortVariable_Type(), theComponentPackage.getPort(), null, "type", null, 1, 1, PortVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortVariable_ConnectorVariables(), this.getConnectorVariable(), null, "connectorVariables", null, 0, -1, PortVariable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		initEClass(partVariableEClass, PartVariable.class, "PartVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(partVariableEClass, PartVariable.class, "PartVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPartVariable_PortVariables(), this.getPortVariable(), null, "portVariables", null, 0, -1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPartVariable_Type(), theComponentPackage.getComponentPart(), null, "type", null, 1, 1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPartVariable_TriggerEmbeddedComponentExpressions(), this.getTriggerEmbeddedComponentExpression(), null, "triggerEmbeddedComponentExpressions", null, 0, 1, PartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorVariableEClass, ConnectorVariable.class, "ConnectorVariable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnectorVariable_PortVariables(), this.getPortVariable(), null, "portVariables", null, 0, -1, ConnectorVariable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -661,9 +670,11 @@ public class ComponentstorypatternPackageImpl extends EPackageImpl implements Co
 
 		initEClass(triggerEmbeddedComponentExpressionEClass, TriggerEmbeddedComponentExpression.class, "TriggerEmbeddedComponentExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(fadingComponentVariableEClass, FadingComponentVariable.class, "FadingComponentVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFadingComponentVariable_Type(), theReconfigurationPackage.getFadingComponent(), null, "type", null, 1, 1, FadingComponentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFadingComponentVariable_AppliedFadingFunction(), theReconfigurationPackage.getFadingFunction(), null, "appliedFadingFunction", null, 0, 1, FadingComponentVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(fadingComponentPartVariableEClass, FadingComponentPartVariable.class, "FadingComponentPartVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFadingComponentPartVariable_AppliedFadingFunction(), theReconfigurationPackage.getFadingFunction(), null, "appliedFadingFunction", null, 0, 1, FadingComponentPartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentPartVariableEClass, ComponentPartVariable.class, "ComponentPartVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentPartVariable_TriggerEmbeddedComponentExpressions(), this.getTriggerEmbeddedComponentExpression(), null, "triggerEmbeddedComponentExpressions", null, 0, 1, ComponentPartVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

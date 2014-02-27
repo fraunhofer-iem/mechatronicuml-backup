@@ -3,17 +3,14 @@
 package de.uni_paderborn.fujaba.muml.componentstorypattern.provider;
 
 
-import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory;
 import de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage;
-import de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable;
+import de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -22,16 +19,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PartVariableItemProvider
-	extends ComponentStoryPatternVariableItemProvider
+public class FadingComponentPartVariableItemProvider
+	extends PartVariableItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -44,7 +40,7 @@ public class PartVariableItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PartVariableItemProvider(AdapterFactory adapterFactory) {
+	public FadingComponentPartVariableItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,25 +55,25 @@ public class PartVariableItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
+			addAppliedFadingFunctionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Applied Fading Function feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addAppliedFadingFunctionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PartVariable_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PartVariable_type_feature", "_UI_PartVariable_type"),
-				 ComponentstorypatternPackage.Literals.PART_VARIABLE__TYPE,
+				 getString("_UI_FadingComponentPartVariable_appliedFadingFunction_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_FadingComponentPartVariable_appliedFadingFunction_feature", "_UI_FadingComponentPartVariable_type"),
+				 ComponentstorypatternPackage.Literals.FADING_COMPONENT_PART_VARIABLE__APPLIED_FADING_FUNCTION,
 				 true,
 				 false,
 				 true,
@@ -87,44 +83,14 @@ public class PartVariableItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns PartVariable.gif.
+	 * This returns FadingComponentPartVariable.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PartVariable"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/FadingComponentPartVariable"));
 	}
 
 	/**
@@ -135,11 +101,12 @@ public class PartVariableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PartVariable)object).getName();
+		String label = ((FadingComponentPartVariable)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PartVariable_type") :
-			getString("_UI_PartVariable_type") + " " + label;
+			getString("_UI_FadingComponentPartVariable_type") :
+			getString("_UI_FadingComponentPartVariable_type") + " " + label;
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -151,12 +118,6 @@ public class PartVariableItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(PartVariable.class)) {
-			case ComponentstorypatternPackage.PART_VARIABLE__PORT_VARIABLES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -170,16 +131,6 @@ public class PartVariableItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES,
-				 ComponentstorypatternFactory.eINSTANCE.createSinglePortVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ComponentstorypatternPackage.Literals.PART_VARIABLE__PORT_VARIABLES,
-				 ComponentstorypatternFactory.eINSTANCE.createMultiPortVariable()));
 	}
 
 }

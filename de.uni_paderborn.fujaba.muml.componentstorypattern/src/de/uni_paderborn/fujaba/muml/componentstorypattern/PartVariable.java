@@ -16,12 +16,12 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPart;
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable#getPortVariables <em>Port Variables</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable#getType <em>Type</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable#getTriggerEmbeddedComponentExpressions <em>Trigger Embedded Component Expressions</em>}</li>
  * </ul>
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getPartVariable()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameBindingOperatorAsComponentVariable='if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif' ValidTypeOfPartVariable='if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedParts->includes(self.type.oclAsType(muml::component::ComponentPart))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tfalse\r\nendif'"
+ * @model abstract="true"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SameBindingOperatorAsComponentVariable='if self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator<>storydiagrams::patterns::BindingOperator::CHECK_ONLY then\r\n\tself.bindingOperator = self.eContainer().oclAsType(ComponentStoryPatternVariable).bindingOperator\r\nelse\r\n\ttrue\r\nendif' ValidTypeOfPartVariable='if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedParts->includes(self.type.oclAsType(muml::component::ComponentPart))\r\n\telse\r\n\t\tfalse\r\n\tendif\r\nelse\r\n\tfalse\r\nendif'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SameBindingOperatorAsComponentVariable ValidTypeOfPartVariable'"
  * @generated
  */
@@ -67,31 +67,5 @@ public interface PartVariable extends ComponentStoryPatternVariable {
 	 * @generated
 	 */
 	void setType(ComponentPart value);
-
-	/**
-	 * Returns the value of the '<em><b>Trigger Embedded Component Expressions</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Trigger Embedded Component Expressions</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Trigger Embedded Component Expressions</em>' containment reference.
-	 * @see #setTriggerEmbeddedComponentExpressions(TriggerEmbeddedComponentExpression)
-	 * @see de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage#getPartVariable_TriggerEmbeddedComponentExpressions()
-	 * @model containment="true"
-	 * @generated
-	 */
-	TriggerEmbeddedComponentExpression getTriggerEmbeddedComponentExpressions();
-
-	/**
-	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable#getTriggerEmbeddedComponentExpressions <em>Trigger Embedded Component Expressions</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Trigger Embedded Component Expressions</em>' containment reference.
-	 * @see #getTriggerEmbeddedComponentExpressions()
-	 * @generated
-	 */
-	void setTriggerEmbeddedComponentExpressions(TriggerEmbeddedComponentExpression value);
 
 } // PartVariable

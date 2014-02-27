@@ -28,7 +28,6 @@
     <genClasses ecoreClass="ComponentStoryPattern.ecore#//PartVariable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//PartVariable/portVariables"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//PartVariable/type"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//PartVariable/triggerEmbeddedComponentExpressions"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ComponentStoryPattern.ecore#//ConnectorVariable">
       <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//ConnectorVariable/portVariables"/>
@@ -47,9 +46,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//MultiPortVariable/gmfSubPortVariables"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ComponentStoryPattern.ecore#//TriggerEmbeddedComponentExpression"/>
-    <genClasses ecoreClass="ComponentStoryPattern.ecore#//FadingComponentVariable">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//FadingComponentVariable/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//FadingComponentVariable/appliedFadingFunction"/>
+    <genClasses ecoreClass="ComponentStoryPattern.ecore#//FadingComponentPartVariable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//FadingComponentPartVariable/appliedFadingFunction"/>
+    </genClasses>
+    <genClasses ecoreClass="ComponentStoryPattern.ecore#//ComponentPartVariable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ComponentStoryPattern.ecore#//ComponentPartVariable/triggerEmbeddedComponentExpressions"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
