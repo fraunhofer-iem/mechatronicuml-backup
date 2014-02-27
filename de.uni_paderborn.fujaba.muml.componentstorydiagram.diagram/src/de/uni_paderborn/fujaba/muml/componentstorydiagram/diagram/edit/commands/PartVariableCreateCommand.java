@@ -51,7 +51,7 @@ public class PartVariableCreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 		de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable newElement = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
-				.createPartVariable();
+				.createComponentPartVariable();
 
 		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable owner = (de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable) getElementToEdit();
 		owner.getPartVariables().add(newElement);

@@ -145,7 +145,7 @@
                         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/partVariables"/>
                     <ownedChild>
                       <domainMetaElement
-                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//PartVariable"/>
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentPartVariable"/>
                       <labelMappings
                           readOnly="true">
                         <diagramLabel
@@ -386,6 +386,8 @@
                           <value
                               body="storydiagrams::patterns::BindingOperator::DESTROY"/>
                         </initializers>
+                        <elementClass
+                            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentPartVariable"/>
                       </newElementInitializers>
                       <newElementInitializers>
                         <initializers
@@ -396,6 +398,8 @@
                           <value
                               body="storydiagrams::patterns::BindingOperator::CREATE"/>
                         </initializers>
+                        <elementClass
+                            href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentPartVariable"/>
                       </newElementInitializers>
                     </initializers>
                   </newElementInitializers>

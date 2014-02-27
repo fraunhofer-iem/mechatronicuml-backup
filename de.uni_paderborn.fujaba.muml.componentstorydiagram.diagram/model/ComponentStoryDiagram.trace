@@ -21,7 +21,7 @@
     <nodeLabelTraces visualID="5020" queryText="true"/>
     <compartmentTraces visualID="7006" queryText="true"/>
   </childNodeTraces>
-  <childNodeTraces visualID="3014" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'PartVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'partVariables')">
+  <childNodeTraces visualID="3014" queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentPartVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/componentstorypattern/0.4.0' and _eClass_.name = 'ComponentVariable') and _containmentMF_.name = 'partVariables')">
     <nodeLabelTraces visualID="5017" queryText="true"/>
     <nodeLabelTraces visualID="5018" queryText="true"/>
   </childNodeTraces>
