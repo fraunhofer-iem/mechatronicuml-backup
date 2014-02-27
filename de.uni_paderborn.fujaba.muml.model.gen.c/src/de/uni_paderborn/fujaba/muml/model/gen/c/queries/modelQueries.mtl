@@ -57,29 +57,7 @@
 	)
 /]
 
-[query public getDefaultValue(type : DataType) : String = 
-	if (type.name = 'BOOLEAN') then 
-		'false' 
-	else if (type.name = 'STRING') then 
-		'""' 
 
-	else if (type.name = 'INT') then 
-		'0' 
-	else
-		'UNKNOWN DATATYPE' 
-	endif  
-	endif  
-	endif 
-
-/]
-
-[query public getDefaultValue(var : Variable) : String = 
-	if (var.initializeExpression.oclIsUndefined()) then
-		getDefaultValue(var.dataType)
-	else
-		generateExpression(var.initializeExpression, true, '')
-	endif
-/]
 
 [query public getMainCIC(mec : ModelElementCategory) : ComponentInstanceConfiguration = 
 	mec.modelElements->at(1).oclAsType(ComponentInstanceConfiguration)

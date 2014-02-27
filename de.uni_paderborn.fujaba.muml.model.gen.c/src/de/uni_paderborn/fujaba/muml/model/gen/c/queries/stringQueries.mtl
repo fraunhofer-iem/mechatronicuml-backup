@@ -676,5 +676,36 @@ channel.name
 [query public getType(par:Parameter) : String = 
 	par.dataType.getTypeName() 
 /]
+
+[query public getDefaultValue(type : DataType) : String = 
+if (type.name = 'BOOLEAN') then 'false' else 
+	if (type.name = 'BYTE') then '0' else
+	if (type.name = 'DOUBLE') then '0.0' else
+	if (type.name = 'INT') then '0' else
+	if (type.name = 'LONG') then '0' else
+	if (type.name = 'SHORT') then '0' else
+	if (type.name = 'VOID') then 'void' else
+	'TYPE UNDIFINED'
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+
+/]
+
+[query public getDefaultValue(var : Variable) : String = 
+	if (var.initializeExpression.oclIsUndefined()) then
+		getDefaultValue(var.dataType)
+	else
+		generateExpression(var.initializeExpression, true, '')
+	endif
+/]
+
+
+
+
 [query public cdtbeautifier(a : String) : String = invoke('org.eclipse.acceleo.additions.beautifier.CdtBeautifier','beautify(java.lang.String)', Sequence{a}) /]
 
