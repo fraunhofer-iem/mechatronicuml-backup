@@ -33,7 +33,7 @@
 [for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
 
 [comment create files for every component type/]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 [generateTypeFiles(modelElementCategory)/]
 [/if]
 [/for]
@@ -112,8 +112,8 @@ while (1){
 [/comment]
 //including all files for used Components
 [for (modelElementCategory : ModelElementCategory | root.categories)]
-	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.oclAsType(Component))]
+	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
 #include "[comp.getFileName(true, false)/]"
 		[/for]
 	[/if]
@@ -126,8 +126,8 @@ while (1){
  * (if modelElementCategory is 'components'
  * @param modelElementCategory
  */]
-[template public generateTypeFiles(modelElementCategory : ModelElementCategory)? (key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
-[for (component : Component | modelElementCategory.modelElements.oclAsType(Component))]
+[template public generateTypeFiles(modelElementCategory : ModelElementCategory)? (key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+[for (component : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
 [generate_ComponentHeader(component)/]
 [generate_ComponentClass(component)/]
 [/for]
@@ -140,9 +140,15 @@ while (1){
  * @param modelElementCategory
  */]
 [template public generateRTSCFiles(rootNode : RootNode) ]
-[for (comp: AtomicComponent | rootNode.eAllContents(AtomicComponent))]
-[generate_RTSCHeader(comp, comp.behavior.oclAsType(RealtimeStatechart))/]
-[generate_RTSC(comp, comp.behavior.oclAsType(RealtimeStatechart))/]
+[for (modelElementCategory : ModelElementCategory | rootNode.categories)]
+	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)]
+		[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
+			[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart))/]
+			[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart))/]
+		[/let]
+		[/for]
+	[/if]
 [/for]
 [/template]
 
@@ -176,6 +182,7 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 	[cInst.getVariableName()/] = [getCreateMethodName(cInst)/]();
 	[cInst.configurateInstance()/]
 
+[if cInst.oclIsKindOf(StructuredComponentInstance)]
 [for (conInst : ConnectorInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.portConnectorInstances)]
 	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([cInst.getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).portType)/],
 	[cInst.getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).portType)/], [conInst.isBidirectional()/]);
@@ -189,6 +196,7 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 	DiscreteConnectionList_add([conInst.getEmbeddingComponent().getVariableName()/]->connectorList,[conInst.getVariableName()/]);
 
 [/for]
+[/if]
 [/for]
 [/template]
 

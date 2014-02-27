@@ -15,11 +15,11 @@
 
 [file ('makefile', false, 'UTF-8')]
 [for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
-RTSC = [for (comp : Component | modelElementCategory.modelElements.oclAsType(Component)) ? (oclIsKindOf(AtomicComponent))][for (rtsc:RealtimeStatechart | comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))][rtsc.getClassName().toLowerFirst()/].o [/for][/for]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+RTSC = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if (comp.oclIsKindOf(AtomicComponent))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
 [/if]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
-COMP = [for (comp : Component | modelElementCategory.modelElements.oclAsType(Component))][comp.getClassName().toLowerFirst()/].o [/for]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+COMP = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][comp.getClassName().toLowerFirst()/].o [/for]
 [/if][/for]
 LIB = syncChannel.o discreteConnection.o discreteConnectionList.o event.o eventQueue.o discretePort.o messages.o
 
@@ -35,8 +35,8 @@ app : main.o $(RTSC) $(COMP) $(LIB) [if (aRootNode.eAllContents(Operation)->size
 	$(CC) $(CFLAGS) [rtsc.getFileName(false,false)/]
 [/for]
 [/if]
-[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
-[for (comp : Component | modelElementCategory.modelElements.oclAsType(Component))]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
 [comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,false)/]
 	$(CC) $(CFLAGS) [comp.getFileName(false,false)/]
 [/for]
@@ -73,12 +73,12 @@ clean:
 TARGET = nxtOSEKImpl
 TARGET_SOURCES := \
 		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.oclAsType(Component)) ? (oclIsKindOf(AtomicComponent))][for (rtsc:RealtimeStatechart | comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))]		RTSCs/[rtsc.getClassName().toLowerFirst()/].c\
+		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[for (comp : Component | modelElementCategory.modelElements.oclAsType(ComponentInstance).componentType) ? (oclIsKindOf(AtomicComponent))][for (rtsc:RealtimeStatechart | comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))]		RTSCs/[rtsc.getClassName().toLowerFirst()/].c\
 [/for][/for]
 		[/if]
-		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.oclAsType(Component))]		components/[comp.getClassName().toLowerFirst()/].c\
+		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[for (comp : Component | modelElementCategory.modelElements.oclAsType(ComponentInstance).componentType)]		components/[comp.getClassName().toLowerFirst()/].c\
 [/for][/if][/for]
 		lib/syncChannel.c\
 		lib/discreteConnection.c\
