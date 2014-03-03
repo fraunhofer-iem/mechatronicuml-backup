@@ -13,9 +13,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
-import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -400,7 +398,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String DISCRETE_PORT__DISCRETE_PORT_AT_STRUCTURED_COMPONENT_HAS_NO_BEHAVIOR__EEXPRESSION = "-- Discrete Prot at Structured Component must not have behavior\n" +
-		"(not self.component.oclIsUndefined() and self.component.oclIsTypeOf(component::StructuredComponent))\n" +
+		"(not self.component.oclIsUndefined() and self.component.oclIsKindOf(component::StructuredComponent))\n" +
 		"\timplies self.behavior.oclIsUndefined()";
 
 	/**
@@ -431,7 +429,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String DISCRETE_PORT__DISCRETE_PORT_REQUIRES_ROLE__EEXPRESSION = "-- Discrete Port must refine a role\n" +
-		"self.oclIsTypeOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()";
+		"self.oclIsKindOf(component::DiscretePort) implies not self.refinedRole.oclIsUndefined()";
 
 	/**
 	 * Validates the DiscretePortRequiresRole constraint of '<em>Discrete Port</em>'.
@@ -699,7 +697,7 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String STRUCTURED_COMPONENT__STRUCTURED_COMPONENT_ALLOWS_NO_HYBRID_PORTS__EEXPRESSION = "-- A structured component allows no hybrid ports.\r\n" +
-		"self.ports->forAll(port | not port.oclIsTypeOf(component::HybridPort))";
+		"self.ports->forAll(port | not port.oclIsKindOf(component::HybridPort))";
 
 	/**
 	 * Validates the StructuredComponentAllowsNoHybridPorts constraint of '<em>Structured Component</em>'.
@@ -838,7 +836,7 @@ public class ComponentValidator extends MumlValidator {
 	protected static final String STRUCTURED_COMPONENT__HYBRID_STRUCTURED_COMPONENT_VALID_PORTS__EEXPRESSION = "-- Structured hybrid component must only have discrete or continuous ports\r\n" +
 		"self.componentKind = component::ComponentKind::HYBRID_COMPONENT\r\n" +
 		"\timplies (\r\n" +
-		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::DiscretePort) or p.oclIsTypeOf(component::ContinuousPort))\r\n" +
+		"\t\tself.ports->forAll(p | p.oclIsKindOf(component::DiscretePort) or p.oclIsKindOf(component::ContinuousPort))\r\n" +
 		"\t)";
 
 	/**
@@ -1183,7 +1181,7 @@ public class ComponentValidator extends MumlValidator {
 	protected static final String ATOMIC_COMPONENT__CONTINUOUS_COMPONENT_VALID_PORTS__EEXPRESSION = "-- Continuous Component must only have continuous ports.\n" +
 		"self.componentKind = component::ComponentKind::CONTINUOUS_COMPONENT\n" +
 		"\timplies (\n" +
-		"\t\tself.ports->forAll(p | p.oclIsTypeOf(component::ContinuousPort))\n" +
+		"\t\tself.ports->forAll(p | p.oclIsKindOf(component::ContinuousPort))\n" +
 		"\t)";
 
 	/**

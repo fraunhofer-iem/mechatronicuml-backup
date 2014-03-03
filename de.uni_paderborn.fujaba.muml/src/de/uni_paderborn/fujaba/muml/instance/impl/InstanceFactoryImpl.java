@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.instance.impl;
 
-import de.uni_paderborn.fujaba.muml.instance.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -42,7 +41,7 @@ public class InstanceFactoryImpl extends EFactoryImpl implements InstanceFactory
 	 */
 	public static InstanceFactory init() {
 		try {
-			InstanceFactory theInstanceFactory = (InstanceFactory)EPackage.Registry.INSTANCE.getEFactory(InstancePackage.eNS_URI);
+			InstanceFactory theInstanceFactory = (InstanceFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/instance/0.4.0"); 
 			if (theInstanceFactory != null) {
 				return theInstanceFactory;
 			}
