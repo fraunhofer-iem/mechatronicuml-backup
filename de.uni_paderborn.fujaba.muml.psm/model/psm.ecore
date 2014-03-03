@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="psm" nsURI="http://www.fujaba.de/muml/psm/0.1.0" nsPrefix="psm">
+  <eSubpackages name="allocation" nsURI="http://www.fujaba.de/muml/psm/allocation/0.1.0"
+      nsPrefix="allocation">
+    <eClassifiers xsi:type="ecore:EClass" name="SystemAllocation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allocations" lowerBound="1"
+          upperBound="-1" eType="#//allocation/Allocation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Allocation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/StructuredResourceInstance"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="properties" nsURI="http://www.fujaba.de/muml/psm/properties/0.1.0"
+      nsPrefix="properties">
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceExecutionProperties">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="wcet" upperBound="-1"
+          eType="#//properties/WCETpair" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="codeMem" upperBound="-1"
+          eType="#//properties/MemoryPair" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ramMem" upperBound="-1"
+          eType="#//properties/MemoryPair" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WCETpair">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="amount" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resource" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/ResourceInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MemoryPair">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="amount" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resource" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/ResourceInstance"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

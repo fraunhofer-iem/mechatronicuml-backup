@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/allocation/0.1.0"
+            class="psm.allocation.AllocationPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/properties/0.1.0"
+            class="psm.properties.PropertiesPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
+
+</plugin>
