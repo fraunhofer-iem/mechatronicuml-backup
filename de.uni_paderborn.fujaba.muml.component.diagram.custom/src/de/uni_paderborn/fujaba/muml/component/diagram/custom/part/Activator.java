@@ -127,8 +127,9 @@ public class Activator extends AbstractUIPlugin {
 		}
 		
 		if (!command.hasChanged() && editingDomain.getCommandStack().canUndo()) {
-			editingDomain.getCommandStack().undo();
-		}
+		//	editingDomain.getCommandStack().undo();
+				command.undo();
+				}
 	}
 	
 	public static void updateCoordinationProtocolParts(EditingDomain editingDomain, StructuredComponent component) {
