@@ -123,6 +123,7 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 			// Remove and recreate listeners
 			reactivateSemanticModel();
 
+
 			executeTransformation();
 		} else if (ComponentPackage.Literals.COMPONENT__PORTS == feature) {
 			executeTransformation();
@@ -131,18 +132,31 @@ public class CustomComponentPartEditPart extends ComponentPartEditPart {
 	}
 
 	private void executeTransformation() {
-
+		executePortPartTransformation();
+		executeCoordinationProtocolPartTransformation();
+		
+	}
+	
+	
+	private void executePortPartTransformation() {
 		EditingDomain editingDomain = getEditingDomain();
 		if (editingDomain != null) {
 			ComponentPart componentPart = (ComponentPart) getNotationView()
 					.getElement();
 			Activator.updateComponentPart(editingDomain, componentPart);
-			
+		}
+	}
+	
+
+	private void executeCoordinationProtocolPartTransformation() {
+		EditingDomain editingDomain = getEditingDomain();
+		if (editingDomain != null) {
+			ComponentPart componentPart = (ComponentPart) getNotationView()
+					.getElement();
 			StructuredComponent component = componentPart.getParentComponent();
 			Activator.updateCoordinationProtocolParts(editingDomain, component);	
 		}
 	}
-
 	/**
 	 * Updates the PartFigure to visualize a multi-part, if necessary.
 	 */
