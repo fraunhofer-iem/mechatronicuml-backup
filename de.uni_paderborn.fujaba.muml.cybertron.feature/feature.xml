@@ -16,6 +16,18 @@
       [Enter License Description here.]
    </license>
 
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.storydriven.core"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.hardware"/>
+      <import plugin="de.uni_paderborn.fujaba.muml"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.storydriven.core.edit"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.hardware.edit"/>
+      <import plugin="de.uni_paderborn.fujaba.muml.edit"/>
+   </requires>
+
    <plugin
          id="de.uni_paderborn.fujaba.muml.psm"
          download-size="0"
