@@ -44,6 +44,8 @@
 		
 			[getterAndSetter(component)/]
 	
+			[createHybridPortMethods(component)/]
+		
 			[queueMethods(component)/]
 	
 			[comment @TODO connect(component)/]
@@ -127,7 +129,6 @@ struct [getClassName(component)/] {
 			[if (port.oclIsTypeOf(DiscretePort))]
 				DiscretePort* [getVariableName(port)/];
 			[elseif (port.oclIsTypeOf(ContinuousPort))]
-				#warning Continuous ports are not supported yet! 
 			[/if]
 		[/for]
 		
@@ -202,7 +203,9 @@ struct [getClassName(component)/] {
 	[/if]
 
 	[for (port : Port | component.ports)]
+	[if (port.oclIsKindOf(DiscretePort))]
 		[getClassName(port)/]* [getGetterName(port)/]([getClassName(component)/]* component);
+	[/if]
 	[/for]
 [/template]
 
@@ -220,6 +223,16 @@ void [getRemoveMethodName(component,compPart)/]([getClassName(compPart)/]* compo
 [/if]
 [/template]
 
+
+[template private createHybridPortMethods (component : Component) post (trim())]
+[for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
+	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
+	
+	void setValueOf_[hybridPort.getName()/]([component.getClassName()/] *component, [hybridPort.dataType.getTypeName()/] value);
+	[hybridPort.dataType.getTypeName()/] getValueOf_[hybridPort.getName()/]([component.getClassName()/] *component);
+	[/let]
+[/for]
+[/template]
 
 [**
  * 

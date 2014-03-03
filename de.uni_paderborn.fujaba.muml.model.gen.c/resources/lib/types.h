@@ -13,6 +13,7 @@ typedef unsigned short ushort_t;
 typedef int int_t;
 typedef double real_t;
 typedef char* string_t;
+typedef unsigned char byte;
 
 #include <stdbool.h>
 #ifndef _STDBOOL_H

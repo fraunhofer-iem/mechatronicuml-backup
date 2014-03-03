@@ -16,7 +16,7 @@
  * The documentation of the query generateElement.
  * @param anOclAny
  */]
-[query public getHeaderFile (rtsc : RealtimeStatechart) : String = rtsc.name+'.h'/]
+[query public getHeaderFile (rtsc : RealtimeStatechart) : String = rtsc.name.getName()+'.h'/]
 
 [**
  * @param syncChannel
@@ -44,11 +44,11 @@
 /]
 
 [query public getName(op : Operation) : String =
-	op.name.toLowerFirst()	
+	op.name.getName().toLowerFirst()	
 /]
 
 [query public getName(parameter : Parameter) : String = 
-	parameter.name.toLowerFirst()
+	parameter.name.getName().toLowerFirst()
 /]
 
 [query public getName(component : Component) : String = 
@@ -85,11 +85,11 @@ getName(region.name)
 /]
 
 [query public getName (rep : MessageTypeRepository) : String = 
-rep.name
+getName(rep.name)
 /]
 
 [query public getName (channel : SynchronizationChannel) : String = 
-channel.name
+getName(channel.name)
 /]
 
 [query public getName(state : State) : String =
@@ -101,6 +101,13 @@ channel.name
  * @param port
 */]
 [query public getName(port : Port) : String = 
+	getName(port.name) 
+/]
+
+[**
+ * @param port
+*/]
+[query public getName(port : HybridPort) : String = 
 	getName(port.name) 
 /]
 
@@ -292,7 +299,7 @@ channel.name
 
 
 [query public getVariableName(syncChannel : SynchronizationChannel) : String = 
-	syncChannel.name.toLowerFirst() + 'SyncChannel'
+	syncChannel.name.getName().toLowerFirst() + 'SyncChannel'
 /]
 
 [query public getVariableName(rtsc : RealtimeStatechart) : String =
@@ -305,7 +312,7 @@ channel.name
 
 
 [query public getVariableName(msgType : MessageType) : String = 
-	msgType.getName() + 'Message'
+	msgType.getName() + msgType.repository.getName() +'Message'
 /]
 
 [**
@@ -330,16 +337,8 @@ channel.name
  * @param port
 */]
 [query public getVariableName(port : Port, classVariable : Boolean) : String = 
-	if (port.oclIsTypeOf(ContinuousPort)) then
-		if (classVariable) then
-			if (port.oclAsType(ContinuousPort).inPort) then
-				getName(port).toLowerFirst() + 'InPort'
-			else
-				getName(port).toLowerFirst() + 'OutPort'
-			endif
-		else
+	if (port.oclIsTypeOf(HybridPort) or port.oclIsTypeOf(ContinuousPort)) then
 			getName(port).toLowerFirst()
-		endif
 	else
 		getName(port).toLowerFirst() + 'Port'
 	endif
@@ -504,12 +503,12 @@ channel.name
 
 
 [query public replaceClockNames(rtsc : RealtimeStatechart, expression : String) : String = 
-	rtsc.availableClocks->collect(oclAsType(Clock))->iterate(clock : Clock; returnValue : String = expression | returnValue.replaceAll('\\b' + clock.name + '\\b', 'Clock_getTime(stateMachine->' + getVariableName(clock) + ')'))	
+	rtsc.availableClocks->collect(oclAsType(Clock))->iterate(clock : Clock; returnValue : String = expression | returnValue.replaceAll('\\b' + getName(clock.name) + '\\b', 'Clock_getTime(stateMachine->' + getVariableName(clock) + ')'))	
 /]
 
 [query public replaceLocalVariableNames(rtsc : RealtimeStatechart, expression : String) : String = 
 	if not rtsc.oclIsUndefined() and rtsc.allAvailableVariables ->size() > 0 then 
-		rtsc.allAvailableVariables->collect(oclAsType(Variable))->iterate(var : Variable; returnValue : String = expression | returnValue.replaceAll('\\b' + var.name + '\\b', 'stateMachine->' + getVariableName(var)))
+		rtsc.allAvailableVariables->collect(oclAsType(Variable))->iterate(var : Variable; returnValue : String = expression | returnValue.replaceAll('\\b' + getName(var.name) + '\\b', 'stateMachine->' + getVariableName(var)))
 	else
 		expression
 	endif	
@@ -625,7 +624,7 @@ channel.name
  * @param name
 */]
 [query public getName(name : String) : String =
-	Sequence{' ', '_', '-'}->iterate(iterator : String; returnValue : String = name | tokenize(returnValue, iterator)) 
+	Sequence{' ', '-'}->iterate(iterator : String; returnValue : String = name | tokenize(returnValue, iterator)) 
 /]
 
 
@@ -662,7 +661,8 @@ channel.name
  * @param port
 */]
 [query public getGetterName(port : Port) : String = 
-	getClassName(port.component) + '_get' + port.name
+	getClassName(port.component) + '_get' + port.name.getName()
+
 /]
 
 [**

@@ -42,6 +42,8 @@
 		[processStep(component)/]
 	
 		[getterAndSetter(component)/]
+	
+		[createHybridPortMethods(component)/]
 
 		[queueMethods(component)/]
 
@@ -61,6 +63,9 @@
 	#include <stdio.h>
 	[if component.oclIsKindOf(AtomicComponent)]
 		#include "../[getFileName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart), true, false)/]"
+	[/if]
+	[if component.eAllContents(HybridPort)->size()>0]
+	#include "../hybridPortImpl.h"
 	[/if]
 
 	#include "[getClassName(component).toLowerFirst()/].h"
@@ -189,8 +194,7 @@
 
 					[/if]
 					);
-				[elseif (port.oclIsKindOf(ContinuousPort))]
-					#warning continous ports not supported!
+					
 				[/if]
 			[/for]	
 
@@ -239,14 +243,16 @@
 		
 			[for (port : Port | component.ports)]
 				[comment @TODO multiports/]
-				[getDestroyMethodName(port)/](component->[getVariableName(port)/]);
+				[if port.oclIsKindOf(DiscretePort)]
+					[getDestroyMethodName(port)/](component->[getVariableName(port)/]);
+				[/if]
 			[/for]
 
 			[if component.oclIsKindOf(StructuredComponent)]
 			[for (connector : Connector | component.oclAsType(StructuredComponent).connectors)]		
 			[if ((connector.connectorEndpoints->at(1).oclIsTypeOf(DiscretePort)) and (connector.connectorEndpoints->at(2).oclIsTypeOf(DiscretePort)))]				
 			[comment connectors/]
-[comment @TODO Continous Ports/]
+			[comment @TODO Continous Ports/]
 				[/if]
 			[/for]
 			[/if]
@@ -324,7 +330,13 @@
 		}
 	[/if]
 	[if component.oclIsKindOf(AtomicComponent)]
-		[getProcessMethodName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/](component->stateChart);	
+		[for (hPort : HybridPort | component.eAllContents(HybridPort))]
+			component->stateChart->[hPort.getVariableName()/] = read_[hPort.getName()/](component);
+		[/for]
+		[getProcessMethodName(component.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))/](component->stateChart);
+		[for (hPort : HybridPort | component.eAllContents(HybridPort))]
+			write_[hPort.getName()/](component,component->stateChart->[hPort.getVariableName()/]);
+		[/for]
 	[/if]
 }	
 [/template]
@@ -345,13 +357,59 @@
 	[/if]
 
 	[for (port : Port | component.ports)]
+	[if (port.oclIsKindOf(DiscretePort))]
 		[getClassName(port)/]* [getGetterName(port)/]([getClassName(component)/]* component) {
 			return component->[getVariableName(port)/];
 		}
+	[/if]
 	[/for]
 [/template]
 
 
+[**
+ * Generates the queue methods for multiparts.
+ * 
+ * @param component
+*/]
+[template private createHybridPortMethods (component : Component) post (trim())]
+[for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
+	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
+	//set value of hybrid port [hybridPort.getName()/]
+	void setValueOf_[hybridPort.getName()/]([component.getClassName()/] *component, [hybridPort.dataType.getTypeName()/] value){
+		component->stateChart->[hybridPort.getVariableName()/] = value;
+	}
+
+	//get value of hybrid port [hybridPort.getName()/]
+	[hybridPort.dataType.getTypeName()/] getValueOf_[hybridPort.getName()/]([component.getClassName()/] *component){
+		return component->stateChart->[hybridPort.getVariableName()/];
+	}
+	[/let]
+[/for]
+
+[file ('hybridPortImpl.h', false, 'UTF-8')]
+#import "[getFileName(component, true)/]"
+[for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
+	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
+	void write_[hybridPort.getName()/]([component.getClassName()/] *component, [hybridPort.dataType.getTypeName()/] value);
+	[hybridPort.dataType.getTypeName()/] read_[hybridPort.getName()/]([component.getClassName()/] *component);
+	[/let]
+[/for]
+[/file]
+[file ('hybridPortImpl.c', false, 'UTF-8')]
+#import "hybridPortImpl.h"
+[for (port : Port | component.ports) ? (oclIsKindOf(HybridPort))]
+	[let hybridPort  :HybridPort = port.oclAsType(HybridPort)]
+	//write port
+	void write_[hybridPort.getName()/]([component.getClassName()/] *component, [hybridPort.dataType.getTypeName()/] value){
+	
+	}
+	[hybridPort.dataType.getTypeName()/] read_[hybridPort.getName()/]([component.getClassName()/] *component){
+	return [hybridPort.dataType.getDefaultValue()/];
+	}
+	[/let]
+[/for]
+[/file]
+[/template]
 [**
  * Generates the queue methods for multiparts.
  * 

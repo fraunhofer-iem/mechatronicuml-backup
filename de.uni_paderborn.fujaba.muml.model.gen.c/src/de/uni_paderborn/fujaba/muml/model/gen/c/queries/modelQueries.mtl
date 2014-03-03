@@ -105,3 +105,12 @@
 	endif
 /]
 
+
+[query public getPortForRegion(region : Region) : DiscretePort =
+	if (region.embeddedStatechart.behavioralElement.oclIsUndefined()) then
+		getPortForRegion(region.parentState.parentStatechart.parentRegion)
+	else
+		region.embeddedStatechart.behavioralElement.oclAsType(DiscretePort)
+	endif
+/]
+

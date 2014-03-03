@@ -72,66 +72,7 @@
  * @param statechart
 */]
 [template private variables (comp: Component, rtsc: RealtimeStatechart) post(trim())]	
- struct [getClassName(rtsc)/] {	
-		[comment Member variable for the parent component. /]	
-		[comp.getClassName()/] * parentComponent;		
-
-
-					[getClassName(rtsc, true)/] [getVariableName(rtsc)/];
-		[comment Member variables for the current state of each region. /]	
-
-		[for (region : Region | rtsc.eAllContents(Region))]
-			[getClassName(rtsc, true)/] [getVariableName(region.embeddedStatechart)/];
-		[/for]
-		[comment]
-		[for (state : State | rtsc.states)]
-
-				[if (not state.oclAsType(State).simple)]
-					[for (region : Region | state.embeddedRegions)]	
-				[getClassName(rtsc, true)/] [getVariableName(region.embeddedStatechart)/];
-						[for (innerState : State | region.embeddedStatechart.states)]
-							[if (not innerState.oclAsType(State).simple)]
-								[for (innerRegion : Region | innerState.embeddedRegions)]	
-				[getClassName(rtsc, true)/] [getVariableName(innerRegion.embeddedStatechart)/];
-								[/for]
-							[/if]
-						[/for]		
-					[/for]
-				[/if]
-		[/for]
-		[/comment]
-	
-		[comment Member variables for the clocks of each region. /]
-		[for (clock : Clock | rtsc.eAllContents(Clock))]
-			Clock [getVariableName(clock)/];
-		[/for]
-	
-		[comment @TODO Member variables for the clocks of after transitions. /]	
-		
-	
-		[comment Member variables for the clocks of do actions. /]
-		[for (state : State | rtsc.states) ? (not state.doEvent.oclIsUndefined() and state.doEvent.action.extension->size()>0)]
-			Clock [getClockVariableName(state)/];
-		[/for]
-	
-
-		
-		[comment Member variables for the variables of each region. /]	
-		[for (var : Variable | rtsc.eAllContents(Variable))]
-			[comment]			
-			[if (variable.kind = VariableKind::EXTERN)]extern[elseif (variable.scope = VariableScope::LOCAL)]static[/if]
-			[/comment] 
-			[getTypeName(var)/] [getVariableName(var)/];
-		[/for]
-	
-		[comment @TODO Member variables for the contineous ports of the component./]
-
-
-		[comment Member variables for the synchronization channels /]	
-		[for (syncChannel : SynchronizationChannel | rtsc.eAllContents(State)->collect(channels)->asSet())]
-			[getClassName(syncChannel)/]* [getVariableName(syncChannel)/];
-		[/for]
-	} ;
+ 
 [/template]
 
 
@@ -381,20 +322,8 @@
 	
 	[comment Trigger events /]
 	[if (not transition.triggerMessageEvent.oclIsUndefined())]
-		[for (msg : Message | transition.triggerMessageEvent.message)]
-			[for (port : Port | component.ports)]	
-			[if (port.oclIsKindOf(DiscretePort))]
-			[let dPort : DiscretePort = port.oclAsType(DiscretePort)]
-			[if (dPort.isDiscreteInPort or dPort.isDiscreteInOutPort)]		
-					[for (msgType : MessageType | dPort.receiverMessageTypes)]
-						[if (msgType.name = msg.instanceOf.name)]
-							Event* event = DiscretePort_receiveEvent([getGetterName(port)/](stateChart->parentComponent), [getVariableName(msgType)/].signature);
-						[/if]
-					[/for]
-			[/if]
-			[/let]
-			[/if]
-			[/for]
+		[for (msg : Message | transition.triggerMessageEvent.message)]		
+				Event* event = DiscretePort_receiveEvent([getGetterName(getPortForRegion(transition.statechart.parentRegion))/](stateChart->parentComponent), [getVariableName(msg.instanceOf)/].signature);
 		[/for]
 	[/if]
 
@@ -499,32 +428,9 @@
 		[comment checks for trigger events /]	
 		[if (transition.triggerMessageEvent->size()>0)]	
 		[for (msg : Message | transition.triggerMessageEvent.message) separator(' && ')]			
-			[if (not component.oclIsUndefined())]			
-				[comment check IN-port/]
-				[for (port : Port | component.ports)]
-			[if (port.oclIsKindOf(DiscretePort))]
-			[let dPort : DiscretePort = port.oclAsType(DiscretePort)]
-			[if (dPort.isDiscreteInPort or dPort.isDiscreteInOutPort)]					
-					[for (msgType : MessageType | dPort.receiverMessageTypes)]
-						[if (msgType.name = msg.instanceOf.name)]
-							DiscretePort_eventExists([getGetterName(dPort)/](stateChart->parentComponent), [getVariableName(msg.instanceOf)/].signature)
-						[/if]
-					[/for]
-				[/if]
-				[/let]
-				[/if]
-				[/for]
+			
+			DiscretePort_eventExists([getGetterName(getPortForRegion(transition.statechart.parentRegion))/](stateChart->parentComponent), [getVariableName(msg.instanceOf)/].signature)
 
-				[comment]
-				[for (port : DiscretePort | component.ports) ? (isDiscreteInOutPort)]					
-					[for (msgType : MessageType | port.receiverMessageTypes)]
-						[if (msgType.name = msg.instanceOf.name)]
-							DiscretePort_eventExists([getGetterName(port)/](stateChart->parentComponent), [getVariableName(msg.instanceOf)/].signature)
-						[/if]
-					[/for]
-				[/for]
-				[/comment]
-			[/if]
 		[/for]
 		[/if]
 
@@ -708,7 +614,6 @@
 [/template]
 
 [template private getRegionVariables (rtsc: RealtimeStatechart, state : State) post(cdtbeautifier())]
-1
 	[if (not state.oclAsType(State).simple)]
 		[for (region : Region | state.embeddedRegions)]	
 			[getClassName(rtsc, true)/] [getVariableName(region.embeddedStatechart)/];
@@ -718,3 +623,6 @@
 		[/for]
 	[/if]
 [/template]
+
+
+

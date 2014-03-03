@@ -19,7 +19,7 @@
 RTSC = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if (comp.oclIsKindOf(AtomicComponent))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
 [/if]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-COMP = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][comp.getClassName().toLowerFirst()/].o [/for]
+COMP = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][comp.getClassName().toLowerFirst()/].o [/for] 
 [/if][/for]
 LIB = syncChannel.o discreteConnection.o discreteConnectionList.o event.o eventQueue.o discretePort.o messages.o
 
@@ -28,8 +28,8 @@ CFLAGS = -c
 all: app
 [for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.realtimestatechart.category'))]
-app : main.o $(RTSC) $(COMP) $(LIB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if]
-	$(CC) main.o $(RTSC) $(COMP) $(LIB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if] -o app
+app : main.o $(RTSC) $(COMP) $(LIB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if] [if (aRootNode.eAllContents(ComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o[/if]
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if] [if (aRootNode.eAllContents(ComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o[/if] -o app
 [for (rtsc : RealtimeStatechart | modelElementCategory.modelElements.oclAsType(RealtimeStatechart))]
 [rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,false)/]
 	$(CC) $(CFLAGS) [rtsc.getFileName(false,false)/]
@@ -58,9 +58,11 @@ messages.o: msg/messages.c
 	$(CC) $(CFLAGS) msg/messages.c
 [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o: operations/Operations.c
 	$(CC) $(CFLAGS) operations/Operations.c
-
-
 [/if]
+[if (aRootNode.eAllContents(ComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o: hybridPortImpl.c
+	$(CC) $(CFLAGS) hybridPortImpl.c
+[/if]
+
 clean:
 	rm -rf *o app
 [/file]
