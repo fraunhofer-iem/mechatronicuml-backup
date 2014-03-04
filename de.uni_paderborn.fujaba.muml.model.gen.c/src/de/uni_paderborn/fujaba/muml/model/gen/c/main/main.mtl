@@ -16,6 +16,7 @@
 
 [import de::uni_paderborn::fujaba::muml::model::gen::c::main::main_nxtOSEK]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::main::main_C]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::main::main_PG]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::middleware::MWCore]
 
 [**
@@ -27,7 +28,7 @@
 [comment @main/]
 
 [comment]
-possbile values for 'targetPlatform' are: 'C' or 'nxtOSEK'
+possbile values for 'targetPlatform' are: 'C', 'PG' or 'nxtOSEK'
 [/comment]
 [let targetPlatform : String = 'C']
 
@@ -37,6 +38,8 @@ possbile values for 'targetPlatform' are: 'C' or 'nxtOSEK'
 [generateNXTOSEK(aRootNode)/]
 [elseif (targetPlatform = 'C')]
 [generateANSIC(aRootNode)/]
+[elseif (targetPlatform = 'PG')]
+[generatePG(aRootNode)/]
 [else]
 not defined
 [/if]
