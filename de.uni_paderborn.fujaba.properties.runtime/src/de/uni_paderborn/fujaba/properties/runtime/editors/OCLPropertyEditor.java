@@ -54,13 +54,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 			label.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
 		}
 		composite = new Composite(parent, SWT.BORDER);
-		GridData gridData = null;
-		if (parent.getLayout() instanceof GridLayout) {
-			gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
-			gridData.minimumWidth = 200;
-			gridData.minimumHeight = MINIMUM_HEIGHT;
-			composite.setLayoutData(gridData);
-		}
+		
 		GridLayout gridLayout = new GridLayout(1, false);
 		gridLayout.horizontalSpacing = gridLayout.verticalSpacing = 0;
 		gridLayout.marginWidth = gridLayout.marginHeight = 0;
@@ -78,19 +72,14 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 																			 */
 		SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
 		final StyledText textWidget = embeddedXtextEditor.getViewer().getTextWidget();
-		if (gridData != null) {
-			final GridData finalGridData = gridData;
-			textWidget.addModifyListener(new ModifyListener() {
-	
-				@Override
-				public void modifyText(ModifyEvent e) {
-					int height = textWidget.computeSize(SWT.DEFAULT, SWT.DEFAULT).y + 20;
-					finalGridData.minimumHeight = Math.max(MINIMUM_HEIGHT, height);
-					RuntimePlugin.revalidateLayout(composite);
-				}
-				
-			});
-		}
+		textWidget.addModifyListener(new ModifyListener() {
+
+			@Override
+			public void modifyText(ModifyEvent e) {
+				textModified();
+			}
+			
+		});
 		
 		embeddedXtextEditor.getDocument().addModelListener(
 				new IXtextModelListener() {
@@ -109,6 +98,22 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 				});
 		updateContext();
 		refresh();
+	}
+
+	protected void textModified() {
+		final StyledText textWidget = embeddedXtextEditor.getViewer().getTextWidget();
+		int height = textWidget.computeSize(SWT.DEFAULT, SWT.DEFAULT).y + 40;
+		GridData gridData = null;
+		if (composite.getParent().getLayout() instanceof GridLayout) {
+			gridData = new GridData(SWT.FILL, SWT.FILL, true, true);
+			gridData.minimumWidth = 200;
+			gridData.minimumHeight = MINIMUM_HEIGHT;
+			composite.setLayoutData(gridData);
+		}
+		if (gridData != null) {
+			gridData.minimumHeight = Math.max(MINIMUM_HEIGHT, height);
+			RuntimePlugin.revalidateLayout(composite);
+		}
 	}
 
 	protected void modify() {
@@ -152,6 +157,7 @@ public class OCLPropertyEditor extends AbstractStructuralFeaturePropertyEditor {
 				&& !text.equals(embeddedXtextEditor.getDocument().get())
 				&& saving == 0) {
 			embeddedXtextEditor.update(text);
+			textModified();
 		}
 	}
 	
