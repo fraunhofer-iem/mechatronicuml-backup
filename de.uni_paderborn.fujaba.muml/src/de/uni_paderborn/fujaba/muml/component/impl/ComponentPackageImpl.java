@@ -1154,7 +1154,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (delegationConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "DelegationBetweenDirectedTypedPortsRequiresSameDataType DelegationBetweenDiscretePortsOrDirectedTypedPorts DelegationBetweenDiscretePortsEqualMessageTypes ValidPortDirections DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"
+			 "constraints", "DelegateToEmbeddedPort DelegationBetweenDirectedTypedPortsRequiresSameDataType DelegationBetweenDiscretePortsOrDirectedTypedPorts DelegationBetweenDiscretePortsEqualMessageTypes ValidPortDirections DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"
 		   });																	
 		addAnnotation
 		  (structuredComponentEClass, 

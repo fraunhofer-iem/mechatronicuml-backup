@@ -1477,6 +1477,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateDelegationConnector_DelegateToEmbeddedPort(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDirectedTypedPortsRequiresSameDataType(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsOrDirectedTypedPorts(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsEqualMessageTypes(delegationConnector, diagnostics, context);
@@ -1484,6 +1485,37 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateDelegationConnector_DelegationBetweenDiscretePortsRequiresSameRoles(delegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateDelegationConnector_DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart(delegationConnector, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the DelegateToEmbeddedPort constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String DELEGATION_CONNECTOR__DELEGATE_TO_EMBEDDED_PORT__EEXPRESSION = "-- Delegation must delegate to a Port at an embedded Component Part.\r\n" +
+		"portPart.componentPart.parentComponent = port.component\r\n" +
+		"";
+
+	/**
+	 * Validates the DelegateToEmbeddedPort constraint of '<em>Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDelegationConnector_DelegateToEmbeddedPort(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.DELEGATION_CONNECTOR,
+				 delegationConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "DelegateToEmbeddedPort",
+				 DELEGATION_CONNECTOR__DELEGATE_TO_EMBEDDED_PORT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
