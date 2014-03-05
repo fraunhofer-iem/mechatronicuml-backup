@@ -236,7 +236,7 @@
           <details key="derivation" value="self.portParts->first().coordinationProtocolPart"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="2"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portParts" lowerBound="1"
           upperBound="2" eType="#//component/PortPart" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
