@@ -1877,13 +1877,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		  (getTransition_ReceiverMessageTypes(), 
 		   source, 
 		   new String[] {
-			 "derivation", "let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\nif b.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).receiverMessageTypes\r\n\telse\r\n\t\tOrderedSet { }\r\n\tendif\r\nendif"
+			 "derivation", "if statechart.getPortOrRoleStatechart().oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse \r\n\tlet b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\n\tif b.oclIsUndefined() then\r\n\t\tOrderedSet { }\r\n\telse\r\n\t\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).receiverMessageTypes\r\n\t\telse\r\n\t\t\tOrderedSet { }\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });		
 		addAnnotation
 		  (getTransition_SenderMessageTypes(), 
 		   source, 
 		   new String[] {
-			 "derivation", "let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\nif b.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).senderMessageTypes\r\n\telse\r\n\t\tOrderedSet { }\r\n\tendif\r\nendif"
+			 "derivation", "if statechart.getPortOrRoleStatechart().oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tlet b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\n\tif b.oclIsUndefined() then\r\n\t\tOrderedSet { }\r\n\telse\r\n\t\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).senderMessageTypes\r\n\t\telse\r\n\t\t\tOrderedSet { }\r\n\t\tendif\r\n\tendif\r\nendif"
 		   });									
 		addAnnotation
 		  (asynchronousMessageEventEClass, 

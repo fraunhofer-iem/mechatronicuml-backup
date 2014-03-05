@@ -390,7 +390,7 @@ public interface Transition extends PrioritizedElement, CommentableElement {
 	 * @return the value of the '<em>Receiver Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getTransition_ReceiverMessageTypes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\nif b.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).receiverMessageTypes\r\n\telse\r\n\t\tOrderedSet { }\r\n\tendif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if statechart.getPortOrRoleStatechart().oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse \r\n\tlet b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\n\tif b.oclIsUndefined() then\r\n\t\tOrderedSet { }\r\n\telse\r\n\t\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).receiverMessageTypes\r\n\t\telse\r\n\t\t\tOrderedSet { }\r\n\t\tendif\r\n\tendif\r\nendif'"
 	 * @generated
 	 */
 	EList<MessageType> getReceiverMessageTypes();
@@ -407,7 +407,7 @@ public interface Transition extends PrioritizedElement, CommentableElement {
 	 * @return the value of the '<em>Sender Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getTransition_SenderMessageTypes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\nif b.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).senderMessageTypes\r\n\telse\r\n\t\tOrderedSet { }\r\n\tendif\r\nendif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if statechart.getPortOrRoleStatechart().oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tlet b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\n\tif b.oclIsUndefined() then\r\n\t\tOrderedSet { }\r\n\telse\r\n\t\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).senderMessageTypes\r\n\t\telse\r\n\t\t\tOrderedSet { }\r\n\t\tendif\r\n\tendif\r\nendif'"
 	 * @generated
 	 */
 	EList<MessageType> getSenderMessageTypes();
