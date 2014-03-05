@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -10,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSizeUnit;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -222,6 +224,22 @@ public class DataSizeImpl extends EObjectImpl implements DataSize {
 				return unit != UNIT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case HwvaluetypePackage.DATA_SIZE___TO_STRING:
+				return toString();
+			case HwvaluetypePackage.DATA_SIZE___GET_IN_BYTE:
+				return getInByte();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DataSizeImpl

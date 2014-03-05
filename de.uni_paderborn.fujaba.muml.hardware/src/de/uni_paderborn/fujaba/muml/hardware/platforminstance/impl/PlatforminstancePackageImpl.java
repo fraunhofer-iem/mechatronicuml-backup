@@ -311,7 +311,7 @@ public class PlatforminstancePackageImpl extends EPackageImpl implements Platfor
 		hwPlatformInstanceConfigurationEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		hwPlatformInstanceConfigurationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(hwPlatformInstanceEClass, HWPlatformInstance.class, "HWPlatformInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPlatformInstance_HwplatformType(), thePlatformPackage.getHWPlatform(), null, "hwplatformType", null, 1, 1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPlatformInstance_ResourceInstances(), thePlatformPackage.getResourceInstance(), null, "resourceInstances", null, 0, -1, HWPlatformInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

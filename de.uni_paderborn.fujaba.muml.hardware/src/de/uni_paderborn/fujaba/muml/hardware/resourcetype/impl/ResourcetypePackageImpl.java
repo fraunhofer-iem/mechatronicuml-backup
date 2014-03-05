@@ -928,7 +928,7 @@ public class ResourcetypePackageImpl extends EPackageImpl implements Resourcetyp
 		busProtocolEClass.getESuperTypes().add(this.getCommunicationProtocol());
 		linkProtocolEClass.getESuperTypes().add(this.getCommunicationProtocol());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(resourceTypeEClass, ResourceType.class, "ResourceType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResourceType_Hwports(), this.getHWPort(), this.getHWPort_ParentResource(), "hwports", null, 0, -1, ResourceType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

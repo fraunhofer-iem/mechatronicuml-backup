@@ -3,6 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -10,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRateUnit;
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -222,6 +224,22 @@ public class DataRateImpl extends EObjectImpl implements DataRate {
 				return unit != UNIT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case HwvaluetypePackage.DATA_RATE___TO_STRING:
+				return toString();
+			case HwvaluetypePackage.DATA_RATE___GET_IN_BP_S:
+				return getInBpS();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DataRateImpl

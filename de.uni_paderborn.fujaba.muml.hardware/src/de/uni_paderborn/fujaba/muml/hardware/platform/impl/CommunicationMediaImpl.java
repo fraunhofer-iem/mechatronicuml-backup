@@ -30,12 +30,12 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#getDataFrameSize <em>Data Frame Size</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#isIsSerial <em>Is Serial</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#getBandwidth <em>Bandwidth</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#getConnectedHWPortParts <em>Connected HW Port Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#getConnectedBridges <em>Connected Bridges</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#getConnectedHWPortInstances <em>Connected HW Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.impl.CommunicationMediaImpl#isIsSerial <em>Is Serial</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,26 +51,6 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 	 * @ordered
 	 */
 	protected DataSize dataFrameSize;
-
-	/**
-	 * The default value of the '{@link #isIsSerial() <em>Is Serial</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsSerial()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean IS_SERIAL_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isIsSerial() <em>Is Serial</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsSerial()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isSerial = IS_SERIAL_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getBandwidth() <em>Bandwidth</em>}' containment reference.
@@ -121,6 +101,26 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 	 * @ordered
 	 */
 	protected EList<HWPortInstance> connectedHWPortInstances;
+
+	/**
+	 * The default value of the '{@link #isIsSerial() <em>Is Serial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsSerial()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_SERIAL_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsSerial() <em>Is Serial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsSerial()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isSerial = IS_SERIAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -373,8 +373,6 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 		switch (featureID) {
 			case PlatformPackage.COMMUNICATION_MEDIA__DATA_FRAME_SIZE:
 				return getDataFrameSize();
-			case PlatformPackage.COMMUNICATION_MEDIA__IS_SERIAL:
-				return isIsSerial();
 			case PlatformPackage.COMMUNICATION_MEDIA__BANDWIDTH:
 				return getBandwidth();
 			case PlatformPackage.COMMUNICATION_MEDIA__PROTOCOL:
@@ -386,6 +384,8 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 				return getConnectedBridges();
 			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES:
 				return getConnectedHWPortInstances();
+			case PlatformPackage.COMMUNICATION_MEDIA__IS_SERIAL:
+				return isIsSerial();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -401,9 +401,6 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 		switch (featureID) {
 			case PlatformPackage.COMMUNICATION_MEDIA__DATA_FRAME_SIZE:
 				setDataFrameSize((DataSize)newValue);
-				return;
-			case PlatformPackage.COMMUNICATION_MEDIA__IS_SERIAL:
-				setIsSerial((Boolean)newValue);
 				return;
 			case PlatformPackage.COMMUNICATION_MEDIA__BANDWIDTH:
 				setBandwidth((DataRate)newValue);
@@ -423,6 +420,9 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 				getConnectedHWPortInstances().clear();
 				getConnectedHWPortInstances().addAll((Collection<? extends HWPortInstance>)newValue);
 				return;
+			case PlatformPackage.COMMUNICATION_MEDIA__IS_SERIAL:
+				setIsSerial((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -437,9 +437,6 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 		switch (featureID) {
 			case PlatformPackage.COMMUNICATION_MEDIA__DATA_FRAME_SIZE:
 				setDataFrameSize((DataSize)null);
-				return;
-			case PlatformPackage.COMMUNICATION_MEDIA__IS_SERIAL:
-				setIsSerial(IS_SERIAL_EDEFAULT);
 				return;
 			case PlatformPackage.COMMUNICATION_MEDIA__BANDWIDTH:
 				setBandwidth((DataRate)null);
@@ -456,6 +453,9 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES:
 				getConnectedHWPortInstances().clear();
 				return;
+			case PlatformPackage.COMMUNICATION_MEDIA__IS_SERIAL:
+				setIsSerial(IS_SERIAL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -470,8 +470,6 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 		switch (featureID) {
 			case PlatformPackage.COMMUNICATION_MEDIA__DATA_FRAME_SIZE:
 				return dataFrameSize != null;
-			case PlatformPackage.COMMUNICATION_MEDIA__IS_SERIAL:
-				return isSerial != IS_SERIAL_EDEFAULT;
 			case PlatformPackage.COMMUNICATION_MEDIA__BANDWIDTH:
 				return bandwidth != null;
 			case PlatformPackage.COMMUNICATION_MEDIA__PROTOCOL:
@@ -482,6 +480,8 @@ public abstract class CommunicationMediaImpl extends CommunicationResourceImpl i
 				return connectedBridges != null && !connectedBridges.isEmpty();
 			case PlatformPackage.COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES:
 				return connectedHWPortInstances != null && !connectedHWPortInstances.isEmpty();
+			case PlatformPackage.COMMUNICATION_MEDIA__IS_SERIAL:
+				return isSerial != IS_SERIAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -656,7 +656,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * @generated
 	 */
 	public EAttribute getCommunicationMedia_IsSerial() {
-		return (EAttribute)communicationMediaEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)communicationMediaEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -665,7 +665,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * @generated
 	 */
 	public EReference getCommunicationMedia_Bandwidth() {
-		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(2);
+		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -674,7 +674,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * @generated
 	 */
 	public EReference getCommunicationMedia_Protocol() {
-		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(3);
+		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -683,7 +683,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * @generated
 	 */
 	public EReference getCommunicationMedia_ConnectedHWPortParts() {
-		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(4);
+		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -692,7 +692,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * @generated
 	 */
 	public EReference getCommunicationMedia_ConnectedBridges() {
-		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(5);
+		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -701,7 +701,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * @generated
 	 */
 	public EReference getCommunicationMedia_ConnectedHWPortInstances() {
-		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(6);
+		return (EReference)communicationMediaEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1157,12 +1157,12 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		communicationMediaEClass = createEClass(COMMUNICATION_MEDIA);
 		createEReference(communicationMediaEClass, COMMUNICATION_MEDIA__DATA_FRAME_SIZE);
-		createEAttribute(communicationMediaEClass, COMMUNICATION_MEDIA__IS_SERIAL);
 		createEReference(communicationMediaEClass, COMMUNICATION_MEDIA__BANDWIDTH);
 		createEReference(communicationMediaEClass, COMMUNICATION_MEDIA__PROTOCOL);
 		createEReference(communicationMediaEClass, COMMUNICATION_MEDIA__CONNECTED_HW_PORT_PARTS);
 		createEReference(communicationMediaEClass, COMMUNICATION_MEDIA__CONNECTED_BRIDGES);
 		createEReference(communicationMediaEClass, COMMUNICATION_MEDIA__CONNECTED_HW_PORT_INSTANCES);
+		createEAttribute(communicationMediaEClass, COMMUNICATION_MEDIA__IS_SERIAL);
 
 		hwPlatformEClass = createEClass(HW_PLATFORM);
 		createEReference(hwPlatformEClass, HW_PLATFORM__EMBEDDED_PLATFORM_PARTS);
@@ -1285,7 +1285,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		delegationEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
 		hwPortPartEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(hwPlatformConfigurationEClass, HWPlatformConfiguration.class, "HWPlatformConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPlatformConfiguration_Hwplatforms(), this.getHWPlatform(), null, "hwplatforms", null, 0, -1, HWPlatformConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHWPlatformConfiguration_Repositories(), this.getResourceInstanceRepository(), null, "repositories", null, 1, -1, HWPlatformConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1333,12 +1333,12 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		initEClass(communicationMediaEClass, CommunicationMedia.class, "CommunicationMedia", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCommunicationMedia_DataFrameSize(), theHwvaluetypePackage.getDataSize(), null, "dataFrameSize", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCommunicationMedia_IsSerial(), ecorePackage.getEBoolean(), "isSerial", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationMedia_Bandwidth(), theHwvaluetypePackage.getDataRate(), null, "bandwidth", null, 1, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationMedia_Protocol(), theResourcetypePackage.getCommunicationProtocol(), null, "protocol", null, 1, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationMedia_ConnectedHWPortParts(), this.getHWPortPart(), this.getHWPortPart_ConnectedMedia(), "connectedHWPortParts", null, 0, -1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationMedia_ConnectedBridges(), this.getBridge(), this.getBridge_ConnectedCommunicationMedia(), "connectedBridges", null, 0, -1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCommunicationMedia_ConnectedHWPortInstances(), this.getHWPortInstance(), this.getHWPortInstance_ConnectedMedia(), "connectedHWPortInstances", null, 0, -1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommunicationMedia_IsSerial(), ecorePackage.getEBoolean(), "isSerial", null, 0, 1, CommunicationMedia.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hwPlatformEClass, HWPlatform.class, "HWPlatform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getHWPlatform_EmbeddedPlatformParts(), this.getPlatformPart(), this.getPlatformPart_ParentHWPlatform(), "embeddedPlatformParts", null, 1, -1, HWPlatform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1614,12 +1614,6 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 			 "documentation", "The size of a data frame."
 		   });		
 		addAnnotation
-		  (getCommunicationMedia_IsSerial(), 
-		   source, 
-		   new String[] {
-			 "documentation", "Determines if this CommunicationMedia uses a serial communication."
-		   });		
-		addAnnotation
 		  (getCommunicationMedia_Bandwidth(), 
 		   source, 
 		   new String[] {
@@ -1648,6 +1642,12 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		   source, 
 		   new String[] {
 			 "documentation", "The connected HWPortInstances."
+		   });		
+		addAnnotation
+		  (getCommunicationMedia_IsSerial(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Determines if this CommunicationMedia uses a serial communication."
 		   });		
 		addAnnotation
 		  (hwPlatformEClass, 

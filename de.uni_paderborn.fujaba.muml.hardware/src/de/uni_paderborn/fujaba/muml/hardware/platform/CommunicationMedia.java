@@ -22,12 +22,12 @@ import de.uni_paderborn.fujaba.muml.hardware.resourcetype.CommunicationProtocol;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getDataFrameSize <em>Data Frame Size</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#isIsSerial <em>Is Serial</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getBandwidth <em>Bandwidth</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getProtocol <em>Protocol</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortParts <em>Connected HW Port Parts</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedBridges <em>Connected Bridges</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#getConnectedHWPortInstances <em>Connected HW Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.hardware.platform.CommunicationMedia#isIsSerial <em>Is Serial</em>}</li>
  * </ul>
  * </p>
  *

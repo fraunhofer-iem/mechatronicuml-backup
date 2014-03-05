@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwvaluetype;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
@@ -100,6 +101,33 @@ public interface HwvaluetypePackage extends EPackage {
 	int DATA_SIZE_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE___TO_STRING = 0;
+
+	/**
+	 * The operation id for the '<em>Get In Byte</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE___GET_IN_BYTE = 1;
+
+	/**
+	 * The number of operations of the '<em>Data Size</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SIZE_OPERATION_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl.FrequencyImpl <em>Frequency</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +165,33 @@ public interface HwvaluetypePackage extends EPackage {
 	int FREQUENCY_FEATURE_COUNT = 2;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREQUENCY___TO_STRING = 0;
+
+	/**
+	 * The operation id for the '<em>Get In Hz</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREQUENCY___GET_IN_HZ = 1;
+
+	/**
+	 * The number of operations of the '<em>Frequency</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FREQUENCY_OPERATION_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl.DataRateImpl <em>Data Rate</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,6 +227,33 @@ public interface HwvaluetypePackage extends EPackage {
 	 * @ordered
 	 */
 	int DATA_RATE_FEATURE_COUNT = 2;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_RATE___TO_STRING = 0;
+
+	/**
+	 * The operation id for the '<em>Get In Bp S</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_RATE___GET_IN_BP_S = 1;
+
+	/**
+	 * The number of operations of the '<em>Data Rate</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_RATE_OPERATION_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl.TimeIntervalImpl <em>Time Interval</em>}' class.
@@ -218,6 +300,15 @@ public interface HwvaluetypePackage extends EPackage {
 	 * @ordered
 	 */
 	int TIME_INTERVAL_FEATURE_COUNT = ValuetypePackage.RANGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Time Interval</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL_OPERATION_COUNT = ValuetypePackage.RANGE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSizeUnit <em>Data Size Unit</em>}' enum.
@@ -283,6 +374,26 @@ public interface HwvaluetypePackage extends EPackage {
 	EAttribute getDataSize_Unit();
 
 	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize#toString()
+	 * @generated
+	 */
+	EOperation getDataSize__ToString();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize#getInByte() <em>Get In Byte</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get In Byte</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize#getInByte()
+	 * @generated
+	 */
+	EOperation getDataSize__GetInByte();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency <em>Frequency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -315,6 +426,26 @@ public interface HwvaluetypePackage extends EPackage {
 	EAttribute getFrequency_Unit();
 
 	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency#toString()
+	 * @generated
+	 */
+	EOperation getFrequency__ToString();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency#getInHz() <em>Get In Hz</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get In Hz</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.Frequency#getInHz()
+	 * @generated
+	 */
+	EOperation getFrequency__GetInHz();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate <em>Data Rate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -345,6 +476,26 @@ public interface HwvaluetypePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataRate_Unit();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate#toString()
+	 * @generated
+	 */
+	EOperation getDataRate__ToString();
+
+	/**
+	 * Returns the meta object for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate#getInBpS() <em>Get In Bp S</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get In Bp S</em>' operation.
+	 * @see de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataRate#getInBpS()
+	 * @generated
+	 */
+	EOperation getDataRate__GetInBpS();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.TimeInterval <em>Time Interval</em>}'.
@@ -446,6 +597,22 @@ public interface HwvaluetypePackage extends EPackage {
 		EAttribute DATA_SIZE__UNIT = eINSTANCE.getDataSize_Unit();
 
 		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_SIZE___TO_STRING = eINSTANCE.getDataSize__ToString();
+
+		/**
+		 * The meta object literal for the '<em><b>Get In Byte</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_SIZE___GET_IN_BYTE = eINSTANCE.getDataSize__GetInByte();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl.FrequencyImpl <em>Frequency</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -472,6 +639,22 @@ public interface HwvaluetypePackage extends EPackage {
 		EAttribute FREQUENCY__UNIT = eINSTANCE.getFrequency_Unit();
 
 		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FREQUENCY___TO_STRING = eINSTANCE.getFrequency__ToString();
+
+		/**
+		 * The meta object literal for the '<em><b>Get In Hz</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FREQUENCY___GET_IN_HZ = eINSTANCE.getFrequency__GetInHz();
+
+		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl.DataRateImpl <em>Data Rate</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -496,6 +679,22 @@ public interface HwvaluetypePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_RATE__UNIT = eINSTANCE.getDataRate_Unit();
+
+		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_RATE___TO_STRING = eINSTANCE.getDataRate__ToString();
+
+		/**
+		 * The meta object literal for the '<em><b>Get In Bp S</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_RATE___GET_IN_BP_S = eINSTANCE.getDataRate__GetInBpS();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl.TimeIntervalImpl <em>Time Interval</em>}' class.

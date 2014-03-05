@@ -5,6 +5,7 @@ package de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -206,6 +207,24 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getDataSize__ToString() {
+		return dataSizeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataSize__GetInByte() {
+		return dataSizeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFrequency() {
 		return frequencyEClass;
 	}
@@ -233,6 +252,24 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getFrequency__ToString() {
+		return frequencyEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getFrequency__GetInHz() {
+		return frequencyEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataRate() {
 		return dataRateEClass;
 	}
@@ -253,6 +290,24 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 	 */
 	public EAttribute getDataRate_Unit() {
 		return (EAttribute)dataRateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataRate__ToString() {
+		return dataRateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataRate__GetInBpS() {
+		return dataRateEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -331,14 +386,20 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 		dataSizeEClass = createEClass(DATA_SIZE);
 		createEAttribute(dataSizeEClass, DATA_SIZE__VALUE);
 		createEAttribute(dataSizeEClass, DATA_SIZE__UNIT);
+		createEOperation(dataSizeEClass, DATA_SIZE___TO_STRING);
+		createEOperation(dataSizeEClass, DATA_SIZE___GET_IN_BYTE);
 
 		frequencyEClass = createEClass(FREQUENCY);
 		createEAttribute(frequencyEClass, FREQUENCY__VALUE);
 		createEAttribute(frequencyEClass, FREQUENCY__UNIT);
+		createEOperation(frequencyEClass, FREQUENCY___TO_STRING);
+		createEOperation(frequencyEClass, FREQUENCY___GET_IN_HZ);
 
 		dataRateEClass = createEClass(DATA_RATE);
 		createEAttribute(dataRateEClass, DATA_RATE__VALUE);
 		createEAttribute(dataRateEClass, DATA_RATE__UNIT);
+		createEOperation(dataRateEClass, DATA_RATE___TO_STRING);
+		createEOperation(dataRateEClass, DATA_RATE___GET_IN_BP_S);
 
 		timeIntervalEClass = createEClass(TIME_INTERVAL);
 		createEAttribute(timeIntervalEClass, TIME_INTERVAL__UNIT);
@@ -382,30 +443,30 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 		// Add supertypes to classes
 		timeIntervalEClass.getESuperTypes().add(theValuetypePackage.getRange());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(dataSizeEClass, DataSize.class, "DataSize", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataSize_Value(), ecorePackage.getEDouble(), "value", null, 1, 1, DataSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSize_Unit(), this.getDataSizeUnit(), "unit", null, 1, 1, DataSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(dataSizeEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataSize__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(dataSizeEClass, ecorePackage.getEDouble(), "getInByte", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataSize__GetInByte(), ecorePackage.getEDouble(), "getInByte", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(frequencyEClass, Frequency.class, "Frequency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFrequency_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, Frequency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFrequency_Unit(), this.getFrequencyUnit(), "unit", null, 0, 1, Frequency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(frequencyEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getFrequency__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(frequencyEClass, ecorePackage.getEDouble(), "getInHz", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getFrequency__GetInHz(), ecorePackage.getEDouble(), "getInHz", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(dataRateEClass, DataRate.class, "DataRate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataRate_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DataRate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataRate_Unit(), this.getDataRateUnit(), "unit", null, 0, 1, DataRate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(dataRateEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataRate__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(dataRateEClass, ecorePackage.getEDouble(), "getInBpS", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDataRate__GetInBpS(), ecorePackage.getEDouble(), "getInBpS", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(timeIntervalEClass, TimeInterval.class, "TimeInterval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimeInterval_Unit(), theValuetypePackage.getTimeUnit(), "unit", null, 1, 1, TimeInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -460,14 +521,14 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 			 "documentation", "This class represents the data size of an element or the size of a memory resource."
 		   });		
 		addAnnotation
-		  (dataSizeEClass.getEOperations().get(0), 
+		  (getDataSize__ToString(), 
 		   source, 
 		   new String[] {
 			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();",
 			 "documentation", "Converts the entered data size into a String with the appended unit."
 		   });		
 		addAnnotation
-		  (dataSizeEClass.getEOperations().get(1), 
+		  (getDataSize__GetInByte(), 
 		   source, 
 		   new String[] {
 			 "body", "double inByte=0;\n\t\tif(unit!=null){\n\t\tinByte=value*Math.pow(2, unit.getValue());\t\n\t\t}\nreturn inByte;",
@@ -498,14 +559,14 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 			 "documentation", "This class represents the frequency of a computing resource."
 		   });		
 		addAnnotation
-		  (frequencyEClass.getEOperations().get(0), 
+		  (getFrequency__ToString(), 
 		   source, 
 		   new String[] {
 			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();",
 			 "documentation", "Converts the entered frequency into a String with the appended unit."
 		   });		
 		addAnnotation
-		  (frequencyEClass.getEOperations().get(1), 
+		  (getFrequency__GetInHz(), 
 		   source, 
 		   new String[] {
 			 "body", "double inHz=0;\n\t\tif(unit!=null){\n\t\tinHz=value*Math.pow(10, unit.getValue());\t\n\t\t}\nreturn inHz;",
@@ -542,14 +603,14 @@ public class HwvaluetypePackageImpl extends EPackageImpl implements HwvaluetypeP
 			 "documentation", "This class represents the data rate of a resource (i.e. the bandwidth of a bus)."
 		   });		
 		addAnnotation
-		  (dataRateEClass.getEOperations().get(0), 
+		  (getDataRate__ToString(), 
 		   source, 
 		   new String[] {
 			 "body", "// Return value concatenated with unit\nStringBuffer sb = new StringBuffer();\nsb.append(String.valueOf(value));\n\tif (unit != null) {\n\t\tsb.append(\' \');\n\t\tsb.append(unit.toString());\n\t\t}\nreturn sb.toString();",
 			 "documentation", "Converts the entered data rate into a String with the appended unit."
 		   });		
 		addAnnotation
-		  (dataRateEClass.getEOperations().get(1), 
+		  (getDataRate__GetInBpS(), 
 		   source, 
 		   new String[] {
 			 "body", "double inBpS=0;\n\t\tif(unit!=null){\n\t\tinBpS=value*Math.pow(2, unit.getValue());\t\n\t\t}\nreturn inBpS;",
