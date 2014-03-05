@@ -1137,7 +1137,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "CardinalityLowerBoundSet TypeNotEqualToParent CardinalityUpperBoundSet"
-		   });													
+		   });											
+		addAnnotation
+		  (staticStructuredComponentEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"
+		   });					
 		addAnnotation
 		  (atomicComponentEClass, 
 		   source, 
@@ -1260,6 +1266,12 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "derivation", "if (not self.cardinality.oclIsUndefined() and not self.cardinality.upperBound.oclIsUndefined()) then\nself.cardinality.upperBound.value > 1 or self.cardinality.upperBound.infinity\nelse false\nendif"
 		   });				
 		addAnnotation
+		  (staticStructuredComponentEClass, 
+		   source, 
+		   new String[] {
+			 "DiscretePortAndRoleSameMessageTypes", "-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports\nports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))"
+		   });			
+		addAnnotation
 		  (atomicComponentEClass, 
 		   source, 
 		   new String[] {
@@ -1324,7 +1336,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "ValidComponentType", "-- Structured components must be either software or hybrid components\nself.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\nor self.componentKind = component::ComponentKind::HYBRID_COMPONENT",
 			 "NoCyclicComponentPartHierarchy", "-- Hierarchy of embedded component parts must not include myself\r\nif self.allStructuredComponents->oclIsUndefined() then\r\nfalse\r\nelse\r\nnot self.allStructuredComponents->includes(self)\r\nendif",
 			 "DiscreteStructuredComponentValidParts", "-- Structured software component must only have software component parts \r\nif (not self.allAtomicComponents->oclIsUndefined()) then\r\nself.componentKind = component::ComponentKind::SOFTWARE_COMPONENT\r\nimplies\r\n\t-- collect all atomic components from parent parts and union them\r\n\t-- with own atomic components\r\n\tself.allAtomicComponents->union(\r\n\t\tself.embeddedComponentParts->select(\r\n\t\t\tcomponentType.oclIsKindOf(component::AtomicComponent)\r\n\t\t)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()\r\n\t)->forAll(componentKind = component::ComponentKind::SOFTWARE_COMPONENT)\r\nelse\r\ntrue\r\nendif",
-			 "HybridStructuredComponentValidPorts", "-- Structured hybrid component must only have discrete or continuous ports\r\nself.componentKind = component::ComponentKind::HYBRID_COMPONENT\r\n\timplies (\r\n\t\tself.ports->forAll(p | p.oclIsKindOf(component::DiscretePort) or p.oclIsKindOf(component::ContinuousPort))\r\n\t)",
+			 "HybridStructuredComponentValidPorts", "-- Structured hybrid component must only have discrete or continuous ports\r\nself.componentKind = component::ComponentKind::HYBRID_COMPONENT\r\n\timplies (\r\n\t\tself.ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) or p.oclIsKindOf(component::ContinuousPort))\r\n\t)",
 			 "ComponentPartsHaveUniqueName", "-- Names of embedded component parts must be unique\nself.embeddedComponentParts -> isUnique(name)",
 			 "SoftwareComponentNoContinuousPorts", "-- Software component must not have continuous ports\r\nself.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(p | not p.oclIsKindOf(ContinuousPort))"
 		   });					

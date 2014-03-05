@@ -18,7 +18,8 @@ package de.uni_paderborn.fujaba.muml.component;
  *
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getStaticStructuredComponent()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL DiscretePortAndRoleSameMessageTypes='-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports\nports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))'"
  * @generated
  */
 public interface StaticStructuredComponent extends StructuredComponent, StaticComponent {

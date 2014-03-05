@@ -189,6 +189,13 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A static structured component is a structured component whose internal structure consisting of component part, ports, delegation, and assemblies cannot be changed during run-time."/>
       </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints"
+            value="-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports&#xA;ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))"/>
+      </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" abstract="true" eSuperTypes="#//component/Component #//behavior/BehavioralElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -346,7 +353,7 @@
         <details key="ValidComponentType" value="-- Structured components must be either software or hybrid components&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xA;or self.componentKind = component::ComponentKind::HYBRID_COMPONENT"/>
         <details key="NoCyclicComponentPartHierarchy" value="-- Hierarchy of embedded component parts must not include myself&#xD;&#xA;if self.allStructuredComponents->oclIsUndefined() then&#xD;&#xA;false&#xD;&#xA;else&#xD;&#xA;not self.allStructuredComponents->includes(self)&#xD;&#xA;endif"/>
         <details key="DiscreteStructuredComponentValidParts" value="-- Structured software component must only have software component parts &#xD;&#xA;if (not self.allAtomicComponents->oclIsUndefined()) then&#xD;&#xA;self.componentKind = component::ComponentKind::SOFTWARE_COMPONENT&#xD;&#xA;implies&#xD;&#xA;&#x9;-- collect all atomic components from parent parts and union them&#xD;&#xA;&#x9;-- with own atomic components&#xD;&#xA;&#x9;self.allAtomicComponents->union(&#xD;&#xA;&#x9;&#x9;self.embeddedComponentParts->select(&#xD;&#xA;&#x9;&#x9;&#x9;componentType.oclIsKindOf(component::AtomicComponent)&#xD;&#xA;&#x9;&#x9;)->collect(componentType.oclAsType(component::AtomicComponent))->asOrderedSet()&#xD;&#xA;&#x9;)->forAll(componentKind = component::ComponentKind::SOFTWARE_COMPONENT)&#xD;&#xA;else&#xD;&#xA;true&#xD;&#xA;endif"/>
-        <details key="HybridStructuredComponentValidPorts" value="-- Structured hybrid component must only have discrete or continuous ports&#xD;&#xA;self.componentKind = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsKindOf(component::DiscretePort) or p.oclIsKindOf(component::ContinuousPort))&#xD;&#xA;&#x9;)"/>
+        <details key="HybridStructuredComponentValidPorts" value="-- Structured hybrid component must only have discrete or continuous ports&#xD;&#xA;self.componentKind = component::ComponentKind::HYBRID_COMPONENT&#xD;&#xA;&#x9;implies (&#xD;&#xA;&#x9;&#x9;self.ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) or p.oclIsKindOf(component::ContinuousPort))&#xD;&#xA;&#x9;)"/>
         <details key="ComponentPartsHaveUniqueName" value="-- Names of embedded component parts must be unique&#xA;self.embeddedComponentParts -> isUnique(name)"/>
         <details key="SoftwareComponentNoContinuousPorts" value="-- Software component must not have continuous ports&#xD;&#xA;self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->forAll(p | not p.oclIsKindOf(ContinuousPort))"/>
       </eAnnotations>
