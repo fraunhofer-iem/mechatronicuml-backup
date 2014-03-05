@@ -259,6 +259,7 @@
         <details key="DelegationBetweenDiscretePortsRequiresSameRoles" value="-- Delegation may only connect ports refining same roles&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and self.port.oclIsKindOf(DiscretePort)) &#xD;&#xA;implies &#xD;&#xA;self.port.oclAsType(DiscretePort).refinedRole = self.portPart.refinedRole&#xD;&#xA;-- author: bingo, cgerking, see MUML #883"/>
         <details key="DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"
             value="-- Delegation starting at Multi Port must connect to a multi port or single port at multi part&#xD;&#xA;(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and self.port.oclIsKindOf(DiscretePort) and self.port.oclAsType(DiscretePort).multi)&#xD;&#xA;implies&#xD;&#xA;((self.portPart.portType.oclIsKindOf(DiscretePort) and self.portPart.portType.oclAsType(DiscretePort).multi) or self.portPart.componentPart.multiPart)&#xD;&#xA;-- author: bingo, cgerking, see MUML #884"/>
+        <details key="DelegateToEmbeddedPort" value="-- Delegation must delegate to a Port at an embedded Component Part.&#xD;&#xA;portPart.componentPart.parentComponent = port.component&#xD;&#xA;"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" lowerBound="1"
           eType="#//component/PortPart" changeable="false" volatile="true" transient="true"
