@@ -25,7 +25,8 @@ import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
  * </p>
  *
  * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getAssemblyConnectorInstance()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AssemblyConnectorInstanceNeedsTypeIfNotTopLevel'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL AssemblyConnectorInstanceNeedsTypeIfNotTopLevel='-- Assembly Connector Instance needs type, if not top-level\nportInstances.componentInstance->exists(not parentCIC.parentStructuredComponentInstance.oclIsUndefined()) implies not assemblyConnectorType.oclIsUndefined()\n'"
  * @generated
  */
 public interface AssemblyConnectorInstance extends PortConnectorInstance {

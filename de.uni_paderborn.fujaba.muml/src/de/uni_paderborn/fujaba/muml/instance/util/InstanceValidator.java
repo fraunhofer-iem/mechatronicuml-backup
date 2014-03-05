@@ -245,7 +245,48 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	public boolean validateAssemblyConnectorInstance(AssemblyConnectorInstance assemblyConnectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(assemblyConnectorInstance, diagnostics, context);
+		if (!validate_NoCircularContainment(assemblyConnectorInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(assemblyConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(assemblyConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(assemblyConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(assemblyConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(assemblyConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(assemblyConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assemblyConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assemblyConnectorInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnectorInstance_AssemblyConnectorInstanceNeedsTypeIfNotTopLevel(assemblyConnectorInstance, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyConnectorInstanceNeedsTypeIfNotTopLevel constraint of '<em>Assembly Connector Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_INSTANCE_NEEDS_TYPE_IF_NOT_TOP_LEVEL__EEXPRESSION = "-- Assembly Connector Instance needs type, if not top-level\n" +
+		"portInstances.componentInstance->exists(not parentCIC.parentStructuredComponentInstance.oclIsUndefined()) implies not assemblyConnectorType.oclIsUndefined()\n" +
+		"";
+
+	/**
+	 * Validates the AssemblyConnectorInstanceNeedsTypeIfNotTopLevel constraint of '<em>Assembly Connector Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnectorInstance_AssemblyConnectorInstanceNeedsTypeIfNotTopLevel(AssemblyConnectorInstance assemblyConnectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(InstancePackage.Literals.ASSEMBLY_CONNECTOR_INSTANCE,
+				 assemblyConnectorInstance,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyConnectorInstanceNeedsTypeIfNotTopLevel",
+				 ASSEMBLY_CONNECTOR_INSTANCE__ASSEMBLY_CONNECTOR_INSTANCE_NEEDS_TYPE_IF_NOT_TOP_LEVEL__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

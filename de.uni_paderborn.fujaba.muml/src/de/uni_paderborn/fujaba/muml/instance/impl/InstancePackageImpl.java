@@ -818,7 +818,13 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   source, 
 		   new String[] {
 			 "constraints", "PortInstanceMustReferencePortType PortInstanceMustDelegateToEmbeddedCIC"
-		   });												
+		   });									
+		addAnnotation
+		  (assemblyConnectorInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "AssemblyConnectorInstanceNeedsTypeIfNotTopLevel"
+		   });						
 		addAnnotation
 		  (delegationConnectorInstanceEClass, 
 		   source, 
@@ -884,6 +890,12 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		   new String[] {
 			 "derivation", "componentInstance.componentPart.portParts->any(portPart | portPart.portType = self.type)"
 		   });				
+		addAnnotation
+		  (assemblyConnectorInstanceEClass, 
+		   source, 
+		   new String[] {
+			 "AssemblyConnectorInstanceNeedsTypeIfNotTopLevel", "-- Assembly Connector Instance needs type, if not top-level\nportInstances.componentInstance->exists(not parentCIC.parentStructuredComponentInstance.oclIsUndefined()) implies not assemblyConnectorType.oclIsUndefined()\n"
+		   });			
 		addAnnotation
 		  (getAssemblyConnectorInstance_AssemblyConnectorType(), 
 		   source, 
