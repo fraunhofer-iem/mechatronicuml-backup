@@ -340,7 +340,7 @@
       <sourceEnd
           body="-- Only PortParts may be connected using an AssemblyConnector&#xA;self.oclIsKindOf(component::PortPart)"/>
       <targetEnd
-          body="-- Assembly must only connect PortParts at different ComponentParts of the same type&#xA;self.oclIsKindOf(component::PortPart) and&#xA;not oppositeEnd.oclAsType(component::PortPart).componentPart.parentComponent.componentKind.oclIsUndefined() and&#xA;not self.oclAsType(component::PortPart).componentPart.parentComponent.oclIsUndefined() and&#xA;oppositeEnd.oclAsType(component::PortPart).componentPart &lt;> self.oclAsType(component::PortPart).componentPart and&#xA;oppositeEnd.oclAsType(component::PortPart).componentPart.parentComponent = self.oclAsType(component::PortPart).componentPart.parentComponent"/>
+          body="-- DEACTIVATED FOR #941:&#xA;-- Assembly must only connect PortParts at different ComponentParts of the same type&#xA;true&#xA;--self.oclIsKindOf(component::PortPart) and&#xA;--not oppositeEnd.oclAsType(component::PortPart).componentPart.parentComponent.componentKind.oclIsUndefined() and&#xA;--not self.oclAsType(component::PortPart).componentPart.parentComponent.oclIsUndefined() and&#xA;--oppositeEnd.oclAsType(component::PortPart).componentPart &lt;> self.oclAsType(component::PortPart).componentPart and&#xA;--oppositeEnd.oclAsType(component::PortPart).componentPart.parentComponent = self.oclAsType(component::PortPart).componentPart.parentComponent"/>
     </creationConstraints>
   </links>
   <links>
