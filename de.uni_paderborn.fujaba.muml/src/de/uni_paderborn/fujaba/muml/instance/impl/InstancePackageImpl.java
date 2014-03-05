@@ -894,7 +894,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (delegationConnectorInstanceEClass, 
 		   source, 
 		   new String[] {
-			 "DelegateToEmbeddedCIC", "-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\nnot self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 <> ci)))->isEmpty()"
+			 "DelegateToEmbeddedCIC", "-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\nself.portInstances->exists(a, b | b.componentInstance.parentCIC.parentStructuredComponentInstance = a.componentInstance)"
 		   });			
 		addAnnotation
 		  (getDelegationConnectorInstance_DelegationConnectorType(), 

@@ -727,7 +727,7 @@
         <details key="constraints" value="DelegateToEmbeddedCIC"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="DelegateToEmbeddedCIC" value="-- Delegation Connector Instance must delegate to embedded Component Instance Configuration&#xA;not self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 &lt;> ci)))->isEmpty()"/>
+        <details key="DelegateToEmbeddedCIC" value="-- Delegation Connector Instance must delegate to embedded Component Instance Configuration&#xA;self.portInstances->exists(a, b | b.componentInstance.parentCIC.parentStructuredComponentInstance = a.componentInstance)"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="delegationConnectorType"
           lowerBound="1" eType="#//component/DelegationConnector" changeable="false"

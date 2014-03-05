@@ -274,7 +274,7 @@ public class InstanceValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String DELEGATION_CONNECTOR_INSTANCE__DELEGATE_TO_EMBEDDED_CIC__EEXPRESSION = "-- Delegation Connector Instance must delegate to embedded Component Instance Configuration\n" +
-		"not self.portInstances.componentInstance->select(ci | ci.oclIsKindOf(StructuredComponentInstance) implies ci.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances->includes(self.portInstances.componentInstance->any(ci2 | ci2 <> ci)))->isEmpty()";
+		"self.portInstances->exists(a, b | b.componentInstance.parentCIC.parentStructuredComponentInstance = a.componentInstance)";
 
 	/**
 	 * Validates the DelegateToEmbeddedCIC constraint of '<em>Delegation Connector Instance</em>'.
