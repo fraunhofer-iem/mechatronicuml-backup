@@ -1,4 +1,4 @@
-juiuuuiiiiManifest-Version: 1.0
+Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MechatronicUML ActionLanguage
 Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
