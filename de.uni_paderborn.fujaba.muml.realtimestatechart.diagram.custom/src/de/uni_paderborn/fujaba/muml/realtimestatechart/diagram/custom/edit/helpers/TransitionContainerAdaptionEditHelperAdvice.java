@@ -46,20 +46,23 @@ public class TransitionContainerAdaptionEditHelperAdvice extends AbstractEditHel
 
 	@Override
 	protected ICommand getAfterConfigureCommand(final ConfigureRequest request) {
-		return new ConfigureElementCommand(request) {
-
-			@Override
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
-					throws ExecutionException {
-
-				Transition transition = (Transition) request.getElementToConfigure();
-				adaptContainer(transition);
-
-				return CommandResult.newOKCommandResult(transition);
-			}
-
-		};
+		if (request.getElementToConfigure() instanceof Transition) {
+			return new ConfigureElementCommand(request) {
+	
+				@Override
+				protected CommandResult doExecuteWithResult(
+						IProgressMonitor monitor, IAdaptable info)
+						throws ExecutionException {
+	
+					Transition transition = (Transition) request.getElementToConfigure();
+					adaptContainer(transition);
+				
+					return CommandResult.newOKCommandResult(transition);
+				}
+	
+			};
+		}
+		return super.getAfterConfigureCommand(request);
 	}
 	
 
@@ -109,7 +112,7 @@ public class TransitionContainerAdaptionEditHelperAdvice extends AbstractEditHel
 		return Collections.emptyList();
 	}
 	
-	protected Collection<Transition> getTransition(RealtimeStatechart element) {
+	protected Collection<Transition> getTransitions(RealtimeStatechart element) {
 		List<Transition> transitions = new ArrayList<Transition>();
 		for (State state : element.getStates()) {
 			transitions.addAll(getTransitions(state));
