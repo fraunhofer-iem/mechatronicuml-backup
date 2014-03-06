@@ -27,20 +27,6 @@
       </binding>
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
-      <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.ComponentInstanceConfiguration_1000"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.ComponentInstanceConfigurationAdvice_1000"/>
-      </binding>
-   </extension>
-   
-      <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
-      <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.TypeContext">
-         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.ComponentInstanceConfiguration_3023"/>
-         <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.ComponentInstanceConfigurationAdvice_3023"/>
-      </binding>
-   </extension>
-   
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
       <metamodel nsURI="http://www.fujaba.de/muml/instance/0.4.0">
         <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"
@@ -61,26 +47,6 @@
       </metamodel>
    </extension>
    
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
-      <metamodel nsURI="http://www.fujaba.de/muml/instance/0.4.0">
-        <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.ComponentInstanceConfigurationAdvice_1000"
-		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.ComponentInstanceConfiguration_1000"
-		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.helpers.ComponentInstanceConfigurationEditHelperAdvice"
-		  inheritance="all">
-        </adviceBinding>
-      </metamodel>
-   </extension>
-   
-   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
-      <metamodel nsURI="http://www.fujaba.de/muml/instance/0.4.0">
-        <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.ComponentInstanceConfigurationAdvice_3023"
-		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.ComponentInstanceConfiguration_3023"
-		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.helpers.ComponentInstanceConfigurationEditHelperAdvice"
-		  inheritance="all">
-        </adviceBinding>
-      </metamodel>
-   </extension>
-   
    
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.providers.CustomMumlParserProvider">
@@ -94,4 +60,10 @@
        </layoutProvider>
    </extension>
 
+   <extension
+       point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.initializer.ComponentInstanceConfigurationInitializer">
+      </initializer>
+   </extension>
 </plugin>
