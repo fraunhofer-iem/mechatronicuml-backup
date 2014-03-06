@@ -662,60 +662,26 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateStructuredComponent_ComponentPartsHaveUniqueName(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStructuredComponent_SoftwareComponentNoContinuousPorts(staticStructuredComponent, diagnostics, context);
 		if (result || diagnostics != null) result &= validateStaticComponent_SoftwareComponentOnlyDiscreteOrHybridPorts(staticStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStaticStructuredComponent_DiscretePortRequiresMessageTypes(staticStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStaticStructuredComponent_DiscretePortAndRoleSameMessageTypes(staticStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStaticStructuredComponent_DiscretePortRequiresBehavior(staticStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStaticStructuredComponent_DiscretePortAtStructuredComponentHasNoBehavior(staticStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStaticStructuredComponent_DiscretePortRequiresRole(staticStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStaticStructuredComponent_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(staticStructuredComponent, diagnostics, context);
-		if (result || diagnostics != null) result &= validateStaticStructuredComponent_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(staticStructuredComponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validateStaticStructuredComponent_StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints(staticStructuredComponent, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the DiscretePortRequiresMessageTypes constraint of '<em>Static Structured Component</em>'.
+	 * The cached validation expression for the StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints constraint of '<em>Static Structured Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStaticStructuredComponent_DiscretePortRequiresMessageTypes(StaticStructuredComponent staticStructuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "DiscretePortRequiresMessageTypes", getObjectLabel(staticStructuredComponent, context) },
-						 new Object[] { staticStructuredComponent },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * The cached validation expression for the DiscretePortAndRoleSameMessageTypes constraint of '<em>Static Structured Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String STATIC_STRUCTURED_COMPONENT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_TYPES__EEXPRESSION = "-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports\n" +
+	protected static final String STATIC_STRUCTURED_COMPONENT__STATIC_STRUCTURED_COMPONENT_MUST_NOT_HAVE_WRONG_DISCRETE_INTERACTION_ENDPOINTS__EEXPRESSION = "-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports\n" +
 		"ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))";
 
 	/**
-	 * Validates the DiscretePortAndRoleSameMessageTypes constraint of '<em>Static Structured Component</em>'.
+	 * Validates the StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints constraint of '<em>Static Structured Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateStaticStructuredComponent_DiscretePortAndRoleSameMessageTypes(StaticStructuredComponent staticStructuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateStaticStructuredComponent_StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints(StaticStructuredComponent staticStructuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(ComponentPackage.Literals.STATIC_STRUCTURED_COMPONENT,
@@ -723,151 +689,11 @@ public class ComponentValidator extends MumlValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "DiscretePortAndRoleSameMessageTypes",
-				 STATIC_STRUCTURED_COMPONENT__DISCRETE_PORT_AND_ROLE_SAME_MESSAGE_TYPES__EEXPRESSION,
+				 "StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints",
+				 STATIC_STRUCTURED_COMPONENT__STATIC_STRUCTURED_COMPONENT_MUST_NOT_HAVE_WRONG_DISCRETE_INTERACTION_ENDPOINTS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * Validates the DiscretePortRequiresBehavior constraint of '<em>Static Structured Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStaticStructuredComponent_DiscretePortRequiresBehavior(StaticStructuredComponent staticStructuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "DiscretePortRequiresBehavior", getObjectLabel(staticStructuredComponent, context) },
-						 new Object[] { staticStructuredComponent },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the DiscretePortAtStructuredComponentHasNoBehavior constraint of '<em>Static Structured Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStaticStructuredComponent_DiscretePortAtStructuredComponentHasNoBehavior(StaticStructuredComponent staticStructuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "DiscretePortAtStructuredComponentHasNoBehavior", getObjectLabel(staticStructuredComponent, context) },
-						 new Object[] { staticStructuredComponent },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the DiscretePortRequiresRole constraint of '<em>Static Structured Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStaticStructuredComponent_DiscretePortRequiresRole(StaticStructuredComponent staticStructuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "DiscretePortRequiresRole", getObjectLabel(staticStructuredComponent, context) },
-						 new Object[] { staticStructuredComponent },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the DiscretePortCardinalityMustComplyWithRefinedRoleCardinality constraint of '<em>Static Structured Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStaticStructuredComponent_DiscretePortCardinalityMustComplyWithRefinedRoleCardinality(StaticStructuredComponent staticStructuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "DiscretePortCardinalityMustComplyWithRefinedRoleCardinality", getObjectLabel(staticStructuredComponent, context) },
-						 new Object[] { staticStructuredComponent },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Validates the MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior constraint of '<em>Static Structured Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStaticStructuredComponent_MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior(StaticStructuredComponent staticStructuredComponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior", getObjectLabel(staticStructuredComponent, context) },
-						 new Object[] { staticStructuredComponent },
-						 context));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -1699,7 +1525,11 @@ public class ComponentValidator extends MumlValidator {
 	 * @generated
 	 */
 	protected static final String DELEGATION_CONNECTOR__DELEGATE_TO_EMBEDDED_PORT__EEXPRESSION = "-- Delegation must delegate to a Port at an embedded Component Part.\r\n" +
-		"portPart.componentPart.parentComponent = port.component\r\n" +
+		"if portPart.oclIsUndefined() or portPart.componentPart.oclIsUndefined() or port.oclIsUndefined() then\r\n" +
+		"\ttrue\r\n" +
+		"else\r\n" +
+		"\tportPart.componentPart.parentComponent = port.component\r\n" +
+		"endif\r\n" +
 		"";
 
 	/**

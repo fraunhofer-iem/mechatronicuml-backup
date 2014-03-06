@@ -1142,7 +1142,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (staticStructuredComponentEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "DiscretePortRequiresMessageTypes DiscretePortAndRoleSameMessageTypes DiscretePortRequiresBehavior DiscretePortAtStructuredComponentHasNoBehavior DiscretePortRequiresRole DiscretePortCardinalityMustComplyWithRefinedRoleCardinality MultiPortOfAtomicComponentRequiresRoleAndAdaptationBehavior"
+			 "constraints", "StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints"
 		   });					
 		addAnnotation
 		  (atomicComponentEClass, 
@@ -1269,7 +1269,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (staticStructuredComponentEClass, 
 		   source, 
 		   new String[] {
-			 "DiscretePortAndRoleSameMessageTypes", "-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports\nports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))"
+			 "StaticStructuredComponentMustNotHaveWrongDiscreteInteractionEndpoints", "-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports\nports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))"
 		   });			
 		addAnnotation
 		  (atomicComponentEClass, 
@@ -1314,7 +1314,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "ValidPortDirections", "-- Delegation may only connect Directed Typed Ports with different Port Direction Kinds\r\n(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined())\r\nimplies \r\nlet ports : OrderedSet (Port) = OrderedSet { portPart.portType, port } in ports->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->forAll(p1, p2 | p1.kind = p2.kind)\r\n-- author: bingo, cgerking, see MUML #882",
 			 "DelegationBetweenDiscretePortsRequiresSameRoles", "-- Delegation may only connect ports refining same roles\r\n(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and self.port.oclIsKindOf(DiscretePort)) \r\nimplies \r\nself.port.oclAsType(DiscretePort).refinedRole = self.portPart.refinedRole\r\n-- author: bingo, cgerking, see MUML #883",
 			 "DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart", "-- Delegation starting at Multi Port must connect to a multi port or single port at multi part\r\n(not portPart.portType.oclIsUndefined() and not port.oclIsUndefined() and self.port.oclIsKindOf(DiscretePort) and self.port.oclAsType(DiscretePort).multi)\r\nimplies\r\n((self.portPart.portType.oclIsKindOf(DiscretePort) and self.portPart.portType.oclAsType(DiscretePort).multi) or self.portPart.componentPart.multiPart)\r\n-- author: bingo, cgerking, see MUML #884",
-			 "DelegateToEmbeddedPort", "-- Delegation must delegate to a Port at an embedded Component Part.\r\nportPart.componentPart.parentComponent = port.component\r\n"
+			 "DelegateToEmbeddedPort", "-- Delegation must delegate to a Port at an embedded Component Part.\r\nif portPart.oclIsUndefined() or portPart.componentPart.oclIsUndefined() or port.oclIsUndefined() then\r\n\ttrue\r\nelse\r\n\tportPart.componentPart.parentComponent = port.component\r\nendif\r\n"
 		   });		
 		addAnnotation
 		  (getDelegationConnector_PortPart(), 
