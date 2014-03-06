@@ -9,7 +9,7 @@
       
         <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.TransitionAdvice"
 		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Transition_4003"
-		  class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.TransitionEditHelperAdvice"
+		  class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
 		  inheritance="all">
         </adviceBinding>
 
@@ -62,5 +62,70 @@
             <Priority name="High"/>
        </layoutProvider>
    </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.State_3032"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.StateAdvice"/>
+      </binding>
+   </extension>
+       
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.StateAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.State_3032"
+		  class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Region_3042"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.RegionAdvice"/>
+      </binding>
+   </extension>
+       
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.RegionAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Region_3042"
+		  class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.RealtimeStatechart_1000"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"/>
+      </binding>
+   </extension>
+       
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.RealtimeStatechart_1000"
+		  class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+<!-- does not work -->
+<!--
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+       <elementTypeFactory
+           factory="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.StateTypeFactory"
+           kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+       </elementTypeFactory>
+   </extension>   
+-->
 
 </plugin>
