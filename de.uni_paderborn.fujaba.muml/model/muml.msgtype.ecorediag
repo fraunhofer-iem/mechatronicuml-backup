@@ -14,7 +14,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_5YEhoZPREeOY4ZB1xSVe-w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="muml.ecore#//msgtype/MessageType"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5YEhopPREeOY4ZB1xSVe-w" x="315" y="52" width="102" height="42"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5YEhopPREeOY4ZB1xSVe-w" x="344" y="52" width="102" height="42"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_5YKBMJPREeOY4ZB1xSVe-w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_5YKoQJPREeOY4ZB1xSVe-w" type="4001"/>
@@ -30,13 +30,13 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_5YKBMZPREeOY4ZB1xSVe-w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="muml.ecore#//msgtype/MessageTypeRepository"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5YKBMpPREeOY4ZB1xSVe-w" x="16" y="52" width="138" height="42"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5YKBMpPREeOY4ZB1xSVe-w" x="16" y="52" width="175" height="42"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_5YCscZPREeOY4ZB1xSVe-w"/>
   <element xmi:type="ecore:EPackage" href="muml.ecore#//msgtype"/>
   <edges xmi:type="notation:Edge" xmi:id="_5YMdcpPREeOY4ZB1xSVe-w" type="3002" source="_5YEhoJPREeOY4ZB1xSVe-w" target="_5YKBMJPREeOY4ZB1xSVe-w">
     <children xmi:type="notation:Node" xmi:id="_5YMddpPREeOY4ZB1xSVe-w" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_5YMdd5PREeOY4ZB1xSVe-w" x="-1" y="15"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5YMdd5PREeOY4ZB1xSVe-w" x="-1" y="14"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_5YNEgJPREeOY4ZB1xSVe-w" type="4012">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_5YNEgZPREeOY4ZB1xSVe-w" x="21" y="6"/>

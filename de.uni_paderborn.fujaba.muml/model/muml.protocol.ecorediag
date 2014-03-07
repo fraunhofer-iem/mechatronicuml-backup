@@ -30,7 +30,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_YiP7IZPREeOY4ZB1xSVe-w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="muml.ecore#//protocol/CoordinationProtocol"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiP7IpPREeOY4ZB1xSVe-w" x="18" y="120" width="124" height="42"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YiP7IpPREeOY4ZB1xSVe-w" x="18" y="120" width="141" height="42"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_YiQiOJPREeOY4ZB1xSVe-w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_YiQiO5PREeOY4ZB1xSVe-w" type="4001"/>
@@ -131,7 +131,7 @@
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_YiTlhZPREeOY4ZB1xSVe-w" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_YiTlhpPREeOY4ZB1xSVe-w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="muml.ecore#//protocol/CoordinationProtocol/gmfCoordinationProtocol"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YiTlh5PREeOY4ZB1xSVe-w" points="[0, 0, 20, -42]$[0, -24, 20, -66]$[113, -24, 133, -66]$[113, 69, 133, 27]$[-20, 69, 0, 27]$[-20, 42, 0, 0]"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YiTlh5PREeOY4ZB1xSVe-w" points="[0, 0, 23, -40]$[0, -25, 23, -65]$[106, -25, 129, -65]$[106, 67, 129, 27]$[-22, 67, 1, 27]$[-22, 40, 1, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_b4dB8JPREeOY4ZB1xSVe-w" id="(0.6666667076849169,0.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_b4dB8ZPREeOY4ZB1xSVe-w" id="(0.5,1.0)"/>
   </edges>
