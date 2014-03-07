@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.realtimestatechart.util;
 
-import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -14,7 +13,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
@@ -534,6 +532,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateTransition_NoCombinationOfRelativeAndAbsoluteDeadlines(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_NoCombinationOfReceivedSynchronizationAndTriggerMessage(transition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateTransition_TransitionMustBeContainedByCorrectStatechart(transition, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTransition_OutgoingTransitionOfUrgentStateMustBeUrgent(transition, diagnostics, context);
 		return result;
 	}
 
@@ -543,7 +542,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__LEGAL_TRANSITIONS_ONLY__EEXPRESSION = "-- Only specific types of transitions are allowed\r\n" +
+	protected static final String TRANSITION__LEGAL_TRANSITIONS_ONLY__EEXPRESSION = "-- Inter-level transitions are invalid\r\n" +
 		"\r\n" +
 		"if (self.source.oclIsUndefined() or self.target.oclIsUndefined()) then\r\n" +
 		"true\r\n" +
@@ -860,7 +859,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String TRANSITION__TRANSITION_MUST_BE_CONTAINED_BY_CORRECT_STATECHART__EEXPRESSION = "-- A transition must be contained by its associated statechart\r\n" +
+	protected static final String TRANSITION__TRANSITION_MUST_BE_CONTAINED_BY_CORRECT_STATECHART__EEXPRESSION = "-- A transition must be contained by its logical parent statechart\r\n" +
 		"(not self.statechart.oclIsUndefined()) implies (self.statechart.transitions->includes(self))";
 
 	/**
@@ -879,6 +878,36 @@ public class RealtimestatechartValidator extends MumlValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
 				 "TransitionMustBeContainedByCorrectStatechart",
 				 TRANSITION__TRANSITION_MUST_BE_CONTAINED_BY_CORRECT_STATECHART__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the OutgoingTransitionOfUrgentStateMustBeUrgent constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TRANSITION__OUTGOING_TRANSITION_OF_URGENT_STATE_MUST_BE_URGENT__EEXPRESSION = "-- An outgoing transition of an urgent state must be urgent itself\r\n" +
+		"(self.source.oclIsKindOf(State) and self.source.oclAsType(State).urgent) implies self.urgent";
+
+	/**
+	 * Validates the OutgoingTransitionOfUrgentStateMustBeUrgent constraint of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTransition_OutgoingTransitionOfUrgentStateMustBeUrgent(Transition transition, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RealtimestatechartPackage.Literals.TRANSITION,
+				 transition,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "OutgoingTransitionOfUrgentStateMustBeUrgent",
+				 TRANSITION__OUTGOING_TRANSITION_OF_URGENT_STATE_MUST_BE_URGENT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

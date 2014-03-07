@@ -47,6 +47,7 @@ public final class MumlEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     CoreEditPlugin.INSTANCE,
 		     ModelinstanceEditPlugin.INSTANCE,
+		     EcoreEditPlugin.INSTANCE,
 		   });
 	}
 

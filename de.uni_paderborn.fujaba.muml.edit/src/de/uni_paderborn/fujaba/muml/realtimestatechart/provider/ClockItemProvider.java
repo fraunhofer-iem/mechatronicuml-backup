@@ -26,7 +26,6 @@ import de.uni_paderborn.fujaba.muml.ItemProviderUtilities;
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
-import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.realtimestatechart.Clock} object.
