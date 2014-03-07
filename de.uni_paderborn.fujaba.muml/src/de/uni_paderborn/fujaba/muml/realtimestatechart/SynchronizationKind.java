@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * and utility methods for working with them.
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
- * A synchronization has two kinds: send and receive.
+ * A synchronization has two possible kinds: send and receive.
  * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getSynchronizationKind()
  * @model

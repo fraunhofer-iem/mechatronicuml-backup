@@ -15,6 +15,10 @@ import org.storydriven.core.NamedElement;
  * A representation of the model object '<em><b>Endpoint Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An instance of a particular connector endpoint.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -38,6 +42,9 @@ public interface ConnectorEndpointInstance extends NamedElement, CommentableElem
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The connector instances attached to this endpoint instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connector Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnectorEndpointInstance_ConnectorInstances()
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorInstance#getConnectorEndpointInstances
@@ -54,6 +61,9 @@ public interface ConnectorEndpointInstance extends NamedElement, CommentableElem
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The connector endpoint that represents the type of this instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(ConnectorEndpoint)
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnectorEndpointInstance_Type()

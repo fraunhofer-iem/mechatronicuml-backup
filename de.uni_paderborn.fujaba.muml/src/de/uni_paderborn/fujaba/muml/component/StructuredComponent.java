@@ -144,6 +144,9 @@ public interface StructuredComponent extends Component {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Redefinition of the Java toString method.
+	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return \"Structured_Component_\" + getName();'"
 	 * @generated
 	 */

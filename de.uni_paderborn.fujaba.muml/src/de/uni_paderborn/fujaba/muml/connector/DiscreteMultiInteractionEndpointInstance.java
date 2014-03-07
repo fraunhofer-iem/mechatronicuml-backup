@@ -13,6 +13,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Discrete Multi Interaction Endpoint Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A discrete interaction endpoint instance that comprises multiple single sub-instances.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -54,6 +58,9 @@ public interface DiscreteMultiInteractionEndpointInstance extends DiscreteIntera
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Refers to the first single instance of the corresponding multi discrete interaction endpoint.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>First</em>' reference.
 	 * @see #setFirst(DiscreteSingleInteractionEndpointInstance)
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteMultiInteractionEndpointInstance_First()
@@ -80,6 +87,9 @@ public interface DiscreteMultiInteractionEndpointInstance extends DiscreteIntera
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Refers to the last single instance of the corresponding multi discrete interaction endpoint.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Last</em>' reference.
 	 * @see #setLast(DiscreteSingleInteractionEndpointInstance)
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteMultiInteractionEndpointInstance_Last()

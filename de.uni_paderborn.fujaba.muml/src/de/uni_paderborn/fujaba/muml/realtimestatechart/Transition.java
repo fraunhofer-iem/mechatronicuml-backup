@@ -360,6 +360,9 @@ public interface Transition extends PrioritizedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Indicates whether this transition fires immediately when it is enabled.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Urgent</em>' attribute.
 	 * @see #setUrgent(boolean)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getTransition_Urgent()
@@ -387,6 +390,9 @@ public interface Transition extends PrioritizedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * All message types accessible by the trigger message event of this transition.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Receiver Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getTransition_ReceiverMessageTypes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -404,6 +410,9 @@ public interface Transition extends PrioritizedElement, CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * All message types accessible by the raise message event of this transition.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Sender Message Types</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getTransition_SenderMessageTypes()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"

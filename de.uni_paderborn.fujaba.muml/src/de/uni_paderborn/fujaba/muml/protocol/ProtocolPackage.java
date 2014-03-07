@@ -25,6 +25,9 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package provides modeling support for coordination protocols including roles, role connectors, and quality of service assumptions.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.protocol.ProtocolFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"

@@ -89,6 +89,9 @@ public interface PortInstance extends ConnectorEndpointInstance {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The port connector instances attached to this port instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Connector Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortInstance_PortConnectorInstances()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -105,10 +108,13 @@ public interface PortInstance extends ConnectorEndpointInstance {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Refers to the first single instance of the corresponding multi discrete interaction endpoint.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Part</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortInstance_PortPart()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='componentInstance.componentPart.portParts->any(portPart | portPart.portType = self.type)'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='If the enclosing component instance corresponds to a component part of a structured component, refers to the port part that corresponds to this port instance.'"
 	 * @generated
 	 */
 	PortPart getPortPart();

@@ -14,6 +14,10 @@ import org.storydriven.core.CommentableElement;
  * A representation of the model object '<em><b>Endpoint</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An endpoint that may be connected to other endpoints via connectors.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -36,6 +40,9 @@ public interface ConnectorEndpoint extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The connectors attached to this endpoint.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connectors</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnectorEndpoint_Connectors()
 	 * @see de.uni_paderborn.fujaba.muml.connector.Connector#getConnectorEndpoints

@@ -70,6 +70,9 @@ public interface Message extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The collection of parameter bindings for this message. All parameters of the message type must be bound exactly once.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter Binding</em>' containment reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getMessage_ParameterBinding()
 	 * @model containment="true"

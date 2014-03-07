@@ -1155,13 +1155,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"
-		   });							
+		   });								
 		addAnnotation
 		  (delegationConnectorEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "DelegateToEmbeddedPort DelegationBetweenDirectedTypedPortsRequiresSameDataType DelegationBetweenDiscretePortsOrDirectedTypedPorts DelegationBetweenDiscretePortsEqualMessageTypes ValidPortDirections DelegationBetweenDiscretePortsRequiresSameRoles DiscreteMultiPortDelegationRequiresMultiPortOrSinglePortAndMultiPart"
-		   });																	
+		   });																			
 		addAnnotation
 		  (structuredComponentEClass, 
 		   source, 
@@ -1179,13 +1179,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "constraints", "InitializeExpressionOnlyForOutPorts"
-		   });																			
+		   });																				
 		addAnnotation
 		  (staticComponentEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "SoftwareComponentOnlyDiscreteOrHybridPorts"
-		   });	
+		   });		
 	}
 
 	/**
@@ -1303,7 +1303,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)->asOrderedSet()"
-		   });				
+		   });					
 		addAnnotation
 		  (delegationConnectorEClass, 
 		   source, 
@@ -1321,13 +1321,13 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart) -> any(true)"
-		   });		
+		   });			
 		addAnnotation
 		  (getDelegationConnector_Port(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port) -> any(true)"
-		   });															
+		   });																
 		addAnnotation
 		  (structuredComponentEClass, 
 		   source, 
@@ -1375,7 +1375,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "derivation", "self.kind = component::PortDirectionKind::IN"
-		   });							
+		   });								
 		addAnnotation
 		  (getPortPart_RefinedRole(), 
 		   source, 
@@ -1393,7 +1393,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "SoftwareComponentOnlyDiscreteOrHybridPorts", "-- Static software components must only have discrete ports and hybrid ports.\r\nself.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()"
-		   });
+		   });	
 	}
 
 } //ComponentPackageImpl

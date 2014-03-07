@@ -520,13 +520,13 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		   source, 
 		   new String[] {
 			 "constraints", "LiteralExpressionMustBeANaturalNumber"
-		   });							
+		   });								
 		addAnnotation
 		  (naturalNumberEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "ValueGreaterOrEqualZero"
-		   });											
+		   });																		
 		addAnnotation
 		  (rangeEClass, 
 		   source, 
@@ -554,25 +554,25 @@ public class ValuetypePackageImpl extends EPackageImpl implements ValuetypePacka
 		   source, 
 		   new String[] {
 			 "LiteralExpressionMustBeANaturalNumber", "-- If a TimeValue has as value a LiteralExpression, it must be a natural number.\r\n-- 1. Check if the LiteralExpression can be cast to an Integer\r\n-- 2. Check if this Integer is greater or equal to zero.\r\n\r\n(\r\nnot self.value.oclIsUndefined()\r\nand \r\nself.value.oclIsKindOf(core::expressions::common::LiteralExpression)\r\n)\r\nimplies\r\n(\r\nnot self.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger().oclIsUndefined()\r\nand \r\nself.value.oclAsType(core::expressions::common::LiteralExpression).value.toInteger()>=0\r\n)\r\n-- author: xell\r\n-- ticket: 770"
-		   });							
+		   });								
 		addAnnotation
 		  (naturalNumberEClass, 
 		   source, 
 		   new String[] {
 			 "ValueGreaterOrEqualZero", "-- Natural number must not be negative\nself.value >= 0"
-		   });					
+		   });							
 		addAnnotation
 		  (getNaturalNumber__LessOrEqual__NaturalNumber(), 
 		   source, 
 		   new String[] {
 			 "body", "if self.infinity\r\nthen n.infinity\r\nelse self.value <= n.value\r\nendif"
-		   });		
+		   });				
 		addAnnotation
 		  (getNaturalNumber__GreaterOrEqual__NaturalNumber(), 
 		   source, 
 		   new String[] {
 			 "body", "n.lessOrEqual(self)"
-		   });						
+		   });									
 		addAnnotation
 		  (rangeEClass, 
 		   source, 

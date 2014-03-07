@@ -181,6 +181,9 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * All variables accessible within this statechart.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>All Available Variables</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AllAvailableVariables()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -198,6 +201,9 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * All operations accessible within this statechart.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>All Available Operations</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getRealtimeStatechart_AllAvailableOperations()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -210,7 +216,8 @@ public interface RealtimeStatechart extends NamedElement, CommentableElement, Be
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Returns realtime statechart which represents the root of the hierarchy tree.
+	 * Returns whether this statechart is a super-statechart of the given Real-Time Statechart.
+	 * @param statechart The statechart to be checked for being a sub-statechart.
 	 * <!-- end-model-doc -->
 	 * @model required="true" statechartRequired="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='// TODO: Replace by OCL\'s transitive closure?\r\n\t\t\r\nAssert.isLegal(statechart != null);\r\n\r\nBreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();\r\nreturn bfs.search(statechart, new ISearchVisitor() {\r\n\r\n\t@Override\r\n\tpublic boolean visit(Object object) {\r\n\t\treturn !RealtimeStatechartImpl.this.equals(object);\r\n\t}\r\n\r\n\t@Override\r\n\tpublic List<?> getAdjacentNodes(Object object) {\r\n\t\tRealtimeStatechart rtsc = (RealtimeStatechart) object;\r\n\r\n\t\tList<Object> parentStatecharts = new ArrayList<Object>();\r\n\r\n\t\tRegion region = rtsc.getParentRegion();\r\n\t\tif (region != null) {\r\n\t\t\t// List<Region> regions = rtsc.getParentRegions();\r\n\t\t\t// for (Region region : regions) {\r\n\t\t\tState state = region.getParentState();\r\n\t\t\tif (state != null && state.getParentStatechart() != null) {\r\n\t\t\t\tparentStatecharts.add(state.getParentStatechart());\r\n\t\t\t}\r\n\t\t\t// }\r\n\t\t}\r\n\r\n\t\treturn parentStatecharts;\r\n\t}\r\n\r\n});'"

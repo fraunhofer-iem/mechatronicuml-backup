@@ -12,6 +12,10 @@ package de.uni_paderborn.fujaba.muml.connector;
  * A representation of the model object '<em><b>Discrete Single Interaction Endpoint Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A single instance of a discrete interaction endpoint.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -35,6 +39,9 @@ public interface DiscreteSingleInteractionEndpointInstance extends DiscreteInter
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If this is an instance of a multi discrete interaction endpoint, refers to the corresponding multi instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Multi Interaction Endpoint Instance</em>' reference.
 	 * @see #setMultiInteractionEndpointInstance(DiscreteMultiInteractionEndpointInstance)
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance()
@@ -63,6 +70,9 @@ public interface DiscreteSingleInteractionEndpointInstance extends DiscreteInter
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If this is an instance of a multi discrete interaction endpoint, refers to the next single instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Next</em>' reference.
 	 * @see #setNext(DiscreteSingleInteractionEndpointInstance)
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteSingleInteractionEndpointInstance_Next()
@@ -91,6 +101,9 @@ public interface DiscreteSingleInteractionEndpointInstance extends DiscreteInter
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If this is an instance of a multi discrete interaction endpoint, refers to the previous single instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Previous</em>' reference.
 	 * @see #setPrevious(DiscreteSingleInteractionEndpointInstance)
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteSingleInteractionEndpointInstance_Previous()

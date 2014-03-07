@@ -14,6 +14,10 @@ import org.storydriven.core.CommentableElement;
  * A representation of the model object '<em><b>Instance</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * An instance of a particular connector.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -35,6 +39,9 @@ public interface ConnectorInstance extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The connector that represents the type of this connector instance. May be undefined in case of a top level connector instance, which does not refer to a particular connector inside a structured component.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(Connector)
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnectorInstance_Type()
@@ -63,6 +70,9 @@ public interface ConnectorInstance extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The connector endpoint instances connected by this connector instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connector Endpoint Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnectorInstance_ConnectorEndpointInstances()
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance#getConnectorInstances

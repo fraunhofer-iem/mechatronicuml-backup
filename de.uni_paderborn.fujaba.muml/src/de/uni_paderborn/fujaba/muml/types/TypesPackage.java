@@ -24,6 +24,9 @@ import org.storydriven.core.CorePackage;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * This package provides modeling support for data types.
+ * <!-- end-model-doc -->
  * @see de.uni_paderborn.fujaba.muml.types.TypesFactory
  * @model kind="package"
  * @generated

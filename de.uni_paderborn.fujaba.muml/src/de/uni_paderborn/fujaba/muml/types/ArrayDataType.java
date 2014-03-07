@@ -63,6 +63,9 @@ public interface ArrayDataType extends DataType {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The cardinality that induces the index for this array data type.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Cardinality</em>' containment reference.
 	 * @see #setCardinality(NaturalNumber)
 	 * @see de.uni_paderborn.fujaba.muml.types.TypesPackage#getArrayDataType_Cardinality()

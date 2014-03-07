@@ -57,9 +57,12 @@ public interface PortConnectorInstance extends ConnectorInstance {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The port instances connected by this connector instance.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getPortConnectorInstance_PortInstances()
-	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @model lower="2" upper="2" transient="true" changeable="false" volatile="true" derived="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='self.connectorEndpointInstances->select(c | c.oclIsKindOf(PortInstance)).oclAsType(PortInstance)->asOrderedSet()'"
 	 * @generated
 	 */

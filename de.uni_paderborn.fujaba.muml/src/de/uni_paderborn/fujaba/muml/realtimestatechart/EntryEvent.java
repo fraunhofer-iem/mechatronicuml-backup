@@ -15,9 +15,10 @@ package de.uni_paderborn.fujaba.muml.realtimestatechart;
  * <!-- begin-model-doc -->
  * This class represents an entry event. The action associated with this 
  * event will be executed when the state is entered.
- * \paragraph{Note}
- * We need this subclass, because GMF forbids using the same semantic
- * element for different notational elements within the same container.
+ * 
+ * 
+ * % We need this subclass, because GMF forbids using the same semantic
+ *  element for different notational elements within the same container.
  * <!-- end-model-doc -->
  *
  *

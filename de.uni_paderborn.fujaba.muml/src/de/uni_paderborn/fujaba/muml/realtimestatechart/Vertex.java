@@ -87,7 +87,8 @@ public interface Vertex extends NamedElement, CommentableElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * return if this vertex is a super vertex of another vertex
+	 * Returns if this vertex is a super vertex of another vertex.
+	 * @param vertex The vertex to be checked as a sub-vertex.
 	 * <!-- end-model-doc -->
 	 * @model required="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='vertex.allSuperVertices->includes(self)'"
@@ -101,6 +102,7 @@ public interface Vertex extends NamedElement, CommentableElement {
 	 * <!-- begin-model-doc -->
 	 * Returns the next free higher transition priority that is closest to the value provided as hint.
 	 * \todosd{Rename hint to an understandable name.}
+	 * @param hint The integer value that represents a hint for the priority to be computed.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='int nextHighestTransitionPriority = hint;\r\nfor (; hasOutgoingTransitionOfPriority(nextHighestTransitionPriority); nextHighestTransitionPriority++);\r\nreturn nextHighestTransitionPriority;'"
 	 * @generated
@@ -112,6 +114,7 @@ public interface Vertex extends NamedElement, CommentableElement {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Returns <code>true</code>, if this Vertex contains an outgoing transition of the given priority.
+	 * @param priority The priority value to be checked for.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Transition transition : getOutgoingTransitions()) {\r\n\tif (transition.getPriority() == priority) {\r\n\t\treturn true;\r\n\t}\r\n}\r\nreturn false;'"
 	 * @generated

@@ -70,6 +70,9 @@ public interface SynchronizationChannel extends NamedElement, CommentableElement
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A data type that provides possible values for the selection of a particular counterpart when synchronizing over this channel.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Selector Type</em>' reference.
 	 * @see #setSelectorType(DataType)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getSynchronizationChannel_SelectorType()

@@ -213,6 +213,7 @@
       <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return &quot;Atomic_Component_&quot; + getName();"/>
+          <details key="documentation" value="Redefinition of the Java toString method."/>
         </eAnnotations>
       </eOperations>
     </eClassifiers>
@@ -249,6 +250,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart)->asOrderedSet()"/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The port parts that the assembly connects. In case of a self-assembly, this will include only one port part."/>
+        </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" eSuperTypes="#//component/PortConnector">
@@ -274,12 +278,18 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(PortPart)).oclAsType(PortPart) -> any(true)"/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The port part that this delegation delegates to."/>
+        </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1"
           eType="#//component/Port" changeable="false" volatile="true" transient="true"
           derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectorEndpoints->select(c | c.oclIsKindOf(Port)).oclAsType(Port) -> any(true)"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The delegating port for this delegation."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -360,6 +370,7 @@
       <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="return &quot;Structured_Component_&quot; + getName();"/>
+          <details key="documentation" value="Redefinition of the Java toString method."/>
         </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedComponentParts"
@@ -493,7 +504,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
-          eType="#//component/CoordinationProtocolPart" eOpposite="#//component/CoordinationProtocolPart/portParts"/>
+          eType="#//component/CoordinationProtocolPart" eOpposite="#//component/CoordinationProtocolPart/portParts">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If the port type refines a role, this part refers to the enclosing coordination protocol."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="refinedRole" eType="#//protocol/Role"
           changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -524,6 +539,9 @@
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="SoftwareComponentOnlyDiscreteOrHybridPorts" value="-- Static software components must only have discrete ports and hybrid ports.&#xD;&#xA;self.componentKind = ComponentKind::SOFTWARE_COMPONENT implies self.ports->reject(p | p.oclIsKindOf(DiscretePort) or p.oclIsKindOf(HybridPort))->isEmpty()"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A static component is a component whose internal structure cannot be changed during run-time."/>
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>
@@ -663,11 +681,14 @@
           <details key="derivation" value="self.type.oclAsType(component::PortConnector)"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1"
-          eType="#//instance/PortInstance" changeable="false" volatile="true" transient="true"
-          derived="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" lowerBound="2"
+          upperBound="2" eType="#//instance/PortInstance" changeable="false" volatile="true"
+          transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectorEndpointInstances->select(c | c.oclIsKindOf(PortInstance)).oclAsType(PortInstance)->asOrderedSet()"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The port instances connected by this connector instance."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -704,11 +725,17 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectorInstances->select(i | i.oclIsKindOf(PortConnectorInstance)).oclAsType(PortConnectorInstance)->asOrderedSet()"/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The port connector instances attached to this port instance."/>
+        </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="portPart" eType="#//component/PortPart"
           changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="componentInstance.componentPart.portParts->any(portPart | portPart.portType = self.type)"/>
+          <details key="derivation" value="If the enclosing component instance corresponds to a component part of a structured component, refers to the port part that corresponds to this port instance."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Refers to the first single instance of the corresponding multi discrete interaction endpoint."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -916,11 +943,11 @@
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package provides modeling support for coordination protocols including roles, role connectors, and quality of service assumptions."/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCoordinationSpecification"
         abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//constraint/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="\todosd{document!}"/>
-      </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="UniqueRoleNames RoleMessageTypesMustBeCompatible SingleRoleImpliesMultiRole"/>
       </eAnnotations>
@@ -928,6 +955,9 @@
         <details key="UniqueRoleNames" value="-- Names of roles must be unique&#xA;self.roles->isUnique(name)"/>
         <details key="RoleMessageTypesMustBeCompatible" value="-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes&#xD;&#xA;self.roles->forAll(role1 : Role, role2 : Role |&#xD;&#xA;   role1 &lt;> role2&#xD;&#xA;   implies&#xD;&#xA;   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()&#xD;&#xA;)"/>
         <details key="SingleRoleImpliesMultiRole" value="-- Only one role exists, so it must be a Multi Role.&#xD;&#xA;self.roles->size() = 1 implies self.roles->any(true).multiRole"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Abstract base class for coordination protocols."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1"
           upperBound="2" eType="#//protocol/Role" containment="true" eOpposite="#//protocol/Role/coordinationProtocol">
@@ -1102,6 +1132,9 @@
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package provides modeling support for Real-Time Statecharts as a combination of UML state machines and timed automata."/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="Deadline" abstract="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a deadline consisting of an upper and a lower bound."/>
@@ -1194,14 +1227,22 @@
           <details key="documentation" value="Returns the next free higher region priority that is closest to the value provided as hint."/>
           <details key="body" value="int nextHighestPriority=hint;&#xD;&#xA;for (; hasRegionOfPriority(nextHighestPriority); nextHighestPriority++);&#xD;&#xA;return nextHighestPriority;"/>
         </eAnnotations>
-        <eParameters name="hint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="hint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The integer value that represents a hint for the priority to be computed."/>
+          </eAnnotations>
+        </eParameters>
       </eOperations>
       <eOperations name="hasRegionOfPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Returns the &lt;code>true&lt;/code>, if this State contains a region of the given priority."/>
+          <details key="documentation" value="Returns true, if this state contains a region of the given priority."/>
           <details key="body" value="for (Region region : getEmbeddedRegions()) {&#xD;&#xA;&#x9;if (region.getPriority() == priority) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"/>
         </eAnnotations>
-        <eParameters name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The priority value to be checked."/>
+          </eAnnotations>
+        </eParameters>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="embeddedRegions" upperBound="-1"
           eType="#//realtimestatechart/Region" containment="true" eOpposite="#//realtimestatechart/Region/parentState">
@@ -1296,6 +1337,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif).channels ->asOrderedSet()"/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All synchronization channels accessible within this state."/>
+        </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Vertex" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
@@ -1304,26 +1348,38 @@
       </eAnnotations>
       <eOperations name="isSuperVertexOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="return if this vertex is a super vertex of another vertex"/>
+          <details key="documentation" value="Returns if this vertex is a super vertex of another vertex."/>
         </eAnnotations>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="vertex.allSuperVertices->includes(self)"/>
         </eAnnotations>
-        <eParameters name="vertex" eType="#//realtimestatechart/Vertex"/>
+        <eParameters name="vertex" eType="#//realtimestatechart/Vertex">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The vertex to be checked as a sub-vertex."/>
+          </eAnnotations>
+        </eParameters>
       </eOperations>
       <eOperations name="getUniqueTransitionPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Returns the next free higher transition priority that is closest to the value provided as hint.&#xD;&#xA;\todosd{Rename hint to an understandable name.}"/>
           <details key="body" value="int nextHighestTransitionPriority = hint;&#xD;&#xA;for (; hasOutgoingTransitionOfPriority(nextHighestTransitionPriority); nextHighestTransitionPriority++);&#xD;&#xA;return nextHighestTransitionPriority;"/>
         </eAnnotations>
-        <eParameters name="hint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="hint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The integer value that represents a hint for the priority to be computed."/>
+          </eAnnotations>
+        </eParameters>
       </eOperations>
       <eOperations name="hasOutgoingTransitionOfPriority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="Returns &lt;code>true&lt;/code>, if this Vertex contains an outgoing transition of the given priority."/>
           <details key="body" value="for (Transition transition : getOutgoingTransitions()) {&#xD;&#xA;&#x9;if (transition.getPriority() == priority) {&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return false;"/>
         </eAnnotations>
-        <eParameters name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The priority value to be checked for."/>
+          </eAnnotations>
+        </eParameters>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingTransitions"
           upperBound="-1" eType="#//realtimestatechart/Transition" eOpposite="#//realtimestatechart/Transition/source">
@@ -1465,12 +1521,19 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="urgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          defaultValueLiteral="true"/>
+          defaultValueLiteral="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Indicates whether this transition fires immediately when it is enabled."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="receiverMessageTypes"
           upperBound="-1" eType="#//msgtype/MessageType" changeable="false" volatile="true"
           transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if statechart.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;if statechart.getPortOrRoleStatechart().oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;OrderedSet { }&#xD;&#xA;&#x9;else &#xD;&#xA;&#x9;&#x9;let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in&#xD;&#xA;&#x9;&#x9;if b.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;OrderedSet { }&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;if b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;b.oclAsType(connector::DiscreteInteractionEndpoint).receiverMessageTypes&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;OrderedSet { }&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All message types accessible by the trigger message event of this transition."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="senderMessageTypes" upperBound="-1"
@@ -1478,6 +1541,9 @@
           derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="if statechart.oclIsUndefined() then&#xD;&#xA;&#x9;OrderedSet { }&#xD;&#xA;else&#xD;&#xA;&#x9;if statechart.getPortOrRoleStatechart().oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;OrderedSet { }&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;let b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in&#xD;&#xA;&#x9;&#x9;if b.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;&#x9;OrderedSet { }&#xD;&#xA;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;if b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;b.oclAsType(connector::DiscreteInteractionEndpoint).senderMessageTypes&#xD;&#xA;&#x9;&#x9;&#x9;else&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;OrderedSet { }&#xD;&#xA;&#x9;&#x9;&#x9;endif&#xD;&#xA;&#x9;&#x9;endif&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All message types accessible by the raise message event of this transition."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -1579,7 +1645,11 @@
           <details key="documentation" value="The state in which this synchronization channel is defined."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="selectorType" eType="#//types/DataType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="selectorType" eType="#//types/DataType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A data type that provides possible values for the selection of a particular counterpart when synchronizing over this channel."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1589,8 +1659,8 @@
         <details key="constraints" value="SelectorExpressionNecessary SelectorExpressionForbidden"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="SelectorExpressionNecessary" value="-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.&#xA;not syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()"/>
-        <details key="SelectorExpressionForbidden" value="-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.&#xA;not syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())"/>
+        <details key="SelectorExpressionNecessary" value="-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.&#xD;&#xA;not syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()"/>
+        <details key="SelectorExpressionForbidden" value="-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.&#xD;&#xA;not syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="syncChannel" eType="#//realtimestatechart/SynchronizationChannel">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1604,7 +1674,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="selectorExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
-          containment="true"/>
+          containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="An expression that evaluates to a value which is used to select a particular counterpart for the synchronization."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PrioritizedElement" abstract="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1616,7 +1690,11 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="PriorityGreaterOrEqualOne" value="-- Priority must be >= 1&#xA;self.priority >= 1"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The integer value that represents the priority."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RealtimeStatechart" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//behavior/Behavior">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1632,10 +1710,14 @@
       </eAnnotations>
       <eOperations name="isSuperStatechartOf" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Returns realtime statechart which represents the root of the hierarchy tree."/>
+          <details key="documentation" value="Returns whether this statechart is a super-statechart of the given Real-Time Statechart."/>
           <details key="body" value="// TODO: Replace by OCL's transitive closure?&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;Assert.isLegal(statechart != null);&#xD;&#xA;&#xD;&#xA;BreadthFirstSearchAlgorithm bfs = new BreadthFirstSearchAlgorithm();&#xD;&#xA;return bfs.search(statechart, new ISearchVisitor() {&#xD;&#xA;&#xD;&#xA;&#x9;@Override&#xD;&#xA;&#x9;public boolean visit(Object object) {&#xD;&#xA;&#x9;&#x9;return !RealtimeStatechartImpl.this.equals(object);&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;@Override&#xD;&#xA;&#x9;public List&lt;?> getAdjacentNodes(Object object) {&#xD;&#xA;&#x9;&#x9;RealtimeStatechart rtsc = (RealtimeStatechart) object;&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;List&lt;Object> parentStatecharts = new ArrayList&lt;Object>();&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;Region region = rtsc.getParentRegion();&#xD;&#xA;&#x9;&#x9;if (region != null) {&#xD;&#xA;&#x9;&#x9;&#x9;// List&lt;Region> regions = rtsc.getParentRegions();&#xD;&#xA;&#x9;&#x9;&#x9;// for (Region region : regions) {&#xD;&#xA;&#x9;&#x9;&#x9;State state = region.getParentState();&#xD;&#xA;&#x9;&#x9;&#x9;if (state != null &amp;&amp; state.getParentStatechart() != null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;parentStatecharts.add(state.getParentStatechart());&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;// }&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;return parentStatecharts;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;});"/>
         </eAnnotations>
-        <eParameters name="statechart" lowerBound="1" eType="#//realtimestatechart/RealtimeStatechart"/>
+        <eParameters name="statechart" lowerBound="1" eType="#//realtimestatechart/RealtimeStatechart">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The statechart to be checked for being a sub-statechart."/>
+          </eAnnotations>
+        </eParameters>
       </eOperations>
       <eOperations name="getHighestParentStatechart" lowerBound="1" eType="#//realtimestatechart/RealtimeStatechart">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1709,6 +1791,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).variables->asOrderedSet()"/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All variables accessible within this statechart."/>
+        </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allAvailableOperations"
           upperBound="-1" eType="#//behavior/Operation" changeable="false" volatile="true"
@@ -1716,11 +1801,14 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).operations ->asOrderedSet()"/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="All operations accessible within this statechart."/>
+        </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="SynchronizationKind">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A synchronization has two kinds: send and receive."/>
+        <details key="documentation" value="A synchronization has two possible kinds: send and receive."/>
       </eAnnotations>
       <eLiterals name="SEND" literal="SEND">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1764,7 +1852,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterBinding" upperBound="-1"
-          eType="#//behavior/ParameterBinding" containment="true"/>
+          eType="#//behavior/ParameterBinding" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The collection of parameter bindings for this message. All parameters of the message type must be bound exactly once."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="EventKind">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1783,7 +1875,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="EntryEvent" eSuperTypes="#//realtimestatechart/EntryOrExitEvent">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents an entry event. The action associated with this &#xD;&#xA;event will be executed when the state is entered.&#xA;\paragraph{Note}&#xA;We need this subclass, because GMF forbids using the same semantic&#xA;element for different notational elements within the same container."/>
+        <details key="documentation" value="This class represents an entry event. The action associated with this &#xD;&#xA;event will be executed when the state is entered.&#xD;&#xA;&#xD;&#xA;&#xA;% We need this subclass, because GMF forbids using the same semantic&#xA; element for different notational elements within the same container."/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExitEvent" eSuperTypes="#//realtimestatechart/EntryOrExitEvent">
@@ -1882,6 +1974,9 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="types" nsURI="http://www.fujaba.de/muml/types/0.4.0" nsPrefix="types">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This package provides modeling support for data types."/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ArrayDataType" eSuperTypes="#//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This data type represents an array data type and specifies the maximum cardinality of inner data types."/>
@@ -1893,7 +1988,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-          eType="#//valuetype/NaturalNumber" containment="true"/>
+          eType="#//valuetype/NaturalNumber" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The cardinality that induces the index for this array data type."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataType" eSuperTypes="#//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1924,10 +2023,21 @@
       <eLiterals name="DOUBLE" value="6"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RangedPrimitiveDataType" eSuperTypes="#//types/DataType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A data type comprising a range of values from another primitive data type."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="rangedType" lowerBound="1"
-          eType="#//types/PrimitiveDataType"/>
+          eType="#//types/PrimitiveDataType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The primitive data type that provides a superset of possible values."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="range" lowerBound="1"
-          eType="#//valuetype/Range" containment="true"/>
+          eType="#//valuetype/Range" containment="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The range of values provided by this data type."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="connector" nsURI="http://www.fujaba.de/muml/connector/0.4.0"
@@ -1938,37 +2048,76 @@
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="This package defines a set a abstract classes that form the basis for all connectors&#xD;&#xA;that we use in our meta-model. They define the connectors, different types of &#xD;&#xA;endpoint that are connected by connectors, and their instances."/>
+      <details key="documentation" value="This package defines a set of abstract classes that form the basis for all connectors&#xD;&#xA;that we use in our meta-model. They define the connectors, different types of &#xD;&#xA;endpoints that are connected by connectors, and their instances."/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpoint" abstract="true"
         eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An endpoint that may be connected to other endpoints via connectors."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
-          eType="#//connector/Connector" eOpposite="#//connector/Connector/connectorEndpoints"/>
+          eType="#//connector/Connector" eOpposite="#//connector/Connector/connectorEndpoints">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The connectors attached to this endpoint."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A connector connects up to two connector endpoints. In case of a self-connector, there is only one endpoint."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectorEndpoints" lowerBound="1"
-          upperBound="2" eType="#//connector/ConnectorEndpoint" eOpposite="#//connector/ConnectorEndpoint/connectors"/>
+          upperBound="2" eType="#//connector/ConnectorEndpoint" eOpposite="#//connector/ConnectorEndpoint/connectors">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The endpoints connected by this connector."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="selfConnector" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
           changeable="false" volatile="true" transient="true" derived="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="derivation" value="self.connectorEndpoints->size() = 1&#xD;&#xA;-- author: bingo, cgerking, see MUML #872"/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Indicates a self-connector, i.e., whether this connector connects one and the same endpoint to itself."/>
+        </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorEndpointInstance" abstract="true"
         eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An instance of a particular connector endpoint."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances" upperBound="-1"
-          eType="#//connector/ConnectorInstance" eOpposite="#//connector/ConnectorInstance/connectorEndpointInstances"/>
+          eType="#//connector/ConnectorInstance" eOpposite="#//connector/ConnectorInstance/connectorEndpointInstances">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The connector instances attached to this endpoint instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
-          eType="#//connector/ConnectorEndpoint"/>
+          eType="#//connector/ConnectorEndpoint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The connector endpoint that represents the type of this instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance" abstract="true"
         eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//connector/Connector"/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An instance of a particular connector."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//connector/Connector">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The connector that represents the type of this connector instance. May be undefined in case of a top level connector instance, which does not refer to a particular connector inside a structured component."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectorEndpointInstances"
           lowerBound="2" upperBound="2" eType="#//connector/ConnectorEndpointInstance"
-          eOpposite="#//connector/ConnectorEndpointInstance/connectorInstances"/>
+          eOpposite="#//connector/ConnectorEndpointInstance/connectorInstances">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The connector endpoint instances connected by this connector instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpoint" abstract="true"
         eSuperTypes="#//connector/ConnectorEndpoint #//behavior/BehavioralElement #//constraint/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
@@ -2030,18 +2179,40 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpointInstance"
-        abstract="true" eSuperTypes="#//connector/ConnectorEndpointInstance"/>
+        abstract="true" eSuperTypes="#//connector/ConnectorEndpointInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An instance of a discrete interaction endpoint."/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DiscreteSingleInteractionEndpointInstance"
         abstract="true" eSuperTypes="#//connector/DiscreteInteractionEndpointInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A single instance of a discrete interaction endpoint."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="multiInteractionEndpointInstance"
-          eType="#//connector/DiscreteMultiInteractionEndpointInstance" eOpposite="#//connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances"/>
+          eType="#//connector/DiscreteMultiInteractionEndpointInstance" eOpposite="#//connector/DiscreteMultiInteractionEndpointInstance/subInteractionEndpointInstances">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If this is an instance of a multi discrete interaction endpoint, refers to the corresponding multi instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//connector/DiscreteSingleInteractionEndpointInstance"
-          eOpposite="#//connector/DiscreteSingleInteractionEndpointInstance/previous"/>
+          eOpposite="#//connector/DiscreteSingleInteractionEndpointInstance/previous">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If this is an instance of a multi discrete interaction endpoint, refers to the next single instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="previous" eType="#//connector/DiscreteSingleInteractionEndpointInstance"
-          eOpposite="#//connector/DiscreteSingleInteractionEndpointInstance/next"/>
+          eOpposite="#//connector/DiscreteSingleInteractionEndpointInstance/next">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If this is an instance of a multi discrete interaction endpoint, refers to the previous single instance."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DiscreteMultiInteractionEndpointInstance"
         abstract="true" eSuperTypes="#//connector/DiscreteInteractionEndpointInstance">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A discrete interaction endpoint instance that comprises multiple single sub-instances."/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subInteractionEndpointInstances"
           upperBound="-1" eType="#//connector/DiscreteSingleInteractionEndpointInstance"
           eOpposite="#//connector/DiscreteSingleInteractionEndpointInstance/multiInteractionEndpointInstance">
@@ -2049,8 +2220,16 @@
           <details key="documentation" value="These are all sub-interaction endpoint instances of the multi-interaction endpoint instance. The sub-interaction endpoint instances are&#xD;&#xA;represented by DiscreteSingleInteractionEndpointInstances. This reference may only be used if the corresponding &#xD;&#xA;DiscreteInteractionEndpoint has an upper bound greater 1 in its cardinality."/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//connector/DiscreteSingleInteractionEndpointInstance"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="last" eType="#//connector/DiscreteSingleInteractionEndpointInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//connector/DiscreteSingleInteractionEndpointInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Refers to the first single instance of the corresponding multi discrete interaction endpoint."/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="last" eType="#//connector/DiscreteSingleInteractionEndpointInstance">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Refers to the last single instance of the corresponding multi discrete interaction endpoint."/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageBuffer" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2123,6 +2302,9 @@
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="// Return value concatenated with abbreviated unit.&#xD;&#xA;StringBuffer sb = new StringBuffer();&#xD;&#xA;if (value == null) {&#xD;&#xA;&#x9;sb.append(&quot;null&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if (value instanceof LiteralExpression) {&#xD;&#xA;&#x9;&#x9;sb.append(((LiteralExpression) value).getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;sb.append(value.eClass().getName());&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;if (unit != null) {&#xD;&#xA;&#x9;sb.append(' ');&#xD;&#xA;&#x9;sb.append(TimeValueImpl.getUnitRepresentation(unit));&#xD;&#xA;}&#xD;&#xA;return sb.toString();"/>
         </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Redefinition of the Java toString method."/>
+        </eAnnotations>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1"
           eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
@@ -2153,7 +2335,11 @@
           <details key="documentation" value="Set the value to the value of the given parameter."/>
           <details key="body" value="if (value == null || value.equals(&quot;*&quot;)) {&#xA;&#x9;setInfinity(true);&#xA;&#x9;return;&#xA;}&#xA;&#xA;// Convert to long, if string cannot be parsed, set infinity.&#xA;long longValue;&#xA;try {&#xA;&#x9;longValue = Long.parseLong(value);&#xA;} catch (NumberFormatException e) {&#xA;&#x9;setInfinity(true);&#xA;&#x9;return;&#xA;}&#xA;&#xA;// Call setValue(long) outsite of catch block, so that the NumberFormatException&#xA;// indicating negative numbers is not catched.&#xA;setValue(longValue);"/>
         </eAnnotations>
-        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The new value to be set."/>
+          </eAnnotations>
+        </eParameters>
       </eOperations>
       <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -2164,20 +2350,39 @@
       <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="body" value="if (o instanceof NaturalNumber) {&#xD;&#xA;&#x9;NaturalNumber naturalNumber = (NaturalNumber) o;&#xD;&#xA;&#x9;// Value of infinity must be equal&#xD;&#xA;&#x9;if (isInfinity() != naturalNumber.isInfinity()) {&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;// If both are not infinite, make sure their value is identical.&#xD;&#xA;&#x9;if (!isInfinity() &amp;&amp; (naturalNumber.getValue() != getValue())) {&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;return false;"/>
+          <details key="documentation" value="Indicates whether this natural number equals the given object."/>
         </eAnnotations>
-        <eParameters name="o" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+        <eParameters name="o" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The object to be checked for equivalence."/>
+          </eAnnotations>
+        </eParameters>
       </eOperations>
       <eOperations name="lessOrEqual" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="if self.infinity&#xD;&#xA;then n.infinity&#xD;&#xA;else self.value &lt;= n.value&#xD;&#xA;endif"/>
         </eAnnotations>
-        <eParameters name="n" lowerBound="1" eType="#//valuetype/NaturalNumber"/>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Indicates whether this natural number if less or equal to the given natural number."/>
+        </eAnnotations>
+        <eParameters name="n" lowerBound="1" eType="#//valuetype/NaturalNumber">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The given natural number."/>
+          </eAnnotations>
+        </eParameters>
       </eOperations>
       <eOperations name="greaterOrEqual" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="n.lessOrEqual(self)"/>
         </eAnnotations>
-        <eParameters name="n" lowerBound="1" eType="#//valuetype/NaturalNumber"/>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Indicates whether this natural number if greater or equal to the given natural number."/>
+        </eAnnotations>
+        <eParameters name="n" lowerBound="1" eType="#//valuetype/NaturalNumber">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The given natural number."/>
+          </eAnnotations>
+        </eParameters>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
           defaultValueLiteral="1">
@@ -2192,7 +2397,11 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EDataType" name="TimeUnit" instanceClassName="java.util.concurrent.TimeUnit"/>
+    <eClassifiers xsi:type="ecore:EDataType" name="TimeUnit" instanceClassName="java.util.concurrent.TimeUnit">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A data type for time units."/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Range">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents a two-dimensional range specification of an arbitrary &#xD;&#xA;model object. It consists of a lower and an upper bound. Intuitively, the upper&#xD;&#xA;bound must be greater or equal to the lower bound."/>

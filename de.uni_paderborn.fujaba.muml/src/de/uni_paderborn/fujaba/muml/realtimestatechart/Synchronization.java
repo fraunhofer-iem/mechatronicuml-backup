@@ -29,7 +29,7 @@ import org.storydriven.core.expressions.Expression;
  *
  * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getSynchronization()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SelectorExpressionNecessary SelectorExpressionForbidden'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SelectorExpressionNecessary='-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\nnot syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()' SelectorExpressionForbidden='-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\nnot syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL SelectorExpressionNecessary='-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\r\nnot syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()' SelectorExpressionForbidden='-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\r\nnot syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())'"
  * @generated
  */
 public interface Synchronization extends ExtendableElement {
@@ -94,6 +94,9 @@ public interface Synchronization extends ExtendableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * An expression that evaluates to a value which is used to select a particular counterpart for the synchronization.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Selector Expression</em>' containment reference.
 	 * @see #setSelectorExpression(Expression)
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getSynchronization_SelectorExpression()

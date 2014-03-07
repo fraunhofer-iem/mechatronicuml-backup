@@ -88,6 +88,7 @@ public interface NaturalNumber extends EObject {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Set the value to the value of the given parameter.
+	 * @param value The new value to be set.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (value == null || value.equals(\"*\")) {\n\tsetInfinity(true);\n\treturn;\n}\n\n// Convert to long, if string cannot be parsed, set infinity.\nlong longValue;\ntry {\n\tlongValue = Long.parseLong(value);\n} catch (NumberFormatException e) {\n\tsetInfinity(true);\n\treturn;\n}\n\n// Call setValue(long) outsite of catch block, so that the NumberFormatException\n// indicating negative numbers is not catched.\nsetValue(longValue);'"
 	 * @generated
@@ -108,6 +109,10 @@ public interface NaturalNumber extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Indicates whether this natural number equals the given object.
+	 * @param o The object to be checked for equivalence.
+	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if (o instanceof NaturalNumber) {\r\n\tNaturalNumber naturalNumber = (NaturalNumber) o;\r\n\t// Value of infinity must be equal\r\n\tif (isInfinity() != naturalNumber.isInfinity()) {\r\n\t\treturn false;\r\n\t}\r\n\t// If both are not infinite, make sure their value is identical.\r\n\tif (!isInfinity() && (naturalNumber.getValue() != getValue())) {\r\n\t\treturn false;\r\n\t}\r\n\treturn true;\r\n}\r\nreturn false;'"
 	 * @generated
 	 */
@@ -116,6 +121,10 @@ public interface NaturalNumber extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Indicates whether this natural number if less or equal to the given natural number.
+	 * @param n The given natural number.
+	 * <!-- end-model-doc -->
 	 * @model required="true" nRequired="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if self.infinity\r\nthen n.infinity\r\nelse self.value <= n.value\r\nendif'"
 	 * @generated
@@ -125,6 +134,10 @@ public interface NaturalNumber extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Indicates whether this natural number if greater or equal to the given natural number.
+	 * @param n The given natural number.
+	 * <!-- end-model-doc -->
 	 * @model required="true" nRequired="true"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='n.lessOrEqual(self)'"
 	 * @generated

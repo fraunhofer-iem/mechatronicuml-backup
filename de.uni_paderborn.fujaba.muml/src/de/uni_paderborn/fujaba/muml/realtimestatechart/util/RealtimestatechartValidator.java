@@ -1035,7 +1035,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SYNCHRONIZATION__SELECTOR_EXPRESSION_NECESSARY__EEXPRESSION = "-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\n" +
+	protected static final String SYNCHRONIZATION__SELECTOR_EXPRESSION_NECESSARY__EEXPRESSION = "-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\r\n" +
 		"not syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()";
 
 	/**
@@ -1065,7 +1065,7 @@ public class RealtimestatechartValidator extends MumlValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SYNCHRONIZATION__SELECTOR_EXPRESSION_FORBIDDEN__EEXPRESSION = "-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\n" +
+	protected static final String SYNCHRONIZATION__SELECTOR_EXPRESSION_FORBIDDEN__EEXPRESSION = "-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\r\n" +
 		"not syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())";
 
 	/**

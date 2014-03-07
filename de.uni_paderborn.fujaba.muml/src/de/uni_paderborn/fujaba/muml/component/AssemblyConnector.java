@@ -55,6 +55,9 @@ public interface AssemblyConnector extends PortConnector {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The port parts that the assembly connects. In case of a self-assembly, this will include only one port part.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Parts</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getAssemblyConnector_PortParts()
 	 * @model required="true" upper="2" transient="true" changeable="false" volatile="true" derived="true"

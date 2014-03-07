@@ -271,6 +271,9 @@ public interface State extends Vertex {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * All synchronization channels accessible within this state.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>All Available Channels</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage#getState_AllAvailableChannels()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -284,6 +287,7 @@ public interface State extends Vertex {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Returns the next free higher region priority that is closest to the value provided as hint.
+	 * @param hint The integer value that represents a hint for the priority to be computed.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='int nextHighestPriority=hint;\r\nfor (; hasRegionOfPriority(nextHighestPriority); nextHighestPriority++);\r\nreturn nextHighestPriority;'"
 	 * @generated
@@ -294,7 +298,8 @@ public interface State extends Vertex {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Returns the <code>true</code>, if this State contains a region of the given priority.
+	 * Returns true, if this state contains a region of the given priority.
+	 * @param priority The priority value to be checked.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for (Region region : getEmbeddedRegions()) {\r\n\tif (region.getPriority() == priority) {\r\n\t\treturn true;\r\n\t}\r\n}\r\nreturn false;'"
 	 * @generated

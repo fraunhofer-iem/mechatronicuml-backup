@@ -107,6 +107,9 @@ public interface PortPart extends ConnectorEndpoint {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If the port type refines a role, this part refers to the enclosing coordination protocol.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Coordination Protocol Part</em>' reference.
 	 * @see #setCoordinationProtocolPart(CoordinationProtocolPart)
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getPortPart_CoordinationProtocolPart()

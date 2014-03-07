@@ -1726,43 +1726,43 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });																
+		   });																	
 		addAnnotation
 		  (stateEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "NoOutgoingTransitionOfFinalState NoRegionsOfFinalState UniquePrioritiesOfOutgoingTransitions UniquePrioritiesOfRegions UniqueChannelNames UniqueRegionNames InvalidClockConstraintOperator UniqueStateConnectionPointNames"
-		   });																														
+		   });																																				
 		addAnnotation
 		  (transitionEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "LegalTransitionsOnly TriggerMessageEventsMustNotHaveAnOwnedParameterBinding ValidTriggerMessageEvents ValidRaiseMessageEvents StateConnectionPointIncomingTransitionsNoSideEffectsOrDeadlines StateConnectionPointOutgoingTransitionsNoConditions StateConnectionPointOutgoingTransitionsMustBeUrgent NoCombinationOfRelativeAndAbsoluteDeadlines NoCombinationOfReceivedSynchronizationAndTriggerMessage TransitionMustBeContainedByCorrectStatechart OutgoingTransitionOfUrgentStateMustBeUrgent"
-		   });																															
+		   });																																		
 		addAnnotation
 		  (asynchronousMessageEventEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "RaiseMessageEventImpliesParameterBinding"
-		   });												
+		   });													
 		addAnnotation
 		  (synchronizationEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "SelectorExpressionNecessary SelectorExpressionForbidden"
-		   });						
+		   });							
 		addAnnotation
 		  (prioritizedElementEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "PriorityGreaterOrEqualOne"
-		   });					
+		   });						
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "UniqueNameOfStates NoCycles OneInitialState"
-		   });																															
+		   });																																			
 		addAnnotation
 		  (stateConnectionPointEClass, 
 		   source, 
@@ -1790,7 +1790,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 	 * @generated
 	 */
 	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";														
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";															
 		addAnnotation
 		  (getRegion_Name(), 
 		   source, 
@@ -1809,7 +1809,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "UniqueRegionNames", "-- Regions must have a unique name\nself.embeddedRegions->isUnique(name)",
 			 "InvalidClockConstraintOperator", "-- Clock Constraints must only use operators LESS and LESS_OR_EQUAL\nself.invariants->forAll(invariant | Set{core::expressions::common::ComparingOperator::LESS, core::expressions::common::ComparingOperator::LESS_OR_EQUAL }->includes(invariant.operator))",
 			 "UniqueStateConnectionPointNames", "-- State Connection Points of a composite state must have unique names.\r\nself.connectionPoints->isUnique(name)"
-		   });													
+		   });															
 		addAnnotation
 		  (getState_Events(), 
 		   source, 
@@ -1827,13 +1827,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "self -> closure(if parentStatechart.parentRegion.oclIsUndefined() then self else parentStatechart.parentRegion.parentState endif).channels ->asOrderedSet()"
-		   });				
+		   });					
 		addAnnotation
 		  (getVertex__IsSuperVertexOf__Vertex(), 
 		   source, 
 		   new String[] {
 			 "body", "vertex.allSuperVertices->includes(self)"
-		   });						
+		   });									
 		addAnnotation
 		  (getVertex_AllSuperVertices(), 
 		   source, 
@@ -1873,38 +1873,38 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "let eventSet : Sequence(AsynchronousMessageEvent) = self.events->select(e | e.oclIsKindOf(AsynchronousMessageEvent) and e.kind=EventKind::RAISE).oclAsType(AsynchronousMessageEvent) in\r\nif eventSet ->size() = 0 then null else eventSet -> first() endif"
-		   });									
+		   });										
 		addAnnotation
 		  (getTransition_ReceiverMessageTypes(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if statechart.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tif statechart.getPortOrRoleStatechart().oclIsUndefined() then\r\n\t\tOrderedSet { }\r\n\telse \r\n\t\tlet b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\n\t\tif b.oclIsUndefined() then\r\n\t\t\tOrderedSet { }\r\n\t\telse\r\n\t\t\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\t\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).receiverMessageTypes\r\n\t\t\telse\r\n\t\t\t\tOrderedSet { }\r\n\t\t\tendif\r\n\t\tendif\r\n\tendif\r\nendif"
-		   });		
+		   });			
 		addAnnotation
 		  (getTransition_SenderMessageTypes(), 
 		   source, 
 		   new String[] {
 			 "derivation", "if statechart.oclIsUndefined() then\r\n\tOrderedSet { }\r\nelse\r\n\tif statechart.getPortOrRoleStatechart().oclIsUndefined() then\r\n\t\tOrderedSet { }\r\n\telse\r\n\t\tlet b : behavior::BehavioralElement = statechart.getPortOrRoleStatechart().behavioralElement in\r\n\t\tif b.oclIsUndefined() then\r\n\t\t\tOrderedSet { }\r\n\t\telse\r\n\t\t\tif b.oclIsKindOf(connector::DiscreteInteractionEndpoint) then\r\n\t\t\t\tb.oclAsType(connector::DiscreteInteractionEndpoint).senderMessageTypes\r\n\t\t\telse\r\n\t\t\t\tOrderedSet { }\r\n\t\t\tendif\r\n\t\tendif\r\n\tendif\r\nendif"
-		   });									
+		   });										
 		addAnnotation
 		  (asynchronousMessageEventEClass, 
 		   source, 
 		   new String[] {
 			 "RaiseMessageEventImpliesParameterBinding", "-- A raise message event must bind a value to every parameter\nlet messageType : msgtype::MessageType = self.message.instanceOf in\n(self.kind=EventKind::RAISE and not self.message.oclIsUndefined()) implies ( not messageType.oclIsUndefined() implies (messageType.parameters->asBag() = message.parameterBinding.parameter->asBag()))\n-- author: adann"
-		   });														
+		   });															
 		addAnnotation
 		  (synchronizationEClass, 
 		   source, 
 		   new String[] {
-			 "SelectorExpressionNecessary", "-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\nnot syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()",
-			 "SelectorExpressionForbidden", "-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\nnot syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())"
-		   });						
+			 "SelectorExpressionNecessary", "-- Selected SynchronizationChannel requires this Synchronization to specify a selector expression.\r\nnot syncChannel.selectorType.oclIsUndefined() implies not selectorExpression.oclIsUndefined()",
+			 "SelectorExpressionForbidden", "-- Selected SynchronizationChannel forbids this Synchronization to specify a selector expression.\r\nnot syncChannel.oclIsUndefined() implies (syncChannel.selectorType.oclIsUndefined() implies selectorExpression.oclIsUndefined())"
+		   });							
 		addAnnotation
 		  (prioritizedElementEClass, 
 		   source, 
 		   new String[] {
 			 "PriorityGreaterOrEqualOne", "-- Priority must be >= 1\nself.priority >= 1"
-		   });			
+		   });				
 		addAnnotation
 		  (realtimeStatechartEClass, 
 		   source, 
@@ -1912,7 +1912,7 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 			 "UniqueNameOfStates", "-- State names must be unique\nself.states->isUnique(name)",
 			 "NoCycles", "-- If we are contained within a statechart...\r\n(not self.parentRegion.parentState.parentStatechart.oclIsUndefined())\r\n\r\nimplies\r\n\r\n-- ... then we must not be a super statechart of it.\r\n(not self.isSuperStatechartOf(self.parentRegion.parentState.parentStatechart))",
 			 "OneInitialState", "-- An initial state is missing\nself.states->select(s |  s.initial)->size() = 1"
-		   });										
+		   });											
 		addAnnotation
 		  (getRealtimeStatechart_Flat(), 
 		   source, 
@@ -1936,13 +1936,13 @@ public class RealtimestatechartPackageImpl extends EPackageImpl implements Realt
 		   source, 
 		   new String[] {
 			 "derivation", "self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).variables->asOrderedSet()"
-		   });		
+		   });			
 		addAnnotation
 		  (getRealtimeStatechart_AllAvailableOperations(), 
 		   source, 
 		   new String[] {
 			 "derivation", "self -> closure(if parentRegion.oclIsUndefined() then self else parentRegion.parentState.parentStatechart endif).operations ->asOrderedSet()"
-		   });																		
+		   });																				
 		addAnnotation
 		  (stateConnectionPointEClass, 
 		   source, 

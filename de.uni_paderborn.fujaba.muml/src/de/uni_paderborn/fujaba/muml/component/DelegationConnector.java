@@ -43,6 +43,9 @@ public interface DelegationConnector extends PortConnector {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The port part that this delegation delegates to.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port Part</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDelegationConnector_PortPart()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"
@@ -59,6 +62,9 @@ public interface DelegationConnector extends PortConnector {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The delegating port for this delegation.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Port</em>' reference.
 	 * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getDelegationConnector_Port()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"

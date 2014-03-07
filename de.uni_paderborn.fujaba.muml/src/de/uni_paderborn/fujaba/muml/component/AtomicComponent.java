@@ -31,6 +31,9 @@ public interface AtomicComponent extends Component, BehavioralElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Redefinition of the Java toString method.
+	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return \"Atomic_Component_\" + getName();'"
 	 * @generated
 	 */

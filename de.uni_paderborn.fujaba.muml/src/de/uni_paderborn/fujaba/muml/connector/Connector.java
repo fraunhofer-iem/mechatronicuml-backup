@@ -14,6 +14,10 @@ import org.storydriven.core.CommentableElement;
  * A representation of the model object '<em><b>Connector</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A connector connects up to two connector endpoints. In case of a self-connector, there is only one endpoint.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -37,6 +41,9 @@ public interface Connector extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The endpoints connected by this connector.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Connector Endpoints</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnector_ConnectorEndpoints()
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint#getConnectors
@@ -53,6 +60,9 @@ public interface Connector extends CommentableElement {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Indicates a self-connector, i.e., whether this connector connects one and the same endpoint to itself.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Self Connector</em>' attribute.
 	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getConnector_SelfConnector()
 	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true"

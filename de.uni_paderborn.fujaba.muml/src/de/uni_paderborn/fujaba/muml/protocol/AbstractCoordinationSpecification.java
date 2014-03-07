@@ -14,7 +14,7 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * \todosd{document!}
+ * Abstract base class for coordination protocols.
  * <!-- end-model-doc -->
  *
  * <p>

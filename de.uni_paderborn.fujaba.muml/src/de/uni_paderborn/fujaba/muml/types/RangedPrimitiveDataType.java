@@ -13,6 +13,10 @@ import de.uni_paderborn.fujaba.muml.valuetype.Range;
  * A representation of the model object '<em><b>Ranged Primitive Data Type</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A data type comprising a range of values from another primitive data type.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -34,6 +38,9 @@ public interface RangedPrimitiveDataType extends DataType {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The primitive data type that provides a superset of possible values.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ranged Type</em>' reference.
 	 * @see #setRangedType(PrimitiveDataType)
 	 * @see de.uni_paderborn.fujaba.muml.types.TypesPackage#getRangedPrimitiveDataType_RangedType()
@@ -60,6 +67,9 @@ public interface RangedPrimitiveDataType extends DataType {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The range of values provided by this data type.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Range</em>' containment reference.
 	 * @see #setRange(Range)
 	 * @see de.uni_paderborn.fujaba.muml.types.TypesPackage#getRangedPrimitiveDataType_Range()

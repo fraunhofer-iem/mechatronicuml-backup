@@ -18,6 +18,10 @@ package de.uni_paderborn.fujaba.muml.component;
  * A representation of the model object '<em><b>Static Component</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A static component is a component whose internal structure cannot be changed during run-time.
+ * <!-- end-model-doc -->
+ *
  *
  * @see de.uni_paderborn.fujaba.muml.component.ComponentPackage#getStaticComponent()
  * @model abstract="true"
