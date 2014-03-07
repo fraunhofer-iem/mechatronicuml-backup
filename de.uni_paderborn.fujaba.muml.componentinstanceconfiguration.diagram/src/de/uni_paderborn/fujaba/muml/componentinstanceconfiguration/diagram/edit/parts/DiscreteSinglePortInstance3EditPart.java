@@ -134,8 +134,9 @@ public class DiscreteSinglePortInstance3EditPart extends
 	protected void addBorderItem(IFigure borderItemContainer,
 			IBorderItemEditPart borderItemEditPart) {
 		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DiscreteSinglePortInstanceName3EditPart) {
-			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
-					PositionConstants.SOUTH);
+			// bug-fix: allows the free positioning of external Labels
+			de.uni_paderborn.fujaba.muml.common.figures.CustomExternalLabelBorderItemLocator locator = new de.uni_paderborn.fujaba.muml.common.figures.CustomExternalLabelBorderItemLocator(
+					getMainFigure(), PositionConstants.SOUTH);
 			locator.setBorderItemOffset(new Dimension(-20, -20));
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {

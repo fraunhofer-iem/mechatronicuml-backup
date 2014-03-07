@@ -328,6 +328,8 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/AssemblyConnectorInstance"/>
+    <domainSpecialization
+        body="not self.oclIsTypeOf(DelegationConnectorInstance)"/>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
     <tool
@@ -345,6 +347,8 @@
   <links>
     <domainMetaElement
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/DelegationConnectorInstance"/>
+    <domainSpecialization
+        body="not self.oclIsTypeOf(AssemblyConnectorInstance)"/>
     <containmentFeature
         href="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration/portConnectorInstances"/>
     <tool

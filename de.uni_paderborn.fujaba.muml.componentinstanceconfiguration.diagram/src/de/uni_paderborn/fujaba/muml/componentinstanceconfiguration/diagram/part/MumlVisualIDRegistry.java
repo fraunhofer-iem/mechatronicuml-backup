@@ -497,12 +497,14 @@ public class MumlVisualIDRegistry {
 		}
 		if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 				.getAssemblyConnectorInstance().isSuperTypeOf(
-						domainElement.eClass())) {
+						domainElement.eClass())
+				&& isAssemblyConnectorInstance_4001((de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.AssemblyConnectorInstanceEditPart.VISUAL_ID;
 		}
 		if (de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 				.getDelegationConnectorInstance().isSuperTypeOf(
-						domainElement.eClass())) {
+						domainElement.eClass())
+				&& isDelegationConnectorInstance_4002((de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance) domainElement)) {
 			return de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.edit.parts.DelegationConnectorInstanceEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -543,6 +545,34 @@ public class MumlVisualIDRegistry {
 						2,
 						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
 								.getDiscreteSinglePortInstance(), null)
+				.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isAssemblyConnectorInstance_4001(
+			de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance domainElement) {
+		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
+				.getExpression(
+						16,
+						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+								.getAssemblyConnectorInstance(), null)
+				.evaluate(domainElement);
+		return result instanceof Boolean && ((Boolean) result).booleanValue();
+	}
+
+	/**
+	 * @generated
+	 */
+	private static boolean isDelegationConnectorInstance_4002(
+			de.uni_paderborn.fujaba.muml.instance.DelegationConnectorInstance domainElement) {
+		Object result = de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.expressions.MumlOCLFactory
+				.getExpression(
+						17,
+						de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
+								.getDelegationConnectorInstance(), null)
 				.evaluate(domainElement);
 		return result instanceof Boolean && ((Boolean) result).booleanValue();
 	}
