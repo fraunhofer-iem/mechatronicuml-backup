@@ -13,4 +13,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedAtomicComponentInstances"
         upperBound="-1" eType="#//RefinedAtomicComponentInstance"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodGen" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstanceConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allResourceInstances" upperBound="-1"
+        eType="#//RefindedStructuredResourceInstance" containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>
