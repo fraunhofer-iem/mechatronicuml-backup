@@ -134,7 +134,7 @@ public abstract class PortInstanceImpl extends ConnectorEndpointInstanceImpl imp
 	 */
 	public ComponentInstance getComponentInstance() {
 		if (eContainerFeatureID() != InstancePackage.PORT_INSTANCE__COMPONENT_INSTANCE) return null;
-		return (ComponentInstance)eContainer();
+		return (ComponentInstance)eInternalContainer();
 	}
 
 	/**

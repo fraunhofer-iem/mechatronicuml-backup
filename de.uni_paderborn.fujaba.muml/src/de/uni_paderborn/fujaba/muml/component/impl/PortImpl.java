@@ -159,7 +159,7 @@ public abstract class PortImpl extends ConnectorEndpointImpl implements Port {
 	 */
 	public Component getComponent() {
 		if (eContainerFeatureID() != ComponentPackage.PORT__COMPONENT) return null;
-		return (Component)eContainer();
+		return (Component)eInternalContainer();
 	}
 
 	/**

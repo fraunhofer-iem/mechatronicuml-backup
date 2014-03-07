@@ -198,7 +198,7 @@ public class ComponentPartImpl extends NamedElementImpl implements ComponentPart
 	 */
 	public StructuredComponent getParentComponent() {
 		if (eContainerFeatureID() != ComponentPackage.COMPONENT_PART__PARENT_COMPONENT) return null;
-		return (StructuredComponent)eContainer();
+		return (StructuredComponent)eInternalContainer();
 	}
 
 	/**

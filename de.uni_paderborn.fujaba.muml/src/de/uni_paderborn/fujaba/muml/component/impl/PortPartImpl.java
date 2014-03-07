@@ -151,7 +151,7 @@ public class PortPartImpl extends ConnectorEndpointImpl implements PortPart {
 	 */
 	public ComponentPart getComponentPart() {
 		if (eContainerFeatureID() != ComponentPackage.PORT_PART__COMPONENT_PART) return null;
-		return (ComponentPart)eContainer();
+		return (ComponentPart)eInternalContainer();
 	}
 
 	/**
