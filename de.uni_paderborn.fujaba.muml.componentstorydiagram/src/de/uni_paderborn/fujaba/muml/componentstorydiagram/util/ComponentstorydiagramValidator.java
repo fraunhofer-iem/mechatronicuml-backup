@@ -176,54 +176,32 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the CorrectNumberOfFadingFunctions constraint of '<em>Controller Exchange Node</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONTROLLER_EXCHANGE_NODE__CORRECT_NUMBER_OF_FADING_FUNCTIONS__EEXPRESSION = "if self.controllerExchangeStrategy <> ControllerExchangeStrategy::FADING_FUNCTION then\r\n" +
-		"self.fadingFunctions->size()=0\r\n" +
-		"else\r\n" +
-		"\tif self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n" +
-		"\t\t--self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).type.oclAsType(muml::component::StructuredComponent).ports->select(i : muml::component::Port | i.oclIsKindOf(muml::component::ContinuousPort))->select(i : muml::component::ContinuousPort | i.outPort = true)->size() = self.fadingFunctions->size()\r\n" +
-		"\t\tself.fadingFunctions->size()>0\r\n" +
-		"\telse\r\n" +
-		"\t\tfalse\r\n" +
-		"\tendif\r\n" +
-		"endif";
-
-	/**
 	 * Validates the CorrectNumberOfFadingFunctions constraint of '<em>Controller Exchange Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateControllerExchangeNode_CorrectNumberOfFadingFunctions(ControllerExchangeNode controllerExchangeNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE,
-				 controllerExchangeNode,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "CorrectNumberOfFadingFunctions",
-				 CONTROLLER_EXCHANGE_NODE__CORRECT_NUMBER_OF_FADING_FUNCTIONS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "CorrectNumberOfFadingFunctions", getObjectLabel(controllerExchangeNode, context) },
+						 new Object[] { controllerExchangeNode },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
-
-	/**
-	 * The cached validation expression for the NoDeadlineIfStrategyIsATOMIC_SWITCHING constraint of '<em>Controller Exchange Node</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONTROLLER_EXCHANGE_NODE__NO_DEADLINE_IF_STRATEGY_IS_ATOMIC_SWITCHING__EEXPRESSION = "if self.controllerExchangeStrategy = ControllerExchangeStrategy::ATOMIC_SWITCHING then\r\n" +
-		"self.deadline.oclIsUndefined()\r\n" +
-		"else\r\n" +
-		"not self.deadline.oclIsUndefined()\r\n" +
-		"endif";
 
 	/**
 	 * Validates the NoDeadlineIfStrategyIsATOMIC_SWITCHING constraint of '<em>Controller Exchange Node</em>'.
@@ -232,18 +210,25 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateControllerExchangeNode_NoDeadlineIfStrategyIsATOMIC_SWITCHING(ControllerExchangeNode controllerExchangeNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE,
-				 controllerExchangeNode,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "NoDeadlineIfStrategyIsATOMIC_SWITCHING",
-				 CONTROLLER_EXCHANGE_NODE__NO_DEADLINE_IF_STRATEGY_IS_ATOMIC_SWITCHING__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "NoDeadlineIfStrategyIsATOMIC_SWITCHING", getObjectLabel(controllerExchangeNode, context) },
+						 new Object[] { controllerExchangeNode },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
