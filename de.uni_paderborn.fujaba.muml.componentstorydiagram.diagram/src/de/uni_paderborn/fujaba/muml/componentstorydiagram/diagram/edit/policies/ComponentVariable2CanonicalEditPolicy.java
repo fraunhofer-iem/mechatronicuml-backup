@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies;
 
 import java.util.ArrayList;
@@ -25,13 +37,13 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PartVariableCanonicalEditPolicy extends CanonicalEditPolicy {
+public class ComponentVariable2CanonicalEditPolicy extends CanonicalEditPolicy {
 	private boolean canonicalNodes = true;
 
-	public PartVariableCanonicalEditPolicy() {
+	public ComponentVariable2CanonicalEditPolicy() {
 	}
 
-	public PartVariableCanonicalEditPolicy(boolean canonicalNodes) {
+	public ComponentVariable2CanonicalEditPolicy(boolean canonicalNodes) {
 		this.canonicalNodes = canonicalNodes;
 	}
 
@@ -52,7 +64,7 @@ public class PartVariableCanonicalEditPolicy extends CanonicalEditPolicy {
 	 */
 	protected EStructuralFeature getFeatureToSynchronize() {
 		return de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-				.getPartVariable_PortVariables();
+				.getComponentVariable_PortVariables();
 	}
 
 	/**
@@ -86,8 +98,8 @@ public class PartVariableCanonicalEditPolicy extends CanonicalEditPolicy {
 						.getVisualID(childView);
 				List<Integer> visualIDs = Arrays
 						.asList(new Integer[] {
-								de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID,
-								de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID });
+								de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart.VISUAL_ID,
+								de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
@@ -104,7 +116,7 @@ public class PartVariableCanonicalEditPolicy extends CanonicalEditPolicy {
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-				.getComponentPartVariable_3014SemanticChildren(viewObject);
+				.getComponentVariable_3023SemanticChildren(viewObject);
 
 	}
 
@@ -123,8 +135,8 @@ public class PartVariableCanonicalEditPolicy extends CanonicalEditPolicy {
 	private boolean isMyDiagramElement(View view) {
 		int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 				.getVisualID(view);
-		return visualID == de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID
-				|| visualID == de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable2EditPart.VISUAL_ID;
+		return visualID == de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariable2EditPart.VISUAL_ID
+				|| visualID == de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariable3EditPart.VISUAL_ID;
 	}
 
 	/**

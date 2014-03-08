@@ -123,6 +123,10 @@
             path="icons/Delegation.gif"
             bundle="de.uni_paderborn.fujaba.muml.common"/>
       </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="FadingComponentVariable"
+          description="Create new FadingComponentVariable"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

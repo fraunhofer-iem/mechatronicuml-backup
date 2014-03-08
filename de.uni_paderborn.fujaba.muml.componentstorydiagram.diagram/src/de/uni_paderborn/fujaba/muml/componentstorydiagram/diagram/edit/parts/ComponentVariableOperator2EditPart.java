@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts;
 
 import java.util.Collections;
@@ -44,19 +56,21 @@ import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.accessibility.AccessibleEvent;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * @generated
  */
-public class WrappingLabelEditPart extends LabelEditPart implements
+public class ComponentVariableOperator2EditPart extends LabelEditPart implements
 		ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5017;
+	public static final int VISUAL_ID = 5052;
 
 	/**
 	 * @generated
@@ -89,14 +103,14 @@ public class WrappingLabelEditPart extends LabelEditPart implements
 	static {
 		registerSnapBackPosition(
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID),
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableOperator2EditPart.VISUAL_ID),
 				new Point(0, 0));
 	}
 
 	/**
 	 * @generated
 	 */
-	public WrappingLabelEditPart(View view) {
+	public ComponentVariableOperator2EditPart(View view) {
 		super(view);
 	}
 
@@ -340,10 +354,10 @@ public class WrappingLabelEditPart extends LabelEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentPartVariable_3014,
+							de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentVariable_3023,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
-									.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabelEditPart.VISUAL_ID));
+									.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableOperator2EditPart.VISUAL_ID));
 		}
 		return parser;
 	}
@@ -570,7 +584,7 @@ public class WrappingLabelEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return getPrimaryView();
+		return (View) getModel();
 	}
 
 	/**
@@ -655,7 +669,43 @@ public class WrappingLabelEditPart extends LabelEditPart implements
 	 * @generated
 	 */
 	protected IFigure createFigurePrim() {
-		return new WrappingLabel();
+		return new ComponentVariableOperatorFigure();
 	}
+
+	/**
+	 * @generated
+	 */
+	public class ComponentVariableOperatorFigure extends WrappingLabel {
+
+		/**
+		 * @generated
+		 */
+		private WrappingLabel fFigureComponentVariableOperator;
+
+		/**
+		 * @generated
+		 */
+		public ComponentVariableOperatorFigure() {
+			this.setText("");
+
+			this.setFont(THIS_FONT);
+
+		}
+
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureComponentVariableOperator() {
+			return fFigureComponentVariableOperator;
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	static final Font THIS_FONT = new Font(Display.getCurrent(), Display
+			.getDefault().getSystemFont().getFontData()[0].getName(), 9,
+			SWT.NORMAL);
 
 }

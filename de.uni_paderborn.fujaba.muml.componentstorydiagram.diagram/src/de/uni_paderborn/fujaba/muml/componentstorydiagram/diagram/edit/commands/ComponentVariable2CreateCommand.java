@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.commands;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -15,12 +27,12 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PartVariableCreateCommand extends EditElementCommand {
+public class ComponentVariable2CreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public PartVariableCreateCommand(CreateElementRequest req) {
+	public ComponentVariable2CreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -41,6 +53,10 @@ public class PartVariableCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	public boolean canExecute() {
+		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern container = (de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern) getElementToEdit();
+		if (container.getThisVariable() != null) {
+			return false;
+		}
 		return true;
 
 	}
@@ -50,11 +66,11 @@ public class PartVariableCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable newElement = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
-				.createComponentPartVariable();
+		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable newElement = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+				.createComponentVariable();
 
-		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable owner = (de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable) getElementToEdit();
-		owner.getPartVariables().add(newElement);
+		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern owner = (de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentStoryPattern) getElementToEdit();
+		owner.setThisVariable(newElement);
 
 		doConfigure(newElement, monitor, info);
 
@@ -66,7 +82,7 @@ public class PartVariableCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable newElement,
+			de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

@@ -222,7 +222,8 @@
                       </compartments>
                     </ownedChild>
                   </children>
-                  <children>
+                  <children
+                      referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
                     <containmentFeature
                         href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/portVariables"/>
                     <ownedChild>
@@ -422,32 +423,82 @@
             <features
                 href="../../org.storydriven.core/model/core.ecore#//NamedElement/name"/>
           </labelMappings>
-          <labelMappings
-              xsi:type="gmfmap:ExpressionLabelMapping"
-              readOnly="true">
-            <diagramLabel
-                href="ComponentStoryDiagram.gmfgraph#ControllerExchangeNodeIconDeadline"/>
-            <viewExpression
-                body="if self.controllerExchangeStrategy &lt;> ControllerExchangeStrategy::ATOMIC_SWITCHING then&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;if self.deadline.oclIsUndefined() then&#xD;&#xA;&#x9;&#x9;''&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'['.concat(&#xA;&#x9;&#x9;&#x9;-- explicitely access NaturalNumber,value and NaturalNumber.infinity so that the OCL Impact Analyzer listens to model changes.&#xD;&#xA;&#x9;&#x9;&#x9;if self.deadline.lowerBound.value.oclIsUndefined() or self.deadline.lowerBound.infinity.oclIsUndefined() then 'null' else self.deadline.lowerBound.toString() endif&#xD;&#xA;&#x9;&#x9;).concat(';').concat(&#xA;&#x9;&#x9;&#x9;-- explicitely access NaturalNumber,value and NaturalNumber.infinity so that the OCL Impact Analyzer listens to model changes.&#xD;&#xA;&#x9;&#x9;&#x9;if self.deadline.upperBound.value.oclIsUndefined() or self.deadline.upperBound.infinity.oclIsundefined() then 'null' else self.deadline.upperBound.toString() endif&#xD;&#xA;&#x9;&#x9;).concat(']')&#xD;&#xA;&#x9;endif&#xD;&#xA;&#xD;&#xA;else&#xD;&#xA;&#x9;''&#xD;&#xA;endif"/>
-          </labelMappings>
-          <labelMappings
-              xsi:type="gmfmap:ExpressionLabelMapping"
-              readOnly="true">
-            <diagramLabel
-                href="ComponentStoryDiagram.gmfgraph#ControllerExchangeNodeIconLabel"/>
-            <viewExpression
-                body="if ControllerExchangeStrategy::FADING_FUNCTION = self.controllerExchangeStrategy then&#xD;&#xA;&#x9;'Cross'&#xD;&#xA;else&#xD;&#xA;&#x9;if ControllerExchangeStrategy::FLAT_SWITCHING = self.controllerExchangeStrategy then&#xD;&#xA;&#x9;&#x9;'Flat'&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;'Atomic'&#xD;&#xA;&#x9;endif&#xD;&#xA;endif"/>
-          </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
               href="ComponentStoryDiagram.gmftool#//@palette/@tools.0/@tools.2"/>
           <diagramNode
               href="ComponentStoryDiagram.gmfgraph#ControllerExchangeNode"/>
           <children
-              compartment="//@nodes.0/@ownedChild/@children.4/@ownedChild/@compartments.0"
-              referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
+              compartment="//@nodes.0/@ownedChild/@children.4/@ownedChild/@compartments.0">
             <containmentFeature
                 href="../../de.uni_paderborn.fujaba.muml.componentstorydiagram/model/ComponentStoryDiagram.ecore#//ControllerExchangeNode/componentStoryPattern"/>
+            <ownedChild>
+              <domainMetaElement
+                  href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern"/>
+              <diagramNode
+                  href="ComponentStoryDiagram.gmfgraph#ComponentStoryPattern"/>
+              <children
+                  compartment="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                <containmentFeature
+                    href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentStoryPattern/thisVariable"/>
+                <ownedChild>
+                  <domainMetaElement
+                      href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable"/>
+                  <labelMappings
+                      readOnly="true">
+                    <diagramLabel
+                        href="ComponentStoryDiagram.gmfgraph#ComponentOperatorLabel"/>
+                  </labelMappings>
+                  <labelMappings
+                      readOnly="true">
+                    <diagramLabel
+                        href="ComponentStoryDiagram.gmfgraph#ComponentNameLabel"/>
+                  </labelMappings>
+                  <diagramNode
+                      href="ComponentStoryDiagram.gmfgraph#ComponentVariable"/>
+                  <children
+                      compartment="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0"
+                      referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild">
+                    <containmentFeature
+                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/partVariables"/>
+                  </children>
+                  <children
+                      referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.1/@ownedChild">
+                    <containmentFeature
+                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/portVariables"/>
+                  </children>
+                  <children
+                      referencedChild="//@nodes.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.2/@ownedChild">
+                    <containmentFeature
+                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/portVariables"/>
+                  </children>
+                  <children
+                      compartment="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@compartments.0">
+                    <containmentFeature
+                        href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//ComponentVariable/partVariables"/>
+                    <ownedChild>
+                      <domainMetaElement
+                          href="../../de.uni_paderborn.fujaba.muml.componentstorypattern/model/ComponentStoryPattern.ecore#//FadingComponentPartVariable"/>
+                      <tool
+                          xsi:type="gmftool:CreationTool"
+                          href="ComponentStoryDiagram.gmftool#//@palette/@tools.1/@tools.5"/>
+                      <diagramNode
+                          href="ComponentStoryDiagram.gmfgraph#FadingComponentVariable"/>
+                    </ownedChild>
+                  </children>
+                  <compartments
+                      children="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild/@children.0/@ownedChild/@children.3">
+                    <compartment
+                        href="ComponentStoryDiagram.gmfgraph#ComponentVariableCompartment"/>
+                  </compartments>
+                </ownedChild>
+              </children>
+              <compartments
+                  children="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0/@ownedChild/@children.0">
+                <compartment
+                    href="ComponentStoryDiagram.gmfgraph#ComponentStoryPatternCompartment"/>
+              </compartments>
+            </ownedChild>
           </children>
           <compartments
               children="//@nodes.0/@ownedChild/@children.4/@ownedChild/@children.0">

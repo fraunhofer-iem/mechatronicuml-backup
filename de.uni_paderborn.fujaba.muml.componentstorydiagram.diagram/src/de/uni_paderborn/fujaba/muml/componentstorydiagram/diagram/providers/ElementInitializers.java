@@ -144,15 +144,15 @@ public class ElementInitializers {
 							PatternsPackage.eINSTANCE.getBindingSemantics());
 			newInstance_0_0_1_0
 					.setBindingSemantics((BindingSemantics) value_0_0_1_0_2);
-			de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable newInstance_0_0_1_0_3_0 = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+			de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable newInstance_0_0_1_0_3_0 = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 					.createComponentPartVariable();
 			newInstance_0_0_1_0.getPartVariables().add(newInstance_0_0_1_0_3_0);
 			Object value_0_0_1_0_3_0_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
 							12,
 							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-									.getPartVariable(), null).evaluate(
-							newInstance_0_0_1_0_3_0);
+									.getComponentPartVariable(), null)
+					.evaluate(newInstance_0_0_1_0_3_0);
 
 			value_0_0_1_0_3_0_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression
 					.performCast(value_0_0_1_0_3_0_0,
@@ -160,15 +160,15 @@ public class ElementInitializers {
 			newInstance_0_0_1_0_3_0
 					.setBindingOperator((BindingOperator) value_0_0_1_0_3_0_0);
 
-			de.uni_paderborn.fujaba.muml.componentstorypattern.PartVariable newInstance_0_0_1_0_3_1 = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+			de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable newInstance_0_0_1_0_3_1 = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
 					.createComponentPartVariable();
 			newInstance_0_0_1_0.getPartVariables().add(newInstance_0_0_1_0_3_1);
 			Object value_0_0_1_0_3_1_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramOCLFactory
 					.getExpression(
 							13,
 							de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-									.getPartVariable(), null).evaluate(
-							newInstance_0_0_1_0_3_1);
+									.getComponentPartVariable(), null)
+					.evaluate(newInstance_0_0_1_0_3_1);
 
 			value_0_0_1_0_3_1_0 = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression
 					.performCast(value_0_0_1_0_3_1_0,

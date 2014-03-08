@@ -87,7 +87,7 @@ public class ComponentStoryPatternComponentStoryPatternCompartment2CanonicalEdit
 				int visualID = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 						.getVisualID(childView);
 				List<Integer> visualIDs = Arrays
-						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID });
+						.asList(new Integer[] { de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariable2EditPart.VISUAL_ID });
 
 				// Note: childElement can be null, for diagram annotations!
 				if (childElement == null
@@ -104,7 +104,7 @@ public class ComponentStoryPatternComponentStoryPatternCompartment2CanonicalEdit
 
 		View viewObject = (View) getHost().getModel();
 		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramUpdater
-				.getComponentStoryPatternComponentStoryPatternCompartment_7010SemanticChildren(viewObject);
+				.getComponentStoryPatternComponentStoryPatternCompartment_7012SemanticChildren(viewObject);
 
 	}
 
@@ -121,7 +121,7 @@ public class ComponentStoryPatternComponentStoryPatternCompartment2CanonicalEdit
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariable2EditPart.VISUAL_ID == de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 				.getVisualID(view);
 	}
 

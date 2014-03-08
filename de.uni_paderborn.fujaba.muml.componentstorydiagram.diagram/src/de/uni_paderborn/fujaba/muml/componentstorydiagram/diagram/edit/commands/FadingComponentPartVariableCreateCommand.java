@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.commands;
 
 import org.eclipse.core.commands.ExecutionException;
@@ -15,12 +27,13 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class PartVariableCreateCommand extends EditElementCommand {
+public class FadingComponentPartVariableCreateCommand extends
+		EditElementCommand {
 
 	/**
 	 * @generated
 	 */
-	public PartVariableCreateCommand(CreateElementRequest req) {
+	public FadingComponentPartVariableCreateCommand(CreateElementRequest req) {
 		super(req.getLabel(), null, req);
 	}
 
@@ -50,8 +63,8 @@ public class PartVariableCreateCommand extends EditElementCommand {
 	 */
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable newElement = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
-				.createComponentPartVariable();
+		de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable newElement = de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternFactory.eINSTANCE
+				.createFadingComponentPartVariable();
 
 		de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable owner = (de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentVariable) getElementToEdit();
 		owner.getPartVariables().add(newElement);
@@ -66,7 +79,7 @@ public class PartVariableCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(
-			de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentPartVariable newElement,
+			de.uni_paderborn.fujaba.muml.componentstorypattern.FadingComponentPartVariable newElement,
 			IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
 		IElementType elementType = ((CreateElementRequest) getRequest())

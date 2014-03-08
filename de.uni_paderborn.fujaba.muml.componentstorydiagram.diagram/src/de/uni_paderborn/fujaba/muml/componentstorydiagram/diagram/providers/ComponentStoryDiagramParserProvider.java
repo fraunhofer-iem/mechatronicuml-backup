@@ -42,8 +42,8 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser getPartVariableLabel_5018Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.PartVariableLabelExpressionLabelParser();
+	private IParser getComponentPartVariableLabel_5018Parser() {
+		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ComponentPartVariableLabelExpressionLabelParser5018();
 	}
 
 	/**
@@ -152,20 +152,6 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
-	private IParser getControllerExchangeNodeLabel_5043Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser();
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getControllerExchangeNodeLabel_5044Parser() {
-		return new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.parsers.ControllerExchangeNodeLabelExpressionLabelParser();
-	}
-
-	/**
-	 * @generated
-	 */
 	private IParser assemblyVariableName_6004Parser;
 
 	/**
@@ -213,7 +199,7 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryNodeNameEditPart.VISUAL_ID:
 			return getComponentStoryNodeName_5001Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel2EditPart.VISUAL_ID:
-			return getPartVariableLabel_5018Parser();
+			return getComponentPartVariableLabel_5018Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableNameEditPart.VISUAL_ID:
 			return getMultiPortVariableName_5022Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariableNameEditPart.VISUAL_ID:
@@ -224,10 +210,6 @@ public class ComponentStoryDiagramParserProvider extends AbstractProvider
 			return getSinglePortVariableName_5028Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ControllerExchangeNodeNameEditPart.VISUAL_ID:
 			return getControllerExchangeNodeName_5041Parser();
-		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID:
-			return getControllerExchangeNodeLabel_5043Parser();
-		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
-			return getControllerExchangeNodeLabel_5044Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableNameEditPart.VISUAL_ID:
 			return getAssemblyVariableName_6004Parser();
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.DelegationVariableNameEditPart.VISUAL_ID:

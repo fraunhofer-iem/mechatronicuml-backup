@@ -57,6 +57,7 @@ public class ComponentStoryDiagramPaletteFactory {
 		paletteContainer.add(createMultiPortVariable3CreationTool());
 		paletteContainer.add(createAssemblyVariable4CreationTool());
 		paletteContainer.add(createDelegationVariable5CreationTool());
+		paletteContainer.add(createFadingComponentVariable6CreationTool());
 		return paletteContainer;
 	}
 
@@ -180,7 +181,7 @@ public class ComponentStoryDiagramPaletteFactory {
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.PartVariable1CreationTool_title,
 				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.PartVariable1CreationTool_desc,
 				Collections
-						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.PartVariable_3014));
+						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ComponentPartVariable_3014));
 		entry.setId("createPartVariable1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/ComponentPart.gif")); //$NON-NLS-1$
@@ -253,6 +254,22 @@ public class ComponentStoryDiagramPaletteFactory {
 		entry.setId("createDelegationVariable5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramDiagramEditorPlugin
 				.findImageDescriptor("/de.uni_paderborn.fujaba.muml.common/icons/Delegation.gif")); //$NON-NLS-1$
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createFadingComponentVariable6CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.FadingComponentVariable6CreationTool_title,
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.FadingComponentVariable6CreationTool_desc,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.FadingComponentPartVariable_3024));
+		entry.setId("createFadingComponentVariable6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.FadingComponentPartVariable_3024));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

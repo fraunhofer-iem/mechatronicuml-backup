@@ -1,3 +1,15 @@
+/*
+ * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
+ * </copyright>
+ */
 package de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
@@ -13,19 +25,18 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
 /**
  * @generated
  */
-public class ComponentStoryPatternComponentStoryPatternCompartment2EditPart
-		extends ShapeCompartmentEditPart {
+public class ComponentVariableComponentVariableCompartment2EditPart extends
+		ShapeCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7012;
+	public static final int VISUAL_ID = 7013;
 
 	/**
 	 * @generated
 	 */
-	public ComponentStoryPatternComponentStoryPatternCompartment2EditPart(
-			View view) {
+	public ComponentVariableComponentVariableCompartment2EditPart(View view) {
 		super(view);
 	}
 
@@ -33,7 +44,7 @@ public class ComponentStoryPatternComponentStoryPatternCompartment2EditPart
 	 * @generated
 	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.ComponentStoryPatternComponentStoryPatternCompartment2EditPart_title;
+		return de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.Messages.ComponentVariableComponentVariableCompartment2EditPart_title;
 	}
 
 	/**
@@ -65,7 +76,7 @@ public class ComponentStoryPatternComponentStoryPatternCompartment2EditPart
 		super.createDefaultEditPolicies();
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartment2ItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentVariableComponentVariableCompartment2ItemSemanticEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(
@@ -74,7 +85,7 @@ public class ComponentStoryPatternComponentStoryPatternCompartment2EditPart
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentStoryPatternComponentStoryPatternCompartment2CanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentVariableComponentVariableCompartment2CanonicalEditPolicy());
 	}
 
 	/**

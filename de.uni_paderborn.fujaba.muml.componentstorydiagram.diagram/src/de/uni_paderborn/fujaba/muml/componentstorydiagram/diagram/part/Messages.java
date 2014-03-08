@@ -373,6 +373,16 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String FadingComponentVariable6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String FadingComponentVariable6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
 	public static String ActivityActivityCompartmentEditPart_title;
 
 	/**
@@ -409,6 +419,11 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String ComponentStoryPatternComponentStoryPatternCompartment2EditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String ComponentVariableComponentVariableCompartment2EditPart_title;
 
 	/**
 	 * @generated

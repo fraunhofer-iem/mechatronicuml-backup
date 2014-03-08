@@ -66,7 +66,8 @@ public class ComponentStoryDiagramElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType PartVariable_3014 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.PartVariable_3014"); //$NON-NLS-1$
+	public static final IElementType ComponentPartVariable_3014 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentPartVariable_3014"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -108,6 +109,16 @@ public class ComponentStoryDiagramElementTypes {
 	 * @generated
 	 */
 	public static final IElementType ComponentStoryPattern_3022 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentStoryPattern_3022"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ComponentVariable_3023 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.ComponentVariable_3023"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType FadingComponentPartVariable_3024 = getElementType("de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.FadingComponentPartVariable_3024"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -184,9 +195,9 @@ public class ComponentStoryDiagramElementTypes {
 							.getComponentVariable());
 
 			elements.put(
-					PartVariable_3014,
+					ComponentPartVariable_3014,
 					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
-							.getPartVariable());
+							.getComponentPartVariable());
 
 			elements.put(
 					MultiPortVariable_3016,
@@ -232,6 +243,16 @@ public class ComponentStoryDiagramElementTypes {
 					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
 							.getComponentStoryPattern());
 
+			elements.put(
+					ComponentVariable_3023,
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+							.getComponentVariable());
+
+			elements.put(
+					FadingComponentPartVariable_3024,
+					de.uni_paderborn.fujaba.muml.componentstorypattern.ComponentstorypatternPackage.eINSTANCE
+							.getFadingComponentPartVariable());
+
 			elements.put(ActivityEdge_4001,
 					ActivitiesPackage.eINSTANCE.getActivityEdge());
 
@@ -266,7 +287,7 @@ public class ComponentStoryDiagramElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ComponentStoryNode_3001);
 			KNOWN_ELEMENT_TYPES.add(ComponentStoryPattern_3011);
 			KNOWN_ELEMENT_TYPES.add(ComponentVariable_3012);
-			KNOWN_ELEMENT_TYPES.add(PartVariable_3014);
+			KNOWN_ELEMENT_TYPES.add(ComponentPartVariable_3014);
 			KNOWN_ELEMENT_TYPES.add(MultiPortVariable_3016);
 			KNOWN_ELEMENT_TYPES.add(SinglePortVariable_3017);
 			KNOWN_ELEMENT_TYPES.add(SinglePortVariable_3018);
@@ -277,6 +298,8 @@ public class ComponentStoryDiagramElementTypes {
 			KNOWN_ELEMENT_TYPES.add(ActivityFinalNode_3010);
 			KNOWN_ELEMENT_TYPES.add(ControllerExchangeNode_3021);
 			KNOWN_ELEMENT_TYPES.add(ComponentStoryPattern_3022);
+			KNOWN_ELEMENT_TYPES.add(ComponentVariable_3023);
+			KNOWN_ELEMENT_TYPES.add(FadingComponentPartVariable_3024);
 			KNOWN_ELEMENT_TYPES.add(ActivityEdge_4001);
 			KNOWN_ELEMENT_TYPES.add(AssemblyVariable_4004);
 			KNOWN_ELEMENT_TYPES.add(DelegationVariable_4005);
@@ -300,7 +323,7 @@ public class ComponentStoryDiagramElementTypes {
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariableEditPart.VISUAL_ID:
 			return ComponentVariable_3012;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.PartVariableEditPart.VISUAL_ID:
-			return PartVariable_3014;
+			return ComponentPartVariable_3014;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.MultiPortVariableEditPart.VISUAL_ID:
 			return MultiPortVariable_3016;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.SinglePortVariableEditPart.VISUAL_ID:
@@ -321,6 +344,10 @@ public class ComponentStoryDiagramElementTypes {
 			return ControllerExchangeNode_3021;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentStoryPattern2EditPart.VISUAL_ID:
 			return ComponentStoryPattern_3022;
+		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ComponentVariable2EditPart.VISUAL_ID:
+			return ComponentVariable_3023;
+		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.FadingComponentPartVariableEditPart.VISUAL_ID:
+			return FadingComponentPartVariable_3024;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.ActivityEdgeEditPart.VISUAL_ID:
 			return ActivityEdge_4001;
 		case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.AssemblyVariableEditPart.VISUAL_ID:
