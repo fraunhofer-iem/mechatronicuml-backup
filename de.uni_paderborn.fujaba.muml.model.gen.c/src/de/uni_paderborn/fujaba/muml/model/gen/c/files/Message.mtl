@@ -30,7 +30,7 @@
 [**
  * The documentation of the template generateMessageClass.
  */]
-[template private generateMessageClass(root : RootNode)]
+[template public generateMessageClass(root : RootNode)]
 
 [file ('msg/messages.h', false, 'UTF-8')]
 

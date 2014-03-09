@@ -36,7 +36,7 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template private generateOperationHeader(allOperations : Sequence(Operation))]
+[template public generateOperationHeader(allOperations : Sequence(Operation))]
 
 [file ('operations/Operations.h', false, 'UTF-8')]
 #ifndef OPERATIONS_H_
@@ -56,7 +56,7 @@
  * The documentation of the template generateOperationFile.
  * @param anAbsoluteDeadline
  */]
-[template private generateOperationClass(allOperations : Sequence(Operation))]
+[template public generateOperationClass(allOperations : Sequence(Operation))]
 
 [file ('operations/Operations.c', false, 'UTF-8')]
 #include "operations.h"

@@ -65,8 +65,8 @@
 */]
 [template private variables (comp: Component, rtsc: RealtimeStatechart) post(trim())]
 	typedef enum {
-		[for (state : State | rtsc.states) separator (',')]
-			[getStateNames(state)/]	
+		[for (state : State | rtsc.eAllContents(State)) separator (',')]
+			[getName(state)/]	
 		[/for]
 	}[getClassName(rtsc, true)/];
 
