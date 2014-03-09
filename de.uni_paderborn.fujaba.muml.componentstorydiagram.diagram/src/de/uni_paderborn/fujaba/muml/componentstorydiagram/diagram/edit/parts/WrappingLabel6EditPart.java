@@ -6,6 +6,7 @@ import java.util.List;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.RunnableWithResult;
@@ -20,9 +21,12 @@ import org.eclipse.gmf.runtime.common.ui.services.parser.ParserEditStatus;
 import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
 import org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.CompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ITextAwareEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.LabelEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramColorRegistry;
 import org.eclipse.gmf.runtime.diagram.ui.label.ILabelDelegate;
 import org.eclipse.gmf.runtime.diagram.ui.label.WrappingLabelDelegate;
@@ -51,13 +55,13 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
-public class WrappingLabel6EditPart extends CompartmentEditPart implements
-		ITextAwareEditPart {
+public class WrappingLabel6EditPart extends LabelEditPart implements
+		ITextAwareEditPart, IBorderItemEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5044;
+	public static final int VISUAL_ID = 5055;
 
 	/**
 	 * @generated
@@ -72,7 +76,7 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	private OclTracker.Registrator myOclRegistrator;
+	private List<?> parserElements;
 
 	/**
 	 * @generated
@@ -87,6 +91,16 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
+	static {
+		registerSnapBackPosition(
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID),
+				new Point(0, 0));
+	}
+
+	/**
+	 * @generated
+	 */
 	public WrappingLabel6EditPart(View view) {
 		super(view);
 	}
@@ -96,13 +110,40 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
+				new LabelDirectEditPolicy());
 		installEditPolicy(
 				EditPolicy.SELECTION_FEEDBACK_ROLE,
 				new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.policies.ComponentStoryDiagramTextSelectionEditPolicy());
-		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
-				new LabelDirectEditPolicy());
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
-				new DefaultNodeLabelDragPolicy());
+	}
+
+	/**
+	 * @generated
+	 */
+	public IBorderItemLocator getBorderItemLocator() {
+		IFigure parentFigure = getFigure().getParent();
+		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
+			Object constraint = parentFigure.getLayoutManager().getConstraint(
+					getFigure());
+			return (IBorderItemLocator) constraint;
+		}
+		return null;
+	}
+
+	/**
+	 * @generated
+	 */
+	public void refreshBounds() {
+		int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getLocation_X())).intValue();
+		int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getLocation_Y())).intValue();
+		int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getSize_Width())).intValue();
+		int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE
+				.getSize_Height())).intValue();
+		getBorderItemLocator()
+				.setConstraint(new Rectangle(x, y, width, height));
 	}
 
 	/**
@@ -162,7 +203,7 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public void setLabel(WrappingLabel figure) {
+	public void setLabel(IFigure figure) {
 		unregisterVisuals();
 		setFigure(figure);
 		defaultText = getLabelTextHelper(figure);
@@ -304,7 +345,7 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramParserProvider
 					.getParser(
-							de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.ControllerExchangeNode_3021,
+							de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.providers.ComponentStoryDiagramElementTypes.FadingComponentPartVariable_3024,
 							getParserElement(),
 							de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
 									.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
@@ -489,16 +530,30 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected void addSemanticListeners() {
-		OclTracker tracker = getTracker();
-		tracker.initialize(resolveSemanticElement());
-		tracker.installListeners(getEditingDomain(), this, getOclRegistrator());
+		if (getParser() instanceof ISemanticParser) {
+			EObject element = resolveSemanticElement();
+			parserElements = ((ISemanticParser) getParser())
+					.getSemanticElementsBeingParsed(element);
+			for (int i = 0; i < parserElements.size(); i++) {
+				addListenerFilter(
+						"SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
+			}
+		} else {
+			super.addSemanticListeners();
+		}
 	}
 
 	/**
 	 * @generated
 	 */
 	protected void removeSemanticListeners() {
-		getTracker().uninstallListeners();
+		if (parserElements != null) {
+			for (int i = 0; i < parserElements.size(); i++) {
+				removeListenerFilter("SemanticModel" + i); //$NON-NLS-1$
+			}
+		} else {
+			super.removeSemanticListeners();
+		}
 	}
 
 	/**
@@ -520,36 +575,7 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	private View getFontStyleOwnerView() {
-		return (View) getModel();
-	}
-
-	/**
-	 * @generated
-	 */
-	private OclTracker getTracker() {
-		return ((HasOclTracker) getParser()).getOclTracker();
-	}
-
-	/**
-	 * @generated
-	 */
-	private OclTracker.Registrator getOclRegistrator() {
-		if (myOclRegistrator == null) {
-			myOclRegistrator = new OclTracker.Registrator() {
-
-				@Override
-				public void registerListener(String filterId,
-						NotificationListener listener, EObject element) {
-					addListenerFilter(filterId, listener, element);
-				}
-
-				@Override
-				public void unregisterListener(String filterId) {
-					removeListenerFilter(filterId);
-				}
-			};
-		}
-		return myOclRegistrator;
+		return getPrimaryView();
 	}
 
 	/**
@@ -576,22 +602,6 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 			return getLabelDelegate();
 		}
 		return super.getAdapter(key);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addNotationalListeners() {
-		super.addNotationalListeners();
-		addListenerFilter("PrimaryView", this, getPrimaryView()); //$NON-NLS-1$
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void removeNotationalListeners() {
-		super.removeNotationalListeners();
-		removeListenerFilter("PrimaryView"); //$NON-NLS-1$
 	}
 
 	/**
@@ -641,8 +651,16 @@ public class WrappingLabel6EditPart extends CompartmentEditPart implements
 	 * @generated
 	 */
 	protected IFigure createFigure() {
-		// Parent should assign one using setLabel() method
-		return null;
+		IFigure label = createFigurePrim();
+		defaultText = getLabelTextHelper(label);
+		return label;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure createFigurePrim() {
+		return new WrappingLabel();
 	}
 
 }

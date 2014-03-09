@@ -30,7 +30,7 @@ public class ComponentStoryDiagramOCLFactory {
 	 * @generated
 	 */
 	protected ComponentStoryDiagramOCLFactory() {
-		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression[19];
+		this.expressions = new de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.expressions.ComponentStoryDiagramAbstractExpression[20];
 	}
 
 	/**
@@ -65,6 +65,7 @@ public class ComponentStoryDiagramOCLFactory {
 					"--storydiagrams::patterns::BindingOperator::DESTROY".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--storydiagrams::patterns::BindingOperator::CREATE".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"--\'controllerExchangeNode\'".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
+					"--let compName : String = if self.type.componentType.name.oclIsUndefined() then \'null\' else\tself.type.componentType.name endif in\r\n--let partName : String = if self.type.name.oclIsUndefined() then \' \' else\t\' / \'.concat(self.type.name) endif in\r\n--let selfName : String = if self.name.oclIsUndefined() then \'null\' else self.name endif in\r\n--if bindingState = storydiagrams::patterns::BindingState::BOUND then\r\n--selfName\r\n--else\r\n--selfName.concat(partName.concat(\' : \'.concat(compName)))\r\n--endif".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"----Create AssemblyVariable between PortVariables of PartVariables\r\n--not self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"----Create AssemblyVariable between PortVariables of different PartVariables\r\n--self.oclAsType(ecore::EObject).eContainer().eContainer() = oppositeEnd.eContainer().eContainer() and self.eContainer() <> oppositeEnd.eContainer()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$
 					"----Start creation of DelegationVariable at PortVariable of ComponentVariable\r\n--self.oclAsType(ecore::EObject).eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().eContainer().oclIsUndefined()".substring(2).replaceAll("\n--", "\n"), //$NON-NLS-1$

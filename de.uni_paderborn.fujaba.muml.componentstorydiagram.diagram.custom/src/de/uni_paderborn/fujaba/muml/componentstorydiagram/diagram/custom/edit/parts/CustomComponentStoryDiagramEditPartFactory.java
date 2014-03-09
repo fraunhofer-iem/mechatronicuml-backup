@@ -30,6 +30,7 @@ import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.Por
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.PortVariableOperatorEditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel2EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel4EditPart;
+import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart;
 import de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabelEditPart;
 
 public class CustomComponentStoryDiagramEditPartFactory extends
@@ -82,6 +83,8 @@ public class CustomComponentStoryDiagramEditPartFactory extends
 
 			case WrappingLabelEditPart.VISUAL_ID:
 				return new CustomWrappingLabelEditPart(view);
+			case WrappingLabel6EditPart.VISUAL_ID:
+				return new CustomWrappingLabel6EditPart(view);
 			case WrappingLabel2EditPart.VISUAL_ID:
 				return new CustomWrappingLabel2EditPart(view);
 				

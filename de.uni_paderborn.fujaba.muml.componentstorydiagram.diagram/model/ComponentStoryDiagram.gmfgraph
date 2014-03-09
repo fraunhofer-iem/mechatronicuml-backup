@@ -890,72 +890,57 @@
         name="FadingComponentVariableFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="ComponentFigure">
-        <layout
-            xsi:type="gmfgraph:StackLayout"/>
+          name="FadingComponentVariableFigure">
         <children
             xsi:type="gmfgraph:Rectangle"
-            name="ComponentVariableContent"
+            name="FadingComponentVariable"
             outline="false"
             fill="false">
           <layout
-              xsi:type="gmfgraph:GridLayout"/>
+              xsi:type="gmfgraph:GridLayout"
+              numColumns="2"
+              equalWidth="false"/>
           <children
               xsi:type="gmfgraph:Rectangle"
-              name="container"
+              name="NameContainer"
               outline="false"
               fill="false">
             <layoutData
                 xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                verticalAlignment="BEGINNING"
-                horizontalAlignment="FILL"/>
+                grabExcessHorizontalSpace="true"/>
             <layout
                 xsi:type="gmfgraph:GridLayout"
-                numColumns="3"/>
-            <border
-                xsi:type="gmfgraph:MarginBorder">
-              <insets
-                  top="3"
-                  left="3"
-                  right="3"/>
-            </border>
-            <children
-                xsi:type="gmfgraph:Rectangle"
-                name="fake"
-                outline="false"
-                fill="false"/>
+                equalWidth="false"/>
             <children
                 xsi:type="gmfgraph:Label"
-                name="ComponentVariableThis"
-                text="this">
+                name="FadingComponentVariableNameFigure">
               <layoutData
                   xsi:type="gmfgraph:GridLayoutData"
                   grabExcessHorizontalSpace="true"
-                  verticalAlignment="BEGINNING"/>
+                  grabExcessVerticalSpace="true"/>
               <font
-                  xsi:type="gmfgraph:BasicFont"
-                  faceName=""
-                  style="BOLD"/>
+                  xsi:type="gmfgraph:BasicFont"/>
             </children>
+          </children>
+          <children
+              xsi:type="gmfgraph:Rectangle"
+              name="IconContainer"
+              outline="false"
+              fill="false">
+            <layoutData
+                xsi:type="gmfgraph:GridLayoutData"
+                horizontalAlignment="END"/>
+            <layout
+                xsi:type="gmfgraph:GridLayout"
+                equalWidth="false"/>
             <children
                 xsi:type="gmfgraph:FigureRef"
                 figure="//@figures.0/@descriptors.18/@actualFigure"/>
           </children>
-          <children
-              xsi:type="gmfgraph:Rectangle"
-              name="children"
-              outline="false"
-              fill="false">
-            <layoutData
-                xsi:type="gmfgraph:GridLayoutData"
-                grabExcessHorizontalSpace="true"
-                grabExcessVerticalSpace="true"
-                verticalAlignment="FILL"
-                horizontalAlignment="FILL"/>
-          </children>
         </children>
       </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.0/@children.0/@children.0"/>
     </descriptors>
     <descriptors
         name="FadingComponentIconFigure">
@@ -1382,4 +1367,9 @@
       figure="ControllerExchangeNodeFigure"
       elementIcon="false"
       accessor="//@figures.0/@descriptors.14/@accessors.4"/>
+  <labels
+      name="FadingComponentVariableNameLabel"
+      figure="FadingComponentVariableFigure"
+      elementIcon="false"
+      accessor="//@figures.0/@descriptors.17/@accessors.0"/>
 </gmfgraph:Canvas>

@@ -1223,6 +1223,19 @@ public class ComponentStoryDiagramViewProvider extends AbstractProvider
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5054 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
+		Node label5055 = createLabel(
+				node,
+				de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID));
+		label5055.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location5055 = (Location) label5055.getLayoutConstraint();
+		location5055.setX(0);
+		location5055.setY(5);
 		return node;
 	}
 

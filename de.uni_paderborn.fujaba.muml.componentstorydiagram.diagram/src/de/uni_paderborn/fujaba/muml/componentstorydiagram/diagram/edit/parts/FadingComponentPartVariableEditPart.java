@@ -16,6 +16,7 @@ import org.eclipse.draw2d.GridData;
 import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -29,8 +30,12 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -43,7 +48,8 @@ import org.eclipse.swt.widgets.Display;
 /**
  * @generated
  */
-public class FadingComponentPartVariableEditPart extends ShapeNodeEditPart {
+public class FadingComponentPartVariableEditPart extends
+		AbstractBorderedShapeEditPart {
 
 	/**
 	 * @generated
@@ -99,6 +105,12 @@ public class FadingComponentPartVariableEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				View childView = (View) child.getModel();
+				switch (de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+						.getVisualID(childView)) {
+				case de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart.VISUAL_ID:
+					return new de.uni_paderborn.fujaba.muml.common.edit.policies.BorderItemSelectionEditPolicy();
+				}
 				EditPolicy result = child
 						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
@@ -135,6 +147,75 @@ public class FadingComponentPartVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart) {
+			((de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart) childEditPart)
+					.setLabel(getPrimaryShape()
+							.getFigureFadingComponentVariableNameFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		if (editPart instanceof IBorderItemEditPart) {
+			return getBorderedFigure().getBorderItemContainer();
+		}
+		return getContentPane();
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addBorderItem(IFigure borderItemContainer,
+			IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel6EditPart) {
+			// bug-fix: allows the free positioning of external Labels
+			de.uni_paderborn.fujaba.muml.common.figures.CustomExternalLabelBorderItemLocator locator = new de.uni_paderborn.fujaba.muml.common.figures.CustomExternalLabelBorderItemLocator(
+					getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(-20, -20));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else {
+			super.addBorderItem(borderItemContainer, borderItemEditPart);
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 
@@ -152,7 +233,7 @@ public class FadingComponentPartVariableEditPart extends ShapeNodeEditPart {
 	 * 
 	 * @generated
 	 */
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -168,6 +249,11 @@ public class FadingComponentPartVariableEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected IFigure setupContentPane(IFigure nodeShape) {
+		if (nodeShape.getLayoutManager() == null) {
+			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+			layout.setSpacing(5);
+			nodeShape.setLayoutManager(layout);
+		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -220,13 +306,25 @@ public class FadingComponentPartVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.part.ComponentStoryDiagramVisualIDRegistry
+				.getType(de.uni_paderborn.fujaba.muml.componentstorydiagram.diagram.edit.parts.WrappingLabel5EditPart.VISUAL_ID));
+	}
+
+	/**
+	 * @generated
+	 */
 	public class FadingComponentVariableFigure extends RectangleFigure {
 
 		/**
 		 * @generated
 		 */
+		private WrappingLabel fFigureFadingComponentVariableNameFigure;
+
+		/**
+		 * @generated
+		 */
 		public FadingComponentVariableFigure() {
-			this.setLayoutManager(new StackLayout());
 			createContents();
 		}
 
@@ -235,65 +333,78 @@ public class FadingComponentPartVariableEditPart extends ShapeNodeEditPart {
 		 */
 		private void createContents() {
 
-			RectangleFigure componentVariableContent0 = new RectangleFigure();
+			RectangleFigure fadingComponentVariable0 = new RectangleFigure();
 
-			componentVariableContent0.setFill(false);
-			componentVariableContent0.setOutline(false);
+			fadingComponentVariable0.setFill(false);
+			fadingComponentVariable0.setOutline(false);
 
-			this.add(componentVariableContent0);
+			this.add(fadingComponentVariable0);
 
-			GridLayout layoutComponentVariableContent0 = new GridLayout();
-			layoutComponentVariableContent0.numColumns = 1;
-			layoutComponentVariableContent0.makeColumnsEqualWidth = true;
-			componentVariableContent0
-					.setLayoutManager(layoutComponentVariableContent0);
+			GridLayout layoutFadingComponentVariable0 = new GridLayout();
+			layoutFadingComponentVariable0.numColumns = 2;
+			layoutFadingComponentVariable0.makeColumnsEqualWidth = false;
+			fadingComponentVariable0
+					.setLayoutManager(layoutFadingComponentVariable0);
 
-			RectangleFigure container1 = new RectangleFigure();
+			RectangleFigure nameContainer1 = new RectangleFigure();
 
-			container1.setFill(false);
-			container1.setOutline(false);
-			container1.setBorder(new MarginBorder(getMapMode().DPtoLP(3),
-					getMapMode().DPtoLP(3), getMapMode().DPtoLP(0),
-					getMapMode().DPtoLP(3)));
+			nameContainer1.setFill(false);
+			nameContainer1.setOutline(false);
 
-			GridData constraintContainer1 = new GridData();
-			constraintContainer1.verticalAlignment = GridData.BEGINNING;
-			constraintContainer1.horizontalAlignment = GridData.FILL;
-			constraintContainer1.horizontalIndent = 0;
-			constraintContainer1.horizontalSpan = 1;
-			constraintContainer1.verticalSpan = 1;
-			constraintContainer1.grabExcessHorizontalSpace = true;
-			constraintContainer1.grabExcessVerticalSpace = false;
-			componentVariableContent0.add(container1, constraintContainer1);
+			GridData constraintNameContainer1 = new GridData();
+			constraintNameContainer1.verticalAlignment = GridData.CENTER;
+			constraintNameContainer1.horizontalAlignment = GridData.CENTER;
+			constraintNameContainer1.horizontalIndent = 0;
+			constraintNameContainer1.horizontalSpan = 1;
+			constraintNameContainer1.verticalSpan = 1;
+			constraintNameContainer1.grabExcessHorizontalSpace = true;
+			constraintNameContainer1.grabExcessVerticalSpace = false;
+			fadingComponentVariable0.add(nameContainer1,
+					constraintNameContainer1);
 
-			GridLayout layoutContainer1 = new GridLayout();
-			layoutContainer1.numColumns = 3;
-			layoutContainer1.makeColumnsEqualWidth = true;
-			container1.setLayoutManager(layoutContainer1);
+			GridLayout layoutNameContainer1 = new GridLayout();
+			layoutNameContainer1.numColumns = 1;
+			layoutNameContainer1.makeColumnsEqualWidth = false;
+			nameContainer1.setLayoutManager(layoutNameContainer1);
 
-			RectangleFigure fake2 = new RectangleFigure();
+			fFigureFadingComponentVariableNameFigure = new WrappingLabel();
 
-			fake2.setFill(false);
-			fake2.setOutline(false);
+			fFigureFadingComponentVariableNameFigure.setText("");
 
-			container1.add(fake2);
+			fFigureFadingComponentVariableNameFigure
+					.setFont(FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT);
 
-			WrappingLabel componentVariableThis2 = new WrappingLabel();
+			GridData constraintFFigureFadingComponentVariableNameFigure = new GridData();
+			constraintFFigureFadingComponentVariableNameFigure.verticalAlignment = GridData.CENTER;
+			constraintFFigureFadingComponentVariableNameFigure.horizontalAlignment = GridData.CENTER;
+			constraintFFigureFadingComponentVariableNameFigure.horizontalIndent = 0;
+			constraintFFigureFadingComponentVariableNameFigure.horizontalSpan = 1;
+			constraintFFigureFadingComponentVariableNameFigure.verticalSpan = 1;
+			constraintFFigureFadingComponentVariableNameFigure.grabExcessHorizontalSpace = true;
+			constraintFFigureFadingComponentVariableNameFigure.grabExcessVerticalSpace = true;
+			nameContainer1.add(fFigureFadingComponentVariableNameFigure,
+					constraintFFigureFadingComponentVariableNameFigure);
 
-			componentVariableThis2.setText("this");
+			RectangleFigure iconContainer1 = new RectangleFigure();
 
-			componentVariableThis2.setFont(COMPONENTVARIABLETHIS2_FONT);
+			iconContainer1.setFill(false);
+			iconContainer1.setOutline(false);
 
-			GridData constraintComponentVariableThis2 = new GridData();
-			constraintComponentVariableThis2.verticalAlignment = GridData.BEGINNING;
-			constraintComponentVariableThis2.horizontalAlignment = GridData.CENTER;
-			constraintComponentVariableThis2.horizontalIndent = 0;
-			constraintComponentVariableThis2.horizontalSpan = 1;
-			constraintComponentVariableThis2.verticalSpan = 1;
-			constraintComponentVariableThis2.grabExcessHorizontalSpace = true;
-			constraintComponentVariableThis2.grabExcessVerticalSpace = false;
-			container1.add(componentVariableThis2,
-					constraintComponentVariableThis2);
+			GridData constraintIconContainer1 = new GridData();
+			constraintIconContainer1.verticalAlignment = GridData.CENTER;
+			constraintIconContainer1.horizontalAlignment = GridData.END;
+			constraintIconContainer1.horizontalIndent = 0;
+			constraintIconContainer1.horizontalSpan = 1;
+			constraintIconContainer1.verticalSpan = 1;
+			constraintIconContainer1.grabExcessHorizontalSpace = false;
+			constraintIconContainer1.grabExcessVerticalSpace = false;
+			fadingComponentVariable0.add(iconContainer1,
+					constraintIconContainer1);
+
+			GridLayout layoutIconContainer1 = new GridLayout();
+			layoutIconContainer1.numColumns = 1;
+			layoutIconContainer1.makeColumnsEqualWidth = false;
+			iconContainer1.setLayoutManager(layoutIconContainer1);
 
 			RectangleFigure fadingComponentIconFigure2 = new RectangleFigure();
 
@@ -310,7 +421,7 @@ public class FadingComponentPartVariableEditPart extends ShapeNodeEditPart {
 			constraintFadingComponentIconFigure2.verticalSpan = 1;
 			constraintFadingComponentIconFigure2.grabExcessHorizontalSpace = true;
 			constraintFadingComponentIconFigure2.grabExcessVerticalSpace = false;
-			container1.add(fadingComponentIconFigure2,
+			iconContainer1.add(fadingComponentIconFigure2,
 					constraintFadingComponentIconFigure2);
 
 			fadingComponentIconFigure2.setLayoutManager(new XYLayout());
@@ -454,23 +565,15 @@ public class FadingComponentPartVariableEditPart extends ShapeNodeEditPart {
 
 			// Process FigureRef details
 
-			container1.add(fadingComponentIconFigure2);
+			iconContainer1.add(fadingComponentIconFigure2);
 
-			RectangleFigure children1 = new RectangleFigure();
+		}
 
-			children1.setFill(false);
-			children1.setOutline(false);
-
-			GridData constraintChildren1 = new GridData();
-			constraintChildren1.verticalAlignment = GridData.FILL;
-			constraintChildren1.horizontalAlignment = GridData.FILL;
-			constraintChildren1.horizontalIndent = 0;
-			constraintChildren1.horizontalSpan = 1;
-			constraintChildren1.verticalSpan = 1;
-			constraintChildren1.grabExcessHorizontalSpace = true;
-			constraintChildren1.grabExcessVerticalSpace = true;
-			componentVariableContent0.add(children1, constraintChildren1);
-
+		/**
+		 * @generated
+		 */
+		public WrappingLabel getFigureFadingComponentVariableNameFigure() {
+			return fFigureFadingComponentVariableNameFigure;
 		}
 
 	}
@@ -478,9 +581,9 @@ public class FadingComponentPartVariableEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	static final Font COMPONENTVARIABLETHIS2_FONT = new Font(
+	static final Font FFIGUREFADINGCOMPONENTVARIABLENAMEFIGURE_FONT = new Font(
 			Display.getCurrent(), Display.getDefault().getSystemFont()
-					.getFontData()[0].getName(), 9, SWT.BOLD);
+					.getFontData()[0].getName(), 9, SWT.NORMAL);
 
 	/**
 	 * @generated
