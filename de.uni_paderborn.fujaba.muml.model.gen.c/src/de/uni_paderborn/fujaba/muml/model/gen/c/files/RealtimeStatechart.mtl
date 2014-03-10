@@ -335,8 +335,9 @@
 
 	[comment Transition effects/]
 	// Transition Effects (incl. clock resets)
-	[if (not (transition.action->isEmpty() and transition.clockResets->isEmpty()))]
-	[if (not (transition.action->isEmpty()))]
+	[if (not (transition.action.oclIsUndefined() and transition.clockResets->isEmpty()))]
+	[if (not (transition.action.oclIsUndefined()))]
+	
 	[for (exp : Expression | transition.action.expressions)]
 		[if (exp.oclIsKindOf(OperationCall))]
 			[getOperationMethodCall(exp.oclAsType(OperationCall))/];
@@ -345,6 +346,7 @@
 		[/if]
 	
 	[/for]
+
 	[/if]
 	[for (clock : Clock |  transition.clockResets)]
 		Clock_reset(stateChart->[getVariableName(clock)/]);

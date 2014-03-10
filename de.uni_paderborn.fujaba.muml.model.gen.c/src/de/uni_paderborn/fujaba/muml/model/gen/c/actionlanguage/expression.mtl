@@ -332,8 +332,12 @@
  * @param usePre use pre construct for rhs variables (and for guards)
  * @param fqname a fully qualified name or the empty string
 */]
-[template public generateExpression(expression : Assignment, usePre : Boolean, fqname : String)]
+[template public generateExpression(expression : Assignment, usePre : Boolean, fqname : String)? (not expression.rhs_assignExpression.oclIsUndefined())]
 [generateExpression(expression.lhs_typedNamedElementExpression, false, fqname) /] = [generateExpression(expression.rhs_assignExpression, usePre, fqname) /];
+[/template]
+
+[template public generateExpression(expression : Assignment, usePre : Boolean, fqname : String)? (expression.rhs_assignExpression.oclIsUndefined())]
+[generateExpression(expression.lhs_typedNamedElementExpression, false, fqname) /][expression.incrementDecrementOperator.getIncrementDecremetOperator()/];
 [/template]
 
 [**

@@ -86,6 +86,22 @@
 	endif
 /]
 
+
+[**
+ * Returns a corresponding C unary operator
+ * @param unaryOperator the unary operator
+*/]
+[query public getIncrementDecremetOperator(incdecOp : IncrementDecrementOperator) : String =
+	if incdecOp = IncrementDecrementOperator::INCREMENT then
+		'++'
+	else if incdecOp = IncrementDecrementOperator::DECREMENT then
+		'--'
+	else
+		'unsupported'
+	endif
+	endif
+/]
+
 [**
  * Returns the rtsc which contains the trigger message expression's
  * transition (that is the transition which contains the expression).
