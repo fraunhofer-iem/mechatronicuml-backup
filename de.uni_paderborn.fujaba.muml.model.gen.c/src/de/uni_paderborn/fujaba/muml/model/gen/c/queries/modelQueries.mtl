@@ -81,26 +81,26 @@
 	conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).componentInstance.parentCIC.parentStructuredComponentInstance
 /]
 
-[query public getSourceComponent(conInst : ConnectorInstance) : ComponentInstance =
+[query public getSourcePort(conInst : ConnectorInstance) : PortInstance =
 	if ((conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).senderMessageTypes->size()>0) and (conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).receiverMessageTypes->size()>0)) then
-		conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).componentInstance
+		conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance)
 	else
 		if (conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).senderMessageTypes->size()>0) then
-		conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).componentInstance
+		conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance)
 		else
-		conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).componentInstance
+		conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance)
 		endif
 	endif
 /]
 
-[query public getTargetComponent(conInst : ConnectorInstance) : ComponentInstance =
+[query public getTargetPort(conInst : ConnectorInstance) : PortInstance =
 	if ((conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).senderMessageTypes->size()>0) and (conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).receiverMessageTypes->size()>0)) then
-		conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).componentInstance
+		conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance)
 	else
 		if (conInst.connectorEndpointInstances->at(1).oclAsType(DiscretePortInstance).receiverMessageTypes->size()>0) then
-		conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).componentInstance
+		conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance)
 		else
-		conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).componentInstance
+		conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance)
 		endif
 	endif
 /]
@@ -113,4 +113,5 @@
 		region.embeddedStatechart.behavioralElement.oclAsType(DiscretePort)
 	endif
 /]
+
 

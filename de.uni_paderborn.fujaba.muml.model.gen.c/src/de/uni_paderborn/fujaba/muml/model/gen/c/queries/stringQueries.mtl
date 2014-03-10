@@ -704,6 +704,22 @@ if (type.name = 'BOOLEAN') then 'false' else
 	endif
 /]
 
+[query public getVariablePathRecursive(ci : ComponentInstance, path : String) : String = 
+	if (ci.parentCIC.parentStructuredComponentInstance.oclIsUndefined()) then
+		getVariableName(ci) +'->'+path
+	else
+	getVariablePathRecursive(ci.parentCIC.parentStructuredComponentInstance,getVariableName(ci) +'->'+path)
+	endif
+/]
+[query public getVariablePath(pi : PortInstance) : String = 
+	if (pi.componentInstance.parentCIC.parentStructuredComponentInstance.oclIsUndefined()) then
+		getVariableName(pi.componentInstance) +'->'+getVariableName(pi.portType)
+	else
+	getVariablePathRecursive(pi.componentInstance.parentCIC.parentStructuredComponentInstance, getVariableName(pi.componentInstance) +'->'+getVariableName(pi.portType))
+	endif
+/]
+
+
 
 
 
