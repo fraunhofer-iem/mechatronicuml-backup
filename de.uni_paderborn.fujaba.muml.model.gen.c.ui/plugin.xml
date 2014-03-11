@@ -7,7 +7,7 @@
             objectClass="org.eclipse.core.resources.IFile"
             nameFilter="*.fujaba"
             id="de.uni_paderborn.fujaba.muml.model.gen.c.ui.popupMenus.contribution.IFile">
-         <menu id="org.eclipse.acceleo.module.menu" label="Generate..." path="additionsAcceleo">
+         <menu id="de.uni_paderborn.fujaba" label="Fujaba" path="additionsAcceleo">
                <groupMarker name="acceleo"/> 
          </menu>
          <action
@@ -15,8 +15,8 @@
                enablesFor="+"
                id="de.uni_paderborn.fujaba.muml.model.gen.c.ui.popupMenus.acceleoGenerateCAction"
                icon="icons/default.gif"
-               label="C (test)"
-               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
+               label="Generate C"
+               menubarPath="de.uni_paderborn.fujaba/generation"/>
       </objectContribution>
    </extension>
 </plugin>
