@@ -357,7 +357,7 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		  (controllerExchangeNodeEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "HasOnlyOneCreateAndOneDestroyPartVariable CorrectNumberOfFadingFunctions NoDeadlineIfStrategyIsATOMIC_SWITCHING"
+			 "constraints", "HasOnlyOneCreateAndOneDestroyPartVariable ContainsExactlyOneFadingComponentPartVariable"
 		   });		
 	}
 
@@ -373,7 +373,8 @@ public class ComponentstorydiagramPackageImpl extends EPackageImpl implements Co
 		  (controllerExchangeNodeEClass, 
 		   source, 
 		   new String[] {
-			 "HasOnlyOneCreateAndOneDestroyPartVariable", "let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables->asOrderedSet() in\r\npartVariables->size() = 2 and\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY else\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE else\r\nfalse endif endif\r\n"
+			 "HasOnlyOneCreateAndOneDestroyPartVariable", "let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables\r\n->select(pV : componentstorypattern::PartVariable | pV.oclIsKindOf(componentstorypattern::ComponentPartVariable))->asOrderedSet() in\r\npartVariables->size() = 2 and\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY else\r\nif partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE else\r\nfalse endif endif\r\n",
+			 "ContainsExactlyOneFadingComponentPartVariable", "let fadingComponentPartVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables->select(pv : componentstorypattern::PartVariable | pv.oclIsKindOf(componentstorypattern::FadingComponentPartVariable))->asOrderedSet()\r\n  in fadingComponentPartVariables->size() = 1"
 		   });			
 	}
 

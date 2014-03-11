@@ -136,8 +136,7 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(controllerExchangeNode, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(controllerExchangeNode, diagnostics, context);
 		if (result || diagnostics != null) result &= validateControllerExchangeNode_HasOnlyOneCreateAndOneDestroyPartVariable(controllerExchangeNode, diagnostics, context);
-		if (result || diagnostics != null) result &= validateControllerExchangeNode_CorrectNumberOfFadingFunctions(controllerExchangeNode, diagnostics, context);
-		if (result || diagnostics != null) result &= validateControllerExchangeNode_NoDeadlineIfStrategyIsATOMIC_SWITCHING(controllerExchangeNode, diagnostics, context);
+		if (result || diagnostics != null) result &= validateControllerExchangeNode_ContainsExactlyOneFadingComponentPartVariable(controllerExchangeNode, diagnostics, context);
 		return result;
 	}
 
@@ -147,7 +146,8 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CONTROLLER_EXCHANGE_NODE__HAS_ONLY_ONE_CREATE_AND_ONE_DESTROY_PART_VARIABLE__EEXPRESSION = "let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables->asOrderedSet() in\r\n" +
+	protected static final String CONTROLLER_EXCHANGE_NODE__HAS_ONLY_ONE_CREATE_AND_ONE_DESTROY_PART_VARIABLE__EEXPRESSION = "let partVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables\r\n" +
+		"->select(pV : componentstorypattern::PartVariable | pV.oclIsKindOf(componentstorypattern::ComponentPartVariable))->asOrderedSet() in\r\n" +
 		"partVariables->size() = 2 and\r\n" +
 		"if partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY else\r\n" +
 		"if partVariables->first().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::DESTROY then partVariables->last().oclAsType(componentstorypattern::PartVariable).bindingOperator = storydiagrams::patterns::BindingOperator::CREATE else\r\n" +
@@ -176,59 +176,33 @@ public class ComponentstorydiagramValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the CorrectNumberOfFadingFunctions constraint of '<em>Controller Exchange Node</em>'.
+	 * The cached validation expression for the ContainsExactlyOneFadingComponentPartVariable constraint of '<em>Controller Exchange Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateControllerExchangeNode_CorrectNumberOfFadingFunctions(ControllerExchangeNode controllerExchangeNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "CorrectNumberOfFadingFunctions", getObjectLabel(controllerExchangeNode, context) },
-						 new Object[] { controllerExchangeNode },
-						 context));
-			}
-			return false;
-		}
-		return true;
-	}
+	protected static final String CONTROLLER_EXCHANGE_NODE__CONTAINS_EXACTLY_ONE_FADING_COMPONENT_PART_VARIABLE__EEXPRESSION = "let fadingComponentPartVariables : OrderedSet(componentstorypattern::PartVariable) = self.componentStoryPattern.oclAsType(componentstorypattern::ComponentStoryPattern).thisVariable.oclAsType(componentstorypattern::ComponentVariable).partVariables->select(pv : componentstorypattern::PartVariable | pv.oclIsKindOf(componentstorypattern::FadingComponentPartVariable))->asOrderedSet()\r\n" +
+		"  in fadingComponentPartVariables->size() = 1";
 
 	/**
-	 * Validates the NoDeadlineIfStrategyIsATOMIC_SWITCHING constraint of '<em>Controller Exchange Node</em>'.
+	 * Validates the ContainsExactlyOneFadingComponentPartVariable constraint of '<em>Controller Exchange Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateControllerExchangeNode_NoDeadlineIfStrategyIsATOMIC_SWITCHING(ControllerExchangeNode controllerExchangeNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(createDiagnostic
-						(Diagnostic.ERROR,
-						 DIAGNOSTIC_SOURCE,
-						 0,
-						 "_UI_GenericConstraint_diagnostic",
-						 new Object[] { "NoDeadlineIfStrategyIsATOMIC_SWITCHING", getObjectLabel(controllerExchangeNode, context) },
-						 new Object[] { controllerExchangeNode },
-						 context));
-			}
-			return false;
-		}
-		return true;
+	public boolean validateControllerExchangeNode_ContainsExactlyOneFadingComponentPartVariable(ControllerExchangeNode controllerExchangeNode, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentstorydiagramPackage.Literals.CONTROLLER_EXCHANGE_NODE,
+				 controllerExchangeNode,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ContainsExactlyOneFadingComponentPartVariable",
+				 CONTROLLER_EXCHANGE_NODE__CONTAINS_EXACTLY_ONE_FADING_COMPONENT_PART_VARIABLE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

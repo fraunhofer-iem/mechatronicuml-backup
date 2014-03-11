@@ -373,12 +373,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String FadingComponentVariable6CreationTool_title;
+	public static String FadingComponentPartVariable6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String FadingComponentVariable6CreationTool_desc;
+	public static String FadingComponentPartVariable6CreationTool_desc;
 
 	/**
 	 * @generated

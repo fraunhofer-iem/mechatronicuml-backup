@@ -1522,8 +1522,8 @@
             genLinks="//@diagram/@links.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="FadingComponentVariable"
-            description="Create new FadingComponentVariable"
+            title="FadingComponentPartVariable"
+            description="Create new FadingComponentPartVariable"
             genNodes="//@diagram/@childNodes.15"/>
       </groups>
     </palette>

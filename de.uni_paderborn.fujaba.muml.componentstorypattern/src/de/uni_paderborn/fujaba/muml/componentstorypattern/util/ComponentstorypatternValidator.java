@@ -2,6 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.componentstorypattern.util;
 
+import de.uni_paderborn.fujaba.muml.componentstorypattern.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -387,7 +388,7 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 */
 	protected static final String PART_VARIABLE__VALID_TYPE_OF_PART_VARIABLE__EEXPRESSION = "if not self.eContainer().oclAsType(ComponentVariable).type.oclIsUndefined() then\r\n" +
 		"\tif self.eContainer().oclAsType(ComponentVariable).type.oclIsKindOf(muml::component::StructuredComponent) then\r\n" +
-		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedParts->includes(self.type.oclAsType(muml::component::ComponentPart))\r\n" +
+		"\t\tself.eContainer().oclAsType(ComponentVariable).type.oclAsType(muml::component::StructuredComponent).embeddedComponentParts->includes(self.type.oclAsType(muml::component::ComponentPart))\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif\r\n" +
@@ -519,20 +520,20 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 	 */
 	protected static final String CONNECTOR_VARIABLE__EXISTING_CONNECTOR_BETWEEN_PORT_VARIABLE_TYPES__EEXPRESSION = "if self.oclIsKindOf(AssemblyVariable) then\r\n" +
 		"\tif not self.oclAsType(AssemblyVariable).type.oclIsUndefined() then\r\n" +
-		"\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->first() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
-		"\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->last()= self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type) or\r\n" +
-		"\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->last() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
-		"\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->first() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type)\r\n" +
+		"\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->first() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
+		"\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->last()= self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type) or\r\n" +
+		"\t\t(self.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->last() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
+		"\t\tself.oclAsType(AssemblyVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->first() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type)\r\n" +
 		"\telse\r\n" +
 		"\t\tfalse\r\n" +
 		"\tendif\r\n" +
 		"else\r\n" +
 		"\tif self.oclIsKindOf(DelegationVariable) then\r\n" +
 		"\t\tif not self.oclAsType(DelegationVariable).type.oclIsUndefined() then\r\n" +
-		"\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->first() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
-		"\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->last() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type) or\r\n" +
-		"\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->last() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
-		"\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).ports->asOrderedSet()->first() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type)\r\n" +
+		"\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->first() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
+		"\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->last() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type) or\r\n" +
+		"\t\t\t(self.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->last() = self.portVariables->asOrderedSet()->first().oclAsType(PortVariable).type and\r\n" +
+		"\t\t\tself.oclAsType(DelegationVariable).type.oclAsType(muml::component::PortConnector).connectorEndpoints->asOrderedSet()->first() = self.portVariables->asOrderedSet()->last().oclAsType(PortVariable).type)\r\n" +
 		"\t\telse\r\n" +
 		"\t\t\tfalse\r\n" +
 		"\t\tendif\t\r\n" +
@@ -672,7 +673,69 @@ public class ComponentstorypatternValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(fadingComponentPartVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePartVariable_SameBindingOperatorAsComponentVariable(fadingComponentPartVariable, diagnostics, context);
 		if (result || diagnostics != null) result &= validatePartVariable_ValidTypeOfPartVariable(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFadingComponentPartVariable_AppliedFadingFunctionIsContainedInTyp(fadingComponentPartVariable, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFadingComponentPartVariable_NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode(fadingComponentPartVariable, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the AppliedFadingFunctionIsContainedInTyp constraint of '<em>Fading Component Part Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFadingComponentPartVariable_AppliedFadingFunctionIsContainedInTyp(FadingComponentPartVariable fadingComponentPartVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "AppliedFadingFunctionIsContainedInTyp", getObjectLabel(fadingComponentPartVariable, context) },
+						 new Object[] { fadingComponentPartVariable },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * The cached validation expression for the NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode constraint of '<em>Fading Component Part Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String FADING_COMPONENT_PART_VARIABLE__NOT_DEFINE_APPLIED_FADING_FUNCTION_FOR_VARIABLE_NOT_CONTAINED_IN_CONTROLLER_EXCHANGE_NODE__EEXPRESSION = "if not self.eContainer().eContainer().eContainer().oclIsTypeOf(componentstorydiagram::ControllerExchangeNode)\r\n" +
+		"\tthen self.appliedFadingFunction.oclIsUndefined()\r\n" +
+		"else true\r\n" +
+		"endif";
+
+	/**
+	 * Validates the NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode constraint of '<em>Fading Component Part Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFadingComponentPartVariable_NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode(FadingComponentPartVariable fadingComponentPartVariable, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentstorypatternPackage.Literals.FADING_COMPONENT_PART_VARIABLE,
+				 fadingComponentPartVariable,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "NotDefineAppliedFadingFunctionForVariableNotContainedInControllerExchangeNode",
+				 FADING_COMPONENT_PART_VARIABLE__NOT_DEFINE_APPLIED_FADING_FUNCTION_FOR_VARIABLE_NOT_CONTAINED_IN_CONTROLLER_EXCHANGE_NODE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

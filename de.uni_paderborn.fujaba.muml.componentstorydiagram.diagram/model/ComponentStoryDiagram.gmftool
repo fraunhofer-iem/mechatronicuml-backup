@@ -125,8 +125,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="FadingComponentVariable"
-          description="Create new FadingComponentVariable"/>
+          title="FadingComponentPartVariable"
+          description="Create new FadingComponentPartVariable"/>
     </tools>
   </palette>
 </gmftool:ToolRegistry>
