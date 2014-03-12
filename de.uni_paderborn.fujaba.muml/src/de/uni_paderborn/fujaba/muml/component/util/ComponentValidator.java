@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.component.util;
 
+import de.uni_paderborn.fujaba.muml.component.*;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -13,6 +14,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import de.uni_paderborn.fujaba.common.validator.MumlValidator;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
@@ -1260,6 +1262,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblySameStructuredComponent(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_SelfAssemblyOnlyForMultiPortsOrMultiParts(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDirectedTypedPortsRequiresSameDataType(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsOrDirectedTypedPorts(assemblyConnector, diagnostics, context);
@@ -1268,6 +1271,37 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresDifferentRoles(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsCompatibleMessageTypes(assemblyConnector, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the AssemblySameStructuredComponent constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_SAME_STRUCTURED_COMPONENT__EEXPRESSION = "-- Assembly must connect port parts within same structured component.\r\n" +
+		"portParts.componentPart.parentComponent->forAll(a, b | a = b)\r\n" +
+		"";
+
+	/**
+	 * Validates the AssemblySameStructuredComponent constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnector_AssemblySameStructuredComponent(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
+				 assemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblySameStructuredComponent",
+				 ASSEMBLY_CONNECTOR__ASSEMBLY_SAME_STRUCTURED_COMPONENT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

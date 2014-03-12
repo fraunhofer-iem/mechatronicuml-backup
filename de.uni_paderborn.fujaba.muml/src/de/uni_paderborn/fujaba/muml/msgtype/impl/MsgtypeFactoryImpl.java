@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.msgtype.impl;
 
+import de.uni_paderborn.fujaba.muml.msgtype.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -32,7 +33,7 @@ public class MsgtypeFactoryImpl extends EFactoryImpl implements MsgtypeFactory {
 	 */
 	public static MsgtypeFactory init() {
 		try {
-			MsgtypeFactory theMsgtypeFactory = (MsgtypeFactory)EPackage.Registry.INSTANCE.getEFactory(MsgtypePackage.eNS_URI);
+			MsgtypeFactory theMsgtypeFactory = (MsgtypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/msgtype/0.4.0"); 
 			if (theMsgtypeFactory != null) {
 				return theMsgtypeFactory;
 			}

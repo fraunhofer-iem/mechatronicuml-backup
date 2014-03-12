@@ -1154,7 +1154,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (assemblyConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"
+			 "constraints", "AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"
 		   });								
 		addAnnotation
 		  (delegationConnectorEClass, 
@@ -1285,6 +1285,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		   source, 
 		   new String[] {
 			 "SelfAssemblyOnlyForMultiPortsOrMultiParts", "--  Self assembly only allowed for multi ports and multi component-parts\nselfConnector implies\nlet portPart : PortPart = portParts->first() in\nportPart.portType.oclIsKindOf(component::DiscretePort) and (portPart.portType.oclAsType(component::DiscretePort).multi or portPart.componentPart.multiPart)\n-- author: bingo, cgerking, see MUML #872",
+			 "AssemblySameStructuredComponent", "-- Assembly must connect port parts within same structured component.\r\nportParts.componentPart.parentComponent->forAll(a, b | a = b)\r\n",
 			 "AssemblyBetweenDirectedTypedPortsRequiresSameDataType", "-- Assembly between DirectedTypedPorts requires same Data Type\nlet directedTypedPorts : Sequence(component::DirectedTypedPort) = portParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort) in\ndirectedTypedPorts->forAll(p1,p2 | p1.dataType = p2.dataType)\n-- author: bingo, cgerking, see MUML #873",
 			 "AssemblyBetweenDiscretePortsOrDirectedTypedPorts", "-- Assembly may only connect exclusively Discrete Ports or exclusively Directed Typed Ports\n(portParts.portType->forAll(oclIsKindOf(component::DiscretePort)) or portParts.portType->forAll(oclIsKindOf(component::DirectedTypedPort)))\n-- author: bingo, cgerking, see MUML #874",
 			 "ValidPortDirections", "-- Assembly may only connect Directed Typed Ports with different Port Direction Kinds\nportParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->isUnique(kind)\n-- author: bingo, cgerking, see MUML #875",

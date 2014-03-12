@@ -199,7 +199,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getUniqueTransitionPriority(final int hint) {
+	public int getUniqueTransitionPriority(int hint) {
 		int nextHighestTransitionPriority = hint;
 		for (; hasOutgoingTransitionOfPriority(nextHighestTransitionPriority); nextHighestTransitionPriority++);
 		return nextHighestTransitionPriority;
@@ -210,7 +210,7 @@ public abstract class VertexImpl extends NamedElementImpl implements Vertex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean hasOutgoingTransitionOfPriority(final int priority) {
+	public boolean hasOutgoingTransitionOfPriority(int priority) {
 		for (Transition transition : getOutgoingTransitions()) {
 			if (transition.getPriority() == priority) {
 				return true;

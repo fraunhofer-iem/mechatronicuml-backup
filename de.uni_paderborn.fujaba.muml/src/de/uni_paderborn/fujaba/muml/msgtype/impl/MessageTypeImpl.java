@@ -131,7 +131,7 @@ public class MessageTypeImpl extends NamedElementImpl implements MessageType {
 	 */
 	public MessageTypeRepository getRepository() {
 		if (eContainerFeatureID() != MsgtypePackage.MESSAGE_TYPE__REPOSITORY) return null;
-		return (MessageTypeRepository)eInternalContainer();
+		return (MessageTypeRepository)eContainer();
 	}
 
 	/**
