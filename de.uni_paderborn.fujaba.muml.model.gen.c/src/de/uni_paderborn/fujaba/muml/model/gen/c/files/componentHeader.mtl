@@ -79,7 +79,7 @@
 	[if component.oclIsKindOf(StructuredComponent)]	
 	[if (component.oclAsType(StructuredComponent).connectors->size() > 0)]
 		#include "../lib/discreteConnection.h"
-		#include "../lib/discreteconnectionList.h"
+		#include "../lib/discreteConnectionList.h"
 	[comment @TODO only inlcude, if needed/]
 		#include "../lib/continuousConnection.h"
 	[/if]	

@@ -209,12 +209,6 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 
 
 
-[**
- * Generates code to instanciate a given component instance configuration.
- * (based on the component type files). Before using this template, it is necessary to
- * call 'generateTypeFiles' and 'generateRTSCFiles'!
- * @param modelElementCategory
- */]
 [template public generateInstanceConfiguration(modelElementCategory : ModelElementCategory) ? (key.matches('de.uni_paderborn.fujaba.muml.instance.category')){
 cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 ]
@@ -222,6 +216,23 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 //instantiate components of [cInst.getName()/]
 	[cInst.getVariableName()/] = [getCreateMethodName(cInst)/]();
 	[cInst.configurateInstance()/]
+[comment]
+[if cInst.oclIsKindOf(StructuredComponentInstance)]
+[for (conInst : ConnectorInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.portConnectorInstances)]
+	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([cInst.getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).portType)/],
+	[cInst.getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).portType)/], [conInst.isBidirectional()/]);
+	
+	DiscreteConnectionList_add([cInst.getVariableName()/],[conInst.getVariableName()/]);
+[/for]
+[for (conInst : ConnectorInstance | cic.portConnectorInstances)]
+	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([conInst.getEmbeddingComponent().getVariableName()/]->[conInst.getSourceComponent().getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).portType)/],
+	[conInst.getEmbeddingComponent().getVariableName()/]->[conInst.getTargetComponent().getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).portType)/], [conInst.isBidirectional()/]);
+
+	DiscreteConnectionList_add([conInst.getEmbeddingComponent().getVariableName()/]->connectorList,[conInst.getVariableName()/]);
+
+[/for]
+[/if]
+[/comment]
 [/for]
 [/template]
 
@@ -240,28 +251,12 @@ cic : ComponentInstanceConfiguration = modelElementCategory.getMainCIC();}
 		[configurateInstance(partInstance)/]
 	[/for]
 [/for]
+[if cInst.oclIsKindOf(StructuredComponentInstance)]
 [for (conInst : ConnectorInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.portConnectorInstances)]
-	[if conInst.isDiscreteConnection()]
-	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([cInst.getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(1).oclAsType(PortInstance).portType)/],
-	[cInst.getVariableName()/]->[getVariableName(conInst.connectorEndpointInstances->at(2).oclAsType(PortInstance).portType)/], [conInst.isBidirectional()/]);
-	
-	DiscreteConnectionList_add([cInst.getVariableName()/],[conInst.getVariableName()/])
-	[/if]
-[/for]
-[comment]
-[for (compType : Component | cInst.componentType.oclAsType(StaticStructuredComponent).embeddedComponentParts.componentType)]
-	[for (cPartInst : ComponentInstance | cInst.oclAsType(StructuredComponentInstance).embeddedCIC.componentInstances) ? (componentType == compType)]
-			
-	[/for]
+	DiscreteConnection * [conInst.getVariableName()/] = DiscreteConnection_create([getVariablePath(conInst.getSourcePort())/],[getVariablePath(conInst.getTargetPort())/], [conInst.isBidirectional()/]);
 
-	[if (not subComp.componentPart.multiPart)]
-		[subComp.parentCIC.parentStructuredComponentInstance.getVariableName()/]->[subComp.getVariableName()/] = [subComp.getCreateMethodName()/]();
-		[if (subComp.oclIsKindOf(StructuredComponentInstance))]
-			[subComp.getClassName()/] * [subComp.getVariableName()/] = [subComp.parentCIC.parentStructuredComponentInstance.getVariableName()/]->[subComp.getVariableName()/];
-			[subComp.configurateInstance()/]
-		[/if]
-	[/if]
+	DiscreteConnectionList_add([cInst.getVariableName()/]->connectorList,[conInst.getVariableName()/]);
 [/for]
-[/comment]
+[/if]
+
 [/template]
-

@@ -74,14 +74,6 @@ clean:
 # Targets
 TARGET = nxtOSEKImpl
 TARGET_SOURCES := \
-		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
-		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.oclAsType(ComponentInstance).componentType) ? (oclIsKindOf(AtomicComponent))][for (rtsc:RealtimeStatechart | comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))]		RTSCs/[rtsc.getClassName().toLowerFirst()/].c\
-[/for][/for]
-		[/if]
-		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-		[for (comp : Component | modelElementCategory.modelElements.oclAsType(ComponentInstance).componentType)]		components/[comp.getClassName().toLowerFirst()/].c\
-[/for][/if][/for]
 		lib/syncChannel.c\
 		lib/discreteConnection.c\
 		lib/discreteConnectionList.c\
@@ -90,6 +82,16 @@ TARGET_SOURCES := \
 		lib/ports/discretePort.c\ 
 		msg/messages.c\
 		operations/Operations.c
+		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)][for (rtsc:RealtimeStatechart | comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))]		RTSCs/[rtsc.getClassName().toLowerFirst()/].c\
+[/for][/for]
+		[/if]
+		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]		components/[comp.getClassName().toLowerFirst()/].c\
+[/for][/if][/for]
+		main.c
+
 		
 TOPPERS_OSEK_OIL_SOURCE := ./nxtOSEK.oil
 BUILD_MODE = ROM_ONLY
