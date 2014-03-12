@@ -439,7 +439,7 @@
 		[comment checks the clock guard /]		
 		[if (transition.clockConstraints->size()>0)]
 	 		[if (transition.triggerMessageEvent->size() > 0)]
-			
+			 &&
 			[/if]
 	 		[getClockConstraint(rtsc, transition)/]
 		[/if]
@@ -447,7 +447,7 @@
 		[comment checks the conditional guard/]		
 		[if (transition.guard->size()>0)]
 	 		[if (transition.clockConstraints->size()>0 or transition.triggerMessageEvent->size() > 0)]
-	 		
+	 		&&
 			[/if]
 	 		[getGuardConstraint(component, rtsc, transition)/]
 
