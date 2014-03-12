@@ -1154,7 +1154,7 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 		  (assemblyConnectorEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"
+			 "constraints", "AssemblyNotBetweenHybridPorts AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"
 		   });								
 		addAnnotation
 		  (delegationConnectorEClass, 
@@ -1291,7 +1291,8 @@ public class ComponentPackageImpl extends EPackageImpl implements ComponentPacka
 			 "ValidPortDirections", "-- Assembly may only connect Directed Typed Ports with different Port Direction Kinds\nportParts.portType->select(oclIsKindOf(component::DirectedTypedPort)).oclAsType(component::DirectedTypedPort)->isUnique(kind)\n-- author: bingo, cgerking, see MUML #875",
 			 "AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol", "-- Assembly may only connect ports refining roles of the same coordination protocol\nportParts.refinedRole->reject(oclIsUndefined())->forAll(r1,r2 | r1.coordinationProtocol = r2.coordinationProtocol)\n-- author: bingo, cgerking, see MUML #876",
 			 "AssemblyBetweenDiscretePortsRequiresDifferentRoles", "-- Assembly may only connect ports refining different roles\nportParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)\n-- author: bingo, cgerking, see MUML #877",
-			 "AssemblyBetweenDiscretePortsCompatibleMessageTypes", "-- Assembly may only connect discrete ports with compatible message types (a.senderMessageTypes = b.receiverMessageTypes)\nportParts.portType->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->\nforAll(p1, p2 | p1 <> p2 implies p1.senderMessageTypes->asSet() = p2.receiverMessageTypes->asSet())\n-- author: bingo, cgerking, see MUML #878"
+			 "AssemblyBetweenDiscretePortsCompatibleMessageTypes", "-- Assembly may only connect discrete ports with compatible message types (a.senderMessageTypes = b.receiverMessageTypes)\nportParts.portType->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->\nforAll(p1, p2 | p1 <> p2 implies p1.senderMessageTypes->asSet() = p2.receiverMessageTypes->asSet())\n-- author: bingo, cgerking, see MUML #878",
+			 "AssemblyNotBetweenHybridPorts", "-- Assembly must not connect two Hybrid Ports\nportParts->notEmpty() implies not portParts.portType->reject(oclIsUndefined())->forAll(oclIsKindOf(component::HybridPort))\n"
 		   });			
 		addAnnotation
 		  (getAssemblyConnector_CoordinationProtocolPart(), 

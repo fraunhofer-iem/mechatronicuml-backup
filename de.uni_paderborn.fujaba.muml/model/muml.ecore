@@ -222,7 +222,7 @@
         <details key="documentation" value="This class represents an assembly connector. Assembly connectors connect the port parts of two component parts."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"/>
+        <details key="constraints" value="AssemblyNotBetweenHybridPorts AssemblySameStructuredComponent SelfAssemblyOnlyForMultiPortsOrMultiParts AssemblyBetweenDirectedTypedPortsRequiresSameDataType AssemblyBetweenDiscretePortsOrDirectedTypedPorts ValidPortDirections AssemblyBetweenDiscretePortsRequiresSameCoordinationProtocol AssemblyBetweenDiscretePortsRequiresDifferentRoles AssemblyBetweenDiscretePortsCompatibleMessageTypes"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
         <details key="SelfAssemblyOnlyForMultiPortsOrMultiParts" value="--  Self assembly only allowed for multi ports and multi component-parts&#xA;selfConnector implies&#xA;let portPart : PortPart = portParts->first() in&#xA;portPart.portType.oclIsKindOf(component::DiscretePort) and (portPart.portType.oclAsType(component::DiscretePort).multi or portPart.componentPart.multiPart)&#xA;-- author: bingo, cgerking, see MUML #872"/>
@@ -234,6 +234,7 @@
             value="-- Assembly may only connect ports refining roles of the same coordination protocol&#xA;portParts.refinedRole->reject(oclIsUndefined())->forAll(r1,r2 | r1.coordinationProtocol = r2.coordinationProtocol)&#xA;-- author: bingo, cgerking, see MUML #876"/>
         <details key="AssemblyBetweenDiscretePortsRequiresDifferentRoles" value="-- Assembly may only connect ports refining different roles&#xA;portParts.refinedRole->reject(oclIsUndefined())->isUnique(r | r)&#xA;-- author: bingo, cgerking, see MUML #877"/>
         <details key="AssemblyBetweenDiscretePortsCompatibleMessageTypes" value="-- Assembly may only connect discrete ports with compatible message types (a.senderMessageTypes = b.receiverMessageTypes)&#xA;portParts.portType->select(oclIsKindOf(component::DiscretePort)).oclAsType(component::DiscretePort)->&#xA;forAll(p1, p2 | p1 &lt;> p2 implies p1.senderMessageTypes->asSet() = p2.receiverMessageTypes->asSet())&#xA;-- author: bingo, cgerking, see MUML #878"/>
+        <details key="AssemblyNotBetweenHybridPorts" value="-- Assembly must not connect two Hybrid Ports&#xA;portParts->notEmpty() implies not portParts.portType->reject(oclIsUndefined())->forAll(oclIsKindOf(component::HybridPort))&#xA;"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="coordinationProtocolPart"
           eType="#//component/CoordinationProtocolPart" changeable="false" volatile="true"

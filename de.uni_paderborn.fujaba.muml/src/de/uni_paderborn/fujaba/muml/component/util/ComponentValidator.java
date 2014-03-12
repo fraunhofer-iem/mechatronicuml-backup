@@ -1262,6 +1262,7 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(assemblyConnector, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyNotBetweenHybridPorts(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblySameStructuredComponent(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_SelfAssemblyOnlyForMultiPortsOrMultiParts(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDirectedTypedPortsRequiresSameDataType(assemblyConnector, diagnostics, context);
@@ -1271,6 +1272,37 @@ public class ComponentValidator extends MumlValidator {
 		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsRequiresDifferentRoles(assemblyConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAssemblyConnector_AssemblyBetweenDiscretePortsCompatibleMessageTypes(assemblyConnector, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyNotBetweenHybridPorts constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ASSEMBLY_CONNECTOR__ASSEMBLY_NOT_BETWEEN_HYBRID_PORTS__EEXPRESSION = "-- Assembly must not connect two Hybrid Ports\n" +
+		"portParts->notEmpty() implies not portParts.portType->reject(oclIsUndefined())->forAll(oclIsKindOf(component::HybridPort))\n" +
+		"";
+
+	/**
+	 * Validates the AssemblyNotBetweenHybridPorts constraint of '<em>Assembly Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAssemblyConnector_AssemblyNotBetweenHybridPorts(AssemblyConnector assemblyConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ComponentPackage.Literals.ASSEMBLY_CONNECTOR,
+				 assemblyConnector,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "AssemblyNotBetweenHybridPorts",
+				 ASSEMBLY_CONNECTOR__ASSEMBLY_NOT_BETWEEN_HYBRID_PORTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
