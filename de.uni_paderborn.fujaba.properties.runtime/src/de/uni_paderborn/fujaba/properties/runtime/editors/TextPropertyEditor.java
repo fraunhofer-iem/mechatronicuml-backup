@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
@@ -82,8 +83,17 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 	protected void modify() {
 		// Do not read from text field, as it could have been disposed, see comment in dispose()
 		//String newValue = text.getText();
-		String newValue = currentValue; 
-		if (text != null && !newValue.equals(value)) {
+		Object newValue = currentValue; 
+		if (text != null && !newValue.equals(value.toString())) {
+			if (EcorePackage.Literals.EDOUBLE.equals(feature.getEType())) {
+				newValue = Double.parseDouble(currentValue);
+			} else if (EcorePackage.Literals.EINT.equals(feature.getEType())) {
+				newValue = Integer.parseInt(currentValue);
+			} else if (EcorePackage.Literals.ELONG.equals(feature.getEType())) {
+				newValue = Long.parseLong(currentValue);
+			} else if (EcorePackage.Literals.EFLOAT.equals(feature.getEType())) {
+				newValue = Float.parseFloat(currentValue);
+			}
 			setValue(newValue);
 		}
 	}
