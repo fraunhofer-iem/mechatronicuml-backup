@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ComponentStoryDiagram Tabbed Properties
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.componentstorydiagram.edit.properties; singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
+ org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.muml,
+ org.eclipse.emf.edit,
+ de.uni_paderborn.fujaba.properties.runtime,
+ org.eclipse.ui,
+ org.storydriven.core.edit,
+ org.storydriven.core.edit.properties,
+ de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui,
+ de.uni_paderborn.fujaba.muml.common,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.edit,
+ de.uni_paderborn.fujaba.muml.reconfiguration,
+ de.uni_paderborn.fujaba.muml.reconfiguration.edit,
+ de.uni_paderborn.fujaba.muml.edit.properties,
+ de.uni_paderborn.fujaba.muml.reconfiguration.ui.edit.properties;bundle-version="0.4.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: 
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.componentstorydiagram.editor,
+ de.uni_paderborn.fujaba.muml.componentstorydiagram.properties.tabs
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
