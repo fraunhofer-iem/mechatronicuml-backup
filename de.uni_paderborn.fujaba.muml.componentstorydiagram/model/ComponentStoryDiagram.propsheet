@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler>
+    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.common/transformations/muml-propsheet.qvto"/>
+    <customTransformations uri="platform:/plugin/de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui/transformations/xtext-propsheet.qvto"/>
+  </reconciler>
+  <genModel href="ComponentStoryDiagram.genmodel#/"/>
+  <referencedGenerators href="../../org.storydriven.core.edit.properties/model/core.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.componentstorydiagram.edit.properties" name="ComponentStoryDiagram Tabbed Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4.0.qualifier">
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit</requiredBundles>
+    <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.common</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.componentstorydiagram</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.componentstorydiagram.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.reconfiguration.edit.properties</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+  <tabs id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
+  <packages>
+    <genPackage href="ComponentStoryDiagram.genmodel#//componentstorydiagram"/>
+    <classes>
+      <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryRule"/>
+      <superClasses href="../../de.uni_paderborn.fujaba.muml.reconfiguration/model/MumlReconfiguration.propsheet#//@packages.1/@classes.20"/>
+    </classes>
+    <classes>
+      <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryNode"/>
+      <properties category="//@packages.0/@classes.1/@propertyCategories.0">
+        <genFeature href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ComponentStoryNode/forEach"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Booleans" properties="//@packages.0/@classes.1/@properties.0"/>
+    </classes>
+    <classes>
+      <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/ControllerExchangeNode"/>
+    </classes>
+    <classes>
+      <genClass href="ComponentStoryDiagram.genmodel#//componentstorydiagram/SendReconfigurationMessageExpression"/>
+      <properties>
+        <genFeature href="ComponentStoryDiagram.genmodel#//componentstorydiagram/SendReconfigurationMessageExpression/reconfigurationMessageType"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>
