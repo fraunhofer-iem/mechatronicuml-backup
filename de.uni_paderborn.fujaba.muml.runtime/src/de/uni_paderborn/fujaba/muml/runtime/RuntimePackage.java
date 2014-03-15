@@ -1096,13 +1096,31 @@ public interface RuntimePackage extends EPackage {
 	int SINGLE_ROLE_INSTANCE__PREVIOUS = ROLE_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>First</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_ROLE_INSTANCE__FIRST = ROLE_INSTANCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Last</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SINGLE_ROLE_INSTANCE__LAST = ROLE_INSTANCE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Single Role Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_ROLE_INSTANCE_FEATURE_COUNT = ROLE_INSTANCE_FEATURE_COUNT + 3;
+	int SINGLE_ROLE_INSTANCE_FEATURE_COUNT = ROLE_INSTANCE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1722,13 +1740,31 @@ public interface RuntimePackage extends EPackage {
 	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__PREVIOUS = RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>First</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__FIRST = RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Last</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE__LAST = RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Discrete Single Port Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE_FEATURE_COUNT = RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 3;
+	int RUNTIME_DISCRETE_SINGLE_PORT_INSTANCE_FEATURE_COUNT = RUNTIME_DISCRETE_PORT_INSTANCE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.runtime.impl.RuntimeDiscreteMultiPortInstanceImpl <em>Discrete Multi Port Instance</em>}' class.
