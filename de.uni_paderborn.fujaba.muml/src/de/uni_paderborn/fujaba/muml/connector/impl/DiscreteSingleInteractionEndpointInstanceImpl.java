@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.connector.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -26,6 +27,8 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointI
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteSingleInteractionEndpointInstanceImpl#getMultiInteractionEndpointInstance <em>Multi Interaction Endpoint Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteSingleInteractionEndpointInstanceImpl#getNext <em>Next</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteSingleInteractionEndpointInstanceImpl#getPrevious <em>Previous</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteSingleInteractionEndpointInstanceImpl#getFirst <em>First</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.impl.DiscreteSingleInteractionEndpointInstanceImpl#getLast <em>Last</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +63,26 @@ public abstract class DiscreteSingleInteractionEndpointInstanceImpl extends Disc
 	 * @ordered
 	 */
 	protected DiscreteSingleInteractionEndpointInstance previous;
+
+	/**
+	 * The cached setting delegate for the '{@link #getFirst() <em>First</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirst()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate FIRST__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ConnectorPackage.Literals.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__FIRST).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getLast() <em>Last</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLast()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate LAST__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ConnectorPackage.Literals.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__LAST).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -265,6 +288,42 @@ public abstract class DiscreteSingleInteractionEndpointInstanceImpl extends Disc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DiscreteSingleInteractionEndpointInstance getFirst() {
+		return (DiscreteSingleInteractionEndpointInstance)FIRST__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstance basicGetFirst() {
+		return (DiscreteSingleInteractionEndpointInstance)FIRST__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstance getLast() {
+		return (DiscreteSingleInteractionEndpointInstance)LAST__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstance basicGetLast() {
+		return (DiscreteSingleInteractionEndpointInstance)LAST__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -319,6 +378,12 @@ public abstract class DiscreteSingleInteractionEndpointInstanceImpl extends Disc
 			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS:
 				if (resolve) return getPrevious();
 				return basicGetPrevious();
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__FIRST:
+				if (resolve) return getFirst();
+				return basicGetFirst();
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__LAST:
+				if (resolve) return getLast();
+				return basicGetLast();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -379,6 +444,10 @@ public abstract class DiscreteSingleInteractionEndpointInstanceImpl extends Disc
 				return next != null;
 			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS:
 				return previous != null;
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__FIRST:
+				return FIRST__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__LAST:
+				return LAST__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

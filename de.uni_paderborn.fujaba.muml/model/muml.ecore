@@ -2209,6 +2209,24 @@
           <details key="documentation" value="If this is an instance of a multi discrete interaction endpoint, refers to the previous single instance."/>
         </eAnnotations>
       </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="first" eType="#//connector/DiscreteSingleInteractionEndpointInstance"
+          changeable="false" volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If this DiscreteInteractionEndpointInstance is used as a subInteractionEndpointInstance of a DiscreteMultiInteractionEndpointInstance,&#xD;&#xA;then this derived reference allows to resolve the first subInteractionEndpointInstance directly."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if self.multiInteractionEndpointInstance.oclIsUndefined() then null else self.multiInteractionEndpointInstance.first endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="last" eType="#//connector/DiscreteSingleInteractionEndpointInstance"
+          changeable="false" volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="If this DiscreteInteractionEndpointInstance is used as a subInteractionEndpointInstance of a DiscreteMultiInteractionEndpointInstance,&#xD;&#xA;then this derived reference allows to resolve the last subInteractionEndpointInstance directly."/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="derivation" value="if self.multiInteractionEndpointInstance.oclIsUndefined() then null else self.multiInteractionEndpointInstance.last endif"/>
+        </eAnnotations>
+      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DiscreteMultiInteractionEndpointInstance"
         abstract="true" eSuperTypes="#//connector/DiscreteInteractionEndpointInstance">

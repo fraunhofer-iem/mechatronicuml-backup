@@ -9,6 +9,7 @@ package de.uni_paderborn.fujaba.muml.instance.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -28,6 +29,8 @@ import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl#getMultiInteractionEndpointInstance <em>Multi Interaction Endpoint Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl#getNext <em>Next</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl#getPrevious <em>Previous</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl#getFirst <em>First</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.impl.DiscreteSinglePortInstanceImpl#getLast <em>Last</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,6 +64,24 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	 * @ordered
 	 */
 	protected DiscreteSingleInteractionEndpointInstance previous;
+	/**
+	 * The cached setting delegate for the '{@link #getFirst() <em>First</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirst()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate FIRST__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ConnectorPackage.Literals.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__FIRST).getSettingDelegate();
+	/**
+	 * The cached setting delegate for the '{@link #getLast() <em>Last</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLast()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate LAST__ESETTING_DELEGATE = ((EStructuralFeature.Internal)ConnectorPackage.Literals.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__LAST).getSettingDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -265,6 +286,42 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DiscreteSingleInteractionEndpointInstance getFirst() {
+		return (DiscreteSingleInteractionEndpointInstance)FIRST__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstance basicGetFirst() {
+		return (DiscreteSingleInteractionEndpointInstance)FIRST__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstance getLast() {
+		return (DiscreteSingleInteractionEndpointInstance)LAST__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiscreteSingleInteractionEndpointInstance basicGetLast() {
+		return (DiscreteSingleInteractionEndpointInstance)LAST__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -319,6 +376,12 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__PREVIOUS:
 				if (resolve) return getPrevious();
 				return basicGetPrevious();
+			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__FIRST:
+				if (resolve) return getFirst();
+				return basicGetFirst();
+			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__LAST:
+				if (resolve) return getLast();
+				return basicGetLast();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -379,6 +442,10 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 				return next != null;
 			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__PREVIOUS:
 				return previous != null;
+			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__FIRST:
+				return FIRST__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__LAST:
+				return LAST__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -395,6 +462,8 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 				case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE: return ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE;
 				case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__NEXT: return ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__NEXT;
 				case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__PREVIOUS: return ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS;
+				case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__FIRST: return ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__FIRST;
+				case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__LAST: return ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__LAST;
 				default: return -1;
 			}
 		}
@@ -413,6 +482,8 @@ public class DiscreteSinglePortInstanceImpl extends DiscretePortInstanceImpl imp
 				case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE: return InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__MULTI_INTERACTION_ENDPOINT_INSTANCE;
 				case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__NEXT: return InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__NEXT;
 				case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__PREVIOUS: return InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__PREVIOUS;
+				case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__FIRST: return InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__FIRST;
+				case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__LAST: return InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__LAST;
 				default: return -1;
 			}
 		}

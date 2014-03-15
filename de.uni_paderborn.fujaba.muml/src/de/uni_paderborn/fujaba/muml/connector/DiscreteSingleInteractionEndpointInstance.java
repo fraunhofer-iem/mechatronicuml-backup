@@ -22,6 +22,8 @@ package de.uni_paderborn.fujaba.muml.connector;
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance#getMultiInteractionEndpointInstance <em>Multi Interaction Endpoint Instance</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance#getNext <em>Next</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance#getPrevious <em>Previous</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance#getFirst <em>First</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance#getLast <em>Last</em>}</li>
  * </ul>
  * </p>
  *
@@ -122,5 +124,37 @@ public interface DiscreteSingleInteractionEndpointInstance extends DiscreteInter
 	 * @generated
 	 */
 	void setPrevious(DiscreteSingleInteractionEndpointInstance value);
+
+	/**
+	 * Returns the value of the '<em><b>First</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If this DiscreteInteractionEndpointInstance is used as a subInteractionEndpointInstance of a DiscreteMultiInteractionEndpointInstance,
+	 * then this derived reference allows to resolve the first subInteractionEndpointInstance directly.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>First</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteSingleInteractionEndpointInstance_First()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.multiInteractionEndpointInstance.oclIsUndefined() then null else self.multiInteractionEndpointInstance.first endif'"
+	 * @generated
+	 */
+	DiscreteSingleInteractionEndpointInstance getFirst();
+
+	/**
+	 * Returns the value of the '<em><b>Last</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * If this DiscreteInteractionEndpointInstance is used as a subInteractionEndpointInstance of a DiscreteMultiInteractionEndpointInstance,
+	 * then this derived reference allows to resolve the last subInteractionEndpointInstance directly.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Last</em>' reference.
+	 * @see de.uni_paderborn.fujaba.muml.connector.ConnectorPackage#getDiscreteSingleInteractionEndpointInstance_Last()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.multiInteractionEndpointInstance.oclIsUndefined() then null else self.multiInteractionEndpointInstance.last endif'"
+	 * @generated
+	 */
+	DiscreteSingleInteractionEndpointInstance getLast();
 
 } // DiscreteSingleInteractionEndpointInstance
