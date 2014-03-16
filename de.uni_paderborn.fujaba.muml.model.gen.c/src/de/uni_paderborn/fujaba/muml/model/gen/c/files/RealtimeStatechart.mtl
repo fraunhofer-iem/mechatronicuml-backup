@@ -21,8 +21,8 @@
  * @param component the component which is embedding the statechart
  * @param rtsc the realtime statechart
  */]
-[template public generate_RTSC(component : Component, rtsc : RealtimeStatechart) post(cdtbeautifier())]
-	[file (getFileName(rtsc, false, false), false, 'UTF-8')]
+[template public generate_RTSC(component : Component, rtsc : RealtimeStatechart, path : String) post(cdtbeautifier())]
+	[file (path+getFileName(rtsc, false, false), false, 'UTF-8')]
 
 		////////////////////////////////////////////////////////////////////////////////
 		// Includes

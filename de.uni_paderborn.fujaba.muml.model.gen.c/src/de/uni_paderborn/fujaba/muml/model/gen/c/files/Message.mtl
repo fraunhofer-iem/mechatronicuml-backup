@@ -19,10 +19,10 @@
 [**
  * The documentation of the template generateMessageFiles.
  */]
-[template public generateMessageFiles(root : RootNode)]
+[template public generateMessageFiles(root : RootNode, path : String)]
 
-[generateMessageClass(root)/]
-[generateMessageHeader(root)/]
+[generateMessageClass(root, path)/]
+[generateMessageHeader(root, path)/]
 
 [/template]
 
@@ -30,9 +30,9 @@
 [**
  * The documentation of the template generateMessageClass.
  */]
-[template public generateMessageClass(root : RootNode)]
+[template public generateMessageClass(root : RootNode, path : String)]
 
-[file ('msg/messages.h', false, 'UTF-8')]
+[file (path+'msg/messages.h', false, 'UTF-8')]
 
 #ifndef MESSAGES_H_
 #define MESSAGES_H_
@@ -53,9 +53,9 @@
 [**
  * The documentation of the template generateMessageHeader.
  */]
-[template public generateMessageHeader(root : RootNode)]
+[template public generateMessageHeader(root : RootNode, path : String)]
 
-[file ('msg/messages.c', false, 'UTF-8')]
+[file (path+'msg/messages.c', false, 'UTF-8')]
 
 #include "../lib/event.h"
 

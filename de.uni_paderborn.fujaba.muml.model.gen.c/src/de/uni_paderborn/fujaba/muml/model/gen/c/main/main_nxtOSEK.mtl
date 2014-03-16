@@ -38,24 +38,24 @@
 
 [comment create files for every component type/]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
-[generateTypeFiles(modelElementCategory)/]
+[generateTypeFiles(modelElementCategory, '')/]
 [/if]
 [/for]
 
 [comment create message file/]
-[generateMessageFiles(aRootNode)/]
+[generateMessageFiles(aRootNode,'')/]
 
 [comment craeate files for RTSCs/]
-[generateRTSCFiles(aRootNode)/]
+[generateRTSCFiles(aRootNode,'')/]
 
 [comment create makefile for gcc/]
-[generateMakeFileForNXTOSEK(aRootNode)/]
+[generateMakeFileForNXTOSEK(aRootNode,'')/]
 
 [comment create OIL file/]
-[generateOILFile(aRootNode)/]
+[generateOILFile(aRootNode,'')/]
 
 [comment create Operation files/]
-[generateOperationFiles(aRootNode)/]
+[generateOperationFiles(aRootNode,'')/]
 
 
 [comment create 'main.c'/]
@@ -173,10 +173,10 @@ ChainTask(Task_Main);
  * (if modelElementCategory is 'components'
  * @param modelElementCategory
  */]
-[template public generateTypeFiles(modelElementCategory : ModelElementCategory)? (key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
+[template public generateTypeFiles(modelElementCategory : ModelElementCategory, path: String)? (key.matches('de.uni_paderborn.fujaba.muml.components.category'))]
 [for (component : Component | modelElementCategory.modelElements.oclAsType(Component))]
-[generate_ComponentHeader(component)/]
-[generate_ComponentClass(component)/]
+[generate_ComponentHeader(component, path)/]
+[generate_ComponentClass(component, path)/]
 [/for]
 [/template]
 
@@ -186,10 +186,10 @@ ChainTask(Task_Main);
  * an atomic component of the model (if modelElementCategory is 'realtimestatechart'
  * @param modelElementCategory
  */]
-[template public generateRTSCFiles(rootNode : RootNode) ]
+[template public generateRTSCFiles(rootNode : RootNode, path : String) ]
 [for (comp: AtomicComponent | rootNode.eAllContents(AtomicComponent))]
-[generate_RTSCHeader(comp, comp.behavior.oclAsType(RealtimeStatechart))/]
-[generate_RTSC(comp, comp.behavior.oclAsType(RealtimeStatechart))/]
+[generate_RTSCHeader(comp, comp.behavior.oclAsType(RealtimeStatechart),path)/]
+[generate_RTSC(comp, comp.behavior.oclAsType(RealtimeStatechart),path)/]
 [/for]
 [/template]
 

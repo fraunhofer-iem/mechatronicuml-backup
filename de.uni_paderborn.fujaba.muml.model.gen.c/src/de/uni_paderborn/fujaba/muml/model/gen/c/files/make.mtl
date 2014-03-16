@@ -11,9 +11,9 @@
 
 [import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
 [import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
-[template public generateMakeFile(aRootNode : RootNode)]
+[template public generateMakeFile(aRootNode : RootNode, path : String)]
 
-[file ('makefile', false, 'UTF-8')]
+[file (path+'makefile', false, 'UTF-8')]
 [for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 RTSC = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if (comp.oclIsKindOf(AtomicComponent))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
@@ -69,8 +69,8 @@ clean:
 [/template]
 
 
-[template public generateMakeFileForNXTOSEK(aRootNode : RootNode)]
-[file ('makefile', false, 'UTF-8')]
+[template public generateMakeFileForNXTOSEK(aRootNode : RootNode, path : String)]
+[file (path+'makefile', false, 'UTF-8')]
 # Targets
 TARGET = nxtOSEKImpl
 TARGET_SOURCES := \

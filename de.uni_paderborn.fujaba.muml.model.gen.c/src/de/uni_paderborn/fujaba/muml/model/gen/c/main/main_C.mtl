@@ -34,21 +34,21 @@
 
 [comment create files for every component type/]
 [if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
-[generateTypeFiles(modelElementCategory)/]
+[generateTypeFiles(modelElementCategory, '')/]
 [/if]
 [/for]
 
 [comment create message file/]
-[generateMessageFiles(aRootNode)/]
+[generateMessageFiles(aRootNode,'')/]
 
 [comment craeate files for RTSCs/]
-[generateRTSCFiles(aRootNode)/]
+[generateRTSCFiles(aRootNode,'')/]
 
 [comment create makefile for gcc/]
-[generateMakeFile(aRootNode)/]
+[generateMakeFile(aRootNode,'')/]
 
 [comment create Operation files/]
-[generateOperationFiles(aRootNode)/]
+[generateOperationFiles(aRootNode,'')/]
 
 [comment create 'main.c'/]
 [file('main.c',false,'UTF-8')]
@@ -126,10 +126,10 @@ while (1){
  * (if modelElementCategory is 'components'
  * @param modelElementCategory
  */]
-[template public generateTypeFiles(modelElementCategory : ModelElementCategory)? (key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+[template public generateTypeFiles(modelElementCategory : ModelElementCategory, path: String)? (key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 [for (component : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
-[generate_ComponentHeader(component)/]
-[generate_ComponentClass(component)/]
+[generate_ComponentHeader(component, path)/]
+[generate_ComponentClass(component, path)/]
 [/for]
 [/template]
 
@@ -139,13 +139,13 @@ while (1){
  * an atomic component of the model (if modelElementCategory is 'realtimestatechart'
  * @param modelElementCategory
  */]
-[template public generateRTSCFiles(rootNode : RootNode) ]
+[template public generateRTSCFiles(rootNode : RootNode, path: String) ]
 [for (modelElementCategory : ModelElementCategory | rootNode.categories)]
 	[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)]
 		[let aComp : AtomicComponent = comp.oclAsType(AtomicComponent)]
-			[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart))/]
-			[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart))/]
+			[generate_RTSCHeader(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
+			[generate_RTSC(aComp, aComp.behavior.oclAsType(RealtimeStatechart), path)/]
 		[/let]
 		[/for]
 	[/if]
