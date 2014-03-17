@@ -24,11 +24,11 @@ public class FrequencyEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addFrequencyValueEditor(null, true);
+			addFrequencyValue_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addFrequencyUnitEditor(null, true);
+			addFrequencyUnit_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,18 +36,20 @@ public class FrequencyEditor
 	/**
 	 * @generated
 	 */
-	protected void addFrequencyValueEditor(String category, boolean front) {
-		addEditorToCategory(category, createFrequencyValueEditor(), front);
+	protected void addFrequencyValue_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createFrequencyValue_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFrequencyValueEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFrequencyValue_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
-						.getFrequency_Value(), 3);
+						.getFrequency_Value(), false);
 
 		editor.setTooltipMessage("The value of the frequency.");
 
@@ -58,14 +60,16 @@ public class FrequencyEditor
 	/**
 	 * @generated
 	 */
-	protected void addFrequencyUnitEditor(String category, boolean front) {
-		addEditorToCategory(category, createFrequencyUnitEditor(), front);
+	protected void addFrequencyUnit_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createFrequencyUnit_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFrequencyUnitEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createFrequencyUnit_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE

@@ -24,7 +24,7 @@ public abstract class MemoryResourceInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMemoryResourceInstanceMemorySizeEditor(null, false);
+			addMemoryResourceInstanceMemorySize_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -32,16 +32,17 @@ public abstract class MemoryResourceInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addMemoryResourceInstanceMemorySizeEditor(String category,
-			boolean front) {
+	protected void addMemoryResourceInstanceMemorySize_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createMemoryResourceInstanceMemorySizeEditor(), front);
+				createMemoryResourceInstanceMemorySize_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceInstanceMemorySizeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceInstanceMemorySize_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE

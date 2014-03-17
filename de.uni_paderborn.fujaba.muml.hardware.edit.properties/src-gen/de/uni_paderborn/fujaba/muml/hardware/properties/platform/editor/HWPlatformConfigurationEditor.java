@@ -55,8 +55,9 @@ public class HWPlatformConfigurationEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
-					tab);
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

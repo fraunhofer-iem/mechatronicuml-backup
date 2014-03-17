@@ -30,27 +30,27 @@ public abstract class CommunicationMediaEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaIsSerialEditor(
+			addCommunicationMediaIsSerial_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaProtocolEditor(null, true);
+			addCommunicationMediaProtocol_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaConnectedHWPortPartsEditor(
+			addCommunicationMediaConnectedHWPortParts_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaConnectedBridgesEditor(
+			addCommunicationMediaConnectedBridges_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationMediaConnectedHWPortInstancesEditor(
+			addCommunicationMediaConnectedHWPortInstances_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -59,16 +59,16 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationMediaIsSerialEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommunicationMediaIsSerialEditor(),
-				front);
+	protected void addCommunicationMediaIsSerial_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createCommunicationMediaIsSerial_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaIsSerialEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaIsSerial_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
@@ -83,16 +83,16 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationMediaProtocolEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommunicationMediaProtocolEditor(),
-				front);
+	protected void addCommunicationMediaProtocol_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createCommunicationMediaProtocol_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaProtocolEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaProtocol_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
@@ -107,16 +107,18 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationMediaConnectedHWPortPartsEditor(
+	protected void addCommunicationMediaConnectedHWPortParts_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommunicationMediaConnectedHWPortPartsEditor(), front);
+		addEditorToCategory(
+				category,
+				createCommunicationMediaConnectedHWPortParts_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedHWPortPartsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedHWPortParts_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
@@ -131,16 +133,17 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationMediaConnectedBridgesEditor(String category,
-			boolean front) {
+	protected void addCommunicationMediaConnectedBridges_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createCommunicationMediaConnectedBridgesEditor(), front);
+				createCommunicationMediaConnectedBridges_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedBridgesEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedBridges_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
@@ -155,16 +158,18 @@ public abstract class CommunicationMediaEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationMediaConnectedHWPortInstancesEditor(
+	protected void addCommunicationMediaConnectedHWPortInstances_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommunicationMediaConnectedHWPortInstancesEditor(), front);
+		addEditorToCategory(
+				category,
+				createCommunicationMediaConnectedHWPortInstances_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedHWPortInstancesEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationMediaConnectedHWPortInstances_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE

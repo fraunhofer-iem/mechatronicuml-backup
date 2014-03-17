@@ -24,7 +24,7 @@ public class TimeIntervalEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTimeIntervalUnitEditor(null, true);
+			addTimeIntervalUnit_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,14 +32,16 @@ public class TimeIntervalEditor
 	/**
 	 * @generated
 	 */
-	protected void addTimeIntervalUnitEditor(String category, boolean front) {
-		addEditorToCategory(category, createTimeIntervalUnitEditor(), front);
+	protected void addTimeIntervalUnit_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createTimeIntervalUnit_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeIntervalUnitEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeIntervalUnit_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE

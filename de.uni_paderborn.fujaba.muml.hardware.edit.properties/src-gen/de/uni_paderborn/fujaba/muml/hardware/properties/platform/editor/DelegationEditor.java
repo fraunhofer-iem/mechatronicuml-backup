@@ -24,11 +24,11 @@ public class DelegationEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDelegationHwPortInstanceEditor(null, true);
+			addDelegationHwPortInstance_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDelegationHwPortPartEditor(null, true);
+			addDelegationHwPortPart_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,17 +36,17 @@ public class DelegationEditor
 	/**
 	 * @generated
 	 */
-	protected void addDelegationHwPortInstanceEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createDelegationHwPortInstanceEditor(),
-				front);
+	protected void addDelegationHwPortInstance_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createDelegationHwPortInstance_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDelegationHwPortInstanceEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDelegationHwPortInstance_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getDelegation_HwPortInstance());
@@ -60,18 +60,22 @@ public class DelegationEditor
 	/**
 	 * @generated
 	 */
-	protected void addDelegationHwPortPartEditor(String category, boolean front) {
-		addEditorToCategory(category, createDelegationHwPortPartEditor(), front);
+	protected void addDelegationHwPortPart_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createDelegationHwPortPart_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDelegationHwPortPartEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDelegationHwPortPart_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
 						.getDelegation_HwPortPart());
+
+		editor.setTooltipMessage("The HWPortPart to which this delegation is connected.");
 
 		return editor;
 
@@ -110,7 +114,8 @@ public class DelegationEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general",
-							"property.tab.documentation"}).contains(tab);
+							"property.tab.documentation",
+							"property.tab.extensions"}).contains(tab);
 		}
 	}
 

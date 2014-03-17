@@ -24,11 +24,11 @@ public class DataSizeEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDataSizeValueEditor(null, true);
+			addDataSizeValue_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDataSizeUnitEditor(null, true);
+			addDataSizeUnit_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,18 +36,20 @@ public class DataSizeEditor
 	/**
 	 * @generated
 	 */
-	protected void addDataSizeValueEditor(String category, boolean front) {
-		addEditorToCategory(category, createDataSizeValueEditor(), front);
+	protected void addDataSizeValue_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createDataSizeValue_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDataSizeValueEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDataSizeValue_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE
-						.getDataSize_Value(), 3);
+						.getDataSize_Value(), false);
 
 		editor.setTooltipMessage("The value of this DataSize.");
 
@@ -58,14 +60,16 @@ public class DataSizeEditor
 	/**
 	 * @generated
 	 */
-	protected void addDataSizeUnitEditor(String category, boolean front) {
-		addEditorToCategory(category, createDataSizeUnitEditor(), front);
+	protected void addDataSizeUnit_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createDataSizeUnit_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDataSizeUnitEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDataSizeUnit_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage.eINSTANCE

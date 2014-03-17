@@ -59,7 +59,8 @@ public class LinkEditor
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.documentation"}).contains(tab);
+							"property.tab.documentation",
+							"property.tab.extensions"}).contains(tab);
 		}
 	}
 

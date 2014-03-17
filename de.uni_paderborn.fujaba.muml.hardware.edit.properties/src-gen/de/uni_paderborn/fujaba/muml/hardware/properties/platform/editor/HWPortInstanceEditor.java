@@ -27,20 +27,21 @@ public abstract class HWPortInstanceEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortInstanceHwportTypeEditor(null, true);
+			addHWPortInstanceHwportType_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortInstanceParentResourceInstanceEditor(null, true);
+			addHWPortInstanceParentResourceInstance_GeneralTab_Editor(null,
+					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortInstanceConnectedMediaEditor(
+			addHWPortInstanceConnectedMedia_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortInstanceDelegationEditor(
+			addHWPortInstanceDelegation_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -49,16 +50,16 @@ public abstract class HWPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPortInstanceHwportTypeEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createHWPortInstanceHwportTypeEditor(),
-				front);
+	protected void addHWPortInstanceHwportType_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createHWPortInstanceHwportType_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortInstanceHwportTypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortInstanceHwportType_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
@@ -73,16 +74,17 @@ public abstract class HWPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPortInstanceParentResourceInstanceEditor(
+	protected void addHWPortInstanceParentResourceInstance_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(category,
-				createHWPortInstanceParentResourceInstanceEditor(), front);
+				createHWPortInstanceParentResourceInstance_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortInstanceParentResourceInstanceEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortInstanceParentResourceInstance_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
@@ -97,16 +99,16 @@ public abstract class HWPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPortInstanceConnectedMediaEditor(String category,
-			boolean front) {
+	protected void addHWPortInstanceConnectedMedia_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createHWPortInstanceConnectedMediaEditor(), front);
+				createHWPortInstanceConnectedMedia_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortInstanceConnectedMediaEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortInstanceConnectedMedia_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
@@ -121,16 +123,16 @@ public abstract class HWPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPortInstanceDelegationEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createHWPortInstanceDelegationEditor(),
-				front);
+	protected void addHWPortInstanceDelegation_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createHWPortInstanceDelegation_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortInstanceDelegationEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortInstanceDelegation_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE

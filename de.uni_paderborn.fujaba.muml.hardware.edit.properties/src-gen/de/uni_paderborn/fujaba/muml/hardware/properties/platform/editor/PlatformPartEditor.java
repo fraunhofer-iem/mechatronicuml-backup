@@ -24,11 +24,11 @@ public abstract class PlatformPartEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPlatformPartParentHWPlatformEditor(null, true);
+			addPlatformPartParentHWPlatform_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPlatformPartCardinalityEditor(null, true);
+			addPlatformPartCardinality_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,16 +36,16 @@ public abstract class PlatformPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addPlatformPartParentHWPlatformEditor(String category,
-			boolean front) {
+	protected void addPlatformPartParentHWPlatform_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createPlatformPartParentHWPlatformEditor(), front);
+				createPlatformPartParentHWPlatform_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPlatformPartParentHWPlatformEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPlatformPartParentHWPlatform_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
@@ -60,16 +60,16 @@ public abstract class PlatformPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addPlatformPartCardinalityEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createPlatformPartCardinalityEditor(),
-				front);
+	protected void addPlatformPartCardinality_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createPlatformPartCardinality_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPlatformPartCardinalityEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPlatformPartCardinality_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE

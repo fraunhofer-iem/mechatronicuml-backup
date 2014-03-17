@@ -27,19 +27,20 @@ public abstract class CommunicationProtocolEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationProtocolIsTimeTriggeredEditor(
+			addCommunicationProtocolIsTimeTriggered_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationProtocolIsEventTriggeredEditor(
+			addCommunicationProtocolIsEventTriggered_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCommunicationProtocolFurtherInformationEditor(null, true);
+			addCommunicationProtocolFurtherInformation_GeneralTab_Editor(null,
+					true);
 		}
 
 	}
@@ -47,16 +48,17 @@ public abstract class CommunicationProtocolEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationProtocolIsTimeTriggeredEditor(
+	protected void addCommunicationProtocolIsTimeTriggered_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(category,
-				createCommunicationProtocolIsTimeTriggeredEditor(), front);
+				createCommunicationProtocolIsTimeTriggered_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolIsTimeTriggeredEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolIsTimeTriggered_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
@@ -71,16 +73,18 @@ public abstract class CommunicationProtocolEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationProtocolIsEventTriggeredEditor(
+	protected void addCommunicationProtocolIsEventTriggered_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommunicationProtocolIsEventTriggeredEditor(), front);
+		addEditorToCategory(
+				category,
+				createCommunicationProtocolIsEventTriggered_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolIsEventTriggeredEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolIsEventTriggered_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
@@ -95,16 +99,18 @@ public abstract class CommunicationProtocolEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommunicationProtocolFurtherInformationEditor(
+	protected void addCommunicationProtocolFurtherInformation_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommunicationProtocolFurtherInformationEditor(), front);
+		addEditorToCategory(
+				category,
+				createCommunicationProtocolFurtherInformation_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolFurtherInformationEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommunicationProtocolFurtherInformation_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE

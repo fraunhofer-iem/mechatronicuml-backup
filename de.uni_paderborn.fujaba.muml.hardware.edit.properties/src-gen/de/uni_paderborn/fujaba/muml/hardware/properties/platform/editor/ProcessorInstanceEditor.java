@@ -24,15 +24,15 @@ public class ProcessorInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addProcessorInstanceMIPSEditor(null, true);
+			addProcessorInstanceMIPS_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addProcessorInstanceCPIEditor(null, true);
+			addProcessorInstanceCPI_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addProcessorInstanceOwnedCacheInstanceEditor(null, true);
+			addProcessorInstanceOwnedCacheInstance_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -40,19 +40,20 @@ public class ProcessorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addProcessorInstanceMIPSEditor(String category, boolean front) {
-		addEditorToCategory(category, createProcessorInstanceMIPSEditor(),
-				front);
+	protected void addProcessorInstanceMIPS_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createProcessorInstanceMIPS_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceMIPSEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceMIPS_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-						.getProcessorInstance_MIPS(), 3);
+						.getProcessorInstance_MIPS(), false);
 
 		editor.setTooltipMessage("The MIPS-Rate (Million instructions per second) of this ProcessorInstance.");
 
@@ -63,18 +64,20 @@ public class ProcessorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addProcessorInstanceCPIEditor(String category, boolean front) {
-		addEditorToCategory(category, createProcessorInstanceCPIEditor(), front);
+	protected void addProcessorInstanceCPI_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createProcessorInstanceCPI_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceCPIEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceCPI_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
-						.getProcessorInstance_CPI(), 3);
+						.getProcessorInstance_CPI(), false);
 
 		editor.setTooltipMessage("The average count of cycles per instruction (CPI) of this ProcessorInstance.");
 
@@ -85,16 +88,17 @@ public class ProcessorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addProcessorInstanceOwnedCacheInstanceEditor(
+	protected void addProcessorInstanceOwnedCacheInstance_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(category,
-				createProcessorInstanceOwnedCacheInstanceEditor(), front);
+				createProcessorInstanceOwnedCacheInstance_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceOwnedCacheInstanceEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createProcessorInstanceOwnedCacheInstance_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
@@ -140,8 +144,8 @@ public class ProcessorInstanceEditor
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+							"property.tab.general", "property.tab.extensions",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

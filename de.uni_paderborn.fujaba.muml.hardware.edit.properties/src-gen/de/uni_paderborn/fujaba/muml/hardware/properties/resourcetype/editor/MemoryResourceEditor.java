@@ -27,17 +27,17 @@ public class MemoryResourceEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMemoryResourceMemoryAccessEditor(null, true);
+			addMemoryResourceMemoryAccess_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMemoryResourceIsVolatileEditor(
+			addMemoryResourceIsVolatile_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMemoryResourceMemoryTypeEditor(null, true);
+			addMemoryResourceMemoryType_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -45,16 +45,16 @@ public class MemoryResourceEditor
 	/**
 	 * @generated
 	 */
-	protected void addMemoryResourceMemoryAccessEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createMemoryResourceMemoryAccessEditor(),
-				front);
+	protected void addMemoryResourceMemoryAccess_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createMemoryResourceMemoryAccess_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceMemoryAccessEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceMemoryAccess_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
@@ -69,16 +69,16 @@ public class MemoryResourceEditor
 	/**
 	 * @generated
 	 */
-	protected void addMemoryResourceIsVolatileEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createMemoryResourceIsVolatileEditor(),
-				front);
+	protected void addMemoryResourceIsVolatile_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createMemoryResourceIsVolatile_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceIsVolatileEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceIsVolatile_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
@@ -93,16 +93,16 @@ public class MemoryResourceEditor
 	/**
 	 * @generated
 	 */
-	protected void addMemoryResourceMemoryTypeEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createMemoryResourceMemoryTypeEditor(),
-				front);
+	protected void addMemoryResourceMemoryType_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createMemoryResourceMemoryType_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceMemoryTypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMemoryResourceMemoryType_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
@@ -147,8 +147,8 @@ public class MemoryResourceEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+							"property.tab.general", "property.tab.general",
+							"property.tab.extensions"}).contains(tab);
 		}
 	}
 

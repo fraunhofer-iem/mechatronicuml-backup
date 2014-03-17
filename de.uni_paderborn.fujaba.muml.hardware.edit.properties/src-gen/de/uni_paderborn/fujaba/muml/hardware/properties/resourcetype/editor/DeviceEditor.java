@@ -24,7 +24,7 @@ public class DeviceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDeviceDeviceTypeEditor(null, true);
+			addDeviceDeviceType_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,14 +32,16 @@ public class DeviceEditor
 	/**
 	 * @generated
 	 */
-	protected void addDeviceDeviceTypeEditor(String category, boolean front) {
-		addEditorToCategory(category, createDeviceDeviceTypeEditor(), front);
+	protected void addDeviceDeviceType_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createDeviceDeviceType_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDeviceDeviceTypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDeviceDeviceType_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
@@ -83,7 +85,8 @@ public class DeviceEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general"}).contains(tab);
+							"property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 

@@ -24,19 +24,19 @@ public class HWPortEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortParentResourceEditor(null, true);
+			addHWPortParentResource_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortPortTypeEditor(null, true);
+			addHWPortPortType_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortProtocolEditor(null, true);
+			addHWPortProtocol_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPortCardinalityEditor(null, true);
+			addHWPortCardinality_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -44,14 +44,16 @@ public class HWPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPortParentResourceEditor(String category, boolean front) {
-		addEditorToCategory(category, createHWPortParentResourceEditor(), front);
+	protected void addHWPortParentResource_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createHWPortParentResource_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortParentResourceEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortParentResource_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
@@ -66,14 +68,16 @@ public class HWPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPortPortTypeEditor(String category, boolean front) {
-		addEditorToCategory(category, createHWPortPortTypeEditor(), front);
+	protected void addHWPortPortType_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createHWPortPortType_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortPortTypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortPortType_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
@@ -88,14 +92,16 @@ public class HWPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPortProtocolEditor(String category, boolean front) {
-		addEditorToCategory(category, createHWPortProtocolEditor(), front);
+	protected void addHWPortProtocol_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createHWPortProtocol_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortProtocolEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortProtocol_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
@@ -110,18 +116,22 @@ public class HWPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPortCardinalityEditor(String category, boolean front) {
-		addEditorToCategory(category, createHWPortCardinalityEditor(), front);
+	protected void addHWPortCardinality_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createHWPortCardinality_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortCardinalityEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPortCardinality_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage.eINSTANCE
 						.getHWPort_Cardinality());
+
+		editor.setTooltipMessage("The cardinality of this HWPort.\nIt determines the number of allowed hardware port instances.");
 
 		return editor;
 
@@ -160,8 +170,8 @@ public class HWPortEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+							"property.tab.general", "property.tab.general",
+							"property.tab.extensions"}).contains(tab);
 		}
 	}
 

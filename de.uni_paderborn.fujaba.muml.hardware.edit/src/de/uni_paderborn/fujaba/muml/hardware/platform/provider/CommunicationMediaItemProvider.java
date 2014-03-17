@@ -58,11 +58,11 @@ public class CommunicationMediaItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIsSerialPropertyDescriptor(object);
 			addProtocolPropertyDescriptor(object);
 			addConnectedHWPortPartsPropertyDescriptor(object);
 			addConnectedBridgesPropertyDescriptor(object);
 			addConnectedHWPortInstancesPropertyDescriptor(object);
+			addIsSerialPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}

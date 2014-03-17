@@ -27,7 +27,7 @@ public class BridgeEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBridgeConnectedCommunicationMediaEditor(
+			addBridgeConnectedCommunicationMedia_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -36,16 +36,17 @@ public class BridgeEditor
 	/**
 	 * @generated
 	 */
-	protected void addBridgeConnectedCommunicationMediaEditor(String category,
-			boolean front) {
+	protected void addBridgeConnectedCommunicationMedia_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createBridgeConnectedCommunicationMediaEditor(), front);
+				createBridgeConnectedCommunicationMedia_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBridgeConnectedCommunicationMediaEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBridgeConnectedCommunicationMedia_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage.eINSTANCE
@@ -89,7 +90,8 @@ public class BridgeEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.documentation"}).contains(tab);
+							"property.tab.documentation",
+							"property.tab.extensions"}).contains(tab);
 		}
 	}
 

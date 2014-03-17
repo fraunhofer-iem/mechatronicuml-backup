@@ -56,8 +56,8 @@ public class ResourceInstanceRepositoryEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.documentation"})
-					.contains(tab);
+					new java.lang.String[]{"property.tab.documentation",
+							"property.tab.extensions"}).contains(tab);
 		}
 	}
 

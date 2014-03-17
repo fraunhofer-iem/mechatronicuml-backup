@@ -27,16 +27,16 @@ public class HWPlatformInstanceEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPlatformInstanceHwplatformTypeEditor(null, true);
+			addHWPlatformInstanceHwplatformType_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPlatformInstanceDelegationPortsEditor(
+			addHWPlatformInstanceDelegationPorts_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHWPlatformInstanceDelegationsEditor(
+			addHWPlatformInstanceDelegations_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -45,16 +45,17 @@ public class HWPlatformInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPlatformInstanceHwplatformTypeEditor(String category,
-			boolean front) {
+	protected void addHWPlatformInstanceHwplatformType_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createHWPlatformInstanceHwplatformTypeEditor(), front);
+				createHWPlatformInstanceHwplatformType_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceHwplatformTypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceHwplatformType_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platforminstance.PlatforminstancePackage.eINSTANCE
@@ -69,16 +70,17 @@ public class HWPlatformInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPlatformInstanceDelegationPortsEditor(String category,
-			boolean front) {
+	protected void addHWPlatformInstanceDelegationPorts_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createHWPlatformInstanceDelegationPortsEditor(), front);
+				createHWPlatformInstanceDelegationPorts_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceDelegationPortsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceDelegationPorts_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platforminstance.PlatforminstancePackage.eINSTANCE
@@ -93,16 +95,16 @@ public class HWPlatformInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addHWPlatformInstanceDelegationsEditor(String category,
-			boolean front) {
+	protected void addHWPlatformInstanceDelegations_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createHWPlatformInstanceDelegationsEditor(), front);
+				createHWPlatformInstanceDelegations_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceDelegationsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHWPlatformInstanceDelegations_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.hardware.platforminstance.PlatforminstancePackage.eINSTANCE
@@ -147,7 +149,8 @@ public class HWPlatformInstanceEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+							"property.tab.general", "property.tab.extensions"})
+					.contains(tab);
 		}
 	}
 
