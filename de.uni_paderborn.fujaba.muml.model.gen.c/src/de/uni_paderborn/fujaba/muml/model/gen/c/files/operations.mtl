@@ -38,7 +38,7 @@
  */]
 [template public generateOperationHeader(allOperations : Sequence(Operation), path : String)]
 
-[file (path+'operations/Operations.h', false, 'UTF-8')]
+[file (path+'operations/operations.h', false, 'UTF-8')]
 #ifndef OPERATIONS_H_
 #define OPERATIONS_H_
 
@@ -58,7 +58,7 @@
  */]
 [template public generateOperationClass(allOperations : Sequence(Operation), path : String)]
 
-[file (path+'operations/Operations.c', false, 'UTF-8')]
+[file (path+'operations/operations.c', false, 'UTF-8')]
 #include "operations.h"
 /** [protected ('user includes **/')] 
 
