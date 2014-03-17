@@ -60,6 +60,9 @@
 
 [file (path+'operations/Operations.c', false, 'UTF-8')]
 #include "operations.h"
+/** [protected ('user includes **/')] 
+
+/**[/protected]**/
 [for (operation : Operation | allOperations)]
 
 
