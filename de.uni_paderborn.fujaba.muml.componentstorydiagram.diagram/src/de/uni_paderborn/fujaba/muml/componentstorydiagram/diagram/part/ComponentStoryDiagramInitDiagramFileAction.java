@@ -96,11 +96,11 @@ public class ComponentStoryDiagramInitDiagramFileAction
 		ComponentStoryRule cSR = getInitialComponentStoryRule(diagramRoot
 				.eResource());
 
-		class blah extends AbstractTransactionalCommand {
+		abstract class AddInitialComponentStoryRuleCommand extends AbstractTransactionalCommand {
 			protected ComponentStoryRule compoStoryRule;
 			protected IDiagramInformation diagramInformation;
 
-			public blah(ComponentStoryRule componentStoryRule,
+			public AddInitialComponentStoryRuleCommand(ComponentStoryRule componentStoryRule,
 					TransactionalEditingDomain domain, String label,
 					List affectedFiles, IDiagramInformation diagramInformation) {
 				super(domain, label, affectedFiles);
@@ -108,16 +108,8 @@ public class ComponentStoryDiagramInitDiagramFileAction
 				this.diagramInformation = diagramInformation;
 			}
 
-			@Override
-			protected CommandResult doExecuteWithResult(
-					IProgressMonitor monitor, IAdaptable info)
-					throws ExecutionException {
-				// TODO Auto-generated method stub
-				return null;
-			}
-
 		}
-		AbstractTransactionalCommand createInitModelElementsCommand = new blah(
+		AbstractTransactionalCommand createInitModelElementsCommand = new AddInitialComponentStoryRuleCommand(
 				cSR, myEditingDomain, "Add initial ComponentStoryRule",
 				affectedFiles, diagramInformation) {
 
