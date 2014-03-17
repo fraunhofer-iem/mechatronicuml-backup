@@ -888,7 +888,7 @@ public class InstancePackageImpl extends EPackageImpl implements InstancePackage
 		  (getPortInstance_PortPart(), 
 		   source, 
 		   new String[] {
-			 "derivation", "If the enclosing component instance corresponds to a component part of a structured component, refers to the port part that corresponds to this port instance."
+			 "derivation", "componentInstance.componentPart.portParts->any(portPart | portPart.portType = self.type)"
 		   });					
 		addAnnotation
 		  (assemblyConnectorInstanceEClass, 
