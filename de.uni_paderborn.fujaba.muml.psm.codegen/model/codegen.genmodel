@@ -6,7 +6,7 @@
     usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml"
     operationReflection="true" importOrganizing="true">
   <foreignModel>codegen.ecore</foreignModel>
-  <genPackages prefix="Codegen" basePackage="de.uni_paderbor.fujaba.muml.psm" disposableProviderFactory="true"
+  <genPackages prefix="Codegen" basePackage="de.uni_paderborn.fujaba.muml.psm" disposableProviderFactory="true"
       ecorePackage="codegen.ecore#/">
     <genClasses image="false" ecoreClass="codegen.ecore#//RefinedComponentInstance"/>
     <genClasses ecoreClass="codegen.ecore#//RefinedAtomicComponentInstance">
@@ -17,6 +17,7 @@
     </genClasses>
     <genClasses ecoreClass="codegen.ecore#//CodGen">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codegen.ecore#//CodGen/allResourceInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference codegen.ecore#//CodGen/cic"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

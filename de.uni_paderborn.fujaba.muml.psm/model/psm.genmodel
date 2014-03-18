@@ -6,9 +6,10 @@
     usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml"
     operationReflection="true" importOrganizing="true">
   <foreignModel>psm.ecore</foreignModel>
-  <genPackages prefix="Psm" disposableProviderFactory="true" ecorePackage="psm.ecore#/">
-    <nestedGenPackages prefix="Allocation" basePackage="psm" disposableProviderFactory="true"
-        ecorePackage="psm.ecore#//allocation">
+  <genPackages prefix="Psm" basePackage="de.uni_paderborn.fujaba.muml" disposableProviderFactory="true"
+      ecorePackage="psm.ecore#/">
+    <nestedGenPackages prefix="Allocation" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//allocation">
       <genClasses ecoreClass="psm.ecore#//allocation/SystemAllocation">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference psm.ecore#//allocation/SystemAllocation/allocations"/>
       </genClasses>
@@ -19,8 +20,8 @@
             ecoreFeature="ecore:EReference psm.ecore#//allocation/Allocation/resourceInstance"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Properties" basePackage="psm" disposableProviderFactory="true"
-        ecorePackage="psm.ecore#//properties">
+    <nestedGenPackages prefix="Properties" basePackage="de.uni_paderborn.fujaba.muml.psm"
+        disposableProviderFactory="true" ecorePackage="psm.ecore#//properties">
       <genClasses ecoreClass="psm.ecore#//properties/ComponentInstanceExecutionProperties">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference psm.ecore#//properties/ComponentInstanceExecutionProperties/componentInstance"/>

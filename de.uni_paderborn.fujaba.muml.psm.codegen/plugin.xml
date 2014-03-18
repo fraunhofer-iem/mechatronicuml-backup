@@ -10,7 +10,7 @@
       <!-- @generated codegen -->
       <package
             uri="http://www.fujaba.de/muml/psm/codegen/0.1.0"
-            class="de.uni_paderbor.fujaba.muml.psm.codegen.CodegenPackage"
+            class="de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage"
             genModel="model/codegen.genmodel"/>
    </extension>
 

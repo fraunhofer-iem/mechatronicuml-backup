@@ -10,7 +10,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/allocation/0.1.0"
-            class="psm.allocation.AllocationPackage"
+            class="de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage"
             genModel="model/psm.genmodel"/>
    </extension>
 
@@ -18,8 +18,7 @@
       <!-- @generated psm -->
       <package
             uri="http://www.fujaba.de/muml/psm/properties/0.1.0"
-            class="psm.properties.PropertiesPackage"
+            class="de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage"
             genModel="model/psm.genmodel"/>
    </extension>
-
 </plugin>
