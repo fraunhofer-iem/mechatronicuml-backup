@@ -26,6 +26,7 @@ public interface RefindedStructuredResourceInstance extends StructuredResourceIn
 	/**
 	 * Returns the value of the '<em><b>Allocated Atomic Component Instances</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance#getAllocatedResourceInstance <em>Allocated Resource Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Allocated Atomic Component Instances</em>' reference list isn't clear,
@@ -34,7 +35,8 @@ public interface RefindedStructuredResourceInstance extends StructuredResourceIn
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Allocated Atomic Component Instances</em>' reference list.
 	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances()
-	 * @model
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance#getAllocatedResourceInstance
+	 * @model opposite="allocatedResourceInstance"
 	 * @generated
 	 */
 	EList<RefinedAtomicComponentInstance> getAllocatedAtomicComponentInstances();

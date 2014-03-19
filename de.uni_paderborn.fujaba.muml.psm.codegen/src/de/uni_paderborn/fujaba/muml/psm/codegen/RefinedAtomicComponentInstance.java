@@ -23,6 +23,7 @@ import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 public interface RefinedAtomicComponentInstance extends AtomicComponentInstance {
 	/**
 	 * Returns the value of the '<em><b>Allocated Resource Instance</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedAtomicComponentInstances <em>Allocated Atomic Component Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Allocated Resource Instance</em>' reference isn't clear,
@@ -32,7 +33,8 @@ public interface RefinedAtomicComponentInstance extends AtomicComponentInstance 
 	 * @return the value of the '<em>Allocated Resource Instance</em>' reference.
 	 * @see #setAllocatedResourceInstance(RefindedStructuredResourceInstance)
 	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.CodegenPackage#getRefinedAtomicComponentInstance_AllocatedResourceInstance()
-	 * @model required="true"
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedAtomicComponentInstances
+	 * @model opposite="allocatedAtomicComponentInstances" required="true"
 	 * @generated
 	 */
 	RefindedStructuredResourceInstance getAllocatedResourceInstance();

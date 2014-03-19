@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.muml.psm.codegen.RefinedAtomicComponentInstance;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -89,11 +90,63 @@ public class RefinedAtomicComponentInstanceImpl extends AtomicComponentInstanceI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAllocatedResourceInstance(RefindedStructuredResourceInstance newAllocatedResourceInstance) {
+	public NotificationChain basicSetAllocatedResourceInstance(RefindedStructuredResourceInstance newAllocatedResourceInstance, NotificationChain msgs) {
 		RefindedStructuredResourceInstance oldAllocatedResourceInstance = allocatedResourceInstance;
 		allocatedResourceInstance = newAllocatedResourceInstance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE, oldAllocatedResourceInstance, allocatedResourceInstance));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE, oldAllocatedResourceInstance, newAllocatedResourceInstance);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAllocatedResourceInstance(RefindedStructuredResourceInstance newAllocatedResourceInstance) {
+		if (newAllocatedResourceInstance != allocatedResourceInstance) {
+			NotificationChain msgs = null;
+			if (allocatedResourceInstance != null)
+				msgs = ((InternalEObject)allocatedResourceInstance).eInverseRemove(this, CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES, RefindedStructuredResourceInstance.class, msgs);
+			if (newAllocatedResourceInstance != null)
+				msgs = ((InternalEObject)newAllocatedResourceInstance).eInverseAdd(this, CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES, RefindedStructuredResourceInstance.class, msgs);
+			msgs = basicSetAllocatedResourceInstance(newAllocatedResourceInstance, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE, newAllocatedResourceInstance, newAllocatedResourceInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE:
+				if (allocatedResourceInstance != null)
+					msgs = ((InternalEObject)allocatedResourceInstance).eInverseRemove(this, CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES, RefindedStructuredResourceInstance.class, msgs);
+				return basicSetAllocatedResourceInstance((RefindedStructuredResourceInstance)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CodegenPackage.REFINED_ATOMIC_COMPONENT_INSTANCE__ALLOCATED_RESOURCE_INSTANCE:
+				return basicSetAllocatedResourceInstance(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
