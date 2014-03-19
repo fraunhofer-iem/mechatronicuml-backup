@@ -84,7 +84,7 @@ public class TextPropertyEditor extends AbstractStructuralFeaturePropertyEditor 
 		// Do not read from text field, as it could have been disposed, see comment in dispose()
 		//String newValue = text.getText();
 		Object newValue = currentValue; 
-		if (text != null && !newValue.equals(value.toString())) {
+		if (text != null &&  (value == null && newValue != null || value != null && !newValue.equals(value.toString()))) {
 			if (EcorePackage.Literals.EDOUBLE.equals(feature.getEType())) {
 				newValue = Double.parseDouble(currentValue);
 			} else if (EcorePackage.Literals.EINT.equals(feature.getEType())) {
