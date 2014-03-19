@@ -107,12 +107,12 @@ init{
 			result:=new DelegationConnectorInstance(self.oclAsType(DelegationConnector));
 					}
 			
-			else{//sollte nich aufgerufen werden
+			else{//shall not be called
 				result:=self.createConnectorInstance(endpoints);
 				}
 		};	
 }
-
+	result.type:=self;
 	result.connectorEndpointInstances:=endpoints.late resolve(PortInstance);
 }
 
