@@ -216,7 +216,7 @@ mapping Property::spinnerEditor() : SpinnerPropertyEditor when {self.genFeature.
 	digits := 0;
 }
 
-mapping Property::comboEditor() : ComboBoxPropertyEditor when {(self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound = 1 and not self.genFeature.ecoreFeature.oclAsType(EReference).containment) or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EDataType) and self.genFeature.ecoreFeature.eType.name <> 'EString') or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) and self.genFeature.ecoreFeature.eType.oclAsType(EEnum).eLiterals->size() > 3)} {
+mapping Property::comboEditor() : ComboBoxPropertyEditor when {(self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound = 1 and not self.genFeature.ecoreFeature.oclAsType(EReference).containment) or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EDataType) and self.genFeature.ecoreFeature.eType.name <> 'EString' and self.genFeature.ecoreFeature.eType.name <> 'EFloat' and self.genFeature.ecoreFeature.eType.name <> 'EDouble') or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) and self.genFeature.ecoreFeature.eType.oclAsType(EEnum).eLiterals->size() > 3)} {
 	init {
 		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(ComboBoxPropertyEditor)) then {
 			result := self.editor.oclAsType(ComboBoxPropertyEditor);
