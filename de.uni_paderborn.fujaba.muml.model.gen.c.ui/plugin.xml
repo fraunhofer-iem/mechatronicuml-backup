@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.fujaba"
+            id="de.uni_paderborn.fujaba.muml.model.gen.c.ui.popupMenus.contribution.IFile">
+         <menu id="de.uni_paderborn.fujaba" label="Fujaba" path="additionsAcceleo">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="de.uni_paderborn.fujaba.muml.model.gen.c.ui.popupMenus.AcceleoGenerateCAction"
+               enablesFor="+"
+               id="de.uni_paderborn.fujaba.muml.model.gen.c.ui.popupMenus.acceleoGenerateCAction"
+               icon="icons/default.gif"
+               label="Generate C"
+               menubarPath="de.uni_paderborn.fujaba/generation"/>
+      </objectContribution>
+   </extension>
+</plugin>

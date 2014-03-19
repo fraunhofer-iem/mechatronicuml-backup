@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MechatronicUML Preferences
+Bundle-SymbolicName: de.uni_paderborn.fujaba.preferences;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.preferences.FujabaPreferencesPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.preferences
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

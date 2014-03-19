@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Fujaba-Model Meta-Model
+Bundle-SymbolicName: de.uni_paderborn.fujaba.modelinstance;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-ClassPath: .
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.storydriven.core;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: de.uni_paderborn.fujaba.modelinstance.ModelInstancePlugin
+Export-Package: de.uni_paderborn.fujaba.modelinstance,
+ de.uni_paderborn.fujaba.modelinstance.impl,
+ de.uni_paderborn.fujaba.modelinstance.categories,
+ de.uni_paderborn.fujaba.modelinstance.util
+Bundle-Vendor: Fujaba Community made up of Heinz Nixdorf Institute Paderborn,
+ Technische Universität Darmstadt,
+ University of Kassel,
+ Hasso Plattner Institute Potsdam,
+ Yatta Solutions GmbH

@@ -1,0 +1,35 @@
+«IMPORT properties»
+«EXTENSION Metamodel»
+
+«DEFINE Generate FOR PropertyGenerator»
+«FILE 'META-INF/MANIFEST.MF'-»
+«EXPAND plugin::Manifest::Manifest-»
+«ENDFILE-»
+
+«FILE 'plugin.xml'-»
+«EXPAND plugin::Plugin::Plugin-»
+«ENDFILE-»
+
+«FOREACH packages.classes AS class»
+«FILE sourceFolder + "/" + class.genQualifiedEditorName().replaceAll('\\.', '/').toString() + '.java'»
+package «class.package.genPackageName()».editor;
+«EXPAND editor::Editor::ClassEditor FOR class»
+«ENDFILE»
+«ENDFOREACH»
+
+«FOREACH tabs AS tab»
+«FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/tabs/" + tab.name.toString().toFirstUpper() + "TabElementFilter.java"»
+package «genPluginId()».tabs;
+«EXPAND util::Utility::TabElementFilter FOR tab»
+«ENDFILE»
+«ENDFOREACH»
+
+«FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/util/PropertiesUtil.java"»
+package «genPluginId()».util;
+«EXPAND util::Utility::Utility»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE ClassEditor FOR Class»
+
+«ENDDEFINE»

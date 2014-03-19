@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.providers.CustomComponentinstanceconfigurationEditPartProvider">
+         <Priority
+               name="Low">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   
+      
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"/>
+      </binding>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings">
+      <binding context="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"/>
+      </binding>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel nsURI="http://www.fujaba.de/muml/instance/0.4.0">
+        <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstanceAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteSinglePortInstance_2022"
+		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteSinglePortInstanceEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+      <metamodel nsURI="http://www.fujaba.de/muml/instance/0.4.0">
+        <adviceBinding id="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstanceAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.DiscreteMultiPortInstance_2023"
+		  class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.edit.helpers.DiscreteMultiPortInstanceEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.layout.CICLayoutProvider">
+            <Priority name="High"/>
+       </layoutProvider>
+   </extension>
+
+   <extension
+       point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="de.uni_paderborn.fujaba.muml.componentinstanceconfiguration.diagram.custom.initializer.ComponentInstanceConfigurationInitializer">
+      </initializer>
+   </extension>
+</plugin>

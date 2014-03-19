@@ -1,0 +1,593 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package de.uni_paderborn.fujaba.muml.runtime.impl;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.impl.ExtendableElementImpl;
+
+import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.runtime.RealtimeStatechartInstance;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimeBehavioralElement;
+import de.uni_paderborn.fujaba.muml.runtime.RuntimePackage;
+import de.uni_paderborn.fujaba.muml.runtime.VariableBinding;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Realtime Statechart Instance</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getRuntimeBehavioralElement <em>Runtime Behavioral Element</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getInstanceOf <em>Instance Of</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getActive <em>Active</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getSubRealtimeStatechartInstances <em>Sub Realtime Statechart Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getParentRealtimeStatechartInstance <em>Parent Realtime Statechart Instance</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getVariableBindings <em>Variable Bindings</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getAllAvailableVariableBindings <em>All Available Variable Bindings</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.runtime.impl.RealtimeStatechartInstanceImpl#getNearestRuntimeBehavioralElement <em>Nearest Runtime Behavioral Element</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class RealtimeStatechartInstanceImpl extends ExtendableElementImpl implements RealtimeStatechartInstance {
+	/**
+	 * The cached value of the '{@link #getRuntimeBehavioralElement() <em>Runtime Behavioral Element</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRuntimeBehavioralElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected RuntimeBehavioralElement runtimeBehavioralElement;
+
+	/**
+	 * The cached value of the '{@link #getInstanceOf() <em>Instance Of</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInstanceOf()
+	 * @generated
+	 * @ordered
+	 */
+	protected RealtimeStatechart instanceOf;
+
+	/**
+	 * The cached value of the '{@link #getActive() <em>Active</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActive()
+	 * @generated
+	 * @ordered
+	 */
+	protected State active;
+
+	/**
+	 * The cached value of the '{@link #getSubRealtimeStatechartInstances() <em>Sub Realtime Statechart Instances</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubRealtimeStatechartInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RealtimeStatechartInstance> subRealtimeStatechartInstances;
+
+	/**
+	 * The cached value of the '{@link #getVariableBindings() <em>Variable Bindings</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVariableBindings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<VariableBinding> variableBindings;
+
+	/**
+	 * The cached setting delegate for the '{@link #getAllAvailableVariableBindings() <em>All Available Variable Bindings</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAllAvailableVariableBindings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate ALL_AVAILABLE_VARIABLE_BINDINGS__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RuntimePackage.Literals.REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS).getSettingDelegate();
+
+	/**
+	 * The cached setting delegate for the '{@link #getNearestRuntimeBehavioralElement() <em>Nearest Runtime Behavioral Element</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNearestRuntimeBehavioralElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE = ((EStructuralFeature.Internal)RuntimePackage.Literals.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT).getSettingDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RealtimeStatechartInstanceImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return RuntimePackage.Literals.REALTIME_STATECHART_INSTANCE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeBehavioralElement getRuntimeBehavioralElement() {
+		if (runtimeBehavioralElement != null && runtimeBehavioralElement.eIsProxy()) {
+			InternalEObject oldRuntimeBehavioralElement = (InternalEObject)runtimeBehavioralElement;
+			runtimeBehavioralElement = (RuntimeBehavioralElement)eResolveProxy(oldRuntimeBehavioralElement);
+			if (runtimeBehavioralElement != oldRuntimeBehavioralElement) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT, oldRuntimeBehavioralElement, runtimeBehavioralElement));
+			}
+		}
+		return runtimeBehavioralElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeBehavioralElement basicGetRuntimeBehavioralElement() {
+		return runtimeBehavioralElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRuntimeBehavioralElement(RuntimeBehavioralElement newRuntimeBehavioralElement, NotificationChain msgs) {
+		RuntimeBehavioralElement oldRuntimeBehavioralElement = runtimeBehavioralElement;
+		runtimeBehavioralElement = newRuntimeBehavioralElement;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT, oldRuntimeBehavioralElement, newRuntimeBehavioralElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRuntimeBehavioralElement(RuntimeBehavioralElement newRuntimeBehavioralElement) {
+		if (newRuntimeBehavioralElement != runtimeBehavioralElement) {
+			NotificationChain msgs = null;
+			if (runtimeBehavioralElement != null)
+				msgs = ((InternalEObject)runtimeBehavioralElement).eInverseRemove(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE, RuntimeBehavioralElement.class, msgs);
+			if (newRuntimeBehavioralElement != null)
+				msgs = ((InternalEObject)newRuntimeBehavioralElement).eInverseAdd(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE, RuntimeBehavioralElement.class, msgs);
+			msgs = basicSetRuntimeBehavioralElement(newRuntimeBehavioralElement, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT, newRuntimeBehavioralElement, newRuntimeBehavioralElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RealtimeStatechart getInstanceOf() {
+		if (instanceOf != null && instanceOf.eIsProxy()) {
+			InternalEObject oldInstanceOf = (InternalEObject)instanceOf;
+			instanceOf = (RealtimeStatechart)eResolveProxy(oldInstanceOf);
+			if (instanceOf != oldInstanceOf) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF, oldInstanceOf, instanceOf));
+			}
+		}
+		return instanceOf;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RealtimeStatechart basicGetInstanceOf() {
+		return instanceOf;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInstanceOf(RealtimeStatechart newInstanceOf) {
+		RealtimeStatechart oldInstanceOf = instanceOf;
+		instanceOf = newInstanceOf;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF, oldInstanceOf, instanceOf));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 * 
+	 * Returns all States of the real-time statechart. This method has been implemented in Java rather than OCL
+	 * to improve the run-time performance.
+	 */
+	public EList<State> getStates() {
+		// BEGIN: Deactivated because RealtimeStatechart does not have a reference to vertices anymore 
+//		EList<State> states = new BasicEList<State>(this.getInstanceOf().getVertices().size());
+//		for(Vertex curObject : this.getInstanceOf().getVertices()){
+//			if (curObject instanceof State){
+//				states.add((State)curObject);
+//			}
+//		}
+		// END Deactivated
+
+		// The following code replaces it:
+
+		RealtimeStatechart statechart = getInstanceOf();
+		if (statechart != null) {
+			return statechart.getStates();
+		}
+		return ECollections.emptyEList();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public State getActive() {
+		if (active != null && active.eIsProxy()) {
+			InternalEObject oldActive = (InternalEObject)active;
+			active = (State)eResolveProxy(oldActive);
+			if (active != oldActive) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE, oldActive, active));
+			}
+		}
+		return active;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public State basicGetActive() {
+		return active;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActive(State newActive) {
+		State oldActive = active;
+		active = newActive;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE, oldActive, active));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RealtimeStatechartInstance> getSubRealtimeStatechartInstances() {
+		if (subRealtimeStatechartInstances == null) {
+			subRealtimeStatechartInstances = new EObjectContainmentWithInverseEList<RealtimeStatechartInstance>(RealtimeStatechartInstance.class, this, RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES, RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE);
+		}
+		return subRealtimeStatechartInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RealtimeStatechartInstance getParentRealtimeStatechartInstance() {
+		if (eContainerFeatureID() != RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE) return null;
+		return (RealtimeStatechartInstance)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParentRealtimeStatechartInstance(RealtimeStatechartInstance newParentRealtimeStatechartInstance, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParentRealtimeStatechartInstance, RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParentRealtimeStatechartInstance(RealtimeStatechartInstance newParentRealtimeStatechartInstance) {
+		if (newParentRealtimeStatechartInstance != eInternalContainer() || (eContainerFeatureID() != RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE && newParentRealtimeStatechartInstance != null)) {
+			if (EcoreUtil.isAncestor(this, newParentRealtimeStatechartInstance))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParentRealtimeStatechartInstance != null)
+				msgs = ((InternalEObject)newParentRealtimeStatechartInstance).eInverseAdd(this, RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES, RealtimeStatechartInstance.class, msgs);
+			msgs = basicSetParentRealtimeStatechartInstance(newParentRealtimeStatechartInstance, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE, newParentRealtimeStatechartInstance, newParentRealtimeStatechartInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<VariableBinding> getVariableBindings() {
+		if (variableBindings == null) {
+			variableBindings = new EObjectContainmentEList<VariableBinding>(VariableBinding.class, this, RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS);
+		}
+		return variableBindings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<VariableBinding> getAllAvailableVariableBindings() {
+		return (EList<VariableBinding>)ALL_AVAILABLE_VARIABLE_BINDINGS__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeBehavioralElement getNearestRuntimeBehavioralElement() {
+		return (RuntimeBehavioralElement)NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RuntimeBehavioralElement basicGetNearestRuntimeBehavioralElement() {
+		return (RuntimeBehavioralElement)NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNearestRuntimeBehavioralElement(RuntimeBehavioralElement newNearestRuntimeBehavioralElement) {
+		NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE.dynamicSet(this, null, 0, newNearestRuntimeBehavioralElement);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT:
+				if (runtimeBehavioralElement != null)
+					msgs = ((InternalEObject)runtimeBehavioralElement).eInverseRemove(this, RuntimePackage.RUNTIME_BEHAVIORAL_ELEMENT__STATECHART_INSTANCE, RuntimeBehavioralElement.class, msgs);
+				return basicSetRuntimeBehavioralElement((RuntimeBehavioralElement)otherEnd, msgs);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubRealtimeStatechartInstances()).basicAdd(otherEnd, msgs);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParentRealtimeStatechartInstance((RealtimeStatechartInstance)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT:
+				return basicSetRuntimeBehavioralElement(null, msgs);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
+				return ((InternalEList<?>)getSubRealtimeStatechartInstances()).basicRemove(otherEnd, msgs);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
+				return basicSetParentRealtimeStatechartInstance(null, msgs);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
+				return ((InternalEList<?>)getVariableBindings()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
+				return eInternalContainer().eInverseRemove(this, RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES, RealtimeStatechartInstance.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT:
+				if (resolve) return getRuntimeBehavioralElement();
+				return basicGetRuntimeBehavioralElement();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
+				if (resolve) return getInstanceOf();
+				return basicGetInstanceOf();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:
+				if (resolve) return getActive();
+				return basicGetActive();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
+				return getSubRealtimeStatechartInstances();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
+				return getParentRealtimeStatechartInstance();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
+				return getVariableBindings();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS:
+				return getAllAvailableVariableBindings();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
+				if (resolve) return getNearestRuntimeBehavioralElement();
+				return basicGetNearestRuntimeBehavioralElement();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT:
+				setRuntimeBehavioralElement((RuntimeBehavioralElement)newValue);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
+				setInstanceOf((RealtimeStatechart)newValue);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:
+				setActive((State)newValue);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
+				getSubRealtimeStatechartInstances().clear();
+				getSubRealtimeStatechartInstances().addAll((Collection<? extends RealtimeStatechartInstance>)newValue);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
+				setParentRealtimeStatechartInstance((RealtimeStatechartInstance)newValue);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
+				getVariableBindings().clear();
+				getVariableBindings().addAll((Collection<? extends VariableBinding>)newValue);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
+				setNearestRuntimeBehavioralElement((RuntimeBehavioralElement)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT:
+				setRuntimeBehavioralElement((RuntimeBehavioralElement)null);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
+				setInstanceOf((RealtimeStatechart)null);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:
+				setActive((State)null);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
+				getSubRealtimeStatechartInstances().clear();
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
+				setParentRealtimeStatechartInstance((RealtimeStatechartInstance)null);
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
+				getVariableBindings().clear();
+				return;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
+				setNearestRuntimeBehavioralElement((RuntimeBehavioralElement)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__RUNTIME_BEHAVIORAL_ELEMENT:
+				return runtimeBehavioralElement != null;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__INSTANCE_OF:
+				return instanceOf != null;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ACTIVE:
+				return active != null;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__SUB_REALTIME_STATECHART_INSTANCES:
+				return subRealtimeStatechartInstances != null && !subRealtimeStatechartInstances.isEmpty();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__PARENT_REALTIME_STATECHART_INSTANCE:
+				return getParentRealtimeStatechartInstance() != null;
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__VARIABLE_BINDINGS:
+				return variableBindings != null && !variableBindings.isEmpty();
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__ALL_AVAILABLE_VARIABLE_BINDINGS:
+				return ALL_AVAILABLE_VARIABLE_BINDINGS__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+			case RuntimePackage.REALTIME_STATECHART_INSTANCE__NEAREST_RUNTIME_BEHAVIORAL_ELEMENT:
+				return NEAREST_RUNTIME_BEHAVIORAL_ELEMENT__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+		}
+		return super.eIsSet(featureID);
+	}
+
+} //RealtimeStatechartInstanceImpl

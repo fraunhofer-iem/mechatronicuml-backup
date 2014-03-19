@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Fujaba Tree-Editor
+Bundle-SymbolicName: de.uni_paderborn.fujaba.modelinstance.editor;singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditorPlugin$Implementation
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: de.uni_paderborn.fujaba.modelinstance.presentation
+Require-Bundle: org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.emf.edit.ui;bundle-version="2.7.0",
+ de.uni_paderborn.fujaba.muml.edit;bundle-version="0.3.1",
+ de.uni_paderborn.fujaba.muml.common;bundle-version="0.3.1",
+ org.eclipse.core.resources;bundle-version="3.7.101"
+Bundle-ActivationPolicy: lazy

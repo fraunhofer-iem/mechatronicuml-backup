@@ -1,0 +1,80 @@
+library PostReconcileLibrary;
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+
+mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginName:String) {
+	
+	self.dynamicTemplates :=true;
+	self.templateDirectory := "/de.uni_paderborn.fujaba.muml.common/gmf-templates";
+	self.sameFileForDiagramAndModel := false;
+	
+	self.domainFileExtension := "fujaba"; // kieler textual syntax for SyncCharts, in this case XMI
+	self.diagramFileExtension :=diagramFileExtension; // kieler diagram syntax for SyncCharts
+	
+
+	//self.plugin.version := "1.0.0.qualifier";
+	self.plugin.provider := "Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn";
+	self.plugin.name := pluginName;
+	
+	self.diagram.validationDecorators := true;
+	self.diagram.validationEnabled := true;
+	
+	//Set the Custom Preferenc Pages
+	self.diagram.preferencePages->map GenCustomPreferencePage(self);
+	
+}
+
+mapping inout GenEditorGenerator::general(diagramFileExtension:String, pluginName:String,providerFraunhofer:Boolean) {
+	self->map general(diagramFileExtension,pluginName);
+	//self.plugin.version := "1.0.0.qualifier";
+	if(providerFraunhofer) then{
+	self.plugin.provider := "Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT";
+	} endif;
+}
+
+
+
+mapping inout GenPreferencePage::GenCustomPreferencePage(in editor:GenEditorGenerator){
+		var pluginID:String = editor.plugin.iD;
+		var indexOfPoint :Integer = iD.lastIndexOf(".");
+		iD:= pluginID.concat(".").concat(iD.substring(indexOfPoint+1,iD.size()));
+		
+	if(self.parent.oclIsUndefined())then{
+		self.parentCategory:="de.uni_paderborn.fujaba.preferences";
+		self.name:=editor.plugin.name;
+	}
+	else{
+		parentCategory:=parent.iD;
+	}endif;
+	children->map GenCustomPreferencePage(editor);
+	}
+	
+
+mapping inout InnerClassViewmap::setTextWrap(in labelName:String, in figureName:String){	
+	// customize the Interface Declaration Label from a State
+    if (self.className = figureName) then {
+        var find := (labelName)+(".setText(\"<...>\");"); 
+        var pre := self.classBody.substringBefore(find);
+        var inject := find+(labelName)+(".setTextWrap(true);\n");
+        var matchresult:=self.classBody.find((labelName)+(".setTextWrap(true);\n"));
+       if(matchresult<=0) then{
+       // setting TextWrap to true 
+     	var after := self.classBody.substringAfter(find);
+      	self.classBody := pre+(inject)+(after);
+        } endif;
+    } endif;
+}
+
+mapping inout InnerClassViewmap::underLine(in labelName:String, in figureName:String){	
+	// customize the Interface Declaration Label from a State
+    if (self.className = figureName) then {
+        var find := (labelName)+(".setText(\"<...>\");"); 
+        var pre := self.classBody.substringBefore(find);
+        var inject := find+(labelName)+(".setTextUnderline(true);\n");
+          var matchresult:=self.classBody.find((labelName)+(".setTextUnderline(true);\n"));
+       if(matchresult<=0) then{       
+        	        // setting Underline to true
+        var after := self.classBody.substringAfter(find);
+        self.classBody := pre+(inject)+(after);
+        } endif;
+        }endif;
+}

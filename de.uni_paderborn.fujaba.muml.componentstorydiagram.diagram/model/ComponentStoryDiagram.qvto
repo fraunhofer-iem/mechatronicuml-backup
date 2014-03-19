@@ -1,0 +1,30 @@
+import PostReconcileLibrary;
+modeltype GMFGEN uses gmfgen('http://www.eclipse.org/gmf/2009/GenModel');
+
+
+transformation settings(inout gmfgen : GMFGEN);
+	-- extends transformation common...
+
+-- TODO: call /de.uni_paderborn.fujaba.common/transformations/settings.qvto
+
+main() {
+	gmfgen.rootObjects()![GenEditorGenerator]->map settings();
+}
+
+mapping inout GenEditorGenerator::settings() {
+	self->map general("componentstorydiagram_diagram","Component Story Diagram Editor");
+	self->map editorSpecific();
+}
+
+
+
+mapping inout GenEditorGenerator::editorSpecific() {
+	-- put settings here, that are often lost to apply them permanently
+	 self.diagram.childNodes->map addLineTypeStyle();
+     self.diagram.topLevelNodes->map addLineTypeStyle();
+}
+
+mapping inout GenNode::addLineTypeStyle() {
+	//self.styles += Gen
+
+}

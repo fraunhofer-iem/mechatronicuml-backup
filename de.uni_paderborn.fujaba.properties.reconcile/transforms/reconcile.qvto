@@ -1,0 +1,266 @@
+transformation reconcile(inout properties : Properties);
+
+modeltype genmodel uses genmodel('http://www.eclipse.org/emf/2002/GenModel');
+modeltype ecore uses ecore ('http://www.eclipse.org/emf/2002/Ecore');
+modeltype Properties uses properties('http://de.uni_paderborn.fujaba.properties/0.4.0');
+
+main() {
+	log("QVT-O Script \"reconcile.qvto\" started.");
+
+	properties.rootObjects()[PropertyGenerator]->forEach(generator) {
+		generator->map generator();
+	}
+	
+}
+
+mapping inout PropertyGenerator::generator() {
+
+	-- assert that genmodel is defined
+	if (not genModel.oclIsUndefined()) then {
+		
+		-- create plugin definition
+		if (plugin.oclIsUndefined()) then {
+			plugin := new Plugin(self.genModel);
+		} endif;
+		
+		-- make sure important required bundles are registered
+		plugin.requiredBundles += Set {
+			"org.eclipse.ui",
+			"org.eclipse.core.runtime",
+			"org.eclipse.emf.ecore",
+			"org.eclipse.emf.edit",
+			"de.uni_paderborn.fujaba.properties.runtime",
+			genModel.modelPluginID,
+			genModel.editPluginID
+		};
+		self.referencedGenerators.genModel->forEach(g) {
+			plugin.requiredBundles += g.editPluginID;
+			plugin.requiredBundles += g.modelPluginID + '.edit.properties';
+		};
+		
+		-- there must be at least one tab
+		--if (tabs->isEmpty()) then {
+		--	tabs := new PropertyTab('base', 'Base');
+		--} endif;
+		
+		-- make sure, defaultTab is set
+		--if (defaultTab.oclIsUndefined()) then {
+		--	defaultTab := tabs->first();
+		--} endif;
+		
+		-- generate missing packages
+		self.genModel.allSubobjectsOfType(GenPackage)[GenPackage]->select(shouldGenerate())->forEach(package) {
+			if (not self.packages.genPackage->includes(package)) then {
+				self.packages += self->map createPackage(package);
+			} endif;
+		};
+		
+		-- reconcile all packages
+		if (self.reconciler.reconcilePackages) then {
+			packages->map reconcilePackage(defaultTab);
+		} endif;
+		
+	} endif;
+}
+
+mapping inout Package::reconcilePackage(tab : PropertyTab) {
+	
+	var newClasses : OrderedSet(Class);
+	
+	
+	-- generate missing classes
+	self.genPackage.genClasses->select(shouldGenerate())->forEach(_class) {
+		if (not self.classes.genClass->includes(_class)) then {
+			newClasses += self->map createClass(_class);
+		} endif;
+	};
+	
+	if (not newClasses->isEmpty()) then {
+		classes += newClasses;
+	} endif;
+	
+	
+	if (generator.reconciler.reconcileClasses) then {
+		-- reconcile all classes
+		classes->map reconcileClass(tab);
+	
+		if (not newClasses->isEmpty()) then {
+			classes->map initializeCategories()
+		} endif;
+	} endif;
+	
+	
+}
+ 
+mapping inout Class::reconcileClass(tab : PropertyTab) {
+	-- update list of super classes that can be found using all referenced models
+	var superClasses : Set(Class) := package.generator.referencedGenerators->union(Set { package.generator }).packages.classes->reject(superClass | not self.genClass.ecoreClass.eSuperTypes->includes(superClass.genClass.ecoreClass))->asSet();
+	
+	if (self.superClasses->asSet() != superClasses) then {
+		self.superClasses := superClasses;
+	} endif;
+
+	-- generate missing properties
+	self.genClass.genFeatures->select(shouldGenerate())->forEach(feature) {
+		if (not self.properties.genFeature->includes(feature)) then {
+			self.properties += self->map createProperty(feature, tab);
+		} endif;
+	};
+
+	
+	-- reconcile all properties
+	if (package.generator.reconciler.reconcileProperties) then {
+		self.properties->map reconcileProperty();
+	} endif;
+}
+
+mapping inout Property::reconcileProperty() {
+	if (self.reconcile) then {
+		-- make sure a tab is set
+		if (self.tab = null and self.clazz.package.generator.defaultTab != null) then {
+			self.tab := self.clazz.package.generator.defaultTab;
+		} endif;
+		
+		-- set the right editor
+		var newEditor := self->map editor()->any(true);
+		if (newEditor <> self.editor) then {
+			self.editor := newEditor;
+		} endif;
+	} endif;
+}
+
+mapping PropertyGenerator::createPackage(package : GenPackage) : Package {
+	genPackage := package;
+}
+mapping Package::createClass(_class : GenClass) : Class{
+	genClass := _class;
+}
+
+
+mapping inout Class::initializeCategories() {
+	-- create categories for new class
+	
+	-- booleans in one category
+	var booleanProperties : OrderedSet(Property) := self.properties->select(p | p.genFeature.ecoreFeature.eType.name = 'EBoolean');
+	if (not booleanProperties->isEmpty()) then {
+		var category : PropertyCategory := new PropertyCategory('Booleans', true);
+		category.properties := booleanProperties;
+		propertyCategories := propertyCategories->including(category);
+	} endif;
+	
+	-- lists in one category
+	var listProperties : OrderedSet(Property) := self.properties->select(p | p.genFeature.ecoreFeature.oclIsKindOf(EReference) and p.genFeature.ecoreFeature.upperBound > 1);
+	if (not listProperties->isEmpty()) then {
+		var category : PropertyCategory := new PropertyCategory('Lists', true);
+		category.properties := listProperties;
+		propertyCategories := propertyCategories->including(category);
+	} endif;
+}
+
+mapping Class::createProperty(_feature : GenFeature, _tab : PropertyTab) : Property {
+	genFeature := _feature;
+	tab := _tab;
+	_reconcile := true;
+}
+
+mapping inout Property::editor() : PropertyEditor
+	disjuncts 
+	Property::objectEditor,
+	Property::checkboxEditor,
+	Property::listEditor, 
+	Property::radioEditor,
+	Property::spinnerEditor,
+	Property::comboEditor,
+	Property::textEditor;
+
+
+mapping Property::objectEditor() : ObjectPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.oclAsType(EReference).containment and self.genFeature.ecoreFeature.upperBound = 1} {
+	init {
+		if (not self.editor.oclIsUndefined() and  self.editor.oclIsKindOf(ObjectPropertyEditor)) then {
+			result := self.editor.oclAsType(ObjectPropertyEditor);
+		} endif;
+	}	
+}
+
+mapping Property::checkboxEditor() : CheckboxPropertyEditor when {self.genFeature.ecoreFeature.eType.name = 'EBoolean'} {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(CheckboxPropertyEditor)) then {
+			result := self.editor.oclAsType(CheckboxPropertyEditor);
+		} endif;
+	}
+}
+
+
+mapping Property::listEditor() : ListPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound > 1} {
+	init {
+		if (not self.editor.oclIsUndefined() and  self.editor.oclIsKindOf(ListPropertyEditor)) then {
+			result := self.editor.oclAsType(ListPropertyEditor);
+		} endif;
+	}
+}
+
+mapping inout Property::radioEditor() : RadioPropertyEditor when {self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum)} {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(RadioPropertyEditor)) then {
+			result := self.editor.oclAsType(RadioPropertyEditor);
+		} endif;
+	}
+}
+
+mapping Property::spinnerEditor() : SpinnerPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EAttribute) and (self.genFeature.ecoreFeature.eType.name = 'EInt' or self.genFeature.ecoreFeature.eType.name = 'ELong') } {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(SpinnerPropertyEditor)) then {
+			result := self.editor.oclAsType(SpinnerPropertyEditor);
+		} endif;
+	}
+	digits := 0;
+}
+
+mapping Property::comboEditor() : ComboBoxPropertyEditor when {(self.genFeature.ecoreFeature.oclIsKindOf(EReference) and self.genFeature.ecoreFeature.upperBound = 1 and not self.genFeature.ecoreFeature.oclAsType(EReference).containment) or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EDataType) and self.genFeature.ecoreFeature.eType.name <> 'EString' and self.genFeature.ecoreFeature.eType.name <> 'EFloat' and self.genFeature.ecoreFeature.eType.name <> 'EDouble') or (self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) and self.genFeature.ecoreFeature.eType.oclAsType(EEnum).eLiterals->size() > 3)} {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(ComboBoxPropertyEditor)) then {
+			result := self.editor.oclAsType(ComboBoxPropertyEditor);
+		} endif;
+	}
+}
+mapping Property::textEditor() : TextPropertyEditor when {self.genFeature.ecoreFeature.oclIsKindOf(EAttribute) and self.genFeature.ecoreFeature.eType.name != 'EBoolean' and not self.genFeature.ecoreFeature.eType.oclIsKindOf(EEnum) } {
+	init {
+		if (not self.editor.oclIsUndefined() and self.editor.oclIsKindOf(TextPropertyEditor)) then {
+			result := self.editor.oclAsType(TextPropertyEditor);
+		} endif;
+	}
+
+	multiLine := self.genFeature.propertyMultiLine;
+}
+
+
+
+
+query GenPackage::shouldGenerate() : Boolean {
+	return not self.genClassifiers->select(shouldGenerate())->isEmpty();
+}
+query GenClassifier::shouldGenerate() : Boolean {
+	return false;
+}
+query GenClass::shouldGenerate() : Boolean {
+	return true;
+}
+query GenFeature::shouldGenerate() : Boolean {
+	return self._property != GenPropertyKind::None and self.ecoreFeature.changeable and not self.ecoreFeature._derived;
+}
+constructor Plugin::Plugin(genModel : GenModel) {
+	id := genModel.modelPluginID + ".edit.properties";
+	name := "Properties";
+	version := '0.1';
+}
+
+constructor PropertyTab::PropertyTab(_id : String, _name : String) {
+	id := _id;
+	name := _name;
+}
+
+constructor PropertyCategory::PropertyCategory(_title : String, _open : Boolean) {
+	title := _title;
+	open := _open;
+	vertical := false;
+}

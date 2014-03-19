@@ -1,0 +1,103 @@
+[comment encoding = UTF-8 /]
+[module make('http://www.fujaba.de/muml/connector/0.4.0', 'http://www.fujaba.de/muml/behavior/0.4.0',
+				'http://www.storydriven.org/core/0.3.1',
+				'http://www.fujaba.de/muml/actionlanguage/0.4.0',
+				'http://www.fujaba.de/muml/msgtype/0.4.0',
+				'http://www.fujaba.de/muml/types/0.4.0',
+				'http://www.fujaba.de/modelinstance/0.4.0',
+				'http://www.fujaba.de/muml/component/0.4.0',
+				'http://www.fujaba.de/muml/instance/0.4.0',
+				'http://www.fujaba.de/muml/realtimestatechart/0.4.0')]
+
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::stringQueries]
+[import de::uni_paderborn::fujaba::muml::model::gen::c::queries::modelQueries]
+[template public generateMakeFile(aRootNode : RootNode, path : String)]
+
+[file (path+'makefile', false, 'UTF-8')]
+[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+RTSC = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][if (comp.oclIsKindOf(AtomicComponent))][comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart).getClassName().toLowerFirst()/].o [/if][/for]
+[/if]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+COMP = [for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)][comp.getClassName().toLowerFirst()/].o [/for] 
+[/if][/for]
+LIB = syncChannel.o discreteConnection.o discreteConnectionList.o event.o eventQueue.o discretePort.o messages.o
+
+CC = gcc
+CFLAGS = -c
+all: app
+[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.realtimestatechart.category'))]
+app : main.o $(RTSC) $(COMP) $(LIB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if] [if (aRootNode.eAllContents(ComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o[/if]
+	$(CC) main.o $(RTSC) $(COMP) $(LIB) [if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o[/if] [if (aRootNode.eAllContents(ComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o[/if] -o app
+[for (rtsc : RealtimeStatechart | modelElementCategory.modelElements.oclAsType(RealtimeStatechart))]
+[rtsc.getClassName().toLowerFirst()/].o: [rtsc.getFileName(false,false)/]
+	$(CC) $(CFLAGS) [rtsc.getFileName(false,false)/]
+[/for]
+[/if]
+[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]
+[comp.getClassName().toLowerFirst()/].o: [comp.getFileName(false,false)/]
+	$(CC) $(CFLAGS) [comp.getFileName(false,false)/]
+[/for]
+[/if]
+[/for]
+syncChannel.o: lib/syncChannel.c
+	$(CC) $(CFLAGS) lib/syncChannel.c
+discreteConnection.o: lib/discreteConnection.c
+	$(CC) $(CFLAGS) lib/discreteConnection.c
+discreteConnectionList.o: lib/discreteConnectionList.c
+	$(CC) $(CFLAGS) lib/discreteConnectionList.c
+discretePort.o: lib/ports/discretePort.c
+	$(CC) $(CFLAGS) lib/ports/discretePort.c
+event.o: lib/event.c
+	$(CC) $(CFLAGS) lib/event.c
+eventQueue.o: lib/eventQueue.c
+	$(CC) $(CFLAGS) lib/eventQueue.c
+messages.o: msg/messages.c
+	$(CC) $(CFLAGS) msg/messages.c
+[if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o: operations/Operations.c
+	$(CC) $(CFLAGS) operations/Operations.c
+[/if]
+[if (aRootNode.eAllContents(ComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o: hybridPortImpl.c
+	$(CC) $(CFLAGS) hybridPortImpl.c
+[/if]
+
+clean:
+	rm -rf *o app
+[/file]
+[/template]
+
+
+[template public generateMakeFileForNXTOSEK(aRootNode : RootNode, path : String)]
+[file (path+'makefile', false, 'UTF-8')]
+# Targets
+TARGET = nxtOSEKImpl
+TARGET_SOURCES := \
+		lib/syncChannel.c\
+		lib/discreteConnection.c\
+		lib/discreteConnectionList.c\
+		lib/event.c \
+		lib/eventQueue.c\
+		lib/ports/discretePort.c\ 
+		msg/messages.c\
+		operations/Operations.c
+		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
+		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)][for (rtsc:RealtimeStatechart | comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))]		RTSCs/[rtsc.getClassName().toLowerFirst()/].c\
+[/for][/for]
+		[/if]
+		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
+		[for (comp : Component | modelElementCategory.modelElements.eAllContents(ComponentInstance).componentType)]		components/[comp.getClassName().toLowerFirst()/].c\
+[/for][/if][/for]
+		main.c
+
+		
+TOPPERS_OSEK_OIL_SOURCE := ./nxtOSEK.oil
+BUILD_MODE = ROM_ONLY
+
+O_PATH ?= build
+
+include ../ecrobot/ecrobot.mak
+[/file]
+[/template]

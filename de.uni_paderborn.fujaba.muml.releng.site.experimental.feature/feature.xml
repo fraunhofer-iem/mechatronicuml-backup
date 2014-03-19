@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.uni_paderborn.fujaba.muml.releng.site.experimental.feature"
+      label="MUMLUpdateSite"
+      version="1.0.0.qualifier">
+
+   <description>
+      %description
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      %copyright
+   </copyright>
+
+   <license url="%licenceURL">
+      %licence
+   </license>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.psm.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.model.gen.c.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="de.uni_paderborn.fujaba.muml.cybertron.feature"
+         version="0.0.0"/>
+
+</feature>

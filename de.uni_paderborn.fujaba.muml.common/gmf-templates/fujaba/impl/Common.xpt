@@ -1,0 +1,9 @@
+
+«DEFINE editorId FOR gmfgen::GenDiagram»
+	«EXPAND xpt::Common::generatedMemberComment»
+	@Override
+	public String getEditorId() {
+		return «editorGen.editor.getQualifiedClassName()».ID;
+
+	}
+«ENDDEFINE»

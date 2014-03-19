@@ -1,0 +1,132 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
+ */
+package de.uni_paderborn.fujaba.muml.instance;
+
+import org.eclipse.emf.common.util.EList;
+import org.storydriven.core.CommentableElement;
+import org.storydriven.core.NamedElement;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Component Instance Configuration</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * This class encapsules represents a configuration. It contains all component instances and connector instances that belong to a concrete configuration.
+ * <!-- end-model-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getComponentInstances <em>Component Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getPortConnectorInstances <em>Port Connector Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentPortInstances <em>Parent Port Instances</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentStructuredComponentInstance <em>Parent Structured Component Instance</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration()
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueComponentInstanceNames='--  Component instances of a component instance configuration must have unique names on top level.\r\nself.componentInstances->isUnique(name)'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='UniqueComponentInstanceNames'"
+ * @generated
+ */
+public interface ComponentInstanceConfiguration extends NamedElement, CommentableElement {
+	/**
+	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance}.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getParentCIC <em>Parent CIC</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of component instances of a component instance configuration.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Component Instances</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration_ComponentInstances()
+	 * @see de.uni_paderborn.fujaba.muml.instance.ComponentInstance#getParentCIC
+	 * @model opposite="parentCIC" containment="true"
+	 * @generated
+	 */
+	EList<ComponentInstance> getComponentInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Port Connector Instances</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.instance.PortConnectorInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of connector instances of a component instance configuration.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Port Connector Instances</em>' containment reference list.
+	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration_PortConnectorInstances()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<PortConnectorInstance> getPortConnectorInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Parent Port Instances</b></em>' containment reference list.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.instance.PortInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The port instances of the containing component instance.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Parent Port Instances</em>' containment reference list.
+	 * @see #isSetParentPortInstances()
+	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration_ParentPortInstances()
+	 * @model containment="true" unsettable="true" transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL derivation='if self.parentStructuredComponentInstance.oclIsUndefined()\r\nthen OrderedSet {}\r\nelse self.parentStructuredComponentInstance.portInstances\r\nendif'"
+	 * @generated
+	 */
+	EList<PortInstance> getParentPortInstances();
+
+	/**
+	 * Returns whether the value of the '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentPortInstances <em>Parent Port Instances</em>}' containment reference list is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Parent Port Instances</em>' containment reference list is set.
+	 * @see #getParentPortInstances()
+	 * @generated
+	 */
+	boolean isSetParentPortInstances();
+
+	/**
+	 * Returns the value of the '<em><b>Parent Structured Component Instance</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance#getEmbeddedCIC <em>Embedded CIC</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent Structured Component Instance</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A structured component instance embeds a component instance configuration
+	 * that defines its inner structure. For such component instance configuration,
+	 * this reference points to the containing structured component instance. If this
+	 * component instance configuration is not contained in a structured component
+	 * instance, this reference is null.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Parent Structured Component Instance</em>' container reference.
+	 * @see #setParentStructuredComponentInstance(StructuredComponentInstance)
+	 * @see de.uni_paderborn.fujaba.muml.instance.InstancePackage#getComponentInstanceConfiguration_ParentStructuredComponentInstance()
+	 * @see de.uni_paderborn.fujaba.muml.instance.StructuredComponentInstance#getEmbeddedCIC
+	 * @model opposite="embeddedCIC" transient="false"
+	 * @generated
+	 */
+	StructuredComponentInstance getParentStructuredComponentInstance();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.instance.ComponentInstanceConfiguration#getParentStructuredComponentInstance <em>Parent Structured Component Instance</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Structured Component Instance</em>' container reference.
+	 * @see #getParentStructuredComponentInstance()
+	 * @generated
+	 */
+	void setParentStructuredComponentInstance(StructuredComponentInstance value);
+
+} // ComponentInstanceConfiguration

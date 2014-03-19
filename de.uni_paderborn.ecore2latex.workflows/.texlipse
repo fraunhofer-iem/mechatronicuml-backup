@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Fri May 13 15:07:12 CEST 2011
+builderNum=2
+outputDir=src-gen/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=src-gen
+mainTexFile=doc.tex
+outputFile=doc.pdf
+langSpell=
+markDer=true
+srcDir=src-gen/

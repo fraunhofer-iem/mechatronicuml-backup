@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+    
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+      
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.TransitionAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Transition_4003"
+		  class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+
+      </metamodel>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Transition_4003"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.TransitionAdvice"/>
+      </binding>
+   </extension>
+  
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <viewProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartViewProvider">
+         <Priority name="Low"/>
+		 <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
+      </viewProvider>
+   </extension>
+
+   <extension
+         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
+      <editpartProvider
+            class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers.CustomRealtimestatechartEditPartProvider">
+         <Priority
+               name="Medium">
+         </Priority>
+      </editpartProvider>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.providers.CustomMumlParserProvider">
+         <Priority name="Low"/>
+      </ParserProvider>
+   </extension>
+   
+   <extension
+       point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.initializer.RealtimeStatechartModelInitializer">
+      </initializer>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.layoutProviders">
+       <layoutProvider class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.layout.RealtimeStatechartLayoutProvider">
+            <Priority name="High"/>
+       </layoutProvider>
+   </extension>
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.State_3032"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.StateAdvice"/>
+      </binding>
+   </extension>
+       
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.StateAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.State_3032"
+		  class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Region_3042"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.RegionAdvice"/>
+      </binding>
+   </extension>
+       
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.RegionAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.Region_3042"
+		  class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+   
+   
+   
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <binding context="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.RealtimeStatechart_1000"/>
+         <advice ref="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"/>
+      </binding>
+   </extension>
+       
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <metamodel nsURI="http://www.fujaba.de/muml/realtimestatechart/0.4.0">
+        <adviceBinding  id="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.ModelElementCategoryAdvice"
+		  typeId="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.RealtimeStatechart_1000"
+		  class="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.TransitionContainerAdaptionEditHelperAdvice"
+		  inheritance="all">
+        </adviceBinding>
+      </metamodel>
+   </extension>
+   
+<!-- does not work -->
+<!--
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes">
+       <elementTypeFactory
+           factory="de.uni_paderborn.fujaba.muml.realtimestatechart.diagram.custom.edit.helpers.StateTypeFactory"
+           kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+       </elementTypeFactory>
+   </extension>   
+-->
+
+</plugin>

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Properties
+Bundle-SymbolicName: org.eclipse.emf.ecore.improved.edit.properties; singleton:=true
+Bundle-Version: 0.4.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.properties.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ org.eclipse.emf.ecore.edit
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: 
+ org.eclipse.emf.ecore.properties.ecore.editor,
+ org.eclipse.emf.ecore.properties.tabs
+Bundle-Vendor: University of Paderborn

@@ -1,0 +1,104 @@
+import genmodel;
+import ecore;
+import properties;
+
+String fullyQualifiedName(ecore::EClassifier this, genmodel::GenModel genmodel) :
+	fullyQualifiedName(getGenClassifier(this, genmodel));
+String fullyQualifiedName(genmodel::GenClassifier this) :
+	'';
+String fullyQualifiedName(genmodel::GenClass this) :
+	genPackage.fullyQualifiedName() + '.' + ecoreClass.name;
+String fullyQualifiedName(genmodel::GenDataType this) :
+	genPackage.fullyQualifiedName() + '.' + ecoreDataType.name;
+String fullyQualifiedName(GenBase this) :
+	'';
+String fullyQualifiedName(genmodel::GenPackage this) :
+	(if basePackage.length > 0 then
+		basePackage + '.'
+	else if eContainer != null && { eContainer }.typeSelect(GenBase).size > 0 then
+		 fullyQualifiedName({ eContainer }.typeSelect(GenBase).first()) + '.' 
+	else
+		'') + ecorePackage.name;
+
+String toFirstUp(String this) : "";
+
+//String sectionName(Property this) :
+//	genFeature.genClass.ecoreClass.name + genFeature.ecoreFeature.name;
+
+List[GenPackage] getAllGenPackages(GenModel this) :
+	this.usedGenPackages.union(this.genPackages);
+	
+List[GenBase] getAllGenBases(GenModel this) :
+	getAllGenPackages().eAllContents.typeSelect(GenBase);
+	
+GenClassifier getType(GenFeature this) : 
+	getGenClassifier(ecoreFeature.eType, genClass.genPackage.genModel);
+	
+GenClassifier getGenClassifier(ecore::EClassifier this, genmodel::GenModel genModel) : 
+	genModel.getAllGenBases().typeSelect(GenClassifier).selectFirst(e | e.isGenClassifierFor(this));
+	
+Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClassifier this) :
+	false;
+
+Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EClass this) :
+	{ classifier }.typeSelect(GenClass).first().ecoreClass == this;
+
+Boolean isGenClassifierFor(genmodel::GenClassifier classifier, ecore::EDataType this) :
+	{ classifier }.typeSelect(GenDataType).first().ecoreDataType == this;
+
+String propertyType(Property this) :
+	genFeature.ecoreFeature.eType.fullyQualifiedName(genFeature.genClass.genPackage.genModel);
+	
+String genPluginId(PropertyGenerator this) :
+	genModel.modelPluginID + '.properties';
+
+String genPackageName(properties::Package this) :
+	generator.genPluginId() + '.' + genPackage.ecorePackage.name;
+
+String genEditorName(properties::Class this) :
+	genClass.ecoreClass.name.toString() + 'Editor';
+
+String genQualifiedEditorName(properties::Class this) :
+	package.genPackageName() + '.editor.' + genEditorName();
+
+String genCategoryKey(PropertyCategory this) :
+	"de.uni_paderborn.fujaba.properties.category." + /*clazz.genClass.ecoreClass.name.toString() + "." +*/ title; // Reuse categories from super classes!
+
+String genAdder(Property this) :
+	'add'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';
+
+String genCreator(Property this) :
+	'create'  + clazz.genClass.ecoreClass.name.toString().toFirstUpper() + genFeature.ecoreFeature.name.toString().toFirstUpper() + '_' + tab.name + 'Tab_Editor';	
+
+
+String genClassLiteral(GenClass this) :
+	genPackage.fullyQualifiedName() + '.' + genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + ecoreClass.name.toString().toFirstUpper() + (if ecoreClass.name.toString().toFirstUpper() == "Class" then '_' else '') + '()';
+
+
+String genFeatureLiteral(GenFeature this) :
+	genClass.genPackage.fullyQualifiedName() + '.' + genClass.genPackage.prefix.toString().toFirstUpper() + 'Package.eINSTANCE.get' + genClass.ecoreClass.name.toString().toFirstUpper() + '_' + ecoreFeature.name.toString().toFirstUpper() + '()';
+
+Set[Property] genLocalProperties(Class this) :
+	{ this }.union(allSuperClasses).properties.without(genInheritedProperties()).without(genOverriddenProperties());
+
+Set[Property] genInheritedProperties(Class this) :
+	/* This select makes sure we do not get a NullPointerException!*/
+	superClasses.select(e | e == superClasses.first()).union(superClasses.select(e | e == superClasses.first()).allSuperClasses).properties;
+
+Set[Property] genOverriddenProperties(Class this) :
+	properties.select(p | p.genFeature.ecoreFeature.eContainingClass != genClass.ecoreClass);
+
+	
+Boolean shouldGenerateEditor(Property this) :
+	editor != null;
+	
+String genDocumentation(Property this) :
+	genFeature.ecoreFeature.eAnnotations.genDocumentation().selectFirst(d | d != null && d != "");
+
+String genDocumentation(EAnnotation this) : 
+	if source.toString()=="http://www.eclipse.org/emf/2002/GenModel" then
+		details.select(d | d.key.toString() == "documentation").value;
+	
+
+Set[PropertyTab] genAllTabs(Class this) :
+	{ this }.union(allSuperClasses).properties.tab;

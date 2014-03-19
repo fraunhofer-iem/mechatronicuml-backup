@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+	            icon="icons/TypeDialog.gif"
+	            id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+	            label="Open Type Dialog"
+	            style="push">
+	            	<visibleWhen checkEnabled="true">
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+	
+	<extension
+        point="org.eclipse.ui.commands">
+     <category
+           id="de.uni_paderborn.fujaba"
+           name="Fujaba">
+     </category>
+     <command
+           categoryId="de.uni_paderborn.fujaba"
+           defaultHandler="de.uni_paderborn.fujaba.muml.common.internal.ui.commands.OpenTypeDialogCommand"
+           description="Open Type Dialog"
+           id="de.uni_paderborn.fujaba.muml.common.commands.OpenTypeDialogCommand"
+           name="Open Type Dialog">
+     </command>
+  </extension>
+
+  <!-- make sure that the "types" modelelementcategory is accepted as valid -->
+  <extension
+          point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+      <category
+              key="de.uni_paderborn.fujaba.muml.types.category"
+              name="types">
+          <child
+              class="DataType"
+              packageNsUri="http://www.fujaba.de/muml/types/0.4.0">
+          </child>
+      </category>
+  </extension>
+   
+  <extension
+       point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.TypeCategoryInitializer">
+      </initializer>
+  </extension>
+ 
+  <extension
+       point="org.eclipse.ltk.core.refactoring.moveParticipants">
+    <moveParticipant
+          class="de.uni_paderborn.fujaba.muml.common.refactoring.DiagramMoveParticipant"
+          id="de.uni_paderborn.fujaba.muml.common.refactoring.diagramMoveParticipant"
+          name="Move MUML Diagram Files">
+       <enablement>
+          <adapt
+                type="org.eclipse.core.resources.IResource">
+             <or>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.atomiccomponent_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.componentinstanceconfiguration_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.deployment_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.pattern_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.messagetype_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.realtimestatechart_diagram">
+                </test>
+                <test
+                      property="org.eclipse.core.resources.name"
+                      value="*.component_diagram">
+                </test>
+             </or>
+          </adapt></enablement>
+    </moveParticipant>
+  </extension>
+   
+   <!-- Initialization for ClockConstraints using the CreationDialog -->
+   <extension
+         point="de.uni_paderborn.fujaba.common.elementInitializer">
+         <initializer
+               initializer="de.uni_paderborn.fujaba.muml.common.elementinitializer.ClockConstraintElementInitializer"
+               qualifiedClassName="de.uni_paderborn.fujaba.muml.realtimestatechart.ClockConstraint"/>
+   </extension>
+ 
+ 
+</plugin>

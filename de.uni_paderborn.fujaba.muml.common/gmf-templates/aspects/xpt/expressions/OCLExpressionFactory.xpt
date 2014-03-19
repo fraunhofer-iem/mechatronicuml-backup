@@ -1,0 +1,30 @@
+«REM» Remove the commments (--) before the OCL Expressions, which were added by: /de.uni_paderborn.fujaba.common/transformations/pre-reconcile.qvto «ENDREM»
+
+«AROUND _initInterpreterFactory FOR gmfgen::GenExpressionInterpreter-»
+	«EXPAND xpt::Common::generatedMemberComment»
+	private final «container.getAbstractExpressionQualifiedClassName()»[] expressions; 
+
+	«EXPAND xpt::Common::generatedMemberComment»
+	protected «className»() {
+		this.expressions = new «container.getAbstractExpressionQualifiedClassName()»[«expressions->size()»];
+	}
+	
+	«EXPAND xpt::Common::generatedMemberComment»
+	public static «container.getAbstractExpressionQualifiedClassName()» getExpression(int index, org.eclipse.emf.ecore.EClassifier context, java.util.Map«EXPAND CodeStyle::G2('String', 'org.eclipse.emf.ecore.EClassifier') FOR container.editorGen.diagram» environment) {
+		«className» cached = «EXPAND plugin::Activator::instanceAccess FOR container.editorGen».get«className»();
+		if (cached == null) {
+			«EXPAND plugin::Activator::instanceAccess FOR container.editorGen».set«className»(cached = new «className»());
+		}
+		if (index < 0 || index >= cached.expressions.length) {
+			throw new IllegalArgumentException();
+		}
+		if (cached.expressions[index] == null) {
+			final String[] exprBodies = new String[] {
+				«FOREACH expressions.getBodyString() AS b»«b».substring(2).replaceAll("\n--", "\n"), «EXPAND xpt::Common::nonNLS»
+				«ENDFOREACH-»
+			};
+			cached.expressions[index] = getExpression(exprBodies[index], context, environment == null ? «EXPAND CodeStyle::emptyMap('String, org.eclipse.emf.ecore.EClassifier') FOR container.editorGen.diagram» : environment);
+		}
+		return cached.expressions[index];
+	}
+«ENDAROUND»

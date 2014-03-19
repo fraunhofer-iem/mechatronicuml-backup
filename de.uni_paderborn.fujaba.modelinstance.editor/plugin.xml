@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+<!--
+   Removed as of MUML #507:
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceModelWizardID"
+            name="%_UI_ModelinstanceModelWizard_label"
+            class="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ModelinstanceModelFile.gif">
+         <description>%_UI_ModelinstanceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+-->
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditorID"
+            name="%_UI_ModelinstanceEditor_label"
+            icon="icons/full/obj16/ModelinstanceModelFile.gif"
+            extensions="fujaba"
+            class="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceEditor"
+            contributorClass="de.uni_paderborn.fujaba.modelinstance.presentation.ModelinstanceActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

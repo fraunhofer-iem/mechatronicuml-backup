@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="">
+          <propertyTab
+             category="domain"
+             id="property.tab.general"
+             label="General"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.documentation"
+             label="Documentation"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.extensions"
+             label="Extensions"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="">
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="org.storydriven.core.properties.tabs.GeneralTabElementFilter"
+            id="property.tab.general"
+            tab="property.tab.general">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
+            id="property.tab.documentation"
+            tab="property.tab.documentation">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="org.storydriven.core.properties.tabs.ExtensionsTabElementFilter"
+            id="property.tab.extensions"
+            tab="property.tab.extensions">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="org.storydriven.core.properties.expressions.editor.TextualExpressionEditor$Factory"
+             type="org.storydriven.core.expressions.TextualExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.storydriven.core.properties.common.editor.UnaryExpressionEditor$Factory"
+             type="org.storydriven.core.expressions.common.UnaryExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.storydriven.core.properties.common.editor.ComparisonExpressionEditor$Factory"
+             type="org.storydriven.core.expressions.common.ComparisonExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.storydriven.core.properties.common.editor.ArithmeticExpressionEditor$Factory"
+             type="org.storydriven.core.expressions.common.ArithmeticExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.storydriven.core.properties.common.editor.LogicalExpressionEditor$Factory"
+             type="org.storydriven.core.expressions.common.LogicalExpression">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="org.storydriven.core.properties.common.editor.LiteralExpressionEditor$Factory"
+             type="org.storydriven.core.expressions.common.LiteralExpression">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+</plugin>

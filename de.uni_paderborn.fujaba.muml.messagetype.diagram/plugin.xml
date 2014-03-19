@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="messagetype_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="messagetype_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+	
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/MessageinterfaceDiagramFile.gif"
+         extensions="messagetype_diagram"
+         default="true"
+         class="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramEditor"
+         matchingStrategy="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlMatchingStrategy"
+         contributorClass="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramActionBarContributor">
+      </editor>
+   	</extension>
+   	<extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="de.uni_paderborn.fujaba.muml.messagetype.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   	</extension>
+
+   	<extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/MessageinterfaceDiagramFile.gif"
+  	     category="de.uni_paderborn.fujaba/de.uni_paderborn.fujaba.diagrams"
+  	     class="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlCreationWizard"
+  	     id="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   	</extension>
+	
+	
+	
+	
+	<extension point="org.eclipse.ui.menus">
+	   <?gmfgen generated="true"?>   
+	   <menuContribution
+	         allPopups="false"
+	         locationURI="popup:de.uni_paderborn.fujaba?after=diagrams">
+	      <command
+	            commandId="de.uni_paderborn.fujaba.muml.messagetype.diagram.createDiagram"
+	            icon="icons/obj16/MessageinterfaceDiagramFile.gif"
+	            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.createDiagram"
+	            label="Create Message Type Diagram"
+	            style="push">
+	            	<visibleWhen checkEnabled="false">
+						<reference definitionId="de.uni_paderborn.fujaba.expression.fujabafile"></reference>
+          			</visibleWhen>
+	      </command>
+	   </menuContribution>
+	</extension>
+
+	
+	<extension point="org.eclipse.ui.commands">
+		<?gmfgen generated="true"?>
+		<command
+			categoryId="de.uni_paderborn.fujaba"
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlInitDiagramFileAction"
+			id="de.uni_paderborn.fujaba.muml.messagetype.diagram.createDiagram"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+	
+	<extension
+         point="de.uni_paderborn.fujaba.modelinstance.modelelementcategory">
+      <?gmfgen generated="true"?>  
+      <category
+            key="de.uni_paderborn.fujaba.muml.messagetype.category"
+            name="msgtype">
+         
+         
+         <child
+               class="MessageTypeRepository"
+               packageNsUri="http://www.fujaba.de/muml/msgtype/0.4.0">
+         </child>
+         
+         
+      </category>
+   </extension>
+
+	
+	<extension
+         point="de.uni_paderborn.fujaba.modelinstance.ui.diagraminformation">
+      <?gmfgen generated="true"?>
+      <editor
+            preferencesHint="de.uni_paderborn.fujaba.muml.messagetype.diagram"
+            editorId="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramEditorID"
+            editorName="Message Type Editor"
+            fileExtension="messagetype_diagram"
+            modelElementCategoryKey="de.uni_paderborn.fujaba.muml.messagetype.category"
+            modelId="Message Type">
+         <diagramElement
+               packageNsURI="http://www.fujaba.de/modelinstance/0.4.0"
+               className="ModelElementCategory">
+         </diagramElement>
+         
+         <topLevelNode
+               domainElement="MessageTypeRepository"
+               semanticHint="2008">
+         </topLevelNode>
+         
+      </editor>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="Message TypePresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="Message TypePresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="Message TypeRender">
+         <Priority name="Lowest"/>
+         <ViewId id="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlMarkerNavigationProvider">
+         <MarkerType name="de.uni_paderborn.fujaba.muml.messagetype.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Message Type Diagram Editor problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MessageinterfaceValidationDecoratorProvider">
+         <Priority name="Medium"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+            category="de.uni_paderborn.fujaba.preferences"
+            class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.appearance"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.messagetype.diagram.appearance"
+            category="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+            class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.connections"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.messagetype.diagram.connections"
+            category="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+            class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.printing"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.messagetype.diagram.printing"
+            category="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+            class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.rulersAndGrid"
+            name="%prefpage.de.uni_paderborn.fujaba.muml.messagetype.diagram.rulersAndGrid"
+            category="de.uni_paderborn.fujaba.muml.messagetype.diagram.general"
+            class="de.uni_paderborn.fujaba.muml.messagetype.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   
+   
+   
+
+         
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlViewProvider">
+         <Priority name="Lowest"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Message Type"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2008,3007,3009"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Message Type"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2008,3007,3009"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value=""/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5017,5014,5016"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7010,7009"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlModelingAssistantProvider">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart" id="ModelElementCategory_1000"/>
+         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeRepositoryEditPart" id="MessageTypeRepository_2008"/>
+         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageTypeEditPart" id="MessageType_3007"/>
+         <object class="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.ParameterEditPart" id="Parameter_3009"/>
+         <context elements="ModelElementCategory_1000,MessageTypeRepository_2008,MessageType_3007,Parameter_3009"/>
+      </modelingAssistantProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="de.uni_paderborn.fujaba.muml.messagetype.diagram.providers.MumlParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://www.fujaba.de/modelinstance/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.messagetype.diagram.ModelElementCategory_1000"
+               name="%metatype.name.ModelElementCategory_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ModelElementCategory"
+               edithelper="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.helpers.MessageInterfaceDiagramEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/msgtype/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageTypeRepository_2008"
+               name="%metatype.name.MessageTypeRepository_2008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MessageTypeRepository"
+               edithelper="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.helpers.MessageTypeRepositoryEditHelper">
+            <param name="semanticHint" value="2008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/msgtype/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageType_3007"
+               name="%metatype.name.MessageType_3007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="MessageType"
+               edithelper="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.helpers.MessageTypeEditHelper">
+            <param name="semanticHint" value="3007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/behavior/0.4.0">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.messagetype.diagram.Parameter_3009"
+               name="%metatype.name.Parameter_3009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Parameter"
+               edithelper="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.helpers.ParameterEditHelper">
+            <param name="semanticHint" value="3009"/>
+         </metamodelType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="de.uni_paderborn.fujaba.muml.messagetype.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="de.uni_paderborn.fujaba.muml.messagetype.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="de.uni_paderborn.fujaba.muml.messagetype.diagram.TypeContext">
+         <elementType ref="de.uni_paderborn.fujaba.muml.messagetype.diagram.ModelElementCategory_1000"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageTypeRepository_2008"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.messagetype.diagram.MessageType_3007"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.messagetype.diagram.Parameter_3009"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="de.uni_paderborn.fujaba.muml.messagetype.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="de.uni_paderborn.fujaba.muml.messagetype.diagram"
+           properties="isURIEditorInput"
+           class="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="de.uni_paderborn.fujaba.muml.messagetype.diagram.resourceContent"/>
+			<contentExtension pattern="de.uni_paderborn.fujaba.muml.messagetype.diagram.domainResourceContent"/>
+            <contentExtension pattern="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlNavigatorContentProvider" 
+            labelProvider="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlNavigatorLabelProvider"
+            icon="icons/obj16/MessageinterfaceDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="messagetype_diagram"/>
+               </and>
+               <instanceof value="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlAbstractNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlAbstractNavigatorItem"/>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigatorSorter" 
+               class="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="messagetype_diagram"/>
+                  </and>
+                  <instanceof value="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorContentProvider" 
+            labelProvider="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorLabelProvider"
+            icon="icons/obj16/MessageinterfaceDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="fujaba"/>
+               </and>
+               <instanceof value="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigatorActionProvider"
+            class="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlAbstractNavigatorItem"/>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigatorLinkHelper"
+            class="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="de.uni_paderborn.fujaba.muml.messagetype.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="de.uni_paderborn.fujaba.muml.messagetype.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="de.uni_paderborn.fujaba.muml.messagetype.diagram.updateDiagram"
+         contextId="de.uni_paderborn.fujaba.muml.messagetype.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="de.uni_paderborn.fujaba.muml.messagetype.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="de.uni_paderborn.fujaba.muml.messagetype.diagram.edit.parts.MessageInterfaceDiagramEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="de.uni_paderborn.fujaba.muml.messagetype.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.MumlDiagramEditorID"
+         defaultHandler="de.uni_paderborn.fujaba.muml.messagetype.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="de.uni_paderborn.fujaba.muml.messagetype.diagram"
+            labelProvider="de.uni_paderborn.fujaba.muml.messagetype.diagram.sheet.MumlSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.messagetype.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+                       category="extra"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+          <propertyTab
+                       category="domain"
+             id="property.tab.general"
+             label="%tab.general"/>
+          <propertyTab
+          			 category="domain"
+             afterTab="property.tab.general"
+             id="property.tab.documentation"
+             label="%tab.documentation"/>
+      </propertyTabs>
+   </extension>
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.messagetype.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="de.uni_paderborn.fujaba.muml.messagetype.diagram.sheet.MumlPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="de.uni_paderborn.fujaba.muml.messagetype.diagram.navigator.MumlAbstractNavigatorItem"/>
+         </propertySection>
+         <propertySection
+            id="property.section.general" 
+            tab="property.tab.general"
+            filter="org.storydriven.core.properties.tabs.GeneralTabElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+         </propertySection>
+         <propertySection
+            id="property.section.documentation" 
+            tab="property.tab.documentation"
+            filter="org.storydriven.core.properties.tabs.DocumentationTabElementFilter"
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection">
+         </propertySection>
+      </propertySections>
+   </extension>
+
+
+
+   <!-- optionally, specify keybindings -->
+
+   </plugin>

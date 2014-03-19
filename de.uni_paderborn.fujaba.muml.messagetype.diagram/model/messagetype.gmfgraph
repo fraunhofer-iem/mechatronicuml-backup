@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="messageinterfaceeditor">
+  <figures name="Default">
+    <descriptors name="MessageInterfaceFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="MessageInterfaceFigure">
+        <layout xsi:type="gmfgraph:GridLayout" equalWidth="false">
+          <margins dx="1"/>
+        </layout>
+        <children xsi:type="gmfgraph:Label" name="MessageInterfaceNameLabelFigure">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true"/>
+          <font xsi:type="gmfgraph:BasicFont" height="10" style="BOLD"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="MessageTypesCompartmentFigure" outline="false">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
+        </children>
+      </actualFigure>
+      <accessors accessor="getFigureMessageInterfaceNameLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureMessageTypesCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="MessageTypeFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="MessageTypeFigure" outline="false" fill="false">
+        <layout xsi:type="gmfgraph:FlowLayout" matchMinorSize="true" forceSingleLine="true" majorAlignment="FILL" majorSpacing="0" minorSpacing="0"/>
+        <children xsi:type="gmfgraph:Label" name="MessageTypeNameLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="OpeningParenthesesLabelFigure" text="("/>
+        <children xsi:type="gmfgraph:Rectangle" name="ParametersCompartmentFigure" outline="false" fill="false"/>
+        <children xsi:type="gmfgraph:Label" name="ClosingParenthesesLabelFigure" text=")"/>
+      </actualFigure>
+      <accessors accessor="getFigureMessageTypeNameLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureParametersCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+    </descriptors>
+    <descriptors name="ParameterFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ParameterFigure" outline="false" fill="false">
+        <children xsi:type="gmfgraph:Label" name="ParameterLabel" text=""/>
+      </actualFigure>
+      <accessors accessor="getFigureParameterLabel" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="MessageTypeRepository" figure="MessageInterfaceFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="130" dy="90"/>
+    </facets>
+  </nodes>
+  <nodes name="MessageType" figure="MessageTypeFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="-1" dy="-1"/>
+    </facets>
+  </nodes>
+  <nodes name="Parameter" figure="ParameterFigure" resizeConstraint="NONE">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="-1" dy="-1"/>
+    </facets>
+  </nodes>
+  <compartments name="MessageTypesCompartment" figure="MessageInterfaceFigure" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments name="ParametersCompartment" figure="MessageTypeFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
+  <labels name="MessageTypeName" figure="MessageTypeFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="MessageInterfaceName" figure="MessageInterfaceFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="ParameterName" figure="ParameterFigure" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+</gmfgraph:Canvas>

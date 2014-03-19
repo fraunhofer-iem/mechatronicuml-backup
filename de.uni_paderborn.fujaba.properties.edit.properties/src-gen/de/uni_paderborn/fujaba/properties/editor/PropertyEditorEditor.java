@@ -1,0 +1,28 @@
+package de.uni_paderborn.fujaba.properties.editor;
+
+/**
+ * @generated
+ */
+public abstract class PropertyEditorEditor
+		extends
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
+
+	/**
+	 * @generated
+	 */
+	public PropertyEditorEditor(String tab,
+			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
+			org.eclipse.emf.ecore.EClass eClass) {
+		super(tab, adapterFactory, eClass);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void createProperties() {
+		super.createProperties();
+
+	}
+
+}

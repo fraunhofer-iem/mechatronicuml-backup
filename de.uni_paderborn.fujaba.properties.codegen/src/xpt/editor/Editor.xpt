@@ -1,0 +1,186 @@
+«IMPORT properties»
+«EXTENSION Metamodel»
+
+«DEFINE ClassEditor FOR Class»
+/**
+ * @generated
+ */
+public «IF genClass.ecoreClass.abstract»abstract«ENDIF» class «genEditorName()» extends «EXPAND extends-» {
+	«EXPAND classBody»
+}
+«ENDDEFINE» 
+
+«DEFINE extends FOR Class-»
+«IF superClasses.isEmpty-»
+	de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor
+«ELSE-»
+	«superClasses.first().genQualifiedEditorName()»
+«ENDIF-»
+«ENDDEFINE»
+
+
+«DEFINE classBody FOR Class»
+
+	/**
+	 * @generated
+	 */
+	public «genEditorName()»(String tab, org.eclipse.emf.common.notify.AdapterFactory adapterFactory, org.eclipse.emf.ecore.EClass eClass) {
+		super(tab, adapterFactory, eClass);
+	}
+
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void createProperties() {
+		super.createProperties();
+		«FOREACH propertyCategories.select(c | genLocalProperties().category.contains(c)) AS this»
+		addSubCategory("«genCategoryKey()»", "«title»", «IF vertical»org.eclipse.swt.SWT.VERTICAL«ELSE»org.eclipse.swt.SWT.HORIZONTAL«ENDIF», «open»);
+		«ENDFOREACH»
+		«FOREACH genLocalProperties().select(p | p.shouldGenerateEditor()) AS this»
+			«EXPAND addEditor FOR editor»
+		«ENDFOREACH»
+	}
+
+	«FOREACH genLocalProperties().select(p | p.shouldGenerateEditor()) AS this-»
+	/**
+	 * @generated
+	 */
+	protected void «genAdder()»(String category, boolean front) {
+		addEditorToCategory(category, «genCreator()»(), front);
+	}
+
+	«EXPAND createMethod(false)»
+	«ENDFOREACH»
+
+	«FOREACH genOverriddenProperties() AS this»
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void «genAdder()»(String category, boolean front) {
+		«IF editor != null»
+		category = "«category.genCategoryKey()»";
+		front = «EXPAND front FOR editor»
+		super.«genAdder()»(category, front);
+		«ENDIF»
+	}
+
+	«EXPAND createMethod(true)»
+	«ENDFOREACH»
+
+«IF !genClass.ecoreClass.abstract»
+
+
+	//
+	// instantiation
+	//
+	
+	
+	/**
+	 * @generated
+	 */
+	public «genEditorName()»(String tab) {
+		this(tab, «package.generator.genPluginId()».util.PropertiesUtil.INSTANCE.getAdapterFactory(), «this.genClass.genClassLiteral()»);
+	}
+	
+	/**
+	 * @generated
+	 */
+	public static class Factory implements de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory {
+		@Override
+		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(String tab) {
+			return new «genEditorName()»(tab);
+		}
+		
+		@Override
+		public boolean hasTab(java.lang.String tab) {
+			return java.util.Arrays.asList(
+				new java.lang.String[] { «FOREACH genAllTabs() AS tab SEPARATOR ',\n'»"«tab.id»"«ENDFOREACH» }
+			).contains(tab);
+		}
+	}
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE createMethod(Boolean override) FOR Property»
+	/**
+	 * @generated
+	 */
+	«IF override-»
+	@Override
+	«ENDIF-»
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor «genCreator()»() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = «EXPAND createEditor(this) FOR editor»
+		«EXPAND addFilter("editor") FOREACH filters»
+		«IF genDocumentation() != null»
+		editor.setTooltipMessage("«genDocumentation().replaceAll("\\\\", "\\\\\\\\").replaceAll("\"", "\\\\\"").replaceAll("\r\n", "\\\\n").replaceAll("\r", "\\\\n").replaceAll("\n", "\\\\n")»");
+		«ENDIF»
+		return editor;
+
+	}
+«ENDDEFINE»
+
+«DEFINE addEditor FOR PropertyEditor»
+	if (getTab() == null || "«property.tab.id»".equals(getTab())) {
+«property.genAdder()»(«EXPAND categoryKey FOR property-», «EXPAND front»);
+	}
+«ENDDEFINE»
+
+«DEFINE front FOR PropertyEditor»true«ENDDEFINE»
+«DEFINE front FOR ObjectPropertyEditor»false«ENDDEFINE»
+
+«DEFINE categoryKey FOR Property-»
+«IF category != null-»
+	"«category.genCategoryKey()-»"
+«ELSE-»
+	null
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR PropertyEditor-»
+UNKNOWN PROPERTY EDITOR
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR CheckboxPropertyEditor-»
+new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
+
+«DEFINE createEditor(Property property) FOR SpinnerPropertyEditor-»
+new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()», «digits»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR RadioPropertyEditor-»
+new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR ComboBoxPropertyEditor-»
+new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR TextPropertyEditor-»
+new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()», «multiLine»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR ListPropertyEditor-»
+new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR ObjectPropertyEditor-»
+new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR OCLPropertyEditor-»
+new de.uni_paderborn.fujaba.properties.runtime.editors.OCLPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
+«DEFINE createEditor(Property property) FOR CustomPropertyEditor-»
+new «fullyQualifiedClassName»(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
+«DEFINE addFilter(String editorVar) FOR PropertyFilter»«ENDDEFINE»
+
+«DEFINE addFilter(String editorVar) FOR OCLPropertyFilter»
+ 		«editorVar».addVisibilityFilter("«expression»", getEClass());
+«ENDDEFINE»

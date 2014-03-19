@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+<!-- DEACTIVATED new wizard, because it does not work yet -->
+
+<!--
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="properties.presentation.PropertiesModelWizardID"
+            name="%_UI_PropertiesModelWizard_label"
+            class="de.uni_paderborn.fujaba.properties.presentation.PropertiesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PropertiesModelFile.gif">
+         <description>%_UI_PropertiesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+-->
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="properties.presentation.PropertiesEditorID"
+            name="%_UI_PropertiesEditor_label"
+            icon="icons/full/obj16/PropertiesModelFile.gif"
+            extensions="propsheet"
+            class="de.uni_paderborn.fujaba.properties.presentation.PropertiesEditor"
+            contributorClass="de.uni_paderborn.fujaba.properties.presentation.PropertiesActionBarContributor">
+      </editor>
+   </extension>
+   
+    <extension
+        point="org.eclipse.core.expressions.definitions">
+     <definition
+           id="de.uni_paderborn.fujaba.properties.expression.genmodelfile">
+	    <iterate
+           ifEmpty="false"
+           operator="and">
+	       <adapt type="org.eclipse.core.resources.IResource">
+	          <test property="org.eclipse.core.resources.name" 
+	                value="*.genmodel"/>
+	       </adapt>
+	    </iterate>
+     </definition>
+    </extension>
+
+    <extension point="org.eclipse.ui.menus">
+	   <menuContribution
+	          locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+       <command
+             commandId="de.uni_paderborn.fujaba.properties.initializePropsheet"
+             icon="icons/full/obj16/PropertiesModelFile.gif"
+             id="de.uni_paderborn.fujaba.properties.initializePropsheet"
+             label="Initialize Propsheet Model"
+             style="push">
+          <visibleWhen
+                checkEnabled="false">
+             <reference
+                   definitionId="de.uni_paderborn.fujaba.properties.expression.genmodelfile">
+             </reference>
+          </visibleWhen>
+       </command>
+	   </menuContribution>
+	</extension>
+
+    <extension point="org.eclipse.ui.commands">
+		<command
+			description="Initialize realtimestatechart_diagram"
+			defaultHandler="de.uni_paderborn.fujaba.properties.presentation.InitializePropsheetHandler"
+			id="de.uni_paderborn.fujaba.properties.initializePropsheet"
+			name="%initDiagramActionLabel">
+		</command>
+	</extension>
+
+
+
+</plugin>
