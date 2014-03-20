@@ -56,8 +56,8 @@ eventQueue.o: lib/eventQueue.c
 	$(CC) $(CFLAGS) lib/eventQueue.c
 messages.o: msg/messages.c
 	$(CC) $(CFLAGS) msg/messages.c
-[if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o: operations/Operations.c
-	$(CC) $(CFLAGS) operations/Operations.c
+[if (aRootNode.eAllContents(Operation)->size() > 0)]operations.o: operations/operations.c
+	$(CC) $(CFLAGS) operations/operations.c
 [/if]
 [if (aRootNode.eAllContents(ComponentInstance).componentType.eAllContents(HybridPort)->size()>0)]hybridPortImpl.o: hybridPortImpl.c
 	$(CC) $(CFLAGS) hybridPortImpl.c
@@ -81,7 +81,7 @@ TARGET_SOURCES := \
 		lib/eventQueue.c\
 		lib/ports/discretePort.c\ 
 		msg/messages.c\
-		operations/Operations.c
+		operations/operations.c
 		[for (modelElementCategory : ModelElementCategory | aRootNode.categories)]
 		[if (modelElementCategory.key.matches('de.uni_paderborn.fujaba.muml.instance.category'))]
 		[for (comp : Component | modelElementCategory.modelElements.eAllContents(AtomicComponentInstance).componentType)][for (rtsc:RealtimeStatechart | comp.oclAsType(AtomicComponent).behavior.oclAsType(RealtimeStatechart))]		RTSCs/[rtsc.getClassName().toLowerFirst()/].c\
