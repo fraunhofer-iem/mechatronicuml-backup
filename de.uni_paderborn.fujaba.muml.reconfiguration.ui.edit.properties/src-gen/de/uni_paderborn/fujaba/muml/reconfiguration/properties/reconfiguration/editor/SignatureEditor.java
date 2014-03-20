@@ -23,6 +23,60 @@ public class SignatureEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addSignatureParametersEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addSignatureReturnParametersEditor(null, true);
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addSignatureParametersEditor(String category, boolean front) {
+		addEditorToCategory(category, createSignatureParametersEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSignatureParametersEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+						.getSignature_Parameters());
+
+		editor.setTooltipMessage("The set of input parameters of the reconfiguration rule.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addSignatureReturnParametersEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createSignatureReturnParametersEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSignatureReturnParametersEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+						.getSignature_ReturnParameters());
+
+		editor.setTooltipMessage("The set of output parameters of the reconfiguration rule.");
+
+		return editor;
+
 	}
 
 	//
@@ -57,6 +111,7 @@ public class SignatureEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
+							"property.tab.general", "property.tab.general",
 							"property.tab.extensions"}).contains(tab);
 		}
 	}

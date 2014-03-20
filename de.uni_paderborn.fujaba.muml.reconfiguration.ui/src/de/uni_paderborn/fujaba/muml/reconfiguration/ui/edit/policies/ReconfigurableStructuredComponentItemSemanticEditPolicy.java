@@ -45,18 +45,7 @@ public class ReconfigurableStructuredComponentItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.ContinuousPortCreateCommand(
 					req));
 		}
-		
-		//TODO create commands
-//		if (de.uni_paderborn.fujaba.muml.reconfiguration.ui.providers.ReconfigurationElementTypes.ReconfigurationExecutionPort_3077== req
-//				.getElementType()) {
-//			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.ContinuousPortCreateCommand(
-//					req));
-//		}
-//		if (de.uni_paderborn.fujaba.muml.component.diagram.providers.MumlElementTypes.ContinuousPort_3011 == req
-//				.getElementType()) {
-//			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.component.diagram.edit.commands.ContinuousPortCreateCommand(
-//					req));
-//		}
+	
 		return super.getCreateCommand(req);
 	}
 

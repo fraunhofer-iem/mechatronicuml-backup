@@ -82,7 +82,7 @@ public class ReferenceImpl extends NamedElementImpl implements Reference {
 	 */
 	public StructType getStructType() {
 		if (eContainerFeatureID() != StructdatatypePackage.REFERENCE__STRUCT_TYPE) return null;
-		return (StructType)eContainer();
+		return (StructType)eInternalContainer();
 	}
 
 	/**

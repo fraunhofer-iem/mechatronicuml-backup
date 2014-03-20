@@ -155,7 +155,7 @@ public class ReconfigurationMessagePortInterfaceEntryImpl extends Reconfiguratio
 	 */
 	public ReconfigurationMessagePort getReconfigurationMessagePort() {
 		if (eContainerFeatureID() != ReconfigurationPackage.RECONFIGURATION_MESSAGE_PORT_INTERFACE_ENTRY__RECONFIGURATION_MESSAGE_PORT) return null;
-		return (ReconfigurationMessagePort)eContainer();
+		return (ReconfigurationMessagePort)eInternalContainer();
 	}
 
 	/**

@@ -27,6 +27,10 @@ public abstract class ReconfigurationRuleEditor
 			addReconfigurationRuleReconfiguredComponentEditor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addReconfigurationRuleSignatureEditor(null, false);
+		}
+
 	}
 
 	/**
@@ -48,6 +52,30 @@ public abstract class ReconfigurationRuleEditor
 						.getReconfigurationRule_ReconfiguredComponent());
 
 		editor.setTooltipMessage("The component on which the reconfiguration rule is to be applied.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addReconfigurationRuleSignatureEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createReconfigurationRuleSignatureEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createReconfigurationRuleSignatureEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage.eINSTANCE
+						.getReconfigurationRule_Signature());
+
+		editor.setTooltipMessage("The signature of the reconfiguration rule that defines the name as well as the\ninput and output parameters of this reconfiguration rule.");
 
 		return editor;
 
