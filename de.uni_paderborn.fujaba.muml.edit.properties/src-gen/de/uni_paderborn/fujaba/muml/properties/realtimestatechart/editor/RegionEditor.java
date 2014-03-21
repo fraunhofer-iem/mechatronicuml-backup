@@ -73,6 +73,8 @@ public class RegionEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getPrioritizedElement_Priority(), 0);
 
+		editor.setTooltipMessage("The integer value that represents the priority.");
+
 		return editor;
 
 	}

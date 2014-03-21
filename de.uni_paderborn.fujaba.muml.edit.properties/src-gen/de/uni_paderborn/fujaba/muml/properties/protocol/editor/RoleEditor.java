@@ -56,17 +56,12 @@ public class RoleEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConstrainableElementConstraintEditor(
+			addConnectorEndpointConnectorsEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addBehavioralElementBehaviorEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorEndpointConnectorsEditor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}
@@ -251,22 +246,22 @@ public class RoleEditor
 	/**
 	 * @generated
 	 */
-	protected void addConstrainableElementConstraintEditor(String category,
+	protected void addConnectorEndpointConnectorsEditor(String category,
 			boolean front) {
 		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
+				createConnectorEndpointConnectorsEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
 
-		editor.setTooltipMessage("The constraint for this element.");
+		editor.setTooltipMessage("The connectors attached to this endpoint.");
 
 		return editor;
 
@@ -291,28 +286,6 @@ public class RoleEditor
 						.getBehavioralElement_Behavior());
 
 		editor.setTooltipMessage("The behavior of this behavioral element.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addConnectorEndpointConnectorsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConnectorEndpointConnectorsEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectorsEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpoint_Connectors());
 
 		return editor;
 
@@ -355,8 +328,8 @@ public class RoleEditor
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general"}).contains(tab);
+							"property.tab.general", "property.tab.general"})
+					.contains(tab);
 		}
 	}
 

@@ -59,6 +59,8 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteSingleInteractionEndpointInstance_MultiInteractionEndpointInstance());
 
+		editor.setTooltipMessage("If this is an instance of a multi discrete interaction endpoint, refers to the corresponding multi instance.");
+
 		return editor;
 
 	}
@@ -81,6 +83,8 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteSingleInteractionEndpointInstance_Next());
+
+		editor.setTooltipMessage("If this is an instance of a multi discrete interaction endpoint, refers to the next single instance.");
 
 		return editor;
 
@@ -105,6 +109,8 @@ public abstract class DiscreteSingleInteractionEndpointInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteSingleInteractionEndpointInstance_Previous());
+
+		editor.setTooltipMessage("If this is an instance of a multi discrete interaction endpoint, refers to the previous single instance.");
 
 		return editor;
 

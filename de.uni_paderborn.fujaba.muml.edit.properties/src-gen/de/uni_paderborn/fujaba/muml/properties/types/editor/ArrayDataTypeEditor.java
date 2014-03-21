@@ -73,6 +73,8 @@ public class ArrayDataTypeEditor
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
 						.getArrayDataType_Cardinality(), false);
 
+		editor.setTooltipMessage("The cardinality that induces the index for this array data type.");
+
 		return editor;
 
 	}

@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class TransitionEditor
 		extends
-			org.storydriven.core.properties.core.editor.CommentableElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.PrioritizedElementEditor {
 
 	/**
 	 * @generated
@@ -89,8 +89,12 @@ public class TransitionEditor
 					true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPrioritizedElementPriorityEditor(null, true);
+		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
+			addCommentableElementCommentEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.extensions".equals(getTab())) {
+			addExtendableElementExtensionEditor(null, true);
 		}
 
 	}
@@ -384,6 +388,8 @@ public class TransitionEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getTransition_Urgent());
 
+		editor.setTooltipMessage("Indicates whether this transition fires immediately when it is enabled.");
+
 		return editor;
 
 	}
@@ -391,20 +397,46 @@ public class TransitionEditor
 	/**
 	 * @generated
 	 */
-	protected void addPrioritizedElementPriorityEditor(String category,
+	protected void addCommentableElementCommentEditor(String category,
 			boolean front) {
-		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
-						.getPrioritizedElement_Priority(), 0);
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getCommentableElement_Comment(), true);
+
+		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addExtendableElementExtensionEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createExtendableElementExtensionEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtendableElementExtensionEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				org.storydriven.core.CorePackage.eINSTANCE
+						.getExtendableElement_Extension());
+
+		editor.addVisibilityFilter("not extension->isEmpty()", getEClass());
 
 		return editor;
 
@@ -448,9 +480,9 @@ public class TransitionEditor
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
+							"property.tab.general",
 							"property.tab.documentation",
-							"property.tab.extensions", "property.tab.general"})
-					.contains(tab);
+							"property.tab.extensions"}).contains(tab);
 		}
 	}
 

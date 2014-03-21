@@ -100,6 +100,8 @@ public class PortPartEditor
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
 						.getPortPart_CoordinationProtocolPart());
 
+		editor.setTooltipMessage("If the port type refines a role, this part refers to the enclosing coordination protocol.");
+
 		return editor;
 
 	}

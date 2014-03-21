@@ -77,6 +77,8 @@ public class MessageEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getMessage_ParameterBinding());
 
+		editor.setTooltipMessage("The collection of parameter bindings for this message. All parameters of the message type must be bound exactly once.");
+
 		return editor;
 
 	}

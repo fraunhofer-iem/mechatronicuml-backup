@@ -54,6 +54,8 @@ public abstract class ConnectorInstanceEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorInstance_Type());
 
+		editor.setTooltipMessage("The connector that represents the type of this connector instance. May be undefined in case of a top level connector instance, which does not refer to a particular connector inside a structured component.");
+
 		return editor;
 
 	}
@@ -76,6 +78,8 @@ public abstract class ConnectorInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorInstance_ConnectorEndpointInstances());
+
+		editor.setTooltipMessage("The connector endpoint instances connected by this connector instance.");
 
 		return editor;
 

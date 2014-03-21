@@ -39,11 +39,6 @@ public abstract class ComponentEditor
 			addCommentableElementCommentEditor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConstrainableElementConstraintEditor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
-		}
-
 	}
 
 	/**
@@ -111,30 +106,6 @@ public abstract class ComponentEditor
 						.getCommentableElement_Comment(), true);
 
 		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addConstrainableElementConstraintEditor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConstrainableElementConstraintEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConstrainableElementConstraintEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getConstrainableElement_Constraint());
-
-		editor.setTooltipMessage("The constraint for this element.");
 
 		return editor;
 

@@ -268,9 +268,8 @@
       </properties>
       <propertyCategories title="Booleans" properties="//@packages.1/@classes.7/@properties.8 //@packages.1/@classes.7/@properties.12"/>
       <propertyCategories title="Lists" properties="//@packages.1/@classes.7/@properties.4 //@packages.1/@classes.7/@properties.5 //@packages.1/@classes.7/@properties.6 //@packages.1/@classes.7/@properties.10"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
       <superClasses href="#//@packages.1/@classes.15"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/ClockConstraint"/>
@@ -626,13 +625,17 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/types/RangedPrimitiveDataType/range"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
     </classes>
   </packages>
   <packages>
     <genPackage href="muml.genmodel#//muml/protocol"/>
     <classes>
       <genClass href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification"/>
-      <superClasses href="#//@packages.6/@classes.4"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
@@ -684,49 +687,17 @@
   <packages>
     <genPackage href="muml.genmodel#//muml/constraint"/>
     <classes>
-      <genClass href="muml.genmodel#//muml/constraint/Constraint"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/constraint/Constraint/correctness"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <properties category="//@packages.6/@classes.0/@propertyCategories.0">
-        <genFeature href="muml.genmodel#//muml/constraint/Constraint/background"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
-      </properties>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/constraint/Constraint/constrainableElement"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Booleans" properties="//@packages.6/@classes.0/@properties.1"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
-    </classes>
-    <classes superClasses="//@packages.6/@classes.0">
-      <genClass href="muml.genmodel#//muml/constraint/ModelingConstraint"/>
-    </classes>
-    <classes superClasses="//@packages.6/@classes.0">
-      <genClass href="muml.genmodel#//muml/constraint/VerifiableConstraint"/>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/constraint/TextualConstraint"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/constraint/TextualConstraint/textualExpression"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
-      </properties>
-      <superClasses href="#//@packages.6/@classes.2"/>
+      <genClass href="muml.genmodel#//muml/constraint/TemporalLogicConstraint"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
     <classes>
-      <genClass href="muml.genmodel#//muml/constraint/ConstrainableElement"/>
-      <properties category="//@packages.6/@classes.4/@propertyCategories.0">
-        <genFeature href="muml.genmodel#//muml/constraint/ConstrainableElement/constraint"/>
+      <genClass href="muml.genmodel#//muml/constraint/VerifiableElement"/>
+      <properties category="//@packages.6/@classes.1/@propertyCategories.0">
+        <genFeature href="muml.genmodel#//muml/constraint/VerifiableElement/temporalLogicConstraints"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <propertyCategories title="Lists" properties="//@packages.6/@classes.4/@properties.0"/>
+      <propertyCategories title="Lists" properties="//@packages.6/@classes.1/@properties.0"/>
     </classes>
   </packages>
   <packages>
@@ -839,10 +810,9 @@
       <propertyCategories title="Lists" properties="//@packages.8/@classes.0/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="#//@packages.6/@classes.4"/>
       <superClasses href="#//@packages.4/@classes.2"/>
     </classes>
-    <classes superClasses="//@packages.6/@classes.4 //@packages.4/@classes.2 //@packages.9/@classes.0">
+    <classes superClasses="//@packages.9/@classes.0 //@packages.4/@classes.2">
       <genClass href="muml.genmodel#//muml/component/Port"/>
       <properties>
         <genFeature href="muml.genmodel#//muml/component/Port/component"/>
@@ -885,7 +855,7 @@
     <classes superClasses="//@packages.8/@classes.13 //@packages.8/@classes.11">
       <genClass href="muml.genmodel#//muml/component/StaticStructuredComponent"/>
     </classes>
-    <classes superClasses="//@packages.8/@classes.0 //@packages.7/@classes.0">
+    <classes superClasses="//@packages.6/@classes.1 //@packages.7/@classes.0 //@packages.8/@classes.0">
       <genClass href="muml.genmodel#//muml/component/AtomicComponent"/>
     </classes>
     <classes superClasses="//@packages.8/@classes.9">
@@ -1065,10 +1035,9 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" properties="//@packages.9/@classes.4/@properties.0 //@packages.9/@classes.4/@properties.1 //@packages.9/@classes.4/@properties.5"/>
-      <superClasses href="#//@packages.6/@classes.4"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="#//@packages.7/@classes.0"/>
       <superClasses href="#//@packages.9/@classes.0"/>
+      <superClasses href="#//@packages.7/@classes.0"/>
     </classes>
     <classes superClasses="//@packages.9/@classes.2">
       <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpointInstance"/>

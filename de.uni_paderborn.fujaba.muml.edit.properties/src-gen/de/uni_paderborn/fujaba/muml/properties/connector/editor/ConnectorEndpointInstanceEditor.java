@@ -60,6 +60,8 @@ public abstract class ConnectorEndpointInstanceEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorEndpointInstance_ConnectorInstances());
 
+		editor.setTooltipMessage("The connector instances attached to this endpoint instance.");
+
 		return editor;
 
 	}
@@ -81,6 +83,8 @@ public abstract class ConnectorEndpointInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorEndpointInstance_Type());
+
+		editor.setTooltipMessage("The connector endpoint that represents the type of this instance.");
 
 		return editor;
 

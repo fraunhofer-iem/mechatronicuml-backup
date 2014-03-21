@@ -263,11 +263,6 @@
        </propertyEditor>
     
        <propertyEditor
-             factory="de.uni_paderborn.fujaba.muml.properties.constraint.editor.TextualConstraintEditor$Factory"
-             type="de.uni_paderborn.fujaba.muml.constraint.TextualConstraint">
-       </propertyEditor>
-    
-       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.properties.behavior.editor.VariableEditor$Factory"
              type="de.uni_paderborn.fujaba.muml.behavior.Variable">
        </propertyEditor>

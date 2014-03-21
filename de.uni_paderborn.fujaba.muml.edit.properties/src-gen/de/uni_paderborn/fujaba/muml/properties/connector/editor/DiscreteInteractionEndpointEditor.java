@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.connector.editor;
  */
 public abstract class DiscreteInteractionEndpointEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.constraint.editor.ConstrainableElementEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -55,24 +55,16 @@ public abstract class DiscreteInteractionEndpointEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementNameEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.extensions".equals(getTab())) {
-			addExtendableElementExtensionEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBehavioralElementBehaviorEditor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConnectorEndpointConnectorsEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
 			addCommentableElementCommentEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addBehavioralElementBehaviorEditor(null, true);
 		}
 
 	}
@@ -233,76 +225,6 @@ public abstract class DiscreteInteractionEndpointEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
-
-		editor.setTooltipMessage("The name attribute of a meta-model element.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addExtendableElementExtensionEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createExtendableElementExtensionEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtendableElementExtensionEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getExtendableElement_Extension());
-
-		editor.addVisibilityFilter("not extension->isEmpty()", getEClass());
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addBehavioralElementBehaviorEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createBehavioralElementBehaviorEditor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehaviorEditor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getBehavioralElement_Behavior());
-
-		editor.setTooltipMessage("The behavior of this behavioral element.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
 	protected void addConnectorEndpointConnectorsEditor(String category,
 			boolean front) {
 		addEditorToCategory(category,
@@ -317,6 +239,8 @@ public abstract class DiscreteInteractionEndpointEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorEndpoint_Connectors());
+
+		editor.setTooltipMessage("The connectors attached to this endpoint.");
 
 		return editor;
 
@@ -341,6 +265,30 @@ public abstract class DiscreteInteractionEndpointEditor
 						.getCommentableElement_Comment(), true);
 
 		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addBehavioralElementBehaviorEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createBehavioralElementBehaviorEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehaviorEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getBehavioralElement_Behavior());
+
+		editor.setTooltipMessage("The behavior of this behavioral element.");
 
 		return editor;
 

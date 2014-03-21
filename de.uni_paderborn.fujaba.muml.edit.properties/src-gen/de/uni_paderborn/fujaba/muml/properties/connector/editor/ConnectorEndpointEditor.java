@@ -51,6 +51,8 @@ public abstract class ConnectorEndpointEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getConnectorEndpoint_Connectors());
 
+		editor.setTooltipMessage("The connectors attached to this endpoint.");
+
 		return editor;
 
 	}

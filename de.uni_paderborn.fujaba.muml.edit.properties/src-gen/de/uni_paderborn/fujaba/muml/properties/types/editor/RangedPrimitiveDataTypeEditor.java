@@ -27,6 +27,10 @@ public class RangedPrimitiveDataTypeEditor
 			addRangedPrimitiveDataTypeRangedTypeEditor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addRangedPrimitiveDataTypeRangeEditor(null, false);
+		}
+
 	}
 
 	/**
@@ -46,6 +50,32 @@ public class RangedPrimitiveDataTypeEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
 						.getRangedPrimitiveDataType_RangedType());
+
+		editor.setTooltipMessage("The primitive data type that provides a superset of possible values.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addRangedPrimitiveDataTypeRangeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createRangedPrimitiveDataTypeRangeEditor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangedPrimitiveDataTypeRangeEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
+						.getRangedPrimitiveDataType_Range());
+
+		editor.setTooltipMessage("The range of values provided by this data type.");
 
 		return editor;
 
@@ -83,6 +113,7 @@ public class RangedPrimitiveDataTypeEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
+							"property.tab.general",
 							"property.tab.documentation",
 							"property.tab.extensions", "property.tab.general"})
 					.contains(tab);

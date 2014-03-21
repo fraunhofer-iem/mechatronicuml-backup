@@ -86,6 +86,8 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteMultiInteractionEndpointInstance_First());
 
+		editor.setTooltipMessage("Refers to the first single instance of the corresponding multi discrete interaction endpoint.");
+
 		return editor;
 
 	}
@@ -108,6 +110,8 @@ public abstract class DiscreteMultiInteractionEndpointInstanceEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
 						.getDiscreteMultiInteractionEndpointInstance_Last());
+
+		editor.setTooltipMessage("Refers to the last single instance of the corresponding multi discrete interaction endpoint.");
 
 		return editor;
 

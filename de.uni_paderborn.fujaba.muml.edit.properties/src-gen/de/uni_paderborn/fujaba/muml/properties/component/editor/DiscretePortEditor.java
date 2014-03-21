@@ -300,8 +300,7 @@ public class DiscretePortEditor
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general"})
-					.contains(tab);
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

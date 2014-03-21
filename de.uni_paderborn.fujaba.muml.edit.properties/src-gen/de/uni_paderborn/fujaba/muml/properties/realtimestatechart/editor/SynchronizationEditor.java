@@ -101,6 +101,8 @@ public class SynchronizationEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronization_SelectorExpression());
 
+		editor.setTooltipMessage("An expression that evaluates to a value which is used to select a particular counterpart for the synchronization.");
+
 		return editor;
 
 	}

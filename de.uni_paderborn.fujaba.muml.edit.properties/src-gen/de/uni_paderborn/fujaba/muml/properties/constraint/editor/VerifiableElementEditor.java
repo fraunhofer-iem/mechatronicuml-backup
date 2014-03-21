@@ -1,16 +1,16 @@
-package de.uni_paderborn.fujaba.muml.properties.component.editor;
+package de.uni_paderborn.fujaba.muml.properties.constraint.editor;
 
 /**
  * @generated
  */
-public abstract class StructuredComponentEditor
+public abstract class VerifiableElementEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.component.editor.ComponentEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public StructuredComponentEditor(String tab,
+	public VerifiableElementEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -27,7 +27,7 @@ public abstract class StructuredComponentEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStructuredComponentConnectorsEditor(
+			addVerifiableElementTemporalLogicConstraintsEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -36,22 +36,22 @@ public abstract class StructuredComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addStructuredComponentConnectorsEditor(String category,
-			boolean front) {
+	protected void addVerifiableElementTemporalLogicConstraintsEditor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createStructuredComponentConnectorsEditor(), front);
+				createVerifiableElementTemporalLogicConstraintsEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentConnectorsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVerifiableElementTemporalLogicConstraintsEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
-				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
-						.getStructuredComponent_Connectors());
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getVerifiableElement_TemporalLogicConstraints());
 
-		editor.setTooltipMessage("The connectors this structured component contains. These can either be delegations or assemblies.");
+		editor.setTooltipMessage("The list of temporal logic constraints for this element.");
 
 		return editor;
 

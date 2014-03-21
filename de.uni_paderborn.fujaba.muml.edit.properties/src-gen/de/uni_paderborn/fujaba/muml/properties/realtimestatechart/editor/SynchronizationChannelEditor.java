@@ -79,6 +79,8 @@ public class SynchronizationChannelEditor
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
 						.getSynchronizationChannel_SelectorType());
 
+		editor.setTooltipMessage("A data type that provides possible values for the selection of a particular counterpart when synchronizing over this channel.");
+
 		return editor;
 
 	}
