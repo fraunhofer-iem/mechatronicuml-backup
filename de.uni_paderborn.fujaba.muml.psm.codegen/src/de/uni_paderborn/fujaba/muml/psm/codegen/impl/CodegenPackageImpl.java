@@ -177,6 +177,15 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance() {
+		return (EReference)refindedStructuredResourceInstanceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCodGen() {
 		return codGenEClass;
 	}
@@ -234,6 +243,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		refindedStructuredResourceInstanceEClass = createEClass(REFINDED_STRUCTURED_RESOURCE_INSTANCE);
 		createEReference(refindedStructuredResourceInstanceEClass, REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES);
+		createEReference(refindedStructuredResourceInstanceEClass, REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE);
 
 		codGenEClass = createEClass(COD_GEN);
 		createEReference(codGenEClass, COD_GEN__ALL_RESOURCE_INSTANCES);
@@ -274,7 +284,6 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 		// Add supertypes to classes
 		refinedComponentInstanceEClass.getESuperTypes().add(theInstancePackage.getComponentInstance());
 		refinedAtomicComponentInstanceEClass.getESuperTypes().add(theInstancePackage.getAtomicComponentInstance());
-		refindedStructuredResourceInstanceEClass.getESuperTypes().add(thePlatformPackage.getStructuredResourceInstance());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(refinedComponentInstanceEClass, RefinedComponentInstance.class, "RefinedComponentInstance", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -284,6 +293,7 @@ public class CodegenPackageImpl extends EPackageImpl implements CodegenPackage {
 
 		initEClass(refindedStructuredResourceInstanceEClass, RefindedStructuredResourceInstance.class, "RefindedStructuredResourceInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances(), this.getRefinedAtomicComponentInstance(), this.getRefinedAtomicComponentInstance_AllocatedResourceInstance(), "allocatedAtomicComponentInstances", null, 0, -1, RefindedStructuredResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance(), thePlatformPackage.getStructuredResourceInstance(), null, "allocatedStructuredResourceInstance", null, 1, 1, RefindedStructuredResourceInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(codGenEClass, CodGen.class, "CodGen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCodGen_AllResourceInstances(), this.getRefindedStructuredResourceInstance(), null, "allResourceInstances", null, 0, -1, CodGen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

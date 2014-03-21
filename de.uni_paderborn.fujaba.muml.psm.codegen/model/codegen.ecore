@@ -8,10 +8,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedResourceInstance"
         lowerBound="1" eType="#//RefindedStructuredResourceInstance" eOpposite="#//RefindedStructuredResourceInstance/allocatedAtomicComponentInstances"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RefindedStructuredResourceInstance"
-      eSuperTypes="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/StructuredResourceInstance">
+  <eClassifiers xsi:type="ecore:EClass" name="RefindedStructuredResourceInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedAtomicComponentInstances"
         upperBound="-1" eType="#//RefinedAtomicComponentInstance" eOpposite="#//RefinedAtomicComponentInstance/allocatedResourceInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedStructuredResourceInstance"
+        lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/StructuredResourceInstance"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CodGen">
     <eStructuralFeatures xsi:type="ecore:EReference" name="allResourceInstances" upperBound="-1"

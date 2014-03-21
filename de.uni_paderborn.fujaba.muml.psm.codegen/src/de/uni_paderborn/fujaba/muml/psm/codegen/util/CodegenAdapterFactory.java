@@ -2,21 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen.util;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
-import de.uni_paderborn.fujaba.muml.hardware.platform.StructuredResourceInstance;
-
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-
 import de.uni_paderborn.fujaba.muml.psm.codegen.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
@@ -107,14 +99,6 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAtomicComponentInstance(AtomicComponentInstance object) {
 				return createAtomicComponentInstanceAdapter();
-			}
-			@Override
-			public Adapter caseResourceInstance(ResourceInstance object) {
-				return createResourceInstanceAdapter();
-			}
-			@Override
-			public Adapter caseStructuredResourceInstance(StructuredResourceInstance object) {
-				return createStructuredResourceInstanceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -245,34 +229,6 @@ public class CodegenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAtomicComponentInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance <em>Resource Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance
-	 * @generated
-	 */
-	public Adapter createResourceInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.hardware.platform.StructuredResourceInstance <em>Structured Resource Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.hardware.platform.StructuredResourceInstance
-	 * @generated
-	 */
-	public Adapter createStructuredResourceInstanceAdapter() {
 		return null;
 	}
 

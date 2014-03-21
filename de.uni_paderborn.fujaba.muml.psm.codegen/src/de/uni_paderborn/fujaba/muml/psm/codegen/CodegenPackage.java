@@ -2,10 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
-
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -603,67 +600,22 @@ public interface CodegenPackage extends EPackage {
 	int REFINDED_STRUCTURED_RESOURCE_INSTANCE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ANNOTATION = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__EXTENSION = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__NAME = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Resource Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__RESOURCE_TYPE = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE__RESOURCE_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Hwport Instances</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__HWPORT_INSTANCES = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE__HWPORT_INSTANCES;
-
-	/**
-	 * The feature id for the '<em><b>Embedded Atomic Resource Instances</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__EMBEDDED_ATOMIC_RESOURCE_INSTANCES = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE__EMBEDDED_ATOMIC_RESOURCE_INSTANCES;
-
-	/**
 	 * The feature id for the '<em><b>Allocated Atomic Component Instances</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 0;
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Allocated Structured Resource Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Refinded Structured Resource Instance</em>' class.
@@ -672,178 +624,7 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECLASS = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EIS_PROXY = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ERESOURCE = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECONTAINER = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECONTAINING_FEATURE = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECONTAINMENT_FEATURE = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECONTENTS = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EALL_CONTENTS = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ECROSS_REFERENCES = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EGET__ESTRUCTURALFEATURE = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EIS_SET__ESTRUCTURALFEATURE = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EUNSET__ESTRUCTURALFEATURE = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___EINVOKE__EOPERATION_ELIST = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___PROVIDE_EXTENSION__ECLASS = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___GET_ANNOTATION__STRING = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE___PROVIDE_ANNOTATION__STRING = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE___PROVIDE_ANNOTATION__STRING;
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Refinded Structured Resource Instance</em>' class.
@@ -852,7 +633,7 @@ public interface CodegenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFINDED_STRUCTURED_RESOURCE_INSTANCE_OPERATION_COUNT = PlatformPackage.STRUCTURED_RESOURCE_INSTANCE_OPERATION_COUNT + 0;
+	int REFINDED_STRUCTURED_RESOURCE_INSTANCE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenImpl <em>Cod Gen</em>}' class.
@@ -954,6 +735,17 @@ public interface CodegenPackage extends EPackage {
 	EReference getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances();
 
 	/**
+	 * Returns the meta object for the reference '{@link de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance <em>Allocated Structured Resource Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Allocated Structured Resource Instance</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.psm.codegen.RefindedStructuredResourceInstance#getAllocatedStructuredResourceInstance()
+	 * @see #getRefindedStructuredResourceInstance()
+	 * @generated
+	 */
+	EReference getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.psm.codegen.CodGen <em>Cod Gen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1053,6 +845,14 @@ public interface CodegenPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_ATOMIC_COMPONENT_INSTANCES = eINSTANCE.getRefindedStructuredResourceInstance_AllocatedAtomicComponentInstances();
+
+		/**
+		 * The meta object literal for the '<em><b>Allocated Structured Resource Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REFINDED_STRUCTURED_RESOURCE_INSTANCE__ALLOCATED_STRUCTURED_RESOURCE_INSTANCE = eINSTANCE.getRefindedStructuredResourceInstance_AllocatedStructuredResourceInstance();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.psm.codegen.impl.CodGenImpl <em>Cod Gen</em>}' class.

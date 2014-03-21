@@ -2,19 +2,12 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.codegen.util;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
-import de.uni_paderborn.fujaba.muml.hardware.platform.StructuredResourceInstance;
-
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
-
 import de.uni_paderborn.fujaba.muml.psm.codegen.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
@@ -97,10 +90,6 @@ public class CodegenSwitch<T> extends Switch<T> {
 			case CodegenPackage.REFINDED_STRUCTURED_RESOURCE_INSTANCE: {
 				RefindedStructuredResourceInstance refindedStructuredResourceInstance = (RefindedStructuredResourceInstance)theEObject;
 				T result = caseRefindedStructuredResourceInstance(refindedStructuredResourceInstance);
-				if (result == null) result = caseStructuredResourceInstance(refindedStructuredResourceInstance);
-				if (result == null) result = caseResourceInstance(refindedStructuredResourceInstance);
-				if (result == null) result = caseNamedElement(refindedStructuredResourceInstance);
-				if (result == null) result = caseExtendableElement(refindedStructuredResourceInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -231,36 +220,6 @@ public class CodegenSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAtomicComponentInstance(AtomicComponentInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resource Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resource Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseResourceInstance(ResourceInstance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Structured Resource Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Structured Resource Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStructuredResourceInstance(StructuredResourceInstance object) {
 		return null;
 	}
 
