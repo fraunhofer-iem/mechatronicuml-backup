@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.valuetype.impl;
 
+import de.uni_paderborn.fujaba.muml.valuetype.*;
 import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.ecore.EClass;
@@ -37,7 +38,7 @@ public class ValuetypeFactoryImpl extends EFactoryImpl implements ValuetypeFacto
 	 */
 	public static ValuetypeFactory init() {
 		try {
-			ValuetypeFactory theValuetypeFactory = (ValuetypeFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/valuetype/0.4.0"); 
+			ValuetypeFactory theValuetypeFactory = (ValuetypeFactory)EPackage.Registry.INSTANCE.getEFactory(ValuetypePackage.eNS_URI);
 			if (theValuetypeFactory != null) {
 				return theValuetypeFactory;
 			}

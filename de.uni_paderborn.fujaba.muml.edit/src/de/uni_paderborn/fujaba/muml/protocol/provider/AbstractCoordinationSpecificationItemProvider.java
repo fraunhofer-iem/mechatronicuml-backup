@@ -64,32 +64,9 @@ public class AbstractCoordinationSpecificationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addConstraintPropertyDescriptor(object);
 			addCommentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Constraint feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConstraintPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConstrainableElement_constraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -126,7 +103,7 @@ public class AbstractCoordinationSpecificationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
+			childrenFeatures.add(ConstraintPackage.Literals.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS);
 			childrenFeatures.add(ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ROLES);
 			childrenFeatures.add(ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR);
 		}
@@ -175,7 +152,7 @@ public class AbstractCoordinationSpecificationItemProvider
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT:
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -194,11 +171,6 @@ public class AbstractCoordinationSpecificationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter

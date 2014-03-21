@@ -7,6 +7,7 @@
 package de.uni_paderborn.fujaba.muml.component;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +27,7 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SoftwareComponentRequiresBehavior ValidComponentType SoftwareComponentValidPorts ContinuousComponentValidPorts'"
  * @generated
  */
-public interface AtomicComponent extends Component, BehavioralElement {
+public interface AtomicComponent extends Component, BehavioralElement, VerifiableElement {
 
 	/**
 	 * <!-- begin-user-doc -->

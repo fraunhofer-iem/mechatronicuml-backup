@@ -24,9 +24,6 @@ import de.uni_paderborn.fujaba.muml.component.Component;
 import de.uni_paderborn.fujaba.muml.component.ComponentKind;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.Port;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.constraint.Constraint;
-import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
@@ -37,7 +34,6 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.ComponentImpl#getComponentKind <em>Component Kind</em>}</li>
  * </ul>
@@ -65,16 +61,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConstraint()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Constraint> constraint;
 
 	/**
 	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
@@ -151,18 +137,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Constraint> getConstraint() {
-		if (constraint == null) {
-			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, ComponentPackage.COMPONENT__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
-		}
-		return constraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Port> getPorts() {
 		if (ports == null) {
 			ports = new EObjectContainmentWithInverseEList<Port>(Port.class, this, ComponentPackage.COMPONENT__PORTS, ComponentPackage.PORT__COMPONENT);
@@ -200,8 +174,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT__CONSTRAINT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
 			case ComponentPackage.COMPONENT__PORTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
 		}
@@ -216,8 +188,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ComponentPackage.COMPONENT__CONSTRAINT:
-				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
 			case ComponentPackage.COMPONENT__PORTS:
 				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
 		}
@@ -234,8 +204,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		switch (featureID) {
 			case ComponentPackage.COMPONENT__COMMENT:
 				return getComment();
-			case ComponentPackage.COMPONENT__CONSTRAINT:
-				return getConstraint();
 			case ComponentPackage.COMPONENT__PORTS:
 				return getPorts();
 			case ComponentPackage.COMPONENT__COMPONENT_KIND:
@@ -255,10 +223,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		switch (featureID) {
 			case ComponentPackage.COMPONENT__COMMENT:
 				setComment((String)newValue);
-				return;
-			case ComponentPackage.COMPONENT__CONSTRAINT:
-				getConstraint().clear();
-				getConstraint().addAll((Collection<? extends Constraint>)newValue);
 				return;
 			case ComponentPackage.COMPONENT__PORTS:
 				getPorts().clear();
@@ -282,9 +246,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 			case ComponentPackage.COMPONENT__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case ComponentPackage.COMPONENT__CONSTRAINT:
-				getConstraint().clear();
-				return;
 			case ComponentPackage.COMPONENT__PORTS:
 				getPorts().clear();
 				return;
@@ -305,8 +266,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		switch (featureID) {
 			case ComponentPackage.COMPONENT__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case ComponentPackage.COMPONENT__CONSTRAINT:
-				return constraint != null && !constraint.isEmpty();
 			case ComponentPackage.COMPONENT__PORTS:
 				return ports != null && !ports.isEmpty();
 			case ComponentPackage.COMPONENT__COMPONENT_KIND:
@@ -328,12 +287,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 				default: return -1;
 			}
 		}
-		if (baseClass == ConstrainableElement.class) {
-			switch (derivedFeatureID) {
-				case ComponentPackage.COMPONENT__CONSTRAINT: return ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
-				default: return -1;
-			}
-		}
 		if (baseClass == DataType.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
@@ -352,12 +305,6 @@ public abstract class ComponentImpl extends NamedElementImpl implements Componen
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ComponentPackage.COMPONENT__COMMENT;
-				default: return -1;
-			}
-		}
-		if (baseClass == ConstrainableElement.class) {
-			switch (baseFeatureID) {
-				case ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ComponentPackage.COMPONENT__CONSTRAINT;
 				default: return -1;
 			}
 		}

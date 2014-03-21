@@ -1,19 +1,23 @@
 /**
  * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
  * </copyright>
- *
- * $Id$
  */
 package de.uni_paderborn.fujaba.muml.constraint.impl;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
-import org.storydriven.core.expressions.ExpressionsPackage;
 
 import de.uni_paderborn.fujaba.modelinstance.ModelinstancePackage;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
@@ -22,14 +26,11 @@ import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.component.impl.ComponentPackageImpl;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorPackageImpl;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.constraint.Correctness;
-import de.uni_paderborn.fujaba.muml.constraint.ModelingConstraint;
-import de.uni_paderborn.fujaba.muml.constraint.TextualConstraint;
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableConstraint;
+import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.constraint.util.ConstraintValidator;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
@@ -55,42 +56,14 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass constraintEClass = null;
+	private EClass temporalLogicConstraintEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelingConstraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass verifiableConstraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass textualConstraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass constrainableElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum correctnessEEnum = null;
+	private EClass verifiableElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -190,8 +163,8 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConstraint() {
-		return constraintEClass;
+	public EClass getTemporalLogicConstraint() {
+		return temporalLogicConstraintEClass;
 	}
 
 	/**
@@ -199,8 +172,8 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConstraint_Correctness() {
-		return (EAttribute)constraintEClass.getEStructuralFeatures().get(0);
+	public EClass getVerifiableElement() {
+		return verifiableElementEClass;
 	}
 
 	/**
@@ -208,89 +181,8 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConstraint_Background() {
-		return (EAttribute)constraintEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConstraint_ConstrainableElement() {
-		return (EReference)constraintEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getConstraint_Correct() {
-		return (EAttribute)constraintEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getModelingConstraint() {
-		return modelingConstraintEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVerifiableConstraint() {
-		return verifiableConstraintEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTextualConstraint() {
-		return textualConstraintEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTextualConstraint_TextualExpression() {
-		return (EReference)textualConstraintEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConstrainableElement() {
-		return constrainableElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConstrainableElement_Constraint() {
-		return (EReference)constrainableElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getCorrectness() {
-		return correctnessEEnum;
+	public EReference getVerifiableElement_TemporalLogicConstraints() {
+		return (EReference)verifiableElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -321,24 +213,10 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		isCreated = true;
 
 		// Create classes and their features
-		constraintEClass = createEClass(CONSTRAINT);
-		createEAttribute(constraintEClass, CONSTRAINT__CORRECTNESS);
-		createEAttribute(constraintEClass, CONSTRAINT__BACKGROUND);
-		createEReference(constraintEClass, CONSTRAINT__CONSTRAINABLE_ELEMENT);
-		createEAttribute(constraintEClass, CONSTRAINT__CORRECT);
+		temporalLogicConstraintEClass = createEClass(TEMPORAL_LOGIC_CONSTRAINT);
 
-		modelingConstraintEClass = createEClass(MODELING_CONSTRAINT);
-
-		verifiableConstraintEClass = createEClass(VERIFIABLE_CONSTRAINT);
-
-		textualConstraintEClass = createEClass(TEXTUAL_CONSTRAINT);
-		createEReference(textualConstraintEClass, TEXTUAL_CONSTRAINT__TEXTUAL_EXPRESSION);
-
-		constrainableElementEClass = createEClass(CONSTRAINABLE_ELEMENT);
-		createEReference(constrainableElementEClass, CONSTRAINABLE_ELEMENT__CONSTRAINT);
-
-		// Create enums
-		correctnessEEnum = createEEnum(CORRECTNESS);
+		verifiableElementEClass = createEClass(VERIFIABLE_ELEMENT);
+		createEReference(verifiableElementEClass, VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS);
 	}
 
 	/**
@@ -366,41 +244,19 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		ExpressionsPackage theExpressionsPackage = (ExpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionsPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		constraintEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
-		modelingConstraintEClass.getESuperTypes().add(this.getConstraint());
-		verifiableConstraintEClass.getESuperTypes().add(this.getConstraint());
-		textualConstraintEClass.getESuperTypes().add(this.getVerifiableConstraint());
-		textualConstraintEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		temporalLogicConstraintEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConstraint_Correctness(), this.getCorrectness(), "correctness", "unknown", 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getConstraint_Background(), ecorePackage.getEBoolean(), "background", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConstraint_ConstrainableElement(), this.getConstrainableElement(), this.getConstrainableElement_Constraint(), "constrainableElement", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getConstraint_Correct(), ecorePackage.getEBoolean(), "correct", null, 0, 1, Constraint.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEClass(temporalLogicConstraintEClass, TemporalLogicConstraint.class, "TemporalLogicConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(modelingConstraintEClass, ModelingConstraint.class, "ModelingConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(verifiableConstraintEClass, VerifiableConstraint.class, "VerifiableConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(textualConstraintEClass, TextualConstraint.class, "TextualConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTextualConstraint_TextualExpression(), theExpressionsPackage.getTextualExpression(), null, "textualExpression", null, 0, 1, TextualConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(constrainableElementEClass, ConstrainableElement.class, "ConstrainableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConstrainableElement_Constraint(), this.getConstraint(), this.getConstraint_ConstrainableElement(), "constraint", null, 0, -1, ConstrainableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(correctnessEEnum, Correctness.class, "Correctness");
-		addEEnumLiteral(correctnessEEnum, Correctness.UNKNOWN);
-		addEEnumLiteral(correctnessEEnum, Correctness.CORRECT);
-		addEEnumLiteral(correctnessEEnum, Correctness.VIOLATED);
+		initEClass(verifiableElementEClass, VerifiableElement.class, "VerifiableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVerifiableElement_TemporalLogicConstraints(), this.getTemporalLogicConstraint(), null, "temporalLogicConstraints", null, 0, -1, VerifiableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -408,8 +264,6 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
 	}
 
 	/**
@@ -419,7 +273,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -427,23 +281,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });													
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";									
-		addAnnotation
-		  (getConstraint_Correct(), 
-		   source, 
-		   new String[] {
-			 "derivation", "self.correctness = constraint::Correctness::CORRECT"
-		   });							
+		   });
 	}
 
 } //ConstraintPackageImpl

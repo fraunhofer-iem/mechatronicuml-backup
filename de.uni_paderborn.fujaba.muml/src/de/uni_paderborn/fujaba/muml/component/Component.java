@@ -10,7 +10,6 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
@@ -38,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniquePortNames='-- Port names must be unique\nself.ports->isUnique(name)' UniqueComponentNames='-- The component\'s name must be unique.\nComponent.allInstances()->select(c|c<>self)->collect(name)->excludes(self.name)\n-- author: adann'"
  * @generated
  */
-public interface Component extends NamedElement, CommentableElement, ConstrainableElement, DataType {
+public interface Component extends NamedElement, CommentableElement, DataType {
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.component.Port}.

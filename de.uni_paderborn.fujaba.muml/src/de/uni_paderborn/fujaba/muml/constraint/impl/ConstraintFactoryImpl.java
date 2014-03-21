@@ -1,13 +1,19 @@
 /**
  * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
  * </copyright>
- *
- * $Id$
  */
 package de.uni_paderborn.fujaba.muml.constraint.impl;
 
+import de.uni_paderborn.fujaba.muml.constraint.*;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
@@ -15,9 +21,6 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.constraint.Correctness;
-import de.uni_paderborn.fujaba.muml.constraint.TextualConstraint;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +37,7 @@ public class ConstraintFactoryImpl extends EFactoryImpl implements ConstraintFac
 	 */
 	public static ConstraintFactory init() {
 		try {
-			ConstraintFactory theConstraintFactory = (ConstraintFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/constraint/0.4.0"); 
+			ConstraintFactory theConstraintFactory = (ConstraintFactory)EPackage.Registry.INSTANCE.getEFactory(ConstraintPackage.eNS_URI);
 			if (theConstraintFactory != null) {
 				return theConstraintFactory;
 			}
@@ -63,70 +66,9 @@ public class ConstraintFactoryImpl extends EFactoryImpl implements ConstraintFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ConstraintPackage.TEXTUAL_CONSTRAINT: return createTextualConstraint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case ConstraintPackage.CORRECTNESS:
-				return createCorrectnessFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case ConstraintPackage.CORRECTNESS:
-				return convertCorrectnessToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TextualConstraint createTextualConstraint() {
-		TextualConstraintImpl textualConstraint = new TextualConstraintImpl();
-		return textualConstraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Correctness createCorrectnessFromString(EDataType eDataType, String initialValue) {
-		Correctness result = Correctness.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertCorrectnessToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

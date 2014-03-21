@@ -72,7 +72,6 @@ public class DiscreteInteractionEndpointItemProvider
 			super.getPropertyDescriptors(object);
 
 			addBehaviorPropertyDescriptor(object);
-			addConstraintPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addSenderMessageTypesPropertyDescriptor(object);
 			addReceiverMessageTypesPropertyDescriptor(object);
@@ -102,28 +101,6 @@ public class DiscreteInteractionEndpointItemProvider
 				 true,
 				 false,
 				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Constraint feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConstraintPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConstrainableElement_constraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 true,
-				 false,
-				 false,
 				 null,
 				 null,
 				 null));
@@ -344,7 +321,6 @@ public class DiscreteInteractionEndpointItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
 			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY);
 			childrenFeatures.add(ConnectorPackage.Literals.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER);
 		}
@@ -394,7 +370,6 @@ public class DiscreteInteractionEndpointItemProvider
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__MULTI:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CARDINALITY:
 			case ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__RECEIVER_MESSAGE_BUFFER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -413,11 +388,6 @@ public class DiscreteInteractionEndpointItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 
 		newChildDescriptors.add
 			(createChildParameter

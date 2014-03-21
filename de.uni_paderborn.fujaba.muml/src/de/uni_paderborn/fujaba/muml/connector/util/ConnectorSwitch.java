@@ -14,6 +14,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.connector.*;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
@@ -24,7 +25,6 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstanc
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,7 +121,6 @@ public class ConnectorSwitch<T> extends Switch<T> {
 				T result = caseDiscreteInteractionEndpoint(discreteInteractionEndpoint);
 				if (result == null) result = caseConnectorEndpoint(discreteInteractionEndpoint);
 				if (result == null) result = caseBehavioralElement(discreteInteractionEndpoint);
-				if (result == null) result = caseConstrainableElement(discreteInteractionEndpoint);
 				if (result == null) result = caseNamedElement(discreteInteractionEndpoint);
 				if (result == null) result = caseCommentableElement(discreteInteractionEndpoint);
 				if (result == null) result = caseExtendableElement(discreteInteractionEndpoint);
@@ -364,21 +363,6 @@ public class ConnectorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBehavioralElement(BehavioralElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConstrainableElement(ConstrainableElement object) {
 		return null;
 	}
 

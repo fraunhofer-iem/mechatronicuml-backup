@@ -18,7 +18,8 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.protocol.*;
 import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
@@ -112,12 +113,12 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseConstrainableElement(ConstrainableElement object) {
-				return createConstrainableElementAdapter();
-			}
-			@Override
 			public Adapter caseCommentableElement(CommentableElement object) {
 				return createCommentableElementAdapter();
+			}
+			@Override
+			public Adapter caseVerifiableElement(VerifiableElement object) {
+				return createVerifiableElementAdapter();
 			}
 			@Override
 			public Adapter caseConnectorEndpoint(ConnectorEndpoint object) {
@@ -286,20 +287,6 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement <em>Constrainable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement
-	 * @generated
-	 */
-	public Adapter createConstrainableElementAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint <em>Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -324,6 +311,20 @@ public class ProtocolAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommentableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement <em>Verifiable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.constraint.VerifiableElement
+	 * @generated
+	 */
+	public Adapter createVerifiableElementAdapter() {
 		return null;
 	}
 

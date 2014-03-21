@@ -1,25 +1,28 @@
 /**
  * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
  * </copyright>
- *
- * $Id$
  */
 package de.uni_paderborn.fujaba.muml.constraint.util;
 
+import de.uni_paderborn.fujaba.muml.constraint.*;
+
 import java.util.Map;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.constraint.Constraint;
-import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.constraint.Correctness;
-import de.uni_paderborn.fujaba.muml.constraint.ModelingConstraint;
-import de.uni_paderborn.fujaba.muml.constraint.TextualConstraint;
-import de.uni_paderborn.fujaba.muml.constraint.VerifiableConstraint;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.EObjectValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,18 +96,10 @@ public class ConstraintValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case ConstraintPackage.CONSTRAINT:
-				return validateConstraint((Constraint)value, diagnostics, context);
-			case ConstraintPackage.MODELING_CONSTRAINT:
-				return validateModelingConstraint((ModelingConstraint)value, diagnostics, context);
-			case ConstraintPackage.VERIFIABLE_CONSTRAINT:
-				return validateVerifiableConstraint((VerifiableConstraint)value, diagnostics, context);
-			case ConstraintPackage.TEXTUAL_CONSTRAINT:
-				return validateTextualConstraint((TextualConstraint)value, diagnostics, context);
-			case ConstraintPackage.CONSTRAINABLE_ELEMENT:
-				return validateConstrainableElement((ConstrainableElement)value, diagnostics, context);
-			case ConstraintPackage.CORRECTNESS:
-				return validateCorrectness((Correctness)value, diagnostics, context);
+			case ConstraintPackage.TEMPORAL_LOGIC_CONSTRAINT:
+				return validateTemporalLogicConstraint((TemporalLogicConstraint)value, diagnostics, context);
+			case ConstraintPackage.VERIFIABLE_ELEMENT:
+				return validateVerifiableElement((VerifiableElement)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -115,54 +110,81 @@ public class ConstraintValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConstraint(Constraint constraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(constraint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(constraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(constraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(constraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(constraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(constraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(constraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(constraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(constraint, diagnostics, context);
-		return result;
-	}
-
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateModelingConstraint(ModelingConstraint modelingConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(modelingConstraint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(modelingConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(modelingConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(modelingConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(modelingConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(modelingConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(modelingConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(modelingConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(modelingConstraint, diagnostics, context);
+	public boolean validateTemporalLogicConstraint(TemporalLogicConstraint temporalLogicConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(temporalLogicConstraint, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(temporalLogicConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(temporalLogicConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(temporalLogicConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(temporalLogicConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(temporalLogicConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(temporalLogicConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(temporalLogicConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(temporalLogicConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTemporalLogicConstraint_ReceivingInteractionEndpointRequiresMessageBuffer(temporalLogicConstraint, diagnostics, context);
+		if (result || diagnostics != null) result &= validateTemporalLogicConstraint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(temporalLogicConstraint, diagnostics, context);
 		return result;
 	}
 
 	/**
+	 * The cached validation expression for the ReceivingInteractionEndpointRequiresMessageBuffer constraint of '<em>Temporal Logic Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVerifiableConstraint(VerifiableConstraint verifiableConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(verifiableConstraint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(verifiableConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(verifiableConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(verifiableConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(verifiableConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(verifiableConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(verifiableConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(verifiableConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(verifiableConstraint, diagnostics, context);
-		return result;
+	protected static final String TEMPORAL_LOGIC_CONSTRAINT__RECEIVING_INTERACTION_ENDPOINT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION = "-- Receiver message types need receiver message buffer\r\n" +
+		"self.receiverMessageTypes->notEmpty() \r\n" +
+		"implies \r\n" +
+		"self.receiverMessageBuffer->notEmpty()";
+
+	/**
+	 * Validates the ReceivingInteractionEndpointRequiresMessageBuffer constraint of '<em>Temporal Logic Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTemporalLogicConstraint_ReceivingInteractionEndpointRequiresMessageBuffer(TemporalLogicConstraint temporalLogicConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ConstraintPackage.Literals.TEMPORAL_LOGIC_CONSTRAINT,
+				 temporalLogicConstraint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ReceivingInteractionEndpointRequiresMessageBuffer",
+				 TEMPORAL_LOGIC_CONSTRAINT__RECEIVING_INTERACTION_ENDPOINT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Temporal Logic Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String TEMPORAL_LOGIC_CONSTRAINT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION = "-- Each receiver message type should be assigned to exactly one buffer\r\n" +
+		"self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))";
+
+	/**
+	 * Validates the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Temporal Logic Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTemporalLogicConstraint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(TemporalLogicConstraint temporalLogicConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(ConstraintPackage.Literals.TEMPORAL_LOGIC_CONSTRAINT,
+				 temporalLogicConstraint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer",
+				 TEMPORAL_LOGIC_CONSTRAINT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -170,35 +192,8 @@ public class ConstraintValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateTextualConstraint(TextualConstraint textualConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(textualConstraint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(textualConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(textualConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(textualConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(textualConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(textualConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(textualConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(textualConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(textualConstraint, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConstrainableElement(ConstrainableElement constrainableElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(constrainableElement, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCorrectness(Correctness correctness, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
+	public boolean validateVerifiableElement(VerifiableElement verifiableElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(verifiableElement, diagnostics, context);
 	}
 
 	/**

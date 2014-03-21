@@ -6,6 +6,7 @@
  */
 package de.uni_paderborn.fujaba.muml.behavior.impl;
 
+import de.uni_paderborn.fujaba.muml.behavior.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -35,7 +36,7 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	 */
 	public static BehaviorFactory init() {
 		try {
-			BehaviorFactory theBehaviorFactory = (BehaviorFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.fujaba.de/muml/behavior/0.4.0"); 
+			BehaviorFactory theBehaviorFactory = (BehaviorFactory)EPackage.Registry.INSTANCE.getEFactory(BehaviorPackage.eNS_URI);
 			if (theBehaviorFactory != null) {
 				return theBehaviorFactory;
 			}

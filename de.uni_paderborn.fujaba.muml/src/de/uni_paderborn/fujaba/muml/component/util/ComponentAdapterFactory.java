@@ -16,6 +16,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
+import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -37,7 +38,7 @@ import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
@@ -177,10 +178,6 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 				return createCommentableElementAdapter();
 			}
 			@Override
-			public Adapter caseConstrainableElement(ConstrainableElement object) {
-				return createConstrainableElementAdapter();
-			}
-			@Override
 			public Adapter caseDataType(DataType object) {
 				return createDataTypeAdapter();
 			}
@@ -199,6 +196,10 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
 				return createDiscreteInteractionEndpointAdapter();
+			}
+			@Override
+			public Adapter caseVerifiableElement(VerifiableElement object) {
+				return createVerifiableElementAdapter();
 			}
 			@Override
 			public Adapter caseConnector(Connector object) {
@@ -505,20 +506,6 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement <em>Constrainable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement
-	 * @generated
-	 */
-	public Adapter createConstrainableElementAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint <em>Endpoint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -585,6 +572,20 @@ public class ComponentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDiscreteInteractionEndpointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement <em>Verifiable Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.constraint.VerifiableElement
+	 * @generated
+	 */
+	public Adapter createVerifiableElementAdapter() {
 		return null;
 	}
 

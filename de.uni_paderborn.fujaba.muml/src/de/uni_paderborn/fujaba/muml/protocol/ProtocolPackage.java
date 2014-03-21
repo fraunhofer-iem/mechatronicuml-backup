@@ -104,22 +104,22 @@ public interface ProtocolPackage extends EPackage {
 	int ABSTRACT_COORDINATION_SPECIFICATION__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ABSTRACT_COORDINATION_SPECIFICATION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Temporal Logic Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -376,15 +376,6 @@ public interface ProtocolPackage extends EPackage {
 	int COORDINATION_PROTOCOL__NAME = ABSTRACT_COORDINATION_SPECIFICATION__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COORDINATION_PROTOCOL__CONSTRAINT = ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT;
-
-	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -392,6 +383,15 @@ public interface ProtocolPackage extends EPackage {
 	 * @ordered
 	 */
 	int COORDINATION_PROTOCOL__COMMENT = ABSTRACT_COORDINATION_SPECIFICATION__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Temporal Logic Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COORDINATION_PROTOCOL__TEMPORAL_LOGIC_CONSTRAINTS = ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -663,15 +663,6 @@ public interface ProtocolPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROLE__BEHAVIOR = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__BEHAVIOR;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__CONSTRAINT = ConnectorPackage.DISCRETE_INTERACTION_ENDPOINT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

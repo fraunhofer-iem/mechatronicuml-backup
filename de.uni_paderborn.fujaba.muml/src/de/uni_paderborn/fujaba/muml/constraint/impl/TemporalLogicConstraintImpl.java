@@ -10,34 +10,41 @@
  *     Software Engineering Group - initial API and implementation
  * </copyright>
  */
-package de.uni_paderborn.fujaba.muml.constraint;
+package de.uni_paderborn.fujaba.muml.constraint.impl;
 
-import org.eclipse.emf.ecore.EFactory;
+import org.eclipse.emf.ecore.EClass;
+import org.storydriven.core.impl.ExtendableElementImpl;
+
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
 
 /**
  * <!-- begin-user-doc -->
- * The <b>Factory</b> for the model.
- * It provides a create method for each non-abstract class of the model.
+ * An implementation of the model object '<em><b>Temporal Logic Constraint</b></em>'.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage
+ * <p>
+ * </p>
+ *
  * @generated
  */
-public interface ConstraintFactory extends EFactory {
+public abstract class TemporalLogicConstraintImpl extends ExtendableElementImpl implements TemporalLogicConstraint {
 	/**
-	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ConstraintFactory eINSTANCE = de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintFactoryImpl.init();
+	protected TemporalLogicConstraintImpl() {
+		super();
+	}
 
 	/**
-	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	ConstraintPackage getConstraintPackage();
+	@Override
+	protected EClass eStaticClass() {
+		return ConstraintPackage.Literals.TEMPORAL_LOGIC_CONSTRAINT;
+	}
 
-} //ConstraintFactory
+} //TemporalLogicConstraintImpl

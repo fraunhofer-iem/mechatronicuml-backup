@@ -75,29 +75,6 @@ public class ConstraintItemProviderAdapterFactory extends ConstraintAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.constraint.TextualConstraint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TextualConstraintItemProvider textualConstraintItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.constraint.TextualConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTextualConstraintAdapter() {
-		if (textualConstraintItemProvider == null) {
-			textualConstraintItemProvider = new TextualConstraintItemProvider(this);
-		}
-
-		return textualConstraintItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,7 +173,6 @@ public class ConstraintItemProviderAdapterFactory extends ConstraintAdapterFacto
 	 * @generated
 	 */
 	public void dispose() {
-		if (textualConstraintItemProvider != null) textualConstraintItemProvider.dispose();
 	}
 
 }

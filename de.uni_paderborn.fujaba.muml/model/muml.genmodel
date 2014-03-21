@@ -107,26 +107,9 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//constraint">
-      <genEnums typeSafeEnumCompatible="false" ecoreEnum="muml.ecore#//constraint/Correctness">
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//constraint/Correctness/UNKNOWN"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//constraint/Correctness/CORRECT"/>
-        <genEnumLiterals ecoreEnumLiteral="muml.ecore#//constraint/Correctness/VIOLATED"/>
-      </genEnums>
-      <genClasses image="false" ecoreClass="muml.ecore#//constraint/Constraint">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//constraint/Constraint/correctness"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//constraint/Constraint/background"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//constraint/Constraint/constrainableElement"/>
-        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute muml.ecore#//constraint/Constraint/correct"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="muml.ecore#//constraint/ModelingConstraint"/>
-      <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerifiableConstraint"/>
-      <genClasses ecoreClass="muml.ecore#//constraint/TextualConstraint">
-        <genFeatures children="true" createChild="true" propertyCategory="TextualExpression"
-            ecoreFeature="ecore:EReference muml.ecore#//constraint/TextualConstraint/textualExpression"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="muml.ecore#//constraint/ConstrainableElement">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//constraint/ConstrainableElement/constraint"/>
+      <genClasses image="false" ecoreClass="muml.ecore#//constraint/TemporalLogicConstraint"/>
+      <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerifiableElement">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//constraint/VerifiableElement/temporalLogicConstraints"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml"
@@ -456,6 +439,8 @@
             ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/next"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/previous"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/first"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/last"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//connector/DiscreteMultiInteractionEndpointInstance">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

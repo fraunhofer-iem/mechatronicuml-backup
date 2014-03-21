@@ -10,15 +10,16 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.constraint.Constraint;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
@@ -31,8 +32,8 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getConstraint <em>Constraint</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getTemporalLogicConstraints <em>Temporal Logic Constraints</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getRoleConnector <em>Role Connector</em>}</li>
  * </ul>
@@ -41,16 +42,6 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  * @generated
  */
 public abstract class AbstractCoordinationSpecificationImpl extends NamedElementImpl implements AbstractCoordinationSpecification {
-	/**
-	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConstraint()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Constraint> constraint;
-
 	/**
 	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,6 +61,16 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	 * @ordered
 	 */
 	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTemporalLogicConstraints() <em>Temporal Logic Constraints</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTemporalLogicConstraints()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TemporalLogicConstraint> temporalLogicConstraints;
 
 	/**
 	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
@@ -115,18 +116,6 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Constraint> getConstraint() {
-		if (constraint == null) {
-			constraint = new EObjectContainmentWithInverseEList<Constraint>(Constraint.class, this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT, ConstraintPackage.CONSTRAINT__CONSTRAINABLE_ELEMENT);
-		}
-		return constraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getComment() {
 		return comment;
 	}
@@ -141,6 +130,18 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 		comment = newComment;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT, oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<TemporalLogicConstraint> getTemporalLogicConstraints() {
+		if (temporalLogicConstraints == null) {
+			temporalLogicConstraints = new EObjectContainmentEList<TemporalLogicConstraint>(TemporalLogicConstraint.class, this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS);
+		}
+		return temporalLogicConstraints;
 	}
 
 	/**
@@ -207,8 +208,6 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraint()).basicAdd(otherEnd, msgs);
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoles()).basicAdd(otherEnd, msgs);
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
@@ -227,8 +226,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT:
-				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
+				return ((InternalEList<?>)getTemporalLogicConstraints()).basicRemove(otherEnd, msgs);
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
@@ -245,10 +244,10 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT:
-				return getConstraint();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				return getComment();
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
+				return getTemporalLogicConstraints();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				return getRoles();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
@@ -266,12 +265,12 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT:
-				getConstraint().clear();
-				getConstraint().addAll((Collection<? extends Constraint>)newValue);
-				return;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				setComment((String)newValue);
+				return;
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
+				getTemporalLogicConstraints().clear();
+				getTemporalLogicConstraints().addAll((Collection<? extends TemporalLogicConstraint>)newValue);
 				return;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				getRoles().clear();
@@ -292,11 +291,11 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT:
-				getConstraint().clear();
-				return;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				setComment(COMMENT_EDEFAULT);
+				return;
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
+				getTemporalLogicConstraints().clear();
 				return;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				getRoles().clear();
@@ -316,10 +315,10 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT:
-				return constraint != null && !constraint.isEmpty();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
+				return temporalLogicConstraints != null && !temporalLogicConstraints.isEmpty();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				return roles != null && !roles.isEmpty();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
@@ -335,15 +334,15 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ConstrainableElement.class) {
-			switch (derivedFeatureID) {
-				case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT: return ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT;
-				default: return -1;
-			}
-		}
 		if (baseClass == CommentableElement.class) {
 			switch (derivedFeatureID) {
 				case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT: return CorePackage.COMMENTABLE_ELEMENT__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == VerifiableElement.class) {
+			switch (derivedFeatureID) {
+				case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS: return ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS;
 				default: return -1;
 			}
 		}
@@ -357,15 +356,15 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ConstrainableElement.class) {
-			switch (baseFeatureID) {
-				case ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT: return ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__CONSTRAINT;
-				default: return -1;
-			}
-		}
 		if (baseClass == CommentableElement.class) {
 			switch (baseFeatureID) {
 				case CorePackage.COMMENTABLE_ELEMENT__COMMENT: return ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT;
+				default: return -1;
+			}
+		}
+		if (baseClass == VerifiableElement.class) {
+			switch (baseFeatureID) {
+				case ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS: return ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS;
 				default: return -1;
 			}
 		}

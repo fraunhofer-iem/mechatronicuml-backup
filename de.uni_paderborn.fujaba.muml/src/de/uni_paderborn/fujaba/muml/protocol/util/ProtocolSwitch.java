@@ -17,7 +17,8 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.protocol.*;
 import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ConnectorQualityOfServiceAssumptions;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
@@ -87,8 +88,8 @@ public class ProtocolSwitch<T> extends Switch<T> {
 				AbstractCoordinationSpecification abstractCoordinationSpecification = (AbstractCoordinationSpecification)theEObject;
 				T result = caseAbstractCoordinationSpecification(abstractCoordinationSpecification);
 				if (result == null) result = caseNamedElement(abstractCoordinationSpecification);
-				if (result == null) result = caseConstrainableElement(abstractCoordinationSpecification);
 				if (result == null) result = caseCommentableElement(abstractCoordinationSpecification);
+				if (result == null) result = caseVerifiableElement(abstractCoordinationSpecification);
 				if (result == null) result = caseExtendableElement(abstractCoordinationSpecification);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -98,8 +99,8 @@ public class ProtocolSwitch<T> extends Switch<T> {
 				T result = caseCoordinationProtocol(coordinationProtocol);
 				if (result == null) result = caseAbstractCoordinationSpecification(coordinationProtocol);
 				if (result == null) result = caseNamedElement(coordinationProtocol);
-				if (result == null) result = caseConstrainableElement(coordinationProtocol);
 				if (result == null) result = caseCommentableElement(coordinationProtocol);
+				if (result == null) result = caseVerifiableElement(coordinationProtocol);
 				if (result == null) result = caseExtendableElement(coordinationProtocol);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -111,7 +112,6 @@ public class ProtocolSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDataType(role);
 				if (result == null) result = caseConnectorEndpoint(role);
 				if (result == null) result = caseBehavioralElement(role);
-				if (result == null) result = caseConstrainableElement(role);
 				if (result == null) result = caseNamedElement(role);
 				if (result == null) result = caseCommentableElement(role);
 				if (result == null) result = caseExtendableElement(role);
@@ -275,21 +275,6 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConstrainableElement(ConstrainableElement object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Endpoint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -316,6 +301,21 @@ public class ProtocolSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommentableElement(CommentableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Verifiable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Verifiable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVerifiableElement(VerifiableElement object) {
 		return null;
 	}
 

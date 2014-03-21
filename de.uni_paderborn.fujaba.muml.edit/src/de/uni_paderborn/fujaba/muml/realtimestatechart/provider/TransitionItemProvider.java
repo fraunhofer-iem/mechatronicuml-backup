@@ -968,11 +968,6 @@ public class TransitionItemProvider extends PrioritizedElementItemProvider imple
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CorePackage.Literals.EXTENDABLE_ELEMENT__ANNOTATION,
-				 EcoreFactory.eINSTANCE.createEAnnotation()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RealtimestatechartPackage.Literals.TRANSITION__SYNCHRONIZATION,
 				 RealtimestatechartFactory.eINSTANCE.createSynchronization()));
 

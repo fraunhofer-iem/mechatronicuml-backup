@@ -9,7 +9,6 @@ package de.uni_paderborn.fujaba.muml.component;
 import org.eclipse.emf.common.util.EList;
 
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
@@ -33,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.types.DataType;
  * @model abstract="true"
  * @generated
  */
-public interface Port extends ConnectorEndpoint, ConstrainableElement, DataType {
+public interface Port extends ConnectorEndpoint, DataType {
 	/**
 	 * Returns the value of the '<em><b>Component</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link de.uni_paderborn.fujaba.muml.component.Component#getPorts <em>Ports</em>}'.

@@ -6,7 +6,7 @@ import org.eclipse.emf.common.util.EList;
 import org.storydriven.core.CommentableElement;
 import org.storydriven.core.NamedElement;
 
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL UniqueRoleNames='-- Names of roles must be unique\nself.roles->isUnique(name)' RoleMessageTypesMustBeCompatible='-- Every Role must have the senderMessageTypes of all other Roles set as receiverMessageTypes\r\nself.roles->forAll(role1 : Role, role2 : Role |\r\n   role1 <> role2\r\n   implies\r\n   role1.senderMessageTypes->asSet() = role2.receiverMessageTypes->asSet()\r\n)' SingleRoleImpliesMultiRole='-- Only one role exists, so it must be a Multi Role.\r\nself.roles->size() = 1 implies self.roles->any(true).multiRole'"
  * @generated
  */
-public interface AbstractCoordinationSpecification extends NamedElement, ConstrainableElement, CommentableElement {
+public interface AbstractCoordinationSpecification extends NamedElement, CommentableElement, VerifiableElement {
 	/**
 	 * Returns the value of the '<em><b>Roles</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.protocol.Role}.

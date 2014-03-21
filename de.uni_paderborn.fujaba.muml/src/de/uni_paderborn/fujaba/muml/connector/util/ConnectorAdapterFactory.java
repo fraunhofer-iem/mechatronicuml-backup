@@ -15,6 +15,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
+import de.uni_paderborn.fujaba.muml.connector.*;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
@@ -25,7 +26,6 @@ import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstanc
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -134,10 +134,6 @@ public class ConnectorAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBehavioralElement(BehavioralElement object) {
 				return createBehavioralElementAdapter();
-			}
-			@Override
-			public Adapter caseConstrainableElement(ConstrainableElement object) {
-				return createConstrainableElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -338,20 +334,6 @@ public class ConnectorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBehavioralElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement <em>Constrainable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement
-	 * @generated
-	 */
-	public Adapter createConstrainableElementAdapter() {
 		return null;
 	}
 

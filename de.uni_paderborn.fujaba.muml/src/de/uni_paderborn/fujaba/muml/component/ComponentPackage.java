@@ -116,22 +116,13 @@ public interface ComponentPackage extends EPackage {
 	int COMPONENT__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__CONSTRAINT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__PORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT__PORTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Component Kind</b></em>' attribute.
@@ -140,7 +131,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__COMPONENT_KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int COMPONENT__COMPONENT_KIND = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -149,7 +140,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int COMPONENT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -378,22 +369,13 @@ public interface ComponentPackage extends EPackage {
 	int PORT__CONNECTORS = ConnectorPackage.CONNECTOR_ENDPOINT__CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__CONSTRAINT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__NAME = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
+	int PORT__NAME = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -402,7 +384,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__COMPONENT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
+	int PORT__COMPONENT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Port Connectors</b></em>' reference list.
@@ -411,7 +393,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PORT_CONNECTORS = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
+	int PORT__PORT_CONNECTORS = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -420,7 +402,7 @@ public interface ComponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 4;
+	int PORT_FEATURE_COUNT = ConnectorPackage.CONNECTOR_ENDPOINT_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -647,15 +629,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DIRECTED_TYPED_PORT__CONNECTORS = PORT__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIRECTED_TYPED_PORT__CONSTRAINT = PORT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -974,15 +947,6 @@ public interface ComponentPackage extends EPackage {
 	int CONTINUOUS_PORT__CONNECTORS = DIRECTED_TYPED_PORT__CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_PORT__CONSTRAINT = DIRECTED_TYPED_PORT__CONSTRAINT;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1297,15 +1261,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int DISCRETE_PORT__CONNECTORS = PORT__CONNECTORS;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DISCRETE_PORT__CONSTRAINT = PORT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1976,15 +1931,6 @@ public interface ComponentPackage extends EPackage {
 	int STRUCTURED_COMPONENT__COMMENT = COMPONENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRUCTURED_COMPONENT__CONSTRAINT = COMPONENT__CONSTRAINT;
-
-	/**
 	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2290,15 +2236,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_STRUCTURED_COMPONENT__COMMENT = STRUCTURED_COMPONENT__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_STRUCTURED_COMPONENT__CONSTRAINT = STRUCTURED_COMPONENT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
@@ -2608,15 +2545,6 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__COMMENT = COMPONENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATOMIC_COMPONENT__CONSTRAINT = COMPONENT__CONSTRAINT;
-
-	/**
 	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2644,13 +2572,22 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__BEHAVIOR = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Temporal Logic Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS = COMPONENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Atomic Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
+	int ATOMIC_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -3683,15 +3620,6 @@ public interface ComponentPackage extends EPackage {
 	int HYBRID_PORT__CONNECTORS = DIRECTED_TYPED_PORT__CONNECTORS;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HYBRID_PORT__CONSTRAINT = DIRECTED_TYPED_PORT__CONSTRAINT;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4541,15 +4469,6 @@ public interface ComponentPackage extends EPackage {
 	int STATIC_ATOMIC_COMPONENT__COMMENT = ATOMIC_COMPONENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_ATOMIC_COMPONENT__CONSTRAINT = ATOMIC_COMPONENT__CONSTRAINT;
-
-	/**
 	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4575,6 +4494,15 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_ATOMIC_COMPONENT__BEHAVIOR = ATOMIC_COMPONENT__BEHAVIOR;
+
+	/**
+	 * The feature id for the '<em><b>Temporal Logic Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATIC_ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS = ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS;
 
 	/**
 	 * The number of structural features of the '<em>Static Atomic Component</em>' class.
@@ -4819,15 +4747,6 @@ public interface ComponentPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATIC_COMPONENT__COMMENT = COMPONENT__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_COMPONENT__CONSTRAINT = COMPONENT__CONSTRAINT;
 
 	/**
 	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.

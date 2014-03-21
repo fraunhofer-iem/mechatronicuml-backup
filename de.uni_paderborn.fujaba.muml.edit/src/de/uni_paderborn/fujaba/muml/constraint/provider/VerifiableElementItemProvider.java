@@ -1,20 +1,33 @@
 /**
  * <copyright>
+ * Copyright (c) 2013 Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn, Germany.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Software Engineering Group - initial API and implementation
  * </copyright>
- *
- * $Id$
  */
 package de.uni_paderborn.fujaba.muml.constraint.provider;
 
+
+import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
+
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -24,18 +37,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
-import de.uni_paderborn.fujaba.muml.constraint.ConstraintFactory;
-import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConstrainableElementItemProvider
+public class VerifiableElementItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -49,7 +57,7 @@ public class ConstrainableElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConstrainableElementItemProvider(AdapterFactory adapterFactory) {
+	public VerifiableElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,31 +72,8 @@ public class ConstrainableElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addConstraintPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Constraint feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConstraintPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConstrainableElement_constraint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstrainableElement_constraint_feature", "_UI_ConstrainableElement_type"),
-				 ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -103,7 +88,7 @@ public class ConstrainableElementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT);
+			childrenFeatures.add(ConstraintPackage.Literals.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS);
 		}
 		return childrenFeatures;
 	}
@@ -129,8 +114,9 @@ public class ConstrainableElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ConstrainableElement_type");
+		return getString("_UI_VerifiableElement_type");
 	}
+	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -143,8 +129,8 @@ public class ConstrainableElementItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ConstrainableElement.class)) {
-			case ConstraintPackage.CONSTRAINABLE_ELEMENT__CONSTRAINT:
+		switch (notification.getFeatureID(VerifiableElement.class)) {
+			case ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -161,11 +147,6 @@ public class ConstrainableElementItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ConstraintPackage.Literals.CONSTRAINABLE_ELEMENT__CONSTRAINT,
-				 ConstraintFactory.eINSTANCE.createTextualConstraint()));
 	}
 
 	/**

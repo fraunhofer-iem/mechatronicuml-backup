@@ -168,7 +168,7 @@ public class RegionImpl extends CommentableElementImpl implements Region {
 	 */
 	public State getParentState() {
 		if (eContainerFeatureID() != RealtimestatechartPackage.REGION__PARENT_STATE) return null;
-		return (State)eContainer();
+		return (State)eInternalContainer();
 	}
 
 	/**

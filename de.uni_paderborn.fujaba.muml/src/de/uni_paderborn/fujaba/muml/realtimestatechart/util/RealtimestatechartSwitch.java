@@ -14,6 +14,7 @@ import org.storydriven.core.ExtendableElement;
 import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.*;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AbsoluteDeadline;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Action;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.AsynchronousMessageEvent;

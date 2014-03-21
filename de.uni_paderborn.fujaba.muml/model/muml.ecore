@@ -12,7 +12,7 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The package components contains all classes for modeling atomic and structured components.&#xD;&#xA;Components are defined on the type level and may be instantiated in a component instance configuration."/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//constraint/ConstrainableElement #//types/DataType">
+    <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This abstract class is the super class of all classes representing a concrete component type such as a structured, atomic or a continuous component.&#xA;&#xA;Component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;component&quot;."/>
       </eAnnotations>
@@ -36,7 +36,7 @@
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="#//connector/ConnectorEndpoint #//constraint/ConstrainableElement #//types/DataType">
+    <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true" eSuperTypes="#//connector/ConnectorEndpoint #//types/DataType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Ports represent the interaction points between a component and the components environment."/>
       </eAnnotations>
@@ -197,7 +197,7 @@
             value="-- Static Structured Component must not have Discrete Interaction Endpoints other than Discrete Ports&#xA;ports->forAll(p | p.oclIsKindOf(connector::DiscreteInteractionEndpoint) implies p.oclIsKindOf(DiscretePort))"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" abstract="true" eSuperTypes="#//component/Component #//behavior/BehavioralElement">
+    <eClassifiers xsi:type="ecore:EClass" name="AtomicComponent" abstract="true" eSuperTypes="#//component/Component #//behavior/BehavioralElement #//constraint/VerifiableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="This class represents an atomic component. Atomic components must not be further sub-divided into component parts. In contrast to structured components atomic components own a behavior in form of a realtime statechart.&#xD;&#xA;&#xD;&#xA;The different component types are implemented as a variation of the composite design pattern. Concerning the composite pattern this class represents the role &quot;leaf&quot;."/>
       </eAnnotations>
@@ -550,83 +550,27 @@
   <eSubpackages name="constraint" nsURI="http://www.fujaba.de/muml/constraint/0.4.0"
       nsPrefix="constraint">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="The package constraint provides abstract super classes for modeling different&#xD;&#xA;kinds of constraints that may be attached to ConstrainableElements of the&#xD;&#xA;MechatronicUML meta-model. "/>
+      <details key="documentation" value="This package provides abstract super classes for modeling different kinds of constraints that may be attached to verifiable elements of the MechatronicUML meta-model. "/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
+    <eClassifiers xsi:type="ecore:EClass" name="TemporalLogicConstraint" abstract="true"
+        eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a constraint. A constraint defines certain properties a system has to fulfill. In terms of model checking, a constraint represents the specification of the system."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="correctness" eType="#//constraint/Correctness"
-          defaultValueLiteral="unknown">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The correctness of this constraint encoded as a literal of the enum type &quot;Correctness&quot;."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This attribute decides whether background checking is activated for this constraint. If it is activated the correctness of the constraint is checked whenever the model changes. These checks are performed in the background such that user interaction is not interrupted."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="constrainableElement"
-          lowerBound="1" eType="#//constraint/ConstrainableElement" eOpposite="#//constraint/ConstrainableElement/constraint">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The element this constraint applies to."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="correct" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          changeable="false" volatile="true" transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="This derived attribute is &quot;true&quot; if and only if this.correctness == Correctness.CORRECT holds."/>
-        </eAnnotations>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="derivation" value="self.correctness = constraint::Correctness::CORRECT"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="Correctness">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This enumeration encodes the correctness result of a constraint. The correctness&#xD;&#xA;is UNKNOWN if the constraint has not yet been verified or if the verification failed&#xD;&#xA;for some reason. The constraint is CORRECT, if the verification returned true.&#xD;&#xA;Otherwise the constraint is VIOLATED."/>
-      </eAnnotations>
-      <eLiterals name="UNKNOWN" literal="unknown"/>
-      <eLiterals name="CORRECT" value="1" literal="correct"/>
-      <eLiterals name="VIOLATED" value="2" literal="violated"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ModelingConstraint" abstract="true"
-        eSuperTypes="#//constraint/Constraint">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A modeling constraint is a static semantics constraint that restricts the model.&#xD;&#xA;It can be checked statically and will not be used for verification."/>
+        <details key="documentation" value="This class represents a temporal logic the system has to fulfill. A temporal logic constraint may be an TCTL expression. Thus, the constraint is the input for a model checker."/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="VerifiableConstraint" abstract="true"
-        eSuperTypes="#//constraint/Constraint">
+    <eClassifiers xsi:type="ecore:EClass" name="VerifiableElement" abstract="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="A verifiable constraint is a dynamic semantics constraint that will be used for&#xD;&#xA;verification of the model. This class serves as a super class for all types of &#xD;&#xA;verifiable constraints."/>
+        <details key="documentation" value="A verifiable is an element that may be verified by formal verification, e.g., model checking. Therefore, this class defines a set of temporal logic constraints."/>
       </eAnnotations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TextualConstraint" eSuperTypes="#//constraint/VerifiableConstraint ../../org.storydriven.core/model/core.ecore#//ExtendableElement">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents all verifable constraints that can be entered as a string in a predefined&#xD;&#xA;constraint language like, e.g., CTL or TCTL. Therefore, it contains a textual expression&#xD;&#xA;which is used to store the constraint text and the language."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="textualExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/TextualExpression"
-          containment="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="temporalLogicConstraints"
+          upperBound="-1" eType="#//constraint/TemporalLogicConstraint" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A textual expression which stores the constraint text and the language in which &#xD;&#xA;the constraint is specified."/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ConstrainableElement" abstract="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Abstract super class for all model elements that may carry a constraint."/>
-      </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
-          eType="#//constraint/Constraint" containment="true" eOpposite="#//constraint/Constraint/constrainableElement">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The constraint for this element."/>
+          <details key="documentation" value="The list of temporal logic constraints for this element."/>
         </eAnnotations>
       </eStructuralFeatures>
     </eClassifiers>
@@ -949,7 +893,7 @@
       <details key="documentation" value="This package provides modeling support for coordination protocols including roles, role connectors, and quality of service assumptions."/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractCoordinationSpecification"
-        abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement #//constraint/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//CommentableElement">
+        abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement ../../org.storydriven.core/model/core.ecore#//CommentableElement #//constraint/VerifiableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="UniqueRoleNames RoleMessageTypesMustBeCompatible SingleRoleImpliesMultiRole"/>
       </eAnnotations>
@@ -2122,7 +2066,7 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DiscreteInteractionEndpoint" abstract="true"
-        eSuperTypes="#//connector/ConnectorEndpoint #//behavior/BehavioralElement #//constraint/ConstrainableElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
+        eSuperTypes="#//connector/ConnectorEndpoint #//behavior/BehavioralElement ../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An interaction point for discrete communication via asynchronous messages. This class generalizes concepts of classes DiscretePort and Role."/>
       </eAnnotations>

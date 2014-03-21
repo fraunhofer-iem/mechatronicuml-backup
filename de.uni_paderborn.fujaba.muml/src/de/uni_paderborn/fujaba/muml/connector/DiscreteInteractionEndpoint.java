@@ -11,7 +11,6 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
 
@@ -43,7 +42,7 @@ import de.uni_paderborn.fujaba.muml.valuetype.Cardinality;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL ReceivingInteractionEndpointRequiresMessageBuffer='-- Receiver message types need receiver message buffer\r\nself.receiverMessageTypes->notEmpty() \r\nimplies \r\nself.receiverMessageBuffer->notEmpty()' ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer='-- Each receiver message type should be assigned to exactly one buffer\r\nself.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))'"
  * @generated
  */
-public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, BehavioralElement, ConstrainableElement, NamedElement {
+public interface DiscreteInteractionEndpoint extends ConnectorEndpoint, BehavioralElement, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Sender Message Types</b></em>' reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.msgtype.MessageType}.

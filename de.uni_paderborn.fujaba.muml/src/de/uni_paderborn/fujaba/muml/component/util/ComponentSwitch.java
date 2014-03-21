@@ -15,6 +15,7 @@ import org.storydriven.core.NamedElement;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.behavior.TypedNamedElement;
+import de.uni_paderborn.fujaba.muml.component.*;
 import de.uni_paderborn.fujaba.muml.component.AssemblyConnector;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.Component;
@@ -36,7 +37,7 @@ import de.uni_paderborn.fujaba.muml.component.StructuredComponent;
 import de.uni_paderborn.fujaba.muml.connector.Connector;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpoint;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpoint;
-import de.uni_paderborn.fujaba.muml.constraint.ConstrainableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 import de.uni_paderborn.fujaba.muml.types.DataType;
 
 /**
@@ -99,7 +100,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 			case ComponentPackage.COMPONENT: {
 				Component component = (Component)theEObject;
 				T result = caseComponent(component);
-				if (result == null) result = caseConstrainableElement(component);
 				if (result == null) result = caseDataType(component);
 				if (result == null) result = caseNamedElement(component);
 				if (result == null) result = caseExtendableElement(component);
@@ -111,7 +111,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 				Port port = (Port)theEObject;
 				T result = casePort(port);
 				if (result == null) result = caseConnectorEndpoint(port);
-				if (result == null) result = caseConstrainableElement(port);
 				if (result == null) result = caseDataType(port);
 				if (result == null) result = caseCommentableElement(port);
 				if (result == null) result = caseNamedElement(port);
@@ -126,7 +125,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = casePort(continuousPort);
 				if (result == null) result = caseTypedNamedElement(continuousPort);
 				if (result == null) result = caseConnectorEndpoint(continuousPort);
-				if (result == null) result = caseConstrainableElement(continuousPort);
 				if (result == null) result = caseDataType(continuousPort);
 				if (result == null) result = caseCommentableElement(continuousPort);
 				if (result == null) result = caseNamedElement(continuousPort);
@@ -140,7 +138,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = casePort(discretePort);
 				if (result == null) result = caseDiscreteInteractionEndpoint(discretePort);
 				if (result == null) result = caseConnectorEndpoint(discretePort);
-				if (result == null) result = caseConstrainableElement(discretePort);
 				if (result == null) result = caseDataType(discretePort);
 				if (result == null) result = caseBehavioralElement(discretePort);
 				if (result == null) result = caseCommentableElement(discretePort);
@@ -165,7 +162,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = caseStructuredComponent(staticStructuredComponent);
 				if (result == null) result = caseStaticComponent(staticStructuredComponent);
 				if (result == null) result = caseComponent(staticStructuredComponent);
-				if (result == null) result = caseConstrainableElement(staticStructuredComponent);
 				if (result == null) result = caseDataType(staticStructuredComponent);
 				if (result == null) result = caseNamedElement(staticStructuredComponent);
 				if (result == null) result = caseExtendableElement(staticStructuredComponent);
@@ -178,7 +174,7 @@ public class ComponentSwitch<T> extends Switch<T> {
 				T result = caseAtomicComponent(atomicComponent);
 				if (result == null) result = caseComponent(atomicComponent);
 				if (result == null) result = caseBehavioralElement(atomicComponent);
-				if (result == null) result = caseConstrainableElement(atomicComponent);
+				if (result == null) result = caseVerifiableElement(atomicComponent);
 				if (result == null) result = caseDataType(atomicComponent);
 				if (result == null) result = caseNamedElement(atomicComponent);
 				if (result == null) result = caseExtendableElement(atomicComponent);
@@ -222,7 +218,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = casePort(hybridPort);
 				if (result == null) result = caseTypedNamedElement(hybridPort);
 				if (result == null) result = caseConnectorEndpoint(hybridPort);
-				if (result == null) result = caseConstrainableElement(hybridPort);
 				if (result == null) result = caseDataType(hybridPort);
 				if (result == null) result = caseCommentableElement(hybridPort);
 				if (result == null) result = caseNamedElement(hybridPort);
@@ -234,7 +229,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 				StructuredComponent structuredComponent = (StructuredComponent)theEObject;
 				T result = caseStructuredComponent(structuredComponent);
 				if (result == null) result = caseComponent(structuredComponent);
-				if (result == null) result = caseConstrainableElement(structuredComponent);
 				if (result == null) result = caseDataType(structuredComponent);
 				if (result == null) result = caseNamedElement(structuredComponent);
 				if (result == null) result = caseExtendableElement(structuredComponent);
@@ -256,7 +250,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = casePort(directedTypedPort);
 				if (result == null) result = caseTypedNamedElement(directedTypedPort);
 				if (result == null) result = caseConnectorEndpoint(directedTypedPort);
-				if (result == null) result = caseConstrainableElement(directedTypedPort);
 				if (result == null) result = caseDataType(directedTypedPort);
 				if (result == null) result = caseCommentableElement(directedTypedPort);
 				if (result == null) result = caseNamedElement(directedTypedPort);
@@ -280,7 +273,7 @@ public class ComponentSwitch<T> extends Switch<T> {
 				if (result == null) result = caseStaticComponent(staticAtomicComponent);
 				if (result == null) result = caseComponent(staticAtomicComponent);
 				if (result == null) result = caseBehavioralElement(staticAtomicComponent);
-				if (result == null) result = caseConstrainableElement(staticAtomicComponent);
+				if (result == null) result = caseVerifiableElement(staticAtomicComponent);
 				if (result == null) result = caseDataType(staticAtomicComponent);
 				if (result == null) result = caseNamedElement(staticAtomicComponent);
 				if (result == null) result = caseExtendableElement(staticAtomicComponent);
@@ -292,7 +285,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 				StaticComponent staticComponent = (StaticComponent)theEObject;
 				T result = caseStaticComponent(staticComponent);
 				if (result == null) result = caseComponent(staticComponent);
-				if (result == null) result = caseConstrainableElement(staticComponent);
 				if (result == null) result = caseDataType(staticComponent);
 				if (result == null) result = caseNamedElement(staticComponent);
 				if (result == null) result = caseExtendableElement(staticComponent);
@@ -605,21 +597,6 @@ public class ComponentSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constrainable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConstrainableElement(ConstrainableElement object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Endpoint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -691,6 +668,21 @@ public class ComponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDiscreteInteractionEndpoint(DiscreteInteractionEndpoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Verifiable Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Verifiable Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVerifiableElement(VerifiableElement object) {
 		return null;
 	}
 
