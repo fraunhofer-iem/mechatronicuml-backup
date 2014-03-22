@@ -24,7 +24,7 @@ public class AsynchronousMessageEventEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addAsynchronousMessageEventMessageEditor(null, false);
+			addAsynchronousMessageEventMessage_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -32,16 +32,17 @@ public class AsynchronousMessageEventEditor
 	/**
 	 * @generated
 	 */
-	protected void addAsynchronousMessageEventMessageEditor(String category,
-			boolean front) {
+	protected void addAsynchronousMessageEventMessage_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createAsynchronousMessageEventMessageEditor(), front);
+				createAsynchronousMessageEventMessage_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAsynchronousMessageEventMessageEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAsynchronousMessageEventMessage_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

@@ -24,15 +24,15 @@ public class SynchronizationEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addSynchronizationSyncChannelEditor(null, true);
+			addSynchronizationSyncChannel_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addSynchronizationKindEditor(null, true);
+			addSynchronizationKind_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addSynchronizationSelectorExpressionEditor(null, true);
+			addSynchronizationSelectorExpression_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -40,16 +40,16 @@ public class SynchronizationEditor
 	/**
 	 * @generated
 	 */
-	protected void addSynchronizationSyncChannelEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createSynchronizationSyncChannelEditor(),
-				front);
+	protected void addSynchronizationSyncChannel_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createSynchronizationSyncChannel_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationSyncChannelEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationSyncChannel_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -64,14 +64,16 @@ public class SynchronizationEditor
 	/**
 	 * @generated
 	 */
-	protected void addSynchronizationKindEditor(String category, boolean front) {
-		addEditorToCategory(category, createSynchronizationKindEditor(), front);
+	protected void addSynchronizationKind_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createSynchronizationKind_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationKindEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationKind_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -86,16 +88,17 @@ public class SynchronizationEditor
 	/**
 	 * @generated
 	 */
-	protected void addSynchronizationSelectorExpressionEditor(String category,
-			boolean front) {
+	protected void addSynchronizationSelectorExpression_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createSynchronizationSelectorExpressionEditor(), front);
+				createSynchronizationSelectorExpression_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationSelectorExpressionEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createSynchronizationSelectorExpression_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

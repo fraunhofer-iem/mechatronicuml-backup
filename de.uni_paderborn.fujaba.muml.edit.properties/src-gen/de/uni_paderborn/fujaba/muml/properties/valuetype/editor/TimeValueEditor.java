@@ -24,11 +24,11 @@ public class TimeValueEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTimeValueValueEditor(null, true);
+			addTimeValueValue_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTimeValueUnitEditor(null, true);
+			addTimeValueUnit_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,14 +36,16 @@ public class TimeValueEditor
 	/**
 	 * @generated
 	 */
-	protected void addTimeValueValueEditor(String category, boolean front) {
-		addEditorToCategory(category, createTimeValueValueEditor(), front);
+	protected void addTimeValueValue_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createTimeValueValue_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueValueEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueValue_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
@@ -58,14 +60,16 @@ public class TimeValueEditor
 	/**
 	 * @generated
 	 */
-	protected void addTimeValueUnitEditor(String category, boolean front) {
-		addEditorToCategory(category, createTimeValueUnitEditor(), front);
+	protected void addTimeValueUnit_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createTimeValueUnit_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueUnitEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTimeValueUnit_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE

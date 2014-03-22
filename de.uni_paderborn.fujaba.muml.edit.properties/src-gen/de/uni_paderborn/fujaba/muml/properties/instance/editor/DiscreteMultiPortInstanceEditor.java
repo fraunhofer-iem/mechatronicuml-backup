@@ -24,7 +24,7 @@ public class DiscreteMultiPortInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPortInstanceComponentInstanceEditor(null, true);
+			addPortInstanceComponentInstance_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public class DiscreteMultiPortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addPortInstanceComponentInstanceEditor(String category,
-			boolean front) {
+	protected void addPortInstanceComponentInstance_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createPortInstanceComponentInstanceEditor(), front);
+				createPortInstanceComponentInstance_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortInstanceComponentInstanceEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortInstanceComponentInstance_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE

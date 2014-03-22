@@ -24,7 +24,7 @@ public abstract class StateConnectionPointEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateConnectionPointStateEditor(null, true);
+			addStateConnectionPointState_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public abstract class StateConnectionPointEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateConnectionPointStateEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createStateConnectionPointStateEditor(),
-				front);
+	protected void addStateConnectionPointState_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createStateConnectionPointState_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateConnectionPointStateEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateConnectionPointState_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

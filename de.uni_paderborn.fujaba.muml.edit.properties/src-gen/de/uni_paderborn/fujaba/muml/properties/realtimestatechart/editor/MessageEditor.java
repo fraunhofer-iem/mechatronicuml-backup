@@ -27,11 +27,11 @@ public class MessageEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMessageInstanceOfEditor(null, true);
+			addMessageInstanceOf_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMessageParameterBindingEditor(
+			addMessageParameterBinding_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -40,14 +40,16 @@ public class MessageEditor
 	/**
 	 * @generated
 	 */
-	protected void addMessageInstanceOfEditor(String category, boolean front) {
-		addEditorToCategory(category, createMessageInstanceOfEditor(), front);
+	protected void addMessageInstanceOf_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createMessageInstanceOf_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageInstanceOfEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageInstanceOf_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -62,16 +64,16 @@ public class MessageEditor
 	/**
 	 * @generated
 	 */
-	protected void addMessageParameterBindingEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createMessageParameterBindingEditor(),
-				front);
+	protected void addMessageParameterBinding_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createMessageParameterBinding_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageParameterBindingEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageParameterBinding_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

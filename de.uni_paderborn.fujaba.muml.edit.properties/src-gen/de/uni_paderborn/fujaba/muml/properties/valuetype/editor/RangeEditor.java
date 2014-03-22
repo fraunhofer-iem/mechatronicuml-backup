@@ -24,11 +24,11 @@ public class RangeEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRangeLowerBoundEditor(null, true);
+			addRangeLowerBound_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRangeUpperBoundEditor(null, true);
+			addRangeUpperBound_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,14 +36,16 @@ public class RangeEditor
 	/**
 	 * @generated
 	 */
-	protected void addRangeLowerBoundEditor(String category, boolean front) {
-		addEditorToCategory(category, createRangeLowerBoundEditor(), front);
+	protected void addRangeLowerBound_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createRangeLowerBound_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangeLowerBoundEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangeLowerBound_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
@@ -58,14 +60,16 @@ public class RangeEditor
 	/**
 	 * @generated
 	 */
-	protected void addRangeUpperBoundEditor(String category, boolean front) {
-		addEditorToCategory(category, createRangeUpperBoundEditor(), front);
+	protected void addRangeUpperBound_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createRangeUpperBound_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangeUpperBoundEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangeUpperBound_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE

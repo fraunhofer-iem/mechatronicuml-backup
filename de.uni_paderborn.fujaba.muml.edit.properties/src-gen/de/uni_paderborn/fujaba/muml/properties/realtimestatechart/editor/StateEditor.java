@@ -30,57 +30,57 @@ public class StateEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateEmbeddedRegionsEditor(
+			addStateEmbeddedRegions_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateDoEventEditor(null, false);
+			addStateDoEvent_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateExitEventEditor(null, false);
+			addStateExitEvent_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateEntryEventEditor(null, false);
+			addStateEntryEvent_GeneralTab_Editor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateInvariantsEditor(
+			addStateInvariants_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateInitialEditor(
+			addStateInitial_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateFinalEditor(
+			addStateFinal_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateUrgentEditor(
+			addStateUrgent_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateChannelsEditor(
+			addStateChannels_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateConnectionPointsEditor(
+			addStateConnectionPoints_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStateParentStatechartEditor(null, true);
+			addStateParentStatechart_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -88,14 +88,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateEmbeddedRegionsEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateEmbeddedRegionsEditor(), front);
+	protected void addStateEmbeddedRegions_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createStateEmbeddedRegions_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateEmbeddedRegionsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateEmbeddedRegions_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -110,14 +112,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateDoEventEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateDoEventEditor(), front);
+	protected void addStateDoEvent_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createStateDoEvent_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateDoEventEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateDoEvent_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -132,14 +136,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateExitEventEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateExitEventEditor(), front);
+	protected void addStateExitEvent_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createStateExitEvent_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateExitEventEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateExitEvent_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -154,14 +160,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateEntryEventEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateEntryEventEditor(), front);
+	protected void addStateEntryEvent_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createStateEntryEvent_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateEntryEventEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateEntryEvent_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -176,14 +184,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateInvariantsEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateInvariantsEditor(), front);
+	protected void addStateInvariants_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createStateInvariants_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateInvariantsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateInvariants_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -198,14 +208,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateInitialEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateInitialEditor(), front);
+	protected void addStateInitial_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createStateInitial_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateInitialEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateInitial_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -220,14 +232,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateFinalEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateFinalEditor(), front);
+	protected void addStateFinal_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createStateFinal_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateFinalEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateFinal_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -242,14 +256,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateUrgentEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateUrgentEditor(), front);
+	protected void addStateUrgent_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createStateUrgent_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateUrgentEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateUrgent_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -264,14 +280,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateChannelsEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateChannelsEditor(), front);
+	protected void addStateChannels_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createStateChannels_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateChannelsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateChannels_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -286,15 +304,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateConnectionPointsEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateConnectionPointsEditor(),
-				front);
+	protected void addStateConnectionPoints_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createStateConnectionPoints_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateConnectionPointsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateConnectionPoints_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -309,15 +328,16 @@ public class StateEditor
 	/**
 	 * @generated
 	 */
-	protected void addStateParentStatechartEditor(String category, boolean front) {
-		addEditorToCategory(category, createStateParentStatechartEditor(),
-				front);
+	protected void addStateParentStatechart_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createStateParentStatechart_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateParentStatechartEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStateParentStatechart_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

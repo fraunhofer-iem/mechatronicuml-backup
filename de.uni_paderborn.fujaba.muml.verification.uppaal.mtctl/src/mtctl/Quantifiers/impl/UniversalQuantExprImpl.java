@@ -1,0 +1,39 @@
+/**
+ */
+package mtctl.Quantifiers.impl;
+
+import mtctl.Quantifiers.QuantifiersPackage;
+import mtctl.Quantifiers.UniversalQuantExpr;
+
+import org.eclipse.emf.ecore.EClass;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Universal Quant Expr</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
+public class UniversalQuantExprImpl extends QuantifierExprImpl implements UniversalQuantExpr {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UniversalQuantExprImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return QuantifiersPackage.Literals.UNIVERSAL_QUANT_EXPR;
+	}
+
+} //UniversalQuantExprImpl

@@ -24,7 +24,7 @@ public class HybridPortEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addHybridPortSamplingIntervalEditor(null, false);
+			addHybridPortSamplingInterval_GeneralTab_Editor(null, false);
 		}
 
 	}
@@ -32,16 +32,16 @@ public class HybridPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addHybridPortSamplingIntervalEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createHybridPortSamplingIntervalEditor(),
-				front);
+	protected void addHybridPortSamplingInterval_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createHybridPortSamplingInterval_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHybridPortSamplingIntervalEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createHybridPortSamplingInterval_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE

@@ -1,0 +1,190 @@
+grammar de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl with org.eclipse.xtext.common.Terminals
+
+import "platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore" as mtctl
+import "platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore#//BooleanLogic" as mtctl
+import "platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore#//Comparables" as mtctl
+import "platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore#//Predicates" as mtctl
+import "platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore#//Quantifiers" as mtctl
+import "platform:/resource/de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl/model/Mtctl.ecore#//Sets" as mtctl
+
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart" as realtimestatechart
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types" as types
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior" as behavior
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component" as component
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype" as valuetype
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype" as msgtype
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//protocol" as protocol
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector" as connector
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+PropertyRepository returns mtctl::PropertyRepository:
+	(properties+=Property)*
+;
+
+Property returns mtctl::Property hidden(WS, ML_COMMENT):
+	Expression ';' (comment=SL_COMMENT)?
+;
+
+Expression returns mtctl::Expression:
+	LeadsToExpr
+;
+
+//Binary operators (increasing precedence)
+LeadsToExpr returns mtctl::Expression:
+	TimeIntervalExpr ({mtctl::LeadsToExpr.leftOpd=current} 'leadsTo' rightOpd=TimeIntervalExpr)*
+;
+
+TimeIntervalExpr returns mtctl::Expression:
+	'timeInterval' {mtctl::TimeIntervalExpr} lhs=ImplyExpr '[' lower=INT ',' upper=INT ']' rhs=ImplyExpr | ImplyExpr //TODO use units from action lang
+;
+
+ImplyExpr returns mtctl::Expression:
+	AndExpr ({mtctl::ImplyExpr.leftOpd=current} 'implies' rightOpd=AndExpr)*
+;
+
+AndExpr returns mtctl::Expression:
+	OrExpr ({mtctl::AndExpr.leftOpd=current} 'and' rightOpd=OrExpr)*
+;
+
+OrExpr returns mtctl::Expression:
+	NotExpr ({mtctl::OrExpr.leftOpd=current} 'or' rightOpd=NotExpr)*
+;
+
+//Unary operators
+NotExpr returns mtctl::Expression:
+	'not' {mtctl::NotExpr} opd=NotExpr | QuantifierExpr
+;
+
+QuantifierExpr returns mtctl::Expression:
+	UniversalQuantExpr | ExistentialQuantExpr | TemporalQuantifierExpr | AtomExpr
+;
+
+UniversalQuantExpr returns mtctl::QuantifierExpr:
+	'forall' '(' {mtctl::UniversalQuantExpr} var=VariableBinding ')' formula=(NotExpr)
+;
+
+ExistentialQuantExpr returns mtctl::QuantifierExpr:
+	'exists' '(' {mtctl::ExistenceQuantExpr} var=VariableBinding ')' formula=(NotExpr)
+;
+
+VariableBinding returns mtctl::BoundVariable:
+	name=ID ':' set=SetExpr
+;
+
+TemporalQuantifierExpr returns mtctl::Expression:
+	EFExpr | AFExpr | EGExpr | AGExpr
+;
+
+EFExpr returns mtctl::TemporalQuantifierExpr:
+	('EF' | 'E<>') {mtctl::EFExpr} expr=NotExpr
+;
+
+AFExpr returns mtctl::TemporalQuantifierExpr:
+	('AF' | 'A<>') {mtctl::AFExpr} expr=NotExpr
+;
+
+EGExpr returns mtctl::TemporalQuantifierExpr:
+	('EG' | 'E[]') {mtctl::EGExpr} expr=NotExpr
+;
+
+AGExpr returns mtctl::TemporalQuantifierExpr:
+	('AG' | 'A[]') {mtctl::AGExpr} expr=NotExpr
+;
+
+//Bottom of precedence chain.
+AtomExpr returns mtctl::Expression:
+	'(' Expression ')' | PredicateExpr | ComparisonExpr
+;
+
+//Predicates
+PredicateExpr returns mtctl::Expression:
+	DeadlockExpr | StateExpr | MessageExpr | TransitionExpr
+;
+
+DeadlockExpr returns mtctl::PredicateExpr:
+	{mtctl::DeadlockExpr} 'deadlock'
+;
+
+StateExpr returns mtctl::PredicateExpr:
+	StateActiveExpr | SubstateOfExpr
+;
+
+StateActiveExpr returns mtctl::StateActiveExpr:
+	'stateActive' '(' {mtctl::StateActiveExpr} state=[ecore::EObject|QualifiedName] ')'
+;
+
+SubstateOfExpr returns mtctl::SubstateOfExpr:
+	'substateOf' '(' {mtctl::SubstateOfExpr} state=[ecore::EObject|QualifiedName] ','
+	superstate=[ecore::EObject|QualifiedName] ')'
+;
+
+MessageExpr returns mtctl::PredicateExpr:
+	MessageInBufferExpr | MessageInTransitExpr | BufferOverflowExpr
+;
+
+MessageInTransitExpr returns mtctl::MessageInTransitExpr:
+	'messageInTransit' '(' {mtctl::MessageInTransitExpr} message=[ecore::EObject|QualifiedName] ')' //TODO (roleInstance)  ',' role=[ecore::EObject|QualifiedName] 
+;
+
+MessageInBufferExpr returns mtctl::MessageInBufferExpr:
+	'messageInBuffer' '(' {mtctl::MessageInBufferExpr} role=[ecore::EObject] ','
+	message=[ecore::EObject|QualifiedName] ')'
+;
+
+BufferOverflowExpr returns mtctl::BufferOverflowExpr:
+	{mtctl::BufferOverflowExpr} 'bufferOverflow'
+;
+
+TransitionExpr returns mtctl::PredicateExpr:
+	TransitionFiringExpr
+;
+
+TransitionFiringExpr returns mtctl::TransitionFiringExpr:
+	'transitionFiring' '(' {mtctl::TransitionFiringExpr} transition=[ecore::EObject|QualifiedName] ')'
+;
+
+//Comparisons
+ComparisonExpr returns mtctl::Expression:
+	{mtctl::ComparisonExpr} lhs=(PrimitiveVariableExpr | MapExpr | ConstExpr) op=ComparisonOp rhs=(PrimitiveVariableExpr | MapExpr | ConstExpr)
+;
+
+enum ComparisonOp returns mtctl::ComparisonOp:
+	EQUALS='==' | GREATER='>' | GREATER_OR_EQUAL='>=' | LESS='<' | LESS_OR_EQAL='<=' | NOT_EQUAL='!='
+;
+
+//Expressions usable in comparisons
+MapExpr returns mtctl::Expression:
+	BufferMessageCountExpr
+;
+
+BufferMessageCountExpr returns mtctl::MapExpr:
+	'bufferMessageCount' '(' {mtctl::BufferMsgCountExpr} buffer=[ecore::EObject|QualifiedName] ')'
+;
+
+PrimitiveVariableExpr returns mtctl::PrimitiveVariableExpr:
+	var=[ecore::EObject|QualifiedName]
+;
+
+ConstExpr returns mtctl::Expression:
+	{mtctl::ConstExpr} val=EInt
+;
+
+
+//Sets
+SetExpr returns mtctl::SetExpr:
+	IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr} 'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks'
+;
+
+IntervalSetExpr returns mtctl::SetExpr:
+	{mtctl::IntervalSetExpr} '[' lowerVal=INT ',' upperVal=INT ']'
+;
+
+//Other necessary definitions
+QualifiedName:
+	ID ('.' ID)*
+;
+
+
+EInt returns ecore::EInt:
+	'-'? INT
+;

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl"
+            class="mtctl.MtctlPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers"
+            class="mtctl.Quantifiers.QuantifiersPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates"
+            class="mtctl.Predicates.PredicatesPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets"
+            class="mtctl.Sets.SetsPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic"
+            class="mtctl.BooleanLogic.BooleanLogicPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mtctl -->
+      <package
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables"
+            class="mtctl.Comparables.ComparablesPackage"
+            genModel="model/Mtctl.genmodel"/>
+   </extension>
+
+</plugin>

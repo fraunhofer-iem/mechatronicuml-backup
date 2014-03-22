@@ -27,16 +27,16 @@ public abstract class ComponentEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentPortsEditor(
+			addComponentPorts_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentComponentKindEditor(null, true);
+			addComponentComponentKind_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addCommentableElementCommentEditor(null, true);
+			addCommentableElementComment_DocumentationTab_Editor(null, true);
 		}
 
 	}
@@ -44,14 +44,16 @@ public abstract class ComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentPortsEditor(String category, boolean front) {
-		addEditorToCategory(category, createComponentPortsEditor(), front);
+	protected void addComponentPorts_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComponentPorts_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPortsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPorts_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -66,16 +68,16 @@ public abstract class ComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentComponentKindEditor(String category,
+	protected void addComponentComponentKind_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category, createComponentComponentKindEditor(),
-				front);
+		addEditorToCategory(category,
+				createComponentComponentKind_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentKindEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentComponentKind_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -90,16 +92,17 @@ public abstract class ComponentEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
+	protected void addCommentableElementComment_DocumentationTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createCommentableElementComment_DocumentationTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementComment_DocumentationTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
