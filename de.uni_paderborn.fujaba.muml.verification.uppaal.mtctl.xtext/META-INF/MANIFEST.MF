@@ -21,7 +21,7 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
 Import-Package: com.google.common.base;version="10.0.1",
  org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal,
  de.uni_paderborn.fujaba.muml.verification.uppaal.services,
  de.uni_paderborn.fujaba.muml.verification.uppaal.parser.antlr,
