@@ -2,7 +2,7 @@
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.example(\..+)?" searchPathRef="examples"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification.uppaal.uppaal.mtctl(\..+)?" searchPathRef="muml"/>
-  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification(\..+)?" searchPathRef="verification"/>
+  <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.verification(?!\.mtctl)(\..+)?" searchPathRef="verification"/>
   <rm:locator pattern="^de\.uni_paderborn\.uppaal(\..+)?" searchPathRef="verification"/>
   <rm:locator pattern="(^de\.uni_paderborn\.fujaba\.udbm(\..+)?|^de\.uni_paderborn\.fujaba\.umlrt\.udbm(\..+)?)" searchPathRef="udbmbinding"/>
   <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.reachanalysis(\..+)?" searchPathRef="storychecking"/>
