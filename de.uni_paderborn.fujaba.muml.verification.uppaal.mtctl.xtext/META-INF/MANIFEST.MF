@@ -28,7 +28,6 @@ Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal,
  de.uni_paderborn.fujaba.muml.verification.uppaal.parser.antlr.internal,
  de.uni_paderborn.fujaba.muml.verification.uppaal.validation,
  de.uni_paderborn.fujaba.muml.verification.uppaal.scoping,
- de.uni_paderborn.fujaba.muml.verification.uppaal.generator,
  de.uni_paderborn.fujaba.muml.verification.uppaal.formatting,
  de.uni_paderborn.fujaba.muml.verification.uppaal.parseTreeConstruction
 

@@ -81,12 +81,12 @@ Workflow {
 			// fragment = exporting.QualifiedNamesFragment auto-inject {}
 
 			// scoping and exporting API
-			//fragment = scoping.ImportURIScopingFragment auto-inject {} //TODO if something fails, it may be because I commented this out
+			//fragment = scoping.ImportURIScopingFragment auto-inject {}
 			fragment = exporting.SimpleNamesFragment auto-inject {}
 			fragment = builder.BuilderIntegrationFragment auto-inject {}		
 
 			// generator API
-			fragment = generator.GeneratorFragment auto-inject {}
+			//fragment = generator.GeneratorFragment auto-inject {}
 
 			// formatter API 
 			// fragment = formatting.FormatterFragment auto-inject {}
