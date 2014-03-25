@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<templates>
+
+<template autoinsert="false" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_timeInterval"
+deleted="false" 
+description="between first_expression and second_expression lowerBound to upperBound time units should pass" 
+id="timeInterval"
+enabled="true" 
+name="timeInterval">timeInterval ${first_expression} [${lowerBound},${upperBound}] ${second_expression}</template>
+
+<!--<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_leadsTo"
+deleted="false" 
+description="after first_expression holds, eventually second_expression holds" 
+id="leadsTo"
+enabled="true" 
+name="leadsTo">${first_expression} leadsTo ${second_expression}</template>-->
+
+<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_forall"
+deleted="false" 
+description="expression should hold for all elements in the set" 
+id="forall"
+enabled="true" 
+name="forall">forall(${name}:${Set}) ${expression}</template>
+
+<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_exists"
+deleted="false" 
+description="there exists one element in the set for which the expression holds" 
+id="exists"
+enabled="true" 
+name="exists">exists(${name}:${Set}) ${expression}</template>
+
+<template autoinsert="true"
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_stateActive"
+ deleted="false" 
+ description="true iff state is active"
+ id = "stateActive"
+ enabled="true" 
+ name="stateActive(state)">stateActive(${state})</template>
+ 
+<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_substateOf"
+deleted="false" 
+description="true iff state is a substate of superstate" 
+id="substateOf"
+enabled="true" 
+name="substateOf">substateOf(${state},${superstate})</template>
+
+<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_messageInTransit"
+deleted="false" 
+description="true iff message is in transit (i.e. message has been sent but not yet arrived in the receiver's buffer)" 
+id="messageInTransit"
+enabled="true" 
+name="messageInTransit">messageInTransit(${message})</template>
+
+<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_messageInBuffer"
+deleted="false" 
+description="true iff message is in buffer" 
+id="messageInBuffer"
+enabled="true" 
+name="messageInBuffer">messageInBuffer(${message},${buffer})</template>
+
+<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_transitionFiring"
+deleted="false" 
+description="true iff transition is firing" 
+id="transitionFiring"
+enabled="true" 
+name="transitionFiring">transitionFiring(${transition})</template>
+
+<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_bufferMessageCount"
+deleted="false" 
+description="returns the current number of elements in a buffer" 
+id="bufferMessageCount"
+enabled="true" 
+name="bufferMessageCount">bufferMessageCount(${buffer})</template>
+
+</templates>
