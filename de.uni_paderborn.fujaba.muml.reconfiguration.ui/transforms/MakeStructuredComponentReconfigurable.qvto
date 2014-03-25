@@ -57,7 +57,6 @@ mapping createReconfigurableComponent(in oldComp : StaticStructuredComponent) : 
 	componentKind := oldComp.componentKind;		-- from Component
 	
 	-- move features contained in references
-	constraint := oldComp.constraint;			-- from ConstrainableElement
 	ports := oldComp.ports; 					-- from Component
 	connectors := oldComp.connectors;			-- from StructuredComponent
 	coordinationProtocolParts := oldComp.coordinationProtocolParts; -- from StructuredComponent
