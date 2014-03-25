@@ -14,7 +14,8 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
  */
 public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.AbstractMtctlProposalProvider {
-	public static final String[] keywordExclude = new String[] {">","<",">=","<=","==","!=","(",")", "timeInterval", "forall", "exists", "stateActive", "substateOf", "messageInTransit", "messageInBuffer", "transitionFiring",
+	public static final String[] keywordExclude = new String[] {">","<",">=","<=","==","!=","(",")","A[]","A<>","E<>","E[]", 
+		"timeInterval", "forall", "exists", "stateActive", "substateOf", "messageInTransit", "messageInBuffer", "transitionFiring",
 			"bufferMessageCount" }; // list of keywords to exclude from auto-complete
 	public static final HashSet<String> hashKeywordExclude = new HashSet<String>(Arrays.asList(keywordExclude));
 
