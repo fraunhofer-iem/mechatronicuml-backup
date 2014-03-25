@@ -128,6 +128,8 @@ public abstract class AbstractManyFeatureXtextPropertyEditor extends AbstractXte
 	 * (see AbstractManyFeatureXtextPropertyEditor class comments for naming explanation)
 	 */
 	protected Collection<?> toList(EObject obj) {
+		if (obj == null)
+			return null;
 		return ((Collection<?>) obj.eGet(rootListFeature));
 	}
 	

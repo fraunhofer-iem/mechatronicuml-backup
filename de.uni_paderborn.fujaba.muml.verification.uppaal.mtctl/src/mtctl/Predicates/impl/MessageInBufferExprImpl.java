@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link mtctl.Predicates.impl.MessageInBufferExprImpl#getRole <em>Role</em>}</li>
+ *   <li>{@link mtctl.Predicates.impl.MessageInBufferExprImpl#getBuffer <em>Buffer</em>}</li>
  *   <li>{@link mtctl.Predicates.impl.MessageInBufferExprImpl#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
@@ -29,14 +29,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements MessageInBufferExpr {
 	/**
-	 * The cached value of the '{@link #getRole() <em>Role</em>}' reference.
+	 * The cached value of the '{@link #getBuffer() <em>Buffer</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRole()
+	 * @see #getBuffer()
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject role;
+	protected EObject buffer;
 
 	/**
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' reference.
@@ -72,16 +72,16 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getRole() {
-		if (role != null && role.eIsProxy()) {
-			InternalEObject oldRole = (InternalEObject)role;
-			role = eResolveProxy(oldRole);
-			if (role != oldRole) {
+	public EObject getBuffer() {
+		if (buffer != null && buffer.eIsProxy()) {
+			InternalEObject oldBuffer = (InternalEObject)buffer;
+			buffer = eResolveProxy(oldBuffer);
+			if (buffer != oldBuffer) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__ROLE, oldRole, role));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER, oldBuffer, buffer));
 			}
 		}
-		return role;
+		return buffer;
 	}
 
 	/**
@@ -89,8 +89,8 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetRole() {
-		return role;
+	public EObject basicGetBuffer() {
+		return buffer;
 	}
 
 	/**
@@ -98,11 +98,11 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRole(EObject newRole) {
-		EObject oldRole = role;
-		role = newRole;
+	public void setBuffer(EObject newBuffer) {
+		EObject oldBuffer = buffer;
+		buffer = newBuffer;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__ROLE, oldRole, role));
+			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER, oldBuffer, buffer));
 	}
 
 	/**
@@ -151,9 +151,9 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__ROLE:
-				if (resolve) return getRole();
-				return basicGetRole();
+			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER:
+				if (resolve) return getBuffer();
+				return basicGetBuffer();
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE:
 				if (resolve) return getMessage();
 				return basicGetMessage();
@@ -169,8 +169,8 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__ROLE:
-				setRole((EObject)newValue);
+			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER:
+				setBuffer((EObject)newValue);
 				return;
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE:
 				setMessage((EObject)newValue);
@@ -187,8 +187,8 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__ROLE:
-				setRole((EObject)null);
+			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER:
+				setBuffer((EObject)null);
 				return;
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE:
 				setMessage((EObject)null);
@@ -205,8 +205,8 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__ROLE:
-				return role != null;
+			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER:
+				return buffer != null;
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE:
 				return message != null;
 		}

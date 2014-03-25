@@ -884,19 +884,16 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cMessageInTransitKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Action cMessageInTransitExprAction_2 = (Action)cGroup.eContents().get(2);
-		private final Assignment cMessageAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cMessageEObjectCrossReference_3_0 = (CrossReference)cMessageAssignment_3.eContents().get(0);
-		private final RuleCall cMessageEObjectQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cMessageEObjectCrossReference_3_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cMessageAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cMessageEObjectCrossReference_2_0 = (CrossReference)cMessageAssignment_2.eContents().get(0);
+		private final RuleCall cMessageEObjectQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cMessageEObjectCrossReference_2_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//MessageInTransitExpr returns mtctl::MessageInTransitExpr:
-		//	"messageInTransit" "(" {mtctl::MessageInTransitExpr} message=[ecore::EObject|QualifiedName] //TODO (roleInstance)  ',' role=[ecore::EObject|QualifiedName] 
-		//	")";
+		//	"messageInTransit" "(" message=[ecore::EObject|QualifiedName] ")";
 		public ParserRule getRule() { return rule; }
 
-		//"messageInTransit" "(" {mtctl::MessageInTransitExpr} message=[ecore::EObject|QualifiedName] //TODO (roleInstance)  ',' role=[ecore::EObject|QualifiedName] 
-		//")"
+		//"messageInTransit" "(" message=[ecore::EObject|QualifiedName] ")"
 		public Group getGroup() { return cGroup; }
 
 		//"messageInTransit"
@@ -905,21 +902,17 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//{mtctl::MessageInTransitExpr}
-		public Action getMessageInTransitExprAction_2() { return cMessageInTransitExprAction_2; }
-
 		//message=[ecore::EObject|QualifiedName]
-		public Assignment getMessageAssignment_3() { return cMessageAssignment_3; }
+		public Assignment getMessageAssignment_2() { return cMessageAssignment_2; }
 
 		//[ecore::EObject|QualifiedName]
-		public CrossReference getMessageEObjectCrossReference_3_0() { return cMessageEObjectCrossReference_3_0; }
+		public CrossReference getMessageEObjectCrossReference_2_0() { return cMessageEObjectCrossReference_2_0; }
 
 		//QualifiedName
-		public RuleCall getMessageEObjectQualifiedNameParserRuleCall_3_0_1() { return cMessageEObjectQualifiedNameParserRuleCall_3_0_1; }
+		public RuleCall getMessageEObjectQualifiedNameParserRuleCall_2_0_1() { return cMessageEObjectQualifiedNameParserRuleCall_2_0_1; }
 
-		////TODO (roleInstance)  ',' role=[ecore::EObject|QualifiedName] 
 		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
 	public class MessageInBufferExprElements extends AbstractParserRuleElementFinder {
@@ -927,22 +920,20 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cMessageInBufferKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Action cMessageInBufferExprAction_2 = (Action)cGroup.eContents().get(2);
-		private final Assignment cRoleAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cRoleEObjectCrossReference_3_0 = (CrossReference)cRoleAssignment_3.eContents().get(0);
-		private final RuleCall cRoleEObjectIDTerminalRuleCall_3_0_1 = (RuleCall)cRoleEObjectCrossReference_3_0.eContents().get(1);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cMessageAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cMessageEObjectCrossReference_5_0 = (CrossReference)cMessageAssignment_5.eContents().get(0);
-		private final RuleCall cMessageEObjectQualifiedNameParserRuleCall_5_0_1 = (RuleCall)cMessageEObjectCrossReference_5_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cMessageAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cMessageEObjectCrossReference_2_0 = (CrossReference)cMessageAssignment_2.eContents().get(0);
+		private final RuleCall cMessageEObjectQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cMessageEObjectCrossReference_2_0.eContents().get(1);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cBufferAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cBufferEObjectCrossReference_4_0 = (CrossReference)cBufferAssignment_4.eContents().get(0);
+		private final RuleCall cBufferEObjectIDTerminalRuleCall_4_0_1 = (RuleCall)cBufferEObjectCrossReference_4_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//MessageInBufferExpr returns mtctl::MessageInBufferExpr:
-		//	"messageInBuffer" "(" {mtctl::MessageInBufferExpr} role=[ecore::EObject] "," message=[ecore::EObject|QualifiedName]
-		//	")";
+		//	"messageInBuffer" "(" message=[ecore::EObject|QualifiedName] "," buffer=[ecore::EObject] ")";
 		public ParserRule getRule() { return rule; }
 
-		//"messageInBuffer" "(" {mtctl::MessageInBufferExpr} role=[ecore::EObject] "," message=[ecore::EObject|QualifiedName] ")"
+		//"messageInBuffer" "(" message=[ecore::EObject|QualifiedName] "," buffer=[ecore::EObject] ")"
 		public Group getGroup() { return cGroup; }
 
 		//"messageInBuffer"
@@ -951,32 +942,29 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//{mtctl::MessageInBufferExpr}
-		public Action getMessageInBufferExprAction_2() { return cMessageInBufferExprAction_2; }
-
-		//role=[ecore::EObject]
-		public Assignment getRoleAssignment_3() { return cRoleAssignment_3; }
-
-		//[ecore::EObject]
-		public CrossReference getRoleEObjectCrossReference_3_0() { return cRoleEObjectCrossReference_3_0; }
-
-		//ID
-		public RuleCall getRoleEObjectIDTerminalRuleCall_3_0_1() { return cRoleEObjectIDTerminalRuleCall_3_0_1; }
-
-		//","
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
-
 		//message=[ecore::EObject|QualifiedName]
-		public Assignment getMessageAssignment_5() { return cMessageAssignment_5; }
+		public Assignment getMessageAssignment_2() { return cMessageAssignment_2; }
 
 		//[ecore::EObject|QualifiedName]
-		public CrossReference getMessageEObjectCrossReference_5_0() { return cMessageEObjectCrossReference_5_0; }
+		public CrossReference getMessageEObjectCrossReference_2_0() { return cMessageEObjectCrossReference_2_0; }
 
 		//QualifiedName
-		public RuleCall getMessageEObjectQualifiedNameParserRuleCall_5_0_1() { return cMessageEObjectQualifiedNameParserRuleCall_5_0_1; }
+		public RuleCall getMessageEObjectQualifiedNameParserRuleCall_2_0_1() { return cMessageEObjectQualifiedNameParserRuleCall_2_0_1; }
+
+		//","
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+
+		//buffer=[ecore::EObject]
+		public Assignment getBufferAssignment_4() { return cBufferAssignment_4; }
+
+		//[ecore::EObject]
+		public CrossReference getBufferEObjectCrossReference_4_0() { return cBufferEObjectCrossReference_4_0; }
+
+		//ID
+		public RuleCall getBufferEObjectIDTerminalRuleCall_4_0_1() { return cBufferEObjectIDTerminalRuleCall_4_0_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 
 	public class BufferOverflowExprElements extends AbstractParserRuleElementFinder {
@@ -1016,17 +1004,16 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTransitionFiringKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Action cTransitionFiringExprAction_2 = (Action)cGroup.eContents().get(2);
-		private final Assignment cTransitionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cTransitionEObjectCrossReference_3_0 = (CrossReference)cTransitionAssignment_3.eContents().get(0);
-		private final RuleCall cTransitionEObjectQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cTransitionEObjectCrossReference_3_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cTransitionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTransitionEObjectCrossReference_2_0 = (CrossReference)cTransitionAssignment_2.eContents().get(0);
+		private final RuleCall cTransitionEObjectQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cTransitionEObjectCrossReference_2_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//TransitionFiringExpr returns mtctl::TransitionFiringExpr:
-		//	"transitionFiring" "(" {mtctl::TransitionFiringExpr} transition=[ecore::EObject|QualifiedName] ")";
+		//	"transitionFiring" "(" transition=[ecore::EObject|QualifiedName] ")";
 		public ParserRule getRule() { return rule; }
 
-		//"transitionFiring" "(" {mtctl::TransitionFiringExpr} transition=[ecore::EObject|QualifiedName] ")"
+		//"transitionFiring" "(" transition=[ecore::EObject|QualifiedName] ")"
 		public Group getGroup() { return cGroup; }
 
 		//"transitionFiring"
@@ -1035,20 +1022,17 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//{mtctl::TransitionFiringExpr}
-		public Action getTransitionFiringExprAction_2() { return cTransitionFiringExprAction_2; }
-
 		//transition=[ecore::EObject|QualifiedName]
-		public Assignment getTransitionAssignment_3() { return cTransitionAssignment_3; }
+		public Assignment getTransitionAssignment_2() { return cTransitionAssignment_2; }
 
 		//[ecore::EObject|QualifiedName]
-		public CrossReference getTransitionEObjectCrossReference_3_0() { return cTransitionEObjectCrossReference_3_0; }
+		public CrossReference getTransitionEObjectCrossReference_2_0() { return cTransitionEObjectCrossReference_2_0; }
 
 		//QualifiedName
-		public RuleCall getTransitionEObjectQualifiedNameParserRuleCall_3_0_1() { return cTransitionEObjectQualifiedNameParserRuleCall_3_0_1; }
+		public RuleCall getTransitionEObjectQualifiedNameParserRuleCall_2_0_1() { return cTransitionEObjectQualifiedNameParserRuleCall_2_0_1; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
 	public class ComparisonExprElements extends AbstractParserRuleElementFinder {
@@ -1231,15 +1215,18 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Action cClockSetExprAction_4_0 = (Action)cGroup_4.eContents().get(0);
 		private final Keyword cClocksKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Action cBufferSetExprAction_5_0 = (Action)cGroup_5.eContents().get(0);
+		private final Keyword cBuffersKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		
 		////Sets
 		//SetExpr returns mtctl::SetExpr:
 		//	IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" | {mtctl::MessageSetExpr}
-		//	"MessageTypes" | {mtctl::ClockSetExpr} "Clocks";
+		//	"MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers";
 		public ParserRule getRule() { return rule; }
 
 		//IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" | {mtctl::MessageSetExpr}
-		//"MessageTypes" | {mtctl::ClockSetExpr} "Clocks"
+		//"MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//IntervalSetExpr
@@ -1280,6 +1267,15 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"Clocks"
 		public Keyword getClocksKeyword_4_1() { return cClocksKeyword_4_1; }
+
+		//{mtctl::BufferSetExpr} "Buffers"
+		public Group getGroup_5() { return cGroup_5; }
+
+		//{mtctl::BufferSetExpr}
+		public Action getBufferSetExprAction_5_0() { return cBufferSetExprAction_5_0; }
+
+		//"Buffers"
+		public Keyword getBuffersKeyword_5_1() { return cBuffersKeyword_5_1; }
 	}
 
 	public class IntervalSetExprElements extends AbstractParserRuleElementFinder {
@@ -1772,8 +1768,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MessageInTransitExpr returns mtctl::MessageInTransitExpr:
-	//	"messageInTransit" "(" {mtctl::MessageInTransitExpr} message=[ecore::EObject|QualifiedName] //TODO (roleInstance)  ',' role=[ecore::EObject|QualifiedName] 
-	//	")";
+	//	"messageInTransit" "(" message=[ecore::EObject|QualifiedName] ")";
 	public MessageInTransitExprElements getMessageInTransitExprAccess() {
 		return (pMessageInTransitExpr != null) ? pMessageInTransitExpr : (pMessageInTransitExpr = new MessageInTransitExprElements());
 	}
@@ -1783,8 +1778,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MessageInBufferExpr returns mtctl::MessageInBufferExpr:
-	//	"messageInBuffer" "(" {mtctl::MessageInBufferExpr} role=[ecore::EObject] "," message=[ecore::EObject|QualifiedName]
-	//	")";
+	//	"messageInBuffer" "(" message=[ecore::EObject|QualifiedName] "," buffer=[ecore::EObject] ")";
 	public MessageInBufferExprElements getMessageInBufferExprAccess() {
 		return (pMessageInBufferExpr != null) ? pMessageInBufferExpr : (pMessageInBufferExpr = new MessageInBufferExprElements());
 	}
@@ -1814,7 +1808,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TransitionFiringExpr returns mtctl::TransitionFiringExpr:
-	//	"transitionFiring" "(" {mtctl::TransitionFiringExpr} transition=[ecore::EObject|QualifiedName] ")";
+	//	"transitionFiring" "(" transition=[ecore::EObject|QualifiedName] ")";
 	public TransitionFiringExprElements getTransitionFiringExprAccess() {
 		return (pTransitionFiringExpr != null) ? pTransitionFiringExpr : (pTransitionFiringExpr = new TransitionFiringExprElements());
 	}
@@ -1889,7 +1883,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	////Sets
 	//SetExpr returns mtctl::SetExpr:
 	//	IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" | {mtctl::MessageSetExpr}
-	//	"MessageTypes" | {mtctl::ClockSetExpr} "Clocks";
+	//	"MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers";
 	public SetExprElements getSetExprAccess() {
 		return (pSetExpr != null) ? pSetExpr : (pSetExpr = new SetExprElements());
 	}

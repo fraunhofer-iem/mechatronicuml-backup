@@ -292,7 +292,7 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMessageInBufferExpr_Role() {
+	public EReference getMessageInBufferExpr_Buffer() {
 		return (EReference)messageInBufferExprEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -460,7 +460,7 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		createEReference(comparisonExprEClass, COMPARISON_EXPR__RHS);
 
 		messageInBufferExprEClass = createEClass(MESSAGE_IN_BUFFER_EXPR);
-		createEReference(messageInBufferExprEClass, MESSAGE_IN_BUFFER_EXPR__ROLE);
+		createEReference(messageInBufferExprEClass, MESSAGE_IN_BUFFER_EXPR__BUFFER);
 		createEReference(messageInBufferExprEClass, MESSAGE_IN_BUFFER_EXPR__MESSAGE);
 
 		messageInTransitExprEClass = createEClass(MESSAGE_IN_TRANSIT_EXPR);
@@ -540,7 +540,7 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		initEReference(getComparisonExpr_Rhs(), ecorePackage.getEObject(), null, "rhs", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageInBufferExprEClass, MessageInBufferExpr.class, "MessageInBufferExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessageInBufferExpr_Role(), ecorePackage.getEObject(), null, "role", null, 0, 1, MessageInBufferExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageInBufferExpr_Buffer(), ecorePackage.getEObject(), null, "buffer", null, 0, 1, MessageInBufferExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageInBufferExpr_Message(), ecorePackage.getEObject(), null, "message", null, 0, 1, MessageInBufferExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageInTransitExprEClass, MessageInTransitExpr.class, "MessageInTransitExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

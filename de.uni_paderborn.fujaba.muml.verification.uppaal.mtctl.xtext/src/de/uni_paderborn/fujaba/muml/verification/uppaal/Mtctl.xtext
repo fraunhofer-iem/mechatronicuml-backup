@@ -123,12 +123,11 @@ MessageExpr returns mtctl::PredicateExpr:
 ;
 
 MessageInTransitExpr returns mtctl::MessageInTransitExpr:
-	'messageInTransit' '(' {mtctl::MessageInTransitExpr} message=[ecore::EObject|QualifiedName] ')' //TODO (roleInstance)  ',' role=[ecore::EObject|QualifiedName] 
+	'messageInTransit' '(' message=[ecore::EObject|QualifiedName] ')'
 ;
 
 MessageInBufferExpr returns mtctl::MessageInBufferExpr:
-	'messageInBuffer' '(' {mtctl::MessageInBufferExpr} role=[ecore::EObject] ','
-	message=[ecore::EObject|QualifiedName] ')'
+	'messageInBuffer' '(' message=[ecore::EObject|QualifiedName] ',' buffer=[ecore::EObject] ')'
 ;
 
 BufferOverflowExpr returns mtctl::BufferOverflowExpr:
@@ -140,7 +139,7 @@ TransitionExpr returns mtctl::PredicateExpr:
 ;
 
 TransitionFiringExpr returns mtctl::TransitionFiringExpr:
-	'transitionFiring' '(' {mtctl::TransitionFiringExpr} transition=[ecore::EObject|QualifiedName] ')'
+	'transitionFiring' '(' transition=[ecore::EObject|QualifiedName] ')'
 ;
 
 //Comparisons
@@ -172,7 +171,7 @@ ConstExpr returns mtctl::Expression:
 
 //Sets
 SetExpr returns mtctl::SetExpr:
-	IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr} 'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks'
+	IntervalSetExpr | {mtctl::StateSetExpr} 'States' | {mtctl::TransitionSetExpr} 'Transitions' | {mtctl::MessageSetExpr} 'MessageTypes' | {mtctl::ClockSetExpr} 'Clocks' | {mtctl::BufferSetExpr} 'Buffers'
 ;
 
 IntervalSetExpr returns mtctl::SetExpr:

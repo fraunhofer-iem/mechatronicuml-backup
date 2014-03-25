@@ -170,14 +170,14 @@ protected class Property_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -319,14 +319,14 @@ protected class Expression_LeadsToExprParserRuleCall extends RuleCallToken {
 		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
 			return null;
 		if(checkForRecursion(LeadsToExpr_Group.class, eObjectConsumer)) return null;
@@ -386,14 +386,14 @@ protected class LeadsToExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -610,14 +610,14 @@ protected class TimeIntervalExpr_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -1009,14 +1009,14 @@ protected class ImplyExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -1231,14 +1231,14 @@ protected class AndExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -1453,14 +1453,14 @@ protected class OrExpr_Group extends GroupToken {
 		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -1676,14 +1676,14 @@ protected class NotExpr_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -1896,14 +1896,14 @@ protected class QuantifierExpr_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -3510,14 +3510,14 @@ protected class AtomExpr_Alternatives extends AlternativesToken {
 		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
@@ -3650,11 +3650,11 @@ protected class AtomExpr_PredicateExprParserRuleCall_1 extends RuleCallToken {
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getBufferOverflowExprAccess().getBufferOverflowExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getDeadlockExprAccess().getDeadlockExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier())
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(PredicateExpr_Alternatives.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
@@ -3743,11 +3743,11 @@ protected class PredicateExpr_Alternatives extends AlternativesToken {
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getBufferOverflowExprAccess().getBufferOverflowExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getDeadlockExprAccess().getDeadlockExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier())
+		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
@@ -3850,8 +3850,8 @@ protected class PredicateExpr_MessageExprParserRuleCall_2 extends RuleCallToken 
     @Override
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getBufferOverflowExprAccess().getBufferOverflowExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier())
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(MessageExpr_Alternatives.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
@@ -3887,7 +3887,7 @@ protected class PredicateExpr_TransitionExprParserRuleCall_3 extends RuleCallTok
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(TransitionExpr_TransitionFiringExprParserRuleCall.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
@@ -4538,8 +4538,8 @@ protected class MessageExpr_Alternatives extends AlternativesToken {
     @Override
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getBufferOverflowExprAccess().getBufferOverflowExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier())
+		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
@@ -4568,7 +4568,7 @@ protected class MessageExpr_MessageInBufferExprParserRuleCall_0 extends RuleCall
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(MessageInBufferExpr_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
@@ -4604,7 +4604,7 @@ protected class MessageExpr_MessageInTransitExprParserRuleCall_1 extends RuleCal
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(MessageInTransitExpr_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
@@ -4661,13 +4661,11 @@ protected class MessageExpr_BufferOverflowExprParserRuleCall_2 extends RuleCallT
 /************ begin Rule MessageInTransitExpr ****************
  *
  * MessageInTransitExpr returns mtctl::MessageInTransitExpr:
- * 	"messageInTransit" "(" {mtctl::MessageInTransitExpr} message=[ecore::EObject|QualifiedName] //TODO (roleInstance)  ',' role=[ecore::EObject|QualifiedName] 
- * 	")";
+ * 	"messageInTransit" "(" message=[ecore::EObject|QualifiedName] ")";
  *
  **/
 
-// "messageInTransit" "(" {mtctl::MessageInTransitExpr} message=[ecore::EObject|QualifiedName] //TODO (roleInstance)  ',' role=[ecore::EObject|QualifiedName] 
-// ")"
+// "messageInTransit" "(" message=[ecore::EObject|QualifiedName] ")"
 protected class MessageInTransitExpr_Group extends GroupToken {
 	
 	public MessageInTransitExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4682,14 +4680,14 @@ protected class MessageInTransitExpr_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MessageInTransitExpr_RightParenthesisKeyword_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new MessageInTransitExpr_RightParenthesisKeyword_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
@@ -4739,16 +4737,16 @@ protected class MessageInTransitExpr_LeftParenthesisKeyword_1 extends KeywordTok
 
 }
 
-// {mtctl::MessageInTransitExpr}
-protected class MessageInTransitExpr_MessageInTransitExprAction_2 extends ActionToken  {
-
-	public MessageInTransitExpr_MessageInTransitExprAction_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+// message=[ecore::EObject|QualifiedName]
+protected class MessageInTransitExpr_MessageAssignment_2 extends AssignmentToken  {
+	
+	public MessageInTransitExpr_MessageAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Action getGrammarElement() {
-		return grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getMessageInTransitExprAccess().getMessageAssignment_2();
 	}
 
     @Override
@@ -4759,42 +4757,15 @@ protected class MessageInTransitExpr_MessageInTransitExprAction_2 extends Action
 		}	
 	}
 
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(!eObjectConsumer.isConsumed()) return null;
-		return eObjectConsumer;
-	}
-}
-
-// message=[ecore::EObject|QualifiedName]
-protected class MessageInTransitExpr_MessageAssignment_3 extends AssignmentToken  {
-	
-	public MessageInTransitExpr_MessageAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getMessageInTransitExprAccess().getMessageAssignment_3();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new MessageInTransitExpr_MessageInTransitExprAction_2(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
     @Override	
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("message",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("message");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMessageInTransitExprAccess().getMessageEObjectCrossReference_3_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getMessageInTransitExprAccess().getMessageEObjectCrossReference_2_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getMessageInTransitExprAccess().getMessageEObjectCrossReference_3_0(); 
+				element = grammarAccess.getMessageInTransitExprAccess().getMessageEObjectCrossReference_2_0(); 
 				return obj;
 			}
 		}
@@ -4803,23 +4774,22 @@ protected class MessageInTransitExpr_MessageAssignment_3 extends AssignmentToken
 
 }
 
-// //TODO (roleInstance)  ',' role=[ecore::EObject|QualifiedName] 
 // ")"
-protected class MessageInTransitExpr_RightParenthesisKeyword_4 extends KeywordToken  {
+protected class MessageInTransitExpr_RightParenthesisKeyword_3 extends KeywordToken  {
 	
-	public MessageInTransitExpr_RightParenthesisKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MessageInTransitExpr_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getMessageInTransitExprAccess().getRightParenthesisKeyword_4();
+		return grammarAccess.getMessageInTransitExprAccess().getRightParenthesisKeyword_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MessageInTransitExpr_MessageAssignment_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new MessageInTransitExpr_MessageAssignment_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4833,12 +4803,11 @@ protected class MessageInTransitExpr_RightParenthesisKeyword_4 extends KeywordTo
 /************ begin Rule MessageInBufferExpr ****************
  *
  * MessageInBufferExpr returns mtctl::MessageInBufferExpr:
- * 	"messageInBuffer" "(" {mtctl::MessageInBufferExpr} role=[ecore::EObject] "," message=[ecore::EObject|QualifiedName]
- * 	")";
+ * 	"messageInBuffer" "(" message=[ecore::EObject|QualifiedName] "," buffer=[ecore::EObject] ")";
  *
  **/
 
-// "messageInBuffer" "(" {mtctl::MessageInBufferExpr} role=[ecore::EObject] "," message=[ecore::EObject|QualifiedName] ")"
+// "messageInBuffer" "(" message=[ecore::EObject|QualifiedName] "," buffer=[ecore::EObject] ")"
 protected class MessageInBufferExpr_Group extends GroupToken {
 	
 	public MessageInBufferExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4853,14 +4822,14 @@ protected class MessageInBufferExpr_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MessageInBufferExpr_RightParenthesisKeyword_6(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new MessageInBufferExpr_RightParenthesisKeyword_5(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
@@ -4910,16 +4879,16 @@ protected class MessageInBufferExpr_LeftParenthesisKeyword_1 extends KeywordToke
 
 }
 
-// {mtctl::MessageInBufferExpr}
-protected class MessageInBufferExpr_MessageInBufferExprAction_2 extends ActionToken  {
-
-	public MessageInBufferExpr_MessageInBufferExprAction_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+// message=[ecore::EObject|QualifiedName]
+protected class MessageInBufferExpr_MessageAssignment_2 extends AssignmentToken  {
+	
+	public MessageInBufferExpr_MessageAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Action getGrammarElement() {
-		return grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getMessageInBufferExprAccess().getMessageAssignment_2();
 	}
 
     @Override
@@ -4930,42 +4899,15 @@ protected class MessageInBufferExpr_MessageInBufferExprAction_2 extends ActionTo
 		}	
 	}
 
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(!eObjectConsumer.isConsumed()) return null;
-		return eObjectConsumer;
-	}
-}
-
-// role=[ecore::EObject]
-protected class MessageInBufferExpr_RoleAssignment_3 extends AssignmentToken  {
-	
-	public MessageInBufferExpr_RoleAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getMessageInBufferExprAccess().getRoleAssignment_3();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new MessageInBufferExpr_MessageInBufferExprAction_2(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("role",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("role");
+		if((value = eObjectConsumer.getConsumable("message",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("message");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMessageInBufferExprAccess().getRoleEObjectCrossReference_3_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getMessageInBufferExprAccess().getMessageEObjectCrossReference_2_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getMessageInBufferExprAccess().getRoleEObjectCrossReference_3_0(); 
+				element = grammarAccess.getMessageInBufferExprAccess().getMessageEObjectCrossReference_2_0(); 
 				return obj;
 			}
 		}
@@ -4975,56 +4917,56 @@ protected class MessageInBufferExpr_RoleAssignment_3 extends AssignmentToken  {
 }
 
 // ","
-protected class MessageInBufferExpr_CommaKeyword_4 extends KeywordToken  {
+protected class MessageInBufferExpr_CommaKeyword_3 extends KeywordToken  {
 	
-	public MessageInBufferExpr_CommaKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MessageInBufferExpr_CommaKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getMessageInBufferExprAccess().getCommaKeyword_4();
+		return grammarAccess.getMessageInBufferExprAccess().getCommaKeyword_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MessageInBufferExpr_RoleAssignment_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new MessageInBufferExpr_MessageAssignment_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// message=[ecore::EObject|QualifiedName]
-protected class MessageInBufferExpr_MessageAssignment_5 extends AssignmentToken  {
+// buffer=[ecore::EObject]
+protected class MessageInBufferExpr_BufferAssignment_4 extends AssignmentToken  {
 	
-	public MessageInBufferExpr_MessageAssignment_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MessageInBufferExpr_BufferAssignment_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getMessageInBufferExprAccess().getMessageAssignment_5();
+		return grammarAccess.getMessageInBufferExprAccess().getBufferAssignment_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MessageInBufferExpr_CommaKeyword_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new MessageInBufferExpr_CommaKeyword_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("message",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("message");
+		if((value = eObjectConsumer.getConsumable("buffer",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("buffer");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMessageInBufferExprAccess().getMessageEObjectCrossReference_5_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getMessageInBufferExprAccess().getBufferEObjectCrossReference_4_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getMessageInBufferExprAccess().getMessageEObjectCrossReference_5_0(); 
+				element = grammarAccess.getMessageInBufferExprAccess().getBufferEObjectCrossReference_4_0(); 
 				return obj;
 			}
 		}
@@ -5034,21 +4976,21 @@ protected class MessageInBufferExpr_MessageAssignment_5 extends AssignmentToken 
 }
 
 // ")"
-protected class MessageInBufferExpr_RightParenthesisKeyword_6 extends KeywordToken  {
+protected class MessageInBufferExpr_RightParenthesisKeyword_5 extends KeywordToken  {
 	
-	public MessageInBufferExpr_RightParenthesisKeyword_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MessageInBufferExpr_RightParenthesisKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getMessageInBufferExprAccess().getRightParenthesisKeyword_6();
+		return grammarAccess.getMessageInBufferExprAccess().getRightParenthesisKeyword_5();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MessageInBufferExpr_MessageAssignment_5(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new MessageInBufferExpr_BufferAssignment_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -5176,7 +5118,7 @@ protected class TransitionExpr_TransitionFiringExprParserRuleCall extends RuleCa
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(TransitionFiringExpr_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
@@ -5196,11 +5138,11 @@ protected class TransitionExpr_TransitionFiringExprParserRuleCall extends RuleCa
 /************ begin Rule TransitionFiringExpr ****************
  *
  * TransitionFiringExpr returns mtctl::TransitionFiringExpr:
- * 	"transitionFiring" "(" {mtctl::TransitionFiringExpr} transition=[ecore::EObject|QualifiedName] ")";
+ * 	"transitionFiring" "(" transition=[ecore::EObject|QualifiedName] ")";
  *
  **/
 
-// "transitionFiring" "(" {mtctl::TransitionFiringExpr} transition=[ecore::EObject|QualifiedName] ")"
+// "transitionFiring" "(" transition=[ecore::EObject|QualifiedName] ")"
 protected class TransitionFiringExpr_Group extends GroupToken {
 	
 	public TransitionFiringExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5215,14 +5157,14 @@ protected class TransitionFiringExpr_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new TransitionFiringExpr_RightParenthesisKeyword_4(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new TransitionFiringExpr_RightParenthesisKeyword_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
@@ -5272,16 +5214,16 @@ protected class TransitionFiringExpr_LeftParenthesisKeyword_1 extends KeywordTok
 
 }
 
-// {mtctl::TransitionFiringExpr}
-protected class TransitionFiringExpr_TransitionFiringExprAction_2 extends ActionToken  {
-
-	public TransitionFiringExpr_TransitionFiringExprAction_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+// transition=[ecore::EObject|QualifiedName]
+protected class TransitionFiringExpr_TransitionAssignment_2 extends AssignmentToken  {
+	
+	public TransitionFiringExpr_TransitionAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Action getGrammarElement() {
-		return grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getTransitionFiringExprAccess().getTransitionAssignment_2();
 	}
 
     @Override
@@ -5292,42 +5234,15 @@ protected class TransitionFiringExpr_TransitionFiringExprAction_2 extends Action
 		}	
 	}
 
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(!eObjectConsumer.isConsumed()) return null;
-		return eObjectConsumer;
-	}
-}
-
-// transition=[ecore::EObject|QualifiedName]
-protected class TransitionFiringExpr_TransitionAssignment_3 extends AssignmentToken  {
-	
-	public TransitionFiringExpr_TransitionAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getTransitionFiringExprAccess().getTransitionAssignment_3();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TransitionFiringExpr_TransitionFiringExprAction_2(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
     @Override	
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("transition",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("transition");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getTransitionFiringExprAccess().getTransitionEObjectCrossReference_3_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getTransitionFiringExprAccess().getTransitionEObjectCrossReference_2_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getTransitionFiringExprAccess().getTransitionEObjectCrossReference_3_0(); 
+				element = grammarAccess.getTransitionFiringExprAccess().getTransitionEObjectCrossReference_2_0(); 
 				return obj;
 			}
 		}
@@ -5337,21 +5252,21 @@ protected class TransitionFiringExpr_TransitionAssignment_3 extends AssignmentTo
 }
 
 // ")"
-protected class TransitionFiringExpr_RightParenthesisKeyword_4 extends KeywordToken  {
+protected class TransitionFiringExpr_RightParenthesisKeyword_3 extends KeywordToken  {
 	
-	public TransitionFiringExpr_RightParenthesisKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public TransitionFiringExpr_RightParenthesisKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getTransitionFiringExprAccess().getRightParenthesisKeyword_4();
+		return grammarAccess.getTransitionFiringExprAccess().getRightParenthesisKeyword_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new TransitionFiringExpr_TransitionAssignment_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new TransitionFiringExpr_TransitionAssignment_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -5966,12 +5881,12 @@ protected class ConstExpr_ValAssignment_1 extends AssignmentToken  {
  * //Sets
  * SetExpr returns mtctl::SetExpr:
  * 	IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" | {mtctl::MessageSetExpr}
- * 	"MessageTypes" | {mtctl::ClockSetExpr} "Clocks";
+ * 	"MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers";
  *
  **/
 
 // IntervalSetExpr | {mtctl::StateSetExpr} "States" | {mtctl::TransitionSetExpr} "Transitions" | {mtctl::MessageSetExpr}
-// "MessageTypes" | {mtctl::ClockSetExpr} "Clocks"
+// "MessageTypes" | {mtctl::ClockSetExpr} "Clocks" | {mtctl::BufferSetExpr} "Buffers"
 protected class SetExpr_Alternatives extends AlternativesToken {
 
 	public SetExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5991,13 +5906,15 @@ protected class SetExpr_Alternatives extends AlternativesToken {
 			case 2: return new SetExpr_Group_2(lastRuleCallOrigin, this, 2, inst);
 			case 3: return new SetExpr_Group_3(lastRuleCallOrigin, this, 3, inst);
 			case 4: return new SetExpr_Group_4(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new SetExpr_Group_5(lastRuleCallOrigin, this, 5, inst);
 			default: return null;
 		}	
 	}
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getSetExprAccess().getClockSetExprAction_4_0().getType().getClassifier() && 
+		if(getEObject().eClass() != grammarAccess.getSetExprAccess().getBufferSetExprAction_5_0().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getSetExprAccess().getClockSetExprAction_4_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getIntervalSetExprAccess().getIntervalSetExprAction_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSetExprAccess().getMessageSetExprAction_3_0().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getSetExprAccess().getStateSetExprAction_1_0().getType().getClassifier() && 
@@ -6349,6 +6266,84 @@ protected class SetExpr_ClocksKeyword_4_1 extends KeywordToken  {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new SetExpr_ClockSetExprAction_4_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+
+// {mtctl::BufferSetExpr} "Buffers"
+protected class SetExpr_Group_5 extends GroupToken {
+	
+	public SetExpr_Group_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getSetExprAccess().getGroup_5();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new SetExpr_BuffersKeyword_5_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getSetExprAccess().getBufferSetExprAction_5_0().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// {mtctl::BufferSetExpr}
+protected class SetExpr_BufferSetExprAction_5_0 extends ActionToken  {
+
+	public SetExpr_BufferSetExprAction_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Action getGrammarElement() {
+		return grammarAccess.getSetExprAccess().getBufferSetExprAction_5_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(!eObjectConsumer.isConsumed()) return null;
+		return eObjectConsumer;
+	}
+}
+
+// "Buffers"
+protected class SetExpr_BuffersKeyword_5_1 extends KeywordToken  {
+	
+	public SetExpr_BuffersKeyword_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getSetExprAccess().getBuffersKeyword_5_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new SetExpr_BufferSetExprAction_5_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}

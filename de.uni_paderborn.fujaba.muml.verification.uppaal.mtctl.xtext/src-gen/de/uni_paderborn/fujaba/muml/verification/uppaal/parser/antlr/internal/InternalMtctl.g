@@ -1547,12 +1547,6 @@ ruleMessageInTransitExpr returns [EObject current=null]
     	newLeafNode(otherlv_1, grammarAccess.getMessageInTransitExprAccess().getLeftParenthesisKeyword_1());
     }
 (
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getMessageInTransitExprAccess().getMessageInTransitExprAction_2(),
-            $current);
-    }
-)(
 (
 		{
 			if ($current==null) {
@@ -1560,16 +1554,16 @@ ruleMessageInTransitExpr returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getMessageInTransitExprAccess().getMessageEObjectCrossReference_3_0()); 
+	        newCompositeNode(grammarAccess.getMessageInTransitExprAccess().getMessageEObjectCrossReference_2_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_4=')' 
+)	otherlv_3=')' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getMessageInTransitExprAccess().getRightParenthesisKeyword_4());
+    	newLeafNode(otherlv_3, grammarAccess.getMessageInTransitExprAccess().getRightParenthesisKeyword_3());
     }
 )
 ;
@@ -1601,29 +1595,6 @@ ruleMessageInBufferExpr returns [EObject current=null]
     	newLeafNode(otherlv_1, grammarAccess.getMessageInBufferExprAccess().getLeftParenthesisKeyword_1());
     }
 (
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getMessageInBufferExprAccess().getMessageInBufferExprAction_2(),
-            $current);
-    }
-)(
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getMessageInBufferExprRule());
-	        }
-        }
-	otherlv_3=RULE_ID
-	{
-		newLeafNode(otherlv_3, grammarAccess.getMessageInBufferExprAccess().getRoleEObjectCrossReference_3_0()); 
-	}
-
-)
-)	otherlv_4=',' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getMessageInBufferExprAccess().getCommaKeyword_4());
-    }
-(
 (
 		{
 			if ($current==null) {
@@ -1631,16 +1602,33 @@ ruleMessageInBufferExpr returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getMessageInBufferExprAccess().getMessageEObjectCrossReference_5_0()); 
+	        newCompositeNode(grammarAccess.getMessageInBufferExprAccess().getMessageEObjectCrossReference_2_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_6=')' 
+)	otherlv_3=',' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getMessageInBufferExprAccess().getRightParenthesisKeyword_6());
+    	newLeafNode(otherlv_3, grammarAccess.getMessageInBufferExprAccess().getCommaKeyword_3());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMessageInBufferExprRule());
+	        }
+        }
+	otherlv_4=RULE_ID
+	{
+		newLeafNode(otherlv_4, grammarAccess.getMessageInBufferExprAccess().getBufferEObjectCrossReference_4_0()); 
+	}
+
+)
+)	otherlv_5=')' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getMessageInBufferExprAccess().getRightParenthesisKeyword_5());
     }
 )
 ;
@@ -1733,12 +1721,6 @@ ruleTransitionFiringExpr returns [EObject current=null]
     	newLeafNode(otherlv_1, grammarAccess.getTransitionFiringExprAccess().getLeftParenthesisKeyword_1());
     }
 (
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getTransitionFiringExprAccess().getTransitionFiringExprAction_2(),
-            $current);
-    }
-)(
 (
 		{
 			if ($current==null) {
@@ -1746,16 +1728,16 @@ ruleTransitionFiringExpr returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getTransitionFiringExprAccess().getTransitionEObjectCrossReference_3_0()); 
+	        newCompositeNode(grammarAccess.getTransitionFiringExprAccess().getTransitionEObjectCrossReference_2_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_4=')' 
+)	otherlv_3=')' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getTransitionFiringExprAccess().getRightParenthesisKeyword_4());
+    	newLeafNode(otherlv_3, grammarAccess.getTransitionFiringExprAccess().getRightParenthesisKeyword_3());
     }
 )
 ;
@@ -2142,6 +2124,17 @@ ruleSetExpr returns [EObject current=null]
 )	otherlv_8='Clocks' 
     {
     	newLeafNode(otherlv_8, grammarAccess.getSetExprAccess().getClocksKeyword_4_1());
+    }
+)
+    |((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getSetExprAccess().getBufferSetExprAction_5_0(),
+            $current);
+    }
+)	otherlv_10='Buffers' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getSetExprAccess().getBuffersKeyword_5_1());
     }
 ))
 ;

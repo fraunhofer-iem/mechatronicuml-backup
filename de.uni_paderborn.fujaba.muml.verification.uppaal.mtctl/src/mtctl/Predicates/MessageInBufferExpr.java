@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link mtctl.Predicates.MessageInBufferExpr#getRole <em>Role</em>}</li>
+ *   <li>{@link mtctl.Predicates.MessageInBufferExpr#getBuffer <em>Buffer</em>}</li>
  *   <li>{@link mtctl.Predicates.MessageInBufferExpr#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
@@ -27,30 +27,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface MessageInBufferExpr extends DynamicPredicateExpr {
 	/**
-	 * Returns the value of the '<em><b>Role</b></em>' reference.
+	 * Returns the value of the '<em><b>Buffer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Role</em>' reference isn't clear,
+	 * If the meaning of the '<em>Buffer</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role</em>' reference.
-	 * @see #setRole(EObject)
-	 * @see mtctl.Predicates.PredicatesPackage#getMessageInBufferExpr_Role()
+	 * @return the value of the '<em>Buffer</em>' reference.
+	 * @see #setBuffer(EObject)
+	 * @see mtctl.Predicates.PredicatesPackage#getMessageInBufferExpr_Buffer()
 	 * @model
 	 * @generated
 	 */
-	EObject getRole();
+	EObject getBuffer();
 
 	/**
-	 * Sets the value of the '{@link mtctl.Predicates.MessageInBufferExpr#getRole <em>Role</em>}' reference.
+	 * Sets the value of the '{@link mtctl.Predicates.MessageInBufferExpr#getBuffer <em>Buffer</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role</em>' reference.
-	 * @see #getRole()
+	 * @param value the new value of the '<em>Buffer</em>' reference.
+	 * @see #getBuffer()
 	 * @generated
 	 */
-	void setRole(EObject value);
+	void setBuffer(EObject value);
 
 	/**
 	 * Returns the value of the '<em><b>Message</b></em>' reference.

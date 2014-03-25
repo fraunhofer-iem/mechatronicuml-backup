@@ -99,6 +99,10 @@ public class SetsAdapterFactory extends AdapterFactoryImpl {
 				return createTransitionSetExprAdapter();
 			}
 			@Override
+			public Adapter caseBufferSetExpr(BufferSetExpr object) {
+				return createBufferSetExprAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -219,6 +223,20 @@ public class SetsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTransitionSetExprAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mtctl.Sets.BufferSetExpr <em>Buffer Set Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mtctl.Sets.BufferSetExpr
+	 * @generated
+	 */
+	public Adapter createBufferSetExprAdapter() {
 		return null;
 	}
 

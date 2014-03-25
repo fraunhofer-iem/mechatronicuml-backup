@@ -144,6 +144,18 @@ public class SetsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SetsPackage.BUFFER_SET_EXPR: {
+				BufferSetExpr bufferSetExpr = (BufferSetExpr)theEObject;
+				T result = caseBufferSetExpr(bufferSetExpr);
+				if (result == null) result = caseSetExpr(bufferSetExpr);
+				if (result == null) result = caseExpression(bufferSetExpr);
+				if (result == null) result = caseProperty(bufferSetExpr);
+				if (result == null) result = caseCommentableElement(bufferSetExpr);
+				if (result == null) result = caseTemporalLogicConstraint(bufferSetExpr);
+				if (result == null) result = caseExtendableElement(bufferSetExpr);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -235,6 +247,21 @@ public class SetsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTransitionSetExpr(TransitionSetExpr object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Buffer Set Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Buffer Set Expr</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBufferSetExpr(BufferSetExpr object) {
 		return null;
 	}
 

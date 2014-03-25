@@ -40,6 +40,7 @@ import mtctl.Quantifiers.QuantifiersPackage;
 
 import mtctl.Quantifiers.impl.QuantifiersPackageImpl;
 
+import mtctl.Sets.BufferSetExpr;
 import mtctl.Sets.ClockSetExpr;
 import mtctl.Sets.IntervalSetExpr;
 import mtctl.Sets.MessageSetExpr;
@@ -105,6 +106,13 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 	 * @generated
 	 */
 	private EClass transitionSetExprEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bufferSetExprEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -273,6 +281,15 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBufferSetExpr() {
+		return bufferSetExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SetsFactory getSetsFactory() {
 		return (SetsFactory)getEFactoryInstance();
 	}
@@ -309,6 +326,8 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 		stateSetExprEClass = createEClass(STATE_SET_EXPR);
 
 		transitionSetExprEClass = createEClass(TRANSITION_SET_EXPR);
+
+		bufferSetExprEClass = createEClass(BUFFER_SET_EXPR);
 	}
 
 	/**
@@ -348,6 +367,7 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 		messageSetExprEClass.getESuperTypes().add(this.getSetExpr());
 		stateSetExprEClass.getESuperTypes().add(this.getSetExpr());
 		transitionSetExprEClass.getESuperTypes().add(this.getSetExpr());
+		bufferSetExprEClass.getESuperTypes().add(this.getSetExpr());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(setExprEClass, SetExpr.class, "SetExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -363,6 +383,8 @@ public class SetsPackageImpl extends EPackageImpl implements SetsPackage {
 		initEClass(stateSetExprEClass, StateSetExpr.class, "StateSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(transitionSetExprEClass, TransitionSetExpr.class, "TransitionSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(bufferSetExprEClass, BufferSetExpr.class, "BufferSetExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //SetsPackageImpl

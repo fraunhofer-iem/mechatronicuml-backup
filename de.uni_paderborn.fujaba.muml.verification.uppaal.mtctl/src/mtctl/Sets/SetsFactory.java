@@ -67,6 +67,15 @@ public interface SetsFactory extends EFactory {
 	TransitionSetExpr createTransitionSetExpr();
 
 	/**
+	 * Returns a new object of class '<em>Buffer Set Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Buffer Set Expr</em>'.
+	 * @generated
+	 */
+	BufferSetExpr createBufferSetExpr();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -103,7 +103,7 @@ public abstract class AbstractMtctlUiModule extends DefaultUiModule {
 		return de.uni_paderborn.fujaba.muml.verification.uppaal.ui.quickfix.MtctlQuickfixProvider.class;
 	}
 
-	// contributed by org.eclipse.xtext.ui.generator.contentAssist.ContentAssistFragment
+	// contributed by org.eclipse.xtext.ui.generator.contentAssist.JavaBasedContentAssistFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
 		return de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.MtctlProposalProvider.class;
 	}

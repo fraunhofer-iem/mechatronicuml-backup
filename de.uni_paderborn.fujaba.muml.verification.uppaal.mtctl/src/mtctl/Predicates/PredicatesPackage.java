@@ -1254,13 +1254,13 @@ public interface PredicatesPackage extends EPackage {
 	int MESSAGE_IN_BUFFER_EXPR__COMMENT = DYNAMIC_PREDICATE_EXPR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Role</b></em>' reference.
+	 * The feature id for the '<em><b>Buffer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_IN_BUFFER_EXPR__ROLE = DYNAMIC_PREDICATE_EXPR_FEATURE_COUNT + 0;
+	int MESSAGE_IN_BUFFER_EXPR__BUFFER = DYNAMIC_PREDICATE_EXPR_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' reference.
@@ -2720,15 +2720,15 @@ public interface PredicatesPackage extends EPackage {
 	EClass getMessageInBufferExpr();
 
 	/**
-	 * Returns the meta object for the reference '{@link mtctl.Predicates.MessageInBufferExpr#getRole <em>Role</em>}'.
+	 * Returns the meta object for the reference '{@link mtctl.Predicates.MessageInBufferExpr#getBuffer <em>Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Role</em>'.
-	 * @see mtctl.Predicates.MessageInBufferExpr#getRole()
+	 * @return the meta object for the reference '<em>Buffer</em>'.
+	 * @see mtctl.Predicates.MessageInBufferExpr#getBuffer()
 	 * @see #getMessageInBufferExpr()
 	 * @generated
 	 */
-	EReference getMessageInBufferExpr_Role();
+	EReference getMessageInBufferExpr_Buffer();
 
 	/**
 	 * Returns the meta object for the reference '{@link mtctl.Predicates.MessageInBufferExpr#getMessage <em>Message</em>}'.
@@ -2964,12 +2964,12 @@ public interface PredicatesPackage extends EPackage {
 		EClass MESSAGE_IN_BUFFER_EXPR = eINSTANCE.getMessageInBufferExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>Role</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Buffer</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MESSAGE_IN_BUFFER_EXPR__ROLE = eINSTANCE.getMessageInBufferExpr_Role();
+		EReference MESSAGE_IN_BUFFER_EXPR__BUFFER = eINSTANCE.getMessageInBufferExpr_Buffer();
 
 		/**
 		 * The meta object literal for the '<em><b>Message</b></em>' reference feature.

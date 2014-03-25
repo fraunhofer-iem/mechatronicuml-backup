@@ -1,17 +1,23 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.scoping;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import mtctl.PropertyRepository;
+import mtctl.Comparables.BufferMsgCountExpr;
 import mtctl.Comparables.PrimitiveVariableExpr;
 import mtctl.Predicates.ComparisonExpr;
+import mtctl.Predicates.MessageInBufferExpr;
+import mtctl.Predicates.MessageInTransitExpr;
 import mtctl.Predicates.StateActiveExpr;
 import mtctl.Predicates.StateEnterExpr;
 import mtctl.Predicates.StateExitExpr;
 import mtctl.Predicates.SubstateOfExpr;
+import mtctl.Predicates.TransitionFiringExpr;
 import mtctl.Quantifiers.BoundVariable;
 import mtctl.Quantifiers.QuantifierExpr;
+import mtctl.Sets.BufferSetExpr;
 import mtctl.Sets.ClockSetExpr;
 import mtctl.Sets.MessageSetExpr;
 import mtctl.Sets.StateSetExpr;
@@ -27,6 +33,8 @@ import org.eclipse.xtext.scoping.impl.AbstractScopeProvider;
 import com.google.common.base.Function;
 
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
@@ -43,6 +51,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	protected List<State> states = null; //list of states in realtimestatecharts that are available in the current top-level muml element
 	protected List<Variable> variables = null;
 	protected List<Clock> clocks = null;
+	protected List<MessageType> messageTypes = null;
+	protected List<MessageBuffer> buffers = null;
 	
 	/**
 	 * The mapping that determines how to call elements from the muml models
@@ -70,6 +80,9 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 				
 				if (obj instanceof State)
 					return apply(((State) obj).getParentStatechart()).append(((State) obj).getName()); //states are called rtsc.state
+				
+				if (obj instanceof MessageType)
+					return QualifiedName.create(((MessageType) obj).getRepository().getName(), ((MessageType) obj).getName()); //MessageTypes are called repository.messageType
 				
 				if (obj instanceof Clock)
 					return apply(((Clock) obj).getStatechart()).append(((Clock) obj).getName()); //clocks are called rtsc.clock
@@ -149,13 +162,39 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
 	 * @return the scope
 	 */
-	public IScope getScopeMessageType(EObject context, EReference reference) { //TODO what type do we actually reference here?
+	public IScope getScopeMessageType(EObject context, EReference reference) {
 		List<EObject> scope = new ArrayList<EObject>();
+		
+		//Add states from the muml model
+		scope.addAll(messageTypes);
 		
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
 			if (parentQuantifier.getVar().getSet() instanceof MessageSetExpr)
+				scope.add(parentQuantifier.getVar());
+			parentQuantifier = findParentQuantifier(parentQuantifier);
+		}
+		
+		return createScope(scope);
+	}
+	
+	/**
+	 * Returns the scope when looking for a MessageBuffer
+	 * @param context reference in the mtctl model (e.g., a StateExpr)
+	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
+	 * @return the scope
+	 */
+	public IScope getScopeBuffer(EObject context, EReference reference) {
+		List<EObject> scope = new ArrayList<EObject>();
+		
+		//Add states from the muml model
+		scope.addAll(buffers);
+		
+		//Add BoundVariables
+		QuantifierExpr parentQuantifier = findParentQuantifier(context);
+		while (parentQuantifier != null) {
+			if (parentQuantifier.getVar().getSet() instanceof BufferSetExpr)
 				scope.add(parentQuantifier.getVar());
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
@@ -209,6 +248,12 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			return getScopeState(context, reference);
 		if (context instanceof PrimitiveVariableExpr)
 			return getScopeVariable(context, reference);
+		if (context instanceof TransitionFiringExpr)
+			return getScopeTransition(context, reference);
+		if (context instanceof MessageInTransitExpr || context instanceof MessageInBufferExpr && reference != null && "message".equals(reference.getName()))
+			return getScopeMessageType(context, reference);
+		if (context instanceof BufferMsgCountExpr || context instanceof MessageInBufferExpr && reference != null && "buffer".equals(reference.getName()))
+			return getScopeBuffer(context, reference);
 		
 		if (context instanceof PropertyRepository || context instanceof ComparisonExpr) //Fallback for context where we might want a variable
 			return getScopeVariable(context, reference);
@@ -226,7 +271,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		initLists(); //clear previous data
 		
 		//Delegate to the specific methods for the type of object
-		if (object instanceof CoordinationProtocol) //stateActive(...)
+		if (object instanceof CoordinationProtocol)
 			setScopeForCoordinationProtocol((CoordinationProtocol) object);
 		else
 			System.out.println("MtctlScopeProvider::setScopeForEObject: Don't know how to handle "+object.toString()+" :'(");
@@ -251,6 +296,14 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		//Variables
 		for (Role role : object.getRoles())
 			variables.addAll(((RealtimeStatechart) role.getBehavior()).getAllAvailableVariables());
+		
+		//MessageTypes
+		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
+		for (Role role : object.getRoles())
+			messageTypes.addAll(role.getReceiverMessageTypes());
+		this.messageTypes.addAll(messageTypes);
+		
+		//TODO MessageBuffers (buffers field and rest already in place, populate here. Missing: how to name them)
 	}
 	
 	/**
@@ -277,6 +330,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		states = new ArrayList<State>();
 		variables = new ArrayList<Variable>();
 		clocks = new ArrayList<Clock>();
+		messageTypes = new ArrayList<MessageType>();
+		buffers = new ArrayList<MessageBuffer>();
 	}
 	
 	/**

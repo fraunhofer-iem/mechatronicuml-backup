@@ -61,6 +61,7 @@ public class SetsFactoryImpl extends EFactoryImpl implements SetsFactory {
 			case SetsPackage.MESSAGE_SET_EXPR: return createMessageSetExpr();
 			case SetsPackage.STATE_SET_EXPR: return createStateSetExpr();
 			case SetsPackage.TRANSITION_SET_EXPR: return createTransitionSetExpr();
+			case SetsPackage.BUFFER_SET_EXPR: return createBufferSetExpr();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -114,6 +115,16 @@ public class SetsFactoryImpl extends EFactoryImpl implements SetsFactory {
 	public TransitionSetExpr createTransitionSetExpr() {
 		TransitionSetExprImpl transitionSetExpr = new TransitionSetExprImpl();
 		return transitionSetExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BufferSetExpr createBufferSetExpr() {
+		BufferSetExprImpl bufferSetExpr = new BufferSetExprImpl();
+		return bufferSetExpr;
 	}
 
 	/**
