@@ -23,6 +23,7 @@
   
   <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="eclipse_luna"/>
   <rm:locator pattern="^org\.eclipse\.xtext(\..+)?" searchPathRef="eclipse_kepler"/>
+  <rm:locator pattern="^org\.eclipse\.xtend(\..+)?" searchPathRef="eclipse_kepler"/>
   <rm:locator pattern="^org\.eclipse\.emf\.edapt(\..+)?" searchPathRef="edapt"/>
   <rm:locator pattern="^org\.apache(\..+)?" searchPathRef="eclipse"/>
   <rm:locator pattern="^lpg\.runtime(\..+)?" searchPathRef="eclipse"/>
