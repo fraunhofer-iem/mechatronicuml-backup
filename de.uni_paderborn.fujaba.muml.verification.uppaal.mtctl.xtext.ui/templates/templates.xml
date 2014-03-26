@@ -24,7 +24,7 @@ deleted="false"
 description="expression should hold for all elements in the set" 
 id="forall"
 enabled="true" 
-name="forall">forall(${name}:${Set}) ${expression}</template>
+name="forall">forall(${name}:${Set})</template>
 
 <template autoinsert="true" 
 context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_exists"
@@ -32,7 +32,7 @@ deleted="false"
 description="there exists one element in the set for which the expression holds" 
 id="exists"
 enabled="true" 
-name="exists">exists(${name}:${Set}) ${expression}</template>
+name="exists">exists(${name}:${Set})</template>
 
 <template autoinsert="true"
 context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_stateActive"
