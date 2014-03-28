@@ -58,7 +58,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * The mapping that determines how to call elements from the muml models
 	 */
 	Function<EObject, QualifiedName> scopedElementNameMap = new Function<EObject, QualifiedName>() {
-		final char[] forbiddenChars = new char[] {' ','.','-','/','*','+','&','(',')'};
+		final char[] forbiddenChars = new char[] {' ','.','-','/','*','+','&','(',')'}; //list of characters forbidden in QualifiedNames
 		
 		@Override
 		public QualifiedName apply(EObject obj) {
@@ -72,9 +72,6 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 					segment = segment.replace(c, '_');
 				result = result.append(segment);
 			}
-			
-			if (result.isEmpty())
-				System.out.println(obj);
 			
 			return result;
 		}
@@ -313,22 +310,19 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	private void setScopeForCoordinationProtocol(CoordinationProtocol object) {
 		//Collect everything that can be referenced from mtctl in a CoordinationProtocol
 		
-		//States
-		for (Role role : object.getRoles())
-			states.addAll(recursivelyCollectStates(((RealtimeStatechart) role.getBehavior()).getStates()));
-	
-		//Clocks
-		for (Role role : object.getRoles())
-			clocks.addAll(((RealtimeStatechart) role.getBehavior()).getAvailableClocks());
-		
-		//Variables
-		for (Role role : object.getRoles())
-			variables.addAll(((RealtimeStatechart) role.getBehavior()).getAllAvailableVariables());
-		
-		//MessageTypes
 		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
-		for (Role role : object.getRoles())
+		
+		//States, Clocks, Variables, MessageTypes
+		for (Role role : object.getRoles()) {
+			if (role.getBehavior() == null || !(role instanceof RealtimeStatechart))
+				continue;
+			
+			states.addAll(recursivelyCollectStates(((RealtimeStatechart) role.getBehavior()).getStates()));
+			clocks.addAll(((RealtimeStatechart) role.getBehavior()).getAvailableClocks());
+			variables.addAll(((RealtimeStatechart) role.getBehavior()).getAllAvailableVariables());
 			messageTypes.addAll(role.getReceiverMessageTypes());
+		}
+		
 		this.messageTypes.addAll(messageTypes);
 		
 		//TODO MessageBuffers (buffers field and rest already in place, populate here. Missing: how to name them)

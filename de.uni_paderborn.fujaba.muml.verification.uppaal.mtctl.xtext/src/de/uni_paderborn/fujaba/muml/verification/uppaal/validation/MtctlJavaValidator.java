@@ -27,4 +27,16 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 		
 		error(expr.eClass().getName()+" must be bound to a Temporal Quantifier such as \"AG\"", null);
 	}
+	
+	@Check 
+	public void checkTemporallyQuantified(final TemporalQuantifierExpr expr) { //Disallow using nested TemporalQuantifiers
+		EObject parent = expr;
+		while (parent != null) {
+			parent = parent.eContainer();
+			if (parent instanceof TemporalQuantifierExpr) {
+				error("TemporalQuantifiers must not be nested", null);
+				return;
+			}
+		}
+	}
 }
