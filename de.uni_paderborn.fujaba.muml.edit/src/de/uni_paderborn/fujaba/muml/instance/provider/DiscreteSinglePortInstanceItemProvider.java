@@ -20,10 +20,12 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance;
+import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.instance.DiscreteSinglePortInstance} object.
@@ -239,6 +241,13 @@ public class DiscreteSinglePortInstanceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DiscreteSinglePortInstance.class)) {
+			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__FIRST:
+			case InstancePackage.DISCRETE_SINGLE_PORT_INSTANCE__LAST:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

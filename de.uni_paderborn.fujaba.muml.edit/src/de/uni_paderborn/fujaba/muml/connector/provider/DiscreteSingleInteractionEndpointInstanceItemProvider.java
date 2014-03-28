@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
 
@@ -212,6 +213,13 @@ public class DiscreteSingleInteractionEndpointInstanceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(DiscreteSingleInteractionEndpointInstance.class)) {
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__FIRST:
+			case ConnectorPackage.DISCRETE_SINGLE_INTERACTION_ENDPOINT_INSTANCE__LAST:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
