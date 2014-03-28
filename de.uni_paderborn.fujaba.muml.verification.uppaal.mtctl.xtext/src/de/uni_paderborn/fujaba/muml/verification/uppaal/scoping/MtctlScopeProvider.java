@@ -58,8 +58,31 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 * The mapping that determines how to call elements from the muml models
 	 */
 	Function<EObject, QualifiedName> scopedElementNameMap = new Function<EObject, QualifiedName>() {
+		final char[] forbiddenChars = new char[] {' ','.','-','/','*','+','&','(',')'};
+		
 		@Override
 		public QualifiedName apply(EObject obj) {
+			//Create name by recursively applying names
+			QualifiedName tmpResult = internalCreateName(obj);
+			
+			//Normalize the segments (disallow some characters in names, for example)
+			QualifiedName result = QualifiedName.EMPTY;
+			for (String segment: tmpResult.getSegments()) {
+				for (char c: forbiddenChars)
+					segment = segment.replace(c, '_');
+				result = result.append(segment);
+			}
+			
+			if (result.isEmpty())
+				System.out.println(obj);
+			
+			return result;
+		}
+		
+		/**
+		 * Creates a name for the object recursively
+		 */
+		private QualifiedName internalCreateName(EObject obj) {
 			try {
 				if (obj == null)
 					return QualifiedName.EMPTY;
@@ -72,23 +95,28 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 				
 				if (obj instanceof RealtimeStatechart)
 					if (((RealtimeStatechart) obj).getBehavioralElement() != null)
-						return apply(((RealtimeStatechart) obj).getBehavioralElement()).append(((RealtimeStatechart) obj).getName()); //top-level RTSC are called role.rtsc
-					else if (((RealtimeStatechart) obj).isEmbedded())
-						return apply(((RealtimeStatechart) obj).getParentRegion().getParentState()); //embedded RTSC are called like their parent state
+						return internalCreateName(((RealtimeStatechart) obj).getBehavioralElement()).append(((RealtimeStatechart) obj).getName()); //top-level RTSC are called role.rtsc
+					else if (((RealtimeStatechart) obj).isEmbedded()) {
+						QualifiedName name = internalCreateName(((RealtimeStatechart) obj).getParentRegion().getParentState()); //embedded RTSC are called like their parent state, unless ...
+						if (((RealtimeStatechart) obj).getParentRegion().getParentState().getEmbeddedRegions().size() > 1)
+							name = name.append(((RealtimeStatechart) obj).getName()); //... if there is more than one region in the parent state, we further qualify the name
+						return name;
+					}
 					else
 						return QualifiedName.create(((RealtimeStatechart) obj).getName()); //fallback that should not happen
 				
 				if (obj instanceof State)
-					return apply(((State) obj).getParentStatechart()).append(((State) obj).getName()); //states are called rtsc.state
+					
+					return internalCreateName(((State) obj).getParentStatechart()).append(((State) obj).getName()); //states are called rtsc.state
 				
 				if (obj instanceof MessageType)
 					return QualifiedName.create(((MessageType) obj).getRepository().getName(), ((MessageType) obj).getName()); //MessageTypes are called repository.messageType
 				
 				if (obj instanceof Clock)
-					return apply(((Clock) obj).getStatechart()).append(((Clock) obj).getName()); //clocks are called rtsc.clock
+					return internalCreateName(((Clock) obj).getStatechart()).append(((Clock) obj).getName()); //clocks are called rtsc.clock
 				
 				if (obj instanceof Variable)
-					return apply(obj.eContainer()).append(((Variable) obj).getName()); //variables are called rtsc.var
+					return internalCreateName(obj.eContainer()).append(((Variable) obj).getName()); //variables are called rtsc.var
 			} catch (RuntimeException e) {
 				System.out.println("Exception when computing qualified name for "+obj);
 				e.printStackTrace();
