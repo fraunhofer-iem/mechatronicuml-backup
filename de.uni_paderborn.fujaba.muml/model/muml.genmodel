@@ -439,8 +439,8 @@
             ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/next"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/previous"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/first"/>
-        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/last"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/first"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EReference muml.ecore#//connector/DiscreteSingleInteractionEndpointInstance/last"/>
       </genClasses>
       <genClasses ecoreClass="muml.ecore#//connector/DiscreteMultiInteractionEndpointInstance">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
