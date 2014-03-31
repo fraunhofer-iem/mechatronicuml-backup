@@ -15,13 +15,7 @@ package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.container;
  *      committers of YAKINDU - initial API and implementation
  *
  */
-import java.awt.color.CMMException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
@@ -29,28 +23,20 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
-import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CompoundCommand;
-import org.eclipse.gef.editpolicies.AbstractEditPolicy;
-import org.eclipse.gef.requests.ChangeBoundsRequest;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand;
-import org.eclipse.gmf.runtime.diagram.ui.commands.PasteCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.l10n.DiagramUIMessages;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 
 /**
  * 
@@ -136,16 +122,23 @@ public class AutoSizeContainerCommand extends AbstractTransactionalCommand  {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
-		// TODO Auto-generated method stub
-		 resizeContainerCommand().execute();
-		return CommandResult.newOKCommandResult();
+		
+
+		IGraphicalEditPart parent = getParentEditPart(host);
+		Rectangle feedbackBounds = parent.getFigure().getBounds().getCopy();
+		parent.getFigure().getParent().translateToAbsolute(feedbackBounds);
+		feedbackBounds = calculateFeedbackBounds(feedbackBounds, 5,
+				parent.getFigure());
+		parent.getFigure().translateToRelative(feedbackBounds);
+		SetBoundsCommand cmd = new SetBoundsCommand(getEditingDomain(),
+				DiagramUIMessages.SetLocationCommand_Label_Resize,
+				new EObjectAdapter(parent.getNotationView()), feedbackBounds);
+		
+		IStatus status=cmd.execute(monitor, info);
+	        cleanup();
+		return status.getSeverity()==IStatus.OK ? CommandResult.newOKCommandResult() : CommandResult.newErrorCommandResult("Resize went Wrong!");
 	}
 
 
-	@Override
-	protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info)
-			throws ExecutionException {
-		// TODO Auto-generated method stub
-		return super.doExecute(monitor, info);
-	}
+	
 }
