@@ -58,6 +58,10 @@ public class EnlargeContainerEditPolicy extends AbstractEditPolicy {
 
 	@Override
 	public Command getCommand(Request request) {
+		
+		if(request instanceof AutoSizeContainerRequest){
+			showSourceFeedback(request);
+		}
 
 		if (RequestConstants.REQ_RESIZE.equals(request.getType())
 				|| RequestConstants.REQ_MOVE.equals(request.getType())) {

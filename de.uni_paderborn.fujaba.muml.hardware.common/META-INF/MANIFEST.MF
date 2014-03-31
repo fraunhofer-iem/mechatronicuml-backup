@@ -15,5 +15,6 @@ Export-Package: de.uni_paderborn.fujaba.muml.hardware.common.edit.policies,
 Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
  de.uni_paderborn.fujaba.muml.common;bundle-version="0.4.0",
  de.uni_paderborn.fujaba.muml.hardware,
- org.eclipse.gmf.runtime.diagram.ui
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.eclipse.gmf.runtime.emf.commands.core
 Bundle-Vendor: Software Engineering, Project Group Mechatronic Systems Design, Fraunhofer Institute for Production Technology IPT
