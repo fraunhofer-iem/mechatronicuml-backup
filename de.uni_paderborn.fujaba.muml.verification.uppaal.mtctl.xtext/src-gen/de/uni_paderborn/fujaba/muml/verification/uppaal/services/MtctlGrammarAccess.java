@@ -764,15 +764,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Action cStateActiveExprAction_2 = (Action)cGroup.eContents().get(2);
 		private final Assignment cStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cStateEObjectCrossReference_3_0 = (CrossReference)cStateAssignment_3.eContents().get(0);
-		private final RuleCall cStateEObjectQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cStateEObjectCrossReference_3_0.eContents().get(1);
+		private final RuleCall cStateMapExprParserRuleCall_3_0 = (RuleCall)cStateAssignment_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//StateActiveExpr returns mtctl::StateActiveExpr:
-		//	"stateActive" "(" {mtctl::StateActiveExpr} state=[ecore::EObject|QualifiedName] ")";
+		//	"stateActive" "(" {mtctl::StateActiveExpr} state=MapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"stateActive" "(" {mtctl::StateActiveExpr} state=[ecore::EObject|QualifiedName] ")"
+		//"stateActive" "(" {mtctl::StateActiveExpr} state=MapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"stateActive"
@@ -784,14 +783,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//{mtctl::StateActiveExpr}
 		public Action getStateActiveExprAction_2() { return cStateActiveExprAction_2; }
 
-		//state=[ecore::EObject|QualifiedName]
+		//state=MapExpr
 		public Assignment getStateAssignment_3() { return cStateAssignment_3; }
 
-		//[ecore::EObject|QualifiedName]
-		public CrossReference getStateEObjectCrossReference_3_0() { return cStateEObjectCrossReference_3_0; }
-
-		//QualifiedName
-		public RuleCall getStateEObjectQualifiedNameParserRuleCall_3_0_1() { return cStateEObjectQualifiedNameParserRuleCall_3_0_1; }
+		//MapExpr
+		public RuleCall getStateMapExprParserRuleCall_3_0() { return cStateMapExprParserRuleCall_3_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
@@ -804,21 +800,17 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Action cSubstateOfExprAction_2 = (Action)cGroup.eContents().get(2);
 		private final Assignment cStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cStateEObjectCrossReference_3_0 = (CrossReference)cStateAssignment_3.eContents().get(0);
-		private final RuleCall cStateEObjectQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cStateEObjectCrossReference_3_0.eContents().get(1);
+		private final RuleCall cStateMapExprParserRuleCall_3_0 = (RuleCall)cStateAssignment_3.eContents().get(0);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cSuperstateAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cSuperstateEObjectCrossReference_5_0 = (CrossReference)cSuperstateAssignment_5.eContents().get(0);
-		private final RuleCall cSuperstateEObjectQualifiedNameParserRuleCall_5_0_1 = (RuleCall)cSuperstateEObjectCrossReference_5_0.eContents().get(1);
+		private final RuleCall cSuperstateMapExprParserRuleCall_5_0 = (RuleCall)cSuperstateAssignment_5.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//SubstateOfExpr returns mtctl::SubstateOfExpr:
-		//	"substateOf" "(" {mtctl::SubstateOfExpr} state=[ecore::EObject|QualifiedName] ","
-		//	superstate=[ecore::EObject|QualifiedName] ")";
+		//	"substateOf" "(" {mtctl::SubstateOfExpr} state=MapExpr "," superstate=MapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"substateOf" "(" {mtctl::SubstateOfExpr} state=[ecore::EObject|QualifiedName] ","
-		//superstate=[ecore::EObject|QualifiedName] ")"
+		//"substateOf" "(" {mtctl::SubstateOfExpr} state=MapExpr "," superstate=MapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"substateOf"
@@ -830,26 +822,20 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//{mtctl::SubstateOfExpr}
 		public Action getSubstateOfExprAction_2() { return cSubstateOfExprAction_2; }
 
-		//state=[ecore::EObject|QualifiedName]
+		//state=MapExpr
 		public Assignment getStateAssignment_3() { return cStateAssignment_3; }
 
-		//[ecore::EObject|QualifiedName]
-		public CrossReference getStateEObjectCrossReference_3_0() { return cStateEObjectCrossReference_3_0; }
-
-		//QualifiedName
-		public RuleCall getStateEObjectQualifiedNameParserRuleCall_3_0_1() { return cStateEObjectQualifiedNameParserRuleCall_3_0_1; }
+		//MapExpr
+		public RuleCall getStateMapExprParserRuleCall_3_0() { return cStateMapExprParserRuleCall_3_0; }
 
 		//","
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 
-		//superstate=[ecore::EObject|QualifiedName]
+		//superstate=MapExpr
 		public Assignment getSuperstateAssignment_5() { return cSuperstateAssignment_5; }
 
-		//[ecore::EObject|QualifiedName]
-		public CrossReference getSuperstateEObjectCrossReference_5_0() { return cSuperstateEObjectCrossReference_5_0; }
-
-		//QualifiedName
-		public RuleCall getSuperstateEObjectQualifiedNameParserRuleCall_5_0_1() { return cSuperstateEObjectQualifiedNameParserRuleCall_5_0_1; }
+		//MapExpr
+		public RuleCall getSuperstateMapExprParserRuleCall_5_0() { return cSuperstateMapExprParserRuleCall_5_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
@@ -885,15 +871,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMessageInTransitKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cMessageAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cMessageEObjectCrossReference_2_0 = (CrossReference)cMessageAssignment_2.eContents().get(0);
-		private final RuleCall cMessageEObjectQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cMessageEObjectCrossReference_2_0.eContents().get(1);
+		private final RuleCall cMessageMapExprParserRuleCall_2_0 = (RuleCall)cMessageAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//MessageInTransitExpr returns mtctl::MessageInTransitExpr:
-		//	"messageInTransit" "(" message=[ecore::EObject|QualifiedName] ")";
+		//	"messageInTransit" "(" message=MapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"messageInTransit" "(" message=[ecore::EObject|QualifiedName] ")"
+		//"messageInTransit" "(" message=MapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"messageInTransit"
@@ -902,14 +887,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//message=[ecore::EObject|QualifiedName]
+		//message=MapExpr
 		public Assignment getMessageAssignment_2() { return cMessageAssignment_2; }
 
-		//[ecore::EObject|QualifiedName]
-		public CrossReference getMessageEObjectCrossReference_2_0() { return cMessageEObjectCrossReference_2_0; }
-
-		//QualifiedName
-		public RuleCall getMessageEObjectQualifiedNameParserRuleCall_2_0_1() { return cMessageEObjectQualifiedNameParserRuleCall_2_0_1; }
+		//MapExpr
+		public RuleCall getMessageMapExprParserRuleCall_2_0() { return cMessageMapExprParserRuleCall_2_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -921,19 +903,17 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMessageInBufferKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cMessageAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cMessageEObjectCrossReference_2_0 = (CrossReference)cMessageAssignment_2.eContents().get(0);
-		private final RuleCall cMessageEObjectQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cMessageEObjectCrossReference_2_0.eContents().get(1);
+		private final RuleCall cMessageMapExprParserRuleCall_2_0 = (RuleCall)cMessageAssignment_2.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cBufferAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cBufferEObjectCrossReference_4_0 = (CrossReference)cBufferAssignment_4.eContents().get(0);
-		private final RuleCall cBufferEObjectIDTerminalRuleCall_4_0_1 = (RuleCall)cBufferEObjectCrossReference_4_0.eContents().get(1);
+		private final RuleCall cBufferMapExprParserRuleCall_4_0 = (RuleCall)cBufferAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//MessageInBufferExpr returns mtctl::MessageInBufferExpr:
-		//	"messageInBuffer" "(" message=[ecore::EObject|QualifiedName] "," buffer=[ecore::EObject] ")";
+		//	"messageInBuffer" "(" message=MapExpr "," buffer=MapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"messageInBuffer" "(" message=[ecore::EObject|QualifiedName] "," buffer=[ecore::EObject] ")"
+		//"messageInBuffer" "(" message=MapExpr "," buffer=MapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"messageInBuffer"
@@ -942,26 +922,20 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//message=[ecore::EObject|QualifiedName]
+		//message=MapExpr
 		public Assignment getMessageAssignment_2() { return cMessageAssignment_2; }
 
-		//[ecore::EObject|QualifiedName]
-		public CrossReference getMessageEObjectCrossReference_2_0() { return cMessageEObjectCrossReference_2_0; }
-
-		//QualifiedName
-		public RuleCall getMessageEObjectQualifiedNameParserRuleCall_2_0_1() { return cMessageEObjectQualifiedNameParserRuleCall_2_0_1; }
+		//MapExpr
+		public RuleCall getMessageMapExprParserRuleCall_2_0() { return cMessageMapExprParserRuleCall_2_0; }
 
 		//","
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 
-		//buffer=[ecore::EObject]
+		//buffer=MapExpr
 		public Assignment getBufferAssignment_4() { return cBufferAssignment_4; }
 
-		//[ecore::EObject]
-		public CrossReference getBufferEObjectCrossReference_4_0() { return cBufferEObjectCrossReference_4_0; }
-
-		//ID
-		public RuleCall getBufferEObjectIDTerminalRuleCall_4_0_1() { return cBufferEObjectIDTerminalRuleCall_4_0_1; }
+		//MapExpr
+		public RuleCall getBufferMapExprParserRuleCall_4_0() { return cBufferMapExprParserRuleCall_4_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
@@ -1005,15 +979,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTransitionFiringKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTransitionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cTransitionEObjectCrossReference_2_0 = (CrossReference)cTransitionAssignment_2.eContents().get(0);
-		private final RuleCall cTransitionEObjectQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cTransitionEObjectCrossReference_2_0.eContents().get(1);
+		private final RuleCall cTransitionMumlElemExprParserRuleCall_2_0 = (RuleCall)cTransitionAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//TransitionFiringExpr returns mtctl::TransitionFiringExpr:
-		//	"transitionFiring" "(" transition=[ecore::EObject|QualifiedName] ")";
+		//	"transitionFiring" "(" transition=MumlElemExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"transitionFiring" "(" transition=[ecore::EObject|QualifiedName] ")"
+		//"transitionFiring" "(" transition=MumlElemExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"transitionFiring"
@@ -1022,14 +995,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//transition=[ecore::EObject|QualifiedName]
+		//transition=MumlElemExpr
 		public Assignment getTransitionAssignment_2() { return cTransitionAssignment_2; }
 
-		//[ecore::EObject|QualifiedName]
-		public CrossReference getTransitionEObjectCrossReference_2_0() { return cTransitionEObjectCrossReference_2_0; }
-
-		//QualifiedName
-		public RuleCall getTransitionEObjectQualifiedNameParserRuleCall_2_0_1() { return cTransitionEObjectQualifiedNameParserRuleCall_2_0_1; }
+		//MumlElemExpr
+		public RuleCall getTransitionMumlElemExprParserRuleCall_2_0() { return cTransitionMumlElemExprParserRuleCall_2_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -1040,45 +1010,28 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cComparisonExprAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cLhsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Alternatives cLhsAlternatives_1_0 = (Alternatives)cLhsAssignment_1.eContents().get(0);
-		private final RuleCall cLhsPrimitiveVariableExprParserRuleCall_1_0_0 = (RuleCall)cLhsAlternatives_1_0.eContents().get(0);
-		private final RuleCall cLhsMapExprParserRuleCall_1_0_1 = (RuleCall)cLhsAlternatives_1_0.eContents().get(1);
-		private final RuleCall cLhsConstExprParserRuleCall_1_0_2 = (RuleCall)cLhsAlternatives_1_0.eContents().get(2);
+		private final RuleCall cLhsMapExprParserRuleCall_1_0 = (RuleCall)cLhsAssignment_1.eContents().get(0);
 		private final Assignment cOpAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cOpComparisonOpEnumRuleCall_2_0 = (RuleCall)cOpAssignment_2.eContents().get(0);
 		private final Assignment cRhsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Alternatives cRhsAlternatives_3_0 = (Alternatives)cRhsAssignment_3.eContents().get(0);
-		private final RuleCall cRhsPrimitiveVariableExprParserRuleCall_3_0_0 = (RuleCall)cRhsAlternatives_3_0.eContents().get(0);
-		private final RuleCall cRhsMapExprParserRuleCall_3_0_1 = (RuleCall)cRhsAlternatives_3_0.eContents().get(1);
-		private final RuleCall cRhsConstExprParserRuleCall_3_0_2 = (RuleCall)cRhsAlternatives_3_0.eContents().get(2);
+		private final RuleCall cRhsMapExprParserRuleCall_3_0 = (RuleCall)cRhsAssignment_3.eContents().get(0);
 		
 		////Comparisons
 		//ComparisonExpr returns mtctl::Expression:
-		//	{mtctl::ComparisonExpr} lhs=(PrimitiveVariableExpr | MapExpr | ConstExpr) op=ComparisonOp rhs=(PrimitiveVariableExpr
-		//	| MapExpr | ConstExpr);
+		//	{mtctl::ComparisonExpr} lhs=MapExpr op=ComparisonOp rhs=MapExpr;
 		public ParserRule getRule() { return rule; }
 
-		//{mtctl::ComparisonExpr} lhs=(PrimitiveVariableExpr | MapExpr | ConstExpr) op=ComparisonOp rhs=(PrimitiveVariableExpr |
-		//MapExpr | ConstExpr)
+		//{mtctl::ComparisonExpr} lhs=MapExpr op=ComparisonOp rhs=MapExpr
 		public Group getGroup() { return cGroup; }
 
 		//{mtctl::ComparisonExpr}
 		public Action getComparisonExprAction_0() { return cComparisonExprAction_0; }
 
-		//lhs=(PrimitiveVariableExpr | MapExpr | ConstExpr)
+		//lhs=MapExpr
 		public Assignment getLhsAssignment_1() { return cLhsAssignment_1; }
 
-		//PrimitiveVariableExpr | MapExpr | ConstExpr
-		public Alternatives getLhsAlternatives_1_0() { return cLhsAlternatives_1_0; }
-
-		//PrimitiveVariableExpr
-		public RuleCall getLhsPrimitiveVariableExprParserRuleCall_1_0_0() { return cLhsPrimitiveVariableExprParserRuleCall_1_0_0; }
-
 		//MapExpr
-		public RuleCall getLhsMapExprParserRuleCall_1_0_1() { return cLhsMapExprParserRuleCall_1_0_1; }
-
-		//ConstExpr
-		public RuleCall getLhsConstExprParserRuleCall_1_0_2() { return cLhsConstExprParserRuleCall_1_0_2; }
+		public RuleCall getLhsMapExprParserRuleCall_1_0() { return cLhsMapExprParserRuleCall_1_0; }
 
 		//op=ComparisonOp
 		public Assignment getOpAssignment_2() { return cOpAssignment_2; }
@@ -1086,33 +1039,40 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//ComparisonOp
 		public RuleCall getOpComparisonOpEnumRuleCall_2_0() { return cOpComparisonOpEnumRuleCall_2_0; }
 
-		//rhs=(PrimitiveVariableExpr | MapExpr | ConstExpr)
+		//rhs=MapExpr
 		public Assignment getRhsAssignment_3() { return cRhsAssignment_3; }
 
-		//PrimitiveVariableExpr | MapExpr | ConstExpr
-		public Alternatives getRhsAlternatives_3_0() { return cRhsAlternatives_3_0; }
-
-		//PrimitiveVariableExpr
-		public RuleCall getRhsPrimitiveVariableExprParserRuleCall_3_0_0() { return cRhsPrimitiveVariableExprParserRuleCall_3_0_0; }
-
 		//MapExpr
-		public RuleCall getRhsMapExprParserRuleCall_3_0_1() { return cRhsMapExprParserRuleCall_3_0_1; }
-
-		//ConstExpr
-		public RuleCall getRhsConstExprParserRuleCall_3_0_2() { return cRhsConstExprParserRuleCall_3_0_2; }
+		public RuleCall getRhsMapExprParserRuleCall_3_0() { return cRhsMapExprParserRuleCall_3_0; }
 	}
 
 	public class MapExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MapExpr");
-		private final RuleCall cBufferMessageCountExprParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cBufferMessageCountExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTransitionMapParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cMumlElemExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cConstExprParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		////Expressions usable in comparisons
 		//MapExpr returns mtctl::Expression:
-		//	BufferMessageCountExpr;
+		//	BufferMessageCountExpr | TransitionMap | MumlElemExpr | ConstExpr;
 		public ParserRule getRule() { return rule; }
 
+		//BufferMessageCountExpr | TransitionMap | MumlElemExpr | ConstExpr
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//BufferMessageCountExpr
-		public RuleCall getBufferMessageCountExprParserRuleCall() { return cBufferMessageCountExprParserRuleCall; }
+		public RuleCall getBufferMessageCountExprParserRuleCall_0() { return cBufferMessageCountExprParserRuleCall_0; }
+
+		//TransitionMap
+		public RuleCall getTransitionMapParserRuleCall_1() { return cTransitionMapParserRuleCall_1; }
+
+		//MumlElemExpr
+		public RuleCall getMumlElemExprParserRuleCall_2() { return cMumlElemExprParserRuleCall_2; }
+
+		//ConstExpr
+		public RuleCall getConstExprParserRuleCall_3() { return cConstExprParserRuleCall_3; }
 	}
 
 	public class BufferMessageCountExprElements extends AbstractParserRuleElementFinder {
@@ -1120,17 +1080,15 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBufferMessageCountKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Action cBufferMsgCountExprAction_2 = (Action)cGroup.eContents().get(2);
-		private final Assignment cBufferAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cBufferEObjectCrossReference_3_0 = (CrossReference)cBufferAssignment_3.eContents().get(0);
-		private final RuleCall cBufferEObjectQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cBufferEObjectCrossReference_3_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cBufferAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cBufferMapExprParserRuleCall_2_0 = (RuleCall)cBufferAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//BufferMessageCountExpr returns mtctl::MapExpr:
-		//	"bufferMessageCount" "(" {mtctl::BufferMsgCountExpr} buffer=[ecore::EObject|QualifiedName] ")";
+		//BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
+		//	"bufferMessageCount" "(" buffer=MapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"bufferMessageCount" "(" {mtctl::BufferMsgCountExpr} buffer=[ecore::EObject|QualifiedName] ")"
+		//"bufferMessageCount" "(" buffer=MapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"bufferMessageCount"
@@ -1139,64 +1097,134 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//{mtctl::BufferMsgCountExpr}
-		public Action getBufferMsgCountExprAction_2() { return cBufferMsgCountExprAction_2; }
+		//buffer=MapExpr
+		public Assignment getBufferAssignment_2() { return cBufferAssignment_2; }
 
-		//buffer=[ecore::EObject|QualifiedName]
-		public Assignment getBufferAssignment_3() { return cBufferAssignment_3; }
-
-		//[ecore::EObject|QualifiedName]
-		public CrossReference getBufferEObjectCrossReference_3_0() { return cBufferEObjectCrossReference_3_0; }
-
-		//QualifiedName
-		public RuleCall getBufferEObjectQualifiedNameParserRuleCall_3_0_1() { return cBufferEObjectQualifiedNameParserRuleCall_3_0_1; }
+		//MapExpr
+		public RuleCall getBufferMapExprParserRuleCall_2_0() { return cBufferMapExprParserRuleCall_2_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 
-	public class PrimitiveVariableExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PrimitiveVariableExpr");
-		private final Assignment cVarAssignment = (Assignment)rule.eContents().get(1);
-		private final CrossReference cVarEObjectCrossReference_0 = (CrossReference)cVarAssignment.eContents().get(0);
-		private final RuleCall cVarEObjectQualifiedNameParserRuleCall_0_1 = (RuleCall)cVarEObjectCrossReference_0.eContents().get(1);
+	public class TransitionMapElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TransitionMap");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSourceStateExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTargetStateExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//PrimitiveVariableExpr returns mtctl::PrimitiveVariableExpr:
-		//	var=[ecore::EObject|QualifiedName];
+		//TransitionMap returns mtctl::TransitionMap:
+		//	SourceStateExpr | TargetStateExpr;
 		public ParserRule getRule() { return rule; }
 
-		//var=[ecore::EObject|QualifiedName]
-		public Assignment getVarAssignment() { return cVarAssignment; }
+		//SourceStateExpr | TargetStateExpr
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//SourceStateExpr
+		public RuleCall getSourceStateExprParserRuleCall_0() { return cSourceStateExprParserRuleCall_0; }
+
+		//TargetStateExpr
+		public RuleCall getTargetStateExprParserRuleCall_1() { return cTargetStateExprParserRuleCall_1; }
+	}
+
+	public class SourceStateExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SourceStateExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSourceStateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTransitionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTransitionMapExprParserRuleCall_2_0 = (RuleCall)cTransitionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//SourceStateExpr returns mtctl::SourceStateExpr:
+		//	"sourceState" "(" transition=MapExpr ")";
+		public ParserRule getRule() { return rule; }
+
+		//"sourceState" "(" transition=MapExpr ")"
+		public Group getGroup() { return cGroup; }
+
+		//"sourceState"
+		public Keyword getSourceStateKeyword_0() { return cSourceStateKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//transition=MapExpr
+		public Assignment getTransitionAssignment_2() { return cTransitionAssignment_2; }
+
+		//MapExpr
+		public RuleCall getTransitionMapExprParserRuleCall_2_0() { return cTransitionMapExprParserRuleCall_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+
+	public class TargetStateExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TargetStateExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTargetStateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTransitionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTransitionMapExprParserRuleCall_2_0 = (RuleCall)cTransitionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//TargetStateExpr returns mtctl::TargetStateExpr:
+		//	"targetState" "(" transition=MapExpr ")";
+		public ParserRule getRule() { return rule; }
+
+		//"targetState" "(" transition=MapExpr ")"
+		public Group getGroup() { return cGroup; }
+
+		//"targetState"
+		public Keyword getTargetStateKeyword_0() { return cTargetStateKeyword_0; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+
+		//transition=MapExpr
+		public Assignment getTransitionAssignment_2() { return cTransitionAssignment_2; }
+
+		//MapExpr
+		public RuleCall getTransitionMapExprParserRuleCall_2_0() { return cTransitionMapExprParserRuleCall_2_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+
+	public class MumlElemExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MumlElemExpr");
+		private final Assignment cElemAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cElemEObjectCrossReference_0 = (CrossReference)cElemAssignment.eContents().get(0);
+		private final RuleCall cElemEObjectQualifiedNameParserRuleCall_0_1 = (RuleCall)cElemEObjectCrossReference_0.eContents().get(1);
+		
+		//MumlElemExpr returns mtctl::MumlElemExpr:
+		//	elem=[ecore::EObject|QualifiedName];
+		public ParserRule getRule() { return rule; }
+
+		//elem=[ecore::EObject|QualifiedName]
+		public Assignment getElemAssignment() { return cElemAssignment; }
 
 		//[ecore::EObject|QualifiedName]
-		public CrossReference getVarEObjectCrossReference_0() { return cVarEObjectCrossReference_0; }
+		public CrossReference getElemEObjectCrossReference_0() { return cElemEObjectCrossReference_0; }
 
 		//QualifiedName
-		public RuleCall getVarEObjectQualifiedNameParserRuleCall_0_1() { return cVarEObjectQualifiedNameParserRuleCall_0_1; }
+		public RuleCall getElemEObjectQualifiedNameParserRuleCall_0_1() { return cElemEObjectQualifiedNameParserRuleCall_0_1; }
 	}
 
 	public class ConstExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstExpr");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cConstExprAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cValAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValEIntParserRuleCall_1_0 = (RuleCall)cValAssignment_1.eContents().get(0);
+		private final Assignment cValAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValEIntParserRuleCall_0 = (RuleCall)cValAssignment.eContents().get(0);
 		
-		//ConstExpr returns mtctl::Expression:
-		//	{mtctl::ConstExpr} val=EInt;
+		//ConstExpr returns mtctl::ConstExpr:
+		//	val=EInt;
 		public ParserRule getRule() { return rule; }
 
-		//{mtctl::ConstExpr} val=EInt
-		public Group getGroup() { return cGroup; }
-
-		//{mtctl::ConstExpr}
-		public Action getConstExprAction_0() { return cConstExprAction_0; }
-
 		//val=EInt
-		public Assignment getValAssignment_1() { return cValAssignment_1; }
+		public Assignment getValAssignment() { return cValAssignment; }
 
 		//EInt
-		public RuleCall getValEIntParserRuleCall_1_0() { return cValEIntParserRuleCall_1_0; }
+		public RuleCall getValEIntParserRuleCall_0() { return cValEIntParserRuleCall_0; }
 	}
 
 	public class SetExprElements extends AbstractParserRuleElementFinder {
@@ -1466,7 +1494,10 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private ComparisonOpElements unknownRuleComparisonOp;
 	private MapExprElements pMapExpr;
 	private BufferMessageCountExprElements pBufferMessageCountExpr;
-	private PrimitiveVariableExprElements pPrimitiveVariableExpr;
+	private TransitionMapElements pTransitionMap;
+	private SourceStateExprElements pSourceStateExpr;
+	private TargetStateExprElements pTargetStateExpr;
+	private MumlElemExprElements pMumlElemExpr;
 	private ConstExprElements pConstExpr;
 	private SetExprElements pSetExpr;
 	private IntervalSetExprElements pIntervalSetExpr;
@@ -1737,7 +1768,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StateActiveExpr returns mtctl::StateActiveExpr:
-	//	"stateActive" "(" {mtctl::StateActiveExpr} state=[ecore::EObject|QualifiedName] ")";
+	//	"stateActive" "(" {mtctl::StateActiveExpr} state=MapExpr ")";
 	public StateActiveExprElements getStateActiveExprAccess() {
 		return (pStateActiveExpr != null) ? pStateActiveExpr : (pStateActiveExpr = new StateActiveExprElements());
 	}
@@ -1747,8 +1778,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SubstateOfExpr returns mtctl::SubstateOfExpr:
-	//	"substateOf" "(" {mtctl::SubstateOfExpr} state=[ecore::EObject|QualifiedName] ","
-	//	superstate=[ecore::EObject|QualifiedName] ")";
+	//	"substateOf" "(" {mtctl::SubstateOfExpr} state=MapExpr "," superstate=MapExpr ")";
 	public SubstateOfExprElements getSubstateOfExprAccess() {
 		return (pSubstateOfExpr != null) ? pSubstateOfExpr : (pSubstateOfExpr = new SubstateOfExprElements());
 	}
@@ -1768,7 +1798,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MessageInTransitExpr returns mtctl::MessageInTransitExpr:
-	//	"messageInTransit" "(" message=[ecore::EObject|QualifiedName] ")";
+	//	"messageInTransit" "(" message=MapExpr ")";
 	public MessageInTransitExprElements getMessageInTransitExprAccess() {
 		return (pMessageInTransitExpr != null) ? pMessageInTransitExpr : (pMessageInTransitExpr = new MessageInTransitExprElements());
 	}
@@ -1778,7 +1808,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MessageInBufferExpr returns mtctl::MessageInBufferExpr:
-	//	"messageInBuffer" "(" message=[ecore::EObject|QualifiedName] "," buffer=[ecore::EObject] ")";
+	//	"messageInBuffer" "(" message=MapExpr "," buffer=MapExpr ")";
 	public MessageInBufferExprElements getMessageInBufferExprAccess() {
 		return (pMessageInBufferExpr != null) ? pMessageInBufferExpr : (pMessageInBufferExpr = new MessageInBufferExprElements());
 	}
@@ -1808,7 +1838,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TransitionFiringExpr returns mtctl::TransitionFiringExpr:
-	//	"transitionFiring" "(" transition=[ecore::EObject|QualifiedName] ")";
+	//	"transitionFiring" "(" transition=MumlElemExpr ")";
 	public TransitionFiringExprElements getTransitionFiringExprAccess() {
 		return (pTransitionFiringExpr != null) ? pTransitionFiringExpr : (pTransitionFiringExpr = new TransitionFiringExprElements());
 	}
@@ -1819,8 +1849,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 	////Comparisons
 	//ComparisonExpr returns mtctl::Expression:
-	//	{mtctl::ComparisonExpr} lhs=(PrimitiveVariableExpr | MapExpr | ConstExpr) op=ComparisonOp rhs=(PrimitiveVariableExpr
-	//	| MapExpr | ConstExpr);
+	//	{mtctl::ComparisonExpr} lhs=MapExpr op=ComparisonOp rhs=MapExpr;
 	public ComparisonExprElements getComparisonExprAccess() {
 		return (pComparisonExpr != null) ? pComparisonExpr : (pComparisonExpr = new ComparisonExprElements());
 	}
@@ -1841,7 +1870,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 	////Expressions usable in comparisons
 	//MapExpr returns mtctl::Expression:
-	//	BufferMessageCountExpr;
+	//	BufferMessageCountExpr | TransitionMap | MumlElemExpr | ConstExpr;
 	public MapExprElements getMapExprAccess() {
 		return (pMapExpr != null) ? pMapExpr : (pMapExpr = new MapExprElements());
 	}
@@ -1850,8 +1879,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMapExprAccess().getRule();
 	}
 
-	//BufferMessageCountExpr returns mtctl::MapExpr:
-	//	"bufferMessageCount" "(" {mtctl::BufferMsgCountExpr} buffer=[ecore::EObject|QualifiedName] ")";
+	//BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
+	//	"bufferMessageCount" "(" buffer=MapExpr ")";
 	public BufferMessageCountExprElements getBufferMessageCountExprAccess() {
 		return (pBufferMessageCountExpr != null) ? pBufferMessageCountExpr : (pBufferMessageCountExpr = new BufferMessageCountExprElements());
 	}
@@ -1860,18 +1889,48 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getBufferMessageCountExprAccess().getRule();
 	}
 
-	//PrimitiveVariableExpr returns mtctl::PrimitiveVariableExpr:
-	//	var=[ecore::EObject|QualifiedName];
-	public PrimitiveVariableExprElements getPrimitiveVariableExprAccess() {
-		return (pPrimitiveVariableExpr != null) ? pPrimitiveVariableExpr : (pPrimitiveVariableExpr = new PrimitiveVariableExprElements());
+	//TransitionMap returns mtctl::TransitionMap:
+	//	SourceStateExpr | TargetStateExpr;
+	public TransitionMapElements getTransitionMapAccess() {
+		return (pTransitionMap != null) ? pTransitionMap : (pTransitionMap = new TransitionMapElements());
 	}
 	
-	public ParserRule getPrimitiveVariableExprRule() {
-		return getPrimitiveVariableExprAccess().getRule();
+	public ParserRule getTransitionMapRule() {
+		return getTransitionMapAccess().getRule();
 	}
 
-	//ConstExpr returns mtctl::Expression:
-	//	{mtctl::ConstExpr} val=EInt;
+	//SourceStateExpr returns mtctl::SourceStateExpr:
+	//	"sourceState" "(" transition=MapExpr ")";
+	public SourceStateExprElements getSourceStateExprAccess() {
+		return (pSourceStateExpr != null) ? pSourceStateExpr : (pSourceStateExpr = new SourceStateExprElements());
+	}
+	
+	public ParserRule getSourceStateExprRule() {
+		return getSourceStateExprAccess().getRule();
+	}
+
+	//TargetStateExpr returns mtctl::TargetStateExpr:
+	//	"targetState" "(" transition=MapExpr ")";
+	public TargetStateExprElements getTargetStateExprAccess() {
+		return (pTargetStateExpr != null) ? pTargetStateExpr : (pTargetStateExpr = new TargetStateExprElements());
+	}
+	
+	public ParserRule getTargetStateExprRule() {
+		return getTargetStateExprAccess().getRule();
+	}
+
+	//MumlElemExpr returns mtctl::MumlElemExpr:
+	//	elem=[ecore::EObject|QualifiedName];
+	public MumlElemExprElements getMumlElemExprAccess() {
+		return (pMumlElemExpr != null) ? pMumlElemExpr : (pMumlElemExpr = new MumlElemExprElements());
+	}
+	
+	public ParserRule getMumlElemExprRule() {
+		return getMumlElemExprAccess().getRule();
+	}
+
+	//ConstExpr returns mtctl::ConstExpr:
+	//	val=EInt;
 	public ConstExprElements getConstExprAccess() {
 		return (pConstExpr != null) ? pConstExpr : (pConstExpr = new ConstExprElements());
 	}

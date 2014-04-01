@@ -40,13 +40,31 @@ public interface ComparablesFactory extends EFactory {
 	ConstExpr createConstExpr();
 
 	/**
-	 * Returns a new object of class '<em>Primitive Variable Expr</em>'.
+	 * Returns a new object of class '<em>Muml Elem Expr</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Primitive Variable Expr</em>'.
+	 * @return a new object of class '<em>Muml Elem Expr</em>'.
 	 * @generated
 	 */
-	PrimitiveVariableExpr createPrimitiveVariableExpr();
+	MumlElemExpr createMumlElemExpr();
+
+	/**
+	 * Returns a new object of class '<em>Source State Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Source State Expr</em>'.
+	 * @generated
+	 */
+	SourceStateExpr createSourceStateExpr();
+
+	/**
+	 * Returns a new object of class '<em>Target State Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Target State Expr</em>'.
+	 * @generated
+	 */
+	TargetStateExpr createTargetStateExpr();
 
 	/**
 	 * Returns the package supported by this factory.

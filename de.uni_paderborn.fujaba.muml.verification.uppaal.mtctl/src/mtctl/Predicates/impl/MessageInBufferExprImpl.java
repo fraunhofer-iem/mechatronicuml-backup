@@ -6,6 +6,7 @@ import mtctl.Predicates.MessageInBufferExpr;
 import mtctl.Predicates.PredicatesPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements MessageInBufferExpr {
 	/**
-	 * The cached value of the '{@link #getBuffer() <em>Buffer</em>}' reference.
+	 * The cached value of the '{@link #getBuffer() <em>Buffer</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBuffer()
@@ -39,7 +40,7 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	protected EObject buffer;
 
 	/**
-	 * The cached value of the '{@link #getMessage() <em>Message</em>}' reference.
+	 * The cached value of the '{@link #getMessage() <em>Message</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMessage()
@@ -73,14 +74,6 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * @generated
 	 */
 	public EObject getBuffer() {
-		if (buffer != null && buffer.eIsProxy()) {
-			InternalEObject oldBuffer = (InternalEObject)buffer;
-			buffer = eResolveProxy(oldBuffer);
-			if (buffer != oldBuffer) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER, oldBuffer, buffer));
-			}
-		}
 		return buffer;
 	}
 
@@ -89,8 +82,14 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetBuffer() {
-		return buffer;
+	public NotificationChain basicSetBuffer(EObject newBuffer, NotificationChain msgs) {
+		EObject oldBuffer = buffer;
+		buffer = newBuffer;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER, oldBuffer, newBuffer);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -99,10 +98,17 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * @generated
 	 */
 	public void setBuffer(EObject newBuffer) {
-		EObject oldBuffer = buffer;
-		buffer = newBuffer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER, oldBuffer, buffer));
+		if (newBuffer != buffer) {
+			NotificationChain msgs = null;
+			if (buffer != null)
+				msgs = ((InternalEObject)buffer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER, null, msgs);
+			if (newBuffer != null)
+				msgs = ((InternalEObject)newBuffer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER, null, msgs);
+			msgs = basicSetBuffer(newBuffer, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER, newBuffer, newBuffer));
 	}
 
 	/**
@@ -111,14 +117,6 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * @generated
 	 */
 	public EObject getMessage() {
-		if (message != null && message.eIsProxy()) {
-			InternalEObject oldMessage = (InternalEObject)message;
-			message = eResolveProxy(oldMessage);
-			if (message != oldMessage) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE, oldMessage, message));
-			}
-		}
 		return message;
 	}
 
@@ -127,8 +125,14 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetMessage() {
-		return message;
+	public NotificationChain basicSetMessage(EObject newMessage, NotificationChain msgs) {
+		EObject oldMessage = message;
+		message = newMessage;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE, oldMessage, newMessage);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -137,10 +141,33 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * @generated
 	 */
 	public void setMessage(EObject newMessage) {
-		EObject oldMessage = message;
-		message = newMessage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE, oldMessage, message));
+		if (newMessage != message) {
+			NotificationChain msgs = null;
+			if (message != null)
+				msgs = ((InternalEObject)message).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE, null, msgs);
+			if (newMessage != null)
+				msgs = ((InternalEObject)newMessage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE, null, msgs);
+			msgs = basicSetMessage(newMessage, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE, newMessage, newMessage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER:
+				return basicSetBuffer(null, msgs);
+			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE:
+				return basicSetMessage(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -152,11 +179,9 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER:
-				if (resolve) return getBuffer();
-				return basicGetBuffer();
+				return getBuffer();
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE:
-				if (resolve) return getMessage();
-				return basicGetMessage();
+				return getMessage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

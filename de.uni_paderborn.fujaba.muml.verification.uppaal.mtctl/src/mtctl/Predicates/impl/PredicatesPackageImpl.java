@@ -3,20 +3,35 @@
 package mtctl.Predicates.impl;
 
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
+
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
+
 import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
+
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
+
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
+
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage;
+
 import de.uni_paderborn.fujaba.muml.types.TypesPackage;
+
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
+
 import mtctl.BooleanLogic.BooleanLogicPackage;
+
 import mtctl.BooleanLogic.impl.BooleanLogicPackageImpl;
+
 import mtctl.Comparables.ComparablesPackage;
+
 import mtctl.Comparables.impl.ComparablesPackageImpl;
+
 import mtctl.MtctlPackage;
+
 import mtctl.Predicates.BufferOverflowExpr;
 import mtctl.Predicates.ComparisonExpr;
 import mtctl.Predicates.ComparisonOp;
@@ -31,16 +46,23 @@ import mtctl.Predicates.StateActiveExpr;
 import mtctl.Predicates.StaticPredicateExpr;
 import mtctl.Predicates.SubstateOfExpr;
 import mtctl.Predicates.TransitionFiringExpr;
+
 import mtctl.Quantifiers.QuantifiersPackage;
+
 import mtctl.Quantifiers.impl.QuantifiersPackageImpl;
+
 import mtctl.Sets.SetsPackage;
+
 import mtctl.Sets.impl.SetsPackageImpl;
+
 import mtctl.impl.MtctlPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -540,21 +562,21 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		initEReference(getComparisonExpr_Rhs(), ecorePackage.getEObject(), null, "rhs", null, 0, 1, ComparisonExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageInBufferExprEClass, MessageInBufferExpr.class, "MessageInBufferExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessageInBufferExpr_Buffer(), ecorePackage.getEObject(), null, "buffer", null, 0, 1, MessageInBufferExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageInBufferExpr_Message(), ecorePackage.getEObject(), null, "message", null, 0, 1, MessageInBufferExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageInBufferExpr_Buffer(), ecorePackage.getEObject(), null, "buffer", null, 0, 1, MessageInBufferExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageInBufferExpr_Message(), ecorePackage.getEObject(), null, "message", null, 0, 1, MessageInBufferExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageInTransitExprEClass, MessageInTransitExpr.class, "MessageInTransitExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMessageInTransitExpr_Message(), ecorePackage.getEObject(), null, "message", null, 0, 1, MessageInTransitExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageInTransitExpr_Message(), ecorePackage.getEObject(), null, "message", null, 0, 1, MessageInTransitExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stateActiveExprEClass, StateActiveExpr.class, "StateActiveExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStateActiveExpr_State(), ecorePackage.getEObject(), null, "state", null, 0, 1, StateActiveExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStateActiveExpr_State(), ecorePackage.getEObject(), null, "state", null, 0, 1, StateActiveExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(substateOfExprEClass, SubstateOfExpr.class, "SubstateOfExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSubstateOfExpr_Superstate(), ecorePackage.getEObject(), null, "superstate", null, 0, 1, SubstateOfExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSubstateOfExpr_State(), ecorePackage.getEObject(), null, "state", null, 0, 1, SubstateOfExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubstateOfExpr_Superstate(), ecorePackage.getEObject(), null, "superstate", null, 0, 1, SubstateOfExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubstateOfExpr_State(), ecorePackage.getEObject(), null, "state", null, 0, 1, SubstateOfExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionFiringExprEClass, TransitionFiringExpr.class, "TransitionFiringExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransitionFiringExpr_Transition(), ecorePackage.getEObject(), null, "transition", null, 0, 1, TransitionFiringExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransitionFiringExpr_Transition(), ecorePackage.getEObject(), null, "transition", null, 0, 1, TransitionFiringExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(predicateExprEClass, PredicateExpr.class, "PredicateExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

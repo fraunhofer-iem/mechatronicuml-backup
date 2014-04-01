@@ -16,7 +16,7 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.AbstractMtctlProposalProvider {
 	public static final String[] keywordExclude = new String[] {">","<",">=","<=","==","!=","(",")","A[]","A<>","E<>","E[]", 
 		"timeInterval", "forall", "exists", "stateActive", "substateOf", "messageInTransit", "messageInBuffer", "transitionFiring",
-			"bufferMessageCount" }; // list of keywords to exclude from auto-complete
+			"bufferMessageCount", "sourceState", "targetState" }; // list of keywords to exclude from auto-complete
 	public static final HashSet<String> hashKeywordExclude = new HashSet<String>(Arrays.asList(keywordExclude));
 
 	@Override

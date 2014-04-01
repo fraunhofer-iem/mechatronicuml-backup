@@ -3,6 +3,7 @@
 package mtctl.Comparables.util;
 
 import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
+
 import mtctl.Comparables.*;
 
 import mtctl.Expression;
@@ -87,16 +88,20 @@ public class ComparablesAdapterFactory extends AdapterFactoryImpl {
 				return createMapExprAdapter();
 			}
 			@Override
-			public Adapter casePrimitiveVariableExpr(PrimitiveVariableExpr object) {
-				return createPrimitiveVariableExprAdapter();
+			public Adapter caseMumlElemExpr(MumlElemExpr object) {
+				return createMumlElemExprAdapter();
 			}
 			@Override
-			public Adapter caseStaticMapExpr(StaticMapExpr object) {
-				return createStaticMapExprAdapter();
+			public Adapter caseTransitionMap(TransitionMap object) {
+				return createTransitionMapAdapter();
 			}
 			@Override
-			public Adapter caseDynamicMapExpr(DynamicMapExpr object) {
-				return createDynamicMapExprAdapter();
+			public Adapter caseSourceStateExpr(SourceStateExpr object) {
+				return createSourceStateExprAdapter();
+			}
+			@Override
+			public Adapter caseTargetStateExpr(TargetStateExpr object) {
+				return createTargetStateExprAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -181,44 +186,58 @@ public class ComparablesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mtctl.Comparables.PrimitiveVariableExpr <em>Primitive Variable Expr</em>}'.
+	 * Creates a new adapter for an object of class '{@link mtctl.Comparables.MumlElemExpr <em>Muml Elem Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mtctl.Comparables.PrimitiveVariableExpr
+	 * @see mtctl.Comparables.MumlElemExpr
 	 * @generated
 	 */
-	public Adapter createPrimitiveVariableExprAdapter() {
+	public Adapter createMumlElemExprAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mtctl.Comparables.StaticMapExpr <em>Static Map Expr</em>}'.
+	 * Creates a new adapter for an object of class '{@link mtctl.Comparables.TransitionMap <em>Transition Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mtctl.Comparables.StaticMapExpr
+	 * @see mtctl.Comparables.TransitionMap
 	 * @generated
 	 */
-	public Adapter createStaticMapExprAdapter() {
+	public Adapter createTransitionMapAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mtctl.Comparables.DynamicMapExpr <em>Dynamic Map Expr</em>}'.
+	 * Creates a new adapter for an object of class '{@link mtctl.Comparables.SourceStateExpr <em>Source State Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mtctl.Comparables.DynamicMapExpr
+	 * @see mtctl.Comparables.SourceStateExpr
 	 * @generated
 	 */
-	public Adapter createDynamicMapExprAdapter() {
+	public Adapter createSourceStateExprAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mtctl.Comparables.TargetStateExpr <em>Target State Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mtctl.Comparables.TargetStateExpr
+	 * @generated
+	 */
+	public Adapter createTargetStateExprAdapter() {
 		return null;
 	}
 

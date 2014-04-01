@@ -1254,7 +1254,7 @@ public interface PredicatesPackage extends EPackage {
 	int MESSAGE_IN_BUFFER_EXPR__COMMENT = DYNAMIC_PREDICATE_EXPR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Buffer</b></em>' reference.
+	 * The feature id for the '<em><b>Buffer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1263,7 +1263,7 @@ public interface PredicatesPackage extends EPackage {
 	int MESSAGE_IN_BUFFER_EXPR__BUFFER = DYNAMIC_PREDICATE_EXPR_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Message</b></em>' reference.
+	 * The feature id for the '<em><b>Message</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1498,7 +1498,7 @@ public interface PredicatesPackage extends EPackage {
 	int MESSAGE_IN_TRANSIT_EXPR__COMMENT = DYNAMIC_PREDICATE_EXPR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Message</b></em>' reference.
+	 * The feature id for the '<em><b>Message</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1733,7 +1733,7 @@ public interface PredicatesPackage extends EPackage {
 	int STATE_ACTIVE_EXPR__COMMENT = DYNAMIC_PREDICATE_EXPR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>State</b></em>' reference.
+	 * The feature id for the '<em><b>State</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2194,7 +2194,7 @@ public interface PredicatesPackage extends EPackage {
 	int SUBSTATE_OF_EXPR__COMMENT = STATIC_PREDICATE_EXPR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Superstate</b></em>' reference.
+	 * The feature id for the '<em><b>Superstate</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2203,7 +2203,7 @@ public interface PredicatesPackage extends EPackage {
 	int SUBSTATE_OF_EXPR__SUPERSTATE = STATIC_PREDICATE_EXPR_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>State</b></em>' reference.
+	 * The feature id for the '<em><b>State</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2438,7 +2438,7 @@ public interface PredicatesPackage extends EPackage {
 	int TRANSITION_FIRING_EXPR__COMMENT = DYNAMIC_PREDICATE_EXPR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Transition</b></em>' reference.
+	 * The feature id for the '<em><b>Transition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2720,10 +2720,10 @@ public interface PredicatesPackage extends EPackage {
 	EClass getMessageInBufferExpr();
 
 	/**
-	 * Returns the meta object for the reference '{@link mtctl.Predicates.MessageInBufferExpr#getBuffer <em>Buffer</em>}'.
+	 * Returns the meta object for the containment reference '{@link mtctl.Predicates.MessageInBufferExpr#getBuffer <em>Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Buffer</em>'.
+	 * @return the meta object for the containment reference '<em>Buffer</em>'.
 	 * @see mtctl.Predicates.MessageInBufferExpr#getBuffer()
 	 * @see #getMessageInBufferExpr()
 	 * @generated
@@ -2731,10 +2731,10 @@ public interface PredicatesPackage extends EPackage {
 	EReference getMessageInBufferExpr_Buffer();
 
 	/**
-	 * Returns the meta object for the reference '{@link mtctl.Predicates.MessageInBufferExpr#getMessage <em>Message</em>}'.
+	 * Returns the meta object for the containment reference '{@link mtctl.Predicates.MessageInBufferExpr#getMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Message</em>'.
+	 * @return the meta object for the containment reference '<em>Message</em>'.
 	 * @see mtctl.Predicates.MessageInBufferExpr#getMessage()
 	 * @see #getMessageInBufferExpr()
 	 * @generated
@@ -2752,10 +2752,10 @@ public interface PredicatesPackage extends EPackage {
 	EClass getMessageInTransitExpr();
 
 	/**
-	 * Returns the meta object for the reference '{@link mtctl.Predicates.MessageInTransitExpr#getMessage <em>Message</em>}'.
+	 * Returns the meta object for the containment reference '{@link mtctl.Predicates.MessageInTransitExpr#getMessage <em>Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Message</em>'.
+	 * @return the meta object for the containment reference '<em>Message</em>'.
 	 * @see mtctl.Predicates.MessageInTransitExpr#getMessage()
 	 * @see #getMessageInTransitExpr()
 	 * @generated
@@ -2773,10 +2773,10 @@ public interface PredicatesPackage extends EPackage {
 	EClass getStateActiveExpr();
 
 	/**
-	 * Returns the meta object for the reference '{@link mtctl.Predicates.StateActiveExpr#getState <em>State</em>}'.
+	 * Returns the meta object for the containment reference '{@link mtctl.Predicates.StateActiveExpr#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>State</em>'.
+	 * @return the meta object for the containment reference '<em>State</em>'.
 	 * @see mtctl.Predicates.StateActiveExpr#getState()
 	 * @see #getStateActiveExpr()
 	 * @generated
@@ -2794,10 +2794,10 @@ public interface PredicatesPackage extends EPackage {
 	EClass getSubstateOfExpr();
 
 	/**
-	 * Returns the meta object for the reference '{@link mtctl.Predicates.SubstateOfExpr#getSuperstate <em>Superstate</em>}'.
+	 * Returns the meta object for the containment reference '{@link mtctl.Predicates.SubstateOfExpr#getSuperstate <em>Superstate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Superstate</em>'.
+	 * @return the meta object for the containment reference '<em>Superstate</em>'.
 	 * @see mtctl.Predicates.SubstateOfExpr#getSuperstate()
 	 * @see #getSubstateOfExpr()
 	 * @generated
@@ -2805,10 +2805,10 @@ public interface PredicatesPackage extends EPackage {
 	EReference getSubstateOfExpr_Superstate();
 
 	/**
-	 * Returns the meta object for the reference '{@link mtctl.Predicates.SubstateOfExpr#getState <em>State</em>}'.
+	 * Returns the meta object for the containment reference '{@link mtctl.Predicates.SubstateOfExpr#getState <em>State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>State</em>'.
+	 * @return the meta object for the containment reference '<em>State</em>'.
 	 * @see mtctl.Predicates.SubstateOfExpr#getState()
 	 * @see #getSubstateOfExpr()
 	 * @generated
@@ -2826,10 +2826,10 @@ public interface PredicatesPackage extends EPackage {
 	EClass getTransitionFiringExpr();
 
 	/**
-	 * Returns the meta object for the reference '{@link mtctl.Predicates.TransitionFiringExpr#getTransition <em>Transition</em>}'.
+	 * Returns the meta object for the containment reference '{@link mtctl.Predicates.TransitionFiringExpr#getTransition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Transition</em>'.
+	 * @return the meta object for the containment reference '<em>Transition</em>'.
 	 * @see mtctl.Predicates.TransitionFiringExpr#getTransition()
 	 * @see #getTransitionFiringExpr()
 	 * @generated
@@ -2964,7 +2964,7 @@ public interface PredicatesPackage extends EPackage {
 		EClass MESSAGE_IN_BUFFER_EXPR = eINSTANCE.getMessageInBufferExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>Buffer</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Buffer</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2972,7 +2972,7 @@ public interface PredicatesPackage extends EPackage {
 		EReference MESSAGE_IN_BUFFER_EXPR__BUFFER = eINSTANCE.getMessageInBufferExpr_Buffer();
 
 		/**
-		 * The meta object literal for the '<em><b>Message</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2990,7 +2990,7 @@ public interface PredicatesPackage extends EPackage {
 		EClass MESSAGE_IN_TRANSIT_EXPR = eINSTANCE.getMessageInTransitExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>Message</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3008,7 +3008,7 @@ public interface PredicatesPackage extends EPackage {
 		EClass STATE_ACTIVE_EXPR = eINSTANCE.getStateActiveExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>State</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>State</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3026,7 +3026,7 @@ public interface PredicatesPackage extends EPackage {
 		EClass SUBSTATE_OF_EXPR = eINSTANCE.getSubstateOfExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>Superstate</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Superstate</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3034,7 +3034,7 @@ public interface PredicatesPackage extends EPackage {
 		EReference SUBSTATE_OF_EXPR__SUPERSTATE = eINSTANCE.getSubstateOfExpr_Superstate();
 
 		/**
-		 * The meta object literal for the '<em><b>State</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>State</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3052,7 +3052,7 @@ public interface PredicatesPackage extends EPackage {
 		EClass TRANSITION_FIRING_EXPR = eINSTANCE.getTransitionFiringExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>Transition</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Transition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

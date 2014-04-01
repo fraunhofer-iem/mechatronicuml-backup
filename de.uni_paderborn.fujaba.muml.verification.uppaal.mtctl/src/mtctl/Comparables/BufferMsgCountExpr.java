@@ -24,28 +24,28 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface BufferMsgCountExpr extends DynamicMapExpr {
+public interface BufferMsgCountExpr extends MapExpr {
 	/**
-	 * Returns the value of the '<em><b>Buffer</b></em>' reference.
+	 * Returns the value of the '<em><b>Buffer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Buffer</em>' reference isn't clear,
+	 * If the meaning of the '<em>Buffer</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Buffer</em>' reference.
+	 * @return the value of the '<em>Buffer</em>' containment reference.
 	 * @see #setBuffer(EObject)
 	 * @see mtctl.Comparables.ComparablesPackage#getBufferMsgCountExpr_Buffer()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EObject getBuffer();
 
 	/**
-	 * Sets the value of the '{@link mtctl.Comparables.BufferMsgCountExpr#getBuffer <em>Buffer</em>}' reference.
+	 * Sets the value of the '{@link mtctl.Comparables.BufferMsgCountExpr#getBuffer <em>Buffer</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Buffer</em>' reference.
+	 * @param value the new value of the '<em>Buffer</em>' containment reference.
 	 * @see #getBuffer()
 	 * @generated
 	 */

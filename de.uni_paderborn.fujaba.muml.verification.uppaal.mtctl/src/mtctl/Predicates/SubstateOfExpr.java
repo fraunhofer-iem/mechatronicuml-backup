@@ -27,52 +27,52 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface SubstateOfExpr extends StaticPredicateExpr {
 	/**
-	 * Returns the value of the '<em><b>Superstate</b></em>' reference.
+	 * Returns the value of the '<em><b>Superstate</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Superstate</em>' reference isn't clear,
+	 * If the meaning of the '<em>Superstate</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Superstate</em>' reference.
+	 * @return the value of the '<em>Superstate</em>' containment reference.
 	 * @see #setSuperstate(EObject)
 	 * @see mtctl.Predicates.PredicatesPackage#getSubstateOfExpr_Superstate()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EObject getSuperstate();
 
 	/**
-	 * Sets the value of the '{@link mtctl.Predicates.SubstateOfExpr#getSuperstate <em>Superstate</em>}' reference.
+	 * Sets the value of the '{@link mtctl.Predicates.SubstateOfExpr#getSuperstate <em>Superstate</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Superstate</em>' reference.
+	 * @param value the new value of the '<em>Superstate</em>' containment reference.
 	 * @see #getSuperstate()
 	 * @generated
 	 */
 	void setSuperstate(EObject value);
 
 	/**
-	 * Returns the value of the '<em><b>State</b></em>' reference.
+	 * Returns the value of the '<em><b>State</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>State</em>' reference isn't clear,
+	 * If the meaning of the '<em>State</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>State</em>' reference.
+	 * @return the value of the '<em>State</em>' containment reference.
 	 * @see #setState(EObject)
 	 * @see mtctl.Predicates.PredicatesPackage#getSubstateOfExpr_State()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EObject getState();
 
 	/**
-	 * Sets the value of the '{@link mtctl.Predicates.SubstateOfExpr#getState <em>State</em>}' reference.
+	 * Sets the value of the '{@link mtctl.Predicates.SubstateOfExpr#getState <em>State</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>State</em>' reference.
+	 * @param value the new value of the '<em>State</em>' containment reference.
 	 * @see #getState()
 	 * @generated
 	 */

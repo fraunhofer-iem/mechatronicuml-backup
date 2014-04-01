@@ -6,6 +6,7 @@ import mtctl.Comparables.BufferMsgCountExpr;
 import mtctl.Comparables.ComparablesPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -26,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class BufferMsgCountExprImpl extends DynamicMapExprImpl implements BufferMsgCountExpr {
+public class BufferMsgCountExprImpl extends MapExprImpl implements BufferMsgCountExpr {
 	/**
-	 * The cached value of the '{@link #getBuffer() <em>Buffer</em>}' reference.
+	 * The cached value of the '{@link #getBuffer() <em>Buffer</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBuffer()
@@ -62,14 +63,6 @@ public class BufferMsgCountExprImpl extends DynamicMapExprImpl implements Buffer
 	 * @generated
 	 */
 	public EObject getBuffer() {
-		if (buffer != null && buffer.eIsProxy()) {
-			InternalEObject oldBuffer = (InternalEObject)buffer;
-			buffer = eResolveProxy(oldBuffer);
-			if (buffer != oldBuffer) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER, oldBuffer, buffer));
-			}
-		}
 		return buffer;
 	}
 
@@ -78,8 +71,14 @@ public class BufferMsgCountExprImpl extends DynamicMapExprImpl implements Buffer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetBuffer() {
-		return buffer;
+	public NotificationChain basicSetBuffer(EObject newBuffer, NotificationChain msgs) {
+		EObject oldBuffer = buffer;
+		buffer = newBuffer;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER, oldBuffer, newBuffer);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -88,10 +87,31 @@ public class BufferMsgCountExprImpl extends DynamicMapExprImpl implements Buffer
 	 * @generated
 	 */
 	public void setBuffer(EObject newBuffer) {
-		EObject oldBuffer = buffer;
-		buffer = newBuffer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER, oldBuffer, buffer));
+		if (newBuffer != buffer) {
+			NotificationChain msgs = null;
+			if (buffer != null)
+				msgs = ((InternalEObject)buffer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER, null, msgs);
+			if (newBuffer != null)
+				msgs = ((InternalEObject)newBuffer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER, null, msgs);
+			msgs = basicSetBuffer(newBuffer, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER, newBuffer, newBuffer));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER:
+				return basicSetBuffer(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -103,8 +123,7 @@ public class BufferMsgCountExprImpl extends DynamicMapExprImpl implements Buffer
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER:
-				if (resolve) return getBuffer();
-				return basicGetBuffer();
+				return getBuffer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

@@ -3,6 +3,7 @@
 package mtctl.Comparables.util;
 
 import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
+
 import mtctl.Comparables.*;
 
 import mtctl.Expression;
@@ -76,7 +77,6 @@ public class ComparablesSwitch<T> extends Switch<T> {
 			case ComparablesPackage.BUFFER_MSG_COUNT_EXPR: {
 				BufferMsgCountExpr bufferMsgCountExpr = (BufferMsgCountExpr)theEObject;
 				T result = caseBufferMsgCountExpr(bufferMsgCountExpr);
-				if (result == null) result = caseDynamicMapExpr(bufferMsgCountExpr);
 				if (result == null) result = caseMapExpr(bufferMsgCountExpr);
 				if (result == null) result = caseExpression(bufferMsgCountExpr);
 				if (result == null) result = caseProperty(bufferMsgCountExpr);
@@ -89,7 +89,6 @@ public class ComparablesSwitch<T> extends Switch<T> {
 			case ComparablesPackage.CONST_EXPR: {
 				ConstExpr constExpr = (ConstExpr)theEObject;
 				T result = caseConstExpr(constExpr);
-				if (result == null) result = caseStaticMapExpr(constExpr);
 				if (result == null) result = caseMapExpr(constExpr);
 				if (result == null) result = caseExpression(constExpr);
 				if (result == null) result = caseProperty(constExpr);
@@ -110,40 +109,53 @@ public class ComparablesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComparablesPackage.PRIMITIVE_VARIABLE_EXPR: {
-				PrimitiveVariableExpr primitiveVariableExpr = (PrimitiveVariableExpr)theEObject;
-				T result = casePrimitiveVariableExpr(primitiveVariableExpr);
-				if (result == null) result = caseDynamicMapExpr(primitiveVariableExpr);
-				if (result == null) result = caseMapExpr(primitiveVariableExpr);
-				if (result == null) result = caseExpression(primitiveVariableExpr);
-				if (result == null) result = caseProperty(primitiveVariableExpr);
-				if (result == null) result = caseCommentableElement(primitiveVariableExpr);
-				if (result == null) result = caseTemporalLogicConstraint(primitiveVariableExpr);
-				if (result == null) result = caseExtendableElement(primitiveVariableExpr);
+			case ComparablesPackage.MUML_ELEM_EXPR: {
+				MumlElemExpr mumlElemExpr = (MumlElemExpr)theEObject;
+				T result = caseMumlElemExpr(mumlElemExpr);
+				if (result == null) result = caseMapExpr(mumlElemExpr);
+				if (result == null) result = caseExpression(mumlElemExpr);
+				if (result == null) result = caseProperty(mumlElemExpr);
+				if (result == null) result = caseCommentableElement(mumlElemExpr);
+				if (result == null) result = caseTemporalLogicConstraint(mumlElemExpr);
+				if (result == null) result = caseExtendableElement(mumlElemExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComparablesPackage.STATIC_MAP_EXPR: {
-				StaticMapExpr staticMapExpr = (StaticMapExpr)theEObject;
-				T result = caseStaticMapExpr(staticMapExpr);
-				if (result == null) result = caseMapExpr(staticMapExpr);
-				if (result == null) result = caseExpression(staticMapExpr);
-				if (result == null) result = caseProperty(staticMapExpr);
-				if (result == null) result = caseCommentableElement(staticMapExpr);
-				if (result == null) result = caseTemporalLogicConstraint(staticMapExpr);
-				if (result == null) result = caseExtendableElement(staticMapExpr);
+			case ComparablesPackage.TRANSITION_MAP: {
+				TransitionMap transitionMap = (TransitionMap)theEObject;
+				T result = caseTransitionMap(transitionMap);
+				if (result == null) result = caseMapExpr(transitionMap);
+				if (result == null) result = caseExpression(transitionMap);
+				if (result == null) result = caseProperty(transitionMap);
+				if (result == null) result = caseCommentableElement(transitionMap);
+				if (result == null) result = caseTemporalLogicConstraint(transitionMap);
+				if (result == null) result = caseExtendableElement(transitionMap);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ComparablesPackage.DYNAMIC_MAP_EXPR: {
-				DynamicMapExpr dynamicMapExpr = (DynamicMapExpr)theEObject;
-				T result = caseDynamicMapExpr(dynamicMapExpr);
-				if (result == null) result = caseMapExpr(dynamicMapExpr);
-				if (result == null) result = caseExpression(dynamicMapExpr);
-				if (result == null) result = caseProperty(dynamicMapExpr);
-				if (result == null) result = caseCommentableElement(dynamicMapExpr);
-				if (result == null) result = caseTemporalLogicConstraint(dynamicMapExpr);
-				if (result == null) result = caseExtendableElement(dynamicMapExpr);
+			case ComparablesPackage.SOURCE_STATE_EXPR: {
+				SourceStateExpr sourceStateExpr = (SourceStateExpr)theEObject;
+				T result = caseSourceStateExpr(sourceStateExpr);
+				if (result == null) result = caseTransitionMap(sourceStateExpr);
+				if (result == null) result = caseMapExpr(sourceStateExpr);
+				if (result == null) result = caseExpression(sourceStateExpr);
+				if (result == null) result = caseProperty(sourceStateExpr);
+				if (result == null) result = caseCommentableElement(sourceStateExpr);
+				if (result == null) result = caseTemporalLogicConstraint(sourceStateExpr);
+				if (result == null) result = caseExtendableElement(sourceStateExpr);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ComparablesPackage.TARGET_STATE_EXPR: {
+				TargetStateExpr targetStateExpr = (TargetStateExpr)theEObject;
+				T result = caseTargetStateExpr(targetStateExpr);
+				if (result == null) result = caseTransitionMap(targetStateExpr);
+				if (result == null) result = caseMapExpr(targetStateExpr);
+				if (result == null) result = caseExpression(targetStateExpr);
+				if (result == null) result = caseProperty(targetStateExpr);
+				if (result == null) result = caseCommentableElement(targetStateExpr);
+				if (result == null) result = caseTemporalLogicConstraint(targetStateExpr);
+				if (result == null) result = caseExtendableElement(targetStateExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -197,47 +209,62 @@ public class ComparablesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Primitive Variable Expr</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Muml Elem Expr</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Primitive Variable Expr</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Muml Elem Expr</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePrimitiveVariableExpr(PrimitiveVariableExpr object) {
+	public T caseMumlElemExpr(MumlElemExpr object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Static Map Expr</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Transition Map</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Static Map Expr</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Transition Map</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStaticMapExpr(StaticMapExpr object) {
+	public T caseTransitionMap(TransitionMap object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dynamic Map Expr</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Source State Expr</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dynamic Map Expr</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Source State Expr</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDynamicMapExpr(DynamicMapExpr object) {
+	public T caseSourceStateExpr(SourceStateExpr object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Target State Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Target State Expr</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTargetStateExpr(TargetStateExpr object) {
 		return null;
 	}
 

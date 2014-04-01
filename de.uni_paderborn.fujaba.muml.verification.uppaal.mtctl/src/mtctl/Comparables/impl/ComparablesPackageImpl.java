@@ -30,11 +30,12 @@ import mtctl.Comparables.BufferMsgCountExpr;
 import mtctl.Comparables.ComparablesFactory;
 import mtctl.Comparables.ComparablesPackage;
 import mtctl.Comparables.ConstExpr;
-import mtctl.Comparables.DynamicMapExpr;
 import mtctl.Comparables.MapExpr;
-import mtctl.Comparables.PrimitiveVariableExpr;
+import mtctl.Comparables.MumlElemExpr;
+import mtctl.Comparables.SourceStateExpr;
+import mtctl.Comparables.TargetStateExpr;
+import mtctl.Comparables.TransitionMap;
 
-import mtctl.Comparables.StaticMapExpr;
 import mtctl.MtctlPackage;
 
 import mtctl.Predicates.PredicatesPackage;
@@ -91,21 +92,28 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass primitiveVariableExprEClass = null;
+	private EClass mumlElemExprEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass staticMapExprEClass = null;
+	private EClass transitionMapEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dynamicMapExprEClass = null;
+	private EClass sourceStateExprEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass targetStateExprEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -247,8 +255,8 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPrimitiveVariableExpr() {
-		return primitiveVariableExprEClass;
+	public EClass getMumlElemExpr() {
+		return mumlElemExprEClass;
 	}
 
 	/**
@@ -256,8 +264,8 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPrimitiveVariableExpr_Var() {
-		return (EReference)primitiveVariableExprEClass.getEStructuralFeatures().get(0);
+	public EReference getMumlElemExpr_Elem() {
+		return (EReference)mumlElemExprEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -265,8 +273,8 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStaticMapExpr() {
-		return staticMapExprEClass;
+	public EClass getTransitionMap() {
+		return transitionMapEClass;
 	}
 
 	/**
@@ -274,8 +282,26 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDynamicMapExpr() {
-		return dynamicMapExprEClass;
+	public EReference getTransitionMap_Transition() {
+		return (EReference)transitionMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSourceStateExpr() {
+		return sourceStateExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTargetStateExpr() {
+		return targetStateExprEClass;
 	}
 
 	/**
@@ -314,12 +340,15 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 
 		mapExprEClass = createEClass(MAP_EXPR);
 
-		primitiveVariableExprEClass = createEClass(PRIMITIVE_VARIABLE_EXPR);
-		createEReference(primitiveVariableExprEClass, PRIMITIVE_VARIABLE_EXPR__VAR);
+		mumlElemExprEClass = createEClass(MUML_ELEM_EXPR);
+		createEReference(mumlElemExprEClass, MUML_ELEM_EXPR__ELEM);
 
-		staticMapExprEClass = createEClass(STATIC_MAP_EXPR);
+		transitionMapEClass = createEClass(TRANSITION_MAP);
+		createEReference(transitionMapEClass, TRANSITION_MAP__TRANSITION);
 
-		dynamicMapExprEClass = createEClass(DYNAMIC_MAP_EXPR);
+		sourceStateExprEClass = createEClass(SOURCE_STATE_EXPR);
+
+		targetStateExprEClass = createEClass(TARGET_STATE_EXPR);
 	}
 
 	/**
@@ -353,28 +382,32 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		bufferMsgCountExprEClass.getESuperTypes().add(this.getDynamicMapExpr());
-		constExprEClass.getESuperTypes().add(this.getStaticMapExpr());
+		bufferMsgCountExprEClass.getESuperTypes().add(this.getMapExpr());
+		constExprEClass.getESuperTypes().add(this.getMapExpr());
 		mapExprEClass.getESuperTypes().add(theMtctlPackage.getExpression());
-		primitiveVariableExprEClass.getESuperTypes().add(this.getDynamicMapExpr());
-		staticMapExprEClass.getESuperTypes().add(this.getMapExpr());
-		dynamicMapExprEClass.getESuperTypes().add(this.getMapExpr());
+		mumlElemExprEClass.getESuperTypes().add(this.getMapExpr());
+		transitionMapEClass.getESuperTypes().add(this.getMapExpr());
+		sourceStateExprEClass.getESuperTypes().add(this.getTransitionMap());
+		targetStateExprEClass.getESuperTypes().add(this.getTransitionMap());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(bufferMsgCountExprEClass, BufferMsgCountExpr.class, "BufferMsgCountExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBufferMsgCountExpr_Buffer(), ecorePackage.getEObject(), null, "buffer", null, 0, 1, BufferMsgCountExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBufferMsgCountExpr_Buffer(), ecorePackage.getEObject(), null, "buffer", null, 0, 1, BufferMsgCountExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constExprEClass, ConstExpr.class, "ConstExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConstExpr_Val(), ecorePackage.getEInt(), "val", null, 0, 1, ConstExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mapExprEClass, MapExpr.class, "MapExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(primitiveVariableExprEClass, PrimitiveVariableExpr.class, "PrimitiveVariableExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrimitiveVariableExpr_Var(), ecorePackage.getEObject(), null, "var", null, 0, 1, PrimitiveVariableExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(mumlElemExprEClass, MumlElemExpr.class, "MumlElemExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMumlElemExpr_Elem(), ecorePackage.getEObject(), null, "elem", null, 0, 1, MumlElemExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(staticMapExprEClass, StaticMapExpr.class, "StaticMapExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(transitionMapEClass, TransitionMap.class, "TransitionMap", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTransitionMap_Transition(), ecorePackage.getEObject(), null, "transition", null, 0, 1, TransitionMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(dynamicMapExprEClass, DynamicMapExpr.class, "DynamicMapExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(sourceStateExprEClass, SourceStateExpr.class, "SourceStateExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(targetStateExprEClass, TargetStateExpr.class, "TargetStateExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //ComparablesPackageImpl

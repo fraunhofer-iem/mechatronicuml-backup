@@ -6,6 +6,7 @@ import mtctl.Predicates.PredicatesPackage;
 import mtctl.Predicates.TransitionFiringExpr;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -28,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class TransitionFiringExprImpl extends DynamicPredicateExprImpl implements TransitionFiringExpr {
 	/**
-	 * The cached value of the '{@link #getTransition() <em>Transition</em>}' reference.
+	 * The cached value of the '{@link #getTransition() <em>Transition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTransition()
@@ -62,14 +63,6 @@ public class TransitionFiringExprImpl extends DynamicPredicateExprImpl implement
 	 * @generated
 	 */
 	public EObject getTransition() {
-		if (transition != null && transition.eIsProxy()) {
-			InternalEObject oldTransition = (InternalEObject)transition;
-			transition = eResolveProxy(oldTransition);
-			if (transition != oldTransition) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PredicatesPackage.TRANSITION_FIRING_EXPR__TRANSITION, oldTransition, transition));
-			}
-		}
 		return transition;
 	}
 
@@ -78,8 +71,14 @@ public class TransitionFiringExprImpl extends DynamicPredicateExprImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetTransition() {
-		return transition;
+	public NotificationChain basicSetTransition(EObject newTransition, NotificationChain msgs) {
+		EObject oldTransition = transition;
+		transition = newTransition;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.TRANSITION_FIRING_EXPR__TRANSITION, oldTransition, newTransition);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -88,10 +87,31 @@ public class TransitionFiringExprImpl extends DynamicPredicateExprImpl implement
 	 * @generated
 	 */
 	public void setTransition(EObject newTransition) {
-		EObject oldTransition = transition;
-		transition = newTransition;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.TRANSITION_FIRING_EXPR__TRANSITION, oldTransition, transition));
+		if (newTransition != transition) {
+			NotificationChain msgs = null;
+			if (transition != null)
+				msgs = ((InternalEObject)transition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PredicatesPackage.TRANSITION_FIRING_EXPR__TRANSITION, null, msgs);
+			if (newTransition != null)
+				msgs = ((InternalEObject)newTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PredicatesPackage.TRANSITION_FIRING_EXPR__TRANSITION, null, msgs);
+			msgs = basicSetTransition(newTransition, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.TRANSITION_FIRING_EXPR__TRANSITION, newTransition, newTransition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PredicatesPackage.TRANSITION_FIRING_EXPR__TRANSITION:
+				return basicSetTransition(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -103,8 +123,7 @@ public class TransitionFiringExprImpl extends DynamicPredicateExprImpl implement
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PredicatesPackage.TRANSITION_FIRING_EXPR__TRANSITION:
-				if (resolve) return getTransition();
-				return basicGetTransition();
+				return getTransition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

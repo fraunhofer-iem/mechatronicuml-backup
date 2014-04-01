@@ -288,232 +288,6 @@ public interface ComparablesPackage extends EPackage {
 	int MAP_EXPR_OPERATION_COUNT = MtctlPackage.EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link mtctl.Comparables.impl.DynamicMapExprImpl <em>Dynamic Map Expr</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mtctl.Comparables.impl.DynamicMapExprImpl
-	 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getDynamicMapExpr()
-	 * @generated
-	 */
-	int DYNAMIC_MAP_EXPR = 5;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR__ANNOTATION = MAP_EXPR__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR__EXTENSION = MAP_EXPR__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR__COMMENT = MAP_EXPR__COMMENT;
-
-	/**
-	 * The number of structural features of the '<em>Dynamic Map Expr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR_FEATURE_COUNT = MAP_EXPR_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___ECLASS = MAP_EXPR___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___EIS_PROXY = MAP_EXPR___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___ERESOURCE = MAP_EXPR___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___ECONTAINER = MAP_EXPR___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___ECONTAINING_FEATURE = MAP_EXPR___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___ECONTAINMENT_FEATURE = MAP_EXPR___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___ECONTENTS = MAP_EXPR___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___EALL_CONTENTS = MAP_EXPR___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___ECROSS_REFERENCES = MAP_EXPR___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___EGET__ESTRUCTURALFEATURE = MAP_EXPR___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE = MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___EUNSET__ESTRUCTURALFEATURE = MAP_EXPR___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___EINVOKE__EOPERATION_ELIST = MAP_EXPR___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___GET_EXTENSION__ECLASS = MAP_EXPR___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___PROVIDE_EXTENSION__ECLASS = MAP_EXPR___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___GET_ANNOTATION__STRING = MAP_EXPR___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR___PROVIDE_ANNOTATION__STRING = MAP_EXPR___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Dynamic Map Expr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DYNAMIC_MAP_EXPR_OPERATION_COUNT = MAP_EXPR_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link mtctl.Comparables.impl.BufferMsgCountExprImpl <em>Buffer Msg Count Expr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -530,7 +304,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR__ANNOTATION = DYNAMIC_MAP_EXPR__ANNOTATION;
+	int BUFFER_MSG_COUNT_EXPR__ANNOTATION = MAP_EXPR__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -539,7 +313,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR__EXTENSION = DYNAMIC_MAP_EXPR__EXTENSION;
+	int BUFFER_MSG_COUNT_EXPR__EXTENSION = MAP_EXPR__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -548,16 +322,16 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR__COMMENT = DYNAMIC_MAP_EXPR__COMMENT;
+	int BUFFER_MSG_COUNT_EXPR__COMMENT = MAP_EXPR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Buffer</b></em>' reference.
+	 * The feature id for the '<em><b>Buffer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR__BUFFER = DYNAMIC_MAP_EXPR_FEATURE_COUNT + 0;
+	int BUFFER_MSG_COUNT_EXPR__BUFFER = MAP_EXPR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Buffer Msg Count Expr</em>' class.
@@ -566,7 +340,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR_FEATURE_COUNT = DYNAMIC_MAP_EXPR_FEATURE_COUNT + 1;
+	int BUFFER_MSG_COUNT_EXPR_FEATURE_COUNT = MAP_EXPR_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -575,7 +349,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___ECLASS = DYNAMIC_MAP_EXPR___ECLASS;
+	int BUFFER_MSG_COUNT_EXPR___ECLASS = MAP_EXPR___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -584,7 +358,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___EIS_PROXY = DYNAMIC_MAP_EXPR___EIS_PROXY;
+	int BUFFER_MSG_COUNT_EXPR___EIS_PROXY = MAP_EXPR___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -593,7 +367,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___ERESOURCE = DYNAMIC_MAP_EXPR___ERESOURCE;
+	int BUFFER_MSG_COUNT_EXPR___ERESOURCE = MAP_EXPR___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -602,7 +376,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___ECONTAINER = DYNAMIC_MAP_EXPR___ECONTAINER;
+	int BUFFER_MSG_COUNT_EXPR___ECONTAINER = MAP_EXPR___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -611,7 +385,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___ECONTAINING_FEATURE = DYNAMIC_MAP_EXPR___ECONTAINING_FEATURE;
+	int BUFFER_MSG_COUNT_EXPR___ECONTAINING_FEATURE = MAP_EXPR___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -620,7 +394,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___ECONTAINMENT_FEATURE = DYNAMIC_MAP_EXPR___ECONTAINMENT_FEATURE;
+	int BUFFER_MSG_COUNT_EXPR___ECONTAINMENT_FEATURE = MAP_EXPR___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -629,7 +403,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___ECONTENTS = DYNAMIC_MAP_EXPR___ECONTENTS;
+	int BUFFER_MSG_COUNT_EXPR___ECONTENTS = MAP_EXPR___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -638,7 +412,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___EALL_CONTENTS = DYNAMIC_MAP_EXPR___EALL_CONTENTS;
+	int BUFFER_MSG_COUNT_EXPR___EALL_CONTENTS = MAP_EXPR___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -647,7 +421,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___ECROSS_REFERENCES = DYNAMIC_MAP_EXPR___ECROSS_REFERENCES;
+	int BUFFER_MSG_COUNT_EXPR___ECROSS_REFERENCES = MAP_EXPR___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -656,7 +430,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___EGET__ESTRUCTURALFEATURE = DYNAMIC_MAP_EXPR___EGET__ESTRUCTURALFEATURE;
+	int BUFFER_MSG_COUNT_EXPR___EGET__ESTRUCTURALFEATURE = MAP_EXPR___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -665,7 +439,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = DYNAMIC_MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int BUFFER_MSG_COUNT_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -674,7 +448,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = DYNAMIC_MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int BUFFER_MSG_COUNT_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -683,7 +457,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___EIS_SET__ESTRUCTURALFEATURE = DYNAMIC_MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+	int BUFFER_MSG_COUNT_EXPR___EIS_SET__ESTRUCTURALFEATURE = MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -692,7 +466,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___EUNSET__ESTRUCTURALFEATURE = DYNAMIC_MAP_EXPR___EUNSET__ESTRUCTURALFEATURE;
+	int BUFFER_MSG_COUNT_EXPR___EUNSET__ESTRUCTURALFEATURE = MAP_EXPR___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -701,7 +475,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___EINVOKE__EOPERATION_ELIST = DYNAMIC_MAP_EXPR___EINVOKE__EOPERATION_ELIST;
+	int BUFFER_MSG_COUNT_EXPR___EINVOKE__EOPERATION_ELIST = MAP_EXPR___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -710,7 +484,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___GET_EXTENSION__ECLASS = DYNAMIC_MAP_EXPR___GET_EXTENSION__ECLASS;
+	int BUFFER_MSG_COUNT_EXPR___GET_EXTENSION__ECLASS = MAP_EXPR___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -719,7 +493,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___PROVIDE_EXTENSION__ECLASS = DYNAMIC_MAP_EXPR___PROVIDE_EXTENSION__ECLASS;
+	int BUFFER_MSG_COUNT_EXPR___PROVIDE_EXTENSION__ECLASS = MAP_EXPR___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -728,7 +502,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___GET_ANNOTATION__STRING = DYNAMIC_MAP_EXPR___GET_ANNOTATION__STRING;
+	int BUFFER_MSG_COUNT_EXPR___GET_ANNOTATION__STRING = MAP_EXPR___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -737,7 +511,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR___PROVIDE_ANNOTATION__STRING = DYNAMIC_MAP_EXPR___PROVIDE_ANNOTATION__STRING;
+	int BUFFER_MSG_COUNT_EXPR___PROVIDE_ANNOTATION__STRING = MAP_EXPR___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Buffer Msg Count Expr</em>' class.
@@ -746,233 +520,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUFFER_MSG_COUNT_EXPR_OPERATION_COUNT = DYNAMIC_MAP_EXPR_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link mtctl.Comparables.impl.StaticMapExprImpl <em>Static Map Expr</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mtctl.Comparables.impl.StaticMapExprImpl
-	 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getStaticMapExpr()
-	 * @generated
-	 */
-	int STATIC_MAP_EXPR = 4;
-
-	/**
-	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR__ANNOTATION = MAP_EXPR__ANNOTATION;
-
-	/**
-	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR__EXTENSION = MAP_EXPR__EXTENSION;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR__COMMENT = MAP_EXPR__COMMENT;
-
-	/**
-	 * The number of structural features of the '<em>Static Map Expr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR_FEATURE_COUNT = MAP_EXPR_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>EClass</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___ECLASS = MAP_EXPR___ECLASS;
-
-	/**
-	 * The operation id for the '<em>EIs Proxy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___EIS_PROXY = MAP_EXPR___EIS_PROXY;
-
-	/**
-	 * The operation id for the '<em>EResource</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___ERESOURCE = MAP_EXPR___ERESOURCE;
-
-	/**
-	 * The operation id for the '<em>EContainer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___ECONTAINER = MAP_EXPR___ECONTAINER;
-
-	/**
-	 * The operation id for the '<em>EContaining Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___ECONTAINING_FEATURE = MAP_EXPR___ECONTAINING_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContainment Feature</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___ECONTAINMENT_FEATURE = MAP_EXPR___ECONTAINMENT_FEATURE;
-
-	/**
-	 * The operation id for the '<em>EContents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___ECONTENTS = MAP_EXPR___ECONTENTS;
-
-	/**
-	 * The operation id for the '<em>EAll Contents</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___EALL_CONTENTS = MAP_EXPR___EALL_CONTENTS;
-
-	/**
-	 * The operation id for the '<em>ECross References</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___ECROSS_REFERENCES = MAP_EXPR___ECROSS_REFERENCES;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___EGET__ESTRUCTURALFEATURE = MAP_EXPR___EGET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EGet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>ESet</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
-
-	/**
-	 * The operation id for the '<em>EIs Set</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE = MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EUnset</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___EUNSET__ESTRUCTURALFEATURE = MAP_EXPR___EUNSET__ESTRUCTURALFEATURE;
-
-	/**
-	 * The operation id for the '<em>EInvoke</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___EINVOKE__EOPERATION_ELIST = MAP_EXPR___EINVOKE__EOPERATION_ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___GET_EXTENSION__ECLASS = MAP_EXPR___GET_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Provide Extension</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___PROVIDE_EXTENSION__ECLASS = MAP_EXPR___PROVIDE_EXTENSION__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___GET_ANNOTATION__STRING = MAP_EXPR___GET_ANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Provide Annotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR___PROVIDE_ANNOTATION__STRING = MAP_EXPR___PROVIDE_ANNOTATION__STRING;
-
-	/**
-	 * The number of operations of the '<em>Static Map Expr</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATIC_MAP_EXPR_OPERATION_COUNT = MAP_EXPR_OPERATION_COUNT + 0;
+	int BUFFER_MSG_COUNT_EXPR_OPERATION_COUNT = MAP_EXPR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link mtctl.Comparables.impl.ConstExprImpl <em>Const Expr</em>}' class.
@@ -991,7 +539,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR__ANNOTATION = STATIC_MAP_EXPR__ANNOTATION;
+	int CONST_EXPR__ANNOTATION = MAP_EXPR__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1000,7 +548,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR__EXTENSION = STATIC_MAP_EXPR__EXTENSION;
+	int CONST_EXPR__EXTENSION = MAP_EXPR__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1009,7 +557,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR__COMMENT = STATIC_MAP_EXPR__COMMENT;
+	int CONST_EXPR__COMMENT = MAP_EXPR__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -1018,7 +566,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR__VAL = STATIC_MAP_EXPR_FEATURE_COUNT + 0;
+	int CONST_EXPR__VAL = MAP_EXPR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Const Expr</em>' class.
@@ -1027,7 +575,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR_FEATURE_COUNT = STATIC_MAP_EXPR_FEATURE_COUNT + 1;
+	int CONST_EXPR_FEATURE_COUNT = MAP_EXPR_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1036,7 +584,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___ECLASS = STATIC_MAP_EXPR___ECLASS;
+	int CONST_EXPR___ECLASS = MAP_EXPR___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -1045,7 +593,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___EIS_PROXY = STATIC_MAP_EXPR___EIS_PROXY;
+	int CONST_EXPR___EIS_PROXY = MAP_EXPR___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -1054,7 +602,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___ERESOURCE = STATIC_MAP_EXPR___ERESOURCE;
+	int CONST_EXPR___ERESOURCE = MAP_EXPR___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -1063,7 +611,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___ECONTAINER = STATIC_MAP_EXPR___ECONTAINER;
+	int CONST_EXPR___ECONTAINER = MAP_EXPR___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -1072,7 +620,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___ECONTAINING_FEATURE = STATIC_MAP_EXPR___ECONTAINING_FEATURE;
+	int CONST_EXPR___ECONTAINING_FEATURE = MAP_EXPR___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -1081,7 +629,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___ECONTAINMENT_FEATURE = STATIC_MAP_EXPR___ECONTAINMENT_FEATURE;
+	int CONST_EXPR___ECONTAINMENT_FEATURE = MAP_EXPR___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -1090,7 +638,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___ECONTENTS = STATIC_MAP_EXPR___ECONTENTS;
+	int CONST_EXPR___ECONTENTS = MAP_EXPR___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -1099,7 +647,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___EALL_CONTENTS = STATIC_MAP_EXPR___EALL_CONTENTS;
+	int CONST_EXPR___EALL_CONTENTS = MAP_EXPR___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -1108,7 +656,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___ECROSS_REFERENCES = STATIC_MAP_EXPR___ECROSS_REFERENCES;
+	int CONST_EXPR___ECROSS_REFERENCES = MAP_EXPR___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1117,7 +665,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___EGET__ESTRUCTURALFEATURE = STATIC_MAP_EXPR___EGET__ESTRUCTURALFEATURE;
+	int CONST_EXPR___EGET__ESTRUCTURALFEATURE = MAP_EXPR___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1126,7 +674,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = STATIC_MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int CONST_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1135,7 +683,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = STATIC_MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int CONST_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1144,7 +692,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___EIS_SET__ESTRUCTURALFEATURE = STATIC_MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+	int CONST_EXPR___EIS_SET__ESTRUCTURALFEATURE = MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1153,7 +701,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___EUNSET__ESTRUCTURALFEATURE = STATIC_MAP_EXPR___EUNSET__ESTRUCTURALFEATURE;
+	int CONST_EXPR___EUNSET__ESTRUCTURALFEATURE = MAP_EXPR___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1162,7 +710,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___EINVOKE__EOPERATION_ELIST = STATIC_MAP_EXPR___EINVOKE__EOPERATION_ELIST;
+	int CONST_EXPR___EINVOKE__EOPERATION_ELIST = MAP_EXPR___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1171,7 +719,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___GET_EXTENSION__ECLASS = STATIC_MAP_EXPR___GET_EXTENSION__ECLASS;
+	int CONST_EXPR___GET_EXTENSION__ECLASS = MAP_EXPR___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1180,7 +728,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___PROVIDE_EXTENSION__ECLASS = STATIC_MAP_EXPR___PROVIDE_EXTENSION__ECLASS;
+	int CONST_EXPR___PROVIDE_EXTENSION__ECLASS = MAP_EXPR___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1189,7 +737,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___GET_ANNOTATION__STRING = STATIC_MAP_EXPR___GET_ANNOTATION__STRING;
+	int CONST_EXPR___GET_ANNOTATION__STRING = MAP_EXPR___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1198,7 +746,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR___PROVIDE_ANNOTATION__STRING = STATIC_MAP_EXPR___PROVIDE_ANNOTATION__STRING;
+	int CONST_EXPR___PROVIDE_ANNOTATION__STRING = MAP_EXPR___PROVIDE_ANNOTATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Const Expr</em>' class.
@@ -1207,17 +755,17 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR_OPERATION_COUNT = STATIC_MAP_EXPR_OPERATION_COUNT + 0;
+	int CONST_EXPR_OPERATION_COUNT = MAP_EXPR_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link mtctl.Comparables.impl.PrimitiveVariableExprImpl <em>Primitive Variable Expr</em>}' class.
+	 * The meta object id for the '{@link mtctl.Comparables.impl.MumlElemExprImpl <em>Muml Elem Expr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see mtctl.Comparables.impl.PrimitiveVariableExprImpl
-	 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getPrimitiveVariableExpr()
+	 * @see mtctl.Comparables.impl.MumlElemExprImpl
+	 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getMumlElemExpr()
 	 * @generated
 	 */
-	int PRIMITIVE_VARIABLE_EXPR = 3;
+	int MUML_ELEM_EXPR = 3;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -1226,7 +774,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR__ANNOTATION = DYNAMIC_MAP_EXPR__ANNOTATION;
+	int MUML_ELEM_EXPR__ANNOTATION = MAP_EXPR__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -1235,7 +783,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR__EXTENSION = DYNAMIC_MAP_EXPR__EXTENSION;
+	int MUML_ELEM_EXPR__EXTENSION = MAP_EXPR__EXTENSION;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' attribute.
@@ -1244,25 +792,25 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR__COMMENT = DYNAMIC_MAP_EXPR__COMMENT;
+	int MUML_ELEM_EXPR__COMMENT = MAP_EXPR__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Var</b></em>' reference.
+	 * The feature id for the '<em><b>Elem</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR__VAR = DYNAMIC_MAP_EXPR_FEATURE_COUNT + 0;
+	int MUML_ELEM_EXPR__ELEM = MAP_EXPR_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Primitive Variable Expr</em>' class.
+	 * The number of structural features of the '<em>Muml Elem Expr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR_FEATURE_COUNT = DYNAMIC_MAP_EXPR_FEATURE_COUNT + 1;
+	int MUML_ELEM_EXPR_FEATURE_COUNT = MAP_EXPR_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1271,7 +819,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___ECLASS = DYNAMIC_MAP_EXPR___ECLASS;
+	int MUML_ELEM_EXPR___ECLASS = MAP_EXPR___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -1280,7 +828,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___EIS_PROXY = DYNAMIC_MAP_EXPR___EIS_PROXY;
+	int MUML_ELEM_EXPR___EIS_PROXY = MAP_EXPR___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -1289,7 +837,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___ERESOURCE = DYNAMIC_MAP_EXPR___ERESOURCE;
+	int MUML_ELEM_EXPR___ERESOURCE = MAP_EXPR___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -1298,7 +846,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___ECONTAINER = DYNAMIC_MAP_EXPR___ECONTAINER;
+	int MUML_ELEM_EXPR___ECONTAINER = MAP_EXPR___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -1307,7 +855,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___ECONTAINING_FEATURE = DYNAMIC_MAP_EXPR___ECONTAINING_FEATURE;
+	int MUML_ELEM_EXPR___ECONTAINING_FEATURE = MAP_EXPR___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -1316,7 +864,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___ECONTAINMENT_FEATURE = DYNAMIC_MAP_EXPR___ECONTAINMENT_FEATURE;
+	int MUML_ELEM_EXPR___ECONTAINMENT_FEATURE = MAP_EXPR___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -1325,7 +873,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___ECONTENTS = DYNAMIC_MAP_EXPR___ECONTENTS;
+	int MUML_ELEM_EXPR___ECONTENTS = MAP_EXPR___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -1334,7 +882,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___EALL_CONTENTS = DYNAMIC_MAP_EXPR___EALL_CONTENTS;
+	int MUML_ELEM_EXPR___EALL_CONTENTS = MAP_EXPR___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -1343,7 +891,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___ECROSS_REFERENCES = DYNAMIC_MAP_EXPR___ECROSS_REFERENCES;
+	int MUML_ELEM_EXPR___ECROSS_REFERENCES = MAP_EXPR___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1352,7 +900,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___EGET__ESTRUCTURALFEATURE = DYNAMIC_MAP_EXPR___EGET__ESTRUCTURALFEATURE;
+	int MUML_ELEM_EXPR___EGET__ESTRUCTURALFEATURE = MAP_EXPR___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -1361,7 +909,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = DYNAMIC_MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int MUML_ELEM_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -1370,7 +918,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = DYNAMIC_MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int MUML_ELEM_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -1379,7 +927,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___EIS_SET__ESTRUCTURALFEATURE = DYNAMIC_MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+	int MUML_ELEM_EXPR___EIS_SET__ESTRUCTURALFEATURE = MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -1388,7 +936,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___EUNSET__ESTRUCTURALFEATURE = DYNAMIC_MAP_EXPR___EUNSET__ESTRUCTURALFEATURE;
+	int MUML_ELEM_EXPR___EUNSET__ESTRUCTURALFEATURE = MAP_EXPR___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -1397,7 +945,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___EINVOKE__EOPERATION_ELIST = DYNAMIC_MAP_EXPR___EINVOKE__EOPERATION_ELIST;
+	int MUML_ELEM_EXPR___EINVOKE__EOPERATION_ELIST = MAP_EXPR___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -1406,7 +954,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___GET_EXTENSION__ECLASS = DYNAMIC_MAP_EXPR___GET_EXTENSION__ECLASS;
+	int MUML_ELEM_EXPR___GET_EXTENSION__ECLASS = MAP_EXPR___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -1415,7 +963,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___PROVIDE_EXTENSION__ECLASS = DYNAMIC_MAP_EXPR___PROVIDE_EXTENSION__ECLASS;
+	int MUML_ELEM_EXPR___PROVIDE_EXTENSION__ECLASS = MAP_EXPR___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -1424,7 +972,7 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___GET_ANNOTATION__STRING = DYNAMIC_MAP_EXPR___GET_ANNOTATION__STRING;
+	int MUML_ELEM_EXPR___GET_ANNOTATION__STRING = MAP_EXPR___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -1433,16 +981,721 @@ public interface ComparablesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR___PROVIDE_ANNOTATION__STRING = DYNAMIC_MAP_EXPR___PROVIDE_ANNOTATION__STRING;
+	int MUML_ELEM_EXPR___PROVIDE_ANNOTATION__STRING = MAP_EXPR___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The number of operations of the '<em>Primitive Variable Expr</em>' class.
+	 * The number of operations of the '<em>Muml Elem Expr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_VARIABLE_EXPR_OPERATION_COUNT = DYNAMIC_MAP_EXPR_OPERATION_COUNT + 0;
+	int MUML_ELEM_EXPR_OPERATION_COUNT = MAP_EXPR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link mtctl.Comparables.impl.TransitionMapImpl <em>Transition Map</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mtctl.Comparables.impl.TransitionMapImpl
+	 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getTransitionMap()
+	 * @generated
+	 */
+	int TRANSITION_MAP = 4;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP__ANNOTATION = MAP_EXPR__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP__EXTENSION = MAP_EXPR__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP__COMMENT = MAP_EXPR__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Transition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP__TRANSITION = MAP_EXPR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Transition Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP_FEATURE_COUNT = MAP_EXPR_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___ECLASS = MAP_EXPR___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___EIS_PROXY = MAP_EXPR___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___ERESOURCE = MAP_EXPR___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___ECONTAINER = MAP_EXPR___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___ECONTAINING_FEATURE = MAP_EXPR___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___ECONTAINMENT_FEATURE = MAP_EXPR___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___ECONTENTS = MAP_EXPR___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___EALL_CONTENTS = MAP_EXPR___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___ECROSS_REFERENCES = MAP_EXPR___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___EGET__ESTRUCTURALFEATURE = MAP_EXPR___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___EGET__ESTRUCTURALFEATURE_BOOLEAN = MAP_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___ESET__ESTRUCTURALFEATURE_OBJECT = MAP_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___EIS_SET__ESTRUCTURALFEATURE = MAP_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___EUNSET__ESTRUCTURALFEATURE = MAP_EXPR___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___EINVOKE__EOPERATION_ELIST = MAP_EXPR___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___GET_EXTENSION__ECLASS = MAP_EXPR___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___PROVIDE_EXTENSION__ECLASS = MAP_EXPR___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___GET_ANNOTATION__STRING = MAP_EXPR___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP___PROVIDE_ANNOTATION__STRING = MAP_EXPR___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Transition Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION_MAP_OPERATION_COUNT = MAP_EXPR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link mtctl.Comparables.impl.SourceStateExprImpl <em>Source State Expr</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mtctl.Comparables.impl.SourceStateExprImpl
+	 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getSourceStateExpr()
+	 * @generated
+	 */
+	int SOURCE_STATE_EXPR = 5;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR__ANNOTATION = TRANSITION_MAP__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR__EXTENSION = TRANSITION_MAP__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR__COMMENT = TRANSITION_MAP__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Transition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR__TRANSITION = TRANSITION_MAP__TRANSITION;
+
+	/**
+	 * The number of structural features of the '<em>Source State Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR_FEATURE_COUNT = TRANSITION_MAP_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___ECLASS = TRANSITION_MAP___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___EIS_PROXY = TRANSITION_MAP___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___ERESOURCE = TRANSITION_MAP___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___ECONTAINER = TRANSITION_MAP___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___ECONTAINING_FEATURE = TRANSITION_MAP___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___ECONTAINMENT_FEATURE = TRANSITION_MAP___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___ECONTENTS = TRANSITION_MAP___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___EALL_CONTENTS = TRANSITION_MAP___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___ECROSS_REFERENCES = TRANSITION_MAP___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___EGET__ESTRUCTURALFEATURE = TRANSITION_MAP___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = TRANSITION_MAP___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = TRANSITION_MAP___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___EIS_SET__ESTRUCTURALFEATURE = TRANSITION_MAP___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___EUNSET__ESTRUCTURALFEATURE = TRANSITION_MAP___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___EINVOKE__EOPERATION_ELIST = TRANSITION_MAP___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___GET_EXTENSION__ECLASS = TRANSITION_MAP___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___PROVIDE_EXTENSION__ECLASS = TRANSITION_MAP___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___GET_ANNOTATION__STRING = TRANSITION_MAP___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR___PROVIDE_ANNOTATION__STRING = TRANSITION_MAP___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Source State Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE_STATE_EXPR_OPERATION_COUNT = TRANSITION_MAP_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link mtctl.Comparables.impl.TargetStateExprImpl <em>Target State Expr</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mtctl.Comparables.impl.TargetStateExprImpl
+	 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getTargetStateExpr()
+	 * @generated
+	 */
+	int TARGET_STATE_EXPR = 6;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR__ANNOTATION = TRANSITION_MAP__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR__EXTENSION = TRANSITION_MAP__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR__COMMENT = TRANSITION_MAP__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Transition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR__TRANSITION = TRANSITION_MAP__TRANSITION;
+
+	/**
+	 * The number of structural features of the '<em>Target State Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR_FEATURE_COUNT = TRANSITION_MAP_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___ECLASS = TRANSITION_MAP___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___EIS_PROXY = TRANSITION_MAP___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___ERESOURCE = TRANSITION_MAP___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___ECONTAINER = TRANSITION_MAP___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___ECONTAINING_FEATURE = TRANSITION_MAP___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___ECONTAINMENT_FEATURE = TRANSITION_MAP___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___ECONTENTS = TRANSITION_MAP___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___EALL_CONTENTS = TRANSITION_MAP___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___ECROSS_REFERENCES = TRANSITION_MAP___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___EGET__ESTRUCTURALFEATURE = TRANSITION_MAP___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = TRANSITION_MAP___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = TRANSITION_MAP___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___EIS_SET__ESTRUCTURALFEATURE = TRANSITION_MAP___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___EUNSET__ESTRUCTURALFEATURE = TRANSITION_MAP___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___EINVOKE__EOPERATION_ELIST = TRANSITION_MAP___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___GET_EXTENSION__ECLASS = TRANSITION_MAP___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___PROVIDE_EXTENSION__ECLASS = TRANSITION_MAP___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___GET_ANNOTATION__STRING = TRANSITION_MAP___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR___PROVIDE_ANNOTATION__STRING = TRANSITION_MAP___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>Target State Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET_STATE_EXPR_OPERATION_COUNT = TRANSITION_MAP_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1456,10 +1709,10 @@ public interface ComparablesPackage extends EPackage {
 	EClass getBufferMsgCountExpr();
 
 	/**
-	 * Returns the meta object for the reference '{@link mtctl.Comparables.BufferMsgCountExpr#getBuffer <em>Buffer</em>}'.
+	 * Returns the meta object for the containment reference '{@link mtctl.Comparables.BufferMsgCountExpr#getBuffer <em>Buffer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Buffer</em>'.
+	 * @return the meta object for the containment reference '<em>Buffer</em>'.
 	 * @see mtctl.Comparables.BufferMsgCountExpr#getBuffer()
 	 * @see #getBufferMsgCountExpr()
 	 * @generated
@@ -1498,45 +1751,66 @@ public interface ComparablesPackage extends EPackage {
 	EClass getMapExpr();
 
 	/**
-	 * Returns the meta object for class '{@link mtctl.Comparables.PrimitiveVariableExpr <em>Primitive Variable Expr</em>}'.
+	 * Returns the meta object for class '{@link mtctl.Comparables.MumlElemExpr <em>Muml Elem Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Primitive Variable Expr</em>'.
-	 * @see mtctl.Comparables.PrimitiveVariableExpr
+	 * @return the meta object for class '<em>Muml Elem Expr</em>'.
+	 * @see mtctl.Comparables.MumlElemExpr
 	 * @generated
 	 */
-	EClass getPrimitiveVariableExpr();
+	EClass getMumlElemExpr();
 
 	/**
-	 * Returns the meta object for the reference '{@link mtctl.Comparables.PrimitiveVariableExpr#getVar <em>Var</em>}'.
+	 * Returns the meta object for the reference '{@link mtctl.Comparables.MumlElemExpr#getElem <em>Elem</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Var</em>'.
-	 * @see mtctl.Comparables.PrimitiveVariableExpr#getVar()
-	 * @see #getPrimitiveVariableExpr()
+	 * @return the meta object for the reference '<em>Elem</em>'.
+	 * @see mtctl.Comparables.MumlElemExpr#getElem()
+	 * @see #getMumlElemExpr()
 	 * @generated
 	 */
-	EReference getPrimitiveVariableExpr_Var();
+	EReference getMumlElemExpr_Elem();
 
 	/**
-	 * Returns the meta object for class '{@link mtctl.Comparables.StaticMapExpr <em>Static Map Expr</em>}'.
+	 * Returns the meta object for class '{@link mtctl.Comparables.TransitionMap <em>Transition Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Static Map Expr</em>'.
-	 * @see mtctl.Comparables.StaticMapExpr
+	 * @return the meta object for class '<em>Transition Map</em>'.
+	 * @see mtctl.Comparables.TransitionMap
 	 * @generated
 	 */
-	EClass getStaticMapExpr();
+	EClass getTransitionMap();
 
 	/**
-	 * Returns the meta object for class '{@link mtctl.Comparables.DynamicMapExpr <em>Dynamic Map Expr</em>}'.
+	 * Returns the meta object for the containment reference '{@link mtctl.Comparables.TransitionMap#getTransition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Dynamic Map Expr</em>'.
-	 * @see mtctl.Comparables.DynamicMapExpr
+	 * @return the meta object for the containment reference '<em>Transition</em>'.
+	 * @see mtctl.Comparables.TransitionMap#getTransition()
+	 * @see #getTransitionMap()
 	 * @generated
 	 */
-	EClass getDynamicMapExpr();
+	EReference getTransitionMap_Transition();
+
+	/**
+	 * Returns the meta object for class '{@link mtctl.Comparables.SourceStateExpr <em>Source State Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Source State Expr</em>'.
+	 * @see mtctl.Comparables.SourceStateExpr
+	 * @generated
+	 */
+	EClass getSourceStateExpr();
+
+	/**
+	 * Returns the meta object for class '{@link mtctl.Comparables.TargetStateExpr <em>Target State Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Target State Expr</em>'.
+	 * @see mtctl.Comparables.TargetStateExpr
+	 * @generated
+	 */
+	EClass getTargetStateExpr();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1572,7 +1846,7 @@ public interface ComparablesPackage extends EPackage {
 		EClass BUFFER_MSG_COUNT_EXPR = eINSTANCE.getBufferMsgCountExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>Buffer</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Buffer</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1608,42 +1882,60 @@ public interface ComparablesPackage extends EPackage {
 		EClass MAP_EXPR = eINSTANCE.getMapExpr();
 
 		/**
-		 * The meta object literal for the '{@link mtctl.Comparables.impl.PrimitiveVariableExprImpl <em>Primitive Variable Expr</em>}' class.
+		 * The meta object literal for the '{@link mtctl.Comparables.impl.MumlElemExprImpl <em>Muml Elem Expr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see mtctl.Comparables.impl.PrimitiveVariableExprImpl
-		 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getPrimitiveVariableExpr()
+		 * @see mtctl.Comparables.impl.MumlElemExprImpl
+		 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getMumlElemExpr()
 		 * @generated
 		 */
-		EClass PRIMITIVE_VARIABLE_EXPR = eINSTANCE.getPrimitiveVariableExpr();
+		EClass MUML_ELEM_EXPR = eINSTANCE.getMumlElemExpr();
 
 		/**
-		 * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Elem</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PRIMITIVE_VARIABLE_EXPR__VAR = eINSTANCE.getPrimitiveVariableExpr_Var();
+		EReference MUML_ELEM_EXPR__ELEM = eINSTANCE.getMumlElemExpr_Elem();
 
 		/**
-		 * The meta object literal for the '{@link mtctl.Comparables.impl.StaticMapExprImpl <em>Static Map Expr</em>}' class.
+		 * The meta object literal for the '{@link mtctl.Comparables.impl.TransitionMapImpl <em>Transition Map</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see mtctl.Comparables.impl.StaticMapExprImpl
-		 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getStaticMapExpr()
+		 * @see mtctl.Comparables.impl.TransitionMapImpl
+		 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getTransitionMap()
 		 * @generated
 		 */
-		EClass STATIC_MAP_EXPR = eINSTANCE.getStaticMapExpr();
+		EClass TRANSITION_MAP = eINSTANCE.getTransitionMap();
 
 		/**
-		 * The meta object literal for the '{@link mtctl.Comparables.impl.DynamicMapExprImpl <em>Dynamic Map Expr</em>}' class.
+		 * The meta object literal for the '<em><b>Transition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see mtctl.Comparables.impl.DynamicMapExprImpl
-		 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getDynamicMapExpr()
 		 * @generated
 		 */
-		EClass DYNAMIC_MAP_EXPR = eINSTANCE.getDynamicMapExpr();
+		EReference TRANSITION_MAP__TRANSITION = eINSTANCE.getTransitionMap_Transition();
+
+		/**
+		 * The meta object literal for the '{@link mtctl.Comparables.impl.SourceStateExprImpl <em>Source State Expr</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mtctl.Comparables.impl.SourceStateExprImpl
+		 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getSourceStateExpr()
+		 * @generated
+		 */
+		EClass SOURCE_STATE_EXPR = eINSTANCE.getSourceStateExpr();
+
+		/**
+		 * The meta object literal for the '{@link mtctl.Comparables.impl.TargetStateExprImpl <em>Target State Expr</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mtctl.Comparables.impl.TargetStateExprImpl
+		 * @see mtctl.Comparables.impl.ComparablesPackageImpl#getTargetStateExpr()
+		 * @generated
+		 */
+		EClass TARGET_STATE_EXPR = eINSTANCE.getTargetStateExpr();
 
 	}
 

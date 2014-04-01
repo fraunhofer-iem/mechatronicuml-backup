@@ -82,4 +82,20 @@ id="bufferMessageCount"
 enabled="true" 
 name="bufferMessageCount">bufferMessageCount(${buffer})</template>
 
+<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_sourceState"
+deleted="false" 
+description="returns the source state of the transition" 
+id="sourceState"
+enabled="true" 
+name="sourceState">sourceState(${transition})</template>
+
+<template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_targetState"
+deleted="false" 
+description="returns the target state of the transition" 
+id="targetState"
+enabled="true" 
+name="targetState">targetState(${transition})</template>
+
 </templates>

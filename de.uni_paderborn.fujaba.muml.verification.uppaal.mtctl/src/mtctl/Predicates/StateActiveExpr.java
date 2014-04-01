@@ -26,26 +26,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface StateActiveExpr extends DynamicPredicateExpr {
 	/**
-	 * Returns the value of the '<em><b>State</b></em>' reference.
+	 * Returns the value of the '<em><b>State</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>State</em>' reference isn't clear,
+	 * If the meaning of the '<em>State</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>State</em>' reference.
+	 * @return the value of the '<em>State</em>' containment reference.
 	 * @see #setState(EObject)
 	 * @see mtctl.Predicates.PredicatesPackage#getStateActiveExpr_State()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EObject getState();
 
 	/**
-	 * Sets the value of the '{@link mtctl.Predicates.StateActiveExpr#getState <em>State</em>}' reference.
+	 * Sets the value of the '{@link mtctl.Predicates.StateActiveExpr#getState <em>State</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>State</em>' reference.
+	 * @param value the new value of the '<em>State</em>' containment reference.
 	 * @see #getState()
 	 * @generated
 	 */

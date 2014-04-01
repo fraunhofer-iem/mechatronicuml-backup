@@ -4,6 +4,7 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.validation;
 
 import mtctl.Predicates.DynamicPredicateExpr;
+import mtctl.Quantifiers.QuantifierExpr;
 import mtctl.Quantifiers.TemporalQuantifierExpr;
 
 import org.eclipse.emf.ecore.EObject;
@@ -30,13 +31,25 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 	
 	@Check 
 	public void checkTemporallyQuantified(final TemporalQuantifierExpr expr) { //Disallow using nested TemporalQuantifiers
-		EObject parent = expr;
+		EObject parent = expr.eContainer();
 		while (parent != null) {
-			parent = parent.eContainer();
 			if (parent instanceof TemporalQuantifierExpr) {
 				error("TemporalQuantifiers must not be nested", null);
 				return;
 			}
+			parent = parent.eContainer();
 		}
 	}
+	
+	@Check
+	public void checkHiddenBoundVariable(final QuantifierExpr expr) { //give a warning when quantifier variables are shadowing one another
+		EObject parent = expr.eContainer();
+		while (parent != null) {
+			if (parent instanceof QuantifierExpr && expr.getVar().getName().equals(((QuantifierExpr) parent).getVar().getName()))
+				warning("The variable "+expr.getVar().getName()+" is shadowed", null);
+			parent = parent.eContainer();
+		}
+	}
+	
+	//TODO check types in comparisons
 }

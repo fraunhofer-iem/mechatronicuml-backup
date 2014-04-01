@@ -58,7 +58,9 @@ public class ComparablesFactoryImpl extends EFactoryImpl implements ComparablesF
 		switch (eClass.getClassifierID()) {
 			case ComparablesPackage.BUFFER_MSG_COUNT_EXPR: return createBufferMsgCountExpr();
 			case ComparablesPackage.CONST_EXPR: return createConstExpr();
-			case ComparablesPackage.PRIMITIVE_VARIABLE_EXPR: return createPrimitiveVariableExpr();
+			case ComparablesPackage.MUML_ELEM_EXPR: return createMumlElemExpr();
+			case ComparablesPackage.SOURCE_STATE_EXPR: return createSourceStateExpr();
+			case ComparablesPackage.TARGET_STATE_EXPR: return createTargetStateExpr();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -89,9 +91,29 @@ public class ComparablesFactoryImpl extends EFactoryImpl implements ComparablesF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PrimitiveVariableExpr createPrimitiveVariableExpr() {
-		PrimitiveVariableExprImpl primitiveVariableExpr = new PrimitiveVariableExprImpl();
-		return primitiveVariableExpr;
+	public MumlElemExpr createMumlElemExpr() {
+		MumlElemExprImpl mumlElemExpr = new MumlElemExprImpl();
+		return mumlElemExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SourceStateExpr createSourceStateExpr() {
+		SourceStateExprImpl sourceStateExpr = new SourceStateExprImpl();
+		return sourceStateExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TargetStateExpr createTargetStateExpr() {
+		TargetStateExprImpl targetStateExpr = new TargetStateExprImpl();
+		return targetStateExpr;
 	}
 
 	/**

@@ -3,26 +3,26 @@
 package mtctl.Comparables.impl;
 
 import mtctl.Comparables.ComparablesPackage;
-import mtctl.Comparables.StaticMapExpr;
+import mtctl.Comparables.SourceStateExpr;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Static Map Expr</b></em>'.
+ * An implementation of the model object '<em><b>Source State Expr</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class StaticMapExprImpl extends MapExprImpl implements StaticMapExpr {
+public class SourceStateExprImpl extends TransitionMapImpl implements SourceStateExpr {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StaticMapExprImpl() {
+	protected SourceStateExprImpl() {
 		super();
 	}
 
@@ -33,7 +33,7 @@ public abstract class StaticMapExprImpl extends MapExprImpl implements StaticMap
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComparablesPackage.Literals.STATIC_MAP_EXPR;
+		return ComparablesPackage.Literals.SOURCE_STATE_EXPR;
 	}
 
-} //StaticMapExprImpl
+} //SourceStateExprImpl

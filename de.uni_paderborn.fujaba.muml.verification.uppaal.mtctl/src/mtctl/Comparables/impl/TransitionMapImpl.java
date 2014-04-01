@@ -1,9 +1,9 @@
 /**
  */
-package mtctl.Predicates.impl;
+package mtctl.Comparables.impl;
 
-import mtctl.Predicates.PredicatesPackage;
-import mtctl.Predicates.StateActiveExpr;
+import mtctl.Comparables.ComparablesPackage;
+import mtctl.Comparables.TransitionMap;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,34 +16,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>State Active Expr</b></em>'.
+ * An implementation of the model object '<em><b>Transition Map</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link mtctl.Predicates.impl.StateActiveExprImpl#getState <em>State</em>}</li>
+ *   <li>{@link mtctl.Comparables.impl.TransitionMapImpl#getTransition <em>Transition</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StateActiveExprImpl extends DynamicPredicateExprImpl implements StateActiveExpr {
+public abstract class TransitionMapImpl extends MapExprImpl implements TransitionMap {
 	/**
-	 * The cached value of the '{@link #getState() <em>State</em>}' containment reference.
+	 * The cached value of the '{@link #getTransition() <em>Transition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getState()
+	 * @see #getTransition()
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject state;
+	protected EObject transition;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StateActiveExprImpl() {
+	protected TransitionMapImpl() {
 		super();
 	}
 
@@ -54,7 +54,7 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PredicatesPackage.Literals.STATE_ACTIVE_EXPR;
+		return ComparablesPackage.Literals.TRANSITION_MAP;
 	}
 
 	/**
@@ -62,8 +62,8 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getState() {
-		return state;
+	public EObject getTransition() {
+		return transition;
 	}
 
 	/**
@@ -71,11 +71,11 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetState(EObject newState, NotificationChain msgs) {
-		EObject oldState = state;
-		state = newState;
+	public NotificationChain basicSetTransition(EObject newTransition, NotificationChain msgs) {
+		EObject oldTransition = transition;
+		transition = newTransition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.STATE_ACTIVE_EXPR__STATE, oldState, newState);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComparablesPackage.TRANSITION_MAP__TRANSITION, oldTransition, newTransition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -86,18 +86,18 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setState(EObject newState) {
-		if (newState != state) {
+	public void setTransition(EObject newTransition) {
+		if (newTransition != transition) {
 			NotificationChain msgs = null;
-			if (state != null)
-				msgs = ((InternalEObject)state).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PredicatesPackage.STATE_ACTIVE_EXPR__STATE, null, msgs);
-			if (newState != null)
-				msgs = ((InternalEObject)newState).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PredicatesPackage.STATE_ACTIVE_EXPR__STATE, null, msgs);
-			msgs = basicSetState(newState, msgs);
+			if (transition != null)
+				msgs = ((InternalEObject)transition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComparablesPackage.TRANSITION_MAP__TRANSITION, null, msgs);
+			if (newTransition != null)
+				msgs = ((InternalEObject)newTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComparablesPackage.TRANSITION_MAP__TRANSITION, null, msgs);
+			msgs = basicSetTransition(newTransition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.STATE_ACTIVE_EXPR__STATE, newState, newState));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComparablesPackage.TRANSITION_MAP__TRANSITION, newTransition, newTransition));
 	}
 
 	/**
@@ -108,8 +108,8 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PredicatesPackage.STATE_ACTIVE_EXPR__STATE:
-				return basicSetState(null, msgs);
+			case ComparablesPackage.TRANSITION_MAP__TRANSITION:
+				return basicSetTransition(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -122,8 +122,8 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PredicatesPackage.STATE_ACTIVE_EXPR__STATE:
-				return getState();
+			case ComparablesPackage.TRANSITION_MAP__TRANSITION:
+				return getTransition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -136,8 +136,8 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PredicatesPackage.STATE_ACTIVE_EXPR__STATE:
-				setState((EObject)newValue);
+			case ComparablesPackage.TRANSITION_MAP__TRANSITION:
+				setTransition((EObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -151,8 +151,8 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PredicatesPackage.STATE_ACTIVE_EXPR__STATE:
-				setState((EObject)null);
+			case ComparablesPackage.TRANSITION_MAP__TRANSITION:
+				setTransition((EObject)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -166,10 +166,10 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PredicatesPackage.STATE_ACTIVE_EXPR__STATE:
-				return state != null;
+			case ComparablesPackage.TRANSITION_MAP__TRANSITION:
+				return transition != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //StateActiveExprImpl
+} //TransitionMapImpl

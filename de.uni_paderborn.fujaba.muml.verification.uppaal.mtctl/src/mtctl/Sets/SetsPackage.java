@@ -1431,7 +1431,6 @@ public interface SetsPackage extends EPackage {
 	 */
 	int TRANSITION_SET_EXPR_OPERATION_COUNT = SET_EXPR_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link mtctl.Sets.impl.BufferSetExprImpl <em>Buffer Set Expr</em>}' class.
 	 * <!-- begin-user-doc -->

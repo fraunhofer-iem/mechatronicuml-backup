@@ -4,10 +4,14 @@ package mtctl.Predicates.impl;
 
 import mtctl.Predicates.MessageInTransitExpr;
 import mtctl.Predicates.PredicatesPackage;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -25,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implements MessageInTransitExpr {
 	/**
-	 * The cached value of the '{@link #getMessage() <em>Message</em>}' reference.
+	 * The cached value of the '{@link #getMessage() <em>Message</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMessage()
@@ -59,14 +63,6 @@ public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implement
 	 * @generated
 	 */
 	public EObject getMessage() {
-		if (message != null && message.eIsProxy()) {
-			InternalEObject oldMessage = (InternalEObject)message;
-			message = eResolveProxy(oldMessage);
-			if (message != oldMessage) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE, oldMessage, message));
-			}
-		}
 		return message;
 	}
 
@@ -75,8 +71,14 @@ public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetMessage() {
-		return message;
+	public NotificationChain basicSetMessage(EObject newMessage, NotificationChain msgs) {
+		EObject oldMessage = message;
+		message = newMessage;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE, oldMessage, newMessage);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -85,10 +87,31 @@ public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implement
 	 * @generated
 	 */
 	public void setMessage(EObject newMessage) {
-		EObject oldMessage = message;
-		message = newMessage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE, oldMessage, message));
+		if (newMessage != message) {
+			NotificationChain msgs = null;
+			if (message != null)
+				msgs = ((InternalEObject)message).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE, null, msgs);
+			if (newMessage != null)
+				msgs = ((InternalEObject)newMessage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE, null, msgs);
+			msgs = basicSetMessage(newMessage, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE, newMessage, newMessage));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE:
+				return basicSetMessage(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -100,8 +123,7 @@ public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implement
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE:
-				if (resolve) return getMessage();
-				return basicGetMessage();
+				return getMessage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

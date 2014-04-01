@@ -110,12 +110,12 @@ StateExpr returns mtctl::PredicateExpr:
 ;
 
 StateActiveExpr returns mtctl::StateActiveExpr:
-	'stateActive' '(' {mtctl::StateActiveExpr} state=[ecore::EObject|QualifiedName] ')'
+	'stateActive' '(' {mtctl::StateActiveExpr} state=MapExpr ')'
 ;
 
 SubstateOfExpr returns mtctl::SubstateOfExpr:
-	'substateOf' '(' {mtctl::SubstateOfExpr} state=[ecore::EObject|QualifiedName] ','
-	superstate=[ecore::EObject|QualifiedName] ')'
+	'substateOf' '(' {mtctl::SubstateOfExpr} state=MapExpr ','
+	superstate=MapExpr ')'
 ;
 
 MessageExpr returns mtctl::PredicateExpr:
@@ -123,11 +123,11 @@ MessageExpr returns mtctl::PredicateExpr:
 ;
 
 MessageInTransitExpr returns mtctl::MessageInTransitExpr:
-	'messageInTransit' '(' message=[ecore::EObject|QualifiedName] ')'
+	'messageInTransit' '(' message=MapExpr ')'
 ;
 
 MessageInBufferExpr returns mtctl::MessageInBufferExpr:
-	'messageInBuffer' '(' message=[ecore::EObject|QualifiedName] ',' buffer=[ecore::EObject] ')'
+	'messageInBuffer' '(' message=MapExpr ',' buffer=MapExpr ')'
 ;
 
 BufferOverflowExpr returns mtctl::BufferOverflowExpr:
@@ -139,12 +139,12 @@ TransitionExpr returns mtctl::PredicateExpr:
 ;
 
 TransitionFiringExpr returns mtctl::TransitionFiringExpr:
-	'transitionFiring' '(' transition=[ecore::EObject|QualifiedName] ')'
+	'transitionFiring' '(' transition=MumlElemExpr ')'
 ;
 
 //Comparisons
 ComparisonExpr returns mtctl::Expression:
-	{mtctl::ComparisonExpr} lhs=(PrimitiveVariableExpr | MapExpr | ConstExpr) op=ComparisonOp rhs=(PrimitiveVariableExpr | MapExpr | ConstExpr)
+	{mtctl::ComparisonExpr} lhs=MapExpr op=ComparisonOp rhs=MapExpr
 ;
 
 enum ComparisonOp returns mtctl::ComparisonOp:
@@ -153,19 +153,31 @@ enum ComparisonOp returns mtctl::ComparisonOp:
 
 //Expressions usable in comparisons
 MapExpr returns mtctl::Expression:
-	BufferMessageCountExpr
+	BufferMessageCountExpr | TransitionMap | MumlElemExpr | ConstExpr
 ;
 
-BufferMessageCountExpr returns mtctl::MapExpr:
-	'bufferMessageCount' '(' {mtctl::BufferMsgCountExpr} buffer=[ecore::EObject|QualifiedName] ')'
+BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
+	'bufferMessageCount' '(' buffer=MapExpr ')'
 ;
 
-PrimitiveVariableExpr returns mtctl::PrimitiveVariableExpr:
-	var=[ecore::EObject|QualifiedName]
+TransitionMap returns mtctl::TransitionMap:
+	SourceStateExpr | TargetStateExpr
 ;
 
-ConstExpr returns mtctl::Expression:
-	{mtctl::ConstExpr} val=EInt
+SourceStateExpr returns mtctl::SourceStateExpr:
+	'sourceState' '(' transition=MapExpr ')'
+;
+
+TargetStateExpr returns mtctl::TargetStateExpr:
+	'targetState' '(' transition=MapExpr ')'
+;
+
+MumlElemExpr returns mtctl::MumlElemExpr:
+	elem=[ecore::EObject|QualifiedName]
+;
+
+ConstExpr returns mtctl::ConstExpr:
+	val=EInt
 ;
 
 

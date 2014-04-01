@@ -6,13 +6,12 @@ import java.util.List;
 
 import mtctl.PropertyRepository;
 import mtctl.Comparables.BufferMsgCountExpr;
-import mtctl.Comparables.PrimitiveVariableExpr;
+import mtctl.Comparables.MumlElemExpr;
+import mtctl.Comparables.TransitionMap;
 import mtctl.Predicates.ComparisonExpr;
 import mtctl.Predicates.MessageInBufferExpr;
 import mtctl.Predicates.MessageInTransitExpr;
 import mtctl.Predicates.StateActiveExpr;
-import mtctl.Predicates.StateEnterExpr;
-import mtctl.Predicates.StateExitExpr;
 import mtctl.Predicates.SubstateOfExpr;
 import mtctl.Predicates.TransitionFiringExpr;
 import mtctl.Quantifiers.BoundVariable;
@@ -20,6 +19,7 @@ import mtctl.Quantifiers.QuantifierExpr;
 import mtctl.Sets.BufferSetExpr;
 import mtctl.Sets.ClockSetExpr;
 import mtctl.Sets.MessageSetExpr;
+import mtctl.Sets.SetExpr;
 import mtctl.Sets.StateSetExpr;
 import mtctl.Sets.TransitionSetExpr;
 
@@ -252,6 +252,33 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	}
 	
 	/**
+	 * Returns the scope when looking for something that can be used in a comparison
+	 * @param context reference in the mtctl model (e.g., a StateExpr)
+	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
+	 * @return the scope
+	 */
+	public IScope getScopeComparable(EObject context, EReference reference) {
+		List<EObject> scope = new ArrayList<EObject>();
+		
+		//Add elements from the model
+		scope.addAll(clocks);
+		scope.addAll(variables);
+		scope.addAll(states);
+		scope.addAll(messageTypes);
+		scope.addAll(buffers);
+		
+		//Add BoundVariables
+		QuantifierExpr parentQuantifier = findParentQuantifier(context);
+		while (parentQuantifier != null) {
+			if (parentQuantifier.getVar().getSet() instanceof SetExpr) //we might want to change this if some set elements are not comparable
+				scope.add(parentQuantifier.getVar());
+			parentQuantifier = findParentQuantifier(parentQuantifier);
+		}
+		
+		return createScope(scope);
+	}
+	
+	/**
 	 * Returns the quantifier in the mtctl model that (indirectly) contains the passed object. Null of none found
 	 * @param obj
 	 * @return a QuantifierExpr (indirectly) containing the obj or null
@@ -268,20 +295,26 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
+		//The requested scope might be for a MumlElemExpr. 
+		if (context instanceof MumlElemExpr) {
+			//Because this is not very informational, we exchange the supplied values with the context and reference for the MumlElemExpr, not the reference itself
+			//So basically, we pretend as if we resolve the MumlElemExpr and not the reference
+			reference = context.eContainmentFeature(); //now contains the reference to the MumlElemExpr
+			context = context.eContainer(); //now contains the class that wants to set its field with a MumlElemExp	
+		}
+		
 		//Take care of calling the correct method wrt. the type that is looked for
-		if (context instanceof SubstateOfExpr || context instanceof StateEnterExpr || context instanceof StateExitExpr || context instanceof StateActiveExpr)
+		if (context instanceof SubstateOfExpr || context instanceof StateActiveExpr)
 			return getScopeState(context, reference);
-		if (context instanceof PrimitiveVariableExpr)
-			return getScopeVariable(context, reference);
-		if (context instanceof TransitionFiringExpr)
+		if (context instanceof TransitionFiringExpr || context instanceof TransitionMap)
 			return getScopeTransition(context, reference);
 		if (context instanceof MessageInTransitExpr || context instanceof MessageInBufferExpr && reference != null && "message".equals(reference.getName()))
 			return getScopeMessageType(context, reference);
 		if (context instanceof BufferMsgCountExpr || context instanceof MessageInBufferExpr && reference != null && "buffer".equals(reference.getName()))
 			return getScopeBuffer(context, reference);
 		
-		if (context instanceof PropertyRepository || context instanceof ComparisonExpr) //Fallback for context where we might want a variable
-			return getScopeVariable(context, reference);
+		if (context instanceof PropertyRepository || context instanceof ComparisonExpr || context instanceof MumlElemExpr) //Fallback for contexts where we might want a variable
+			return getScopeComparable(context, reference);
 		
 		return IScope.NULLSCOPE;
 	}
@@ -314,7 +347,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		
 		//States, Clocks, Variables, MessageTypes
 		for (Role role : object.getRoles()) {
-			if (role.getBehavior() == null || !(role instanceof RealtimeStatechart))
+			if (role.getBehavior() == null || !(role.getBehavior() instanceof RealtimeStatechart))
 				continue;
 			
 			states.addAll(recursivelyCollectStates(((RealtimeStatechart) role.getBehavior()).getStates()));

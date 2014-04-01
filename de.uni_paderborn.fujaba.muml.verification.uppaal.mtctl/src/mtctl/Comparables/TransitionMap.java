@@ -1,30 +1,30 @@
 /**
  */
-package mtctl.Predicates;
+package mtctl.Comparables;
 
 import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Transition Firing Expr</b></em>'.
+ * A representation of the model object '<em><b>Transition Map</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * True iff the specified transition is currently firing in the snapshot
+ * Common abstract superclass of maps with transition pre-image
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link mtctl.Predicates.TransitionFiringExpr#getTransition <em>Transition</em>}</li>
+ *   <li>{@link mtctl.Comparables.TransitionMap#getTransition <em>Transition</em>}</li>
  * </ul>
  * </p>
  *
- * @see mtctl.Predicates.PredicatesPackage#getTransitionFiringExpr()
- * @model
+ * @see mtctl.Comparables.ComparablesPackage#getTransitionMap()
+ * @model abstract="true"
  * @generated
  */
-public interface TransitionFiringExpr extends DynamicPredicateExpr {
+public interface TransitionMap extends MapExpr {
 	/**
 	 * Returns the value of the '<em><b>Transition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -35,14 +35,14 @@ public interface TransitionFiringExpr extends DynamicPredicateExpr {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Transition</em>' containment reference.
 	 * @see #setTransition(EObject)
-	 * @see mtctl.Predicates.PredicatesPackage#getTransitionFiringExpr_Transition()
+	 * @see mtctl.Comparables.ComparablesPackage#getTransitionMap_Transition()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EObject getTransition();
 
 	/**
-	 * Sets the value of the '{@link mtctl.Predicates.TransitionFiringExpr#getTransition <em>Transition</em>}' containment reference.
+	 * Sets the value of the '{@link mtctl.Comparables.TransitionMap#getTransition <em>Transition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Transition</em>' containment reference.
@@ -51,4 +51,4 @@ public interface TransitionFiringExpr extends DynamicPredicateExpr {
 	 */
 	void setTransition(EObject value);
 
-} // TransitionFiringExpr
+} // TransitionMap

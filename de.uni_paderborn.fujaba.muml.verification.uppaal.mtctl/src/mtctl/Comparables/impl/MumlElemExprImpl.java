@@ -3,43 +3,46 @@
 package mtctl.Comparables.impl;
 
 import mtctl.Comparables.ComparablesPackage;
-import mtctl.Comparables.PrimitiveVariableExpr;
+import mtctl.Comparables.MumlElemExpr;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Primitive Variable Expr</b></em>'.
+ * An implementation of the model object '<em><b>Muml Elem Expr</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link mtctl.Comparables.impl.PrimitiveVariableExprImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link mtctl.Comparables.impl.MumlElemExprImpl#getElem <em>Elem</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PrimitiveVariableExprImpl extends DynamicMapExprImpl implements PrimitiveVariableExpr {
+public class MumlElemExprImpl extends MapExprImpl implements MumlElemExpr {
 	/**
-	 * The cached value of the '{@link #getVar() <em>Var</em>}' reference.
+	 * The cached value of the '{@link #getElem() <em>Elem</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVar()
+	 * @see #getElem()
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject var;
+	protected EObject elem;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PrimitiveVariableExprImpl() {
+	protected MumlElemExprImpl() {
 		super();
 	}
 
@@ -50,7 +53,7 @@ public class PrimitiveVariableExprImpl extends DynamicMapExprImpl implements Pri
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ComparablesPackage.Literals.PRIMITIVE_VARIABLE_EXPR;
+		return ComparablesPackage.Literals.MUML_ELEM_EXPR;
 	}
 
 	/**
@@ -58,16 +61,16 @@ public class PrimitiveVariableExprImpl extends DynamicMapExprImpl implements Pri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getVar() {
-		if (var != null && var.eIsProxy()) {
-			InternalEObject oldVar = (InternalEObject)var;
-			var = eResolveProxy(oldVar);
-			if (var != oldVar) {
+	public EObject getElem() {
+		if (elem != null && elem.eIsProxy()) {
+			InternalEObject oldElem = (InternalEObject)elem;
+			elem = eResolveProxy(oldElem);
+			if (elem != oldElem) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComparablesPackage.PRIMITIVE_VARIABLE_EXPR__VAR, oldVar, var));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ComparablesPackage.MUML_ELEM_EXPR__ELEM, oldElem, elem));
 			}
 		}
-		return var;
+		return elem;
 	}
 
 	/**
@@ -75,8 +78,8 @@ public class PrimitiveVariableExprImpl extends DynamicMapExprImpl implements Pri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject basicGetVar() {
-		return var;
+	public EObject basicGetElem() {
+		return elem;
 	}
 
 	/**
@@ -84,11 +87,11 @@ public class PrimitiveVariableExprImpl extends DynamicMapExprImpl implements Pri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVar(EObject newVar) {
-		EObject oldVar = var;
-		var = newVar;
+	public void setElem(EObject newElem) {
+		EObject oldElem = elem;
+		elem = newElem;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComparablesPackage.PRIMITIVE_VARIABLE_EXPR__VAR, oldVar, var));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComparablesPackage.MUML_ELEM_EXPR__ELEM, oldElem, elem));
 	}
 
 	/**
@@ -99,9 +102,9 @@ public class PrimitiveVariableExprImpl extends DynamicMapExprImpl implements Pri
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ComparablesPackage.PRIMITIVE_VARIABLE_EXPR__VAR:
-				if (resolve) return getVar();
-				return basicGetVar();
+			case ComparablesPackage.MUML_ELEM_EXPR__ELEM:
+				if (resolve) return getElem();
+				return basicGetElem();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,8 +117,8 @@ public class PrimitiveVariableExprImpl extends DynamicMapExprImpl implements Pri
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ComparablesPackage.PRIMITIVE_VARIABLE_EXPR__VAR:
-				setVar((EObject)newValue);
+			case ComparablesPackage.MUML_ELEM_EXPR__ELEM:
+				setElem((EObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,8 +132,8 @@ public class PrimitiveVariableExprImpl extends DynamicMapExprImpl implements Pri
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ComparablesPackage.PRIMITIVE_VARIABLE_EXPR__VAR:
-				setVar((EObject)null);
+			case ComparablesPackage.MUML_ELEM_EXPR__ELEM:
+				setElem((EObject)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -144,10 +147,10 @@ public class PrimitiveVariableExprImpl extends DynamicMapExprImpl implements Pri
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ComparablesPackage.PRIMITIVE_VARIABLE_EXPR__VAR:
-				return var != null;
+			case ComparablesPackage.MUML_ELEM_EXPR__ELEM:
+				return elem != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PrimitiveVariableExprImpl
+} //MumlElemExprImpl
