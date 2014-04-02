@@ -24,7 +24,7 @@ public class UnaryExpressionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addUnaryExpressionOperatorEditor(null, true);
+			addUnaryExpressionOperator_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public class UnaryExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addUnaryExpressionOperatorEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createUnaryExpressionOperatorEditor(),
-				front);
+	protected void addUnaryExpressionOperator_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createUnaryExpressionOperator_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createUnaryExpressionOperatorEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createUnaryExpressionOperator_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE

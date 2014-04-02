@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -22,6 +23,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -30,7 +32,6 @@ import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartViewer;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -62,15 +63,17 @@ import de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePrope
 import de.uni_paderborn.fujaba.properties.runtime.editors.ObjectPropertyEditor;
 import de.uni_paderborn.fujaba.properties.runtime.factory.IPropertyEditorFactory;
 import de.uni_paderborn.fujaba.properties.runtime.wizard.ElementSelectionWizardPage;
+import de.uni_paderborn.fujaba.properties.runtime.wizard.ElementSelectionWizardPage.IElementValidator;
 import de.uni_paderborn.fujaba.properties.runtime.wizard.PropertiesWizard;
 import de.uni_paderborn.fujaba.properties.runtime.wizard.PropertiesWizardDialog;
 import de.uni_paderborn.fujaba.properties.runtime.wizard.PropertyEditorWizardPage;
-import de.uni_paderborn.fujaba.properties.runtime.wizard.ElementSelectionWizardPage.IElementValidator;
 
 /**
  * The activator class controls the plug-in life cycle
  */
 public class RuntimePlugin extends AbstractUIPlugin {
+
+
 
 	private static Map<EReference, List<EClass>> foundEClasses = new HashMap<EReference, List<EClass>>();
 
@@ -81,6 +84,9 @@ public class RuntimePlugin extends AbstractUIPlugin {
 
 	public static final String PROPERTY_EDITOR__EXTENSION_POINT_ID = PLUGIN_ID
 			+ ".propertyEditors"; //$NON-NLS-1$
+	
+	public static final String METAMODEL_CONTRIBUTOR__EXTENSION_POINT_ID = PLUGIN_ID + ".metamodelContributor"; //$NON-NLS-1$
+
 
 	public static final String IMAGE_ADD = "add";
 
@@ -263,36 +269,54 @@ public class RuntimePlugin extends AbstractUIPlugin {
 		return buffer.toString();
 	}
 
+
 	public static List<EClass> getEClasses(EReference feature) {
 		List<EClass> eClasses = foundEClasses.get(feature);
 		if (eClasses == null) {
 			eClasses = new ArrayList<EClass>();
 
-			AdapterFactory adapterFactory = new ReflectiveItemProviderAdapterFactory();
-	
-			IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(
-					feature, IItemPropertySource.class);
-	
-			if (ips != null) {
-				IItemPropertyDescriptor itemPropertyDescriptor = ips
-						.getPropertyDescriptor(
-								feature,
-								org.eclipse.emf.ecore.EcorePackage.Literals.ETYPED_ELEMENT__ETYPE);
-				for (Object object : itemPropertyDescriptor
-						.getChoiceOfValues(feature)) {
-					if (object instanceof EClass) {
-						EClass eClass = (EClass) object;
-						if (eClass != null && !eClass.isAbstract() && feature.getEReferenceType().isSuperTypeOf(eClass)) {
+			// New implementation considering the whole package registry.
+			org.eclipse.emf.ecore.EPackage.Registry registry = EPackage.Registry.INSTANCE;
+			for (String key : new HashSet<String>(registry.keySet())) {
+			    EPackage ePackage = registry.getEPackage(key);
+			   for (EClassifier eClassifier : ePackage.getEClassifiers()) {
+				   if (eClassifier instanceof EClass) {
+					   EClass eClass = (EClass) eClassifier;
+					   if (eClass != null && !eClass.isAbstract() && feature.getEReferenceType().isSuperTypeOf(eClass)) {
 							eClasses.add(eClass);
-						}
-						
-					}
-				}
+					   }
+				   }
+			   }
 			}
+			
+			// This implementation has problems: It does not find eClasses of extending metamodels.
+//			AdapterFactory adapterFactory = new ReflectiveItemProviderAdapterFactory();
+//	
+//			IItemPropertySource ips = (IItemPropertySource) adapterFactory.adapt(
+//					feature, IItemPropertySource.class);
+//	
+//			if (ips != null) {
+//				IItemPropertyDescriptor itemPropertyDescriptor = ips
+//						.getPropertyDescriptor(
+//								feature,
+//								org.eclipse.emf.ecore.EcorePackage.Literals.ETYPED_ELEMENT__ETYPE);
+//				for (Object object : itemPropertyDescriptor
+//						.getChoiceOfValues(feature)) {
+//					if (object instanceof EClass) {
+//						EClass eClass = (EClass) object;
+//						if (eClass != null && !eClass.isAbstract() && feature.getEReferenceType().isSuperTypeOf(eClass)) {
+//							eClasses.add(eClass);
+//						}
+//						
+//					}
+//				}
+//			}
 			foundEClasses.put(feature, eClasses);
 		}
 		return new ArrayList<EClass>(eClasses); 
 	}
+
+	
 
 	public static Object resolveSemanticObject(Object object) {
 		if (object instanceof IStructuredSelection) {

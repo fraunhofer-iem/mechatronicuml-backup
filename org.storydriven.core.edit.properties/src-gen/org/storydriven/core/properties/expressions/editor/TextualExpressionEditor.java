@@ -24,15 +24,15 @@ public class TextualExpressionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTextualExpressionExpressionTextEditor(null, true);
+			addTextualExpressionExpressionText_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTextualExpressionLanguageEditor(null, true);
+			addTextualExpressionLanguage_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTextualExpressionLanguageVersionEditor(null, true);
+			addTextualExpressionLanguageVersion_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -40,16 +40,17 @@ public class TextualExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addTextualExpressionExpressionTextEditor(String category,
-			boolean front) {
+	protected void addTextualExpressionExpressionText_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createTextualExpressionExpressionTextEditor(), front);
+				createTextualExpressionExpressionText_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionExpressionTextEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionExpressionText_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
@@ -64,16 +65,16 @@ public class TextualExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addTextualExpressionLanguageEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createTextualExpressionLanguageEditor(),
-				front);
+	protected void addTextualExpressionLanguage_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createTextualExpressionLanguage_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionLanguageEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionLanguage_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE
@@ -88,16 +89,17 @@ public class TextualExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addTextualExpressionLanguageVersionEditor(String category,
-			boolean front) {
+	protected void addTextualExpressionLanguageVersion_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createTextualExpressionLanguageVersionEditor(), front);
+				createTextualExpressionLanguageVersion_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionLanguageVersionEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTextualExpressionLanguageVersion_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.ExpressionsPackage.eINSTANCE

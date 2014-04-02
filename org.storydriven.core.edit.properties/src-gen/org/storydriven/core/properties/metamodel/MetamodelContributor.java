@@ -1,0 +1,33 @@
+package org.storydriven.core.properties.metamodel;
+
+public class MetamodelContributor
+		implements
+			de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor {
+
+	/**
+	 * @generated
+	 */
+	public java.util.List<org.eclipse.emf.common.notify.AdapterFactory> getItemProviderFactories() {
+		java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories = new java.util.ArrayList<org.eclipse.emf.common.notify.AdapterFactory>();
+		fillItemProviderFactories(factories);
+		return factories;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void fillItemProviderFactories(
+			java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+
+		factories
+				.add(new org.storydriven.core.provider.CoreItemProviderAdapterFactory());
+
+		factories
+				.add(new org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory());
+
+		factories
+				.add(new org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory());
+
+	}
+
+}

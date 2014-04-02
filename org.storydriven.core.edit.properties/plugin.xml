@@ -33,6 +33,7 @@
           <propertyTab
              category="domain"
              id="property.tab.documentation"
+             afterTab="property.tab.general"
              label="Documentation"/>
           <propertyTab
              category="domain"
@@ -85,35 +86,43 @@
     
        <propertyEditor
              factory="org.storydriven.core.properties.expressions.editor.TextualExpressionEditor$Factory"
-             type="org.storydriven.core.expressions.TextualExpression">
+             type="http://www.storydriven.org/core/expressions/0.3.1#TextualExpression">
        </propertyEditor>
     
        <propertyEditor
              factory="org.storydriven.core.properties.common.editor.UnaryExpressionEditor$Factory"
-             type="org.storydriven.core.expressions.common.UnaryExpression">
+             type="http://www.storydriven.org/core/expressions/common/0.3.1#UnaryExpression">
        </propertyEditor>
     
        <propertyEditor
              factory="org.storydriven.core.properties.common.editor.ComparisonExpressionEditor$Factory"
-             type="org.storydriven.core.expressions.common.ComparisonExpression">
+             type="http://www.storydriven.org/core/expressions/common/0.3.1#ComparisonExpression">
        </propertyEditor>
     
        <propertyEditor
              factory="org.storydriven.core.properties.common.editor.ArithmeticExpressionEditor$Factory"
-             type="org.storydriven.core.expressions.common.ArithmeticExpression">
+             type="http://www.storydriven.org/core/expressions/common/0.3.1#ArithmeticExpression">
        </propertyEditor>
     
        <propertyEditor
              factory="org.storydriven.core.properties.common.editor.LogicalExpressionEditor$Factory"
-             type="org.storydriven.core.expressions.common.LogicalExpression">
+             type="http://www.storydriven.org/core/expressions/common/0.3.1#LogicalExpression">
        </propertyEditor>
     
        <propertyEditor
              factory="org.storydriven.core.properties.common.editor.LiteralExpressionEditor$Factory"
-             type="org.storydriven.core.expressions.common.LiteralExpression">
+             type="http://www.storydriven.org/core/expressions/common/0.3.1#LiteralExpression">
        </propertyEditor>
     
     </propertyEditors>
+ </extension>
+
+
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.metamodelContributor">
+    <metamodel
+          contributor="org.storydriven.core.properties.metamodel.MetamodelContributor">
+    </metamodel>
  </extension>
 
 </plugin>

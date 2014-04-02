@@ -24,7 +24,7 @@ public class LiteralExpressionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addLiteralExpressionValueEditor(null, true);
+			addLiteralExpressionValue_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public class LiteralExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addLiteralExpressionValueEditor(String category,
+	protected void addLiteralExpressionValue_GeneralTab_Editor(String category,
 			boolean front) {
-		addEditorToCategory(category, createLiteralExpressionValueEditor(),
-				front);
+		addEditorToCategory(category,
+				createLiteralExpressionValue_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createLiteralExpressionValueEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createLiteralExpressionValue_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE

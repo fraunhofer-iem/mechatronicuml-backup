@@ -24,7 +24,7 @@ public class ArithmeticExpressionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addArithmeticExpressionOperatorEditor(null, true);
+			addArithmeticExpressionOperator_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public class ArithmeticExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addArithmeticExpressionOperatorEditor(String category,
-			boolean front) {
+	protected void addArithmeticExpressionOperator_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createArithmeticExpressionOperatorEditor(), front);
+				createArithmeticExpressionOperator_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createArithmeticExpressionOperatorEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createArithmeticExpressionOperator_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE

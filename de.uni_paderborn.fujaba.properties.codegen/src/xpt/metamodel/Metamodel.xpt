@@ -1,0 +1,31 @@
+«IMPORT properties»
+«EXTENSION Metamodel»
+
+«DEFINE Metamodel FOR PropertyGenerator»
+
+public class MetamodelContributor implements de.uni_paderborn.fujaba.properties.runtime.metamodel.IMetamodelContributor {
+
+	/**
+	 * @generated
+	 */
+	public java.util.List<org.eclipse.emf.common.notify.AdapterFactory> getItemProviderFactories() {
+		java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories = new java.util.ArrayList<org.eclipse.emf.common.notify.AdapterFactory>();
+		fillItemProviderFactories(factories);
+		return factories;
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void fillItemProviderFactories(java.util.List<org.eclipse.emf.common.notify.AdapterFactory> factories) {
+
+		«REM»«FOREACH { this }.union(referencedGenerators).packages AS this»«ENDREM»
+		«FOREACH packages AS this»
+		factories.add(new «genPackage.fullyQualifiedName().toString()».provider.«genPackage.prefix»ItemProviderAdapterFactory());
+		«ENDFOREACH»
+
+	}
+
+}
+
+«ENDDEFINE»

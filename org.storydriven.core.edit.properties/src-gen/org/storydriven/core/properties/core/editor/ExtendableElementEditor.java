@@ -24,7 +24,7 @@ public abstract class ExtendableElementEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.extensions".equals(getTab())) {
-			addExtendableElementExtensionEditor(null, true);
+			addExtendableElementExtension_ExtensionsTab_Editor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public abstract class ExtendableElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addExtendableElementExtensionEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createExtendableElementExtensionEditor(),
-				front);
+	protected void addExtendableElementExtension_ExtensionsTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createExtendableElementExtension_ExtensionsTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtendableElementExtensionEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtendableElementExtension_ExtensionsTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE

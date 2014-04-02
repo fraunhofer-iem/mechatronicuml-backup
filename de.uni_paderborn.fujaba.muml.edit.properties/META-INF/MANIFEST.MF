@@ -13,11 +13,10 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.edit,
  org.storydriven.core.edit,
  org.storydriven.core.edit.properties,
  de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui,
- de.uni_paderborn.fujaba.muml.common,
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui
+ de.uni_paderborn.fujaba.muml.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: 
+Export-Package: de.uni_paderborn.fujaba.muml.properties.metamodel,
  de.uni_paderborn.fujaba.muml.properties.valuetype.editor,
  de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor,
  de.uni_paderborn.fujaba.muml.properties.instance.editor,

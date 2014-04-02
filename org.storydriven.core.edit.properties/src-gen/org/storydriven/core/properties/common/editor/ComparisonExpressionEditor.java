@@ -24,7 +24,7 @@ public class ComparisonExpressionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComparisonExpressionOperatorEditor(null, true);
+			addComparisonExpressionOperator_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public class ComparisonExpressionEditor
 	/**
 	 * @generated
 	 */
-	protected void addComparisonExpressionOperatorEditor(String category,
-			boolean front) {
+	protected void addComparisonExpressionOperator_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createComparisonExpressionOperatorEditor(), front);
+				createComparisonExpressionOperator_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComparisonExpressionOperatorEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComparisonExpressionOperator_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.expressions.common.CommonExpressionsPackage.eINSTANCE

@@ -29,6 +29,7 @@
 «EXPAND propertyTabs»
 «EXPAND propertySections»
 «EXPAND propertyEditor»
+«EXPAND metamodelContributor»
 «ENDDEFINE»
 
 «DEFINE propertyContributor FOR PropertyGenerator»
@@ -101,5 +102,14 @@
        </propertyEditor>
     «ENDFOREACH»
     </propertyEditors>
+ </extension>
+«ENDDEFINE»
+
+«DEFINE metamodelContributor FOR PropertyGenerator»
+ <extension
+       point="de.uni_paderborn.fujaba.properties.runtime.metamodelContributor">
+    <metamodel
+          contributor="«genPluginId()».metamodel.MetamodelContributor">
+    </metamodel>
  </extension>
 «ENDDEFINE»

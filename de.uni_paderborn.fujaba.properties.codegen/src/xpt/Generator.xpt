@@ -28,6 +28,11 @@ package «genPluginId()».tabs;
 package «genPluginId()».util;
 «EXPAND util::Utility::Utility»
 «ENDFILE»
+
+«FILE sourceFolder + "/" + genPluginId().replaceAll("\\.", "/") + "/metamodel/MetamodelContributor.java"»
+package «genPluginId()».metamodel;
+«EXPAND metamodel::Metamodel::Metamodel»
+«ENDFILE»
 «ENDDEFINE»
 
 «DEFINE ClassEditor FOR Class»
