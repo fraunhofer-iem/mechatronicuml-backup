@@ -18,6 +18,7 @@
     <requiredBundles>org.storydriven.core.edit.properties</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.actionlanguage.xtext.ui</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.common</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui</requiredBundles>
   </plugin>
   <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
   <tabs id="property.tab.constraint" name="Constraint" afterTab="property.tab.comment"/>
