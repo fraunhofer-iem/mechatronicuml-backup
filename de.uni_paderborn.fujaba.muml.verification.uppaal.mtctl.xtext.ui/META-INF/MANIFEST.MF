@@ -20,7 +20,8 @@ Require-Bundle: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext;vis
  de.uni_paderborn.fujaba.muml.common,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
  de.uni_paderborn.fujaba.properties.runtime,
- org.eclipse.swt
+ org.eclipse.swt,
+ org.eclipse.emf.ecore
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

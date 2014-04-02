@@ -4,8 +4,10 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.MtctlLastSegmentFinder;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.MtctlTemplateProposalProvider;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -25,5 +27,10 @@ public class MtctlUiModule extends de.uni_paderborn.fujaba.muml.verification.upp
 	
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.FQNPrefixMatcher.LastSegmentFinder> bindLastSegmentFinder() {
 		return MtctlLastSegmentFinder.class;
+	}
+	
+	@Override
+	public Class<? extends ITemplateProposalProvider> bindITemplateProposalProvider() {
+		return MtctlTemplateProposalProvider.class;
 	}
 }
