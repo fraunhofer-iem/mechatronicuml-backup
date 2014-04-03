@@ -121,6 +121,14 @@ public class PredicatesAdapterFactory extends AdapterFactoryImpl {
 				return createStaticPredicateExprAdapter();
 			}
 			@Override
+			public Adapter caseTrueExpr(TrueExpr object) {
+				return createTrueExprAdapter();
+			}
+			@Override
+			public Adapter caseFalseExpr(FalseExpr object) {
+				return createFalseExprAdapter();
+			}
+			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -311,6 +319,34 @@ public class PredicatesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStaticPredicateExprAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mtctl.Predicates.TrueExpr <em>True Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mtctl.Predicates.TrueExpr
+	 * @generated
+	 */
+	public Adapter createTrueExprAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link mtctl.Predicates.FalseExpr <em>False Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see mtctl.Predicates.FalseExpr
+	 * @generated
+	 */
+	public Adapter createFalseExprAdapter() {
 		return null;
 	}
 

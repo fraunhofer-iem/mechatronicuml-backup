@@ -37,6 +37,7 @@ import mtctl.Predicates.ComparisonExpr;
 import mtctl.Predicates.ComparisonOp;
 import mtctl.Predicates.DeadlockExpr;
 import mtctl.Predicates.DynamicPredicateExpr;
+import mtctl.Predicates.FalseExpr;
 import mtctl.Predicates.MessageInBufferExpr;
 import mtctl.Predicates.MessageInTransitExpr;
 import mtctl.Predicates.PredicateExpr;
@@ -47,6 +48,7 @@ import mtctl.Predicates.StaticPredicateExpr;
 import mtctl.Predicates.SubstateOfExpr;
 import mtctl.Predicates.TransitionFiringExpr;
 
+import mtctl.Predicates.TrueExpr;
 import mtctl.Quantifiers.QuantifiersPackage;
 
 import mtctl.Quantifiers.impl.QuantifiersPackageImpl;
@@ -148,6 +150,20 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 	 * @generated
 	 */
 	private EClass staticPredicateExprEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass trueExprEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass falseExprEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -440,6 +456,24 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTrueExpr() {
+		return trueExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFalseExpr() {
+		return falseExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getComparisonOp() {
 		return comparisonOpEEnum;
 	}
@@ -504,6 +538,10 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 
 		staticPredicateExprEClass = createEClass(STATIC_PREDICATE_EXPR);
 
+		trueExprEClass = createEClass(TRUE_EXPR);
+
+		falseExprEClass = createEClass(FALSE_EXPR);
+
 		// Create enums
 		comparisonOpEEnum = createEEnum(COMPARISON_OP);
 	}
@@ -550,6 +588,8 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		predicateExprEClass.getESuperTypes().add(theMtctlPackage.getExpression());
 		dynamicPredicateExprEClass.getESuperTypes().add(this.getPredicateExpr());
 		staticPredicateExprEClass.getESuperTypes().add(this.getPredicateExpr());
+		trueExprEClass.getESuperTypes().add(this.getStaticPredicateExpr());
+		falseExprEClass.getESuperTypes().add(this.getStaticPredicateExpr());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(deadlockExprEClass, DeadlockExpr.class, "DeadlockExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -583,6 +623,10 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		initEClass(dynamicPredicateExprEClass, DynamicPredicateExpr.class, "DynamicPredicateExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(staticPredicateExprEClass, StaticPredicateExpr.class, "StaticPredicateExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(trueExprEClass, TrueExpr.class, "TrueExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(falseExprEClass, FalseExpr.class, "FalseExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(comparisonOpEEnum, ComparisonOp.class, "ComparisonOp");

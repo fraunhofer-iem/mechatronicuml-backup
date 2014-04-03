@@ -11,7 +11,7 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultAntlrTokenToAttributeId
  */
 public class MtctlTokenToAttributeIdMapper extends DefaultAntlrTokenToAttributeIdMapper {
 	private static final Pattern LOGIC = Pattern.compile("^'(and|or|not|implies|forall|exists)'$", Pattern.MULTILINE);
-	private static final Pattern SPECIAL_PREDICATES = Pattern.compile("^'(deadlock|bufferOverflow)'$", Pattern.MULTILINE);
+	private static final Pattern SPECIAL_PREDICATES = Pattern.compile("^'(deadlock|bufferOverflow|true|false)'$", Pattern.MULTILINE);
 	
 	@Override
 	protected String calculateId(String tokenName, int tokenType) {

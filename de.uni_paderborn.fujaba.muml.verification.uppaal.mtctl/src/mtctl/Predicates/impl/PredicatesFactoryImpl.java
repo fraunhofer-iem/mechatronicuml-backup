@@ -66,6 +66,8 @@ public class PredicatesFactoryImpl extends EFactoryImpl implements PredicatesFac
 			case PredicatesPackage.SUBSTATE_OF_EXPR: return createSubstateOfExpr();
 			case PredicatesPackage.TRANSITION_FIRING_EXPR: return createTransitionFiringExpr();
 			case PredicatesPackage.PREDICATE_EXPR: return createPredicateExpr();
+			case PredicatesPackage.TRUE_EXPR: return createTrueExpr();
+			case PredicatesPackage.FALSE_EXPR: return createFalseExpr();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -189,6 +191,26 @@ public class PredicatesFactoryImpl extends EFactoryImpl implements PredicatesFac
 	public PredicateExpr createPredicateExpr() {
 		PredicateExprImpl predicateExpr = new PredicateExprImpl();
 		return predicateExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TrueExpr createTrueExpr() {
+		TrueExprImpl trueExpr = new TrueExprImpl();
+		return trueExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FalseExpr createFalseExpr() {
+		FalseExprImpl falseExpr = new FalseExprImpl();
+		return falseExpr;
 	}
 
 	/**

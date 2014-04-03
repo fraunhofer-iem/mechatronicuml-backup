@@ -103,6 +103,24 @@ public interface PredicatesFactory extends EFactory {
 	PredicateExpr createPredicateExpr();
 
 	/**
+	 * Returns a new object of class '<em>True Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>True Expr</em>'.
+	 * @generated
+	 */
+	TrueExpr createTrueExpr();
+
+	/**
+	 * Returns a new object of class '<em>False Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>False Expr</em>'.
+	 * @generated
+	 */
+	FalseExpr createFalseExpr();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

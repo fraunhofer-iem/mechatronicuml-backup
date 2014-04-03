@@ -98,11 +98,23 @@ AtomExpr returns mtctl::Expression:
 
 //Predicates
 PredicateExpr returns mtctl::Expression:
-	DeadlockExpr | StateExpr | MessageExpr | TransitionExpr
+	TrueExpr | FalseExpr | DeadlockExpr | BufferOverflowExpr | StateExpr | MessageExpr | TransitionExpr
 ;
 
-DeadlockExpr returns mtctl::PredicateExpr:
+DeadlockExpr returns mtctl::DeadlockExpr:
 	{mtctl::DeadlockExpr} 'deadlock'
+;
+
+BufferOverflowExpr returns mtctl::BufferOverflowExpr:
+	{mtctl::BufferOverflowExpr} 'bufferOverflow'
+;
+
+TrueExpr returns mtctl::TrueExpr:
+	{mtctl::TrueExpr} 'true'
+;
+
+FalseExpr returns mtctl::FalseExpr:
+	{mtctl::FalseExpr} 'false'
 ;
 
 StateExpr returns mtctl::PredicateExpr:
@@ -119,7 +131,7 @@ SubstateOfExpr returns mtctl::SubstateOfExpr:
 ;
 
 MessageExpr returns mtctl::PredicateExpr:
-	MessageInBufferExpr | MessageInTransitExpr | BufferOverflowExpr
+	MessageInBufferExpr | MessageInTransitExpr
 ;
 
 MessageInTransitExpr returns mtctl::MessageInTransitExpr:
@@ -128,10 +140,6 @@ MessageInTransitExpr returns mtctl::MessageInTransitExpr:
 
 MessageInBufferExpr returns mtctl::MessageInBufferExpr:
 	'messageInBuffer' '(' message=MessageMapExpr ',' buffer=BufferMapExpr ')'
-;
-
-BufferOverflowExpr returns mtctl::BufferOverflowExpr:
-	{mtctl::BufferOverflowExpr} 'bufferOverflow'
 ;
 
 TransitionExpr returns mtctl::PredicateExpr:

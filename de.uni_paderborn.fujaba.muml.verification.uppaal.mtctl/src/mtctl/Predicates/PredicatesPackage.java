@@ -2636,6 +2636,458 @@ public interface PredicatesPackage extends EPackage {
 	int TRANSITION_FIRING_EXPR_OPERATION_COUNT = DYNAMIC_PREDICATE_EXPR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link mtctl.Predicates.impl.TrueExprImpl <em>True Expr</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mtctl.Predicates.impl.TrueExprImpl
+	 * @see mtctl.Predicates.impl.PredicatesPackageImpl#getTrueExpr()
+	 * @generated
+	 */
+	int TRUE_EXPR = 11;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR__ANNOTATION = STATIC_PREDICATE_EXPR__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR__EXTENSION = STATIC_PREDICATE_EXPR__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR__COMMENT = STATIC_PREDICATE_EXPR__COMMENT;
+
+	/**
+	 * The number of structural features of the '<em>True Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR_FEATURE_COUNT = STATIC_PREDICATE_EXPR_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___ECLASS = STATIC_PREDICATE_EXPR___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___EIS_PROXY = STATIC_PREDICATE_EXPR___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___ERESOURCE = STATIC_PREDICATE_EXPR___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___ECONTAINER = STATIC_PREDICATE_EXPR___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___ECONTAINING_FEATURE = STATIC_PREDICATE_EXPR___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___ECONTAINMENT_FEATURE = STATIC_PREDICATE_EXPR___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___ECONTENTS = STATIC_PREDICATE_EXPR___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___EALL_CONTENTS = STATIC_PREDICATE_EXPR___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___ECROSS_REFERENCES = STATIC_PREDICATE_EXPR___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___EGET__ESTRUCTURALFEATURE = STATIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = STATIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = STATIC_PREDICATE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___EIS_SET__ESTRUCTURALFEATURE = STATIC_PREDICATE_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___EUNSET__ESTRUCTURALFEATURE = STATIC_PREDICATE_EXPR___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___EINVOKE__EOPERATION_ELIST = STATIC_PREDICATE_EXPR___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___GET_EXTENSION__ECLASS = STATIC_PREDICATE_EXPR___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___PROVIDE_EXTENSION__ECLASS = STATIC_PREDICATE_EXPR___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___GET_ANNOTATION__STRING = STATIC_PREDICATE_EXPR___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR___PROVIDE_ANNOTATION__STRING = STATIC_PREDICATE_EXPR___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>True Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_EXPR_OPERATION_COUNT = STATIC_PREDICATE_EXPR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link mtctl.Predicates.impl.FalseExprImpl <em>False Expr</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mtctl.Predicates.impl.FalseExprImpl
+	 * @see mtctl.Predicates.impl.PredicatesPackageImpl#getFalseExpr()
+	 * @generated
+	 */
+	int FALSE_EXPR = 12;
+
+	/**
+	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR__ANNOTATION = STATIC_PREDICATE_EXPR__ANNOTATION;
+
+	/**
+	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR__EXTENSION = STATIC_PREDICATE_EXPR__EXTENSION;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR__COMMENT = STATIC_PREDICATE_EXPR__COMMENT;
+
+	/**
+	 * The number of structural features of the '<em>False Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR_FEATURE_COUNT = STATIC_PREDICATE_EXPR_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___ECLASS = STATIC_PREDICATE_EXPR___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___EIS_PROXY = STATIC_PREDICATE_EXPR___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___ERESOURCE = STATIC_PREDICATE_EXPR___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___ECONTAINER = STATIC_PREDICATE_EXPR___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___ECONTAINING_FEATURE = STATIC_PREDICATE_EXPR___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___ECONTAINMENT_FEATURE = STATIC_PREDICATE_EXPR___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___ECONTENTS = STATIC_PREDICATE_EXPR___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___EALL_CONTENTS = STATIC_PREDICATE_EXPR___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___ECROSS_REFERENCES = STATIC_PREDICATE_EXPR___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___EGET__ESTRUCTURALFEATURE = STATIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = STATIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = STATIC_PREDICATE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___EIS_SET__ESTRUCTURALFEATURE = STATIC_PREDICATE_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___EUNSET__ESTRUCTURALFEATURE = STATIC_PREDICATE_EXPR___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___EINVOKE__EOPERATION_ELIST = STATIC_PREDICATE_EXPR___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___GET_EXTENSION__ECLASS = STATIC_PREDICATE_EXPR___GET_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Provide Extension</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___PROVIDE_EXTENSION__ECLASS = STATIC_PREDICATE_EXPR___PROVIDE_EXTENSION__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___GET_ANNOTATION__STRING = STATIC_PREDICATE_EXPR___GET_ANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Provide Annotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR___PROVIDE_ANNOTATION__STRING = STATIC_PREDICATE_EXPR___PROVIDE_ANNOTATION__STRING;
+
+	/**
+	 * The number of operations of the '<em>False Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_EXPR_OPERATION_COUNT = STATIC_PREDICATE_EXPR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link mtctl.Predicates.ComparisonOp <em>Comparison Op</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2643,7 +3095,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @see mtctl.Predicates.impl.PredicatesPackageImpl#getComparisonOp()
 	 * @generated
 	 */
-	int COMPARISON_OP = 11;
+	int COMPARISON_OP = 13;
 
 
 	/**
@@ -2867,6 +3319,26 @@ public interface PredicatesPackage extends EPackage {
 	EClass getStaticPredicateExpr();
 
 	/**
+	 * Returns the meta object for class '{@link mtctl.Predicates.TrueExpr <em>True Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>True Expr</em>'.
+	 * @see mtctl.Predicates.TrueExpr
+	 * @generated
+	 */
+	EClass getTrueExpr();
+
+	/**
+	 * Returns the meta object for class '{@link mtctl.Predicates.FalseExpr <em>False Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>False Expr</em>'.
+	 * @see mtctl.Predicates.FalseExpr
+	 * @generated
+	 */
+	EClass getFalseExpr();
+
+	/**
 	 * Returns the meta object for enum '{@link mtctl.Predicates.ComparisonOp <em>Comparison Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3088,6 +3560,26 @@ public interface PredicatesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STATIC_PREDICATE_EXPR = eINSTANCE.getStaticPredicateExpr();
+
+		/**
+		 * The meta object literal for the '{@link mtctl.Predicates.impl.TrueExprImpl <em>True Expr</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mtctl.Predicates.impl.TrueExprImpl
+		 * @see mtctl.Predicates.impl.PredicatesPackageImpl#getTrueExpr()
+		 * @generated
+		 */
+		EClass TRUE_EXPR = eINSTANCE.getTrueExpr();
+
+		/**
+		 * The meta object literal for the '{@link mtctl.Predicates.impl.FalseExprImpl <em>False Expr</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mtctl.Predicates.impl.FalseExprImpl
+		 * @see mtctl.Predicates.impl.PredicatesPackageImpl#getFalseExpr()
+		 * @generated
+		 */
+		EClass FALSE_EXPR = eINSTANCE.getFalseExpr();
 
 		/**
 		 * The meta object literal for the '{@link mtctl.Predicates.ComparisonOp <em>Comparison Op</em>}' enum.

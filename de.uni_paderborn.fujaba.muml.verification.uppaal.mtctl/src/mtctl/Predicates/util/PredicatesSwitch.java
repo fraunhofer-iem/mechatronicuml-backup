@@ -213,6 +213,32 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PredicatesPackage.TRUE_EXPR: {
+				TrueExpr trueExpr = (TrueExpr)theEObject;
+				T result = caseTrueExpr(trueExpr);
+				if (result == null) result = caseStaticPredicateExpr(trueExpr);
+				if (result == null) result = casePredicateExpr(trueExpr);
+				if (result == null) result = caseExpression(trueExpr);
+				if (result == null) result = caseProperty(trueExpr);
+				if (result == null) result = caseCommentableElement(trueExpr);
+				if (result == null) result = caseTemporalLogicConstraint(trueExpr);
+				if (result == null) result = caseExtendableElement(trueExpr);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PredicatesPackage.FALSE_EXPR: {
+				FalseExpr falseExpr = (FalseExpr)theEObject;
+				T result = caseFalseExpr(falseExpr);
+				if (result == null) result = caseStaticPredicateExpr(falseExpr);
+				if (result == null) result = casePredicateExpr(falseExpr);
+				if (result == null) result = caseExpression(falseExpr);
+				if (result == null) result = caseProperty(falseExpr);
+				if (result == null) result = caseCommentableElement(falseExpr);
+				if (result == null) result = caseTemporalLogicConstraint(falseExpr);
+				if (result == null) result = caseExtendableElement(falseExpr);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -379,6 +405,36 @@ public class PredicatesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStaticPredicateExpr(StaticPredicateExpr object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>True Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>True Expr</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTrueExpr(TrueExpr object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>False Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>False Expr</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFalseExpr(FalseExpr object) {
 		return null;
 	}
 

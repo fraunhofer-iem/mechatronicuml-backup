@@ -1232,41 +1232,71 @@ rulePredicateExpr returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getPredicateExprAccess().getDeadlockExprParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getPredicateExprAccess().getTrueExprParserRuleCall_0()); 
     }
-    this_DeadlockExpr_0=ruleDeadlockExpr
+    this_TrueExpr_0=ruleTrueExpr
     { 
-        $current = $this_DeadlockExpr_0.current; 
+        $current = $this_TrueExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getPredicateExprAccess().getStateExprParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getPredicateExprAccess().getFalseExprParserRuleCall_1()); 
     }
-    this_StateExpr_1=ruleStateExpr
+    this_FalseExpr_1=ruleFalseExpr
     { 
-        $current = $this_StateExpr_1.current; 
+        $current = $this_FalseExpr_1.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getPredicateExprAccess().getMessageExprParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getPredicateExprAccess().getDeadlockExprParserRuleCall_2()); 
     }
-    this_MessageExpr_2=ruleMessageExpr
+    this_DeadlockExpr_2=ruleDeadlockExpr
     { 
-        $current = $this_MessageExpr_2.current; 
+        $current = $this_DeadlockExpr_2.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getPredicateExprAccess().getTransitionExprParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getPredicateExprAccess().getBufferOverflowExprParserRuleCall_3()); 
     }
-    this_TransitionExpr_3=ruleTransitionExpr
+    this_BufferOverflowExpr_3=ruleBufferOverflowExpr
     { 
-        $current = $this_TransitionExpr_3.current; 
+        $current = $this_BufferOverflowExpr_3.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getPredicateExprAccess().getStateExprParserRuleCall_4()); 
+    }
+    this_StateExpr_4=ruleStateExpr
+    { 
+        $current = $this_StateExpr_4.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getPredicateExprAccess().getMessageExprParserRuleCall_5()); 
+    }
+    this_MessageExpr_5=ruleMessageExpr
+    { 
+        $current = $this_MessageExpr_5.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getPredicateExprAccess().getTransitionExprParserRuleCall_6()); 
+    }
+    this_TransitionExpr_6=ruleTransitionExpr
+    { 
+        $current = $this_TransitionExpr_6.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1299,6 +1329,99 @@ ruleDeadlockExpr returns [EObject current=null]
 )	otherlv_1='deadlock' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getDeadlockExprAccess().getDeadlockKeyword_1());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleBufferOverflowExpr
+entryRuleBufferOverflowExpr returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getBufferOverflowExprRule()); }
+	 iv_ruleBufferOverflowExpr=ruleBufferOverflowExpr 
+	 { $current=$iv_ruleBufferOverflowExpr.current; } 
+	 EOF 
+;
+
+// Rule BufferOverflowExpr
+ruleBufferOverflowExpr returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getBufferOverflowExprAccess().getBufferOverflowExprAction_0(),
+            $current);
+    }
+)	otherlv_1='bufferOverflow' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getBufferOverflowExprAccess().getBufferOverflowKeyword_1());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleTrueExpr
+entryRuleTrueExpr returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTrueExprRule()); }
+	 iv_ruleTrueExpr=ruleTrueExpr 
+	 { $current=$iv_ruleTrueExpr.current; } 
+	 EOF 
+;
+
+// Rule TrueExpr
+ruleTrueExpr returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getTrueExprAccess().getTrueExprAction_0(),
+            $current);
+    }
+)	otherlv_1='true' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getTrueExprAccess().getTrueKeyword_1());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleFalseExpr
+entryRuleFalseExpr returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFalseExprRule()); }
+	 iv_ruleFalseExpr=ruleFalseExpr 
+	 { $current=$iv_ruleFalseExpr.current; } 
+	 EOF 
+;
+
+// Rule FalseExpr
+ruleFalseExpr returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getFalseExprAccess().getFalseExprAction_0(),
+            $current);
+    }
+)	otherlv_1='false' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getFalseExprAccess().getFalseKeyword_1());
     }
 )
 ;
@@ -1516,16 +1639,6 @@ ruleMessageExpr returns [EObject current=null]
         $current = $this_MessageInTransitExpr_1.current; 
         afterParserOrEnumRuleCall();
     }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getMessageExprAccess().getBufferOverflowExprParserRuleCall_2()); 
-    }
-    this_BufferOverflowExpr_2=ruleBufferOverflowExpr
-    { 
-        $current = $this_BufferOverflowExpr_2.current; 
-        afterParserOrEnumRuleCall();
-    }
 )
 ;
 
@@ -1649,37 +1762,6 @@ ruleMessageInBufferExpr returns [EObject current=null]
 )	otherlv_5=')' 
     {
     	newLeafNode(otherlv_5, grammarAccess.getMessageInBufferExprAccess().getRightParenthesisKeyword_5());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleBufferOverflowExpr
-entryRuleBufferOverflowExpr returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getBufferOverflowExprRule()); }
-	 iv_ruleBufferOverflowExpr=ruleBufferOverflowExpr 
-	 { $current=$iv_ruleBufferOverflowExpr.current; } 
-	 EOF 
-;
-
-// Rule BufferOverflowExpr
-ruleBufferOverflowExpr returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getBufferOverflowExprAccess().getBufferOverflowExprAction_0(),
-            $current);
-    }
-)	otherlv_1='bufferOverflow' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getBufferOverflowExprAccess().getBufferOverflowKeyword_1());
     }
 )
 ;

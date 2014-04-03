@@ -691,30 +691,42 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	public class PredicateExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PredicateExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cDeadlockExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cStateExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cMessageExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cTransitionExprParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cTrueExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cFalseExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cDeadlockExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cBufferOverflowExprParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cStateExprParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cMessageExprParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cTransitionExprParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		////Predicates
 		//PredicateExpr returns mtctl::Expression:
-		//	DeadlockExpr | StateExpr | MessageExpr | TransitionExpr;
+		//	TrueExpr | FalseExpr | DeadlockExpr | BufferOverflowExpr | StateExpr | MessageExpr | TransitionExpr;
 		public ParserRule getRule() { return rule; }
 
-		//DeadlockExpr | StateExpr | MessageExpr | TransitionExpr
+		//TrueExpr | FalseExpr | DeadlockExpr | BufferOverflowExpr | StateExpr | MessageExpr | TransitionExpr
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//TrueExpr
+		public RuleCall getTrueExprParserRuleCall_0() { return cTrueExprParserRuleCall_0; }
+
+		//FalseExpr
+		public RuleCall getFalseExprParserRuleCall_1() { return cFalseExprParserRuleCall_1; }
+
 		//DeadlockExpr
-		public RuleCall getDeadlockExprParserRuleCall_0() { return cDeadlockExprParserRuleCall_0; }
+		public RuleCall getDeadlockExprParserRuleCall_2() { return cDeadlockExprParserRuleCall_2; }
+
+		//BufferOverflowExpr
+		public RuleCall getBufferOverflowExprParserRuleCall_3() { return cBufferOverflowExprParserRuleCall_3; }
 
 		//StateExpr
-		public RuleCall getStateExprParserRuleCall_1() { return cStateExprParserRuleCall_1; }
+		public RuleCall getStateExprParserRuleCall_4() { return cStateExprParserRuleCall_4; }
 
 		//MessageExpr
-		public RuleCall getMessageExprParserRuleCall_2() { return cMessageExprParserRuleCall_2; }
+		public RuleCall getMessageExprParserRuleCall_5() { return cMessageExprParserRuleCall_5; }
 
 		//TransitionExpr
-		public RuleCall getTransitionExprParserRuleCall_3() { return cTransitionExprParserRuleCall_3; }
+		public RuleCall getTransitionExprParserRuleCall_6() { return cTransitionExprParserRuleCall_6; }
 	}
 
 	public class DeadlockExprElements extends AbstractParserRuleElementFinder {
@@ -723,7 +735,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cDeadlockExprAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDeadlockKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
-		//DeadlockExpr returns mtctl::PredicateExpr:
+		//DeadlockExpr returns mtctl::DeadlockExpr:
 		//	{mtctl::DeadlockExpr} "deadlock";
 		public ParserRule getRule() { return rule; }
 
@@ -735,6 +747,66 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"deadlock"
 		public Keyword getDeadlockKeyword_1() { return cDeadlockKeyword_1; }
+	}
+
+	public class BufferOverflowExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BufferOverflowExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cBufferOverflowExprAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cBufferOverflowKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//BufferOverflowExpr returns mtctl::BufferOverflowExpr:
+		//	{mtctl::BufferOverflowExpr} "bufferOverflow";
+		public ParserRule getRule() { return rule; }
+
+		//{mtctl::BufferOverflowExpr} "bufferOverflow"
+		public Group getGroup() { return cGroup; }
+
+		//{mtctl::BufferOverflowExpr}
+		public Action getBufferOverflowExprAction_0() { return cBufferOverflowExprAction_0; }
+
+		//"bufferOverflow"
+		public Keyword getBufferOverflowKeyword_1() { return cBufferOverflowKeyword_1; }
+	}
+
+	public class TrueExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TrueExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cTrueExprAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cTrueKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//TrueExpr returns mtctl::TrueExpr:
+		//	{mtctl::TrueExpr} "true";
+		public ParserRule getRule() { return rule; }
+
+		//{mtctl::TrueExpr} "true"
+		public Group getGroup() { return cGroup; }
+
+		//{mtctl::TrueExpr}
+		public Action getTrueExprAction_0() { return cTrueExprAction_0; }
+
+		//"true"
+		public Keyword getTrueKeyword_1() { return cTrueKeyword_1; }
+	}
+
+	public class FalseExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FalseExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cFalseExprAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//FalseExpr returns mtctl::FalseExpr:
+		//	{mtctl::FalseExpr} "false";
+		public ParserRule getRule() { return rule; }
+
+		//{mtctl::FalseExpr} "false"
+		public Group getGroup() { return cGroup; }
+
+		//{mtctl::FalseExpr}
+		public Action getFalseExprAction_0() { return cFalseExprAction_0; }
+
+		//"false"
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
 	}
 
 	public class StateExprElements extends AbstractParserRuleElementFinder {
@@ -846,13 +918,12 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cMessageInBufferExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cMessageInTransitExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cBufferOverflowExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//MessageExpr returns mtctl::PredicateExpr:
-		//	MessageInBufferExpr | MessageInTransitExpr | BufferOverflowExpr;
+		//	MessageInBufferExpr | MessageInTransitExpr;
 		public ParserRule getRule() { return rule; }
 
-		//MessageInBufferExpr | MessageInTransitExpr | BufferOverflowExpr
+		//MessageInBufferExpr | MessageInTransitExpr
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//MessageInBufferExpr
@@ -860,9 +931,6 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//MessageInTransitExpr
 		public RuleCall getMessageInTransitExprParserRuleCall_1() { return cMessageInTransitExprParserRuleCall_1; }
-
-		//BufferOverflowExpr
-		public RuleCall getBufferOverflowExprParserRuleCall_2() { return cBufferOverflowExprParserRuleCall_2; }
 	}
 
 	public class MessageInTransitExprElements extends AbstractParserRuleElementFinder {
@@ -939,26 +1007,6 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
-	}
-
-	public class BufferOverflowExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BufferOverflowExpr");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cBufferOverflowExprAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cBufferOverflowKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		
-		//BufferOverflowExpr returns mtctl::BufferOverflowExpr:
-		//	{mtctl::BufferOverflowExpr} "bufferOverflow";
-		public ParserRule getRule() { return rule; }
-
-		//{mtctl::BufferOverflowExpr} "bufferOverflow"
-		public Group getGroup() { return cGroup; }
-
-		//{mtctl::BufferOverflowExpr}
-		public Action getBufferOverflowExprAction_0() { return cBufferOverflowExprAction_0; }
-
-		//"bufferOverflow"
-		public Keyword getBufferOverflowKeyword_1() { return cBufferOverflowKeyword_1; }
 	}
 
 	public class TransitionExprElements extends AbstractParserRuleElementFinder {
@@ -1549,13 +1597,15 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private AtomExprElements pAtomExpr;
 	private PredicateExprElements pPredicateExpr;
 	private DeadlockExprElements pDeadlockExpr;
+	private BufferOverflowExprElements pBufferOverflowExpr;
+	private TrueExprElements pTrueExpr;
+	private FalseExprElements pFalseExpr;
 	private StateExprElements pStateExpr;
 	private StateActiveExprElements pStateActiveExpr;
 	private SubstateOfExprElements pSubstateOfExpr;
 	private MessageExprElements pMessageExpr;
 	private MessageInTransitExprElements pMessageInTransitExpr;
 	private MessageInBufferExprElements pMessageInBufferExpr;
-	private BufferOverflowExprElements pBufferOverflowExpr;
 	private TransitionExprElements pTransitionExpr;
 	private TransitionFiringExprElements pTransitionFiringExpr;
 	private ComparisonExprElements pComparisonExpr;
@@ -1810,7 +1860,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 	////Predicates
 	//PredicateExpr returns mtctl::Expression:
-	//	DeadlockExpr | StateExpr | MessageExpr | TransitionExpr;
+	//	TrueExpr | FalseExpr | DeadlockExpr | BufferOverflowExpr | StateExpr | MessageExpr | TransitionExpr;
 	public PredicateExprElements getPredicateExprAccess() {
 		return (pPredicateExpr != null) ? pPredicateExpr : (pPredicateExpr = new PredicateExprElements());
 	}
@@ -1819,7 +1869,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getPredicateExprAccess().getRule();
 	}
 
-	//DeadlockExpr returns mtctl::PredicateExpr:
+	//DeadlockExpr returns mtctl::DeadlockExpr:
 	//	{mtctl::DeadlockExpr} "deadlock";
 	public DeadlockExprElements getDeadlockExprAccess() {
 		return (pDeadlockExpr != null) ? pDeadlockExpr : (pDeadlockExpr = new DeadlockExprElements());
@@ -1827,6 +1877,36 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getDeadlockExprRule() {
 		return getDeadlockExprAccess().getRule();
+	}
+
+	//BufferOverflowExpr returns mtctl::BufferOverflowExpr:
+	//	{mtctl::BufferOverflowExpr} "bufferOverflow";
+	public BufferOverflowExprElements getBufferOverflowExprAccess() {
+		return (pBufferOverflowExpr != null) ? pBufferOverflowExpr : (pBufferOverflowExpr = new BufferOverflowExprElements());
+	}
+	
+	public ParserRule getBufferOverflowExprRule() {
+		return getBufferOverflowExprAccess().getRule();
+	}
+
+	//TrueExpr returns mtctl::TrueExpr:
+	//	{mtctl::TrueExpr} "true";
+	public TrueExprElements getTrueExprAccess() {
+		return (pTrueExpr != null) ? pTrueExpr : (pTrueExpr = new TrueExprElements());
+	}
+	
+	public ParserRule getTrueExprRule() {
+		return getTrueExprAccess().getRule();
+	}
+
+	//FalseExpr returns mtctl::FalseExpr:
+	//	{mtctl::FalseExpr} "false";
+	public FalseExprElements getFalseExprAccess() {
+		return (pFalseExpr != null) ? pFalseExpr : (pFalseExpr = new FalseExprElements());
+	}
+	
+	public ParserRule getFalseExprRule() {
+		return getFalseExprAccess().getRule();
 	}
 
 	//StateExpr returns mtctl::PredicateExpr:
@@ -1860,7 +1940,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MessageExpr returns mtctl::PredicateExpr:
-	//	MessageInBufferExpr | MessageInTransitExpr | BufferOverflowExpr;
+	//	MessageInBufferExpr | MessageInTransitExpr;
 	public MessageExprElements getMessageExprAccess() {
 		return (pMessageExpr != null) ? pMessageExpr : (pMessageExpr = new MessageExprElements());
 	}
@@ -1887,16 +1967,6 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMessageInBufferExprRule() {
 		return getMessageInBufferExprAccess().getRule();
-	}
-
-	//BufferOverflowExpr returns mtctl::BufferOverflowExpr:
-	//	{mtctl::BufferOverflowExpr} "bufferOverflow";
-	public BufferOverflowExprElements getBufferOverflowExprAccess() {
-		return (pBufferOverflowExpr != null) ? pBufferOverflowExpr : (pBufferOverflowExpr = new BufferOverflowExprElements());
-	}
-	
-	public ParserRule getBufferOverflowExprRule() {
-		return getBufferOverflowExprAccess().getRule();
 	}
 
 	//TransitionExpr returns mtctl::PredicateExpr:

@@ -144,6 +144,8 @@
         <details key="documentation" value="Predicates that are evaluated statically (i.e. they say something about the static structure of a model)"/>
       </eAnnotations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TrueExpr" eSuperTypes="#//Predicates/StaticPredicateExpr"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FalseExpr" eSuperTypes="#//Predicates/StaticPredicateExpr"/>
   </eSubpackages>
   <eSubpackages name="Sets" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets"
       nsPrefix="Sets">

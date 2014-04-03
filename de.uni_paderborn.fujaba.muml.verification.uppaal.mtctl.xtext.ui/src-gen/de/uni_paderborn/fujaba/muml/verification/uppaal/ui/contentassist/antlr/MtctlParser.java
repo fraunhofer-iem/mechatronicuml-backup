@@ -74,11 +74,13 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAGExprAccess().getGroup(), "rule__AGExpr__Group__0");
 					put(grammarAccess.getAtomExprAccess().getGroup_0(), "rule__AtomExpr__Group_0__0");
 					put(grammarAccess.getDeadlockExprAccess().getGroup(), "rule__DeadlockExpr__Group__0");
+					put(grammarAccess.getBufferOverflowExprAccess().getGroup(), "rule__BufferOverflowExpr__Group__0");
+					put(grammarAccess.getTrueExprAccess().getGroup(), "rule__TrueExpr__Group__0");
+					put(grammarAccess.getFalseExprAccess().getGroup(), "rule__FalseExpr__Group__0");
 					put(grammarAccess.getStateActiveExprAccess().getGroup(), "rule__StateActiveExpr__Group__0");
 					put(grammarAccess.getSubstateOfExprAccess().getGroup(), "rule__SubstateOfExpr__Group__0");
 					put(grammarAccess.getMessageInTransitExprAccess().getGroup(), "rule__MessageInTransitExpr__Group__0");
 					put(grammarAccess.getMessageInBufferExprAccess().getGroup(), "rule__MessageInBufferExpr__Group__0");
-					put(grammarAccess.getBufferOverflowExprAccess().getGroup(), "rule__BufferOverflowExpr__Group__0");
 					put(grammarAccess.getTransitionFiringExprAccess().getGroup(), "rule__TransitionFiringExpr__Group__0");
 					put(grammarAccess.getComparisonExprAccess().getGroup(), "rule__ComparisonExpr__Group__0");
 					put(grammarAccess.getBufferMessageCountExprAccess().getGroup(), "rule__BufferMessageCountExpr__Group__0");
