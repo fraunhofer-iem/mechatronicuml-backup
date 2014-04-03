@@ -764,14 +764,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Action cStateActiveExprAction_2 = (Action)cGroup.eContents().get(2);
 		private final Assignment cStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cStateMapExprParserRuleCall_3_0 = (RuleCall)cStateAssignment_3.eContents().get(0);
+		private final RuleCall cStateStateMapExprParserRuleCall_3_0 = (RuleCall)cStateAssignment_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//StateActiveExpr returns mtctl::StateActiveExpr:
-		//	"stateActive" "(" {mtctl::StateActiveExpr} state=MapExpr ")";
+		//	"stateActive" "(" {mtctl::StateActiveExpr} state=StateMapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"stateActive" "(" {mtctl::StateActiveExpr} state=MapExpr ")"
+		//"stateActive" "(" {mtctl::StateActiveExpr} state=StateMapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"stateActive"
@@ -783,11 +783,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//{mtctl::StateActiveExpr}
 		public Action getStateActiveExprAction_2() { return cStateActiveExprAction_2; }
 
-		//state=MapExpr
+		//state=StateMapExpr
 		public Assignment getStateAssignment_3() { return cStateAssignment_3; }
 
-		//MapExpr
-		public RuleCall getStateMapExprParserRuleCall_3_0() { return cStateMapExprParserRuleCall_3_0; }
+		//StateMapExpr
+		public RuleCall getStateStateMapExprParserRuleCall_3_0() { return cStateStateMapExprParserRuleCall_3_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
@@ -800,17 +800,17 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Action cSubstateOfExprAction_2 = (Action)cGroup.eContents().get(2);
 		private final Assignment cStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cStateMapExprParserRuleCall_3_0 = (RuleCall)cStateAssignment_3.eContents().get(0);
+		private final RuleCall cStateStateMapExprParserRuleCall_3_0 = (RuleCall)cStateAssignment_3.eContents().get(0);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cSuperstateAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSuperstateMapExprParserRuleCall_5_0 = (RuleCall)cSuperstateAssignment_5.eContents().get(0);
+		private final RuleCall cSuperstateStateMapExprParserRuleCall_5_0 = (RuleCall)cSuperstateAssignment_5.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//SubstateOfExpr returns mtctl::SubstateOfExpr:
-		//	"substateOf" "(" {mtctl::SubstateOfExpr} state=MapExpr "," superstate=MapExpr ")";
+		//	"substateOf" "(" {mtctl::SubstateOfExpr} state=StateMapExpr "," superstate=StateMapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"substateOf" "(" {mtctl::SubstateOfExpr} state=MapExpr "," superstate=MapExpr ")"
+		//"substateOf" "(" {mtctl::SubstateOfExpr} state=StateMapExpr "," superstate=StateMapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"substateOf"
@@ -822,20 +822,20 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//{mtctl::SubstateOfExpr}
 		public Action getSubstateOfExprAction_2() { return cSubstateOfExprAction_2; }
 
-		//state=MapExpr
+		//state=StateMapExpr
 		public Assignment getStateAssignment_3() { return cStateAssignment_3; }
 
-		//MapExpr
-		public RuleCall getStateMapExprParserRuleCall_3_0() { return cStateMapExprParserRuleCall_3_0; }
+		//StateMapExpr
+		public RuleCall getStateStateMapExprParserRuleCall_3_0() { return cStateStateMapExprParserRuleCall_3_0; }
 
 		//","
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 
-		//superstate=MapExpr
+		//superstate=StateMapExpr
 		public Assignment getSuperstateAssignment_5() { return cSuperstateAssignment_5; }
 
-		//MapExpr
-		public RuleCall getSuperstateMapExprParserRuleCall_5_0() { return cSuperstateMapExprParserRuleCall_5_0; }
+		//StateMapExpr
+		public RuleCall getSuperstateStateMapExprParserRuleCall_5_0() { return cSuperstateStateMapExprParserRuleCall_5_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
@@ -871,14 +871,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMessageInTransitKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cMessageAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cMessageMapExprParserRuleCall_2_0 = (RuleCall)cMessageAssignment_2.eContents().get(0);
+		private final RuleCall cMessageMessageMapExprParserRuleCall_2_0 = (RuleCall)cMessageAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//MessageInTransitExpr returns mtctl::MessageInTransitExpr:
-		//	"messageInTransit" "(" message=MapExpr ")";
+		//	"messageInTransit" "(" message=MessageMapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"messageInTransit" "(" message=MapExpr ")"
+		//"messageInTransit" "(" message=MessageMapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"messageInTransit"
@@ -887,11 +887,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//message=MapExpr
+		//message=MessageMapExpr
 		public Assignment getMessageAssignment_2() { return cMessageAssignment_2; }
 
-		//MapExpr
-		public RuleCall getMessageMapExprParserRuleCall_2_0() { return cMessageMapExprParserRuleCall_2_0; }
+		//MessageMapExpr
+		public RuleCall getMessageMessageMapExprParserRuleCall_2_0() { return cMessageMessageMapExprParserRuleCall_2_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -903,17 +903,17 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cMessageInBufferKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cMessageAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cMessageMapExprParserRuleCall_2_0 = (RuleCall)cMessageAssignment_2.eContents().get(0);
+		private final RuleCall cMessageMessageMapExprParserRuleCall_2_0 = (RuleCall)cMessageAssignment_2.eContents().get(0);
 		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cBufferAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cBufferMapExprParserRuleCall_4_0 = (RuleCall)cBufferAssignment_4.eContents().get(0);
+		private final RuleCall cBufferBufferMapExprParserRuleCall_4_0 = (RuleCall)cBufferAssignment_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//MessageInBufferExpr returns mtctl::MessageInBufferExpr:
-		//	"messageInBuffer" "(" message=MapExpr "," buffer=MapExpr ")";
+		//	"messageInBuffer" "(" message=MessageMapExpr "," buffer=BufferMapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"messageInBuffer" "(" message=MapExpr "," buffer=MapExpr ")"
+		//"messageInBuffer" "(" message=MessageMapExpr "," buffer=BufferMapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"messageInBuffer"
@@ -922,20 +922,20 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//message=MapExpr
+		//message=MessageMapExpr
 		public Assignment getMessageAssignment_2() { return cMessageAssignment_2; }
 
-		//MapExpr
-		public RuleCall getMessageMapExprParserRuleCall_2_0() { return cMessageMapExprParserRuleCall_2_0; }
+		//MessageMapExpr
+		public RuleCall getMessageMessageMapExprParserRuleCall_2_0() { return cMessageMessageMapExprParserRuleCall_2_0; }
 
 		//","
 		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
 
-		//buffer=MapExpr
+		//buffer=BufferMapExpr
 		public Assignment getBufferAssignment_4() { return cBufferAssignment_4; }
 
-		//MapExpr
-		public RuleCall getBufferMapExprParserRuleCall_4_0() { return cBufferMapExprParserRuleCall_4_0; }
+		//BufferMapExpr
+		public RuleCall getBufferBufferMapExprParserRuleCall_4_0() { return cBufferBufferMapExprParserRuleCall_4_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
@@ -979,14 +979,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTransitionFiringKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTransitionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTransitionMumlElemExprParserRuleCall_2_0 = (RuleCall)cTransitionAssignment_2.eContents().get(0);
+		private final RuleCall cTransitionTransitionMapExprParserRuleCall_2_0 = (RuleCall)cTransitionAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//TransitionFiringExpr returns mtctl::TransitionFiringExpr:
-		//	"transitionFiring" "(" transition=MumlElemExpr ")";
+		//	"transitionFiring" "(" transition=TransitionMapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"transitionFiring" "(" transition=MumlElemExpr ")"
+		//"transitionFiring" "(" transition=TransitionMapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"transitionFiring"
@@ -995,11 +995,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//transition=MumlElemExpr
+		//transition=TransitionMapExpr
 		public Assignment getTransitionAssignment_2() { return cTransitionAssignment_2; }
 
-		//MumlElemExpr
-		public RuleCall getTransitionMumlElemExprParserRuleCall_2_0() { return cTransitionMumlElemExprParserRuleCall_2_0; }
+		//TransitionMapExpr
+		public RuleCall getTransitionTransitionMapExprParserRuleCall_2_0() { return cTransitionTransitionMapExprParserRuleCall_2_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -1049,30 +1049,118 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	public class MapExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MapExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cBufferMessageCountExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cTransitionMapParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cMumlElemExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cConstExprParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cMumlElemExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBufferMessageCountExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cConstExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSourceStateExprParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cTargetStateExprParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
-		////Expressions usable in comparisons
+		////Expressions usable in comparisons. Starting with MapExpressions arranged by return type
 		//MapExpr returns mtctl::Expression:
-		//	BufferMessageCountExpr | TransitionMap | MumlElemExpr | ConstExpr;
+		//	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr;
 		public ParserRule getRule() { return rule; }
 
-		//BufferMessageCountExpr | TransitionMap | MumlElemExpr | ConstExpr
+		//MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//BufferMessageCountExpr
-		public RuleCall getBufferMessageCountExprParserRuleCall_0() { return cBufferMessageCountExprParserRuleCall_0; }
-
-		//TransitionMap
-		public RuleCall getTransitionMapParserRuleCall_1() { return cTransitionMapParserRuleCall_1; }
-
 		//MumlElemExpr
-		public RuleCall getMumlElemExprParserRuleCall_2() { return cMumlElemExprParserRuleCall_2; }
+		public RuleCall getMumlElemExprParserRuleCall_0() { return cMumlElemExprParserRuleCall_0; }
+
+		//BufferMessageCountExpr
+		public RuleCall getBufferMessageCountExprParserRuleCall_1() { return cBufferMessageCountExprParserRuleCall_1; }
 
 		//ConstExpr
-		public RuleCall getConstExprParserRuleCall_3() { return cConstExprParserRuleCall_3; }
+		public RuleCall getConstExprParserRuleCall_2() { return cConstExprParserRuleCall_2; }
+
+		//SourceStateExpr
+		public RuleCall getSourceStateExprParserRuleCall_3() { return cSourceStateExprParserRuleCall_3; }
+
+		//TargetStateExpr
+		public RuleCall getTargetStateExprParserRuleCall_4() { return cTargetStateExprParserRuleCall_4; }
+	}
+
+	public class IntegerMapExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IntegerMapExpr");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cMumlElemExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBufferMessageCountExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cConstExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//IntegerMapExpr returns mtctl::Expression:
+		//	MumlElemExpr | BufferMessageCountExpr | ConstExpr;
+		public ParserRule getRule() { return rule; }
+
+		//MumlElemExpr | BufferMessageCountExpr | ConstExpr
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//MumlElemExpr
+		public RuleCall getMumlElemExprParserRuleCall_0() { return cMumlElemExprParserRuleCall_0; }
+
+		//BufferMessageCountExpr
+		public RuleCall getBufferMessageCountExprParserRuleCall_1() { return cBufferMessageCountExprParserRuleCall_1; }
+
+		//ConstExpr
+		public RuleCall getConstExprParserRuleCall_2() { return cConstExprParserRuleCall_2; }
+	}
+
+	public class TransitionMapExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TransitionMapExpr");
+		private final RuleCall cMumlElemExprParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//TransitionMapExpr returns mtctl::Expression:
+		//	MumlElemExpr;
+		public ParserRule getRule() { return rule; }
+
+		//MumlElemExpr
+		public RuleCall getMumlElemExprParserRuleCall() { return cMumlElemExprParserRuleCall; }
+	}
+
+	public class StateMapExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StateMapExpr");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cMumlElemExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSourceStateExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cTargetStateExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//StateMapExpr returns mtctl::Expression:
+		//	MumlElemExpr | SourceStateExpr | TargetStateExpr;
+		public ParserRule getRule() { return rule; }
+
+		//MumlElemExpr | SourceStateExpr | TargetStateExpr
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//MumlElemExpr
+		public RuleCall getMumlElemExprParserRuleCall_0() { return cMumlElemExprParserRuleCall_0; }
+
+		//SourceStateExpr
+		public RuleCall getSourceStateExprParserRuleCall_1() { return cSourceStateExprParserRuleCall_1; }
+
+		//TargetStateExpr
+		public RuleCall getTargetStateExprParserRuleCall_2() { return cTargetStateExprParserRuleCall_2; }
+	}
+
+	public class BufferMapExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BufferMapExpr");
+		private final RuleCall cMumlElemExprParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//BufferMapExpr returns mtctl::Expression:
+		//	MumlElemExpr;
+		public ParserRule getRule() { return rule; }
+
+		//MumlElemExpr
+		public RuleCall getMumlElemExprParserRuleCall() { return cMumlElemExprParserRuleCall; }
+	}
+
+	public class MessageMapExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MessageMapExpr");
+		private final RuleCall cMumlElemExprParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//MessageMapExpr returns mtctl::Expression:
+		//	MumlElemExpr;
+		public ParserRule getRule() { return rule; }
+
+		//MumlElemExpr
+		public RuleCall getMumlElemExprParserRuleCall() { return cMumlElemExprParserRuleCall; }
 	}
 
 	public class BufferMessageCountExprElements extends AbstractParserRuleElementFinder {
@@ -1081,14 +1169,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBufferMessageCountKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cBufferAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cBufferMapExprParserRuleCall_2_0 = (RuleCall)cBufferAssignment_2.eContents().get(0);
+		private final RuleCall cBufferBufferMapExprParserRuleCall_2_0 = (RuleCall)cBufferAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
-		//	"bufferMessageCount" "(" buffer=MapExpr ")";
+		//	"bufferMessageCount" "(" buffer=BufferMapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"bufferMessageCount" "(" buffer=MapExpr ")"
+		//"bufferMessageCount" "(" buffer=BufferMapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"bufferMessageCount"
@@ -1097,34 +1185,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//buffer=MapExpr
+		//buffer=BufferMapExpr
 		public Assignment getBufferAssignment_2() { return cBufferAssignment_2; }
 
-		//MapExpr
-		public RuleCall getBufferMapExprParserRuleCall_2_0() { return cBufferMapExprParserRuleCall_2_0; }
+		//BufferMapExpr
+		public RuleCall getBufferBufferMapExprParserRuleCall_2_0() { return cBufferBufferMapExprParserRuleCall_2_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-	}
-
-	public class TransitionMapElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TransitionMap");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSourceStateExprParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cTargetStateExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//TransitionMap returns mtctl::TransitionMap:
-		//	SourceStateExpr | TargetStateExpr;
-		public ParserRule getRule() { return rule; }
-
-		//SourceStateExpr | TargetStateExpr
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//SourceStateExpr
-		public RuleCall getSourceStateExprParserRuleCall_0() { return cSourceStateExprParserRuleCall_0; }
-
-		//TargetStateExpr
-		public RuleCall getTargetStateExprParserRuleCall_1() { return cTargetStateExprParserRuleCall_1; }
 	}
 
 	public class SourceStateExprElements extends AbstractParserRuleElementFinder {
@@ -1133,14 +1201,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSourceStateKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTransitionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTransitionMapExprParserRuleCall_2_0 = (RuleCall)cTransitionAssignment_2.eContents().get(0);
+		private final RuleCall cTransitionTransitionMapExprParserRuleCall_2_0 = (RuleCall)cTransitionAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//SourceStateExpr returns mtctl::SourceStateExpr:
-		//	"sourceState" "(" transition=MapExpr ")";
+		//	"sourceState" "(" transition=TransitionMapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"sourceState" "(" transition=MapExpr ")"
+		//"sourceState" "(" transition=TransitionMapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"sourceState"
@@ -1149,11 +1217,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//transition=MapExpr
+		//transition=TransitionMapExpr
 		public Assignment getTransitionAssignment_2() { return cTransitionAssignment_2; }
 
-		//MapExpr
-		public RuleCall getTransitionMapExprParserRuleCall_2_0() { return cTransitionMapExprParserRuleCall_2_0; }
+		//TransitionMapExpr
+		public RuleCall getTransitionTransitionMapExprParserRuleCall_2_0() { return cTransitionTransitionMapExprParserRuleCall_2_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -1165,14 +1233,14 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTargetStateKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTransitionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTransitionMapExprParserRuleCall_2_0 = (RuleCall)cTransitionAssignment_2.eContents().get(0);
+		private final RuleCall cTransitionTransitionMapExprParserRuleCall_2_0 = (RuleCall)cTransitionAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//TargetStateExpr returns mtctl::TargetStateExpr:
-		//	"targetState" "(" transition=MapExpr ")";
+		//	"targetState" "(" transition=TransitionMapExpr ")";
 		public ParserRule getRule() { return rule; }
 
-		//"targetState" "(" transition=MapExpr ")"
+		//"targetState" "(" transition=TransitionMapExpr ")"
 		public Group getGroup() { return cGroup; }
 
 		//"targetState"
@@ -1181,11 +1249,11 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		//"("
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 
-		//transition=MapExpr
+		//transition=TransitionMapExpr
 		public Assignment getTransitionAssignment_2() { return cTransitionAssignment_2; }
 
-		//MapExpr
-		public RuleCall getTransitionMapExprParserRuleCall_2_0() { return cTransitionMapExprParserRuleCall_2_0; }
+		//TransitionMapExpr
+		public RuleCall getTransitionTransitionMapExprParserRuleCall_2_0() { return cTransitionTransitionMapExprParserRuleCall_2_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -1493,8 +1561,12 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private ComparisonExprElements pComparisonExpr;
 	private ComparisonOpElements unknownRuleComparisonOp;
 	private MapExprElements pMapExpr;
+	private IntegerMapExprElements pIntegerMapExpr;
+	private TransitionMapExprElements pTransitionMapExpr;
+	private StateMapExprElements pStateMapExpr;
+	private BufferMapExprElements pBufferMapExpr;
+	private MessageMapExprElements pMessageMapExpr;
 	private BufferMessageCountExprElements pBufferMessageCountExpr;
-	private TransitionMapElements pTransitionMap;
 	private SourceStateExprElements pSourceStateExpr;
 	private TargetStateExprElements pTargetStateExpr;
 	private MumlElemExprElements pMumlElemExpr;
@@ -1768,7 +1840,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StateActiveExpr returns mtctl::StateActiveExpr:
-	//	"stateActive" "(" {mtctl::StateActiveExpr} state=MapExpr ")";
+	//	"stateActive" "(" {mtctl::StateActiveExpr} state=StateMapExpr ")";
 	public StateActiveExprElements getStateActiveExprAccess() {
 		return (pStateActiveExpr != null) ? pStateActiveExpr : (pStateActiveExpr = new StateActiveExprElements());
 	}
@@ -1778,7 +1850,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SubstateOfExpr returns mtctl::SubstateOfExpr:
-	//	"substateOf" "(" {mtctl::SubstateOfExpr} state=MapExpr "," superstate=MapExpr ")";
+	//	"substateOf" "(" {mtctl::SubstateOfExpr} state=StateMapExpr "," superstate=StateMapExpr ")";
 	public SubstateOfExprElements getSubstateOfExprAccess() {
 		return (pSubstateOfExpr != null) ? pSubstateOfExpr : (pSubstateOfExpr = new SubstateOfExprElements());
 	}
@@ -1798,7 +1870,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MessageInTransitExpr returns mtctl::MessageInTransitExpr:
-	//	"messageInTransit" "(" message=MapExpr ")";
+	//	"messageInTransit" "(" message=MessageMapExpr ")";
 	public MessageInTransitExprElements getMessageInTransitExprAccess() {
 		return (pMessageInTransitExpr != null) ? pMessageInTransitExpr : (pMessageInTransitExpr = new MessageInTransitExprElements());
 	}
@@ -1808,7 +1880,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MessageInBufferExpr returns mtctl::MessageInBufferExpr:
-	//	"messageInBuffer" "(" message=MapExpr "," buffer=MapExpr ")";
+	//	"messageInBuffer" "(" message=MessageMapExpr "," buffer=BufferMapExpr ")";
 	public MessageInBufferExprElements getMessageInBufferExprAccess() {
 		return (pMessageInBufferExpr != null) ? pMessageInBufferExpr : (pMessageInBufferExpr = new MessageInBufferExprElements());
 	}
@@ -1838,7 +1910,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TransitionFiringExpr returns mtctl::TransitionFiringExpr:
-	//	"transitionFiring" "(" transition=MumlElemExpr ")";
+	//	"transitionFiring" "(" transition=TransitionMapExpr ")";
 	public TransitionFiringExprElements getTransitionFiringExprAccess() {
 		return (pTransitionFiringExpr != null) ? pTransitionFiringExpr : (pTransitionFiringExpr = new TransitionFiringExprElements());
 	}
@@ -1868,9 +1940,9 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getComparisonOpAccess().getRule();
 	}
 
-	////Expressions usable in comparisons
+	////Expressions usable in comparisons. Starting with MapExpressions arranged by return type
 	//MapExpr returns mtctl::Expression:
-	//	BufferMessageCountExpr | TransitionMap | MumlElemExpr | ConstExpr;
+	//	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr;
 	public MapExprElements getMapExprAccess() {
 		return (pMapExpr != null) ? pMapExpr : (pMapExpr = new MapExprElements());
 	}
@@ -1879,8 +1951,58 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMapExprAccess().getRule();
 	}
 
+	//IntegerMapExpr returns mtctl::Expression:
+	//	MumlElemExpr | BufferMessageCountExpr | ConstExpr;
+	public IntegerMapExprElements getIntegerMapExprAccess() {
+		return (pIntegerMapExpr != null) ? pIntegerMapExpr : (pIntegerMapExpr = new IntegerMapExprElements());
+	}
+	
+	public ParserRule getIntegerMapExprRule() {
+		return getIntegerMapExprAccess().getRule();
+	}
+
+	//TransitionMapExpr returns mtctl::Expression:
+	//	MumlElemExpr;
+	public TransitionMapExprElements getTransitionMapExprAccess() {
+		return (pTransitionMapExpr != null) ? pTransitionMapExpr : (pTransitionMapExpr = new TransitionMapExprElements());
+	}
+	
+	public ParserRule getTransitionMapExprRule() {
+		return getTransitionMapExprAccess().getRule();
+	}
+
+	//StateMapExpr returns mtctl::Expression:
+	//	MumlElemExpr | SourceStateExpr | TargetStateExpr;
+	public StateMapExprElements getStateMapExprAccess() {
+		return (pStateMapExpr != null) ? pStateMapExpr : (pStateMapExpr = new StateMapExprElements());
+	}
+	
+	public ParserRule getStateMapExprRule() {
+		return getStateMapExprAccess().getRule();
+	}
+
+	//BufferMapExpr returns mtctl::Expression:
+	//	MumlElemExpr;
+	public BufferMapExprElements getBufferMapExprAccess() {
+		return (pBufferMapExpr != null) ? pBufferMapExpr : (pBufferMapExpr = new BufferMapExprElements());
+	}
+	
+	public ParserRule getBufferMapExprRule() {
+		return getBufferMapExprAccess().getRule();
+	}
+
+	//MessageMapExpr returns mtctl::Expression:
+	//	MumlElemExpr;
+	public MessageMapExprElements getMessageMapExprAccess() {
+		return (pMessageMapExpr != null) ? pMessageMapExpr : (pMessageMapExpr = new MessageMapExprElements());
+	}
+	
+	public ParserRule getMessageMapExprRule() {
+		return getMessageMapExprAccess().getRule();
+	}
+
 	//BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
-	//	"bufferMessageCount" "(" buffer=MapExpr ")";
+	//	"bufferMessageCount" "(" buffer=BufferMapExpr ")";
 	public BufferMessageCountExprElements getBufferMessageCountExprAccess() {
 		return (pBufferMessageCountExpr != null) ? pBufferMessageCountExpr : (pBufferMessageCountExpr = new BufferMessageCountExprElements());
 	}
@@ -1889,18 +2011,8 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getBufferMessageCountExprAccess().getRule();
 	}
 
-	//TransitionMap returns mtctl::TransitionMap:
-	//	SourceStateExpr | TargetStateExpr;
-	public TransitionMapElements getTransitionMapAccess() {
-		return (pTransitionMap != null) ? pTransitionMap : (pTransitionMap = new TransitionMapElements());
-	}
-	
-	public ParserRule getTransitionMapRule() {
-		return getTransitionMapAccess().getRule();
-	}
-
 	//SourceStateExpr returns mtctl::SourceStateExpr:
-	//	"sourceState" "(" transition=MapExpr ")";
+	//	"sourceState" "(" transition=TransitionMapExpr ")";
 	public SourceStateExprElements getSourceStateExprAccess() {
 		return (pSourceStateExpr != null) ? pSourceStateExpr : (pSourceStateExpr = new SourceStateExprElements());
 	}
@@ -1910,7 +2022,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TargetStateExpr returns mtctl::TargetStateExpr:
-	//	"targetState" "(" transition=MapExpr ")";
+	//	"targetState" "(" transition=TransitionMapExpr ")";
 	public TargetStateExprElements getTargetStateExprAccess() {
 		return (pTargetStateExpr != null) ? pTargetStateExpr : (pTargetStateExpr = new TargetStateExprElements());
 	}

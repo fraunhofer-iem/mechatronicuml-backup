@@ -1378,9 +1378,9 @@ ruleStateActiveExpr returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStateActiveExprAccess().getStateMapExprParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getStateActiveExprAccess().getStateStateMapExprParserRuleCall_3_0()); 
 	    }
-		lv_state_3_0=ruleMapExpr		{
+		lv_state_3_0=ruleStateMapExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStateActiveExprRule());
 	        }
@@ -1388,7 +1388,7 @@ ruleStateActiveExpr returns [EObject current=null]
        			$current, 
        			"state",
         		lv_state_3_0, 
-        		"MapExpr");
+        		"StateMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1435,9 +1435,9 @@ ruleSubstateOfExpr returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSubstateOfExprAccess().getStateMapExprParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getSubstateOfExprAccess().getStateStateMapExprParserRuleCall_3_0()); 
 	    }
-		lv_state_3_0=ruleMapExpr		{
+		lv_state_3_0=ruleStateMapExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSubstateOfExprRule());
 	        }
@@ -1445,7 +1445,7 @@ ruleSubstateOfExpr returns [EObject current=null]
        			$current, 
        			"state",
         		lv_state_3_0, 
-        		"MapExpr");
+        		"StateMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1457,9 +1457,9 @@ ruleSubstateOfExpr returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSubstateOfExprAccess().getSuperstateMapExprParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getSubstateOfExprAccess().getSuperstateStateMapExprParserRuleCall_5_0()); 
 	    }
-		lv_superstate_5_0=ruleMapExpr		{
+		lv_superstate_5_0=ruleStateMapExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSubstateOfExprRule());
 	        }
@@ -1467,7 +1467,7 @@ ruleSubstateOfExpr returns [EObject current=null]
        			$current, 
        			"superstate",
         		lv_superstate_5_0, 
-        		"MapExpr");
+        		"StateMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1558,9 +1558,9 @@ ruleMessageInTransitExpr returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMessageInTransitExprAccess().getMessageMapExprParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getMessageInTransitExprAccess().getMessageMessageMapExprParserRuleCall_2_0()); 
 	    }
-		lv_message_2_0=ruleMapExpr		{
+		lv_message_2_0=ruleMessageMapExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMessageInTransitExprRule());
 	        }
@@ -1568,7 +1568,7 @@ ruleMessageInTransitExpr returns [EObject current=null]
        			$current, 
        			"message",
         		lv_message_2_0, 
-        		"MapExpr");
+        		"MessageMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1609,9 +1609,9 @@ ruleMessageInBufferExpr returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMessageInBufferExprAccess().getMessageMapExprParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getMessageInBufferExprAccess().getMessageMessageMapExprParserRuleCall_2_0()); 
 	    }
-		lv_message_2_0=ruleMapExpr		{
+		lv_message_2_0=ruleMessageMapExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMessageInBufferExprRule());
 	        }
@@ -1619,7 +1619,7 @@ ruleMessageInBufferExpr returns [EObject current=null]
        			$current, 
        			"message",
         		lv_message_2_0, 
-        		"MapExpr");
+        		"MessageMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1631,9 +1631,9 @@ ruleMessageInBufferExpr returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMessageInBufferExprAccess().getBufferMapExprParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getMessageInBufferExprAccess().getBufferBufferMapExprParserRuleCall_4_0()); 
 	    }
-		lv_buffer_4_0=ruleMapExpr		{
+		lv_buffer_4_0=ruleBufferMapExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMessageInBufferExprRule());
 	        }
@@ -1641,7 +1641,7 @@ ruleMessageInBufferExpr returns [EObject current=null]
        			$current, 
        			"buffer",
         		lv_buffer_4_0, 
-        		"MapExpr");
+        		"BufferMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1743,9 +1743,9 @@ ruleTransitionFiringExpr returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTransitionFiringExprAccess().getTransitionMumlElemExprParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getTransitionFiringExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0()); 
 	    }
-		lv_transition_2_0=ruleMumlElemExpr		{
+		lv_transition_2_0=ruleTransitionMapExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTransitionFiringExprRule());
 	        }
@@ -1753,7 +1753,7 @@ ruleTransitionFiringExpr returns [EObject current=null]
        			$current, 
        			"transition",
         		lv_transition_2_0, 
-        		"MumlElemExpr");
+        		"TransitionMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1866,44 +1866,196 @@ ruleMapExpr returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getMapExprAccess().getBufferMessageCountExprParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getMapExprAccess().getMumlElemExprParserRuleCall_0()); 
     }
-    this_BufferMessageCountExpr_0=ruleBufferMessageCountExpr
+    this_MumlElemExpr_0=ruleMumlElemExpr
     { 
-        $current = $this_BufferMessageCountExpr_0.current; 
+        $current = $this_MumlElemExpr_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getMapExprAccess().getTransitionMapParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getMapExprAccess().getBufferMessageCountExprParserRuleCall_1()); 
     }
-    this_TransitionMap_1=ruleTransitionMap
+    this_BufferMessageCountExpr_1=ruleBufferMessageCountExpr
     { 
-        $current = $this_TransitionMap_1.current; 
+        $current = $this_BufferMessageCountExpr_1.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getMapExprAccess().getMumlElemExprParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getMapExprAccess().getConstExprParserRuleCall_2()); 
     }
-    this_MumlElemExpr_2=ruleMumlElemExpr
+    this_ConstExpr_2=ruleConstExpr
     { 
-        $current = $this_MumlElemExpr_2.current; 
+        $current = $this_ConstExpr_2.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getMapExprAccess().getConstExprParserRuleCall_3()); 
+        newCompositeNode(grammarAccess.getMapExprAccess().getSourceStateExprParserRuleCall_3()); 
     }
-    this_ConstExpr_3=ruleConstExpr
+    this_SourceStateExpr_3=ruleSourceStateExpr
     { 
-        $current = $this_ConstExpr_3.current; 
+        $current = $this_SourceStateExpr_3.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getMapExprAccess().getTargetStateExprParserRuleCall_4()); 
+    }
+    this_TargetStateExpr_4=ruleTargetStateExpr
+    { 
+        $current = $this_TargetStateExpr_4.current; 
         afterParserOrEnumRuleCall();
     }
 )
+;
+
+
+
+
+
+
+
+// Entry rule entryRuleTransitionMapExpr
+entryRuleTransitionMapExpr returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTransitionMapExprRule()); }
+	 iv_ruleTransitionMapExpr=ruleTransitionMapExpr 
+	 { $current=$iv_ruleTransitionMapExpr.current; } 
+	 EOF 
+;
+
+// Rule TransitionMapExpr
+ruleTransitionMapExpr returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+    { 
+        newCompositeNode(grammarAccess.getTransitionMapExprAccess().getMumlElemExprParserRuleCall()); 
+    }
+    this_MumlElemExpr_0=ruleMumlElemExpr
+    { 
+        $current = $this_MumlElemExpr_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+;
+
+
+
+
+
+// Entry rule entryRuleStateMapExpr
+entryRuleStateMapExpr returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getStateMapExprRule()); }
+	 iv_ruleStateMapExpr=ruleStateMapExpr 
+	 { $current=$iv_ruleStateMapExpr.current; } 
+	 EOF 
+;
+
+// Rule StateMapExpr
+ruleStateMapExpr returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getStateMapExprAccess().getMumlElemExprParserRuleCall_0()); 
+    }
+    this_MumlElemExpr_0=ruleMumlElemExpr
+    { 
+        $current = $this_MumlElemExpr_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getStateMapExprAccess().getSourceStateExprParserRuleCall_1()); 
+    }
+    this_SourceStateExpr_1=ruleSourceStateExpr
+    { 
+        $current = $this_SourceStateExpr_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getStateMapExprAccess().getTargetStateExprParserRuleCall_2()); 
+    }
+    this_TargetStateExpr_2=ruleTargetStateExpr
+    { 
+        $current = $this_TargetStateExpr_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleBufferMapExpr
+entryRuleBufferMapExpr returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getBufferMapExprRule()); }
+	 iv_ruleBufferMapExpr=ruleBufferMapExpr 
+	 { $current=$iv_ruleBufferMapExpr.current; } 
+	 EOF 
+;
+
+// Rule BufferMapExpr
+ruleBufferMapExpr returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+    { 
+        newCompositeNode(grammarAccess.getBufferMapExprAccess().getMumlElemExprParserRuleCall()); 
+    }
+    this_MumlElemExpr_0=ruleMumlElemExpr
+    { 
+        $current = $this_MumlElemExpr_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+;
+
+
+
+
+
+// Entry rule entryRuleMessageMapExpr
+entryRuleMessageMapExpr returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMessageMapExprRule()); }
+	 iv_ruleMessageMapExpr=ruleMessageMapExpr 
+	 { $current=$iv_ruleMessageMapExpr.current; } 
+	 EOF 
+;
+
+// Rule MessageMapExpr
+ruleMessageMapExpr returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+    { 
+        newCompositeNode(grammarAccess.getMessageMapExprAccess().getMumlElemExprParserRuleCall()); 
+    }
+    this_MumlElemExpr_0=ruleMumlElemExpr
+    { 
+        $current = $this_MumlElemExpr_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
 ;
 
 
@@ -1935,9 +2087,9 @@ ruleBufferMessageCountExpr returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBufferMessageCountExprAccess().getBufferMapExprParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getBufferMessageCountExprAccess().getBufferBufferMapExprParserRuleCall_2_0()); 
 	    }
-		lv_buffer_2_0=ruleMapExpr		{
+		lv_buffer_2_0=ruleBufferMapExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getBufferMessageCountExprRule());
 	        }
@@ -1945,7 +2097,7 @@ ruleBufferMessageCountExpr returns [EObject current=null]
        			$current, 
        			"buffer",
         		lv_buffer_2_0, 
-        		"MapExpr");
+        		"BufferMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1953,46 +2105,6 @@ ruleBufferMessageCountExpr returns [EObject current=null]
 )	otherlv_3=')' 
     {
     	newLeafNode(otherlv_3, grammarAccess.getBufferMessageCountExprAccess().getRightParenthesisKeyword_3());
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleTransitionMap
-entryRuleTransitionMap returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getTransitionMapRule()); }
-	 iv_ruleTransitionMap=ruleTransitionMap 
-	 { $current=$iv_ruleTransitionMap.current; } 
-	 EOF 
-;
-
-// Rule TransitionMap
-ruleTransitionMap returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getTransitionMapAccess().getSourceStateExprParserRuleCall_0()); 
-    }
-    this_SourceStateExpr_0=ruleSourceStateExpr
-    { 
-        $current = $this_SourceStateExpr_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getTransitionMapAccess().getTargetStateExprParserRuleCall_1()); 
-    }
-    this_TargetStateExpr_1=ruleTargetStateExpr
-    { 
-        $current = $this_TargetStateExpr_1.current; 
-        afterParserOrEnumRuleCall();
     }
 )
 ;
@@ -2026,9 +2138,9 @@ ruleSourceStateExpr returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSourceStateExprAccess().getTransitionMapExprParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getSourceStateExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0()); 
 	    }
-		lv_transition_2_0=ruleMapExpr		{
+		lv_transition_2_0=ruleTransitionMapExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSourceStateExprRule());
 	        }
@@ -2036,7 +2148,7 @@ ruleSourceStateExpr returns [EObject current=null]
        			$current, 
        			"transition",
         		lv_transition_2_0, 
-        		"MapExpr");
+        		"TransitionMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2077,9 +2189,9 @@ ruleTargetStateExpr returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTargetStateExprAccess().getTransitionMapExprParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getTargetStateExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0()); 
 	    }
-		lv_transition_2_0=ruleMapExpr		{
+		lv_transition_2_0=ruleTransitionMapExpr		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTargetStateExprRule());
 	        }
@@ -2087,7 +2199,7 @@ ruleTargetStateExpr returns [EObject current=null]
        			$current, 
        			"transition",
         		lv_transition_2_0, 
-        		"MapExpr");
+        		"TransitionMapExpr");
 	        afterParserOrEnumRuleCall();
 	    }
 

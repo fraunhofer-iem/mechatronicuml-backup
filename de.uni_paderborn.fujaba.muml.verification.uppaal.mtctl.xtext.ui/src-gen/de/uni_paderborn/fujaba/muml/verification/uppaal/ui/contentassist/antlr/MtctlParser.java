@@ -50,7 +50,8 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStateExprAccess().getAlternatives(), "rule__StateExpr__Alternatives");
 					put(grammarAccess.getMessageExprAccess().getAlternatives(), "rule__MessageExpr__Alternatives");
 					put(grammarAccess.getMapExprAccess().getAlternatives(), "rule__MapExpr__Alternatives");
-					put(grammarAccess.getTransitionMapAccess().getAlternatives(), "rule__TransitionMap__Alternatives");
+					put(grammarAccess.getIntegerMapExprAccess().getAlternatives(), "rule__IntegerMapExpr__Alternatives");
+					put(grammarAccess.getStateMapExprAccess().getAlternatives(), "rule__StateMapExpr__Alternatives");
 					put(grammarAccess.getSetExprAccess().getAlternatives(), "rule__SetExpr__Alternatives");
 					put(grammarAccess.getComparisonOpAccess().getAlternatives(), "rule__ComparisonOp__Alternatives");
 					put(grammarAccess.getPropertyAccess().getGroup(), "rule__Property__Group__0");

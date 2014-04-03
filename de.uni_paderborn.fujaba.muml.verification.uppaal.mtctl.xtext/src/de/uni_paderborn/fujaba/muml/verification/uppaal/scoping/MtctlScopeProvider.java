@@ -153,7 +153,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
-			if (parentQuantifier.getVar().getSet() instanceof StateSetExpr)
+			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof StateSetExpr)
 				scope.add(parentQuantifier.getVar());
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
@@ -173,7 +173,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
-			if (parentQuantifier.getVar().getSet() instanceof TransitionSetExpr)
+			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof TransitionSetExpr)
 				scope.add(parentQuantifier.getVar());
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
@@ -196,7 +196,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
-			if (parentQuantifier.getVar().getSet() instanceof MessageSetExpr)
+			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof MessageSetExpr)
 				scope.add(parentQuantifier.getVar());
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
@@ -219,7 +219,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
-			if (parentQuantifier.getVar().getSet() instanceof BufferSetExpr)
+			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof BufferSetExpr)
 				scope.add(parentQuantifier.getVar());
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
@@ -243,7 +243,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		//Add BoundVariables for clocks
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
-			if (parentQuantifier.getVar().getSet() instanceof ClockSetExpr)
+			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof ClockSetExpr)
 				scope.add(parentQuantifier.getVar());
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
@@ -252,12 +252,12 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	}
 	
 	/**
-	 * Returns the scope when looking for something that can be used in a comparison
+	 * Returns the scope when looking for anything
 	 * @param context reference in the mtctl model (e.g., a StateExpr)
 	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
 	 * @return the scope
 	 */
-	public IScope getScopeComparable(EObject context, EReference reference) {
+	public IScope getScopeAny(EObject context, EReference reference) {
 		List<EObject> scope = new ArrayList<EObject>();
 		
 		//Add elements from the model
@@ -297,13 +297,13 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	public IScope getScope(EObject context, EReference reference) {
 		//The requested scope might be for a MumlElemExpr. 
 		if (context instanceof MumlElemExpr) {
-			//Because this is not very informational, we exchange the supplied values with the context and reference for the MumlElemExpr, not the reference itself
-			//So basically, we pretend as if we resolve the MumlElemExpr and not the reference
+			//Because this is not very informative, we exchange the supplied values with the context and reference for the MumlElemExpr, not the reference itself
+			//So basically, we pretend that we resolve the MumlElemExpr and not the reference
 			reference = context.eContainmentFeature(); //now contains the reference to the MumlElemExpr
 			context = context.eContainer(); //now contains the class that wants to set its field with a MumlElemExp	
 		}
 		
-		//Take care of calling the correct method wrt. the type that is looked for
+		//Take care of calling the correct method wrt. the type that is looked for		
 		if (context instanceof SubstateOfExpr || context instanceof StateActiveExpr)
 			return getScopeState(context, reference);
 		if (context instanceof TransitionFiringExpr || context instanceof TransitionMap)
@@ -313,8 +313,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		if (context instanceof BufferMsgCountExpr || context instanceof MessageInBufferExpr && reference != null && "buffer".equals(reference.getName()))
 			return getScopeBuffer(context, reference);
 		
-		if (context instanceof PropertyRepository || context instanceof ComparisonExpr || context instanceof MumlElemExpr) //Fallback for contexts where we might want a variable
-			return getScopeComparable(context, reference);
+		if (context instanceof PropertyRepository || context instanceof ComparisonExpr || context instanceof MumlElemExpr) //Fallback for contexts where we might want any variable
+			return getScopeAny(context, reference);
 		
 		return IScope.NULLSCOPE;
 	}

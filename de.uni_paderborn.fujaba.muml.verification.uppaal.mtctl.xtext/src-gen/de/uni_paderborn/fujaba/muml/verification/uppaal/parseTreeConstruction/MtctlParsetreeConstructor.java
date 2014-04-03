@@ -62,14 +62,18 @@ protected class ThisRootNode extends RootToken {
 			case 29: return new TransitionFiringExpr_Group(this, this, 29, inst);
 			case 30: return new ComparisonExpr_Group(this, this, 30, inst);
 			case 31: return new MapExpr_Alternatives(this, this, 31, inst);
-			case 32: return new BufferMessageCountExpr_Group(this, this, 32, inst);
-			case 33: return new TransitionMap_Alternatives(this, this, 33, inst);
-			case 34: return new SourceStateExpr_Group(this, this, 34, inst);
-			case 35: return new TargetStateExpr_Group(this, this, 35, inst);
-			case 36: return new MumlElemExpr_ElemAssignment(this, this, 36, inst);
-			case 37: return new ConstExpr_ValAssignment(this, this, 37, inst);
-			case 38: return new SetExpr_Alternatives(this, this, 38, inst);
-			case 39: return new IntervalSetExpr_Group(this, this, 39, inst);
+			case 32: return new IntegerMapExpr_Alternatives(this, this, 32, inst);
+			case 33: return new TransitionMapExpr_MumlElemExprParserRuleCall(this, this, 33, inst);
+			case 34: return new StateMapExpr_Alternatives(this, this, 34, inst);
+			case 35: return new BufferMapExpr_MumlElemExprParserRuleCall(this, this, 35, inst);
+			case 36: return new MessageMapExpr_MumlElemExprParserRuleCall(this, this, 36, inst);
+			case 37: return new BufferMessageCountExpr_Group(this, this, 37, inst);
+			case 38: return new SourceStateExpr_Group(this, this, 38, inst);
+			case 39: return new TargetStateExpr_Group(this, this, 39, inst);
+			case 40: return new MumlElemExpr_ElemAssignment(this, this, 40, inst);
+			case 41: return new ConstExpr_ValAssignment(this, this, 41, inst);
+			case 42: return new SetExpr_Alternatives(this, this, 42, inst);
+			case 43: return new IntervalSetExpr_Group(this, this, 43, inst);
 			default: return null;
 		}	
 	}	
@@ -4113,11 +4117,11 @@ protected class StateExpr_SubstateOfExprParserRuleCall_1 extends RuleCallToken {
 /************ begin Rule StateActiveExpr ****************
  *
  * StateActiveExpr returns mtctl::StateActiveExpr:
- * 	"stateActive" "(" {mtctl::StateActiveExpr} state=MapExpr ")";
+ * 	"stateActive" "(" {mtctl::StateActiveExpr} state=StateMapExpr ")";
  *
  **/
 
-// "stateActive" "(" {mtctl::StateActiveExpr} state=MapExpr ")"
+// "stateActive" "(" {mtctl::StateActiveExpr} state=StateMapExpr ")"
 protected class StateActiveExpr_Group extends GroupToken {
 	
 	public StateActiveExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4216,7 +4220,7 @@ protected class StateActiveExpr_StateActiveExprAction_2 extends ActionToken  {
 	}
 }
 
-// state=MapExpr
+// state=StateMapExpr
 protected class StateActiveExpr_StateAssignment_3 extends AssignmentToken  {
 	
 	public StateActiveExpr_StateAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4231,7 +4235,7 @@ protected class StateActiveExpr_StateAssignment_3 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MapExpr_Alternatives(this, this, 0, inst);
+			case 0: return new StateMapExpr_Alternatives(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4242,9 +4246,9 @@ protected class StateActiveExpr_StateAssignment_3 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("state");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMapExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getStateMapExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getStateActiveExprAccess().getStateMapExprParserRuleCall_3_0(); 
+				element = grammarAccess.getStateActiveExprAccess().getStateStateMapExprParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -4291,11 +4295,11 @@ protected class StateActiveExpr_RightParenthesisKeyword_4 extends KeywordToken  
 /************ begin Rule SubstateOfExpr ****************
  *
  * SubstateOfExpr returns mtctl::SubstateOfExpr:
- * 	"substateOf" "(" {mtctl::SubstateOfExpr} state=MapExpr "," superstate=MapExpr ")";
+ * 	"substateOf" "(" {mtctl::SubstateOfExpr} state=StateMapExpr "," superstate=StateMapExpr ")";
  *
  **/
 
-// "substateOf" "(" {mtctl::SubstateOfExpr} state=MapExpr "," superstate=MapExpr ")"
+// "substateOf" "(" {mtctl::SubstateOfExpr} state=StateMapExpr "," superstate=StateMapExpr ")"
 protected class SubstateOfExpr_Group extends GroupToken {
 	
 	public SubstateOfExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4394,7 +4398,7 @@ protected class SubstateOfExpr_SubstateOfExprAction_2 extends ActionToken  {
 	}
 }
 
-// state=MapExpr
+// state=StateMapExpr
 protected class SubstateOfExpr_StateAssignment_3 extends AssignmentToken  {
 	
 	public SubstateOfExpr_StateAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4409,7 +4413,7 @@ protected class SubstateOfExpr_StateAssignment_3 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MapExpr_Alternatives(this, this, 0, inst);
+			case 0: return new StateMapExpr_Alternatives(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4420,9 +4424,9 @@ protected class SubstateOfExpr_StateAssignment_3 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("state");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMapExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getStateMapExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSubstateOfExprAccess().getStateMapExprParserRuleCall_3_0(); 
+				element = grammarAccess.getSubstateOfExprAccess().getStateStateMapExprParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -4462,7 +4466,7 @@ protected class SubstateOfExpr_CommaKeyword_4 extends KeywordToken  {
 
 }
 
-// superstate=MapExpr
+// superstate=StateMapExpr
 protected class SubstateOfExpr_SuperstateAssignment_5 extends AssignmentToken  {
 	
 	public SubstateOfExpr_SuperstateAssignment_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4477,7 +4481,7 @@ protected class SubstateOfExpr_SuperstateAssignment_5 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MapExpr_Alternatives(this, this, 0, inst);
+			case 0: return new StateMapExpr_Alternatives(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4488,9 +4492,9 @@ protected class SubstateOfExpr_SuperstateAssignment_5 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("superstate");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMapExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getStateMapExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSubstateOfExprAccess().getSuperstateMapExprParserRuleCall_5_0(); 
+				element = grammarAccess.getSubstateOfExprAccess().getSuperstateStateMapExprParserRuleCall_5_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -4689,11 +4693,11 @@ protected class MessageExpr_BufferOverflowExprParserRuleCall_2 extends RuleCallT
 /************ begin Rule MessageInTransitExpr ****************
  *
  * MessageInTransitExpr returns mtctl::MessageInTransitExpr:
- * 	"messageInTransit" "(" message=MapExpr ")";
+ * 	"messageInTransit" "(" message=MessageMapExpr ")";
  *
  **/
 
-// "messageInTransit" "(" message=MapExpr ")"
+// "messageInTransit" "(" message=MessageMapExpr ")"
 protected class MessageInTransitExpr_Group extends GroupToken {
 	
 	public MessageInTransitExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4765,7 +4769,7 @@ protected class MessageInTransitExpr_LeftParenthesisKeyword_1 extends KeywordTok
 
 }
 
-// message=MapExpr
+// message=MessageMapExpr
 protected class MessageInTransitExpr_MessageAssignment_2 extends AssignmentToken  {
 	
 	public MessageInTransitExpr_MessageAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4780,7 +4784,7 @@ protected class MessageInTransitExpr_MessageAssignment_2 extends AssignmentToken
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MapExpr_Alternatives(this, this, 0, inst);
+			case 0: return new MessageMapExpr_MumlElemExprParserRuleCall(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4791,9 +4795,9 @@ protected class MessageInTransitExpr_MessageAssignment_2 extends AssignmentToken
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("message");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMapExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getMessageMapExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getMessageInTransitExprAccess().getMessageMapExprParserRuleCall_2_0(); 
+				element = grammarAccess.getMessageInTransitExprAccess().getMessageMessageMapExprParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -4840,11 +4844,11 @@ protected class MessageInTransitExpr_RightParenthesisKeyword_3 extends KeywordTo
 /************ begin Rule MessageInBufferExpr ****************
  *
  * MessageInBufferExpr returns mtctl::MessageInBufferExpr:
- * 	"messageInBuffer" "(" message=MapExpr "," buffer=MapExpr ")";
+ * 	"messageInBuffer" "(" message=MessageMapExpr "," buffer=BufferMapExpr ")";
  *
  **/
 
-// "messageInBuffer" "(" message=MapExpr "," buffer=MapExpr ")"
+// "messageInBuffer" "(" message=MessageMapExpr "," buffer=BufferMapExpr ")"
 protected class MessageInBufferExpr_Group extends GroupToken {
 	
 	public MessageInBufferExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4916,7 +4920,7 @@ protected class MessageInBufferExpr_LeftParenthesisKeyword_1 extends KeywordToke
 
 }
 
-// message=MapExpr
+// message=MessageMapExpr
 protected class MessageInBufferExpr_MessageAssignment_2 extends AssignmentToken  {
 	
 	public MessageInBufferExpr_MessageAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4931,7 +4935,7 @@ protected class MessageInBufferExpr_MessageAssignment_2 extends AssignmentToken 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MapExpr_Alternatives(this, this, 0, inst);
+			case 0: return new MessageMapExpr_MumlElemExprParserRuleCall(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -4942,9 +4946,9 @@ protected class MessageInBufferExpr_MessageAssignment_2 extends AssignmentToken 
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("message");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMapExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getMessageMapExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getMessageInBufferExprAccess().getMessageMapExprParserRuleCall_2_0(); 
+				element = grammarAccess.getMessageInBufferExprAccess().getMessageMessageMapExprParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -4984,7 +4988,7 @@ protected class MessageInBufferExpr_CommaKeyword_3 extends KeywordToken  {
 
 }
 
-// buffer=MapExpr
+// buffer=BufferMapExpr
 protected class MessageInBufferExpr_BufferAssignment_4 extends AssignmentToken  {
 	
 	public MessageInBufferExpr_BufferAssignment_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4999,7 +5003,7 @@ protected class MessageInBufferExpr_BufferAssignment_4 extends AssignmentToken  
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MapExpr_Alternatives(this, this, 0, inst);
+			case 0: return new BufferMapExpr_MumlElemExprParserRuleCall(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -5010,9 +5014,9 @@ protected class MessageInBufferExpr_BufferAssignment_4 extends AssignmentToken  
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("buffer");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMapExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getBufferMapExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getMessageInBufferExprAccess().getBufferMapExprParserRuleCall_4_0(); 
+				element = grammarAccess.getMessageInBufferExprAccess().getBufferBufferMapExprParserRuleCall_4_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -5193,11 +5197,11 @@ protected class TransitionExpr_TransitionFiringExprParserRuleCall extends RuleCa
 /************ begin Rule TransitionFiringExpr ****************
  *
  * TransitionFiringExpr returns mtctl::TransitionFiringExpr:
- * 	"transitionFiring" "(" transition=MumlElemExpr ")";
+ * 	"transitionFiring" "(" transition=TransitionMapExpr ")";
  *
  **/
 
-// "transitionFiring" "(" transition=MumlElemExpr ")"
+// "transitionFiring" "(" transition=TransitionMapExpr ")"
 protected class TransitionFiringExpr_Group extends GroupToken {
 	
 	public TransitionFiringExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5269,7 +5273,7 @@ protected class TransitionFiringExpr_LeftParenthesisKeyword_1 extends KeywordTok
 
 }
 
-// transition=MumlElemExpr
+// transition=TransitionMapExpr
 protected class TransitionFiringExpr_TransitionAssignment_2 extends AssignmentToken  {
 	
 	public TransitionFiringExpr_TransitionAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5284,7 +5288,7 @@ protected class TransitionFiringExpr_TransitionAssignment_2 extends AssignmentTo
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MumlElemExpr_ElemAssignment(this, this, 0, inst);
+			case 0: return new TransitionMapExpr_MumlElemExprParserRuleCall(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -5295,9 +5299,9 @@ protected class TransitionFiringExpr_TransitionAssignment_2 extends AssignmentTo
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("transition");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMumlElemExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getTransitionMapExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getTransitionFiringExprAccess().getTransitionMumlElemExprParserRuleCall_2_0(); 
+				element = grammarAccess.getTransitionFiringExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -5536,13 +5540,13 @@ protected class ComparisonExpr_RhsAssignment_3 extends AssignmentToken  {
 
 /************ begin Rule MapExpr ****************
  *
- * //Expressions usable in comparisons
+ * //Expressions usable in comparisons. Starting with MapExpressions arranged by return type
  * MapExpr returns mtctl::Expression:
- * 	BufferMessageCountExpr | TransitionMap | MumlElemExpr | ConstExpr;
+ * 	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr;
  *
  **/
 
-// BufferMessageCountExpr | TransitionMap | MumlElemExpr | ConstExpr
+// MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr
 protected class MapExpr_Alternatives extends AlternativesToken {
 
 	public MapExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5557,10 +5561,11 @@ protected class MapExpr_Alternatives extends AlternativesToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MapExpr_BufferMessageCountExprParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new MapExpr_TransitionMapParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new MapExpr_MumlElemExprParserRuleCall_2(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new MapExpr_ConstExprParserRuleCall_3(lastRuleCallOrigin, this, 3, inst);
+			case 0: return new MapExpr_MumlElemExprParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new MapExpr_BufferMessageCountExprParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new MapExpr_ConstExprParserRuleCall_2(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new MapExpr_SourceStateExprParserRuleCall_3(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new MapExpr_TargetStateExprParserRuleCall_4(lastRuleCallOrigin, this, 4, inst);
 			default: return null;
 		}	
 	}
@@ -5578,89 +5583,16 @@ protected class MapExpr_Alternatives extends AlternativesToken {
 
 }
 
-// BufferMessageCountExpr
-protected class MapExpr_BufferMessageCountExprParserRuleCall_0 extends RuleCallToken {
-	
-	public MapExpr_BufferMessageCountExprParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public RuleCall getGrammarElement() {
-		return grammarAccess.getMapExprAccess().getBufferMessageCountExprParserRuleCall_0();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new BufferMessageCountExpr_Group(this, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getBufferMessageCountExprRule().getType().getClassifier())
-			return null;
-		if(checkForRecursion(BufferMessageCountExpr_Group.class, eObjectConsumer)) return null;
-		return eObjectConsumer;
-	}
-	
-    @Override
-	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
-		switch(index) {
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
-		}	
-	}	
-}
-
-// TransitionMap
-protected class MapExpr_TransitionMapParserRuleCall_1 extends RuleCallToken {
-	
-	public MapExpr_TransitionMapParserRuleCall_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public RuleCall getGrammarElement() {
-		return grammarAccess.getMapExprAccess().getTransitionMapParserRuleCall_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TransitionMap_Alternatives(this, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getSourceStateExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTargetStateExprRule().getType().getClassifier())
-			return null;
-		if(checkForRecursion(TransitionMap_Alternatives.class, eObjectConsumer)) return null;
-		return eObjectConsumer;
-	}
-	
-    @Override
-	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
-		switch(index) {
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
-		}	
-	}	
-}
-
 // MumlElemExpr
-protected class MapExpr_MumlElemExprParserRuleCall_2 extends RuleCallToken {
+protected class MapExpr_MumlElemExprParserRuleCall_0 extends RuleCallToken {
 	
-	public MapExpr_MumlElemExprParserRuleCall_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MapExpr_MumlElemExprParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getMapExprAccess().getMumlElemExprParserRuleCall_2();
+		return grammarAccess.getMapExprAccess().getMumlElemExprParserRuleCall_0();
 	}
 
     @Override
@@ -5687,16 +5619,276 @@ protected class MapExpr_MumlElemExprParserRuleCall_2 extends RuleCallToken {
 	}	
 }
 
-// ConstExpr
-protected class MapExpr_ConstExprParserRuleCall_3 extends RuleCallToken {
+// BufferMessageCountExpr
+protected class MapExpr_BufferMessageCountExprParserRuleCall_1 extends RuleCallToken {
 	
-	public MapExpr_ConstExprParserRuleCall_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public MapExpr_BufferMessageCountExprParserRuleCall_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public RuleCall getGrammarElement() {
-		return grammarAccess.getMapExprAccess().getConstExprParserRuleCall_3();
+		return grammarAccess.getMapExprAccess().getBufferMessageCountExprParserRuleCall_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new BufferMessageCountExpr_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getBufferMessageCountExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(BufferMessageCountExpr_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// ConstExpr
+protected class MapExpr_ConstExprParserRuleCall_2 extends RuleCallToken {
+	
+	public MapExpr_ConstExprParserRuleCall_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getMapExprAccess().getConstExprParserRuleCall_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ConstExpr_ValAssignment(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getConstExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(ConstExpr_ValAssignment.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// SourceStateExpr
+protected class MapExpr_SourceStateExprParserRuleCall_3 extends RuleCallToken {
+	
+	public MapExpr_SourceStateExprParserRuleCall_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getMapExprAccess().getSourceStateExprParserRuleCall_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new SourceStateExpr_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getSourceStateExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(SourceStateExpr_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// TargetStateExpr
+protected class MapExpr_TargetStateExprParserRuleCall_4 extends RuleCallToken {
+	
+	public MapExpr_TargetStateExprParserRuleCall_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getMapExprAccess().getTargetStateExprParserRuleCall_4();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new TargetStateExpr_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getTargetStateExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(TargetStateExpr_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+
+/************ end Rule MapExpr ****************/
+
+
+/************ begin Rule IntegerMapExpr ****************
+ *
+ * IntegerMapExpr returns mtctl::Expression:
+ * 	MumlElemExpr | BufferMessageCountExpr | ConstExpr;
+ *
+ **/
+
+// MumlElemExpr | BufferMessageCountExpr | ConstExpr
+protected class IntegerMapExpr_Alternatives extends AlternativesToken {
+
+	public IntegerMapExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Alternatives getGrammarElement() {
+		return grammarAccess.getIntegerMapExprAccess().getAlternatives();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new IntegerMapExpr_MumlElemExprParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new IntegerMapExpr_BufferMessageCountExprParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new IntegerMapExpr_ConstExprParserRuleCall_2(lastRuleCallOrigin, this, 2, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getBufferMessageCountExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getConstExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getMumlElemExprRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// MumlElemExpr
+protected class IntegerMapExpr_MumlElemExprParserRuleCall_0 extends RuleCallToken {
+	
+	public IntegerMapExpr_MumlElemExprParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getIntegerMapExprAccess().getMumlElemExprParserRuleCall_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MumlElemExpr_ElemAssignment(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMumlElemExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(MumlElemExpr_ElemAssignment.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// BufferMessageCountExpr
+protected class IntegerMapExpr_BufferMessageCountExprParserRuleCall_1 extends RuleCallToken {
+	
+	public IntegerMapExpr_BufferMessageCountExprParserRuleCall_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getIntegerMapExprAccess().getBufferMessageCountExprParserRuleCall_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new BufferMessageCountExpr_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getBufferMessageCountExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(BufferMessageCountExpr_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// ConstExpr
+protected class IntegerMapExpr_ConstExprParserRuleCall_2 extends RuleCallToken {
+	
+	public IntegerMapExpr_ConstExprParserRuleCall_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getIntegerMapExprAccess().getConstExprParserRuleCall_2();
 	}
 
     @Override
@@ -5724,17 +5916,307 @@ protected class MapExpr_ConstExprParserRuleCall_3 extends RuleCallToken {
 }
 
 
-/************ end Rule MapExpr ****************/
+/************ end Rule IntegerMapExpr ****************/
+
+
+/************ begin Rule TransitionMapExpr ****************
+ *
+ * TransitionMapExpr returns mtctl::Expression:
+ * 	MumlElemExpr;
+ *
+ **/
+
+// MumlElemExpr
+protected class TransitionMapExpr_MumlElemExprParserRuleCall extends RuleCallToken {
+	
+	public TransitionMapExpr_MumlElemExprParserRuleCall(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getTransitionMapExprAccess().getMumlElemExprParserRuleCall();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MumlElemExpr_ElemAssignment(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMumlElemExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(MumlElemExpr_ElemAssignment.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+/************ end Rule TransitionMapExpr ****************/
+
+
+/************ begin Rule StateMapExpr ****************
+ *
+ * StateMapExpr returns mtctl::Expression:
+ * 	MumlElemExpr | SourceStateExpr | TargetStateExpr;
+ *
+ **/
+
+// MumlElemExpr | SourceStateExpr | TargetStateExpr
+protected class StateMapExpr_Alternatives extends AlternativesToken {
+
+	public StateMapExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Alternatives getGrammarElement() {
+		return grammarAccess.getStateMapExprAccess().getAlternatives();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new StateMapExpr_MumlElemExprParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new StateMapExpr_SourceStateExprParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new StateMapExpr_TargetStateExprParserRuleCall_2(lastRuleCallOrigin, this, 2, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMumlElemExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getSourceStateExprRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getTargetStateExprRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// MumlElemExpr
+protected class StateMapExpr_MumlElemExprParserRuleCall_0 extends RuleCallToken {
+	
+	public StateMapExpr_MumlElemExprParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getStateMapExprAccess().getMumlElemExprParserRuleCall_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MumlElemExpr_ElemAssignment(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMumlElemExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(MumlElemExpr_ElemAssignment.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// SourceStateExpr
+protected class StateMapExpr_SourceStateExprParserRuleCall_1 extends RuleCallToken {
+	
+	public StateMapExpr_SourceStateExprParserRuleCall_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getStateMapExprAccess().getSourceStateExprParserRuleCall_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new SourceStateExpr_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getSourceStateExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(SourceStateExpr_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// TargetStateExpr
+protected class StateMapExpr_TargetStateExprParserRuleCall_2 extends RuleCallToken {
+	
+	public StateMapExpr_TargetStateExprParserRuleCall_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getStateMapExprAccess().getTargetStateExprParserRuleCall_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new TargetStateExpr_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getTargetStateExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(TargetStateExpr_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+
+/************ end Rule StateMapExpr ****************/
+
+
+/************ begin Rule BufferMapExpr ****************
+ *
+ * BufferMapExpr returns mtctl::Expression:
+ * 	MumlElemExpr;
+ *
+ **/
+
+// MumlElemExpr
+protected class BufferMapExpr_MumlElemExprParserRuleCall extends RuleCallToken {
+	
+	public BufferMapExpr_MumlElemExprParserRuleCall(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getBufferMapExprAccess().getMumlElemExprParserRuleCall();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MumlElemExpr_ElemAssignment(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMumlElemExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(MumlElemExpr_ElemAssignment.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+/************ end Rule BufferMapExpr ****************/
+
+
+/************ begin Rule MessageMapExpr ****************
+ *
+ * MessageMapExpr returns mtctl::Expression:
+ * 	MumlElemExpr;
+ *
+ **/
+
+// MumlElemExpr
+protected class MessageMapExpr_MumlElemExprParserRuleCall extends RuleCallToken {
+	
+	public MessageMapExpr_MumlElemExprParserRuleCall(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getMessageMapExprAccess().getMumlElemExprParserRuleCall();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new MumlElemExpr_ElemAssignment(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getMumlElemExprRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(MumlElemExpr_ElemAssignment.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+/************ end Rule MessageMapExpr ****************/
 
 
 /************ begin Rule BufferMessageCountExpr ****************
  *
  * BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
- * 	"bufferMessageCount" "(" buffer=MapExpr ")";
+ * 	"bufferMessageCount" "(" buffer=BufferMapExpr ")";
  *
  **/
 
-// "bufferMessageCount" "(" buffer=MapExpr ")"
+// "bufferMessageCount" "(" buffer=BufferMapExpr ")"
 protected class BufferMessageCountExpr_Group extends GroupToken {
 	
 	public BufferMessageCountExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5806,7 +6288,7 @@ protected class BufferMessageCountExpr_LeftParenthesisKeyword_1 extends KeywordT
 
 }
 
-// buffer=MapExpr
+// buffer=BufferMapExpr
 protected class BufferMessageCountExpr_BufferAssignment_2 extends AssignmentToken  {
 	
 	public BufferMessageCountExpr_BufferAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5821,7 +6303,7 @@ protected class BufferMessageCountExpr_BufferAssignment_2 extends AssignmentToke
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MapExpr_Alternatives(this, this, 0, inst);
+			case 0: return new BufferMapExpr_MumlElemExprParserRuleCall(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -5832,9 +6314,9 @@ protected class BufferMessageCountExpr_BufferAssignment_2 extends AssignmentToke
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("buffer");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMapExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getBufferMapExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getBufferMessageCountExprAccess().getBufferMapExprParserRuleCall_2_0(); 
+				element = grammarAccess.getBufferMessageCountExprAccess().getBufferBufferMapExprParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -5878,128 +6360,14 @@ protected class BufferMessageCountExpr_RightParenthesisKeyword_3 extends Keyword
 /************ end Rule BufferMessageCountExpr ****************/
 
 
-/************ begin Rule TransitionMap ****************
- *
- * TransitionMap returns mtctl::TransitionMap:
- * 	SourceStateExpr | TargetStateExpr;
- *
- **/
-
-// SourceStateExpr | TargetStateExpr
-protected class TransitionMap_Alternatives extends AlternativesToken {
-
-	public TransitionMap_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Alternatives getGrammarElement() {
-		return grammarAccess.getTransitionMapAccess().getAlternatives();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TransitionMap_SourceStateExprParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new TransitionMap_TargetStateExprParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getSourceStateExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTargetStateExprRule().getType().getClassifier())
-			return null;
-		return eObjectConsumer;
-	}
-
-}
-
-// SourceStateExpr
-protected class TransitionMap_SourceStateExprParserRuleCall_0 extends RuleCallToken {
-	
-	public TransitionMap_SourceStateExprParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public RuleCall getGrammarElement() {
-		return grammarAccess.getTransitionMapAccess().getSourceStateExprParserRuleCall_0();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new SourceStateExpr_Group(this, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getSourceStateExprRule().getType().getClassifier())
-			return null;
-		if(checkForRecursion(SourceStateExpr_Group.class, eObjectConsumer)) return null;
-		return eObjectConsumer;
-	}
-	
-    @Override
-	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
-		switch(index) {
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
-		}	
-	}	
-}
-
-// TargetStateExpr
-protected class TransitionMap_TargetStateExprParserRuleCall_1 extends RuleCallToken {
-	
-	public TransitionMap_TargetStateExprParserRuleCall_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public RuleCall getGrammarElement() {
-		return grammarAccess.getTransitionMapAccess().getTargetStateExprParserRuleCall_1();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new TargetStateExpr_Group(this, this, 0, inst);
-			default: return null;
-		}	
-	}
-
-    @Override
-	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getTargetStateExprRule().getType().getClassifier())
-			return null;
-		if(checkForRecursion(TargetStateExpr_Group.class, eObjectConsumer)) return null;
-		return eObjectConsumer;
-	}
-	
-    @Override
-	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
-		switch(index) {
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
-		}	
-	}	
-}
-
-
-/************ end Rule TransitionMap ****************/
-
-
 /************ begin Rule SourceStateExpr ****************
  *
  * SourceStateExpr returns mtctl::SourceStateExpr:
- * 	"sourceState" "(" transition=MapExpr ")";
+ * 	"sourceState" "(" transition=TransitionMapExpr ")";
  *
  **/
 
-// "sourceState" "(" transition=MapExpr ")"
+// "sourceState" "(" transition=TransitionMapExpr ")"
 protected class SourceStateExpr_Group extends GroupToken {
 	
 	public SourceStateExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6071,7 +6439,7 @@ protected class SourceStateExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 
 }
 
-// transition=MapExpr
+// transition=TransitionMapExpr
 protected class SourceStateExpr_TransitionAssignment_2 extends AssignmentToken  {
 	
 	public SourceStateExpr_TransitionAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6086,7 +6454,7 @@ protected class SourceStateExpr_TransitionAssignment_2 extends AssignmentToken  
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MapExpr_Alternatives(this, this, 0, inst);
+			case 0: return new TransitionMapExpr_MumlElemExprParserRuleCall(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -6097,9 +6465,9 @@ protected class SourceStateExpr_TransitionAssignment_2 extends AssignmentToken  
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("transition");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMapExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getTransitionMapExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getSourceStateExprAccess().getTransitionMapExprParserRuleCall_2_0(); 
+				element = grammarAccess.getSourceStateExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -6146,11 +6514,11 @@ protected class SourceStateExpr_RightParenthesisKeyword_3 extends KeywordToken  
 /************ begin Rule TargetStateExpr ****************
  *
  * TargetStateExpr returns mtctl::TargetStateExpr:
- * 	"targetState" "(" transition=MapExpr ")";
+ * 	"targetState" "(" transition=TransitionMapExpr ")";
  *
  **/
 
-// "targetState" "(" transition=MapExpr ")"
+// "targetState" "(" transition=TransitionMapExpr ")"
 protected class TargetStateExpr_Group extends GroupToken {
 	
 	public TargetStateExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6222,7 +6590,7 @@ protected class TargetStateExpr_LeftParenthesisKeyword_1 extends KeywordToken  {
 
 }
 
-// transition=MapExpr
+// transition=TransitionMapExpr
 protected class TargetStateExpr_TransitionAssignment_2 extends AssignmentToken  {
 	
 	public TargetStateExpr_TransitionAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -6237,7 +6605,7 @@ protected class TargetStateExpr_TransitionAssignment_2 extends AssignmentToken  
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new MapExpr_Alternatives(this, this, 0, inst);
+			case 0: return new TransitionMapExpr_MumlElemExprParserRuleCall(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -6248,9 +6616,9 @@ protected class TargetStateExpr_TransitionAssignment_2 extends AssignmentToken  
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("transition");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getMapExprRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getTransitionMapExprRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getTargetStateExprAccess().getTransitionMapExprParserRuleCall_2_0(); 
+				element = grammarAccess.getTargetStateExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}

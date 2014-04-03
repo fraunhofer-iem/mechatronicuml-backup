@@ -110,12 +110,12 @@ StateExpr returns mtctl::PredicateExpr:
 ;
 
 StateActiveExpr returns mtctl::StateActiveExpr:
-	'stateActive' '(' {mtctl::StateActiveExpr} state=MapExpr ')'
+	'stateActive' '(' {mtctl::StateActiveExpr} state=StateMapExpr ')'
 ;
 
 SubstateOfExpr returns mtctl::SubstateOfExpr:
-	'substateOf' '(' {mtctl::SubstateOfExpr} state=MapExpr ','
-	superstate=MapExpr ')'
+	'substateOf' '(' {mtctl::SubstateOfExpr} state=StateMapExpr ','
+	superstate=StateMapExpr ')'
 ;
 
 MessageExpr returns mtctl::PredicateExpr:
@@ -123,11 +123,11 @@ MessageExpr returns mtctl::PredicateExpr:
 ;
 
 MessageInTransitExpr returns mtctl::MessageInTransitExpr:
-	'messageInTransit' '(' message=MapExpr ')'
+	'messageInTransit' '(' message=MessageMapExpr ')'
 ;
 
 MessageInBufferExpr returns mtctl::MessageInBufferExpr:
-	'messageInBuffer' '(' message=MapExpr ',' buffer=MapExpr ')'
+	'messageInBuffer' '(' message=MessageMapExpr ',' buffer=BufferMapExpr ')'
 ;
 
 BufferOverflowExpr returns mtctl::BufferOverflowExpr:
@@ -139,7 +139,7 @@ TransitionExpr returns mtctl::PredicateExpr:
 ;
 
 TransitionFiringExpr returns mtctl::TransitionFiringExpr:
-	'transitionFiring' '(' transition=MumlElemExpr ')'
+	'transitionFiring' '(' transition=TransitionMapExpr ')'
 ;
 
 //Comparisons
@@ -151,25 +151,41 @@ enum ComparisonOp returns mtctl::ComparisonOp:
 	EQUALS='==' | GREATER='>' | GREATER_OR_EQUAL='>=' | LESS='<' | LESS_OR_EQAL='<=' | NOT_EQUAL='!='
 ;
 
-//Expressions usable in comparisons
+//Expressions usable in comparisons. Starting with MapExpressions arranged by return type
 MapExpr returns mtctl::Expression:
-	BufferMessageCountExpr | TransitionMap | MumlElemExpr | ConstExpr
+	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr
+;
+
+IntegerMapExpr returns mtctl::Expression:
+	MumlElemExpr | BufferMessageCountExpr | ConstExpr
+;
+
+TransitionMapExpr returns mtctl::Expression:
+	MumlElemExpr
+;
+
+StateMapExpr returns mtctl::Expression:
+	MumlElemExpr | SourceStateExpr | TargetStateExpr
+;
+
+BufferMapExpr returns mtctl::Expression:
+	MumlElemExpr
+;
+
+MessageMapExpr returns mtctl::Expression:
+	MumlElemExpr
 ;
 
 BufferMessageCountExpr returns mtctl::BufferMsgCountExpr:
-	'bufferMessageCount' '(' buffer=MapExpr ')'
-;
-
-TransitionMap returns mtctl::TransitionMap:
-	SourceStateExpr | TargetStateExpr
+	'bufferMessageCount' '(' buffer=BufferMapExpr ')'
 ;
 
 SourceStateExpr returns mtctl::SourceStateExpr:
-	'sourceState' '(' transition=MapExpr ')'
+	'sourceState' '(' transition=TransitionMapExpr ')'
 ;
 
 TargetStateExpr returns mtctl::TargetStateExpr:
-	'targetState' '(' transition=MapExpr ')'
+	'targetState' '(' transition=TransitionMapExpr ')'
 ;
 
 MumlElemExpr returns mtctl::MumlElemExpr:
