@@ -3,6 +3,11 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="psm" nsURI="http://www.fujaba.de/muml/psm/0.1.0" nsPrefix="psm">
   <eSubpackages name="allocation" nsURI="http://www.fujaba.de/muml/psm/allocation/0.1.0"
       nsPrefix="allocation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="SystemAllocation">
       <eStructuralFeatures xsi:type="ecore:EReference" name="allocations" lowerBound="1"
           upperBound="-1" eType="#//allocation/Allocation" containment="true"/>
@@ -16,6 +21,11 @@
   </eSubpackages>
   <eSubpackages name="properties" nsURI="http://www.fujaba.de/muml/psm/properties/0.1.0"
       nsPrefix="properties">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ComponentInstanceExecutionProperties">
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
@@ -30,13 +40,42 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="amount" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resource" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/ResourceInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//resourceinstance/StructuredResourceInstance"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MemoryPair">
       <eStructuralFeatures xsi:type="ecore:EReference" name="amount" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resource" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//platform/ResourceInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//resourceinstance/StructuredResourceInstance"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="cicmapping" nsURI="http://www.fujaba.de/muml/psm/cic,apping/0.1.0"
+      nsPrefix="cicmapping">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Describes the Mapping of continous component instances to sensors and actuators."/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="CICSystemMapping">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Describes the Mapping of cntinous components to sensors and actuators."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
+          eType="#//cicmapping/CICMapping" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CICMapping">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ComponentInstanceIsContinousComponentInstance"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="ComponentInstanceIsContinousComponentInstance" value="self.cic.componentType.componentKind=muml::component::ComponentKind::CONTINUOUS_COMPONENT"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cic" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="deviceInstance" lowerBound="1"
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//resourceinstance/DeviceInstance"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
