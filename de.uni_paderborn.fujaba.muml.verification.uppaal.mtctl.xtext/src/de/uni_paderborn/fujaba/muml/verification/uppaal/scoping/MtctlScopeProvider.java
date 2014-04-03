@@ -350,9 +350,11 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			if (role.getBehavior() == null || !(role.getBehavior() instanceof RealtimeStatechart))
 				continue;
 			
-			states.addAll(recursivelyCollectStates(((RealtimeStatechart) role.getBehavior()).getStates()));
-			clocks.addAll(((RealtimeStatechart) role.getBehavior()).getAvailableClocks());
-			variables.addAll(((RealtimeStatechart) role.getBehavior()).getAllAvailableVariables());
+			for (RealtimeStatechart rtsc : findEmbeddedStatecharts((RealtimeStatechart) role.getBehavior())) {
+				states.addAll(rtsc.getStates());
+				clocks.addAll(rtsc.getClocks());
+				variables.addAll(rtsc.getVariables());
+			}
 			messageTypes.addAll(role.getReceiverMessageTypes());
 		}
 		
@@ -362,17 +364,19 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	}
 	
 	/**
-	 * Collects all states and substates of states in the list 'states'
-	 * @param states Any list of states
-	 * @return the substate-of transitive closure of states
+	 * Computes the transitive closure of the sub-statechart relation rooted in rtsc
+	 * @param rtsc statechart to start from
+	 * @return list of all statecharts that are sub-statecharts of rtsc
 	 */
-	private List<State> recursivelyCollectStates(List<State> states) {
-		List<State> result = new ArrayList<State>();
-		for (State state : states) {
-			result.add(state);
-			for (Region region : state.getEmbeddedRegions())
-				result.addAll(recursivelyCollectStates(region.getEmbeddedStatechart().getStates()));
-		}
+	private List<RealtimeStatechart> findEmbeddedStatecharts(RealtimeStatechart rtsc) {
+		ArrayList<RealtimeStatechart> result = new ArrayList<RealtimeStatechart>();
+		if (rtsc == null)
+			return result; 
+		result.add(rtsc);
+		
+		for (State state : rtsc.getStates())
+			for (Region region : state.getEmbeddedRegions()) //find all regions in direct substates
+				result.addAll(findEmbeddedStatecharts(region.getEmbeddedStatechart())); //find all statecharts in there, add them
 		
 		return result;
 	}
