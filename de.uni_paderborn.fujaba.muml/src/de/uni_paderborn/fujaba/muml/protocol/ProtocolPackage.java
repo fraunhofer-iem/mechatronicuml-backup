@@ -113,13 +113,13 @@ public interface ProtocolPackage extends EPackage {
 	int ABSTRACT_COORDINATION_SPECIFICATION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Temporal Logic Constraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Verification Constraint Repository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -385,13 +385,13 @@ public interface ProtocolPackage extends EPackage {
 	int COORDINATION_PROTOCOL__COMMENT = ABSTRACT_COORDINATION_SPECIFICATION__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Temporal Logic Constraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Verification Constraint Repository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__TEMPORAL_LOGIC_CONSTRAINTS = ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS;
+	int COORDINATION_PROTOCOL__VERIFICATION_CONSTRAINT_REPOSITORY = ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.

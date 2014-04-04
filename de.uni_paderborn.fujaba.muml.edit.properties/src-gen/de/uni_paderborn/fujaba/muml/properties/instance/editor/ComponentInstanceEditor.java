@@ -27,20 +27,20 @@ public abstract class ComponentInstanceEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentInstanceComponentType_GeneralTab_Editor(null, true);
+			addComponentInstanceComponentTypeEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentInstancePortInstances_GeneralTab_Editor(
+			addComponentInstancePortInstancesEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentInstanceComponentPart_GeneralTab_Editor(null, true);
+			addComponentInstanceComponentPartEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentInstanceParentCIC_GeneralTab_Editor(null, true);
+			addComponentInstanceParentCICEditor(null, true);
 		}
 
 	}
@@ -48,16 +48,16 @@ public abstract class ComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentInstanceComponentType_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addComponentInstanceComponentTypeEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createComponentInstanceComponentType_GeneralTab_Editor(), front);
+				createComponentInstanceComponentTypeEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceComponentType_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceComponentTypeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
@@ -72,16 +72,16 @@ public abstract class ComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentInstancePortInstances_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addComponentInstancePortInstancesEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createComponentInstancePortInstances_GeneralTab_Editor(), front);
+				createComponentInstancePortInstancesEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstancePortInstances_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstancePortInstancesEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
@@ -96,16 +96,16 @@ public abstract class ComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentInstanceComponentPart_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addComponentInstanceComponentPartEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createComponentInstanceComponentPart_GeneralTab_Editor(), front);
+				createComponentInstanceComponentPartEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceComponentPart_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceComponentPartEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
@@ -120,16 +120,16 @@ public abstract class ComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentInstanceParentCIC_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createComponentInstanceParentCIC_GeneralTab_Editor(), front);
+	protected void addComponentInstanceParentCICEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComponentInstanceParentCICEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceParentCIC_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentInstanceParentCICEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE

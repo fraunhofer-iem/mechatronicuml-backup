@@ -24,7 +24,7 @@ public class PrimitiveDataTypeEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPrimitiveDataTypePrimitiveType_GeneralTab_Editor(null, true);
+			addPrimitiveDataTypePrimitiveTypeEditor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public class PrimitiveDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addPrimitiveDataTypePrimitiveType_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addPrimitiveDataTypePrimitiveTypeEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createPrimitiveDataTypePrimitiveType_GeneralTab_Editor(), front);
+				createPrimitiveDataTypePrimitiveTypeEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPrimitiveDataTypePrimitiveType_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPrimitiveDataTypePrimitiveTypeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE

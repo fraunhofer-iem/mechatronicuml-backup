@@ -20,8 +20,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
@@ -63,7 +63,6 @@ public class AtomicComponentItemProvider
 			super.getPropertyDescriptors(object);
 
 			addBehaviorPropertyDescriptor(object);
-			addTemporalLogicConstraintsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,28 +90,6 @@ public class AtomicComponentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Temporal Logic Constraints feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTemporalLogicConstraintsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VerifiableElement_temporalLogicConstraints_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VerifiableElement_temporalLogicConstraints_feature", "_UI_VerifiableElement_type"),
-				 ConstraintPackage.Literals.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -124,7 +101,7 @@ public class AtomicComponentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ConstraintPackage.Literals.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS);
+			childrenFeatures.add(ConstraintPackage.Literals.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY);
 		}
 		return childrenFeatures;
 	}
@@ -179,7 +156,7 @@ public class AtomicComponentItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AtomicComponent.class)) {
-			case ComponentPackage.ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS:
+			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

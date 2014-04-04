@@ -24,18 +24,17 @@ public class DiscreteSinglePortInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstance_GeneralTab_Editor(
+			addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor(
 					null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteSingleInteractionEndpointInstanceNext_GeneralTab_Editor(
-					null, true);
+			addDiscreteSingleInteractionEndpointInstanceNextEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteSingleInteractionEndpointInstancePrevious_GeneralTab_Editor(
-					null, true);
+			addDiscreteSingleInteractionEndpointInstancePreviousEditor(null,
+					true);
 		}
 
 	}
@@ -43,18 +42,18 @@ public class DiscreteSinglePortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstance_GeneralTab_Editor(
+	protected void addDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstance_GeneralTab_Editor(),
+				createDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstance_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstanceMultiInteractionEndpointInstanceEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -69,18 +68,17 @@ public class DiscreteSinglePortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteSingleInteractionEndpointInstanceNext_GeneralTab_Editor(
+	protected void addDiscreteSingleInteractionEndpointInstanceNextEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteSingleInteractionEndpointInstanceNext_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createDiscreteSingleInteractionEndpointInstanceNextEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstanceNext_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstanceNextEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -95,18 +93,18 @@ public class DiscreteSinglePortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteSingleInteractionEndpointInstancePrevious_GeneralTab_Editor(
+	protected void addDiscreteSingleInteractionEndpointInstancePreviousEditor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createDiscreteSingleInteractionEndpointInstancePrevious_GeneralTab_Editor(),
+				createDiscreteSingleInteractionEndpointInstancePreviousEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstancePrevious_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteSingleInteractionEndpointInstancePreviousEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE

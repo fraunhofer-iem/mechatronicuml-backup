@@ -58,8 +58,7 @@ public class StaticAtomicComponentEditor
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.extensions",
+							"property.tab.general", "property.tab.extensions",
 							"property.tab.documentation"}).contains(tab);
 		}
 	}

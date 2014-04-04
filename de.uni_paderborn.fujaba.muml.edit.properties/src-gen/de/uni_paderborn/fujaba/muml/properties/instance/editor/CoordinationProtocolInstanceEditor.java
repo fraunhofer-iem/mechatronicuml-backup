@@ -27,13 +27,13 @@ public class CoordinationProtocolInstanceEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCoordinationProtocolInstancePortInstances_GeneralTab_Editor(
+			addCoordinationProtocolInstancePortInstancesEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCoordinationProtocolInstanceCoordinationProtocolPart_GeneralTab_Editor(
-					null, true);
+			addCoordinationProtocolInstanceCoordinationProtocolPartEditor(null,
+					true);
 		}
 
 	}
@@ -41,18 +41,16 @@ public class CoordinationProtocolInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addCoordinationProtocolInstancePortInstances_GeneralTab_Editor(
+	protected void addCoordinationProtocolInstancePortInstancesEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createCoordinationProtocolInstancePortInstances_GeneralTab_Editor(),
-				front);
+		addEditorToCategory(category,
+				createCoordinationProtocolInstancePortInstancesEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolInstancePortInstances_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolInstancePortInstancesEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
@@ -67,18 +65,18 @@ public class CoordinationProtocolInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addCoordinationProtocolInstanceCoordinationProtocolPart_GeneralTab_Editor(
+	protected void addCoordinationProtocolInstanceCoordinationProtocolPartEditor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createCoordinationProtocolInstanceCoordinationProtocolPart_GeneralTab_Editor(),
+				createCoordinationProtocolInstanceCoordinationProtocolPartEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolInstanceCoordinationProtocolPart_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCoordinationProtocolInstanceCoordinationProtocolPartEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE

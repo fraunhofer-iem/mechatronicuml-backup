@@ -6,7 +6,6 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint.util;
 
-import de.uni_paderborn.fujaba.muml.constraint.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -14,8 +13,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.storydriven.core.ExtendableElement;
 
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 
 
 /**
@@ -75,12 +75,16 @@ public class ConstraintAdapterFactory extends AdapterFactoryImpl {
 	protected ConstraintSwitch<Adapter> modelSwitch =
 		new ConstraintSwitch<Adapter>() {
 			@Override
-			public Adapter caseTemporalLogicConstraint(TemporalLogicConstraint object) {
-				return createTemporalLogicConstraintAdapter();
+			public Adapter caseVerificationConstraintRepository(VerificationConstraintRepository object) {
+				return createVerificationConstraintRepositoryAdapter();
 			}
 			@Override
 			public Adapter caseVerifiableElement(VerifiableElement object) {
 				return createVerifiableElementAdapter();
+			}
+			@Override
+			public Adapter caseVerificationConstraint(VerificationConstraint object) {
+				return createVerificationConstraintAdapter();
 			}
 			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
@@ -107,16 +111,16 @@ public class ConstraintAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint <em>Temporal Logic Constraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository <em>Verification Constraint Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint
+	 * @see de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository
 	 * @generated
 	 */
-	public Adapter createTemporalLogicConstraintAdapter() {
+	public Adapter createVerificationConstraintRepositoryAdapter() {
 		return null;
 	}
 
@@ -131,6 +135,20 @@ public class ConstraintAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVerifiableElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint <em>Verification Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint
+	 * @generated
+	 */
+	public Adapter createVerificationConstraintAdapter() {
 		return null;
 	}
 

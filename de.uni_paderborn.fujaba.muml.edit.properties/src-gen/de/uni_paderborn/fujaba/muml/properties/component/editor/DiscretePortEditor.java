@@ -24,41 +24,39 @@ public class DiscretePortEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscretePortRefinedRole_GeneralTab_Editor(null, true);
+			addDiscretePortRefinedRoleEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteInteractionEndpointSenderMessageTypes_GeneralTab_Editor(
+			addDiscreteInteractionEndpointSenderMessageTypesEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageTypes_GeneralTab_Editor(
+			addDiscreteInteractionEndpointReceiverMessageTypesEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteInteractionEndpointAdaptationBehavior_GeneralTab_Editor(
-					null, true);
+			addDiscreteInteractionEndpointAdaptationBehaviorEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteInteractionEndpointRoleAndAdaptationBehavior_GeneralTab_Editor(
-					null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteInteractionEndpointCardinality_GeneralTab_Editor(null,
+			addDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor(null,
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDiscreteInteractionEndpointReceiverMessageBuffer_GeneralTab_Editor(
+			addDiscreteInteractionEndpointCardinalityEditor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addDiscreteInteractionEndpointReceiverMessageBufferEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBehavioralElementBehavior_GeneralTab_Editor(null, true);
+			addBehavioralElementBehaviorEditor(null, true);
 		}
 
 	}
@@ -66,16 +64,16 @@ public class DiscretePortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscretePortRefinedRole_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDiscretePortRefinedRole_GeneralTab_Editor(), front);
+	protected void addDiscretePortRefinedRoleEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createDiscretePortRefinedRoleEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortRefinedRole_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscretePortRefinedRoleEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -90,18 +88,17 @@ public class DiscretePortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteInteractionEndpointSenderMessageTypes_GeneralTab_Editor(
+	protected void addDiscreteInteractionEndpointSenderMessageTypesEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteInteractionEndpointSenderMessageTypes_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createDiscreteInteractionEndpointSenderMessageTypesEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointSenderMessageTypes_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointSenderMessageTypesEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -116,18 +113,17 @@ public class DiscretePortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteInteractionEndpointReceiverMessageTypes_GeneralTab_Editor(
+	protected void addDiscreteInteractionEndpointReceiverMessageTypesEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteInteractionEndpointReceiverMessageTypes_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createDiscreteInteractionEndpointReceiverMessageTypesEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointReceiverMessageTypes_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointReceiverMessageTypesEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -142,18 +138,17 @@ public class DiscretePortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteInteractionEndpointAdaptationBehavior_GeneralTab_Editor(
+	protected void addDiscreteInteractionEndpointAdaptationBehaviorEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteInteractionEndpointAdaptationBehavior_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createDiscreteInteractionEndpointAdaptationBehaviorEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointAdaptationBehavior_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointAdaptationBehaviorEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -171,18 +166,18 @@ public class DiscretePortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteInteractionEndpointRoleAndAdaptationBehavior_GeneralTab_Editor(
+	protected void addDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createDiscreteInteractionEndpointRoleAndAdaptationBehavior_GeneralTab_Editor(),
+				createDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointRoleAndAdaptationBehavior_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointRoleAndAdaptationBehaviorEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -197,18 +192,16 @@ public class DiscretePortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteInteractionEndpointCardinality_GeneralTab_Editor(
+	protected void addDiscreteInteractionEndpointCardinalityEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteInteractionEndpointCardinality_GeneralTab_Editor(),
-				front);
+		addEditorToCategory(category,
+				createDiscreteInteractionEndpointCardinalityEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointCardinality_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointCardinalityEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -223,18 +216,17 @@ public class DiscretePortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDiscreteInteractionEndpointReceiverMessageBuffer_GeneralTab_Editor(
+	protected void addDiscreteInteractionEndpointReceiverMessageBufferEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDiscreteInteractionEndpointReceiverMessageBuffer_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createDiscreteInteractionEndpointReceiverMessageBufferEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointReceiverMessageBuffer_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDiscreteInteractionEndpointReceiverMessageBufferEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -249,16 +241,16 @@ public class DiscretePortEditor
 	/**
 	 * @generated
 	 */
-	protected void addBehavioralElementBehavior_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createBehavioralElementBehavior_GeneralTab_Editor(), front);
+	protected void addBehavioralElementBehaviorEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createBehavioralElementBehaviorEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehavior_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehaviorEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE

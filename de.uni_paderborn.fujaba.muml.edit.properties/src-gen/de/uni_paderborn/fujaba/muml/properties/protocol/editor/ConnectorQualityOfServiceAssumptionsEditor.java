@@ -27,17 +27,17 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorQualityOfServiceAssumptionsMinMessageDelay_GeneralTab_Editor(
-					null, false);
+			addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(null,
+					false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorQualityOfServiceAssumptionsMaxMessageDelay_GeneralTab_Editor(
-					null, false);
+			addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(null,
+					false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorQualityOfServiceAssumptionsMessageLossPossible_GeneralTab_Editor(
+			addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
@@ -47,18 +47,18 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorQualityOfServiceAssumptionsMinMessageDelay_GeneralTab_Editor(
+	protected void addConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createConnectorQualityOfServiceAssumptionsMinMessageDelay_GeneralTab_Editor(),
+				createConnectorQualityOfServiceAssumptionsMinMessageDelayEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMinMessageDelay_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMinMessageDelayEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
@@ -73,18 +73,18 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorQualityOfServiceAssumptionsMaxMessageDelay_GeneralTab_Editor(
+	protected void addConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createConnectorQualityOfServiceAssumptionsMaxMessageDelay_GeneralTab_Editor(),
+				createConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMaxMessageDelay_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMaxMessageDelayEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
@@ -99,18 +99,18 @@ public class ConnectorQualityOfServiceAssumptionsEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorQualityOfServiceAssumptionsMessageLossPossible_GeneralTab_Editor(
+	protected void addConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createConnectorQualityOfServiceAssumptionsMessageLossPossible_GeneralTab_Editor(),
+				createConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMessageLossPossible_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorQualityOfServiceAssumptionsMessageLossPossibleEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE

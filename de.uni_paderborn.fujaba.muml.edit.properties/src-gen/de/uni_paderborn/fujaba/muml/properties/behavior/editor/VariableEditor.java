@@ -24,15 +24,15 @@ public class VariableEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addVariableInitializeExpression_GeneralTab_Editor(null, true);
+			addVariableInitializeExpressionEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addVariableConstant_GeneralTab_Editor(null, true);
+			addVariableConstantEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addCommentableElementComment_DocumentationTab_Editor(null, true);
+			addCommentableElementCommentEditor(null, true);
 		}
 
 	}
@@ -40,16 +40,16 @@ public class VariableEditor
 	/**
 	 * @generated
 	 */
-	protected void addVariableInitializeExpression_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addVariableInitializeExpressionEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createVariableInitializeExpression_GeneralTab_Editor(), front);
+				createVariableInitializeExpressionEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVariableInitializeExpression_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVariableInitializeExpressionEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -64,16 +64,14 @@ public class VariableEditor
 	/**
 	 * @generated
 	 */
-	protected void addVariableConstant_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createVariableConstant_GeneralTab_Editor(), front);
+	protected void addVariableConstantEditor(String category, boolean front) {
+		addEditorToCategory(category, createVariableConstantEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVariableConstant_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVariableConstantEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -88,17 +86,16 @@ public class VariableEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementComment_DocumentationTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommentableElementComment_DocumentationTab_Editor(),
+	protected void addCommentableElementCommentEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createCommentableElementCommentEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementComment_DocumentationTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE

@@ -10,7 +10,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
@@ -18,8 +17,8 @@ import org.storydriven.core.CorePackage;
 import org.storydriven.core.impl.NamedElementImpl;
 
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.protocol.AbstractCoordinationSpecification;
 import de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
@@ -33,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getTemporalLogicConstraints <em>Temporal Logic Constraints</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getVerificationConstraintRepository <em>Verification Constraint Repository</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getRoleConnector <em>Role Connector</em>}</li>
  * </ul>
@@ -63,14 +62,14 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTemporalLogicConstraints() <em>Temporal Logic Constraints</em>}' containment reference list.
+	 * The cached value of the '{@link #getVerificationConstraintRepository() <em>Verification Constraint Repository</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemporalLogicConstraints()
+	 * @see #getVerificationConstraintRepository()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TemporalLogicConstraint> temporalLogicConstraints;
+	protected VerificationConstraintRepository verificationConstraintRepository;
 
 	/**
 	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
@@ -137,11 +136,42 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TemporalLogicConstraint> getTemporalLogicConstraints() {
-		if (temporalLogicConstraints == null) {
-			temporalLogicConstraints = new EObjectContainmentEList<TemporalLogicConstraint>(TemporalLogicConstraint.class, this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS);
+	public VerificationConstraintRepository getVerificationConstraintRepository() {
+		return verificationConstraintRepository;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVerificationConstraintRepository(VerificationConstraintRepository newVerificationConstraintRepository, NotificationChain msgs) {
+		VerificationConstraintRepository oldVerificationConstraintRepository = verificationConstraintRepository;
+		verificationConstraintRepository = newVerificationConstraintRepository;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY, oldVerificationConstraintRepository, newVerificationConstraintRepository);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return temporalLogicConstraints;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVerificationConstraintRepository(VerificationConstraintRepository newVerificationConstraintRepository) {
+		if (newVerificationConstraintRepository != verificationConstraintRepository) {
+			NotificationChain msgs = null;
+			if (verificationConstraintRepository != null)
+				msgs = ((InternalEObject)verificationConstraintRepository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY, null, msgs);
+			if (newVerificationConstraintRepository != null)
+				msgs = ((InternalEObject)newVerificationConstraintRepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY, null, msgs);
+			msgs = basicSetVerificationConstraintRepository(newVerificationConstraintRepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY, newVerificationConstraintRepository, newVerificationConstraintRepository));
 	}
 
 	/**
@@ -226,8 +256,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
-				return ((InternalEList<?>)getTemporalLogicConstraints()).basicRemove(otherEnd, msgs);
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
+				return basicSetVerificationConstraintRepository(null, msgs);
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
@@ -246,8 +276,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 		switch (featureID) {
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				return getComment();
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
-				return getTemporalLogicConstraints();
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
+				return getVerificationConstraintRepository();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				return getRoles();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
@@ -268,9 +298,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				setComment((String)newValue);
 				return;
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
-				getTemporalLogicConstraints().clear();
-				getTemporalLogicConstraints().addAll((Collection<? extends TemporalLogicConstraint>)newValue);
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
+				setVerificationConstraintRepository((VerificationConstraintRepository)newValue);
 				return;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				getRoles().clear();
@@ -294,8 +323,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
-				getTemporalLogicConstraints().clear();
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
+				setVerificationConstraintRepository((VerificationConstraintRepository)null);
 				return;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				getRoles().clear();
@@ -317,8 +346,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 		switch (featureID) {
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS:
-				return temporalLogicConstraints != null && !temporalLogicConstraints.isEmpty();
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
+				return verificationConstraintRepository != null;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				return roles != null && !roles.isEmpty();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
@@ -342,7 +371,7 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 		}
 		if (baseClass == VerifiableElement.class) {
 			switch (derivedFeatureID) {
-				case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS: return ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS;
+				case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY: return ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY;
 				default: return -1;
 			}
 		}
@@ -364,7 +393,7 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 		}
 		if (baseClass == VerifiableElement.class) {
 			switch (baseFeatureID) {
-				case ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS: return ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__TEMPORAL_LOGIC_CONSTRAINTS;
+				case ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY: return ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY;
 				default: return -1;
 			}
 		}

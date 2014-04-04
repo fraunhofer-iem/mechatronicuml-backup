@@ -24,11 +24,11 @@ public abstract class DeadlineEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDeadlineUpperBound_GeneralTab_Editor(null, false);
+			addDeadlineUpperBoundEditor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDeadlineLowerBound_GeneralTab_Editor(null, false);
+			addDeadlineLowerBoundEditor(null, false);
 		}
 
 	}
@@ -36,16 +36,14 @@ public abstract class DeadlineEditor
 	/**
 	 * @generated
 	 */
-	protected void addDeadlineUpperBound_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createDeadlineUpperBound_GeneralTab_Editor(), front);
+	protected void addDeadlineUpperBoundEditor(String category, boolean front) {
+		addEditorToCategory(category, createDeadlineUpperBoundEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDeadlineUpperBound_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDeadlineUpperBoundEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -60,16 +58,14 @@ public abstract class DeadlineEditor
 	/**
 	 * @generated
 	 */
-	protected void addDeadlineLowerBound_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createDeadlineLowerBound_GeneralTab_Editor(), front);
+	protected void addDeadlineLowerBoundEditor(String category, boolean front) {
+		addEditorToCategory(category, createDeadlineLowerBoundEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDeadlineLowerBound_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDeadlineLowerBoundEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

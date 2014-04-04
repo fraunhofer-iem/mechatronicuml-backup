@@ -24,15 +24,15 @@ public class ClockConstraintEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addClockConstraintBound_GeneralTab_Editor(null, false);
+			addClockConstraintBoundEditor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addClockConstraintClock_GeneralTab_Editor(null, true);
+			addClockConstraintClockEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addClockConstraintOperator_GeneralTab_Editor(null, true);
+			addClockConstraintOperatorEditor(null, true);
 		}
 
 	}
@@ -40,16 +40,14 @@ public class ClockConstraintEditor
 	/**
 	 * @generated
 	 */
-	protected void addClockConstraintBound_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createClockConstraintBound_GeneralTab_Editor(), front);
+	protected void addClockConstraintBoundEditor(String category, boolean front) {
+		addEditorToCategory(category, createClockConstraintBoundEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClockConstraintBound_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClockConstraintBoundEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -64,16 +62,14 @@ public class ClockConstraintEditor
 	/**
 	 * @generated
 	 */
-	protected void addClockConstraintClock_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createClockConstraintClock_GeneralTab_Editor(), front);
+	protected void addClockConstraintClockEditor(String category, boolean front) {
+		addEditorToCategory(category, createClockConstraintClockEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClockConstraintClock_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClockConstraintClockEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -88,16 +84,16 @@ public class ClockConstraintEditor
 	/**
 	 * @generated
 	 */
-	protected void addClockConstraintOperator_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createClockConstraintOperator_GeneralTab_Editor(), front);
+	protected void addClockConstraintOperatorEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createClockConstraintOperatorEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClockConstraintOperator_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClockConstraintOperatorEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

@@ -24,11 +24,11 @@ public class DoEventEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDoEventAction_GeneralTab_Editor(null, false);
+			addDoEventActionEditor(null, false);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDoEventPeriod_GeneralTab_Editor(null, false);
+			addDoEventPeriodEditor(null, false);
 		}
 
 	}
@@ -36,16 +36,14 @@ public class DoEventEditor
 	/**
 	 * @generated
 	 */
-	protected void addDoEventAction_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createDoEventAction_GeneralTab_Editor(),
-				front);
+	protected void addDoEventActionEditor(String category, boolean front) {
+		addEditorToCategory(category, createDoEventActionEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDoEventAction_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDoEventActionEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -60,16 +58,14 @@ public class DoEventEditor
 	/**
 	 * @generated
 	 */
-	protected void addDoEventPeriod_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category, createDoEventPeriod_GeneralTab_Editor(),
-				front);
+	protected void addDoEventPeriodEditor(String category, boolean front) {
+		addEditorToCategory(category, createDoEventPeriodEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDoEventPeriod_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDoEventPeriodEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

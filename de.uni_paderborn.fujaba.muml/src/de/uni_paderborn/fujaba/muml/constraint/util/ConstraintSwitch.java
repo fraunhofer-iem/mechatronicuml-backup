@@ -6,15 +6,15 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint.util;
 
-import de.uni_paderborn.fujaba.muml.constraint.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.storydriven.core.ExtendableElement;
 
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 
 
 /**
@@ -74,10 +74,10 @@ public class ConstraintSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ConstraintPackage.TEMPORAL_LOGIC_CONSTRAINT: {
-				TemporalLogicConstraint temporalLogicConstraint = (TemporalLogicConstraint)theEObject;
-				T result = caseTemporalLogicConstraint(temporalLogicConstraint);
-				if (result == null) result = caseExtendableElement(temporalLogicConstraint);
+			case ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY: {
+				VerificationConstraintRepository verificationConstraintRepository = (VerificationConstraintRepository)theEObject;
+				T result = caseVerificationConstraintRepository(verificationConstraintRepository);
+				if (result == null) result = caseExtendableElement(verificationConstraintRepository);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -87,22 +87,28 @@ public class ConstraintSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ConstraintPackage.VERIFICATION_CONSTRAINT: {
+				VerificationConstraint verificationConstraint = (VerificationConstraint)theEObject;
+				T result = caseVerificationConstraint(verificationConstraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Temporal Logic Constraint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Verification Constraint Repository</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Temporal Logic Constraint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Verification Constraint Repository</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTemporalLogicConstraint(TemporalLogicConstraint object) {
+	public T caseVerificationConstraintRepository(VerificationConstraintRepository object) {
 		return null;
 	}
 
@@ -118,6 +124,21 @@ public class ConstraintSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVerifiableElement(VerifiableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Verification Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Verification Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVerificationConstraint(VerificationConstraint object) {
 		return null;
 	}
 

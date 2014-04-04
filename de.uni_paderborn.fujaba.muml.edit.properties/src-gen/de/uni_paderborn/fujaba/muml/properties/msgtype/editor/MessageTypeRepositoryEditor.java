@@ -27,12 +27,12 @@ public class MessageTypeRepositoryEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addMessageTypeRepositoryMessageTypes_GeneralTab_Editor(
+			addMessageTypeRepositoryMessageTypesEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementName_GeneralTab_Editor(null, true);
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -40,17 +40,16 @@ public class MessageTypeRepositoryEditor
 	/**
 	 * @generated
 	 */
-	protected void addMessageTypeRepositoryMessageTypes_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addMessageTypeRepositoryMessageTypesEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createMessageTypeRepositoryMessageTypes_GeneralTab_Editor(),
-				front);
+				createMessageTypeRepositoryMessageTypesEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageTypeRepositoryMessageTypes_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createMessageTypeRepositoryMessageTypesEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage.eINSTANCE
@@ -65,16 +64,14 @@ public class MessageTypeRepositoryEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementName_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createNamedElementName_GeneralTab_Editor(), front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE

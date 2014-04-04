@@ -24,7 +24,7 @@ public class ActionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addActionExpressions_GeneralTab_Editor(null, true);
+			addActionExpressionsEditor(null, true);
 		}
 
 	}
@@ -32,16 +32,14 @@ public class ActionEditor
 	/**
 	 * @generated
 	 */
-	protected void addActionExpressions_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createActionExpressions_GeneralTab_Editor(), front);
+	protected void addActionExpressionsEditor(String category, boolean front) {
+		addEditorToCategory(category, createActionExpressionsEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createActionExpressions_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createActionExpressionsEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

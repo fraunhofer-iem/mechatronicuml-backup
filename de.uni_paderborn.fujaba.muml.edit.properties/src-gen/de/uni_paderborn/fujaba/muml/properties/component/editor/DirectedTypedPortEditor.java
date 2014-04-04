@@ -27,22 +27,21 @@ public abstract class DirectedTypedPortEditor
 				"Booleans", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDirectedTypedPortKind_GeneralTab_Editor(null, true);
+			addDirectedTypedPortKindEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDirectedTypedPortOptional_GeneralTab_Editor(
+			addDirectedTypedPortOptionalEditor(
 					"de.uni_paderborn.fujaba.properties.category.Booleans",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addDirectedTypedPortInitializeExpression_GeneralTab_Editor(null,
-					true);
+			addDirectedTypedPortInitializeExpressionEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTypedNamedElementDataType_GeneralTab_Editor(null, true);
+			addTypedNamedElementDataTypeEditor(null, true);
 		}
 
 	}
@@ -50,16 +49,15 @@ public abstract class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDirectedTypedPortKind_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createDirectedTypedPortKind_GeneralTab_Editor(), front);
+	protected void addDirectedTypedPortKindEditor(String category, boolean front) {
+		addEditorToCategory(category, createDirectedTypedPortKindEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortKind_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortKindEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -74,16 +72,16 @@ public abstract class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDirectedTypedPortOptional_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createDirectedTypedPortOptional_GeneralTab_Editor(), front);
+	protected void addDirectedTypedPortOptionalEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createDirectedTypedPortOptionalEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortOptional_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortOptionalEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -98,18 +96,16 @@ public abstract class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addDirectedTypedPortInitializeExpression_GeneralTab_Editor(
+	protected void addDirectedTypedPortInitializeExpressionEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createDirectedTypedPortInitializeExpression_GeneralTab_Editor(),
-				front);
+		addEditorToCategory(category,
+				createDirectedTypedPortInitializeExpressionEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortInitializeExpression_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createDirectedTypedPortInitializeExpressionEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -124,16 +120,16 @@ public abstract class DirectedTypedPortEditor
 	/**
 	 * @generated
 	 */
-	protected void addTypedNamedElementDataType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createTypedNamedElementDataType_GeneralTab_Editor(), front);
+	protected void addTypedNamedElementDataTypeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createTypedNamedElementDataTypeEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTypedNamedElementDataType_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTypedNamedElementDataTypeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE

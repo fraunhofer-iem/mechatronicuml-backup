@@ -71,14 +71,14 @@ public interface ConstraintPackage extends EPackage {
 	ConstraintPackage eINSTANCE = de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.TemporalLogicConstraintImpl <em>Temporal Logic Constraint</em>}' class.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintRepositoryImpl <em>Verification Constraint Repository</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.constraint.impl.TemporalLogicConstraintImpl
-	 * @see de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl#getTemporalLogicConstraint()
+	 * @see de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintRepositoryImpl
+	 * @see de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl#getVerificationConstraintRepository()
 	 * @generated
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT = 0;
+	int VERIFICATION_CONSTRAINT_REPOSITORY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Annotation</b></em>' containment reference list.
@@ -87,7 +87,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
+	int VERIFICATION_CONSTRAINT_REPOSITORY__ANNOTATION = CorePackage.EXTENDABLE_ELEMENT__ANNOTATION;
 
 	/**
 	 * The feature id for the '<em><b>Extension</b></em>' containment reference list.
@@ -96,16 +96,25 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
+	int VERIFICATION_CONSTRAINT_REPOSITORY__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The number of structural features of the '<em>Temporal Logic Constraint</em>' class.
+	 * The feature id for the '<em><b>Verification Constraint</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+	int VERIFICATION_CONSTRAINT_REPOSITORY__VERIFICATION_CONSTRAINT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Verification Constraint Repository</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFICATION_CONSTRAINT_REPOSITORY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -114,7 +123,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___ECLASS = CorePackage.EXTENDABLE_ELEMENT___ECLASS;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___ECLASS = CorePackage.EXTENDABLE_ELEMENT___ECLASS;
 
 	/**
 	 * The operation id for the '<em>EIs Proxy</em>' operation.
@@ -123,7 +132,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___EIS_PROXY = CorePackage.EXTENDABLE_ELEMENT___EIS_PROXY;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___EIS_PROXY = CorePackage.EXTENDABLE_ELEMENT___EIS_PROXY;
 
 	/**
 	 * The operation id for the '<em>EResource</em>' operation.
@@ -132,7 +141,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___ERESOURCE = CorePackage.EXTENDABLE_ELEMENT___ERESOURCE;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___ERESOURCE = CorePackage.EXTENDABLE_ELEMENT___ERESOURCE;
 
 	/**
 	 * The operation id for the '<em>EContainer</em>' operation.
@@ -141,7 +150,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___ECONTAINER = CorePackage.EXTENDABLE_ELEMENT___ECONTAINER;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___ECONTAINER = CorePackage.EXTENDABLE_ELEMENT___ECONTAINER;
 
 	/**
 	 * The operation id for the '<em>EContaining Feature</em>' operation.
@@ -150,7 +159,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___ECONTAINING_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___ECONTAINING_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINING_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContainment Feature</em>' operation.
@@ -159,7 +168,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___ECONTAINMENT_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___ECONTAINMENT_FEATURE = CorePackage.EXTENDABLE_ELEMENT___ECONTAINMENT_FEATURE;
 
 	/**
 	 * The operation id for the '<em>EContents</em>' operation.
@@ -168,7 +177,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___ECONTENTS = CorePackage.EXTENDABLE_ELEMENT___ECONTENTS;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___ECONTENTS = CorePackage.EXTENDABLE_ELEMENT___ECONTENTS;
 
 	/**
 	 * The operation id for the '<em>EAll Contents</em>' operation.
@@ -177,7 +186,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___EALL_CONTENTS = CorePackage.EXTENDABLE_ELEMENT___EALL_CONTENTS;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___EALL_CONTENTS = CorePackage.EXTENDABLE_ELEMENT___EALL_CONTENTS;
 
 	/**
 	 * The operation id for the '<em>ECross References</em>' operation.
@@ -186,7 +195,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___ECROSS_REFERENCES = CorePackage.EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___ECROSS_REFERENCES = CorePackage.EXTENDABLE_ELEMENT___ECROSS_REFERENCES;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -195,7 +204,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___EGET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EGet</em>' operation.
@@ -204,7 +213,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___EGET__ESTRUCTURALFEATURE_BOOLEAN = CorePackage.EXTENDABLE_ELEMENT___EGET__ESTRUCTURALFEATURE_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>ESet</em>' operation.
@@ -213,7 +222,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___ESET__ESTRUCTURALFEATURE_OBJECT = CorePackage.EXTENDABLE_ELEMENT___ESET__ESTRUCTURALFEATURE_OBJECT;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -222,7 +231,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___EIS_SET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EUnset</em>' operation.
@@ -231,7 +240,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___EUNSET__ESTRUCTURALFEATURE = CorePackage.EXTENDABLE_ELEMENT___EUNSET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The operation id for the '<em>EInvoke</em>' operation.
@@ -240,7 +249,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___EINVOKE__EOPERATION_ELIST = CorePackage.EXTENDABLE_ELEMENT___EINVOKE__EOPERATION_ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Extension</em>' operation.
@@ -249,7 +258,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___GET_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___GET_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Provide Extension</em>' operation.
@@ -258,7 +267,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___PROVIDE_EXTENSION__ECLASS = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_EXTENSION__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Annotation</em>' operation.
@@ -267,7 +276,7 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___GET_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___GET_ANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Provide Annotation</em>' operation.
@@ -276,16 +285,16 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
+	int VERIFICATION_CONSTRAINT_REPOSITORY___PROVIDE_ANNOTATION__STRING = CorePackage.EXTENDABLE_ELEMENT___PROVIDE_ANNOTATION__STRING;
 
 	/**
-	 * The number of operations of the '<em>Temporal Logic Constraint</em>' class.
+	 * The number of operations of the '<em>Verification Constraint Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPORAL_LOGIC_CONSTRAINT_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
+	int VERIFICATION_CONSTRAINT_REPOSITORY_OPERATION_COUNT = CorePackage.EXTENDABLE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerifiableElementImpl <em>Verifiable Element</em>}' class.
@@ -298,13 +307,13 @@ public interface ConstraintPackage extends EPackage {
 	int VERIFIABLE_ELEMENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Temporal Logic Constraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Verification Constraint Repository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS = 0;
+	int VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY = 0;
 
 	/**
 	 * The number of structural features of the '<em>Verifiable Element</em>' class.
@@ -326,14 +335,54 @@ public interface ConstraintPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint <em>Temporal Logic Constraint</em>}'.
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintImpl <em>Verification Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Temporal Logic Constraint</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint
+	 * @see de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintImpl
+	 * @see de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl#getVerificationConstraint()
 	 * @generated
 	 */
-	EClass getTemporalLogicConstraint();
+	int VERIFICATION_CONSTRAINT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Verification Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFICATION_CONSTRAINT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Verification Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERIFICATION_CONSTRAINT_OPERATION_COUNT = 0;
+
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository <em>Verification Constraint Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Verification Constraint Repository</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository
+	 * @generated
+	 */
+	EClass getVerificationConstraintRepository();
+
+	/**
+	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository#getVerificationConstraint <em>Verification Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Verification Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository#getVerificationConstraint()
+	 * @see #getVerificationConstraintRepository()
+	 * @generated
+	 */
+	EReference getVerificationConstraintRepository_VerificationConstraint();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement <em>Verifiable Element</em>}'.
@@ -346,15 +395,25 @@ public interface ConstraintPackage extends EPackage {
 	EClass getVerifiableElement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getTemporalLogicConstraints <em>Temporal Logic Constraints</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getVerificationConstraintRepository <em>Verification Constraint Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Temporal Logic Constraints</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getTemporalLogicConstraints()
+	 * @return the meta object for the containment reference '<em>Verification Constraint Repository</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getVerificationConstraintRepository()
 	 * @see #getVerifiableElement()
 	 * @generated
 	 */
-	EReference getVerifiableElement_TemporalLogicConstraints();
+	EReference getVerifiableElement_VerificationConstraintRepository();
+
+	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint <em>Verification Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Verification Constraint</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint
+	 * @generated
+	 */
+	EClass getVerificationConstraint();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -380,14 +439,22 @@ public interface ConstraintPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.TemporalLogicConstraintImpl <em>Temporal Logic Constraint</em>}' class.
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintRepositoryImpl <em>Verification Constraint Repository</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.constraint.impl.TemporalLogicConstraintImpl
-		 * @see de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl#getTemporalLogicConstraint()
+		 * @see de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintRepositoryImpl
+		 * @see de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl#getVerificationConstraintRepository()
 		 * @generated
 		 */
-		EClass TEMPORAL_LOGIC_CONSTRAINT = eINSTANCE.getTemporalLogicConstraint();
+		EClass VERIFICATION_CONSTRAINT_REPOSITORY = eINSTANCE.getVerificationConstraintRepository();
+
+		/**
+		 * The meta object literal for the '<em><b>Verification Constraint</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VERIFICATION_CONSTRAINT_REPOSITORY__VERIFICATION_CONSTRAINT = eINSTANCE.getVerificationConstraintRepository_VerificationConstraint();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerifiableElementImpl <em>Verifiable Element</em>}' class.
@@ -400,12 +467,22 @@ public interface ConstraintPackage extends EPackage {
 		EClass VERIFIABLE_ELEMENT = eINSTANCE.getVerifiableElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Temporal Logic Constraints</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Verification Constraint Repository</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS = eINSTANCE.getVerifiableElement_TemporalLogicConstraints();
+		EReference VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY = eINSTANCE.getVerifiableElement_VerificationConstraintRepository();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintImpl <em>Verification Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintImpl
+		 * @see de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl#getVerificationConstraint()
+		 * @generated
+		 */
+		EClass VERIFICATION_CONSTRAINT = eINSTANCE.getVerificationConstraint();
 
 	}
 

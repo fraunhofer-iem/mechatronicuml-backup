@@ -27,11 +27,11 @@ public abstract class ConnectorInstanceEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorInstanceType_GeneralTab_Editor(null, true);
+			addConnectorInstanceTypeEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorInstanceConnectorEndpointInstances_GeneralTab_Editor(
+			addConnectorInstanceConnectorEndpointInstancesEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
@@ -40,16 +40,15 @@ public abstract class ConnectorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorInstanceType_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createConnectorInstanceType_GeneralTab_Editor(), front);
+	protected void addConnectorInstanceTypeEditor(String category, boolean front) {
+		addEditorToCategory(category, createConnectorInstanceTypeEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorInstanceType_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorInstanceTypeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -64,18 +63,17 @@ public abstract class ConnectorInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorInstanceConnectorEndpointInstances_GeneralTab_Editor(
+	protected void addConnectorInstanceConnectorEndpointInstancesEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createConnectorInstanceConnectorEndpointInstances_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createConnectorInstanceConnectorEndpointInstancesEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorInstanceConnectorEndpointInstances_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorInstanceConnectorEndpointInstancesEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE

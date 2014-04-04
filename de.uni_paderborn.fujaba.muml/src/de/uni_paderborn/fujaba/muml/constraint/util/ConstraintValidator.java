@@ -12,17 +12,15 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint.util;
 
-import de.uni_paderborn.fujaba.muml.constraint.*;
-
 import java.util.Map;
 
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
+import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -96,33 +94,11 @@ public class ConstraintValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case ConstraintPackage.TEMPORAL_LOGIC_CONSTRAINT:
-				return validateTemporalLogicConstraint((TemporalLogicConstraint)value, diagnostics, context);
 			case ConstraintPackage.VERIFIABLE_ELEMENT:
 				return validateVerifiableElement((VerifiableElement)value, diagnostics, context);
 			default:
 				return true;
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTemporalLogicConstraint(TemporalLogicConstraint temporalLogicConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(temporalLogicConstraint, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(temporalLogicConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(temporalLogicConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(temporalLogicConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(temporalLogicConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(temporalLogicConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(temporalLogicConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(temporalLogicConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(temporalLogicConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTemporalLogicConstraint_ReceivingInteractionEndpointRequiresMessageBuffer(temporalLogicConstraint, diagnostics, context);
-		if (result || diagnostics != null) result &= validateTemporalLogicConstraint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(temporalLogicConstraint, diagnostics, context);
-		return result;
 	}
 
 	/**
@@ -137,27 +113,6 @@ public class ConstraintValidator extends EObjectValidator {
 		"self.receiverMessageBuffer->notEmpty()";
 
 	/**
-	 * Validates the ReceivingInteractionEndpointRequiresMessageBuffer constraint of '<em>Temporal Logic Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTemporalLogicConstraint_ReceivingInteractionEndpointRequiresMessageBuffer(TemporalLogicConstraint temporalLogicConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ConstraintPackage.Literals.TEMPORAL_LOGIC_CONSTRAINT,
-				 temporalLogicConstraint,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ReceivingInteractionEndpointRequiresMessageBuffer",
-				 TEMPORAL_LOGIC_CONSTRAINT__RECEIVING_INTERACTION_ENDPOINT_REQUIRES_MESSAGE_BUFFER__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
 	 * The cached validation expression for the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Temporal Logic Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,27 +120,6 @@ public class ConstraintValidator extends EObjectValidator {
 	 */
 	protected static final String TEMPORAL_LOGIC_CONSTRAINT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION = "-- Each receiver message type should be assigned to exactly one buffer\r\n" +
 		"self.receiverMessageTypes->forAll(type | self.receiverMessageBuffer->one(messageType->includes(type)))";
-
-	/**
-	 * Validates the ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer constraint of '<em>Temporal Logic Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTemporalLogicConstraint_ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer(TemporalLogicConstraint temporalLogicConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ConstraintPackage.Literals.TEMPORAL_LOGIC_CONSTRAINT,
-				 temporalLogicConstraint,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
-				 "ReceiverMessageTypeMustBeAssignedToExactlyOneBuffer",
-				 TEMPORAL_LOGIC_CONSTRAINT__RECEIVER_MESSAGE_TYPE_MUST_BE_ASSIGNED_TO_EXACTLY_ONE_BUFFER__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
 
 	/**
 	 * <!-- begin-user-doc -->

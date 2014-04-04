@@ -24,15 +24,15 @@ public class PortPartEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPortPartPortType_GeneralTab_Editor(null, true);
+			addPortPartPortTypeEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPortPartComponentPart_GeneralTab_Editor(null, true);
+			addPortPartComponentPartEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPortPartCoordinationProtocolPart_GeneralTab_Editor(null, true);
+			addPortPartCoordinationProtocolPartEditor(null, true);
 		}
 
 	}
@@ -40,16 +40,14 @@ public class PortPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addPortPartPortType_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createPortPartPortType_GeneralTab_Editor(), front);
+	protected void addPortPartPortTypeEditor(String category, boolean front) {
+		addEditorToCategory(category, createPortPartPortTypeEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortPartPortType_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortPartPortTypeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -64,16 +62,15 @@ public class PortPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addPortPartComponentPart_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createPortPartComponentPart_GeneralTab_Editor(), front);
+	protected void addPortPartComponentPartEditor(String category, boolean front) {
+		addEditorToCategory(category, createPortPartComponentPartEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortPartComponentPart_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortPartComponentPartEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -88,17 +85,16 @@ public class PortPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addPortPartCoordinationProtocolPart_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addPortPartCoordinationProtocolPartEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createPortPartCoordinationProtocolPart_GeneralTab_Editor(),
-				front);
+				createPortPartCoordinationProtocolPartEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortPartCoordinationProtocolPart_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortPartCoordinationProtocolPartEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE

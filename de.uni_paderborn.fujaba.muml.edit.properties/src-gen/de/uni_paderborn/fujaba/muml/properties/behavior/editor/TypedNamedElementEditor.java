@@ -24,7 +24,7 @@ public abstract class TypedNamedElementEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addTypedNamedElementDataType_GeneralTab_Editor(null, true);
+			addTypedNamedElementDataTypeEditor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public abstract class TypedNamedElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addTypedNamedElementDataType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createTypedNamedElementDataType_GeneralTab_Editor(), front);
+	protected void addTypedNamedElementDataTypeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createTypedNamedElementDataTypeEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTypedNamedElementDataType_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTypedNamedElementDataTypeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE

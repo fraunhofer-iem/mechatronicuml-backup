@@ -24,19 +24,19 @@ public class ComponentPartEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentPartComponentType_GeneralTab_Editor(null, true);
+			addComponentPartComponentTypeEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentPartParentComponent_GeneralTab_Editor(null, true);
+			addComponentPartParentComponentEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addComponentPartCardinality_GeneralTab_Editor(null, true);
+			addComponentPartCardinalityEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementName_GeneralTab_Editor(null, true);
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -44,16 +44,16 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentPartComponentType_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createComponentPartComponentType_GeneralTab_Editor(), front);
+	protected void addComponentPartComponentTypeEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComponentPartComponentTypeEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartComponentType_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartComponentTypeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -68,16 +68,16 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentPartParentComponent_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addComponentPartParentComponentEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createComponentPartParentComponent_GeneralTab_Editor(), front);
+				createComponentPartParentComponentEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartParentComponent_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartParentComponentEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -92,16 +92,16 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addComponentPartCardinality_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createComponentPartCardinality_GeneralTab_Editor(), front);
+	protected void addComponentPartCardinalityEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createComponentPartCardinalityEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartCardinality_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createComponentPartCardinalityEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.component.ComponentPackage.eINSTANCE
@@ -116,16 +116,14 @@ public class ComponentPartEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementName_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createNamedElementName_GeneralTab_Editor(), front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE

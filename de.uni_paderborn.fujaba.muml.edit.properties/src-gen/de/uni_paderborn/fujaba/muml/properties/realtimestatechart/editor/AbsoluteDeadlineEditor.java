@@ -24,7 +24,7 @@ public class AbsoluteDeadlineEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addAbsoluteDeadlineClock_GeneralTab_Editor(null, true);
+			addAbsoluteDeadlineClockEditor(null, true);
 		}
 
 	}
@@ -32,16 +32,15 @@ public class AbsoluteDeadlineEditor
 	/**
 	 * @generated
 	 */
-	protected void addAbsoluteDeadlineClock_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createAbsoluteDeadlineClock_GeneralTab_Editor(), front);
+	protected void addAbsoluteDeadlineClockEditor(String category, boolean front) {
+		addEditorToCategory(category, createAbsoluteDeadlineClockEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAbsoluteDeadlineClock_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createAbsoluteDeadlineClockEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

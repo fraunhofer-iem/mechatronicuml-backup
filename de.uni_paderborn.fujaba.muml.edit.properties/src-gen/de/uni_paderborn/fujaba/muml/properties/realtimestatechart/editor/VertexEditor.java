@@ -28,19 +28,19 @@ public abstract class VertexEditor
 				"Transitions", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addVertexOutgoingTransitions_GeneralTab_Editor(
+			addVertexOutgoingTransitionsEditor(
 					"de.uni_paderborn.fujaba.properties.category.Transitions",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addVertexIncomingTransitions_GeneralTab_Editor(
+			addVertexIncomingTransitionsEditor(
 					"de.uni_paderborn.fujaba.properties.category.Transitions",
 					true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementName_GeneralTab_Editor(null, true);
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -48,16 +48,16 @@ public abstract class VertexEditor
 	/**
 	 * @generated
 	 */
-	protected void addVertexOutgoingTransitions_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createVertexOutgoingTransitions_GeneralTab_Editor(), front);
+	protected void addVertexOutgoingTransitionsEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createVertexOutgoingTransitionsEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVertexOutgoingTransitions_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVertexOutgoingTransitionsEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -72,16 +72,16 @@ public abstract class VertexEditor
 	/**
 	 * @generated
 	 */
-	protected void addVertexIncomingTransitions_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createVertexIncomingTransitions_GeneralTab_Editor(), front);
+	protected void addVertexIncomingTransitionsEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createVertexIncomingTransitionsEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVertexIncomingTransitions_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVertexIncomingTransitionsEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -96,16 +96,14 @@ public abstract class VertexEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementName_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createNamedElementName_GeneralTab_Editor(), front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE

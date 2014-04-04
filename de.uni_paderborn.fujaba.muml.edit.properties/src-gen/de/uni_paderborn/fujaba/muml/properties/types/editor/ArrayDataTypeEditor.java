@@ -24,11 +24,11 @@ public class ArrayDataTypeEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addArrayDataTypeType_GeneralTab_Editor(null, true);
+			addArrayDataTypeTypeEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addArrayDataTypeCardinality_GeneralTab_Editor(null, true);
+			addArrayDataTypeCardinalityEditor(null, true);
 		}
 
 	}
@@ -36,16 +36,14 @@ public class ArrayDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addArrayDataTypeType_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createArrayDataTypeType_GeneralTab_Editor(), front);
+	protected void addArrayDataTypeTypeEditor(String category, boolean front) {
+		addEditorToCategory(category, createArrayDataTypeTypeEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createArrayDataTypeType_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createArrayDataTypeTypeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
@@ -60,16 +58,16 @@ public class ArrayDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addArrayDataTypeCardinality_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createArrayDataTypeCardinality_GeneralTab_Editor(), front);
+	protected void addArrayDataTypeCardinalityEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createArrayDataTypeCardinalityEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createArrayDataTypeCardinality_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createArrayDataTypeCardinalityEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE

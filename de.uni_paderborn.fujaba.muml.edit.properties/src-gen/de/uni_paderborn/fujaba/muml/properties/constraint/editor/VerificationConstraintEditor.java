@@ -1,16 +1,16 @@
-package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
+package de.uni_paderborn.fujaba.muml.properties.constraint.editor;
 
 /**
  * @generated
  */
-public abstract class StateEventEditor
+public abstract class VerificationConstraintEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor.EventEditor {
+			de.uni_paderborn.fujaba.properties.runtime.editors.ClassPropertyEditor {
 
 	/**
 	 * @generated
 	 */
-	public StateEventEditor(String tab,
+	public VerificationConstraintEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);

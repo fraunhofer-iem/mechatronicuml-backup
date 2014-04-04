@@ -13,33 +13,30 @@
 package de.uni_paderborn.fujaba.muml.constraint.provider;
 
 
-import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
-import org.storydriven.core.provider.ExtendableElementItemProvider;
+import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemporalLogicConstraintItemProvider
-	extends ExtendableElementItemProvider
+public class VerificationConstraintItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -52,7 +49,7 @@ public class TemporalLogicConstraintItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TemporalLogicConstraintItemProvider(AdapterFactory adapterFactory) {
+	public VerificationConstraintItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -79,7 +76,7 @@ public class TemporalLogicConstraintItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_TemporalLogicConstraint_type");
+		return getString("_UI_VerificationConstraint_type");
 	}
 	
 

@@ -12,19 +12,16 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +30,7 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerifiableElementImpl#getTemporalLogicConstraints <em>Temporal Logic Constraints</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerifiableElementImpl#getVerificationConstraintRepository <em>Verification Constraint Repository</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,15 +38,14 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
  */
 public abstract class VerifiableElementImpl extends EObjectImpl implements VerifiableElement {
 	/**
-	 * The cached value of the '{@link #getTemporalLogicConstraints() <em>Temporal Logic Constraints</em>}' containment reference list.
+	 * The cached value of the '{@link #getVerificationConstraintRepository() <em>Verification Constraint Repository</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemporalLogicConstraints()
+	 * @see #getVerificationConstraintRepository()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TemporalLogicConstraint> temporalLogicConstraints;
-
+	protected VerificationConstraintRepository verificationConstraintRepository;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,11 +70,42 @@ public abstract class VerifiableElementImpl extends EObjectImpl implements Verif
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TemporalLogicConstraint> getTemporalLogicConstraints() {
-		if (temporalLogicConstraints == null) {
-			temporalLogicConstraints = new EObjectContainmentEList<TemporalLogicConstraint>(TemporalLogicConstraint.class, this, ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS);
+	public VerificationConstraintRepository getVerificationConstraintRepository() {
+		return verificationConstraintRepository;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVerificationConstraintRepository(VerificationConstraintRepository newVerificationConstraintRepository, NotificationChain msgs) {
+		VerificationConstraintRepository oldVerificationConstraintRepository = verificationConstraintRepository;
+		verificationConstraintRepository = newVerificationConstraintRepository;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY, oldVerificationConstraintRepository, newVerificationConstraintRepository);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return temporalLogicConstraints;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVerificationConstraintRepository(VerificationConstraintRepository newVerificationConstraintRepository) {
+		if (newVerificationConstraintRepository != verificationConstraintRepository) {
+			NotificationChain msgs = null;
+			if (verificationConstraintRepository != null)
+				msgs = ((InternalEObject)verificationConstraintRepository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY, null, msgs);
+			if (newVerificationConstraintRepository != null)
+				msgs = ((InternalEObject)newVerificationConstraintRepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY, null, msgs);
+			msgs = basicSetVerificationConstraintRepository(newVerificationConstraintRepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY, newVerificationConstraintRepository, newVerificationConstraintRepository));
 	}
 
 	/**
@@ -89,8 +116,8 @@ public abstract class VerifiableElementImpl extends EObjectImpl implements Verif
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS:
-				return ((InternalEList<?>)getTemporalLogicConstraints()).basicRemove(otherEnd, msgs);
+			case ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY:
+				return basicSetVerificationConstraintRepository(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -103,8 +130,8 @@ public abstract class VerifiableElementImpl extends EObjectImpl implements Verif
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS:
-				return getTemporalLogicConstraints();
+			case ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY:
+				return getVerificationConstraintRepository();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -118,9 +145,8 @@ public abstract class VerifiableElementImpl extends EObjectImpl implements Verif
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS:
-				getTemporalLogicConstraints().clear();
-				getTemporalLogicConstraints().addAll((Collection<? extends TemporalLogicConstraint>)newValue);
+			case ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY:
+				setVerificationConstraintRepository((VerificationConstraintRepository)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -134,8 +160,8 @@ public abstract class VerifiableElementImpl extends EObjectImpl implements Verif
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS:
-				getTemporalLogicConstraints().clear();
+			case ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY:
+				setVerificationConstraintRepository((VerificationConstraintRepository)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -149,8 +175,8 @@ public abstract class VerifiableElementImpl extends EObjectImpl implements Verif
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS:
-				return temporalLogicConstraints != null && !temporalLogicConstraints.isEmpty();
+			case ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY:
+				return verificationConstraintRepository != null;
 		}
 		return super.eIsSet(featureID);
 	}

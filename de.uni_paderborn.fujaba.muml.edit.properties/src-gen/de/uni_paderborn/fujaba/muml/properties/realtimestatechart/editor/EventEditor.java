@@ -24,7 +24,7 @@ public abstract class EventEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addEventKind_GeneralTab_Editor(null, true);
+			addEventKindEditor(null, true);
 		}
 
 	}
@@ -32,15 +32,14 @@ public abstract class EventEditor
 	/**
 	 * @generated
 	 */
-	protected void addEventKind_GeneralTab_Editor(String category, boolean front) {
-		addEditorToCategory(category, createEventKind_GeneralTab_Editor(),
-				front);
+	protected void addEventKindEditor(String category, boolean front) {
+		addEditorToCategory(category, createEventKindEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEventKind_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createEventKindEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.OptionPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

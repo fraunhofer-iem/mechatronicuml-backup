@@ -27,16 +27,16 @@ public abstract class ConnectorEndpointInstanceEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorEndpointInstanceConnectorInstances_GeneralTab_Editor(
+			addConnectorEndpointInstanceConnectorInstancesEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorEndpointInstanceType_GeneralTab_Editor(null, true);
+			addConnectorEndpointInstanceTypeEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementName_GeneralTab_Editor(null, true);
+			addNamedElementNameEditor(null, true);
 		}
 
 	}
@@ -44,18 +44,17 @@ public abstract class ConnectorEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorEndpointInstanceConnectorInstances_GeneralTab_Editor(
+	protected void addConnectorEndpointInstanceConnectorInstancesEditor(
 			String category, boolean front) {
-		addEditorToCategory(
-				category,
-				createConnectorEndpointInstanceConnectorInstances_GeneralTab_Editor(),
+		addEditorToCategory(category,
+				createConnectorEndpointInstanceConnectorInstancesEditor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointInstanceConnectorInstances_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointInstanceConnectorInstancesEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -70,16 +69,16 @@ public abstract class ConnectorEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorEndpointInstanceType_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addConnectorEndpointInstanceTypeEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createConnectorEndpointInstanceType_GeneralTab_Editor(), front);
+				createConnectorEndpointInstanceTypeEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointInstanceType_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointInstanceTypeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
@@ -94,16 +93,14 @@ public abstract class ConnectorEndpointInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementName_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createNamedElementName_GeneralTab_Editor(), front);
+	protected void addNamedElementNameEditor(String category, boolean front) {
+		addEditorToCategory(category, createNamedElementNameEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE

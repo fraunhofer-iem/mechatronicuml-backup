@@ -7,7 +7,6 @@
 package de.uni_paderborn.fujaba.muml.component.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -15,8 +14,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage;
@@ -24,8 +21,8 @@ import de.uni_paderborn.fujaba.muml.behavior.BehavioralElement;
 import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
 import de.uni_paderborn.fujaba.muml.component.ComponentPackage;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +32,7 @@ import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AtomicComponentImpl#getBehavior <em>Behavior</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AtomicComponentImpl#getTemporalLogicConstraints <em>Temporal Logic Constraints</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.component.impl.AtomicComponentImpl#getVerificationConstraintRepository <em>Verification Constraint Repository</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,14 +49,14 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 	 */
 	protected Behavior behavior;
 	/**
-	 * The cached value of the '{@link #getTemporalLogicConstraints() <em>Temporal Logic Constraints</em>}' containment reference list.
+	 * The cached value of the '{@link #getVerificationConstraintRepository() <em>Verification Constraint Repository</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTemporalLogicConstraints()
+	 * @see #getVerificationConstraintRepository()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TemporalLogicConstraint> temporalLogicConstraints;
+	protected VerificationConstraintRepository verificationConstraintRepository;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,11 +141,42 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<TemporalLogicConstraint> getTemporalLogicConstraints() {
-		if (temporalLogicConstraints == null) {
-			temporalLogicConstraints = new EObjectContainmentEList<TemporalLogicConstraint>(TemporalLogicConstraint.class, this, ComponentPackage.ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS);
+	public VerificationConstraintRepository getVerificationConstraintRepository() {
+		return verificationConstraintRepository;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVerificationConstraintRepository(VerificationConstraintRepository newVerificationConstraintRepository, NotificationChain msgs) {
+		VerificationConstraintRepository oldVerificationConstraintRepository = verificationConstraintRepository;
+		verificationConstraintRepository = newVerificationConstraintRepository;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY, oldVerificationConstraintRepository, newVerificationConstraintRepository);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return temporalLogicConstraints;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVerificationConstraintRepository(VerificationConstraintRepository newVerificationConstraintRepository) {
+		if (newVerificationConstraintRepository != verificationConstraintRepository) {
+			NotificationChain msgs = null;
+			if (verificationConstraintRepository != null)
+				msgs = ((InternalEObject)verificationConstraintRepository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY, null, msgs);
+			if (newVerificationConstraintRepository != null)
+				msgs = ((InternalEObject)newVerificationConstraintRepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY, null, msgs);
+			msgs = basicSetVerificationConstraintRepository(newVerificationConstraintRepository, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY, newVerificationConstraintRepository, newVerificationConstraintRepository));
 	}
 
 	/**
@@ -178,8 +206,8 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 		switch (featureID) {
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				return basicSetBehavior(null, msgs);
-			case ComponentPackage.ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS:
-				return ((InternalEList<?>)getTemporalLogicConstraints()).basicRemove(otherEnd, msgs);
+			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY:
+				return basicSetVerificationConstraintRepository(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -195,8 +223,8 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				if (resolve) return getBehavior();
 				return basicGetBehavior();
-			case ComponentPackage.ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS:
-				return getTemporalLogicConstraints();
+			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY:
+				return getVerificationConstraintRepository();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,9 +241,8 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				setBehavior((Behavior)newValue);
 				return;
-			case ComponentPackage.ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS:
-				getTemporalLogicConstraints().clear();
-				getTemporalLogicConstraints().addAll((Collection<? extends TemporalLogicConstraint>)newValue);
+			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY:
+				setVerificationConstraintRepository((VerificationConstraintRepository)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -232,8 +259,8 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				setBehavior((Behavior)null);
 				return;
-			case ComponentPackage.ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS:
-				getTemporalLogicConstraints().clear();
+			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY:
+				setVerificationConstraintRepository((VerificationConstraintRepository)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -249,8 +276,8 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 		switch (featureID) {
 			case ComponentPackage.ATOMIC_COMPONENT__BEHAVIOR:
 				return behavior != null;
-			case ComponentPackage.ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS:
-				return temporalLogicConstraints != null && !temporalLogicConstraints.isEmpty();
+			case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY:
+				return verificationConstraintRepository != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -270,7 +297,7 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 		}
 		if (baseClass == VerifiableElement.class) {
 			switch (derivedFeatureID) {
-				case ComponentPackage.ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS: return ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS;
+				case ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY: return ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY;
 				default: return -1;
 			}
 		}
@@ -292,7 +319,7 @@ public abstract class AtomicComponentImpl extends ComponentImpl implements Atomi
 		}
 		if (baseClass == VerifiableElement.class) {
 			switch (baseFeatureID) {
-				case ConstraintPackage.VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS: return ComponentPackage.ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS;
+				case ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY: return ComponentPackage.ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY;
 				default: return -1;
 			}
 		}

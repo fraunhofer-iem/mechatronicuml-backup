@@ -15,7 +15,6 @@ package de.uni_paderborn.fujaba.muml.constraint.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.storydriven.core.CorePackage;
 
@@ -28,9 +27,9 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorPackage;
 import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorPackageImpl;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
-import de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.constraint.util.ConstraintValidator;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.instance.impl.InstancePackageImpl;
 import de.uni_paderborn.fujaba.muml.msgtype.MsgtypePackage;
@@ -56,7 +55,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass temporalLogicConstraintEClass = null;
+	private EClass verificationConstraintRepositoryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -64,6 +63,13 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * @generated
 	 */
 	private EClass verifiableElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass verificationConstraintEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -163,8 +169,17 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTemporalLogicConstraint() {
-		return temporalLogicConstraintEClass;
+	public EClass getVerificationConstraintRepository() {
+		return verificationConstraintRepositoryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVerificationConstraintRepository_VerificationConstraint() {
+		return (EReference)verificationConstraintRepositoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -181,8 +196,17 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVerifiableElement_TemporalLogicConstraints() {
+	public EReference getVerifiableElement_VerificationConstraintRepository() {
 		return (EReference)verifiableElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVerificationConstraint() {
+		return verificationConstraintEClass;
 	}
 
 	/**
@@ -213,10 +237,13 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		isCreated = true;
 
 		// Create classes and their features
-		temporalLogicConstraintEClass = createEClass(TEMPORAL_LOGIC_CONSTRAINT);
+		verificationConstraintRepositoryEClass = createEClass(VERIFICATION_CONSTRAINT_REPOSITORY);
+		createEReference(verificationConstraintRepositoryEClass, VERIFICATION_CONSTRAINT_REPOSITORY__VERIFICATION_CONSTRAINT);
 
 		verifiableElementEClass = createEClass(VERIFIABLE_ELEMENT);
-		createEReference(verifiableElementEClass, VERIFIABLE_ELEMENT__TEMPORAL_LOGIC_CONSTRAINTS);
+		createEReference(verifiableElementEClass, VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY);
+
+		verificationConstraintEClass = createEClass(VERIFICATION_CONSTRAINT);
 	}
 
 	/**
@@ -250,13 +277,16 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		temporalLogicConstraintEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
+		verificationConstraintRepositoryEClass.getESuperTypes().add(theCorePackage.getExtendableElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(temporalLogicConstraintEClass, TemporalLogicConstraint.class, "TemporalLogicConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(verificationConstraintRepositoryEClass, VerificationConstraintRepository.class, "VerificationConstraintRepository", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVerificationConstraintRepository_VerificationConstraint(), this.getVerificationConstraint(), null, "verificationConstraint", null, 1, -1, VerificationConstraintRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(verifiableElementEClass, VerifiableElement.class, "VerifiableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVerifiableElement_TemporalLogicConstraints(), this.getTemporalLogicConstraint(), null, "temporalLogicConstraints", null, 0, -1, VerifiableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVerifiableElement_VerificationConstraintRepository(), this.getVerificationConstraintRepository(), null, "verificationConstraintRepository", null, 0, 1, VerifiableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(verificationConstraintEClass, VerificationConstraint.class, "VerificationConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

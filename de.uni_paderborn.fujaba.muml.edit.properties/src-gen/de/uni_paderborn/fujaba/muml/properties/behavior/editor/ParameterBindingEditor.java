@@ -24,11 +24,11 @@ public class ParameterBindingEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addParameterBindingParameter_GeneralTab_Editor(null, true);
+			addParameterBindingParameterEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addParameterBindingValue_GeneralTab_Editor(null, true);
+			addParameterBindingValueEditor(null, true);
 		}
 
 	}
@@ -36,16 +36,16 @@ public class ParameterBindingEditor
 	/**
 	 * @generated
 	 */
-	protected void addParameterBindingParameter_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createParameterBindingParameter_GeneralTab_Editor(), front);
+	protected void addParameterBindingParameterEditor(String category,
+			boolean front) {
+		addEditorToCategory(category, createParameterBindingParameterEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingParameter_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingParameterEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -60,16 +60,15 @@ public class ParameterBindingEditor
 	/**
 	 * @generated
 	 */
-	protected void addParameterBindingValue_GeneralTab_Editor(String category,
-			boolean front) {
-		addEditorToCategory(category,
-				createParameterBindingValue_GeneralTab_Editor(), front);
+	protected void addParameterBindingValueEditor(String category, boolean front) {
+		addEditorToCategory(category, createParameterBindingValueEditor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingValue_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createParameterBindingValueEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE

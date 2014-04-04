@@ -12,7 +12,6 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -21,13 +20,13 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A verifiable is an element that may be verified by formal verification, e.g., model checking. Therefore, this class defines a set of temporal logic constraints.
+ * Represents an element that may be verified by formal verification, e.g., model checking. Therefore, this class provides a repository to store verification constraints.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getTemporalLogicConstraints <em>Temporal Logic Constraints</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getVerificationConstraintRepository <em>Verification Constraint Repository</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,18 +36,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface VerifiableElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Temporal Logic Constraints</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.constraint.TemporalLogicConstraint}.
+	 * Returns the value of the '<em><b>Verification Constraint Repository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The list of temporal logic constraints for this element.
+	 * The referenced repository that contains verifiable constraints for this element.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Temporal Logic Constraints</em>' containment reference list.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage#getVerifiableElement_TemporalLogicConstraints()
+	 * @return the value of the '<em>Verification Constraint Repository</em>' containment reference.
+	 * @see #setVerificationConstraintRepository(VerificationConstraintRepository)
+	 * @see de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage#getVerifiableElement_VerificationConstraintRepository()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<TemporalLogicConstraint> getTemporalLogicConstraints();
+	VerificationConstraintRepository getVerificationConstraintRepository();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getVerificationConstraintRepository <em>Verification Constraint Repository</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Verification Constraint Repository</em>' containment reference.
+	 * @see #getVerificationConstraintRepository()
+	 * @generated
+	 */
+	void setVerificationConstraintRepository(VerificationConstraintRepository value);
 
 } // VerifiableElement

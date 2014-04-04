@@ -2572,13 +2572,13 @@ public interface ComponentPackage extends EPackage {
 	int ATOMIC_COMPONENT__BEHAVIOR = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Temporal Logic Constraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Verification Constraint Repository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS = COMPONENT_FEATURE_COUNT + 1;
+	int ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY = COMPONENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Atomic Component</em>' class.
@@ -4496,13 +4496,13 @@ public interface ComponentPackage extends EPackage {
 	int STATIC_ATOMIC_COMPONENT__BEHAVIOR = ATOMIC_COMPONENT__BEHAVIOR;
 
 	/**
-	 * The feature id for the '<em><b>Temporal Logic Constraints</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Verification Constraint Repository</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATIC_ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS = ATOMIC_COMPONENT__TEMPORAL_LOGIC_CONSTRAINTS;
+	int STATIC_ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY = ATOMIC_COMPONENT__VERIFICATION_CONSTRAINT_REPOSITORY;
 
 	/**
 	 * The number of structural features of the '<em>Static Atomic Component</em>' class.

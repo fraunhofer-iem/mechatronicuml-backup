@@ -24,11 +24,11 @@ public class RangedPrimitiveDataTypeEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRangedPrimitiveDataTypeRangedType_GeneralTab_Editor(null, true);
+			addRangedPrimitiveDataTypeRangedTypeEditor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRangedPrimitiveDataTypeRange_GeneralTab_Editor(null, false);
+			addRangedPrimitiveDataTypeRangeEditor(null, false);
 		}
 
 	}
@@ -36,17 +36,16 @@ public class RangedPrimitiveDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addRangedPrimitiveDataTypeRangedType_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addRangedPrimitiveDataTypeRangedTypeEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createRangedPrimitiveDataTypeRangedType_GeneralTab_Editor(),
-				front);
+				createRangedPrimitiveDataTypeRangedTypeEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangedPrimitiveDataTypeRangedType_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangedPrimitiveDataTypeRangedTypeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE
@@ -61,16 +60,16 @@ public class RangedPrimitiveDataTypeEditor
 	/**
 	 * @generated
 	 */
-	protected void addRangedPrimitiveDataTypeRange_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addRangedPrimitiveDataTypeRangeEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createRangedPrimitiveDataTypeRange_GeneralTab_Editor(), front);
+				createRangedPrimitiveDataTypeRangeEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangedPrimitiveDataTypeRange_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRangedPrimitiveDataTypeRangeEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.types.TypesPackage.eINSTANCE

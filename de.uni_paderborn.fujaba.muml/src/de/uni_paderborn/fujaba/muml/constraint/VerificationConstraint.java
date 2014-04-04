@@ -12,21 +12,21 @@
  */
 package de.uni_paderborn.fujaba.muml.constraint;
 
-import org.storydriven.core.ExtendableElement;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Temporal Logic Constraint</b></em>'.
+ * A representation of the model object '<em><b>Verification Constraint</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * This class represents a temporal logic the system has to fulfill. A temporal logic constraint may be an TCTL expression. Thus, the constraint is the input for a model checker.
+ * The verification constraint of an verifiable element.
  * <!-- end-model-doc -->
  *
  *
- * @see de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage#getTemporalLogicConstraint()
+ * @see de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage#getVerificationConstraint()
  * @model abstract="true"
  * @generated
  */
-public interface TemporalLogicConstraint extends ExtendableElement {
-} // TemporalLogicConstraint
+public interface VerificationConstraint extends EObject {
+} // VerificationConstraint

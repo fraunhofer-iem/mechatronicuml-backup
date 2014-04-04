@@ -24,7 +24,7 @@ public abstract class PortInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPortInstanceComponentInstance_GeneralTab_Editor(null, true);
+			addPortInstanceComponentInstanceEditor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public abstract class PortInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addPortInstanceComponentInstance_GeneralTab_Editor(
-			String category, boolean front) {
+	protected void addPortInstanceComponentInstanceEditor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createPortInstanceComponentInstance_GeneralTab_Editor(), front);
+				createPortInstanceComponentInstanceEditor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortInstanceComponentInstance_GeneralTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPortInstanceComponentInstanceEditor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE
