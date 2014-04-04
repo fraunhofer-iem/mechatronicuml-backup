@@ -693,6 +693,11 @@
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/constraint/VerifiableElement"/>
+      <properties>
+        <genFeature href="muml.genmodel#//muml/constraint/VerifiableElement/verificationConstraintRepository"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+      </properties>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/constraint/VerificationConstraintRepository"/>

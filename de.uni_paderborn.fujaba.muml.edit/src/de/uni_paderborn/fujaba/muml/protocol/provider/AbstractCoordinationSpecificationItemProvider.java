@@ -64,6 +64,7 @@ public class AbstractCoordinationSpecificationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addVerificationConstraintRepositoryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,6 +87,28 @@ public class AbstractCoordinationSpecificationItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Verification Constraint Repository feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVerificationConstraintRepositoryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_VerifiableElement_verificationConstraintRepository_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_VerifiableElement_verificationConstraintRepository_feature", "_UI_VerifiableElement_type"),
+				 ConstraintPackage.Literals.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY,
+				 true,
+				 false,
+				 false,
+				 null,
 				 null,
 				 null));
 	}

@@ -112,7 +112,7 @@
             ecoreFeature="ecore:EReference muml.ecore#//constraint/VerificationConstraintRepository/verificationConstraint"/>
       </genClasses>
       <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerifiableElement">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//constraint/VerifiableElement/verificationConstraintRepository"/>
+        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//constraint/VerifiableElement/verificationConstraintRepository"/>
       </genClasses>
       <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerificationConstraint"/>
     </nestedGenPackages>
