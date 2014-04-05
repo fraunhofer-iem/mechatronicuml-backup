@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+          <propertyTab
+             category="domain"
+             id="property.tab.mtctl"
+             label="Mtctl"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.tabs.MtctlTabElementFilter"
+            id="property.tab.mtctl"
+            tab="property.tab.mtctl">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.BooleanLogic.editor.AndExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic#AndExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.BooleanLogic.editor.ImplyExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic#ImplyExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.BooleanLogic.editor.NotExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic#NotExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.BooleanLogic.editor.OrExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic#OrExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.DeadlockExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#DeadlockExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.BufferOverflowExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#BufferOverflowExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.ComparisonExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#ComparisonExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.MessageInBufferExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#MessageInBufferExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.MessageInTransitExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#MessageInTransitExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.StateActiveExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#StateActiveExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.SubstateOfExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#SubstateOfExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.TransitionFiringExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#TransitionFiringExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.PredicateExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#PredicateExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.TrueExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#TrueExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.FalseExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates#FalseExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.AFExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#AFExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.AGExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#AGExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.EFExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#EFExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.EGExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#EGExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.ExistenceQuantExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#ExistenceQuantExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.BoundVariableEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#BoundVariable">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.UniversalQuantExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#UniversalQuantExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.LeadsToExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#LeadsToExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor.TimeIntervalExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers#TimeIntervalExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.mtctl.editor.PropertyRepositoryEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl#PropertyRepository">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Comparables.editor.BufferMsgCountExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables#BufferMsgCountExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Comparables.editor.ConstExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables#ConstExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Comparables.editor.MumlElemExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables#MumlElemExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Comparables.editor.SourceStateExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables#SourceStateExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Comparables.editor.TargetStateExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables#TargetStateExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.ClockSetExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets#ClockSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.IntervalSetExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets#IntervalSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.MessageSetExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets#MessageSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.StateSetExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets#StateSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.TransitionSetExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets#TransitionSetExpr">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.BufferSetExprEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets#BufferSetExpr">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+</plugin>

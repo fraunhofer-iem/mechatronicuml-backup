@@ -1,0 +1,339 @@
+/**
+ */
+package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.provider;
+
+
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.BooleanLogicFactory;
+
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesFactory;
+
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesFactory;
+
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
+
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsFactory;
+
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.ExpressionItemProvider;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlEditPlugin;
+
+import java.util.Collection;
+import java.util.List;
+
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+/**
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr} object.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class TemporalQuantifierExprItemProvider
+	extends ExpressionItemProvider
+	implements
+		IEditingDomainItemProvider,
+		IStructuredItemContentProvider,
+		ITreeItemContentProvider,
+		IItemLabelProvider,
+		IItemPropertySource {
+	/**
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TemporalQuantifierExprItemProvider(AdapterFactory adapterFactory) {
+		super(adapterFactory);
+	}
+
+	/**
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
+
+		}
+		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getText(Object object) {
+		String label = ((TemporalQuantifierExpr)object).getComment();
+		return label == null || label.length() == 0 ?
+			getString("_UI_TemporalQuantifierExpr_type") :
+			getString("_UI_TemporalQuantifierExpr_type") + " " + label;
+	}
+
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void notifyChanged(Notification notification) {
+		updateChildren(notification);
+
+		switch (notification.getFeatureID(TemporalQuantifierExpr.class)) {
+			case QuantifiersPackage.TEMPORAL_QUANTIFIER_EXPR__EXPR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 QuantifiersFactory.eINSTANCE.createAFExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 QuantifiersFactory.eINSTANCE.createAGExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 QuantifiersFactory.eINSTANCE.createEFExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 QuantifiersFactory.eINSTANCE.createEGExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 QuantifiersFactory.eINSTANCE.createExistenceQuantExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 QuantifiersFactory.eINSTANCE.createBoundVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 QuantifiersFactory.eINSTANCE.createUniversalQuantExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 QuantifiersFactory.eINSTANCE.createLeadsToExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 QuantifiersFactory.eINSTANCE.createTimeIntervalExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createPredicateExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createDeadlockExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createComparisonExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createMessageInBufferExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createMessageInTransitExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createStateActiveExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createSubstateOfExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createTransitionFiringExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createTrueExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createFalseExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 SetsFactory.eINSTANCE.createClockSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 SetsFactory.eINSTANCE.createIntervalSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 SetsFactory.eINSTANCE.createMessageSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 SetsFactory.eINSTANCE.createStateSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 SetsFactory.eINSTANCE.createTransitionSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 SetsFactory.eINSTANCE.createBufferSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 BooleanLogicFactory.eINSTANCE.createAndExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 BooleanLogicFactory.eINSTANCE.createImplyExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 BooleanLogicFactory.eINSTANCE.createNotExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 BooleanLogicFactory.eINSTANCE.createOrExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 ComparablesFactory.eINSTANCE.createBufferMsgCountExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 ComparablesFactory.eINSTANCE.createConstExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 ComparablesFactory.eINSTANCE.createMumlElemExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 ComparablesFactory.eINSTANCE.createSourceStateExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR,
+				 ComparablesFactory.eINSTANCE.createTargetStateExpr()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MtctlEditPlugin.INSTANCE;
+	}
+
+}

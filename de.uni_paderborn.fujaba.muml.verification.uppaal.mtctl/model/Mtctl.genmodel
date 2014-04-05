@@ -6,9 +6,10 @@
     complianceLevel="7.0" copyrightFields="false" usedGenPackages="../../org.storydriven.core/model/core.uml.genmodel#//core ../../de.uni_paderborn.fujaba.muml/model/muml.genmodel#//muml"
     operationReflection="true" importOrganizing="true">
   <foreignModel>Mtctl.ecore</foreignModel>
-  <genPackages prefix="Mtctl" disposableProviderFactory="true" ecorePackage="Mtctl.ecore#/">
+  <genPackages prefix="Mtctl" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal"
+      disposableProviderFactory="true" ecorePackage="Mtctl.ecore#/">
     <genClasses ecoreClass="Mtctl.ecore#//PropertyRepository">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//PropertyRepository/properties"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//PropertyRepository/properties"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Mtctl.ecore#//Property"/>
     <genClasses image="false" ecoreClass="Mtctl.ecore#//Expression"/>
@@ -19,9 +20,12 @@
       <genClasses ecoreClass="Mtctl.ecore#//Quantifiers/EGExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Quantifiers/ExistenceQuantExpr"/>
       <genClasses image="false" ecoreClass="Mtctl.ecore#//Quantifiers/QuantifierExpr">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//Quantifiers/QuantifierExpr/var"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Quantifiers/QuantifierExpr/set"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Quantifiers/QuantifierExpr/formula"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EReference Mtctl.ecore#//Quantifiers/QuantifierExpr/var"/>
+      </genClasses>
+      <genClasses ecoreClass="Mtctl.ecore#//Quantifiers/BoundVariable">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Quantifiers/BoundVariable/set"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//Quantifiers/BoundVariable/name"/>
       </genClasses>
       <genClasses image="false" ecoreClass="Mtctl.ecore#//Quantifiers/TemporalQuantifierExpr">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Quantifiers/TemporalQuantifierExpr/expr"/>
@@ -48,14 +52,6 @@
         <genEnumLiterals ecoreEnumLiteral="Mtctl.ecore#//Predicates/ComparisonOp/NOT_EQUAL"/>
       </genEnums>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/DeadlockExpr"/>
-      <genClasses image="false" ecoreClass="Mtctl.ecore#//Predicates/MessageExpr"/>
-      <genClasses ecoreClass="Mtctl.ecore#//Predicates/StateEnterExpr"/>
-      <genClasses ecoreClass="Mtctl.ecore#//Predicates/StateExitExpr"/>
-      <genClasses image="false" ecoreClass="Mtctl.ecore#//Predicates/StateExpr">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/StateExpr/state"/>
-      </genClasses>
-      <genClasses image="false" ecoreClass="Mtctl.ecore#//Predicates/TransitionExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/BufferOverflowExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/ComparisonExpr">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/ComparisonExpr/lhs"/>
@@ -63,30 +59,33 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/ComparisonExpr/rhs"/>
       </genClasses>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/MessageInBufferExpr">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/MessageInBufferExpr/role"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/MessageInBufferExpr/buffer"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/MessageInBufferExpr/message"/>
       </genClasses>
-      <genClasses ecoreClass="Mtctl.ecore#//Predicates/MessageInFlightExpr">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/MessageInFlightExpr/message"/>
+      <genClasses ecoreClass="Mtctl.ecore#//Predicates/MessageInTransitExpr">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/MessageInTransitExpr/message"/>
       </genClasses>
-      <genClasses ecoreClass="Mtctl.ecore#//Predicates/StateActiveExpr"/>
-      <genClasses ecoreClass="Mtctl.ecore#//Predicates/StateInStatechartExpr">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/StateInStatechartExpr/statechart"/>
+      <genClasses ecoreClass="Mtctl.ecore#//Predicates/StateActiveExpr">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/StateActiveExpr/state"/>
       </genClasses>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/SubstateOfExpr">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/SubstateOfExpr/superstate"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/SubstateOfExpr/state"/>
       </genClasses>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/TransitionFiringExpr">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/TransitionFiringExpr/transition"/>
       </genClasses>
+      <genClasses ecoreClass="Mtctl.ecore#//Predicates/PredicateExpr"/>
+      <genClasses image="false" ecoreClass="Mtctl.ecore#//Predicates/DynamicPredicateExpr"/>
+      <genClasses image="false" ecoreClass="Mtctl.ecore#//Predicates/StaticPredicateExpr"/>
+      <genClasses ecoreClass="Mtctl.ecore#//Predicates/TrueExpr"/>
+      <genClasses ecoreClass="Mtctl.ecore#//Predicates/FalseExpr"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Sets" disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Sets">
+      <genClasses image="false" ecoreClass="Mtctl.ecore#//Sets/SetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/ClockSetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/IntervalSetExpr">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//Sets/IntervalSetExpr/lowerVal"/>
@@ -95,6 +94,7 @@
       <genClasses ecoreClass="Mtctl.ecore#//Sets/MessageSetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/StateSetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/TransitionSetExpr"/>
+      <genClasses ecoreClass="Mtctl.ecore#//Sets/BufferSetExpr"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="BooleanLogic" disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//BooleanLogic">
       <genClasses ecoreClass="Mtctl.ecore#//BooleanLogic/AndExpr">
@@ -122,10 +122,15 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//Comparables/ConstExpr/val"/>
       </genClasses>
       <genClasses image="false" ecoreClass="Mtctl.ecore#//Comparables/MapExpr"/>
-      <genClasses ecoreClass="Mtctl.ecore#//Comparables/MumlVariableExpr">
+      <genClasses ecoreClass="Mtctl.ecore#//Comparables/MumlElemExpr">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference Mtctl.ecore#//Comparables/MumlVariableExpr/var"/>
+            ecoreFeature="ecore:EReference Mtctl.ecore#//Comparables/MumlElemExpr/elem"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="Mtctl.ecore#//Comparables/TransitionMap">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Comparables/TransitionMap/transition"/>
+      </genClasses>
+      <genClasses ecoreClass="Mtctl.ecore#//Comparables/SourceStateExpr"/>
+      <genClasses ecoreClass="Mtctl.ecore#//Comparables/TargetStateExpr"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

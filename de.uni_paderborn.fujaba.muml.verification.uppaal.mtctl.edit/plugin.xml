@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Mtctl -->
+      <factory
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Mtctl -->
+      <factory
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.provider.QuantifiersItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Mtctl -->
+      <factory
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.provider.PredicatesItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Mtctl -->
+      <factory
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.provider.SetsItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Mtctl -->
+      <factory
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.provider.BooleanLogicItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated Mtctl -->
+      <factory
+            uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.provider.ComparablesItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+</plugin>

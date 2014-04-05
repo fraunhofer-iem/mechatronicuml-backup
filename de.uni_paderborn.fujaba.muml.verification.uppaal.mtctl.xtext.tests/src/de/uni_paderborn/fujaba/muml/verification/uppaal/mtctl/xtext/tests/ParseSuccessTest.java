@@ -1,11 +1,10 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-
-import mtctl.PropertyRepository;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -18,6 +17,7 @@ import org.junit.Test;
 import com.google.inject.Injector;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlStandaloneSetup;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
 
 public class ParseSuccessTest {
 	public Resource parse(String str) throws Exception {

@@ -10,7 +10,7 @@
       <!-- @generated Mtctl -->
       <package
             uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl"
-            class="mtctl.MtctlPackage"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage"
             genModel="model/Mtctl.genmodel"/>
    </extension>
 
@@ -18,7 +18,7 @@
       <!-- @generated Mtctl -->
       <package
             uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Quantifiers"
-            class="mtctl.Quantifiers.QuantifiersPackage"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage"
             genModel="model/Mtctl.genmodel"/>
    </extension>
 
@@ -26,7 +26,7 @@
       <!-- @generated Mtctl -->
       <package
             uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Predicates"
-            class="mtctl.Predicates.PredicatesPackage"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage"
             genModel="model/Mtctl.genmodel"/>
    </extension>
 
@@ -34,7 +34,7 @@
       <!-- @generated Mtctl -->
       <package
             uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets"
-            class="mtctl.Sets.SetsPackage"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage"
             genModel="model/Mtctl.genmodel"/>
    </extension>
 
@@ -42,7 +42,7 @@
       <!-- @generated Mtctl -->
       <package
             uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/BooleanLogic"
-            class="mtctl.BooleanLogic.BooleanLogicPackage"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.BooleanLogicPackage"
             genModel="model/Mtctl.genmodel"/>
    </extension>
 
@@ -50,8 +50,7 @@
       <!-- @generated Mtctl -->
       <package
             uri="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables"
-            class="mtctl.Comparables.ComparablesPackage"
+            class="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage"
             genModel="model/Mtctl.genmodel"/>
    </extension>
-
 </plugin>

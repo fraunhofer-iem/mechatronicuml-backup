@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mtctl Properties
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit.properties; singleton:=true
+Bundle-Version: 0.1
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime,
+ de.uni_paderborn.fujaba.properties.runtime,
+ org.eclipse.emf.edit,
+ org.eclipse.ui,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: 
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.BooleanLogic.editor,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Quantifiers.editor,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.mtctl.editor,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Comparables.editor,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor,
+ de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.tabs
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn

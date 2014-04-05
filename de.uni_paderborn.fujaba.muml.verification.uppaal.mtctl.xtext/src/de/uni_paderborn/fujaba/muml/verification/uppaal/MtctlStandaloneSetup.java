@@ -3,9 +3,10 @@
 */
 package de.uni_paderborn.fujaba.muml.verification.uppaal;
 
-import mtctl.impl.MtctlPackageImpl;
 
 import com.google.inject.Injector;
+
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.MtctlPackageImpl;
 
 /**
  * Initialization support for running Xtext languages 

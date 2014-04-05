@@ -3,12 +3,12 @@
 */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.validation;
 
-import mtctl.Predicates.DynamicPredicateExpr;
-import mtctl.Quantifiers.QuantifierExpr;
-import mtctl.Quantifiers.TemporalQuantifierExpr;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
+
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DynamicPredicateExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
 
 /**
  * Custom validation rules. 

@@ -4,25 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import mtctl.PropertyRepository;
-import mtctl.Comparables.BufferMsgCountExpr;
-import mtctl.Comparables.MumlElemExpr;
-import mtctl.Comparables.TransitionMap;
-import mtctl.Predicates.ComparisonExpr;
-import mtctl.Predicates.MessageInBufferExpr;
-import mtctl.Predicates.MessageInTransitExpr;
-import mtctl.Predicates.StateActiveExpr;
-import mtctl.Predicates.SubstateOfExpr;
-import mtctl.Predicates.TransitionFiringExpr;
-import mtctl.Quantifiers.BoundVariable;
-import mtctl.Quantifiers.QuantifierExpr;
-import mtctl.Sets.BufferSetExpr;
-import mtctl.Sets.ClockSetExpr;
-import mtctl.Sets.MessageSetExpr;
-import mtctl.Sets.SetExpr;
-import mtctl.Sets.StateSetExpr;
-import mtctl.Sets.TransitionSetExpr;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.naming.QualifiedName;
@@ -34,6 +15,7 @@ import com.google.common.base.Function;
 
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
+import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
 import de.uni_paderborn.fujaba.muml.protocol.CoordinationProtocol;
 import de.uni_paderborn.fujaba.muml.protocol.Role;
@@ -41,6 +23,24 @@ import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimeStatechart;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.Region;
 import de.uni_paderborn.fujaba.muml.realtimestatechart.State;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TransitionMap;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInTransitExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateActiveExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.SubstateOfExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.TransitionFiringExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.BufferSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ClockSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.MessageSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.StateSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.TransitionSetExpr;
 
 /**
  * Provides scoping rules for Mtctl.
@@ -327,6 +327,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 */
 	public void setScopeForEObject(EObject object) {
 		initLists(); //clear previous data
+		if (object instanceof VerificationConstraintRepository && object != null) //this will happen when the editor is used to specify a list of constraints to save them in a foreign-created VerificationConstraintRepository
+			object = object.eContainer();
 		
 		//Delegate to the specific methods for the type of object
 		if (object instanceof CoordinationProtocol)

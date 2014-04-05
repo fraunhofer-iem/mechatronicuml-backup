@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler enabled="false"/>
+  <genModel href="Mtctl.genmodel#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit.properties" name="Mtctl Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl</requiredBundles>
+  </plugin>
+  <tabs id="property.tab.mtctl" name="Mtctl" afterTab=""/>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl/BooleanLogic"/>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/BooleanLogic/AndExpr"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/BooleanLogic/ImplyExpr"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/BooleanLogic/NotExpr"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/BooleanLogic/OrExpr"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl/Predicates"/>
+    <classes superClasses="//@packages.1/@classes.9">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/DeadlockExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.9">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/BufferOverflowExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.8">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/ComparisonExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.9">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/MessageInBufferExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.9">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/MessageInTransitExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.9">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/StateActiveExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.10">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/SubstateOfExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.9">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/TransitionFiringExpr"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/PredicateExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.8">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/DynamicPredicateExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.8">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/StaticPredicateExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.10">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/TrueExpr"/>
+    </classes>
+    <classes superClasses="//@packages.1/@classes.10">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/FalseExpr"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl/Quantifiers"/>
+    <classes superClasses="//@packages.2/@classes.7">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/AFExpr"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.7">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/AGExpr"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.7">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/EFExpr"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.7">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/EGExpr"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.5">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/ExistenceQuantExpr"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/QuantifierExpr"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/BoundVariable"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/TemporalQuantifierExpr"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.5">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/UniversalQuantExpr"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.7">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/LeadsToExpr"/>
+    </classes>
+    <classes superClasses="//@packages.2/@classes.7">
+      <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/TimeIntervalExpr"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl"/>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/PropertyRepository"/>
+      <properties tab="//@tabs.0" reconcile="false">
+        <genFeature href="Mtctl.genmodel#//mtctl/PropertyRepository/properties"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.MtctlXtextPropertyEditor"/>
+      </properties>
+    </classes>
+    <classes>
+      <genClass href="Mtctl.genmodel#//mtctl/Property"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.1">
+      <genClass href="Mtctl.genmodel#//mtctl/Expression"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl/Comparables"/>
+    <classes superClasses="//@packages.4/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/Comparables/BufferMsgCountExpr"/>
+    </classes>
+    <classes superClasses="//@packages.4/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/Comparables/ConstExpr"/>
+    </classes>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/Comparables/MapExpr"/>
+    </classes>
+    <classes superClasses="//@packages.4/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/Comparables/MumlElemExpr"/>
+    </classes>
+    <classes superClasses="//@packages.4/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/Comparables/TransitionMap"/>
+    </classes>
+    <classes superClasses="//@packages.4/@classes.4">
+      <genClass href="Mtctl.genmodel#//mtctl/Comparables/SourceStateExpr"/>
+    </classes>
+    <classes superClasses="//@packages.4/@classes.4">
+      <genClass href="Mtctl.genmodel#//mtctl/Comparables/TargetStateExpr"/>
+    </classes>
+  </packages>
+  <packages>
+    <genPackage href="Mtctl.genmodel#//mtctl/Sets"/>
+    <classes superClasses="//@packages.3/@classes.2">
+      <genClass href="Mtctl.genmodel#//mtctl/Sets/SetExpr"/>
+    </classes>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/Sets/ClockSetExpr"/>
+    </classes>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/Sets/IntervalSetExpr"/>
+    </classes>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/Sets/MessageSetExpr"/>
+    </classes>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/Sets/StateSetExpr"/>
+    </classes>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/Sets/TransitionSetExpr"/>
+    </classes>
+    <classes superClasses="//@packages.5/@classes.0">
+      <genClass href="Mtctl.genmodel#//mtctl/Sets/BufferSetExpr"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>

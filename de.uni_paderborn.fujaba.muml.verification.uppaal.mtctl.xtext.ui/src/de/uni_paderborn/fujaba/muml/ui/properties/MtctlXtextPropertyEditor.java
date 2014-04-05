@@ -1,9 +1,5 @@
 package de.uni_paderborn.fujaba.muml.ui.properties;
 
-import mtctl.PropertyRepository;
-import mtctl.impl.MtctlFactoryImpl;
-import mtctl.impl.MtctlPackageImpl;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -13,6 +9,9 @@ import com.google.inject.Injector;
 import de.uni_paderborn.fujaba.common.xtext.AbstractLanguageResource;
 import de.uni_paderborn.fujaba.common.xtext.ILoadResult;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.MtctlStandaloneSetup;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.MtctlFactoryImpl;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.MtctlPackageImpl;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlScopeProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.ui.internal.MtctlActivator;
 import de.uni_paderborn.fujaba.properties.runtime.editors.AbstractManyFeatureXtextPropertyEditor;
