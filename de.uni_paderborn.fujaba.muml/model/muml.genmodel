@@ -107,14 +107,10 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Constraint" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//constraint">
-      <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerificationConstraintRepository">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference muml.ecore#//constraint/VerificationConstraintRepository/verificationConstraint"/>
-      </genClasses>
+      <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerificationConstraintRepository"/>
       <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerifiableElement">
         <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//constraint/VerifiableElement/verificationConstraintRepository"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerificationConstraint"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml"
         disposableProviderFactory="true" ecorePackage="muml.ecore#//instance">

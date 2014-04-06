@@ -13,7 +13,6 @@ import org.storydriven.core.ExtendableElement;
 
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 
 
@@ -87,12 +86,6 @@ public class ConstraintSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ConstraintPackage.VERIFICATION_CONSTRAINT: {
-				VerificationConstraint verificationConstraint = (VerificationConstraint)theEObject;
-				T result = caseVerificationConstraint(verificationConstraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -124,21 +117,6 @@ public class ConstraintSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVerifiableElement(VerifiableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Verification Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Verification Constraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVerificationConstraint(VerificationConstraint object) {
 		return null;
 	}
 

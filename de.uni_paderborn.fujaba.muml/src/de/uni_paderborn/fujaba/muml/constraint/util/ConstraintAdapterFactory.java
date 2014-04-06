@@ -14,7 +14,6 @@ import org.storydriven.core.ExtendableElement;
 
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 
 
@@ -83,10 +82,6 @@ public class ConstraintAdapterFactory extends AdapterFactoryImpl {
 				return createVerifiableElementAdapter();
 			}
 			@Override
-			public Adapter caseVerificationConstraint(VerificationConstraint object) {
-				return createVerificationConstraintAdapter();
-			}
-			@Override
 			public Adapter caseExtendableElement(ExtendableElement object) {
 				return createExtendableElementAdapter();
 			}
@@ -135,20 +130,6 @@ public class ConstraintAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVerifiableElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint <em>Verification Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint
-	 * @generated
-	 */
-	public Adapter createVerificationConstraintAdapter() {
 		return null;
 	}
 

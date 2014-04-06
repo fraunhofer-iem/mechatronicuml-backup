@@ -99,22 +99,13 @@ public interface ConstraintPackage extends EPackage {
 	int VERIFICATION_CONSTRAINT_REPOSITORY__EXTENSION = CorePackage.EXTENDABLE_ELEMENT__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Verification Constraint</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERIFICATION_CONSTRAINT_REPOSITORY__VERIFICATION_CONSTRAINT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Verification Constraint Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFICATION_CONSTRAINT_REPOSITORY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 1;
+	int VERIFICATION_CONSTRAINT_REPOSITORY_FEATURE_COUNT = CorePackage.EXTENDABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -335,35 +326,6 @@ public interface ConstraintPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintImpl <em>Verification Constraint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintImpl
-	 * @see de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl#getVerificationConstraint()
-	 * @generated
-	 */
-	int VERIFICATION_CONSTRAINT = 2;
-
-	/**
-	 * The number of structural features of the '<em>Verification Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERIFICATION_CONSTRAINT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Verification Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERIFICATION_CONSTRAINT_OPERATION_COUNT = 0;
-
-
-	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository <em>Verification Constraint Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -372,17 +334,6 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getVerificationConstraintRepository();
-
-	/**
-	 * Returns the meta object for the reference list '{@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository#getVerificationConstraint <em>Verification Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Verification Constraint</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository#getVerificationConstraint()
-	 * @see #getVerificationConstraintRepository()
-	 * @generated
-	 */
-	EReference getVerificationConstraintRepository_VerificationConstraint();
 
 	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement <em>Verifiable Element</em>}'.
@@ -404,16 +355,6 @@ public interface ConstraintPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVerifiableElement_VerificationConstraintRepository();
-
-	/**
-	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint <em>Verification Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Verification Constraint</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint
-	 * @generated
-	 */
-	EClass getVerificationConstraint();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -449,14 +390,6 @@ public interface ConstraintPackage extends EPackage {
 		EClass VERIFICATION_CONSTRAINT_REPOSITORY = eINSTANCE.getVerificationConstraintRepository();
 
 		/**
-		 * The meta object literal for the '<em><b>Verification Constraint</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VERIFICATION_CONSTRAINT_REPOSITORY__VERIFICATION_CONSTRAINT = eINSTANCE.getVerificationConstraintRepository_VerificationConstraint();
-
-		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerifiableElementImpl <em>Verifiable Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -473,16 +406,6 @@ public interface ConstraintPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY = eINSTANCE.getVerifiableElement_VerificationConstraintRepository();
-
-		/**
-		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintImpl <em>Verification Constraint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.uni_paderborn.fujaba.muml.constraint.impl.VerificationConstraintImpl
-		 * @see de.uni_paderborn.fujaba.muml.constraint.impl.ConstraintPackageImpl#getVerificationConstraint()
-		 * @generated
-		 */
-		EClass VERIFICATION_CONSTRAINT = eINSTANCE.getVerificationConstraint();
 
 	}
 

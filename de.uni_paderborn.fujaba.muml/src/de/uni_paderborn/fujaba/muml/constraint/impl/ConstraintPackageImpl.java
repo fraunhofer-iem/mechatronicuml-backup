@@ -28,7 +28,6 @@ import de.uni_paderborn.fujaba.muml.connector.impl.ConnectorPackageImpl;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintFactory;
 import de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage;
 import de.uni_paderborn.fujaba.muml.constraint.VerifiableElement;
-import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraint;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 import de.uni_paderborn.fujaba.muml.instance.impl.InstancePackageImpl;
@@ -63,13 +62,6 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * @generated
 	 */
 	private EClass verifiableElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass verificationConstraintEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -178,15 +170,6 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVerificationConstraintRepository_VerificationConstraint() {
-		return (EReference)verificationConstraintRepositoryEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getVerifiableElement() {
 		return verifiableElementEClass;
 	}
@@ -198,15 +181,6 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 */
 	public EReference getVerifiableElement_VerificationConstraintRepository() {
 		return (EReference)verifiableElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVerificationConstraint() {
-		return verificationConstraintEClass;
 	}
 
 	/**
@@ -238,12 +212,9 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Create classes and their features
 		verificationConstraintRepositoryEClass = createEClass(VERIFICATION_CONSTRAINT_REPOSITORY);
-		createEReference(verificationConstraintRepositoryEClass, VERIFICATION_CONSTRAINT_REPOSITORY__VERIFICATION_CONSTRAINT);
 
 		verifiableElementEClass = createEClass(VERIFIABLE_ELEMENT);
 		createEReference(verifiableElementEClass, VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY);
-
-		verificationConstraintEClass = createEClass(VERIFICATION_CONSTRAINT);
 	}
 
 	/**
@@ -281,12 +252,9 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(verificationConstraintRepositoryEClass, VerificationConstraintRepository.class, "VerificationConstraintRepository", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVerificationConstraintRepository_VerificationConstraint(), this.getVerificationConstraint(), null, "verificationConstraint", null, 1, -1, VerificationConstraintRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(verifiableElementEClass, VerifiableElement.class, "VerifiableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVerifiableElement_VerificationConstraintRepository(), this.getVerificationConstraintRepository(), null, "verificationConstraintRepository", null, 0, 1, VerifiableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(verificationConstraintEClass, VerificationConstraint.class, "VerificationConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

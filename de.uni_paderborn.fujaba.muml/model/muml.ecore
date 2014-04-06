@@ -560,14 +560,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="VerificationConstraintRepository"
         abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//ExtendableElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="This class represents a verifiable constraint the system has to fulfill. A verifiable constraint may be an TCTL expression. Thus, the constraint may be the input for a model checker."/>
+        <details key="documentation" value="Represents a repository for verifiable constraints the element has to fulfill. A verifiable constraint may be an TCTL expression. Thus, the constraint may be the input for a model checker."/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="verificationConstraint"
-          lowerBound="1" upperBound="-1" eType="#//constraint/VerificationConstraint">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The non-empty list of verification constraints this repository contains."/>
-        </eAnnotations>
-      </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="VerifiableElement" abstract="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -579,11 +573,6 @@
           <details key="documentation" value="The referenced repository that contains verifiable constraints for this element."/>
         </eAnnotations>
       </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="VerificationConstraint" abstract="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The verification constraint of an verifiable element."/>
-      </eAnnotations>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="instance" nsURI="http://www.fujaba.de/muml/instance/0.4.0" nsPrefix="instance">

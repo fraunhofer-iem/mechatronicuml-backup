@@ -704,7 +704,7 @@
       <properties category="//@packages.6/@classes.2/@propertyCategories.0">
         <genFeature href="muml.genmodel#//muml/constraint/VerificationConstraintRepository/verificationConstraint"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" properties="//@packages.6/@classes.2/@properties.0"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
