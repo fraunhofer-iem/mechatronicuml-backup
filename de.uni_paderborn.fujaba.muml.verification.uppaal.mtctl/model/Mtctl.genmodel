@@ -13,7 +13,8 @@
     </genClasses>
     <genClasses image="false" ecoreClass="Mtctl.ecore#//Property"/>
     <genClasses image="false" ecoreClass="Mtctl.ecore#//Expression"/>
-    <nestedGenPackages prefix="Quantifiers" disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Quantifiers">
+    <nestedGenPackages prefix="Quantifiers" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
+        disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Quantifiers">
       <genClasses ecoreClass="Mtctl.ecore#//Quantifiers/AFExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Quantifiers/AGExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Quantifiers/EFExpr"/>
@@ -42,7 +43,8 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Quantifiers/TimeIntervalExpr/rhs"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Predicates" disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Predicates">
+    <nestedGenPackages prefix="Predicates" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
+        disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Predicates">
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="Mtctl.ecore#//Predicates/ComparisonOp">
         <genEnumLiterals ecoreEnumLiteral="Mtctl.ecore#//Predicates/ComparisonOp/EQUALS"/>
         <genEnumLiterals ecoreEnumLiteral="Mtctl.ecore#//Predicates/ComparisonOp/GREATER"/>
@@ -84,7 +86,8 @@
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/TrueExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/FalseExpr"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Sets" disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Sets">
+    <nestedGenPackages prefix="Sets" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
+        disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Sets">
       <genClasses image="false" ecoreClass="Mtctl.ecore#//Sets/SetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/ClockSetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/IntervalSetExpr">
@@ -96,7 +99,8 @@
       <genClasses ecoreClass="Mtctl.ecore#//Sets/TransitionSetExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Sets/BufferSetExpr"/>
     </nestedGenPackages>
-    <nestedGenPackages prefix="BooleanLogic" disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//BooleanLogic">
+    <nestedGenPackages prefix="BooleanLogic" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
+        disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//BooleanLogic">
       <genClasses ecoreClass="Mtctl.ecore#//BooleanLogic/AndExpr">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//BooleanLogic/AndExpr/leftOpd"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//BooleanLogic/AndExpr/rightOpd"/>
@@ -113,7 +117,8 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//BooleanLogic/OrExpr/rightOpd"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Comparables" disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Comparables">
+    <nestedGenPackages prefix="Comparables" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
+        disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Comparables">
       <genClasses ecoreClass="Mtctl.ecore#//Comparables/BufferMsgCountExpr">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference Mtctl.ecore#//Comparables/BufferMsgCountExpr/buffer"/>

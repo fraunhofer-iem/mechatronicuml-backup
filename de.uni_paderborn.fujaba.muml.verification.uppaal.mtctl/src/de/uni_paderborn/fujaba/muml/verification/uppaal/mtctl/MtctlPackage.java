@@ -88,15 +88,6 @@ public interface MtctlPackage extends EPackage {
 	int PROPERTY_REPOSITORY__EXTENSION = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY__EXTENSION;
 
 	/**
-	 * The feature id for the '<em><b>Verification Constraint</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROPERTY_REPOSITORY__VERIFICATION_CONSTRAINT = ConstraintPackage.VERIFICATION_CONSTRAINT_REPOSITORY__VERIFICATION_CONSTRAINT;
-
-	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
