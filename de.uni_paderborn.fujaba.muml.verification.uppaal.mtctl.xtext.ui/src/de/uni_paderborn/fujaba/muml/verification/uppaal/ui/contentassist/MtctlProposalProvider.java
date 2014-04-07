@@ -18,18 +18,32 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
 import com.google.common.base.Function;
 
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
+
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
  */
 public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist.AbstractMtctlProposalProvider {
 	public static final String[] keywordExclude = new String[] {">","<",">=","<=","==","!=","(",")","A[]","A<>","E<>","E[]"}; // list of keywords to exclude from auto-complete
 	public static final HashSet<String> hashKeywordExclude = new HashSet<String>(Arrays.asList(keywordExclude));
-
+	public static final HashSet<String> temporalQuantifiers = new HashSet<String>(Arrays.asList(new String[] {"AG", "AF", "EG", "EF"}));
+	
 	@Override
 	public void completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
 
 		if (hashKeywordExclude.contains(keyword.getValue()) || MtctlTemplateProposalProvider.templateNames.contains(keyword.getValue()))
-			return; // ignore keyword suggestion
+			return; // suppress <ignored keyword> and <keywords overruled by templates>
+		
+		//suppress nested temporal quantifiers suggestions
+		EObject context = contentAssistContext.getCurrentModel();
+		if (temporalQuantifiers.contains((keyword.getValue()))) {
+			while (context != null) {
+				if (context instanceof TemporalQuantifierExpr)
+					return;
+				context = context.eContainer();
+			}
+		}
 
 		super.completeKeyword(keyword, contentAssistContext, acceptor);
 	}
@@ -54,10 +68,14 @@ public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verifica
 	 */
 	@Override
 	public void completeAssignment(Assignment assignment, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
-		for (EReference reference : contentAssistContext.getCurrentModel().eClass().getEAllReferences()) //find correct reference (O(1) for fixed metamodel)
-			if (reference.getName().equals(assignment.getFeature())) //compare reference with current feature to set
-				completeAssignmentUsingScope(contentAssistContext.getCurrentModel(), reference, contentAssistContext, acceptor); //add appropriate items from scoping
+		EObject currentModel = contentAssistContext.getCurrentModel();
+		if (currentModel == null) //normalize empty models
+			currentModel = MtctlFactory.eINSTANCE.createPropertyRepository();
 		
+		for (EReference reference : currentModel.eClass().getEAllReferences()) //find correct reference (O(1) for fixed metamodel)
+			if (reference.getName().equals(assignment.getFeature())) //compare reference with current feature to set
+				completeAssignmentUsingScope(currentModel, reference, contentAssistContext, acceptor); //add appropriate items from scoping
+	
 		super.completeAssignment(assignment, contentAssistContext, acceptor);
 	}
 }
