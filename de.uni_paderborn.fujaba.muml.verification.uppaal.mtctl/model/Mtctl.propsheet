@@ -10,6 +10,7 @@
     <requiredBundles>org.eclipse.ui</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit</requiredBundles>
     <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui</requiredBundles>
   </plugin>
   <tabs id="property.tab.mtctl" name="Mtctl" afterTab=""/>
   <packages>
