@@ -6,9 +6,17 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.ui.contentassist;
 import java.util.Arrays;
 import java.util.HashSet;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.resource.IEObjectDescription;
+import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+
+import com.google.common.base.Function;
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
@@ -26,4 +34,30 @@ public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verifica
 		super.completeKeyword(keyword, contentAssistContext, acceptor);
 	}
 	
+	/**
+	 * Calls getScope(modelContext, reference) and adds the returned elements to the proposals. 
+	 */
+	protected void completeAssignmentUsingScope(EObject modelContext, EReference reference, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		Function<IEObjectDescription, ICompletionProposal> factory = new DefaultProposalCreator(context, null, getQualifiedNameConverter());
+		IScope scope = getScopeProvider().getScope(modelContext, reference);
+		for (IEObjectDescription e : scope.getAllElements())
+			acceptor.accept(factory.apply(e));
+	}
+	
+	/*
+	 * We override this method to correct the issue that the default proposal provider is not very smart at calling the ScopeProvider
+	 * In particular, it calls getScope(context, reference) with references that do not exist in the supplied context:
+	 * !context.eClass.getEAllReferences().contains(reference).
+	 * That behavior makes it difficult to find the correct scope (most prominently, getScope(messageInBufferExpr, MumlElemExpr.elem) cannot
+	 * distinguish whether the message (1st argument) or the buffer (2nd argument) is searched for, because both calls are the same.
+	 * This implementation fixes that, then lets the default provider do its thing.
+	 */
+	@Override
+	public void completeAssignment(Assignment assignment, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
+		for (EReference reference : contentAssistContext.getCurrentModel().eClass().getEAllReferences()) //find correct reference (O(1) for fixed metamodel)
+			if (reference.getName().equals(assignment.getFeature())) //compare reference with current feature to set
+				completeAssignmentUsingScope(contentAssistContext.getCurrentModel(), reference, contentAssistContext, acceptor); //add appropriate items from scoping
+		
+		super.completeAssignment(assignment, contentAssistContext, acceptor);
+	}
 }

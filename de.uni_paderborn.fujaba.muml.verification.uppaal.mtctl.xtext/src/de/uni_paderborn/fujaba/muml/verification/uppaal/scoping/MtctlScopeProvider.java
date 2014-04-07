@@ -295,6 +295,9 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	
 	@Override
 	public IScope getScope(EObject context, EReference reference) {
+		if (!(context instanceof MumlElemExpr) && ("MumlElemExpr".equals(reference.getEContainingClass().getName()))) //happens for proposals, but makes it impossible to judge the actual scope (too little information). So this scope provider will simply not react. The problem is solved in MtctlProposalProvider which makes sure that the correct call is also issued.
+			return IScope.NULLSCOPE;
+		
 		//The requested scope might be for a MumlElemExpr. 
 		if (context instanceof MumlElemExpr) {
 			//Because this is not very informative, we exchange the supplied values with the context and reference for the MumlElemExpr, not the reference itself
