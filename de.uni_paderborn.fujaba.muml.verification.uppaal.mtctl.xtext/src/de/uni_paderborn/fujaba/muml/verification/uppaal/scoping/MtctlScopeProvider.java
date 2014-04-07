@@ -13,7 +13,11 @@ import org.eclipse.xtext.scoping.impl.AbstractScopeProvider;
 
 import com.google.common.base.Function;
 
+import de.uni_paderborn.fujaba.muml.behavior.Behavior;
 import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.component.AtomicComponent;
+import de.uni_paderborn.fujaba.muml.component.DiscretePort;
+import de.uni_paderborn.fujaba.muml.component.Port;
 import de.uni_paderborn.fujaba.muml.connector.MessageBuffer;
 import de.uni_paderborn.fujaba.muml.constraint.VerificationConstraintRepository;
 import de.uni_paderborn.fujaba.muml.msgtype.MessageType;
@@ -90,9 +94,15 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 				if (obj instanceof Role)
 					return QualifiedName.create(((Role) obj).getName()); //Roles are called by their names
 				
+				if (obj instanceof AtomicComponent)
+					return QualifiedName.create(((AtomicComponent) obj).getName()); //AtomicComponents are called by their names
+				
+				if (obj instanceof Port) //Ports are called component.port
+					return internalCreateName(obj.eContainer()).append(((DiscretePort) obj).getName());
+				
 				if (obj instanceof RealtimeStatechart)
 					if (((RealtimeStatechart) obj).getBehavioralElement() != null)
-						return internalCreateName(((RealtimeStatechart) obj).getBehavioralElement()).append(((RealtimeStatechart) obj).getName()); //top-level RTSC are called role.rtsc
+						return internalCreateName(((RealtimeStatechart) obj).getBehavioralElement()).append(((RealtimeStatechart) obj).getName()); //top-level RTSC are called (role|port).rtsc
 					else if (((RealtimeStatechart) obj).isEmbedded()) {
 						QualifiedName name = internalCreateName(((RealtimeStatechart) obj).getParentRegion().getParentState()); //embedded RTSC are called like their parent state, unless ...
 						if (((RealtimeStatechart) obj).getParentRegion().getParentState().getEmbeddedRegions().size() > 1)
@@ -103,7 +113,6 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 						return QualifiedName.create(((RealtimeStatechart) obj).getName()); //fallback that should not happen
 				
 				if (obj instanceof State)
-					
 					return internalCreateName(((State) obj).getParentStatechart()).append(((State) obj).getName()); //states are called rtsc.state
 				
 				if (obj instanceof MessageType)
@@ -336,36 +345,71 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		//Delegate to the specific methods for the type of object
 		if (object instanceof CoordinationProtocol)
 			setScopeForCoordinationProtocol((CoordinationProtocol) object);
+		else if (object instanceof AtomicComponent)
+			setScopeForAtomicComponent((AtomicComponent) object);
 		else
 			System.out.println("MtctlScopeProvider::setScopeForEObject: Don't know how to handle "+object.toString()+" :'(");
 		
 	}
 
 	/**
-	 * Called by setScopeForEObject() if the top-level-element is a CoordinationProtocol
+	 * Called by setScopeForEObject() if the top-level-element is a CoordinationProtocol.
+	 * Collects everything that can be referenced from mtctl in a CoordinationProtocol.
 	 * @param object
 	 */
 	private void setScopeForCoordinationProtocol(CoordinationProtocol object) {
-		//Collect everything that can be referenced from mtctl in a CoordinationProtocol
-		
 		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
 		
 		//States, Clocks, Variables, MessageTypes
 		for (Role role : object.getRoles()) {
-			if (role.getBehavior() == null || !(role.getBehavior() instanceof RealtimeStatechart))
-				continue;
-			
-			for (RealtimeStatechart rtsc : findEmbeddedStatecharts((RealtimeStatechart) role.getBehavior())) {
-				states.addAll(rtsc.getStates());
-				clocks.addAll(rtsc.getClocks());
-				variables.addAll(rtsc.getVariables());
-			}
+			addRtscElementsToArrays(role.getBehavior());
 			messageTypes.addAll(role.getReceiverMessageTypes());
+			messageTypes.addAll(role.getSenderMessageTypes());
 		}
 		
 		this.messageTypes.addAll(messageTypes);
 		
 		//TODO MessageBuffers (buffers field and rest already in place, populate here. Missing: how to name them)
+	}
+	
+	/**
+	 * Called by setScopeForEObject() if the top-level-element is an AtomicComponent.
+	 * Collects everything that can be referenced from mtctl in an AtomicComponent.
+	 * @param object
+	 */
+	private void setScopeForAtomicComponent(AtomicComponent object) {
+		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
+		
+		//Component behavior
+		addRtscElementsToArrays(object.getBehavior());
+		
+		//Port behavior
+		for (Port port : object.getPorts()) {
+			if (port instanceof DiscretePort) {
+				addRtscElementsToArrays(((DiscretePort) port).getBehavior());
+				messageTypes.addAll(((DiscretePort) port).getReceiverMessageTypes());
+				messageTypes.addAll(((DiscretePort) port).getSenderMessageTypes());
+			}
+		}
+		
+		this.messageTypes.addAll(messageTypes);
+		
+		//TODO MessageBuffers (buffers field and rest already in place, populate here. Missing: how to name them)
+	}
+	
+	/**
+	 * Adds the contained (interesting) elements of rtsc to the arrays "states", "clocks", ...
+	 * (Helper function)
+	 */
+	private void addRtscElementsToArrays(Behavior rtsc) {
+		if (rtsc == null || !(rtsc instanceof RealtimeStatechart))
+			return;
+		
+		for (RealtimeStatechart innerRtsc : findEmbeddedStatecharts((RealtimeStatechart) rtsc)) {
+			states.addAll(innerRtsc.getStates());
+			clocks.addAll(innerRtsc.getClocks());
+			variables.addAll(innerRtsc.getVariables());
+		}
 	}
 	
 	/**
