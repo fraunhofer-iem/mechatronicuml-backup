@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><!--
+--><plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated MumlReconfiguration -->
+      <package
+            uri="http://www.fujaba.de/muml/reconfiguration/0.3.18"
+            class="de.uni_paderborn.fujaba.muml.reconfiguration.ReconfigurationPackage"
+            genModel="model/MumlReconfiguration.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated MumlReconfiguration -->
+      <package
+            uri="http://www.fujaba.de/muml/reconfiguration/expression/0.3.7"
+            class="de.uni_paderborn.fujaba.muml.reconfiguration.expression.ExpressionPackage"
+            genModel="model/MumlReconfiguration.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated MumlReconfiguration -->
+      <package
+            uri="http://www.fujaba.de/muml/reconfiguration/structdatatype/0.3.18"
+            class="de.uni_paderborn.fujaba.muml.reconfiguration.structdatatype.StructdatatypePackage"
+            genModel="model/MumlReconfiguration.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated MumlReconfiguration -->
+      <package
+            uri="http://www.fujaba.de/muml/reconfiguration/protocolinstantiation/0.4.0"
+            class="de.uni_paderborn.fujaba.muml.reconfiguration.protocolinstantiation.ProtocolinstantiationPackage"
+            genModel="model/MumlReconfiguration.genmodel"/>
+   </extension>
+</plugin>
