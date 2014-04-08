@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated RuntimeModel -->
+      <package
+            uri="http://www.fujaba.de/muml/runtime/0.4.0"
+            class="de.uni_paderborn.fujaba.muml.runtime.RuntimePackage"
+            genModel="model/RuntimeModel.genmodel"/>
+   </extension>
+
+</plugin>
