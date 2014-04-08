@@ -1,0 +1,93 @@
+--core models
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype expressions_common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+
+-- muml models 
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype component uses muml::component("http://www.fujaba.de/muml/0.4.0");
+modeltype connector uses muml::connector("http://www.fujaba.de/muml/0.4.0");
+modeltype constraints uses muml::constraint("http://www.fujaba.de/muml/0.4.0");
+modeltype instance uses muml::instance("http://www.fujaba.de/muml/0.4.0");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype protocol uses muml::protocol("http://www.fujaba.de/muml/0.4.0");
+modeltype realtimestatechart uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+
+modeltype actionlanguage uses actionlanguage('http://www.fujaba.de/muml/actionlanguage/0.4.0');
+modeltype reconf uses reconfiguration("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_expressions uses reconfiguration::expression("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+modeltype reconf_datatype uses reconfiguration::structdatatype("http://www.fujaba.de/muml/reconfiguration/0.3.18");
+
+--modeltype componentpattern uses componentstorydiagram::componentstorypattern("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
+--modeltype componentstory uses componentstorydiagram::controlflow("http://www.fujaba.de/muml/componentstorydiagram/0.3.1");
+
+library UpdateReferencesToComponent;
+
+-- redirects all references of all meta-model elements targeting the oldComp to the new component.
+mapping updateReferencesToComponent(inout rootNode : RootNode, in oldComp : Component,
+										inout newComp : Component){
+	
+	-- update references of component parts
+	var compCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.components.category') -> any(true);
+	map updateComponentParts(compCategory, oldComp, newComp);
+	
+	-- update references of component story diagram (parameters + variables) 
+	var activityCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'org.storydriven.storydiagrams.activities.category') -> any(true);
+	map updateComponentStoryDiagrams(activityCategory, oldComp, newComp);
+	
+	-- update references of struct data types
+	var typeCategory := rootNode.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.types.category') -> any(true);
+	map updateStructTypes(typeCategory, oldComp, newComp);
+}
+
+-- if a component part refers to oldComp, then the reference will be redirected to newComp
+mapping updateComponentParts(inout compCategory : ModelElementCategory, in oldComp : Component,
+										in newComp : Component){
+
+	-- iterate all components
+	compCategory.modelElements -> forEach(comp){
+		if(comp.oclIsKindOf(StructuredComponent)) then {
+		
+			-- iterate all parts of a structured component
+			comp.oclAsType(StructuredComponent).embeddedComponentParts -> forEach(part){
+				-- redirect type reference from oldComp to newComp
+				if(part.componentType = oldComp) then{
+					part.componentType := newComp;
+										
+				} endif;
+			}
+		} endif;
+	}											
+}
+
+-- if a variable in a component story diagram refers to oldComp, then the reference will be redirected to newComp
+mapping updateComponentStoryDiagrams(inout actCategory : ModelElementCategory, in oldComp : Component,
+										in newComp : Component){
+
+	-- iterate all activity diagrams											
+	
+}
+
+-- if a struct type refers to oldComp, then the reference will be redirected to newComp
+mapping updateStructTypes(inout typeCategory : ModelElementCategory, in oldComp : Component,
+										in newComp : Component){
+
+	--iterate all types
+	typeCategory.modelElements -> forEach(type){
+		if(type.oclIsKindOf(StructType)) then{
+			
+			-- components may only be referenced by References of a struct type
+			type.oclAsType(StructType)._references -> forEach(reference){
+				-- redirect type reference from oldComp to newComp
+				if(reference.type = oldComp) then{
+					-- reference.type := newComp;
+				} endif;
+			}
+		}endif;
+	}
+											
+}
+

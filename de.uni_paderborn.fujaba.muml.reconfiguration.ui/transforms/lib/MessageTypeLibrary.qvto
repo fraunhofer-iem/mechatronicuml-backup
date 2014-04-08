@@ -1,0 +1,106 @@
+import TypeAndBehaviorLibrary;
+import ProjectSpecificConstants;
+
+--core models
+modeltype core uses core('http://www.storydriven.org/core/0.3.1');
+modeltype modelinst uses modelinstance("http://www.fujaba.de/modelinstance/0.4.0");
+
+-- muml models 
+modeltype behavior uses muml::behavior("http://www.fujaba.de/muml/0.4.0");
+modeltype msgi uses muml::msgtype("http://www.fujaba.de/muml/0.4.0");
+modeltype types uses muml::types("http://www.fujaba.de/muml/0.4.0");
+modeltype valuetype uses muml::valuetype("http://www.fujaba.de/muml/0.4.0");
+modeltype connector uses muml::connector("http://www.fujaba.de/muml/0.4.0");
+
+library MessageTypeLibrary;
+
+------------ helper functions --------------
+
+-- returns the generated message type repositoy which contains all message types that are needed for the
+-- communication of manager and executor and that are NOT user defined 
+helper getOrCreateReconfigurationMessageTypeRepositoy(inout rootNode : RootNode) : MessageTypeRepository{
+	
+	var category : ModelElementCategory := rootNode.getMessageTypeCategory();
+	
+	-- try to obtain message type repository
+	var repo : MessageTypeRepository := (category.modelElements -> select(t : ExtendableElement | t.oclIsKindOf(MessageTypeRepository) 
+						and t.oclAsType(MessageTypeRepository).name = reconfigurationMessageTypeRepositoryName) 
+						-> any(true)).oclAsType(MessageTypeRepository);
+	
+	-- if no repository was found, then create it!
+	if(repo = null) then{
+		repo := createReconfigurationMessageTypeRepository(rootNode);
+		category.modelElements += repo;
+	}endif;
+	
+	return repo;
+}
+
+-- creates the message type repositoy which contains all message types that are needed for the
+-- communication of manager and executor and that are NOT user defined 
+helper createReconfigurationMessageTypeRepository(inout rootNode : RootNode) : MessageTypeRepository{
+	-- create the repository
+	var repo : MessageTypeRepository := new MessageTypeRepository(reconfigurationMessageTypeRepositoryName);
+	repo.comment := 'Generated Message Types for Reconfigurable Structured Components - DO NOT EDIT!';
+	
+	-- create all necessary message types
+	var msgType : MessageType;
+	
+	repo.messageTypes += new MessageType(genMsgTypeSuccess);
+	repo.messageTypes += new MessageType(genMsgTypeFailed);
+	repo.messageTypes += new MessageType(genMsgTypeOccupied);
+	repo.messageTypes += new MessageType(genMsgTypeDeclineRequest);
+	repo.messageTypes += new MessageType(genMsgTypeExecute);
+	repo.messageTypes += new MessageType(genMsgTypeAbort);
+	repo.messageTypes += new MessageType(genMsgTypeFinished);
+	
+	msgType := new MessageType(genMsgTypeExecuteReconf);
+	msgType.parameters += new Parameter(genParamExecute_Reconf, rootNode.getPrimitiveType(intType));
+	repo.messageTypes += msgType;
+	
+	msgType := new MessageType(genMsgTypeConfirmRequest);
+	msgType.parameters += new Parameter(genParamConfirmRequest_Reconf, rootNode.getPrimitiveType(intType));
+	repo.messageTypes += msgType;
+	
+	msgType := new MessageType(genMsgTypeConfirm);
+	msgType.parameters += new Parameter(genParamConfirm_T, rootNode.getPrimitiveType(intType));
+	repo.messageTypes += msgType;
+	
+	return repo;
+}
+
+------------ helper queries ---------------
+
+-- returns the model element category for real-time statecharts.
+query RootNode::getMessageTypeCategory() : ModelElementCategory {
+	return self.categories -> select(c : ModelElementCategory | c.key = 'de.uni_paderborn.fujaba.muml.messagetype.category') -> any(true);
+}
+
+-- return the parameter with the given name of the message type
+query MessageType::getParameterByName(in theName : String) : Parameter{
+	return (self.parameters -> any(name = theName));
+}
+
+-- returns the message type with the given name from the generated message type repository
+-- that contains all message types that are needed for the
+-- communication of manager and executor and that are NOT user defined 
+query RootNode::getGeneratedReconfigurationMessageType(in theName : String) : MessageType{
+	return getOrCreateReconfigurationMessageTypeRepositoy(self).messageTypes -> select(name = theName) -> any(true);
+}
+
+------------- constructors -----------------
+
+constructor MessageType::MessageType(in newName : String){
+	name := newName;
+}
+
+constructor MessageTypeRepository::MessageTypeRepository(in newName : String){
+	name := newName;
+}
+
+constructor MessageBuffer::MessageBuffer(in size : Integer){
+	bufferSize := object NaturalNumber{
+		value := size;
+		infinity := false;
+	};
+}
