@@ -24,6 +24,11 @@ public abstract class AtomicComponentEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addVerifiableElementVerificationConstraintRepositoryEditor(null,
+					false);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addComponentPortsEditor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
@@ -43,6 +48,32 @@ public abstract class AtomicComponentEditor
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
 			addCommentableElementCommentEditor(null, true);
 		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addVerifiableElementVerificationConstraintRepositoryEditor(
+			String category, boolean front) {
+		addEditorToCategory(
+				category,
+				createVerifiableElementVerificationConstraintRepositoryEditor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVerifiableElementVerificationConstraintRepositoryEditor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
+						.getVerifiableElement_VerificationConstraintRepository());
+
+		editor.setTooltipMessage("The referenced repository that contains verifiable constraints for this element.");
+
+		return editor;
 
 	}
 

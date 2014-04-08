@@ -638,7 +638,6 @@
     <classes>
       <genClass href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="#//@packages.6/@classes.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
     <classes superClasses="//@packages.5/@classes.0">
@@ -689,7 +688,8 @@
   <packages>
     <genPackage href="muml.genmodel#//muml/constraint"/>
     <classes>
-      <genClass href="muml.genmodel#//muml/constraint/VerificationConstraint"/>
+      <genClass href="muml.genmodel#//muml/constraint/VerificationConstraintRepository"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/constraint/VerifiableElement"/>
@@ -698,16 +698,6 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
       </properties>
-    </classes>
-    <classes>
-      <genClass href="muml.genmodel#//muml/constraint/VerificationConstraintRepository"/>
-      <properties category="//@packages.6/@classes.2/@propertyCategories.0">
-        <genFeature href="muml.genmodel#//muml/constraint/VerificationConstraintRepository/verificationConstraint"/>
-        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
-      </properties>
-      <propertyCategories title="Lists" properties="//@packages.6/@classes.2/@properties.0"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.1"/>
     </classes>
   </packages>
   <packages>
