@@ -24,11 +24,11 @@ public class CardinalityEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCardinalityLowerBoundEditor(null, true);
+			addCardinalityLowerBound_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addCardinalityUpperBoundEditor(null, true);
+			addCardinalityUpperBound_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,15 +36,16 @@ public class CardinalityEditor
 	/**
 	 * @generated
 	 */
-	protected void addCardinalityLowerBoundEditor(String category, boolean front) {
-		addEditorToCategory(category, createCardinalityLowerBoundEditor(),
-				front);
+	protected void addCardinalityLowerBound_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createCardinalityLowerBound_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityLowerBoundEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityLowerBound_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE
@@ -59,15 +60,16 @@ public class CardinalityEditor
 	/**
 	 * @generated
 	 */
-	protected void addCardinalityUpperBoundEditor(String category, boolean front) {
-		addEditorToCategory(category, createCardinalityUpperBoundEditor(),
-				front);
+	protected void addCardinalityUpperBound_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createCardinalityUpperBound_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityUpperBoundEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCardinalityUpperBound_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage.eINSTANCE

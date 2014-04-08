@@ -24,12 +24,12 @@ public class RoleConnectorEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRoleConnectorCoordinationProtocolEditor(null, true);
+			addRoleConnectorCoordinationProtocol_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRoleConnectorConnectorQualityOfServiceAssumptionsEditor(null,
-					false);
+			addRoleConnectorConnectorQualityOfServiceAssumptions_GeneralTab_Editor(
+					null, false);
 		}
 
 	}
@@ -37,16 +37,17 @@ public class RoleConnectorEditor
 	/**
 	 * @generated
 	 */
-	protected void addRoleConnectorCoordinationProtocolEditor(String category,
-			boolean front) {
+	protected void addRoleConnectorCoordinationProtocol_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createRoleConnectorCoordinationProtocolEditor(), front);
+				createRoleConnectorCoordinationProtocol_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRoleConnectorCoordinationProtocolEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRoleConnectorCoordinationProtocol_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE
@@ -61,18 +62,18 @@ public class RoleConnectorEditor
 	/**
 	 * @generated
 	 */
-	protected void addRoleConnectorConnectorQualityOfServiceAssumptionsEditor(
+	protected void addRoleConnectorConnectorQualityOfServiceAssumptions_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createRoleConnectorConnectorQualityOfServiceAssumptionsEditor(),
+				createRoleConnectorConnectorQualityOfServiceAssumptions_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRoleConnectorConnectorQualityOfServiceAssumptionsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRoleConnectorConnectorQualityOfServiceAssumptions_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.protocol.ProtocolPackage.eINSTANCE

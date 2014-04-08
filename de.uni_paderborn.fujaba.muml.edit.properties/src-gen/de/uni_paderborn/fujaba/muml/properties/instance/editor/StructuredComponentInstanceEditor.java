@@ -24,7 +24,8 @@ public class StructuredComponentInstanceEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addStructuredComponentInstanceEmbeddedCICEditor(null, false);
+			addStructuredComponentInstanceEmbeddedCIC_GeneralTab_Editor(null,
+					false);
 		}
 
 	}
@@ -32,16 +33,18 @@ public class StructuredComponentInstanceEditor
 	/**
 	 * @generated
 	 */
-	protected void addStructuredComponentInstanceEmbeddedCICEditor(
+	protected void addStructuredComponentInstanceEmbeddedCIC_GeneralTab_Editor(
 			String category, boolean front) {
-		addEditorToCategory(category,
-				createStructuredComponentInstanceEmbeddedCICEditor(), front);
+		addEditorToCategory(
+				category,
+				createStructuredComponentInstanceEmbeddedCIC_GeneralTab_Editor(),
+				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentInstanceEmbeddedCICEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createStructuredComponentInstanceEmbeddedCIC_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.instance.InstancePackage.eINSTANCE

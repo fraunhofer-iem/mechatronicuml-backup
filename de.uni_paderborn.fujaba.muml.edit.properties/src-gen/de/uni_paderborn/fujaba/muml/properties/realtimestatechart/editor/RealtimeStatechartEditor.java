@@ -27,34 +27,34 @@ public class RealtimeStatechartEditor
 				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRealtimeStatechartParentRegionEditor(null, true);
+			addRealtimeStatechartParentRegion_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRealtimeStatechartTransitionsEditor(
+			addRealtimeStatechartTransitions_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRealtimeStatechartStatesEditor(
+			addRealtimeStatechartStates_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRealtimeStatechartClocksEditor(
+			addRealtimeStatechartClocks_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementNameEditor(null, true);
+			addNamedElementName_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.extensions".equals(getTab())) {
-			addExtendableElementExtensionEditor(null, true);
+			addExtendableElementExtension_ExtensionsTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addCommentableElementCommentEditor(null, true);
+			addCommentableElementComment_DocumentationTab_Editor(null, true);
 		}
 
 	}
@@ -62,16 +62,16 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	protected void addRealtimeStatechartParentRegionEditor(String category,
-			boolean front) {
+	protected void addRealtimeStatechartParentRegion_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createRealtimeStatechartParentRegionEditor(), front);
+				createRealtimeStatechartParentRegion_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartParentRegionEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartParentRegion_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -86,16 +86,16 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	protected void addRealtimeStatechartTransitionsEditor(String category,
-			boolean front) {
+	protected void addRealtimeStatechartTransitions_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createRealtimeStatechartTransitionsEditor(), front);
+				createRealtimeStatechartTransitions_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartTransitionsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartTransitions_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -110,16 +110,16 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	protected void addRealtimeStatechartStatesEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createRealtimeStatechartStatesEditor(),
-				front);
+	protected void addRealtimeStatechartStates_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createRealtimeStatechartStates_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartStatesEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartStates_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -134,16 +134,16 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	protected void addRealtimeStatechartClocksEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createRealtimeStatechartClocksEditor(),
-				front);
+	protected void addRealtimeStatechartClocks_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createRealtimeStatechartClocks_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartClocksEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRealtimeStatechartClocks_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -158,14 +158,16 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	protected void addNamedElementName_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createNamedElementName_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
@@ -180,16 +182,16 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	protected void addExtendableElementExtensionEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createExtendableElementExtensionEditor(),
-				front);
+	protected void addExtendableElementExtension_ExtensionsTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createExtendableElementExtension_ExtensionsTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtendableElementExtensionEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtendableElementExtension_ExtensionsTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
@@ -204,16 +206,17 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementCommentEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createCommentableElementCommentEditor(),
+	protected void addCommentableElementComment_DocumentationTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createCommentableElementComment_DocumentationTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementCommentEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementComment_DocumentationTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE

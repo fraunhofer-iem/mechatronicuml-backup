@@ -24,19 +24,19 @@ public class OperationEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addOperationReturnTypeEditor(null, true);
+			addOperationReturnType_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addOperationImplementationsEditor(null, true);
+			addOperationImplementations_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addOperationParametersEditor(null, true);
+			addOperationParameters_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementNameEditor(null, true);
+			addNamedElementName_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -44,14 +44,16 @@ public class OperationEditor
 	/**
 	 * @generated
 	 */
-	protected void addOperationReturnTypeEditor(String category, boolean front) {
-		addEditorToCategory(category, createOperationReturnTypeEditor(), front);
+	protected void addOperationReturnType_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createOperationReturnType_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOperationReturnTypeEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOperationReturnType_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -66,16 +68,16 @@ public class OperationEditor
 	/**
 	 * @generated
 	 */
-	protected void addOperationImplementationsEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createOperationImplementationsEditor(),
-				front);
+	protected void addOperationImplementations_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createOperationImplementations_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOperationImplementationsEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOperationImplementations_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.muml.ui.properties.XtextPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -90,14 +92,16 @@ public class OperationEditor
 	/**
 	 * @generated
 	 */
-	protected void addOperationParametersEditor(String category, boolean front) {
-		addEditorToCategory(category, createOperationParametersEditor(), front);
+	protected void addOperationParameters_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createOperationParameters_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOperationParametersEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createOperationParameters_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
@@ -112,14 +116,16 @@ public class OperationEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementNameEditor(String category, boolean front) {
-		addEditorToCategory(category, createNamedElementNameEditor(), front);
+	protected void addNamedElementName_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createNamedElementName_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementNameEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE

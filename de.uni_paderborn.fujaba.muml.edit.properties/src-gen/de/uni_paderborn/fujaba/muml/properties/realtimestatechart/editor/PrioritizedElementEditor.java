@@ -24,7 +24,7 @@ public abstract class PrioritizedElementEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPrioritizedElementPriorityEditor(null, true);
+			addPrioritizedElementPriority_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,16 +32,16 @@ public abstract class PrioritizedElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addPrioritizedElementPriorityEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
-				front);
+	protected void addPrioritizedElementPriority_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createPrioritizedElementPriority_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriority_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

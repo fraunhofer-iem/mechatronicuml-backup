@@ -24,7 +24,7 @@ public class ClockEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addClockStatechartEditor(null, true);
+			addClockStatechart_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -32,14 +32,16 @@ public class ClockEditor
 	/**
 	 * @generated
 	 */
-	protected void addClockStatechartEditor(String category, boolean front) {
-		addEditorToCategory(category, createClockStatechartEditor(), front);
+	protected void addClockStatechart_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createClockStatechart_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClockStatechartEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createClockStatechart_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE

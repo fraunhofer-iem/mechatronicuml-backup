@@ -24,11 +24,11 @@ public class RegionEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addRegionParentStateEditor(null, true);
+			addRegionParentState_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addPrioritizedElementPriorityEditor(null, true);
+			addPrioritizedElementPriority_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -36,14 +36,16 @@ public class RegionEditor
 	/**
 	 * @generated
 	 */
-	protected void addRegionParentStateEditor(String category, boolean front) {
-		addEditorToCategory(category, createRegionParentStateEditor(), front);
+	protected void addRegionParentState_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createRegionParentState_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRegionParentStateEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createRegionParentState_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
@@ -58,16 +60,16 @@ public class RegionEditor
 	/**
 	 * @generated
 	 */
-	protected void addPrioritizedElementPriorityEditor(String category,
-			boolean front) {
-		addEditorToCategory(category, createPrioritizedElementPriorityEditor(),
-				front);
+	protected void addPrioritizedElementPriority_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createPrioritizedElementPriority_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriorityEditor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPrioritizedElementPriority_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.SpinnerPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.realtimestatechart.RealtimestatechartPackage.eINSTANCE
