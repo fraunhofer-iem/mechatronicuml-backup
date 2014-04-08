@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.provider,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.provider,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.provider,
