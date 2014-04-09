@@ -3,19 +3,13 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.provider;
 
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.ExpressionItemProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlEditPlugin;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -80,10 +74,7 @@ public class MapExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MapExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_MapExpr_type") :
-			getString("_UI_MapExpr_type") + " " + label;
+		return getString("_UI_MapExpr_type");
 	}
 
 	/**

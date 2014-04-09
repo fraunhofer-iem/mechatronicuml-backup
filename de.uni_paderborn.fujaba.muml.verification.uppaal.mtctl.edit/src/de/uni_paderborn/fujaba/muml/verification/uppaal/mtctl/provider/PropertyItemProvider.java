@@ -3,8 +3,14 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider;
 
 
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.BooleanLogicFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
 
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -13,6 +19,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -20,6 +27,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.storydriven.core.provider.CommentableElementItemProvider;
 
 /**
@@ -62,6 +70,36 @@ public class PropertyItemProvider
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(MtctlPackage.Literals.PROPERTY__EXPRESSION);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -95,6 +133,12 @@ public class PropertyItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Property.class)) {
+			case MtctlPackage.PROPERTY__EXPRESSION:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -108,6 +152,181 @@ public class PropertyItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 QuantifiersFactory.eINSTANCE.createAFExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 QuantifiersFactory.eINSTANCE.createAGExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 QuantifiersFactory.eINSTANCE.createEFExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 QuantifiersFactory.eINSTANCE.createEGExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 QuantifiersFactory.eINSTANCE.createExistenceQuantExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 QuantifiersFactory.eINSTANCE.createBoundVariable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 QuantifiersFactory.eINSTANCE.createUniversalQuantExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 QuantifiersFactory.eINSTANCE.createLeadsToExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 QuantifiersFactory.eINSTANCE.createTimeIntervalExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createPredicateExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createDeadlockExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createComparisonExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createMessageInBufferExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createMessageInTransitExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createStateActiveExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createSubstateOfExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createTransitionFiringExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createTrueExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 PredicatesFactory.eINSTANCE.createFalseExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 SetsFactory.eINSTANCE.createClockSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 SetsFactory.eINSTANCE.createIntervalSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 SetsFactory.eINSTANCE.createMessageSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 SetsFactory.eINSTANCE.createStateSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 SetsFactory.eINSTANCE.createTransitionSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 SetsFactory.eINSTANCE.createBufferSetExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 BooleanLogicFactory.eINSTANCE.createAndExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 BooleanLogicFactory.eINSTANCE.createImplyExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 BooleanLogicFactory.eINSTANCE.createNotExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 BooleanLogicFactory.eINSTANCE.createOrExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 ComparablesFactory.eINSTANCE.createBufferMsgCountExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 ComparablesFactory.eINSTANCE.createConstExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 ComparablesFactory.eINSTANCE.createMumlElemExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 ComparablesFactory.eINSTANCE.createSourceStateExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MtctlPackage.Literals.PROPERTY__EXPRESSION,
+				 ComparablesFactory.eINSTANCE.createTargetStateExpr()));
 	}
 
 	/**

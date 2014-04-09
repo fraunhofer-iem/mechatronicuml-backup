@@ -5713,25 +5713,31 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Property__Group__0__Impl"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1926:1: rule__Property__Group__0__Impl : ( ruleExpression ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1926:1: rule__Property__Group__0__Impl : ( ( rule__Property__ExpressionAssignment_0 ) ) ;
     public final void rule__Property__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1930:1: ( ( ruleExpression ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1931:1: ( ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1930:1: ( ( ( rule__Property__ExpressionAssignment_0 ) ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1931:1: ( ( rule__Property__ExpressionAssignment_0 ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1931:1: ( ruleExpression )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1932:1: ruleExpression
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1931:1: ( ( rule__Property__ExpressionAssignment_0 ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1932:1: ( rule__Property__ExpressionAssignment_0 )
             {
-             before(grammarAccess.getPropertyAccess().getExpressionParserRuleCall_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_rule__Property__Group__0__Impl4176);
-            ruleExpression();
+             before(grammarAccess.getPropertyAccess().getExpressionAssignment_0()); 
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1933:1: ( rule__Property__ExpressionAssignment_0 )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1933:2: rule__Property__ExpressionAssignment_0
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Property__ExpressionAssignment_0_in_rule__Property__Group__0__Impl4176);
+            rule__Property__ExpressionAssignment_0();
 
             state._fsp--;
 
-             after(grammarAccess.getPropertyAccess().getExpressionParserRuleCall_0()); 
+
+            }
+
+             after(grammarAccess.getPropertyAccess().getExpressionAssignment_0()); 
 
             }
 
@@ -5763,12 +5769,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1947:1: ( rule__Property__Group__1__Impl rule__Property__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1948:2: rule__Property__Group__1__Impl rule__Property__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Property__Group__1__Impl_in_rule__Property__Group__14205);
+            pushFollow(FollowSets000.FOLLOW_rule__Property__Group__1__Impl_in_rule__Property__Group__14206);
             rule__Property__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Property__Group__2_in_rule__Property__Group__14208);
+            pushFollow(FollowSets000.FOLLOW_rule__Property__Group__2_in_rule__Property__Group__14209);
             rule__Property__Group__2();
 
             state._fsp--;
@@ -5805,7 +5811,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1961:1: ';'
             {
              before(grammarAccess.getPropertyAccess().getSemicolonKeyword_1()); 
-            match(input,25,FollowSets000.FOLLOW_25_in_rule__Property__Group__1__Impl4236); 
+            match(input,25,FollowSets000.FOLLOW_25_in_rule__Property__Group__1__Impl4237); 
              after(grammarAccess.getPropertyAccess().getSemicolonKeyword_1()); 
 
             }
@@ -5838,7 +5844,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1978:1: ( rule__Property__Group__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1979:2: rule__Property__Group__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Property__Group__2__Impl_in_rule__Property__Group__24267);
+            pushFollow(FollowSets000.FOLLOW_rule__Property__Group__2__Impl_in_rule__Property__Group__24268);
             rule__Property__Group__2__Impl();
 
             state._fsp--;
@@ -5886,7 +5892,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:1992:2: rule__Property__CommentAssignment_2
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Property__CommentAssignment_2_in_rule__Property__Group__2__Impl4294);
+                    pushFollow(FollowSets000.FOLLOW_rule__Property__CommentAssignment_2_in_rule__Property__Group__2__Impl4295);
                     rule__Property__CommentAssignment_2();
 
                     state._fsp--;
@@ -5929,12 +5935,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2012:1: ( rule__LeadsToExpr__Group__0__Impl rule__LeadsToExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2013:2: rule__LeadsToExpr__Group__0__Impl rule__LeadsToExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group__0__Impl_in_rule__LeadsToExpr__Group__04331);
+            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group__0__Impl_in_rule__LeadsToExpr__Group__04332);
             rule__LeadsToExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group__1_in_rule__LeadsToExpr__Group__04334);
+            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group__1_in_rule__LeadsToExpr__Group__04335);
             rule__LeadsToExpr__Group__1();
 
             state._fsp--;
@@ -5971,7 +5977,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2026:1: ruleTimeIntervalExpr
             {
              before(grammarAccess.getLeadsToExprAccess().getTimeIntervalExprParserRuleCall_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTimeIntervalExpr_in_rule__LeadsToExpr__Group__0__Impl4361);
+            pushFollow(FollowSets000.FOLLOW_ruleTimeIntervalExpr_in_rule__LeadsToExpr__Group__0__Impl4362);
             ruleTimeIntervalExpr();
 
             state._fsp--;
@@ -6008,7 +6014,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2041:1: ( rule__LeadsToExpr__Group__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2042:2: rule__LeadsToExpr__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group__1__Impl_in_rule__LeadsToExpr__Group__14390);
+            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group__1__Impl_in_rule__LeadsToExpr__Group__14391);
             rule__LeadsToExpr__Group__1__Impl();
 
             state._fsp--;
@@ -6060,7 +6066,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2055:2: rule__LeadsToExpr__Group_1__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__0_in_rule__LeadsToExpr__Group__1__Impl4417);
+            	    pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__0_in_rule__LeadsToExpr__Group__1__Impl4418);
             	    rule__LeadsToExpr__Group_1__0();
 
             	    state._fsp--;
@@ -6106,12 +6112,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2073:1: ( rule__LeadsToExpr__Group_1__0__Impl rule__LeadsToExpr__Group_1__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2074:2: rule__LeadsToExpr__Group_1__0__Impl rule__LeadsToExpr__Group_1__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__0__Impl_in_rule__LeadsToExpr__Group_1__04452);
+            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__0__Impl_in_rule__LeadsToExpr__Group_1__04453);
             rule__LeadsToExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__1_in_rule__LeadsToExpr__Group_1__04455);
+            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__1_in_rule__LeadsToExpr__Group_1__04456);
             rule__LeadsToExpr__Group_1__1();
 
             state._fsp--;
@@ -6181,12 +6187,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2104:1: ( rule__LeadsToExpr__Group_1__1__Impl rule__LeadsToExpr__Group_1__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2105:2: rule__LeadsToExpr__Group_1__1__Impl rule__LeadsToExpr__Group_1__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__1__Impl_in_rule__LeadsToExpr__Group_1__14513);
+            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__1__Impl_in_rule__LeadsToExpr__Group_1__14514);
             rule__LeadsToExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__2_in_rule__LeadsToExpr__Group_1__14516);
+            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__2_in_rule__LeadsToExpr__Group_1__14517);
             rule__LeadsToExpr__Group_1__2();
 
             state._fsp--;
@@ -6223,7 +6229,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2118:1: 'leadsTo'
             {
              before(grammarAccess.getLeadsToExprAccess().getLeadsToKeyword_1_1()); 
-            match(input,26,FollowSets000.FOLLOW_26_in_rule__LeadsToExpr__Group_1__1__Impl4544); 
+            match(input,26,FollowSets000.FOLLOW_26_in_rule__LeadsToExpr__Group_1__1__Impl4545); 
              after(grammarAccess.getLeadsToExprAccess().getLeadsToKeyword_1_1()); 
 
             }
@@ -6256,7 +6262,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2135:1: ( rule__LeadsToExpr__Group_1__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2136:2: rule__LeadsToExpr__Group_1__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__2__Impl_in_rule__LeadsToExpr__Group_1__24575);
+            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__Group_1__2__Impl_in_rule__LeadsToExpr__Group_1__24576);
             rule__LeadsToExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -6296,7 +6302,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2149:1: ( rule__LeadsToExpr__RightOpdAssignment_1_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2149:2: rule__LeadsToExpr__RightOpdAssignment_1_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__RightOpdAssignment_1_2_in_rule__LeadsToExpr__Group_1__2__Impl4602);
+            pushFollow(FollowSets000.FOLLOW_rule__LeadsToExpr__RightOpdAssignment_1_2_in_rule__LeadsToExpr__Group_1__2__Impl4603);
             rule__LeadsToExpr__RightOpdAssignment_1_2();
 
             state._fsp--;
@@ -6336,12 +6342,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2169:1: ( rule__TimeIntervalExpr__Group_0__0__Impl rule__TimeIntervalExpr__Group_0__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2170:2: rule__TimeIntervalExpr__Group_0__0__Impl rule__TimeIntervalExpr__Group_0__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__0__Impl_in_rule__TimeIntervalExpr__Group_0__04638);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__0__Impl_in_rule__TimeIntervalExpr__Group_0__04639);
             rule__TimeIntervalExpr__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__1_in_rule__TimeIntervalExpr__Group_0__04641);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__1_in_rule__TimeIntervalExpr__Group_0__04642);
             rule__TimeIntervalExpr__Group_0__1();
 
             state._fsp--;
@@ -6378,7 +6384,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2183:1: 'timeInterval'
             {
              before(grammarAccess.getTimeIntervalExprAccess().getTimeIntervalKeyword_0_0()); 
-            match(input,27,FollowSets000.FOLLOW_27_in_rule__TimeIntervalExpr__Group_0__0__Impl4669); 
+            match(input,27,FollowSets000.FOLLOW_27_in_rule__TimeIntervalExpr__Group_0__0__Impl4670); 
              after(grammarAccess.getTimeIntervalExprAccess().getTimeIntervalKeyword_0_0()); 
 
             }
@@ -6411,12 +6417,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2200:1: ( rule__TimeIntervalExpr__Group_0__1__Impl rule__TimeIntervalExpr__Group_0__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2201:2: rule__TimeIntervalExpr__Group_0__1__Impl rule__TimeIntervalExpr__Group_0__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__1__Impl_in_rule__TimeIntervalExpr__Group_0__14700);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__1__Impl_in_rule__TimeIntervalExpr__Group_0__14701);
             rule__TimeIntervalExpr__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__2_in_rule__TimeIntervalExpr__Group_0__14703);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__2_in_rule__TimeIntervalExpr__Group_0__14704);
             rule__TimeIntervalExpr__Group_0__2();
 
             state._fsp--;
@@ -6486,12 +6492,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2231:1: ( rule__TimeIntervalExpr__Group_0__2__Impl rule__TimeIntervalExpr__Group_0__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2232:2: rule__TimeIntervalExpr__Group_0__2__Impl rule__TimeIntervalExpr__Group_0__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__2__Impl_in_rule__TimeIntervalExpr__Group_0__24761);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__2__Impl_in_rule__TimeIntervalExpr__Group_0__24762);
             rule__TimeIntervalExpr__Group_0__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__3_in_rule__TimeIntervalExpr__Group_0__24764);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__3_in_rule__TimeIntervalExpr__Group_0__24765);
             rule__TimeIntervalExpr__Group_0__3();
 
             state._fsp--;
@@ -6531,7 +6537,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2246:1: ( rule__TimeIntervalExpr__LhsAssignment_0_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2246:2: rule__TimeIntervalExpr__LhsAssignment_0_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__LhsAssignment_0_2_in_rule__TimeIntervalExpr__Group_0__2__Impl4791);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__LhsAssignment_0_2_in_rule__TimeIntervalExpr__Group_0__2__Impl4792);
             rule__TimeIntervalExpr__LhsAssignment_0_2();
 
             state._fsp--;
@@ -6571,12 +6577,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2260:1: ( rule__TimeIntervalExpr__Group_0__3__Impl rule__TimeIntervalExpr__Group_0__4 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2261:2: rule__TimeIntervalExpr__Group_0__3__Impl rule__TimeIntervalExpr__Group_0__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__3__Impl_in_rule__TimeIntervalExpr__Group_0__34821);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__3__Impl_in_rule__TimeIntervalExpr__Group_0__34822);
             rule__TimeIntervalExpr__Group_0__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__4_in_rule__TimeIntervalExpr__Group_0__34824);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__4_in_rule__TimeIntervalExpr__Group_0__34825);
             rule__TimeIntervalExpr__Group_0__4();
 
             state._fsp--;
@@ -6613,7 +6619,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2274:1: '['
             {
              before(grammarAccess.getTimeIntervalExprAccess().getLeftSquareBracketKeyword_0_3()); 
-            match(input,28,FollowSets000.FOLLOW_28_in_rule__TimeIntervalExpr__Group_0__3__Impl4852); 
+            match(input,28,FollowSets000.FOLLOW_28_in_rule__TimeIntervalExpr__Group_0__3__Impl4853); 
              after(grammarAccess.getTimeIntervalExprAccess().getLeftSquareBracketKeyword_0_3()); 
 
             }
@@ -6646,12 +6652,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2291:1: ( rule__TimeIntervalExpr__Group_0__4__Impl rule__TimeIntervalExpr__Group_0__5 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2292:2: rule__TimeIntervalExpr__Group_0__4__Impl rule__TimeIntervalExpr__Group_0__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__4__Impl_in_rule__TimeIntervalExpr__Group_0__44883);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__4__Impl_in_rule__TimeIntervalExpr__Group_0__44884);
             rule__TimeIntervalExpr__Group_0__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__5_in_rule__TimeIntervalExpr__Group_0__44886);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__5_in_rule__TimeIntervalExpr__Group_0__44887);
             rule__TimeIntervalExpr__Group_0__5();
 
             state._fsp--;
@@ -6691,7 +6697,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2306:1: ( rule__TimeIntervalExpr__LowerAssignment_0_4 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2306:2: rule__TimeIntervalExpr__LowerAssignment_0_4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__LowerAssignment_0_4_in_rule__TimeIntervalExpr__Group_0__4__Impl4913);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__LowerAssignment_0_4_in_rule__TimeIntervalExpr__Group_0__4__Impl4914);
             rule__TimeIntervalExpr__LowerAssignment_0_4();
 
             state._fsp--;
@@ -6731,12 +6737,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2320:1: ( rule__TimeIntervalExpr__Group_0__5__Impl rule__TimeIntervalExpr__Group_0__6 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2321:2: rule__TimeIntervalExpr__Group_0__5__Impl rule__TimeIntervalExpr__Group_0__6
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__5__Impl_in_rule__TimeIntervalExpr__Group_0__54943);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__5__Impl_in_rule__TimeIntervalExpr__Group_0__54944);
             rule__TimeIntervalExpr__Group_0__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__6_in_rule__TimeIntervalExpr__Group_0__54946);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__6_in_rule__TimeIntervalExpr__Group_0__54947);
             rule__TimeIntervalExpr__Group_0__6();
 
             state._fsp--;
@@ -6773,7 +6779,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2334:1: ','
             {
              before(grammarAccess.getTimeIntervalExprAccess().getCommaKeyword_0_5()); 
-            match(input,29,FollowSets000.FOLLOW_29_in_rule__TimeIntervalExpr__Group_0__5__Impl4974); 
+            match(input,29,FollowSets000.FOLLOW_29_in_rule__TimeIntervalExpr__Group_0__5__Impl4975); 
              after(grammarAccess.getTimeIntervalExprAccess().getCommaKeyword_0_5()); 
 
             }
@@ -6806,12 +6812,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2351:1: ( rule__TimeIntervalExpr__Group_0__6__Impl rule__TimeIntervalExpr__Group_0__7 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2352:2: rule__TimeIntervalExpr__Group_0__6__Impl rule__TimeIntervalExpr__Group_0__7
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__6__Impl_in_rule__TimeIntervalExpr__Group_0__65005);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__6__Impl_in_rule__TimeIntervalExpr__Group_0__65006);
             rule__TimeIntervalExpr__Group_0__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__7_in_rule__TimeIntervalExpr__Group_0__65008);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__7_in_rule__TimeIntervalExpr__Group_0__65009);
             rule__TimeIntervalExpr__Group_0__7();
 
             state._fsp--;
@@ -6851,7 +6857,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2366:1: ( rule__TimeIntervalExpr__UpperAssignment_0_6 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2366:2: rule__TimeIntervalExpr__UpperAssignment_0_6
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__UpperAssignment_0_6_in_rule__TimeIntervalExpr__Group_0__6__Impl5035);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__UpperAssignment_0_6_in_rule__TimeIntervalExpr__Group_0__6__Impl5036);
             rule__TimeIntervalExpr__UpperAssignment_0_6();
 
             state._fsp--;
@@ -6891,12 +6897,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2380:1: ( rule__TimeIntervalExpr__Group_0__7__Impl rule__TimeIntervalExpr__Group_0__8 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2381:2: rule__TimeIntervalExpr__Group_0__7__Impl rule__TimeIntervalExpr__Group_0__8
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__7__Impl_in_rule__TimeIntervalExpr__Group_0__75065);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__7__Impl_in_rule__TimeIntervalExpr__Group_0__75066);
             rule__TimeIntervalExpr__Group_0__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__8_in_rule__TimeIntervalExpr__Group_0__75068);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__8_in_rule__TimeIntervalExpr__Group_0__75069);
             rule__TimeIntervalExpr__Group_0__8();
 
             state._fsp--;
@@ -6933,7 +6939,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2394:1: ']'
             {
              before(grammarAccess.getTimeIntervalExprAccess().getRightSquareBracketKeyword_0_7()); 
-            match(input,30,FollowSets000.FOLLOW_30_in_rule__TimeIntervalExpr__Group_0__7__Impl5096); 
+            match(input,30,FollowSets000.FOLLOW_30_in_rule__TimeIntervalExpr__Group_0__7__Impl5097); 
              after(grammarAccess.getTimeIntervalExprAccess().getRightSquareBracketKeyword_0_7()); 
 
             }
@@ -6966,7 +6972,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2411:1: ( rule__TimeIntervalExpr__Group_0__8__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2412:2: rule__TimeIntervalExpr__Group_0__8__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__8__Impl_in_rule__TimeIntervalExpr__Group_0__85127);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__Group_0__8__Impl_in_rule__TimeIntervalExpr__Group_0__85128);
             rule__TimeIntervalExpr__Group_0__8__Impl();
 
             state._fsp--;
@@ -7006,7 +7012,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2425:1: ( rule__TimeIntervalExpr__RhsAssignment_0_8 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2425:2: rule__TimeIntervalExpr__RhsAssignment_0_8
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__RhsAssignment_0_8_in_rule__TimeIntervalExpr__Group_0__8__Impl5154);
+            pushFollow(FollowSets000.FOLLOW_rule__TimeIntervalExpr__RhsAssignment_0_8_in_rule__TimeIntervalExpr__Group_0__8__Impl5155);
             rule__TimeIntervalExpr__RhsAssignment_0_8();
 
             state._fsp--;
@@ -7046,12 +7052,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2457:1: ( rule__ImplyExpr__Group__0__Impl rule__ImplyExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2458:2: rule__ImplyExpr__Group__0__Impl rule__ImplyExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group__0__Impl_in_rule__ImplyExpr__Group__05202);
+            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group__0__Impl_in_rule__ImplyExpr__Group__05203);
             rule__ImplyExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group__1_in_rule__ImplyExpr__Group__05205);
+            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group__1_in_rule__ImplyExpr__Group__05206);
             rule__ImplyExpr__Group__1();
 
             state._fsp--;
@@ -7088,7 +7094,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2471:1: ruleAndExpr
             {
              before(grammarAccess.getImplyExprAccess().getAndExprParserRuleCall_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAndExpr_in_rule__ImplyExpr__Group__0__Impl5232);
+            pushFollow(FollowSets000.FOLLOW_ruleAndExpr_in_rule__ImplyExpr__Group__0__Impl5233);
             ruleAndExpr();
 
             state._fsp--;
@@ -7125,7 +7131,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2486:1: ( rule__ImplyExpr__Group__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2487:2: rule__ImplyExpr__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group__1__Impl_in_rule__ImplyExpr__Group__15261);
+            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group__1__Impl_in_rule__ImplyExpr__Group__15262);
             rule__ImplyExpr__Group__1__Impl();
 
             state._fsp--;
@@ -7177,7 +7183,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2500:2: rule__ImplyExpr__Group_1__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__0_in_rule__ImplyExpr__Group__1__Impl5288);
+            	    pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__0_in_rule__ImplyExpr__Group__1__Impl5289);
             	    rule__ImplyExpr__Group_1__0();
 
             	    state._fsp--;
@@ -7223,12 +7229,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2518:1: ( rule__ImplyExpr__Group_1__0__Impl rule__ImplyExpr__Group_1__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2519:2: rule__ImplyExpr__Group_1__0__Impl rule__ImplyExpr__Group_1__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__0__Impl_in_rule__ImplyExpr__Group_1__05323);
+            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__0__Impl_in_rule__ImplyExpr__Group_1__05324);
             rule__ImplyExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__1_in_rule__ImplyExpr__Group_1__05326);
+            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__1_in_rule__ImplyExpr__Group_1__05327);
             rule__ImplyExpr__Group_1__1();
 
             state._fsp--;
@@ -7298,12 +7304,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2549:1: ( rule__ImplyExpr__Group_1__1__Impl rule__ImplyExpr__Group_1__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2550:2: rule__ImplyExpr__Group_1__1__Impl rule__ImplyExpr__Group_1__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__1__Impl_in_rule__ImplyExpr__Group_1__15384);
+            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__1__Impl_in_rule__ImplyExpr__Group_1__15385);
             rule__ImplyExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__2_in_rule__ImplyExpr__Group_1__15387);
+            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__2_in_rule__ImplyExpr__Group_1__15388);
             rule__ImplyExpr__Group_1__2();
 
             state._fsp--;
@@ -7340,7 +7346,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2563:1: 'implies'
             {
              before(grammarAccess.getImplyExprAccess().getImpliesKeyword_1_1()); 
-            match(input,31,FollowSets000.FOLLOW_31_in_rule__ImplyExpr__Group_1__1__Impl5415); 
+            match(input,31,FollowSets000.FOLLOW_31_in_rule__ImplyExpr__Group_1__1__Impl5416); 
              after(grammarAccess.getImplyExprAccess().getImpliesKeyword_1_1()); 
 
             }
@@ -7373,7 +7379,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2580:1: ( rule__ImplyExpr__Group_1__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2581:2: rule__ImplyExpr__Group_1__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__2__Impl_in_rule__ImplyExpr__Group_1__25446);
+            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__Group_1__2__Impl_in_rule__ImplyExpr__Group_1__25447);
             rule__ImplyExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -7413,7 +7419,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2594:1: ( rule__ImplyExpr__RightOpdAssignment_1_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2594:2: rule__ImplyExpr__RightOpdAssignment_1_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__RightOpdAssignment_1_2_in_rule__ImplyExpr__Group_1__2__Impl5473);
+            pushFollow(FollowSets000.FOLLOW_rule__ImplyExpr__RightOpdAssignment_1_2_in_rule__ImplyExpr__Group_1__2__Impl5474);
             rule__ImplyExpr__RightOpdAssignment_1_2();
 
             state._fsp--;
@@ -7453,12 +7459,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2614:1: ( rule__AndExpr__Group__0__Impl rule__AndExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2615:2: rule__AndExpr__Group__0__Impl rule__AndExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group__0__Impl_in_rule__AndExpr__Group__05509);
+            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group__0__Impl_in_rule__AndExpr__Group__05510);
             rule__AndExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group__1_in_rule__AndExpr__Group__05512);
+            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group__1_in_rule__AndExpr__Group__05513);
             rule__AndExpr__Group__1();
 
             state._fsp--;
@@ -7495,7 +7501,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2628:1: ruleOrExpr
             {
              before(grammarAccess.getAndExprAccess().getOrExprParserRuleCall_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleOrExpr_in_rule__AndExpr__Group__0__Impl5539);
+            pushFollow(FollowSets000.FOLLOW_ruleOrExpr_in_rule__AndExpr__Group__0__Impl5540);
             ruleOrExpr();
 
             state._fsp--;
@@ -7532,7 +7538,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2643:1: ( rule__AndExpr__Group__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2644:2: rule__AndExpr__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group__1__Impl_in_rule__AndExpr__Group__15568);
+            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group__1__Impl_in_rule__AndExpr__Group__15569);
             rule__AndExpr__Group__1__Impl();
 
             state._fsp--;
@@ -7584,7 +7590,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2657:2: rule__AndExpr__Group_1__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__0_in_rule__AndExpr__Group__1__Impl5595);
+            	    pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__0_in_rule__AndExpr__Group__1__Impl5596);
             	    rule__AndExpr__Group_1__0();
 
             	    state._fsp--;
@@ -7630,12 +7636,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2675:1: ( rule__AndExpr__Group_1__0__Impl rule__AndExpr__Group_1__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2676:2: rule__AndExpr__Group_1__0__Impl rule__AndExpr__Group_1__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__0__Impl_in_rule__AndExpr__Group_1__05630);
+            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__0__Impl_in_rule__AndExpr__Group_1__05631);
             rule__AndExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__1_in_rule__AndExpr__Group_1__05633);
+            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__1_in_rule__AndExpr__Group_1__05634);
             rule__AndExpr__Group_1__1();
 
             state._fsp--;
@@ -7705,12 +7711,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2706:1: ( rule__AndExpr__Group_1__1__Impl rule__AndExpr__Group_1__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2707:2: rule__AndExpr__Group_1__1__Impl rule__AndExpr__Group_1__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__1__Impl_in_rule__AndExpr__Group_1__15691);
+            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__1__Impl_in_rule__AndExpr__Group_1__15692);
             rule__AndExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__2_in_rule__AndExpr__Group_1__15694);
+            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__2_in_rule__AndExpr__Group_1__15695);
             rule__AndExpr__Group_1__2();
 
             state._fsp--;
@@ -7747,7 +7753,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2720:1: 'and'
             {
              before(grammarAccess.getAndExprAccess().getAndKeyword_1_1()); 
-            match(input,32,FollowSets000.FOLLOW_32_in_rule__AndExpr__Group_1__1__Impl5722); 
+            match(input,32,FollowSets000.FOLLOW_32_in_rule__AndExpr__Group_1__1__Impl5723); 
              after(grammarAccess.getAndExprAccess().getAndKeyword_1_1()); 
 
             }
@@ -7780,7 +7786,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2737:1: ( rule__AndExpr__Group_1__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2738:2: rule__AndExpr__Group_1__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__2__Impl_in_rule__AndExpr__Group_1__25753);
+            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__Group_1__2__Impl_in_rule__AndExpr__Group_1__25754);
             rule__AndExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -7820,7 +7826,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2751:1: ( rule__AndExpr__RightOpdAssignment_1_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2751:2: rule__AndExpr__RightOpdAssignment_1_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__RightOpdAssignment_1_2_in_rule__AndExpr__Group_1__2__Impl5780);
+            pushFollow(FollowSets000.FOLLOW_rule__AndExpr__RightOpdAssignment_1_2_in_rule__AndExpr__Group_1__2__Impl5781);
             rule__AndExpr__RightOpdAssignment_1_2();
 
             state._fsp--;
@@ -7860,12 +7866,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2771:1: ( rule__OrExpr__Group__0__Impl rule__OrExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2772:2: rule__OrExpr__Group__0__Impl rule__OrExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group__0__Impl_in_rule__OrExpr__Group__05816);
+            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group__0__Impl_in_rule__OrExpr__Group__05817);
             rule__OrExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group__1_in_rule__OrExpr__Group__05819);
+            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group__1_in_rule__OrExpr__Group__05820);
             rule__OrExpr__Group__1();
 
             state._fsp--;
@@ -7902,7 +7908,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2785:1: ruleNotExpr
             {
              before(grammarAccess.getOrExprAccess().getNotExprParserRuleCall_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__OrExpr__Group__0__Impl5846);
+            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__OrExpr__Group__0__Impl5847);
             ruleNotExpr();
 
             state._fsp--;
@@ -7939,7 +7945,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2800:1: ( rule__OrExpr__Group__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2801:2: rule__OrExpr__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group__1__Impl_in_rule__OrExpr__Group__15875);
+            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group__1__Impl_in_rule__OrExpr__Group__15876);
             rule__OrExpr__Group__1__Impl();
 
             state._fsp--;
@@ -7991,7 +7997,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2814:2: rule__OrExpr__Group_1__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__0_in_rule__OrExpr__Group__1__Impl5902);
+            	    pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__0_in_rule__OrExpr__Group__1__Impl5903);
             	    rule__OrExpr__Group_1__0();
 
             	    state._fsp--;
@@ -8037,12 +8043,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2832:1: ( rule__OrExpr__Group_1__0__Impl rule__OrExpr__Group_1__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2833:2: rule__OrExpr__Group_1__0__Impl rule__OrExpr__Group_1__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__0__Impl_in_rule__OrExpr__Group_1__05937);
+            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__0__Impl_in_rule__OrExpr__Group_1__05938);
             rule__OrExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__1_in_rule__OrExpr__Group_1__05940);
+            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__1_in_rule__OrExpr__Group_1__05941);
             rule__OrExpr__Group_1__1();
 
             state._fsp--;
@@ -8112,12 +8118,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2863:1: ( rule__OrExpr__Group_1__1__Impl rule__OrExpr__Group_1__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2864:2: rule__OrExpr__Group_1__1__Impl rule__OrExpr__Group_1__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__1__Impl_in_rule__OrExpr__Group_1__15998);
+            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__1__Impl_in_rule__OrExpr__Group_1__15999);
             rule__OrExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__2_in_rule__OrExpr__Group_1__16001);
+            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__2_in_rule__OrExpr__Group_1__16002);
             rule__OrExpr__Group_1__2();
 
             state._fsp--;
@@ -8154,7 +8160,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2877:1: 'or'
             {
              before(grammarAccess.getOrExprAccess().getOrKeyword_1_1()); 
-            match(input,33,FollowSets000.FOLLOW_33_in_rule__OrExpr__Group_1__1__Impl6029); 
+            match(input,33,FollowSets000.FOLLOW_33_in_rule__OrExpr__Group_1__1__Impl6030); 
              after(grammarAccess.getOrExprAccess().getOrKeyword_1_1()); 
 
             }
@@ -8187,7 +8193,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2894:1: ( rule__OrExpr__Group_1__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2895:2: rule__OrExpr__Group_1__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__2__Impl_in_rule__OrExpr__Group_1__26060);
+            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__Group_1__2__Impl_in_rule__OrExpr__Group_1__26061);
             rule__OrExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -8227,7 +8233,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2908:1: ( rule__OrExpr__RightOpdAssignment_1_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2908:2: rule__OrExpr__RightOpdAssignment_1_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__RightOpdAssignment_1_2_in_rule__OrExpr__Group_1__2__Impl6087);
+            pushFollow(FollowSets000.FOLLOW_rule__OrExpr__RightOpdAssignment_1_2_in_rule__OrExpr__Group_1__2__Impl6088);
             rule__OrExpr__RightOpdAssignment_1_2();
 
             state._fsp--;
@@ -8267,12 +8273,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2928:1: ( rule__NotExpr__Group_0__0__Impl rule__NotExpr__Group_0__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2929:2: rule__NotExpr__Group_0__0__Impl rule__NotExpr__Group_0__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__Group_0__0__Impl_in_rule__NotExpr__Group_0__06123);
+            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__Group_0__0__Impl_in_rule__NotExpr__Group_0__06124);
             rule__NotExpr__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__Group_0__1_in_rule__NotExpr__Group_0__06126);
+            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__Group_0__1_in_rule__NotExpr__Group_0__06127);
             rule__NotExpr__Group_0__1();
 
             state._fsp--;
@@ -8309,7 +8315,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2942:1: 'not'
             {
              before(grammarAccess.getNotExprAccess().getNotKeyword_0_0()); 
-            match(input,34,FollowSets000.FOLLOW_34_in_rule__NotExpr__Group_0__0__Impl6154); 
+            match(input,34,FollowSets000.FOLLOW_34_in_rule__NotExpr__Group_0__0__Impl6155); 
              after(grammarAccess.getNotExprAccess().getNotKeyword_0_0()); 
 
             }
@@ -8342,12 +8348,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2959:1: ( rule__NotExpr__Group_0__1__Impl rule__NotExpr__Group_0__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2960:2: rule__NotExpr__Group_0__1__Impl rule__NotExpr__Group_0__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__Group_0__1__Impl_in_rule__NotExpr__Group_0__16185);
+            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__Group_0__1__Impl_in_rule__NotExpr__Group_0__16186);
             rule__NotExpr__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__Group_0__2_in_rule__NotExpr__Group_0__16188);
+            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__Group_0__2_in_rule__NotExpr__Group_0__16189);
             rule__NotExpr__Group_0__2();
 
             state._fsp--;
@@ -8417,7 +8423,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2990:1: ( rule__NotExpr__Group_0__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:2991:2: rule__NotExpr__Group_0__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__Group_0__2__Impl_in_rule__NotExpr__Group_0__26246);
+            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__Group_0__2__Impl_in_rule__NotExpr__Group_0__26247);
             rule__NotExpr__Group_0__2__Impl();
 
             state._fsp--;
@@ -8457,7 +8463,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3004:1: ( rule__NotExpr__OpdAssignment_0_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3004:2: rule__NotExpr__OpdAssignment_0_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__OpdAssignment_0_2_in_rule__NotExpr__Group_0__2__Impl6273);
+            pushFollow(FollowSets000.FOLLOW_rule__NotExpr__OpdAssignment_0_2_in_rule__NotExpr__Group_0__2__Impl6274);
             rule__NotExpr__OpdAssignment_0_2();
 
             state._fsp--;
@@ -8497,12 +8503,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3024:1: ( rule__UniversalQuantExpr__Group__0__Impl rule__UniversalQuantExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3025:2: rule__UniversalQuantExpr__Group__0__Impl rule__UniversalQuantExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__0__Impl_in_rule__UniversalQuantExpr__Group__06309);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__0__Impl_in_rule__UniversalQuantExpr__Group__06310);
             rule__UniversalQuantExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__1_in_rule__UniversalQuantExpr__Group__06312);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__1_in_rule__UniversalQuantExpr__Group__06313);
             rule__UniversalQuantExpr__Group__1();
 
             state._fsp--;
@@ -8539,7 +8545,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3038:1: 'forall'
             {
              before(grammarAccess.getUniversalQuantExprAccess().getForallKeyword_0()); 
-            match(input,35,FollowSets000.FOLLOW_35_in_rule__UniversalQuantExpr__Group__0__Impl6340); 
+            match(input,35,FollowSets000.FOLLOW_35_in_rule__UniversalQuantExpr__Group__0__Impl6341); 
              after(grammarAccess.getUniversalQuantExprAccess().getForallKeyword_0()); 
 
             }
@@ -8572,12 +8578,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3055:1: ( rule__UniversalQuantExpr__Group__1__Impl rule__UniversalQuantExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3056:2: rule__UniversalQuantExpr__Group__1__Impl rule__UniversalQuantExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__1__Impl_in_rule__UniversalQuantExpr__Group__16371);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__1__Impl_in_rule__UniversalQuantExpr__Group__16372);
             rule__UniversalQuantExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__2_in_rule__UniversalQuantExpr__Group__16374);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__2_in_rule__UniversalQuantExpr__Group__16375);
             rule__UniversalQuantExpr__Group__2();
 
             state._fsp--;
@@ -8614,7 +8620,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3069:1: '('
             {
              before(grammarAccess.getUniversalQuantExprAccess().getLeftParenthesisKeyword_1()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__UniversalQuantExpr__Group__1__Impl6402); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__UniversalQuantExpr__Group__1__Impl6403); 
              after(grammarAccess.getUniversalQuantExprAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -8647,12 +8653,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3086:1: ( rule__UniversalQuantExpr__Group__2__Impl rule__UniversalQuantExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3087:2: rule__UniversalQuantExpr__Group__2__Impl rule__UniversalQuantExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__2__Impl_in_rule__UniversalQuantExpr__Group__26433);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__2__Impl_in_rule__UniversalQuantExpr__Group__26434);
             rule__UniversalQuantExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__3_in_rule__UniversalQuantExpr__Group__26436);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__3_in_rule__UniversalQuantExpr__Group__26437);
             rule__UniversalQuantExpr__Group__3();
 
             state._fsp--;
@@ -8722,12 +8728,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3117:1: ( rule__UniversalQuantExpr__Group__3__Impl rule__UniversalQuantExpr__Group__4 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3118:2: rule__UniversalQuantExpr__Group__3__Impl rule__UniversalQuantExpr__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__3__Impl_in_rule__UniversalQuantExpr__Group__36494);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__3__Impl_in_rule__UniversalQuantExpr__Group__36495);
             rule__UniversalQuantExpr__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__4_in_rule__UniversalQuantExpr__Group__36497);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__4_in_rule__UniversalQuantExpr__Group__36498);
             rule__UniversalQuantExpr__Group__4();
 
             state._fsp--;
@@ -8767,7 +8773,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3132:1: ( rule__UniversalQuantExpr__VarAssignment_3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3132:2: rule__UniversalQuantExpr__VarAssignment_3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__VarAssignment_3_in_rule__UniversalQuantExpr__Group__3__Impl6524);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__VarAssignment_3_in_rule__UniversalQuantExpr__Group__3__Impl6525);
             rule__UniversalQuantExpr__VarAssignment_3();
 
             state._fsp--;
@@ -8807,12 +8813,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3146:1: ( rule__UniversalQuantExpr__Group__4__Impl rule__UniversalQuantExpr__Group__5 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3147:2: rule__UniversalQuantExpr__Group__4__Impl rule__UniversalQuantExpr__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__4__Impl_in_rule__UniversalQuantExpr__Group__46554);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__4__Impl_in_rule__UniversalQuantExpr__Group__46555);
             rule__UniversalQuantExpr__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__5_in_rule__UniversalQuantExpr__Group__46557);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__5_in_rule__UniversalQuantExpr__Group__46558);
             rule__UniversalQuantExpr__Group__5();
 
             state._fsp--;
@@ -8849,7 +8855,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3160:1: ')'
             {
              before(grammarAccess.getUniversalQuantExprAccess().getRightParenthesisKeyword_4()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__UniversalQuantExpr__Group__4__Impl6585); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__UniversalQuantExpr__Group__4__Impl6586); 
              after(grammarAccess.getUniversalQuantExprAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -8882,7 +8888,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3177:1: ( rule__UniversalQuantExpr__Group__5__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3178:2: rule__UniversalQuantExpr__Group__5__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__5__Impl_in_rule__UniversalQuantExpr__Group__56616);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__Group__5__Impl_in_rule__UniversalQuantExpr__Group__56617);
             rule__UniversalQuantExpr__Group__5__Impl();
 
             state._fsp--;
@@ -8922,7 +8928,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3191:1: ( rule__UniversalQuantExpr__FormulaAssignment_5 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3191:2: rule__UniversalQuantExpr__FormulaAssignment_5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__FormulaAssignment_5_in_rule__UniversalQuantExpr__Group__5__Impl6643);
+            pushFollow(FollowSets000.FOLLOW_rule__UniversalQuantExpr__FormulaAssignment_5_in_rule__UniversalQuantExpr__Group__5__Impl6644);
             rule__UniversalQuantExpr__FormulaAssignment_5();
 
             state._fsp--;
@@ -8962,12 +8968,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3217:1: ( rule__ExistentialQuantExpr__Group__0__Impl rule__ExistentialQuantExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3218:2: rule__ExistentialQuantExpr__Group__0__Impl rule__ExistentialQuantExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__0__Impl_in_rule__ExistentialQuantExpr__Group__06685);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__0__Impl_in_rule__ExistentialQuantExpr__Group__06686);
             rule__ExistentialQuantExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__1_in_rule__ExistentialQuantExpr__Group__06688);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__1_in_rule__ExistentialQuantExpr__Group__06689);
             rule__ExistentialQuantExpr__Group__1();
 
             state._fsp--;
@@ -9004,7 +9010,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3231:1: 'exists'
             {
              before(grammarAccess.getExistentialQuantExprAccess().getExistsKeyword_0()); 
-            match(input,38,FollowSets000.FOLLOW_38_in_rule__ExistentialQuantExpr__Group__0__Impl6716); 
+            match(input,38,FollowSets000.FOLLOW_38_in_rule__ExistentialQuantExpr__Group__0__Impl6717); 
              after(grammarAccess.getExistentialQuantExprAccess().getExistsKeyword_0()); 
 
             }
@@ -9037,12 +9043,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3248:1: ( rule__ExistentialQuantExpr__Group__1__Impl rule__ExistentialQuantExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3249:2: rule__ExistentialQuantExpr__Group__1__Impl rule__ExistentialQuantExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__1__Impl_in_rule__ExistentialQuantExpr__Group__16747);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__1__Impl_in_rule__ExistentialQuantExpr__Group__16748);
             rule__ExistentialQuantExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__2_in_rule__ExistentialQuantExpr__Group__16750);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__2_in_rule__ExistentialQuantExpr__Group__16751);
             rule__ExistentialQuantExpr__Group__2();
 
             state._fsp--;
@@ -9079,7 +9085,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3262:1: '('
             {
              before(grammarAccess.getExistentialQuantExprAccess().getLeftParenthesisKeyword_1()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__ExistentialQuantExpr__Group__1__Impl6778); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__ExistentialQuantExpr__Group__1__Impl6779); 
              after(grammarAccess.getExistentialQuantExprAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -9112,12 +9118,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3279:1: ( rule__ExistentialQuantExpr__Group__2__Impl rule__ExistentialQuantExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3280:2: rule__ExistentialQuantExpr__Group__2__Impl rule__ExistentialQuantExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__2__Impl_in_rule__ExistentialQuantExpr__Group__26809);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__2__Impl_in_rule__ExistentialQuantExpr__Group__26810);
             rule__ExistentialQuantExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__3_in_rule__ExistentialQuantExpr__Group__26812);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__3_in_rule__ExistentialQuantExpr__Group__26813);
             rule__ExistentialQuantExpr__Group__3();
 
             state._fsp--;
@@ -9187,12 +9193,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3310:1: ( rule__ExistentialQuantExpr__Group__3__Impl rule__ExistentialQuantExpr__Group__4 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3311:2: rule__ExistentialQuantExpr__Group__3__Impl rule__ExistentialQuantExpr__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__3__Impl_in_rule__ExistentialQuantExpr__Group__36870);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__3__Impl_in_rule__ExistentialQuantExpr__Group__36871);
             rule__ExistentialQuantExpr__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__4_in_rule__ExistentialQuantExpr__Group__36873);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__4_in_rule__ExistentialQuantExpr__Group__36874);
             rule__ExistentialQuantExpr__Group__4();
 
             state._fsp--;
@@ -9232,7 +9238,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3325:1: ( rule__ExistentialQuantExpr__VarAssignment_3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3325:2: rule__ExistentialQuantExpr__VarAssignment_3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__VarAssignment_3_in_rule__ExistentialQuantExpr__Group__3__Impl6900);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__VarAssignment_3_in_rule__ExistentialQuantExpr__Group__3__Impl6901);
             rule__ExistentialQuantExpr__VarAssignment_3();
 
             state._fsp--;
@@ -9272,12 +9278,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3339:1: ( rule__ExistentialQuantExpr__Group__4__Impl rule__ExistentialQuantExpr__Group__5 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3340:2: rule__ExistentialQuantExpr__Group__4__Impl rule__ExistentialQuantExpr__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__4__Impl_in_rule__ExistentialQuantExpr__Group__46930);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__4__Impl_in_rule__ExistentialQuantExpr__Group__46931);
             rule__ExistentialQuantExpr__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__5_in_rule__ExistentialQuantExpr__Group__46933);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__5_in_rule__ExistentialQuantExpr__Group__46934);
             rule__ExistentialQuantExpr__Group__5();
 
             state._fsp--;
@@ -9314,7 +9320,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3353:1: ')'
             {
              before(grammarAccess.getExistentialQuantExprAccess().getRightParenthesisKeyword_4()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__ExistentialQuantExpr__Group__4__Impl6961); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__ExistentialQuantExpr__Group__4__Impl6962); 
              after(grammarAccess.getExistentialQuantExprAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -9347,7 +9353,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3370:1: ( rule__ExistentialQuantExpr__Group__5__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3371:2: rule__ExistentialQuantExpr__Group__5__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__5__Impl_in_rule__ExistentialQuantExpr__Group__56992);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__Group__5__Impl_in_rule__ExistentialQuantExpr__Group__56993);
             rule__ExistentialQuantExpr__Group__5__Impl();
 
             state._fsp--;
@@ -9387,7 +9393,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3384:1: ( rule__ExistentialQuantExpr__FormulaAssignment_5 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3384:2: rule__ExistentialQuantExpr__FormulaAssignment_5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__FormulaAssignment_5_in_rule__ExistentialQuantExpr__Group__5__Impl7019);
+            pushFollow(FollowSets000.FOLLOW_rule__ExistentialQuantExpr__FormulaAssignment_5_in_rule__ExistentialQuantExpr__Group__5__Impl7020);
             rule__ExistentialQuantExpr__FormulaAssignment_5();
 
             state._fsp--;
@@ -9427,12 +9433,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3410:1: ( rule__VariableBinding__Group__0__Impl rule__VariableBinding__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3411:2: rule__VariableBinding__Group__0__Impl rule__VariableBinding__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__Group__0__Impl_in_rule__VariableBinding__Group__07061);
+            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__Group__0__Impl_in_rule__VariableBinding__Group__07062);
             rule__VariableBinding__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__Group__1_in_rule__VariableBinding__Group__07064);
+            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__Group__1_in_rule__VariableBinding__Group__07065);
             rule__VariableBinding__Group__1();
 
             state._fsp--;
@@ -9472,7 +9478,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3425:1: ( rule__VariableBinding__NameAssignment_0 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3425:2: rule__VariableBinding__NameAssignment_0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__NameAssignment_0_in_rule__VariableBinding__Group__0__Impl7091);
+            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__NameAssignment_0_in_rule__VariableBinding__Group__0__Impl7092);
             rule__VariableBinding__NameAssignment_0();
 
             state._fsp--;
@@ -9512,12 +9518,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3439:1: ( rule__VariableBinding__Group__1__Impl rule__VariableBinding__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3440:2: rule__VariableBinding__Group__1__Impl rule__VariableBinding__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__Group__1__Impl_in_rule__VariableBinding__Group__17121);
+            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__Group__1__Impl_in_rule__VariableBinding__Group__17122);
             rule__VariableBinding__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__Group__2_in_rule__VariableBinding__Group__17124);
+            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__Group__2_in_rule__VariableBinding__Group__17125);
             rule__VariableBinding__Group__2();
 
             state._fsp--;
@@ -9554,7 +9560,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3453:1: ':'
             {
              before(grammarAccess.getVariableBindingAccess().getColonKeyword_1()); 
-            match(input,39,FollowSets000.FOLLOW_39_in_rule__VariableBinding__Group__1__Impl7152); 
+            match(input,39,FollowSets000.FOLLOW_39_in_rule__VariableBinding__Group__1__Impl7153); 
              after(grammarAccess.getVariableBindingAccess().getColonKeyword_1()); 
 
             }
@@ -9587,7 +9593,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3470:1: ( rule__VariableBinding__Group__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3471:2: rule__VariableBinding__Group__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__Group__2__Impl_in_rule__VariableBinding__Group__27183);
+            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__Group__2__Impl_in_rule__VariableBinding__Group__27184);
             rule__VariableBinding__Group__2__Impl();
 
             state._fsp--;
@@ -9627,7 +9633,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3484:1: ( rule__VariableBinding__SetAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3484:2: rule__VariableBinding__SetAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__SetAssignment_2_in_rule__VariableBinding__Group__2__Impl7210);
+            pushFollow(FollowSets000.FOLLOW_rule__VariableBinding__SetAssignment_2_in_rule__VariableBinding__Group__2__Impl7211);
             rule__VariableBinding__SetAssignment_2();
 
             state._fsp--;
@@ -9667,12 +9673,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3504:1: ( rule__EFExpr__Group__0__Impl rule__EFExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3505:2: rule__EFExpr__Group__0__Impl rule__EFExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Group__0__Impl_in_rule__EFExpr__Group__07246);
+            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Group__0__Impl_in_rule__EFExpr__Group__07247);
             rule__EFExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Group__1_in_rule__EFExpr__Group__07249);
+            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Group__1_in_rule__EFExpr__Group__07250);
             rule__EFExpr__Group__1();
 
             state._fsp--;
@@ -9712,7 +9718,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3519:1: ( rule__EFExpr__Alternatives_0 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3519:2: rule__EFExpr__Alternatives_0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Alternatives_0_in_rule__EFExpr__Group__0__Impl7276);
+            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Alternatives_0_in_rule__EFExpr__Group__0__Impl7277);
             rule__EFExpr__Alternatives_0();
 
             state._fsp--;
@@ -9752,12 +9758,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3533:1: ( rule__EFExpr__Group__1__Impl rule__EFExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3534:2: rule__EFExpr__Group__1__Impl rule__EFExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Group__1__Impl_in_rule__EFExpr__Group__17306);
+            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Group__1__Impl_in_rule__EFExpr__Group__17307);
             rule__EFExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Group__2_in_rule__EFExpr__Group__17309);
+            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Group__2_in_rule__EFExpr__Group__17310);
             rule__EFExpr__Group__2();
 
             state._fsp--;
@@ -9827,7 +9833,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3564:1: ( rule__EFExpr__Group__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3565:2: rule__EFExpr__Group__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Group__2__Impl_in_rule__EFExpr__Group__27367);
+            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__Group__2__Impl_in_rule__EFExpr__Group__27368);
             rule__EFExpr__Group__2__Impl();
 
             state._fsp--;
@@ -9867,7 +9873,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3578:1: ( rule__EFExpr__ExprAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3578:2: rule__EFExpr__ExprAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__ExprAssignment_2_in_rule__EFExpr__Group__2__Impl7394);
+            pushFollow(FollowSets000.FOLLOW_rule__EFExpr__ExprAssignment_2_in_rule__EFExpr__Group__2__Impl7395);
             rule__EFExpr__ExprAssignment_2();
 
             state._fsp--;
@@ -9907,12 +9913,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3598:1: ( rule__AFExpr__Group__0__Impl rule__AFExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3599:2: rule__AFExpr__Group__0__Impl rule__AFExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Group__0__Impl_in_rule__AFExpr__Group__07430);
+            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Group__0__Impl_in_rule__AFExpr__Group__07431);
             rule__AFExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Group__1_in_rule__AFExpr__Group__07433);
+            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Group__1_in_rule__AFExpr__Group__07434);
             rule__AFExpr__Group__1();
 
             state._fsp--;
@@ -9952,7 +9958,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3613:1: ( rule__AFExpr__Alternatives_0 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3613:2: rule__AFExpr__Alternatives_0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Alternatives_0_in_rule__AFExpr__Group__0__Impl7460);
+            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Alternatives_0_in_rule__AFExpr__Group__0__Impl7461);
             rule__AFExpr__Alternatives_0();
 
             state._fsp--;
@@ -9992,12 +9998,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3627:1: ( rule__AFExpr__Group__1__Impl rule__AFExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3628:2: rule__AFExpr__Group__1__Impl rule__AFExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Group__1__Impl_in_rule__AFExpr__Group__17490);
+            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Group__1__Impl_in_rule__AFExpr__Group__17491);
             rule__AFExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Group__2_in_rule__AFExpr__Group__17493);
+            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Group__2_in_rule__AFExpr__Group__17494);
             rule__AFExpr__Group__2();
 
             state._fsp--;
@@ -10067,7 +10073,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3658:1: ( rule__AFExpr__Group__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3659:2: rule__AFExpr__Group__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Group__2__Impl_in_rule__AFExpr__Group__27551);
+            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__Group__2__Impl_in_rule__AFExpr__Group__27552);
             rule__AFExpr__Group__2__Impl();
 
             state._fsp--;
@@ -10107,7 +10113,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3672:1: ( rule__AFExpr__ExprAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3672:2: rule__AFExpr__ExprAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__ExprAssignment_2_in_rule__AFExpr__Group__2__Impl7578);
+            pushFollow(FollowSets000.FOLLOW_rule__AFExpr__ExprAssignment_2_in_rule__AFExpr__Group__2__Impl7579);
             rule__AFExpr__ExprAssignment_2();
 
             state._fsp--;
@@ -10147,12 +10153,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3692:1: ( rule__EGExpr__Group__0__Impl rule__EGExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3693:2: rule__EGExpr__Group__0__Impl rule__EGExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Group__0__Impl_in_rule__EGExpr__Group__07614);
+            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Group__0__Impl_in_rule__EGExpr__Group__07615);
             rule__EGExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Group__1_in_rule__EGExpr__Group__07617);
+            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Group__1_in_rule__EGExpr__Group__07618);
             rule__EGExpr__Group__1();
 
             state._fsp--;
@@ -10192,7 +10198,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3707:1: ( rule__EGExpr__Alternatives_0 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3707:2: rule__EGExpr__Alternatives_0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Alternatives_0_in_rule__EGExpr__Group__0__Impl7644);
+            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Alternatives_0_in_rule__EGExpr__Group__0__Impl7645);
             rule__EGExpr__Alternatives_0();
 
             state._fsp--;
@@ -10232,12 +10238,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3721:1: ( rule__EGExpr__Group__1__Impl rule__EGExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3722:2: rule__EGExpr__Group__1__Impl rule__EGExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Group__1__Impl_in_rule__EGExpr__Group__17674);
+            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Group__1__Impl_in_rule__EGExpr__Group__17675);
             rule__EGExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Group__2_in_rule__EGExpr__Group__17677);
+            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Group__2_in_rule__EGExpr__Group__17678);
             rule__EGExpr__Group__2();
 
             state._fsp--;
@@ -10307,7 +10313,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3752:1: ( rule__EGExpr__Group__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3753:2: rule__EGExpr__Group__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Group__2__Impl_in_rule__EGExpr__Group__27735);
+            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__Group__2__Impl_in_rule__EGExpr__Group__27736);
             rule__EGExpr__Group__2__Impl();
 
             state._fsp--;
@@ -10347,7 +10353,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3766:1: ( rule__EGExpr__ExprAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3766:2: rule__EGExpr__ExprAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__ExprAssignment_2_in_rule__EGExpr__Group__2__Impl7762);
+            pushFollow(FollowSets000.FOLLOW_rule__EGExpr__ExprAssignment_2_in_rule__EGExpr__Group__2__Impl7763);
             rule__EGExpr__ExprAssignment_2();
 
             state._fsp--;
@@ -10387,12 +10393,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3786:1: ( rule__AGExpr__Group__0__Impl rule__AGExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3787:2: rule__AGExpr__Group__0__Impl rule__AGExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Group__0__Impl_in_rule__AGExpr__Group__07798);
+            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Group__0__Impl_in_rule__AGExpr__Group__07799);
             rule__AGExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Group__1_in_rule__AGExpr__Group__07801);
+            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Group__1_in_rule__AGExpr__Group__07802);
             rule__AGExpr__Group__1();
 
             state._fsp--;
@@ -10432,7 +10438,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3801:1: ( rule__AGExpr__Alternatives_0 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3801:2: rule__AGExpr__Alternatives_0
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Alternatives_0_in_rule__AGExpr__Group__0__Impl7828);
+            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Alternatives_0_in_rule__AGExpr__Group__0__Impl7829);
             rule__AGExpr__Alternatives_0();
 
             state._fsp--;
@@ -10472,12 +10478,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3815:1: ( rule__AGExpr__Group__1__Impl rule__AGExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3816:2: rule__AGExpr__Group__1__Impl rule__AGExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Group__1__Impl_in_rule__AGExpr__Group__17858);
+            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Group__1__Impl_in_rule__AGExpr__Group__17859);
             rule__AGExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Group__2_in_rule__AGExpr__Group__17861);
+            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Group__2_in_rule__AGExpr__Group__17862);
             rule__AGExpr__Group__2();
 
             state._fsp--;
@@ -10547,7 +10553,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3846:1: ( rule__AGExpr__Group__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3847:2: rule__AGExpr__Group__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Group__2__Impl_in_rule__AGExpr__Group__27919);
+            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__Group__2__Impl_in_rule__AGExpr__Group__27920);
             rule__AGExpr__Group__2__Impl();
 
             state._fsp--;
@@ -10587,7 +10593,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3860:1: ( rule__AGExpr__ExprAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3860:2: rule__AGExpr__ExprAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__ExprAssignment_2_in_rule__AGExpr__Group__2__Impl7946);
+            pushFollow(FollowSets000.FOLLOW_rule__AGExpr__ExprAssignment_2_in_rule__AGExpr__Group__2__Impl7947);
             rule__AGExpr__ExprAssignment_2();
 
             state._fsp--;
@@ -10627,12 +10633,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3880:1: ( rule__AtomExpr__Group_0__0__Impl rule__AtomExpr__Group_0__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3881:2: rule__AtomExpr__Group_0__0__Impl rule__AtomExpr__Group_0__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AtomExpr__Group_0__0__Impl_in_rule__AtomExpr__Group_0__07982);
+            pushFollow(FollowSets000.FOLLOW_rule__AtomExpr__Group_0__0__Impl_in_rule__AtomExpr__Group_0__07983);
             rule__AtomExpr__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__AtomExpr__Group_0__1_in_rule__AtomExpr__Group_0__07985);
+            pushFollow(FollowSets000.FOLLOW_rule__AtomExpr__Group_0__1_in_rule__AtomExpr__Group_0__07986);
             rule__AtomExpr__Group_0__1();
 
             state._fsp--;
@@ -10669,7 +10675,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3894:1: '('
             {
              before(grammarAccess.getAtomExprAccess().getLeftParenthesisKeyword_0_0()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__AtomExpr__Group_0__0__Impl8013); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__AtomExpr__Group_0__0__Impl8014); 
              after(grammarAccess.getAtomExprAccess().getLeftParenthesisKeyword_0_0()); 
 
             }
@@ -10702,12 +10708,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3911:1: ( rule__AtomExpr__Group_0__1__Impl rule__AtomExpr__Group_0__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3912:2: rule__AtomExpr__Group_0__1__Impl rule__AtomExpr__Group_0__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AtomExpr__Group_0__1__Impl_in_rule__AtomExpr__Group_0__18044);
+            pushFollow(FollowSets000.FOLLOW_rule__AtomExpr__Group_0__1__Impl_in_rule__AtomExpr__Group_0__18045);
             rule__AtomExpr__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__AtomExpr__Group_0__2_in_rule__AtomExpr__Group_0__18047);
+            pushFollow(FollowSets000.FOLLOW_rule__AtomExpr__Group_0__2_in_rule__AtomExpr__Group_0__18048);
             rule__AtomExpr__Group_0__2();
 
             state._fsp--;
@@ -10744,7 +10750,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3925:1: ruleExpression
             {
              before(grammarAccess.getAtomExprAccess().getExpressionParserRuleCall_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_rule__AtomExpr__Group_0__1__Impl8074);
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_rule__AtomExpr__Group_0__1__Impl8075);
             ruleExpression();
 
             state._fsp--;
@@ -10781,7 +10787,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3940:1: ( rule__AtomExpr__Group_0__2__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3941:2: rule__AtomExpr__Group_0__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__AtomExpr__Group_0__2__Impl_in_rule__AtomExpr__Group_0__28103);
+            pushFollow(FollowSets000.FOLLOW_rule__AtomExpr__Group_0__2__Impl_in_rule__AtomExpr__Group_0__28104);
             rule__AtomExpr__Group_0__2__Impl();
 
             state._fsp--;
@@ -10818,7 +10824,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3953:1: ')'
             {
              before(grammarAccess.getAtomExprAccess().getRightParenthesisKeyword_0_2()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__AtomExpr__Group_0__2__Impl8131); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__AtomExpr__Group_0__2__Impl8132); 
              after(grammarAccess.getAtomExprAccess().getRightParenthesisKeyword_0_2()); 
 
             }
@@ -10851,12 +10857,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3976:1: ( rule__DeadlockExpr__Group__0__Impl rule__DeadlockExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:3977:2: rule__DeadlockExpr__Group__0__Impl rule__DeadlockExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__DeadlockExpr__Group__0__Impl_in_rule__DeadlockExpr__Group__08168);
+            pushFollow(FollowSets000.FOLLOW_rule__DeadlockExpr__Group__0__Impl_in_rule__DeadlockExpr__Group__08169);
             rule__DeadlockExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__DeadlockExpr__Group__1_in_rule__DeadlockExpr__Group__08171);
+            pushFollow(FollowSets000.FOLLOW_rule__DeadlockExpr__Group__1_in_rule__DeadlockExpr__Group__08172);
             rule__DeadlockExpr__Group__1();
 
             state._fsp--;
@@ -10926,7 +10932,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4007:1: ( rule__DeadlockExpr__Group__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4008:2: rule__DeadlockExpr__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__DeadlockExpr__Group__1__Impl_in_rule__DeadlockExpr__Group__18229);
+            pushFollow(FollowSets000.FOLLOW_rule__DeadlockExpr__Group__1__Impl_in_rule__DeadlockExpr__Group__18230);
             rule__DeadlockExpr__Group__1__Impl();
 
             state._fsp--;
@@ -10963,7 +10969,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4020:1: 'deadlock'
             {
              before(grammarAccess.getDeadlockExprAccess().getDeadlockKeyword_1()); 
-            match(input,40,FollowSets000.FOLLOW_40_in_rule__DeadlockExpr__Group__1__Impl8257); 
+            match(input,40,FollowSets000.FOLLOW_40_in_rule__DeadlockExpr__Group__1__Impl8258); 
              after(grammarAccess.getDeadlockExprAccess().getDeadlockKeyword_1()); 
 
             }
@@ -10996,12 +11002,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4041:1: ( rule__BufferOverflowExpr__Group__0__Impl rule__BufferOverflowExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4042:2: rule__BufferOverflowExpr__Group__0__Impl rule__BufferOverflowExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BufferOverflowExpr__Group__0__Impl_in_rule__BufferOverflowExpr__Group__08292);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferOverflowExpr__Group__0__Impl_in_rule__BufferOverflowExpr__Group__08293);
             rule__BufferOverflowExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BufferOverflowExpr__Group__1_in_rule__BufferOverflowExpr__Group__08295);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferOverflowExpr__Group__1_in_rule__BufferOverflowExpr__Group__08296);
             rule__BufferOverflowExpr__Group__1();
 
             state._fsp--;
@@ -11071,7 +11077,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4072:1: ( rule__BufferOverflowExpr__Group__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4073:2: rule__BufferOverflowExpr__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BufferOverflowExpr__Group__1__Impl_in_rule__BufferOverflowExpr__Group__18353);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferOverflowExpr__Group__1__Impl_in_rule__BufferOverflowExpr__Group__18354);
             rule__BufferOverflowExpr__Group__1__Impl();
 
             state._fsp--;
@@ -11108,7 +11114,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4085:1: 'bufferOverflow'
             {
              before(grammarAccess.getBufferOverflowExprAccess().getBufferOverflowKeyword_1()); 
-            match(input,41,FollowSets000.FOLLOW_41_in_rule__BufferOverflowExpr__Group__1__Impl8381); 
+            match(input,41,FollowSets000.FOLLOW_41_in_rule__BufferOverflowExpr__Group__1__Impl8382); 
              after(grammarAccess.getBufferOverflowExprAccess().getBufferOverflowKeyword_1()); 
 
             }
@@ -11141,12 +11147,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4106:1: ( rule__TrueExpr__Group__0__Impl rule__TrueExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4107:2: rule__TrueExpr__Group__0__Impl rule__TrueExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TrueExpr__Group__0__Impl_in_rule__TrueExpr__Group__08416);
+            pushFollow(FollowSets000.FOLLOW_rule__TrueExpr__Group__0__Impl_in_rule__TrueExpr__Group__08417);
             rule__TrueExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TrueExpr__Group__1_in_rule__TrueExpr__Group__08419);
+            pushFollow(FollowSets000.FOLLOW_rule__TrueExpr__Group__1_in_rule__TrueExpr__Group__08420);
             rule__TrueExpr__Group__1();
 
             state._fsp--;
@@ -11216,7 +11222,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4137:1: ( rule__TrueExpr__Group__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4138:2: rule__TrueExpr__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TrueExpr__Group__1__Impl_in_rule__TrueExpr__Group__18477);
+            pushFollow(FollowSets000.FOLLOW_rule__TrueExpr__Group__1__Impl_in_rule__TrueExpr__Group__18478);
             rule__TrueExpr__Group__1__Impl();
 
             state._fsp--;
@@ -11253,7 +11259,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4150:1: 'true'
             {
              before(grammarAccess.getTrueExprAccess().getTrueKeyword_1()); 
-            match(input,42,FollowSets000.FOLLOW_42_in_rule__TrueExpr__Group__1__Impl8505); 
+            match(input,42,FollowSets000.FOLLOW_42_in_rule__TrueExpr__Group__1__Impl8506); 
              after(grammarAccess.getTrueExprAccess().getTrueKeyword_1()); 
 
             }
@@ -11286,12 +11292,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4171:1: ( rule__FalseExpr__Group__0__Impl rule__FalseExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4172:2: rule__FalseExpr__Group__0__Impl rule__FalseExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__FalseExpr__Group__0__Impl_in_rule__FalseExpr__Group__08540);
+            pushFollow(FollowSets000.FOLLOW_rule__FalseExpr__Group__0__Impl_in_rule__FalseExpr__Group__08541);
             rule__FalseExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__FalseExpr__Group__1_in_rule__FalseExpr__Group__08543);
+            pushFollow(FollowSets000.FOLLOW_rule__FalseExpr__Group__1_in_rule__FalseExpr__Group__08544);
             rule__FalseExpr__Group__1();
 
             state._fsp--;
@@ -11361,7 +11367,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4202:1: ( rule__FalseExpr__Group__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4203:2: rule__FalseExpr__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__FalseExpr__Group__1__Impl_in_rule__FalseExpr__Group__18601);
+            pushFollow(FollowSets000.FOLLOW_rule__FalseExpr__Group__1__Impl_in_rule__FalseExpr__Group__18602);
             rule__FalseExpr__Group__1__Impl();
 
             state._fsp--;
@@ -11398,7 +11404,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4215:1: 'false'
             {
              before(grammarAccess.getFalseExprAccess().getFalseKeyword_1()); 
-            match(input,43,FollowSets000.FOLLOW_43_in_rule__FalseExpr__Group__1__Impl8629); 
+            match(input,43,FollowSets000.FOLLOW_43_in_rule__FalseExpr__Group__1__Impl8630); 
              after(grammarAccess.getFalseExprAccess().getFalseKeyword_1()); 
 
             }
@@ -11431,12 +11437,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4236:1: ( rule__StateActiveExpr__Group__0__Impl rule__StateActiveExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4237:2: rule__StateActiveExpr__Group__0__Impl rule__StateActiveExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__0__Impl_in_rule__StateActiveExpr__Group__08664);
+            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__0__Impl_in_rule__StateActiveExpr__Group__08665);
             rule__StateActiveExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__1_in_rule__StateActiveExpr__Group__08667);
+            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__1_in_rule__StateActiveExpr__Group__08668);
             rule__StateActiveExpr__Group__1();
 
             state._fsp--;
@@ -11473,7 +11479,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4250:1: 'stateActive'
             {
              before(grammarAccess.getStateActiveExprAccess().getStateActiveKeyword_0()); 
-            match(input,44,FollowSets000.FOLLOW_44_in_rule__StateActiveExpr__Group__0__Impl8695); 
+            match(input,44,FollowSets000.FOLLOW_44_in_rule__StateActiveExpr__Group__0__Impl8696); 
              after(grammarAccess.getStateActiveExprAccess().getStateActiveKeyword_0()); 
 
             }
@@ -11506,12 +11512,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4267:1: ( rule__StateActiveExpr__Group__1__Impl rule__StateActiveExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4268:2: rule__StateActiveExpr__Group__1__Impl rule__StateActiveExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__1__Impl_in_rule__StateActiveExpr__Group__18726);
+            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__1__Impl_in_rule__StateActiveExpr__Group__18727);
             rule__StateActiveExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__2_in_rule__StateActiveExpr__Group__18729);
+            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__2_in_rule__StateActiveExpr__Group__18730);
             rule__StateActiveExpr__Group__2();
 
             state._fsp--;
@@ -11548,7 +11554,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4281:1: '('
             {
              before(grammarAccess.getStateActiveExprAccess().getLeftParenthesisKeyword_1()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__StateActiveExpr__Group__1__Impl8757); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__StateActiveExpr__Group__1__Impl8758); 
              after(grammarAccess.getStateActiveExprAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -11581,12 +11587,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4298:1: ( rule__StateActiveExpr__Group__2__Impl rule__StateActiveExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4299:2: rule__StateActiveExpr__Group__2__Impl rule__StateActiveExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__2__Impl_in_rule__StateActiveExpr__Group__28788);
+            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__2__Impl_in_rule__StateActiveExpr__Group__28789);
             rule__StateActiveExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__3_in_rule__StateActiveExpr__Group__28791);
+            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__3_in_rule__StateActiveExpr__Group__28792);
             rule__StateActiveExpr__Group__3();
 
             state._fsp--;
@@ -11656,12 +11662,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4329:1: ( rule__StateActiveExpr__Group__3__Impl rule__StateActiveExpr__Group__4 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4330:2: rule__StateActiveExpr__Group__3__Impl rule__StateActiveExpr__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__3__Impl_in_rule__StateActiveExpr__Group__38849);
+            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__3__Impl_in_rule__StateActiveExpr__Group__38850);
             rule__StateActiveExpr__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__4_in_rule__StateActiveExpr__Group__38852);
+            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__4_in_rule__StateActiveExpr__Group__38853);
             rule__StateActiveExpr__Group__4();
 
             state._fsp--;
@@ -11701,7 +11707,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4344:1: ( rule__StateActiveExpr__StateAssignment_3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4344:2: rule__StateActiveExpr__StateAssignment_3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__StateAssignment_3_in_rule__StateActiveExpr__Group__3__Impl8879);
+            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__StateAssignment_3_in_rule__StateActiveExpr__Group__3__Impl8880);
             rule__StateActiveExpr__StateAssignment_3();
 
             state._fsp--;
@@ -11741,7 +11747,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4358:1: ( rule__StateActiveExpr__Group__4__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4359:2: rule__StateActiveExpr__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__4__Impl_in_rule__StateActiveExpr__Group__48909);
+            pushFollow(FollowSets000.FOLLOW_rule__StateActiveExpr__Group__4__Impl_in_rule__StateActiveExpr__Group__48910);
             rule__StateActiveExpr__Group__4__Impl();
 
             state._fsp--;
@@ -11778,7 +11784,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4371:1: ')'
             {
              before(grammarAccess.getStateActiveExprAccess().getRightParenthesisKeyword_4()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__StateActiveExpr__Group__4__Impl8937); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__StateActiveExpr__Group__4__Impl8938); 
              after(grammarAccess.getStateActiveExprAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -11811,12 +11817,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4398:1: ( rule__SubstateOfExpr__Group__0__Impl rule__SubstateOfExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4399:2: rule__SubstateOfExpr__Group__0__Impl rule__SubstateOfExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__0__Impl_in_rule__SubstateOfExpr__Group__08978);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__0__Impl_in_rule__SubstateOfExpr__Group__08979);
             rule__SubstateOfExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__1_in_rule__SubstateOfExpr__Group__08981);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__1_in_rule__SubstateOfExpr__Group__08982);
             rule__SubstateOfExpr__Group__1();
 
             state._fsp--;
@@ -11853,7 +11859,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4412:1: 'substateOf'
             {
              before(grammarAccess.getSubstateOfExprAccess().getSubstateOfKeyword_0()); 
-            match(input,45,FollowSets000.FOLLOW_45_in_rule__SubstateOfExpr__Group__0__Impl9009); 
+            match(input,45,FollowSets000.FOLLOW_45_in_rule__SubstateOfExpr__Group__0__Impl9010); 
              after(grammarAccess.getSubstateOfExprAccess().getSubstateOfKeyword_0()); 
 
             }
@@ -11886,12 +11892,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4429:1: ( rule__SubstateOfExpr__Group__1__Impl rule__SubstateOfExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4430:2: rule__SubstateOfExpr__Group__1__Impl rule__SubstateOfExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__1__Impl_in_rule__SubstateOfExpr__Group__19040);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__1__Impl_in_rule__SubstateOfExpr__Group__19041);
             rule__SubstateOfExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__2_in_rule__SubstateOfExpr__Group__19043);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__2_in_rule__SubstateOfExpr__Group__19044);
             rule__SubstateOfExpr__Group__2();
 
             state._fsp--;
@@ -11928,7 +11934,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4443:1: '('
             {
              before(grammarAccess.getSubstateOfExprAccess().getLeftParenthesisKeyword_1()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__SubstateOfExpr__Group__1__Impl9071); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__SubstateOfExpr__Group__1__Impl9072); 
              after(grammarAccess.getSubstateOfExprAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -11961,12 +11967,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4460:1: ( rule__SubstateOfExpr__Group__2__Impl rule__SubstateOfExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4461:2: rule__SubstateOfExpr__Group__2__Impl rule__SubstateOfExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__2__Impl_in_rule__SubstateOfExpr__Group__29102);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__2__Impl_in_rule__SubstateOfExpr__Group__29103);
             rule__SubstateOfExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__3_in_rule__SubstateOfExpr__Group__29105);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__3_in_rule__SubstateOfExpr__Group__29106);
             rule__SubstateOfExpr__Group__3();
 
             state._fsp--;
@@ -12036,12 +12042,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4491:1: ( rule__SubstateOfExpr__Group__3__Impl rule__SubstateOfExpr__Group__4 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4492:2: rule__SubstateOfExpr__Group__3__Impl rule__SubstateOfExpr__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__3__Impl_in_rule__SubstateOfExpr__Group__39163);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__3__Impl_in_rule__SubstateOfExpr__Group__39164);
             rule__SubstateOfExpr__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__4_in_rule__SubstateOfExpr__Group__39166);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__4_in_rule__SubstateOfExpr__Group__39167);
             rule__SubstateOfExpr__Group__4();
 
             state._fsp--;
@@ -12081,7 +12087,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4506:1: ( rule__SubstateOfExpr__StateAssignment_3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4506:2: rule__SubstateOfExpr__StateAssignment_3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__StateAssignment_3_in_rule__SubstateOfExpr__Group__3__Impl9193);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__StateAssignment_3_in_rule__SubstateOfExpr__Group__3__Impl9194);
             rule__SubstateOfExpr__StateAssignment_3();
 
             state._fsp--;
@@ -12121,12 +12127,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4520:1: ( rule__SubstateOfExpr__Group__4__Impl rule__SubstateOfExpr__Group__5 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4521:2: rule__SubstateOfExpr__Group__4__Impl rule__SubstateOfExpr__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__4__Impl_in_rule__SubstateOfExpr__Group__49223);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__4__Impl_in_rule__SubstateOfExpr__Group__49224);
             rule__SubstateOfExpr__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__5_in_rule__SubstateOfExpr__Group__49226);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__5_in_rule__SubstateOfExpr__Group__49227);
             rule__SubstateOfExpr__Group__5();
 
             state._fsp--;
@@ -12163,7 +12169,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4534:1: ','
             {
              before(grammarAccess.getSubstateOfExprAccess().getCommaKeyword_4()); 
-            match(input,29,FollowSets000.FOLLOW_29_in_rule__SubstateOfExpr__Group__4__Impl9254); 
+            match(input,29,FollowSets000.FOLLOW_29_in_rule__SubstateOfExpr__Group__4__Impl9255); 
              after(grammarAccess.getSubstateOfExprAccess().getCommaKeyword_4()); 
 
             }
@@ -12196,12 +12202,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4551:1: ( rule__SubstateOfExpr__Group__5__Impl rule__SubstateOfExpr__Group__6 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4552:2: rule__SubstateOfExpr__Group__5__Impl rule__SubstateOfExpr__Group__6
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__5__Impl_in_rule__SubstateOfExpr__Group__59285);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__5__Impl_in_rule__SubstateOfExpr__Group__59286);
             rule__SubstateOfExpr__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__6_in_rule__SubstateOfExpr__Group__59288);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__6_in_rule__SubstateOfExpr__Group__59289);
             rule__SubstateOfExpr__Group__6();
 
             state._fsp--;
@@ -12241,7 +12247,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4566:1: ( rule__SubstateOfExpr__SuperstateAssignment_5 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4566:2: rule__SubstateOfExpr__SuperstateAssignment_5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__SuperstateAssignment_5_in_rule__SubstateOfExpr__Group__5__Impl9315);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__SuperstateAssignment_5_in_rule__SubstateOfExpr__Group__5__Impl9316);
             rule__SubstateOfExpr__SuperstateAssignment_5();
 
             state._fsp--;
@@ -12281,7 +12287,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4580:1: ( rule__SubstateOfExpr__Group__6__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4581:2: rule__SubstateOfExpr__Group__6__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__6__Impl_in_rule__SubstateOfExpr__Group__69345);
+            pushFollow(FollowSets000.FOLLOW_rule__SubstateOfExpr__Group__6__Impl_in_rule__SubstateOfExpr__Group__69346);
             rule__SubstateOfExpr__Group__6__Impl();
 
             state._fsp--;
@@ -12318,7 +12324,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4593:1: ')'
             {
              before(grammarAccess.getSubstateOfExprAccess().getRightParenthesisKeyword_6()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__SubstateOfExpr__Group__6__Impl9373); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__SubstateOfExpr__Group__6__Impl9374); 
              after(grammarAccess.getSubstateOfExprAccess().getRightParenthesisKeyword_6()); 
 
             }
@@ -12351,12 +12357,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4624:1: ( rule__MessageInTransitExpr__Group__0__Impl rule__MessageInTransitExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4625:2: rule__MessageInTransitExpr__Group__0__Impl rule__MessageInTransitExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__0__Impl_in_rule__MessageInTransitExpr__Group__09418);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__0__Impl_in_rule__MessageInTransitExpr__Group__09419);
             rule__MessageInTransitExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__1_in_rule__MessageInTransitExpr__Group__09421);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__1_in_rule__MessageInTransitExpr__Group__09422);
             rule__MessageInTransitExpr__Group__1();
 
             state._fsp--;
@@ -12393,7 +12399,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4638:1: 'messageInTransit'
             {
              before(grammarAccess.getMessageInTransitExprAccess().getMessageInTransitKeyword_0()); 
-            match(input,46,FollowSets000.FOLLOW_46_in_rule__MessageInTransitExpr__Group__0__Impl9449); 
+            match(input,46,FollowSets000.FOLLOW_46_in_rule__MessageInTransitExpr__Group__0__Impl9450); 
              after(grammarAccess.getMessageInTransitExprAccess().getMessageInTransitKeyword_0()); 
 
             }
@@ -12426,12 +12432,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4655:1: ( rule__MessageInTransitExpr__Group__1__Impl rule__MessageInTransitExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4656:2: rule__MessageInTransitExpr__Group__1__Impl rule__MessageInTransitExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__1__Impl_in_rule__MessageInTransitExpr__Group__19480);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__1__Impl_in_rule__MessageInTransitExpr__Group__19481);
             rule__MessageInTransitExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__2_in_rule__MessageInTransitExpr__Group__19483);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__2_in_rule__MessageInTransitExpr__Group__19484);
             rule__MessageInTransitExpr__Group__2();
 
             state._fsp--;
@@ -12468,7 +12474,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4669:1: '('
             {
              before(grammarAccess.getMessageInTransitExprAccess().getLeftParenthesisKeyword_1()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__MessageInTransitExpr__Group__1__Impl9511); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__MessageInTransitExpr__Group__1__Impl9512); 
              after(grammarAccess.getMessageInTransitExprAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -12501,12 +12507,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4686:1: ( rule__MessageInTransitExpr__Group__2__Impl rule__MessageInTransitExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4687:2: rule__MessageInTransitExpr__Group__2__Impl rule__MessageInTransitExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__2__Impl_in_rule__MessageInTransitExpr__Group__29542);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__2__Impl_in_rule__MessageInTransitExpr__Group__29543);
             rule__MessageInTransitExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__3_in_rule__MessageInTransitExpr__Group__29545);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__3_in_rule__MessageInTransitExpr__Group__29546);
             rule__MessageInTransitExpr__Group__3();
 
             state._fsp--;
@@ -12546,7 +12552,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4701:1: ( rule__MessageInTransitExpr__MessageAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4701:2: rule__MessageInTransitExpr__MessageAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__MessageAssignment_2_in_rule__MessageInTransitExpr__Group__2__Impl9572);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__MessageAssignment_2_in_rule__MessageInTransitExpr__Group__2__Impl9573);
             rule__MessageInTransitExpr__MessageAssignment_2();
 
             state._fsp--;
@@ -12586,7 +12592,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4715:1: ( rule__MessageInTransitExpr__Group__3__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4716:2: rule__MessageInTransitExpr__Group__3__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__3__Impl_in_rule__MessageInTransitExpr__Group__39602);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInTransitExpr__Group__3__Impl_in_rule__MessageInTransitExpr__Group__39603);
             rule__MessageInTransitExpr__Group__3__Impl();
 
             state._fsp--;
@@ -12623,7 +12629,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4728:1: ')'
             {
              before(grammarAccess.getMessageInTransitExprAccess().getRightParenthesisKeyword_3()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__MessageInTransitExpr__Group__3__Impl9630); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__MessageInTransitExpr__Group__3__Impl9631); 
              after(grammarAccess.getMessageInTransitExprAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -12656,12 +12662,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4753:1: ( rule__MessageInBufferExpr__Group__0__Impl rule__MessageInBufferExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4754:2: rule__MessageInBufferExpr__Group__0__Impl rule__MessageInBufferExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__0__Impl_in_rule__MessageInBufferExpr__Group__09669);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__0__Impl_in_rule__MessageInBufferExpr__Group__09670);
             rule__MessageInBufferExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__1_in_rule__MessageInBufferExpr__Group__09672);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__1_in_rule__MessageInBufferExpr__Group__09673);
             rule__MessageInBufferExpr__Group__1();
 
             state._fsp--;
@@ -12698,7 +12704,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4767:1: 'messageInBuffer'
             {
              before(grammarAccess.getMessageInBufferExprAccess().getMessageInBufferKeyword_0()); 
-            match(input,47,FollowSets000.FOLLOW_47_in_rule__MessageInBufferExpr__Group__0__Impl9700); 
+            match(input,47,FollowSets000.FOLLOW_47_in_rule__MessageInBufferExpr__Group__0__Impl9701); 
              after(grammarAccess.getMessageInBufferExprAccess().getMessageInBufferKeyword_0()); 
 
             }
@@ -12731,12 +12737,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4784:1: ( rule__MessageInBufferExpr__Group__1__Impl rule__MessageInBufferExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4785:2: rule__MessageInBufferExpr__Group__1__Impl rule__MessageInBufferExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__1__Impl_in_rule__MessageInBufferExpr__Group__19731);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__1__Impl_in_rule__MessageInBufferExpr__Group__19732);
             rule__MessageInBufferExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__2_in_rule__MessageInBufferExpr__Group__19734);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__2_in_rule__MessageInBufferExpr__Group__19735);
             rule__MessageInBufferExpr__Group__2();
 
             state._fsp--;
@@ -12773,7 +12779,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4798:1: '('
             {
              before(grammarAccess.getMessageInBufferExprAccess().getLeftParenthesisKeyword_1()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__MessageInBufferExpr__Group__1__Impl9762); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__MessageInBufferExpr__Group__1__Impl9763); 
              after(grammarAccess.getMessageInBufferExprAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -12806,12 +12812,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4815:1: ( rule__MessageInBufferExpr__Group__2__Impl rule__MessageInBufferExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4816:2: rule__MessageInBufferExpr__Group__2__Impl rule__MessageInBufferExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__2__Impl_in_rule__MessageInBufferExpr__Group__29793);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__2__Impl_in_rule__MessageInBufferExpr__Group__29794);
             rule__MessageInBufferExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__3_in_rule__MessageInBufferExpr__Group__29796);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__3_in_rule__MessageInBufferExpr__Group__29797);
             rule__MessageInBufferExpr__Group__3();
 
             state._fsp--;
@@ -12851,7 +12857,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4830:1: ( rule__MessageInBufferExpr__MessageAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4830:2: rule__MessageInBufferExpr__MessageAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__MessageAssignment_2_in_rule__MessageInBufferExpr__Group__2__Impl9823);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__MessageAssignment_2_in_rule__MessageInBufferExpr__Group__2__Impl9824);
             rule__MessageInBufferExpr__MessageAssignment_2();
 
             state._fsp--;
@@ -12891,12 +12897,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4844:1: ( rule__MessageInBufferExpr__Group__3__Impl rule__MessageInBufferExpr__Group__4 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4845:2: rule__MessageInBufferExpr__Group__3__Impl rule__MessageInBufferExpr__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__3__Impl_in_rule__MessageInBufferExpr__Group__39853);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__3__Impl_in_rule__MessageInBufferExpr__Group__39854);
             rule__MessageInBufferExpr__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__4_in_rule__MessageInBufferExpr__Group__39856);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__4_in_rule__MessageInBufferExpr__Group__39857);
             rule__MessageInBufferExpr__Group__4();
 
             state._fsp--;
@@ -12933,7 +12939,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4858:1: ','
             {
              before(grammarAccess.getMessageInBufferExprAccess().getCommaKeyword_3()); 
-            match(input,29,FollowSets000.FOLLOW_29_in_rule__MessageInBufferExpr__Group__3__Impl9884); 
+            match(input,29,FollowSets000.FOLLOW_29_in_rule__MessageInBufferExpr__Group__3__Impl9885); 
              after(grammarAccess.getMessageInBufferExprAccess().getCommaKeyword_3()); 
 
             }
@@ -12966,12 +12972,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4875:1: ( rule__MessageInBufferExpr__Group__4__Impl rule__MessageInBufferExpr__Group__5 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4876:2: rule__MessageInBufferExpr__Group__4__Impl rule__MessageInBufferExpr__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__4__Impl_in_rule__MessageInBufferExpr__Group__49915);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__4__Impl_in_rule__MessageInBufferExpr__Group__49916);
             rule__MessageInBufferExpr__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__5_in_rule__MessageInBufferExpr__Group__49918);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__5_in_rule__MessageInBufferExpr__Group__49919);
             rule__MessageInBufferExpr__Group__5();
 
             state._fsp--;
@@ -13011,7 +13017,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4890:1: ( rule__MessageInBufferExpr__BufferAssignment_4 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4890:2: rule__MessageInBufferExpr__BufferAssignment_4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__BufferAssignment_4_in_rule__MessageInBufferExpr__Group__4__Impl9945);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__BufferAssignment_4_in_rule__MessageInBufferExpr__Group__4__Impl9946);
             rule__MessageInBufferExpr__BufferAssignment_4();
 
             state._fsp--;
@@ -13051,7 +13057,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4904:1: ( rule__MessageInBufferExpr__Group__5__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4905:2: rule__MessageInBufferExpr__Group__5__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__5__Impl_in_rule__MessageInBufferExpr__Group__59975);
+            pushFollow(FollowSets000.FOLLOW_rule__MessageInBufferExpr__Group__5__Impl_in_rule__MessageInBufferExpr__Group__59976);
             rule__MessageInBufferExpr__Group__5__Impl();
 
             state._fsp--;
@@ -13088,7 +13094,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4917:1: ')'
             {
              before(grammarAccess.getMessageInBufferExprAccess().getRightParenthesisKeyword_5()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__MessageInBufferExpr__Group__5__Impl10003); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__MessageInBufferExpr__Group__5__Impl10004); 
              after(grammarAccess.getMessageInBufferExprAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -13121,12 +13127,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4946:1: ( rule__TransitionFiringExpr__Group__0__Impl rule__TransitionFiringExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4947:2: rule__TransitionFiringExpr__Group__0__Impl rule__TransitionFiringExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__0__Impl_in_rule__TransitionFiringExpr__Group__010046);
+            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__0__Impl_in_rule__TransitionFiringExpr__Group__010047);
             rule__TransitionFiringExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__1_in_rule__TransitionFiringExpr__Group__010049);
+            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__1_in_rule__TransitionFiringExpr__Group__010050);
             rule__TransitionFiringExpr__Group__1();
 
             state._fsp--;
@@ -13163,7 +13169,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4960:1: 'transitionFiring'
             {
              before(grammarAccess.getTransitionFiringExprAccess().getTransitionFiringKeyword_0()); 
-            match(input,48,FollowSets000.FOLLOW_48_in_rule__TransitionFiringExpr__Group__0__Impl10077); 
+            match(input,48,FollowSets000.FOLLOW_48_in_rule__TransitionFiringExpr__Group__0__Impl10078); 
              after(grammarAccess.getTransitionFiringExprAccess().getTransitionFiringKeyword_0()); 
 
             }
@@ -13196,12 +13202,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4977:1: ( rule__TransitionFiringExpr__Group__1__Impl rule__TransitionFiringExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4978:2: rule__TransitionFiringExpr__Group__1__Impl rule__TransitionFiringExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__1__Impl_in_rule__TransitionFiringExpr__Group__110108);
+            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__1__Impl_in_rule__TransitionFiringExpr__Group__110109);
             rule__TransitionFiringExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__2_in_rule__TransitionFiringExpr__Group__110111);
+            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__2_in_rule__TransitionFiringExpr__Group__110112);
             rule__TransitionFiringExpr__Group__2();
 
             state._fsp--;
@@ -13238,7 +13244,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:4991:1: '('
             {
              before(grammarAccess.getTransitionFiringExprAccess().getLeftParenthesisKeyword_1()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__TransitionFiringExpr__Group__1__Impl10139); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__TransitionFiringExpr__Group__1__Impl10140); 
              after(grammarAccess.getTransitionFiringExprAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -13271,12 +13277,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5008:1: ( rule__TransitionFiringExpr__Group__2__Impl rule__TransitionFiringExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5009:2: rule__TransitionFiringExpr__Group__2__Impl rule__TransitionFiringExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__2__Impl_in_rule__TransitionFiringExpr__Group__210170);
+            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__2__Impl_in_rule__TransitionFiringExpr__Group__210171);
             rule__TransitionFiringExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__3_in_rule__TransitionFiringExpr__Group__210173);
+            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__3_in_rule__TransitionFiringExpr__Group__210174);
             rule__TransitionFiringExpr__Group__3();
 
             state._fsp--;
@@ -13316,7 +13322,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5023:1: ( rule__TransitionFiringExpr__TransitionAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5023:2: rule__TransitionFiringExpr__TransitionAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__TransitionAssignment_2_in_rule__TransitionFiringExpr__Group__2__Impl10200);
+            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__TransitionAssignment_2_in_rule__TransitionFiringExpr__Group__2__Impl10201);
             rule__TransitionFiringExpr__TransitionAssignment_2();
 
             state._fsp--;
@@ -13356,7 +13362,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5037:1: ( rule__TransitionFiringExpr__Group__3__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5038:2: rule__TransitionFiringExpr__Group__3__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__3__Impl_in_rule__TransitionFiringExpr__Group__310230);
+            pushFollow(FollowSets000.FOLLOW_rule__TransitionFiringExpr__Group__3__Impl_in_rule__TransitionFiringExpr__Group__310231);
             rule__TransitionFiringExpr__Group__3__Impl();
 
             state._fsp--;
@@ -13393,7 +13399,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5050:1: ')'
             {
              before(grammarAccess.getTransitionFiringExprAccess().getRightParenthesisKeyword_3()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__TransitionFiringExpr__Group__3__Impl10258); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__TransitionFiringExpr__Group__3__Impl10259); 
              after(grammarAccess.getTransitionFiringExprAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -13426,12 +13432,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5075:1: ( rule__ComparisonExpr__Group__0__Impl rule__ComparisonExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5076:2: rule__ComparisonExpr__Group__0__Impl rule__ComparisonExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__0__Impl_in_rule__ComparisonExpr__Group__010297);
+            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__0__Impl_in_rule__ComparisonExpr__Group__010298);
             rule__ComparisonExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__1_in_rule__ComparisonExpr__Group__010300);
+            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__1_in_rule__ComparisonExpr__Group__010301);
             rule__ComparisonExpr__Group__1();
 
             state._fsp--;
@@ -13501,12 +13507,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5106:1: ( rule__ComparisonExpr__Group__1__Impl rule__ComparisonExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5107:2: rule__ComparisonExpr__Group__1__Impl rule__ComparisonExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__1__Impl_in_rule__ComparisonExpr__Group__110358);
+            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__1__Impl_in_rule__ComparisonExpr__Group__110359);
             rule__ComparisonExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__2_in_rule__ComparisonExpr__Group__110361);
+            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__2_in_rule__ComparisonExpr__Group__110362);
             rule__ComparisonExpr__Group__2();
 
             state._fsp--;
@@ -13546,7 +13552,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5121:1: ( rule__ComparisonExpr__LhsAssignment_1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5121:2: rule__ComparisonExpr__LhsAssignment_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__LhsAssignment_1_in_rule__ComparisonExpr__Group__1__Impl10388);
+            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__LhsAssignment_1_in_rule__ComparisonExpr__Group__1__Impl10389);
             rule__ComparisonExpr__LhsAssignment_1();
 
             state._fsp--;
@@ -13586,12 +13592,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5135:1: ( rule__ComparisonExpr__Group__2__Impl rule__ComparisonExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5136:2: rule__ComparisonExpr__Group__2__Impl rule__ComparisonExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__2__Impl_in_rule__ComparisonExpr__Group__210418);
+            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__2__Impl_in_rule__ComparisonExpr__Group__210419);
             rule__ComparisonExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__3_in_rule__ComparisonExpr__Group__210421);
+            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__3_in_rule__ComparisonExpr__Group__210422);
             rule__ComparisonExpr__Group__3();
 
             state._fsp--;
@@ -13631,7 +13637,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5150:1: ( rule__ComparisonExpr__OpAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5150:2: rule__ComparisonExpr__OpAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__OpAssignment_2_in_rule__ComparisonExpr__Group__2__Impl10448);
+            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__OpAssignment_2_in_rule__ComparisonExpr__Group__2__Impl10449);
             rule__ComparisonExpr__OpAssignment_2();
 
             state._fsp--;
@@ -13671,7 +13677,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5164:1: ( rule__ComparisonExpr__Group__3__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5165:2: rule__ComparisonExpr__Group__3__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__3__Impl_in_rule__ComparisonExpr__Group__310478);
+            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__Group__3__Impl_in_rule__ComparisonExpr__Group__310479);
             rule__ComparisonExpr__Group__3__Impl();
 
             state._fsp--;
@@ -13711,7 +13717,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5178:1: ( rule__ComparisonExpr__RhsAssignment_3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5178:2: rule__ComparisonExpr__RhsAssignment_3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__RhsAssignment_3_in_rule__ComparisonExpr__Group__3__Impl10505);
+            pushFollow(FollowSets000.FOLLOW_rule__ComparisonExpr__RhsAssignment_3_in_rule__ComparisonExpr__Group__3__Impl10506);
             rule__ComparisonExpr__RhsAssignment_3();
 
             state._fsp--;
@@ -13751,12 +13757,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5200:1: ( rule__BufferMessageCountExpr__Group__0__Impl rule__BufferMessageCountExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5201:2: rule__BufferMessageCountExpr__Group__0__Impl rule__BufferMessageCountExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__0__Impl_in_rule__BufferMessageCountExpr__Group__010543);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__0__Impl_in_rule__BufferMessageCountExpr__Group__010544);
             rule__BufferMessageCountExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__1_in_rule__BufferMessageCountExpr__Group__010546);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__1_in_rule__BufferMessageCountExpr__Group__010547);
             rule__BufferMessageCountExpr__Group__1();
 
             state._fsp--;
@@ -13793,7 +13799,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5214:1: 'bufferMessageCount'
             {
              before(grammarAccess.getBufferMessageCountExprAccess().getBufferMessageCountKeyword_0()); 
-            match(input,49,FollowSets000.FOLLOW_49_in_rule__BufferMessageCountExpr__Group__0__Impl10574); 
+            match(input,49,FollowSets000.FOLLOW_49_in_rule__BufferMessageCountExpr__Group__0__Impl10575); 
              after(grammarAccess.getBufferMessageCountExprAccess().getBufferMessageCountKeyword_0()); 
 
             }
@@ -13826,12 +13832,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5231:1: ( rule__BufferMessageCountExpr__Group__1__Impl rule__BufferMessageCountExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5232:2: rule__BufferMessageCountExpr__Group__1__Impl rule__BufferMessageCountExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__1__Impl_in_rule__BufferMessageCountExpr__Group__110605);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__1__Impl_in_rule__BufferMessageCountExpr__Group__110606);
             rule__BufferMessageCountExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__2_in_rule__BufferMessageCountExpr__Group__110608);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__2_in_rule__BufferMessageCountExpr__Group__110609);
             rule__BufferMessageCountExpr__Group__2();
 
             state._fsp--;
@@ -13868,7 +13874,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5245:1: '('
             {
              before(grammarAccess.getBufferMessageCountExprAccess().getLeftParenthesisKeyword_1()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__BufferMessageCountExpr__Group__1__Impl10636); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__BufferMessageCountExpr__Group__1__Impl10637); 
              after(grammarAccess.getBufferMessageCountExprAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -13901,12 +13907,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5262:1: ( rule__BufferMessageCountExpr__Group__2__Impl rule__BufferMessageCountExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5263:2: rule__BufferMessageCountExpr__Group__2__Impl rule__BufferMessageCountExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__2__Impl_in_rule__BufferMessageCountExpr__Group__210667);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__2__Impl_in_rule__BufferMessageCountExpr__Group__210668);
             rule__BufferMessageCountExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__3_in_rule__BufferMessageCountExpr__Group__210670);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__3_in_rule__BufferMessageCountExpr__Group__210671);
             rule__BufferMessageCountExpr__Group__3();
 
             state._fsp--;
@@ -13946,7 +13952,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5277:1: ( rule__BufferMessageCountExpr__BufferAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5277:2: rule__BufferMessageCountExpr__BufferAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__BufferAssignment_2_in_rule__BufferMessageCountExpr__Group__2__Impl10697);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__BufferAssignment_2_in_rule__BufferMessageCountExpr__Group__2__Impl10698);
             rule__BufferMessageCountExpr__BufferAssignment_2();
 
             state._fsp--;
@@ -13986,7 +13992,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5291:1: ( rule__BufferMessageCountExpr__Group__3__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5292:2: rule__BufferMessageCountExpr__Group__3__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__3__Impl_in_rule__BufferMessageCountExpr__Group__310727);
+            pushFollow(FollowSets000.FOLLOW_rule__BufferMessageCountExpr__Group__3__Impl_in_rule__BufferMessageCountExpr__Group__310728);
             rule__BufferMessageCountExpr__Group__3__Impl();
 
             state._fsp--;
@@ -14023,7 +14029,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5304:1: ')'
             {
              before(grammarAccess.getBufferMessageCountExprAccess().getRightParenthesisKeyword_3()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__BufferMessageCountExpr__Group__3__Impl10755); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__BufferMessageCountExpr__Group__3__Impl10756); 
              after(grammarAccess.getBufferMessageCountExprAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -14056,12 +14062,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5329:1: ( rule__SourceStateExpr__Group__0__Impl rule__SourceStateExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5330:2: rule__SourceStateExpr__Group__0__Impl rule__SourceStateExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__0__Impl_in_rule__SourceStateExpr__Group__010794);
+            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__0__Impl_in_rule__SourceStateExpr__Group__010795);
             rule__SourceStateExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__1_in_rule__SourceStateExpr__Group__010797);
+            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__1_in_rule__SourceStateExpr__Group__010798);
             rule__SourceStateExpr__Group__1();
 
             state._fsp--;
@@ -14098,7 +14104,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5343:1: 'sourceState'
             {
              before(grammarAccess.getSourceStateExprAccess().getSourceStateKeyword_0()); 
-            match(input,50,FollowSets000.FOLLOW_50_in_rule__SourceStateExpr__Group__0__Impl10825); 
+            match(input,50,FollowSets000.FOLLOW_50_in_rule__SourceStateExpr__Group__0__Impl10826); 
              after(grammarAccess.getSourceStateExprAccess().getSourceStateKeyword_0()); 
 
             }
@@ -14131,12 +14137,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5360:1: ( rule__SourceStateExpr__Group__1__Impl rule__SourceStateExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5361:2: rule__SourceStateExpr__Group__1__Impl rule__SourceStateExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__1__Impl_in_rule__SourceStateExpr__Group__110856);
+            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__1__Impl_in_rule__SourceStateExpr__Group__110857);
             rule__SourceStateExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__2_in_rule__SourceStateExpr__Group__110859);
+            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__2_in_rule__SourceStateExpr__Group__110860);
             rule__SourceStateExpr__Group__2();
 
             state._fsp--;
@@ -14173,7 +14179,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5374:1: '('
             {
              before(grammarAccess.getSourceStateExprAccess().getLeftParenthesisKeyword_1()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__SourceStateExpr__Group__1__Impl10887); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__SourceStateExpr__Group__1__Impl10888); 
              after(grammarAccess.getSourceStateExprAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -14206,12 +14212,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5391:1: ( rule__SourceStateExpr__Group__2__Impl rule__SourceStateExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5392:2: rule__SourceStateExpr__Group__2__Impl rule__SourceStateExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__2__Impl_in_rule__SourceStateExpr__Group__210918);
+            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__2__Impl_in_rule__SourceStateExpr__Group__210919);
             rule__SourceStateExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__3_in_rule__SourceStateExpr__Group__210921);
+            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__3_in_rule__SourceStateExpr__Group__210922);
             rule__SourceStateExpr__Group__3();
 
             state._fsp--;
@@ -14251,7 +14257,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5406:1: ( rule__SourceStateExpr__TransitionAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5406:2: rule__SourceStateExpr__TransitionAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__TransitionAssignment_2_in_rule__SourceStateExpr__Group__2__Impl10948);
+            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__TransitionAssignment_2_in_rule__SourceStateExpr__Group__2__Impl10949);
             rule__SourceStateExpr__TransitionAssignment_2();
 
             state._fsp--;
@@ -14291,7 +14297,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5420:1: ( rule__SourceStateExpr__Group__3__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5421:2: rule__SourceStateExpr__Group__3__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__3__Impl_in_rule__SourceStateExpr__Group__310978);
+            pushFollow(FollowSets000.FOLLOW_rule__SourceStateExpr__Group__3__Impl_in_rule__SourceStateExpr__Group__310979);
             rule__SourceStateExpr__Group__3__Impl();
 
             state._fsp--;
@@ -14328,7 +14334,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5433:1: ')'
             {
              before(grammarAccess.getSourceStateExprAccess().getRightParenthesisKeyword_3()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__SourceStateExpr__Group__3__Impl11006); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__SourceStateExpr__Group__3__Impl11007); 
              after(grammarAccess.getSourceStateExprAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -14361,12 +14367,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5458:1: ( rule__TargetStateExpr__Group__0__Impl rule__TargetStateExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5459:2: rule__TargetStateExpr__Group__0__Impl rule__TargetStateExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__0__Impl_in_rule__TargetStateExpr__Group__011045);
+            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__0__Impl_in_rule__TargetStateExpr__Group__011046);
             rule__TargetStateExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__1_in_rule__TargetStateExpr__Group__011048);
+            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__1_in_rule__TargetStateExpr__Group__011049);
             rule__TargetStateExpr__Group__1();
 
             state._fsp--;
@@ -14403,7 +14409,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5472:1: 'targetState'
             {
              before(grammarAccess.getTargetStateExprAccess().getTargetStateKeyword_0()); 
-            match(input,51,FollowSets000.FOLLOW_51_in_rule__TargetStateExpr__Group__0__Impl11076); 
+            match(input,51,FollowSets000.FOLLOW_51_in_rule__TargetStateExpr__Group__0__Impl11077); 
              after(grammarAccess.getTargetStateExprAccess().getTargetStateKeyword_0()); 
 
             }
@@ -14436,12 +14442,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5489:1: ( rule__TargetStateExpr__Group__1__Impl rule__TargetStateExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5490:2: rule__TargetStateExpr__Group__1__Impl rule__TargetStateExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__1__Impl_in_rule__TargetStateExpr__Group__111107);
+            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__1__Impl_in_rule__TargetStateExpr__Group__111108);
             rule__TargetStateExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__2_in_rule__TargetStateExpr__Group__111110);
+            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__2_in_rule__TargetStateExpr__Group__111111);
             rule__TargetStateExpr__Group__2();
 
             state._fsp--;
@@ -14478,7 +14484,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5503:1: '('
             {
              before(grammarAccess.getTargetStateExprAccess().getLeftParenthesisKeyword_1()); 
-            match(input,36,FollowSets000.FOLLOW_36_in_rule__TargetStateExpr__Group__1__Impl11138); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__TargetStateExpr__Group__1__Impl11139); 
              after(grammarAccess.getTargetStateExprAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -14511,12 +14517,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5520:1: ( rule__TargetStateExpr__Group__2__Impl rule__TargetStateExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5521:2: rule__TargetStateExpr__Group__2__Impl rule__TargetStateExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__2__Impl_in_rule__TargetStateExpr__Group__211169);
+            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__2__Impl_in_rule__TargetStateExpr__Group__211170);
             rule__TargetStateExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__3_in_rule__TargetStateExpr__Group__211172);
+            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__3_in_rule__TargetStateExpr__Group__211173);
             rule__TargetStateExpr__Group__3();
 
             state._fsp--;
@@ -14556,7 +14562,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5535:1: ( rule__TargetStateExpr__TransitionAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5535:2: rule__TargetStateExpr__TransitionAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__TransitionAssignment_2_in_rule__TargetStateExpr__Group__2__Impl11199);
+            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__TransitionAssignment_2_in_rule__TargetStateExpr__Group__2__Impl11200);
             rule__TargetStateExpr__TransitionAssignment_2();
 
             state._fsp--;
@@ -14596,7 +14602,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5549:1: ( rule__TargetStateExpr__Group__3__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5550:2: rule__TargetStateExpr__Group__3__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__3__Impl_in_rule__TargetStateExpr__Group__311229);
+            pushFollow(FollowSets000.FOLLOW_rule__TargetStateExpr__Group__3__Impl_in_rule__TargetStateExpr__Group__311230);
             rule__TargetStateExpr__Group__3__Impl();
 
             state._fsp--;
@@ -14633,7 +14639,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5562:1: ')'
             {
              before(grammarAccess.getTargetStateExprAccess().getRightParenthesisKeyword_3()); 
-            match(input,37,FollowSets000.FOLLOW_37_in_rule__TargetStateExpr__Group__3__Impl11257); 
+            match(input,37,FollowSets000.FOLLOW_37_in_rule__TargetStateExpr__Group__3__Impl11258); 
              after(grammarAccess.getTargetStateExprAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -14666,12 +14672,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5587:1: ( rule__SetExpr__Group_1__0__Impl rule__SetExpr__Group_1__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5588:2: rule__SetExpr__Group_1__0__Impl rule__SetExpr__Group_1__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_1__0__Impl_in_rule__SetExpr__Group_1__011296);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_1__0__Impl_in_rule__SetExpr__Group_1__011297);
             rule__SetExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_1__1_in_rule__SetExpr__Group_1__011299);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_1__1_in_rule__SetExpr__Group_1__011300);
             rule__SetExpr__Group_1__1();
 
             state._fsp--;
@@ -14741,7 +14747,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5618:1: ( rule__SetExpr__Group_1__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5619:2: rule__SetExpr__Group_1__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_1__1__Impl_in_rule__SetExpr__Group_1__111357);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_1__1__Impl_in_rule__SetExpr__Group_1__111358);
             rule__SetExpr__Group_1__1__Impl();
 
             state._fsp--;
@@ -14778,7 +14784,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5631:1: 'States'
             {
              before(grammarAccess.getSetExprAccess().getStatesKeyword_1_1()); 
-            match(input,52,FollowSets000.FOLLOW_52_in_rule__SetExpr__Group_1__1__Impl11385); 
+            match(input,52,FollowSets000.FOLLOW_52_in_rule__SetExpr__Group_1__1__Impl11386); 
              after(grammarAccess.getSetExprAccess().getStatesKeyword_1_1()); 
 
             }
@@ -14811,12 +14817,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5652:1: ( rule__SetExpr__Group_2__0__Impl rule__SetExpr__Group_2__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5653:2: rule__SetExpr__Group_2__0__Impl rule__SetExpr__Group_2__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_2__0__Impl_in_rule__SetExpr__Group_2__011420);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_2__0__Impl_in_rule__SetExpr__Group_2__011421);
             rule__SetExpr__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_2__1_in_rule__SetExpr__Group_2__011423);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_2__1_in_rule__SetExpr__Group_2__011424);
             rule__SetExpr__Group_2__1();
 
             state._fsp--;
@@ -14886,7 +14892,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5683:1: ( rule__SetExpr__Group_2__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5684:2: rule__SetExpr__Group_2__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_2__1__Impl_in_rule__SetExpr__Group_2__111481);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_2__1__Impl_in_rule__SetExpr__Group_2__111482);
             rule__SetExpr__Group_2__1__Impl();
 
             state._fsp--;
@@ -14923,7 +14929,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5696:1: 'Transitions'
             {
              before(grammarAccess.getSetExprAccess().getTransitionsKeyword_2_1()); 
-            match(input,53,FollowSets000.FOLLOW_53_in_rule__SetExpr__Group_2__1__Impl11509); 
+            match(input,53,FollowSets000.FOLLOW_53_in_rule__SetExpr__Group_2__1__Impl11510); 
              after(grammarAccess.getSetExprAccess().getTransitionsKeyword_2_1()); 
 
             }
@@ -14956,12 +14962,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5717:1: ( rule__SetExpr__Group_3__0__Impl rule__SetExpr__Group_3__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5718:2: rule__SetExpr__Group_3__0__Impl rule__SetExpr__Group_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_3__0__Impl_in_rule__SetExpr__Group_3__011544);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_3__0__Impl_in_rule__SetExpr__Group_3__011545);
             rule__SetExpr__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_3__1_in_rule__SetExpr__Group_3__011547);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_3__1_in_rule__SetExpr__Group_3__011548);
             rule__SetExpr__Group_3__1();
 
             state._fsp--;
@@ -15031,7 +15037,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5748:1: ( rule__SetExpr__Group_3__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5749:2: rule__SetExpr__Group_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_3__1__Impl_in_rule__SetExpr__Group_3__111605);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_3__1__Impl_in_rule__SetExpr__Group_3__111606);
             rule__SetExpr__Group_3__1__Impl();
 
             state._fsp--;
@@ -15068,7 +15074,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5761:1: 'MessageTypes'
             {
              before(grammarAccess.getSetExprAccess().getMessageTypesKeyword_3_1()); 
-            match(input,54,FollowSets000.FOLLOW_54_in_rule__SetExpr__Group_3__1__Impl11633); 
+            match(input,54,FollowSets000.FOLLOW_54_in_rule__SetExpr__Group_3__1__Impl11634); 
              after(grammarAccess.getSetExprAccess().getMessageTypesKeyword_3_1()); 
 
             }
@@ -15101,12 +15107,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5782:1: ( rule__SetExpr__Group_4__0__Impl rule__SetExpr__Group_4__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5783:2: rule__SetExpr__Group_4__0__Impl rule__SetExpr__Group_4__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_4__0__Impl_in_rule__SetExpr__Group_4__011668);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_4__0__Impl_in_rule__SetExpr__Group_4__011669);
             rule__SetExpr__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_4__1_in_rule__SetExpr__Group_4__011671);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_4__1_in_rule__SetExpr__Group_4__011672);
             rule__SetExpr__Group_4__1();
 
             state._fsp--;
@@ -15176,7 +15182,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5813:1: ( rule__SetExpr__Group_4__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5814:2: rule__SetExpr__Group_4__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_4__1__Impl_in_rule__SetExpr__Group_4__111729);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_4__1__Impl_in_rule__SetExpr__Group_4__111730);
             rule__SetExpr__Group_4__1__Impl();
 
             state._fsp--;
@@ -15213,7 +15219,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5826:1: 'Clocks'
             {
              before(grammarAccess.getSetExprAccess().getClocksKeyword_4_1()); 
-            match(input,55,FollowSets000.FOLLOW_55_in_rule__SetExpr__Group_4__1__Impl11757); 
+            match(input,55,FollowSets000.FOLLOW_55_in_rule__SetExpr__Group_4__1__Impl11758); 
              after(grammarAccess.getSetExprAccess().getClocksKeyword_4_1()); 
 
             }
@@ -15246,12 +15252,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5847:1: ( rule__SetExpr__Group_5__0__Impl rule__SetExpr__Group_5__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5848:2: rule__SetExpr__Group_5__0__Impl rule__SetExpr__Group_5__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_5__0__Impl_in_rule__SetExpr__Group_5__011792);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_5__0__Impl_in_rule__SetExpr__Group_5__011793);
             rule__SetExpr__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_5__1_in_rule__SetExpr__Group_5__011795);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_5__1_in_rule__SetExpr__Group_5__011796);
             rule__SetExpr__Group_5__1();
 
             state._fsp--;
@@ -15321,7 +15327,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5878:1: ( rule__SetExpr__Group_5__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5879:2: rule__SetExpr__Group_5__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_5__1__Impl_in_rule__SetExpr__Group_5__111853);
+            pushFollow(FollowSets000.FOLLOW_rule__SetExpr__Group_5__1__Impl_in_rule__SetExpr__Group_5__111854);
             rule__SetExpr__Group_5__1__Impl();
 
             state._fsp--;
@@ -15358,7 +15364,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5891:1: 'Buffers'
             {
              before(grammarAccess.getSetExprAccess().getBuffersKeyword_5_1()); 
-            match(input,56,FollowSets000.FOLLOW_56_in_rule__SetExpr__Group_5__1__Impl11881); 
+            match(input,56,FollowSets000.FOLLOW_56_in_rule__SetExpr__Group_5__1__Impl11882); 
              after(grammarAccess.getSetExprAccess().getBuffersKeyword_5_1()); 
 
             }
@@ -15391,12 +15397,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5912:1: ( rule__IntervalSetExpr__Group__0__Impl rule__IntervalSetExpr__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5913:2: rule__IntervalSetExpr__Group__0__Impl rule__IntervalSetExpr__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__0__Impl_in_rule__IntervalSetExpr__Group__011916);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__0__Impl_in_rule__IntervalSetExpr__Group__011917);
             rule__IntervalSetExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__1_in_rule__IntervalSetExpr__Group__011919);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__1_in_rule__IntervalSetExpr__Group__011920);
             rule__IntervalSetExpr__Group__1();
 
             state._fsp--;
@@ -15466,12 +15472,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5943:1: ( rule__IntervalSetExpr__Group__1__Impl rule__IntervalSetExpr__Group__2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5944:2: rule__IntervalSetExpr__Group__1__Impl rule__IntervalSetExpr__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__1__Impl_in_rule__IntervalSetExpr__Group__111977);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__1__Impl_in_rule__IntervalSetExpr__Group__111978);
             rule__IntervalSetExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__2_in_rule__IntervalSetExpr__Group__111980);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__2_in_rule__IntervalSetExpr__Group__111981);
             rule__IntervalSetExpr__Group__2();
 
             state._fsp--;
@@ -15508,7 +15514,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5957:1: '['
             {
              before(grammarAccess.getIntervalSetExprAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,28,FollowSets000.FOLLOW_28_in_rule__IntervalSetExpr__Group__1__Impl12008); 
+            match(input,28,FollowSets000.FOLLOW_28_in_rule__IntervalSetExpr__Group__1__Impl12009); 
              after(grammarAccess.getIntervalSetExprAccess().getLeftSquareBracketKeyword_1()); 
 
             }
@@ -15541,12 +15547,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5974:1: ( rule__IntervalSetExpr__Group__2__Impl rule__IntervalSetExpr__Group__3 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5975:2: rule__IntervalSetExpr__Group__2__Impl rule__IntervalSetExpr__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__2__Impl_in_rule__IntervalSetExpr__Group__212039);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__2__Impl_in_rule__IntervalSetExpr__Group__212040);
             rule__IntervalSetExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__3_in_rule__IntervalSetExpr__Group__212042);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__3_in_rule__IntervalSetExpr__Group__212043);
             rule__IntervalSetExpr__Group__3();
 
             state._fsp--;
@@ -15586,7 +15592,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5989:1: ( rule__IntervalSetExpr__LowerValAssignment_2 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:5989:2: rule__IntervalSetExpr__LowerValAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__LowerValAssignment_2_in_rule__IntervalSetExpr__Group__2__Impl12069);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__LowerValAssignment_2_in_rule__IntervalSetExpr__Group__2__Impl12070);
             rule__IntervalSetExpr__LowerValAssignment_2();
 
             state._fsp--;
@@ -15626,12 +15632,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6003:1: ( rule__IntervalSetExpr__Group__3__Impl rule__IntervalSetExpr__Group__4 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6004:2: rule__IntervalSetExpr__Group__3__Impl rule__IntervalSetExpr__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__3__Impl_in_rule__IntervalSetExpr__Group__312099);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__3__Impl_in_rule__IntervalSetExpr__Group__312100);
             rule__IntervalSetExpr__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__4_in_rule__IntervalSetExpr__Group__312102);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__4_in_rule__IntervalSetExpr__Group__312103);
             rule__IntervalSetExpr__Group__4();
 
             state._fsp--;
@@ -15668,7 +15674,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6017:1: ','
             {
              before(grammarAccess.getIntervalSetExprAccess().getCommaKeyword_3()); 
-            match(input,29,FollowSets000.FOLLOW_29_in_rule__IntervalSetExpr__Group__3__Impl12130); 
+            match(input,29,FollowSets000.FOLLOW_29_in_rule__IntervalSetExpr__Group__3__Impl12131); 
              after(grammarAccess.getIntervalSetExprAccess().getCommaKeyword_3()); 
 
             }
@@ -15701,12 +15707,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6034:1: ( rule__IntervalSetExpr__Group__4__Impl rule__IntervalSetExpr__Group__5 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6035:2: rule__IntervalSetExpr__Group__4__Impl rule__IntervalSetExpr__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__4__Impl_in_rule__IntervalSetExpr__Group__412161);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__4__Impl_in_rule__IntervalSetExpr__Group__412162);
             rule__IntervalSetExpr__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__5_in_rule__IntervalSetExpr__Group__412164);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__5_in_rule__IntervalSetExpr__Group__412165);
             rule__IntervalSetExpr__Group__5();
 
             state._fsp--;
@@ -15746,7 +15752,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6049:1: ( rule__IntervalSetExpr__UpperValAssignment_4 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6049:2: rule__IntervalSetExpr__UpperValAssignment_4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__UpperValAssignment_4_in_rule__IntervalSetExpr__Group__4__Impl12191);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__UpperValAssignment_4_in_rule__IntervalSetExpr__Group__4__Impl12192);
             rule__IntervalSetExpr__UpperValAssignment_4();
 
             state._fsp--;
@@ -15786,7 +15792,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6063:1: ( rule__IntervalSetExpr__Group__5__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6064:2: rule__IntervalSetExpr__Group__5__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__5__Impl_in_rule__IntervalSetExpr__Group__512221);
+            pushFollow(FollowSets000.FOLLOW_rule__IntervalSetExpr__Group__5__Impl_in_rule__IntervalSetExpr__Group__512222);
             rule__IntervalSetExpr__Group__5__Impl();
 
             state._fsp--;
@@ -15823,7 +15829,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6076:1: ']'
             {
              before(grammarAccess.getIntervalSetExprAccess().getRightSquareBracketKeyword_5()); 
-            match(input,30,FollowSets000.FOLLOW_30_in_rule__IntervalSetExpr__Group__5__Impl12249); 
+            match(input,30,FollowSets000.FOLLOW_30_in_rule__IntervalSetExpr__Group__5__Impl12250); 
              after(grammarAccess.getIntervalSetExprAccess().getRightSquareBracketKeyword_5()); 
 
             }
@@ -15856,12 +15862,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6105:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6106:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__012292);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__012293);
             rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__012295);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__012296);
             rule__QualifiedName__Group__1();
 
             state._fsp--;
@@ -15898,7 +15904,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6119:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl12322); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl12323); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
 
             }
@@ -15931,7 +15937,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6134:1: ( rule__QualifiedName__Group__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6135:2: rule__QualifiedName__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__112351);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__112352);
             rule__QualifiedName__Group__1__Impl();
 
             state._fsp--;
@@ -15983,7 +15989,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6148:2: rule__QualifiedName__Group_1__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl12378);
+            	    pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl12379);
             	    rule__QualifiedName__Group_1__0();
 
             	    state._fsp--;
@@ -16029,12 +16035,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6166:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6167:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__012413);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__012414);
             rule__QualifiedName__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__012416);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__012417);
             rule__QualifiedName__Group_1__1();
 
             state._fsp--;
@@ -16071,7 +16077,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6180:1: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            match(input,57,FollowSets000.FOLLOW_57_in_rule__QualifiedName__Group_1__0__Impl12444); 
+            match(input,57,FollowSets000.FOLLOW_57_in_rule__QualifiedName__Group_1__0__Impl12445); 
              after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -16104,7 +16110,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6197:1: ( rule__QualifiedName__Group_1__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6198:2: rule__QualifiedName__Group_1__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__112475);
+            pushFollow(FollowSets000.FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__112476);
             rule__QualifiedName__Group_1__1__Impl();
 
             state._fsp--;
@@ -16141,7 +16147,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6210:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl12502); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl12503); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
 
             }
@@ -16174,12 +16180,12 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6229:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6230:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__0__Impl_in_rule__EInt__Group__012535);
+            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__0__Impl_in_rule__EInt__Group__012536);
             rule__EInt__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__1_in_rule__EInt__Group__012538);
+            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__1_in_rule__EInt__Group__012539);
             rule__EInt__Group__1();
 
             state._fsp--;
@@ -16227,7 +16233,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
                 case 1 :
                     // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6245:2: '-'
                     {
-                    match(input,58,FollowSets000.FOLLOW_58_in_rule__EInt__Group__0__Impl12567); 
+                    match(input,58,FollowSets000.FOLLOW_58_in_rule__EInt__Group__0__Impl12568); 
 
                     }
                     break;
@@ -16266,7 +16272,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6260:1: ( rule__EInt__Group__1__Impl )
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6261:2: rule__EInt__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__1__Impl_in_rule__EInt__Group__112600);
+            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__1__Impl_in_rule__EInt__Group__112601);
             rule__EInt__Group__1__Impl();
 
             state._fsp--;
@@ -16303,7 +16309,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6273:1: RULE_INT
             {
              before(grammarAccess.getEIntAccess().getINTTerminalRuleCall_1()); 
-            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__EInt__Group__1__Impl12627); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__EInt__Group__1__Impl12628); 
              after(grammarAccess.getEIntAccess().getINTTerminalRuleCall_1()); 
 
             }
@@ -16340,7 +16346,7 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
             // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6295:1: ruleProperty
             {
              before(grammarAccess.getPropertyRepositoryAccess().getPropertiesPropertyParserRuleCall_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleProperty_in_rule__PropertyRepository__PropertiesAssignment12665);
+            pushFollow(FollowSets000.FOLLOW_ruleProperty_in_rule__PropertyRepository__PropertiesAssignment12666);
             ruleProperty();
 
             state._fsp--;
@@ -16367,21 +16373,62 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__PropertyRepository__PropertiesAssignment"
 
 
+    // $ANTLR start "rule__Property__ExpressionAssignment_0"
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6304:1: rule__Property__ExpressionAssignment_0 : ( ruleExpression ) ;
+    public final void rule__Property__ExpressionAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6308:1: ( ( ruleExpression ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6309:1: ( ruleExpression )
+            {
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6309:1: ( ruleExpression )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6310:1: ruleExpression
+            {
+             before(grammarAccess.getPropertyAccess().getExpressionExpressionParserRuleCall_0_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleExpression_in_rule__Property__ExpressionAssignment_012697);
+            ruleExpression();
+
+            state._fsp--;
+
+             after(grammarAccess.getPropertyAccess().getExpressionExpressionParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Property__ExpressionAssignment_0"
+
+
     // $ANTLR start "rule__Property__CommentAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6304:1: rule__Property__CommentAssignment_2 : ( RULE_SL_COMMENT ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6319:1: rule__Property__CommentAssignment_2 : ( RULE_SL_COMMENT ) ;
     public final void rule__Property__CommentAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6308:1: ( ( RULE_SL_COMMENT ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6309:1: ( RULE_SL_COMMENT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6323:1: ( ( RULE_SL_COMMENT ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6324:1: ( RULE_SL_COMMENT )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6309:1: ( RULE_SL_COMMENT )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6310:1: RULE_SL_COMMENT
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6324:1: ( RULE_SL_COMMENT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6325:1: RULE_SL_COMMENT
             {
              before(grammarAccess.getPropertyAccess().getCommentSL_COMMENTTerminalRuleCall_2_0()); 
-            match(input,RULE_SL_COMMENT,FollowSets000.FOLLOW_RULE_SL_COMMENT_in_rule__Property__CommentAssignment_212696); 
+            match(input,RULE_SL_COMMENT,FollowSets000.FOLLOW_RULE_SL_COMMENT_in_rule__Property__CommentAssignment_212728); 
              after(grammarAccess.getPropertyAccess().getCommentSL_COMMENTTerminalRuleCall_2_0()); 
 
             }
@@ -16405,20 +16452,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LeadsToExpr__RightOpdAssignment_1_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6319:1: rule__LeadsToExpr__RightOpdAssignment_1_2 : ( ruleTimeIntervalExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6334:1: rule__LeadsToExpr__RightOpdAssignment_1_2 : ( ruleTimeIntervalExpr ) ;
     public final void rule__LeadsToExpr__RightOpdAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6323:1: ( ( ruleTimeIntervalExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6324:1: ( ruleTimeIntervalExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6338:1: ( ( ruleTimeIntervalExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6339:1: ( ruleTimeIntervalExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6324:1: ( ruleTimeIntervalExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6325:1: ruleTimeIntervalExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6339:1: ( ruleTimeIntervalExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6340:1: ruleTimeIntervalExpr
             {
              before(grammarAccess.getLeadsToExprAccess().getRightOpdTimeIntervalExprParserRuleCall_1_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTimeIntervalExpr_in_rule__LeadsToExpr__RightOpdAssignment_1_212727);
+            pushFollow(FollowSets000.FOLLOW_ruleTimeIntervalExpr_in_rule__LeadsToExpr__RightOpdAssignment_1_212759);
             ruleTimeIntervalExpr();
 
             state._fsp--;
@@ -16446,20 +16493,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeIntervalExpr__LhsAssignment_0_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6334:1: rule__TimeIntervalExpr__LhsAssignment_0_2 : ( ruleImplyExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6349:1: rule__TimeIntervalExpr__LhsAssignment_0_2 : ( ruleImplyExpr ) ;
     public final void rule__TimeIntervalExpr__LhsAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6338:1: ( ( ruleImplyExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6339:1: ( ruleImplyExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6353:1: ( ( ruleImplyExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6354:1: ( ruleImplyExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6339:1: ( ruleImplyExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6340:1: ruleImplyExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6354:1: ( ruleImplyExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6355:1: ruleImplyExpr
             {
              before(grammarAccess.getTimeIntervalExprAccess().getLhsImplyExprParserRuleCall_0_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleImplyExpr_in_rule__TimeIntervalExpr__LhsAssignment_0_212758);
+            pushFollow(FollowSets000.FOLLOW_ruleImplyExpr_in_rule__TimeIntervalExpr__LhsAssignment_0_212790);
             ruleImplyExpr();
 
             state._fsp--;
@@ -16487,20 +16534,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeIntervalExpr__LowerAssignment_0_4"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6349:1: rule__TimeIntervalExpr__LowerAssignment_0_4 : ( RULE_INT ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6364:1: rule__TimeIntervalExpr__LowerAssignment_0_4 : ( RULE_INT ) ;
     public final void rule__TimeIntervalExpr__LowerAssignment_0_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6353:1: ( ( RULE_INT ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6354:1: ( RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6368:1: ( ( RULE_INT ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6369:1: ( RULE_INT )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6354:1: ( RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6355:1: RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6369:1: ( RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6370:1: RULE_INT
             {
              before(grammarAccess.getTimeIntervalExprAccess().getLowerINTTerminalRuleCall_0_4_0()); 
-            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__TimeIntervalExpr__LowerAssignment_0_412789); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__TimeIntervalExpr__LowerAssignment_0_412821); 
              after(grammarAccess.getTimeIntervalExprAccess().getLowerINTTerminalRuleCall_0_4_0()); 
 
             }
@@ -16524,20 +16571,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeIntervalExpr__UpperAssignment_0_6"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6364:1: rule__TimeIntervalExpr__UpperAssignment_0_6 : ( RULE_INT ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6379:1: rule__TimeIntervalExpr__UpperAssignment_0_6 : ( RULE_INT ) ;
     public final void rule__TimeIntervalExpr__UpperAssignment_0_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6368:1: ( ( RULE_INT ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6369:1: ( RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6383:1: ( ( RULE_INT ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6384:1: ( RULE_INT )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6369:1: ( RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6370:1: RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6384:1: ( RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6385:1: RULE_INT
             {
              before(grammarAccess.getTimeIntervalExprAccess().getUpperINTTerminalRuleCall_0_6_0()); 
-            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__TimeIntervalExpr__UpperAssignment_0_612820); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__TimeIntervalExpr__UpperAssignment_0_612852); 
              after(grammarAccess.getTimeIntervalExprAccess().getUpperINTTerminalRuleCall_0_6_0()); 
 
             }
@@ -16561,20 +16608,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeIntervalExpr__RhsAssignment_0_8"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6379:1: rule__TimeIntervalExpr__RhsAssignment_0_8 : ( ruleImplyExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6394:1: rule__TimeIntervalExpr__RhsAssignment_0_8 : ( ruleImplyExpr ) ;
     public final void rule__TimeIntervalExpr__RhsAssignment_0_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6383:1: ( ( ruleImplyExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6384:1: ( ruleImplyExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6398:1: ( ( ruleImplyExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6399:1: ( ruleImplyExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6384:1: ( ruleImplyExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6385:1: ruleImplyExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6399:1: ( ruleImplyExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6400:1: ruleImplyExpr
             {
              before(grammarAccess.getTimeIntervalExprAccess().getRhsImplyExprParserRuleCall_0_8_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleImplyExpr_in_rule__TimeIntervalExpr__RhsAssignment_0_812851);
+            pushFollow(FollowSets000.FOLLOW_ruleImplyExpr_in_rule__TimeIntervalExpr__RhsAssignment_0_812883);
             ruleImplyExpr();
 
             state._fsp--;
@@ -16602,20 +16649,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ImplyExpr__RightOpdAssignment_1_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6394:1: rule__ImplyExpr__RightOpdAssignment_1_2 : ( ruleAndExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6409:1: rule__ImplyExpr__RightOpdAssignment_1_2 : ( ruleAndExpr ) ;
     public final void rule__ImplyExpr__RightOpdAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6398:1: ( ( ruleAndExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6399:1: ( ruleAndExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6413:1: ( ( ruleAndExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6414:1: ( ruleAndExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6399:1: ( ruleAndExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6400:1: ruleAndExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6414:1: ( ruleAndExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6415:1: ruleAndExpr
             {
              before(grammarAccess.getImplyExprAccess().getRightOpdAndExprParserRuleCall_1_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAndExpr_in_rule__ImplyExpr__RightOpdAssignment_1_212882);
+            pushFollow(FollowSets000.FOLLOW_ruleAndExpr_in_rule__ImplyExpr__RightOpdAssignment_1_212914);
             ruleAndExpr();
 
             state._fsp--;
@@ -16643,20 +16690,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__RightOpdAssignment_1_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6409:1: rule__AndExpr__RightOpdAssignment_1_2 : ( ruleOrExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6424:1: rule__AndExpr__RightOpdAssignment_1_2 : ( ruleOrExpr ) ;
     public final void rule__AndExpr__RightOpdAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6413:1: ( ( ruleOrExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6414:1: ( ruleOrExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6428:1: ( ( ruleOrExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6429:1: ( ruleOrExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6414:1: ( ruleOrExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6415:1: ruleOrExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6429:1: ( ruleOrExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6430:1: ruleOrExpr
             {
              before(grammarAccess.getAndExprAccess().getRightOpdOrExprParserRuleCall_1_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleOrExpr_in_rule__AndExpr__RightOpdAssignment_1_212913);
+            pushFollow(FollowSets000.FOLLOW_ruleOrExpr_in_rule__AndExpr__RightOpdAssignment_1_212945);
             ruleOrExpr();
 
             state._fsp--;
@@ -16684,20 +16731,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__RightOpdAssignment_1_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6424:1: rule__OrExpr__RightOpdAssignment_1_2 : ( ruleNotExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6439:1: rule__OrExpr__RightOpdAssignment_1_2 : ( ruleNotExpr ) ;
     public final void rule__OrExpr__RightOpdAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6428:1: ( ( ruleNotExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6429:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6443:1: ( ( ruleNotExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6444:1: ( ruleNotExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6429:1: ( ruleNotExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6430:1: ruleNotExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6444:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6445:1: ruleNotExpr
             {
              before(grammarAccess.getOrExprAccess().getRightOpdNotExprParserRuleCall_1_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__OrExpr__RightOpdAssignment_1_212944);
+            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__OrExpr__RightOpdAssignment_1_212976);
             ruleNotExpr();
 
             state._fsp--;
@@ -16725,20 +16772,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NotExpr__OpdAssignment_0_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6439:1: rule__NotExpr__OpdAssignment_0_2 : ( ruleNotExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6454:1: rule__NotExpr__OpdAssignment_0_2 : ( ruleNotExpr ) ;
     public final void rule__NotExpr__OpdAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6443:1: ( ( ruleNotExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6444:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6458:1: ( ( ruleNotExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6459:1: ( ruleNotExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6444:1: ( ruleNotExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6445:1: ruleNotExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6459:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6460:1: ruleNotExpr
             {
              before(grammarAccess.getNotExprAccess().getOpdNotExprParserRuleCall_0_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__NotExpr__OpdAssignment_0_212975);
+            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__NotExpr__OpdAssignment_0_213007);
             ruleNotExpr();
 
             state._fsp--;
@@ -16766,20 +16813,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UniversalQuantExpr__VarAssignment_3"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6454:1: rule__UniversalQuantExpr__VarAssignment_3 : ( ruleVariableBinding ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6469:1: rule__UniversalQuantExpr__VarAssignment_3 : ( ruleVariableBinding ) ;
     public final void rule__UniversalQuantExpr__VarAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6458:1: ( ( ruleVariableBinding ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6459:1: ( ruleVariableBinding )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6473:1: ( ( ruleVariableBinding ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6474:1: ( ruleVariableBinding )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6459:1: ( ruleVariableBinding )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6460:1: ruleVariableBinding
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6474:1: ( ruleVariableBinding )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6475:1: ruleVariableBinding
             {
              before(grammarAccess.getUniversalQuantExprAccess().getVarVariableBindingParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleVariableBinding_in_rule__UniversalQuantExpr__VarAssignment_313006);
+            pushFollow(FollowSets000.FOLLOW_ruleVariableBinding_in_rule__UniversalQuantExpr__VarAssignment_313038);
             ruleVariableBinding();
 
             state._fsp--;
@@ -16807,20 +16854,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UniversalQuantExpr__FormulaAssignment_5"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6469:1: rule__UniversalQuantExpr__FormulaAssignment_5 : ( ruleNotExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6484:1: rule__UniversalQuantExpr__FormulaAssignment_5 : ( ruleNotExpr ) ;
     public final void rule__UniversalQuantExpr__FormulaAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6473:1: ( ( ruleNotExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6474:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6488:1: ( ( ruleNotExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6489:1: ( ruleNotExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6474:1: ( ruleNotExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6475:1: ruleNotExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6489:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6490:1: ruleNotExpr
             {
              before(grammarAccess.getUniversalQuantExprAccess().getFormulaNotExprParserRuleCall_5_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__UniversalQuantExpr__FormulaAssignment_513037);
+            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__UniversalQuantExpr__FormulaAssignment_513069);
             ruleNotExpr();
 
             state._fsp--;
@@ -16848,20 +16895,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExistentialQuantExpr__VarAssignment_3"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6484:1: rule__ExistentialQuantExpr__VarAssignment_3 : ( ruleVariableBinding ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6499:1: rule__ExistentialQuantExpr__VarAssignment_3 : ( ruleVariableBinding ) ;
     public final void rule__ExistentialQuantExpr__VarAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6488:1: ( ( ruleVariableBinding ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6489:1: ( ruleVariableBinding )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6503:1: ( ( ruleVariableBinding ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6504:1: ( ruleVariableBinding )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6489:1: ( ruleVariableBinding )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6490:1: ruleVariableBinding
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6504:1: ( ruleVariableBinding )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6505:1: ruleVariableBinding
             {
              before(grammarAccess.getExistentialQuantExprAccess().getVarVariableBindingParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleVariableBinding_in_rule__ExistentialQuantExpr__VarAssignment_313068);
+            pushFollow(FollowSets000.FOLLOW_ruleVariableBinding_in_rule__ExistentialQuantExpr__VarAssignment_313100);
             ruleVariableBinding();
 
             state._fsp--;
@@ -16889,20 +16936,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExistentialQuantExpr__FormulaAssignment_5"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6499:1: rule__ExistentialQuantExpr__FormulaAssignment_5 : ( ruleNotExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6514:1: rule__ExistentialQuantExpr__FormulaAssignment_5 : ( ruleNotExpr ) ;
     public final void rule__ExistentialQuantExpr__FormulaAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6503:1: ( ( ruleNotExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6504:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6518:1: ( ( ruleNotExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6519:1: ( ruleNotExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6504:1: ( ruleNotExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6505:1: ruleNotExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6519:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6520:1: ruleNotExpr
             {
              before(grammarAccess.getExistentialQuantExprAccess().getFormulaNotExprParserRuleCall_5_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__ExistentialQuantExpr__FormulaAssignment_513099);
+            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__ExistentialQuantExpr__FormulaAssignment_513131);
             ruleNotExpr();
 
             state._fsp--;
@@ -16930,20 +16977,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableBinding__NameAssignment_0"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6514:1: rule__VariableBinding__NameAssignment_0 : ( RULE_ID ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6529:1: rule__VariableBinding__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__VariableBinding__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6518:1: ( ( RULE_ID ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6519:1: ( RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6533:1: ( ( RULE_ID ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6534:1: ( RULE_ID )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6519:1: ( RULE_ID )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6520:1: RULE_ID
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6534:1: ( RULE_ID )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6535:1: RULE_ID
             {
              before(grammarAccess.getVariableBindingAccess().getNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__VariableBinding__NameAssignment_013130); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__VariableBinding__NameAssignment_013162); 
              after(grammarAccess.getVariableBindingAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
@@ -16967,20 +17014,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableBinding__SetAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6529:1: rule__VariableBinding__SetAssignment_2 : ( ruleSetExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6544:1: rule__VariableBinding__SetAssignment_2 : ( ruleSetExpr ) ;
     public final void rule__VariableBinding__SetAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6533:1: ( ( ruleSetExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6534:1: ( ruleSetExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6548:1: ( ( ruleSetExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6549:1: ( ruleSetExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6534:1: ( ruleSetExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6535:1: ruleSetExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6549:1: ( ruleSetExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6550:1: ruleSetExpr
             {
              before(grammarAccess.getVariableBindingAccess().getSetSetExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleSetExpr_in_rule__VariableBinding__SetAssignment_213161);
+            pushFollow(FollowSets000.FOLLOW_ruleSetExpr_in_rule__VariableBinding__SetAssignment_213193);
             ruleSetExpr();
 
             state._fsp--;
@@ -17008,20 +17055,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EFExpr__ExprAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6544:1: rule__EFExpr__ExprAssignment_2 : ( ruleNotExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6559:1: rule__EFExpr__ExprAssignment_2 : ( ruleNotExpr ) ;
     public final void rule__EFExpr__ExprAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6548:1: ( ( ruleNotExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6549:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6563:1: ( ( ruleNotExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6564:1: ( ruleNotExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6549:1: ( ruleNotExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6550:1: ruleNotExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6564:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6565:1: ruleNotExpr
             {
              before(grammarAccess.getEFExprAccess().getExprNotExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__EFExpr__ExprAssignment_213192);
+            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__EFExpr__ExprAssignment_213224);
             ruleNotExpr();
 
             state._fsp--;
@@ -17049,20 +17096,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AFExpr__ExprAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6559:1: rule__AFExpr__ExprAssignment_2 : ( ruleNotExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6574:1: rule__AFExpr__ExprAssignment_2 : ( ruleNotExpr ) ;
     public final void rule__AFExpr__ExprAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6563:1: ( ( ruleNotExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6564:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6578:1: ( ( ruleNotExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6579:1: ( ruleNotExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6564:1: ( ruleNotExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6565:1: ruleNotExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6579:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6580:1: ruleNotExpr
             {
              before(grammarAccess.getAFExprAccess().getExprNotExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__AFExpr__ExprAssignment_213223);
+            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__AFExpr__ExprAssignment_213255);
             ruleNotExpr();
 
             state._fsp--;
@@ -17090,20 +17137,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EGExpr__ExprAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6574:1: rule__EGExpr__ExprAssignment_2 : ( ruleNotExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6589:1: rule__EGExpr__ExprAssignment_2 : ( ruleNotExpr ) ;
     public final void rule__EGExpr__ExprAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6578:1: ( ( ruleNotExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6579:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6593:1: ( ( ruleNotExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6594:1: ( ruleNotExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6579:1: ( ruleNotExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6580:1: ruleNotExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6594:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6595:1: ruleNotExpr
             {
              before(grammarAccess.getEGExprAccess().getExprNotExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__EGExpr__ExprAssignment_213254);
+            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__EGExpr__ExprAssignment_213286);
             ruleNotExpr();
 
             state._fsp--;
@@ -17131,20 +17178,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AGExpr__ExprAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6589:1: rule__AGExpr__ExprAssignment_2 : ( ruleNotExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6604:1: rule__AGExpr__ExprAssignment_2 : ( ruleNotExpr ) ;
     public final void rule__AGExpr__ExprAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6593:1: ( ( ruleNotExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6594:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6608:1: ( ( ruleNotExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6609:1: ( ruleNotExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6594:1: ( ruleNotExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6595:1: ruleNotExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6609:1: ( ruleNotExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6610:1: ruleNotExpr
             {
              before(grammarAccess.getAGExprAccess().getExprNotExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__AGExpr__ExprAssignment_213285);
+            pushFollow(FollowSets000.FOLLOW_ruleNotExpr_in_rule__AGExpr__ExprAssignment_213317);
             ruleNotExpr();
 
             state._fsp--;
@@ -17172,20 +17219,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StateActiveExpr__StateAssignment_3"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6604:1: rule__StateActiveExpr__StateAssignment_3 : ( ruleStateMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6619:1: rule__StateActiveExpr__StateAssignment_3 : ( ruleStateMapExpr ) ;
     public final void rule__StateActiveExpr__StateAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6608:1: ( ( ruleStateMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6609:1: ( ruleStateMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6623:1: ( ( ruleStateMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6624:1: ( ruleStateMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6609:1: ( ruleStateMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6610:1: ruleStateMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6624:1: ( ruleStateMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6625:1: ruleStateMapExpr
             {
              before(grammarAccess.getStateActiveExprAccess().getStateStateMapExprParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleStateMapExpr_in_rule__StateActiveExpr__StateAssignment_313316);
+            pushFollow(FollowSets000.FOLLOW_ruleStateMapExpr_in_rule__StateActiveExpr__StateAssignment_313348);
             ruleStateMapExpr();
 
             state._fsp--;
@@ -17213,20 +17260,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SubstateOfExpr__StateAssignment_3"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6619:1: rule__SubstateOfExpr__StateAssignment_3 : ( ruleStateMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6634:1: rule__SubstateOfExpr__StateAssignment_3 : ( ruleStateMapExpr ) ;
     public final void rule__SubstateOfExpr__StateAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6623:1: ( ( ruleStateMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6624:1: ( ruleStateMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6638:1: ( ( ruleStateMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6639:1: ( ruleStateMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6624:1: ( ruleStateMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6625:1: ruleStateMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6639:1: ( ruleStateMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6640:1: ruleStateMapExpr
             {
              before(grammarAccess.getSubstateOfExprAccess().getStateStateMapExprParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleStateMapExpr_in_rule__SubstateOfExpr__StateAssignment_313347);
+            pushFollow(FollowSets000.FOLLOW_ruleStateMapExpr_in_rule__SubstateOfExpr__StateAssignment_313379);
             ruleStateMapExpr();
 
             state._fsp--;
@@ -17254,20 +17301,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SubstateOfExpr__SuperstateAssignment_5"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6634:1: rule__SubstateOfExpr__SuperstateAssignment_5 : ( ruleStateMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6649:1: rule__SubstateOfExpr__SuperstateAssignment_5 : ( ruleStateMapExpr ) ;
     public final void rule__SubstateOfExpr__SuperstateAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6638:1: ( ( ruleStateMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6639:1: ( ruleStateMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6653:1: ( ( ruleStateMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6654:1: ( ruleStateMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6639:1: ( ruleStateMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6640:1: ruleStateMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6654:1: ( ruleStateMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6655:1: ruleStateMapExpr
             {
              before(grammarAccess.getSubstateOfExprAccess().getSuperstateStateMapExprParserRuleCall_5_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleStateMapExpr_in_rule__SubstateOfExpr__SuperstateAssignment_513378);
+            pushFollow(FollowSets000.FOLLOW_ruleStateMapExpr_in_rule__SubstateOfExpr__SuperstateAssignment_513410);
             ruleStateMapExpr();
 
             state._fsp--;
@@ -17295,20 +17342,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageInTransitExpr__MessageAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6649:1: rule__MessageInTransitExpr__MessageAssignment_2 : ( ruleMessageMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6664:1: rule__MessageInTransitExpr__MessageAssignment_2 : ( ruleMessageMapExpr ) ;
     public final void rule__MessageInTransitExpr__MessageAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6653:1: ( ( ruleMessageMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6654:1: ( ruleMessageMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6668:1: ( ( ruleMessageMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6669:1: ( ruleMessageMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6654:1: ( ruleMessageMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6655:1: ruleMessageMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6669:1: ( ruleMessageMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6670:1: ruleMessageMapExpr
             {
              before(grammarAccess.getMessageInTransitExprAccess().getMessageMessageMapExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleMessageMapExpr_in_rule__MessageInTransitExpr__MessageAssignment_213409);
+            pushFollow(FollowSets000.FOLLOW_ruleMessageMapExpr_in_rule__MessageInTransitExpr__MessageAssignment_213441);
             ruleMessageMapExpr();
 
             state._fsp--;
@@ -17336,20 +17383,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageInBufferExpr__MessageAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6664:1: rule__MessageInBufferExpr__MessageAssignment_2 : ( ruleMessageMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6679:1: rule__MessageInBufferExpr__MessageAssignment_2 : ( ruleMessageMapExpr ) ;
     public final void rule__MessageInBufferExpr__MessageAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6668:1: ( ( ruleMessageMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6669:1: ( ruleMessageMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6683:1: ( ( ruleMessageMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6684:1: ( ruleMessageMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6669:1: ( ruleMessageMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6670:1: ruleMessageMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6684:1: ( ruleMessageMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6685:1: ruleMessageMapExpr
             {
              before(grammarAccess.getMessageInBufferExprAccess().getMessageMessageMapExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleMessageMapExpr_in_rule__MessageInBufferExpr__MessageAssignment_213440);
+            pushFollow(FollowSets000.FOLLOW_ruleMessageMapExpr_in_rule__MessageInBufferExpr__MessageAssignment_213472);
             ruleMessageMapExpr();
 
             state._fsp--;
@@ -17377,20 +17424,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageInBufferExpr__BufferAssignment_4"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6679:1: rule__MessageInBufferExpr__BufferAssignment_4 : ( ruleBufferMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6694:1: rule__MessageInBufferExpr__BufferAssignment_4 : ( ruleBufferMapExpr ) ;
     public final void rule__MessageInBufferExpr__BufferAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6683:1: ( ( ruleBufferMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6684:1: ( ruleBufferMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6698:1: ( ( ruleBufferMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6699:1: ( ruleBufferMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6684:1: ( ruleBufferMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6685:1: ruleBufferMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6699:1: ( ruleBufferMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6700:1: ruleBufferMapExpr
             {
              before(grammarAccess.getMessageInBufferExprAccess().getBufferBufferMapExprParserRuleCall_4_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleBufferMapExpr_in_rule__MessageInBufferExpr__BufferAssignment_413471);
+            pushFollow(FollowSets000.FOLLOW_ruleBufferMapExpr_in_rule__MessageInBufferExpr__BufferAssignment_413503);
             ruleBufferMapExpr();
 
             state._fsp--;
@@ -17418,20 +17465,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionFiringExpr__TransitionAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6694:1: rule__TransitionFiringExpr__TransitionAssignment_2 : ( ruleTransitionMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6709:1: rule__TransitionFiringExpr__TransitionAssignment_2 : ( ruleTransitionMapExpr ) ;
     public final void rule__TransitionFiringExpr__TransitionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6698:1: ( ( ruleTransitionMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6699:1: ( ruleTransitionMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6713:1: ( ( ruleTransitionMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6714:1: ( ruleTransitionMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6699:1: ( ruleTransitionMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6700:1: ruleTransitionMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6714:1: ( ruleTransitionMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6715:1: ruleTransitionMapExpr
             {
              before(grammarAccess.getTransitionFiringExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTransitionMapExpr_in_rule__TransitionFiringExpr__TransitionAssignment_213502);
+            pushFollow(FollowSets000.FOLLOW_ruleTransitionMapExpr_in_rule__TransitionFiringExpr__TransitionAssignment_213534);
             ruleTransitionMapExpr();
 
             state._fsp--;
@@ -17459,20 +17506,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisonExpr__LhsAssignment_1"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6709:1: rule__ComparisonExpr__LhsAssignment_1 : ( ruleMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6724:1: rule__ComparisonExpr__LhsAssignment_1 : ( ruleMapExpr ) ;
     public final void rule__ComparisonExpr__LhsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6713:1: ( ( ruleMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6714:1: ( ruleMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6728:1: ( ( ruleMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6729:1: ( ruleMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6714:1: ( ruleMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6715:1: ruleMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6729:1: ( ruleMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6730:1: ruleMapExpr
             {
              before(grammarAccess.getComparisonExprAccess().getLhsMapExprParserRuleCall_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleMapExpr_in_rule__ComparisonExpr__LhsAssignment_113533);
+            pushFollow(FollowSets000.FOLLOW_ruleMapExpr_in_rule__ComparisonExpr__LhsAssignment_113565);
             ruleMapExpr();
 
             state._fsp--;
@@ -17500,20 +17547,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisonExpr__OpAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6724:1: rule__ComparisonExpr__OpAssignment_2 : ( ruleComparisonOp ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6739:1: rule__ComparisonExpr__OpAssignment_2 : ( ruleComparisonOp ) ;
     public final void rule__ComparisonExpr__OpAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6728:1: ( ( ruleComparisonOp ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6729:1: ( ruleComparisonOp )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6743:1: ( ( ruleComparisonOp ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6744:1: ( ruleComparisonOp )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6729:1: ( ruleComparisonOp )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6730:1: ruleComparisonOp
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6744:1: ( ruleComparisonOp )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6745:1: ruleComparisonOp
             {
              before(grammarAccess.getComparisonExprAccess().getOpComparisonOpEnumRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleComparisonOp_in_rule__ComparisonExpr__OpAssignment_213564);
+            pushFollow(FollowSets000.FOLLOW_ruleComparisonOp_in_rule__ComparisonExpr__OpAssignment_213596);
             ruleComparisonOp();
 
             state._fsp--;
@@ -17541,20 +17588,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisonExpr__RhsAssignment_3"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6739:1: rule__ComparisonExpr__RhsAssignment_3 : ( ruleMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6754:1: rule__ComparisonExpr__RhsAssignment_3 : ( ruleMapExpr ) ;
     public final void rule__ComparisonExpr__RhsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6743:1: ( ( ruleMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6744:1: ( ruleMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6758:1: ( ( ruleMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6759:1: ( ruleMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6744:1: ( ruleMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6745:1: ruleMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6759:1: ( ruleMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6760:1: ruleMapExpr
             {
              before(grammarAccess.getComparisonExprAccess().getRhsMapExprParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleMapExpr_in_rule__ComparisonExpr__RhsAssignment_313595);
+            pushFollow(FollowSets000.FOLLOW_ruleMapExpr_in_rule__ComparisonExpr__RhsAssignment_313627);
             ruleMapExpr();
 
             state._fsp--;
@@ -17582,20 +17629,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BufferMessageCountExpr__BufferAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6754:1: rule__BufferMessageCountExpr__BufferAssignment_2 : ( ruleBufferMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6769:1: rule__BufferMessageCountExpr__BufferAssignment_2 : ( ruleBufferMapExpr ) ;
     public final void rule__BufferMessageCountExpr__BufferAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6758:1: ( ( ruleBufferMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6759:1: ( ruleBufferMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6773:1: ( ( ruleBufferMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6774:1: ( ruleBufferMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6759:1: ( ruleBufferMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6760:1: ruleBufferMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6774:1: ( ruleBufferMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6775:1: ruleBufferMapExpr
             {
              before(grammarAccess.getBufferMessageCountExprAccess().getBufferBufferMapExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleBufferMapExpr_in_rule__BufferMessageCountExpr__BufferAssignment_213626);
+            pushFollow(FollowSets000.FOLLOW_ruleBufferMapExpr_in_rule__BufferMessageCountExpr__BufferAssignment_213658);
             ruleBufferMapExpr();
 
             state._fsp--;
@@ -17623,20 +17670,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SourceStateExpr__TransitionAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6769:1: rule__SourceStateExpr__TransitionAssignment_2 : ( ruleTransitionMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6784:1: rule__SourceStateExpr__TransitionAssignment_2 : ( ruleTransitionMapExpr ) ;
     public final void rule__SourceStateExpr__TransitionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6773:1: ( ( ruleTransitionMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6774:1: ( ruleTransitionMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6788:1: ( ( ruleTransitionMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6789:1: ( ruleTransitionMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6774:1: ( ruleTransitionMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6775:1: ruleTransitionMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6789:1: ( ruleTransitionMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6790:1: ruleTransitionMapExpr
             {
              before(grammarAccess.getSourceStateExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTransitionMapExpr_in_rule__SourceStateExpr__TransitionAssignment_213657);
+            pushFollow(FollowSets000.FOLLOW_ruleTransitionMapExpr_in_rule__SourceStateExpr__TransitionAssignment_213689);
             ruleTransitionMapExpr();
 
             state._fsp--;
@@ -17664,20 +17711,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TargetStateExpr__TransitionAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6784:1: rule__TargetStateExpr__TransitionAssignment_2 : ( ruleTransitionMapExpr ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6799:1: rule__TargetStateExpr__TransitionAssignment_2 : ( ruleTransitionMapExpr ) ;
     public final void rule__TargetStateExpr__TransitionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6788:1: ( ( ruleTransitionMapExpr ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6789:1: ( ruleTransitionMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6803:1: ( ( ruleTransitionMapExpr ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6804:1: ( ruleTransitionMapExpr )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6789:1: ( ruleTransitionMapExpr )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6790:1: ruleTransitionMapExpr
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6804:1: ( ruleTransitionMapExpr )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6805:1: ruleTransitionMapExpr
             {
              before(grammarAccess.getTargetStateExprAccess().getTransitionTransitionMapExprParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleTransitionMapExpr_in_rule__TargetStateExpr__TransitionAssignment_213688);
+            pushFollow(FollowSets000.FOLLOW_ruleTransitionMapExpr_in_rule__TargetStateExpr__TransitionAssignment_213720);
             ruleTransitionMapExpr();
 
             state._fsp--;
@@ -17705,24 +17752,24 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MumlElemExpr__ElemAssignment"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6799:1: rule__MumlElemExpr__ElemAssignment : ( ( ruleQualifiedName ) ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6814:1: rule__MumlElemExpr__ElemAssignment : ( ( ruleQualifiedName ) ) ;
     public final void rule__MumlElemExpr__ElemAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6803:1: ( ( ( ruleQualifiedName ) ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6804:1: ( ( ruleQualifiedName ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6818:1: ( ( ( ruleQualifiedName ) ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6819:1: ( ( ruleQualifiedName ) )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6804:1: ( ( ruleQualifiedName ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6805:1: ( ruleQualifiedName )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6819:1: ( ( ruleQualifiedName ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6820:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getMumlElemExprAccess().getElemEObjectCrossReference_0()); 
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6806:1: ( ruleQualifiedName )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6807:1: ruleQualifiedName
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6821:1: ( ruleQualifiedName )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6822:1: ruleQualifiedName
             {
              before(grammarAccess.getMumlElemExprAccess().getElemEObjectQualifiedNameParserRuleCall_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_rule__MumlElemExpr__ElemAssignment13723);
+            pushFollow(FollowSets000.FOLLOW_ruleQualifiedName_in_rule__MumlElemExpr__ElemAssignment13755);
             ruleQualifiedName();
 
             state._fsp--;
@@ -17754,20 +17801,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConstExpr__ValAssignment"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6818:1: rule__ConstExpr__ValAssignment : ( ruleEInt ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6833:1: rule__ConstExpr__ValAssignment : ( ruleEInt ) ;
     public final void rule__ConstExpr__ValAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6822:1: ( ( ruleEInt ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6823:1: ( ruleEInt )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6837:1: ( ( ruleEInt ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6838:1: ( ruleEInt )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6823:1: ( ruleEInt )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6824:1: ruleEInt
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6838:1: ( ruleEInt )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6839:1: ruleEInt
             {
              before(grammarAccess.getConstExprAccess().getValEIntParserRuleCall_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_rule__ConstExpr__ValAssignment13758);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_rule__ConstExpr__ValAssignment13790);
             ruleEInt();
 
             state._fsp--;
@@ -17795,20 +17842,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntervalSetExpr__LowerValAssignment_2"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6833:1: rule__IntervalSetExpr__LowerValAssignment_2 : ( RULE_INT ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6848:1: rule__IntervalSetExpr__LowerValAssignment_2 : ( RULE_INT ) ;
     public final void rule__IntervalSetExpr__LowerValAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6837:1: ( ( RULE_INT ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6838:1: ( RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6852:1: ( ( RULE_INT ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6853:1: ( RULE_INT )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6838:1: ( RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6839:1: RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6853:1: ( RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6854:1: RULE_INT
             {
              before(grammarAccess.getIntervalSetExprAccess().getLowerValINTTerminalRuleCall_2_0()); 
-            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__IntervalSetExpr__LowerValAssignment_213789); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__IntervalSetExpr__LowerValAssignment_213821); 
              after(grammarAccess.getIntervalSetExprAccess().getLowerValINTTerminalRuleCall_2_0()); 
 
             }
@@ -17832,20 +17879,20 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__IntervalSetExpr__UpperValAssignment_4"
-    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6848:1: rule__IntervalSetExpr__UpperValAssignment_4 : ( RULE_INT ) ;
+    // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6863:1: rule__IntervalSetExpr__UpperValAssignment_4 : ( RULE_INT ) ;
     public final void rule__IntervalSetExpr__UpperValAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6852:1: ( ( RULE_INT ) )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6853:1: ( RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6867:1: ( ( RULE_INT ) )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6868:1: ( RULE_INT )
             {
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6853:1: ( RULE_INT )
-            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6854:1: RULE_INT
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6868:1: ( RULE_INT )
+            // ../de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.xtext.ui/src-gen/de/uni_paderborn/fujaba/muml/verification/uppaal/ui/contentassist/antlr/internal/InternalMtctl.g:6869:1: RULE_INT
             {
              before(grammarAccess.getIntervalSetExprAccess().getUpperValINTTerminalRuleCall_4_0()); 
-            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__IntervalSetExpr__UpperValAssignment_413820); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__IntervalSetExpr__UpperValAssignment_413852); 
              after(grammarAccess.getIntervalSetExprAccess().getUpperValINTTerminalRuleCall_4_0()); 
 
             }
@@ -18072,387 +18119,388 @@ public class InternalMtctlParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_24_in_rule__ComparisonOp__Alternatives4113 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Property__Group__0__Impl_in_rule__Property__Group__04146 = new BitSet(new long[]{0x0000000002000000L});
         public static final BitSet FOLLOW_rule__Property__Group__1_in_rule__Property__Group__04149 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExpression_in_rule__Property__Group__0__Impl4176 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Property__Group__1__Impl_in_rule__Property__Group__14205 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_rule__Property__Group__2_in_rule__Property__Group__14208 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_rule__Property__Group__1__Impl4236 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Property__Group__2__Impl_in_rule__Property__Group__24267 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Property__CommentAssignment_2_in_rule__Property__Group__2__Impl4294 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__LeadsToExpr__Group__0__Impl_in_rule__LeadsToExpr__Group__04331 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_rule__LeadsToExpr__Group__1_in_rule__LeadsToExpr__Group__04334 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTimeIntervalExpr_in_rule__LeadsToExpr__Group__0__Impl4361 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__LeadsToExpr__Group__1__Impl_in_rule__LeadsToExpr__Group__14390 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__0_in_rule__LeadsToExpr__Group__1__Impl4417 = new BitSet(new long[]{0x0000000004000002L});
-        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__0__Impl_in_rule__LeadsToExpr__Group_1__04452 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__1_in_rule__LeadsToExpr__Group_1__04455 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__1__Impl_in_rule__LeadsToExpr__Group_1__14513 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__2_in_rule__LeadsToExpr__Group_1__14516 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_rule__LeadsToExpr__Group_1__1__Impl4544 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__2__Impl_in_rule__LeadsToExpr__Group_1__24575 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__LeadsToExpr__RightOpdAssignment_1_2_in_rule__LeadsToExpr__Group_1__2__Impl4602 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__0__Impl_in_rule__TimeIntervalExpr__Group_0__04638 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__1_in_rule__TimeIntervalExpr__Group_0__04641 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_27_in_rule__TimeIntervalExpr__Group_0__0__Impl4669 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__1__Impl_in_rule__TimeIntervalExpr__Group_0__14700 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__2_in_rule__TimeIntervalExpr__Group_0__14703 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__2__Impl_in_rule__TimeIntervalExpr__Group_0__24761 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__3_in_rule__TimeIntervalExpr__Group_0__24764 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__LhsAssignment_0_2_in_rule__TimeIntervalExpr__Group_0__2__Impl4791 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__3__Impl_in_rule__TimeIntervalExpr__Group_0__34821 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__4_in_rule__TimeIntervalExpr__Group_0__34824 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_rule__TimeIntervalExpr__Group_0__3__Impl4852 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__4__Impl_in_rule__TimeIntervalExpr__Group_0__44883 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__5_in_rule__TimeIntervalExpr__Group_0__44886 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__LowerAssignment_0_4_in_rule__TimeIntervalExpr__Group_0__4__Impl4913 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__5__Impl_in_rule__TimeIntervalExpr__Group_0__54943 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__6_in_rule__TimeIntervalExpr__Group_0__54946 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_29_in_rule__TimeIntervalExpr__Group_0__5__Impl4974 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__6__Impl_in_rule__TimeIntervalExpr__Group_0__65005 = new BitSet(new long[]{0x0000000040000000L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__7_in_rule__TimeIntervalExpr__Group_0__65008 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__UpperAssignment_0_6_in_rule__TimeIntervalExpr__Group_0__6__Impl5035 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__7__Impl_in_rule__TimeIntervalExpr__Group_0__75065 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__8_in_rule__TimeIntervalExpr__Group_0__75068 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_30_in_rule__TimeIntervalExpr__Group_0__7__Impl5096 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__8__Impl_in_rule__TimeIntervalExpr__Group_0__85127 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TimeIntervalExpr__RhsAssignment_0_8_in_rule__TimeIntervalExpr__Group_0__8__Impl5154 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ImplyExpr__Group__0__Impl_in_rule__ImplyExpr__Group__05202 = new BitSet(new long[]{0x0000000080000000L});
-        public static final BitSet FOLLOW_rule__ImplyExpr__Group__1_in_rule__ImplyExpr__Group__05205 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAndExpr_in_rule__ImplyExpr__Group__0__Impl5232 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ImplyExpr__Group__1__Impl_in_rule__ImplyExpr__Group__15261 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__0_in_rule__ImplyExpr__Group__1__Impl5288 = new BitSet(new long[]{0x0000000080000002L});
-        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__0__Impl_in_rule__ImplyExpr__Group_1__05323 = new BitSet(new long[]{0x0000000080000000L});
-        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__1_in_rule__ImplyExpr__Group_1__05326 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__1__Impl_in_rule__ImplyExpr__Group_1__15384 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__2_in_rule__ImplyExpr__Group_1__15387 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_rule__ImplyExpr__Group_1__1__Impl5415 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__2__Impl_in_rule__ImplyExpr__Group_1__25446 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ImplyExpr__RightOpdAssignment_1_2_in_rule__ImplyExpr__Group_1__2__Impl5473 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AndExpr__Group__0__Impl_in_rule__AndExpr__Group__05509 = new BitSet(new long[]{0x0000000100000000L});
-        public static final BitSet FOLLOW_rule__AndExpr__Group__1_in_rule__AndExpr__Group__05512 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOrExpr_in_rule__AndExpr__Group__0__Impl5539 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AndExpr__Group__1__Impl_in_rule__AndExpr__Group__15568 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AndExpr__Group_1__0_in_rule__AndExpr__Group__1__Impl5595 = new BitSet(new long[]{0x0000000100000002L});
-        public static final BitSet FOLLOW_rule__AndExpr__Group_1__0__Impl_in_rule__AndExpr__Group_1__05630 = new BitSet(new long[]{0x0000000100000000L});
-        public static final BitSet FOLLOW_rule__AndExpr__Group_1__1_in_rule__AndExpr__Group_1__05633 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AndExpr__Group_1__1__Impl_in_rule__AndExpr__Group_1__15691 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__AndExpr__Group_1__2_in_rule__AndExpr__Group_1__15694 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_rule__AndExpr__Group_1__1__Impl5722 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AndExpr__Group_1__2__Impl_in_rule__AndExpr__Group_1__25753 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AndExpr__RightOpdAssignment_1_2_in_rule__AndExpr__Group_1__2__Impl5780 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__OrExpr__Group__0__Impl_in_rule__OrExpr__Group__05816 = new BitSet(new long[]{0x0000000200000000L});
-        public static final BitSet FOLLOW_rule__OrExpr__Group__1_in_rule__OrExpr__Group__05819 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNotExpr_in_rule__OrExpr__Group__0__Impl5846 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__OrExpr__Group__1__Impl_in_rule__OrExpr__Group__15875 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__OrExpr__Group_1__0_in_rule__OrExpr__Group__1__Impl5902 = new BitSet(new long[]{0x0000000200000002L});
-        public static final BitSet FOLLOW_rule__OrExpr__Group_1__0__Impl_in_rule__OrExpr__Group_1__05937 = new BitSet(new long[]{0x0000000200000000L});
-        public static final BitSet FOLLOW_rule__OrExpr__Group_1__1_in_rule__OrExpr__Group_1__05940 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__OrExpr__Group_1__1__Impl_in_rule__OrExpr__Group_1__15998 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__OrExpr__Group_1__2_in_rule__OrExpr__Group_1__16001 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_33_in_rule__OrExpr__Group_1__1__Impl6029 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__OrExpr__Group_1__2__Impl_in_rule__OrExpr__Group_1__26060 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__OrExpr__RightOpdAssignment_1_2_in_rule__OrExpr__Group_1__2__Impl6087 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__NotExpr__Group_0__0__Impl_in_rule__NotExpr__Group_0__06123 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__NotExpr__Group_0__1_in_rule__NotExpr__Group_0__06126 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_34_in_rule__NotExpr__Group_0__0__Impl6154 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__NotExpr__Group_0__1__Impl_in_rule__NotExpr__Group_0__16185 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__NotExpr__Group_0__2_in_rule__NotExpr__Group_0__16188 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__NotExpr__Group_0__2__Impl_in_rule__NotExpr__Group_0__26246 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__NotExpr__OpdAssignment_0_2_in_rule__NotExpr__Group_0__2__Impl6273 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__0__Impl_in_rule__UniversalQuantExpr__Group__06309 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__1_in_rule__UniversalQuantExpr__Group__06312 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_35_in_rule__UniversalQuantExpr__Group__0__Impl6340 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__1__Impl_in_rule__UniversalQuantExpr__Group__16371 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__2_in_rule__UniversalQuantExpr__Group__16374 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__UniversalQuantExpr__Group__1__Impl6402 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__2__Impl_in_rule__UniversalQuantExpr__Group__26433 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__3_in_rule__UniversalQuantExpr__Group__26436 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__3__Impl_in_rule__UniversalQuantExpr__Group__36494 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__4_in_rule__UniversalQuantExpr__Group__36497 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__VarAssignment_3_in_rule__UniversalQuantExpr__Group__3__Impl6524 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__4__Impl_in_rule__UniversalQuantExpr__Group__46554 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__5_in_rule__UniversalQuantExpr__Group__46557 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__UniversalQuantExpr__Group__4__Impl6585 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__5__Impl_in_rule__UniversalQuantExpr__Group__56616 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__UniversalQuantExpr__FormulaAssignment_5_in_rule__UniversalQuantExpr__Group__5__Impl6643 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__0__Impl_in_rule__ExistentialQuantExpr__Group__06685 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__1_in_rule__ExistentialQuantExpr__Group__06688 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_38_in_rule__ExistentialQuantExpr__Group__0__Impl6716 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__1__Impl_in_rule__ExistentialQuantExpr__Group__16747 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__2_in_rule__ExistentialQuantExpr__Group__16750 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__ExistentialQuantExpr__Group__1__Impl6778 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__2__Impl_in_rule__ExistentialQuantExpr__Group__26809 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__3_in_rule__ExistentialQuantExpr__Group__26812 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__3__Impl_in_rule__ExistentialQuantExpr__Group__36870 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__4_in_rule__ExistentialQuantExpr__Group__36873 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__VarAssignment_3_in_rule__ExistentialQuantExpr__Group__3__Impl6900 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__4__Impl_in_rule__ExistentialQuantExpr__Group__46930 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__5_in_rule__ExistentialQuantExpr__Group__46933 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__ExistentialQuantExpr__Group__4__Impl6961 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__5__Impl_in_rule__ExistentialQuantExpr__Group__56992 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__FormulaAssignment_5_in_rule__ExistentialQuantExpr__Group__5__Impl7019 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariableBinding__Group__0__Impl_in_rule__VariableBinding__Group__07061 = new BitSet(new long[]{0x0000008000000000L});
-        public static final BitSet FOLLOW_rule__VariableBinding__Group__1_in_rule__VariableBinding__Group__07064 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariableBinding__NameAssignment_0_in_rule__VariableBinding__Group__0__Impl7091 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariableBinding__Group__1__Impl_in_rule__VariableBinding__Group__17121 = new BitSet(new long[]{0x01F0000010000000L});
-        public static final BitSet FOLLOW_rule__VariableBinding__Group__2_in_rule__VariableBinding__Group__17124 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_39_in_rule__VariableBinding__Group__1__Impl7152 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariableBinding__Group__2__Impl_in_rule__VariableBinding__Group__27183 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariableBinding__SetAssignment_2_in_rule__VariableBinding__Group__2__Impl7210 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EFExpr__Group__0__Impl_in_rule__EFExpr__Group__07246 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__EFExpr__Group__1_in_rule__EFExpr__Group__07249 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EFExpr__Alternatives_0_in_rule__EFExpr__Group__0__Impl7276 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EFExpr__Group__1__Impl_in_rule__EFExpr__Group__17306 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__EFExpr__Group__2_in_rule__EFExpr__Group__17309 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EFExpr__Group__2__Impl_in_rule__EFExpr__Group__27367 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EFExpr__ExprAssignment_2_in_rule__EFExpr__Group__2__Impl7394 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AFExpr__Group__0__Impl_in_rule__AFExpr__Group__07430 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__AFExpr__Group__1_in_rule__AFExpr__Group__07433 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AFExpr__Alternatives_0_in_rule__AFExpr__Group__0__Impl7460 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AFExpr__Group__1__Impl_in_rule__AFExpr__Group__17490 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__AFExpr__Group__2_in_rule__AFExpr__Group__17493 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AFExpr__Group__2__Impl_in_rule__AFExpr__Group__27551 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AFExpr__ExprAssignment_2_in_rule__AFExpr__Group__2__Impl7578 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EGExpr__Group__0__Impl_in_rule__EGExpr__Group__07614 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__EGExpr__Group__1_in_rule__EGExpr__Group__07617 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EGExpr__Alternatives_0_in_rule__EGExpr__Group__0__Impl7644 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EGExpr__Group__1__Impl_in_rule__EGExpr__Group__17674 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__EGExpr__Group__2_in_rule__EGExpr__Group__17677 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EGExpr__Group__2__Impl_in_rule__EGExpr__Group__27735 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EGExpr__ExprAssignment_2_in_rule__EGExpr__Group__2__Impl7762 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AGExpr__Group__0__Impl_in_rule__AGExpr__Group__07798 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__AGExpr__Group__1_in_rule__AGExpr__Group__07801 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AGExpr__Alternatives_0_in_rule__AGExpr__Group__0__Impl7828 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AGExpr__Group__1__Impl_in_rule__AGExpr__Group__17858 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__AGExpr__Group__2_in_rule__AGExpr__Group__17861 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AGExpr__Group__2__Impl_in_rule__AGExpr__Group__27919 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AGExpr__ExprAssignment_2_in_rule__AGExpr__Group__2__Impl7946 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AtomExpr__Group_0__0__Impl_in_rule__AtomExpr__Group_0__07982 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__AtomExpr__Group_0__1_in_rule__AtomExpr__Group_0__07985 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__AtomExpr__Group_0__0__Impl8013 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AtomExpr__Group_0__1__Impl_in_rule__AtomExpr__Group_0__18044 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__AtomExpr__Group_0__2_in_rule__AtomExpr__Group_0__18047 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleExpression_in_rule__AtomExpr__Group_0__1__Impl8074 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__AtomExpr__Group_0__2__Impl_in_rule__AtomExpr__Group_0__28103 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__AtomExpr__Group_0__2__Impl8131 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__DeadlockExpr__Group__0__Impl_in_rule__DeadlockExpr__Group__08168 = new BitSet(new long[]{0x0000010000000000L});
-        public static final BitSet FOLLOW_rule__DeadlockExpr__Group__1_in_rule__DeadlockExpr__Group__08171 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__DeadlockExpr__Group__1__Impl_in_rule__DeadlockExpr__Group__18229 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_40_in_rule__DeadlockExpr__Group__1__Impl8257 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BufferOverflowExpr__Group__0__Impl_in_rule__BufferOverflowExpr__Group__08292 = new BitSet(new long[]{0x0000020000000000L});
-        public static final BitSet FOLLOW_rule__BufferOverflowExpr__Group__1_in_rule__BufferOverflowExpr__Group__08295 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BufferOverflowExpr__Group__1__Impl_in_rule__BufferOverflowExpr__Group__18353 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_41_in_rule__BufferOverflowExpr__Group__1__Impl8381 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TrueExpr__Group__0__Impl_in_rule__TrueExpr__Group__08416 = new BitSet(new long[]{0x0000040000000000L});
-        public static final BitSet FOLLOW_rule__TrueExpr__Group__1_in_rule__TrueExpr__Group__08419 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TrueExpr__Group__1__Impl_in_rule__TrueExpr__Group__18477 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_42_in_rule__TrueExpr__Group__1__Impl8505 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__FalseExpr__Group__0__Impl_in_rule__FalseExpr__Group__08540 = new BitSet(new long[]{0x0000080000000000L});
-        public static final BitSet FOLLOW_rule__FalseExpr__Group__1_in_rule__FalseExpr__Group__08543 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__FalseExpr__Group__1__Impl_in_rule__FalseExpr__Group__18601 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_43_in_rule__FalseExpr__Group__1__Impl8629 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__0__Impl_in_rule__StateActiveExpr__Group__08664 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__1_in_rule__StateActiveExpr__Group__08667 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_44_in_rule__StateActiveExpr__Group__0__Impl8695 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__1__Impl_in_rule__StateActiveExpr__Group__18726 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__2_in_rule__StateActiveExpr__Group__18729 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__StateActiveExpr__Group__1__Impl8757 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__2__Impl_in_rule__StateActiveExpr__Group__28788 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__3_in_rule__StateActiveExpr__Group__28791 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__3__Impl_in_rule__StateActiveExpr__Group__38849 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__4_in_rule__StateActiveExpr__Group__38852 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__StateActiveExpr__StateAssignment_3_in_rule__StateActiveExpr__Group__3__Impl8879 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__4__Impl_in_rule__StateActiveExpr__Group__48909 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__StateActiveExpr__Group__4__Impl8937 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__0__Impl_in_rule__SubstateOfExpr__Group__08978 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__1_in_rule__SubstateOfExpr__Group__08981 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_45_in_rule__SubstateOfExpr__Group__0__Impl9009 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__1__Impl_in_rule__SubstateOfExpr__Group__19040 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__2_in_rule__SubstateOfExpr__Group__19043 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__SubstateOfExpr__Group__1__Impl9071 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__2__Impl_in_rule__SubstateOfExpr__Group__29102 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__3_in_rule__SubstateOfExpr__Group__29105 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__3__Impl_in_rule__SubstateOfExpr__Group__39163 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__4_in_rule__SubstateOfExpr__Group__39166 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__StateAssignment_3_in_rule__SubstateOfExpr__Group__3__Impl9193 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__4__Impl_in_rule__SubstateOfExpr__Group__49223 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__5_in_rule__SubstateOfExpr__Group__49226 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_29_in_rule__SubstateOfExpr__Group__4__Impl9254 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__5__Impl_in_rule__SubstateOfExpr__Group__59285 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__6_in_rule__SubstateOfExpr__Group__59288 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__SuperstateAssignment_5_in_rule__SubstateOfExpr__Group__5__Impl9315 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__6__Impl_in_rule__SubstateOfExpr__Group__69345 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__SubstateOfExpr__Group__6__Impl9373 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__0__Impl_in_rule__MessageInTransitExpr__Group__09418 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__1_in_rule__MessageInTransitExpr__Group__09421 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_46_in_rule__MessageInTransitExpr__Group__0__Impl9449 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__1__Impl_in_rule__MessageInTransitExpr__Group__19480 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__2_in_rule__MessageInTransitExpr__Group__19483 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__MessageInTransitExpr__Group__1__Impl9511 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__2__Impl_in_rule__MessageInTransitExpr__Group__29542 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__3_in_rule__MessageInTransitExpr__Group__29545 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInTransitExpr__MessageAssignment_2_in_rule__MessageInTransitExpr__Group__2__Impl9572 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__3__Impl_in_rule__MessageInTransitExpr__Group__39602 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__MessageInTransitExpr__Group__3__Impl9630 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__0__Impl_in_rule__MessageInBufferExpr__Group__09669 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__1_in_rule__MessageInBufferExpr__Group__09672 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_47_in_rule__MessageInBufferExpr__Group__0__Impl9700 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__1__Impl_in_rule__MessageInBufferExpr__Group__19731 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__2_in_rule__MessageInBufferExpr__Group__19734 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__MessageInBufferExpr__Group__1__Impl9762 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__2__Impl_in_rule__MessageInBufferExpr__Group__29793 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__3_in_rule__MessageInBufferExpr__Group__29796 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__MessageAssignment_2_in_rule__MessageInBufferExpr__Group__2__Impl9823 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__3__Impl_in_rule__MessageInBufferExpr__Group__39853 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__4_in_rule__MessageInBufferExpr__Group__39856 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_29_in_rule__MessageInBufferExpr__Group__3__Impl9884 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__4__Impl_in_rule__MessageInBufferExpr__Group__49915 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__5_in_rule__MessageInBufferExpr__Group__49918 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__BufferAssignment_4_in_rule__MessageInBufferExpr__Group__4__Impl9945 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__5__Impl_in_rule__MessageInBufferExpr__Group__59975 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__MessageInBufferExpr__Group__5__Impl10003 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__0__Impl_in_rule__TransitionFiringExpr__Group__010046 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__1_in_rule__TransitionFiringExpr__Group__010049 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_48_in_rule__TransitionFiringExpr__Group__0__Impl10077 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__1__Impl_in_rule__TransitionFiringExpr__Group__110108 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__2_in_rule__TransitionFiringExpr__Group__110111 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__TransitionFiringExpr__Group__1__Impl10139 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__2__Impl_in_rule__TransitionFiringExpr__Group__210170 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__3_in_rule__TransitionFiringExpr__Group__210173 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TransitionFiringExpr__TransitionAssignment_2_in_rule__TransitionFiringExpr__Group__2__Impl10200 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__3__Impl_in_rule__TransitionFiringExpr__Group__310230 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__TransitionFiringExpr__Group__3__Impl10258 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__0__Impl_in_rule__ComparisonExpr__Group__010297 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__1_in_rule__ComparisonExpr__Group__010300 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__1__Impl_in_rule__ComparisonExpr__Group__110358 = new BitSet(new long[]{0x0000000001F80000L});
-        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__2_in_rule__ComparisonExpr__Group__110361 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ComparisonExpr__LhsAssignment_1_in_rule__ComparisonExpr__Group__1__Impl10388 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__2__Impl_in_rule__ComparisonExpr__Group__210418 = new BitSet(new long[]{0x040FFF5C0807F830L});
-        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__3_in_rule__ComparisonExpr__Group__210421 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ComparisonExpr__OpAssignment_2_in_rule__ComparisonExpr__Group__2__Impl10448 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__3__Impl_in_rule__ComparisonExpr__Group__310478 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ComparisonExpr__RhsAssignment_3_in_rule__ComparisonExpr__Group__3__Impl10505 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__0__Impl_in_rule__BufferMessageCountExpr__Group__010543 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__1_in_rule__BufferMessageCountExpr__Group__010546 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_49_in_rule__BufferMessageCountExpr__Group__0__Impl10574 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__1__Impl_in_rule__BufferMessageCountExpr__Group__110605 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__2_in_rule__BufferMessageCountExpr__Group__110608 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__BufferMessageCountExpr__Group__1__Impl10636 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__2__Impl_in_rule__BufferMessageCountExpr__Group__210667 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__3_in_rule__BufferMessageCountExpr__Group__210670 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__BufferAssignment_2_in_rule__BufferMessageCountExpr__Group__2__Impl10697 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__3__Impl_in_rule__BufferMessageCountExpr__Group__310727 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__BufferMessageCountExpr__Group__3__Impl10755 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__0__Impl_in_rule__SourceStateExpr__Group__010794 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__1_in_rule__SourceStateExpr__Group__010797 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_50_in_rule__SourceStateExpr__Group__0__Impl10825 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__1__Impl_in_rule__SourceStateExpr__Group__110856 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__2_in_rule__SourceStateExpr__Group__110859 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__SourceStateExpr__Group__1__Impl10887 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__2__Impl_in_rule__SourceStateExpr__Group__210918 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__3_in_rule__SourceStateExpr__Group__210921 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SourceStateExpr__TransitionAssignment_2_in_rule__SourceStateExpr__Group__2__Impl10948 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__3__Impl_in_rule__SourceStateExpr__Group__310978 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__SourceStateExpr__Group__3__Impl11006 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__0__Impl_in_rule__TargetStateExpr__Group__011045 = new BitSet(new long[]{0x0000001000000000L});
-        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__1_in_rule__TargetStateExpr__Group__011048 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_51_in_rule__TargetStateExpr__Group__0__Impl11076 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__1__Impl_in_rule__TargetStateExpr__Group__111107 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__2_in_rule__TargetStateExpr__Group__111110 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_36_in_rule__TargetStateExpr__Group__1__Impl11138 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__2__Impl_in_rule__TargetStateExpr__Group__211169 = new BitSet(new long[]{0x0000002000000000L});
-        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__3_in_rule__TargetStateExpr__Group__211172 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TargetStateExpr__TransitionAssignment_2_in_rule__TargetStateExpr__Group__2__Impl11199 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__3__Impl_in_rule__TargetStateExpr__Group__311229 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_37_in_rule__TargetStateExpr__Group__3__Impl11257 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_1__0__Impl_in_rule__SetExpr__Group_1__011296 = new BitSet(new long[]{0x0010000000000000L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_1__1_in_rule__SetExpr__Group_1__011299 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_1__1__Impl_in_rule__SetExpr__Group_1__111357 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_52_in_rule__SetExpr__Group_1__1__Impl11385 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_2__0__Impl_in_rule__SetExpr__Group_2__011420 = new BitSet(new long[]{0x0020000000000000L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_2__1_in_rule__SetExpr__Group_2__011423 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_2__1__Impl_in_rule__SetExpr__Group_2__111481 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_53_in_rule__SetExpr__Group_2__1__Impl11509 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_3__0__Impl_in_rule__SetExpr__Group_3__011544 = new BitSet(new long[]{0x0040000000000000L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_3__1_in_rule__SetExpr__Group_3__011547 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_3__1__Impl_in_rule__SetExpr__Group_3__111605 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_54_in_rule__SetExpr__Group_3__1__Impl11633 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_4__0__Impl_in_rule__SetExpr__Group_4__011668 = new BitSet(new long[]{0x0080000000000000L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_4__1_in_rule__SetExpr__Group_4__011671 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_4__1__Impl_in_rule__SetExpr__Group_4__111729 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_55_in_rule__SetExpr__Group_4__1__Impl11757 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_5__0__Impl_in_rule__SetExpr__Group_5__011792 = new BitSet(new long[]{0x01F0000010000000L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_5__1_in_rule__SetExpr__Group_5__011795 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__SetExpr__Group_5__1__Impl_in_rule__SetExpr__Group_5__111853 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_56_in_rule__SetExpr__Group_5__1__Impl11881 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__0__Impl_in_rule__IntervalSetExpr__Group__011916 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__1_in_rule__IntervalSetExpr__Group__011919 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__1__Impl_in_rule__IntervalSetExpr__Group__111977 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__2_in_rule__IntervalSetExpr__Group__111980 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_rule__IntervalSetExpr__Group__1__Impl12008 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__2__Impl_in_rule__IntervalSetExpr__Group__212039 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__3_in_rule__IntervalSetExpr__Group__212042 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__LowerValAssignment_2_in_rule__IntervalSetExpr__Group__2__Impl12069 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__3__Impl_in_rule__IntervalSetExpr__Group__312099 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__4_in_rule__IntervalSetExpr__Group__312102 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_29_in_rule__IntervalSetExpr__Group__3__Impl12130 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__4__Impl_in_rule__IntervalSetExpr__Group__412161 = new BitSet(new long[]{0x0000000040000000L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__5_in_rule__IntervalSetExpr__Group__412164 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__UpperValAssignment_4_in_rule__IntervalSetExpr__Group__4__Impl12191 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__5__Impl_in_rule__IntervalSetExpr__Group__512221 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_30_in_rule__IntervalSetExpr__Group__5__Impl12249 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__012292 = new BitSet(new long[]{0x0200000000000000L});
-        public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__012295 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl12322 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__112351 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl12378 = new BitSet(new long[]{0x0200000000000002L});
-        public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__012413 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__012416 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_57_in_rule__QualifiedName__Group_1__0__Impl12444 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__112475 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl12502 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EInt__Group__0__Impl_in_rule__EInt__Group__012535 = new BitSet(new long[]{0x0400000000000020L});
-        public static final BitSet FOLLOW_rule__EInt__Group__1_in_rule__EInt__Group__012538 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_58_in_rule__EInt__Group__0__Impl12567 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EInt__Group__1__Impl_in_rule__EInt__Group__112600 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_rule__EInt__Group__1__Impl12627 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleProperty_in_rule__PropertyRepository__PropertiesAssignment12665 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_SL_COMMENT_in_rule__Property__CommentAssignment_212696 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTimeIntervalExpr_in_rule__LeadsToExpr__RightOpdAssignment_1_212727 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleImplyExpr_in_rule__TimeIntervalExpr__LhsAssignment_0_212758 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_rule__TimeIntervalExpr__LowerAssignment_0_412789 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_rule__TimeIntervalExpr__UpperAssignment_0_612820 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleImplyExpr_in_rule__TimeIntervalExpr__RhsAssignment_0_812851 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleAndExpr_in_rule__ImplyExpr__RightOpdAssignment_1_212882 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleOrExpr_in_rule__AndExpr__RightOpdAssignment_1_212913 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNotExpr_in_rule__OrExpr__RightOpdAssignment_1_212944 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNotExpr_in_rule__NotExpr__OpdAssignment_0_212975 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleVariableBinding_in_rule__UniversalQuantExpr__VarAssignment_313006 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNotExpr_in_rule__UniversalQuantExpr__FormulaAssignment_513037 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleVariableBinding_in_rule__ExistentialQuantExpr__VarAssignment_313068 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNotExpr_in_rule__ExistentialQuantExpr__FormulaAssignment_513099 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__VariableBinding__NameAssignment_013130 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleSetExpr_in_rule__VariableBinding__SetAssignment_213161 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNotExpr_in_rule__EFExpr__ExprAssignment_213192 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNotExpr_in_rule__AFExpr__ExprAssignment_213223 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNotExpr_in_rule__EGExpr__ExprAssignment_213254 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleNotExpr_in_rule__AGExpr__ExprAssignment_213285 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleStateMapExpr_in_rule__StateActiveExpr__StateAssignment_313316 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleStateMapExpr_in_rule__SubstateOfExpr__StateAssignment_313347 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleStateMapExpr_in_rule__SubstateOfExpr__SuperstateAssignment_513378 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMessageMapExpr_in_rule__MessageInTransitExpr__MessageAssignment_213409 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMessageMapExpr_in_rule__MessageInBufferExpr__MessageAssignment_213440 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBufferMapExpr_in_rule__MessageInBufferExpr__BufferAssignment_413471 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTransitionMapExpr_in_rule__TransitionFiringExpr__TransitionAssignment_213502 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMapExpr_in_rule__ComparisonExpr__LhsAssignment_113533 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleComparisonOp_in_rule__ComparisonExpr__OpAssignment_213564 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleMapExpr_in_rule__ComparisonExpr__RhsAssignment_313595 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleBufferMapExpr_in_rule__BufferMessageCountExpr__BufferAssignment_213626 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTransitionMapExpr_in_rule__SourceStateExpr__TransitionAssignment_213657 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleTransitionMapExpr_in_rule__TargetStateExpr__TransitionAssignment_213688 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleQualifiedName_in_rule__MumlElemExpr__ElemAssignment13723 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_rule__ConstExpr__ValAssignment13758 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_rule__IntervalSetExpr__LowerValAssignment_213789 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_rule__IntervalSetExpr__UpperValAssignment_413820 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Property__ExpressionAssignment_0_in_rule__Property__Group__0__Impl4176 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Property__Group__1__Impl_in_rule__Property__Group__14206 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_rule__Property__Group__2_in_rule__Property__Group__14209 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_25_in_rule__Property__Group__1__Impl4237 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Property__Group__2__Impl_in_rule__Property__Group__24268 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Property__CommentAssignment_2_in_rule__Property__Group__2__Impl4295 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__LeadsToExpr__Group__0__Impl_in_rule__LeadsToExpr__Group__04332 = new BitSet(new long[]{0x0000000004000000L});
+        public static final BitSet FOLLOW_rule__LeadsToExpr__Group__1_in_rule__LeadsToExpr__Group__04335 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTimeIntervalExpr_in_rule__LeadsToExpr__Group__0__Impl4362 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__LeadsToExpr__Group__1__Impl_in_rule__LeadsToExpr__Group__14391 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__0_in_rule__LeadsToExpr__Group__1__Impl4418 = new BitSet(new long[]{0x0000000004000002L});
+        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__0__Impl_in_rule__LeadsToExpr__Group_1__04453 = new BitSet(new long[]{0x0000000004000000L});
+        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__1_in_rule__LeadsToExpr__Group_1__04456 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__1__Impl_in_rule__LeadsToExpr__Group_1__14514 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__2_in_rule__LeadsToExpr__Group_1__14517 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_rule__LeadsToExpr__Group_1__1__Impl4545 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__LeadsToExpr__Group_1__2__Impl_in_rule__LeadsToExpr__Group_1__24576 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__LeadsToExpr__RightOpdAssignment_1_2_in_rule__LeadsToExpr__Group_1__2__Impl4603 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__0__Impl_in_rule__TimeIntervalExpr__Group_0__04639 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__1_in_rule__TimeIntervalExpr__Group_0__04642 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_27_in_rule__TimeIntervalExpr__Group_0__0__Impl4670 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__1__Impl_in_rule__TimeIntervalExpr__Group_0__14701 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__2_in_rule__TimeIntervalExpr__Group_0__14704 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__2__Impl_in_rule__TimeIntervalExpr__Group_0__24762 = new BitSet(new long[]{0x0000000010000000L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__3_in_rule__TimeIntervalExpr__Group_0__24765 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__LhsAssignment_0_2_in_rule__TimeIntervalExpr__Group_0__2__Impl4792 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__3__Impl_in_rule__TimeIntervalExpr__Group_0__34822 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__4_in_rule__TimeIntervalExpr__Group_0__34825 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_28_in_rule__TimeIntervalExpr__Group_0__3__Impl4853 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__4__Impl_in_rule__TimeIntervalExpr__Group_0__44884 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__5_in_rule__TimeIntervalExpr__Group_0__44887 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__LowerAssignment_0_4_in_rule__TimeIntervalExpr__Group_0__4__Impl4914 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__5__Impl_in_rule__TimeIntervalExpr__Group_0__54944 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__6_in_rule__TimeIntervalExpr__Group_0__54947 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_29_in_rule__TimeIntervalExpr__Group_0__5__Impl4975 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__6__Impl_in_rule__TimeIntervalExpr__Group_0__65006 = new BitSet(new long[]{0x0000000040000000L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__7_in_rule__TimeIntervalExpr__Group_0__65009 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__UpperAssignment_0_6_in_rule__TimeIntervalExpr__Group_0__6__Impl5036 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__7__Impl_in_rule__TimeIntervalExpr__Group_0__75066 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__8_in_rule__TimeIntervalExpr__Group_0__75069 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_30_in_rule__TimeIntervalExpr__Group_0__7__Impl5097 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__Group_0__8__Impl_in_rule__TimeIntervalExpr__Group_0__85128 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TimeIntervalExpr__RhsAssignment_0_8_in_rule__TimeIntervalExpr__Group_0__8__Impl5155 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ImplyExpr__Group__0__Impl_in_rule__ImplyExpr__Group__05203 = new BitSet(new long[]{0x0000000080000000L});
+        public static final BitSet FOLLOW_rule__ImplyExpr__Group__1_in_rule__ImplyExpr__Group__05206 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAndExpr_in_rule__ImplyExpr__Group__0__Impl5233 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ImplyExpr__Group__1__Impl_in_rule__ImplyExpr__Group__15262 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__0_in_rule__ImplyExpr__Group__1__Impl5289 = new BitSet(new long[]{0x0000000080000002L});
+        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__0__Impl_in_rule__ImplyExpr__Group_1__05324 = new BitSet(new long[]{0x0000000080000000L});
+        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__1_in_rule__ImplyExpr__Group_1__05327 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__1__Impl_in_rule__ImplyExpr__Group_1__15385 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__2_in_rule__ImplyExpr__Group_1__15388 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_rule__ImplyExpr__Group_1__1__Impl5416 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ImplyExpr__Group_1__2__Impl_in_rule__ImplyExpr__Group_1__25447 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ImplyExpr__RightOpdAssignment_1_2_in_rule__ImplyExpr__Group_1__2__Impl5474 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AndExpr__Group__0__Impl_in_rule__AndExpr__Group__05510 = new BitSet(new long[]{0x0000000100000000L});
+        public static final BitSet FOLLOW_rule__AndExpr__Group__1_in_rule__AndExpr__Group__05513 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOrExpr_in_rule__AndExpr__Group__0__Impl5540 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AndExpr__Group__1__Impl_in_rule__AndExpr__Group__15569 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AndExpr__Group_1__0_in_rule__AndExpr__Group__1__Impl5596 = new BitSet(new long[]{0x0000000100000002L});
+        public static final BitSet FOLLOW_rule__AndExpr__Group_1__0__Impl_in_rule__AndExpr__Group_1__05631 = new BitSet(new long[]{0x0000000100000000L});
+        public static final BitSet FOLLOW_rule__AndExpr__Group_1__1_in_rule__AndExpr__Group_1__05634 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AndExpr__Group_1__1__Impl_in_rule__AndExpr__Group_1__15692 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__AndExpr__Group_1__2_in_rule__AndExpr__Group_1__15695 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_32_in_rule__AndExpr__Group_1__1__Impl5723 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AndExpr__Group_1__2__Impl_in_rule__AndExpr__Group_1__25754 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AndExpr__RightOpdAssignment_1_2_in_rule__AndExpr__Group_1__2__Impl5781 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__OrExpr__Group__0__Impl_in_rule__OrExpr__Group__05817 = new BitSet(new long[]{0x0000000200000000L});
+        public static final BitSet FOLLOW_rule__OrExpr__Group__1_in_rule__OrExpr__Group__05820 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNotExpr_in_rule__OrExpr__Group__0__Impl5847 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__OrExpr__Group__1__Impl_in_rule__OrExpr__Group__15876 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__OrExpr__Group_1__0_in_rule__OrExpr__Group__1__Impl5903 = new BitSet(new long[]{0x0000000200000002L});
+        public static final BitSet FOLLOW_rule__OrExpr__Group_1__0__Impl_in_rule__OrExpr__Group_1__05938 = new BitSet(new long[]{0x0000000200000000L});
+        public static final BitSet FOLLOW_rule__OrExpr__Group_1__1_in_rule__OrExpr__Group_1__05941 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__OrExpr__Group_1__1__Impl_in_rule__OrExpr__Group_1__15999 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__OrExpr__Group_1__2_in_rule__OrExpr__Group_1__16002 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_33_in_rule__OrExpr__Group_1__1__Impl6030 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__OrExpr__Group_1__2__Impl_in_rule__OrExpr__Group_1__26061 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__OrExpr__RightOpdAssignment_1_2_in_rule__OrExpr__Group_1__2__Impl6088 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__NotExpr__Group_0__0__Impl_in_rule__NotExpr__Group_0__06124 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__NotExpr__Group_0__1_in_rule__NotExpr__Group_0__06127 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_34_in_rule__NotExpr__Group_0__0__Impl6155 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__NotExpr__Group_0__1__Impl_in_rule__NotExpr__Group_0__16186 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__NotExpr__Group_0__2_in_rule__NotExpr__Group_0__16189 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__NotExpr__Group_0__2__Impl_in_rule__NotExpr__Group_0__26247 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__NotExpr__OpdAssignment_0_2_in_rule__NotExpr__Group_0__2__Impl6274 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__0__Impl_in_rule__UniversalQuantExpr__Group__06310 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__1_in_rule__UniversalQuantExpr__Group__06313 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_35_in_rule__UniversalQuantExpr__Group__0__Impl6341 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__1__Impl_in_rule__UniversalQuantExpr__Group__16372 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__2_in_rule__UniversalQuantExpr__Group__16375 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__UniversalQuantExpr__Group__1__Impl6403 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__2__Impl_in_rule__UniversalQuantExpr__Group__26434 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__3_in_rule__UniversalQuantExpr__Group__26437 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__3__Impl_in_rule__UniversalQuantExpr__Group__36495 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__4_in_rule__UniversalQuantExpr__Group__36498 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__VarAssignment_3_in_rule__UniversalQuantExpr__Group__3__Impl6525 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__4__Impl_in_rule__UniversalQuantExpr__Group__46555 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__5_in_rule__UniversalQuantExpr__Group__46558 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__UniversalQuantExpr__Group__4__Impl6586 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__Group__5__Impl_in_rule__UniversalQuantExpr__Group__56617 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__UniversalQuantExpr__FormulaAssignment_5_in_rule__UniversalQuantExpr__Group__5__Impl6644 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__0__Impl_in_rule__ExistentialQuantExpr__Group__06686 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__1_in_rule__ExistentialQuantExpr__Group__06689 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_38_in_rule__ExistentialQuantExpr__Group__0__Impl6717 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__1__Impl_in_rule__ExistentialQuantExpr__Group__16748 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__2_in_rule__ExistentialQuantExpr__Group__16751 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__ExistentialQuantExpr__Group__1__Impl6779 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__2__Impl_in_rule__ExistentialQuantExpr__Group__26810 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__3_in_rule__ExistentialQuantExpr__Group__26813 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__3__Impl_in_rule__ExistentialQuantExpr__Group__36871 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__4_in_rule__ExistentialQuantExpr__Group__36874 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__VarAssignment_3_in_rule__ExistentialQuantExpr__Group__3__Impl6901 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__4__Impl_in_rule__ExistentialQuantExpr__Group__46931 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__5_in_rule__ExistentialQuantExpr__Group__46934 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__ExistentialQuantExpr__Group__4__Impl6962 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__Group__5__Impl_in_rule__ExistentialQuantExpr__Group__56993 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ExistentialQuantExpr__FormulaAssignment_5_in_rule__ExistentialQuantExpr__Group__5__Impl7020 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariableBinding__Group__0__Impl_in_rule__VariableBinding__Group__07062 = new BitSet(new long[]{0x0000008000000000L});
+        public static final BitSet FOLLOW_rule__VariableBinding__Group__1_in_rule__VariableBinding__Group__07065 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariableBinding__NameAssignment_0_in_rule__VariableBinding__Group__0__Impl7092 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariableBinding__Group__1__Impl_in_rule__VariableBinding__Group__17122 = new BitSet(new long[]{0x01F0000010000000L});
+        public static final BitSet FOLLOW_rule__VariableBinding__Group__2_in_rule__VariableBinding__Group__17125 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_39_in_rule__VariableBinding__Group__1__Impl7153 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariableBinding__Group__2__Impl_in_rule__VariableBinding__Group__27184 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariableBinding__SetAssignment_2_in_rule__VariableBinding__Group__2__Impl7211 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EFExpr__Group__0__Impl_in_rule__EFExpr__Group__07247 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__EFExpr__Group__1_in_rule__EFExpr__Group__07250 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EFExpr__Alternatives_0_in_rule__EFExpr__Group__0__Impl7277 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EFExpr__Group__1__Impl_in_rule__EFExpr__Group__17307 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__EFExpr__Group__2_in_rule__EFExpr__Group__17310 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EFExpr__Group__2__Impl_in_rule__EFExpr__Group__27368 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EFExpr__ExprAssignment_2_in_rule__EFExpr__Group__2__Impl7395 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AFExpr__Group__0__Impl_in_rule__AFExpr__Group__07431 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__AFExpr__Group__1_in_rule__AFExpr__Group__07434 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AFExpr__Alternatives_0_in_rule__AFExpr__Group__0__Impl7461 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AFExpr__Group__1__Impl_in_rule__AFExpr__Group__17491 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__AFExpr__Group__2_in_rule__AFExpr__Group__17494 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AFExpr__Group__2__Impl_in_rule__AFExpr__Group__27552 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AFExpr__ExprAssignment_2_in_rule__AFExpr__Group__2__Impl7579 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EGExpr__Group__0__Impl_in_rule__EGExpr__Group__07615 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__EGExpr__Group__1_in_rule__EGExpr__Group__07618 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EGExpr__Alternatives_0_in_rule__EGExpr__Group__0__Impl7645 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EGExpr__Group__1__Impl_in_rule__EGExpr__Group__17675 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__EGExpr__Group__2_in_rule__EGExpr__Group__17678 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EGExpr__Group__2__Impl_in_rule__EGExpr__Group__27736 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EGExpr__ExprAssignment_2_in_rule__EGExpr__Group__2__Impl7763 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AGExpr__Group__0__Impl_in_rule__AGExpr__Group__07799 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__AGExpr__Group__1_in_rule__AGExpr__Group__07802 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AGExpr__Alternatives_0_in_rule__AGExpr__Group__0__Impl7829 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AGExpr__Group__1__Impl_in_rule__AGExpr__Group__17859 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__AGExpr__Group__2_in_rule__AGExpr__Group__17862 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AGExpr__Group__2__Impl_in_rule__AGExpr__Group__27920 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AGExpr__ExprAssignment_2_in_rule__AGExpr__Group__2__Impl7947 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AtomExpr__Group_0__0__Impl_in_rule__AtomExpr__Group_0__07983 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__AtomExpr__Group_0__1_in_rule__AtomExpr__Group_0__07986 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__AtomExpr__Group_0__0__Impl8014 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AtomExpr__Group_0__1__Impl_in_rule__AtomExpr__Group_0__18045 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__AtomExpr__Group_0__2_in_rule__AtomExpr__Group_0__18048 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExpression_in_rule__AtomExpr__Group_0__1__Impl8075 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__AtomExpr__Group_0__2__Impl_in_rule__AtomExpr__Group_0__28104 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__AtomExpr__Group_0__2__Impl8132 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__DeadlockExpr__Group__0__Impl_in_rule__DeadlockExpr__Group__08169 = new BitSet(new long[]{0x0000010000000000L});
+        public static final BitSet FOLLOW_rule__DeadlockExpr__Group__1_in_rule__DeadlockExpr__Group__08172 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__DeadlockExpr__Group__1__Impl_in_rule__DeadlockExpr__Group__18230 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_40_in_rule__DeadlockExpr__Group__1__Impl8258 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BufferOverflowExpr__Group__0__Impl_in_rule__BufferOverflowExpr__Group__08293 = new BitSet(new long[]{0x0000020000000000L});
+        public static final BitSet FOLLOW_rule__BufferOverflowExpr__Group__1_in_rule__BufferOverflowExpr__Group__08296 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BufferOverflowExpr__Group__1__Impl_in_rule__BufferOverflowExpr__Group__18354 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_41_in_rule__BufferOverflowExpr__Group__1__Impl8382 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TrueExpr__Group__0__Impl_in_rule__TrueExpr__Group__08417 = new BitSet(new long[]{0x0000040000000000L});
+        public static final BitSet FOLLOW_rule__TrueExpr__Group__1_in_rule__TrueExpr__Group__08420 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TrueExpr__Group__1__Impl_in_rule__TrueExpr__Group__18478 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_42_in_rule__TrueExpr__Group__1__Impl8506 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__FalseExpr__Group__0__Impl_in_rule__FalseExpr__Group__08541 = new BitSet(new long[]{0x0000080000000000L});
+        public static final BitSet FOLLOW_rule__FalseExpr__Group__1_in_rule__FalseExpr__Group__08544 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__FalseExpr__Group__1__Impl_in_rule__FalseExpr__Group__18602 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_43_in_rule__FalseExpr__Group__1__Impl8630 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__0__Impl_in_rule__StateActiveExpr__Group__08665 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__1_in_rule__StateActiveExpr__Group__08668 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_44_in_rule__StateActiveExpr__Group__0__Impl8696 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__1__Impl_in_rule__StateActiveExpr__Group__18727 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__2_in_rule__StateActiveExpr__Group__18730 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__StateActiveExpr__Group__1__Impl8758 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__2__Impl_in_rule__StateActiveExpr__Group__28789 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__3_in_rule__StateActiveExpr__Group__28792 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__3__Impl_in_rule__StateActiveExpr__Group__38850 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__4_in_rule__StateActiveExpr__Group__38853 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__StateActiveExpr__StateAssignment_3_in_rule__StateActiveExpr__Group__3__Impl8880 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__StateActiveExpr__Group__4__Impl_in_rule__StateActiveExpr__Group__48910 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__StateActiveExpr__Group__4__Impl8938 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__0__Impl_in_rule__SubstateOfExpr__Group__08979 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__1_in_rule__SubstateOfExpr__Group__08982 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_45_in_rule__SubstateOfExpr__Group__0__Impl9010 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__1__Impl_in_rule__SubstateOfExpr__Group__19041 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__2_in_rule__SubstateOfExpr__Group__19044 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__SubstateOfExpr__Group__1__Impl9072 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__2__Impl_in_rule__SubstateOfExpr__Group__29103 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__3_in_rule__SubstateOfExpr__Group__29106 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__3__Impl_in_rule__SubstateOfExpr__Group__39164 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__4_in_rule__SubstateOfExpr__Group__39167 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__StateAssignment_3_in_rule__SubstateOfExpr__Group__3__Impl9194 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__4__Impl_in_rule__SubstateOfExpr__Group__49224 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__5_in_rule__SubstateOfExpr__Group__49227 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_29_in_rule__SubstateOfExpr__Group__4__Impl9255 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__5__Impl_in_rule__SubstateOfExpr__Group__59286 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__6_in_rule__SubstateOfExpr__Group__59289 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__SuperstateAssignment_5_in_rule__SubstateOfExpr__Group__5__Impl9316 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SubstateOfExpr__Group__6__Impl_in_rule__SubstateOfExpr__Group__69346 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__SubstateOfExpr__Group__6__Impl9374 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__0__Impl_in_rule__MessageInTransitExpr__Group__09419 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__1_in_rule__MessageInTransitExpr__Group__09422 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_46_in_rule__MessageInTransitExpr__Group__0__Impl9450 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__1__Impl_in_rule__MessageInTransitExpr__Group__19481 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__2_in_rule__MessageInTransitExpr__Group__19484 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__MessageInTransitExpr__Group__1__Impl9512 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__2__Impl_in_rule__MessageInTransitExpr__Group__29543 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__3_in_rule__MessageInTransitExpr__Group__29546 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInTransitExpr__MessageAssignment_2_in_rule__MessageInTransitExpr__Group__2__Impl9573 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInTransitExpr__Group__3__Impl_in_rule__MessageInTransitExpr__Group__39603 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__MessageInTransitExpr__Group__3__Impl9631 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__0__Impl_in_rule__MessageInBufferExpr__Group__09670 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__1_in_rule__MessageInBufferExpr__Group__09673 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_47_in_rule__MessageInBufferExpr__Group__0__Impl9701 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__1__Impl_in_rule__MessageInBufferExpr__Group__19732 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__2_in_rule__MessageInBufferExpr__Group__19735 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__MessageInBufferExpr__Group__1__Impl9763 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__2__Impl_in_rule__MessageInBufferExpr__Group__29794 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__3_in_rule__MessageInBufferExpr__Group__29797 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__MessageAssignment_2_in_rule__MessageInBufferExpr__Group__2__Impl9824 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__3__Impl_in_rule__MessageInBufferExpr__Group__39854 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__4_in_rule__MessageInBufferExpr__Group__39857 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_29_in_rule__MessageInBufferExpr__Group__3__Impl9885 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__4__Impl_in_rule__MessageInBufferExpr__Group__49916 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__5_in_rule__MessageInBufferExpr__Group__49919 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__BufferAssignment_4_in_rule__MessageInBufferExpr__Group__4__Impl9946 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__MessageInBufferExpr__Group__5__Impl_in_rule__MessageInBufferExpr__Group__59976 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__MessageInBufferExpr__Group__5__Impl10004 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__0__Impl_in_rule__TransitionFiringExpr__Group__010047 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__1_in_rule__TransitionFiringExpr__Group__010050 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_48_in_rule__TransitionFiringExpr__Group__0__Impl10078 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__1__Impl_in_rule__TransitionFiringExpr__Group__110109 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__2_in_rule__TransitionFiringExpr__Group__110112 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__TransitionFiringExpr__Group__1__Impl10140 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__2__Impl_in_rule__TransitionFiringExpr__Group__210171 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__3_in_rule__TransitionFiringExpr__Group__210174 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TransitionFiringExpr__TransitionAssignment_2_in_rule__TransitionFiringExpr__Group__2__Impl10201 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TransitionFiringExpr__Group__3__Impl_in_rule__TransitionFiringExpr__Group__310231 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__TransitionFiringExpr__Group__3__Impl10259 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__0__Impl_in_rule__ComparisonExpr__Group__010298 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__1_in_rule__ComparisonExpr__Group__010301 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__1__Impl_in_rule__ComparisonExpr__Group__110359 = new BitSet(new long[]{0x0000000001F80000L});
+        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__2_in_rule__ComparisonExpr__Group__110362 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ComparisonExpr__LhsAssignment_1_in_rule__ComparisonExpr__Group__1__Impl10389 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__2__Impl_in_rule__ComparisonExpr__Group__210419 = new BitSet(new long[]{0x040FFF5C0807F830L});
+        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__3_in_rule__ComparisonExpr__Group__210422 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ComparisonExpr__OpAssignment_2_in_rule__ComparisonExpr__Group__2__Impl10449 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ComparisonExpr__Group__3__Impl_in_rule__ComparisonExpr__Group__310479 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ComparisonExpr__RhsAssignment_3_in_rule__ComparisonExpr__Group__3__Impl10506 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__0__Impl_in_rule__BufferMessageCountExpr__Group__010544 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__1_in_rule__BufferMessageCountExpr__Group__010547 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_49_in_rule__BufferMessageCountExpr__Group__0__Impl10575 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__1__Impl_in_rule__BufferMessageCountExpr__Group__110606 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__2_in_rule__BufferMessageCountExpr__Group__110609 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__BufferMessageCountExpr__Group__1__Impl10637 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__2__Impl_in_rule__BufferMessageCountExpr__Group__210668 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__3_in_rule__BufferMessageCountExpr__Group__210671 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__BufferAssignment_2_in_rule__BufferMessageCountExpr__Group__2__Impl10698 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__BufferMessageCountExpr__Group__3__Impl_in_rule__BufferMessageCountExpr__Group__310728 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__BufferMessageCountExpr__Group__3__Impl10756 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__0__Impl_in_rule__SourceStateExpr__Group__010795 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__1_in_rule__SourceStateExpr__Group__010798 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_50_in_rule__SourceStateExpr__Group__0__Impl10826 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__1__Impl_in_rule__SourceStateExpr__Group__110857 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__2_in_rule__SourceStateExpr__Group__110860 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__SourceStateExpr__Group__1__Impl10888 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__2__Impl_in_rule__SourceStateExpr__Group__210919 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__3_in_rule__SourceStateExpr__Group__210922 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SourceStateExpr__TransitionAssignment_2_in_rule__SourceStateExpr__Group__2__Impl10949 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SourceStateExpr__Group__3__Impl_in_rule__SourceStateExpr__Group__310979 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__SourceStateExpr__Group__3__Impl11007 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__0__Impl_in_rule__TargetStateExpr__Group__011046 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__1_in_rule__TargetStateExpr__Group__011049 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_51_in_rule__TargetStateExpr__Group__0__Impl11077 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__1__Impl_in_rule__TargetStateExpr__Group__111108 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__2_in_rule__TargetStateExpr__Group__111111 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__TargetStateExpr__Group__1__Impl11139 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__2__Impl_in_rule__TargetStateExpr__Group__211170 = new BitSet(new long[]{0x0000002000000000L});
+        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__3_in_rule__TargetStateExpr__Group__211173 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TargetStateExpr__TransitionAssignment_2_in_rule__TargetStateExpr__Group__2__Impl11200 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__TargetStateExpr__Group__3__Impl_in_rule__TargetStateExpr__Group__311230 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_37_in_rule__TargetStateExpr__Group__3__Impl11258 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_1__0__Impl_in_rule__SetExpr__Group_1__011297 = new BitSet(new long[]{0x0010000000000000L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_1__1_in_rule__SetExpr__Group_1__011300 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_1__1__Impl_in_rule__SetExpr__Group_1__111358 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_52_in_rule__SetExpr__Group_1__1__Impl11386 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_2__0__Impl_in_rule__SetExpr__Group_2__011421 = new BitSet(new long[]{0x0020000000000000L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_2__1_in_rule__SetExpr__Group_2__011424 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_2__1__Impl_in_rule__SetExpr__Group_2__111482 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_53_in_rule__SetExpr__Group_2__1__Impl11510 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_3__0__Impl_in_rule__SetExpr__Group_3__011545 = new BitSet(new long[]{0x0040000000000000L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_3__1_in_rule__SetExpr__Group_3__011548 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_3__1__Impl_in_rule__SetExpr__Group_3__111606 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_54_in_rule__SetExpr__Group_3__1__Impl11634 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_4__0__Impl_in_rule__SetExpr__Group_4__011669 = new BitSet(new long[]{0x0080000000000000L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_4__1_in_rule__SetExpr__Group_4__011672 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_4__1__Impl_in_rule__SetExpr__Group_4__111730 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_55_in_rule__SetExpr__Group_4__1__Impl11758 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_5__0__Impl_in_rule__SetExpr__Group_5__011793 = new BitSet(new long[]{0x01F0000010000000L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_5__1_in_rule__SetExpr__Group_5__011796 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__SetExpr__Group_5__1__Impl_in_rule__SetExpr__Group_5__111854 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_56_in_rule__SetExpr__Group_5__1__Impl11882 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__0__Impl_in_rule__IntervalSetExpr__Group__011917 = new BitSet(new long[]{0x0000000010000000L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__1_in_rule__IntervalSetExpr__Group__011920 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__1__Impl_in_rule__IntervalSetExpr__Group__111978 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__2_in_rule__IntervalSetExpr__Group__111981 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_28_in_rule__IntervalSetExpr__Group__1__Impl12009 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__2__Impl_in_rule__IntervalSetExpr__Group__212040 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__3_in_rule__IntervalSetExpr__Group__212043 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__LowerValAssignment_2_in_rule__IntervalSetExpr__Group__2__Impl12070 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__3__Impl_in_rule__IntervalSetExpr__Group__312100 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__4_in_rule__IntervalSetExpr__Group__312103 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_29_in_rule__IntervalSetExpr__Group__3__Impl12131 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__4__Impl_in_rule__IntervalSetExpr__Group__412162 = new BitSet(new long[]{0x0000000040000000L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__5_in_rule__IntervalSetExpr__Group__412165 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__UpperValAssignment_4_in_rule__IntervalSetExpr__Group__4__Impl12192 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__IntervalSetExpr__Group__5__Impl_in_rule__IntervalSetExpr__Group__512222 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_30_in_rule__IntervalSetExpr__Group__5__Impl12250 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__012293 = new BitSet(new long[]{0x0200000000000000L});
+        public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__012296 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl12323 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__112352 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl12379 = new BitSet(new long[]{0x0200000000000002L});
+        public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__012414 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__012417 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_57_in_rule__QualifiedName__Group_1__0__Impl12445 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__112476 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl12503 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EInt__Group__0__Impl_in_rule__EInt__Group__012536 = new BitSet(new long[]{0x0400000000000020L});
+        public static final BitSet FOLLOW_rule__EInt__Group__1_in_rule__EInt__Group__012539 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_58_in_rule__EInt__Group__0__Impl12568 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EInt__Group__1__Impl_in_rule__EInt__Group__112601 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__EInt__Group__1__Impl12628 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleProperty_in_rule__PropertyRepository__PropertiesAssignment12666 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleExpression_in_rule__Property__ExpressionAssignment_012697 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_SL_COMMENT_in_rule__Property__CommentAssignment_212728 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTimeIntervalExpr_in_rule__LeadsToExpr__RightOpdAssignment_1_212759 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleImplyExpr_in_rule__TimeIntervalExpr__LhsAssignment_0_212790 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__TimeIntervalExpr__LowerAssignment_0_412821 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__TimeIntervalExpr__UpperAssignment_0_612852 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleImplyExpr_in_rule__TimeIntervalExpr__RhsAssignment_0_812883 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleAndExpr_in_rule__ImplyExpr__RightOpdAssignment_1_212914 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleOrExpr_in_rule__AndExpr__RightOpdAssignment_1_212945 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNotExpr_in_rule__OrExpr__RightOpdAssignment_1_212976 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNotExpr_in_rule__NotExpr__OpdAssignment_0_213007 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleVariableBinding_in_rule__UniversalQuantExpr__VarAssignment_313038 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNotExpr_in_rule__UniversalQuantExpr__FormulaAssignment_513069 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleVariableBinding_in_rule__ExistentialQuantExpr__VarAssignment_313100 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNotExpr_in_rule__ExistentialQuantExpr__FormulaAssignment_513131 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__VariableBinding__NameAssignment_013162 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleSetExpr_in_rule__VariableBinding__SetAssignment_213193 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNotExpr_in_rule__EFExpr__ExprAssignment_213224 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNotExpr_in_rule__AFExpr__ExprAssignment_213255 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNotExpr_in_rule__EGExpr__ExprAssignment_213286 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleNotExpr_in_rule__AGExpr__ExprAssignment_213317 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleStateMapExpr_in_rule__StateActiveExpr__StateAssignment_313348 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleStateMapExpr_in_rule__SubstateOfExpr__StateAssignment_313379 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleStateMapExpr_in_rule__SubstateOfExpr__SuperstateAssignment_513410 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMessageMapExpr_in_rule__MessageInTransitExpr__MessageAssignment_213441 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMessageMapExpr_in_rule__MessageInBufferExpr__MessageAssignment_213472 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleBufferMapExpr_in_rule__MessageInBufferExpr__BufferAssignment_413503 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTransitionMapExpr_in_rule__TransitionFiringExpr__TransitionAssignment_213534 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMapExpr_in_rule__ComparisonExpr__LhsAssignment_113565 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleComparisonOp_in_rule__ComparisonExpr__OpAssignment_213596 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleMapExpr_in_rule__ComparisonExpr__RhsAssignment_313627 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleBufferMapExpr_in_rule__BufferMessageCountExpr__BufferAssignment_213658 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTransitionMapExpr_in_rule__SourceStateExpr__TransitionAssignment_213689 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleTransitionMapExpr_in_rule__TargetStateExpr__TransitionAssignment_213720 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleQualifiedName_in_rule__MumlElemExpr__ElemAssignment13755 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_rule__ConstExpr__ValAssignment13790 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__IntervalSetExpr__LowerValAssignment_213821 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__IntervalSetExpr__UpperValAssignment_413852 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

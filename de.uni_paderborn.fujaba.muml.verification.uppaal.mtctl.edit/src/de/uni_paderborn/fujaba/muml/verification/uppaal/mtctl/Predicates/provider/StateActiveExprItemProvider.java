@@ -153,10 +153,7 @@ public class StateActiveExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StateActiveExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_StateActiveExpr_type") :
-			getString("_UI_StateActiveExpr_type") + " " + label;
+		return getString("_UI_StateActiveExpr_type");
 	}
 
 	/**
@@ -248,6 +245,11 @@ public class StateActiveExprItemProvider
 			(createChildParameter
 				(PredicatesPackage.Literals.STATE_ACTIVE_EXPR__STATE,
 				 MtctlFactory.eINSTANCE.createPropertyRepository()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PredicatesPackage.Literals.STATE_ACTIVE_EXPR__STATE,
+				 MtctlFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter

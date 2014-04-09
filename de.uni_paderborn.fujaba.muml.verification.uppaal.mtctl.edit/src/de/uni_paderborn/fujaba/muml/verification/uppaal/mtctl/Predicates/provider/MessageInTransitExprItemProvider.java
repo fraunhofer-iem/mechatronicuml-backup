@@ -153,10 +153,7 @@ public class MessageInTransitExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MessageInTransitExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_MessageInTransitExpr_type") :
-			getString("_UI_MessageInTransitExpr_type") + " " + label;
+		return getString("_UI_MessageInTransitExpr_type");
 	}
 
 	/**
@@ -248,6 +245,11 @@ public class MessageInTransitExprItemProvider
 			(createChildParameter
 				(PredicatesPackage.Literals.MESSAGE_IN_TRANSIT_EXPR__MESSAGE,
 				 MtctlFactory.eINSTANCE.createPropertyRepository()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PredicatesPackage.Literals.MESSAGE_IN_TRANSIT_EXPR__MESSAGE,
+				 MtctlFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter

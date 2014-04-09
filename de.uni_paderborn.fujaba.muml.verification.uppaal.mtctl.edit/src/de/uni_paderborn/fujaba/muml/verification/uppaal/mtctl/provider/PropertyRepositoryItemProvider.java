@@ -4,31 +4,15 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider;
 
 
 import de.uni_paderborn.fujaba.muml.constraint.provider.VerificationConstraintRepositoryItemProvider;
-
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.BooleanLogicFactory;
-
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesFactory;
-
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage;
-
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesFactory;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository;
-
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersFactory;
-
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsFactory;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -195,177 +179,7 @@ public class PropertyRepositoryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 QuantifiersFactory.eINSTANCE.createAFExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 QuantifiersFactory.eINSTANCE.createAGExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 QuantifiersFactory.eINSTANCE.createEFExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 QuantifiersFactory.eINSTANCE.createEGExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 QuantifiersFactory.eINSTANCE.createExistenceQuantExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 QuantifiersFactory.eINSTANCE.createBoundVariable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 QuantifiersFactory.eINSTANCE.createUniversalQuantExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 QuantifiersFactory.eINSTANCE.createLeadsToExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 QuantifiersFactory.eINSTANCE.createTimeIntervalExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createPredicateExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createDeadlockExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createBufferOverflowExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createComparisonExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createMessageInBufferExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createMessageInTransitExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createStateActiveExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createSubstateOfExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createTransitionFiringExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createTrueExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 PredicatesFactory.eINSTANCE.createFalseExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 SetsFactory.eINSTANCE.createClockSetExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 SetsFactory.eINSTANCE.createIntervalSetExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 SetsFactory.eINSTANCE.createMessageSetExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 SetsFactory.eINSTANCE.createStateSetExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 SetsFactory.eINSTANCE.createTransitionSetExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 SetsFactory.eINSTANCE.createBufferSetExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 BooleanLogicFactory.eINSTANCE.createAndExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 BooleanLogicFactory.eINSTANCE.createImplyExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 BooleanLogicFactory.eINSTANCE.createNotExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 BooleanLogicFactory.eINSTANCE.createOrExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 ComparablesFactory.eINSTANCE.createBufferMsgCountExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 ComparablesFactory.eINSTANCE.createConstExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 ComparablesFactory.eINSTANCE.createMumlElemExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 ComparablesFactory.eINSTANCE.createSourceStateExpr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MtctlPackage.Literals.PROPERTY_REPOSITORY__PROPERTIES,
-				 ComparablesFactory.eINSTANCE.createTargetStateExpr()));
+				 MtctlFactory.eINSTANCE.createProperty()));
 	}
 
 	/**

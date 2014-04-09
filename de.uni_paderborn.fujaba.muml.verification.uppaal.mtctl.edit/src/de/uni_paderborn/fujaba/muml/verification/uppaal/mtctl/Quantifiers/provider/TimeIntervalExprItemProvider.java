@@ -178,10 +178,8 @@ public class TimeIntervalExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TimeIntervalExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_TimeIntervalExpr_type") :
-			getString("_UI_TimeIntervalExpr_type") + " " + label;
+		TimeIntervalExpr timeIntervalExpr = (TimeIntervalExpr)object;
+		return getString("_UI_TimeIntervalExpr_type") + " " + timeIntervalExpr.getLower();
 	}
 
 	/**

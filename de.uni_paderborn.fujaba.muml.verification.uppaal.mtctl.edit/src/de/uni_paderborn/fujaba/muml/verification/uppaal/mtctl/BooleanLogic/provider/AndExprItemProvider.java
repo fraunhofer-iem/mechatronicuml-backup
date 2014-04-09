@@ -135,10 +135,7 @@ public class AndExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AndExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AndExpr_type") :
-			getString("_UI_AndExpr_type") + " " + label;
+		return getString("_UI_AndExpr_type");
 	}
 
 	/**

@@ -136,10 +136,8 @@ public class IntervalSetExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((IntervalSetExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_IntervalSetExpr_type") :
-			getString("_UI_IntervalSetExpr_type") + " " + label;
+		IntervalSetExpr intervalSetExpr = (IntervalSetExpr)object;
+		return getString("_UI_IntervalSetExpr_type") + " " + intervalSetExpr.getLowerVal();
 	}
 
 	/**

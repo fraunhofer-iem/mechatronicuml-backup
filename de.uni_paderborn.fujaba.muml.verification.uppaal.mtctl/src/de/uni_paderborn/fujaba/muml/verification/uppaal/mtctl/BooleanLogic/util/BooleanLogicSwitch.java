@@ -3,17 +3,10 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.util;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.*;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,9 +69,6 @@ public class BooleanLogicSwitch<T> extends Switch<T> {
 				AndExpr andExpr = (AndExpr)theEObject;
 				T result = caseAndExpr(andExpr);
 				if (result == null) result = caseExpression(andExpr);
-				if (result == null) result = caseProperty(andExpr);
-				if (result == null) result = caseCommentableElement(andExpr);
-				if (result == null) result = caseExtendableElement(andExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -86,9 +76,6 @@ public class BooleanLogicSwitch<T> extends Switch<T> {
 				ImplyExpr implyExpr = (ImplyExpr)theEObject;
 				T result = caseImplyExpr(implyExpr);
 				if (result == null) result = caseExpression(implyExpr);
-				if (result == null) result = caseProperty(implyExpr);
-				if (result == null) result = caseCommentableElement(implyExpr);
-				if (result == null) result = caseExtendableElement(implyExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -96,9 +83,6 @@ public class BooleanLogicSwitch<T> extends Switch<T> {
 				NotExpr notExpr = (NotExpr)theEObject;
 				T result = caseNotExpr(notExpr);
 				if (result == null) result = caseExpression(notExpr);
-				if (result == null) result = caseProperty(notExpr);
-				if (result == null) result = caseCommentableElement(notExpr);
-				if (result == null) result = caseExtendableElement(notExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -106,9 +90,6 @@ public class BooleanLogicSwitch<T> extends Switch<T> {
 				OrExpr orExpr = (OrExpr)theEObject;
 				T result = caseOrExpr(orExpr);
 				if (result == null) result = caseExpression(orExpr);
-				if (result == null) result = caseProperty(orExpr);
-				if (result == null) result = caseCommentableElement(orExpr);
-				if (result == null) result = caseExtendableElement(orExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -173,51 +154,6 @@ public class BooleanLogicSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOrExpr(OrExpr object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExtendableElement(ExtendableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommentableElement(CommentableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProperty(Property object) {
 		return null;
 	}
 

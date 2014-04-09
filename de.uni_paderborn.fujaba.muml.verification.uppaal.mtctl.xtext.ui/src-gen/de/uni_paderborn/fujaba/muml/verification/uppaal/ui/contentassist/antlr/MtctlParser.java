@@ -96,6 +96,7 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 					put(grammarAccess.getPropertyRepositoryAccess().getPropertiesAssignment(), "rule__PropertyRepository__PropertiesAssignment");
+					put(grammarAccess.getPropertyAccess().getExpressionAssignment_0(), "rule__Property__ExpressionAssignment_0");
 					put(grammarAccess.getPropertyAccess().getCommentAssignment_2(), "rule__Property__CommentAssignment_2");
 					put(grammarAccess.getLeadsToExprAccess().getRightOpdAssignment_1_2(), "rule__LeadsToExpr__RightOpdAssignment_1_2");
 					put(grammarAccess.getTimeIntervalExprAccess().getLhsAssignment_0_2(), "rule__TimeIntervalExpr__LhsAssignment_0_2");

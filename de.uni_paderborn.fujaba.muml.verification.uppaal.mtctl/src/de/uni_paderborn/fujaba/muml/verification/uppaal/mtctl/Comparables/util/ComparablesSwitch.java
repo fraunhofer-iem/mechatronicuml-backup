@@ -3,17 +3,10 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.util;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.*;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,9 +70,6 @@ public class ComparablesSwitch<T> extends Switch<T> {
 				T result = caseBufferMsgCountExpr(bufferMsgCountExpr);
 				if (result == null) result = caseMapExpr(bufferMsgCountExpr);
 				if (result == null) result = caseExpression(bufferMsgCountExpr);
-				if (result == null) result = caseProperty(bufferMsgCountExpr);
-				if (result == null) result = caseCommentableElement(bufferMsgCountExpr);
-				if (result == null) result = caseExtendableElement(bufferMsgCountExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -88,9 +78,6 @@ public class ComparablesSwitch<T> extends Switch<T> {
 				T result = caseConstExpr(constExpr);
 				if (result == null) result = caseMapExpr(constExpr);
 				if (result == null) result = caseExpression(constExpr);
-				if (result == null) result = caseProperty(constExpr);
-				if (result == null) result = caseCommentableElement(constExpr);
-				if (result == null) result = caseExtendableElement(constExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,9 +85,6 @@ public class ComparablesSwitch<T> extends Switch<T> {
 				MapExpr mapExpr = (MapExpr)theEObject;
 				T result = caseMapExpr(mapExpr);
 				if (result == null) result = caseExpression(mapExpr);
-				if (result == null) result = caseProperty(mapExpr);
-				if (result == null) result = caseCommentableElement(mapExpr);
-				if (result == null) result = caseExtendableElement(mapExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,9 +93,6 @@ public class ComparablesSwitch<T> extends Switch<T> {
 				T result = caseMumlElemExpr(mumlElemExpr);
 				if (result == null) result = caseMapExpr(mumlElemExpr);
 				if (result == null) result = caseExpression(mumlElemExpr);
-				if (result == null) result = caseProperty(mumlElemExpr);
-				if (result == null) result = caseCommentableElement(mumlElemExpr);
-				if (result == null) result = caseExtendableElement(mumlElemExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,9 +101,6 @@ public class ComparablesSwitch<T> extends Switch<T> {
 				T result = caseTransitionMap(transitionMap);
 				if (result == null) result = caseMapExpr(transitionMap);
 				if (result == null) result = caseExpression(transitionMap);
-				if (result == null) result = caseProperty(transitionMap);
-				if (result == null) result = caseCommentableElement(transitionMap);
-				if (result == null) result = caseExtendableElement(transitionMap);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -132,9 +110,6 @@ public class ComparablesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTransitionMap(sourceStateExpr);
 				if (result == null) result = caseMapExpr(sourceStateExpr);
 				if (result == null) result = caseExpression(sourceStateExpr);
-				if (result == null) result = caseProperty(sourceStateExpr);
-				if (result == null) result = caseCommentableElement(sourceStateExpr);
-				if (result == null) result = caseExtendableElement(sourceStateExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -144,9 +119,6 @@ public class ComparablesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseTransitionMap(targetStateExpr);
 				if (result == null) result = caseMapExpr(targetStateExpr);
 				if (result == null) result = caseExpression(targetStateExpr);
-				if (result == null) result = caseProperty(targetStateExpr);
-				if (result == null) result = caseCommentableElement(targetStateExpr);
-				if (result == null) result = caseExtendableElement(targetStateExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -256,51 +228,6 @@ public class ComparablesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTargetStateExpr(TargetStateExpr object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExtendableElement(ExtendableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommentableElement(CommentableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProperty(Property object) {
 		return null;
 	}
 

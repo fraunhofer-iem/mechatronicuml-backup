@@ -3,14 +3,10 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.provider;
 
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.AFExpr;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -86,10 +82,7 @@ public class AFExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AFExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_AFExpr_type") :
-			getString("_UI_AFExpr_type") + " " + label;
+		return getString("_UI_AFExpr_type");
 	}
 
 	/**

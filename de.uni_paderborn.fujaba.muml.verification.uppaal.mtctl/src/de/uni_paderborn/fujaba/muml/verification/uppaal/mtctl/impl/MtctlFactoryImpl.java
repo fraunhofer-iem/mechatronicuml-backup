@@ -57,6 +57,7 @@ public class MtctlFactoryImpl extends EFactoryImpl implements MtctlFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case MtctlPackage.PROPERTY_REPOSITORY: return createPropertyRepository();
+			case MtctlPackage.PROPERTY: return createProperty();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,6 +71,16 @@ public class MtctlFactoryImpl extends EFactoryImpl implements MtctlFactory {
 	public PropertyRepository createPropertyRepository() {
 		PropertyRepositoryImpl propertyRepository = new PropertyRepositoryImpl();
 		return propertyRepository;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Property createProperty() {
+		PropertyImpl property = new PropertyImpl();
+		return property;
 	}
 
 	/**

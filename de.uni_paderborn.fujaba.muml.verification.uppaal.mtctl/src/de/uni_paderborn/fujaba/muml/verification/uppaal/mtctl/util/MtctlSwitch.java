@@ -90,9 +90,6 @@ public class MtctlSwitch<T> extends Switch<T> {
 			case MtctlPackage.EXPRESSION: {
 				Expression expression = (Expression)theEObject;
 				T result = caseExpression(expression);
-				if (result == null) result = caseProperty(expression);
-				if (result == null) result = caseCommentableElement(expression);
-				if (result == null) result = caseExtendableElement(expression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

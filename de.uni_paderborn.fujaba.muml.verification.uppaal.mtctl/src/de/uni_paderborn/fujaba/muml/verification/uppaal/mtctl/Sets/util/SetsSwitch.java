@@ -3,17 +3,10 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.util;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,9 +69,6 @@ public class SetsSwitch<T> extends Switch<T> {
 				SetExpr setExpr = (SetExpr)theEObject;
 				T result = caseSetExpr(setExpr);
 				if (result == null) result = caseExpression(setExpr);
-				if (result == null) result = caseProperty(setExpr);
-				if (result == null) result = caseCommentableElement(setExpr);
-				if (result == null) result = caseExtendableElement(setExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -87,9 +77,6 @@ public class SetsSwitch<T> extends Switch<T> {
 				T result = caseClockSetExpr(clockSetExpr);
 				if (result == null) result = caseSetExpr(clockSetExpr);
 				if (result == null) result = caseExpression(clockSetExpr);
-				if (result == null) result = caseProperty(clockSetExpr);
-				if (result == null) result = caseCommentableElement(clockSetExpr);
-				if (result == null) result = caseExtendableElement(clockSetExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,9 +85,6 @@ public class SetsSwitch<T> extends Switch<T> {
 				T result = caseIntervalSetExpr(intervalSetExpr);
 				if (result == null) result = caseSetExpr(intervalSetExpr);
 				if (result == null) result = caseExpression(intervalSetExpr);
-				if (result == null) result = caseProperty(intervalSetExpr);
-				if (result == null) result = caseCommentableElement(intervalSetExpr);
-				if (result == null) result = caseExtendableElement(intervalSetExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,9 +93,6 @@ public class SetsSwitch<T> extends Switch<T> {
 				T result = caseMessageSetExpr(messageSetExpr);
 				if (result == null) result = caseSetExpr(messageSetExpr);
 				if (result == null) result = caseExpression(messageSetExpr);
-				if (result == null) result = caseProperty(messageSetExpr);
-				if (result == null) result = caseCommentableElement(messageSetExpr);
-				if (result == null) result = caseExtendableElement(messageSetExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -120,9 +101,6 @@ public class SetsSwitch<T> extends Switch<T> {
 				T result = caseStateSetExpr(stateSetExpr);
 				if (result == null) result = caseSetExpr(stateSetExpr);
 				if (result == null) result = caseExpression(stateSetExpr);
-				if (result == null) result = caseProperty(stateSetExpr);
-				if (result == null) result = caseCommentableElement(stateSetExpr);
-				if (result == null) result = caseExtendableElement(stateSetExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,9 +109,6 @@ public class SetsSwitch<T> extends Switch<T> {
 				T result = caseTransitionSetExpr(transitionSetExpr);
 				if (result == null) result = caseSetExpr(transitionSetExpr);
 				if (result == null) result = caseExpression(transitionSetExpr);
-				if (result == null) result = caseProperty(transitionSetExpr);
-				if (result == null) result = caseCommentableElement(transitionSetExpr);
-				if (result == null) result = caseExtendableElement(transitionSetExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,9 +117,6 @@ public class SetsSwitch<T> extends Switch<T> {
 				T result = caseBufferSetExpr(bufferSetExpr);
 				if (result == null) result = caseSetExpr(bufferSetExpr);
 				if (result == null) result = caseExpression(bufferSetExpr);
-				if (result == null) result = caseProperty(bufferSetExpr);
-				if (result == null) result = caseCommentableElement(bufferSetExpr);
-				if (result == null) result = caseExtendableElement(bufferSetExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -254,51 +226,6 @@ public class SetsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBufferSetExpr(BufferSetExpr object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExtendableElement(ExtendableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommentableElement(CommentableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProperty(Property object) {
 		return null;
 	}
 

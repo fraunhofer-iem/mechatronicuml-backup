@@ -207,6 +207,15 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getProperty_Expression() {
+		return (EReference)propertyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExpression() {
 		return expressionEClass;
 	}
@@ -243,6 +252,7 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 		createEReference(propertyRepositoryEClass, PROPERTY_REPOSITORY__PROPERTIES);
 
 		propertyEClass = createEClass(PROPERTY);
+		createEReference(propertyEClass, PROPERTY__EXPRESSION);
 
 		expressionEClass = createEClass(EXPRESSION);
 	}
@@ -293,13 +303,13 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 		// Add supertypes to classes
 		propertyRepositoryEClass.getESuperTypes().add(theConstraintPackage.getVerificationConstraintRepository());
 		propertyEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
-		expressionEClass.getESuperTypes().add(this.getProperty());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(propertyRepositoryEClass, PropertyRepository.class, "PropertyRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPropertyRepository_Properties(), this.getProperty(), null, "properties", null, 0, -1, PropertyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(propertyEClass, Property.class, "Property", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProperty_Expression(), this.getExpression(), null, "expression", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

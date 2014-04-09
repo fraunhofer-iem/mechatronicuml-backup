@@ -22,7 +22,7 @@ PropertyRepository returns mtctl::PropertyRepository:
 ;
 
 Property returns mtctl::Property hidden(WS, ML_COMMENT):
-	Expression ';' (comment=SL_COMMENT)?
+	expression=Expression ';' (comment=SL_COMMENT)?
 ;
 
 Expression returns mtctl::Expression:

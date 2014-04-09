@@ -4,14 +4,10 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.provi
 
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -111,10 +107,7 @@ public class MumlElemExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MumlElemExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_MumlElemExpr_type") :
-			getString("_UI_MumlElemExpr_type") + " " + label;
+		return getString("_UI_MumlElemExpr_type");
 	}
 
 	/**

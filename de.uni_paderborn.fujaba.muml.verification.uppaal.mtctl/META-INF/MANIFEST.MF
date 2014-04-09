@@ -7,8 +7,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: 
- de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
+Export-Package: de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.impl,
  de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.util,

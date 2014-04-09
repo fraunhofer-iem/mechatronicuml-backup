@@ -3,19 +3,13 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.provider;
 
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicateExpr;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.ExpressionItemProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlEditPlugin;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -91,10 +85,7 @@ public class PredicateExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PredicateExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_PredicateExpr_type") :
-			getString("_UI_PredicateExpr_type") + " " + label;
+		return getString("_UI_PredicateExpr_type");
 	}
 
 	/**

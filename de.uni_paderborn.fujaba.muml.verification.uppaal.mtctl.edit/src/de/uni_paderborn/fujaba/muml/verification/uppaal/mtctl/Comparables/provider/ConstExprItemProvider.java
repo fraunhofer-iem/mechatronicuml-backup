@@ -113,10 +113,8 @@ public class ConstExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConstExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ConstExpr_type") :
-			getString("_UI_ConstExpr_type") + " " + label;
+		ConstExpr constExpr = (ConstExpr)object;
+		return getString("_UI_ConstExpr_type") + " " + constExpr.getVal();
 	}
 
 	/**

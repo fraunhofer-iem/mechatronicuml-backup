@@ -123,10 +123,7 @@ public class TemporalQuantifierExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TemporalQuantifierExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_TemporalQuantifierExpr_type") :
-			getString("_UI_TemporalQuantifierExpr_type") + " " + label;
+		return getString("_UI_TemporalQuantifierExpr_type");
 	}
 
 	/**

@@ -3,15 +3,11 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.provider;
 
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -111,10 +107,7 @@ public class BufferMsgCountExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((BufferMsgCountExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_BufferMsgCountExpr_type") :
-			getString("_UI_BufferMsgCountExpr_type") + " " + label;
+		return getString("_UI_BufferMsgCountExpr_type");
 	}
 
 	/**

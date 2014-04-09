@@ -177,10 +177,7 @@ public class MessageInBufferExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MessageInBufferExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_MessageInBufferExpr_type") :
-			getString("_UI_MessageInBufferExpr_type") + " " + label;
+		return getString("_UI_MessageInBufferExpr_type");
 	}
 
 	/**
@@ -272,6 +269,11 @@ public class MessageInBufferExprItemProvider
 			(createChildParameter
 				(PredicatesPackage.Literals.MESSAGE_IN_BUFFER_EXPR__BUFFER,
 				 MtctlFactory.eINSTANCE.createPropertyRepository()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PredicatesPackage.Literals.MESSAGE_IN_BUFFER_EXPR__BUFFER,
+				 MtctlFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -147,10 +147,7 @@ public class QuantifierExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((QuantifierExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_QuantifierExpr_type") :
-			getString("_UI_QuantifierExpr_type") + " " + label;
+		return getString("_UI_QuantifierExpr_type");
 	}
 
 	/**

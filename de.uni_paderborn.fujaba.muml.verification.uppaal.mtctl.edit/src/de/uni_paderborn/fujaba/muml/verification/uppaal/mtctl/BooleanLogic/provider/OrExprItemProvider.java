@@ -135,10 +135,7 @@ public class OrExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OrExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_OrExpr_type") :
-			getString("_UI_OrExpr_type") + " " + label;
+		return getString("_UI_OrExpr_type");
 	}
 
 	/**

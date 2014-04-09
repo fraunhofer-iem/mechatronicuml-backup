@@ -177,10 +177,7 @@ public class SubstateOfExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SubstateOfExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_SubstateOfExpr_type") :
-			getString("_UI_SubstateOfExpr_type") + " " + label;
+		return getString("_UI_SubstateOfExpr_type");
 	}
 
 	/**
@@ -272,6 +269,11 @@ public class SubstateOfExprItemProvider
 			(createChildParameter
 				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__STATE,
 				 MtctlFactory.eINSTANCE.createPropertyRepository()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PredicatesPackage.Literals.SUBSTATE_OF_EXPR__STATE,
+				 MtctlFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter

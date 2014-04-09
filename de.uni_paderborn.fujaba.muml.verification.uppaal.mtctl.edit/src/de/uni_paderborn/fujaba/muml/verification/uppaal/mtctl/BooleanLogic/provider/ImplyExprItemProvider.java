@@ -135,10 +135,7 @@ public class ImplyExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ImplyExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ImplyExpr_type") :
-			getString("_UI_ImplyExpr_type") + " " + label;
+		return getString("_UI_ImplyExpr_type");
 	}
 
 	/**

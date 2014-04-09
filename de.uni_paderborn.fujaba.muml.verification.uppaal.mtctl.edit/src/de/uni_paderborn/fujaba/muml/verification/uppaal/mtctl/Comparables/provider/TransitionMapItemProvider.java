@@ -142,10 +142,7 @@ public class TransitionMapItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TransitionMap)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_TransitionMap_type") :
-			getString("_UI_TransitionMap_type") + " " + label;
+		return getString("_UI_TransitionMap_type");
 	}
 
 	/**
@@ -207,6 +204,11 @@ public class TransitionMapItemProvider
 			(createChildParameter
 				(ComparablesPackage.Literals.TRANSITION_MAP__TRANSITION,
 				 MtctlFactory.eINSTANCE.createPropertyRepository()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComparablesPackage.Literals.TRANSITION_MAP__TRANSITION,
+				 MtctlFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter

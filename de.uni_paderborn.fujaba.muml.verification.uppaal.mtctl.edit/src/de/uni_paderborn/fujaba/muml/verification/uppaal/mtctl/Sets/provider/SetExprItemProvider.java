@@ -3,19 +3,13 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.provider;
 
 
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetExpr;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.ExpressionItemProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlEditPlugin;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -80,10 +74,7 @@ public class SetExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SetExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_SetExpr_type") :
-			getString("_UI_SetExpr_type") + " " + label;
+		return getString("_UI_SetExpr_type");
 	}
 
 	/**

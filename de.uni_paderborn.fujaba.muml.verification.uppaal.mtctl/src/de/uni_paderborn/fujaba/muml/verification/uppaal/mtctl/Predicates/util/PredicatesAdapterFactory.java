@@ -3,20 +3,11 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.util;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.*;
-
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -125,18 +116,6 @@ public class PredicatesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseFalseExpr(FalseExpr object) {
 				return createFalseExprAdapter();
-			}
-			@Override
-			public Adapter caseExtendableElement(ExtendableElement object) {
-				return createExtendableElementAdapter();
-			}
-			@Override
-			public Adapter caseCommentableElement(CommentableElement object) {
-				return createCommentableElementAdapter();
-			}
-			@Override
-			public Adapter caseProperty(Property object) {
-				return createPropertyAdapter();
 			}
 			@Override
 			public Adapter caseExpression(Expression object) {
@@ -341,48 +320,6 @@ public class PredicatesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFalseExprAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.ExtendableElement <em>Extendable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.ExtendableElement
-	 * @generated
-	 */
-	public Adapter createExtendableElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.storydriven.core.CommentableElement <em>Commentable Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.storydriven.core.CommentableElement
-	 * @generated
-	 */
-	public Adapter createCommentableElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property <em>Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property
-	 * @generated
-	 */
-	public Adapter createPropertyAdapter() {
 		return null;
 	}
 

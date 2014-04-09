@@ -130,10 +130,7 @@ public class LeadsToExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LeadsToExpr)object).getComment();
-		return label == null || label.length() == 0 ?
-			getString("_UI_LeadsToExpr_type") :
-			getString("_UI_LeadsToExpr_type") + " " + label;
+		return getString("_UI_LeadsToExpr_type");
 	}
 
 	/**

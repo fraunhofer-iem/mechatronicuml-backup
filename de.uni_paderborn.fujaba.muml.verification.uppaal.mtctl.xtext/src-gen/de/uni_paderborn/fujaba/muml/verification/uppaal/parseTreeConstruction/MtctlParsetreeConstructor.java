@@ -141,11 +141,11 @@ protected class PropertyRepository_PropertiesAssignment extends AssignmentToken 
 /************ begin Rule Property ****************
  *
  * Property returns mtctl::Property hidden(WS, ML_COMMENT):
- * 	Expression ";" comment=SL_COMMENT?;
+ * 	expression=Expression ";" comment=SL_COMMENT?;
  *
  **/
 
-// Expression ";" comment=SL_COMMENT?
+// expression=Expression ";" comment=SL_COMMENT?
 protected class Property_Group extends GroupToken {
 	
 	public Property_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -168,44 +168,23 @@ protected class Property_Group extends GroupToken {
 
     @Override
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getAFExprAccess().getAFExprAction_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getAGExprAccess().getAGExprAction_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getAndExprAccess().getAndExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getBufferOverflowExprAccess().getBufferOverflowExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getComparisonExprAccess().getComparisonExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getDeadlockExprAccess().getDeadlockExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getEFExprAccess().getEFExprAction_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getEGExprAccess().getEGExprAction_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getExistentialQuantExprAccess().getExistenceQuantExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getFalseExprAccess().getFalseExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getImplyExprAccess().getImplyExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getLeadsToExprAccess().getLeadsToExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInBufferExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getMessageInTransitExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getNotExprAccess().getNotExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getOrExprAccess().getOrExprLeftOpdAction_1_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getStateActiveExprAccess().getStateActiveExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getSubstateOfExprAccess().getSubstateOfExprAction_2().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTimeIntervalExprAccess().getTimeIntervalExprAction_0_1().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTransitionFiringExprRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getTrueExprAccess().getTrueExprAction_0().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getUniversalQuantExprAccess().getUniversalQuantExprAction_2().getType().getClassifier())
+		if(getEObject().eClass() != grammarAccess.getPropertyRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
 
 }
 
-// Expression
-protected class Property_ExpressionParserRuleCall_0 extends RuleCallToken {
+// expression=Expression
+protected class Property_ExpressionAssignment_0 extends AssignmentToken  {
 	
-	public Property_ExpressionParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Property_ExpressionAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public RuleCall getGrammarElement() {
-		return grammarAccess.getPropertyAccess().getExpressionParserRuleCall_0();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getPropertyAccess().getExpressionAssignment_0();
 	}
 
     @Override
@@ -216,16 +195,27 @@ protected class Property_ExpressionParserRuleCall_0 extends RuleCallToken {
 		}	
 	}
 
-    @Override
+    @Override	
 	public IEObjectConsumer tryConsume() {
-		if(checkForRecursion(Expression_LeadsToExprParserRuleCall.class, eObjectConsumer)) return null;
-		return eObjectConsumer;
+		if((value = eObjectConsumer.getConsumable("expression",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("expression");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getExpressionRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getPropertyAccess().getExpressionExpressionParserRuleCall_0_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
 	}
-	
+
     @Override
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, consumed);
 		}	
 	}	
 }
@@ -245,7 +235,7 @@ protected class Property_SemicolonKeyword_1 extends KeywordToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Property_ExpressionParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Property_ExpressionAssignment_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}

@@ -3,18 +3,10 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.util;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.*;
-
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,9 +71,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDynamicPredicateExpr(deadlockExpr);
 				if (result == null) result = casePredicateExpr(deadlockExpr);
 				if (result == null) result = caseExpression(deadlockExpr);
-				if (result == null) result = caseProperty(deadlockExpr);
-				if (result == null) result = caseCommentableElement(deadlockExpr);
-				if (result == null) result = caseExtendableElement(deadlockExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -91,9 +80,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDynamicPredicateExpr(bufferOverflowExpr);
 				if (result == null) result = casePredicateExpr(bufferOverflowExpr);
 				if (result == null) result = caseExpression(bufferOverflowExpr);
-				if (result == null) result = caseProperty(bufferOverflowExpr);
-				if (result == null) result = caseCommentableElement(bufferOverflowExpr);
-				if (result == null) result = caseExtendableElement(bufferOverflowExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -102,9 +88,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				T result = caseComparisonExpr(comparisonExpr);
 				if (result == null) result = casePredicateExpr(comparisonExpr);
 				if (result == null) result = caseExpression(comparisonExpr);
-				if (result == null) result = caseProperty(comparisonExpr);
-				if (result == null) result = caseCommentableElement(comparisonExpr);
-				if (result == null) result = caseExtendableElement(comparisonExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -114,9 +97,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDynamicPredicateExpr(messageInBufferExpr);
 				if (result == null) result = casePredicateExpr(messageInBufferExpr);
 				if (result == null) result = caseExpression(messageInBufferExpr);
-				if (result == null) result = caseProperty(messageInBufferExpr);
-				if (result == null) result = caseCommentableElement(messageInBufferExpr);
-				if (result == null) result = caseExtendableElement(messageInBufferExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -126,9 +106,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDynamicPredicateExpr(messageInTransitExpr);
 				if (result == null) result = casePredicateExpr(messageInTransitExpr);
 				if (result == null) result = caseExpression(messageInTransitExpr);
-				if (result == null) result = caseProperty(messageInTransitExpr);
-				if (result == null) result = caseCommentableElement(messageInTransitExpr);
-				if (result == null) result = caseExtendableElement(messageInTransitExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -138,9 +115,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDynamicPredicateExpr(stateActiveExpr);
 				if (result == null) result = casePredicateExpr(stateActiveExpr);
 				if (result == null) result = caseExpression(stateActiveExpr);
-				if (result == null) result = caseProperty(stateActiveExpr);
-				if (result == null) result = caseCommentableElement(stateActiveExpr);
-				if (result == null) result = caseExtendableElement(stateActiveExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -150,9 +124,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseStaticPredicateExpr(substateOfExpr);
 				if (result == null) result = casePredicateExpr(substateOfExpr);
 				if (result == null) result = caseExpression(substateOfExpr);
-				if (result == null) result = caseProperty(substateOfExpr);
-				if (result == null) result = caseCommentableElement(substateOfExpr);
-				if (result == null) result = caseExtendableElement(substateOfExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -162,9 +133,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDynamicPredicateExpr(transitionFiringExpr);
 				if (result == null) result = casePredicateExpr(transitionFiringExpr);
 				if (result == null) result = caseExpression(transitionFiringExpr);
-				if (result == null) result = caseProperty(transitionFiringExpr);
-				if (result == null) result = caseCommentableElement(transitionFiringExpr);
-				if (result == null) result = caseExtendableElement(transitionFiringExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -172,9 +140,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				PredicateExpr predicateExpr = (PredicateExpr)theEObject;
 				T result = casePredicateExpr(predicateExpr);
 				if (result == null) result = caseExpression(predicateExpr);
-				if (result == null) result = caseProperty(predicateExpr);
-				if (result == null) result = caseCommentableElement(predicateExpr);
-				if (result == null) result = caseExtendableElement(predicateExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -183,9 +148,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				T result = caseDynamicPredicateExpr(dynamicPredicateExpr);
 				if (result == null) result = casePredicateExpr(dynamicPredicateExpr);
 				if (result == null) result = caseExpression(dynamicPredicateExpr);
-				if (result == null) result = caseProperty(dynamicPredicateExpr);
-				if (result == null) result = caseCommentableElement(dynamicPredicateExpr);
-				if (result == null) result = caseExtendableElement(dynamicPredicateExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -194,9 +156,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				T result = caseStaticPredicateExpr(staticPredicateExpr);
 				if (result == null) result = casePredicateExpr(staticPredicateExpr);
 				if (result == null) result = caseExpression(staticPredicateExpr);
-				if (result == null) result = caseProperty(staticPredicateExpr);
-				if (result == null) result = caseCommentableElement(staticPredicateExpr);
-				if (result == null) result = caseExtendableElement(staticPredicateExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -206,9 +165,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseStaticPredicateExpr(trueExpr);
 				if (result == null) result = casePredicateExpr(trueExpr);
 				if (result == null) result = caseExpression(trueExpr);
-				if (result == null) result = caseProperty(trueExpr);
-				if (result == null) result = caseCommentableElement(trueExpr);
-				if (result == null) result = caseExtendableElement(trueExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -218,9 +174,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = caseStaticPredicateExpr(falseExpr);
 				if (result == null) result = casePredicateExpr(falseExpr);
 				if (result == null) result = caseExpression(falseExpr);
-				if (result == null) result = caseProperty(falseExpr);
-				if (result == null) result = caseCommentableElement(falseExpr);
-				if (result == null) result = caseExtendableElement(falseExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -420,51 +373,6 @@ public class PredicatesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFalseExpr(FalseExpr object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExtendableElement(ExtendableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommentableElement(CommentableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProperty(Property object) {
 		return null;
 	}
 

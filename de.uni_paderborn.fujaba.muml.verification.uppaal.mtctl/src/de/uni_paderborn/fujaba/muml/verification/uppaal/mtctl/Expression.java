@@ -2,6 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -9,7 +11,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Common superclass of all elements of the language
+ * Common superclass of all elements of the language (except Property and PropertyRepository)
  * <!-- end-model-doc -->
  *
  *
@@ -17,5 +19,5 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl;
  * @model abstract="true"
  * @generated
  */
-public interface Expression extends Property {
+public interface Expression extends EObject {
 } // Expression

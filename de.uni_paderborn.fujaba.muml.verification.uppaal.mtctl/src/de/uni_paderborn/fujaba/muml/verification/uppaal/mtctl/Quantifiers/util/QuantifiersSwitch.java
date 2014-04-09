@@ -3,17 +3,10 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.util;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Expression;
-import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Property;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
-import org.storydriven.core.CommentableElement;
-import org.storydriven.core.ExtendableElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,9 +70,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				T result = caseAFExpr(afExpr);
 				if (result == null) result = caseTemporalQuantifierExpr(afExpr);
 				if (result == null) result = caseExpression(afExpr);
-				if (result == null) result = caseProperty(afExpr);
-				if (result == null) result = caseCommentableElement(afExpr);
-				if (result == null) result = caseExtendableElement(afExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -88,9 +78,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				T result = caseAGExpr(agExpr);
 				if (result == null) result = caseTemporalQuantifierExpr(agExpr);
 				if (result == null) result = caseExpression(agExpr);
-				if (result == null) result = caseProperty(agExpr);
-				if (result == null) result = caseCommentableElement(agExpr);
-				if (result == null) result = caseExtendableElement(agExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -99,9 +86,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				T result = caseEFExpr(efExpr);
 				if (result == null) result = caseTemporalQuantifierExpr(efExpr);
 				if (result == null) result = caseExpression(efExpr);
-				if (result == null) result = caseProperty(efExpr);
-				if (result == null) result = caseCommentableElement(efExpr);
-				if (result == null) result = caseExtendableElement(efExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -110,9 +94,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				T result = caseEGExpr(egExpr);
 				if (result == null) result = caseTemporalQuantifierExpr(egExpr);
 				if (result == null) result = caseExpression(egExpr);
-				if (result == null) result = caseProperty(egExpr);
-				if (result == null) result = caseCommentableElement(egExpr);
-				if (result == null) result = caseExtendableElement(egExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -121,9 +102,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				T result = caseExistenceQuantExpr(existenceQuantExpr);
 				if (result == null) result = caseQuantifierExpr(existenceQuantExpr);
 				if (result == null) result = caseExpression(existenceQuantExpr);
-				if (result == null) result = caseProperty(existenceQuantExpr);
-				if (result == null) result = caseCommentableElement(existenceQuantExpr);
-				if (result == null) result = caseExtendableElement(existenceQuantExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,9 +109,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				QuantifierExpr quantifierExpr = (QuantifierExpr)theEObject;
 				T result = caseQuantifierExpr(quantifierExpr);
 				if (result == null) result = caseExpression(quantifierExpr);
-				if (result == null) result = caseProperty(quantifierExpr);
-				if (result == null) result = caseCommentableElement(quantifierExpr);
-				if (result == null) result = caseExtendableElement(quantifierExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -141,9 +116,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				BoundVariable boundVariable = (BoundVariable)theEObject;
 				T result = caseBoundVariable(boundVariable);
 				if (result == null) result = caseExpression(boundVariable);
-				if (result == null) result = caseProperty(boundVariable);
-				if (result == null) result = caseCommentableElement(boundVariable);
-				if (result == null) result = caseExtendableElement(boundVariable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -151,9 +123,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				TemporalQuantifierExpr temporalQuantifierExpr = (TemporalQuantifierExpr)theEObject;
 				T result = caseTemporalQuantifierExpr(temporalQuantifierExpr);
 				if (result == null) result = caseExpression(temporalQuantifierExpr);
-				if (result == null) result = caseProperty(temporalQuantifierExpr);
-				if (result == null) result = caseCommentableElement(temporalQuantifierExpr);
-				if (result == null) result = caseExtendableElement(temporalQuantifierExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -162,9 +131,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				T result = caseUniversalQuantExpr(universalQuantExpr);
 				if (result == null) result = caseQuantifierExpr(universalQuantExpr);
 				if (result == null) result = caseExpression(universalQuantExpr);
-				if (result == null) result = caseProperty(universalQuantExpr);
-				if (result == null) result = caseCommentableElement(universalQuantExpr);
-				if (result == null) result = caseExtendableElement(universalQuantExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -173,9 +139,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				T result = caseLeadsToExpr(leadsToExpr);
 				if (result == null) result = caseTemporalQuantifierExpr(leadsToExpr);
 				if (result == null) result = caseExpression(leadsToExpr);
-				if (result == null) result = caseProperty(leadsToExpr);
-				if (result == null) result = caseCommentableElement(leadsToExpr);
-				if (result == null) result = caseExtendableElement(leadsToExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -184,9 +147,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 				T result = caseTimeIntervalExpr(timeIntervalExpr);
 				if (result == null) result = caseTemporalQuantifierExpr(timeIntervalExpr);
 				if (result == null) result = caseExpression(timeIntervalExpr);
-				if (result == null) result = caseProperty(timeIntervalExpr);
-				if (result == null) result = caseCommentableElement(timeIntervalExpr);
-				if (result == null) result = caseExtendableElement(timeIntervalExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -356,51 +316,6 @@ public class QuantifiersSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTimeIntervalExpr(TimeIntervalExpr object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Extendable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseExtendableElement(ExtendableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Commentable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommentableElement(CommentableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProperty(Property object) {
 		return null;
 	}
 

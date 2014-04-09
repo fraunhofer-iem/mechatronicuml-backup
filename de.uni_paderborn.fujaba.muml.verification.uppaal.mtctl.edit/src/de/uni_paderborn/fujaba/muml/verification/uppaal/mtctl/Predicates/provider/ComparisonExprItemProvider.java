@@ -28,6 +28,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.Compar
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlFactory;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
 
@@ -179,7 +180,8 @@ public class ComparisonExprItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ComparisonExpr)object).getComment();
+		ComparisonOp labelValue = ((ComparisonExpr)object).getOp();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_ComparisonExpr_type") :
 			getString("_UI_ComparisonExpr_type") + " " + label;
@@ -278,6 +280,11 @@ public class ComparisonExprItemProvider
 			(createChildParameter
 				(PredicatesPackage.Literals.COMPARISON_EXPR__LHS,
 				 MtctlFactory.eINSTANCE.createPropertyRepository()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PredicatesPackage.Literals.COMPARISON_EXPR__LHS,
+				 MtctlFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -768,6 +775,11 @@ public class ComparisonExprItemProvider
 			(createChildParameter
 				(PredicatesPackage.Literals.COMPARISON_EXPR__RHS,
 				 MtctlFactory.eINSTANCE.createPropertyRepository()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PredicatesPackage.Literals.COMPARISON_EXPR__RHS,
+				 MtctlFactory.eINSTANCE.createProperty()));
 
 		newChildDescriptors.add
 			(createChildParameter
