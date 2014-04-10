@@ -4,14 +4,11 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage;
-
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -36,7 +33,7 @@ public class BufferMsgCountExprImpl extends MapExprImpl implements BufferMsgCoun
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject buffer;
+	protected MapExpr buffer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +59,7 @@ public class BufferMsgCountExprImpl extends MapExprImpl implements BufferMsgCoun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getBuffer() {
+	public MapExpr getBuffer() {
 		return buffer;
 	}
 
@@ -71,8 +68,8 @@ public class BufferMsgCountExprImpl extends MapExprImpl implements BufferMsgCoun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBuffer(EObject newBuffer, NotificationChain msgs) {
-		EObject oldBuffer = buffer;
+	public NotificationChain basicSetBuffer(MapExpr newBuffer, NotificationChain msgs) {
+		MapExpr oldBuffer = buffer;
 		buffer = newBuffer;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER, oldBuffer, newBuffer);
@@ -86,7 +83,7 @@ public class BufferMsgCountExprImpl extends MapExprImpl implements BufferMsgCoun
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBuffer(EObject newBuffer) {
+	public void setBuffer(MapExpr newBuffer) {
 		if (newBuffer != buffer) {
 			NotificationChain msgs = null;
 			if (buffer != null)
@@ -137,7 +134,7 @@ public class BufferMsgCountExprImpl extends MapExprImpl implements BufferMsgCoun
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER:
-				setBuffer((EObject)newValue);
+				setBuffer((MapExpr)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,7 +149,7 @@ public class BufferMsgCountExprImpl extends MapExprImpl implements BufferMsgCoun
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER:
-				setBuffer((EObject)null);
+				setBuffer((MapExpr)null);
 				return;
 		}
 		super.eUnset(featureID);

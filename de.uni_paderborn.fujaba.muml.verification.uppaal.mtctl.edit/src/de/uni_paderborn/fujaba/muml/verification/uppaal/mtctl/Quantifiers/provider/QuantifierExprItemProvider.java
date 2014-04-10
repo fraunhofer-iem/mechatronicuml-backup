@@ -4,31 +4,20 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.provi
 
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.BooleanLogic.BooleanLogicFactory;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesFactory;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesFactory;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifiersPackage;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsFactory;
-
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.ExpressionItemProvider;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.provider.MtctlEditPlugin;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -72,31 +61,8 @@ public class QuantifierExprItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addVarPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Var feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addVarPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_QuantifierExpr_var_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_QuantifierExpr_var_feature", "_UI_QuantifierExpr_type"),
-				 QuantifiersPackage.Literals.QUANTIFIER_EXPR__VAR,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -112,6 +78,7 @@ public class QuantifierExprItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(QuantifiersPackage.Literals.QUANTIFIER_EXPR__FORMULA);
+			childrenFeatures.add(QuantifiersPackage.Literals.QUANTIFIER_EXPR__VAR);
 		}
 		return childrenFeatures;
 	}
@@ -162,10 +129,8 @@ public class QuantifierExprItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(QuantifierExpr.class)) {
-			case QuantifiersPackage.QUANTIFIER_EXPR__VAR:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case QuantifiersPackage.QUANTIFIER_EXPR__FORMULA:
+			case QuantifiersPackage.QUANTIFIER_EXPR__VAR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -357,6 +322,34 @@ public class QuantifierExprItemProvider
 			(createChildParameter
 				(QuantifiersPackage.Literals.QUANTIFIER_EXPR__FORMULA,
 				 ComparablesFactory.eINSTANCE.createTargetStateExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.QUANTIFIER_EXPR__VAR,
+				 QuantifiersFactory.eINSTANCE.createBoundVariable()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == QuantifiersPackage.Literals.QUANTIFIER_EXPR__FORMULA ||
+			childFeature == QuantifiersPackage.Literals.QUANTIFIER_EXPR__VAR;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

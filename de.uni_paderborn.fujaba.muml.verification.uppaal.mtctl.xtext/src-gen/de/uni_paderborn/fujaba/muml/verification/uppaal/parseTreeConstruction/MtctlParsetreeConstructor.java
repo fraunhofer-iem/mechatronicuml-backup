@@ -5805,7 +5805,7 @@ protected class ComparisonExpr_RhsAssignment_3 extends AssignmentToken  {
 /************ begin Rule MapExpr ****************
  *
  * //Expressions usable in comparisons. Starting with MapExpressions arranged by return type
- * MapExpr returns mtctl::Expression:
+ * MapExpr returns mtctl::MapExpr:
  * 	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr;
  *
  **/
@@ -6033,7 +6033,7 @@ protected class MapExpr_TargetStateExprParserRuleCall_4 extends RuleCallToken {
 
 /************ begin Rule IntegerMapExpr ****************
  *
- * IntegerMapExpr returns mtctl::Expression:
+ * IntegerMapExpr returns mtctl::MapExpr:
  * 	MumlElemExpr | BufferMessageCountExpr | ConstExpr;
  *
  **/
@@ -6185,7 +6185,7 @@ protected class IntegerMapExpr_ConstExprParserRuleCall_2 extends RuleCallToken {
 
 /************ begin Rule TransitionMapExpr ****************
  *
- * TransitionMapExpr returns mtctl::Expression:
+ * TransitionMapExpr returns mtctl::MapExpr:
  * 	MumlElemExpr;
  *
  **/
@@ -6231,7 +6231,7 @@ protected class TransitionMapExpr_MumlElemExprParserRuleCall extends RuleCallTok
 
 /************ begin Rule StateMapExpr ****************
  *
- * StateMapExpr returns mtctl::Expression:
+ * StateMapExpr returns mtctl::MapExpr:
  * 	MumlElemExpr | SourceStateExpr | TargetStateExpr;
  *
  **/
@@ -6383,7 +6383,7 @@ protected class StateMapExpr_TargetStateExprParserRuleCall_2 extends RuleCallTok
 
 /************ begin Rule BufferMapExpr ****************
  *
- * BufferMapExpr returns mtctl::Expression:
+ * BufferMapExpr returns mtctl::MapExpr:
  * 	MumlElemExpr;
  *
  **/
@@ -6429,7 +6429,7 @@ protected class BufferMapExpr_MumlElemExprParserRuleCall extends RuleCallToken {
 
 /************ begin Rule MessageMapExpr ****************
  *
- * MessageMapExpr returns mtctl::Expression:
+ * MessageMapExpr returns mtctl::MapExpr:
  * 	MumlElemExpr;
  *
  **/

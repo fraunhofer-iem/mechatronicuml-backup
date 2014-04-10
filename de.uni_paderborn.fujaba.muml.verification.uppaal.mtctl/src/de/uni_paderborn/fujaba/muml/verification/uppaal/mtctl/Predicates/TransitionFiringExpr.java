@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates;
 
-import org.eclipse.emf.ecore.EObject;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,12 +34,12 @@ public interface TransitionFiringExpr extends DynamicPredicateExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Transition</em>' containment reference.
-	 * @see #setTransition(EObject)
+	 * @see #setTransition(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getTransitionFiringExpr_Transition()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getTransition();
+	MapExpr getTransition();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.TransitionFiringExpr#getTransition <em>Transition</em>}' containment reference.
@@ -49,6 +49,6 @@ public interface TransitionFiringExpr extends DynamicPredicateExpr {
 	 * @see #getTransition()
 	 * @generated
 	 */
-	void setTransition(EObject value);
+	void setTransition(MapExpr value);
 
 } // TransitionFiringExpr

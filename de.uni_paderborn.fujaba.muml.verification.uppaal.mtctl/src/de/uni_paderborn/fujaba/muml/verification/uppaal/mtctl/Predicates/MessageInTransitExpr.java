@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates;
 
-import org.eclipse.emf.ecore.EObject;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,12 +34,12 @@ public interface MessageInTransitExpr extends DynamicPredicateExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message</em>' containment reference.
-	 * @see #setMessage(EObject)
+	 * @see #setMessage(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getMessageInTransitExpr_Message()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getMessage();
+	MapExpr getMessage();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInTransitExpr#getMessage <em>Message</em>}' containment reference.
@@ -49,6 +49,6 @@ public interface MessageInTransitExpr extends DynamicPredicateExpr {
 	 * @see #getMessage()
 	 * @generated
 	 */
-	void setMessage(EObject value);
+	void setMessage(MapExpr value);
 
 } // MessageInTransitExpr

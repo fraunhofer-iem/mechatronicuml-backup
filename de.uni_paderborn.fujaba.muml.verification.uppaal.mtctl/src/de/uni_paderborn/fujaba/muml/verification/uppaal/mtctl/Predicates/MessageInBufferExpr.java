@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates;
 
-import org.eclipse.emf.ecore.EObject;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,12 +35,12 @@ public interface MessageInBufferExpr extends DynamicPredicateExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Buffer</em>' containment reference.
-	 * @see #setBuffer(EObject)
+	 * @see #setBuffer(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getMessageInBufferExpr_Buffer()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getBuffer();
+	MapExpr getBuffer();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr#getBuffer <em>Buffer</em>}' containment reference.
@@ -50,7 +50,7 @@ public interface MessageInBufferExpr extends DynamicPredicateExpr {
 	 * @see #getBuffer()
 	 * @generated
 	 */
-	void setBuffer(EObject value);
+	void setBuffer(MapExpr value);
 
 	/**
 	 * Returns the value of the '<em><b>Message</b></em>' containment reference.
@@ -61,12 +61,12 @@ public interface MessageInBufferExpr extends DynamicPredicateExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message</em>' containment reference.
-	 * @see #setMessage(EObject)
+	 * @see #setMessage(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getMessageInBufferExpr_Message()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getMessage();
+	MapExpr getMessage();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr#getMessage <em>Message</em>}' containment reference.
@@ -76,6 +76,6 @@ public interface MessageInBufferExpr extends DynamicPredicateExpr {
 	 * @see #getMessage()
 	 * @generated
 	 */
-	void setMessage(EObject value);
+	void setMessage(MapExpr value);
 
 } // MessageInBufferExpr

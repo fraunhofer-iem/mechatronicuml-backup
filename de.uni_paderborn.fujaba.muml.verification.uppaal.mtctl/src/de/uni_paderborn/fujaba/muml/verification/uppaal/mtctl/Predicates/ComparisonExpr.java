@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates;
 
-import org.eclipse.emf.ecore.EObject;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,12 +36,12 @@ public interface ComparisonExpr extends PredicateExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Lhs</em>' containment reference.
-	 * @see #setLhs(EObject)
+	 * @see #setLhs(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getComparisonExpr_Lhs()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getLhs();
+	MapExpr getLhs();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr#getLhs <em>Lhs</em>}' containment reference.
@@ -51,7 +51,7 @@ public interface ComparisonExpr extends PredicateExpr {
 	 * @see #getLhs()
 	 * @generated
 	 */
-	void setLhs(EObject value);
+	void setLhs(MapExpr value);
 
 	/**
 	 * Returns the value of the '<em><b>Op</b></em>' attribute.
@@ -91,12 +91,12 @@ public interface ComparisonExpr extends PredicateExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Rhs</em>' containment reference.
-	 * @see #setRhs(EObject)
+	 * @see #setRhs(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getComparisonExpr_Rhs()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getRhs();
+	MapExpr getRhs();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr#getRhs <em>Rhs</em>}' containment reference.
@@ -106,6 +106,6 @@ public interface ComparisonExpr extends PredicateExpr {
 	 * @see #getRhs()
 	 * @generated
 	 */
-	void setRhs(EObject value);
+	void setRhs(MapExpr value);
 
 } // ComparisonExpr

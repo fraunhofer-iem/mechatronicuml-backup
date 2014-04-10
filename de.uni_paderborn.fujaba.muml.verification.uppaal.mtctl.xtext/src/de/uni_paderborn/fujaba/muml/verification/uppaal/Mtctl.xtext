@@ -160,27 +160,27 @@ enum ComparisonOp returns mtctl::ComparisonOp:
 ;
 
 //Expressions usable in comparisons. Starting with MapExpressions arranged by return type
-MapExpr returns mtctl::Expression:
+MapExpr returns mtctl::MapExpr:
 	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr
 ;
 
-IntegerMapExpr returns mtctl::Expression:
+IntegerMapExpr returns mtctl::MapExpr:
 	MumlElemExpr | BufferMessageCountExpr | ConstExpr
 ;
 
-TransitionMapExpr returns mtctl::Expression:
+TransitionMapExpr returns mtctl::MapExpr:
 	MumlElemExpr
 ;
 
-StateMapExpr returns mtctl::Expression:
+StateMapExpr returns mtctl::MapExpr:
 	MumlElemExpr | SourceStateExpr | TargetStateExpr
 ;
 
-BufferMapExpr returns mtctl::Expression:
+BufferMapExpr returns mtctl::MapExpr:
 	MumlElemExpr
 ;
 
-MessageMapExpr returns mtctl::Expression:
+MessageMapExpr returns mtctl::MapExpr:
 	MumlElemExpr
 ;
 

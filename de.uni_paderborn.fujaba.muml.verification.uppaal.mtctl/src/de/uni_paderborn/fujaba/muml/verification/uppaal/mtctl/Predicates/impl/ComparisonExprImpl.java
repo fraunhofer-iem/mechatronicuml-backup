@@ -2,17 +2,14 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl;
 
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -39,7 +36,7 @@ public class ComparisonExprImpl extends PredicateExprImpl implements ComparisonE
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject lhs;
+	protected MapExpr lhs;
 
 	/**
 	 * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
@@ -69,7 +66,7 @@ public class ComparisonExprImpl extends PredicateExprImpl implements ComparisonE
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject rhs;
+	protected MapExpr rhs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,7 +92,7 @@ public class ComparisonExprImpl extends PredicateExprImpl implements ComparisonE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getLhs() {
+	public MapExpr getLhs() {
 		return lhs;
 	}
 
@@ -104,8 +101,8 @@ public class ComparisonExprImpl extends PredicateExprImpl implements ComparisonE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLhs(EObject newLhs, NotificationChain msgs) {
-		EObject oldLhs = lhs;
+	public NotificationChain basicSetLhs(MapExpr newLhs, NotificationChain msgs) {
+		MapExpr oldLhs = lhs;
 		lhs = newLhs;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.COMPARISON_EXPR__LHS, oldLhs, newLhs);
@@ -119,7 +116,7 @@ public class ComparisonExprImpl extends PredicateExprImpl implements ComparisonE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLhs(EObject newLhs) {
+	public void setLhs(MapExpr newLhs) {
 		if (newLhs != lhs) {
 			NotificationChain msgs = null;
 			if (lhs != null)
@@ -159,7 +156,7 @@ public class ComparisonExprImpl extends PredicateExprImpl implements ComparisonE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getRhs() {
+	public MapExpr getRhs() {
 		return rhs;
 	}
 
@@ -168,8 +165,8 @@ public class ComparisonExprImpl extends PredicateExprImpl implements ComparisonE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRhs(EObject newRhs, NotificationChain msgs) {
-		EObject oldRhs = rhs;
+	public NotificationChain basicSetRhs(MapExpr newRhs, NotificationChain msgs) {
+		MapExpr oldRhs = rhs;
 		rhs = newRhs;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.COMPARISON_EXPR__RHS, oldRhs, newRhs);
@@ -183,7 +180,7 @@ public class ComparisonExprImpl extends PredicateExprImpl implements ComparisonE
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRhs(EObject newRhs) {
+	public void setRhs(MapExpr newRhs) {
 		if (newRhs != rhs) {
 			NotificationChain msgs = null;
 			if (rhs != null)
@@ -240,13 +237,13 @@ public class ComparisonExprImpl extends PredicateExprImpl implements ComparisonE
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PredicatesPackage.COMPARISON_EXPR__LHS:
-				setLhs((EObject)newValue);
+				setLhs((MapExpr)newValue);
 				return;
 			case PredicatesPackage.COMPARISON_EXPR__OP:
 				setOp((ComparisonOp)newValue);
 				return;
 			case PredicatesPackage.COMPARISON_EXPR__RHS:
-				setRhs((EObject)newValue);
+				setRhs((MapExpr)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -261,13 +258,13 @@ public class ComparisonExprImpl extends PredicateExprImpl implements ComparisonE
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PredicatesPackage.COMPARISON_EXPR__LHS:
-				setLhs((EObject)null);
+				setLhs((MapExpr)null);
 				return;
 			case PredicatesPackage.COMPARISON_EXPR__OP:
 				setOp(OP_EDEFAULT);
 				return;
 			case PredicatesPackage.COMPARISON_EXPR__RHS:
-				setRhs((EObject)null);
+				setRhs((MapExpr)null);
 				return;
 		}
 		super.eUnset(featureID);

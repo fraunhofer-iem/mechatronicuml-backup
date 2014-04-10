@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates;
 
-import org.eclipse.emf.ecore.EObject;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,12 +34,12 @@ public interface StateActiveExpr extends DynamicPredicateExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>State</em>' containment reference.
-	 * @see #setState(EObject)
+	 * @see #setState(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getStateActiveExpr_State()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getState();
+	MapExpr getState();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateActiveExpr#getState <em>State</em>}' containment reference.
@@ -49,6 +49,6 @@ public interface StateActiveExpr extends DynamicPredicateExpr {
 	 * @see #getState()
 	 * @generated
 	 */
-	void setState(EObject value);
+	void setState(MapExpr value);
 
 } // StateActiveExpr

@@ -2,16 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl;
 
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateActiveExpr;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -36,7 +33,7 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject state;
+	protected MapExpr state;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +59,7 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getState() {
+	public MapExpr getState() {
 		return state;
 	}
 
@@ -71,8 +68,8 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetState(EObject newState, NotificationChain msgs) {
-		EObject oldState = state;
+	public NotificationChain basicSetState(MapExpr newState, NotificationChain msgs) {
+		MapExpr oldState = state;
 		state = newState;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.STATE_ACTIVE_EXPR__STATE, oldState, newState);
@@ -86,7 +83,7 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setState(EObject newState) {
+	public void setState(MapExpr newState) {
 		if (newState != state) {
 			NotificationChain msgs = null;
 			if (state != null)
@@ -137,7 +134,7 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PredicatesPackage.STATE_ACTIVE_EXPR__STATE:
-				setState((EObject)newValue);
+				setState((MapExpr)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,7 +149,7 @@ public class StateActiveExprImpl extends DynamicPredicateExprImpl implements Sta
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PredicatesPackage.STATE_ACTIVE_EXPR__STATE:
-				setState((EObject)null);
+				setState((MapExpr)null);
 				return;
 		}
 		super.eUnset(featureID);

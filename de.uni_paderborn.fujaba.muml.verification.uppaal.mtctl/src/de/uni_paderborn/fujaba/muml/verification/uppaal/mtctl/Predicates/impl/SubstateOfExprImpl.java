@@ -2,16 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl;
 
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.SubstateOfExpr;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -37,7 +34,7 @@ public class SubstateOfExprImpl extends StaticPredicateExprImpl implements Subst
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject superstate;
+	protected MapExpr superstate;
 
 	/**
 	 * The cached value of the '{@link #getState() <em>State</em>}' containment reference.
@@ -47,7 +44,7 @@ public class SubstateOfExprImpl extends StaticPredicateExprImpl implements Subst
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject state;
+	protected MapExpr state;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +70,7 @@ public class SubstateOfExprImpl extends StaticPredicateExprImpl implements Subst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getSuperstate() {
+	public MapExpr getSuperstate() {
 		return superstate;
 	}
 
@@ -82,8 +79,8 @@ public class SubstateOfExprImpl extends StaticPredicateExprImpl implements Subst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSuperstate(EObject newSuperstate, NotificationChain msgs) {
-		EObject oldSuperstate = superstate;
+	public NotificationChain basicSetSuperstate(MapExpr newSuperstate, NotificationChain msgs) {
+		MapExpr oldSuperstate = superstate;
 		superstate = newSuperstate;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.SUBSTATE_OF_EXPR__SUPERSTATE, oldSuperstate, newSuperstate);
@@ -97,7 +94,7 @@ public class SubstateOfExprImpl extends StaticPredicateExprImpl implements Subst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSuperstate(EObject newSuperstate) {
+	public void setSuperstate(MapExpr newSuperstate) {
 		if (newSuperstate != superstate) {
 			NotificationChain msgs = null;
 			if (superstate != null)
@@ -116,7 +113,7 @@ public class SubstateOfExprImpl extends StaticPredicateExprImpl implements Subst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getState() {
+	public MapExpr getState() {
 		return state;
 	}
 
@@ -125,8 +122,8 @@ public class SubstateOfExprImpl extends StaticPredicateExprImpl implements Subst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetState(EObject newState, NotificationChain msgs) {
-		EObject oldState = state;
+	public NotificationChain basicSetState(MapExpr newState, NotificationChain msgs) {
+		MapExpr oldState = state;
 		state = newState;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.SUBSTATE_OF_EXPR__STATE, oldState, newState);
@@ -140,7 +137,7 @@ public class SubstateOfExprImpl extends StaticPredicateExprImpl implements Subst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setState(EObject newState) {
+	public void setState(MapExpr newState) {
 		if (newState != state) {
 			NotificationChain msgs = null;
 			if (state != null)
@@ -195,10 +192,10 @@ public class SubstateOfExprImpl extends StaticPredicateExprImpl implements Subst
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PredicatesPackage.SUBSTATE_OF_EXPR__SUPERSTATE:
-				setSuperstate((EObject)newValue);
+				setSuperstate((MapExpr)newValue);
 				return;
 			case PredicatesPackage.SUBSTATE_OF_EXPR__STATE:
-				setState((EObject)newValue);
+				setState((MapExpr)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,10 +210,10 @@ public class SubstateOfExprImpl extends StaticPredicateExprImpl implements Subst
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PredicatesPackage.SUBSTATE_OF_EXPR__SUPERSTATE:
-				setSuperstate((EObject)null);
+				setSuperstate((MapExpr)null);
 				return;
 			case PredicatesPackage.SUBSTATE_OF_EXPR__STATE:
-				setState((EObject)null);
+				setState((MapExpr)null);
 				return;
 		}
 		super.eUnset(featureID);

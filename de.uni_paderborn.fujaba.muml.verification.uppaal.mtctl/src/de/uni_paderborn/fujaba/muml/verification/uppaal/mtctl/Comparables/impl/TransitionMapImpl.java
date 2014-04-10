@@ -3,15 +3,12 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TransitionMap;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -36,7 +33,7 @@ public abstract class TransitionMapImpl extends MapExprImpl implements Transitio
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject transition;
+	protected MapExpr transition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +59,7 @@ public abstract class TransitionMapImpl extends MapExprImpl implements Transitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getTransition() {
+	public MapExpr getTransition() {
 		return transition;
 	}
 
@@ -71,8 +68,8 @@ public abstract class TransitionMapImpl extends MapExprImpl implements Transitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTransition(EObject newTransition, NotificationChain msgs) {
-		EObject oldTransition = transition;
+	public NotificationChain basicSetTransition(MapExpr newTransition, NotificationChain msgs) {
+		MapExpr oldTransition = transition;
 		transition = newTransition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComparablesPackage.TRANSITION_MAP__TRANSITION, oldTransition, newTransition);
@@ -86,7 +83,7 @@ public abstract class TransitionMapImpl extends MapExprImpl implements Transitio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTransition(EObject newTransition) {
+	public void setTransition(MapExpr newTransition) {
 		if (newTransition != transition) {
 			NotificationChain msgs = null;
 			if (transition != null)
@@ -137,7 +134,7 @@ public abstract class TransitionMapImpl extends MapExprImpl implements Transitio
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ComparablesPackage.TRANSITION_MAP__TRANSITION:
-				setTransition((EObject)newValue);
+				setTransition((MapExpr)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,7 +149,7 @@ public abstract class TransitionMapImpl extends MapExprImpl implements Transitio
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ComparablesPackage.TRANSITION_MAP__TRANSITION:
-				setTransition((EObject)null);
+				setTransition((MapExpr)null);
 				return;
 		}
 		super.eUnset(featureID);

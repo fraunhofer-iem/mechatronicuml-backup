@@ -3,18 +3,21 @@
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.provider;
 
 
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr} object.
@@ -51,31 +54,38 @@ public class BufferMsgCountExprItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addBufferPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Buffer feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBufferPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_BufferMsgCountExpr_buffer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_BufferMsgCountExpr_buffer_feature", "_UI_BufferMsgCountExpr_type"),
-				 ComparablesPackage.Literals.BUFFER_MSG_COUNT_EXPR__BUFFER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(ComparablesPackage.Literals.BUFFER_MSG_COUNT_EXPR__BUFFER);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -120,6 +130,12 @@ public class BufferMsgCountExprItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(BufferMsgCountExpr.class)) {
+			case ComparablesPackage.BUFFER_MSG_COUNT_EXPR__BUFFER:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -133,6 +149,31 @@ public class BufferMsgCountExprItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComparablesPackage.Literals.BUFFER_MSG_COUNT_EXPR__BUFFER,
+				 ComparablesFactory.eINSTANCE.createBufferMsgCountExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComparablesPackage.Literals.BUFFER_MSG_COUNT_EXPR__BUFFER,
+				 ComparablesFactory.eINSTANCE.createConstExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComparablesPackage.Literals.BUFFER_MSG_COUNT_EXPR__BUFFER,
+				 ComparablesFactory.eINSTANCE.createMumlElemExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComparablesPackage.Literals.BUFFER_MSG_COUNT_EXPR__BUFFER,
+				 ComparablesFactory.eINSTANCE.createSourceStateExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ComparablesPackage.Literals.BUFFER_MSG_COUNT_EXPR__BUFFER,
+				 ComparablesFactory.eINSTANCE.createTargetStateExpr()));
 	}
 
 }

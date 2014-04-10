@@ -85,49 +85,49 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Compares two values. Is evaluated either dynamically or statically "/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="#//Comparables/MapExpr"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="#//Predicates/ComparisonOp"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//Comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageInBufferExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Evaluates to true iff in the snapshot, there is a message of the specified type in one of the buffers of the specified role"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="#//Comparables/MapExpr"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//Comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MessageInTransitExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Evaluates to true iff a message of the specified type is currently being sent but has not arrived yet"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//Comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StateActiveExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Evaluates to true iff the specified state is active in the snapshot"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//Comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SubstateOfExpr" eSuperTypes="#//Predicates/StaticPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="True iff state is a substate of superstate"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="superstate" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="superstate" eType="#//Comparables/MapExpr"
           containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//Comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TransitionFiringExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="True iff the specified transition is currently firing in the snapshot"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//Comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PredicateExpr" eSuperTypes="#//Expression">
@@ -220,7 +220,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Evaluates to the current number of elements in the buffer"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="buffer" eType="#//Comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConstExpr" eSuperTypes="#//Comparables/MapExpr">
@@ -252,7 +252,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Common abstract superclass of maps with transition pre-image"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="transition" eType="#//Comparables/MapExpr"
           containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SourceStateExpr" eSuperTypes="#//Comparables/TransitionMap">

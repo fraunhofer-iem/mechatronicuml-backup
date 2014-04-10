@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,12 +33,12 @@ public interface TransitionMap extends MapExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Transition</em>' containment reference.
-	 * @see #setTransition(EObject)
+	 * @see #setTransition(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage#getTransitionMap_Transition()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getTransition();
+	MapExpr getTransition();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.TransitionMap#getTransition <em>Transition</em>}' containment reference.
@@ -49,6 +48,6 @@ public interface TransitionMap extends MapExpr {
 	 * @see #getTransition()
 	 * @generated
 	 */
-	void setTransition(EObject value);
+	void setTransition(MapExpr value);
 
 } // TransitionMap

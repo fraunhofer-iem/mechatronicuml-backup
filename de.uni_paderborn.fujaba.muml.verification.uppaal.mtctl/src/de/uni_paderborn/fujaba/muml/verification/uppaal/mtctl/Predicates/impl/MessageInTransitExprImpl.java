@@ -2,16 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl;
 
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInTransitExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -36,7 +33,7 @@ public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject message;
+	protected MapExpr message;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +59,7 @@ public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getMessage() {
+	public MapExpr getMessage() {
 		return message;
 	}
 
@@ -71,8 +68,8 @@ public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMessage(EObject newMessage, NotificationChain msgs) {
-		EObject oldMessage = message;
+	public NotificationChain basicSetMessage(MapExpr newMessage, NotificationChain msgs) {
+		MapExpr oldMessage = message;
 		message = newMessage;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE, oldMessage, newMessage);
@@ -86,7 +83,7 @@ public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMessage(EObject newMessage) {
+	public void setMessage(MapExpr newMessage) {
 		if (newMessage != message) {
 			NotificationChain msgs = null;
 			if (message != null)
@@ -137,7 +134,7 @@ public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implement
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE:
-				setMessage((EObject)newValue);
+				setMessage((MapExpr)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,7 +149,7 @@ public class MessageInTransitExprImpl extends DynamicPredicateExprImpl implement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PredicatesPackage.MESSAGE_IN_TRANSIT_EXPR__MESSAGE:
-				setMessage((EObject)null);
+				setMessage((MapExpr)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -183,6 +183,11 @@
        </propertyEditor>
     
        <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.mtctl.editor.PropertyEditor$Factory"
+             type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl#Property">
+       </propertyEditor>
+    
+       <propertyEditor
              factory="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Comparables.editor.BufferMsgCountExprEditor$Factory"
              type="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Comparables#BufferMsgCountExpr">
        </propertyEditor>

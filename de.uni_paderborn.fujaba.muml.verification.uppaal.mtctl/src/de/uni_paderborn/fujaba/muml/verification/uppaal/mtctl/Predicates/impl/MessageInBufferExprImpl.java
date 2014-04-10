@@ -2,16 +2,13 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl;
 
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -37,7 +34,7 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject buffer;
+	protected MapExpr buffer;
 
 	/**
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' containment reference.
@@ -47,7 +44,7 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EObject message;
+	protected MapExpr message;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,7 +70,7 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getBuffer() {
+	public MapExpr getBuffer() {
 		return buffer;
 	}
 
@@ -82,8 +79,8 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBuffer(EObject newBuffer, NotificationChain msgs) {
-		EObject oldBuffer = buffer;
+	public NotificationChain basicSetBuffer(MapExpr newBuffer, NotificationChain msgs) {
+		MapExpr oldBuffer = buffer;
 		buffer = newBuffer;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER, oldBuffer, newBuffer);
@@ -97,7 +94,7 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBuffer(EObject newBuffer) {
+	public void setBuffer(MapExpr newBuffer) {
 		if (newBuffer != buffer) {
 			NotificationChain msgs = null;
 			if (buffer != null)
@@ -116,7 +113,7 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject getMessage() {
+	public MapExpr getMessage() {
 		return message;
 	}
 
@@ -125,8 +122,8 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetMessage(EObject newMessage, NotificationChain msgs) {
-		EObject oldMessage = message;
+	public NotificationChain basicSetMessage(MapExpr newMessage, NotificationChain msgs) {
+		MapExpr oldMessage = message;
 		message = newMessage;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE, oldMessage, newMessage);
@@ -140,7 +137,7 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMessage(EObject newMessage) {
+	public void setMessage(MapExpr newMessage) {
 		if (newMessage != message) {
 			NotificationChain msgs = null;
 			if (message != null)
@@ -195,10 +192,10 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER:
-				setBuffer((EObject)newValue);
+				setBuffer((MapExpr)newValue);
 				return;
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE:
-				setMessage((EObject)newValue);
+				setMessage((MapExpr)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,10 +210,10 @@ public class MessageInBufferExprImpl extends DynamicPredicateExprImpl implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__BUFFER:
-				setBuffer((EObject)null);
+				setBuffer((MapExpr)null);
 				return;
 			case PredicatesPackage.MESSAGE_IN_BUFFER_EXPR__MESSAGE:
-				setMessage((EObject)null);
+				setMessage((MapExpr)null);
 				return;
 		}
 		super.eUnset(featureID);

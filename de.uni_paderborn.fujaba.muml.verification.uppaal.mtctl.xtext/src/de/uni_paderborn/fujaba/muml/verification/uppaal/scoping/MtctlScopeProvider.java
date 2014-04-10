@@ -359,17 +359,18 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 */
 	private void setScopeForCoordinationProtocol(CoordinationProtocol object) {
 		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
+		HashSet<MessageBuffer> buffers = new HashSet<MessageBuffer>();
 		
 		//States, Clocks, Variables, MessageTypes
 		for (Role role : object.getRoles()) {
 			addRtscElementsToArrays(role.getBehavior());
 			messageTypes.addAll(role.getReceiverMessageTypes());
 			messageTypes.addAll(role.getSenderMessageTypes());
+			buffers.addAll(role.getReceiverMessageBuffer());
 		}
 		
 		this.messageTypes.addAll(messageTypes);
-		
-		//TODO MessageBuffers (buffers field and rest already in place, populate here. Missing: how to name them)
+		this.buffers.addAll(buffers);
 	}
 	
 	/**
@@ -379,6 +380,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 */
 	private void setScopeForAtomicComponent(AtomicComponent object) {
 		HashSet<MessageType> messageTypes = new HashSet<MessageType>();
+		HashSet<MessageBuffer> buffers = new HashSet<MessageBuffer>();
 		
 		//Component behavior
 		addRtscElementsToArrays(object.getBehavior());
@@ -389,12 +391,12 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 				addRtscElementsToArrays(((DiscretePort) port).getBehavior());
 				messageTypes.addAll(((DiscretePort) port).getReceiverMessageTypes());
 				messageTypes.addAll(((DiscretePort) port).getSenderMessageTypes());
+				buffers.addAll(((DiscretePort) port).getReceiverMessageBuffer());
 			}
 		}
 		
 		this.messageTypes.addAll(messageTypes);
-		
-		//TODO MessageBuffers (buffers field and rest already in place, populate here. Missing: how to name them)
+		this.buffers.addAll(buffers);
 	}
 	
 	/**

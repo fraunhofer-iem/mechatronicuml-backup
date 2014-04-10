@@ -2,7 +2,6 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,12 +33,12 @@ public interface BufferMsgCountExpr extends MapExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Buffer</em>' containment reference.
-	 * @see #setBuffer(EObject)
+	 * @see #setBuffer(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage#getBufferMsgCountExpr_Buffer()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getBuffer();
+	MapExpr getBuffer();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr#getBuffer <em>Buffer</em>}' containment reference.
@@ -49,6 +48,6 @@ public interface BufferMsgCountExpr extends MapExpr {
 	 * @see #getBuffer()
 	 * @generated
 	 */
-	void setBuffer(EObject value);
+	void setBuffer(MapExpr value);
 
 } // BufferMsgCountExpr

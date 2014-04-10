@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates;
 
-import org.eclipse.emf.ecore.EObject;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,12 +35,12 @@ public interface SubstateOfExpr extends StaticPredicateExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Superstate</em>' containment reference.
-	 * @see #setSuperstate(EObject)
+	 * @see #setSuperstate(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getSubstateOfExpr_Superstate()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getSuperstate();
+	MapExpr getSuperstate();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.SubstateOfExpr#getSuperstate <em>Superstate</em>}' containment reference.
@@ -50,7 +50,7 @@ public interface SubstateOfExpr extends StaticPredicateExpr {
 	 * @see #getSuperstate()
 	 * @generated
 	 */
-	void setSuperstate(EObject value);
+	void setSuperstate(MapExpr value);
 
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' containment reference.
@@ -61,12 +61,12 @@ public interface SubstateOfExpr extends StaticPredicateExpr {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>State</em>' containment reference.
-	 * @see #setState(EObject)
+	 * @see #setState(MapExpr)
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage#getSubstateOfExpr_State()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EObject getState();
+	MapExpr getState();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.SubstateOfExpr#getState <em>State</em>}' containment reference.
@@ -76,6 +76,6 @@ public interface SubstateOfExpr extends StaticPredicateExpr {
 	 * @see #getState()
 	 * @generated
 	 */
-	void setState(EObject value);
+	void setState(MapExpr value);
 
 } // SubstateOfExpr

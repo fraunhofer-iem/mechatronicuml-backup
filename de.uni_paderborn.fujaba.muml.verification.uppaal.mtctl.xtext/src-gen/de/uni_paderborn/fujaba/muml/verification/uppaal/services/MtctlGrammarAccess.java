@@ -1108,7 +1108,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTargetStateExprParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		////Expressions usable in comparisons. Starting with MapExpressions arranged by return type
-		//MapExpr returns mtctl::Expression:
+		//MapExpr returns mtctl::MapExpr:
 		//	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr;
 		public ParserRule getRule() { return rule; }
 
@@ -1138,7 +1138,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBufferMessageCountExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cConstExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//IntegerMapExpr returns mtctl::Expression:
+		//IntegerMapExpr returns mtctl::MapExpr:
 		//	MumlElemExpr | BufferMessageCountExpr | ConstExpr;
 		public ParserRule getRule() { return rule; }
 
@@ -1159,7 +1159,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TransitionMapExpr");
 		private final RuleCall cMumlElemExprParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//TransitionMapExpr returns mtctl::Expression:
+		//TransitionMapExpr returns mtctl::MapExpr:
 		//	MumlElemExpr;
 		public ParserRule getRule() { return rule; }
 
@@ -1174,7 +1174,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSourceStateExprParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cTargetStateExprParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//StateMapExpr returns mtctl::Expression:
+		//StateMapExpr returns mtctl::MapExpr:
 		//	MumlElemExpr | SourceStateExpr | TargetStateExpr;
 		public ParserRule getRule() { return rule; }
 
@@ -1195,7 +1195,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BufferMapExpr");
 		private final RuleCall cMumlElemExprParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//BufferMapExpr returns mtctl::Expression:
+		//BufferMapExpr returns mtctl::MapExpr:
 		//	MumlElemExpr;
 		public ParserRule getRule() { return rule; }
 
@@ -1207,7 +1207,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MessageMapExpr");
 		private final RuleCall cMumlElemExprParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//MessageMapExpr returns mtctl::Expression:
+		//MessageMapExpr returns mtctl::MapExpr:
 		//	MumlElemExpr;
 		public ParserRule getRule() { return rule; }
 
@@ -2015,7 +2015,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	////Expressions usable in comparisons. Starting with MapExpressions arranged by return type
-	//MapExpr returns mtctl::Expression:
+	//MapExpr returns mtctl::MapExpr:
 	//	MumlElemExpr | BufferMessageCountExpr | ConstExpr | SourceStateExpr | TargetStateExpr;
 	public MapExprElements getMapExprAccess() {
 		return (pMapExpr != null) ? pMapExpr : (pMapExpr = new MapExprElements());
@@ -2025,7 +2025,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getMapExprAccess().getRule();
 	}
 
-	//IntegerMapExpr returns mtctl::Expression:
+	//IntegerMapExpr returns mtctl::MapExpr:
 	//	MumlElemExpr | BufferMessageCountExpr | ConstExpr;
 	public IntegerMapExprElements getIntegerMapExprAccess() {
 		return (pIntegerMapExpr != null) ? pIntegerMapExpr : (pIntegerMapExpr = new IntegerMapExprElements());
@@ -2035,7 +2035,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getIntegerMapExprAccess().getRule();
 	}
 
-	//TransitionMapExpr returns mtctl::Expression:
+	//TransitionMapExpr returns mtctl::MapExpr:
 	//	MumlElemExpr;
 	public TransitionMapExprElements getTransitionMapExprAccess() {
 		return (pTransitionMapExpr != null) ? pTransitionMapExpr : (pTransitionMapExpr = new TransitionMapExprElements());
@@ -2045,7 +2045,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getTransitionMapExprAccess().getRule();
 	}
 
-	//StateMapExpr returns mtctl::Expression:
+	//StateMapExpr returns mtctl::MapExpr:
 	//	MumlElemExpr | SourceStateExpr | TargetStateExpr;
 	public StateMapExprElements getStateMapExprAccess() {
 		return (pStateMapExpr != null) ? pStateMapExpr : (pStateMapExpr = new StateMapExprElements());
@@ -2055,7 +2055,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getStateMapExprAccess().getRule();
 	}
 
-	//BufferMapExpr returns mtctl::Expression:
+	//BufferMapExpr returns mtctl::MapExpr:
 	//	MumlElemExpr;
 	public BufferMapExprElements getBufferMapExprAccess() {
 		return (pBufferMapExpr != null) ? pBufferMapExpr : (pBufferMapExpr = new BufferMapExprElements());
@@ -2065,7 +2065,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 		return getBufferMapExprAccess().getRule();
 	}
 
-	//MessageMapExpr returns mtctl::Expression:
+	//MessageMapExpr returns mtctl::MapExpr:
 	//	MumlElemExpr;
 	public MessageMapExprElements getMessageMapExprAccess() {
 		return (pMessageMapExpr != null) ? pMessageMapExpr : (pMessageMapExpr = new MessageMapExprElements());
