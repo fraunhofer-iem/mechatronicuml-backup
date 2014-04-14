@@ -6,9 +6,19 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.validation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
+import de.uni_paderborn.fujaba.muml.behavior.Variable;
+import de.uni_paderborn.fujaba.muml.realtimestatechart.Clock;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.BufferMsgCountExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MumlElemExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.DynamicPredicateExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.QuantifierExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.ClockSetExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.IntervalSetExpr;
 
 /**
  * Custom validation rules. 
@@ -51,5 +61,24 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 		}
 	}
 	
-	//TODO check types in comparisons
+	private boolean isInequalityComparable(EObject obj) {
+		if (obj instanceof ConstExpr || obj instanceof BufferMsgCountExpr || obj instanceof Variable || obj instanceof Clock)
+			return true;
+		if (obj instanceof BoundVariable)
+			if (((BoundVariable) obj).getSet() instanceof IntervalSetExpr || ((BoundVariable) obj).getSet() instanceof ClockSetExpr)
+				return true;
+		if (obj instanceof MumlElemExpr)
+			return isInequalityComparable(((MumlElemExpr) obj).getElem());
+		
+		return false;
+	}
+	
+	@Check
+	public void checkComparisonType(final ComparisonExpr expr) {
+		if (isInequalityComparable(expr.getLhs()) && isInequalityComparable(expr.getRhs()))
+			return;
+		if (expr.getOp().equals(ComparisonOp.EQUALS) || expr.getOp().equals(ComparisonOp.NOT_EQUAL))
+			return;
+		error(expr.getOp().toString() + " is not allowed here",null);
+	}
 }
