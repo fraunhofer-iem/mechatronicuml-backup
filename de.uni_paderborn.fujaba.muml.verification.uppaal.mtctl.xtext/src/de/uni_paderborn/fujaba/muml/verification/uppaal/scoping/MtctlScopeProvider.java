@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.naming.QualifiedName;
@@ -123,6 +124,11 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 				
 				if (obj instanceof Variable)
 					return internalCreateName(obj.eContainer()).append(((Variable) obj).getName()); //variables are called rtsc.var
+				
+				if (obj instanceof MessageBuffer) {
+					int index = ((EList) obj.eContainer().eGet(obj.eContainingFeature())).indexOf(obj);
+					return internalCreateName(obj.eContainer()).append("Buffer"+index);
+				}
 			} catch (RuntimeException e) {
 				System.out.println("Exception when computing qualified name for "+obj);
 				e.printStackTrace();

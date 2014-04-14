@@ -580,7 +580,6 @@ public class TimeIntervalExprItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR ||
 			childFeature == QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__LHS ||
 			childFeature == QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__RHS;
 

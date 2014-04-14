@@ -251,8 +251,26 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAFExpr_Expr() {
+		return (EReference)afExprEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAGExpr() {
 		return agExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAGExpr_Expr() {
+		return (EReference)agExprEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -269,8 +287,26 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEFExpr_Expr() {
+		return (EReference)efExprEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEGExpr() {
 		return egExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEGExpr_Expr() {
+		return (EReference)egExprEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -343,15 +379,6 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 	 */
 	public EClass getTemporalQuantifierExpr() {
 		return temporalQuantifierExprEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTemporalQuantifierExpr_Expr() {
-		return (EReference)temporalQuantifierExprEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -464,12 +491,16 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 
 		// Create classes and their features
 		afExprEClass = createEClass(AF_EXPR);
+		createEReference(afExprEClass, AF_EXPR__EXPR);
 
 		agExprEClass = createEClass(AG_EXPR);
+		createEReference(agExprEClass, AG_EXPR__EXPR);
 
 		efExprEClass = createEClass(EF_EXPR);
+		createEReference(efExprEClass, EF_EXPR__EXPR);
 
 		egExprEClass = createEClass(EG_EXPR);
+		createEReference(egExprEClass, EG_EXPR__EXPR);
 
 		existenceQuantExprEClass = createEClass(EXISTENCE_QUANT_EXPR);
 
@@ -482,7 +513,6 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 		createEAttribute(boundVariableEClass, BOUND_VARIABLE__NAME);
 
 		temporalQuantifierExprEClass = createEClass(TEMPORAL_QUANTIFIER_EXPR);
-		createEReference(temporalQuantifierExprEClass, TEMPORAL_QUANTIFIER_EXPR__EXPR);
 
 		universalQuantExprEClass = createEClass(UNIVERSAL_QUANT_EXPR);
 
@@ -543,12 +573,16 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(afExprEClass, AFExpr.class, "AFExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAFExpr_Expr(), theMtctlPackage.getExpression(), null, "expr", null, 0, 1, AFExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(agExprEClass, AGExpr.class, "AGExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAGExpr_Expr(), theMtctlPackage.getExpression(), null, "expr", null, 0, 1, AGExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(efExprEClass, EFExpr.class, "EFExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEFExpr_Expr(), theMtctlPackage.getExpression(), null, "expr", null, 0, 1, EFExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(egExprEClass, EGExpr.class, "EGExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEGExpr_Expr(), theMtctlPackage.getExpression(), null, "expr", null, 0, 1, EGExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(existenceQuantExprEClass, ExistenceQuantExpr.class, "ExistenceQuantExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -561,7 +595,6 @@ public class QuantifiersPackageImpl extends EPackageImpl implements QuantifiersP
 		initEAttribute(getBoundVariable_Name(), ecorePackage.getEString(), "name", null, 1, 1, BoundVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(temporalQuantifierExprEClass, TemporalQuantifierExpr.class, "TemporalQuantifierExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTemporalQuantifierExpr_Expr(), theMtctlPackage.getExpression(), null, "expr", null, 0, 1, TemporalQuantifierExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(universalQuantExprEClass, UniversalQuantExpr.class, "UniversalQuantExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

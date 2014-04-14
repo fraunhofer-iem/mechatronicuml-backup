@@ -527,7 +527,6 @@ public class LeadsToExprItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == QuantifiersPackage.Literals.TEMPORAL_QUANTIFIER_EXPR__EXPR ||
 			childFeature == QuantifiersPackage.Literals.LEADS_TO_EXPR__LEFT_OPD ||
 			childFeature == QuantifiersPackage.Literals.LEADS_TO_EXPR__RIGHT_OPD;
 
