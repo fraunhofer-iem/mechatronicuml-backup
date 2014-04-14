@@ -28,9 +28,9 @@ public class ActionLanguageFormatter extends AbstractDeclarativeFormatter {
 			c.setLinewrap(1).after(pair.getSecond());
 		}
 		for(Keyword comma: f.findKeywords(",")) {
-			c.setNoLinewrap().before(comma);
+			//c.setNoLinewrap().before(comma);
 			c.setNoSpace().before(comma);
-			c.setLinewrap().after(comma);
+			//c.setLinewrap().after(comma);
 		}
 		c.setLinewrap(0, 1, 2).before(f.getSL_COMMENTRule());
 		c.setLinewrap(0, 1, 2).before(f.getML_COMMENTRule());
