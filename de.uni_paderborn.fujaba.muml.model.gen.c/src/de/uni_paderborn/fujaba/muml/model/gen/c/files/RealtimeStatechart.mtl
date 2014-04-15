@@ -323,7 +323,7 @@
 	[comment Trigger events /]
 	[if (not transition.triggerMessageEvent.oclIsUndefined())]
 		[for (msg : Message | transition.triggerMessageEvent.message)]		
-				Event* event = DiscretePort_receiveEvent([getGetterName(getPortForRegion(transition.statechart.parentRegion))/](stateChart->parentComponent), [getVariableName(msg.instanceOf)/].signature);
+				Event* [msg.instanceOf.getName()/]Event = DiscretePort_receiveEvent([getGetterName(getPortForRegion(transition.statechart.parentRegion))/](stateChart->parentComponent), [getVariableName(msg.instanceOf)/].signature);
 		[/for]
 	[/if]
 
@@ -386,7 +386,12 @@
 			// nothing to do			
 		[/if]
 
-		
+		[comment release Trigger events /]
+	[if (not transition.triggerMessageEvent.oclIsUndefined())]
+		[for (msg : Message | transition.triggerMessageEvent.message)]		
+				free([msg.instanceOf.getName()/]Event);
+		[/for]
+	[/if]	
 	[comment State change /]	
 	// change the state
 	[if (transition.target.oclIsKindOf(State))]		
