@@ -177,6 +177,15 @@ public class PredicatesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PredicatesPackage.STATE_IN_STATECHART_EXPR: {
+				StateInStatechartExpr stateInStatechartExpr = (StateInStatechartExpr)theEObject;
+				T result = caseStateInStatechartExpr(stateInStatechartExpr);
+				if (result == null) result = caseStaticPredicateExpr(stateInStatechartExpr);
+				if (result == null) result = casePredicateExpr(stateInStatechartExpr);
+				if (result == null) result = caseExpression(stateInStatechartExpr);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -373,6 +382,21 @@ public class PredicatesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFalseExpr(FalseExpr object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State In Statechart Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State In Statechart Expr</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStateInStatechartExpr(StateInStatechartExpr object) {
 		return null;
 	}
 

@@ -121,6 +121,15 @@ public interface PredicatesFactory extends EFactory {
 	FalseExpr createFalseExpr();
 
 	/**
+	 * Returns a new object of class '<em>State In Statechart Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>State In Statechart Expr</em>'.
+	 * @generated
+	 */
+	StateInStatechartExpr createStateInStatechartExpr();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

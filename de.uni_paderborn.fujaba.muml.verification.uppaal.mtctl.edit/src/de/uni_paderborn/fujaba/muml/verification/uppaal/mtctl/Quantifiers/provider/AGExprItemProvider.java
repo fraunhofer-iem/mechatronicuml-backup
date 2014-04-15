@@ -257,6 +257,11 @@ public class AGExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.AG_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createStateInStatechartExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.AG_EXPR__EXPR,
 				 SetsFactory.eINSTANCE.createClockSetExpr()));
 
 		newChildDescriptors.add

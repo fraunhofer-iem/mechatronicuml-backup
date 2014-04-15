@@ -59,16 +59,14 @@ public enum ComparisonOp implements Enumerator {
 	LESS(3, "LESS", "<"),
 
 	/**
-	 * The '<em><b>LESS OR EQAL</b></em>' literal object.
+	 * The '<em><b>LESS OR EQUAL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LESS_OR_EQAL_VALUE
+	 * @see #LESS_OR_EQUAL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LESS_OR_EQAL(4, "LESS_OR_EQAL", "<="),
-
-	/**
+	LESS_OR_EQUAL(4, "LESS_OR_EQUAL", "<="), /**
 	 * The '<em><b>NOT EQUAL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,19 +137,19 @@ public enum ComparisonOp implements Enumerator {
 	public static final int LESS_VALUE = 3;
 
 	/**
-	 * The '<em><b>LESS OR EQAL</b></em>' literal value.
+	 * The '<em><b>LESS OR EQUAL</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>LESS OR EQAL</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>LESS OR EQUAL</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @see #LESS_OR_EQAL
+	 * @see #LESS_OR_EQUAL
 	 * @model literal="<="
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LESS_OR_EQAL_VALUE = 4;
+	public static final int LESS_OR_EQUAL_VALUE = 4;
 
 	/**
 	 * The '<em><b>NOT EQUAL</b></em>' literal value.
@@ -180,7 +178,7 @@ public enum ComparisonOp implements Enumerator {
 			GREATER,
 			GREATER_OR_EQUAL,
 			LESS,
-			LESS_OR_EQAL,
+			LESS_OR_EQUAL,
 			NOT_EQUAL,
 		};
 
@@ -236,7 +234,7 @@ public enum ComparisonOp implements Enumerator {
 			case GREATER_VALUE: return GREATER;
 			case GREATER_OR_EQUAL_VALUE: return GREATER_OR_EQUAL;
 			case LESS_VALUE: return LESS;
-			case LESS_OR_EQAL_VALUE: return LESS_OR_EQAL;
+			case LESS_OR_EQUAL_VALUE: return LESS_OR_EQUAL;
 			case NOT_EQUAL_VALUE: return NOT_EQUAL;
 		}
 		return null;

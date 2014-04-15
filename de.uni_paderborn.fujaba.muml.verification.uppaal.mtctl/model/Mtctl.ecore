@@ -82,7 +82,7 @@
       <eLiterals name="GREATER" value="1" literal=">"/>
       <eLiterals name="GREATER_OR_EQUAL" value="2" literal=">="/>
       <eLiterals name="LESS" value="3" literal="&lt;"/>
-      <eLiterals name="LESS_OR_EQAL" value="4" literal="&lt;="/>
+      <eLiterals name="LESS_OR_EQUAL" value="4" literal="&lt;="/>
       <eLiterals name="NOT_EQUAL" value="5" literal="!="/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BufferOverflowExpr" eSuperTypes="#//Predicates/DynamicPredicateExpr">
@@ -158,6 +158,15 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="TrueExpr" eSuperTypes="#//Predicates/StaticPredicateExpr"/>
     <eClassifiers xsi:type="ecore:EClass" name="FalseExpr" eSuperTypes="#//Predicates/StaticPredicateExpr"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StateInStatechartExpr" eSuperTypes="#//Predicates/StaticPredicateExpr">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="true iff a state is indirectly embedded in a statechart"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//Comparables/MapExpr"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="statechart" eType="#//Comparables/MapExpr"
+          containment="true"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="Sets" nsURI="http://www.uni_paderborn.de/fujaba/muml/verification/uppaal/Mtctl/Sets"
       nsPrefix="Sets">

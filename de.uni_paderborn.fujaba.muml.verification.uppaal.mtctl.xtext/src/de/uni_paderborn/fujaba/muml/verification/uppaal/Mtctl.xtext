@@ -118,16 +118,19 @@ FalseExpr returns mtctl::FalseExpr:
 ;
 
 StateExpr returns mtctl::PredicateExpr:
-	StateActiveExpr | SubstateOfExpr
+	StateActiveExpr | SubstateOfExpr | StateInStatechartExpr
 ;
 
 StateActiveExpr returns mtctl::StateActiveExpr:
-	'stateActive' '(' {mtctl::StateActiveExpr} state=StateMapExpr ')'
+	'stateActive' '(' state=StateMapExpr ')'
 ;
 
 SubstateOfExpr returns mtctl::SubstateOfExpr:
-	'substateOf' '(' {mtctl::SubstateOfExpr} state=StateMapExpr ','
-	superstate=StateMapExpr ')'
+	'substateOf' '(' state=StateMapExpr ','	superstate=StateMapExpr ')'
+;
+
+StateInStatechartExpr returns mtctl::StateInStatechartExpr:
+	'stateInStatechart' '(' state = StateMapExpr ',' statechart = StatechartMapExpr ')'
 ;
 
 MessageExpr returns mtctl::PredicateExpr:
@@ -156,7 +159,7 @@ ComparisonExpr returns mtctl::Expression:
 ;
 
 enum ComparisonOp returns mtctl::ComparisonOp:
-	EQUALS='==' | GREATER='>' | GREATER_OR_EQUAL='>=' | LESS='<' | LESS_OR_EQAL='<=' | NOT_EQUAL='!='
+	EQUALS='==' | GREATER='>' | GREATER_OR_EQUAL='>=' | LESS='<' | LESS_OR_EQUAL='<=' | NOT_EQUAL='!='
 ;
 
 //Expressions usable in comparisons. Starting with MapExpressions arranged by return type
@@ -174,6 +177,10 @@ TransitionMapExpr returns mtctl::MapExpr:
 
 StateMapExpr returns mtctl::MapExpr:
 	MumlElemExpr | SourceStateExpr | TargetStateExpr
+;
+
+StatechartMapExpr returns mtctl::MapExpr:
+	MumlElemExpr
 ;
 
 BufferMapExpr returns mtctl::MapExpr:

@@ -44,6 +44,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.Predica
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesFactory;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateActiveExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StaticPredicateExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.SubstateOfExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.TransitionFiringExpr;
@@ -164,6 +165,13 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 	 * @generated
 	 */
 	private EClass falseExprEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stateInStatechartExprEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -474,6 +482,33 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStateInStatechartExpr() {
+		return stateInStatechartExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStateInStatechartExpr_State() {
+		return (EReference)stateInStatechartExprEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStateInStatechartExpr_Statechart() {
+		return (EReference)stateInStatechartExprEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getComparisonOp() {
 		return comparisonOpEEnum;
 	}
@@ -542,6 +577,10 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 
 		falseExprEClass = createEClass(FALSE_EXPR);
 
+		stateInStatechartExprEClass = createEClass(STATE_IN_STATECHART_EXPR);
+		createEReference(stateInStatechartExprEClass, STATE_IN_STATECHART_EXPR__STATE);
+		createEReference(stateInStatechartExprEClass, STATE_IN_STATECHART_EXPR__STATECHART);
+
 		// Create enums
 		comparisonOpEEnum = createEEnum(COMPARISON_OP);
 	}
@@ -591,6 +630,7 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 		staticPredicateExprEClass.getESuperTypes().add(this.getPredicateExpr());
 		trueExprEClass.getESuperTypes().add(this.getStaticPredicateExpr());
 		falseExprEClass.getESuperTypes().add(this.getStaticPredicateExpr());
+		stateInStatechartExprEClass.getESuperTypes().add(this.getStaticPredicateExpr());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(deadlockExprEClass, DeadlockExpr.class, "DeadlockExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -629,13 +669,17 @@ public class PredicatesPackageImpl extends EPackageImpl implements PredicatesPac
 
 		initEClass(falseExprEClass, FalseExpr.class, "FalseExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(stateInStatechartExprEClass, StateInStatechartExpr.class, "StateInStatechartExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStateInStatechartExpr_State(), theComparablesPackage.getMapExpr(), null, "state", null, 0, 1, StateInStatechartExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStateInStatechartExpr_Statechart(), theComparablesPackage.getMapExpr(), null, "statechart", null, 0, 1, StateInStatechartExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(comparisonOpEEnum, ComparisonOp.class, "ComparisonOp");
 		addEEnumLiteral(comparisonOpEEnum, ComparisonOp.EQUALS);
 		addEEnumLiteral(comparisonOpEEnum, ComparisonOp.GREATER);
 		addEEnumLiteral(comparisonOpEEnum, ComparisonOp.GREATER_OR_EQUAL);
 		addEEnumLiteral(comparisonOpEEnum, ComparisonOp.LESS);
-		addEEnumLiteral(comparisonOpEEnum, ComparisonOp.LESS_OR_EQAL);
+		addEEnumLiteral(comparisonOpEEnum, ComparisonOp.LESS_OR_EQUAL);
 		addEEnumLiteral(comparisonOpEEnum, ComparisonOp.NOT_EQUAL);
 	}
 

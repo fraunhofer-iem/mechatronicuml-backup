@@ -79,6 +79,7 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFalseExprAccess().getGroup(), "rule__FalseExpr__Group__0");
 					put(grammarAccess.getStateActiveExprAccess().getGroup(), "rule__StateActiveExpr__Group__0");
 					put(grammarAccess.getSubstateOfExprAccess().getGroup(), "rule__SubstateOfExpr__Group__0");
+					put(grammarAccess.getStateInStatechartExprAccess().getGroup(), "rule__StateInStatechartExpr__Group__0");
 					put(grammarAccess.getMessageInTransitExprAccess().getGroup(), "rule__MessageInTransitExpr__Group__0");
 					put(grammarAccess.getMessageInBufferExprAccess().getGroup(), "rule__MessageInBufferExpr__Group__0");
 					put(grammarAccess.getTransitionFiringExprAccess().getGroup(), "rule__TransitionFiringExpr__Group__0");
@@ -117,9 +118,11 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAFExprAccess().getExprAssignment_2(), "rule__AFExpr__ExprAssignment_2");
 					put(grammarAccess.getEGExprAccess().getExprAssignment_2(), "rule__EGExpr__ExprAssignment_2");
 					put(grammarAccess.getAGExprAccess().getExprAssignment_2(), "rule__AGExpr__ExprAssignment_2");
-					put(grammarAccess.getStateActiveExprAccess().getStateAssignment_3(), "rule__StateActiveExpr__StateAssignment_3");
-					put(grammarAccess.getSubstateOfExprAccess().getStateAssignment_3(), "rule__SubstateOfExpr__StateAssignment_3");
-					put(grammarAccess.getSubstateOfExprAccess().getSuperstateAssignment_5(), "rule__SubstateOfExpr__SuperstateAssignment_5");
+					put(grammarAccess.getStateActiveExprAccess().getStateAssignment_2(), "rule__StateActiveExpr__StateAssignment_2");
+					put(grammarAccess.getSubstateOfExprAccess().getStateAssignment_2(), "rule__SubstateOfExpr__StateAssignment_2");
+					put(grammarAccess.getSubstateOfExprAccess().getSuperstateAssignment_4(), "rule__SubstateOfExpr__SuperstateAssignment_4");
+					put(grammarAccess.getStateInStatechartExprAccess().getStateAssignment_2(), "rule__StateInStatechartExpr__StateAssignment_2");
+					put(grammarAccess.getStateInStatechartExprAccess().getStatechartAssignment_4(), "rule__StateInStatechartExpr__StatechartAssignment_4");
 					put(grammarAccess.getMessageInTransitExprAccess().getMessageAssignment_2(), "rule__MessageInTransitExpr__MessageAssignment_2");
 					put(grammarAccess.getMessageInBufferExprAccess().getMessageAssignment_2(), "rule__MessageInBufferExpr__MessageAssignment_2");
 					put(grammarAccess.getMessageInBufferExprAccess().getBufferAssignment_4(), "rule__MessageInBufferExpr__BufferAssignment_4");

@@ -51,6 +51,14 @@ enabled="true"
 name="substateOf">substateOf(${state},${superstate})</template>
 
 <template autoinsert="true" 
+context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_stateInStatechart"
+deleted="false" 
+description="true iff state is indirectly contained in a statechart" 
+id="stateInStatechart"
+enabled="true" 
+name="stateInStatechart">stateInStatechart(${state},${statechart})</template>
+
+<template autoinsert="true" 
 context="de.uni_paderborn.fujaba.muml.verification.uppaal.Mtctl.kw_messageInTransit"
 deleted="false" 
 description="true iff message is in transit (i.e. message has been sent but not yet arrived in the receiver's buffer)" 

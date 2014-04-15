@@ -251,6 +251,11 @@ public class QuantifierExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.QUANTIFIER_EXPR__FORMULA,
+				 PredicatesFactory.eINSTANCE.createStateInStatechartExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.QUANTIFIER_EXPR__FORMULA,
 				 SetsFactory.eINSTANCE.createClockSetExpr()));
 
 		newChildDescriptors.add

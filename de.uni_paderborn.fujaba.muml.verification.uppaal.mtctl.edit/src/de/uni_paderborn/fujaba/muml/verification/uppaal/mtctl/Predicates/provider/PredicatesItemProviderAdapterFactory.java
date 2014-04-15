@@ -325,6 +325,29 @@ public class PredicatesItemProviderAdapterFactory extends PredicatesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StateInStatechartExprItemProvider stateInStatechartExprItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStateInStatechartExprAdapter() {
+		if (stateInStatechartExprItemProvider == null) {
+			stateInStatechartExprItemProvider = new StateInStatechartExprItemProvider(this);
+		}
+
+		return stateInStatechartExprItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -434,6 +457,7 @@ public class PredicatesItemProviderAdapterFactory extends PredicatesAdapterFacto
 		if (predicateExprItemProvider != null) predicateExprItemProvider.dispose();
 		if (trueExprItemProvider != null) trueExprItemProvider.dispose();
 		if (falseExprItemProvider != null) falseExprItemProvider.dispose();
+		if (stateInStatechartExprItemProvider != null) stateInStatechartExprItemProvider.dispose();
 	}
 
 }

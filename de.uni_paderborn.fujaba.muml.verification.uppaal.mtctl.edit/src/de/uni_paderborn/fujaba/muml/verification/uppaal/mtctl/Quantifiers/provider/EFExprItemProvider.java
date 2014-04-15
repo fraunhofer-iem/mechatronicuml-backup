@@ -257,6 +257,11 @@ public class EFExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.EF_EXPR__EXPR,
+				 PredicatesFactory.eINSTANCE.createStateInStatechartExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.EF_EXPR__EXPR,
 				 SetsFactory.eINSTANCE.createClockSetExpr()));
 
 		newChildDescriptors.add

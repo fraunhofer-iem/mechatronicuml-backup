@@ -2269,6 +2269,187 @@ public interface PredicatesPackage extends EPackage {
 	int FALSE_EXPR_OPERATION_COUNT = STATIC_PREDICATE_EXPR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.StateInStatechartExprImpl <em>State In Statechart Expr</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.StateInStatechartExprImpl
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl#getStateInStatechartExpr()
+	 * @generated
+	 */
+	int STATE_IN_STATECHART_EXPR = 13;
+
+	/**
+	 * The feature id for the '<em><b>State</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR__STATE = STATIC_PREDICATE_EXPR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Statechart</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR__STATECHART = STATIC_PREDICATE_EXPR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>State In Statechart Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR_FEATURE_COUNT = STATIC_PREDICATE_EXPR_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___ECLASS = STATIC_PREDICATE_EXPR___ECLASS;
+
+	/**
+	 * The operation id for the '<em>EIs Proxy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___EIS_PROXY = STATIC_PREDICATE_EXPR___EIS_PROXY;
+
+	/**
+	 * The operation id for the '<em>EResource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___ERESOURCE = STATIC_PREDICATE_EXPR___ERESOURCE;
+
+	/**
+	 * The operation id for the '<em>EContainer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___ECONTAINER = STATIC_PREDICATE_EXPR___ECONTAINER;
+
+	/**
+	 * The operation id for the '<em>EContaining Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___ECONTAINING_FEATURE = STATIC_PREDICATE_EXPR___ECONTAINING_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContainment Feature</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___ECONTAINMENT_FEATURE = STATIC_PREDICATE_EXPR___ECONTAINMENT_FEATURE;
+
+	/**
+	 * The operation id for the '<em>EContents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___ECONTENTS = STATIC_PREDICATE_EXPR___ECONTENTS;
+
+	/**
+	 * The operation id for the '<em>EAll Contents</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___EALL_CONTENTS = STATIC_PREDICATE_EXPR___EALL_CONTENTS;
+
+	/**
+	 * The operation id for the '<em>ECross References</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___ECROSS_REFERENCES = STATIC_PREDICATE_EXPR___ECROSS_REFERENCES;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___EGET__ESTRUCTURALFEATURE = STATIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EGet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN = STATIC_PREDICATE_EXPR___EGET__ESTRUCTURALFEATURE_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>ESet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT = STATIC_PREDICATE_EXPR___ESET__ESTRUCTURALFEATURE_OBJECT;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___EIS_SET__ESTRUCTURALFEATURE = STATIC_PREDICATE_EXPR___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EUnset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___EUNSET__ESTRUCTURALFEATURE = STATIC_PREDICATE_EXPR___EUNSET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The operation id for the '<em>EInvoke</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR___EINVOKE__EOPERATION_ELIST = STATIC_PREDICATE_EXPR___EINVOKE__EOPERATION_ELIST;
+
+	/**
+	 * The number of operations of the '<em>State In Statechart Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_IN_STATECHART_EXPR_OPERATION_COUNT = STATIC_PREDICATE_EXPR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp <em>Comparison Op</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2276,7 +2457,7 @@ public interface PredicatesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl#getComparisonOp()
 	 * @generated
 	 */
-	int COMPARISON_OP = 13;
+	int COMPARISON_OP = 14;
 
 
 	/**
@@ -2520,6 +2701,38 @@ public interface PredicatesPackage extends EPackage {
 	EClass getFalseExpr();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr <em>State In Statechart Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>State In Statechart Expr</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr
+	 * @generated
+	 */
+	EClass getStateInStatechartExpr();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr#getState <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>State</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr#getState()
+	 * @see #getStateInStatechartExpr()
+	 * @generated
+	 */
+	EReference getStateInStatechartExpr_State();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr#getStatechart <em>Statechart</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Statechart</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr#getStatechart()
+	 * @see #getStateInStatechartExpr()
+	 * @generated
+	 */
+	EReference getStateInStatechartExpr_Statechart();
+
+	/**
 	 * Returns the meta object for enum '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp <em>Comparison Op</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2761,6 +2974,32 @@ public interface PredicatesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FALSE_EXPR = eINSTANCE.getFalseExpr();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.StateInStatechartExprImpl <em>State In Statechart Expr</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.StateInStatechartExprImpl
+		 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.impl.PredicatesPackageImpl#getStateInStatechartExpr()
+		 * @generated
+		 */
+		EClass STATE_IN_STATECHART_EXPR = eINSTANCE.getStateInStatechartExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>State</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE_IN_STATECHART_EXPR__STATE = eINSTANCE.getStateInStatechartExpr_State();
+
+		/**
+		 * The meta object literal for the '<em><b>Statechart</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE_IN_STATECHART_EXPR__STATECHART = eINSTANCE.getStateInStatechartExpr_Statechart();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.ComparisonOp <em>Comparison Op</em>}' enum.

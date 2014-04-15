@@ -320,6 +320,11 @@ public class TimeIntervalExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__LHS,
+				 PredicatesFactory.eINSTANCE.createStateInStatechartExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__LHS,
 				 SetsFactory.eINSTANCE.createClockSetExpr()));
 
 		newChildDescriptors.add
@@ -491,6 +496,11 @@ public class TimeIntervalExprItemProvider
 			(createChildParameter
 				(QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__RHS,
 				 PredicatesFactory.eINSTANCE.createFalseExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.TIME_INTERVAL_EXPR__RHS,
+				 PredicatesFactory.eINSTANCE.createStateInStatechartExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -36,6 +36,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.Compari
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInBufferExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.MessageInTransitExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateActiveExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.StateInStatechartExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.SubstateOfExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.TransitionFiringExpr;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.BoundVariable;
@@ -58,6 +59,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	protected List<Clock> clocks = null;
 	protected List<MessageType> messageTypes = null;
 	protected List<MessageBuffer> buffers = null;
+	protected List<RealtimeStatechart> statecharts = null;
 	
 	/**
 	 * The mapping that determines how to call elements from the muml models
@@ -267,7 +269,18 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	}
 	
 	/**
-	 * Returns the scope when looking for anything
+	 * Returns the scope when looking for an RTSC
+	 * @param context reference in the mtctl model (e.g., a StateExpr)
+	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
+	 * @return the scope
+	 */
+	public IScope getScopeStatechart(EObject context, EReference reference) {
+		return createScope(statecharts);
+	}
+	
+	
+	/**
+	 * Returns the scope when looking for anything (mainly for comparisons)
 	 * @param context reference in the mtctl model (e.g., a StateExpr)
 	 * @param ref which reference in the mtctl model needs to be set? (e.g., the state field in StateExpr)
 	 * @return the scope
@@ -322,7 +335,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		}
 		
 		//Take care of calling the correct method wrt. the type that is looked for		
-		if (context instanceof SubstateOfExpr || context instanceof StateActiveExpr)
+		if (context instanceof SubstateOfExpr || context instanceof StateActiveExpr || context instanceof StateInStatechartExpr && reference != null && "state".equals(reference.getName()))
 			return getScopeState(context, reference);
 		if (context instanceof TransitionFiringExpr || context instanceof TransitionMap)
 			return getScopeTransition(context, reference);
@@ -330,7 +343,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			return getScopeMessageType(context, reference);
 		if (context instanceof BufferMsgCountExpr || context instanceof MessageInBufferExpr && reference != null && "buffer".equals(reference.getName()))
 			return getScopeBuffer(context, reference);
-		
+		if (context instanceof StateInStatechartExpr && reference != null && "statechart".equals(reference.getName()))
+			return getScopeStatechart(context, reference);
 		if (context instanceof PropertyRepository || context instanceof ComparisonExpr || context instanceof MumlElemExpr) //Fallback for contexts where we might want any variable
 			return getScopeAny(context, reference);
 		
@@ -417,6 +431,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			states.addAll(innerRtsc.getStates());
 			clocks.addAll(innerRtsc.getClocks());
 			variables.addAll(innerRtsc.getVariables());
+			statecharts.add(innerRtsc);
 		}
 	}
 	
@@ -448,6 +463,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		clocks = new ArrayList<Clock>();
 		messageTypes = new ArrayList<MessageType>();
 		buffers = new ArrayList<MessageBuffer>();
+		statecharts = new ArrayList<RealtimeStatechart>();
 	}
 	
 	/**

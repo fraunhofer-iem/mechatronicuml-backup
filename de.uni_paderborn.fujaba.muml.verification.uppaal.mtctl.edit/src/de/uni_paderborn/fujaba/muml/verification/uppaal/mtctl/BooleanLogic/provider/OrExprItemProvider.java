@@ -292,6 +292,11 @@ public class OrExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(BooleanLogicPackage.Literals.OR_EXPR__LEFT_OPD,
+				 PredicatesFactory.eINSTANCE.createStateInStatechartExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BooleanLogicPackage.Literals.OR_EXPR__LEFT_OPD,
 				 SetsFactory.eINSTANCE.createClockSetExpr()));
 
 		newChildDescriptors.add
@@ -463,6 +468,11 @@ public class OrExprItemProvider
 			(createChildParameter
 				(BooleanLogicPackage.Literals.OR_EXPR__RIGHT_OPD,
 				 PredicatesFactory.eINSTANCE.createFalseExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BooleanLogicPackage.Literals.OR_EXPR__RIGHT_OPD,
+				 PredicatesFactory.eINSTANCE.createStateInStatechartExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter

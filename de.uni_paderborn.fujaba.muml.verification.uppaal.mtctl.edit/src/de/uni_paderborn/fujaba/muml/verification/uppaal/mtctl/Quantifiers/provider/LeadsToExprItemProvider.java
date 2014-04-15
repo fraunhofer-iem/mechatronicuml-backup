@@ -267,6 +267,11 @@ public class LeadsToExprItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QuantifiersPackage.Literals.LEADS_TO_EXPR__LEFT_OPD,
+				 PredicatesFactory.eINSTANCE.createStateInStatechartExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.LEADS_TO_EXPR__LEFT_OPD,
 				 SetsFactory.eINSTANCE.createClockSetExpr()));
 
 		newChildDescriptors.add
@@ -438,6 +443,11 @@ public class LeadsToExprItemProvider
 			(createChildParameter
 				(QuantifiersPackage.Literals.LEADS_TO_EXPR__RIGHT_OPD,
 				 PredicatesFactory.eINSTANCE.createFalseExpr()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QuantifiersPackage.Literals.LEADS_TO_EXPR__RIGHT_OPD,
+				 PredicatesFactory.eINSTANCE.createStateInStatechartExpr()));
 
 		newChildDescriptors.add
 			(createChildParameter
