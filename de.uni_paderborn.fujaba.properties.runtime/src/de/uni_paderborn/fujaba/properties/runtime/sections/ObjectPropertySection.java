@@ -40,7 +40,7 @@ public class ObjectPropertySection extends AbstractPropertySection {
 		editor = createObjectPropertyEditor(tabId);
 
 		editor.createControls(parent, toolkit);
-		editor.getSection().setSeparatorControl(toolkit.createCompositeSeparator(editor.getSection()));
+		//editor.getSection().setSeparatorControl(toolkit.createCompositeSeparator(editor.getSection()));
 		editor.setFocus();
 	}
 	

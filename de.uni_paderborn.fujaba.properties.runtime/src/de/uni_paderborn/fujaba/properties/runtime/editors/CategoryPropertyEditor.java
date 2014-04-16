@@ -20,6 +20,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Layout;
 import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.events.IExpansionListener;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 
@@ -33,7 +34,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 	public Color colorActiveText = null;
 	public Color colorActiveBackground = null;
 	
-	protected Section section;
+	protected ExpandableComposite section;
 	protected Composite childrenComposite;
 	private String title;
 	private int orientation = SWT.VERTICAL;
@@ -133,12 +134,12 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			if (propertyEditors.isEmpty()) {
 				section.setToggleColor(colorInactiveText);
 				section.setTitleBarForeground(colorInactiveText);
-				section.setTitleBarGradientBackground(colorInactiveBackground);
+			//	section.setTitleBarGradientBackground(colorInactiveBackground);
 
 			} else {
 				section.setToggleColor(colorActiveText);
 				section.setTitleBarForeground(colorActiveText);
-				section.setTitleBarGradientBackground(colorActiveBackground);
+				//section.setTitleBarGradientBackground(colorActiveBackground);
 			}
 		}
 	}
@@ -206,7 +207,7 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 			section = createSection(parent, toolkit);
 		
 			colorActiveText = new Color(null, 0, 85, 239);
-			colorActiveBackground = section.getTitleBarGradientBackground();
+			//colorActiveBackground = section.getTitleBarGradientBackground();
 			childrenComposite = toolkit.createComposite(section);
 			childrenComposite.setLayoutData(layoutData);
 			section.setClient(childrenComposite);
@@ -306,13 +307,13 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 		}
 	}
 
-	protected Section createSection(Composite parent, FormToolkit factory) {
+	protected ExpandableComposite createSection(Composite parent, FormToolkit factory) {
 		int sectionStyle = Section.TITLE_BAR
 				| Section.TWISTIE | Section.CLIENT_INDENT;
 		if (initiallyExpanded) {
 			sectionStyle |= Section.EXPANDED;
 		}
-		Section section = toolkit.createSection(parent, sectionStyle);
+		ExpandableComposite section = toolkit.createExpandableComposite(parent, sectionStyle);
 		section.setText(title);
 		return section;
 	}
@@ -359,13 +360,13 @@ public class CategoryPropertyEditor extends AbstractPropertyEditor  {
 
 	public void setEnabled(boolean enabled) {
 		if (enabled) {
-			section.setTitleBarBackground(null);
+			//section.setTitleBarBackground(null);
 		} else {
-			section.setTitleBarBackground(new Color(null, 230, 230, 230));
+			//section.setTitleBarBackground(new Color(null, 230, 230, 230));
 		}
 	}
 
-	public Section getSection() {
+	public ExpandableComposite getSection() {
 		return section;
 	}
 	

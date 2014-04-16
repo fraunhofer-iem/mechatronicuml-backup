@@ -29,6 +29,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.events.ExpansionEvent;
 import org.eclipse.ui.forms.events.IExpansionListener;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 
@@ -78,7 +79,7 @@ public class NavigationFeaturePropertyEditor extends
 		navigatedEditor.createControls(parent, toolkit);
 
 		// Initialize section with buttons
-		Section section = navigatedEditor.getSection();
+		ExpandableComposite section = navigatedEditor.getSection();
 
 		Composite composite = toolkit.createComposite(section);
 		RowLayout layout = new RowLayout(SWT.HORIZONTAL);
@@ -102,7 +103,7 @@ public class NavigationFeaturePropertyEditor extends
 			}
 		}
 		if (eClasses.size() > 1) {
-			Combo combo = new Combo(section, SWT.BORDER | SWT.READ_ONLY);
+			Combo combo = new Combo(composite, SWT.BORDER | SWT.READ_ONLY);
 			classViewer = new ComboViewer(combo);
 			classViewer.setContentProvider(ArrayContentProvider.getInstance());
 			classViewer.setLabelProvider(new LabelProvider() {
@@ -110,7 +111,6 @@ public class NavigationFeaturePropertyEditor extends
 					return ((EClass) element).getName();
 				}
 			});
-			section.setDescriptionControl(combo);
 		
 			classViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 				
@@ -275,6 +275,7 @@ public class NavigationFeaturePropertyEditor extends
 			refreshButtons();
 			navigatedEditor.getSection().setExpanded(true);
 			navigatedEditor.getSection().setExpanded(false);
+			RuntimePlugin.revalidateLayout(parentComposite);
 		}
 	}
 
