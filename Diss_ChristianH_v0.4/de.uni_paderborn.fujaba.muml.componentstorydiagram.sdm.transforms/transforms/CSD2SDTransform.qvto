@@ -1,0 +1,12 @@
+import lib.CSD2SD;
+
+modeltype csd uses 'http://www.fujaba.de/muml/componentstorydiagram/0.4.0';
+modeltype sd uses 'http://www.storydriven.org/storydiagrams/0.2.1';
+
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+
+transformation CSD2SDTransform(inout model: modelinstance);
+
+main() {
+	model.objects()[RootNode]->map RootNode2RootNode();
+}
