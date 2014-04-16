@@ -3,6 +3,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.scoping;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -163,20 +164,26 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 */
 	public IScope getScopeState(EObject context, EReference reference) {
 		List<EObject> scope = new ArrayList<EObject>();
+		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
 		
 		//Add states from the muml model
 		scope.addAll(states);
 		
 		//Add BoundVariables
-		QuantifierExpr parentQuantifier = findParentQuantifier(context);
+		QuantifierExpr parentQuantifier = findParentQuantifier(context); // returns the closest quantifier in the hierarchy of quantifiers
 		while (parentQuantifier != null) {
-			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof StateSetExpr)
-				scope.add(parentQuantifier.getVar());
+			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof StateSetExpr){
+				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
+					scope.add(parentQuantifier.getVar());
+					namesOfBoundVariables.add(parentQuantifier.getVar().getName());
+				}
+			}
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
 		return createScope(scope);
 	}
+	
 	
 	/**
 	 * Returns the scope when looking for a transition
@@ -186,12 +193,16 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 */
 	public IScope getScopeTransition(EObject context, EReference reference) {
 		List<EObject> scope = new ArrayList<EObject>();
-		
+		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
+				
 		//Add BoundVariables
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
 			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof TransitionSetExpr)
-				scope.add(parentQuantifier.getVar());
+				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
+					scope.add(parentQuantifier.getVar());
+					namesOfBoundVariables.add(parentQuantifier.getVar().getName());
+				}
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
@@ -206,7 +217,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 */
 	public IScope getScopeMessageType(EObject context, EReference reference) {
 		List<EObject> scope = new ArrayList<EObject>();
-		
+		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
+				
 		//Add states from the muml model
 		scope.addAll(messageTypes);
 		
@@ -214,7 +226,10 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
 			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof MessageSetExpr)
-				scope.add(parentQuantifier.getVar());
+				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
+					scope.add(parentQuantifier.getVar());
+					namesOfBoundVariables.add(parentQuantifier.getVar().getName());
+				}
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
@@ -229,7 +244,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 */
 	public IScope getScopeBuffer(EObject context, EReference reference) {
 		List<EObject> scope = new ArrayList<EObject>();
-		
+		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
+				
 		//Add states from the muml model
 		scope.addAll(buffers);
 		
@@ -237,7 +253,10 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
 			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof BufferSetExpr)
-				scope.add(parentQuantifier.getVar());
+				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
+					scope.add(parentQuantifier.getVar());
+					namesOfBoundVariables.add(parentQuantifier.getVar().getName());
+				}
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
@@ -252,7 +271,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 */
 	public IScope getScopeVariable(EObject context, EReference reference) {
 		List<EObject> scope = new ArrayList<EObject>();
-		
+		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
+				
 		//Add clocks and variables from the model
 		scope.addAll(clocks);
 		scope.addAll(variables);
@@ -261,7 +281,10 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
 			if (parentQuantifier.getVar() != null && parentQuantifier.getVar().getSet() instanceof ClockSetExpr)
-				scope.add(parentQuantifier.getVar());
+				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
+					scope.add(parentQuantifier.getVar());
+					namesOfBoundVariables.add(parentQuantifier.getVar().getName());
+				}
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
@@ -287,7 +310,8 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 	 */
 	public IScope getScopeAny(EObject context, EReference reference) {
 		List<EObject> scope = new ArrayList<EObject>();
-		
+		Set<String> namesOfBoundVariables = new HashSet<String>(); // contains names of already added BoundVariables
+				
 		//Add elements from the model
 		scope.addAll(clocks);
 		scope.addAll(variables);
@@ -299,7 +323,10 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 		QuantifierExpr parentQuantifier = findParentQuantifier(context);
 		while (parentQuantifier != null) {
 			if (parentQuantifier.getVar().getSet() instanceof SetExpr) //we might want to change this if some set elements are not comparable
-				scope.add(parentQuantifier.getVar());
+				if (!namesOfBoundVariables.contains(parentQuantifier.getVar().getName())) { // adds the current BoundVariable only if it is not shadowed
+					scope.add(parentQuantifier.getVar());
+					namesOfBoundVariables.add(parentQuantifier.getVar().getName());
+				}
 			parentQuantifier = findParentQuantifier(parentQuantifier);
 		}
 		
