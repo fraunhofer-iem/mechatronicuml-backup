@@ -4,6 +4,7 @@ import java.util.Collections;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.change.ChangeDescription;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.command.ChangeCommand;
 import org.eclipse.m2m.qvt.oml.BasicModelExtent;
 import org.eclipse.m2m.qvt.oml.ExecutionContextImpl;
@@ -87,6 +88,9 @@ public class ReconcileCommand extends ChangeCommand {
 		if (transformationExecutor == null) {
 			return;
 		}
+		
+		// WORKAROUND QVTO #431055
+		Resource resource = generator.eResource();
 
 		// Bind componentInstance to input
 		ModelExtent input = new BasicModelExtent(
@@ -98,6 +102,9 @@ public class ReconcileCommand extends ChangeCommand {
 		// Execute transformation
 		ExecutionDiagnostic result = transformationExecutor.execute(context,
 				input);
+		
+		// WORKAROUND QVTO #431055
+		resource.getContents().add(generator);
 
 		if (result.getSeverity() != ExecutionDiagnostic.OK) {
 			System.out
