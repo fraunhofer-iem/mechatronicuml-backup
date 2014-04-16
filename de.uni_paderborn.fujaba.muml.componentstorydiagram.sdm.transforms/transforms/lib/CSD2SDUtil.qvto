@@ -1,0 +1,126 @@
+library CSD2SDUtil;
+
+modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
+
+modeltype componentInstanceConfiguration uses 'http://www.fujaba.de/muml/instance/0.4.0';
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+modeltype reconfiguration uses 'http://www.fujaba.de/muml/reconfiguration/0.3.18';
+
+modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
+
+modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+
+
+mapping componentstorypattern::ComponentStoryPattern :: createInitialCIC() : ObjectVariable{
+	name := 'rootCIC';
+	classifier:=ComponentInstanceConfiguration.oclAsType(EClass);
+}
+
+mapping componentstorypattern::ComponentVariable:: createEmbeddedCIC() : ObjectVariable{
+	name := 'embeddedCIC';
+	classifier:=ComponentInstanceConfiguration.oclAsType(EClass);
+}
+
+mapping componentstorypattern::ComponentVariable ::createComponentInstance() : ObjectVariable disjuncts componentstorypattern::ComponentVariable :: createStructuredComponentInstance, componentstorypattern::ComponentVariable :: createAtomicComponentInstance;
+
+
+mapping componentstorypattern::ComponentVariable :: createStructuredComponentInstance() : ObjectVariable when{self.type.eClass() = ReconfigurableStructuredComponent or self.type.eClass() = StaticStructuredComponent}{
+	name := self.name;
+	classifier := StructuredComponentInstance.oclAsType(EClass);
+	   	_bindingState := self._bindingState;
+    	_bindingSemantics := self._bindingSemantics;
+    	_bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::ComponentVariable :: createAtomicComponentInstance() : ObjectVariable when {self.type.eClass() = AtomicComponent or self.type.eClass() = ReconfigurableAtomicComponent}{
+	name := self.name;
+	classifier := AtomicComponentInstance.oclAsType(EClass);
+	   	_bindingState := self._bindingState;
+    	_bindingSemantics := self._bindingSemantics;
+    	_bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::PartVariable ::createComponentInstance() : ObjectVariable disjuncts componentstorypattern::PartVariable ::createStructuredComponentInstance, componentstorypattern::PartVariable ::createAtomicComponentInstance;
+
+mapping componentstorypattern::PartVariable ::createStructuredComponentInstance() : ObjectVariable when {self.type.componentType.eClass() = StaticStructuredComponent or self.type.componentType.eClass() = ReconfigurableStructuredComponent}{
+	name := self.name;
+	classifier := StructuredComponentInstance.oclAsType(EClass);
+	   	_bindingState := self._bindingState;
+    	_bindingSemantics := self._bindingSemantics;
+    	_bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::PartVariable ::createAtomicComponentInstance() : ObjectVariable when {self.type.componentType.eClass() = StaticAtomicComponent or self.type.componentType.eClass() = ReconfigurableAtomicComponent}{
+	name := self.name;
+	classifier := AtomicComponentInstance.oclAsType(EClass);
+	  	_bindingState := self._bindingState;
+    	_bindingSemantics := self._bindingSemantics;
+    	_bindingOperator := self._bindingOperator;
+}
+
+-- we need the parameter to create every "component type variable" anew for each story pattern
+mapping muml::component::Component ::createComponentType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	name := self.name;
+	classifier := self.eClass();
+}
+
+
+mapping componentstorypattern::PartVariable :: createComponentPart() : ObjectVariable{
+	name := self.type.name;
+	classifier := self.type.eClass();
+}
+
+mapping createLinkVaribale(sourceVariable : ObjectVariable, targetVariable : ObjectVariable, targetEndReference : EReference) : LinkVariable{
+//	_name := self._name;
+//    _bindingSemantics := self._bindingSemantics;
+//    _bindingOperator := self._bindingOperator;
+//    _annotation := self._annotation.map EAnnotation2EAnnotation();
+//    _extension := self._extension.map Extension2Extension();
+    _source := sourceVariable;
+//    _secondLinkConstraint := self._secondLinkConstraint.map LinkConstraint2LinkConstraint();
+//    _firstLinkConstraint := self._firstLinkConstraint.map LinkConstraint2LinkConstraint();
+//    _pattern := self._pattern.map StoryPattern2StoryPattern();
+    _target := targetVariable;
+    
+    _targetEnd := targetEndReference;
+//    _qualifierExpression := self._qualifierExpression.map Expression2Expression();
+}
+
+mapping PartVariable:: createPartVariableEquivalence(in compStoryPattern : componentstorypattern::ComponentStoryPattern, inout container : StoryPattern){
+	container._variable +=  self.map createComponentInstance();
+	container._linkVariable += map createLinkVaribale(compStoryPattern.thisVariable.map createEmbeddedCIC(), self.map createComponentInstance(), getComponentInstancesReference());
+	container._variable += self.type.componentType.map createComponentType(compStoryPattern);
+	container._linkVariable += map createLinkVaribale(self.map createComponentInstance(), self.type.componentType.map createComponentType(compStoryPattern), getComponentTypeReference());
+	container._variable += self.map createComponentPart();
+	container._linkVariable += map createLinkVaribale(self.map createComponentInstance(), self.map createComponentPart(), getComponentPartReference());
+	container._linkVariable += map createLinkVaribale(compStoryPattern.thisVariable.type.map createComponentType(compStoryPattern), self.map createComponentPart(), getEmbeddedComponentPartsReference());
+}
+
+//mapping PortPart createPort
+
+helper getComponentInstancesReference() : EReference{
+	return ComponentInstanceConfiguration.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'componentInstances')->first();
+}
+
+helper getComponentTypeReference() : EReference{
+	return ComponentInstance.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'componentType')->first();
+}
+
+helper getEmbeddedCICReference() : EReference{
+	return StructuredComponentInstance.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'embeddedCIC')->first();
+}
+
+helper getComponentPartReference() : EReference{
+	return ComponentInstance.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'componentPart')->first();
+}
+
+helper getEmbeddedComponentPartsReference() : EReference{
+	return StructuredComponent.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'embeddedComponentParts')->first();
+}

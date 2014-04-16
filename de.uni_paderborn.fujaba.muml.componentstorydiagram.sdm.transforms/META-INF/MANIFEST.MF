@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Transforms Plug-in
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.componentstorydiagram.sdm.transforms
+Bundle-Version: 1.0.0
+Bundle-Vendor: 

@@ -1,0 +1,167 @@
+import CSD2SDUtil;
+
+
+library CSD2SD();
+
+modeltype csd uses 'http://www.fujaba.de/muml/componentstorydiagram/0.4.0';
+modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
+
+modeltype sd uses 'http://www.storydriven.org/storydiagrams/0.2.1';
+modeltype sdActivities uses 'http://www.storydriven.org/storydiagrams/activities/0.2.1';
+modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
+
+modeltype componentInstanceConfiguration uses 'http://www.fujaba.de/muml/instance/0.4.0';
+
+modeltype storydriven uses 'http://www.storydriven.org/core/0.3.1';
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+
+modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+
+//TODO
+//ports
+//connectors
+//binding semantics: if instance is already bound part, type etc are useless
+
+mapping inout modelinstance::RootNode :: RootNode2RootNode(){
+    	_categories += self._categories.map ModelElementCategory2ModelElementCategory();
+    	//_ecoreDataTypes := self._ecoreDataTypes.deepclone().oclAsType(EDataType);
+   		 }
+   		 
+mapping modelinstance::ModelElementCategory :: ModelElementCategory2ModelElementCategory() : modelinstance::ModelElementCategory when{self.key = "org.storydriven.storydiagrams.activities.category"}{
+    	_key := 'org.storydriven.storydiagrams.category';
+    	_name := 'storydiagrams';
+    	_modelElements := self._modelElements[ComponentStoryRule].activity.map ExtendableElement2ExtendableElement();
+   		 }
+   		 
+mapping core::ExtendableElement :: ExtendableElement2ExtendableElement() : core::ExtendableElement disjuncts storydiagrams::activities::Activity :: Activity2Activity, storydiagrams::activities::InitialNode::InitialNode2InitialNode;
+
+mapping storydiagrams::activities::Activity :: Activity2Activity() : storydiagrams::activities::Activity{
+    	_comment := self._comment;
+    	_name := self._name;
+    	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    	_extension := self._extension.deepclone().oclAsType(Extension);
+    	_inParameter := self._inParameter.deepclone().oclAsType(EParameter);
+    	_outParameter := self._outParameter.deepclone().oclAsType(EParameter);
+    	_containedParameters := self._containedParameters.deepclone().oclAsType(EParameter);
+    	_owningOperation := self._owningOperation.deepclone().oclAsType(OperationExtension);
+    	_ownedActivityEdge := self._ownedActivityEdge.map ActivityEdge2ActivityEdge();
+    	_precondition := self._precondition.deepclone().oclAsType(MatchingStoryNode);
+    	_ownedActivityNode := self._ownedActivityNode.map ActivityNode2ActivityNode();
+   		 }
+
+mapping storydiagrams::activities::ActivityEdge :: ActivityEdge2ActivityEdge() : storydiagrams::activities::ActivityEdge{
+    	_guard := self._guard;
+    	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    	_extension := self._extension.deepclone().oclAsType(Extension);
+    	_target := self._target.map ActivityNode2ActivityNode();
+    	_source := self._source.map ActivityNode2ActivityNode();
+    	_owningActivity := self._owningActivity.map Activity2Activity();
+    	_guardExpression := self._guardExpression.deepclone().oclAsType(core::expressions::Expression);
+    	_guardException := self._guardException.deepclone().oclAsType(ExceptionVariable);
+   		 }
+   		 
+mapping storydiagrams::activities::ActivityNode :: ActivityNode2ActivityNode() : storydiagrams::activities::ActivityNode disjuncts //storydiagrams::activities::StoryNode::StoryNode2StoryNode,
+	// componentstorydiagram::ControllerExchangeNode::ControllerExchangeNode2ControllerExchangeNode, storydiagrams::activities::ModifyingStoryNode::ModifyingStoryNode2ModifyingStoryNode,
+	 componentstorydiagram::ComponentStoryNode::ComponentStoryNode2ModifyingStoryNode, 
+	  storydiagrams::activities::InitialNode::InitialNode2InitialNode;
+	//   storydiagrams::activities::JunctionNode::JunctionNode2JunctionNode, storydiagrams::activities::ActivityFinalNode::ActivityFinalNode2ActivityFinalNode,
+	//    storydiagrams::activities::MatchingStoryNode::MatchingStoryNode2MatchingStoryNode, storydiagrams::activities::StatementNode::StatementNode2StatementNode,
+	//     storydiagrams::activities::StructuredNode::StructuredNode2StructuredNode, storydiagrams::activities::FlowFinalNode::FlowFinalNode2FlowFinalNode,
+	//      storydiagrams::activities::ActivityCallNode::ActivityCallNode2ActivityCallNode;
+	     
+/*mapping storydiagrams::activities::StoryNode :: StoryNode2StoryNode() : storydiagrams::activities::StoryNode disjuncts
+	 storydiagrams::activities::ModifyingStoryNode::ModifyingStoryNode2ModifyingStoryNode,
+	  storydiagrams::activities::MatchingStoryNode::MatchingStoryNode2MatchingStoryNode;
+ */
+  
+mapping componentstorydiagram::ComponentStoryNode :: ComponentStoryNode2ModifyingStoryNode() : storydiagrams::activities::ModifyingStoryNode
+{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_forEach := self._forEach;
+    	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    	_extension := self._extension.deepclone().oclAsType(Extension);
+    	_outgoing := self._outgoing.map ActivityEdge2ActivityEdge();
+    	_owningActivity := self._owningActivity.map Activity2Activity();
+    	_owningActivityNode := self._owningActivityNode.map StructuredNode2StructuredNode();
+    	_incoming := self._incoming.map ActivityEdge2ActivityEdge();
+    	_ownedRule := self._componentStoryPattern.map ComponentStoryPattern2StoryPattern();
+   		 }
+   		 
+
+
+mapping storydiagrams::activities::InitialNode :: InitialNode2InitialNode() : storydiagrams::activities::InitialNode{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    	_extension := self._extension.deepclone().oclAsType(Extension);
+    	_outgoing := self._outgoing.map ActivityEdge2ActivityEdge();
+    	_owningActivity := self._owningActivity.map Activity2Activity();
+    	_owningActivityNode := self._owningActivityNode.map StructuredNode2StructuredNode();
+    	_incoming := self._incoming.map ActivityEdge2ActivityEdge();
+   		 }
+   		 
+mapping storydiagrams::activities::StructuredNode :: StructuredNode2StructuredNode() : storydiagrams::activities::StructuredNode{
+    	_name := self._name;
+    	_comment := self._comment;
+    	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    	_extension := self._extension.deepclone().oclAsType(Extension);
+    	_outgoing := self._outgoing.map ActivityEdge2ActivityEdge();
+    	_owningActivity := self._owningActivity.map Activity2Activity();
+    	_owningActivityNode := self._owningActivityNode.map StructuredNode2StructuredNode();
+    	_incoming := self._incoming.map ActivityEdge2ActivityEdge();
+    	_ownedActivityNode := self._ownedActivityNode.map ActivityNode2ActivityNode();
+   		 }
+   		 
+   		 
+mapping componentstorypattern::ComponentStoryPattern :: ComponentStoryPattern2StoryPattern() : StoryPattern{
+    	_comment := self._comment;
+//TODO what are binding semantics here?
+    	_bindingSemantics := BindingSemantics::MANDATORY;
+    	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    	_extension := self._extension.deepclone().oclAsType(Extension);
+    	_variable := self.map createInitialCIC();
+    	_variable += self.thisVariable.map createComponentInstance();
+    //	_variable += self.thisVariable.map createStructuredComponentInstance();
+    	_linkVariable += map createLinkVaribale(self.map createInitialCIC(), self.thisVariable.map createComponentInstance(), getComponentInstancesReference());
+    	_variable += self.thisVariable.type.map createComponentType(self);
+    	_linkVariable += map createLinkVaribale(self.thisVariable.map createComponentInstance(), self.thisVariable.type.map createComponentType(self), getComponentTypeReference());
+		_variable += self.thisVariable.map createEmbeddedCIC();
+		_linkVariable += map createLinkVaribale(self.thisVariable.map createComponentInstance(), self.thisVariable.map createEmbeddedCIC(), getEmbeddedCICReference());
+		self.thisVariable.partVariables->forEach(pV){
+			pV.map createPartVariableEquivalence(self, result);
+		}
+  //  	_variable += self.thisVariable.partVariables->map PartVariable2ObjectVariable();
+/*    	_constraint := self._constraint.map Constraint2Constraint();
+    	_linkVariable := self._linkVariable.map AbstractLinkVariable2AbstractLinkVariable();
+    	_parentPattern := self._parentPattern.map StoryPattern2StoryPattern();
+    	_containedPattern := self._containedPattern.map StoryPattern2StoryPattern();
+    	_templateSignature := self._templateSignature.map TemplateSignature2TemplateSignature()
+   		 
+   		 */
+   		 }
+   		 
+mapping componentstorypattern::ComponentVariable :: ComponentVariable2ObjectVariable() : storydiagrams::patterns::ObjectVariable{
+    	_name := self._name;
+    	_bindingState := self._bindingState;
+    	_bindingSemantics := self._bindingSemantics;
+    	_bindingOperator := self._bindingOperator;
+    	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    	_extension := self._extension.deepclone().oclAsType(Extension);
+/*    	_genericType := self._genericType.map EGenericType2EGenericType();
+    	_pattern := self._pattern.map ComponentStoryPattern2StoryPattern();
+    	_bindingExpression := self._bindingExpression.map Expression2Expression();
+    	_constraint := self._constraint.map Constraint2Constraint();
+    	_incomingLink := self._incomingLink.map AbstractLinkVariable2AbstractLinkVariable();
+    	_outgoingLink := self._outgoingLink.map AbstractLinkVariable2AbstractLinkVariable();
+    	_linkOrderConstraint := self._linkOrderConstraint.map LinkConstraint2LinkConstraint();
+    	_attributeAssignment := self._attributeAssignment.map AttributeAssignment2AttributeAssignment();
+    	*/
+    	_classifier := self.type.oclAsType(EClass);
+   		 }
+   		 
+   		 
+//mapping storydiagrams::patterns::AbstractVariable :: AbstractVariable2AbstractVariable() : storydiagrams::patterns::AbstractVariable disjuncts storydiagrams::patterns::CollectionVariable::CollectionVariable2CollectionVariable, storydiagrams::patterns::ObjectVariable::ObjectVariable2ObjectVariable, storydiagrams::patterns::PrimitiveVariable::PrimitiveVariable2PrimitiveVariable;
