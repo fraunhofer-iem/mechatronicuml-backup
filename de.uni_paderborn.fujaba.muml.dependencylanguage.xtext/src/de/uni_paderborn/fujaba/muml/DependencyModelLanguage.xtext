@@ -1,0 +1,304 @@
+// written by Sebastian Goschin
+// Hidden elements can't be used as assignment, so to use SL_COMMENT and ML_COMMENT the hidden(WS) overrides hidden(WS, ML_COMMENT, SL_COMMENT)
+// Further this disallows comments that weren't be stored.
+grammar de.uni_paderborn.fujaba.muml.DependencyModelLanguage with de.uni_paderborn.fujaba.muml.ActionLanguage hidden (WS)
+
+import "platform:/resource/de.uni_paderborn.fujaba.muml.dependencylanguage/model/dependencylanguage.ecore" 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+//import "http://www.storydriven.org/core/0.3.1" as core
+//import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions" as expressions
+import "platform:/resource/org.storydriven.core/model/core.ecore#//expressions/common" as commonExpressions
+import "platform:/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore" as actionlanguage
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart" as realtimestatechart
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//types" as types
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior" as behavior
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component" as component
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype" as valuetype
+import "platform:/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype" as msgtype
+
+
+DependencyModel returns DependencyModel:
+{DependencyModel} 
+	(comment=(ML_COMMENT|SL_COMMENT))?
+	(dependencies+=Dependency (dependencies+=Dependency)*)?
+;
+
+///////////////////////////////////////
+// Dependencies
+///////////////////////////////////////
+Dependency returns Dependency:
+	(Synchronization | ForbiddenStateCombination | ConditionalDependency | BoundedActiveState | DataMerge | ClockMerge) ';' (comment=(ML_COMMENT|SL_COMMENT))?
+;
+
+Synchronization returns Synchronization:
+	(
+		('sync' sendingEvents+=Event (',' sendingEvents+=Event)*  'with' receivingEvents+=Event (',' receivingEvents+=Event)*)
+		|
+		('sync' sendingEvents+=SynchronizationEvent (',' sendingEvents+=SynchronizationEvent)*  'with' receivingEvents+=SynchronizationEvent (',' receivingEvents+=SynchronizationEvent)*)
+	)
+	('using' channelName=EString)? ('['generalSelectorExpression=Expression']''of type' selectorType=[types::DataType])?
+;
+
+ForbiddenStateCombination returns ForbiddenStateCombination:
+	'forbid' states+=[realtimestatechart::State|QualifiedName] ( ',' states+=[realtimestatechart::State|QualifiedName])+
+;
+
+BoundedActiveState returns BoundedActiveState:
+	'bound' states+=[realtimestatechart::State|QualifiedName] ( ',' states+=[realtimestatechart::State|QualifiedName])* 'by' '[' constraint=ClockCondition ']'
+;
+
+ConditionalDependency returns ConditionalDependency:
+	('if' condition=Condition
+	'{'
+		effects+=Effect (';'effects+=Effect)* (';')?
+	'}'
+	)|
+	('when' '['event=ComplexEvent']'
+	'{'
+		effects+=LimitedEffect (';'effects+=LimitedEffect)* (';')?
+	'}')
+;
+
+Effect returns Effect:
+	EnableDisableEffect | DataAssignmentEffect | ClockResetEffect
+;
+
+LimitedEffect returns Effect:
+	DataAssignmentEffect | ClockResetEffect
+;
+
+
+EnableDisableEffect returns EnableDisableEffect:
+	(isEnable?='enable'|'disable') event=Event
+;
+
+
+DataAssignmentEffect returns DataAssignmentEffect:
+	'assign' lhs_typedNamedElementExpression=TypedNamedElementExpression
+	(
+		(		
+			assignOperator=AssignOperator rhs_assignExpression=InitializeExpression	
+		)
+		|
+		(
+			incrementDecrementOperator=IncrementDecrementOperatorExpression
+		)
+	)
+;
+
+// reset without an blank does not parse correctly, maybe it is a xtext keyword
+ClockResetEffect returns ClockResetEffect:
+	'clockreset' clocks+=[realtimestatechart::Clock|QualifiedName] ( "," clocks+=[realtimestatechart::Clock|QualifiedName])*
+;
+
+DataMerge returns DataMerge:
+	'datamerge' variables+=[behavior::Variable|QualifiedName] ( ',' variables+=[behavior::Variable|QualifiedName])+ ('to' variableName=EString)?
+;
+
+ClockMerge returns ClockMerge:
+	'clockmerge' clocks+=[realtimestatechart::Clock|QualifiedName] ( "," clocks+=[realtimestatechart::Clock|QualifiedName])+ ('to' clockName=EString)?
+;
+
+
+///////////////////////////////////////
+// Events
+///////////////////////////////////////
+Event:
+	TransitionEvent | StateEvent | StateCombinationEvent | MessageEvent
+;
+
+MessageEvent returns MessageEvent:
+	kind=MessageEventKind (port=[component::DiscretePort]'.')?type=[msgtype::MessageType]
+;
+
+TransitionEvent returns TransitionEvent:
+	transition=[realtimestatechart::Transition|QualifiedName]
+;
+
+StateEvent returns StateEvent:
+	kind=StateEventKind	state=[realtimestatechart::State|QualifiedName]
+;
+
+StateCombinationEvent returns StateCombinationEvent:
+	kind=StateEventKind 'combination of' states+=[realtimestatechart::State|QualifiedName] ( "," states+=[realtimestatechart::State|QualifiedName])+
+;
+
+SynchronizationEvent returns SynchronizationEvent:
+	event=Event '['selectorExpression=Expression']' 
+;
+
+ComplexEvent returns Event:
+	('(' (CompositionEvent | CountedEvent | DelayedEvent) ')') | Event
+;
+
+CompositionEvent returns CompositionEvent:
+	leftEvent=ComplexEvent kind=LogicOperator rightEvent=ComplexEvent;
+
+CountedEvent returns CountedEvent:
+	event=ComplexEvent 'counted' counter=EInt 'times'
+;
+
+DelayedEvent returns DelayedEvent:
+	event=ComplexEvent 'delayed by' delay=TimeValue
+;
+
+///////////////////////////////////////
+// Dependency Conditions
+///////////////////////////////////////
+
+Condition returns Condition:
+	CompositionOrCondition
+;
+
+ConditionWithoutKeyword returns Condition:
+	 '['(StateStatusCondition | EventConstrainedIntervalCondition | DataCondition | ClockCondition | CompositionOrCondition)']'
+;
+
+
+CompositionOrCondition returns Condition:
+	CompositionAndCondition
+	({CompositionCondition.leftCondition=current} kind=OrOperator rightCondition=CompositionOrCondition)?
+;
+
+CompositionAndCondition returns Condition:
+	ConditionWithoutKeyword
+		({CompositionCondition.leftCondition=current} kind=AndOperator rightCondition=CompositionAndCondition)?
+;
+
+StateStatusCondition returns StateStatusCondition:
+	(
+		states+=[realtimestatechart::State|QualifiedName]
+		|
+		('combination of' states+=[realtimestatechart::State|QualifiedName] ( "," states+=[realtimestatechart::State|QualifiedName])+)
+	)
+	kind=StateStatusKind
+;
+
+EventConstrainedIntervalCondition returns EventConstrainedIntervalCondition:
+'between'
+(	((initialEnabled?='INIT' 'OR') fromEvent=ComplexEvent ',' untilEvent=ComplexEvent )	
+	|
+	(initialEnabled?='INIT' ',' untilEvent=ComplexEvent )
+	|
+	(fromEvent=ComplexEvent ',' (untilEvent=ComplexEvent| enabledInfite?='INFINITE') )	
+)
+;
+
+ClockCondition returns ClockCondition:
+	BasicClockCondition | AuxiliaryClockCondition | HybridClockCondition
+;
+
+AuxiliaryClockCondition returns AuxiliaryClockCondition:
+	'last 'event=ComplexEvent
+	operator=ComparingOperator
+	bound=TimeValue
+;
+
+HybridClockCondition returns HybridClockCondition:
+	condition=StateStatusCondition
+	'holds since' operator=ComparingOperator
+	bound=TimeValue
+;
+
+BasicClockCondition returns BasicClockCondition:
+	'clock' clock=[realtimestatechart::Clock|QualifiedName]
+	operator=ComparingOperator
+	bound=TimeValue
+;
+
+DataCondition returns DataCondition:
+	expression=LogicalExpression
+;
+
+
+///////////////////////////////////////
+// Reused Expressions of ActionLanguage only extended by QualifiedName References
+///////////////////////////////////////
+TypedNamedElementExpression returns actionlanguage::TypedNamedElementExpression:
+	typedNamedElement=[behavior::TypedNamedElement|QualifiedName]('['indices+=ArithmeticExpression']')*
+;
+
+OperationCall returns actionlanguage::OperationCall:
+	operation=[behavior::Operation|QualifiedName] '('
+		(parameterBinding+=ParamaterBinding (',' parameterBinding+=ParamaterBinding)* )?
+	')'
+;
+
+///////////////////////////////////////
+// Other Rules
+///////////////////////////////////////
+TimeValue returns valuetype::TimeValue:
+	value=Expression
+	unit=TimeUnit
+;
+
+///////////////////////////////////////
+// Terminals
+///////////////////////////////////////
+terminal NUMBER returns ecore::EBigDecimal:
+	INT'.' INT
+;
+
+// DO NOT REMOVE THIS TERMINAL AND DO NOT CHANGE ORDER!!! IT COULD CREATE AN ERROR WHILE GENERATING.
+terminal BOOLEAN returns ecore::EBoolean:
+	'true' | 'false'
+;
+
+terminal ID:
+	'^'?('a'..'z'|'A'..'Z'|'_') (('a'..'z'|'A'..'Z'|'_'|'0'..'9')+ (('('('0'..'9')+')-->') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')+)?)?
+;
+
+
+LONG returns ecore::ELong:
+	INT
+;
+
+QualifiedName:
+	ID ('.' ID)*
+;
+
+EString returns ecore::EString:
+	STRING | ID;
+	
+EInt returns ecore::EInt:
+	'-'? INT;
+	
+Literal returns ecore::EString:
+	NUMBER | BOOLEAN | INT | STRING | 'null'
+;
+
+//TODO Check if microseconds works under linux.
+TimeUnit returns valuetype::TimeUnit:
+	'ns' | 'µs' | 'ms' | 's' | 'min' | 'h' | 'D'
+;
+	
+///////////////////////////////////////
+// Enumerations
+///////////////////////////////////////
+enum OrOperator returns commonExpressions::LogicOperator:
+	OR='or'
+;
+
+enum AndOperator returns commonExpressions::LogicOperator:
+	AND='and'
+;
+
+enum LogicOperator returns commonExpressions::LogicOperator:
+	OR='or' | AND='and'
+;
+
+enum ComparingOperator returns commonExpressions::ComparingOperator:
+	EQUAL='==' | UNEQUAL='<>' | LESS='<' | LESS_OR_EQUAL='<=' | GREATER_OR_EQUAL='>=' | GREATER='>'
+;
+
+enum StateEventKind returns StateEventKind:
+	ENTRY='entering' | EXIT='leaving'
+;
+
+enum StateStatusKind returns StateStatusKind:
+	ACTIVE='active' | INACTIVE='inactive'
+;
+
+enum MessageEventKind returns MessageEventKind:
+	CONSUMING='consuming' | SENDING='sending'
+;

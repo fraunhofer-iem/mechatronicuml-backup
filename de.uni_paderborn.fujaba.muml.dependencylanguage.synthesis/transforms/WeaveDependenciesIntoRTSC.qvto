@@ -1,0 +1,838 @@
+import transforms.lib.RTSC2RTSCdeepContainmentCopy;	
+
+// SD: unneeded?
+import de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox.XTextSerializerLibUnit;
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype rtsc uses muml::realtimestatechart('http://www.fujaba.de/muml/0.4.0');
+modeltype component uses muml::component('http://www.fujaba.de/muml/0.4.0');
+modeltype types uses muml::types('http://www.fujaba.de/muml/0.4.0');
+modeltype depLang uses 'http://www.fujaba.de/muml/dependencylanguage/0.4.0';
+modeltype modelinstance uses 'http://www.fujaba.de/modelinstance/0.4.0';
+modeltype actLang uses 'http://www.fujaba.de/muml/actionlanguage/0.4.0';
+modeltype behavior uses muml::behavior('http://www.fujaba.de/muml/0.4.0');
+modeltype expressions uses core::expressions('http://www.storydriven.org/core/0.3.1');
+modeltype common uses core::expressions::common('http://www.storydriven.org/core/0.3.1');
+modeltype core uses 'http://www.storydriven.org/core/0.3.1';
+modeltype valuetype uses muml::valuetype('http://www.fujaba.de/muml/0.4.0');
+
+transformation WeaveDependenciesIntoRTSC(inout input:modelinstance);
+
+property synBehavior : SynthesizableBehavior;
+
+configuration property nameOfComponentToSynthesize : String;
+configuration property componentToSynthesize: OrderedSet(AtomicComponent);
+
+main() {
+	log('huhu_weave');
+	assert fatal (not (componentToSynthesize->isEmpty() and nameOfComponentToSynthesize.oclIsUndefined())) with log('The configuration property nameOfComponentToSynthesize or componentToSynthesize must be specified.');
+	if(componentToSynthesize->oclIsUndefined() and input.objectsOfType(AtomicComponent)->notEmpty()) then {
+		if (input.objectsOfType(AtomicComponent)->exists(c : AtomicComponent | c.name.equalsIgnoreCase(nameOfComponentToSynthesize))){
+			componentToSynthesize += input.objectsOfType(AtomicComponent)->any(c : AtomicComponent | c.name.equalsIgnoreCase(nameOfComponentToSynthesize)).oclAsType(AtomicComponent);
+		}
+		else{
+			assert fatal (false) with log('There is no component with the name: '.concat(nameOfComponentToSynthesize));
+		}endif;
+	}endif;
+	assert fatal (componentToSynthesize->notEmpty()) with log('There is no atomic component.');
+	
+	// Add inner behavior to the RTSCs which will be copied
+	componentToSynthesize.extension[SynthesizableBehavior]->forOne(synBeh){
+		synBehavior := synBeh;	
+	};
+	
+	if(not synBehavior.dependencyModel.oclIsUndefined()) then {
+		if(not synBehavior.dependencyModel.dependencies->isEmpty()) then {
+			synBehavior.dependencyModel.dependencies->map Dependency2EObjects();
+		}endif;
+		
+	}endif;
+	assert warning (not synBehavior.dependencyModel.oclIsUndefined()) with log('There is no dependency model.');
+	assert warning (synBehavior.dependencyModel.dependencies->notEmpty()) with log('There are no dependencies.');	
+}
+
+//blackbox helper serializeActionLanguage(obj:EObject):String;
+//blackbox helper serializeDependencyLanguage(obj:EObject):String;
+
+mapping Dependency:: Dependency2EObjects():Set(EObject) disjuncts
+	depLang::Synchronization::Synchronization2Channel,
+	ConditionalDependency::ConditionalDependency2Effects,
+	Dependency::failOnUnsupportedDependency;
+	
+	
+mapping Dependency:: failOnUnsupportedDependency():Set(Dependency){
+	init{
+		assert warning (false) with log(serializeDependencyLanguage(self).concat(' is an unsupported dependency type.'));
+		result:=Set{self};
+	}
+}
+	
+mapping depLang::Synchronization:: Synchronization2Channel() :Set(SynchronizationChannel){
+	init{
+		result:= Set{self.map Sync2Channel()};
+	}
+}	
+	
+mapping depLang::Synchronization:: Sync2Channel() :SynchronizationChannel{
+	init {
+		var channel:SynchronizationChannel:= getReferencedSynchronizationChannel(self.channelName);
+		if(channel.oclIsUndefined()) then {
+			result := object SynchronizationChannel{};
+			result.state := getTopState();
+		}
+		else{
+			result:= channel;
+		}endif;
+	}
+	name := self.channelName;
+	if(name.oclIsUndefined()){
+		name := createChannelName();
+	}endif;
+	selectorType := self.selectorType;
+	end{
+		
+		self.sendingEvents->map EventsOfSync2Synchronization(result,true,self.generalSelectorExpression);
+		self.receivingEvents->map EventsOfSync2Synchronization(result,false,self.generalSelectorExpression);
+	}	
+}
+
+mapping depLang::Event::EventsOfSync2Synchronization(channel:SynchronizationChannel,isSending:Boolean, expression:Expression):Set(rtsc::Synchronization) disjuncts
+	SynchronizationEvent::SychronizationEvent2Synchronization,
+	depLang::TransitionEvent::TransitionEvent2Synchronization,
+	depLang::StateEvent::StateEvent2Synchronization,
+	depLang::Event::failOnUnsupportedEvent2Synchronization;
+
+mapping SynchronizationEvent::SychronizationEvent2Synchronization(channel:SynchronizationChannel,isSending:Boolean, expression:Expression):Set(rtsc::Synchronization){
+	init{
+		if (result->isEmpty()) then{
+			result := Set{};
+		}endif;
+		result += self.event.map EventsOfSync2Synchronization(channel, isSending, self.selectorExpression);
+	}
+}
+	
+mapping depLang::TransitionEvent::TransitionEvent2Synchronization(channel:SynchronizationChannel,isSending:Boolean, expression:Expression):Set(rtsc::Synchronization){
+	init{
+		if (result->isEmpty()) then{
+			result := Set{};
+		}endif;
+		getActionContainer(self).transitions->forEach(t) {
+			result += createSynchronization(t,channel,isSending,expression);
+		};
+	}
+}
+
+mapping depLang::StateEvent::StateEvent2Synchronization(channel:SynchronizationChannel,isSending:Boolean, expression:Expression):Set(rtsc::Synchronization){
+	init{
+		if (result->isEmpty()) then{
+			result := Set{};
+		}endif;
+		getActionContainer(self).stateevents->forEach(e) {
+			eventToTransitions(e)->forEach(t){
+				result += createSynchronization(t,channel,isSending,expression);
+			};
+		};
+	}
+}
+
+mapping depLang::Event::failOnUnsupportedEvent2Synchronization(channel:SynchronizationChannel,isSending:Boolean, defaultSelectorExpression:Expression):Set(rtsc::Synchronization){
+	init{
+		assert fatal (false) with log(serializeDependencyLanguage(self).concat(' is an unsupported event type for Synchronization.'));
+	}
+}
+
+mapping ConditionalDependency::ConditionalDependency2Effects():Set(EObject){
+	init{
+		if (result->isEmpty()) then{
+			result := Set{};
+		}endif;
+		
+		var container:ActionContainer := getActionContainer(self.event);
+		
+		if(container->notEmpty())
+			self.effects->map Effect2Objects(container,self)->forEach(o){result += o;};
+	}
+}
+
+/**
+  * The dependency parameter can be used for the EnableDisable to ensure that they use the same variable for enabling transitions.
+  */
+mapping Effect::Effect2Objects(container:ActionContainer,dep:Dependency):Set(EObject) disjuncts
+	DataAssignmentEffect::DataAssignmentEffect2Assignments,
+	ClockResetEffect::ClockResetEffect2Transition,
+	EnableDisableEffect::EnableDisableEffect2GuardsAndActions,
+	Effect::failOnUnsupportedEffect;
+
+mapping DataAssignmentEffect::DataAssignmentEffect2Assignments(inout container:ActionContainer,dep:Dependency):Set(Assignment){
+	init{
+		if (result->isEmpty()) then{
+				result := Set{};
+		}endif;
+		
+		if(dep.oclIsKindOf(ConditionalDependency)){
+			var condition:Condition := dep.oclAsType(ConditionalDependency).condition;
+			if(not condition.oclIsUndefined()){
+				var container2:ActionContainer:= getActionContainerFromCondition(condition);
+				container.transitions += container2.transitions;
+				container.stateevents += container2.stateevents;
+			}endif;
+		}endif;
+		
+		container.transitions->forEach(t){
+			if(t.action.oclIsUndefined()){
+				t.action:= object Action{};
+			}endif;
+			var block:Block := object Block{};
+			t.action.expressions+=block;
+			var assign:Assignment := self.map Assignment2Assignment(block);
+			block.expressions+=assign;
+			appendName(t.action,serializeActionLanguage(assign));
+			result+=assign;
+		};
+		container.stateevents->forEach(e){
+			if(e.action.oclIsUndefined()){
+				e.action:= object Action{};
+			}endif;
+			var block:Block := object Block{};
+			e.action.expressions+=block;
+			var assign:Assignment := self.map Assignment2Assignment(block);
+			block.expressions+=assign;
+			appendName(e.action,serializeActionLanguage(assign));
+			result+=assign;
+		};
+	}
+}
+
+mapping ClockResetEffect::ClockResetEffect2Transition(inout container:ActionContainer,dep:Dependency):Set(EObject){
+	init{
+		if (result->isEmpty()) then{
+				result := Set{};
+		}endif;
+		
+		if(dep.oclIsKindOf(ConditionalDependency)){
+			var condition:Condition := dep.oclAsType(ConditionalDependency).condition;
+			if(not condition.oclIsUndefined()){
+				var container2:ActionContainer:= getActionContainerFromCondition(condition);
+				container.transitions += container2.transitions;
+				container.stateevents += container2.stateevents;
+			}endif;
+		}endif;
+		
+		container.transitions->forEach(t){
+			t.clockResets+= self.clocks->resolveoneIn(Clock::Clock2Clock,Clock).map GlobalizeClock(t);
+			result+=t;
+		};
+		container.stateevents->forEach(e){
+			e.clockResets+= self.clocks->resolveoneIn(Clock::Clock2Clock,Clock).map GlobalizeClock(e.container().oclAsType(State));
+			result+=e.clockResets;
+		}
+	}
+}
+
+mapping EnableDisableEffect::EnableDisableEffect2GuardsAndActions(inout container:ActionContainer,dep:Dependency):Set(EObject){
+	init{
+		assert fatal (container.transitions->isEmpty() and container.stateevents->isEmpty()) with log(serializeDependencyLanguage(self).concat(' is not supported in combinition with Events.'));
+		var constraint:EObject := self.eContainer().oclAsType(ConditionalDependency).condition.map Condition2EObject(self);
+		
+		var con:ActionContainer:= getActionContainer(self.event);
+		var transitions:OrderedSet(Transition):= getAllTransitions(con);
+		var first:Boolean := true;
+		if(constraint.oclIsKindOf(Expression)){
+			transitions->forEach(t){
+				if(not first){
+					constraint := constraint.oclAsType(Expression).map Expression2Expression(self);
+				}endif;
+				if(not t.guard.oclIsUndefined()){
+					constraint:=composeExpressions(t.guard,constraint.oclAsType(Expression)); 
+				}endif;
+				t.guard:=constraint.oclAsType(Expression);
+			};
+		}
+		else{
+			if(constraint.oclIsKindOf(ClockConstraint)){
+				transitions->forEach(t){
+					if(not first){
+						constraint := constraint.oclAsType(ClockConstraint).map ClockConstraint2ClockConstraint(self);
+					}endif;
+					t.clockConstraints := constraint.oclAsType(ClockConstraint);
+				};
+			}endif;
+		}endif;
+	}
+}
+
+mapping Effect::failOnUnsupportedEffect(inout container:ActionContainer,dep:Dependency): Set(EObject){
+	init{
+		assert warning (false) with log(serializeDependencyLanguage(self).concat(' is an unsupported effect type for conditional dependencies.'));
+		result := Set{};
+	}
+}
+
+mapping Condition::Condition2EObject(effect:EnableDisableEffect):EObject disjuncts
+	DataCondition::DataCondition2Expression,
+	StateStatusCondition::StateStatusCondition2Expression,
+	EventConstrainedIntervalCondition::EventConstrainedIntervalCondition2Expression,
+	ClockCondition::ClockCondition2ClockConstraint,
+	Condition::failOnUnsupportedCondition
+;
+
+mapping Condition::failOnUnsupportedCondition(effect:EnableDisableEffect):EObject{
+	init{
+		assert warning (false) with log(serializeDependencyLanguage(self.eContainer()).concat('contains an unsupported condition.'));
+		result := self;
+	}
+}
+
+mapping DataCondition::DataCondition2Expression(effect:EnableDisableEffect):Expression{
+	init{
+		var constraint:Expression :=self.expression.map Expression2Expression(effect);
+		if(not effect.isEnable){
+				constraint := invertExpression(constraint);
+		}endif;	
+		result:= constraint;
+	}
+}
+
+mapping ClockCondition::ClockCondition2ClockConstraint(effect:EnableDisableEffect):EObject disjuncts
+	BasicClockCondition::BasicClockCondition2ClockConstraint,
+	ClockCondition::failOnUnsupportedClockCondition;
+	
+mapping BasicClockCondition::BasicClockCondition2ClockConstraint(effect:EnableDisableEffect):ClockConstraint{
+	clock := self.clock.resolveoneIn(Clock::Clock2Clock,Clock).map GlobalizeClock(getAllTransitions(getActionContainer(effect.event))->first());
+	if(not effect.isEnable){
+				operator := getInvertComparingOperator(self.operator);
+	}else{
+		operator := self.operator;
+	}endif;
+	bound := self.bound.map TimeValue2TimeValue(effect);
+}	
+	
+mapping ClockCondition::failOnUnsupportedClockCondition(effect:EnableDisableEffect):EObject{
+	init{
+		assert warning (false) with log(serializeDependencyLanguage(self.eContainer()).concat('contains an unsupported clock condition.'));
+		result := self;
+	}
+}
+
+mapping StateStatusCondition::StateStatusCondition2Expression(effect:EnableDisableEffect):EObject{
+	init {
+		if(self.states->size()>1){
+			result := self;
+			assert warning (false) with log(serializeDependencyLanguage(self.eContainer()).concat(': State Status is not yet supported for state combinations'));
+		
+		}
+		else{
+			var state:State := self.states->first().resolveoneIn(State::State2State,State);
+			var variable:Variable := self.map Condition2Variable('aux_state_'.concat(state.name));
+			getTopState().parentStatechart.variables+=variable;
+			var exp:Expression;
+			variable.dataType := getDataType(PrimitiveTypes::BOOLEAN);
+			if(variable.initializeExpression.oclIsUndefined()){
+				variable.initializeExpression := new LiteralExpression('false');
+			}endif;
+			
+			exp:= new TypedNamedElementExpression(variable);
+			if(state.entryEvent.oclIsUndefined()){
+				state.entryEvent:= object EntryEvent{};
+			}endif;
+			if(state.exitEvent.oclIsUndefined()){
+				state.exitEvent:= object ExitEvent{};
+			}endif;
+			
+			state.entryEvent.map ActionContainer2Assignment(variable,'true');
+			state.exitEvent.map ActionContainer2Assignment(variable,'false');
+	
+			if((not effect.isEnable) xor (self.kind=StateStatusKind::INACTIVE)){
+					exp := invertExpression(exp);
+			}endif;		
+			result := exp;
+		}endif;
+	}
+}
+
+mapping OclAny::ActionContainer2Assignment(inout variable:Variable, value:String):Assignment{
+	init{
+			var assign:Assignment := new Assignment(variable,value);
+			result := assign;
+			switch{
+				case (self.oclIsKindOf(Transition)){
+					setEventAssignment(self.oclAsType(Transition),assign,true);
+				};
+				case (self.oclIsKindOf(EntryOrExitEvent)){
+					setEventAssignment(self.oclAsType(EntryOrExitEvent),assign,true);
+				};
+			};
+	}
+}
+
+mapping EventConstrainedIntervalCondition::EventConstrainedIntervalCondition2Expression(effect:EnableDisableEffect):EObject{
+	init {
+		var variable:Variable := self.map Condition2Variable();
+		getTopState().parentStatechart.variables+=variable;
+		var exp:Expression;
+		if (not self.fromEvent.oclIsUndefined()){
+			self.fromEvent.map SetEvent2Assignment(variable);
+		}endif;
+		if(variable.dataType.oclIsKindOf(PrimitiveDataType) and
+			variable.dataType.oclAsType(PrimitiveDataType).primitiveType.=(PrimitiveTypes::BOOLEAN)){
+			exp:= new TypedNamedElementExpression(variable);
+			if (self.initialEnabled){
+				if(variable.initializeExpression.oclIsUndefined()){
+					variable.initializeExpression := new LiteralExpression('true');
+				}endif;
+			}else{
+				if(variable.initializeExpression.oclIsUndefined()){
+					variable.initializeExpression := new LiteralExpression('false');
+				}endif;
+			}endif;
+		}else{
+			//FIXME Here other expressions must could be created.
+		}endif;
+		if (not self.fromEvent.oclIsUndefined()){
+			self.untilEvent.map UnsetEvent2Assignment(variable);
+		}endif;
+	
+		if (variable.dataType.oclIsUndefined()){
+			assert warning (false) with log(serializeDependencyLanguage(self.eContainer()).concat('contains an unsupported event.'));
+			// TODO: what does dump?
+			variable.dump();
+			result := self;
+		}else{
+			if(not effect.isEnable){
+					exp := invertExpression(exp);
+			}endif;		
+			result := exp;
+		}endif;		
+	}
+}
+
+mapping Condition::Condition2Variable(name:String):Variable{
+	init{
+		result := getOrCreateVariable(name);
+	}
+}
+
+mapping Condition::Condition2Variable():Variable{
+	name := createVariableName();
+}
+
+mapping dependencylanguage::Event::SetEvent2Assignment(inout variable:Variable):EObject{
+	init{
+		if(self.oclIsKindOf(SimpleEvent)){
+			variable.dataType := getDataType(PrimitiveTypes::BOOLEAN);
+			var assign:Assignment := new Assignment(variable,'true');
+			result := assign;
+			setDPEventAssignment(self,assign);
+		}else{
+			assert warning (false) with log(serializeDependencyLanguage(self.eContainer()).concat('contains an unsupported first interval event.'));
+			result := self;
+		}endif;
+	}
+}
+
+mapping dependencylanguage::Event::UnsetEvent2Assignment(variable:Variable):Assignment{
+	init{
+		var assign:Assignment :=  object Assignment{};
+		assign.lhs_typedNamedElementExpression:= new TypedNamedElementExpression(variable);
+		assign.assignOperator:=AssignOperator::ASSIGN;
+		if(variable.dataType.oclIsKindOf(PrimitiveDataType) and
+				variable.dataType.oclAsType(PrimitiveDataType).primitiveType=(PrimitiveTypes::BOOLEAN)){
+			assign.rhs_assignExpression:= new LiteralExpression('false');
+		}else{
+			assign.rhs_assignExpression:= new LiteralExpression('0');
+		}endif;
+		result := assign;
+		setDPEventAssignment(self,assign);
+	}
+}
+
+ -- Override copy function of TypedNamedElement to resolve function
+-- Mapping of unresolve expressions to resolved expression
+-- Including the globalization of referenced TypedNamedElements if required.
+
+mapping TypedNamedElementExpression :: TypedNamedElementExpression2TypedNamedElementExpression(context:OclAny) : TypedNamedElementExpression {
+	var element:TypedNamedElement := self.typedNamedElement.resolveoneIn(TypedNamedElement::TypedNamedElement2TypedNamedElement,TypedNamedElement);
+	if(element.oclIsUndefined()){
+		element:=  self.typedNamedElement.resolveoneIn(Variable::Variable2Variable,Variable);
+	}endif;
+	if(element.oclIsUndefined()){
+		element:=  self.typedNamedElement;
+	}endif;
+	if(element.oclIsKindOf(Variable)){
+		element:= element.oclAsType(Variable).map GlobalizeVariable(context);
+	}endif;
+	typedNamedElement := element;
+	indices += self.indices->map Expression2Expression(context);			
+}
+
+mapping LocalVariableDeclarationStatement :: Local2Local(context:OclAny) : LocalVariableDeclarationStatement {	
+	variable := self.variable.resolveoneIn(Variable::Variable2Variable,Variable).map GlobalizeVariable(context);
+}
+
+mapping inout Variable::GlobalizeVariable(context:OclAny):Variable{
+	init{result:=self;}
+	assert fatal (context.oclIsKindOf(EObject)) with log ("Globalization of Variable expects EObject.");
+	var tmp:EObject:=context.oclAsType(EObject);
+	while(not tmp.oclIsUndefined()){
+		if(tmp.oclIsKindOf(RealtimeStatechart)){
+			var statechart:RealtimeStatechart := tmp.oclAsType(RealtimeStatechart);
+			if(statechart.allAvailableVariables->excludes(self)){
+				getTopState().parentStatechart.variables+=self;
+			}endif;
+			break;
+		}endif;	
+		tmp:=tmp.eContainer();
+	};
+}
+
+mapping inout Clock::GlobalizeClock(context:OclAny):Clock{
+	init{result:=self;}
+	assert fatal (context.oclIsKindOf(EObject)) with log ("Globalization of Clock expects EObject.");
+	var tmp:EObject:=context.oclAsType(EObject);
+	while(not tmp.oclIsUndefined()){
+		if(tmp.oclIsKindOf(RealtimeStatechart)){
+			var statechart:RealtimeStatechart := tmp.oclAsType(RealtimeStatechart);
+			if(statechart.availableClocks->excludes(self)){
+				getTopState().parentStatechart.clocks+=self;
+			}endif;
+			break;
+		}endif;	
+		tmp:=tmp.eContainer();
+	};
+}		
+
+mapping inout Operation::GlobalizeOperation(context:OclAny):Operation{
+	init{result:=self;}
+	assert fatal (context.oclIsKindOf(EObject)) with log ("Globalization of Operation expects EObject.");
+	var tmp:EObject:=context.oclAsType(EObject);
+	while(not tmp.oclIsUndefined()){
+		if(tmp.oclIsKindOf(RealtimeStatechart)){
+			var statechart:RealtimeStatechart := tmp.oclAsType(RealtimeStatechart);
+			if(statechart.allAvailableOperations->excludes(self)){
+				getTopState().parentStatechart.operations+=self;
+			}endif;
+			break;
+		}endif;	
+		tmp:=tmp.eContainer();
+	};
+}	
+		
+mapping OperationCall ::Call2Call(context:OclAny) : OperationCall {
+	operation := self.operation.resolveoneIn(Operation::Operation2Operation,Operation).map GlobalizeOperation(context);
+	parameterBinding := self.parameterBinding->map Binding2Binding(context);	
+}
+
+mapping ParameterBinding :: Binding2Binding(context:OclAny) : ParameterBinding {
+		parameter := self.parameter.resolveoneIn(Parameter::Parameter2Parameter,Parameter);
+		if(parameter.oclIsUndefined()){
+			parameter := self.parameter
+		}endif;
+		value := self.value.map Expression2Expression(context);
+	}
+	
+-- constructor
+
+constructor Assignment::Assignment(inout v:Variable,value:String){	
+			lhs_typedNamedElementExpression:= new TypedNamedElementExpression(v);
+			assignOperator:=AssignOperator::ASSIGN;
+			rhs_assignExpression:= new LiteralExpression(value);
+}
+
+constructor TypedNamedElementExpression::TypedNamedElementExpression(element:TypedNamedElement){
+	typedNamedElement:= element;
+}
+
+constructor LiteralExpression::LiteralExpression(text:String){
+	value:= text;
+}
+
+-- helper
+
+helper getOrCreateVariable(name:String):Variable{
+	var variable:Variable := getTopState().parentStatechart.allAvailableVariables->any(v:Variable|v.name.matches(name));
+	if(variable.oclIsUndefined()){
+		variable := object Variable{};
+		variable.name := name;
+	}endif;
+	return variable;
+}
+
+helper createVariableName(prefix:String):String{
+	return createUniqueName(getTopState().parentStatechart.allAvailableVariables,prefix);
+}
+
+helper createVariableName():String{
+	return createUniqueName(getTopState().parentStatechart.allAvailableVariables,'aux_var_');
+}
+
+helper createChannelName():String{
+	return createUniqueName(getTopState().allAvailableChannels,'aux_ch_');
+}
+
+helper createUniqueName(list:OrderedSet(NamedElement),prefix:String):String{
+	var number:Integer := 1;
+	while(list->exists(e:NamedElement|e.name.matches(prefix.concat(number.toString())))){
+		number := number + 1;
+	};
+	return prefix.concat(number.toString());
+}
+
+helper createSynchronization(inout transition:Transition, channel:SynchronizationChannel,isSending:Boolean, expression:Expression):rtsc::Synchronization{
+	var sync:rtsc::Synchronization := null;
+	if(transition.synchronization.oclIsUndefined()) then {
+		sync := object rtsc::Synchronization{};
+		sync.syncChannel:=channel;
+		transition.synchronization:=sync;
+		if(isSending) then {
+			sync.kind:=SynchronizationKind::SEND;
+		}
+		else{
+			sync.kind:=SynchronizationKind::RECEIVE;
+		}endif;
+		sync.selectorExpression := expression.map Expression2Expression(transition);
+	}
+	else{
+		assert fatal (false) with log('The transition '.concat(transition.toString()).concat(' already contains a synchronization.'));
+	}endif;
+	return sync;
+}
+
+helper composeExpressions(left:Expression, right:Expression):Expression{
+		var compos:LogicalExpression := object LogicalExpression{};
+		compos.operator:= LogicOperator::AND;
+		compos.leftExpression:= left;
+		compos.rightExpression:=right;
+		return compos;
+}
+
+helper invertExpression(exp:Expression):Expression{
+	var inverted:UnaryExpression := object UnaryExpression{};
+	inverted.operator:=UnaryOperator::NOT;
+	inverted.enclosedExpression:=exp;
+	return inverted;
+}
+
+helper setDPEventAssignment(inout event:dependencylanguage::Event,inout inputassign:Assignment){
+	var assign:Assignment := inputassign;
+	var con:ActionContainer:= getActionContainer(event);
+	var first:Boolean:=true;
+	con.transitions->forEach(t){
+			assign:= setEventAssignment(t,assign,first);
+			first:=false;
+	};
+	con.stateevents->forEach(e){
+		assign:= setEventAssignment(e,assign,first);
+		first:=false;
+	};
+}
+
+helper setEventAssignment(inout event:Transition,inout inputassign:Assignment,inout first:Boolean):Assignment{
+		var assign:Assignment := inputassign;
+		if(event.action.oclIsUndefined()){
+			event.action:= object Action{};
+		}endif;
+		var block:Block := object Block{};
+		event.action.expressions+=block;
+		if(not first){
+			assign := assign.map Assignment2Assignment(block);
+		}endif;
+		block.expressions+=assign;
+		appendName(event.action,serializeActionLanguage(assign));
+		return assign;	
+}
+
+helper setEventAssignment(inout event:EntryOrExitEvent,inout inputassign:Assignment,inout first:Boolean):Assignment{
+		var assign:Assignment := inputassign;
+		if(event.action.oclIsUndefined()){
+			event.action:= object Action{};
+		}endif;
+		var block:Block := object Block{};
+		event.action.expressions+=block;
+		if(not first){
+			assign := assign.map Assignment2Assignment(block);
+		}endif;
+		block.expressions+=assign;
+		appendName(event.action,serializeActionLanguage(assign));
+		return assign;	
+}
+
+helper appendName(inout element:NamedElement,name:String){
+	if(element.name.oclIsUndefined() or element.name.startsWith('unable to serialize expression')){
+		element.name:=name;
+	}
+	else{
+		element.name:= element.name.concat('; ').concat(name);
+	}endif;
+}
+
+-- queries
+property topState:State;
+
+query getTopState():State{
+	if(topState.oclIsUndefined()){
+		if(componentToSynthesize->first().behavior.oclIsKindOf(RealtimeStatechart)){
+			topState := componentToSynthesize->first().behavior.oclAsType(RealtimeStatechart).states->first();
+		}endif;		
+	assert fatal (not topState.oclIsInvalid()) with log('Top state or component behavior is missing.');
+	}endif;
+	return topState;
+}
+
+query getReferencedSynchronizationChannel(name:String):SynchronizationChannel{
+	return getReferencedElement(name,'SynchronizationChannel').oclAsType(SynchronizationChannel);
+}
+
+query getReferencedElement(name:String, type:String):EObject{
+	if(type.matches('SynchronizationChannel')) then {
+		return getTopState().channels->collect(c:SynchronizationChannel|c.name.matches(name))->first().oclAsType(EObject);
+	}endif;
+	return null;
+}
+
+query getActionContainer(unresolvedEvent:depLang::Event):ActionContainer{
+	switch{
+		case(unresolvedEvent.oclIsKindOf(depLang::TransitionEvent))
+			return object ActionContainer {transitions:= OrderedSet{unresolvedEvent.oclAsType(depLang::TransitionEvent).transition.resolveoneIn(Transition::Transition2Transition,Transition)}};
+		case(unresolvedEvent.oclIsKindOf(depLang::StateEvent)){
+			var event:depLang::StateEvent:=unresolvedEvent.oclAsType(depLang::StateEvent);
+			var actionTarget: EntryOrExitEvent;
+			switch{
+				case (event.kind.=(StateEventKind::ENTRY)){
+					actionTarget := event.state.resolveoneIn(State::State2State,State).entryEvent;
+					if(actionTarget.oclIsUndefined()){
+						actionTarget := object EntryEvent{};
+						//actionTarget.kind := EventKind::RAISE;
+						event.state.resolveoneIn(State::State2State,State).entryEvent:= actionTarget.oclAsType(EntryEvent);
+					}endif;
+				};
+				case (event.kind.=(StateEventKind::EXIT)){
+					actionTarget := event.state.resolveoneIn(State::State2State,State).exitEvent;
+					if(actionTarget.oclIsUndefined()){
+						actionTarget := object ExitEvent{};
+						//actionTarget.kind := EventKind::TRIGGER;
+						event.state.resolveoneIn(State::State2State,State).exitEvent:= actionTarget.oclAsType(ExitEvent);
+					}endif;
+				};
+			};
+			return object ActionContainer {stateevents:=OrderedSet{actionTarget};}
+		};
+		case (unresolvedEvent.oclIsKindOf(CompositionEvent)){
+			var composite:CompositionEvent := unresolvedEvent.oclAsType(CompositionEvent);
+			switch{
+				case (composite.kind=LogicOperator::OR){
+					var container:ActionContainer:= object ActionContainer{};
+					var left:ActionContainer:= getActionContainer(composite.leftEvent);
+					container.transitions+=left.transitions;
+					container.stateevents+=left.stateevents;
+					var right:ActionContainer:= getActionContainer(composite.rightEvent);
+					container.transitions+=right.transitions;
+					container.stateevents+=right.stateevents;
+					return container;
+				}
+			};
+		};
+	};
+	assert warning (false) with log(serializeDependencyLanguage(unresolvedEvent).concat('is not yet supported for the transition determination.'));
+	return object ActionContainer{};
+}
+
+query getActionContainerFromCondition(condition:Condition):ActionContainer{
+	switch{
+		case(condition.oclIsKindOf(EventConstrainedIntervalCondition)){
+					var e:depLang::Event:= condition.oclAsType(EventConstrainedIntervalCondition).fromEvent;
+					return getActionContainer(e);
+		};
+		
+		case (condition.oclIsKindOf(CompositionCondition)){
+			var cond:CompositionCondition := condition.oclAsType(CompositionCondition);
+			switch{
+				case (cond.kind=LogicOperator::OR){
+					var container:ActionContainer:= object ActionContainer{};
+					var left:ActionContainer:= getActionContainerFromCondition(cond.leftCondition);
+					container.transitions+=left.transitions;
+					container.stateevents+=left.stateevents;
+					var right:ActionContainer:= getActionContainerFromCondition(cond.rightCondition);
+					container.transitions+=right.transitions;
+					container.stateevents+=right.stateevents;
+					return container;
+				}
+			};
+		};
+	};
+	assert warning (false) with log(serializeDependencyLanguage(condition).concat(' is an unsupported condition type for conditional dependencies.'));
+	return object ActionContainer{};
+}
+
+
+query eventToTransitions(event:EntryOrExitEvent):OrderedSet(Transition){
+	switch{
+		case(event.oclIsKindOf(EntryEvent))
+			return event.container().oclAsType(State).incomingTransitions;
+		case(event.oclIsKindOf(ExitEvent))
+			return event.container().oclAsType(State).outgoingTransitions;
+	};
+	assert warning (false) with log(event.toString().concat('is not yet supported for the transition determination.'));
+	return null;
+}
+
+query getAllTransitions(container:ActionContainer):OrderedSet(Transition){
+		var transitions:OrderedSet(Transition);
+		container.transitions->forEach(t){
+			transitions += t;
+		};
+		container.stateevents->forEach(e){
+			eventToTransitions(e)->forEach(t){
+				transitions += t;
+			};
+		};
+		return transitions;
+}
+
+query getInvertComparingOperator(op:ComparingOperator):ComparingOperator{
+	switch{
+		case (op.=(ComparingOperator::LESS))
+			return ComparingOperator::GREATER_OR_EQUAL;
+		case (op.=(ComparingOperator::LESS_OR_EQUAL))
+			return ComparingOperator::GREATER;
+		case (op.=(ComparingOperator::GREATER_OR_EQUAL))
+			return ComparingOperator::LESS;
+		case (op.=(ComparingOperator::GREATER))
+			return ComparingOperator::LESS_OR_EQUAL;
+		case (op.=(ComparingOperator::EQUAL))
+			return ComparingOperator::UNEQUAL;
+		case (op.=(ComparingOperator::UNEQUAL))
+			return ComparingOperator::EQUAL;
+	};
+	assert warning (false) with log ('Inverting Comparing Operator failt.');
+	return op;
+}
+
+query getDataType(pType:PrimitiveTypes):DataType{
+	return getModelElementCategory(componentToSynthesize->first(),'de.uni_paderborn.fujaba.muml.types.category')
+		.modelElements[PrimitiveDataType]->any(type:PrimitiveDataType|type.primitiveType=(pType));
+}
+
+query getModelElementCategory(context:EObject, key:String):ModelElementCategory{
+	var tmp:EObject := context;
+	while(not tmp.oclIsUndefined()){
+		if(tmp.oclIsKindOf(RootNode)){
+			var category:ModelElementCategory := tmp.oclAsType(RootNode).categories->any(c:ModelElementCategory|c.key.=(key));
+			assert warning (not category.oclIsUndefined()) with log ('ModelElementCategory '.concat(key).concat(' not found for ').concat(context.toString()));
+			return category;
+		}
+		else{
+			tmp:=tmp.eContainer();
+		}
+	};
+	assert warning (false) with log ('ModelElementCategory '.concat(key).concat(' not found for ').concat(context.toString()));
+	return null;
+}
+
+-- intermediate classes
+
+//FIXME A generic superclass vor both types is required that has a action as containment. This would save a lot code duplicates
+
+intermediate class ActionContainer{
+	references transitions:Transition[*]; 
+	references stateevents:EntryOrExitEvent[*]; 
+}
