@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xtfo
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.ui.xtfo
+Bundle-Version: 0.4.0.qualifier
+Bundle-Activator: de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.ui.xtfo.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.common,
+ org.eclipse.jface.text,
+ org.eclipse.xtext,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.navigator,
+ org.eclipse.xtext.ui,
+ org.eclipse.core.expressions
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn
+Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage.xtext.ui.xtfo
