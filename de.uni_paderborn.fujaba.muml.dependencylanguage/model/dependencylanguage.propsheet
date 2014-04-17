@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
+  <reconciler enabled="false"/>
+  <genModel href="dependencylanguage.genmodel#/"/>
+  <plugin id="de.uni_paderborn.fujaba.muml.dependencylanguage.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.4">
+    <requiredBundles>de.uni_paderborn.fujaba.muml.dependencylanguage</requiredBundles>
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.dependencylanguage.edit</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+  </plugin>
+  <tabs id="de.uni_paderborn.fujaba.muml.dependencylanguage" name="Dependencies"/>
+  <packages>
+    <genPackage href="dependencylanguage.genmodel#//dependencylanguage"/>
+    <classes>
+      <genClass href="dependencylanguage.genmodel#//dependencylanguage/SynthesizableBehavior"/>
+      <properties tab="//@tabs.0">
+        <genFeature href="dependencylanguage.genmodel#//dependencylanguage/SynthesizableBehavior/dependencyModel"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.DependencyModelLanguageXtextPropertyEditor"/>
+      </properties>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>

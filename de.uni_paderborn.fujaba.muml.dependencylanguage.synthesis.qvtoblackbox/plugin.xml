@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2m.qvt.oml.javaBlackboxUnits">
+      <unit
+            description="serializes EObjects using their XText representation"
+            name="XTextSerializerLibUnit"
+            namespace="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox">
+         <library
+               class="de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.qvtoblackbox.XTextSerializerBlackbox"
+               name="XTextSerializerLibrary">
+            <metamodel
+                  nsURI="http://www.eclipse.org/emf/2002/Ecore">
+            </metamodel>
+         </library>
+      </unit>
+   </extension>
+
+</plugin>

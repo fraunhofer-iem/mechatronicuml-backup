@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dependencylanguage" nsURI="http://www.fujaba.de/muml/dependencylanguage/0.4.0"
+    nsPrefix="dependencylanguage">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="actionlanguage" value="/resource/de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#/"/>
+    <details key="core" value="/resource/org.storydriven.core/model/core.ecore#/"/>
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore#/"/>
+    <details key="behavior" value="/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior"/>
+    <details key="component" value="/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//component"/>
+    <details key="expr" value="/resource/org.storydriven.core/model/core.ecore#//expressions"/>
+    <details key="realtimestatechart" value="/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart"/>
+    <details key="valueType" value="/resource/de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype"/>
+    <details key="sdcec" value="/resource/org.storydriven.core/model/core.ecore#//expressions/common"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="This package provides a the possiblity to describe dependencies between multiple RTCSs.&#xD;&#xA;The dependencies can be appended to AtomicComponent through the SynthesizableBehavior.&#xD;&#xA;&#xD;&#xA;@author Sebastian Goschin"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="SynthesizableBehavior" eSuperTypes="../../org.storydriven.core/model/core.ecore#//Extension ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/BehavioralElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class is the container for the dependencies and also contains a behavior for the inner-behavior.&#xD;&#xA;It can be stored at a AtomicComponent through the Extension inheritance."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencyModel" eType="#//DependencyModel"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="derivation" value="if(not self.base.oclIsUndefined() and self.base.oclIsKindOf(component::AtomicComponent))&#xA;then (self.base).oclAsType(component::AtomicComponent).name.concat('-synth')&#xA;else&#xA;null endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependencyModel" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The dependency model is the container for all dependencies and it builds the root for the XText grammar."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
+        eType="#//Dependency" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency" abstract="true" eSuperTypes="../../org.storydriven.core/model/core.ecore#//CommentableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Each dependency must at least contain two references that lead to two different RealtimeStatecharts.&#xD;&#xA;This could be check by constraints."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="#//Dependency">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The Synchronization describes which Transitions should be coupled.&#xD;&#xA;Each Transition can only be referenced once in this expression.&#xD;&#xA;This could be check by constraints."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sendingEvents" upperBound="-1"
+        eType="#//Event" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receivingEvents" upperBound="-1"
+        eType="#//Event" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="channelName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectorType" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//types/DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generalSelectorExpression"
+        eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForbiddenStateCombination" eSuperTypes="#//Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="2"
+        upperBound="-1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockMerge" eSuperTypes="#//Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" lowerBound="2"
+        upperBound="-1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clockName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataMerge" eSuperTypes="#//Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" lowerBound="2"
+        upperBound="-1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//behavior/Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalDependency" eSuperTypes="#//Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//Event"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Condition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="effects" upperBound="-1"
+        eType="#//Effect" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Effect" abstract="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EnableDisableEffect" eSuperTypes="#//Effect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isEnable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockResetEffect" eSuperTypes="#//Effect">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clocks" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Clock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignmentPositions" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataAssignmentEffect" eSuperTypes="#//Effect ../../de.uni_paderborn.fujaba.muml.actionlanguage/model/actionlanguage.ecore#//Assignment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
+        eType="#//AssignmentDirection" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AssignmentDirection">
+    <eLiterals name="PUSH"/>
+    <eLiterals name="PULL" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoundedActiveState" eSuperTypes="#//Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" lowerBound="1"
+        eType="#//ClockCondition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StateStatusCondition" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//StateStatusKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventConstrainedIntervalCondition" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromEvent" eType="#//Event"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialEnabled" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="untilEvent" eType="#//Event"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabledInfite" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StateStatusKind">
+    <eLiterals name="UNDEFIEND"/>
+    <eLiterals name="ACTIVE" value="1" literal="ACTIVE"/>
+    <eLiterals name="INACTIVE" value="2" literal="INACTIVE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockCondition" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AuxiliaryClockCondition" eSuperTypes="#//ClockCondition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="ecore:EEnum ../../org.storydriven.core/model/core.ecore#//expressions/common/ComparingOperator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HybridClockCondition" eSuperTypes="#//ClockCondition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
+        eType="#//Condition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bound" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" lowerBound="1"
+        eType="ecore:EEnum ../../org.storydriven.core/model/core.ecore#//expressions/common/ComparingOperator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicClockCondition" eSuperTypes="../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/ClockConstraint #//ClockCondition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataCondition" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositionCondition" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftCondition" eType="#//Condition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="ecore:EEnum ../../org.storydriven.core/model/core.ecore#//expressions/common/LogicOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightCondition" eType="#//Condition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositionEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftEvent" lowerBound="1"
+        eType="#//Event" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="ecore:EEnum ../../org.storydriven.core/model/core.ecore#//expressions/common/LogicOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightEvent" lowerBound="1"
+        eType="#//Event" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CountedEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="counter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DelayedEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="delay" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SynchronizationEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selectorExpression" eType="ecore:EClass ../../org.storydriven.core/model/core.ecore#//expressions/Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" lowerBound="1" eType="#//Event"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
+        eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/Transition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StateEventKind">
+    <eLiterals name="UNDEFIEND"/>
+    <eLiterals name="ENTRY" value="1"/>
+    <eLiterals name="EXIT" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//StateEventKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StateCombinationEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="2"
+        upperBound="-1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//realtimestatechart/State"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//StateEventKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageEventKind">
+    <eLiterals name="UNDEFIEND"/>
+    <eLiterals name="CONSUMING" value="1"/>
+    <eLiterals name="SENDING" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//MessageEventKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//msgtype/MessageType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//connector/DiscreteInteractionEndpoint"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,88 @@
+/*
+ * NormalTrackSection: 
+ * (7 Dependencies: 5 Data Assignments (alternative 5 Enable Disable or 1 Data Merge), 2 Synchronizations
+ */
+when[ ( left.RailCabApproaching(1)-->CheckRequest or
+	left.EnterDenied(1)-->EnterDenied ) ] {
+	assign left.free := inner.sectionFree };
+when[ (right.RailCabApproaching(1)-->CheckRequest or
+	right.EnterDenied(1)-->EnterDenied) ] {
+	assign right.free := inner.sectionFree };
+when[ entering precedingSwitch.Request ] {
+	assign precedingSwitch.free := inner.sectionFree };
+sync left.CheckRequest(2)-->EnterAllowed,
+	right.CheckRequest(2)-->EnterAllowed,
+	left.EnterDenied(2)-->EnterAllowed,
+	right.EnterDenied(2)-->EnterAllowed with
+	inner.Free(1)-->Occupied using acquire;
+sync left.WaitPostAction(1)-->Idle,
+	right.WaitPostAction(1)-->Idle with
+	inner.Occupied(1)-->Free using release;
+
+
+/*
+ * Crossing
+ * (12 Dependencies: 7 Data Assignments (alternative 1 Data Assignment + 6 Data Constraints in short notation just 1 Dependency or 1 Data Merge), 4 Synchronizations, 1 Data Constraint (can be removed when a Synchronization with Selector are used))
+ */
+when [inner.Free(1)-->Closing] {
+	assign gateAction := true};
+when [ inner.Closed(1)-->Opening] {
+	assign gateAction := false};
+if [ gateStatus == true ] {
+	enable inner.Closing(2)-->Closed;
+	disable inner.Opening(1)-->Free };
+when [  ( left.RailCabApproaching(1)-->CheckRequest or
+	left.EnterDenied(1)-->EnterDenied ) ] {
+	assign left.free := inner.sectionFree };
+when [ ( right.RailCabApproaching(1)-->CheckRequest  or
+right.EnterDenied(1)-->EnterDenied ) ] {
+	assign right.free := inner.sectionFree };
+when [  entering precedingSwitch.Request ] {
+	assign precedingSwitch.free := precedingSwitch.obtainStatus ( sectFree :=
+		inner.sectionFree ) };
+sync left.CheckRequest(2)-->ClosingGate, right.CheckRequest(2)-->ClosingGate,
+left.EnterDenied(2)-->ClosingGate, right.EnterDenied(2)-->ClosingGate with
+inner.Free(1)-->Closing using closeGate;
+sync inner.Closing(2)-->Closed with left.ClosingGate(2)-->EnterAllowed,
+right.ClosingGate(2)-->EnterAllowed using gateClosed;
+sync left.RailCabOnSection(1)-->WaitPostAction,
+right.RailCabOnSection(1)-->WaitPostAction with inner.Closed(1)-->Opening
+using openGate;
+sync inner.Opening(1)-->Free with left.WaitPostAction(1)-->Idle,
+right.WaitPostAction(1)-->Idle using gateOpenend;
+
+/*
+ *  Switch
+ * (10 Dependencies: 6 Data Assignments, 4 Synchronizations)
+ * */
+when [ ( left.EnterDenied(1)-->EnterDenied or leaving
+	left.WaitForTrack ) ] {
+	assign left.free := inner.sectionFree };
+when [ ( right.EnterDenied(1)-->EnterDenied or leaving right.WaitForTrack ) ]
+{
+	assign right.free := inner.sectionFree };
+when [ ( bottom.EnterDenied(1)-->EnterDenied or leaving
+	bottom.WaitForTrack ) ] {
+	assign bottom.free := inner.sectionFree };
+sync left.CheckRequest(1)-->EnterDenied, right.CheckRequest(1)-->EnterDenied,
+bottom.CheckRequest(1)-->EnterDenied with inner.Free(1)-->Occupied using
+acquire;
+sync left.WaitPostAction(1)-->Idle, right.WaitPostAction(1)-->Idle,
+bottom.WaitPostAction(1)-->Idle with inner.Occupied(1)-->Free using release;
+sync left.RailCabApproaching(1)-->WaitForTrack,
+left.EnterDenied(3)-->WaitForTrack,
+right.RailCabApproaching(1)-->WaitForTrack,
+right.EnterDenied(3)-->WaitForTrack,
+bottom.RailCabApproaching(1)-->WaitForTrack,
+bottom.EnterDenied(3)-->WaitForTrack with
+followingSection1.Idle(1)-->WaitForSection,
+followingSection2.Idle(1)-->WaitForSection using nextSectionFree;
+sync left.WaitForTrack(1)-->CheckRequest [ true ],
+right.WaitForTrack(1)-->CheckRequest [ true ],
+bottom.WaitForTrack(1)-->CheckRequest [ true ],
+left.WaitForTrack(2)-->CheckRequest [ false ],
+right.WaitForTrack(2)-->CheckRequest [ false ],
+bottom.WaitForTrack(2)-->CheckRequest [ false ] with
+followingSection1.Notify(1)-->Idle [ followingSection1.status ],
+followingSection2.Notify(1)-->Idle [ followingSection2.status ] using
+sectionFree [ true ] of type BOOLEAN;

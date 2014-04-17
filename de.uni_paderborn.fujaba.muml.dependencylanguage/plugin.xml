@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated dependencylanguage -->
+      <package
+            uri="http://www.fujaba.de/muml/dependencylanguage/0.4.0"
+            class="de.uni_paderborn.fujaba.muml.dependencylanguage.DependencylanguagePackage"
+            genModel="model/dependencylanguage.genmodel"/>
+   </extension>
+	
+</plugin>

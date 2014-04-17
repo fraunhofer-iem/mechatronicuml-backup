@@ -1,0 +1,1611 @@
+
+		\newcommand{\todoo}[1]{\todo[inline, color=red!40]{ecore2latex: #1}}
+		
+		\section{EPackage \bfseries \texttt{dependencylanguage}\normalfont}
+		
+		% Here comes the package documentation
+		\begin{longdescription}
+		\item[Overview]			
+				
+
+	
+
+		This package provides a the possiblity to describe dependencies between multiple RTCSs.
+The dependencies can be appended to AtomicComponent through the SynthesizableBehavior.
+
+@author Sebastian Goschin		
+		\end{longdescription}
+	% Here a manual modifiable file is included: dependencylanguage/graphics.tex
+	\input{img/dependencylanguage/graphics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EEnumeration \bfseries \texttt{AssignmentDirection}\normalfont}
+\label{cls:dependencylanguage::AssignmentDirection} \index{dependencylanguage!AssignmentDirection}
+
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		If a DataAssignmentEffect is specified for an Event and Variable of the same region and only reads from others, its called PULL.
+Otherwise, it is called PUSH, because the Variable is modified outside of the original owner.		
+	
+		\item[\textbf{ELiterals of} \texttt{AssignmentDirection}] ~
+		\begin{longdescription}
+			
+\item[\texttt{PUSH = 0}] ~
+\nopagebreak
+
+\item[\texttt{PULL = 1}] ~
+\nopagebreak
+		\end{longdescription}
+	\end{longdescription}
+	
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{AuxiliaryClockCondition}\normalfont}
+\label{cls:dependencylanguage::AuxiliaryClockCondition} \index{19}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This specifies a time dependency to an events last occurence.
+It leads to an introduction of an auxiliary clock.		
+		\item[ESuper Types of \texttt{AuxiliaryClockCondition}] ~
+			\begin{longdescription}
+				\item[\texttt{ClockCondition}] see Section~\ref{cls:dependencylanguage::ClockCondition} on Page~\pageref{cls:dependencylanguage::ClockCondition}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{AuxiliaryClockCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{operator : ComparingOperator \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:core::expressions::common::ComparingOperator} on Page~\pageref{cls:core::expressions::common::ComparingOperator}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{AuxiliaryClockCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{bound : TimeValue \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::valuetype::TimeValue} on Page~\pageref{cls:muml::valuetype::TimeValue}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+	\item[\texttt{event : Event \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{BasicClockCondition}\normalfont}
+\label{cls:dependencylanguage::BasicClockCondition} \index{21}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		It is just a ClockConstraint with the additional of ClockCondition, to better integratable into the DependencyLanguage.		
+		\item[ESuper Types of \texttt{BasicClockCondition}] ~
+			\begin{longdescription}
+				\item[\texttt{ClockConstraint}] see Section~\ref{cls:muml::realtimestatechart::ClockConstraint} on Page~\pageref{cls:muml::realtimestatechart::ClockConstraint}							\item[\texttt{ClockCondition}] see Section~\ref{cls:dependencylanguage::ClockCondition} on Page~\pageref{cls:dependencylanguage::ClockCondition}						\end{longdescription}
+		
+	
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{BoundedActiveState}\normalfont}
+\label{cls:dependencylanguage::BoundedActiveState} \index{13}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		It can specify invariants for states. Those invariants must include references of elements from other regions.
+	
+		\item[ESuper Types of \texttt{BoundedActiveState}] ~
+			\begin{longdescription}
+				\item[\texttt{Dependency}] see Section~\ref{cls:dependencylanguage::Dependency} on Page~\pageref{cls:dependencylanguage::Dependency}						\end{longdescription}
+		
+	
+			\item[\textbf{EReferences of} \texttt{BoundedActiveState}] ~
+			\begin{longdescription}
+	\item[\texttt{constraint : ClockCondition \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::ClockCondition} on Page~\pageref{cls:dependencylanguage::ClockCondition}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		It is currently only allowed to specify UpperBoundClockConditions, because invariants only support UpperBoundClockConstraints.
+However, it might be possible to drop the restriction, because also other Conditions might be simulatable through UpperBoundClockConstraints.		
+	\item[\texttt{states : State \symbol{"5B}1..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::realtimestatechart::State} on Page~\pageref{cls:muml::realtimestatechart::State}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{ClockCondition}\normalfont}
+\label{cls:dependencylanguage::ClockCondition} \index{18}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		A clock condition describes a ClockConstraint that can be either be resolved to an existing or an auxiliary clock.		
+		\item[ESuper Types of \texttt{ClockCondition}] ~
+			\begin{longdescription}
+				\item[\texttt{Condition}] see Section~\ref{cls:dependencylanguage::Condition} on Page~\pageref{cls:dependencylanguage::Condition}						\end{longdescription}
+		
+	
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{ClockMerge}\normalfont}
+\label{cls:dependencylanguage::ClockMerge} \index{5}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		It merges multiple clocks into one global.		
+		\item[ESuper Types of \texttt{ClockMerge}] ~
+			\begin{longdescription}
+				\item[\texttt{Dependency}] see Section~\ref{cls:dependencylanguage::Dependency} on Page~\pageref{cls:dependencylanguage::Dependency}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{ClockMerge}] ~
+			\begin{longdescription}
+	\item[\texttt{clockName : EString \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	
+	
+	\nopagebreak
+		
+				
+
+	
+
+		If not specified the name of the first clock will be used for the global clock.		
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{ClockMerge}] ~
+			\begin{longdescription}
+	\item[\texttt{clocks : Clock \symbol{"5B}2..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::realtimestatechart::Clock} on Page~\pageref{cls:muml::realtimestatechart::Clock}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		Clocks from different regions which are merged.		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{ClockResetEffect}\normalfont}
+\label{cls:dependencylanguage::ClockResetEffect} \index{10}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		Specifies which Clocks should be reset, when the Condition or Event happens.		
+		\item[ESuper Types of \texttt{ClockResetEffect}] ~
+			\begin{longdescription}
+				\item[\texttt{Effect}] see Section~\ref{cls:dependencylanguage::Effect} on Page~\pageref{cls:dependencylanguage::Effect}						\end{longdescription}
+		
+	
+			\item[\textbf{EReferences of} \texttt{ClockResetEffect}] ~
+			\begin{longdescription}
+	\item[\texttt{clocks : Clock \symbol{"5B}1..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::realtimestatechart::Clock} on Page~\pageref{cls:muml::realtimestatechart::Clock}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		Clocks that shall be reset.		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{CompositionCondition}\normalfont}
+\label{cls:dependencylanguage::CompositionCondition} \index{23}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This can be used to logically compose multiple conditions.
+It is mostly required to shorten specifications, but also the OR composition is otherwise not possible.		
+		\item[ESuper Types of \texttt{CompositionCondition}] ~
+			\begin{longdescription}
+				\item[\texttt{Condition}] see Section~\ref{cls:dependencylanguage::Condition} on Page~\pageref{cls:dependencylanguage::Condition}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{CompositionCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{kind : LogicOperator \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:core::expressions::common::LogicOperator} on Page~\pageref{cls:core::expressions::common::LogicOperator}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{CompositionCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{leftCondition : Condition \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Condition} on Page~\pageref{cls:dependencylanguage::Condition}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+	\item[\texttt{rightCondition : Condition \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Condition} on Page~\pageref{cls:dependencylanguage::Condition}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{CompositionEvent}\normalfont}
+\label{cls:dependencylanguage::CompositionEvent} \index{26}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This can be used to logically compose multiple events.
+If an And composition is chosen it could require to introduce auxiliary elements.		
+		\item[ESuper Types of \texttt{CompositionEvent}] ~
+			\begin{longdescription}
+				\item[\texttt{Event}] see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{CompositionEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{kind : LogicOperator \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:core::expressions::common::LogicOperator} on Page~\pageref{cls:core::expressions::common::LogicOperator}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{CompositionEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{leftEvent : Event \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+	\item[\texttt{rightEvent : Event \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Abstract EClass \bfseries \texttt{Condition}\normalfont}
+\label{cls:dependencylanguage::Condition} \index{14}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		Those Conditions can evaluate to true or false and thereby specify intervals.		
+		\item[ESuper Types of \texttt{Condition}] ~
+			\begin{longdescription}
+				\item[\texttt{EObject}] 						\end{longdescription}
+		
+	
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{ConditionalDependency}\normalfont}
+\label{cls:dependencylanguage::ConditionalDependency} \index{7}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		A conditional dependency can be used to restrict Transition by Constraints, which have to be specified as Conditions.
+Through enable and disable the resolved Constraint will be attached to transitions.
+Also clock resets and data assignments can be specified.
+Those are applied for the specified event or when the Condition changes from false to true.		
+		\item[ESuper Types of \texttt{ConditionalDependency}] ~
+			\begin{longdescription}
+				\item[\texttt{Dependency}] see Section~\ref{cls:dependencylanguage::Dependency} on Page~\pageref{cls:dependencylanguage::Dependency}						\end{longdescription}
+		
+	
+			\item[\textbf{EReferences of} \texttt{ConditionalDependency}] ~
+			\begin{longdescription}
+	\item[\texttt{condition : Condition \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Condition} on Page~\pageref{cls:dependencylanguage::Condition}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		see Condition		
+	\item[\texttt{effects : Effect \symbol{"5B}0..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Effect} on Page~\pageref{cls:dependencylanguage::Effect}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		see Effect		
+	\item[\texttt{event : Event \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		Either event or condition can be used.
+Event cannot be combined with EnableDisableEffect.		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{CountedEvent}\normalfont}
+\label{cls:dependencylanguage::CountedEvent} \index{27}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This event counts the occurences of its subevent. Its own occurence is triggered when the threshold defined in counter is reached.		
+		\item[ESuper Types of \texttt{CountedEvent}] ~
+			\begin{longdescription}
+				\item[\texttt{Event}] see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{CountedEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{counter : EInt \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{CountedEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{event : Event \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{DataAssignmentEffect}\normalfont}
+\label{cls:dependencylanguage::DataAssignmentEffect} \index{11}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		Specifies which Assignments that should be applied, when the Condition or Event happens.		
+		\item[ESuper Types of \texttt{DataAssignmentEffect}] ~
+			\begin{longdescription}
+				\item[\texttt{Effect}] see Section~\ref{cls:dependencylanguage::Effect} on Page~\pageref{cls:dependencylanguage::Effect}							\item[\texttt{Assignment}] see Section~\ref{cls:actionlanguage::Assignment} on Page~\pageref{cls:actionlanguage::Assignment}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{DataAssignmentEffect}] ~
+			\begin{longdescription}
+	\item[\texttt{/direction : AssignmentDirection \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::AssignmentDirection} on Page~\pageref{cls:dependencylanguage::AssignmentDirection}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		Direction of the dependency (see AssignmentDirection).		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{DataCondition}\normalfont}
+\label{cls:dependencylanguage::DataCondition} \index{22}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This Condition can contain any Expression which can be specified for TypedNamedElements.
+This is also just required for an easier integration of Expression.		
+		\item[ESuper Types of \texttt{DataCondition}] ~
+			\begin{longdescription}
+				\item[\texttt{Condition}] see Section~\ref{cls:dependencylanguage::Condition} on Page~\pageref{cls:dependencylanguage::Condition}						\end{longdescription}
+		
+	
+			\item[\textbf{EReferences of} \texttt{DataCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{expression : Expression \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:core::expressions::Expression} on Page~\pageref{cls:core::expressions::Expression}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{DataMerge}\normalfont}
+\label{cls:dependencylanguage::DataMerge} \index{6}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		It merges multiple variable into one global.		
+		\item[ESuper Types of \texttt{DataMerge}] ~
+			\begin{longdescription}
+				\item[\texttt{Dependency}] see Section~\ref{cls:dependencylanguage::Dependency} on Page~\pageref{cls:dependencylanguage::Dependency}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{DataMerge}] ~
+			\begin{longdescription}
+	\item[\texttt{variableName : EString \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	
+	
+	\nopagebreak
+		
+				
+
+	
+
+		If not specified the name of the first variable will be used for the global variable.		
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{DataMerge}] ~
+			\begin{longdescription}
+	\item[\texttt{variables : Variable \symbol{"5B}2..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::behavior::Variable} on Page~\pageref{cls:muml::behavior::Variable}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		 Variables from different regions which are merged.		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{DelayedEvent}\normalfont}
+\label{cls:dependencylanguage::DelayedEvent} \index{28}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This event occurs with the specified delay after its subevent occured.
+It requires an auxiliary elements such that event can happen without any other dependencies.		
+		\item[ESuper Types of \texttt{DelayedEvent}] ~
+			\begin{longdescription}
+				\item[\texttt{Event}] see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}						\end{longdescription}
+		
+	
+			\item[\textbf{EReferences of} \texttt{DelayedEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{delay : TimeValue \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::valuetype::TimeValue} on Page~\pageref{cls:muml::valuetype::TimeValue}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+	\item[\texttt{event : Event \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Abstract EClass \bfseries \texttt{Dependency}\normalfont}
+\label{cls:dependencylanguage::Dependency} \index{2}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		Each dependency must at least contain two references that lead to two different RealtimeStatecharts.
+This could be check by constraints.		
+		\item[ESuper Types of \texttt{Dependency}] ~
+			\begin{longdescription}
+				\item[\texttt{CommentableElement}] see Section~\ref{cls:core::CommentableElement} on Page~\pageref{cls:core::CommentableElement}						\end{longdescription}
+		
+	
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{DependencyModel}\normalfont}
+\label{cls:dependencylanguage::DependencyModel} \index{1}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		The dependency model is the container for all dependencies and it builds the root for the XText grammar.		
+		\item[ESuper Types of \texttt{DependencyModel}] ~
+			\begin{longdescription}
+				\item[\texttt{CommentableElement}] see Section~\ref{cls:core::CommentableElement} on Page~\pageref{cls:core::CommentableElement}						\end{longdescription}
+		
+	
+			\item[\textbf{EReferences of} \texttt{DependencyModel}] ~
+			\begin{longdescription}
+	\item[\texttt{dependencies : Dependency \symbol{"5B}0..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Dependency} on Page~\pageref{cls:dependencylanguage::Dependency}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		  see Dependency		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Abstract EClass \bfseries \texttt{Effect}\normalfont}
+\label{cls:dependencylanguage::Effect} \index{8}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		The effect species for what the condition is used, e.g.,
+as Expression or as Position for Assignments.		
+		\item[ESuper Types of \texttt{Effect}] ~
+			\begin{longdescription}
+				\item[\texttt{EObject}] 						\end{longdescription}
+		
+	
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{EnableDisableEffect}\normalfont}
+\label{cls:dependencylanguage::EnableDisableEffect} \index{9}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		It restricts its event that the event can only occur if the condition is met.
+	
+		\item[ESuper Types of \texttt{EnableDisableEffect}] ~
+			\begin{longdescription}
+				\item[\texttt{Effect}] see Section~\ref{cls:dependencylanguage::Effect} on Page~\pageref{cls:dependencylanguage::Effect}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{EnableDisableEffect}] ~
+			\begin{longdescription}
+	\item[\texttt{isEnable : EBoolean \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	
+	
+	\nopagebreak
+		
+				
+
+	
+
+		It is used to invert the 
+If it is false the Expression is invertingly applied as the restriction.		
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{EnableDisableEffect}] ~
+			\begin{longdescription}
+	\item[\texttt{event : Event \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		Transition or EntryOrExitEvent that shall be restricted (see Event).		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Abstract EClass \bfseries \texttt{Event}\normalfont}
+\label{cls:dependencylanguage::Event} \index{24}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		Events can be resolved to existing or auxiliary Transitions and EntryOrExitEvents.		
+		\item[ESuper Types of \texttt{Event}] ~
+			\begin{longdescription}
+				\item[\texttt{EObject}] 						\end{longdescription}
+		
+	
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{EventConstrainedIntervalCondition}\normalfont}
+\label{cls:dependencylanguage::EventConstrainedIntervalCondition} \index{16}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This condition specifies an interval in relation to two Events.
+initialEnabled and enabledInfinite should not be used, because it would be the same as writing true as Condition.		
+		\item[ESuper Types of \texttt{EventConstrainedIntervalCondition}] ~
+			\begin{longdescription}
+				\item[\texttt{Condition}] see Section~\ref{cls:dependencylanguage::Condition} on Page~\pageref{cls:dependencylanguage::Condition}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{EventConstrainedIntervalCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{enabledInfite : EBoolean \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	
+	
+	\nopagebreak
+		
+				
+
+	
+
+		When it is true, the evaluation never changes after it is true.		
+	\item[\texttt{initialEnabled : EBoolean \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	
+	
+	\nopagebreak
+		
+				
+
+	
+
+		When it is true, the evaluation after initialization true.		
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{EventConstrainedIntervalCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{fromEvent : Event \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		When this event occurs, the condition evaluation is changed to true.		
+	\item[\texttt{untilEvent : Event \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		When this event occurs, the condition evaluation is changed to false		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{ForbiddenStateCombination}\normalfont}
+\label{cls:dependencylanguage::ForbiddenStateCombination} \index{4}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		It forbids the combination of states. This dependency requires to add channels and an auxiliary region.		
+		\item[ESuper Types of \texttt{ForbiddenStateCombination}] ~
+			\begin{longdescription}
+				\item[\texttt{Dependency}] see Section~\ref{cls:dependencylanguage::Dependency} on Page~\pageref{cls:dependencylanguage::Dependency}						\end{longdescription}
+		
+	
+			\item[\textbf{EReferences of} \texttt{ForbiddenStateCombination}] ~
+			\begin{longdescription}
+	\item[\texttt{states : State \symbol{"5B}2..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::realtimestatechart::State} on Page~\pageref{cls:muml::realtimestatechart::State}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		Those states are not allowed to be entered in combination.
+If it contains more than two states, it does not forbid each possible combination, but only the one which is specified.		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{HybridClockCondition}\normalfont}
+\label{cls:dependencylanguage::HybridClockCondition} \index{20}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This is a abreviation of a AuxiliaryClockCondition and a Condtion (mainly for StateStatusConditions).
+For example:
+HybridClockCondition(condition:= state 1 active ,  operation:= < , bound:= 5s )
+<=>
+AuxiliaryClockCondition(event:= entering state 1,  operation:= < , bound:= 5s ) and StateStatusCondition(states:= state 1 , kind:= active)		
+		\item[ESuper Types of \texttt{HybridClockCondition}] ~
+			\begin{longdescription}
+				\item[\texttt{ClockCondition}] see Section~\ref{cls:dependencylanguage::ClockCondition} on Page~\pageref{cls:dependencylanguage::ClockCondition}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{HybridClockCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{operator : ComparingOperator \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:core::expressions::common::ComparingOperator} on Page~\pageref{cls:core::expressions::common::ComparingOperator}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{HybridClockCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{bound : TimeValue \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::valuetype::TimeValue} on Page~\pageref{cls:muml::valuetype::TimeValue}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+	\item[\texttt{condition : Condition \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Condition} on Page~\pageref{cls:dependencylanguage::Condition}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{MessageEvent}\normalfont}
+\label{cls:dependencylanguage::MessageEvent} \index{35}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		Can be resolved to a Set of Transitions, that uses the declared Message.		
+		\item[ESuper Types of \texttt{MessageEvent}] ~
+			\begin{longdescription}
+				\item[\texttt{SimpleEvent}] see Section~\ref{cls:dependencylanguage::SimpleEvent} on Page~\pageref{cls:dependencylanguage::SimpleEvent}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{MessageEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{kind : MessageEventKind \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::MessageEventKind} on Page~\pageref{cls:dependencylanguage::MessageEventKind}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		 see MessageEventKind		
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{MessageEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{port : DiscreteInteractionEndpoint \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::connector::DiscreteInteractionEndpoint} on Page~\pageref{cls:muml::connector::DiscreteInteractionEndpoint}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		The Message Event can be optionally bound to one port.		
+	\item[\texttt{type : MessageType \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::msgtype::MessageType} on Page~\pageref{cls:muml::msgtype::MessageType}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		 Message which is send or consumed.		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EEnumeration \bfseries \texttt{MessageEventKind}\normalfont}
+\label{cls:dependencylanguage::MessageEventKind} \index{dependencylanguage!MessageEventKind}
+
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		A message can either be send or consumed at a Transition.		
+	
+		\item[\textbf{ELiterals of} \texttt{MessageEventKind}] ~
+		\begin{longdescription}
+			
+\item[\texttt{UNDEFIEND = 0}] ~
+\nopagebreak
+
+\item[\texttt{CONSUMING = 1}] ~
+\nopagebreak
+
+\item[\texttt{SENDING = 2}] ~
+\nopagebreak
+		\end{longdescription}
+	\end{longdescription}
+	
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Abstract EClass \bfseries \texttt{SimpleEvent}\normalfont}
+\label{cls:dependencylanguage::SimpleEvent} \index{25}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		They should be always resolveable to existing elements.		
+		\item[ESuper Types of \texttt{SimpleEvent}] ~
+			\begin{longdescription}
+				\item[\texttt{Event}] see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}						\end{longdescription}
+		
+	
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{StateCombinationEvent}\normalfont}
+\label{cls:dependencylanguage::StateCombinationEvent} \index{33}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		Can be resolved either to a Set of Transitions or to a Set of EntryOrExitEvents.		
+		\item[ESuper Types of \texttt{StateCombinationEvent}] ~
+			\begin{longdescription}
+				\item[\texttt{SimpleEvent}] see Section~\ref{cls:dependencylanguage::SimpleEvent} on Page~\pageref{cls:dependencylanguage::SimpleEvent}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{StateCombinationEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{kind : StateEventKind \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::StateEventKind} on Page~\pageref{cls:dependencylanguage::StateEventKind}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		see StateEventKind		
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{StateCombinationEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{states : State \symbol{"5B}2..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::realtimestatechart::State} on Page~\pageref{cls:muml::realtimestatechart::State}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{StateEvent}\normalfont}
+\label{cls:dependencylanguage::StateEvent} \index{32}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		Can be resolved either to a Set of Transitions or to an EntryOrExitEvent.		
+		\item[ESuper Types of \texttt{StateEvent}] ~
+			\begin{longdescription}
+				\item[\texttt{SimpleEvent}] see Section~\ref{cls:dependencylanguage::SimpleEvent} on Page~\pageref{cls:dependencylanguage::SimpleEvent}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{StateEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{kind : StateEventKind \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::StateEventKind} on Page~\pageref{cls:dependencylanguage::StateEventKind}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		see StateEventKind		
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{StateEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{state : State \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::realtimestatechart::State} on Page~\pageref{cls:muml::realtimestatechart::State}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EEnumeration \bfseries \texttt{StateEventKind}\normalfont}
+\label{cls:dependencylanguage::StateEventKind} \index{dependencylanguage!StateEventKind}
+
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This is used to reference the EntryEvent and ExitEvent of a state.
+Even it is was not instantiate yet.		
+	
+		\item[\textbf{ELiterals of} \texttt{StateEventKind}] ~
+		\begin{longdescription}
+			
+\item[\texttt{UNDEFIEND = 0}] ~
+\nopagebreak
+
+\item[\texttt{ENTRY = 1}] ~
+\nopagebreak
+
+\item[\texttt{EXIT = 2}] ~
+\nopagebreak
+		\end{longdescription}
+	\end{longdescription}
+	
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{StateStatusCondition}\normalfont}
+\label{cls:dependencylanguage::StateStatusCondition} \index{15}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This condition specifies the interval that a state (combination) is active or inactive.		
+		\item[ESuper Types of \texttt{StateStatusCondition}] ~
+			\begin{longdescription}
+				\item[\texttt{Condition}] see Section~\ref{cls:dependencylanguage::Condition} on Page~\pageref{cls:dependencylanguage::Condition}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{StateStatusCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{kind : StateStatusKind \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::StateStatusKind} on Page~\pageref{cls:dependencylanguage::StateStatusKind}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		see StateStatusKind		
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{StateStatusCondition}] ~
+			\begin{longdescription}
+	\item[\texttt{states : State \symbol{"5B}1..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::realtimestatechart::State} on Page~\pageref{cls:muml::realtimestatechart::State}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EEnumeration \bfseries \texttt{StateStatusKind}\normalfont}
+\label{cls:dependencylanguage::StateStatusKind} \index{dependencylanguage!StateStatusKind}
+
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		It is used to specify that a state (combination) is active or inactive.		
+	
+		\item[\textbf{ELiterals of} \texttt{StateStatusKind}] ~
+		\begin{longdescription}
+			
+\item[\texttt{UNDEFIEND = 0}] ~
+\nopagebreak
+
+\item[\texttt{ACTIVE = 1}] ~
+\nopagebreak
+
+\item[\texttt{INACTIVE = 2}] ~
+\nopagebreak
+		\end{longdescription}
+	\end{longdescription}
+	
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{Synchronization}\normalfont}
+\label{cls:dependencylanguage::Synchronization} \index{3}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		The Synchronization describes which Transitions should be coupled.
+Each Transition can only be referenced once in this expression.
+This could be check by constraints.		
+		\item[ESuper Types of \texttt{Synchronization}] ~
+			\begin{longdescription}
+				\item[\texttt{Dependency}] see Section~\ref{cls:dependencylanguage::Dependency} on Page~\pageref{cls:dependencylanguage::Dependency}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{Synchronization}] ~
+			\begin{longdescription}
+	\item[\texttt{channelName : EString \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	
+	
+	\nopagebreak
+		
+				
+
+	
+
+		Name for a new SynchronizationChannel. If channel with same name already exists, it is used, instead of a new created SynchronizationChannel.
+If it is empty an unique name is generated.		
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{Synchronization}] ~
+			\begin{longdescription}
+	\item[\texttt{generalSelectorExpression : Expression \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:core::expressions::Expression} on Page~\pageref{cls:core::expressions::Expression}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		This expression is used as default selector expression.
+Thereby, it can be used either SynchronizationEvent or any other SimpleEvent.		
+	\item[\texttt{receivingEvents : Event \symbol{"5B}0..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		They can be  SimpleEvents or  SynchronizationEvents.
+The second can only be used when a selectorType is defined.		
+	\item[\texttt{selectorType : DataType \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::types::DataType} on Page~\pageref{cls:muml::types::DataType}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		Is optional and allows to specify a channel which uses the chosen selectortype.
+If it is empty it is a simple channel.		
+	\item[\texttt{sendingEvents : Event \symbol{"5B}0..$*$\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		They can be  SimpleEvents or  SynchronizationEvents.
+The second can only be used when a selectorType is defined.		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{SynchronizationEvent}\normalfont}
+\label{cls:dependencylanguage::SynchronizationEvent} \index{29}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		It is required to specify selector expressions for single events that are referenced in Synchronization.
+It is only allowed to be used if a selector type is specified.
+	
+		\item[ESuper Types of \texttt{SynchronizationEvent}] ~
+			\begin{longdescription}
+				\item[\texttt{Event}] see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}						\end{longdescription}
+		
+	
+			\item[\textbf{EReferences of} \texttt{SynchronizationEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{event : Event \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::Event} on Page~\pageref{cls:dependencylanguage::Event}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+	\item[\texttt{selectorExpression : Expression \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:core::expressions::Expression} on Page~\pageref{cls:core::expressions::Expression}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{SynthesizableBehavior}\normalfont}
+\label{cls:dependencylanguage::SynthesizableBehavior} \index{0}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		This class is the container for the dependencies.
+It inherits from BehavioralElement to store the inner-behavior.
+It can be stored at a AtomicComponent through the Extension inheritance.		
+		\item[ESuper Types of \texttt{SynthesizableBehavior}] ~
+			\begin{longdescription}
+				\item[\texttt{Extension}] see Section~\ref{cls:core::Extension} on Page~\pageref{cls:core::Extension}							\item[\texttt{BehavioralElement}] see Section~\ref{cls:muml::behavior::BehavioralElement} on Page~\pageref{cls:muml::behavior::BehavioralElement}						\end{longdescription}
+		
+	
+			\item[\textbf{EAttributes of} \texttt{SynthesizableBehavior}] ~
+			\begin{longdescription}
+	\item[\texttt{/name : EString \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	
+	
+	\nopagebreak
+		
+				
+
+	
+
+		 Name of the Atomic Component + '-synth'		
+		\begin{longdescription}
+	\item[\small\textit{derivation}] ~ 
+	\nopagebreak
+		\begin{lstlisting}[language=OCL, breaklines=true]
+if(not self.base.oclIsUndefined() and self.base.oclIsKindOf(component::AtomicComponent))
+then (self.base).oclAsType(component::AtomicComponent).name.concat('-synth')
+else
+null endif		\end{lstlisting}
+		\end{longdescription}
+			\end{longdescription}
+			\item[\textbf{EReferences of} \texttt{SynthesizableBehavior}] ~
+			\begin{longdescription}
+	\item[\texttt{dependencyModel : DependencyModel \symbol{"5B}0..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:dependencylanguage::DependencyModel} on Page~\pageref{cls:dependencylanguage::DependencyModel}
+	
+	\nopagebreak
+		
+				
+
+	
+
+		Container for all Dependency of one Atomic Component, Input for the XText Editor.		
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{EClass \bfseries \texttt{TransitionEvent}\normalfont}
+\label{cls:dependencylanguage::TransitionEvent} \index{30}
+	
+	\begin{longdescription}
+		\item[Overview] 		
+				
+
+	
+
+		Resolves to the single Transition it references.
+It is the simplest Event.		
+		\item[ESuper Types of \texttt{TransitionEvent}] ~
+			\begin{longdescription}
+				\item[\texttt{SimpleEvent}] see Section~\ref{cls:dependencylanguage::SimpleEvent} on Page~\pageref{cls:dependencylanguage::SimpleEvent}						\end{longdescription}
+		
+	
+			\item[\textbf{EReferences of} \texttt{TransitionEvent}] ~
+			\begin{longdescription}
+	\item[\texttt{transition : Transition \symbol{"5B}1..1\symbol{"5D}
+}] ~
+	see Section~\ref{cls:muml::realtimestatechart::Transition} on Page~\pageref{cls:muml::realtimestatechart::Transition}
+	
+	\nopagebreak
+		
+				
+
+	
+
+	
+			\end{longdescription}
+	
+	\end{longdescription}
+	
+			\newpage
+	

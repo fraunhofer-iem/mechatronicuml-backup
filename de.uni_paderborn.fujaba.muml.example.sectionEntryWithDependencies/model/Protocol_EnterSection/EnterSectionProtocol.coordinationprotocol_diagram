@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modelinstance="http://www.fujaba.de/modelinstance/0.4.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:protocol="http://www.fujaba.de/muml/protocol/0.4.0" xmi:id="_HldHQMOmEeKt4K__LJLJ8w" type="Coordination Protocol" name="SectionEntryProtocol.coordinationprotocol_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_JgwWUMOmEeKt4K__LJLJ8w" type="2005" fontName="Segoe UI" lineColor="0">
+    <children xmi:type="notation:DecorationNode" xmi:id="_JgzZoMOmEeKt4K__LJLJ8w" type="7005">
+      <children xmi:type="notation:Shape" xmi:id="_JmfK4MOmEeKt4K__LJLJ8w" type="3005" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_JmfK4sOmEeKt4K__LJLJ8w" type="5005"/>
+        <element xmi:type="protocol:CoordinationProtocol" href="../SectionEntry.fujaba#_Jft0gMOmEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JmfK4cOmEeKt4K__LJLJ8w" x="67" y="6"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_Jmfx8MOmEeKt4K__LJLJ8w" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_Jmfx8sOmEeKt4K__LJLJ8w" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_Jmfx88OmEeKt4K__LJLJ8w" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../SectionEntry.fujaba#_JgQnEMOmEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Jmfx8cOmEeKt4K__LJLJ8w" x="19" y="66"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_JmgZAMOmEeKt4K__LJLJ8w" type="3006" fontName="Segoe UI" lineColor="0">
+        <children xmi:type="notation:DecorationNode" xmi:id="_JmgZAsOmEeKt4K__LJLJ8w" type="5006">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_JmgZA8OmEeKt4K__LJLJ8w" y="5"/>
+        </children>
+        <element xmi:type="protocol:Role" href="../SectionEntry.fujaba#_JgTDUcOmEeKt4K__LJLJ8w"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JmgZAcOmEeKt4K__LJLJ8w" x="175" y="66"/>
+      </children>
+    </children>
+    <element xmi:type="protocol:CoordinationProtocol" href="../SectionEntry.fujaba#_Jft0gMOmEeKt4K__LJLJ8w"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JgwWUcOmEeKt4K__LJLJ8w" x="60" y="96" width="253" height="145"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_HldHQcOmEeKt4K__LJLJ8w"/>
+  <element xmi:type="modelinstance:ModelElementCategory" href="../SectionEntry.fujaba#_HgnqkMOmEeKt4K__LJLJ8w"/>
+  <edges xmi:type="notation:Connector" xmi:id="_JoU98MOmEeKt4K__LJLJ8w" type="4006" source="_Jmfx8MOmEeKt4K__LJLJ8w" target="_JmgZAMOmEeKt4K__LJLJ8w" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_JoU98cOmEeKt4K__LJLJ8w" fontName="Segoe UI"/>
+    <element xmi:type="protocol:RoleConnector" href="../SectionEntry.fujaba#_JgURccOmEeKt4K__LJLJ8w"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JoU98sOmEeKt4K__LJLJ8w" points="[10, 10, 0, 0]$[0, 0, -10, -10]"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_3sQgwP3LEeKsFfsU4q7Qfg" type="4007" source="_JmfK4MOmEeKt4K__LJLJ8w" target="_Jmfx8MOmEeKt4K__LJLJ8w" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_3sQgwf3LEeKsFfsU4q7Qfg" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3sQgwv3LEeKsFfsU4q7Qfg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4oxMUP3LEeKsFfsU4q7Qfg" id="(0.17105263157894737,0.65)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_3sUyMP3LEeKsFfsU4q7Qfg" type="4007" source="_JmfK4MOmEeKt4K__LJLJ8w" target="_JmgZAMOmEeKt4K__LJLJ8w" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_3sUyMf3LEeKsFfsU4q7Qfg" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3sUyMv3LEeKsFfsU4q7Qfg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+</notation:Diagram>

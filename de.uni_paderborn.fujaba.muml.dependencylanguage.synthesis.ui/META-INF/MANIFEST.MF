@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Synthesis Plug-in
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.ui;singleton:=true
+Bundle-Version: 0.4.0
+Bundle-Vendor: 
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: de.uni_paderborn.fujaba.muml,
+ org.eclipse.jface,
+ org.eclipse.ui.workbench,
+ org.eclipse.m2m.qvt.oml,
+ org.eclipse.gmf.runtime.common.core,
+ de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.jobs
+Export-Package: de.uni_paderborn.fujaba.muml.dependencylanguage.synthesis.ui

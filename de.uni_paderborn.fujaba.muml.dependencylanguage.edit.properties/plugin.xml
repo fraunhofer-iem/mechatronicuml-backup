@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+<extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
+          <propertyTab
+             category="domain"
+             id="de.uni_paderborn.fujaba.muml.dependencylanguage"
+             label="Dependencies"/>
+          
+      </propertyTabs>
+  </extension>
+
+
+
+
+  <extension point="org.eclipse.ui.views.properties.tabbed.propertySections"> 
+      <propertySections contributorId="de.uni_paderborn.fujaba.muml.component.diagram">
+          <propertySection
+            class="de.uni_paderborn.fujaba.properties.runtime.sections.ObjectPropertySection"
+            filter="de.uni_paderborn.fujaba.muml.dependencylanguage.properties.tabs.DependenciesTabElementFilter"
+            id="de.uni_paderborn.fujaba.muml.dependencylanguage"
+            tab="de.uni_paderborn.fujaba.muml.dependencylanguage">
+             <input
+               type="org.eclipse.emf.ecore.EObject">
+             </input>
+          </propertySection>
+         
+      </propertySections>
+  </extension>
+
+
+
+ <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.muml.dependencylanguage.properties.dependencylanguage.editor.SynthesizableBehaviorEditor$Factory"
+             type="de.uni_paderborn.fujaba.muml.dependencylanguage.SynthesizableBehavior">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+</plugin>
