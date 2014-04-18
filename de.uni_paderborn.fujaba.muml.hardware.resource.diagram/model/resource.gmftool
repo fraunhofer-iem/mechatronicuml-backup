@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmftool:ToolRegistry
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
+  <palette
+      title="resourcetypePalette">
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="ResourceType">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Device"
+          description="Create new Device">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/device_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/device_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="HWPort"
+          description="Create new HWPort">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/port_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/port_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="StructuredResource and emebedded Resources"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="StructuredResource"
+          description="Create new StructuredResource">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/box_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/box_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="MemoryResource"
+          description="Create new MemoryResource">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/memory_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/memory_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Cache"
+          description="Create new Cache">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/memory_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/memory_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ProgrammableLogicDevice"
+          description="Create new ProgrammableLogicDevice">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/pld_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/pld_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Processor"
+          description="Create new Processor">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/cpu_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/cpu_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ProcessorOwnedCache"
+          description="Create new ProcessorOwnedCache">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/processorcache.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="CommunicationMedia">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="BusResource"
+          description="Create new Bus">
+        <smallIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/bus_small.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+        <largeIcon
+            xsi:type="gmftool:BundleImage"
+            path="icons/bus_large.gif"
+            bundle="de.uni_paderborn.fujaba.muml.hardware.common"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="LinkResource"
+          description="Create new Link"/>
+    </tools>
+  </palette>
+</gmftool:ToolRegistry>

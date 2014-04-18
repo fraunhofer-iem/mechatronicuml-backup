@@ -1,0 +1,7 @@
+# Tracing options for the de.uni_paderborn.fujaba.muml.hardware.resource.diagram plug-in
+
+# Common issues
+de.uni_paderborn.fujaba.muml.hardware.resource.diagram/debug=false
+
+# Visual IDs
+de.uni_paderborn.fujaba.muml.hardware.resource.diagram/debug/visualID=false
