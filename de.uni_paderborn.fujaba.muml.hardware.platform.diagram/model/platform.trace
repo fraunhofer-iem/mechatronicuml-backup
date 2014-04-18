@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trace:TraceModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
+  <nodeTraces
+      visualID="2008"
+      queryText="let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'HWPlatform'">
+    <nodeLabelTraces
+        visualID="5050"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7002"
+        queryText="true"/>
+  </nodeTraces>
+  <childNodeTraces
+      visualID="3014"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'BusPart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'HWPlatform') and _containmentMF_.name = 'networkingHardwareParts')">
+    <nodeLabelTraces
+        visualID="5037"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5038"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3015"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'BridgePart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'HWPlatform') and _containmentMF_.name = 'networkingHardwareParts')">
+    <nodeLabelTraces
+        visualID="5039"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3016"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'HWPlatformPart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'HWPlatform') and _containmentMF_.name = 'embeddedPlatformParts')">
+    <nodeLabelTraces
+        visualID="5041"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5042"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5043"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3017"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'HWPortPart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'PlatformPart') and _containmentMF_.name = 'hwPortParts')">
+    <nodeLabelTraces
+        visualID="5040"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3018"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'DelegationHWPort') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'HWPlatform') and _containmentMF_.name = 'delegationPorts')">
+    <nodeLabelTraces
+        visualID="5044"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3019"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'ResourcePart') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'HWPlatform') and _containmentMF_.name = 'embeddedPlatformParts')">
+    <nodeLabelTraces
+        visualID="5045"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5046"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5047"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5048"
+        queryText="true"/>
+    <nodeLabelTraces
+        visualID="5049"
+        queryText="true"/>
+  </childNodeTraces>
+  <linkTraces
+      visualID="4028"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'Delegation')"/>
+  <linkTraces
+      visualID="4029"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'LinkPart')">
+    <linkLabelTraces
+        visualID="6003"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4030"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwplatform/1.0/' and _eClass_.name = 'BusConnector')"/>
+</trace:TraceModel>

@@ -1,0 +1,22 @@
+/**
+ */
+package de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Storage Memory Instance</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * This class represents an instance of non-volatile memory which is capable of storing data.
+ * <!-- end-model-doc -->
+ *
+ *
+ * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage#getStorageMemoryInstance()
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='CheckMemoryNonVolatile'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL CheckMemoryNonVolatile='self.resourceType.oclAsType(hwresource::MemoryResource).isVolatile=false'"
+ * @generated
+ */
+public interface StorageMemoryInstance extends MemoryResourceInstance {
+} // StorageMemoryInstance
