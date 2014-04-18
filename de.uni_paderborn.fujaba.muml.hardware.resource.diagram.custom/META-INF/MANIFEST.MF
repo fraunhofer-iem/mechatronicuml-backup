@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Custom
+Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.resource.diagram.custom;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.gmf.runtime.diagram.ui.properties,
+ de.uni_paderborn.fujaba.muml.hardware.common,
+ de.uni_paderborn.fujaba.muml.hardware.resource.diagram;bundle-version="1.0.0"
