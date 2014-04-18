@@ -4,7 +4,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
 
 /**
  * Base edit policy for all ResourceInstances that uses the CustomResourceFigure.
@@ -21,11 +21,11 @@ public class ResourceInstanceEditPolicy extends ResourceEditPolicy {
 	 * 
 	 */
 	@Override
-	protected de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceType getResourceType(){
+	protected de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource getResource(){
 		EObject element = getSemanticElement();
 		if (element != null) {
-			return (de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceType) element
-					.eGet(PlatformPackage.Literals.RESOURCE_INSTANCE__RESOURCE_TYPE);
+			return (de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource) element
+					.eGet(HwresourceinstancePackage.Literals.RESOURCE_INSTANCE__RESOURCE_TYPE);
 		}
 		return null;
 	}
@@ -47,7 +47,7 @@ public class ResourceInstanceEditPolicy extends ResourceEditPolicy {
 			feature = (EStructuralFeature) notification.getFeature();
 		}
 
-		if (feature == PlatformPackage.Literals.RESOURCE_INSTANCE__RESOURCE_TYPE) {
+		if (feature == HwresourceinstancePackage.Literals.RESOURCE_INSTANCE__RESOURCE_TYPE) {
 			refreshIcon();
 		}
 		super.handleNotificationEvent(notification);

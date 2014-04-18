@@ -3,8 +3,9 @@ package de.uni_paderborn.fujaba.muml.hardware.common.edit.policies.hwport;
 import org.eclipse.emf.ecore.EObject;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomHWPortFigure.HWPortKind;
-import de.uni_paderborn.fujaba.muml.hardware.platform.HWPortInstance;
-import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.DelegationHWPortInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HWPortInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
 
 /**
  * Base edit policy for all HWPortInstances that uses the CustomHWPortFigure.
@@ -17,19 +18,17 @@ import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
 
 public class HWPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 
- 	/**
+	/**
 	 * Returns whether it is a Bus- or Link-Port based on the Port-Type of this
 	 * HWPortInstance.
 	 * 
 	 */
-/*	protected HWPort getHWPort() {
-		EObject element = getSemanticElement();
-		if (element != null) {
-			return (HWPort) element
-					.eGet(PlatformPackage.Literals.HW_PORT_INSTANCE__HWPORT_TYPE);
-		}
-		return null;
-	} */
+	/*
+	 * protected HWPort getHWPort() { EObject element = getSemanticElement(); if
+	 * (element != null) { return (HWPort) element
+	 * .eGet(PlatformPackage.Literals.HW_PORT_INSTANCE__HWPORT_TYPE); } return
+	 * null; }
+	 */
 
 	/**
 	 * Returns if this PortInstance is a delegation Port by evaluating the
@@ -39,7 +38,8 @@ public class HWPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 	protected boolean isDelegationPort() {
 		EObject element = getSemanticElement();
 		if (element != null) {
-			return ((HWPortInstance) element).isIsDelegationPort();
+			return HwplatforminstancePackage.Literals.DELEGATION_HW_PORT_INSTANCE
+					.isSuperTypeOf(element.eClass());
 		}
 		return false;
 	}
@@ -52,9 +52,8 @@ public class HWPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 	protected boolean isPortInstance() {
 		return true;
 	}
-	
-	
-	protected boolean isMultiHWPort(){
+
+	protected boolean isMultiHWPort() {
 		return false;
 	}
 
@@ -62,19 +61,38 @@ public class HWPortInstanceEditPolicy extends HWPortBaseEditPolicy {
 	 * Returns whether it is a Bus- or Link-Port based on the Port-Type of this
 	 * HWPortInstance.
 	 * 
-	 */	
+	 */
 	@Override
 	protected HWPortKind getHWPortKind() {
 		EObject element = getSemanticElement();
 		HWPortKind kind = HWPortKind.BUS;
+		de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind modelPortKind = de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS;
+		HWPortInstance hwPortInstance = null;
 		if (element != null) {
-			if (PlatformPackage.Literals.BUS_PORT_INSTANCE
+			if (HwplatforminstancePackage.Literals.HW_PORT_INSTANCE
 					.isSuperTypeOf(element.eClass())) {
-				kind = HWPortKind.BUS;
-			} else if (PlatformPackage.Literals.LINK_PORT_INSTANCE
+				hwPortInstance = (HWPortInstance) element;
+			} else if (HwplatforminstancePackage.Literals.DELEGATION_HW_PORT_INSTANCE
 					.isSuperTypeOf(element.eClass())) {
-				kind = HWPortKind.LINK;
+				DelegationHWPortInstance delegationPort = (DelegationHWPortInstance) element;
+				if (!delegationPort.getConnectorInstances().isEmpty()) {
+					hwPortInstance = (HWPortInstance) delegationPort
+							.getConnectorInstances().get(0);
+				}
 			}
+			if (hwPortInstance != null) {
+				modelPortKind = hwPortInstance.getPortKind();
+			}
+
+		}
+		switch (modelPortKind.getValue()) {
+		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.BUS_VALUE):
+			kind = HWPortKind.BUS;
+			break;
+		case (de.uni_paderborn.fujaba.muml.hardware.hwresource.HWPortKind.LINK_VALUE):
+			kind = HWPortKind.LINK;
+			break;
+
 		}
 		return kind;
 	}

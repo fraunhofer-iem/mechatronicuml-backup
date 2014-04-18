@@ -15,7 +15,6 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.swt.graphics.Color;
 
 import de.uni_paderborn.fujaba.muml.hardware.common.icons.Cpu;
-import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
 
 /**
  * The custom icon figure gallery for all {@link ResourceType}s and {@link ResourceInstance}s.

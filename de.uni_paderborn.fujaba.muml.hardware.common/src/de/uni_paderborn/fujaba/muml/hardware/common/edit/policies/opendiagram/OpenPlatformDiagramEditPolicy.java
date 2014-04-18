@@ -4,7 +4,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.AbstractOpenDiagramEditPolicy;
-import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 
 /** When double-clicking a {@link HWPlatformPart} this opens a diagram file that contains the corresponding {@link HWPlatform}.
  * 
@@ -18,9 +18,9 @@ public class OpenPlatformDiagramEditPolicy extends
 	protected EObject getDiagramDomainElement(View view) {
 		EObject element = view.getElement();
 
-		if (PlatformPackage.Literals.HW_PLATFORM_PART.isSuperTypeOf(element
+		if (HwplatformPackage.Literals.HW_PLATFORM_PART.isSuperTypeOf(element
 				.eClass())) {
-			return ((EObject) element.eGet(PlatformPackage.Literals.HW_PLATFORM_PART__HWPLATFORM_TYPE));
+			return ((EObject) element.eGet(HwplatformPackage.Literals.HW_PLATFORM_PART__HWPLATFORM_TYPE));
 		}
 
 		return element;

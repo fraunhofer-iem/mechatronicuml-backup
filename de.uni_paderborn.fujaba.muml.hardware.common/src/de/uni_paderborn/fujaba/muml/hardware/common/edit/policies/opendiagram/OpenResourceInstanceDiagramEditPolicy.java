@@ -4,9 +4,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.View;
 
 import de.uni_paderborn.fujaba.muml.common.edit.policies.opendiagram.AbstractOpenDiagramEditPolicy;
-import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
-import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
-import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstancePart;
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.ResourceInstance;
 
 /** When double-clicking a {@link ResourceInstancePart} this opens a diagram file that contains the corresponding {@link ResourceInstance}.
  * 
@@ -20,9 +19,9 @@ public class OpenResourceInstanceDiagramEditPolicy extends
 	protected EObject getDiagramDomainElement(View view) {
 		EObject element = view.getElement();
 
-		if (PlatformPackage.Literals.RESOURCE_INSTANCE_PART.isSuperTypeOf(element
+		if (HwplatformPackage.Literals.RESOURCE_PART.isSuperTypeOf(element
 				.eClass())) {
-			return ((EObject) element.eGet(PlatformPackage.Literals.RESOURCE_INSTANCE_PART__RESOURCE_INSTANCE_TYPE)).eContainer();
+			return ((EObject) element.eGet(HwplatformPackage.Literals.RESOURCE_PART__RESOURCE_TYPE)).eContainer();
 		}
 
 		return element;

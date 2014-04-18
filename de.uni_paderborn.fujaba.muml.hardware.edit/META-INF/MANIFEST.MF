@@ -4,14 +4,16 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.hardware.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.resourcetype.provider.HardwareEditPlugin$Implementation
+Bundle-Activator: de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.provider,
- de.uni_paderborn.fujaba.muml.hardware.platform.provider,
- de.uni_paderborn.fujaba.muml.hardware.platforminstance.provider,
- de.uni_paderborn.fujaba.muml.hardware.resourcetype.provider
+Export-Package: de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider,
+ de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.provider,
+ de.uni_paderborn.fujaba.muml.hardware.hwresource.provider,
+ de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.provider,
+ de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.provider,
+ de.uni_paderborn.fujaba.muml.hardware.provider
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.hardware;visibility:=reexport;bundle-version="1.0.0",
  org.eclipse.emf.edit;visibility:=reexport,

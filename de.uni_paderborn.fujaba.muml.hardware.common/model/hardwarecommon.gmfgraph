@@ -205,6 +205,35 @@
       <accessors figure="//@figures.0/@descriptors.8/@actualFigure/@children.0/@children.0"/>
       <accessors figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
     </descriptors>
+    <descriptors name="BusFigure">
+      <actualFigure xsi:type="gmfgraph:ScalablePolygon" name="BusArrow" fill="false">
+        <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="BusContainer" outline="false">
+          <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true"/>
+          <layout xsi:type="gmfgraph:GridLayout" equalWidth="false"/>
+          <children xsi:type="gmfgraph:Label" name="BusProtocolFigure" text="&lt;...>">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="BEGINNING" verticalSpan="0"/>
+            <font xsi:type="gmfgraph:BasicFont" faceName="BOLD" style="BOLD"/>
+          </children>
+          <children xsi:type="gmfgraph:Label" name="BusBandwidthFigure" text="&lt;...>">
+            <layoutData xsi:type="gmfgraph:GridLayoutData" grabExcessHorizontalSpace="true" grabExcessVerticalSpace="true" verticalAlignment="BEGINNING"/>
+          </children>
+        </children>
+        <template y="2"/>
+        <template x="1" y="4"/>
+        <template x="1" y="3"/>
+        <template x="5" y="3"/>
+        <template x="5" y="4"/>
+        <template x="6" y="2"/>
+        <template x="5"/>
+        <template x="5" y="1"/>
+        <template x="1" y="1"/>
+        <template x="1"/>
+        <template y="2"/>
+      </actualFigure>
+      <accessors accessor="getFigureBusProtocolFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.0"/>
+      <accessors figure="//@figures.0/@descriptors.9/@actualFigure/@children.0/@children.1"/>
+    </descriptors>
   </figures>
   <nodes name="HWPort" figure="HWPortFigureRef" affixedParentSide="EAST">
     <facets xsi:type="gmfgraph:DefaultSizeFacet">
@@ -236,6 +265,11 @@
       <defaultSize dx="400" dy="400"/>
     </facets>
   </nodes>
+  <nodes name="Bus" figure="BusFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="130" dy="50"/>
+    </facets>
+  </nodes>
   <compartments name="StructuredResourceCompartment" figure="StructuredResourceFigure" collapsible="true" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <compartments name="HWPlatformCompartment" figure="HWPlatform" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
   <labels name="HWPortLabel" figure="HWPortLabelFigure" elementIcon="false">
@@ -250,4 +284,6 @@
   <labels name="ResourceInfo1" figure="ResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.4"/>
   <labels name="ResourceInfo2" figure="ResourceFigureRef" elementIcon="false" accessor="//@figures.0/@descriptors.1/@accessors.5"/>
   <labels name="HWPlatformName" figure="HWPlatform" resizeConstraint="NONE" elementIcon="false" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels name="BusProtocol" figure="BusFigure" elementIcon="false" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+  <labels name="BusBandwidth" figure="BusFigure" elementIcon="false" accessor="//@figures.0/@descriptors.9/@accessors.1"/>
 </gmfgraph:Canvas>

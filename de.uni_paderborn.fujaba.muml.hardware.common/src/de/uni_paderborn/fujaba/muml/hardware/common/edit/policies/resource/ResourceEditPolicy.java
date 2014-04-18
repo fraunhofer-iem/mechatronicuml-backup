@@ -12,9 +12,10 @@ import de.uni_paderborn.fujaba.muml.common.edit.policies.NotifyingGraphicalEditP
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomIconFigure.ResourceType;
 import de.uni_paderborn.fujaba.muml.hardware.common.figures.CustomResourceFigure;
-import de.uni_paderborn.fujaba.muml.hardware.resourcetype.Device;
-import de.uni_paderborn.fujaba.muml.hardware.resourcetype.DeviceKind;
-import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.Device;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.DeviceKind;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
 
 
 /**
@@ -57,17 +58,17 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 	 */
 	public void refreshIcon() {
 
-		de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceType element = getResourceType();
+		Resource element = getResource();
 		ResourceType kind = ResourceType.PROCESSOR;
 		Boolean isResourceInstance = isResourceInstance();
 		getResourceFigure().getFigureResourceInfoRectangle().setVisible(true);
 
 		if (element != null) {
-			if (ResourcetypePackage.Literals.STRUCTURED_RESOURCE
+			if (HwresourcePackage.Literals.STRUCTURED_RESOURCE
 					.isSuperTypeOf(element.eClass())) {
 				kind = ResourceType.STRUCTURED;
 			}
-			if (ResourcetypePackage.Literals.DEVICE.isSuperTypeOf(element
+			if (HwresourcePackage.Literals.DEVICE.isSuperTypeOf(element
 					.eClass())) {
 				if (((Device) element).getDeviceType() == DeviceKind.SENSOR) {
 					kind = ResourceType.SENSOR;
@@ -78,15 +79,15 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 				getResourceFigure().getFigureResourceInfoRectangle()
 						.setVisible(false);
 			}
-			if (ResourcetypePackage.Literals.PROCESSOR.isSuperTypeOf(element
+			if (HwresourcePackage.Literals.PROCESSOR.isSuperTypeOf(element
 					.eClass())) {
 				kind = ResourceType.PROCESSOR;
 			}
-			if (ResourcetypePackage.Literals.PROGRAMMABLE_LOGIC_DEVICE
+			if (HwresourcePackage.Literals.PROGRAMMABLE_LOGIC_DEVICE
 					.isSuperTypeOf(element.eClass())) {
 				kind = ResourceType.PLD;
 			}
-			if (ResourcetypePackage.Literals.MEMORY_RESOURCE
+			if (HwresourcePackage.Literals.MEMORY_RESOURCE
 					.isSuperTypeOf(element.eClass())) {
 				kind = ResourceType.MEMORY;
 			}
@@ -100,8 +101,8 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 	 * Get the current ResourceType
 	 * @return the semanticElement as a {@link ResourceType}
 	 */
-	protected de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceType getResourceType() {
-		return (de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourceType) getSemanticElement();
+	protected Resource getResource() {
+		return (de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource) getSemanticElement();
 	}
 
 	/**
@@ -129,7 +130,7 @@ public class ResourceEditPolicy extends NotifyingGraphicalEditPolicy {
 			feature = (EStructuralFeature) notification.getFeature();
 		}
 
-		if (feature == ResourcetypePackage.Literals.DEVICE__DEVICE_TYPE) {
+		if (feature == HwresourcePackage.Literals.DEVICE__DEVICE_TYPE) {
 			refreshIcon();
 		}
 		super.handleNotificationEvent(notification);
