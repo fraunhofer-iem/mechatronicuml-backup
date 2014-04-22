@@ -16,9 +16,7 @@
 <rm:locator pattern="^de\.uni_paderborn\.fujaba\.muml\.model\.componentstorydiagram\.diagram(\..+)?" searchPathRef="muml2"/>
   <rm:locator pattern="(^de\.uni_paderborn\.fujaba(\..+)?|^org\.eclipse\.emf\.ecore\.improved(\..+)?|^de\.fujaba(\..+)?|^de\.fujaba\.modelinstance\.editor(\..+)?|^org\.storydriven\.core(\..+)?)" searchPathRef="muml" failOnError="false"/>
   <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?|^de\.upb\.swt(\..+)?)" searchPathRef="storydriven" failOnError="false"/>
-  <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2" failOnError="false"/>  
-  <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="eclipse"/>
-  <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="eclipse_kepler"/>
+  <rm:locator pattern="(^org\.storydriven(\..+)?|^de\.mdelab(\..+)?|^de\.fujaba(\..+)?|^org\.fujaba(\..+)?)" searchPathRef="storydriven2" failOnError="false"/>
   <rm:locator pattern="^org\.eclipse\.m2m\.qvt\.oml(\..+)?" searchPathRef="qvto_luna_m5"/>
   <rm:locator pattern="^org\.eclipse\.xtext(\..+)?" searchPathRef="eclipse_kepler"/>
   <rm:locator pattern="^org\.eclipse\.xtend(\..+)?" searchPathRef="eclipse_kepler"/>
