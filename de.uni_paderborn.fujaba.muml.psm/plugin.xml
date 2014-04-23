@@ -21,4 +21,12 @@
             class="de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage"
             genModel="model/psm.genmodel"/>
    </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psm -->
+      <package
+            uri="http://www.fujaba.de/muml/psm/cic,apping/0.1.0"
+            class="de.uni_paderborn.fujaba.muml.psm.cicmapping.CicmappingPackage"
+            genModel="model/psm.genmodel"/>
+   </extension>
 </plugin>

@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 
 import de.uni_paderborn.fujaba.muml.valuetype.TimeValue;
 
@@ -61,12 +61,12 @@ public interface WCETpair extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resource</em>' reference.
-	 * @see #setResource(ResourceInstance)
+	 * @see #setResource(StructuredResourceInstance)
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getWCETpair_Resource()
 	 * @model required="true"
 	 * @generated
 	 */
-	ResourceInstance getResource();
+	StructuredResourceInstance getResource();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.WCETpair#getResource <em>Resource</em>}' reference.
@@ -76,6 +76,6 @@ public interface WCETpair extends EObject {
 	 * @see #getResource()
 	 * @generated
 	 */
-	void setResource(ResourceInstance value);
+	void setResource(StructuredResourceInstance value);
 
 } // WCETpair

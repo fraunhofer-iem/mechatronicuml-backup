@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.allocation;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.StructuredResourceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;
 

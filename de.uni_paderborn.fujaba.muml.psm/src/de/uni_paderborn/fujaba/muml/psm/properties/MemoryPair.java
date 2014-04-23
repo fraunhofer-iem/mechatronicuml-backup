@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -61,12 +61,12 @@ public interface MemoryPair extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resource</em>' reference.
-	 * @see #setResource(ResourceInstance)
+	 * @see #setResource(StructuredResourceInstance)
 	 * @see de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage#getMemoryPair_Resource()
 	 * @model required="true"
 	 * @generated
 	 */
-	ResourceInstance getResource();
+	StructuredResourceInstance getResource();
 
 	/**
 	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair#getResource <em>Resource</em>}' reference.
@@ -76,6 +76,6 @@ public interface MemoryPair extends EObject {
 	 * @see #getResource()
 	 * @generated
 	 */
-	void setResource(ResourceInstance value);
+	void setResource(StructuredResourceInstance value);
 
 } // MemoryPair

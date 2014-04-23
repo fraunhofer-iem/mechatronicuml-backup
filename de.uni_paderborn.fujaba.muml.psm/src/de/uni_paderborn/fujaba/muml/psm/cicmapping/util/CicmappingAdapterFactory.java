@@ -1,8 +1,8 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.util;
+package de.uni_paderborn.fujaba.muml.psm.cicmapping.util;
 
-import de.uni_paderborn.fujaba.muml.psm.*;
+import de.uni_paderborn.fujaba.muml.psm.cicmapping.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -16,17 +16,17 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.psm.PsmPackage
+ * @see de.uni_paderborn.fujaba.muml.psm.cicmapping.CicmappingPackage
  * @generated
  */
-public class PsmAdapterFactory extends AdapterFactoryImpl {
+public class CicmappingAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static PsmPackage modelPackage;
+	protected static CicmappingPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -34,9 +34,9 @@ public class PsmAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PsmAdapterFactory() {
+	public CicmappingAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = PsmPackage.eINSTANCE;
+			modelPackage = CicmappingPackage.eINSTANCE;
 		}
 	}
 
@@ -65,10 +65,16 @@ public class PsmAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PsmSwitch<Adapter> modelSwitch =
-		new PsmSwitch<Adapter>() {
-			
-			
+	protected CicmappingSwitch<Adapter> modelSwitch =
+		new CicmappingSwitch<Adapter>() {
+			@Override
+			public Adapter caseCICSystemMapping(CICSystemMapping object) {
+				return createCICSystemMappingAdapter();
+			}
+			@Override
+			public Adapter caseCICMapping(CICMapping object) {
+				return createCICMappingAdapter();
+			}
 			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
@@ -90,16 +96,30 @@ public class PsmAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.TEST <em>TEST</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICSystemMapping <em>CIC System Mapping</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uni_paderborn.fujaba.muml.psm.TEST
+	 * @see de.uni_paderborn.fujaba.muml.psm.cicmapping.CICSystemMapping
 	 * @generated
 	 */
-	public Adapter createTESTAdapter() {
+	public Adapter createCICSystemMappingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICMapping <em>CIC Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.muml.psm.cicmapping.CICMapping
+	 * @generated
+	 */
+	public Adapter createCICMappingAdapter() {
 		return null;
 	}
 
@@ -115,4 +135,4 @@ public class PsmAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //PsmAdapterFactory
+} //CicmappingAdapterFactory

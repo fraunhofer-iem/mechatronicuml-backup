@@ -2,22 +2,38 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties.impl;
 
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
+
+import de.uni_paderborn.fujaba.muml.hardware.hwplatforminstance.HwplatforminstancePackage;
+
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
+
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstancePackage;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
-import de.uni_paderborn.fujaba.muml.hardware.platform.PlatformPackage;
-import de.uni_paderborn.fujaba.muml.hardware.platforminstance.PlatforminstancePackage;
-import de.uni_paderborn.fujaba.muml.hardware.resourcetype.ResourcetypePackage;
+
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
+
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
+
 import de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationPackageImpl;
+
+import de.uni_paderborn.fujaba.muml.psm.cicmapping.CicmappingPackage;
+
+import de.uni_paderborn.fujaba.muml.psm.cicmapping.impl.CicmappingPackageImpl;
+
 import de.uni_paderborn.fujaba.muml.psm.properties.ComponentInstanceExecutionProperties;
 import de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesFactory;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.muml.psm.properties.WCETpair;
+
 import de.uni_paderborn.fujaba.muml.valuetype.ValuetypePackage;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -95,21 +111,25 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		isInited = true;
 
 		// Initialize simple dependencies
-		ResourcetypePackage.eINSTANCE.eClass();
-		PlatformPackage.eINSTANCE.eClass();
+		HwplatformPackage.eINSTANCE.eClass();
 		HwvaluetypePackage.eINSTANCE.eClass();
-		PlatforminstancePackage.eINSTANCE.eClass();
+		HwplatforminstancePackage.eINSTANCE.eClass();
+		HwresourcePackage.eINSTANCE.eClass();
+		HwresourceinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);
+		CicmappingPackageImpl theCicmappingPackage = (CicmappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CicmappingPackage.eNS_URI) instanceof CicmappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CicmappingPackage.eNS_URI) : CicmappingPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePropertiesPackage.createPackageContents();
 		theAllocationPackage.createPackageContents();
+		theCicmappingPackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePropertiesPackage.initializePackageContents();
 		theAllocationPackage.initializePackageContents();
+		theCicmappingPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePropertiesPackage.freeze();
@@ -288,7 +308,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		// Obtain other dependent packages
 		InstancePackage theInstancePackage = (InstancePackage)EPackage.Registry.INSTANCE.getEPackage(InstancePackage.eNS_URI);
 		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
-		PlatformPackage thePlatformPackage = (PlatformPackage)EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI);
+		HwresourceinstancePackage theHwresourceinstancePackage = (HwresourceinstancePackage)EPackage.Registry.INSTANCE.getEPackage(HwresourceinstancePackage.eNS_URI);
 		HwvaluetypePackage theHwvaluetypePackage = (HwvaluetypePackage)EPackage.Registry.INSTANCE.getEPackage(HwvaluetypePackage.eNS_URI);
 
 		// Create type parameters
@@ -306,14 +326,36 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		initEClass(wceTpairEClass, WCETpair.class, "WCETpair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWCETpair_Amount(), theValuetypePackage.getTimeValue(), null, "amount", null, 1, 1, WCETpair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWCETpair_Resource(), thePlatformPackage.getResourceInstance(), null, "resource", null, 1, 1, WCETpair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWCETpair_Resource(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resource", null, 1, 1, WCETpair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(memoryPairEClass, MemoryPair.class, "MemoryPair", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMemoryPair_Amount(), theHwvaluetypePackage.getDataSize(), null, "amount", null, 1, 1, MemoryPair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMemoryPair_Resource(), thePlatformPackage.getResourceInstance(), null, "resource", null, 1, 1, MemoryPair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMemoryPair_Resource(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resource", null, 1, 1, MemoryPair.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });
 	}
 
 } //PropertiesPackageImpl

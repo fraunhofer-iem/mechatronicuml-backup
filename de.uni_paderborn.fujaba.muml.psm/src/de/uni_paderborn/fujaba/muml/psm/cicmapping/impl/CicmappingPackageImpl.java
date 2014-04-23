@@ -1,6 +1,6 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.allocation.impl;
+package de.uni_paderborn.fujaba.muml.psm.cicmapping.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.HwplatformPackage;
 
@@ -14,14 +14,16 @@ import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.HwvaluetypePackage;
 
 import de.uni_paderborn.fujaba.muml.instance.InstancePackage;
 
-import de.uni_paderborn.fujaba.muml.psm.allocation.Allocation;
-import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationFactory;
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
-import de.uni_paderborn.fujaba.muml.psm.allocation.SystemAllocation;
 
+import de.uni_paderborn.fujaba.muml.psm.allocation.impl.AllocationPackageImpl;
+
+import de.uni_paderborn.fujaba.muml.psm.cicmapping.CICMapping;
+import de.uni_paderborn.fujaba.muml.psm.cicmapping.CICSystemMapping;
+import de.uni_paderborn.fujaba.muml.psm.cicmapping.CicmappingFactory;
 import de.uni_paderborn.fujaba.muml.psm.cicmapping.CicmappingPackage;
 
-import de.uni_paderborn.fujaba.muml.psm.cicmapping.impl.CicmappingPackageImpl;
+import de.uni_paderborn.fujaba.muml.psm.cicmapping.util.CicmappingValidator;
 
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 
@@ -30,6 +32,7 @@ import de.uni_paderborn.fujaba.muml.psm.properties.impl.PropertiesPackageImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -39,20 +42,20 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AllocationPackageImpl extends EPackageImpl implements AllocationPackage {
+public class CicmappingPackageImpl extends EPackageImpl implements CicmappingPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass systemAllocationEClass = null;
+	private EClass cicSystemMappingEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass allocationEClass = null;
+	private EClass cicMappingEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -65,12 +68,12 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage#eNS_URI
+	 * @see de.uni_paderborn.fujaba.muml.psm.cicmapping.CicmappingPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private AllocationPackageImpl() {
-		super(eNS_URI, AllocationFactory.eINSTANCE);
+	private CicmappingPackageImpl() {
+		super(eNS_URI, CicmappingFactory.eINSTANCE);
 	}
 
 	/**
@@ -83,7 +86,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link AllocationPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link CicmappingPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,11 +95,11 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static AllocationPackage init() {
-		if (isInited) return (AllocationPackage)EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI);
+	public static CicmappingPackage init() {
+		if (isInited) return (CicmappingPackage)EPackage.Registry.INSTANCE.getEPackage(CicmappingPackage.eNS_URI);
 
 		// Obtain or create and register package
-		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new AllocationPackageImpl());
+		CicmappingPackageImpl theCicmappingPackage = (CicmappingPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CicmappingPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CicmappingPackageImpl());
 
 		isInited = true;
 
@@ -108,26 +111,35 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		HwresourceinstancePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
+		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);
 		PropertiesPackageImpl thePropertiesPackage = (PropertiesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PropertiesPackage.eNS_URI) instanceof PropertiesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PropertiesPackage.eNS_URI) : PropertiesPackage.eINSTANCE);
-		CicmappingPackageImpl theCicmappingPackage = (CicmappingPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CicmappingPackage.eNS_URI) instanceof CicmappingPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CicmappingPackage.eNS_URI) : CicmappingPackage.eINSTANCE);
 
 		// Create package meta-data objects
+		theCicmappingPackage.createPackageContents();
 		theAllocationPackage.createPackageContents();
 		thePropertiesPackage.createPackageContents();
-		theCicmappingPackage.createPackageContents();
 
 		// Initialize created meta-data
+		theCicmappingPackage.initializePackageContents();
 		theAllocationPackage.initializePackageContents();
 		thePropertiesPackage.initializePackageContents();
-		theCicmappingPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theCicmappingPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return CicmappingValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
-		theAllocationPackage.freeze();
+		theCicmappingPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(AllocationPackage.eNS_URI, theAllocationPackage);
-		return theAllocationPackage;
+		EPackage.Registry.INSTANCE.put(CicmappingPackage.eNS_URI, theCicmappingPackage);
+		return theCicmappingPackage;
 	}
 
 	/**
@@ -135,8 +147,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSystemAllocation() {
-		return systemAllocationEClass;
+	public EClass getCICSystemMapping() {
+		return cicSystemMappingEClass;
 	}
 
 	/**
@@ -144,8 +156,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSystemAllocation_Allocations() {
-		return (EReference)systemAllocationEClass.getEStructuralFeatures().get(0);
+	public EReference getCICSystemMapping_Mappings() {
+		return (EReference)cicSystemMappingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -153,8 +165,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAllocation() {
-		return allocationEClass;
+	public EClass getCICMapping() {
+		return cicMappingEClass;
 	}
 
 	/**
@@ -162,8 +174,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAllocation_ComponentInstance() {
-		return (EReference)allocationEClass.getEStructuralFeatures().get(0);
+	public EReference getCICMapping_Cic() {
+		return (EReference)cicMappingEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -171,8 +183,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAllocation_ResourceInstance() {
-		return (EReference)allocationEClass.getEStructuralFeatures().get(1);
+	public EReference getCICMapping_DeviceInstance() {
+		return (EReference)cicMappingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -180,8 +192,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AllocationFactory getAllocationFactory() {
-		return (AllocationFactory)getEFactoryInstance();
+	public CicmappingFactory getCicmappingFactory() {
+		return (CicmappingFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -203,12 +215,12 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		isCreated = true;
 
 		// Create classes and their features
-		systemAllocationEClass = createEClass(SYSTEM_ALLOCATION);
-		createEReference(systemAllocationEClass, SYSTEM_ALLOCATION__ALLOCATIONS);
+		cicSystemMappingEClass = createEClass(CIC_SYSTEM_MAPPING);
+		createEReference(cicSystemMappingEClass, CIC_SYSTEM_MAPPING__MAPPINGS);
 
-		allocationEClass = createEClass(ALLOCATION);
-		createEReference(allocationEClass, ALLOCATION__COMPONENT_INSTANCE);
-		createEReference(allocationEClass, ALLOCATION__RESOURCE_INSTANCE);
+		cicMappingEClass = createEClass(CIC_MAPPING);
+		createEReference(cicMappingEClass, CIC_MAPPING__CIC);
+		createEReference(cicMappingEClass, CIC_MAPPING__DEVICE_INSTANCE);
 	}
 
 	/**
@@ -245,12 +257,12 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(systemAllocationEClass, SystemAllocation.class, "SystemAllocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSystemAllocation_Allocations(), this.getAllocation(), null, "allocations", null, 1, -1, SystemAllocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(cicSystemMappingEClass, CICSystemMapping.class, "CICSystemMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCICSystemMapping_Mappings(), this.getCICMapping(), null, "mappings", null, 0, -1, CICSystemMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(allocationEClass, Allocation.class, "Allocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAllocation_ComponentInstance(), theInstancePackage.getComponentInstance(), null, "componentInstance", null, 1, 1, Allocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAllocation_ResourceInstance(), theHwresourceinstancePackage.getStructuredResourceInstance(), null, "resourceInstance", null, 1, 1, Allocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(cicMappingEClass, CICMapping.class, "CICMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCICMapping_Cic(), theInstancePackage.getComponentInstance(), null, "cic", null, 1, 1, CICMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCICMapping_DeviceInstance(), theHwresourceinstancePackage.getDeviceInstance(), null, "deviceInstance", null, 1, 1, CICMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -258,6 +270,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 	}
 
 	/**
@@ -267,7 +281,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";		
+		String source = "http://www.eclipse.org/emf/2002/Ecore";			
 		addAnnotation
 		  (this, 
 		   source, 
@@ -275,7 +289,29 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
+		   });			
+		addAnnotation
+		  (cicMappingEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ComponentInstanceIsContinousComponentInstance"
+		   });	
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";						
+		addAnnotation
+		  (cicMappingEClass, 
+		   source, 
+		   new String[] {
+			 "ComponentInstanceIsContinousComponentInstance", "self.cic.componentType.componentKind=muml::component::ComponentKind::CONTINUOUS_COMPONENT"
 		   });
 	}
 
-} //AllocationPackageImpl
+} //CicmappingPackageImpl

@@ -7,56 +7,15 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: de.uni_paderborn.fujaba.muml.psm;uses:="org.eclipse.emf.ecore",
- de.uni_paderborn.fujaba.muml.psm.allocation;
-  uses:="org.eclipse.emf.ecore,
-   org.eclipse.emf.common.util,
-   de.uni_paderborn.fujaba.muml.hardware.platform,
-   de.uni_paderborn.fujaba.muml.instance",
- de.uni_paderborn.fujaba.muml.psm.allocation.impl;
-  uses:="de.uni_paderborn.fujaba.muml.psm.allocation,
-   org.eclipse.emf.ecore,
-   org.eclipse.emf.common.util,
-   de.uni_paderborn.fujaba.muml.hardware.platform,
-   org.eclipse.emf.common.notify,
-   org.eclipse.emf.ecore.impl,
-   de.uni_paderborn.fujaba.muml.instance",
- de.uni_paderborn.fujaba.muml.psm.allocation.util;
-  uses:="de.uni_paderborn.fujaba.muml.psm.allocation,
-   org.eclipse.emf.ecore.util,
-   org.eclipse.emf.ecore,
-   org.eclipse.emf.common.notify.impl,
-   org.eclipse.emf.common.notify",
- de.uni_paderborn.fujaba.muml.psm.impl;uses:="org.eclipse.emf.ecore,de.uni_paderborn.fujaba.muml.psm,org.eclipse.emf.ecore.impl",
- de.uni_paderborn.fujaba.muml.psm.properties;
-  uses:="org.eclipse.emf.ecore,
-   de.uni_paderborn.fujaba.muml.valuetype,
-   org.eclipse.emf.common.util,
-   de.uni_paderborn.fujaba.muml.hardware.platform,
-   de.uni_paderborn.fujaba.muml.instance,
-   de.uni_paderborn.fujaba.muml.hardware.hwvaluetype",
- de.uni_paderborn.fujaba.muml.psm.properties.impl;
-  uses:="org.eclipse.emf.ecore,
-   de.uni_paderborn.fujaba.muml.psm.properties,
-   de.uni_paderborn.fujaba.muml.valuetype,
-   org.eclipse.emf.common.util,
-   de.uni_paderborn.fujaba.muml.hardware.platform,
-   org.eclipse.emf.common.notify,
-   org.eclipse.emf.ecore.impl,
-   de.uni_paderborn.fujaba.muml.instance,
-   de.uni_paderborn.fujaba.muml.hardware.hwvaluetype",
- de.uni_paderborn.fujaba.muml.psm.properties.util;
-  uses:="org.eclipse.emf.ecore.util,
-   org.eclipse.emf.ecore,
-   de.uni_paderborn.fujaba.muml.psm.properties,
-   org.eclipse.emf.common.notify.impl,
-   org.eclipse.emf.common.notify",
- de.uni_paderborn.fujaba.muml.psm.util;
-  uses:="org.eclipse.emf.ecore.util,
-   org.eclipse.emf.ecore,
-   org.eclipse.emf.common.notify.impl,
-   de.uni_paderborn.fujaba.muml.psm,
-   org.eclipse.emf.common.notify"
+Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation;uses:="org.eclipse.emf.ecore,  org.eclipse.emf.common.util,  de.uni_paderborn.fujaba.muml.hardware.platform,  de.uni_paderborn.fujaba.muml.instance",
+ de.uni_paderborn.fujaba.muml.psm.allocation.impl;uses:="de.uni_paderborn.fujaba.muml.psm.allocation,  org.eclipse.emf.ecore,  org.eclipse.emf.common.util,  de.uni_paderborn.fujaba.muml.hardware.platform,  org.eclipse.emf.common.notify,  org.eclipse.emf.ecore.impl,  de.uni_paderborn.fujaba.muml.instance",
+ de.uni_paderborn.fujaba.muml.psm.allocation.util;uses:="de.uni_paderborn.fujaba.muml.psm.allocation,  org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  org.eclipse.emf.common.notify.impl,  org.eclipse.emf.common.notify",
+ de.uni_paderborn.fujaba.muml.psm.cicmapping,
+ de.uni_paderborn.fujaba.muml.psm.cicmapping.impl,
+ de.uni_paderborn.fujaba.muml.psm.cicmapping.util,
+ de.uni_paderborn.fujaba.muml.psm.properties;uses:="org.eclipse.emf.ecore,  de.uni_paderborn.fujaba.muml.valuetype,  org.eclipse.emf.common.util,  de.uni_paderborn.fujaba.muml.hardware.platform,  de.uni_paderborn.fujaba.muml.instance,  de.uni_paderborn.fujaba.muml.hardware.hwvaluetype",
+ de.uni_paderborn.fujaba.muml.psm.properties.impl;uses:="org.eclipse.emf.ecore,  de.uni_paderborn.fujaba.muml.psm.properties,  de.uni_paderborn.fujaba.muml.valuetype,  org.eclipse.emf.common.util,  de.uni_paderborn.fujaba.muml.hardware.platform,  org.eclipse.emf.common.notify,  org.eclipse.emf.ecore.impl,  de.uni_paderborn.fujaba.muml.instance,  de.uni_paderborn.fujaba.muml.hardware.hwvaluetype",
+ de.uni_paderborn.fujaba.muml.psm.properties.util;uses:="org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  de.uni_paderborn.fujaba.muml.psm.properties,  org.eclipse.emf.common.notify.impl,  org.eclipse.emf.common.notify"
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.storydriven.core;bundle-version="1.0.1",

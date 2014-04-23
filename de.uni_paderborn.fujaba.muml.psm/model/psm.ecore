@@ -16,7 +16,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstance" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceInstance" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//resourceinstance/StructuredResourceInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="properties" nsURI="http://www.fujaba.de/muml/psm/properties/0.1.0"
@@ -40,13 +40,13 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="amount" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//valuetype/TimeValue"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resource" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//resourceinstance/StructuredResourceInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MemoryPair">
       <eStructuralFeatures xsi:type="ecore:EReference" name="amount" lowerBound="1"
           eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwvaluetype/DataSize"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resource" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//resourceinstance/StructuredResourceInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/StructuredResourceInstance"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="cicmapping" nsURI="http://www.fujaba.de/muml/psm/cic,apping/0.1.0"
@@ -75,7 +75,7 @@
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="cic" lowerBound="1" eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml/model/muml.ecore#//instance/ComponentInstance"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="deviceInstance" lowerBound="1"
-          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//resourceinstance/DeviceInstance"/>
+          eType="ecore:EClass ../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.ecore#//hwresourceinstance/DeviceInstance"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

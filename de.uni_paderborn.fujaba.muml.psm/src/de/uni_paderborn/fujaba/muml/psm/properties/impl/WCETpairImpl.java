@@ -2,7 +2,7 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
 import de.uni_paderborn.fujaba.muml.psm.properties.WCETpair;
@@ -50,7 +50,7 @@ public class WCETpairImpl extends MinimalEObjectImpl.Container implements WCETpa
 	 * @generated
 	 * @ordered
 	 */
-	protected ResourceInstance resource;
+	protected StructuredResourceInstance resource;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,10 +114,10 @@ public class WCETpairImpl extends MinimalEObjectImpl.Container implements WCETpa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceInstance getResource() {
+	public StructuredResourceInstance getResource() {
 		if (resource != null && resource.eIsProxy()) {
 			InternalEObject oldResource = (InternalEObject)resource;
-			resource = (ResourceInstance)eResolveProxy(oldResource);
+			resource = (StructuredResourceInstance)eResolveProxy(oldResource);
 			if (resource != oldResource) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PropertiesPackage.WCE_TPAIR__RESOURCE, oldResource, resource));
@@ -131,7 +131,7 @@ public class WCETpairImpl extends MinimalEObjectImpl.Container implements WCETpa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceInstance basicGetResource() {
+	public StructuredResourceInstance basicGetResource() {
 		return resource;
 	}
 
@@ -140,8 +140,8 @@ public class WCETpairImpl extends MinimalEObjectImpl.Container implements WCETpa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResource(ResourceInstance newResource) {
-		ResourceInstance oldResource = resource;
+	public void setResource(StructuredResourceInstance newResource) {
+		StructuredResourceInstance oldResource = resource;
 		resource = newResource;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.WCE_TPAIR__RESOURCE, oldResource, resource));
@@ -177,7 +177,7 @@ public class WCETpairImpl extends MinimalEObjectImpl.Container implements WCETpa
 				setAmount((TimeValue)newValue);
 				return;
 			case PropertiesPackage.WCE_TPAIR__RESOURCE:
-				setResource((ResourceInstance)newValue);
+				setResource((StructuredResourceInstance)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,7 +195,7 @@ public class WCETpairImpl extends MinimalEObjectImpl.Container implements WCETpa
 				setAmount((TimeValue)null);
 				return;
 			case PropertiesPackage.WCE_TPAIR__RESOURCE:
-				setResource((ResourceInstance)null);
+				setResource((StructuredResourceInstance)null);
 				return;
 		}
 		super.eUnset(featureID);

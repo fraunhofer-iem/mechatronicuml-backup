@@ -2,9 +2,9 @@
  */
 package de.uni_paderborn.fujaba.muml.psm.properties.impl;
 
-import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
+import de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.StructuredResourceInstance;
 
-import de.uni_paderborn.fujaba.muml.hardware.platform.ResourceInstance;
+import de.uni_paderborn.fujaba.muml.hardware.hwvaluetype.DataSize;
 
 import de.uni_paderborn.fujaba.muml.psm.properties.MemoryPair;
 import de.uni_paderborn.fujaba.muml.psm.properties.PropertiesPackage;
@@ -50,7 +50,7 @@ public class MemoryPairImpl extends MinimalEObjectImpl.Container implements Memo
 	 * @generated
 	 * @ordered
 	 */
-	protected ResourceInstance resource;
+	protected StructuredResourceInstance resource;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,10 +114,10 @@ public class MemoryPairImpl extends MinimalEObjectImpl.Container implements Memo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceInstance getResource() {
+	public StructuredResourceInstance getResource() {
 		if (resource != null && resource.eIsProxy()) {
 			InternalEObject oldResource = (InternalEObject)resource;
-			resource = (ResourceInstance)eResolveProxy(oldResource);
+			resource = (StructuredResourceInstance)eResolveProxy(oldResource);
 			if (resource != oldResource) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PropertiesPackage.MEMORY_PAIR__RESOURCE, oldResource, resource));
@@ -131,7 +131,7 @@ public class MemoryPairImpl extends MinimalEObjectImpl.Container implements Memo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ResourceInstance basicGetResource() {
+	public StructuredResourceInstance basicGetResource() {
 		return resource;
 	}
 
@@ -140,8 +140,8 @@ public class MemoryPairImpl extends MinimalEObjectImpl.Container implements Memo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setResource(ResourceInstance newResource) {
-		ResourceInstance oldResource = resource;
+	public void setResource(StructuredResourceInstance newResource) {
+		StructuredResourceInstance oldResource = resource;
 		resource = newResource;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PropertiesPackage.MEMORY_PAIR__RESOURCE, oldResource, resource));
@@ -177,7 +177,7 @@ public class MemoryPairImpl extends MinimalEObjectImpl.Container implements Memo
 				setAmount((DataSize)newValue);
 				return;
 			case PropertiesPackage.MEMORY_PAIR__RESOURCE:
-				setResource((ResourceInstance)newValue);
+				setResource((StructuredResourceInstance)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,7 +195,7 @@ public class MemoryPairImpl extends MinimalEObjectImpl.Container implements Memo
 				setAmount((DataSize)null);
 				return;
 			case PropertiesPackage.MEMORY_PAIR__RESOURCE:
-				setResource((ResourceInstance)null);
+				setResource((StructuredResourceInstance)null);
 				return;
 		}
 		super.eUnset(featureID);

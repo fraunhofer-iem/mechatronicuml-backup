@@ -1,8 +1,8 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.util;
+package de.uni_paderborn.fujaba.muml.psm.cicmapping.util;
 
-import de.uni_paderborn.fujaba.muml.psm.*;
+import de.uni_paderborn.fujaba.muml.psm.cicmapping.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -19,17 +19,17 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see de.uni_paderborn.fujaba.muml.psm.PsmPackage
+ * @see de.uni_paderborn.fujaba.muml.psm.cicmapping.CicmappingPackage
  * @generated
  */
-public class PsmSwitch<T> extends Switch<T> {
+public class CicmappingSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static PsmPackage modelPackage;
+	protected static CicmappingPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class PsmSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PsmSwitch() {
+	public CicmappingSwitch() {
 		if (modelPackage == null) {
-			modelPackage = PsmPackage.eINSTANCE;
+			modelPackage = CicmappingPackage.eINSTANCE;
 		}
 	}
 
@@ -66,12 +66,51 @@ public class PsmSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			
+			case CicmappingPackage.CIC_SYSTEM_MAPPING: {
+				CICSystemMapping cicSystemMapping = (CICSystemMapping)theEObject;
+				T result = caseCICSystemMapping(cicSystemMapping);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CicmappingPackage.CIC_MAPPING: {
+				CICMapping cicMapping = (CICMapping)theEObject;
+				T result = caseCICMapping(cicMapping);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
 
-	
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>CIC System Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>CIC System Mapping</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCICSystemMapping(CICSystemMapping object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>CIC Mapping</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>CIC Mapping</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCICMapping(CICMapping object) {
+		return null;
+	}
 
 	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
@@ -89,4 +128,4 @@ public class PsmSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //PsmSwitch
+} //CicmappingSwitch
