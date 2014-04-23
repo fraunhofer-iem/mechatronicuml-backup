@@ -416,13 +416,22 @@ public interface ComparablesPackage extends EPackage {
 	int CONST_EXPR__VAL = MAP_EXPR_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONST_EXPR__TIME_UNIT = MAP_EXPR_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Const Expr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONST_EXPR_FEATURE_COUNT = MAP_EXPR_FEATURE_COUNT + 1;
+	int CONST_EXPR_FEATURE_COUNT = MAP_EXPR_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EClass</em>' operation.
@@ -1300,6 +1309,17 @@ public interface ComparablesPackage extends EPackage {
 	EAttribute getConstExpr_Val();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr#getTimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Unit</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr#getTimeUnit()
+	 * @see #getConstExpr()
+	 * @generated
+	 */
+	EAttribute getConstExpr_TimeUnit();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.MapExpr <em>Map Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1429,6 +1449,14 @@ public interface ComparablesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONST_EXPR__VAL = eINSTANCE.getConstExpr_Val();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONST_EXPR__TIME_UNIT = eINSTANCE.getConstExpr_TimeUnit();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.impl.MapExprImpl <em>Map Expr</em>}' class.

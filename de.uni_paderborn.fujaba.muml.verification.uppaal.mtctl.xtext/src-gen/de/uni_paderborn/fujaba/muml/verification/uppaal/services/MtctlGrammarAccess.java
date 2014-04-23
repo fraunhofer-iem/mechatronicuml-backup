@@ -1385,18 +1385,70 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ConstExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstExpr");
-		private final Assignment cValAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValEIntParserRuleCall_0 = (RuleCall)cValAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cValAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cValEIntParserRuleCall_0_0 = (RuleCall)cValAssignment_0.eContents().get(0);
+		private final Assignment cTimeUnitAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTimeUnitTimeUnitExprParserRuleCall_1_0 = (RuleCall)cTimeUnitAssignment_1.eContents().get(0);
 		
 		//ConstExpr returns mtctl::ConstExpr:
-		//	val=EInt;
+		//	val=EInt timeUnit=TimeUnitExpr?;
 		public ParserRule getRule() { return rule; }
 
+		//val=EInt timeUnit=TimeUnitExpr?
+		public Group getGroup() { return cGroup; }
+
 		//val=EInt
-		public Assignment getValAssignment() { return cValAssignment; }
+		public Assignment getValAssignment_0() { return cValAssignment_0; }
 
 		//EInt
-		public RuleCall getValEIntParserRuleCall_0() { return cValEIntParserRuleCall_0; }
+		public RuleCall getValEIntParserRuleCall_0_0() { return cValEIntParserRuleCall_0_0; }
+
+		//timeUnit=TimeUnitExpr?
+		public Assignment getTimeUnitAssignment_1() { return cTimeUnitAssignment_1; }
+
+		//TimeUnitExpr
+		public RuleCall getTimeUnitTimeUnitExprParserRuleCall_1_0() { return cTimeUnitTimeUnitExprParserRuleCall_1_0; }
+	}
+
+	public class TimeUnitExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TimeUnitExpr");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cDKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cHKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cMKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cSKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cMsKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cSKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Keyword cNsKeyword_6 = (Keyword)cAlternatives.eContents().get(6);
+		
+		//TimeUnitExpr returns valuetype::TimeUnit:
+		//	"d" | "h" | "m" | "s" | "ms" | "µs" | "ns";
+		public ParserRule getRule() { return rule; }
+
+		//"d" | "h" | "m" | "s" | "ms" | "µs" | "ns"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"d"
+		public Keyword getDKeyword_0() { return cDKeyword_0; }
+
+		//"h"
+		public Keyword getHKeyword_1() { return cHKeyword_1; }
+
+		//"m"
+		public Keyword getMKeyword_2() { return cMKeyword_2; }
+
+		//"s"
+		public Keyword getSKeyword_3() { return cSKeyword_3; }
+
+		//"ms"
+		public Keyword getMsKeyword_4() { return cMsKeyword_4; }
+
+		//"µs"
+		public Keyword getSKeyword_5() { return cSKeyword_5; }
+
+		//"ns"
+		public Keyword getNsKeyword_6() { return cNsKeyword_6; }
 	}
 
 	public class SetExprElements extends AbstractParserRuleElementFinder {
@@ -1679,6 +1731,7 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	private TargetStateExprElements pTargetStateExpr;
 	private MumlElemExprElements pMumlElemExpr;
 	private ConstExprElements pConstExpr;
+	private TimeUnitExprElements pTimeUnitExpr;
 	private SetExprElements pSetExpr;
 	private IntervalSetExprElements pIntervalSetExpr;
 	private QualifiedNameElements pQualifiedName;
@@ -2190,13 +2243,23 @@ public class MtctlGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ConstExpr returns mtctl::ConstExpr:
-	//	val=EInt;
+	//	val=EInt timeUnit=TimeUnitExpr?;
 	public ConstExprElements getConstExprAccess() {
 		return (pConstExpr != null) ? pConstExpr : (pConstExpr = new ConstExprElements());
 	}
 	
 	public ParserRule getConstExprRule() {
 		return getConstExprAccess().getRule();
+	}
+
+	//TimeUnitExpr returns valuetype::TimeUnit:
+	//	"d" | "h" | "m" | "s" | "ms" | "µs" | "ns";
+	public TimeUnitExprElements getTimeUnitExprAccess() {
+		return (pTimeUnitExpr != null) ? pTimeUnitExpr : (pTimeUnitExpr = new TimeUnitExprElements());
+	}
+	
+	public ParserRule getTimeUnitExprRule() {
+		return getTimeUnitExprAccess().getRule();
 	}
 
 	////Sets

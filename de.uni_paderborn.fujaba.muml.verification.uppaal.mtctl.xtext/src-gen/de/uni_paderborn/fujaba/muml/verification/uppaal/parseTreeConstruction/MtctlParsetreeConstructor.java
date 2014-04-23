@@ -75,7 +75,7 @@ protected class ThisRootNode extends RootToken {
 			case 42: return new SourceStateExpr_Group(this, this, 42, inst);
 			case 43: return new TargetStateExpr_Group(this, this, 43, inst);
 			case 44: return new MumlElemExpr_ElemAssignment(this, this, 44, inst);
-			case 45: return new ConstExpr_ValAssignment(this, this, 45, inst);
+			case 45: return new ConstExpr_Group(this, this, 45, inst);
 			case 46: return new SetExpr_Alternatives(this, this, 46, inst);
 			case 47: return new IntervalSetExpr_Group(this, this, 47, inst);
 			default: return null;
@@ -6151,7 +6151,7 @@ protected class MapExpr_ConstExprParserRuleCall_2 extends RuleCallToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ConstExpr_ValAssignment(this, this, 0, inst);
+			case 0: return new ConstExpr_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -6160,7 +6160,7 @@ protected class MapExpr_ConstExprParserRuleCall_2 extends RuleCallToken {
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getConstExprRule().getType().getClassifier())
 			return null;
-		if(checkForRecursion(ConstExpr_ValAssignment.class, eObjectConsumer)) return null;
+		if(checkForRecursion(ConstExpr_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -6375,7 +6375,7 @@ protected class IntegerMapExpr_ConstExprParserRuleCall_2 extends RuleCallToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ConstExpr_ValAssignment(this, this, 0, inst);
+			case 0: return new ConstExpr_Group(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -6384,7 +6384,7 @@ protected class IntegerMapExpr_ConstExprParserRuleCall_2 extends RuleCallToken {
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getConstExprRule().getType().getClassifier())
 			return null;
-		if(checkForRecursion(ConstExpr_ValAssignment.class, eObjectConsumer)) return null;
+		if(checkForRecursion(ConstExpr_Group.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	
@@ -7240,20 +7240,50 @@ protected class MumlElemExpr_ElemAssignment extends AssignmentToken  {
 /************ begin Rule ConstExpr ****************
  *
  * ConstExpr returns mtctl::ConstExpr:
- * 	val=EInt;
+ * 	val=EInt timeUnit=TimeUnitExpr?;
  *
  **/
 
-// val=EInt
-protected class ConstExpr_ValAssignment extends AssignmentToken  {
+// val=EInt timeUnit=TimeUnitExpr?
+protected class ConstExpr_Group extends GroupToken {
 	
-	public ConstExpr_ValAssignment(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ConstExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getConstExprAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ConstExpr_TimeUnitAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ConstExpr_ValAssignment_0(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getConstExprRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// val=EInt
+protected class ConstExpr_ValAssignment_0 extends AssignmentToken  {
+	
+	public ConstExpr_ValAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getConstExprAccess().getValAssignment();
+		return grammarAccess.getConstExprAccess().getValAssignment_0();
 	}
 
     @Override
@@ -7265,13 +7295,11 @@ protected class ConstExpr_ValAssignment extends AssignmentToken  {
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if(getEObject().eClass() != grammarAccess.getConstExprRule().getType().getClassifier())
-			return null;
 		if((value = eObjectConsumer.getConsumable("val",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("val");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getConstExprAccess().getValEIntParserRuleCall_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getConstExprAccess().getValEIntParserRuleCall_0_0(), value, null)) {
 			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getConstExprAccess().getValEIntParserRuleCall_0();
+			element = grammarAccess.getConstExprAccess().getValEIntParserRuleCall_0_0();
 			return obj;
 		}
 		return null;
@@ -7279,7 +7307,43 @@ protected class ConstExpr_ValAssignment extends AssignmentToken  {
 
 }
 
+// timeUnit=TimeUnitExpr?
+protected class ConstExpr_TimeUnitAssignment_1 extends AssignmentToken  {
+	
+	public ConstExpr_TimeUnitAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getConstExprAccess().getTimeUnitAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ConstExpr_ValAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("timeUnit",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("timeUnit");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getConstExprAccess().getTimeUnitTimeUnitExprParserRuleCall_1_0(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getConstExprAccess().getTimeUnitTimeUnitExprParserRuleCall_1_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+
 /************ end Rule ConstExpr ****************/
+
 
 
 /************ begin Rule SetExpr ****************

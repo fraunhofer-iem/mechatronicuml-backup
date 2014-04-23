@@ -208,9 +208,12 @@ MumlElemExpr returns mtctl::MumlElemExpr:
 ;
 
 ConstExpr returns mtctl::ConstExpr:
-	val=EInt
+	val=EInt (timeUnit=TimeUnitExpr)?
 ;
 
+TimeUnitExpr returns valuetype::TimeUnit:
+	'd' | 'h' | 'm' | 's' | 'ms' | 'µs' | 'ns'
+;
 
 //Sets
 SetExpr returns mtctl::SetExpr:

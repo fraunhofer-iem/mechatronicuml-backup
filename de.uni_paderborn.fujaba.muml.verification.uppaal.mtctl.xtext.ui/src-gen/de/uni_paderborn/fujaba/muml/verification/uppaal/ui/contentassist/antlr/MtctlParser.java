@@ -52,6 +52,7 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMapExprAccess().getAlternatives(), "rule__MapExpr__Alternatives");
 					put(grammarAccess.getIntegerMapExprAccess().getAlternatives(), "rule__IntegerMapExpr__Alternatives");
 					put(grammarAccess.getStateMapExprAccess().getAlternatives(), "rule__StateMapExpr__Alternatives");
+					put(grammarAccess.getTimeUnitExprAccess().getAlternatives(), "rule__TimeUnitExpr__Alternatives");
 					put(grammarAccess.getSetExprAccess().getAlternatives(), "rule__SetExpr__Alternatives");
 					put(grammarAccess.getComparisonOpAccess().getAlternatives(), "rule__ComparisonOp__Alternatives");
 					put(grammarAccess.getPropertyAccess().getGroup(), "rule__Property__Group__0");
@@ -87,6 +88,7 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBufferMessageCountExprAccess().getGroup(), "rule__BufferMessageCountExpr__Group__0");
 					put(grammarAccess.getSourceStateExprAccess().getGroup(), "rule__SourceStateExpr__Group__0");
 					put(grammarAccess.getTargetStateExprAccess().getGroup(), "rule__TargetStateExpr__Group__0");
+					put(grammarAccess.getConstExprAccess().getGroup(), "rule__ConstExpr__Group__0");
 					put(grammarAccess.getSetExprAccess().getGroup_1(), "rule__SetExpr__Group_1__0");
 					put(grammarAccess.getSetExprAccess().getGroup_2(), "rule__SetExpr__Group_2__0");
 					put(grammarAccess.getSetExprAccess().getGroup_3(), "rule__SetExpr__Group_3__0");
@@ -134,7 +136,8 @@ public class MtctlParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSourceStateExprAccess().getTransitionAssignment_2(), "rule__SourceStateExpr__TransitionAssignment_2");
 					put(grammarAccess.getTargetStateExprAccess().getTransitionAssignment_2(), "rule__TargetStateExpr__TransitionAssignment_2");
 					put(grammarAccess.getMumlElemExprAccess().getElemAssignment(), "rule__MumlElemExpr__ElemAssignment");
-					put(grammarAccess.getConstExprAccess().getValAssignment(), "rule__ConstExpr__ValAssignment");
+					put(grammarAccess.getConstExprAccess().getValAssignment_0(), "rule__ConstExpr__ValAssignment_0");
+					put(grammarAccess.getConstExprAccess().getTimeUnitAssignment_1(), "rule__ConstExpr__TimeUnitAssignment_1");
 					put(grammarAccess.getIntervalSetExprAccess().getLowerValAssignment_2(), "rule__IntervalSetExpr__LowerValAssignment_2");
 					put(grammarAccess.getIntervalSetExprAccess().getUpperValAssignment_4(), "rule__IntervalSetExpr__UpperValAssignment_4");
 				}

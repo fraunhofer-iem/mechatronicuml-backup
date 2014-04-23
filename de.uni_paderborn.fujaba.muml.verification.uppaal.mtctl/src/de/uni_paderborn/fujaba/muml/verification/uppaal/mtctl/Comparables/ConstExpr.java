@@ -2,6 +2,8 @@
  */
 package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables;
 
+import java.util.concurrent.TimeUnit;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +18,7 @@ package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables;
  * The following features are supported:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr#getVal <em>Val</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr#getTimeUnit <em>Time Unit</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,5 +51,31 @@ public interface ConstExpr extends MapExpr {
 	 * @generated
 	 */
 	void setVal(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Time Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Time Unit</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Unit</em>' attribute.
+	 * @see #setTimeUnit(TimeUnit)
+	 * @see de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage#getConstExpr_TimeUnit()
+	 * @model dataType="de.uni_paderborn.fujaba.muml.valuetype.TimeUnit"
+	 * @generated
+	 */
+	TimeUnit getTimeUnit();
+
+	/**
+	 * Sets the value of the '{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ConstExpr#getTimeUnit <em>Time Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time Unit</em>' attribute.
+	 * @see #getTimeUnit()
+	 * @generated
+	 */
+	void setTimeUnit(TimeUnit value);
 
 } // ConstExpr

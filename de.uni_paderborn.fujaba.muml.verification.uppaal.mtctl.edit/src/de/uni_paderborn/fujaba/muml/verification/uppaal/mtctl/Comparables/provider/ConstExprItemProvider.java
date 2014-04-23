@@ -58,6 +58,7 @@ public class ConstExprItemProvider
 			super.getPropertyDescriptors(object);
 
 			addValPropertyDescriptor(object);
+			addTimeUnitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -80,6 +81,28 @@ public class ConstExprItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Time Unit feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimeUnitPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ConstExpr_timeUnit_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ConstExpr_timeUnit_feature", "_UI_ConstExpr_type"),
+				 ComparablesPackage.Literals.CONST_EXPR__TIME_UNIT,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -130,6 +153,7 @@ public class ConstExprItemProvider
 
 		switch (notification.getFeatureID(ConstExpr.class)) {
 			case ComparablesPackage.CONST_EXPR__VAL:
+			case ComparablesPackage.CONST_EXPR__TIME_UNIT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

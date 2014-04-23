@@ -2457,10 +2457,10 @@ ruleConstExpr returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConstExprAccess().getValEIntParserRuleCall_0()); 
+	        newCompositeNode(grammarAccess.getConstExprAccess().getValEIntParserRuleCall_0_0()); 
 	    }
 		lv_val_0_0=ruleEInt		{
 	        if ($current==null) {
@@ -2475,8 +2475,95 @@ ruleConstExpr returns [EObject current=null]
 	    }
 
 )
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getConstExprAccess().getTimeUnitTimeUnitExprParserRuleCall_1_0()); 
+	    }
+		lv_timeUnit_1_0=ruleTimeUnitExpr		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getConstExprRule());
+	        }
+       		set(
+       			$current, 
+       			"timeUnit",
+        		lv_timeUnit_1_0, 
+        		"TimeUnitExpr");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+)?)
 ;
+
+
+
+
+
+// Entry rule entryRuleTimeUnitExpr
+entryRuleTimeUnitExpr returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTimeUnitExprRule()); } 
+	 iv_ruleTimeUnitExpr=ruleTimeUnitExpr 
+	 { $current=$iv_ruleTimeUnitExpr.current.getText(); }  
+	 EOF 
+;
+
+// Rule TimeUnitExpr
+ruleTimeUnitExpr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='d' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getDKeyword_0()); 
+    }
+
+    |
+	kw='h' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getHKeyword_1()); 
+    }
+
+    |
+	kw='m' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMKeyword_2()); 
+    }
+
+    |
+	kw='s' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSKeyword_3()); 
+    }
+
+    |
+	kw='ms' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getMsKeyword_4()); 
+    }
+
+    |
+	kw='\u00B5s' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getSKeyword_5()); 
+    }
+
+    |
+	kw='ns' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTimeUnitExprAccess().getNsKeyword_6()); 
+    }
+)
+    ;
 
 
 

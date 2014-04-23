@@ -246,6 +246,15 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getConstExpr_TimeUnit() {
+		return (EAttribute)constExprEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMapExpr() {
 		return mapExprEClass;
 	}
@@ -337,6 +346,7 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 
 		constExprEClass = createEClass(CONST_EXPR);
 		createEAttribute(constExprEClass, CONST_EXPR__VAL);
+		createEAttribute(constExprEClass, CONST_EXPR__TIME_UNIT);
 
 		mapExprEClass = createEClass(MAP_EXPR);
 
@@ -375,6 +385,7 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		ValuetypePackage theValuetypePackage = (ValuetypePackage)EPackage.Registry.INSTANCE.getEPackage(ValuetypePackage.eNS_URI);
 		MtctlPackage theMtctlPackage = (MtctlPackage)EPackage.Registry.INSTANCE.getEPackage(MtctlPackage.eNS_URI);
 
 		// Create type parameters
@@ -396,6 +407,7 @@ public class ComparablesPackageImpl extends EPackageImpl implements ComparablesP
 
 		initEClass(constExprEClass, ConstExpr.class, "ConstExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConstExpr_Val(), ecorePackage.getEInt(), "val", null, 0, 1, ConstExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConstExpr_TimeUnit(), theValuetypePackage.getTimeUnit(), "timeUnit", null, 0, 1, ConstExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mapExprEClass, MapExpr.class, "MapExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
