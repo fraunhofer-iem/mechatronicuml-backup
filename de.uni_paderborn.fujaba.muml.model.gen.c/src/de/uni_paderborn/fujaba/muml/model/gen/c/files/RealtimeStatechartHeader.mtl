@@ -31,7 +31,7 @@
 	[variables(comp, rtsc)/]
 
 //METHOD STUBS
-	[constructor(rtsc)/]
+	[constructor(comp, rtsc)/]
 	[initialize(rtsc)/]
 	[destroy(rtsc)/]		
 	[process(rtsc)/]
@@ -152,8 +152,8 @@ struct [getClassName(rtsc)/] {
  * 
  * @param statechart
 */]
-[template public constructor (rtsc : RealtimeStatechart) post(trim())]
-	[getClassName(rtsc)/]* [getConstructorName(rtsc)/]();
+[template public constructor (component: Component, rtsc : RealtimeStatechart) post(trim())]
+	[getClassName(rtsc)/]* [getCreateMethodName(rtsc)/]([getClassName(component)/]* parentComponent);
 [/template]
 
 [template private initialize (rtsc : RealtimeStatechart) post(trim())]

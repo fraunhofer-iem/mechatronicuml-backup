@@ -387,6 +387,7 @@
 		[/if]
 
 		[comment release Trigger events /]
+//release all created events
 	[if (not transition.triggerMessageEvent.oclIsUndefined())]
 		[for (msg : Message | transition.triggerMessageEvent.message)]		
 				free([msg.instanceOf.getName()/]Event);
