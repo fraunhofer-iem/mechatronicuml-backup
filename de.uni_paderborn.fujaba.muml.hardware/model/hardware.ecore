@@ -909,7 +909,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="protocols" lowerBound="1"
-          upperBound="-1" eType="#//hwresource/CommunicationProtocol" containment="true">
+          upperBound="-1" eType="#//hwresource/CommunicationProtocolRepository" containment="true">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The CommunicationProtocols that belong to this ResourceTypeRepository.&#xA;CommunicationProtocols are used to specify the protocol used by HWPort and CommunicationMedia."/>
         </eAnnotations>
@@ -917,7 +917,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="communicationMedia" upperBound="-1"
           eType="#//hwresource/CommunicationMedia" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocolRepository">
+    <eClassifiers xsi:type="ecore:EClass" name="CommunicationProtocolRepository" eSuperTypes="../../org.storydriven.core/model/core.ecore#//NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="communicationProtocols"
           upperBound="-1" eType="#//hwresource/CommunicationProtocol" containment="true"/>
     </eClassifiers>

@@ -4,18 +4,14 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
-import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeConnectionRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
-import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
@@ -24,26 +20,34 @@ import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicy
 /**
  * @generated
  */
-public class StructuredResourceStructuredResourceCompartmentEditPart extends
-		ShapeCompartmentEditPart {
+public class CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart
+		extends ListCompartmentEditPart {
 
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7001;
+	public static final int VISUAL_ID = 7002;
 
 	/**
 	 * @generated
 	 */
-	public StructuredResourceStructuredResourceCompartmentEditPart(View view) {
+	public CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart(
+			View view) {
 		super(view);
 	}
 
 	/**
 	 * @generated
 	 */
+	protected boolean hasModelChildrenChanged(Notification evt) {
+		return false;
+	}
+
+	/**
+	 * @generated
+	 */
 	public String getCompartmentName() {
-		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.StructuredResourceStructuredResourceCompartmentEditPart_title;
+		return de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart_title;
 	}
 
 	/**
@@ -73,11 +77,9 @@ public class StructuredResourceStructuredResourceCompartmentEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE,
-				new ResizableCompartmentEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.SEMANTIC_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.StructuredResourceStructuredResourceCompartmentItemSemanticEditPolicy());
+				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.CommunicationProtocolRepositoryProtocolRepositoryCompartmentItemSemanticEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(
@@ -86,7 +88,7 @@ public class StructuredResourceStructuredResourceCompartmentEditPart extends
 				new DragDropEditPolicy());
 		installEditPolicy(
 				EditPolicyRoles.CANONICAL_ROLE,
-				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.StructuredResourceStructuredResourceCompartmentCanonicalEditPolicy());
+				new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.policies.CommunicationProtocolRepositoryProtocolRepositoryCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -108,35 +110,41 @@ public class StructuredResourceStructuredResourceCompartmentEditPart extends
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Cache_3002) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3006) {
 				return this;
 			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Processor_3003) {
-				return this;
-			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.ProgrammableLogicDevice_3004) {
-				return this;
-			}
-			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.MemoryResource_3005) {
+			if (type == de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3007) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
 		}
 		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
-			if (RequestConstants.REQ_CONNECTION_END.equals(request.getType())) {
-				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request)
-						.getElementTypes()) {
-					if (type instanceof IElementType) {
-						IElementType elementType = (IElementType) type;
-						if (elementType
-								.equals(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.ProcessorOwnedCache_4001))
-							return super.getTargetEditPart(request);
-					}
-				}
-			}
 			return getParent().getTargetEditPart(request);
 		}
 		return super.getTargetEditPart(request);
+	}
+
+	// Fix to hide this Compartment, if it has no children. See also GMF bug:
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=147855
+	// and workaround:
+	// http://www.eclipse.org/forums/index.php/m/9761/
+	/**
+	 * @generated
+	 */
+	protected void refreshVisibility() {
+		final View notationView = getNotationView();
+		final boolean hasChildren = notationView.getChildren().size() > 0;
+		setVisibility(hasChildren);
+	}
+
+	// This is also part of the fix mentioned above.
+	/**
+	 * @generated
+	 */
+	@Override
+	protected void handleNotificationEvent(Notification event) {
+		refreshVisibility();
+		super.handleNotificationEvent(event);
 	}
 
 }

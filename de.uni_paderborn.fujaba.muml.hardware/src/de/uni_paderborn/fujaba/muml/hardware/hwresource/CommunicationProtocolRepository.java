@@ -3,8 +3,7 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwresource;
 
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
+import org.storydriven.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface CommunicationProtocolRepository extends EObject {
+public interface CommunicationProtocolRepository extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Communication Protocols</b></em>' containment reference list.
 	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol}.

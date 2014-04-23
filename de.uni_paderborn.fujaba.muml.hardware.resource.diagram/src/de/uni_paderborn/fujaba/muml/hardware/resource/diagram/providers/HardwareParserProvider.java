@@ -121,6 +121,25 @@ public class HardwareParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser communicationProtocolRepositoryName_5032Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getCommunicationProtocolRepositoryName_5032Parser() {
+		if (communicationProtocolRepositoryName_5032Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
+					features);
+			communicationProtocolRepositoryName_5032Parser = parser;
+		}
+		return communicationProtocolRepositoryName_5032Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser getCommunicationResourceLabel_5001Parser() {
 		return new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.CommunicationResourceLabelExpressionLabelParser5001();
 	}
@@ -310,6 +329,44 @@ public class HardwareParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser busProtocolName_5030Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getBusProtocolName_5030Parser() {
+		if (busProtocolName_5030Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
+					features);
+			busProtocolName_5030Parser = parser;
+		}
+		return busProtocolName_5030Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser linkProtocolName_5031Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getLinkProtocolName_5031Parser() {
+		if (linkProtocolName_5031Parser == null) {
+			EAttribute[] features = new EAttribute[] { CorePackage.eINSTANCE
+					.getNamedElement_Name() };
+			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser parser = new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.parsers.MessageFormatParser(
+					features);
+			linkProtocolName_5031Parser = parser;
+		}
+		return linkProtocolName_5031Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.DeviceNameEditPart.VISUAL_ID:
@@ -332,6 +389,8 @@ public class HardwareParserProvider extends AbstractProvider implements
 			return getLinkLabel_5028Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel22EditPart.VISUAL_ID:
 			return getLinkLabel_5029Parser();
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryNameEditPart.VISUAL_ID:
+			return getCommunicationProtocolRepositoryName_5032Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.HWPortLabelEditPart.VISUAL_ID:
 			return getCommunicationResourceLabel_5001Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheNameEditPart.VISUAL_ID:
@@ -370,6 +429,10 @@ public class HardwareParserProvider extends AbstractProvider implements
 			return getMemoryResourceLabel_5021Parser();
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.WrappingLabel18EditPart.VISUAL_ID:
 			return getMemoryResourceLabel_5022Parser();
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusProtocolNameEditPart.VISUAL_ID:
+			return getBusProtocolName_5030Parser();
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolNameEditPart.VISUAL_ID:
+			return getLinkProtocolName_5031Parser();
 		}
 		return null;
 	}

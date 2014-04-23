@@ -19,8 +19,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.storydriven.core.provider.NamedElementItemProvider;
 
 /**
  * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository} object.
@@ -29,7 +29,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class CommunicationProtocolRepositoryItemProvider
-	extends ItemProviderAdapter
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -110,7 +110,10 @@ public class CommunicationProtocolRepositoryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_CommunicationProtocolRepository_type");
+		String label = ((CommunicationProtocolRepository)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_CommunicationProtocolRepository_type") :
+			getString("_UI_CommunicationProtocolRepository_type") + " " + label;
 	}
 
 	/**

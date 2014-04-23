@@ -3,23 +3,17 @@
 package de.uni_paderborn.fujaba.muml.hardware.hwresource.impl;
 
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationMedia;
-import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
+import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.Resource;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.ResourceRepository;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.storydriven.core.impl.CommentableElementImpl;
 
 /**
@@ -56,7 +50,7 @@ public class ResourceRepositoryImpl extends CommentableElementImpl implements Re
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CommunicationProtocol> protocols;
+	protected EList<CommunicationProtocolRepository> protocols;
 
 	/**
 	 * The cached value of the '{@link #getCommunicationMedia() <em>Communication Media</em>}' containment reference list.
@@ -104,9 +98,9 @@ public class ResourceRepositoryImpl extends CommentableElementImpl implements Re
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<CommunicationProtocol> getProtocols() {
+	public EList<CommunicationProtocolRepository> getProtocols() {
 		if (protocols == null) {
-			protocols = new EObjectContainmentEList<CommunicationProtocol>(CommunicationProtocol.class, this, HwresourcePackage.RESOURCE_REPOSITORY__PROTOCOLS);
+			protocols = new EObjectContainmentEList<CommunicationProtocolRepository>(CommunicationProtocolRepository.class, this, HwresourcePackage.RESOURCE_REPOSITORY__PROTOCOLS);
 		}
 		return protocols;
 	}
@@ -174,7 +168,7 @@ public class ResourceRepositoryImpl extends CommentableElementImpl implements Re
 				return;
 			case HwresourcePackage.RESOURCE_REPOSITORY__PROTOCOLS:
 				getProtocols().clear();
-				getProtocols().addAll((Collection<? extends CommunicationProtocol>)newValue);
+				getProtocols().addAll((Collection<? extends CommunicationProtocolRepository>)newValue);
 				return;
 			case HwresourcePackage.RESOURCE_REPOSITORY__COMMUNICATION_MEDIA:
 				getCommunicationMedia().clear();

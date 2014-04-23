@@ -47,7 +47,7 @@ public interface ResourceRepository extends CommentableElement {
 
 	/**
 	 * Returns the value of the '<em><b>Protocols</b></em>' containment reference list.
-	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol}.
+	 * The list contents are of type {@link de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -59,7 +59,7 @@ public interface ResourceRepository extends CommentableElement {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<CommunicationProtocol> getProtocols();
+	EList<CommunicationProtocolRepository> getProtocols();
 
 	/**
 	 * Returns the value of the '<em><b>Communication Media</b></em>' containment reference list.

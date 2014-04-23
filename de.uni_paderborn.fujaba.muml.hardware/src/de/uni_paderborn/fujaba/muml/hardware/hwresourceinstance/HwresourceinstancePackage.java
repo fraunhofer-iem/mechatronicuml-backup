@@ -26,7 +26,7 @@ import org.storydriven.core.CorePackage;
  * Hardware platforms are defined at the type level and may be instantiated in a HWPlatformInstanceConfiguration at the Platform Instance Viewpoint.
  * 
  * <!-- end-model-doc -->
- * @see de.uni_padersvn: E155023: Can't set properties on born.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory
+ * @see de.uni_paderborn.fujaba.muml.hardware.hwresourceinstance.HwresourceinstanceFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated

@@ -224,12 +224,7 @@ public class ResourceRepositoryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__PROTOCOLS,
-				 HwresourceFactory.eINSTANCE.createBusProtocol()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(HwresourcePackage.Literals.RESOURCE_REPOSITORY__PROTOCOLS,
-				 HwresourceFactory.eINSTANCE.createLinkProtocol()));
+				 HwresourceFactory.eINSTANCE.createCommunicationProtocolRepository()));
 
 		newChildDescriptors.add
 			(createChildParameter

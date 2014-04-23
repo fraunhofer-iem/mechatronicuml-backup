@@ -607,6 +607,126 @@
             parser="//@labelParsers/@implementations.17"/>
       </labels>
     </childNodes>
+    <childNodes
+        visualID="3006"
+        editPartClassName="BusProtocolEditPart"
+        itemSemanticEditPolicyClassName="BusProtocolItemSemanticEditPolicy"
+        notationViewFactoryClassName="BusProtocolViewFactory"
+        canonicalEditPolicyClassName="BusProtocolCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="BusProtocolGraphicalNodeEditPolicy"
+        createCommandClassName="BusProtocolCreateCommand"
+        containers="//@diagram/@compartments.1">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="BusProtocolEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          layoutType="TOOLBAR_LAYOUT"
+          className="ProtocolFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ProtocolFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureProtocolNameLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ProtocolFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutThis = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(true);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT&#xA;);&#xA;&#xA;&#x9;layoutThis.setSpacing(0);&#xA;&#x9;layoutThis.setVertical(false);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureProtocolNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureProtocolNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureProtocolNameLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureProtocolNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureProtocolNameLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="-1"
+            height="-1"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/BusProtocol"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.38">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5030"
+          editPartClassName="BusProtocolNameEditPart"
+          itemSemanticEditPolicyClassName="BusProtocolNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="BusProtocolNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureProtocolNameLabelFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
+    <childNodes
+        visualID="3007"
+        editPartClassName="LinkProtocolEditPart"
+        itemSemanticEditPolicyClassName="LinkProtocolItemSemanticEditPolicy"
+        notationViewFactoryClassName="LinkProtocolViewFactory"
+        canonicalEditPolicyClassName="LinkProtocolCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="LinkProtocolGraphicalNodeEditPolicy"
+        createCommandClassName="LinkProtocolCreateCommand"
+        containers="//@diagram/@compartments.1">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="LinkProtocolEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          layoutType="TOOLBAR_LAYOUT"
+          className="ProtocolFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ProtocolFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureProtocolNameLabelFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ProtocolFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.ToolbarLayout layoutThis = new org.eclipse.draw2d.ToolbarLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(true);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_TOPLEFT&#xA;);&#xA;&#xA;&#x9;layoutThis.setSpacing(0);&#xA;&#x9;layoutThis.setVertical(false);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureProtocolNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureProtocolNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureProtocolNameLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureProtocolNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureProtocolNameLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="-1"
+            height="-1"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/LinkProtocol"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository/communicationProtocols"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.39">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5031"
+          editPartClassName="LinkProtocolNameEditPart"
+          itemSemanticEditPolicyClassName="LinkProtocolNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="LinkProtocolNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureProtocolNameLabelFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </childNodes>
     <topLevelNodes
         visualID="2001"
         editPartClassName="DeviceEditPart"
@@ -973,6 +1093,69 @@
             parser="//@labelParsers/@implementations.23"/>
       </labels>
     </topLevelNodes>
+    <topLevelNodes
+        visualID="2005"
+        editPartClassName="CommunicationProtocolRepositoryEditPart"
+        itemSemanticEditPolicyClassName="CommunicationProtocolRepositoryItemSemanticEditPolicy"
+        notationViewFactoryClassName="CommunicationProtocolRepositoryViewFactory"
+        canonicalEditPolicyClassName="CommunicationProtocolRepositoryCanonicalEditPolicy"
+        compartments="//@diagram/@compartments.1"
+        graphicalNodeEditPolicyClassName="CommunicationProtocolRepositoryGraphicalNodeEditPolicy"
+        createCommandClassName="CommunicationProtocolRepositoryCreateCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="CommunicationProtocolRepositoryEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ProtocolRepositoryFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ProtocolRepositoryFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureProtocolRepositoryNameLabelFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RectangleFigure fFigureProtocolRepositoryCompartmentFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ProtocolRepositoryFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 1;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = false;&#xA;&#x9;layoutThis.marginWidth = 1;&#xA;&#x9;layoutThis.marginHeight = 0;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureProtocolRepositoryNameLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureProtocolRepositoryNameLabelFigure.setText(&quot;&quot;);&#xA;&#xA;fFigureProtocolRepositoryNameLabelFigure.setFont(FFIGUREPROTOCOLREPOSITORYNAMELABELFIGURE_FONT);&#xA;&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureProtocolRepositoryNameLabelFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureProtocolRepositoryNameLabelFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureProtocolRepositoryNameLabelFigure.horizontalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureProtocolRepositoryNameLabelFigure.horizontalIndent = 0;&#xA;constraintFFigureProtocolRepositoryNameLabelFigure.horizontalSpan = 1;&#xA;constraintFFigureProtocolRepositoryNameLabelFigure.verticalSpan = 1;&#xA;constraintFFigureProtocolRepositoryNameLabelFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureProtocolRepositoryNameLabelFigure.grabExcessVerticalSpace = false;&#xA;this.add(fFigureProtocolRepositoryNameLabelFigure, constraintFFigureProtocolRepositoryNameLabelFigure);&#xA;&#xA;&#xA;&#xA;&#xA;fFigureProtocolRepositoryCompartmentFigure = new org.eclipse.draw2d.RectangleFigure();&#xA;&#xA;fFigureProtocolRepositoryCompartmentFigure.setOutline(false);&#xA;&#xA;&#xA;org.eclipse.draw2d.GridData constraintFFigureProtocolRepositoryCompartmentFigure = new org.eclipse.draw2d.GridData();&#xA;constraintFFigureProtocolRepositoryCompartmentFigure.verticalAlignment = org.eclipse.draw2d.GridData.CENTER;&#xA;constraintFFigureProtocolRepositoryCompartmentFigure.horizontalAlignment = org.eclipse.draw2d.GridData.FILL;&#xA;constraintFFigureProtocolRepositoryCompartmentFigure.horizontalIndent = 0;&#xA;constraintFFigureProtocolRepositoryCompartmentFigure.horizontalSpan = 1;&#xA;constraintFFigureProtocolRepositoryCompartmentFigure.verticalSpan = 1;&#xA;constraintFFigureProtocolRepositoryCompartmentFigure.grabExcessHorizontalSpace = true;&#xA;constraintFFigureProtocolRepositoryCompartmentFigure.grabExcessVerticalSpace = false;&#xA;this.add(fFigureProtocolRepositoryCompartmentFigure, constraintFFigureProtocolRepositoryCompartmentFigure);&#xA;&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureProtocolRepositoryNameLabelFigure() {&#xA;&#x9;&#x9;return fFigureProtocolRepositoryNameLabelFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.draw2d.RectangleFigure getFigureProtocolRepositoryCompartmentFigure() {&#xA;&#x9;&#x9;return fFigureProtocolRepositoryCompartmentFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Font FFIGUREPROTOCOLREPOSITORYNAMELABELFIGURE_FONT = new org.eclipse.swt.graphics.Font(org.eclipse.swt.widgets.Display.getCurrent(), org.eclipse.swt.widgets.Display.getDefault().getSystemFont().getFontData()[0].getName(), 10, org.eclipse.swt.SWT.BOLD);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:DefaultSizeAttributes"
+            width="130"
+            height="90"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/CommunicationProtocolRepository"/>
+        <containmentMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/protocols"/>
+        <childMetaFeature
+            href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/ResourceRepository/protocols"/>
+        <modelElementInitializer
+            xsi:type="gmfgen:GenFeatureSeqInitializer">
+          <initializers
+              xsi:type="gmfgen:GenFeatureValueSpec"
+              value="//@expressionProviders/@providers.0/@expressions.37">
+            <feature
+                href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+          </initializers>
+        </modelElementInitializer>
+      </modelFacet>
+      <labels
+          visualID="5032"
+          editPartClassName="CommunicationProtocolRepositoryNameEditPart"
+          itemSemanticEditPolicyClassName="CommunicationProtocolRepositoryNameItemSemanticEditPolicy"
+          notationViewFactoryClassName="CommunicationProtocolRepositoryNameViewFactory">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureProtocolRepositoryNameLabelFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel">
+          <attributes
+              xsi:type="gmfgen:StyleAttributes"
+              fixedFont="true"/>
+        </viewmap>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.1">
+          <metaFeatures
+              href="../../org.storydriven.core/model/core.uml.genmodel#//core/NamedElement/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
     <links
         visualID="4001"
         editPartClassName="ProcessorOwnedCacheEditPart"
@@ -994,8 +1177,8 @@
             href="../../de.uni_paderborn.fujaba.muml.hardware/model/hardware.genmodel#//hardware/hwresource/Processor/ownedCache"/>
       </modelFacet>
       <creationConstraints
-          sourceEnd="//@expressionProviders/@providers.0/@expressions.37"
-          targetEnd="//@expressionProviders/@providers.0/@expressions.38"/>
+          sourceEnd="//@expressionProviders/@providers.0/@expressions.40"
+          targetEnd="//@expressionProviders/@providers.0/@expressions.41"/>
     </links>
     <compartments
         visualID="7001"
@@ -1006,7 +1189,8 @@
         childNodes="//@diagram/@childNodes.1 //@diagram/@childNodes.2 //@diagram/@childNodes.3 //@diagram/@childNodes.4"
         title="StructuredResourceCompartment"
         needsTitle="false"
-        node="//@diagram/@topLevelNodes.1">
+        node="//@diagram/@topLevelNodes.1"
+        listLayout="false">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
       <viewmap
@@ -1014,9 +1198,28 @@
           getterName="getFigureEmbeddedAtomicResources"
           figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
     </compartments>
+    <compartments
+        visualID="7002"
+        editPartClassName="CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart"
+        itemSemanticEditPolicyClassName="CommunicationProtocolRepositoryProtocolRepositoryCompartmentItemSemanticEditPolicy"
+        notationViewFactoryClassName="CommunicationProtocolRepositoryProtocolRepositoryCompartmentViewFactory"
+        canonicalEditPolicyClassName="CommunicationProtocolRepositoryProtocolRepositoryCompartmentCanonicalEditPolicy"
+        childNodes="//@diagram/@childNodes.5 //@diagram/@childNodes.6"
+        title="ProtocolRepositoryCompartment"
+        canCollapse="false"
+        needsTitle="false"
+        node="//@diagram/@topLevelNodes.4">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <viewmap
+          xsi:type="gmfgen:ParentAssignedViewmap"
+          getterName="getFigureProtocolRepositoryCompartmentFigure"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+    </compartments>
     <palette>
       <groups
-          title="ResourceType">
+          title="ResourceType"
+          collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Device"
@@ -1078,7 +1281,8 @@
             genLinks="//@diagram/@links.0"/>
       </groups>
       <groups
-          title="CommunicationMedia">
+          title="CommunicationMedia"
+          collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="BusResource"
@@ -1091,6 +1295,22 @@
             title="LinkResource"
             description="Create new Link"
             genNodes="//@diagram/@topLevelNodes.3"/>
+      </groups>
+      <groups
+          title="CommunicationProtocol"
+          collapse="true">
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="ProtocolRepository"
+            genNodes="//@diagram/@topLevelNodes.4"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Point-Point Protocol"
+            genNodes="//@diagram/@childNodes.6"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="Bus Protocol"
+            genNodes="//@diagram/@childNodes.5"/>
       </groups>
     </palette>
     <preferences>
@@ -1189,6 +1409,15 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.3"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@childNodes.5"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@childNodes.6"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.4"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@links.0"
@@ -1319,6 +1548,12 @@
       <expressions
           body="--let proto : String = if self.protocol.oclIsUndefined() then 'null' else self.protocol.name endif in&#xA;--proto"/>
       <expressions
+          body="--'ProtocolRepository'"/>
+      <expressions
+          body="--'BusProtocol'"/>
+      <expressions
+          body="--'LinkProtocol'"/>
+      <expressions
           xsi:type="gmfgen:GenConstraint"
           body="--self.oclIsTypeOf(hwresource::Processor) implies self.oclAsType(hwresource::Processor).ownedCache.oclIsUndefined()"/>
       <expressions
@@ -1338,7 +1573,7 @@
     </implementations>
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.1/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@childNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.2/@labels.1/@modelFacet //@diagram/@childNodes.3/@labels.0/@modelFacet //@diagram/@childNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@childNodes.5/@labels.0/@modelFacet //@diagram/@childNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet"/>
     <implementations
         xsi:type="gmfgen:ExpressionLabelParser"
         uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"

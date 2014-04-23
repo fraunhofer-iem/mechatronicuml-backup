@@ -25,6 +25,7 @@ public class HardwarePaletteFactory {
 		paletteRoot.add(createResourceType1Group());
 		paletteRoot.add(createStructuredResourceandemebeddedResources2Group());
 		paletteRoot.add(createCommunicationMedia3Group());
+		paletteRoot.add(createCommunicationProtocol4Group());
 	}
 
 	/**
@@ -32,7 +33,7 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createResourceType1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(
+		PaletteDrawer paletteContainer = new PaletteDrawer(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.ResourceType1Group_title);
 		paletteContainer.setId("createResourceType1Group"); //$NON-NLS-1$
 		paletteContainer.add(createDevice1CreationTool());
@@ -63,11 +64,25 @@ public class HardwarePaletteFactory {
 	 * @generated
 	 */
 	private PaletteContainer createCommunicationMedia3Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(
+		PaletteDrawer paletteContainer = new PaletteDrawer(
 				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationMedia3Group_title);
 		paletteContainer.setId("createCommunicationMedia3Group"); //$NON-NLS-1$
 		paletteContainer.add(createBusResource1CreationTool());
 		paletteContainer.add(createLinkResource2CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	 * Creates "CommunicationProtocol" palette tool group
+	 * @generated
+	 */
+	private PaletteContainer createCommunicationProtocol4Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.CommunicationProtocol4Group_title);
+		paletteContainer.setId("createCommunicationProtocol4Group"); //$NON-NLS-1$
+		paletteContainer.add(createProtocolRepository1CreationTool());
+		paletteContainer.add(createPointPointProtocol2CreationTool());
+		paletteContainer.add(createBusProtocol3CreationTool());
 		return paletteContainer;
 	}
 
@@ -235,6 +250,54 @@ public class HardwarePaletteFactory {
 		entry.setId("createLinkResource2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes
 				.getImageDescriptor(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.Link_2004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createProtocolRepository1CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.ProtocolRepository1CreationTool_title,
+				null,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2005));
+		entry.setId("createProtocolRepository1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createPointPointProtocol2CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.PointPointProtocol2CreationTool_title,
+				null,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3007));
+		entry.setId("createPointPointProtocol2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.LinkProtocol_3007));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createBusProtocol3CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.Messages.BusProtocol3CreationTool_title,
+				null,
+				Collections
+						.singletonList(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3006));
+		entry.setId("createBusProtocol3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes
+				.getImageDescriptor(de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.BusProtocol_3006));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -258,6 +258,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String CommunicationProtocol4Group_title;
+
+	/**
+	 * @generated
+	 */
 	public static String Device1CreationTool_title;
 
 	/**
@@ -358,7 +363,27 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String ProtocolRepository1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String PointPointProtocol2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String BusProtocol3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
 	public static String StructuredResourceStructuredResourceCompartmentEditPart_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CommunicationProtocolRepositoryProtocolRepositoryCompartmentEditPart_title;
 
 	/**
 	 * @generated

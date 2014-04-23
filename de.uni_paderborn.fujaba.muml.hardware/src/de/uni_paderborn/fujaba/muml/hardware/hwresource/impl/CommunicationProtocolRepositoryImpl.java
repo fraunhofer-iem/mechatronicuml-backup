@@ -5,20 +5,14 @@ package de.uni_paderborn.fujaba.muml.hardware.hwresource.impl;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocol;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository;
 import de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.storydriven.core.impl.NamedElementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class CommunicationProtocolRepositoryImpl extends MinimalEObjectImpl.Container implements CommunicationProtocolRepository {
+public class CommunicationProtocolRepositoryImpl extends NamedElementImpl implements CommunicationProtocolRepository {
 	/**
 	 * The cached value of the '{@link #getCommunicationProtocols() <em>Communication Protocols</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

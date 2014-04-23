@@ -46,6 +46,11 @@ public class ResourceRepositoryItemSemanticEditPolicy
 			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.commands.LinkCreateCommand(
 					req));
 		}
+		if (de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareElementTypes.CommunicationProtocolRepository_2005 == req
+				.getElementType()) {
+			return getGEFWrapper(new de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.commands.CommunicationProtocolRepositoryCreateCommand(
+					req));
+		}
 		return super.getCreateCommand(req);
 	}
 

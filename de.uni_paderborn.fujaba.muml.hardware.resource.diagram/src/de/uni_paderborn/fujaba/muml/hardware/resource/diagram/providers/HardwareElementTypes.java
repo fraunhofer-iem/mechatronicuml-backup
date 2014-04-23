@@ -67,6 +67,11 @@ public class HardwareElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType CommunicationProtocolRepository_2005 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationProtocolRepository_2005"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType CommunicationResource_3001 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3001"); //$NON-NLS-1$
 	/**
 	 * @generated
@@ -84,6 +89,16 @@ public class HardwareElementTypes {
 	 * @generated
 	 */
 	public static final IElementType MemoryResource_3005 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.MemoryResource_3005"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType BusProtocol_3006 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.BusProtocol_3006"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType LinkProtocol_3007 = getElementType("de.uni_paderborn.fujaba.muml.hardware.resource.diagram.LinkProtocol_3007"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -153,6 +168,11 @@ public class HardwareElementTypes {
 							.getLink());
 
 			elements.put(
+					CommunicationProtocolRepository_2005,
+					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+							.getCommunicationProtocolRepository());
+
+			elements.put(
 					CommunicationResource_3001,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getCommunicationResource());
@@ -176,6 +196,16 @@ public class HardwareElementTypes {
 					MemoryResource_3005,
 					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 							.getMemoryResource());
+
+			elements.put(
+					BusProtocol_3006,
+					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+							.getBusProtocol());
+
+			elements.put(
+					LinkProtocol_3007,
+					de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+							.getLinkProtocol());
 
 			elements.put(
 					ProcessorOwnedCache_4001,
@@ -203,11 +233,14 @@ public class HardwareElementTypes {
 			KNOWN_ELEMENT_TYPES.add(StructuredResource_2002);
 			KNOWN_ELEMENT_TYPES.add(Bus_2003);
 			KNOWN_ELEMENT_TYPES.add(Link_2004);
+			KNOWN_ELEMENT_TYPES.add(CommunicationProtocolRepository_2005);
 			KNOWN_ELEMENT_TYPES.add(CommunicationResource_3001);
 			KNOWN_ELEMENT_TYPES.add(Cache_3002);
 			KNOWN_ELEMENT_TYPES.add(Processor_3003);
 			KNOWN_ELEMENT_TYPES.add(ProgrammableLogicDevice_3004);
 			KNOWN_ELEMENT_TYPES.add(MemoryResource_3005);
+			KNOWN_ELEMENT_TYPES.add(BusProtocol_3006);
+			KNOWN_ELEMENT_TYPES.add(LinkProtocol_3007);
 			KNOWN_ELEMENT_TYPES.add(ProcessorOwnedCache_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -228,6 +261,8 @@ public class HardwareElementTypes {
 			return Bus_2003;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkEditPart.VISUAL_ID:
 			return Link_2004;
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart.VISUAL_ID:
+			return CommunicationProtocolRepository_2005;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart.VISUAL_ID:
 			return CommunicationResource_3001;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CacheEditPart.VISUAL_ID:
@@ -238,6 +273,10 @@ public class HardwareElementTypes {
 			return ProgrammableLogicDevice_3004;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.MemoryResourceEditPart.VISUAL_ID:
 			return MemoryResource_3005;
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusProtocolEditPart.VISUAL_ID:
+			return BusProtocol_3006;
+		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolEditPart.VISUAL_ID:
+			return LinkProtocol_3007;
 		case de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.ProcessorOwnedCacheEditPart.VISUAL_ID:
 			return ProcessorOwnedCache_4001;
 		}

@@ -38,6 +38,7 @@ public class HwresourceTests extends TestSuite {
 		suite.addTestSuite(ProcessorTest.class);
 		suite.addTestSuite(StructuredResourceTest.class);
 		suite.addTestSuite(ResourceRepositoryTest.class);
+		suite.addTestSuite(CommunicationProtocolRepositoryTest.class);
 		suite.addTestSuite(BusProtocolTest.class);
 		suite.addTestSuite(LinkProtocolTest.class);
 		suite.addTestSuite(CommunicationResourceTest.class);

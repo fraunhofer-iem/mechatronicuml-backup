@@ -8,7 +8,8 @@
       title="resourcetypePalette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="ResourceType">
+        title="ResourceType"
+        collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
           title="Device"
@@ -119,7 +120,8 @@
     </tools>
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="CommunicationMedia">
+        title="CommunicationMedia"
+        collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
           title="BusResource"
@@ -136,7 +138,41 @@
       <tools
           xsi:type="gmftool:CreationTool"
           title="LinkResource"
-          description="Create new Link"/>
+          description="Create new Link">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="CommunicationProtocol"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ProtocolRepository">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Point-Point Protocol">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Bus Protocol">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
     </tools>
   </palette>
 </gmftool:ToolRegistry>

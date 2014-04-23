@@ -105,6 +105,25 @@ public class ElementInitializers {
 	/**
 	 * @generated
 	 */
+	public void init_CommunicationProtocolRepository_2005(
+			de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationProtocolRepository instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
+					.getExpression(
+							37,
+							de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+									.getCommunicationProtocolRepository(), null)
+					.evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	public void init_CommunicationResource_3001(
 			de.uni_paderborn.fujaba.muml.hardware.hwresource.CommunicationResource instance) {
 		try {
@@ -235,6 +254,43 @@ public class ElementInitializers {
 							de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
 									.getMemoryResource(), null).evaluate(
 							instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_BusProtocol_3006(
+			de.uni_paderborn.fujaba.muml.hardware.hwresource.BusProtocol instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
+					.getExpression(
+							38,
+							de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+									.getBusProtocol(), null).evaluate(instance);
+			instance.setName((String) value_0);
+		} catch (RuntimeException e) {
+			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin
+					.getInstance().logError("Element initialization failed", e); //$NON-NLS-1$						
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	public void init_LinkProtocol_3007(
+			de.uni_paderborn.fujaba.muml.hardware.hwresource.LinkProtocol instance) {
+		try {
+			Object value_0 = de.uni_paderborn.fujaba.muml.hardware.resource.diagram.expressions.HardwareOCLFactory
+					.getExpression(
+							39,
+							de.uni_paderborn.fujaba.muml.hardware.hwresource.HwresourcePackage.eINSTANCE
+									.getLinkProtocol(), null)
+					.evaluate(instance);
 			instance.setName((String) value_0);
 		} catch (RuntimeException e) {
 			de.uni_paderborn.fujaba.muml.hardware.resource.diagram.part.HardwareDiagramEditorPlugin

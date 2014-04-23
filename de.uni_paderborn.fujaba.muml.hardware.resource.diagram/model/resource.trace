@@ -52,6 +52,16 @@
         visualID="5029"
         queryText="true"/>
   </nodeTraces>
+  <nodeTraces
+      visualID="2005"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresource/1.0/' and _eClass_.name = 'CommunicationProtocolRepository') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresource/1.0/' and _eClass_.name = 'ResourceRepository') and _containmentMF_.name = 'protocols')">
+    <nodeLabelTraces
+        visualID="5032"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7002"
+        queryText="true"/>
+  </nodeTraces>
   <childNodeTraces
       visualID="3001"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresource/1.0/' and _eClass_.name = 'CommunicationResource') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresource/1.0/' and _eClass_.name = 'Resource') and _containmentMF_.name = 'hwports')">
@@ -127,6 +137,20 @@
         queryText="true"/>
     <nodeLabelTraces
         visualID="5022"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3006"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresource/1.0/' and _eClass_.name = 'BusProtocol') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresource/1.0/' and _eClass_.name = 'CommunicationProtocolRepository') and _containmentMF_.name = 'communicationProtocols')">
+    <nodeLabelTraces
+        visualID="5030"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3007"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresource/1.0/' and _eClass_.name = 'LinkProtocol') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.fujaba.de/muml/hardware/hwresource/1.0/' and _eClass_.name = 'CommunicationProtocolRepository') and _containmentMF_.name = 'communicationProtocols')">
+    <nodeLabelTraces
+        visualID="5031"
         queryText="true"/>
   </childNodeTraces>
   <linkTraces

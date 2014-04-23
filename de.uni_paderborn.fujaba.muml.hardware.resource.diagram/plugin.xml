@@ -300,7 +300,7 @@
       <viewProvider class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.HardwareViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Hardware"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,3001,3002,3003,3004,3005"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,3001,3002,3003,3004,3005,3006,3007"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
@@ -313,16 +313,16 @@
             <method name="getType()" value="Hardware"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,3001,3002,3003,3004,3005"/>
+            <method name="getType()" value="2001,2002,2003,2004,2005,3001,3002,3003,3004,3005,3006,3007"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5002,5003,5004,5023,5024,5025,5026,5027,5028,5029,5001,5005,5006,5007,5008,5009,5010,5011,5012,5013,5014,5015,5016,5017,5018,5019,5020,5021,5022"/>
+            <method name="getType()" value="5002,5003,5004,5023,5024,5025,5026,5027,5028,5029,5032,5001,5005,5006,5007,5008,5009,5010,5011,5012,5013,5014,5015,5016,5017,5018,5019,5020,5021,5022,5030,5031"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001"/>
+            <method name="getType()" value="7001,7002"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -355,6 +355,11 @@
          <object class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkEditPart" id="Link_2004"/>
          <context elements="Link_2004"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.assistants.HardwareModelingAssistantProviderOfCommunicationProtocolRepositoryEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationProtocolRepositoryEditPart" id="CommunicationProtocolRepository_2005"/>
+         <context elements="CommunicationProtocolRepository_2005"/>
+      </modelingAssistantProvider>
             <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.assistants.HardwareModelingAssistantProviderOfCommunicationResourceEditPart">
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.CommunicationResourceEditPart" id="CommunicationResource_3001"/>
@@ -379,6 +384,16 @@
          <Priority name="Lowest"/>
          <object class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.MemoryResourceEditPart" id="MemoryResource_3005"/>
          <context elements="MemoryResource_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.assistants.HardwareModelingAssistantProviderOfBusProtocolEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.BusProtocolEditPart" id="BusProtocol_3006"/>
+         <context elements="BusProtocol_3006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.providers.assistants.HardwareModelingAssistantProviderOfLinkProtocolEditPart">
+         <Priority name="Lowest"/>
+         <object class="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.parts.LinkProtocolEditPart" id="LinkProtocol_3007"/>
+         <context elements="LinkProtocol_3007"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -451,6 +466,16 @@
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.0/">
          <metamodelType
+               id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationProtocolRepository_2005"
+               name="%metatype.name.CommunicationProtocolRepository_2005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CommunicationProtocolRepository"
+               edithelper="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.helpers.CommunicationProtocolRepositoryEditHelper">
+            <param name="semanticHint" value="2005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.0/">
+         <metamodelType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3001"
                name="%metatype.name.CommunicationResource_3001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -500,6 +525,26 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.0/">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.BusProtocol_3006"
+               name="%metatype.name.BusProtocol_3006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="BusProtocol"
+               edithelper="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.helpers.BusProtocolEditHelper">
+            <param name="semanticHint" value="3006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.0/">
+         <metamodelType
+               id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.LinkProtocol_3007"
+               name="%metatype.name.LinkProtocol_3007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="LinkProtocol"
+               edithelper="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.edit.helpers.LinkProtocolEditHelper">
+            <param name="semanticHint" value="3007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.fujaba.de/muml/hardware/hwresource/1.0/">
          <specializationType
                id="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProcessorOwnedCache_4001"
                name="%metatype.name.ProcessorOwnedCache_4001"
@@ -525,11 +570,14 @@
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.StructuredResource_2002"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Bus_2003"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Link_2004"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationProtocolRepository_2005"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.CommunicationResource_3001"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Cache_3002"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.Processor_3003"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProgrammableLogicDevice_3004"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.MemoryResource_3005"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.BusProtocol_3006"/>
+         <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.LinkProtocol_3007"/>
          <elementType ref="de.uni_paderborn.fujaba.muml.hardware.resource.diagram.ProcessorOwnedCache_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
@@ -749,6 +797,11 @@
          <topLevelNode
                domainElement="Link"
                semanticHint="2004">
+         </topLevelNode>
+         
+         <topLevelNode
+               domainElement="CommunicationProtocolRepository"
+               semanticHint="2005">
          </topLevelNode>
          
       </editor>

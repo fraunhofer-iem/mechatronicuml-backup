@@ -1103,6 +1103,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 		atomicResourceEClass.getESuperTypes().add(this.getResource());
 		structuredResourceEClass.getESuperTypes().add(this.getResource());
 		resourceRepositoryEClass.getESuperTypes().add(theCorePackage.getCommentableElement());
+		communicationProtocolRepositoryEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		communicationProtocolEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		busProtocolEClass.getESuperTypes().add(this.getCommunicationProtocol());
 		linkProtocolEClass.getESuperTypes().add(this.getCommunicationProtocol());
@@ -1150,7 +1151,7 @@ public class HwresourcePackageImpl extends EPackageImpl implements HwresourcePac
 
 		initEClass(resourceRepositoryEClass, ResourceRepository.class, "ResourceRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResourceRepository_Resources(), this.getResource(), null, "resources", null, 1, -1, ResourceRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getResourceRepository_Protocols(), this.getCommunicationProtocol(), null, "protocols", null, 1, -1, ResourceRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResourceRepository_Protocols(), this.getCommunicationProtocolRepository(), null, "protocols", null, 1, -1, ResourceRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResourceRepository_CommunicationMedia(), this.getCommunicationMedia(), null, "communicationMedia", null, 0, -1, ResourceRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(communicationProtocolRepositoryEClass, CommunicationProtocolRepository.class, "CommunicationProtocolRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

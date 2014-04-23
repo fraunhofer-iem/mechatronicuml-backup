@@ -169,6 +169,8 @@ public class HwresourceSwitch<T> extends Switch<T> {
 			case HwresourcePackage.COMMUNICATION_PROTOCOL_REPOSITORY: {
 				CommunicationProtocolRepository communicationProtocolRepository = (CommunicationProtocolRepository)theEObject;
 				T result = caseCommunicationProtocolRepository(communicationProtocolRepository);
+				if (result == null) result = caseNamedElement(communicationProtocolRepository);
+				if (result == null) result = caseExtendableElement(communicationProtocolRepository);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
