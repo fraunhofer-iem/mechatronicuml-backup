@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
@@ -19,7 +20,10 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import com.google.common.base.Function;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesFactory;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage;
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Quantifiers.TemporalQuantifierExpr;
+import de.uni_paderborn.fujaba.muml.verification.uppaal.scoping.MtctlScopeProvider;
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
@@ -77,5 +81,16 @@ public class MtctlProposalProvider extends de.uni_paderborn.fujaba.muml.verifica
 				completeAssignmentUsingScope(currentModel, reference, contentAssistContext, acceptor); //add appropriate items from scoping
 	
 		super.completeAssignment(assignment, contentAssistContext, acceptor);
+	}
+	
+	/*
+	 * Overriding to supply helpful proposals wherever comparisons may be expected.
+	 * Without overriding, comparable references to the muml model are not included where appropriate
+	 */
+	@Override
+	public void completeComparisonExpr_Lhs(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.completeComparisonExpr_Lhs(model, assignment, context, acceptor);
+		
+		completeAssignmentUsingScope(PredicatesFactory.eINSTANCE.createComparisonExpr(), PredicatesPackage.eINSTANCE.getComparisonExpr_Lhs(), context, acceptor);
 	}
 }

@@ -372,7 +372,7 @@ public class MtctlScopeProvider extends AbstractScopeProvider {
 			return getScopeBuffer(context, reference);
 		if (context instanceof StateInStatechartExpr && reference != null && "statechart".equals(reference.getName()))
 			return getScopeStatechart(context, reference);
-		if (context instanceof PropertyRepository || context instanceof ComparisonExpr || context instanceof MumlElemExpr) //Fallback for contexts where we might want any variable
+		if (context instanceof ComparisonExpr)
 			return getScopeAny(context, reference);
 		
 		return IScope.NULLSCOPE;
