@@ -61,6 +61,9 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 		}
 	}
 	
+	/**
+	 * Given an EObject, determines whether it can be used in an inequality
+	 */
 	private boolean isInequalityComparable(EObject obj) {
 		if (obj instanceof ConstExpr || obj instanceof BufferMsgCountExpr || obj instanceof Variable || obj instanceof Clock)
 			return true;
@@ -74,11 +77,27 @@ public class MtctlJavaValidator extends de.uni_paderborn.fujaba.muml.verificatio
 	}
 	
 	@Check
-	public void checkComparisonType(final ComparisonExpr expr) {
+	public void checkComparisonType(final ComparisonExpr expr) { //make sure that inequalities are only used on naturally ordered elements
 		if (isInequalityComparable(expr.getLhs()) && isInequalityComparable(expr.getRhs()))
 			return;
 		if (expr.getOp().equals(ComparisonOp.EQUALS) || expr.getOp().equals(ComparisonOp.NOT_EQUAL))
 			return;
 		error(expr.getOp().toString() + " is not allowed here",null);
+	}
+	
+	@Check
+	public void checkClockComparisonTimeUnits(final ConstExpr expr) { //make sure that every ConstExpr has its TimeUnit set iff it's used in a clock comparison
+		boolean isUsedInClockComparison = false;
+		
+		if (expr.eContainer() instanceof ComparisonExpr) { //set isUsedInClockComparison appropriately
+			ComparisonExpr parent = (ComparisonExpr) expr.eContainer();
+			isUsedInClockComparison = (parent.getLhs() instanceof MumlElemExpr && ((MumlElemExpr) parent.getLhs()).getElem() instanceof Clock)
+										|| (parent.getRhs() instanceof MumlElemExpr && ((MumlElemExpr) parent.getRhs()).getElem() instanceof Clock);
+		}
+		
+		if (isUsedInClockComparison && (expr.getTimeUnit() == null))
+			error("Time unit missing", null);
+		if (!isUsedInClockComparison && (expr.getTimeUnit() != null))
+			error("Not expecting time unit", null);
 	}
 }
