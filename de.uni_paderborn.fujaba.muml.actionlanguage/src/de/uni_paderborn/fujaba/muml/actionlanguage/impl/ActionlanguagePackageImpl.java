@@ -859,7 +859,7 @@ public class ActionlanguagePackageImpl extends EPackageImpl implements Actionlan
 		arrayInitializeExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 		nondeterministicChoiceExpressionEClass.getESuperTypes().add(theExpressionsPackage.getExpression());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlock_Expressions(), theExpressionsPackage.getExpression(), null, "expressions", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
