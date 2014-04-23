@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ASCII"?>
+<de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+  <reconciler/>
+  <genModel href="modelinstance.genmodel#/"/>
+  <referencedGenerators href="../../de.uni_paderborn.fujaba.muml/model/muml.propsheet#/"/>
+  <plugin id="de.uni_paderborn.fujaba.modelinstance.edit.properties" name="Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
+    <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
+    <requiredBundles>org.eclipse.core.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.properties.runtime</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.modelinstance</requiredBundles>
+    <requiredBundles>org.eclipse.emf.edit</requiredBundles>
+    <requiredBundles>org.eclipse.ui</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.modelinstance.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit</requiredBundles>
+    <requiredBundles>de.uni_paderborn.fujaba.muml.edit.properties</requiredBundles>
+  </plugin>
+  <defaultTab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+  <packages>
+    <genPackage href="modelinstance.genmodel#//modelinstance"/>
+    <classes>
+      <genClass href="modelinstance.genmodel#//modelinstance/RootNode"/>
+      <properties category="//@packages.0/@classes.0/@propertyCategories.0">
+        <genFeature href="modelinstance.genmodel#//modelinstance/RootNode/categories"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <properties category="//@packages.0/@classes.0/@propertyCategories.0">
+        <genFeature href="modelinstance.genmodel#//modelinstance/RootNode/ecoreDataTypes"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.0/@properties.0 //@packages.0/@classes.0/@properties.1"/>
+    </classes>
+    <classes>
+      <genClass href="modelinstance.genmodel#//modelinstance/ModelElementCategory"/>
+      <properties category="//@packages.0/@classes.1/@propertyCategories.0">
+        <genFeature href="modelinstance.genmodel#//modelinstance/ModelElementCategory/modelElements"/>
+        <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
+      </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.1/@properties.0"/>
+    </classes>
+  </packages>
+</de.uni_paderborn.fujaba:PropertyGenerator>

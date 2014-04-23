@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+
+  <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+    <propertyContributor
+          contributorId="de.uni_paderborn.fujaba.muml.common.properties">
+       <propertyCategory
+             category="domain">
+       </propertyCategory>
+       <propertyCategory
+             category="default">
+       </propertyCategory>
+       <propertyCategory
+             category="extended">
+       </propertyCategory>
+       <propertyCategory
+             category="advanced">
+       </propertyCategory>
+    </propertyContributor>
+  </extension>
+
+
+
+
+
+
+
+
+ <extension point="de.uni_paderborn.fujaba.properties.runtime.propertyEditors">
+    <propertyEditors>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.modelinstance.properties.modelinstance.editor.RootNodeEditor$Factory"
+             type="http://www.fujaba.de/modelinstance/0.4.0#RootNode">
+       </propertyEditor>
+    
+       <propertyEditor
+             factory="de.uni_paderborn.fujaba.modelinstance.properties.modelinstance.editor.ModelElementCategoryEditor$Factory"
+             type="http://www.fujaba.de/modelinstance/0.4.0#ModelElementCategory">
+       </propertyEditor>
+    
+    </propertyEditors>
+ </extension>
+
+</plugin>

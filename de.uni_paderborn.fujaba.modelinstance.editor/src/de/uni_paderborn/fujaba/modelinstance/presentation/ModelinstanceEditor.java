@@ -16,7 +16,6 @@ import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
@@ -28,7 +27,6 @@ import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.core.resources.IResourceDeltaVisitor;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
@@ -57,7 +55,6 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.edit.provider.AdapterFactoryItemDelegator;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.ReflectiveItemProviderAdapterFactory;
 import org.eclipse.emf.edit.provider.resource.ResourceItemProviderAdapterFactory;
 import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
@@ -70,7 +67,6 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
-import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
@@ -122,10 +118,10 @@ import org.eclipse.ui.views.contentoutline.ContentOutline;
 import org.eclipse.ui.views.contentoutline.ContentOutlinePage;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
-import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.eclipse.ui.views.properties.PropertySheet;
-import org.eclipse.ui.views.properties.PropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.storydriven.core.expressions.common.provider.CommonExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.expressions.provider.ExpressionsItemProviderAdapterFactory;
 import org.storydriven.core.provider.CoreItemProviderAdapterFactory;
@@ -137,12 +133,30 @@ import de.uni_paderborn.fujaba.modelinstance.provider.ModelinstanceItemProviderA
  * This is an example of a Modelinstance model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * @generated
+ * @generated NOT
  */
 public class ModelinstanceEditor
 	extends MultiPageEditorPart
-	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
-	
+	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker, ITabbedPropertySheetPageContributor {
+
+ 	// BEGIN Tabbed Properties
+ 	public static final String PROPERTIES_CONTRIBUTOR = "de.uni_paderborn.fujaba.muml.common.properties";
+
+ 	protected TabbedPropertySheetPage propertySheetPage;
+
+ 	public IPropertySheetPage getPropertySheetPage() {
+ 		if (propertySheetPage == null
+ 				|| propertySheetPage.getControl().isDisposed()) {
+ 			propertySheetPage = new TabbedPropertySheetPage(this);
+ 		}
+ 		return propertySheetPage;
+ 	}
+
+ 	public String getContributorId() {
+ 		return PROPERTIES_CONTRIBUTOR;
+ 	}
+ 	// END Tabbed Properties	
+	 	
 	protected IPropertySourceProvider propertySourceProvider;
 	
 	/**
@@ -191,7 +205,7 @@ public class ModelinstanceEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertySheetPage propertySheetPage;
+//	protected PropertySheetPage propertySheetPage;
 
 	/**
 	 * This is the viewer that shadows the selection in the content outline.
@@ -1369,51 +1383,51 @@ public class ModelinstanceEditor
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	 public IPropertySheetPage getPropertySheetPage() {
-		if (propertySheetPage == null) {
-			propertySheetPage =
-				new ExtendedPropertySheetPage(editingDomain) {
-					@Override
-					public void setSelectionToViewer(List<?> selection) {
-						ModelinstanceEditor.this.setSelectionToViewer(selection);
-						ModelinstanceEditor.this.setFocus();
-					}
-
-					@Override
-					public void setActionBars(IActionBars actionBars) {
-						super.setActionBars(actionBars);
-						getActionBarContributor().shareGlobalActions(this, actionBars);
-					}
-				};
-				
-				
-			propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory) {
-				public IPropertySource getPropertySource(Object object) {
-					if (object instanceof IPropertySource) {
-						return (IPropertySource) object;
-					}
-					AdapterFactory af = adapterFactory;
-					if (af != null) {
-						IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
-								IItemPropertySource.class);
-						if (ips != null) {
-							EditingDomain ed = editingDomain;
-							return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(
-									object, ips, af, ed, this);
-						}
-					}
-					if (object instanceof IAdaptable) {
-						return (IPropertySource) ((IAdaptable) object)
-								.getAdapter(IPropertySource.class);
-					}
-					return null;
-				}
-
-			});
-		}
-
-		return propertySheetPage;
-	}
+//	 public IPropertySheetPage getPropertySheetPage() {
+//		if (propertySheetPage == null) {
+//			propertySheetPage =
+//				new ExtendedPropertySheetPage(editingDomain) {
+//					@Override
+//					public void setSelectionToViewer(List<?> selection) {
+//						ModelinstanceEditor.this.setSelectionToViewer(selection);
+//						ModelinstanceEditor.this.setFocus();
+//					}
+//
+//					@Override
+//					public void setActionBars(IActionBars actionBars) {
+//						super.setActionBars(actionBars);
+//						getActionBarContributor().shareGlobalActions(this, actionBars);
+//					}
+//				};
+//				
+//				
+//			propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory) {
+//				public IPropertySource getPropertySource(Object object) {
+//					if (object instanceof IPropertySource) {
+//						return (IPropertySource) object;
+//					}
+//					AdapterFactory af = adapterFactory;
+//					if (af != null) {
+//						IItemPropertySource ips = (IItemPropertySource) af.adapt(object,
+//								IItemPropertySource.class);
+//						if (ips != null) {
+//							EditingDomain ed = editingDomain;
+//							return new de.uni_paderborn.fujaba.muml.common.emf.edit.provider.CustomPropertySource(
+//									object, ips, af, ed, this);
+//						}
+//					}
+//					if (object instanceof IAdaptable) {
+//						return (IPropertySource) ((IAdaptable) object)
+//								.getAdapter(IPropertySource.class);
+//					}
+//					return null;
+//				}
+//
+//			});
+//		}
+//
+//		return propertySheetPage;
+//	}
 
 	/**
 	 * This deals with how we want selection in the outliner to affect the other views.
