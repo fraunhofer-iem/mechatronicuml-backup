@@ -9,8 +9,8 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.uni_paderborn.fujaba.muml.psm.allocation.provider,
- de.uni_paderborn.fujaba.muml.psm.properties.provider,
- de.uni_paderborn.fujaba.muml.psm.provider
+ de.uni_paderborn.fujaba.muml.psm.cicmapping.provider,
+ de.uni_paderborn.fujaba.muml.psm.properties.provider
 Require-Bundle: org.eclipse.core.runtime,
  de.uni_paderborn.fujaba.muml.psm;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,

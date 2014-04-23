@@ -1,8 +1,8 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.provider;
+package de.uni_paderborn.fujaba.muml.psm.cicmapping.provider;
 
-import de.uni_paderborn.fujaba.muml.psm.util.PsmAdapterFactory;
+import de.uni_paderborn.fujaba.muml.psm.cicmapping.util.CicmappingAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PsmItemProviderAdapterFactory extends PsmAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class CicmappingItemProviderAdapterFactory extends CicmappingAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class PsmItemProviderAdapterFactory extends PsmAdapterFactory implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PsmItemProviderAdapterFactory() {
+	public CicmappingItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -71,8 +71,51 @@ public class PsmItemProviderAdapterFactory extends PsmAdapterFactory implements 
 		supportedTypes.add(IItemPropertySource.class);
 	}
 
-	
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICSystemMapping} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CICSystemMappingItemProvider cicSystemMappingItemProvider;
 
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICSystemMapping}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCICSystemMappingAdapter() {
+		if (cicSystemMappingItemProvider == null) {
+			cicSystemMappingItemProvider = new CICSystemMappingItemProvider(this);
+		}
+
+		return cicSystemMappingItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICMapping} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CICMappingItemProvider cicMappingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICMapping}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCICMappingAdapter() {
+		if (cicMappingItemProvider == null) {
+			cicMappingItemProvider = new CICMappingItemProvider(this);
+		}
+
+		return cicMappingItemProvider;
+	}
 
 	/**
 	 * This returns the root adapter factory that contains this factory.
@@ -173,6 +216,8 @@ public class PsmItemProviderAdapterFactory extends PsmAdapterFactory implements 
 	 * @generated
 	 */
 	public void dispose() {
+		if (cicSystemMappingItemProvider != null) cicSystemMappingItemProvider.dispose();
+		if (cicMappingItemProvider != null) cicMappingItemProvider.dispose();
 	}
 
 }

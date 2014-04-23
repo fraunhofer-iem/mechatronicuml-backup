@@ -3,13 +3,9 @@
 package de.uni_paderborn.fujaba.muml.psm.allocation.provider;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
-
-import de.uni_paderborn.fujaba.muml.hardware.resourcetype.provider.HardwareEditPlugin;
-
+import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.storydriven.core.provider.CoreEditPlugin;
 
 /**
