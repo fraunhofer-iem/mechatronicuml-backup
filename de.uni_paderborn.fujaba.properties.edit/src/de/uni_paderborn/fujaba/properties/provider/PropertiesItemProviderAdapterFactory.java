@@ -420,6 +420,29 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FlattenedListPropertyEditorItemProvider flattenedListPropertyEditorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFlattenedListPropertyEditorAdapter() {
+		if (flattenedListPropertyEditorItemProvider == null) {
+			flattenedListPropertyEditorItemProvider = new FlattenedListPropertyEditorItemProvider(this);
+		}
+
+		return flattenedListPropertyEditorItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.properties.ObjectPropertyEditor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -625,6 +648,7 @@ public class PropertiesItemProviderAdapterFactory extends PropertiesAdapterFacto
 		if (checkboxPropertyEditorItemProvider != null) checkboxPropertyEditorItemProvider.dispose();
 		if (radioPropertyEditorItemProvider != null) radioPropertyEditorItemProvider.dispose();
 		if (listPropertyEditorItemProvider != null) listPropertyEditorItemProvider.dispose();
+		if (flattenedListPropertyEditorItemProvider != null) flattenedListPropertyEditorItemProvider.dispose();
 		if (objectPropertyEditorItemProvider != null) objectPropertyEditorItemProvider.dispose();
 		if (oclPropertyEditorItemProvider != null) oclPropertyEditorItemProvider.dispose();
 		if (customPropertyEditorItemProvider != null) customPropertyEditorItemProvider.dispose();

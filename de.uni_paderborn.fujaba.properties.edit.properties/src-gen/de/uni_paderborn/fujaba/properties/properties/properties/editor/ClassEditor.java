@@ -23,6 +23,9 @@ public class ClassEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		addSubCategory("de.uni_paderborn.fujaba.properties.category.Lists",
+				"Lists", org.eclipse.swt.SWT.HORIZONTAL, true);
+
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
@@ -32,7 +35,8 @@ public class ClassEditor
 		if (getTab() == null
 				|| "de.uni_paderborn.fujaba.properties.tab.general"
 						.equals(getTab())) {
-			addClassSuperClasses_GeneralTab_Editor(null, true);
+			addClassSuperClasses_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}

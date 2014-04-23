@@ -747,7 +747,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getObjectPropertyEditor()
 	 * @generated
 	 */
-	int OBJECT_PROPERTY_EDITOR = 16;
+	int OBJECT_PROPERTY_EDITOR = 17;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -876,6 +876,34 @@ public interface PropertiesPackage extends EPackage {
 	int LIST_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.uni_paderborn.fujaba.properties.impl.FlattenedListPropertyEditorImpl <em>Flattened List Property Editor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.uni_paderborn.fujaba.properties.impl.FlattenedListPropertyEditorImpl
+	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getFlattenedListPropertyEditor()
+	 * @generated
+	 */
+	int FLATTENED_LIST_PROPERTY_EDITOR = 16;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLATTENED_LIST_PROPERTY_EDITOR__PROPERTY = PROPERTY_EDITOR__PROPERTY;
+
+	/**
+	 * The number of structural features of the '<em>Flattened List Property Editor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLATTENED_LIST_PROPERTY_EDITOR_FEATURE_COUNT = PROPERTY_EDITOR_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -901,7 +929,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyEditor()
 	 * @generated
 	 */
-	int OCL_PROPERTY_EDITOR = 17;
+	int OCL_PROPERTY_EDITOR = 18;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -929,7 +957,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getCustomPropertyEditor()
 	 * @generated
 	 */
-	int CUSTOM_PROPERTY_EDITOR = 18;
+	int CUSTOM_PROPERTY_EDITOR = 19;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' container reference.
@@ -966,7 +994,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getPropertyFilter()
 	 * @generated
 	 */
-	int PROPERTY_FILTER = 19;
+	int PROPERTY_FILTER = 20;
 
 	/**
 	 * The number of structural features of the '<em>Property Filter</em>' class.
@@ -985,7 +1013,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getOCLPropertyFilter()
 	 * @generated
 	 */
-	int OCL_PROPERTY_FILTER = 20;
+	int OCL_PROPERTY_FILTER = 21;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1014,7 +1042,7 @@ public interface PropertiesPackage extends EPackage {
 	 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getTransformationPosition()
 	 * @generated
 	 */
-	int TRANSFORMATION_POSITION = 21;
+	int TRANSFORMATION_POSITION = 22;
 
 
 	/**
@@ -1728,6 +1756,16 @@ public interface PropertiesPackage extends EPackage {
 	EClass getListPropertyEditor();
 
 	/**
+	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor <em>Flattened List Property Editor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Flattened List Property Editor</em>'.
+	 * @see de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor
+	 * @generated
+	 */
+	EClass getFlattenedListPropertyEditor();
+
+	/**
 	 * Returns the meta object for class '{@link de.uni_paderborn.fujaba.properties.ObjectPropertyEditor <em>Object Property Editor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2390,6 +2428,16 @@ public interface PropertiesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LIST_PROPERTY_EDITOR = eINSTANCE.getListPropertyEditor();
+
+		/**
+		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.FlattenedListPropertyEditorImpl <em>Flattened List Property Editor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.uni_paderborn.fujaba.properties.impl.FlattenedListPropertyEditorImpl
+		 * @see de.uni_paderborn.fujaba.properties.impl.PropertiesPackageImpl#getFlattenedListPropertyEditor()
+		 * @generated
+		 */
+		EClass FLATTENED_LIST_PROPERTY_EDITOR = eINSTANCE.getFlattenedListPropertyEditor();
 
 		/**
 		 * The meta object literal for the '{@link de.uni_paderborn.fujaba.properties.impl.ObjectPropertyEditorImpl <em>Object Property Editor</em>}' class.

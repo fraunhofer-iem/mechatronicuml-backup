@@ -13,6 +13,7 @@ import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomTransformation;
+import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
@@ -45,7 +46,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	 */
 	public static PropertiesFactory init() {
 		try {
-			PropertiesFactory thePropertiesFactory = (PropertiesFactory)EPackage.Registry.INSTANCE.getEFactory("http://de.uni_paderborn.fujaba.properties/0.4.0"); 
+			PropertiesFactory thePropertiesFactory = (PropertiesFactory)EPackage.Registry.INSTANCE.getEFactory(PropertiesPackage.eNS_URI);
 			if (thePropertiesFactory != null) {
 				return thePropertiesFactory;
 			}
@@ -89,6 +90,7 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 			case PropertiesPackage.CHECKBOX_PROPERTY_EDITOR: return createCheckboxPropertyEditor();
 			case PropertiesPackage.RADIO_PROPERTY_EDITOR: return createRadioPropertyEditor();
 			case PropertiesPackage.LIST_PROPERTY_EDITOR: return createListPropertyEditor();
+			case PropertiesPackage.FLATTENED_LIST_PROPERTY_EDITOR: return createFlattenedListPropertyEditor();
 			case PropertiesPackage.OBJECT_PROPERTY_EDITOR: return createObjectPropertyEditor();
 			case PropertiesPackage.OCL_PROPERTY_EDITOR: return createOCLPropertyEditor();
 			case PropertiesPackage.CUSTOM_PROPERTY_EDITOR: return createCustomPropertyEditor();
@@ -276,6 +278,16 @@ public class PropertiesFactoryImpl extends EFactoryImpl implements PropertiesFac
 	public ListPropertyEditor createListPropertyEditor() {
 		ListPropertyEditorImpl listPropertyEditor = new ListPropertyEditorImpl();
 		return listPropertyEditor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FlattenedListPropertyEditor createFlattenedListPropertyEditor() {
+		FlattenedListPropertyEditorImpl flattenedListPropertyEditor = new FlattenedListPropertyEditorImpl();
+		return flattenedListPropertyEditor;
 	}
 
 	/**

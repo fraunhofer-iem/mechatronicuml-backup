@@ -24,7 +24,7 @@
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/genModel"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.0/@propertyCategories.0">
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/referencedGenerators"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
@@ -44,6 +44,7 @@
         <genFeature href="properties.genmodel#//properties/PropertyGenerator/sourceFolder"/>
         <editor xsi:type="de.uni_paderborn.fujaba:TextPropertyEditor"/>
       </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.0/@properties.2"/>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/Reconciler"/>
@@ -132,13 +133,14 @@
         <genFeature href="properties.genmodel#//properties/Class/genClass"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0">
+      <properties tab="//@tabs.0" category="//@packages.0/@classes.6/@propertyCategories.0">
         <genFeature href="properties.genmodel#//properties/Class/superClasses"/>
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
-      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+      <properties tab="//@tabs.0" tooltip="" category="//@packages.0/@classes.6/@propertyCategories.0" reconcile="false">
         <genFeature href="properties.genmodel#//properties/Class/allSuperClasses"/>
       </properties>
+      <propertyCategories title="Lists" properties="//@packages.0/@classes.6/@properties.1 //@packages.0/@classes.6/@properties.2"/>
     </classes>
     <classes>
       <genClass href="properties.genmodel#//properties/PropertyCategory"/>
@@ -237,6 +239,9 @@
         <genFeature href="properties.genmodel#//properties/OCLPropertyFilter/expression"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.properties.editor.CustomOCLPropertyEditor"/>
       </properties>
+    </classes>
+    <classes superClasses="//@packages.0/@classes.9">
+      <genClass href="properties.genmodel#//properties/FlattenedListPropertyEditor"/>
     </classes>
   </packages>
 </de.uni_paderborn.fujaba:PropertyGenerator>

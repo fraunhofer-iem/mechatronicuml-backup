@@ -90,6 +90,7 @@
     <genClasses ecoreClass="properties.ecore#//CheckboxPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//RadioPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//ListPropertyEditor"/>
+    <genClasses ecoreClass="properties.ecore#//FlattenedListPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//ObjectPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//OCLPropertyEditor"/>
     <genClasses ecoreClass="properties.ecore#//CustomPropertyEditor">

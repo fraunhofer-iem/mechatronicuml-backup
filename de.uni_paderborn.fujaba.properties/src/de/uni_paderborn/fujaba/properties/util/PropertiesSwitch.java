@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomTransformation;
+import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
@@ -183,6 +184,13 @@ public class PropertiesSwitch<T> extends Switch<T> {
 				ListPropertyEditor listPropertyEditor = (ListPropertyEditor)theEObject;
 				T result = caseListPropertyEditor(listPropertyEditor);
 				if (result == null) result = casePropertyEditor(listPropertyEditor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PropertiesPackage.FLATTENED_LIST_PROPERTY_EDITOR: {
+				FlattenedListPropertyEditor flattenedListPropertyEditor = (FlattenedListPropertyEditor)theEObject;
+				T result = caseFlattenedListPropertyEditor(flattenedListPropertyEditor);
+				if (result == null) result = casePropertyEditor(flattenedListPropertyEditor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -461,6 +469,21 @@ public class PropertiesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseListPropertyEditor(ListPropertyEditor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Flattened List Property Editor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Flattened List Property Editor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFlattenedListPropertyEditor(FlattenedListPropertyEditor object) {
 		return null;
 	}
 

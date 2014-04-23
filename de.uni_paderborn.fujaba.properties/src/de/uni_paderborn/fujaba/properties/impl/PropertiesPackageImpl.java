@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomTransformation;
+import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
@@ -157,6 +158,13 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * @generated
 	 */
 	private EClass listPropertyEditorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass flattenedListPropertyEditorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -872,6 +880,15 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFlattenedListPropertyEditor() {
+		return flattenedListPropertyEditorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getObjectPropertyEditor() {
 		return objectPropertyEditorEClass;
 	}
@@ -1049,6 +1066,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 
 		listPropertyEditorEClass = createEClass(LIST_PROPERTY_EDITOR);
 
+		flattenedListPropertyEditorEClass = createEClass(FLATTENED_LIST_PROPERTY_EDITOR);
+
 		objectPropertyEditorEClass = createEClass(OBJECT_PROPERTY_EDITOR);
 
 		oclPropertyEditorEClass = createEClass(OCL_PROPERTY_EDITOR);
@@ -1103,6 +1122,7 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		checkboxPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		radioPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		listPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
+		flattenedListPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		objectPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		oclPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
 		customPropertyEditorEClass.getESuperTypes().add(this.getPropertyEditor());
@@ -1192,6 +1212,8 @@ public class PropertiesPackageImpl extends EPackageImpl implements PropertiesPac
 		initEClass(radioPropertyEditorEClass, RadioPropertyEditor.class, "RadioPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(listPropertyEditorEClass, ListPropertyEditor.class, "ListPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(flattenedListPropertyEditorEClass, FlattenedListPropertyEditor.class, "FlattenedListPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(objectPropertyEditorEClass, ObjectPropertyEditor.class, "ObjectPropertyEditor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

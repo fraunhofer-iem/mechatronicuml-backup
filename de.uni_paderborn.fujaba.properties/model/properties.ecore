@@ -164,6 +164,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="CheckboxPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="RadioPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListPropertyEditor" eSuperTypes="#//PropertyEditor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlattenedListPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="OCLPropertyEditor" eSuperTypes="#//PropertyEditor"/>
   <eClassifiers xsi:type="ecore:EClass" name="CustomPropertyEditor" eSuperTypes="#//PropertyEditor">

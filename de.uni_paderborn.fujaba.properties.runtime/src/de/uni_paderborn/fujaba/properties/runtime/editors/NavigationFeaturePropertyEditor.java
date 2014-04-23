@@ -42,9 +42,10 @@ public class NavigationFeaturePropertyEditor extends
 	protected Button buttonRemove;
 	protected ComboViewer classViewer;
 	private EObject manyValue;
-	private boolean createMode = false;
+	protected boolean createMode = false;
 	private boolean initiallyOpen = false;
 	private EClass selectedClass = null;
+	private List<EClass> eClasses;
 
 	public NavigationFeaturePropertyEditor(AdapterFactory adapterFactory,
 			EStructuralFeature feature, boolean initiallyOpen) {
@@ -88,7 +89,7 @@ public class NavigationFeaturePropertyEditor extends
 		layout.fill = true;
 		composite.setLayout(layout);
 
-		List<EClass> eClasses = RuntimePlugin.getEClasses((EReference) feature);
+		eClasses = RuntimePlugin.getEClasses((EReference) feature);
 
 		selectedClass = null;
 		if (!eClasses.isEmpty()) {
@@ -102,7 +103,7 @@ public class NavigationFeaturePropertyEditor extends
 				selectedClass = null;
 			}
 		}
-		if (eClasses.size() > 1) {
+		if (shouldShowClassesCombo()) {
 			Combo combo = new Combo(composite, SWT.BORDER | SWT.READ_ONLY);
 			classViewer = new ComboViewer(combo);
 			classViewer.setContentProvider(ArrayContentProvider.getInstance());
@@ -134,7 +135,7 @@ public class NavigationFeaturePropertyEditor extends
 			}
 		}
 		
-		if (!feature.isMany()) {
+		if (hasCreateButton()) {
 			buttonCreate = toolkit.createButton(composite, "", SWT.TOGGLE);
 			buttonCreate.setImage(RuntimePlugin.getImage(RuntimePlugin.IMAGE_ADD,
 					12, 12));
@@ -147,15 +148,21 @@ public class NavigationFeaturePropertyEditor extends
 				}
 	
 			});
-	
+		}
+		
+		if (hasRemoveButton()) {
 			buttonRemove = toolkit.createButton(composite, "", SWT.TOGGLE);
 			buttonRemove.setImage(RuntimePlugin.getImage(
 					RuntimePlugin.IMAGE_REMOVE, 12, 12));
 			buttonRemove.addSelectionListener(new SelectionAdapter() {
 				public void widgetSelected(SelectionEvent e) {
-					buttonRemove.removeSelectionListener(this);
+					if (!isDisposed()) {
+						buttonRemove.removeSelectionListener(this);
+					}
 					remove();
-					buttonRemove.addSelectionListener(this);
+					if (!isDisposed()) {
+						buttonRemove.addSelectionListener(this);
+					}
 				}
 			});
 		}
@@ -179,9 +186,25 @@ public class NavigationFeaturePropertyEditor extends
 
 		// section.setSeparatorControl(toolkit.createSeparator(section,
 		// SWT.NONE));
-		if (createMode) {
+		if (shouldCreateInitially()) {
 			create();
 		}
+	}
+
+	protected boolean shouldShowClassesCombo() {
+		return eClasses != null && eClasses.size() > 1;
+	}
+
+	protected boolean shouldCreateInitially() {
+		return createMode;
+	}
+
+	protected boolean hasCreateButton() {
+		return !feature.isMany();
+	}
+
+	protected boolean hasRemoveButton() {
+		return !feature.isMany();
 	}
 
 	@Override
@@ -273,8 +296,10 @@ public class NavigationFeaturePropertyEditor extends
 			}
 			setValue(newValue);
 			refreshButtons();
-			navigatedEditor.getSection().setExpanded(true);
-			navigatedEditor.getSection().setExpanded(false);
+			if (!navigatedEditor.isDisposed()) {
+				navigatedEditor.getSection().setExpanded(true);
+				navigatedEditor.getSection().setExpanded(false);
+			}
 			RuntimePlugin.revalidateLayout(parentComposite);
 		}
 	}

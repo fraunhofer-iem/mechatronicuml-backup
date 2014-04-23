@@ -167,6 +167,10 @@ new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(adapte
 new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
 
+«DEFINE createEditor(Property property) FOR FlattenedListPropertyEditor-»
+new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
+«ENDDEFINE»
+
 «DEFINE createEditor(Property property) FOR ObjectPropertyEditor-»
 new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
@@ -174,6 +178,8 @@ new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeatureProperty
 «DEFINE createEditor(Property property) FOR OCLPropertyEditor-»
 new de.uni_paderborn.fujaba.properties.runtime.editors.OCLPropertyEditor(adapterFactory, «property.genFeature.genFeatureLiteral()»);
 «ENDDEFINE»
+
+
 
 «DEFINE createEditor(Property property) FOR CustomPropertyEditor-»
 new «fullyQualifiedClassName»(adapterFactory, «property.genFeature.genFeatureLiteral()»);

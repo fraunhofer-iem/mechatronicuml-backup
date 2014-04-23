@@ -157,6 +157,15 @@ public interface PropertiesFactory extends EFactory {
 	ListPropertyEditor createListPropertyEditor();
 
 	/**
+	 * Returns a new object of class '<em>Flattened List Property Editor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Flattened List Property Editor</em>'.
+	 * @generated
+	 */
+	FlattenedListPropertyEditor createFlattenedListPropertyEditor();
+
+	/**
 	 * Returns a new object of class '<em>Object Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

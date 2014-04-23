@@ -11,6 +11,7 @@ import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomTransformation;
+import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
@@ -147,6 +148,10 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseListPropertyEditor(ListPropertyEditor object) {
 				return createListPropertyEditorAdapter();
+			}
+			@Override
+			public Adapter caseFlattenedListPropertyEditor(FlattenedListPropertyEditor object) {
+				return createFlattenedListPropertyEditorAdapter();
 			}
 			@Override
 			public Adapter caseObjectPropertyEditor(ObjectPropertyEditor object) {
@@ -409,6 +414,20 @@ public class PropertiesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createListPropertyEditorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor <em>Flattened List Property Editor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor
+	 * @generated
+	 */
+	public Adapter createFlattenedListPropertyEditorAdapter() {
 		return null;
 	}
 

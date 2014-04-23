@@ -361,6 +361,11 @@ public class PropertyItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(PropertiesPackage.Literals.PROPERTY__EDITOR,
+				 PropertiesFactory.eINSTANCE.createFlattenedListPropertyEditor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PropertiesPackage.Literals.PROPERTY__EDITOR,
 				 PropertiesFactory.eINSTANCE.createObjectPropertyEditor()));
 
 		newChildDescriptors.add

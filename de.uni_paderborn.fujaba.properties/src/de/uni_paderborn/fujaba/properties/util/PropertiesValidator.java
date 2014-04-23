@@ -18,6 +18,7 @@ import de.uni_paderborn.fujaba.properties.CheckboxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ComboBoxPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomPropertyEditor;
 import de.uni_paderborn.fujaba.properties.CustomTransformation;
+import de.uni_paderborn.fujaba.properties.FlattenedListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.ListPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyEditor;
 import de.uni_paderborn.fujaba.properties.OCLPropertyFilter;
@@ -140,6 +141,8 @@ public class PropertiesValidator extends EObjectValidator {
 				return validateRadioPropertyEditor((RadioPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.LIST_PROPERTY_EDITOR:
 				return validateListPropertyEditor((ListPropertyEditor)value, diagnostics, context);
+			case PropertiesPackage.FLATTENED_LIST_PROPERTY_EDITOR:
+				return validateFlattenedListPropertyEditor((FlattenedListPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.OBJECT_PROPERTY_EDITOR:
 				return validateObjectPropertyEditor((ObjectPropertyEditor)value, diagnostics, context);
 			case PropertiesPackage.OCL_PROPERTY_EDITOR:
@@ -506,6 +509,15 @@ public class PropertiesValidator extends EObjectValidator {
 	 */
 	public boolean validateListPropertyEditor(ListPropertyEditor listPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(listPropertyEditor, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFlattenedListPropertyEditor(FlattenedListPropertyEditor flattenedListPropertyEditor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(flattenedListPropertyEditor, diagnostics, context);
 	}
 
 	/**
