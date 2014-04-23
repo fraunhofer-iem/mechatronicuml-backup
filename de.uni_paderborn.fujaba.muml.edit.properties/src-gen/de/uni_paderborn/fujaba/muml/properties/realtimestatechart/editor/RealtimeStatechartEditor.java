@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.realtimestatechart.editor;
  */
 public class RealtimeStatechartEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.behavior.editor.BehaviorEditor {
+			org.storydriven.core.properties.core.editor.NamedElementEditor {
 
 	/**
 	 * @generated
@@ -46,11 +46,17 @@ public class RealtimeStatechartEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addNamedElementName_GeneralTab_Editor(null, true);
+			addBehaviorBehavioralElement_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.extensions".equals(getTab())) {
-			addExtendableElementExtension_ExtensionsTab_Editor(null, true);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addBehaviorOperations_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addBehaviorVariables_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
@@ -158,22 +164,22 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	protected void addNamedElementName_GeneralTab_Editor(String category,
-			boolean front) {
+	protected void addBehaviorBehavioralElement_GeneralTab_Editor(
+			String category, boolean front) {
 		addEditorToCategory(category,
-				createNamedElementName_GeneralTab_Editor(), front);
+				createBehaviorBehavioralElement_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehaviorBehavioralElement_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
 				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getNamedElement_Name(), false);
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getBehavior_BehavioralElement());
 
-		editor.setTooltipMessage("The name attribute of a meta-model element.");
+		editor.setTooltipMessage("The behavioral element this statechart belongs to.");
 
 		return editor;
 
@@ -182,20 +188,46 @@ public class RealtimeStatechartEditor
 	/**
 	 * @generated
 	 */
-	protected void addExtendableElementExtension_ExtensionsTab_Editor(
-			String category, boolean front) {
+	protected void addBehaviorOperations_GeneralTab_Editor(String category,
+			boolean front) {
 		addEditorToCategory(category,
-				createExtendableElementExtension_ExtensionsTab_Editor(), front);
+				createBehaviorOperations_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createExtendableElementExtension_ExtensionsTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehaviorOperations_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
 				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getExtendableElement_Extension());
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getBehavior_Operations());
+
+		editor.setTooltipMessage("A behavior may define a set of operations as signatures of helper functions. These operations\nmay be called by the behavior specification and may access the variables of\nthe behavior specification. The operations are contained in the behavior.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addBehaviorVariables_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createBehaviorVariables_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehaviorVariables_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getBehavior_Variables());
+
+		editor.setTooltipMessage("A behavior may define a set of variables in order to store data. The variables\nmay be accessed by various elements, e.g., operations and the behavior specification itself.\nThe variables are contained in the behavior.");
 
 		return editor;
 
@@ -260,8 +292,8 @@ public class RealtimeStatechartEditor
 					new java.lang.String[]{"property.tab.general",
 							"property.tab.general", "property.tab.general",
 							"property.tab.general", "property.tab.general",
+							"property.tab.extensions", "property.tab.general",
 							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.extensions",
 							"property.tab.documentation"}).contains(tab);
 		}
 	}

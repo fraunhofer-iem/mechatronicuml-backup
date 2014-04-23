@@ -10,6 +10,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.storydriven.core.CommentableElement;
@@ -32,7 +33,7 @@ import de.uni_paderborn.fujaba.muml.protocol.RoleConnector;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getVerificationConstraintRepository <em>Verification Constraint Repository</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getVerificationConstraintRepositories <em>Verification Constraint Repositories</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link de.uni_paderborn.fujaba.muml.protocol.impl.AbstractCoordinationSpecificationImpl#getRoleConnector <em>Role Connector</em>}</li>
  * </ul>
@@ -62,14 +63,14 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	protected String comment = COMMENT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getVerificationConstraintRepository() <em>Verification Constraint Repository</em>}' containment reference.
+	 * The cached value of the '{@link #getVerificationConstraintRepositories() <em>Verification Constraint Repositories</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getVerificationConstraintRepository()
+	 * @see #getVerificationConstraintRepositories()
 	 * @generated
 	 * @ordered
 	 */
-	protected VerificationConstraintRepository verificationConstraintRepository;
+	protected EList<VerificationConstraintRepository> verificationConstraintRepositories;
 
 	/**
 	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
@@ -136,42 +137,11 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VerificationConstraintRepository getVerificationConstraintRepository() {
-		return verificationConstraintRepository;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetVerificationConstraintRepository(VerificationConstraintRepository newVerificationConstraintRepository, NotificationChain msgs) {
-		VerificationConstraintRepository oldVerificationConstraintRepository = verificationConstraintRepository;
-		verificationConstraintRepository = newVerificationConstraintRepository;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY, oldVerificationConstraintRepository, newVerificationConstraintRepository);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<VerificationConstraintRepository> getVerificationConstraintRepositories() {
+		if (verificationConstraintRepositories == null) {
+			verificationConstraintRepositories = new EObjectContainmentEList<VerificationConstraintRepository>(VerificationConstraintRepository.class, this, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setVerificationConstraintRepository(VerificationConstraintRepository newVerificationConstraintRepository) {
-		if (newVerificationConstraintRepository != verificationConstraintRepository) {
-			NotificationChain msgs = null;
-			if (verificationConstraintRepository != null)
-				msgs = ((InternalEObject)verificationConstraintRepository).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY, null, msgs);
-			if (newVerificationConstraintRepository != null)
-				msgs = ((InternalEObject)newVerificationConstraintRepository).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY, null, msgs);
-			msgs = basicSetVerificationConstraintRepository(newVerificationConstraintRepository, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY, newVerificationConstraintRepository, newVerificationConstraintRepository));
+		return verificationConstraintRepositories;
 	}
 
 	/**
@@ -256,8 +226,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
-				return basicSetVerificationConstraintRepository(null, msgs);
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
+				return ((InternalEList<?>)getVerificationConstraintRepositories()).basicRemove(otherEnd, msgs);
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				return ((InternalEList<?>)getRoles()).basicRemove(otherEnd, msgs);
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
@@ -276,8 +246,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 		switch (featureID) {
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				return getComment();
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
-				return getVerificationConstraintRepository();
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
+				return getVerificationConstraintRepositories();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				return getRoles();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
@@ -298,8 +268,9 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				setComment((String)newValue);
 				return;
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
-				setVerificationConstraintRepository((VerificationConstraintRepository)newValue);
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
+				getVerificationConstraintRepositories().clear();
+				getVerificationConstraintRepositories().addAll((Collection<? extends VerificationConstraintRepository>)newValue);
 				return;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				getRoles().clear();
@@ -323,8 +294,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				setComment(COMMENT_EDEFAULT);
 				return;
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
-				setVerificationConstraintRepository((VerificationConstraintRepository)null);
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
+				getVerificationConstraintRepositories().clear();
 				return;
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				getRoles().clear();
@@ -346,8 +317,8 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 		switch (featureID) {
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
-				return verificationConstraintRepository != null;
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
+				return verificationConstraintRepositories != null && !verificationConstraintRepositories.isEmpty();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 				return roles != null && !roles.isEmpty();
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
@@ -371,7 +342,7 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 		}
 		if (baseClass == VerifiableElement.class) {
 			switch (derivedFeatureID) {
-				case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY: return ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY;
+				case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES: return ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES;
 				default: return -1;
 			}
 		}
@@ -393,7 +364,7 @@ public abstract class AbstractCoordinationSpecificationImpl extends NamedElement
 		}
 		if (baseClass == VerifiableElement.class) {
 			switch (baseFeatureID) {
-				case ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY: return ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY;
+				case ConstraintPackage.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES: return ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES;
 				default: return -1;
 			}
 		}

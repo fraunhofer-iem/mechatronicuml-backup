@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.component.editor;
  */
 public abstract class ComponentEditor
 		extends
-			org.storydriven.core.properties.core.editor.NamedElementEditor {
+			de.uni_paderborn.fujaba.muml.properties.types.editor.DataTypeEditor {
 
 	/**
 	 * @generated
@@ -33,10 +33,6 @@ public abstract class ComponentEditor
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addComponentComponentKind_GeneralTab_Editor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addCommentableElementComment_DocumentationTab_Editor(null, true);
 		}
 
 	}
@@ -84,31 +80,6 @@ public abstract class ComponentEditor
 						.getComponent_ComponentKind());
 
 		editor.setTooltipMessage("This attribute specifies the kind of the component. A component may be either\ndiscrete software component, a continuous component, a hybrid component \nor a hardware component.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addCommentableElementComment_DocumentationTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createCommentableElementComment_DocumentationTab_Editor(),
-				front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementComment_DocumentationTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
-				adapterFactory,
-				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
-
-		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
 
 		return editor;
 

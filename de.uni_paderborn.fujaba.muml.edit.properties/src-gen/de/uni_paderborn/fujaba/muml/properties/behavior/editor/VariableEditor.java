@@ -5,7 +5,7 @@ package de.uni_paderborn.fujaba.muml.properties.behavior.editor;
  */
 public class VariableEditor
 		extends
-			de.uni_paderborn.fujaba.muml.properties.behavior.editor.TypedNamedElementEditor {
+			org.storydriven.core.properties.core.editor.CommentableElementEditor {
 
 	/**
 	 * @generated
@@ -31,8 +31,12 @@ public class VariableEditor
 			addVariableConstant_GeneralTab_Editor(null, true);
 		}
 
-		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
-			addCommentableElementComment_DocumentationTab_Editor(null, true);
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addTypedNamedElementDataType_GeneralTab_Editor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addNamedElementName_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -88,23 +92,46 @@ public class VariableEditor
 	/**
 	 * @generated
 	 */
-	protected void addCommentableElementComment_DocumentationTab_Editor(
+	protected void addTypedNamedElementDataType_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(category,
-				createCommentableElementComment_DocumentationTab_Editor(),
-				front);
+				createTypedNamedElementDataType_GeneralTab_Editor(), front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createCommentableElementComment_DocumentationTab_Editor() {
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createTypedNamedElementDataType_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getTypedNamedElement_DataType());
+
+		editor.setTooltipMessage("The data type of this element.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addNamedElementName_GeneralTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createNamedElementName_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createNamedElementName_GeneralTab_Editor() {
 		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.TextPropertyEditor(
 				adapterFactory,
 				org.storydriven.core.CorePackage.eINSTANCE
-						.getCommentableElement_Comment(), true);
+						.getNamedElement_Name(), false);
 
-		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
+		editor.setTooltipMessage("The name attribute of a meta-model element.");
 
 		return editor;
 
@@ -142,9 +169,10 @@ public class VariableEditor
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
 					new java.lang.String[]{"property.tab.general",
-							"property.tab.general", "property.tab.general",
-							"property.tab.general", "property.tab.extensions",
-							"property.tab.documentation"}).contains(tab);
+							"property.tab.general",
+							"property.tab.documentation",
+							"property.tab.extensions", "property.tab.general",
+							"property.tab.general"}).contains(tab);
 		}
 	}
 

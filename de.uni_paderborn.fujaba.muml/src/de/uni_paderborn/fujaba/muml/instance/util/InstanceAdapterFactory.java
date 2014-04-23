@@ -19,6 +19,7 @@ import de.uni_paderborn.fujaba.muml.connector.ConnectorInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteMultiInteractionEndpointInstance;
 import de.uni_paderborn.fujaba.muml.connector.DiscreteSingleInteractionEndpointInstance;
+import de.uni_paderborn.fujaba.muml.instance.*;
 import de.uni_paderborn.fujaba.muml.instance.AssemblyConnectorInstance;
 import de.uni_paderborn.fujaba.muml.instance.AtomicComponentInstance;
 import de.uni_paderborn.fujaba.muml.instance.ComponentInstance;

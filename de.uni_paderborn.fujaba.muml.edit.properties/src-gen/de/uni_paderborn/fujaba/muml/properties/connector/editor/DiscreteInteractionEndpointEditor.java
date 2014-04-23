@@ -57,16 +57,16 @@ public abstract class DiscreteInteractionEndpointEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
+			addBehavioralElementBehavior_GeneralTab_Editor(null, true);
+		}
+
+		if (getTab() == null || "property.tab.general".equals(getTab())) {
 			addConnectorEndpointConnectors_GeneralTab_Editor(
 					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 		if (getTab() == null || "property.tab.documentation".equals(getTab())) {
 			addCommentableElementComment_DocumentationTab_Editor(null, true);
-		}
-
-		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBehavioralElementBehavior_GeneralTab_Editor(null, true);
 		}
 
 	}
@@ -233,6 +233,30 @@ public abstract class DiscreteInteractionEndpointEditor
 	/**
 	 * @generated
 	 */
+	protected void addBehavioralElementBehavior_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createBehavioralElementBehavior_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehavior_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
+						.getBehavioralElement_Behavior());
+
+		editor.setTooltipMessage("The behavior of this behavioral element.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
 	protected void addConnectorEndpointConnectors_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(category,
@@ -274,30 +298,6 @@ public abstract class DiscreteInteractionEndpointEditor
 						.getCommentableElement_Comment(), true);
 
 		editor.setTooltipMessage("The comment string that can be used to attach arbitrary information to CommentableElements.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
-	protected void addBehavioralElementBehavior_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createBehavioralElementBehavior_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createBehavioralElementBehavior_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.behavior.BehaviorPackage.eINSTANCE
-						.getBehavioralElement_Behavior());
-
-		editor.setTooltipMessage("The behavior of this behavioral element.");
 
 		return editor;
 

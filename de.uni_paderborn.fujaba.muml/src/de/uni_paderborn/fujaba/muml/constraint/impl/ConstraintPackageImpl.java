@@ -179,7 +179,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVerifiableElement_VerificationConstraintRepository() {
+	public EReference getVerifiableElement_VerificationConstraintRepositories() {
 		return (EReference)verifiableElementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -214,7 +214,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		verificationConstraintRepositoryEClass = createEClass(VERIFICATION_CONSTRAINT_REPOSITORY);
 
 		verifiableElementEClass = createEClass(VERIFIABLE_ELEMENT);
-		createEReference(verifiableElementEClass, VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY);
+		createEReference(verifiableElementEClass, VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES);
 	}
 
 	/**
@@ -254,7 +254,7 @@ public class ConstraintPackageImpl extends EPackageImpl implements ConstraintPac
 		initEClass(verificationConstraintRepositoryEClass, VerificationConstraintRepository.class, "VerificationConstraintRepository", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(verifiableElementEClass, VerifiableElement.class, "VerifiableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVerifiableElement_VerificationConstraintRepository(), this.getVerificationConstraintRepository(), null, "verificationConstraintRepository", null, 0, 1, VerifiableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVerifiableElement_VerificationConstraintRepositories(), this.getVerificationConstraintRepository(), null, "verificationConstraintRepositories", null, 0, -1, VerifiableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

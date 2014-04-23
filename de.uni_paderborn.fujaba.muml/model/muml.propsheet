@@ -268,8 +268,8 @@
       </properties>
       <propertyCategories title="Booleans" properties="//@packages.1/@classes.7/@properties.8 //@packages.1/@classes.7/@properties.12"/>
       <propertyCategories title="Lists" properties="//@packages.1/@classes.7/@properties.4 //@packages.1/@classes.7/@properties.5 //@packages.1/@classes.7/@properties.6 //@packages.1/@classes.7/@properties.10"/>
-      <superClasses href="#//@packages.1/@classes.15"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="#//@packages.1/@classes.15"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/realtimestatechart/ClockConstraint"/>
@@ -399,8 +399,8 @@
         <editor xsi:type="de.uni_paderborn.fujaba:ListPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" properties="//@packages.1/@classes.16/@properties.1 //@packages.1/@classes.16/@properties.2 //@packages.1/@classes.16/@properties.3"/>
-      <superClasses href="#//@packages.7/@classes.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="#//@packages.7/@classes.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
     <classes>
@@ -636,9 +636,9 @@
     <genPackage href="muml.genmodel#//muml/protocol"/>
     <classes>
       <genClass href="muml.genmodel#//muml/protocol/AbstractCoordinationSpecification"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="#//@packages.6/@classes.1"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
     </classes>
     <classes superClasses="//@packages.5/@classes.0">
       <genClass href="muml.genmodel#//muml/protocol/CoordinationProtocol"/>
@@ -693,10 +693,10 @@
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/constraint/VerifiableElement"/>
-      <properties>
-        <genFeature href="muml.genmodel#//muml/constraint/VerifiableElement/verificationConstraintRepository"/>
+      <properties tooltip="" reconcile="false">
+        <genFeature href="muml.genmodel#//muml/constraint/VerifiableElement/verificationConstraintRepositories"/>
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
-        <editor xsi:type="de.uni_paderborn.fujaba:ObjectPropertyEditor"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:FlattenedListPropertyEditor"/>
       </properties>
     </classes>
   </packages>
@@ -741,8 +741,8 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
-      <superClasses href="#//@packages.7/@classes.6"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="#//@packages.7/@classes.6"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/behavior/Operation"/>
@@ -766,8 +766,8 @@
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/behavior/Parameter"/>
-      <superClasses href="#//@packages.7/@classes.6"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
+      <superClasses href="#//@packages.7/@classes.6"/>
     </classes>
     <classes>
       <genClass href="muml.genmodel#//muml/behavior/ParameterBinding"/>
@@ -808,9 +808,9 @@
         <editor xsi:type="de.uni_paderborn.fujaba:RadioPropertyEditor"/>
       </properties>
       <propertyCategories title="Lists" properties="//@packages.8/@classes.0/@properties.0"/>
+      <superClasses href="#//@packages.4/@classes.2"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="#//@packages.4/@classes.2"/>
     </classes>
     <classes superClasses="//@packages.9/@classes.0 //@packages.4/@classes.2">
       <genClass href="muml.genmodel#//muml/component/Port"/>
@@ -848,9 +848,9 @@
         <tab href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@tabs.0"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.properties.valuetype.editor.CustomCardinalityPropertyEditor"/>
       </properties>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
-      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
       <superClasses href="#//@packages.4/@classes.2"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
+      <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.0"/>
     </classes>
     <classes superClasses="//@packages.8/@classes.13 //@packages.8/@classes.11">
       <genClass href="muml.genmodel#//muml/component/StaticStructuredComponent"/>
@@ -1036,8 +1036,8 @@
       </properties>
       <propertyCategories title="Lists" properties="//@packages.9/@classes.4/@properties.0 //@packages.9/@classes.4/@properties.1 //@packages.9/@classes.4/@properties.5"/>
       <superClasses href="../../org.storydriven.core.edit.properties/model/core.propsheet#//@packages.0/@classes.3"/>
-      <superClasses href="#//@packages.9/@classes.0"/>
       <superClasses href="#//@packages.7/@classes.0"/>
+      <superClasses href="#//@packages.9/@classes.0"/>
     </classes>
     <classes superClasses="//@packages.9/@classes.2">
       <genClass href="muml.genmodel#//muml/connector/DiscreteInteractionEndpointInstance"/>

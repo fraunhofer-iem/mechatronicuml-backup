@@ -58,12 +58,12 @@ public class RoleEditor
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addConnectorEndpointConnectors_GeneralTab_Editor(
-					"de.uni_paderborn.fujaba.properties.category.Lists", true);
+			addBehavioralElementBehavior_GeneralTab_Editor(null, true);
 		}
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addBehavioralElementBehavior_GeneralTab_Editor(null, true);
+			addConnectorEndpointConnectors_GeneralTab_Editor(
+					"de.uni_paderborn.fujaba.properties.category.Lists", true);
 		}
 
 	}
@@ -254,30 +254,6 @@ public class RoleEditor
 	/**
 	 * @generated
 	 */
-	protected void addConnectorEndpointConnectors_GeneralTab_Editor(
-			String category, boolean front) {
-		addEditorToCategory(category,
-				createConnectorEndpointConnectors_GeneralTab_Editor(), front);
-	}
-
-	/**
-	 * @generated
-	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectors_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
-				adapterFactory,
-				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
-						.getConnectorEndpoint_Connectors());
-
-		editor.setTooltipMessage("The connectors attached to this endpoint.");
-
-		return editor;
-
-	}
-
-	/**
-	 * @generated
-	 */
 	protected void addBehavioralElementBehavior_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(category,
@@ -294,6 +270,30 @@ public class RoleEditor
 						.getBehavioralElement_Behavior());
 
 		editor.setTooltipMessage("The behavior of this behavioral element.");
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addConnectorEndpointConnectors_GeneralTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createConnectorEndpointConnectors_GeneralTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConnectorEndpointConnectors_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ListPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.connector.ConnectorPackage.eINSTANCE
+						.getConnectorEndpoint_Connectors());
+
+		editor.setTooltipMessage("The connectors attached to this endpoint.");
 
 		return editor;
 

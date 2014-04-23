@@ -298,13 +298,13 @@ public interface ConstraintPackage extends EPackage {
 	int VERIFIABLE_ELEMENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Verification Constraint Repository</b></em>' containment reference.
+	 * The feature id for the '<em><b>Verification Constraint Repositories</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY = 0;
+	int VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES = 0;
 
 	/**
 	 * The number of structural features of the '<em>Verifiable Element</em>' class.
@@ -346,15 +346,15 @@ public interface ConstraintPackage extends EPackage {
 	EClass getVerifiableElement();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getVerificationConstraintRepository <em>Verification Constraint Repository</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getVerificationConstraintRepositories <em>Verification Constraint Repositories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Verification Constraint Repository</em>'.
-	 * @see de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getVerificationConstraintRepository()
+	 * @return the meta object for the containment reference list '<em>Verification Constraint Repositories</em>'.
+	 * @see de.uni_paderborn.fujaba.muml.constraint.VerifiableElement#getVerificationConstraintRepositories()
 	 * @see #getVerifiableElement()
 	 * @generated
 	 */
-	EReference getVerifiableElement_VerificationConstraintRepository();
+	EReference getVerifiableElement_VerificationConstraintRepositories();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -400,12 +400,12 @@ public interface ConstraintPackage extends EPackage {
 		EClass VERIFIABLE_ELEMENT = eINSTANCE.getVerifiableElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Verification Constraint Repository</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Verification Constraint Repositories</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY = eINSTANCE.getVerifiableElement_VerificationConstraintRepository();
+		EReference VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES = eINSTANCE.getVerifiableElement_VerificationConstraintRepositories();
 
 	}
 

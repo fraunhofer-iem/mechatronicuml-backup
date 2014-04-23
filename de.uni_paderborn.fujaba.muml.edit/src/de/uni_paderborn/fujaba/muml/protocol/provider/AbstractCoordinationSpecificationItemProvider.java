@@ -64,7 +64,6 @@ public class AbstractCoordinationSpecificationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
-			addVerificationConstraintRepositoryPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -92,28 +91,6 @@ public class AbstractCoordinationSpecificationItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Verification Constraint Repository feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addVerificationConstraintRepositoryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_VerifiableElement_verificationConstraintRepository_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_VerifiableElement_verificationConstraintRepository_feature", "_UI_VerifiableElement_type"),
-				 ConstraintPackage.Literals.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -125,7 +102,7 @@ public class AbstractCoordinationSpecificationItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ConstraintPackage.Literals.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORY);
+			childrenFeatures.add(ConstraintPackage.Literals.VERIFIABLE_ELEMENT__VERIFICATION_CONSTRAINT_REPOSITORIES);
 			childrenFeatures.add(ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ROLES);
 			childrenFeatures.add(ProtocolPackage.Literals.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR);
 		}
@@ -174,7 +151,7 @@ public class AbstractCoordinationSpecificationItemProvider
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__COMMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY:
+			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES:
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLES:
 			case ProtocolPackage.ABSTRACT_COORDINATION_SPECIFICATION__ROLE_CONNECTOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

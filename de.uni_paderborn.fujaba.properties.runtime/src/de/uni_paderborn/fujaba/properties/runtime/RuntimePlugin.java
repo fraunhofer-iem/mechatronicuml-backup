@@ -483,7 +483,9 @@ public class RuntimePlugin extends AbstractUIPlugin {
 	
 	
 	public static String makeSingular(String word) {
-		if (word.charAt(word.length() - 1) == 's') {
+		if (word.substring(word.length() - 3).equals("ies")) {
+			word = word.substring(0, word.length() - 3) + "y";
+		} else if (word.charAt(word.length() - 1) == 's') {
 			word = word.substring(0, word.length() - 1);
 		}
 		return word;

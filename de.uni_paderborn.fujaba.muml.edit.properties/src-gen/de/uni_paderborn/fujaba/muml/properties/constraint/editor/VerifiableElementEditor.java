@@ -24,8 +24,8 @@ public abstract class VerifiableElementEditor
 		super.createProperties();
 
 		if (getTab() == null || "property.tab.general".equals(getTab())) {
-			addVerifiableElementVerificationConstraintRepository_GeneralTab_Editor(
-					null, false);
+			addVerifiableElementVerificationConstraintRepositories_GeneralTab_Editor(
+					null, true);
 		}
 
 	}
@@ -33,22 +33,22 @@ public abstract class VerifiableElementEditor
 	/**
 	 * @generated
 	 */
-	protected void addVerifiableElementVerificationConstraintRepository_GeneralTab_Editor(
+	protected void addVerifiableElementVerificationConstraintRepositories_GeneralTab_Editor(
 			String category, boolean front) {
 		addEditorToCategory(
 				category,
-				createVerifiableElementVerificationConstraintRepository_GeneralTab_Editor(),
+				createVerifiableElementVerificationConstraintRepositories_GeneralTab_Editor(),
 				front);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVerifiableElementVerificationConstraintRepository_GeneralTab_Editor() {
-		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.NavigationFeaturePropertyEditor(
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createVerifiableElementVerificationConstraintRepositories_GeneralTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.FlattenedListPropertyEditor(
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.constraint.ConstraintPackage.eINSTANCE
-						.getVerifiableElement_VerificationConstraintRepository());
+						.getVerifiableElement_VerificationConstraintRepositories());
 
 		editor.setTooltipMessage("The referenced repository that contains verifiable constraints for this element.");
 

@@ -113,13 +113,13 @@ public interface ProtocolPackage extends EPackage {
 	int ABSTRACT_COORDINATION_SPECIFICATION__COMMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Verification Constraint Repository</b></em>' containment reference.
+	 * The feature id for the '<em><b>Verification Constraint Repositories</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
@@ -385,13 +385,13 @@ public interface ProtocolPackage extends EPackage {
 	int COORDINATION_PROTOCOL__COMMENT = ABSTRACT_COORDINATION_SPECIFICATION__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Verification Constraint Repository</b></em>' containment reference.
+	 * The feature id for the '<em><b>Verification Constraint Repositories</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COORDINATION_PROTOCOL__VERIFICATION_CONSTRAINT_REPOSITORY = ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORY;
+	int COORDINATION_PROTOCOL__VERIFICATION_CONSTRAINT_REPOSITORIES = ABSTRACT_COORDINATION_SPECIFICATION__VERIFICATION_CONSTRAINT_REPOSITORIES;
 
 	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.

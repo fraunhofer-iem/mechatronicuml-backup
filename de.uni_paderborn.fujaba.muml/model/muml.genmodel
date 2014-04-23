@@ -109,7 +109,7 @@
         disposableProviderFactory="true" ecorePackage="muml.ecore#//constraint">
       <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerificationConstraintRepository"/>
       <genClasses image="false" ecoreClass="muml.ecore#//constraint/VerifiableElement">
-        <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//constraint/VerifiableElement/verificationConstraintRepository"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference muml.ecore#//constraint/VerifiableElement/verificationConstraintRepositories"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Instance" basePackage="de.uni_paderborn.fujaba.muml"
