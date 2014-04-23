@@ -54,6 +54,14 @@
   </extension>
  
   <extension
+       point="de.uni_paderborn.fujaba.modelinstance.ui.modelinitializer">
+      <initializer
+          initializer="de.uni_paderborn.fujaba.muml.common.modelinitializer.DefaultCategoriesInitializer">
+      </initializer>
+  </extension>
+ 
+ 
+  <extension
        point="org.eclipse.ltk.core.refactoring.moveParticipants">
     <moveParticipant
           class="de.uni_paderborn.fujaba.muml.common.refactoring.DiagramMoveParticipant"
