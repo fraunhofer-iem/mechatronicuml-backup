@@ -390,7 +390,7 @@
 //release all created events
 	[if (not transition.triggerMessageEvent.oclIsUndefined())]
 		[for (msg : Message | transition.triggerMessageEvent.message)]		
-				free([msg.instanceOf.getName()/]Event);
+				Event_destroy([msg.instanceOf.getName()/]Event);
 		[/for]
 	[/if]	
 	[comment State change /]	

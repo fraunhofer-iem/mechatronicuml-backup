@@ -89,6 +89,7 @@ bool_t EventQueue_enqueue(EventQueue* queue, Event* event) {
 			return true;
 		} else {
 			fprintf(stderr, "Queue exceeded. Event will be rejected!\n");
+			Event_destroy(event);
 		}
 	} else {
 		fprintf(stderr, "Error: Invalid argument.\n");

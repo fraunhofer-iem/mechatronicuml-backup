@@ -41,7 +41,6 @@ Event* Event_create(sign_t signature, string_t name, real_t val) {
 
 void Event_destroy(Event* event) {
 	if (event != NULL) {
-		free(event->name);
 		free(event);
 	}
 }

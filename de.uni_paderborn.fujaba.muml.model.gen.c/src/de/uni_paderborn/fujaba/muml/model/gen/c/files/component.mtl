@@ -141,7 +141,8 @@
 		[getClassName(component)/]* component = ([getClassName(component)/]*)malloc(sizeof([getClassName(component)/]));
 
 		if(component != NULL){
-
+			
+			[comment component.generatePorts()/]
 			[comment Initialization of Ports/]
 			[for (port : Port | component.ports) ? (port.oclIsTypeOf(DiscretePort))]
 				component->[port.getVariableName()/] = NULL;
@@ -410,6 +411,33 @@
 [/for]
 [/file]
 [/template]
+
+
+[template private generatePorts(component : Component) post (trim())]
+MessageID** msgIDs;
+MessageBuffer* buffer;
+MessageBuffer** allBuffers
+[for (compPort : Port | component.ports) ? (compPort.oclIsTypeOf(DiscretePort))]
+[let port : DiscretePort = compPort.oclAsType(DiscretePort)]
+component->[port.getVariableName()/] = NULL;
+[if (port.isDiscreteInOutPort or port.isDiscreteInPort)]
+allBuffers = (MessageBuffer**) malloc([port.receiverMessageBuffer->size()/]* sizeof(MessageBuffer*));
+[for (inBuffer : MessageBuffer | port.receiverMessageBuffer)]
+	//create list of supported MessageIDs
+	msgIDs = (MessageID**) malloc([inBuffer.messageType->size()/]* sizeof(MessageID*));
+	[for (msgType : MessageType | inBuffer.messageType)]
+		msgIDs['['/][i-1/][']'/] = [msgType.name/] //will be replaced by ID
+	[/for]
+
+	buffer = MessageBuffer_create([inBuffer.bufferSize/], [inBuffer.messageType->size()/], msgIDs);
+	allBuffers['['/][i-1/][']'/] = buffer;
+[/for]
+component->[port.getVariableName()/] = Port_create(/*Port-ID*/, [port.receiverMessageBuffer->size()/], allBuffers);
+[/if]
+[/let]
+[/for]
+[/template]
+
 [**
  * Generates the queue methods for multiparts.
  * 
