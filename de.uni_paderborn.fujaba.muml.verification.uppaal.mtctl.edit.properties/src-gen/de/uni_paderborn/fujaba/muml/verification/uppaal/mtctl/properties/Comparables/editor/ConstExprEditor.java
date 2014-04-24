@@ -23,6 +23,32 @@ public class ConstExprEditor
 	protected void createProperties() {
 		super.createProperties();
 
+		if (getTab() == null || "property.tab.mtctl".equals(getTab())) {
+			addConstExprTimeUnit_MtctlTab_Editor(null, true);
+		}
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addConstExprTimeUnit_MtctlTab_Editor(String category,
+			boolean front) {
+		addEditorToCategory(category,
+				createConstExprTimeUnit_MtctlTab_Editor(), front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createConstExprTimeUnit_MtctlTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.ComboPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Comparables.ComparablesPackage.eINSTANCE
+						.getConstExpr_TimeUnit());
+
+		return editor;
+
 	}
 
 	//
@@ -55,8 +81,9 @@ public class ConstExprEditor
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
-					tab);
+			return java.util.Arrays.asList(
+					new java.lang.String[]{"property.tab.mtctl",
+							"property.tab.mtctl"}).contains(tab);
 		}
 	}
 

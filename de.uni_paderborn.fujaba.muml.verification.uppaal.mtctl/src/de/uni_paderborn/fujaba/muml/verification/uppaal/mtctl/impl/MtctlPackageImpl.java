@@ -49,6 +49,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage;
 
 import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.impl.SetsPackageImpl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -198,6 +199,15 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPropertyRepository_EnableVerification() {
+		return (EAttribute)propertyRepositoryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getProperty() {
 		return propertyEClass;
 	}
@@ -250,6 +260,7 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 		// Create classes and their features
 		propertyRepositoryEClass = createEClass(PROPERTY_REPOSITORY);
 		createEReference(propertyRepositoryEClass, PROPERTY_REPOSITORY__PROPERTIES);
+		createEAttribute(propertyRepositoryEClass, PROPERTY_REPOSITORY__ENABLE_VERIFICATION);
 
 		propertyEClass = createEClass(PROPERTY);
 		createEReference(propertyEClass, PROPERTY__EXPRESSION);
@@ -308,6 +319,7 @@ public class MtctlPackageImpl extends EPackageImpl implements MtctlPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(propertyRepositoryEClass, PropertyRepository.class, "PropertyRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPropertyRepository_Properties(), this.getProperty(), null, "properties", null, 0, -1, PropertyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPropertyRepository_EnableVerification(), ecorePackage.getEBoolean(), "enableVerification", "true", 1, 1, PropertyRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProperty_Expression(), this.getExpression(), null, "expression", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

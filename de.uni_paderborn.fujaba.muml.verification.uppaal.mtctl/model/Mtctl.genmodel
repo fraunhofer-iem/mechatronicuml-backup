@@ -11,6 +11,7 @@
       disposableProviderFactory="true" ecorePackage="Mtctl.ecore#/">
     <genClasses ecoreClass="Mtctl.ecore#//PropertyRepository">
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//PropertyRepository/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//PropertyRepository/enableVerification"/>
     </genClasses>
     <genClasses ecoreClass="Mtctl.ecore#//Property">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Property/expression"/>
@@ -91,7 +92,10 @@
       <genClasses image="false" ecoreClass="Mtctl.ecore#//Predicates/StaticPredicateExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/TrueExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Predicates/FalseExpr"/>
-      <genClasses ecoreClass="Mtctl.ecore#//Predicates/StateInStatechartExpr"/>
+      <genClasses ecoreClass="Mtctl.ecore#//Predicates/StateInStatechartExpr">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/StateInStatechartExpr/state"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mtctl.ecore#//Predicates/StateInStatechartExpr/statechart"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Sets" basePackage="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl"
         disposableProviderFactory="true" ecorePackage="Mtctl.ecore#//Sets">
@@ -131,6 +135,7 @@
       </genClasses>
       <genClasses ecoreClass="Mtctl.ecore#//Comparables/ConstExpr">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//Comparables/ConstExpr/val"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mtctl.ecore#//Comparables/ConstExpr/timeUnit"/>
       </genClasses>
       <genClasses image="false" ecoreClass="Mtctl.ecore#//Comparables/MapExpr"/>
       <genClasses ecoreClass="Mtctl.ecore#//Comparables/MumlElemExpr">

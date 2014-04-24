@@ -27,6 +27,10 @@ public class PropertyRepositoryEditor
 			addPropertyRepositoryProperties_MtctlTab_Editor(null, true);
 		}
 
+		if (getTab() == null || "property.tab.mtctl".equals(getTab())) {
+			addPropertyRepositoryEnableVerification_MtctlTab_Editor(null, true);
+		}
+
 	}
 
 	/**
@@ -46,6 +50,31 @@ public class PropertyRepositoryEditor
 				adapterFactory,
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage.eINSTANCE
 						.getPropertyRepository_Properties());
+
+		return editor;
+
+	}
+
+	/**
+	 * @generated
+	 */
+	protected void addPropertyRepositoryEnableVerification_MtctlTab_Editor(
+			String category, boolean front) {
+		addEditorToCategory(category,
+				createPropertyRepositoryEnableVerification_MtctlTab_Editor(),
+				front);
+	}
+
+	/**
+	 * @generated
+	 */
+	protected de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyRepositoryEnableVerification_MtctlTab_Editor() {
+		de.uni_paderborn.fujaba.properties.runtime.editors.AbstractStructuralFeaturePropertyEditor editor = new de.uni_paderborn.fujaba.properties.runtime.editors.CheckboxPropertyEditor(
+				adapterFactory,
+				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.MtctlPackage.eINSTANCE
+						.getPropertyRepository_EnableVerification());
+
+		editor.setTooltipMessage("True if the properties in this repository should be verified when starting the next verification");
 
 		return editor;
 
@@ -82,7 +111,8 @@ public class PropertyRepositoryEditor
 		@Override
 		public boolean hasTab(java.lang.String tab) {
 			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.mtctl"}).contains(tab);
+					new java.lang.String[]{"property.tab.mtctl",
+							"property.tab.mtctl"}).contains(tab);
 		}
 	}
 

@@ -10,6 +10,7 @@ import de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.PropertyRepository
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -28,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.PropertyRepositoryImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.impl.PropertyRepositoryImpl#isEnableVerification <em>Enable Verification</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +46,25 @@ public class PropertyRepositoryImpl extends VerificationConstraintRepositoryImpl
 	 * @ordered
 	 */
 	protected EList<Property> properties;
+
+	/**
+	 * The default value of the '{@link #isEnableVerification() <em>Enable Verification</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEnableVerification()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ENABLE_VERIFICATION_EDEFAULT = true;
+	/**
+	 * The cached value of the '{@link #isEnableVerification() <em>Enable Verification</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEnableVerification()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean enableVerification = ENABLE_VERIFICATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,6 +102,27 @@ public class PropertyRepositoryImpl extends VerificationConstraintRepositoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isEnableVerification() {
+		return enableVerification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEnableVerification(boolean newEnableVerification) {
+		boolean oldEnableVerification = enableVerification;
+		enableVerification = newEnableVerification;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MtctlPackage.PROPERTY_REPOSITORY__ENABLE_VERIFICATION, oldEnableVerification, enableVerification));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -99,6 +142,8 @@ public class PropertyRepositoryImpl extends VerificationConstraintRepositoryImpl
 		switch (featureID) {
 			case MtctlPackage.PROPERTY_REPOSITORY__PROPERTIES:
 				return getProperties();
+			case MtctlPackage.PROPERTY_REPOSITORY__ENABLE_VERIFICATION:
+				return isEnableVerification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +161,9 @@ public class PropertyRepositoryImpl extends VerificationConstraintRepositoryImpl
 				getProperties().clear();
 				getProperties().addAll((Collection<? extends Property>)newValue);
 				return;
+			case MtctlPackage.PROPERTY_REPOSITORY__ENABLE_VERIFICATION:
+				setEnableVerification((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,6 +179,9 @@ public class PropertyRepositoryImpl extends VerificationConstraintRepositoryImpl
 			case MtctlPackage.PROPERTY_REPOSITORY__PROPERTIES:
 				getProperties().clear();
 				return;
+			case MtctlPackage.PROPERTY_REPOSITORY__ENABLE_VERIFICATION:
+				setEnableVerification(ENABLE_VERIFICATION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,8 +196,26 @@ public class PropertyRepositoryImpl extends VerificationConstraintRepositoryImpl
 		switch (featureID) {
 			case MtctlPackage.PROPERTY_REPOSITORY__PROPERTIES:
 				return properties != null && !properties.isEmpty();
+			case MtctlPackage.PROPERTY_REPOSITORY__ENABLE_VERIFICATION:
+				return enableVerification != ENABLE_VERIFICATION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (enableVerification: ");
+		result.append(enableVerification);
+		result.append(')');
+		return result.toString();
 	}
 
 } //PropertyRepositoryImpl

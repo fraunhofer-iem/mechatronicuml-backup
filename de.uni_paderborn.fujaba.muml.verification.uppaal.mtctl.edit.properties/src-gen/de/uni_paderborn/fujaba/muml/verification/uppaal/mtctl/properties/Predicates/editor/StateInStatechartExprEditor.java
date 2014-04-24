@@ -1,16 +1,16 @@
-package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor;
+package de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor;
 
 /**
  * @generated
  */
-public class IntervalSetExprEditor
+public class StateInStatechartExprEditor
 		extends
-			de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Sets.editor.SetExprEditor {
+			de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.Predicates.editor.StaticPredicateExprEditor {
 
 	/**
 	 * @generated
 	 */
-	public IntervalSetExprEditor(String tab,
+	public StateInStatechartExprEditor(String tab,
 			org.eclipse.emf.common.notify.AdapterFactory adapterFactory,
 			org.eclipse.emf.ecore.EClass eClass) {
 		super(tab, adapterFactory, eClass);
@@ -32,13 +32,13 @@ public class IntervalSetExprEditor
 	/**
 	 * @generated
 	 */
-	public IntervalSetExprEditor(String tab) {
+	public StateInStatechartExprEditor(String tab) {
 		this(
 				tab,
 				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.properties.util.PropertiesUtil.INSTANCE
 						.getAdapterFactory(),
-				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Sets.SetsPackage.eINSTANCE
-						.getIntervalSetExpr());
+				de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.Predicates.PredicatesPackage.eINSTANCE
+						.getStateInStatechartExpr());
 	}
 
 	/**
@@ -50,14 +50,13 @@ public class IntervalSetExprEditor
 		@Override
 		public de.uni_paderborn.fujaba.properties.runtime.editors.IPropertyEditor createPropertyEditor(
 				String tab) {
-			return new IntervalSetExprEditor(tab);
+			return new StateInStatechartExprEditor(tab);
 		}
 
 		@Override
 		public boolean hasTab(java.lang.String tab) {
-			return java.util.Arrays.asList(
-					new java.lang.String[]{"property.tab.mtctl",
-							"property.tab.mtctl"}).contains(tab);
+			return java.util.Arrays.asList(new java.lang.String[]{}).contains(
+					tab);
 		}
 	}
 

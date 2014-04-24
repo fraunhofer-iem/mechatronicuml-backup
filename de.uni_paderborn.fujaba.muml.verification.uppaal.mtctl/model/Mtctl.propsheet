@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <de.uni_paderborn.fujaba:PropertyGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.uni_paderborn.fujaba="http://de.uni_paderborn.fujaba.properties/0.4.0" defaultTab="//@tabs.0" contributorId="de.uni_paderborn.fujaba.muml.common.properties">
-  <reconciler enabled="false"/>
+  <reconciler/>
   <genModel href="Mtctl.genmodel#/"/>
   <plugin id="de.uni_paderborn.fujaba.muml.verification.uppaal.mtctl.edit.properties" name="Mtctl Properties" vendor="Software Engineering Group, Heinz Nixdorf Institute, University of Paderborn" version="0.1">
     <requiredBundles>org.eclipse.emf.ecore</requiredBundles>
@@ -38,6 +38,9 @@
     </classes>
     <classes superClasses="//@packages.1/@classes.8">
       <genClass href="Mtctl.genmodel#//mtctl/Predicates/ComparisonExpr"/>
+      <properties tab="//@tabs.0" reconcile="false">
+        <genFeature href="Mtctl.genmodel#//mtctl/Predicates/ComparisonExpr/op"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.1/@classes.9">
       <genClass href="Mtctl.genmodel#//mtctl/Predicates/MessageInBufferExpr"/>
@@ -69,6 +72,9 @@
     <classes superClasses="//@packages.1/@classes.10">
       <genClass href="Mtctl.genmodel#//mtctl/Predicates/FalseExpr"/>
     </classes>
+    <classes superClasses="//@packages.1/@classes.10">
+      <genClass href="Mtctl.genmodel#//mtctl/Predicates/StateInStatechartExpr"/>
+    </classes>
   </packages>
   <packages>
     <genPackage href="Mtctl.genmodel#//mtctl/Quantifiers"/>
@@ -92,6 +98,9 @@
     </classes>
     <classes superClasses="//@packages.3/@classes.2">
       <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/BoundVariable"/>
+      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+        <genFeature href="Mtctl.genmodel#//mtctl/Quantifiers/BoundVariable/name"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.3/@classes.2">
       <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/TemporalQuantifierExpr"/>
@@ -104,21 +113,31 @@
     </classes>
     <classes superClasses="//@packages.2/@classes.7">
       <genClass href="Mtctl.genmodel#//mtctl/Quantifiers/TimeIntervalExpr"/>
+      <properties tab="//@tabs.0" reconcile="false">
+        <genFeature href="Mtctl.genmodel#//mtctl/Quantifiers/TimeIntervalExpr/lower"/>
+      </properties>
+      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+        <genFeature href="Mtctl.genmodel#//mtctl/Quantifiers/TimeIntervalExpr/upper"/>
+      </properties>
     </classes>
   </packages>
   <packages>
     <genPackage href="Mtctl.genmodel#//mtctl"/>
     <classes>
       <genClass href="Mtctl.genmodel#//mtctl/PropertyRepository"/>
-      <properties tab="//@tabs.0" reconcile="false">
+      <properties tab="//@tabs.0" tooltip="" reconcile="false">
         <genFeature href="Mtctl.genmodel#//mtctl/PropertyRepository/properties"/>
         <editor xsi:type="de.uni_paderborn.fujaba:CustomPropertyEditor" fullyQualifiedClassName="de.uni_paderborn.fujaba.muml.ui.properties.MtctlXtextPropertyEditor"/>
+      </properties>
+      <properties tab="//@tabs.0" tooltip="Enable verification of the properties in this repository">
+        <genFeature href="Mtctl.genmodel#//mtctl/PropertyRepository/enableVerification"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:CheckboxPropertyEditor"/>
       </properties>
     </classes>
     <classes>
       <genClass href="Mtctl.genmodel#//mtctl/Property"/>
     </classes>
-    <classes superClasses="//@packages.3/@classes.1">
+    <classes>
       <genClass href="Mtctl.genmodel#//mtctl/Expression"/>
     </classes>
   </packages>
@@ -129,12 +148,22 @@
     </classes>
     <classes superClasses="//@packages.4/@classes.2">
       <genClass href="Mtctl.genmodel#//mtctl/Comparables/ConstExpr"/>
+      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+        <genFeature href="Mtctl.genmodel#//mtctl/Comparables/ConstExpr/val"/>
+      </properties>
+      <properties tab="//@tabs.0">
+        <genFeature href="Mtctl.genmodel#//mtctl/Comparables/ConstExpr/timeUnit"/>
+        <editor xsi:type="de.uni_paderborn.fujaba:ComboBoxPropertyEditor"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.3/@classes.2">
       <genClass href="Mtctl.genmodel#//mtctl/Comparables/MapExpr"/>
     </classes>
     <classes superClasses="//@packages.4/@classes.2">
       <genClass href="Mtctl.genmodel#//mtctl/Comparables/MumlElemExpr"/>
+      <properties tab="//@tabs.0" reconcile="false">
+        <genFeature href="Mtctl.genmodel#//mtctl/Comparables/MumlElemExpr/elem"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.4/@classes.2">
       <genClass href="Mtctl.genmodel#//mtctl/Comparables/TransitionMap"/>
@@ -156,6 +185,12 @@
     </classes>
     <classes superClasses="//@packages.5/@classes.0">
       <genClass href="Mtctl.genmodel#//mtctl/Sets/IntervalSetExpr"/>
+      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+        <genFeature href="Mtctl.genmodel#//mtctl/Sets/IntervalSetExpr/lowerVal"/>
+      </properties>
+      <properties tab="//@tabs.0" tooltip="" reconcile="false">
+        <genFeature href="Mtctl.genmodel#//mtctl/Sets/IntervalSetExpr/upperVal"/>
+      </properties>
     </classes>
     <classes superClasses="//@packages.5/@classes.0">
       <genClass href="Mtctl.genmodel#//mtctl/Sets/MessageSetExpr"/>
