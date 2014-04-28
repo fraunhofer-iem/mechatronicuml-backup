@@ -1,11 +1,12 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.cicmapping.provider;
+package de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.provider;
 
 
-import de.uni_paderborn.fujaba.muml.psm.allocation.provider.PsmEditPlugin;
+import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
 
-import de.uni_paderborn.fujaba.muml.psm.cicmapping.CicmappingPackage;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimeStatechartParameter;
+import de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimestatechartparameterPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -22,16 +23,21 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import org.storydriven.core.CorePackage;
+
+import org.storydriven.core.provider.NamedElementItemProvider;
 
 /**
- * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICMapping} object.
+ * This is the item provider adapter for a {@link de.uni_paderborn.fujaba.muml.psm.realtimestatechart.realtimestatechartparameter.RealtimeStatechartParameter} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CICMappingItemProvider
-	extends ItemProviderAdapter
+public class RealtimeStatechartParameterItemProvider
+	extends NamedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -44,7 +50,7 @@ public class CICMappingItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CICMappingItemProvider(AdapterFactory adapterFactory) {
+	public RealtimeStatechartParameterItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -59,65 +65,31 @@ public class CICMappingItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCicPropertyDescriptor(object);
-			addDeviceInstancePropertyDescriptor(object);
+			addCommentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Cic feature.
+	 * This adds a property descriptor for the Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCicPropertyDescriptor(Object object) {
+	protected void addCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CICMapping_cic_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CICMapping_cic_feature", "_UI_CICMapping_type"),
-				 CicmappingPackage.Literals.CIC_MAPPING__CIC,
+				 getString("_UI_CommentableElement_comment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CommentableElement_comment_feature", "_UI_CommentableElement_type"),
+				 CorePackage.Literals.COMMENTABLE_ELEMENT__COMMENT,
 				 true,
 				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Device Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDeviceInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_CICMapping_deviceInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CICMapping_deviceInstance_feature", "_UI_CICMapping_type"),
-				 CicmappingPackage.Literals.CIC_MAPPING__DEVICE_INSTANCE,
-				 true,
 				 false,
-				 true,
-				 null,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
-	}
-
-	/**
-	 * This returns CICMapping.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CICMapping"));
 	}
 
 	/**
@@ -128,7 +100,10 @@ public class CICMappingItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_CICMapping_type");
+		String label = ((RealtimeStatechartParameter)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_RealtimeStatechartParameter_type") :
+			getString("_UI_RealtimeStatechartParameter_type") + " " + label;
 	}
 
 	/**
@@ -141,6 +116,12 @@ public class CICMappingItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(RealtimeStatechartParameter.class)) {
+			case RealtimestatechartparameterPackage.REALTIME_STATECHART_PARAMETER__COMMENT:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

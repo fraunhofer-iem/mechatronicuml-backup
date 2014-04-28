@@ -4,11 +4,17 @@ package de.uni_paderborn.fujaba.muml.psm.allocation.provider;
 
 
 import de.uni_paderborn.fujaba.muml.psm.allocation.AllocationPackage;
+
+import de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin;
+
 import java.util.Collection;
 import java.util.List;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;

@@ -1,8 +1,8 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.cicmapping.provider;
+package de.uni_paderborn.fujaba.muml.psm.api.portapimapping.provider;
 
-import de.uni_paderborn.fujaba.muml.psm.cicmapping.util.CicmappingAdapterFactory;
+import de.uni_paderborn.fujaba.muml.psm.api.portapimapping.util.PortapimappingAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CicmappingItemProviderAdapterFactory extends CicmappingAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class PortapimappingItemProviderAdapterFactory extends PortapimappingAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class CicmappingItemProviderAdapterFactory extends CicmappingAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CicmappingItemProviderAdapterFactory() {
+	public PortapimappingItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -72,49 +72,72 @@ public class CicmappingItemProviderAdapterFactory extends CicmappingAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICSystemMapping} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortApiMapping} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CICSystemMappingItemProvider cicSystemMappingItemProvider;
+	protected PortApiMappingItemProvider portApiMappingItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICSystemMapping}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.api.portapimapping.PortApiMapping}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCICSystemMappingAdapter() {
-		if (cicSystemMappingItemProvider == null) {
-			cicSystemMappingItemProvider = new CICSystemMappingItemProvider(this);
+	public Adapter createPortApiMappingAdapter() {
+		if (portApiMappingItemProvider == null) {
+			portApiMappingItemProvider = new PortApiMappingItemProvider(this);
 		}
 
-		return cicSystemMappingItemProvider;
+		return portApiMappingItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICMapping} instances.
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.api.portapimapping.MappingRepository} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CICMappingItemProvider cicMappingItemProvider;
+	protected MappingRepositoryItemProvider mappingRepositoryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.cicmapping.CICMapping}.
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.api.portapimapping.MappingRepository}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCICMappingAdapter() {
-		if (cicMappingItemProvider == null) {
-			cicMappingItemProvider = new CICMappingItemProvider(this);
+	public Adapter createMappingRepositoryAdapter() {
+		if (mappingRepositoryItemProvider == null) {
+			mappingRepositoryItemProvider = new MappingRepositoryItemProvider(this);
 		}
 
-		return cicMappingItemProvider;
+		return mappingRepositoryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.uni_paderborn.fujaba.muml.psm.api.portapimapping.Mapping} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MappingItemProvider mappingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.uni_paderborn.fujaba.muml.psm.api.portapimapping.Mapping}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMappingAdapter() {
+		if (mappingItemProvider == null) {
+			mappingItemProvider = new MappingItemProvider(this);
+		}
+
+		return mappingItemProvider;
 	}
 
 	/**
@@ -216,8 +239,9 @@ public class CicmappingItemProviderAdapterFactory extends CicmappingAdapterFacto
 	 * @generated
 	 */
 	public void dispose() {
-		if (cicSystemMappingItemProvider != null) cicSystemMappingItemProvider.dispose();
-		if (cicMappingItemProvider != null) cicMappingItemProvider.dispose();
+		if (portApiMappingItemProvider != null) portApiMappingItemProvider.dispose();
+		if (mappingRepositoryItemProvider != null) mappingRepositoryItemProvider.dispose();
+		if (mappingItemProvider != null) mappingItemProvider.dispose();
 	}
 
 }

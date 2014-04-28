@@ -1,11 +1,17 @@
 /**
  */
-package de.uni_paderborn.fujaba.muml.psm.allocation.provider;
+package de.uni_paderborn.fujaba.muml.psm.provider;
+
+import de.uni_paderborn.fujaba.muml.actionlanguage.provider.ActionlanguageEditPlugin;
 
 import de.uni_paderborn.fujaba.muml.component.provider.MumlEditPlugin;
+
 import de.uni_paderborn.fujaba.muml.hardware.hwplatform.provider.HardwareEditPlugin;
+
 import org.eclipse.emf.common.EMFPlugin;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.storydriven.core.provider.CoreEditPlugin;
 
 /**
@@ -40,6 +46,7 @@ public final class PsmEditPlugin extends EMFPlugin {
 	public PsmEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     ActionlanguageEditPlugin.INSTANCE,
 		     CoreEditPlugin.INSTANCE,
 		     HardwareEditPlugin.INSTANCE,
 		     MumlEditPlugin.INSTANCE,
