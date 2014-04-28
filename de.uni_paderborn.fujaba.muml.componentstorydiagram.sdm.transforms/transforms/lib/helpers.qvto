@@ -1,0 +1,64 @@
+library helpers;
+
+modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
+
+modeltype componentInstanceConfiguration uses 'http://www.fujaba.de/muml/instance/0.4.0';
+
+modeltype ecore uses 'http://www.eclipse.org/emf/2002/Ecore';
+
+modeltype reconfiguration uses 'http://www.fujaba.de/muml/reconfiguration/0.3.18';
+
+modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
+
+modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
+
+helper getComponentInstancesReference() : EReference{
+	return ComponentInstanceConfiguration.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'componentInstances')->first();
+}
+
+helper getComponentInstanceReference() : EReference{
+	return PortInstance.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'componentInstance')->first();
+}
+
+helper getPortTypeReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'portType')->first();
+}
+
+helper getComponentTypeReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'componentType')->first();
+}
+
+helper getEmbeddedCICReference() : EReference{
+	return StructuredComponentInstance.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'embeddedCIC')->first();
+}
+
+helper getComponentPartReference() : EReference{
+	return ComponentInstance.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'componentPart')->first();
+}
+
+helper getEmbeddedComponentPartsReference() : EReference{
+	return StructuredComponent.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'embeddedComponentParts')->first();
+}
+
+helper getComponentPartReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'componentPart')->first();
+}
+
+
+helper getComponentReference(containerClass : EClass) : EReference{
+	return containerClass.eAllReferences->
+    select(r | r.name = 'component')->first();
+}
+
+helper getPortPartReference() : EReference{
+	return PortInstance.oclAsType(EClass).eAllReferences->
+    select(r | r.name = 'portPart')->first();
+}

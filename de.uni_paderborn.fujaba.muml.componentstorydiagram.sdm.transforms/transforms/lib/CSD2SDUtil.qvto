@@ -1,3 +1,5 @@
+import helpers;
+
 library CSD2SDUtil;
 
 modeltype sdPatterns uses storydiagrams::patterns('http://www.storydriven.org/storydiagrams/0.2.1');
@@ -12,6 +14,10 @@ modeltype csp uses 'http://www.fujaba.de/muml/componentstorypattern/0.4.0';
 
 modeltype componentModel uses muml::component('http://www.fujaba.de/muml/0.4.0');
 
+modeltype core uses 'http://www.storydriven.org/core/0.3.1';
+
+modeltype sd_expressions uses core::expressions ('http://www.storydriven.org/core/0.3.1');
+
 
 mapping componentstorypattern::ComponentStoryPattern :: createInitialCIC() : ObjectVariable{
 	name := 'rootCIC';
@@ -23,7 +29,10 @@ mapping componentstorypattern::ComponentVariable:: createEmbeddedCIC() : ObjectV
 	classifier:=ComponentInstanceConfiguration.oclAsType(EClass);
 }
 
-mapping componentstorypattern::ComponentVariable ::createComponentInstance() : ObjectVariable disjuncts componentstorypattern::ComponentVariable :: createStructuredComponentInstance, componentstorypattern::ComponentVariable :: createAtomicComponentInstance;
+mapping componentstorypattern::ComponentStoryPatternVariable ::createComponentInstance() : ObjectVariable disjuncts componentstorypattern::ComponentVariable :: createStructuredComponentInstance,
+ componentstorypattern::ComponentVariable :: createAtomicComponentInstance,
+  componentstorypattern::PartVariable ::createStructuredComponentInstance,
+   componentstorypattern::PartVariable ::createAtomicComponentInstance;
 
 
 mapping componentstorypattern::ComponentVariable :: createStructuredComponentInstance() : ObjectVariable when{self.type.eClass() = ReconfigurableStructuredComponent or self.type.eClass() = StaticStructuredComponent}{
@@ -42,7 +51,7 @@ mapping componentstorypattern::ComponentVariable :: createAtomicComponentInstanc
     	_bindingOperator := self._bindingOperator;
 }
 
-mapping componentstorypattern::PartVariable ::createComponentInstance() : ObjectVariable disjuncts componentstorypattern::PartVariable ::createStructuredComponentInstance, componentstorypattern::PartVariable ::createAtomicComponentInstance;
+//mapping componentstorypattern::PartVariable ::createComponentInstance() : ObjectVariable disjuncts componentstorypattern::PartVariable ::createStructuredComponentInstance, componentstorypattern::PartVariable ::createAtomicComponentInstance;
 
 mapping componentstorypattern::PartVariable ::createStructuredComponentInstance() : ObjectVariable when {self.type.componentType.eClass() = StaticStructuredComponent or self.type.componentType.eClass() = ReconfigurableStructuredComponent}{
 	name := self.name;
@@ -60,16 +69,71 @@ mapping componentstorypattern::PartVariable ::createAtomicComponentInstance() : 
     	_bindingOperator := self._bindingOperator;
 }
 
+mapping componentstorypattern::PortVariable :: createPortInstance() : ObjectVariable disjuncts componentstorypattern::PortVariable :: createDiscreteSinglePortInstance,
+ componentstorypattern::PortVariable :: createDiscreteMultiPortInstance,
+  componentstorypattern::PortVariable :: createContinousPortInstance,
+   componentstorypattern::PortVariable :: createHybridPortInstance;
+
+mapping componentstorypattern::PortVariable :: createDiscreteSinglePortInstance() : ObjectVariable when{self.type.eClass() = DiscretePort and self.type.oclAsType(DiscretePort).cardinality.upperBound.value = 1}{
+	name := self.name;
+	classifier := DiscreteSinglePortInstance.oclAsType(EClass);
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
+}
+
+//TODO check if we need new references compared to single here
+mapping componentstorypattern::PortVariable :: createDiscreteMultiPortInstance() : ObjectVariable when{self.type.eClass() = DiscretePort and self.type.oclAsType(DiscretePort).cardinality.upperBound.value > 1}{
+	name := self.name;
+	classifier := DiscreteMultiPortInstance.oclAsType(EClass);
+	   	_bindingState := self._bindingState;
+    	_bindingSemantics := self._bindingSemantics;
+    	_bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::PortVariable :: createContinousPortInstance() : ObjectVariable when{self.type.eClass() = ContinuousPort}{
+	name := self.name;
+	classifier := ContinuousPortInstance.oclAsType(EClass);
+	   	_bindingState := self._bindingState;
+    	_bindingSemantics := self._bindingSemantics;
+    	_bindingOperator := self._bindingOperator;
+}
+
+mapping componentstorypattern::PortVariable :: createHybridPortInstance() : ObjectVariable when{self.type.eClass() = HybridPort}{
+	name := self.name;
+	classifier := HybridPortInstance.oclAsType(EClass);
+	   	_bindingState := self._bindingState;
+    	_bindingSemantics := self._bindingSemantics;
+    	_bindingOperator := self._bindingOperator;
+}
+
+
+mapping Port :: createPortType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	name := self.name;
+	classifier := self.eClass();
+	constraint := createNameConstraint(self.name);
+}
+
+
+mapping componentstorypattern::PortVariable :: createPortPart(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	name := self.name;
+	classifier := PortPart.oclAsType(EClass);
+	constraint := createNameConstraint(self.name);
+}
+
+
 -- we need the parameter to create every "component type variable" anew for each story pattern
 mapping muml::component::Component ::createComponentType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
 	name := self.name;
 	classifier := self.eClass();
+	constraint := createNameConstraint(self.name);
 }
 
 
 mapping componentstorypattern::PartVariable :: createComponentPart() : ObjectVariable{
 	name := self.type.name;
 	classifier := self.type.eClass();
+	constraint := createNameConstraint(self.type.name);
 }
 
 mapping createLinkVaribale(sourceVariable : ObjectVariable, targetVariable : ObjectVariable, targetEndReference : EReference) : LinkVariable{
@@ -92,35 +156,43 @@ mapping PartVariable:: createPartVariableEquivalence(in compStoryPattern : compo
 	container._variable +=  self.map createComponentInstance();
 	container._linkVariable += map createLinkVaribale(compStoryPattern.thisVariable.map createEmbeddedCIC(), self.map createComponentInstance(), getComponentInstancesReference());
 	container._variable += self.type.componentType.map createComponentType(compStoryPattern);
-	container._linkVariable += map createLinkVaribale(self.map createComponentInstance(), self.type.componentType.map createComponentType(compStoryPattern), getComponentTypeReference());
+	container._linkVariable += map createLinkVaribale(self.map createComponentInstance(), self.type.componentType.map createComponentType(compStoryPattern), getComponentTypeReference(ComponentInstance.oclAsType(EClass)));
 	container._variable += self.map createComponentPart();
 	container._linkVariable += map createLinkVaribale(self.map createComponentInstance(), self.map createComponentPart(), getComponentPartReference());
 	container._linkVariable += map createLinkVaribale(compStoryPattern.thisVariable.type.map createComponentType(compStoryPattern), self.map createComponentPart(), getEmbeddedComponentPartsReference());
+	container._linkVariable += map createLinkVaribale(self.map createComponentPart(), self.type.componentType.map createComponentType(compStoryPattern), getComponentTypeReference(self.map createComponentPart().classifier));
+
+	self.portVariables->forEach(pV){
+		pV.map createPortVariableEquivalence(compStoryPattern, container);
+	}
 }
 
+mapping PortVariable :: createPortVariableEquivalence(in compStoryPattern : componentstorypattern::ComponentStoryPattern, inout container : StoryPattern){
+	var portInstance : ObjectVariable := self.map createPortInstance();
+	container.variable += portInstance;
+	container.linkVariable += map createLinkVaribale(portInstance, self.container().oclAsType(ComponentStoryPatternVariable).map createComponentInstance(), getComponentInstanceReference());
+	
+	var portType : ObjectVariable := self.type.map createPortType(compStoryPattern);
+	container.variable += portType;
+	container.linkVariable += map createLinkVaribale(portInstance, portType, getPortTypeReference(portInstance.classifier));
+	container.linkVariable += map createLinkVaribale(portType, self.type.component.map createComponentType(compStoryPattern), getComponentReference(self.type.map createPortType(compStoryPattern).classifier));
+	
+	var portPart : ObjectVariable := self.map createPortPart(compStoryPattern);
+	container.variable += portPart;
+	container.linkVariable += map createLinkVaribale(portInstance, portPart, getPortPartReference());
+	container.linkVariable += map createLinkVaribale(portPart, portType, getPortTypeReference(portPart.classifier));
+	container.linkVariable += map createLinkVaribale(portPart, self.type.component.map createComponentType(compStoryPattern), getComponentPartReference(portPart.classifier));
+}
 //mapping PortPart createPort
 
-helper getComponentInstancesReference() : EReference{
-	return ComponentInstanceConfiguration.oclAsType(EClass).eAllReferences->
-    select(r | r.name = 'componentInstances')->first();
+query createNameConstraint(name : String) : Constraint{
+	return object Constraint{
+		constraintExpression := object TextualExpression{
+			language := 'OCL';
+			expressionText := "name = \'".concat(name).concat("\'");
+			languageVersion := '1.0';
+		}
+	}
 }
 
-helper getComponentTypeReference() : EReference{
-	return ComponentInstance.oclAsType(EClass).eAllReferences->
-    select(r | r.name = 'componentType')->first();
-}
 
-helper getEmbeddedCICReference() : EReference{
-	return StructuredComponentInstance.oclAsType(EClass).eAllReferences->
-    select(r | r.name = 'embeddedCIC')->first();
-}
-
-helper getComponentPartReference() : EReference{
-	return ComponentInstance.oclAsType(EClass).eAllReferences->
-    select(r | r.name = 'componentPart')->first();
-}
-
-helper getEmbeddedComponentPartsReference() : EReference{
-	return StructuredComponent.oclAsType(EClass).eAllReferences->
-    select(r | r.name = 'embeddedComponentParts')->first();
-}
