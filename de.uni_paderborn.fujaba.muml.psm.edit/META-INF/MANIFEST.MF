@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: de.uni_paderborn.fujaba.muml.psm.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: de.uni_paderborn.fujaba.muml.psm.allocation.provider.PsmEditPlugin$Implementation
+Bundle-Activator: de.uni_paderborn.fujaba.muml.psm.provider.PsmEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
