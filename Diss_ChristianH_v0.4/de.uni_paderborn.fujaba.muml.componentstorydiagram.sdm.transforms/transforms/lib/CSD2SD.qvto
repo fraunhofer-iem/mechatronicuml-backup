@@ -1,5 +1,5 @@
 import CSD2SDUtil;
-
+import helpers;
 
 library CSD2SD();
 
@@ -128,7 +128,7 @@ mapping componentstorypattern::ComponentStoryPattern :: ComponentStoryPattern2St
     //	_variable += self.thisVariable.map createStructuredComponentInstance();
     	_linkVariable += map createLinkVaribale(self.map createInitialCIC(), self.thisVariable.map createComponentInstance(), getComponentInstancesReference());
     	_variable += self.thisVariable.type.map createComponentType(self);
-    	_linkVariable += map createLinkVaribale(self.thisVariable.map createComponentInstance(), self.thisVariable.type.map createComponentType(self), getComponentTypeReference());
+    	_linkVariable += map createLinkVaribale(self.thisVariable.map createComponentInstance(), self.thisVariable.type.map createComponentType(self), getComponentTypeReference(self.thisVariable.map createComponentInstance().classifier));
 		_variable += self.thisVariable.map createEmbeddedCIC();
 		_linkVariable += map createLinkVaribale(self.thisVariable.map createComponentInstance(), self.thisVariable.map createEmbeddedCIC(), getEmbeddedCICReference());
 		self.thisVariable.partVariables->forEach(pV){
@@ -143,7 +143,8 @@ mapping componentstorypattern::ComponentStoryPattern :: ComponentStoryPattern2St
    		 
    		 */
    		 }
-   		 
+
+// this mapping is not needed at the moment   		 
 mapping componentstorypattern::ComponentVariable :: ComponentVariable2ObjectVariable() : storydiagrams::patterns::ObjectVariable{
     	_name := self._name;
     	_bindingState := self._bindingState;
