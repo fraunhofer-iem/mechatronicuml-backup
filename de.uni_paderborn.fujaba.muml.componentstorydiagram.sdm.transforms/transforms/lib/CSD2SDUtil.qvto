@@ -20,11 +20,15 @@ modeltype sd_expressions uses core::expressions ('http://www.storydriven.org/cor
 
 
 mapping componentstorypattern::ComponentStoryPattern :: createInitialCIC() : ObjectVariable{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
 	name := 'rootCIC';
 	classifier:=ComponentInstanceConfiguration.oclAsType(EClass);
 }
 
 mapping componentstorypattern::ComponentVariable:: createEmbeddedCIC() : ObjectVariable{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
 	name := 'embeddedCIC';
 	classifier:=ComponentInstanceConfiguration.oclAsType(EClass);
 }
@@ -35,38 +39,50 @@ mapping componentstorypattern::ComponentStoryPatternVariable ::createComponentIn
    componentstorypattern::PartVariable ::createAtomicComponentInstance;
 
 
-mapping componentstorypattern::ComponentVariable :: createStructuredComponentInstance() : ObjectVariable when{self.type.eClass() = ReconfigurableStructuredComponent or self.type.eClass() = StaticStructuredComponent}{
+mapping componentstorypattern::ComponentVariable :: createStructuredComponentInstance() : ObjectVariable
+ when{self.type.eClass() = ReconfigurableStructuredComponent or self.type.eClass() = StaticStructuredComponent}{
+ 	annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
 	classifier := StructuredComponentInstance.oclAsType(EClass);
-	   	_bindingState := self._bindingState;
-    	_bindingSemantics := self._bindingSemantics;
-    	_bindingOperator := self._bindingOperator;
+	bindingState := self._bindingState;
+    bindingSemantics := self._bindingSemantics;
+    bindingOperator := self._bindingOperator;
 }
 
-mapping componentstorypattern::ComponentVariable :: createAtomicComponentInstance() : ObjectVariable when {self.type.eClass() = AtomicComponent or self.type.eClass() = ReconfigurableAtomicComponent}{
+mapping componentstorypattern::ComponentVariable :: createAtomicComponentInstance() : ObjectVariable 
+when {self.type.eClass() = AtomicComponent or self.type.eClass() = ReconfigurableAtomicComponent}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
 	classifier := AtomicComponentInstance.oclAsType(EClass);
-	   	_bindingState := self._bindingState;
-    	_bindingSemantics := self._bindingSemantics;
-    	_bindingOperator := self._bindingOperator;
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
 }
 
 //mapping componentstorypattern::PartVariable ::createComponentInstance() : ObjectVariable disjuncts componentstorypattern::PartVariable ::createStructuredComponentInstance, componentstorypattern::PartVariable ::createAtomicComponentInstance;
 
-mapping componentstorypattern::PartVariable ::createStructuredComponentInstance() : ObjectVariable when {self.type.componentType.eClass() = StaticStructuredComponent or self.type.componentType.eClass() = ReconfigurableStructuredComponent}{
+mapping componentstorypattern::PartVariable ::createStructuredComponentInstance() : ObjectVariable
+when {self.type.componentType.eClass() = StaticStructuredComponent or self.type.componentType.eClass() = ReconfigurableStructuredComponent}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
 	classifier := StructuredComponentInstance.oclAsType(EClass);
-	   	_bindingState := self._bindingState;
-    	_bindingSemantics := self._bindingSemantics;
-    	_bindingOperator := self._bindingOperator;
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
 }
 
-mapping componentstorypattern::PartVariable ::createAtomicComponentInstance() : ObjectVariable when {self.type.componentType.eClass() = StaticAtomicComponent or self.type.componentType.eClass() = ReconfigurableAtomicComponent}{
+mapping componentstorypattern::PartVariable ::createAtomicComponentInstance() : ObjectVariable 
+when {self.type.componentType.eClass() = StaticAtomicComponent or self.type.componentType.eClass() = ReconfigurableAtomicComponent}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);	
 	name := self.name;
 	classifier := AtomicComponentInstance.oclAsType(EClass);
-	  	_bindingState := self._bindingState;
-    	_bindingSemantics := self._bindingSemantics;
-    	_bindingOperator := self._bindingOperator;
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
 }
 
 mapping componentstorypattern::PortVariable :: createPortInstance() : ObjectVariable disjuncts componentstorypattern::PortVariable :: createDiscreteSinglePortInstance,
@@ -74,7 +90,10 @@ mapping componentstorypattern::PortVariable :: createPortInstance() : ObjectVari
   componentstorypattern::PortVariable :: createContinousPortInstance,
    componentstorypattern::PortVariable :: createHybridPortInstance;
 
-mapping componentstorypattern::PortVariable :: createDiscreteSinglePortInstance() : ObjectVariable when{self.type.eClass() = DiscretePort and self.type.oclAsType(DiscretePort).cardinality.upperBound.value = 1}{
+mapping componentstorypattern::PortVariable :: createDiscreteSinglePortInstance() : ObjectVariable
+ when{self.type.eClass() = DiscretePort and self.type.oclAsType(DiscretePort).cardinality.upperBound.value = 1}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
 	classifier := DiscreteSinglePortInstance.oclAsType(EClass);
 	_bindingState := self._bindingState;
@@ -83,42 +102,55 @@ mapping componentstorypattern::PortVariable :: createDiscreteSinglePortInstance(
 }
 
 //TODO check if we need new references compared to single here
-mapping componentstorypattern::PortVariable :: createDiscreteMultiPortInstance() : ObjectVariable when{self.type.eClass() = DiscretePort and self.type.oclAsType(DiscretePort).cardinality.upperBound.value > 1}{
+mapping componentstorypattern::PortVariable :: createDiscreteMultiPortInstance() : ObjectVariable
+ when{self.type.eClass() = DiscretePort and self.type.oclAsType(DiscretePort).cardinality.upperBound.value > 1}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
 	classifier := DiscreteMultiPortInstance.oclAsType(EClass);
-	   	_bindingState := self._bindingState;
-    	_bindingSemantics := self._bindingSemantics;
-    	_bindingOperator := self._bindingOperator;
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
 }
 
-mapping componentstorypattern::PortVariable :: createContinousPortInstance() : ObjectVariable when{self.type.eClass() = ContinuousPort}{
+mapping componentstorypattern::PortVariable :: createContinousPortInstance() : ObjectVariable
+ when{self.type.eClass() = ContinuousPort}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
 	classifier := ContinuousPortInstance.oclAsType(EClass);
-	   	_bindingState := self._bindingState;
-    	_bindingSemantics := self._bindingSemantics;
-    	_bindingOperator := self._bindingOperator;
+	_bindingState := self._bindingState;
+    _bindingSemantics := self._bindingSemantics;
+    _bindingOperator := self._bindingOperator;
 }
 
-mapping componentstorypattern::PortVariable :: createHybridPortInstance() : ObjectVariable when{self.type.eClass() = HybridPort}{
+mapping componentstorypattern::PortVariable :: createHybridPortInstance() : ObjectVariable
+ when{self.type.eClass() = HybridPort}{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
 	classifier := HybridPortInstance.oclAsType(EClass);
-	   	_bindingState := self._bindingState;
-    	_bindingSemantics := self._bindingSemantics;
-    	_bindingOperator := self._bindingOperator;
+   	_bindingState := self._bindingState;
+   	_bindingSemantics := self._bindingSemantics;
+   	_bindingOperator := self._bindingOperator;
+    	
 }
 
 
 mapping Port :: createPortType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
 	name := self.name;
 	classifier := self.eClass();
 	constraint := createNameConstraint(self.name);
 }
 
 
-mapping componentstorypattern::PortVariable :: createPortPart(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
-	name := self.name;
+mapping Port :: createPortPart(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	_annotation := self._annotation.deepclone().oclAsType(EAnnotation);
+    _extension := self._extension.deepclone().oclAsType(Extension);
+	name := self.name.concat('Part');
 	classifier := PortPart.oclAsType(EClass);
-	constraint := createNameConstraint(self.name);
 }
 
 
@@ -136,6 +168,28 @@ mapping componentstorypattern::PartVariable :: createComponentPart() : ObjectVar
 	constraint := createNameConstraint(self.type.name);
 }
 
+
+mapping ConnectorVariable :: createConnectorInstance() : ObjectVariable disjuncts AssemblyVariable::createAssemblyConnectorInstance, DelegationVariable::createDelegationConnectorInstance;
+
+mapping AssemblyVariable :: createAssemblyConnectorInstance() : ObjectVariable {
+	classifier := AssemblyConnectorInstance.oclAsType(EClass);
+}
+
+mapping DelegationVariable :: createDelegationConnectorInstance() : ObjectVariable{
+	classifier := DelegationConnectorInstance.oclAsType(EClass);
+}
+
+mapping PortConnector :: createConnectorType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable disjuncts AssemblyConnector::createAssemblyConnectorType, DelegationConnector::createDelegationConnectorType;
+
+mapping AssemblyConnector :: createAssemblyConnectorType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	classifier := self.eClass();
+	//TODO no such thing like a name constraint here?
+}
+
+mapping DelegationConnector :: createDelegationConnectorType(compStoryPattern : componentstorypattern::ComponentStoryPattern) : ObjectVariable{
+	classifier := self.eClass();
+}
+
 mapping createLinkVaribale(sourceVariable : ObjectVariable, targetVariable : ObjectVariable, targetEndReference : EReference) : LinkVariable{
 //	_name := self._name;
 //    _bindingSemantics := self._bindingSemantics;
@@ -151,39 +205,6 @@ mapping createLinkVaribale(sourceVariable : ObjectVariable, targetVariable : Obj
     _targetEnd := targetEndReference;
 //    _qualifierExpression := self._qualifierExpression.map Expression2Expression();
 }
-
-mapping PartVariable:: createPartVariableEquivalence(in compStoryPattern : componentstorypattern::ComponentStoryPattern, inout container : StoryPattern){
-	container._variable +=  self.map createComponentInstance();
-	container._linkVariable += map createLinkVaribale(compStoryPattern.thisVariable.map createEmbeddedCIC(), self.map createComponentInstance(), getComponentInstancesReference());
-	container._variable += self.type.componentType.map createComponentType(compStoryPattern);
-	container._linkVariable += map createLinkVaribale(self.map createComponentInstance(), self.type.componentType.map createComponentType(compStoryPattern), getComponentTypeReference(ComponentInstance.oclAsType(EClass)));
-	container._variable += self.map createComponentPart();
-	container._linkVariable += map createLinkVaribale(self.map createComponentInstance(), self.map createComponentPart(), getComponentPartReference());
-	container._linkVariable += map createLinkVaribale(compStoryPattern.thisVariable.type.map createComponentType(compStoryPattern), self.map createComponentPart(), getEmbeddedComponentPartsReference());
-	container._linkVariable += map createLinkVaribale(self.map createComponentPart(), self.type.componentType.map createComponentType(compStoryPattern), getComponentTypeReference(self.map createComponentPart().classifier));
-
-	self.portVariables->forEach(pV){
-		pV.map createPortVariableEquivalence(compStoryPattern, container);
-	}
-}
-
-mapping PortVariable :: createPortVariableEquivalence(in compStoryPattern : componentstorypattern::ComponentStoryPattern, inout container : StoryPattern){
-	var portInstance : ObjectVariable := self.map createPortInstance();
-	container.variable += portInstance;
-	container.linkVariable += map createLinkVaribale(portInstance, self.container().oclAsType(ComponentStoryPatternVariable).map createComponentInstance(), getComponentInstanceReference());
-	
-	var portType : ObjectVariable := self.type.map createPortType(compStoryPattern);
-	container.variable += portType;
-	container.linkVariable += map createLinkVaribale(portInstance, portType, getPortTypeReference(portInstance.classifier));
-	container.linkVariable += map createLinkVaribale(portType, self.type.component.map createComponentType(compStoryPattern), getComponentReference(self.type.map createPortType(compStoryPattern).classifier));
-	
-	var portPart : ObjectVariable := self.map createPortPart(compStoryPattern);
-	container.variable += portPart;
-	container.linkVariable += map createLinkVaribale(portInstance, portPart, getPortPartReference());
-	container.linkVariable += map createLinkVaribale(portPart, portType, getPortTypeReference(portPart.classifier));
-	container.linkVariable += map createLinkVaribale(portPart, self.type.component.map createComponentType(compStoryPattern), getComponentPartReference(portPart.classifier));
-}
-//mapping PortPart createPort
 
 query createNameConstraint(name : String) : Constraint{
 	return object Constraint{

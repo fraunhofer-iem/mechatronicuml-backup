@@ -1,4 +1,4 @@
-import lib.CSD2SD;
+import lib.Workflow;
 
 modeltype csd uses 'http://www.fujaba.de/muml/componentstorydiagram/0.4.0';
 modeltype sd uses 'http://www.storydriven.org/storydiagrams/0.2.1';
